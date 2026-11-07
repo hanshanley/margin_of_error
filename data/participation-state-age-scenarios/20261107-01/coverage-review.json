@@ -1,0 +1,729 @@
+{
+  "selected_contest_age_tables": [
+    {
+      "state_code": "CA",
+      "contest_code": "GG",
+      "subset": 55
+    },
+    {
+      "state_code": "FL",
+      "contest_code": "GG",
+      "subset": 55
+    },
+    {
+      "state_code": "IL",
+      "contest_code": "GG",
+      "subset": 55
+    },
+    {
+      "state_code": "IL",
+      "contest_code": "SG",
+      "subset": 55
+    },
+    {
+      "state_code": "MI",
+      "contest_code": "GG",
+      "subset": 55
+    },
+    {
+      "state_code": "NY",
+      "contest_code": "GG",
+      "subset": 55
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "GG",
+      "subset": 55
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "SG",
+      "subset": 55
+    }
+  ],
+  "withheld_contest_age_tables": [
+    {
+      "state_code": "AL",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "AZ",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "AZ",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "CA",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "FL",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "FL",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IL",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "ME",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "ME",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "MN",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "MN",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NE",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NE",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NV",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NV",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NY",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "OH",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "OH",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "OH",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "PA",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "PA",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TN",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TN",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "WI",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "WI",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "AL",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "SG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "SG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IL",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "ME",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "ME",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "MN",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "MN",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NC",
+      "contest_code": "SG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NC",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NC",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TN",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TN",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "SG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "VA",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "VA",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    }
+  ],
+  "jurisdiction_coverage": [
+    {
+      "state_code": "AK",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "AL",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "AR",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "AZ",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "CA",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 1,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "CO",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "CT",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "DC",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "DE",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "FL",
+      "qualified_current_age_tables_in_frozen_release": 3,
+      "released_state_contest_age_tables": 1,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "GA",
+      "qualified_current_age_tables_in_frozen_release": 6,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "HI",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "IA",
+      "qualified_current_age_tables_in_frozen_release": 6,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "ID",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "IL",
+      "qualified_current_age_tables_in_frozen_release": 4,
+      "released_state_contest_age_tables": 2,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "IN",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "KS",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "KY",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "LA",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MA",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MD",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "ME",
+      "qualified_current_age_tables_in_frozen_release": 4,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MI",
+      "qualified_current_age_tables_in_frozen_release": 1,
+      "released_state_contest_age_tables": 1,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "MN",
+      "qualified_current_age_tables_in_frozen_release": 4,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MO",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MS",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MT",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NC",
+      "qualified_current_age_tables_in_frozen_release": 3,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "ND",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NE",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NH",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NJ",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NM",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NV",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NY",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 1,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "OH",
+      "qualified_current_age_tables_in_frozen_release": 3,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "OK",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "OR",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "PA",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "RI",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "SC",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "SD",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "TN",
+      "qualified_current_age_tables_in_frozen_release": 4,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "TX",
+      "qualified_current_age_tables_in_frozen_release": 6,
+      "released_state_contest_age_tables": 2,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "UT",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "VA",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "VT",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "WA",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "WI",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "WV",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "WY",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    }
+  ]
+}

@@ -1,0 +1,1477 @@
+{
+  "status": "conditional_selected_state_prospective_age_scaling_scenarios",
+  "jurisdiction_coverage": [
+    {
+      "state_code": "AK",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "AL",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "AR",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "AZ",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "CA",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 1,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "CO",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "CT",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "DC",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "DE",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "FL",
+      "qualified_current_age_tables_in_frozen_release": 3,
+      "released_state_contest_age_tables": 1,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "GA",
+      "qualified_current_age_tables_in_frozen_release": 6,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "HI",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "IA",
+      "qualified_current_age_tables_in_frozen_release": 6,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "ID",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "IL",
+      "qualified_current_age_tables_in_frozen_release": 4,
+      "released_state_contest_age_tables": 2,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "IN",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "KS",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "KY",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "LA",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MA",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MD",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "ME",
+      "qualified_current_age_tables_in_frozen_release": 4,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MI",
+      "qualified_current_age_tables_in_frozen_release": 1,
+      "released_state_contest_age_tables": 1,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "MN",
+      "qualified_current_age_tables_in_frozen_release": 4,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MO",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MS",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "MT",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NC",
+      "qualified_current_age_tables_in_frozen_release": 3,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "ND",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NE",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NH",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NJ",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NM",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NV",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "NY",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 1,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "OH",
+      "qualified_current_age_tables_in_frozen_release": 3,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "OK",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "OR",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "PA",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "RI",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "SC",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "SD",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "TN",
+      "qualified_current_age_tables_in_frozen_release": 4,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "TX",
+      "qualified_current_age_tables_in_frozen_release": 6,
+      "released_state_contest_age_tables": 2,
+      "status": "conditional_selected65plus_scenarios",
+      "next_action": "Seek independently validated linked participation and state joint precision evidence"
+    },
+    {
+      "state_code": "UT",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "VA",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "VT",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "WA",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "WI",
+      "qualified_current_age_tables_in_frozen_release": 2,
+      "released_state_contest_age_tables": 0,
+      "status": "withheld_historical_precision_disclosure",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "WV",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    },
+    {
+      "state_code": "WY",
+      "qualified_current_age_tables_in_frozen_release": 0,
+      "released_state_contest_age_tables": 0,
+      "status": "no_qualified_current_age_comparison_in_frozen_release",
+      "next_action": "Acquire qualified state historical/current age-cohort participation and joint-choice evidence; no national allocation"
+    }
+  ],
+  "assumptions_and_limits": [
+    "State-specific CES coalition support scales that state's official2024coalition, never national shares.",
+    "Current counts use the same state's qualified contest/population/joint-source release.",
+    "Prospective birth-year support does not observe survival,residence,or2026participation.",
+    "Apparent absence includes death,migration,recall,response-population,and historical composition error.",
+    "Birthday and assumed historicalmix+-2pp,recall+-2pp,total95/100/105percent ranges are not confidence intervals.",
+    "The main grid holds explicit native conditional choice fixed; its rounding envelope is separate.",
+    "Retain signed negatives and rates exceeding100percent as diagnostics,not physical nonvoting counts.",
+    "Rounded zero does not establish zero switching; suppressed cells are not reconstructed.",
+    "Groups18-29and18-44overlap; offices,groups,and marginal endpoints are not additive.",
+    "SSRS choices can retain initial pre-election intentions; outcome calibration is not validation.",
+    "Only separately reviewed broad65+state supports are released as conditional scenarios; smaller groups remain withheld.",
+    "No measured stayinghome,new/returning identity,demographic turnout,causal persuasion,or total-swing share."
+  ],
+  "version": "20261107-01",
+  "withheld_contest_age_tables": [
+    {
+      "state_code": "AL",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "AZ",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "AZ",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "CA",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "FL",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "FL",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IL",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "ME",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "ME",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "MN",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "MN",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NE",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NE",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NV",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NV",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NY",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "OH",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "OH",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "OH",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "PA",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "PA",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TN",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TN",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "GG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "WI",
+      "contest_code": "GG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "WI",
+      "contest_code": "GG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "AL",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "SG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "GA",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "SG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IA",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "IL",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "ME",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "ME",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "MN",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "MN",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NC",
+      "contest_code": "SG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NC",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "NC",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TN",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TN",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "SG",
+      "subset": 53,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "VA",
+      "contest_code": "SG",
+      "subset": 54,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    },
+    {
+      "state_code": "VA",
+      "contest_code": "SG",
+      "subset": 55,
+      "status": "withheld_historical_precision_disclosure_not_qualified_for_this_release"
+    }
+  ],
+  "source_qualification": {
+    "release_scope": "selected_state_conditional_scenarios_only",
+    "historical_controls_and_broad_aggregate_disclosure_reviewed": true,
+    "current_native_state_population_and_joint_choice_matching_required": true,
+    "independent_2026_transition_validation": false,
+    "design_confidence_intervals_available": false,
+    "support_screen_is_not_precision_or_publication_guarantee": true,
+    "methods_review": "data/participation-state-age-scenarios/20261107-01/methodology-review.json"
+  },
+  "input_sha256": {
+    "data/participation-state-age-scenarios/20261107-01/selected-historical-support.json": "a8a2f0ef3339681f3124c07a0149e009df7c95fb1f8046292e9bf04712325710",
+    "data/participation-state-age-scenarios/20261107-01/selected-current-survey.json": "d7e35031453fddd52d7df0e34386ddb84bf49231dfd1f24b442c9711a55b16e7",
+    "data/participation-state-age-scenarios/20261107-01/methodology-review.json": "9a24d4a9fe83449af719d51851303f577bf6c0d8595045ffecd761d6ecba45cc",
+    "data/participation-state-age-scenarios/20261107-01/coverage-review.json": "b609c06c9d6fd64f3fbaae62353ef7ffa64185739fed112336d456bbcd8dfd56",
+    "data/participation-estimated-coalitions/20261107-01/Turnout_2026G_v0.2.csv": "eef37c0606cc1406e76b84bae2216c592e74e6b8cf5034d8d0733f3ab942cf2b",
+    "data/participation-estimated-coalitions/20261107-01/Turnout_2026G_v0.1_doc.txt": "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd",
+    "data/participation-coalition-scenarios/20261107-01/official-2024.xlsx": "68acdee2924d771b92a05cd950dec850b462c633c05563207ac7e206116e7366",
+    "public/participation-coalition-scenarios/20261107-01/official-2024-baselines.json": "2dce916659a3d4b6b1d450bd3d6a6e7a80a063bbfe8304b23eec43e075b12a27"
+  },
+  "complete_scenarios_in_download": true,
+  "estimates": [
+    {
+      "state_code": "CA",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "D",
+      "official_state_prior_coalition": 9276179,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 2456142.3449999676,
+        "upper": 2669345.515911353
+      },
+      "estimated_current_reported_prior_count": 2831760.0,
+      "reported_opposite_choice_count": 113270.4,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 96877.725,
+        "upper": 130332.375
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": -375617.6550000324,
+        "upper": -162414.48408864718
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 4.243377237035118,
+        "upper": 4.611719684349218
+      },
+      "negative_birth_year_residual_endpoint": true,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 646,
+      "historical_certain_group_effective_n": 209.91620921608776,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -876246.9850000325,
+        "upper": 318411.8459113529
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 101458.29000000001,
+        "upper": 125874.63
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 3.5538683768480013,
+        "upper": 5.543626783160219
+      }
+    },
+    {
+      "state_code": "CA",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "R",
+      "official_state_prior_coalition": 6081697,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 2037749.6951031755,
+        "upper": 2225383.1999974395
+      },
+      "estimated_current_reported_prior_count": 1937520.0,
+      "reported_opposite_choice_count": 77500.8,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 66014.025,
+        "upper": 89532.675
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 100229.69510317547,
+        "upper": 287863.1999974395
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 3.4825822357286227,
+        "upper": 3.803254157575814
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 363,
+      "historical_certain_group_effective_n": 173.49732319620423,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -278756.9948968247,
+        "upper": 648288.8899974395
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 67949.13,
+        "upper": 87794.91
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 2.8951271314564893,
+        "upper": 4.581920991264569
+      }
+    },
+    {
+      "state_code": "FL",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "D",
+      "official_state_prior_coalition": 4683038,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 1422157.252000558,
+        "upper": 1547109.1967507575
+      },
+      "estimated_current_reported_prior_count": 1365300.0,
+      "reported_opposite_choice_count": 13653.0,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 6658.959375,
+        "upper": 20988.365625
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 56857.25200055796,
+        "upper": 181809.19675075752
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 0.8824845737245997,
+        "upper": 0.9600204183323775
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 603,
+      "historical_certain_group_effective_n": 214.669627231192,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -213241.47674944228,
+        "upper": 439628.5505007575
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 12011.4140625,
+        "upper": 15417.3796875
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 0.7320596048873537,
+        "upper": 1.1605133909148122
+      }
+    },
+    {
+      "state_code": "FL",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "R",
+      "official_state_prior_coalition": 6110125,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 2437763.9566113334,
+        "upper": 2651933.708086911
+      },
+      "estimated_current_reported_prior_count": 1945552.5,
+      "reported_opposite_choice_count": 58366.575,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 47624.203125,
+        "upper": 69529.359375
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 492211.4566113334,
+        "upper": 706381.2080869111
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 2.2009062602890364,
+        "upper": 2.394266878944823
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 596,
+      "historical_certain_group_effective_n": 424.6741437190275,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": 157128.30036133341,
+        "upper": 1028477.3643369116
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 52369.7653125,
+        "upper": 64752.994687499995
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 1.8877863732803164,
+        "upper": 2.7964273849272647
+      }
+    },
+    {
+      "state_code": "IL",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "D",
+      "official_state_prior_coalition": 3062863,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 917464.3676624455,
+        "upper": 1006561.8541651688
+      },
+      "estimated_current_reported_prior_count": 789480.0,
+      "reported_opposite_choice_count": 15789.6,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 11563.2375,
+        "upper": 20207.3125
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 127984.36766244553,
+        "upper": 217081.85416516883
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 1.568666638285803,
+        "upper": 1.7210041671950063
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 318,
+      "historical_certain_group_effective_n": 209.39474363152075,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -25459.517337554484,
+        "upper": 364484.2391651687
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 14066.6975,
+        "upper": 17633.3325
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 1.3173296219741748,
+        "upper": 2.0594704648202753
+      }
+    },
+    {
+      "state_code": "IL",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "R",
+      "official_state_prior_coalition": 2449079,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 771611.9532047401,
+        "upper": 850887.4214722951
+      },
+      "estimated_current_reported_prior_count": 712080.0,
+      "reported_opposite_choice_count": 21362.4,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 17363.9375,
+        "upper": 25543.6125
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 59531.95320474007,
+        "upper": 138807.42147229507
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 2.5106023970875637,
+        "upper": 2.7685418702076126
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 168,
+      "historical_certain_group_effective_n": 128.04102510187496,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -76637.50179526,
+        "upper": 269042.87647229515
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 18924.78375,
+        "upper": 23978.036249999997
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 2.1030598586057248,
+        "upper": 3.3181605893012187
+      }
+    },
+    {
+      "state_code": "MI",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "D",
+      "official_state_prior_coalition": 2736533,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 692721.4138010221,
+        "upper": 767704.0701704911
+      },
+      "estimated_current_reported_prior_count": 796372.5,
+      "reported_opposite_choice_count": 15927.45,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 11644.546875,
+        "upper": 20417.203125
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": -103651.0861989779,
+        "upper": -28668.42982950888
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 2.0746861478099032,
+        "upper": 2.2992576355630048
+      },
+      "negative_birth_year_residual_endpoint": true,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 275,
+      "historical_certain_group_effective_n": 152.95815977562052,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -254179.1524489778,
+        "upper": 115358.63642049115
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 14141.521875,
+        "upper": 17843.398125
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 1.7194704158551835,
+        "upper": 2.79681139870642
+      }
+    },
+    {
+      "state_code": "MI",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "R",
+      "official_state_prior_coalition": 2816636,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 1076978.4821766259,
+        "upper": 1248409.017328061
+      },
+      "estimated_current_reported_prior_count": 747615.0,
+      "reported_opposite_choice_count": 37380.75,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 32772.796875,
+        "upper": 42195.553125
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 329363.48217662587,
+        "upper": 500794.01732806093
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 2.9942710667057737,
+        "upper": 3.470891073371465
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 227,
+      "historical_certain_group_effective_n": 148.7483585235335,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": 180446.91842662578,
+        "upper": 643283.4560780609
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 33072.9140625,
+        "upper": 42009.942187500004
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 2.5348245646091594,
+        "upper": 4.11601593268851
+      }
+    },
+    {
+      "state_code": "NY",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "D",
+      "official_state_prior_coalition": 4619195,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 1288609.202462954,
+        "upper": 1373843.861426568
+      },
+      "estimated_current_reported_prior_count": 1138371.0,
+      "reported_opposite_choice_count": 34151.13,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 27765.846875,
+        "upper": 40825.273125
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 150238.20246295398,
+        "upper": 235472.8614265679
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 2.4858086831307196,
+        "upper": 2.650231733152767
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 380,
+      "historical_certain_group_effective_n": 119.59302567259775,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -76096.31628704583,
+        "upper": 452911.80517656775
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 30399.4786875,
+        "upper": 38169.6485625
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 2.073312174769,
+        "upper": 3.1908410968996432
+      }
+    },
+    {
+      "state_code": "NY",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "R",
+      "official_state_prior_coalition": 3578899,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 1191641.3820142164,
+        "upper": 1298163.6484753839
+      },
+      "estimated_current_reported_prior_count": 1026766.0,
+      "reported_opposite_choice_count": 41070.64,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 35023.454375,
+        "upper": 47393.555625
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 164875.3820142164,
+        "upper": 271397.6484753839
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 3.163749042598368,
+        "upper": 3.4465604014673286
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 257,
+      "historical_certain_group_effective_n": 100.55731731773655,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -33349.6542357835,
+        "upper": 460891.2347253838
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 36354.015750000006,
+        "upper": 46136.522249999995
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 2.654078330850214,
+        "upper": 4.119099165907254
+      }
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "D",
+      "official_state_prior_coalition": 4835250,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 1041923.3532650153,
+        "upper": 1208561.4364530242
+      },
+      "estimated_current_reported_prior_count": 1137150.0,
+      "reported_opposite_choice_count": 34114.5,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 27587.109375,
+        "upper": 40996.003125
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": -95226.64673498471,
+        "upper": 71411.43645302416
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 2.822736103521702,
+        "upper": 3.2741851781224938
+      },
+      "negative_birth_year_residual_endpoint": true,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 429,
+      "historical_certain_group_effective_n": 222.22501043308367,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -348551.6154849846,
+        "upper": 312866.15520302416
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 29772.0084375,
+        "upper": 38813.0990625
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 2.280914272062605,
+        "upper": 4.1062574513529135
+      }
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "GG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "R",
+      "official_state_prior_coalition": 6393597,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 2130224.914753066,
+        "upper": 2377701.7043260294
+      },
+      "estimated_current_reported_prior_count": 1705725.0,
+      "reported_opposite_choice_count": 51171.75,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 41564.578125,
+        "upper": 61227.796875
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 424499.9147530659,
+        "upper": 671976.7043260294
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 2.1521517988104764,
+        "upper": 2.402175922627015
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 486,
+      "historical_certain_group_effective_n": 228.60291974479665,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": 101629.19350306597,
+        "upper": 982029.5505760293
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 45706.322812499995,
+        "upper": 57021.713437499995
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 1.8241859669941758,
+        "upper": 2.847735347187327
+      }
+    },
+    {
+      "state_code": "IL",
+      "contest_code": "SG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "D",
+      "official_state_prior_coalition": 3062863,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 917464.3676624455,
+        "upper": 1006561.8541651688
+      },
+      "estimated_current_reported_prior_count": 804960.0,
+      "reported_opposite_choice_count": 32198.4,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 27515.1625,
+        "upper": 37079.4375
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 112504.36766244553,
+        "upper": 201601.85416516883
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 3.198849615327912,
+        "upper": 3.509498693887856
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 318,
+      "historical_certain_group_effective_n": 209.39474363152075,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -41939.267337554484,
+        "upper": 349982.4891651687
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 28713.465,
+        "upper": 35925.855
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 2.688982114957594,
+        "upper": 4.19593047972729
+      }
+    },
+    {
+      "state_code": "IL",
+      "contest_code": "SG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "R",
+      "official_state_prior_coalition": 2449079,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 771611.9532047401,
+        "upper": 850887.4214722951
+      },
+      "estimated_current_reported_prior_count": 696600.0,
+      "reported_opposite_choice_count": 13932.0,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 10189.3875,
+        "upper": 17853.0625
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 75011.95320474007,
+        "upper": 154287.42147229507
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 1.6373493894049327,
+        "upper": 1.8055707849180083
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 168,
+      "historical_certain_group_effective_n": 128.04102510187496,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -60157.75179526,
+        "upper": 283544.62647229515
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 12326.487500000001,
+        "upper": 15655.7625
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 1.369809103306411,
+        "upper": 2.1664966046983904
+      }
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "SG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "D",
+      "official_state_prior_coalition": 4835250,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 1041923.3532650153,
+        "upper": 1208561.4364530242
+      },
+      "estimated_current_reported_prior_count": 1137150.0,
+      "reported_opposite_choice_count": 11371.5,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 5517.421875,
+        "upper": 17569.715625
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": -95226.64673498471,
+        "upper": 71411.43645302416
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 0.9409120345072338,
+        "upper": 1.0913950593741646
+      },
+      "negative_birth_year_residual_endpoint": true,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 429,
+      "historical_certain_group_effective_n": 222.22501043308367,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": -348551.6154849846,
+        "upper": 312866.15520302416
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 9924.0028125,
+        "upper": 12937.6996875
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 0.7603047573542018,
+        "upper": 1.3687524837843046
+      }
+    },
+    {
+      "state_code": "TX",
+      "contest_code": "SG",
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "R",
+      "official_state_prior_coalition": 6393597,
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 2130224.914753066,
+        "upper": 2377701.7043260294
+      },
+      "estimated_current_reported_prior_count": 1705725.0,
+      "reported_opposite_choice_count": 68229.0,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 58190.409375,
+        "upper": 78721.453125
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 424499.9147530659,
+        "upper": 671976.7043260294
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 2.8695357317473023,
+        "upper": 3.202901230169353
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 486,
+      "historical_certain_group_effective_n": 228.60291974479665,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_apparent_absence_count": {
+        "lower": 101629.19350306597,
+        "upper": 982029.5505760293
+      },
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 60941.76375,
+        "upper": 76028.95125
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 2.432247955992235,
+        "upper": 3.7969804629164363
+      }
+    }
+  ]
+}

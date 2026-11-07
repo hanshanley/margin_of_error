@@ -1,0 +1,11 @@
+{
+  "file": "complete-analysis.zip",
+  "bytes": 376520,
+  "sha256": "c415a68192dfc494948c46e27de5cf7ca530f8b41db80d76dd591366b59ff40b",
+  "members": 29,
+  "complete_selected_public_inputs_and_code": true,
+  "full_sensitivity_scenarios": 7776,
+  "release_scope": "selected_state_conditional_scenarios_only",
+  "measured_demographic_dropoff_released": false,
+  "personal_records_included": false
+}

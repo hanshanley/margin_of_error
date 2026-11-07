@@ -1,0 +1,4883 @@
+{
+  "configuration_sha256": "534095dec72492470be2a2c7018044d53ae6774001f4b7212e26e49a4005510a",
+  "selected_configuration": {
+    "GG": [
+      {
+        "stateTitle": "California",
+        "stateAbbr": "CA",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-CA.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "California",
+        "stateAbbr": "CA",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-CA-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Florida",
+        "stateAbbr": "FL",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-FL.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Florida",
+        "stateAbbr": "FL",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-FL-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Illinois",
+        "stateAbbr": "IL",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-IL.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Illinois",
+        "stateAbbr": "IL",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-IL-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Michigan",
+        "stateAbbr": "MI",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-MI.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Michigan",
+        "stateAbbr": "MI",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-MI-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "New York",
+        "stateAbbr": "NY",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-NY.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "New York",
+        "stateAbbr": "NY",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-NY-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Texas",
+        "stateAbbr": "TX",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-TX.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Texas",
+        "stateAbbr": "TX",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-TX-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      }
+    ],
+    "SG": [
+      {
+        "stateTitle": "Illinois",
+        "stateAbbr": "IL",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-SG-IL.json",
+        "raceTypeCode": "SG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Illinois",
+        "stateAbbr": "IL",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-SG-IL-55.json",
+        "raceTypeCode": "SG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Texas",
+        "stateAbbr": "TX",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-SG-TX.json",
+        "raceTypeCode": "SG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "Texas",
+        "stateAbbr": "TX",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-SG-TX-55.json",
+        "raceTypeCode": "SG",
+        "isDisabled": false
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-CA.json",
+      "source_bytes": 226345,
+      "source_sha256": "6cef46e9577a61f2bc739481ee45035859d16c73906808ce3a3153a80b9da9fd",
+      "configuration_entry": {
+        "stateTitle": "California",
+        "stateAbbr": "CA",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-CA.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-CA",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "California",
+          "stateId": 5,
+          "fipsCode": "06",
+          "abbreviation": "CA"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 4386,
+        "timestamp": "2026-11-06T19:37:02.000Z",
+        "extractedAt": "2026-11-07T00:30:14.010872",
+        "hasData": true,
+        "stage": 8,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793764800000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793764800000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793764800000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793764800000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Xavier Becerra",
+            "lastName": "Becerra",
+            "firstName": "Xavier",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 94,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.5.SW.0.G.G.94",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": true,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Steve Hilton",
+            "lastName": "Hilton",
+            "firstName": "Steve",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 172439,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.5.SW.0.G.G.172439",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 59,
+                "candidateAnswers": [
+                  {
+                    "percentage": 96,
+                    "candidateId": 94,
+                    "vPercentage": 88,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Becerra"
+                  },
+                  {
+                    "percentage": 4,
+                    "candidateId": 172439,
+                    "vPercentage": 7,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Hilton"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 32,
+                "candidateAnswers": [
+                  {
+                    "percentage": 6,
+                    "candidateId": 94,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Becerra"
+                  },
+                  {
+                    "percentage": 94,
+                    "candidateId": 172439,
+                    "vPercentage": 84,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Hilton"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 4,
+                "candidateAnswers": [
+                  {
+                    "percentage": 55,
+                    "candidateId": 94,
+                    "vPercentage": 3,
+                    "leader": true,
+                    "vLeader": false,
+                    "lastName": "Becerra"
+                  },
+                  {
+                    "percentage": 45,
+                    "candidateId": 172439,
+                    "vPercentage": 5,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Hilton"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 5,
+                "candidateAnswers": [
+                  {
+                    "percentage": 72,
+                    "candidateId": 94,
+                    "vPercentage": 6,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Becerra"
+                  },
+                  {
+                    "percentage": 28,
+                    "candidateId": 172439,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Hilton"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 11001,
+          "question": "Gender",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "Male",
+              "totalPercentage": 47
+            },
+            {
+              "answer": "Female",
+              "totalPercentage": 52
+            },
+            {
+              "answer": "Identify another way",
+              "totalPercentage": 1
+            }
+          ]
+        },
+        {
+          "mxId": 260,
+          "question": "Race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White",
+              "totalPercentage": 54
+            },
+            {
+              "answer": "Black",
+              "totalPercentage": 5
+            },
+            {
+              "answer": "Latino",
+              "totalPercentage": 23
+            },
+            {
+              "answer": "Asian",
+              "totalPercentage": 13
+            },
+            {
+              "answer": "Other racial/ethnic groups",
+              "totalPercentage": 5
+            }
+          ]
+        },
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": 11
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": 20
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": 33
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 36
+            }
+          ]
+        },
+        {
+          "mxId": 1949,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-44",
+              "totalPercentage": 31
+            },
+            {
+              "answer": "45 or older",
+              "totalPercentage": 69
+            }
+          ]
+        },
+        {
+          "mxId": 1974,
+          "question": "Education by race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White voters, college degree",
+              "totalPercentage": 30
+            },
+            {
+              "answer": "White voters, no degree",
+              "totalPercentage": 24
+            },
+            {
+              "answer": "Voters of color, college degree",
+              "totalPercentage": 21
+            },
+            {
+              "answer": "Voters of color, no degree",
+              "totalPercentage": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-CA-55.json",
+      "source_bytes": 226447,
+      "source_sha256": "fbc44bbc41cef84a99d2b19ad63fc8be7e4d360c25a34688e15bf45a7cdf53fc",
+      "configuration_entry": {
+        "stateTitle": "California",
+        "stateAbbr": "CA",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-CA-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-CA-55",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "California",
+          "stateId": 5,
+          "fipsCode": "06",
+          "abbreviation": "CA"
+        },
+        "subset": {
+          "sub": 55,
+          "longName": "Voters Age 65+",
+          "shortName": "65PLUS"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 1276,
+        "timestamp": "2026-11-06T19:37:02.000Z",
+        "extractedAt": "2026-11-07T00:30:14.010872",
+        "hasData": true,
+        "stage": 8,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793764800000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793764800000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793764800000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793764800000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Xavier Becerra",
+            "lastName": "Becerra",
+            "firstName": "Xavier",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 94,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.5.SW.0.G.G.94",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": true,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Steve Hilton",
+            "lastName": "Hilton",
+            "firstName": "Steve",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 172439,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.5.SW.0.G.G.172439",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 57,
+                "candidateAnswers": [
+                  {
+                    "percentage": 96,
+                    "candidateId": 94,
+                    "vPercentage": 94,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Becerra"
+                  },
+                  {
+                    "percentage": 4,
+                    "candidateId": 172439,
+                    "vPercentage": 5,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Hilton"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 39,
+                "candidateAnswers": [
+                  {
+                    "percentage": 4,
+                    "candidateId": 94,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Becerra"
+                  },
+                  {
+                    "percentage": 96,
+                    "candidateId": 172439,
+                    "vPercentage": 91,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Hilton"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 3,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 94,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Becerra"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 172439,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Hilton"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 1,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 94,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Becerra"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 172439,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Hilton"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-FL.json",
+      "source_bytes": 218640,
+      "source_sha256": "04cbfa55007584ab439c6e6c1a9ce444a366db3d872e4f22d5d93364a15e113c",
+      "configuration_entry": {
+        "stateTitle": "Florida",
+        "stateAbbr": "FL",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-FL.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-FL",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Florida",
+          "stateId": 10,
+          "fipsCode": "12",
+          "abbreviation": "FL"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 4542,
+        "timestamp": "2026-11-04T17:07:10.000Z",
+        "extractedAt": "2026-11-07T00:30:03.539075",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "David Jolly",
+            "lastName": "Jolly",
+            "firstName": "David",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 63159,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.10.SW.0.G.G.63159",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": false,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Byron Donalds",
+            "lastName": "Donalds",
+            "firstName": "Byron",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 62408,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.10.SW.0.G.G.62408",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": true,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 45,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 42,
+                "candidateAnswers": [
+                  {
+                    "percentage": 98,
+                    "candidateId": 63159,
+                    "vPercentage": 84,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Jolly"
+                  },
+                  {
+                    "percentage": 2,
+                    "candidateId": 62408,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Donalds"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 51,
+                "candidateAnswers": [
+                  {
+                    "percentage": 6,
+                    "candidateId": 63159,
+                    "vPercentage": 6,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Jolly"
+                  },
+                  {
+                    "percentage": 93,
+                    "candidateId": 62408,
+                    "vPercentage": 94,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Donalds"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": 48,
+                    "candidateId": 63159,
+                    "vPercentage": 2,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Jolly"
+                  },
+                  {
+                    "percentage": 37,
+                    "candidateId": 62408,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Donalds"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 5,
+                "candidateAnswers": [
+                  {
+                    "percentage": 72,
+                    "candidateId": 63159,
+                    "vPercentage": 7,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Jolly"
+                  },
+                  {
+                    "percentage": 24,
+                    "candidateId": 62408,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Donalds"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 11001,
+          "question": "Gender",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "Male",
+              "totalPercentage": 46
+            },
+            {
+              "answer": "Female",
+              "totalPercentage": 54
+            },
+            {
+              "answer": "Identify another way",
+              "totalPercentage": 1
+            }
+          ]
+        },
+        {
+          "mxId": 260,
+          "question": "Race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White",
+              "totalPercentage": 67
+            },
+            {
+              "answer": "Black",
+              "totalPercentage": 10
+            },
+            {
+              "answer": "Latino",
+              "totalPercentage": 18
+            },
+            {
+              "answer": "Asian",
+              "totalPercentage": 2
+            },
+            {
+              "answer": "Other racial/ethnic groups",
+              "totalPercentage": 3
+            }
+          ]
+        },
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": 8
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": 16
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": 34
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 41
+            }
+          ]
+        },
+        {
+          "mxId": 1949,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-44",
+              "totalPercentage": 24
+            },
+            {
+              "answer": "45 or older",
+              "totalPercentage": 76
+            }
+          ]
+        },
+        {
+          "mxId": 1974,
+          "question": "Education by race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White voters, college degree",
+              "totalPercentage": 31
+            },
+            {
+              "answer": "White voters, no degree",
+              "totalPercentage": 36
+            },
+            {
+              "answer": "Voters of color, college degree",
+              "totalPercentage": 15
+            },
+            {
+              "answer": "Voters of color, no degree",
+              "totalPercentage": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-FL-55.json",
+      "source_bytes": 218727,
+      "source_sha256": "e5124f72dfb2fe0c0270e4de7bffd5582fac4987f45c29f579b1b70136a9cc0c",
+      "configuration_entry": {
+        "stateTitle": "Florida",
+        "stateAbbr": "FL",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-FL-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-FL-55",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Florida",
+          "stateId": 10,
+          "fipsCode": "12",
+          "abbreviation": "FL"
+        },
+        "subset": {
+          "sub": 55,
+          "longName": "Voters Age 65+",
+          "shortName": "65PLUS"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 1443,
+        "timestamp": "2026-11-04T17:07:10.000Z",
+        "extractedAt": "2026-11-07T00:30:03.539075",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "David Jolly",
+            "lastName": "Jolly",
+            "firstName": "David",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 63159,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.10.SW.0.G.G.63159",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": false,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Byron Donalds",
+            "lastName": "Donalds",
+            "firstName": "Byron",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 62408,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.10.SW.0.G.G.62408",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": true,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 45,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 40,
+                "candidateAnswers": [
+                  {
+                    "percentage": 99,
+                    "candidateId": 63159,
+                    "vPercentage": 92,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Jolly"
+                  },
+                  {
+                    "percentage": 1,
+                    "candidateId": 62408,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Donalds"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 57,
+                "candidateAnswers": [
+                  {
+                    "percentage": 3,
+                    "candidateId": 63159,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Jolly"
+                  },
+                  {
+                    "percentage": 96,
+                    "candidateId": 62408,
+                    "vPercentage": 97,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Donalds"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 1,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 63159,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Jolly"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 62408,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Donalds"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 1,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 63159,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Jolly"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 62408,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Donalds"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-IL.json",
+      "source_bytes": 195100,
+      "source_sha256": "a1fff41c5ff2f02730a0e25966dce86435d875a463926d92a3e113bcb779448d",
+      "configuration_entry": {
+        "stateTitle": "Illinois",
+        "stateAbbr": "IL",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-IL.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-IL",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Illinois",
+          "stateId": 14,
+          "fipsCode": "17",
+          "abbreviation": "IL"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 1652,
+        "timestamp": "2026-11-04T21:14:48.000Z",
+        "extractedAt": "2026-11-07T00:30:03.603403",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "JB Pritzker",
+            "lastName": "Pritzker",
+            "firstName": "JB",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 17710,
+            "isIncumbent": true,
+            "candidacyKey": "2026-11-03.14.SW.0.G.G.17710",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": true,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Darren Bailey",
+            "lastName": "Bailey",
+            "firstName": "Darren",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 71049,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.14.SW.0.G.G.71049",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 57,
+                "candidateAnswers": [
+                  {
+                    "percentage": 95,
+                    "candidateId": 17710,
+                    "vPercentage": 90,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Pritzker"
+                  },
+                  {
+                    "percentage": 2,
+                    "candidateId": 71049,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Bailey"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 37,
+                "candidateAnswers": [
+                  {
+                    "percentage": 6,
+                    "candidateId": 17710,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Pritzker"
+                  },
+                  {
+                    "percentage": 92,
+                    "candidateId": 71049,
+                    "vPercentage": 93,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Bailey"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 17710,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Pritzker"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 71049,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Bailey"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 4,
+                "candidateAnswers": [
+                  {
+                    "percentage": 65,
+                    "candidateId": 17710,
+                    "vPercentage": 4,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Pritzker"
+                  },
+                  {
+                    "percentage": 20,
+                    "candidateId": 71049,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Bailey"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 11001,
+          "question": "Gender",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "Male",
+              "totalPercentage": 46
+            },
+            {
+              "answer": "Female",
+              "totalPercentage": 53
+            },
+            {
+              "answer": "Identify another way",
+              "totalPercentage": 1
+            }
+          ]
+        },
+        {
+          "mxId": 260,
+          "question": "Race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White",
+              "totalPercentage": 75
+            },
+            {
+              "answer": "Black",
+              "totalPercentage": 11
+            },
+            {
+              "answer": "Latino",
+              "totalPercentage": 7
+            },
+            {
+              "answer": "Asian",
+              "totalPercentage": 3
+            },
+            {
+              "answer": "Other racial/ethnic groups",
+              "totalPercentage": 3
+            }
+          ]
+        },
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": 9
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": 20
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": 35
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 36
+            }
+          ]
+        },
+        {
+          "mxId": 1949,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-44",
+              "totalPercentage": 29
+            },
+            {
+              "answer": "45 or older",
+              "totalPercentage": 71
+            }
+          ]
+        },
+        {
+          "mxId": 1974,
+          "question": "Education by race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White voters, college degree",
+              "totalPercentage": 40
+            },
+            {
+              "answer": "White voters, no degree",
+              "totalPercentage": 36
+            },
+            {
+              "answer": "Voters of color, college degree",
+              "totalPercentage": 11
+            },
+            {
+              "answer": "Voters of color, no degree",
+              "totalPercentage": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-IL-55.json",
+      "source_bytes": 195341,
+      "source_sha256": "7b0262aab7ec5c039fee60ba9cd9ec929d23a5434943a01d71d3cba31d576972",
+      "configuration_entry": {
+        "stateTitle": "Illinois",
+        "stateAbbr": "IL",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-IL-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-IL-55",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Illinois",
+          "stateId": 14,
+          "fipsCode": "17",
+          "abbreviation": "IL"
+        },
+        "subset": {
+          "sub": 55,
+          "longName": "Voters Age 65+",
+          "shortName": "65PLUS"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 488,
+        "timestamp": "2026-11-04T21:14:48.000Z",
+        "extractedAt": "2026-11-07T00:30:03.603403",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "JB Pritzker",
+            "lastName": "Pritzker",
+            "firstName": "JB",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 17710,
+            "isIncumbent": true,
+            "candidacyKey": "2026-11-03.14.SW.0.G.G.17710",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": true,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Darren Bailey",
+            "lastName": "Bailey",
+            "firstName": "Darren",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 71049,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.14.SW.0.G.G.71049",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 51,
+                "candidateAnswers": [
+                  {
+                    "percentage": 96,
+                    "candidateId": 17710,
+                    "vPercentage": 95,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Pritzker"
+                  },
+                  {
+                    "percentage": 2,
+                    "candidateId": 71049,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Bailey"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 46,
+                "candidateAnswers": [
+                  {
+                    "percentage": 3,
+                    "candidateId": 17710,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Pritzker"
+                  },
+                  {
+                    "percentage": 94,
+                    "candidateId": 71049,
+                    "vPercentage": 95,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Bailey"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 1,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 17710,
+                    "vPercentage": 0,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Pritzker"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 71049,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Bailey"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 17710,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Pritzker"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 71049,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Bailey"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-MI.json",
+      "source_bytes": 202788,
+      "source_sha256": "88c74253b7d9e085ed652a3b83722c3868b280b6c7090a51ec4825d310818d14",
+      "configuration_entry": {
+        "stateTitle": "Michigan",
+        "stateAbbr": "MI",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-MI.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-MI",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Michigan",
+          "stateId": 23,
+          "fipsCode": "26",
+          "abbreviation": "MI"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 4576,
+        "timestamp": "2026-11-04T20:55:28.000Z",
+        "extractedAt": "2026-11-07T00:30:08.561915",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Jocelyn Benson",
+            "lastName": "Benson",
+            "firstName": "Jocelyn",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 128670,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.23.SW.0.G.G.128670",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": true,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "John James",
+            "lastName": "James",
+            "firstName": "John",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 166570,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.23.SW.0.G.G.166570",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 48,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 45,
+                "candidateAnswers": [
+                  {
+                    "percentage": 97,
+                    "candidateId": 128670,
+                    "vPercentage": 80,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Benson"
+                  },
+                  {
+                    "percentage": 2,
+                    "candidateId": 166570,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "James"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 44,
+                "candidateAnswers": [
+                  {
+                    "percentage": 8,
+                    "candidateId": 128670,
+                    "vPercentage": 7,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Benson"
+                  },
+                  {
+                    "percentage": 90,
+                    "candidateId": 166570,
+                    "vPercentage": 90,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "James"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 3,
+                "candidateAnswers": [
+                  {
+                    "percentage": 55,
+                    "candidateId": 128670,
+                    "vPercentage": 3,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Benson"
+                  },
+                  {
+                    "percentage": 29,
+                    "candidateId": 166570,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "James"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 6,
+                "candidateAnswers": [
+                  {
+                    "percentage": 83,
+                    "candidateId": 128670,
+                    "vPercentage": 9,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Benson"
+                  },
+                  {
+                    "percentage": 16,
+                    "candidateId": 166570,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "James"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 11001,
+          "question": "Gender",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "Male",
+              "totalPercentage": 46
+            },
+            {
+              "answer": "Female",
+              "totalPercentage": 53
+            },
+            {
+              "answer": "Identify another way",
+              "totalPercentage": 1
+            }
+          ]
+        },
+        {
+          "mxId": 260,
+          "question": "Race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White",
+              "totalPercentage": 81
+            },
+            {
+              "answer": "Black",
+              "totalPercentage": 10
+            },
+            {
+              "answer": "Latino",
+              "totalPercentage": 3
+            },
+            {
+              "answer": "Asian",
+              "totalPercentage": 2
+            },
+            {
+              "answer": "Other racial/ethnic groups",
+              "totalPercentage": 5
+            }
+          ]
+        },
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": 13
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": 21
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": 33
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 33
+            }
+          ]
+        },
+        {
+          "mxId": 1949,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-44",
+              "totalPercentage": 34
+            },
+            {
+              "answer": "45 or older",
+              "totalPercentage": 66
+            }
+          ]
+        },
+        {
+          "mxId": 1974,
+          "question": "Education by race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White voters, college degree",
+              "totalPercentage": 34
+            },
+            {
+              "answer": "White voters, no degree",
+              "totalPercentage": 47
+            },
+            {
+              "answer": "Voters of color, college degree",
+              "totalPercentage": 7
+            },
+            {
+              "answer": "Voters of color, no degree",
+              "totalPercentage": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-MI-55.json",
+      "source_bytes": 202871,
+      "source_sha256": "d893ce201e516950d0d89a6e17317574015a6caeee485241b4848d4aaf683bbf",
+      "configuration_entry": {
+        "stateTitle": "Michigan",
+        "stateAbbr": "MI",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-MI-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-MI-55",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Michigan",
+          "stateId": 23,
+          "fipsCode": "26",
+          "abbreviation": "MI"
+        },
+        "subset": {
+          "sub": 55,
+          "longName": "Voters Age 65+",
+          "shortName": "65PLUS"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 1215,
+        "timestamp": "2026-11-04T20:55:28.000Z",
+        "extractedAt": "2026-11-07T00:30:08.561915",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Jocelyn Benson",
+            "lastName": "Benson",
+            "firstName": "Jocelyn",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 128670,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.23.SW.0.G.G.128670",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": true,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "John James",
+            "lastName": "James",
+            "firstName": "John",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 166570,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.23.SW.0.G.G.166570",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 48,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 49,
+                "candidateAnswers": [
+                  {
+                    "percentage": 98,
+                    "candidateId": 128670,
+                    "vPercentage": 90,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Benson"
+                  },
+                  {
+                    "percentage": 2,
+                    "candidateId": 166570,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "James"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 46,
+                "candidateAnswers": [
+                  {
+                    "percentage": 5,
+                    "candidateId": 128670,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Benson"
+                  },
+                  {
+                    "percentage": 94,
+                    "candidateId": 166570,
+                    "vPercentage": 93,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "James"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 128670,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Benson"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 166570,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "James"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 1,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 128670,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Benson"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 166570,
+                    "vPercentage": 0,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "James"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-NY.json",
+      "source_bytes": 195099,
+      "source_sha256": "406430eff257f3f598ac29e195cac5ac228e84f071308d42ed509d3443922893",
+      "configuration_entry": {
+        "stateTitle": "New York",
+        "stateAbbr": "NY",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-NY.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-NY",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "New York",
+          "stateId": 33,
+          "fipsCode": "36",
+          "abbreviation": "NY"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 2502,
+        "timestamp": "2026-11-04T21:17:25.000Z",
+        "extractedAt": "2026-11-07T00:30:18.789451",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Kathy Hochul",
+            "lastName": "Hochul",
+            "firstName": "Kathy",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 61285,
+            "isIncumbent": true,
+            "candidacyKey": "2026-11-03.33.SW.0.G.G.61285",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": true,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Bruce Blakeman",
+            "lastName": "Blakeman",
+            "firstName": "Bruce",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 61145,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.33.SW.0.G.G.61145",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 56,
+                "candidateAnswers": [
+                  {
+                    "percentage": 97,
+                    "candidateId": 61285,
+                    "vPercentage": 91,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Hochul"
+                  },
+                  {
+                    "percentage": 3,
+                    "candidateId": 61145,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Blakeman"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 39,
+                "candidateAnswers": [
+                  {
+                    "percentage": 7,
+                    "candidateId": 61285,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Hochul"
+                  },
+                  {
+                    "percentage": 93,
+                    "candidateId": 61145,
+                    "vPercentage": 92,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Blakeman"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 1,
+                "candidateAnswers": [
+                  {
+                    "percentage": 57,
+                    "candidateId": 61285,
+                    "vPercentage": 1,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Hochul"
+                  },
+                  {
+                    "percentage": 39,
+                    "candidateId": 61145,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Blakeman"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 3,
+                "candidateAnswers": [
+                  {
+                    "percentage": 67,
+                    "candidateId": 61285,
+                    "vPercentage": 4,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Hochul"
+                  },
+                  {
+                    "percentage": 32,
+                    "candidateId": 61145,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Blakeman"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 11001,
+          "question": "Gender",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "Male",
+              "totalPercentage": 46
+            },
+            {
+              "answer": "Female",
+              "totalPercentage": 53
+            },
+            {
+              "answer": "Identify another way",
+              "totalPercentage": 1
+            }
+          ]
+        },
+        {
+          "mxId": 260,
+          "question": "Race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White",
+              "totalPercentage": 74
+            },
+            {
+              "answer": "Black",
+              "totalPercentage": 9
+            },
+            {
+              "answer": "Latino",
+              "totalPercentage": 9
+            },
+            {
+              "answer": "Asian",
+              "totalPercentage": 4
+            },
+            {
+              "answer": "Other racial/ethnic groups",
+              "totalPercentage": 5
+            }
+          ]
+        },
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": 10
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": 22
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": 34
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 34
+            }
+          ]
+        },
+        {
+          "mxId": 1949,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-44",
+              "totalPercentage": 32
+            },
+            {
+              "answer": "45 or older",
+              "totalPercentage": 68
+            }
+          ]
+        },
+        {
+          "mxId": 1974,
+          "question": "Education by race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White voters, college degree",
+              "totalPercentage": 42
+            },
+            {
+              "answer": "White voters, no degree",
+              "totalPercentage": 32
+            },
+            {
+              "answer": "Voters of color, college degree",
+              "totalPercentage": 13
+            },
+            {
+              "answer": "Voters of color, no degree",
+              "totalPercentage": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-NY-55.json",
+      "source_bytes": 195241,
+      "source_sha256": "0a5a1dd976a6e49416af582290335bd515faf97b4b976f784c6d354e2e6fa345",
+      "configuration_entry": {
+        "stateTitle": "New York",
+        "stateAbbr": "NY",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-NY-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-NY-55",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "New York",
+          "stateId": 33,
+          "fipsCode": "36",
+          "abbreviation": "NY"
+        },
+        "subset": {
+          "sub": 55,
+          "longName": "Voters Age 65+",
+          "shortName": "65PLUS"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 735,
+        "timestamp": "2026-11-04T21:17:25.000Z",
+        "extractedAt": "2026-11-07T00:30:18.789451",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Kathy Hochul",
+            "lastName": "Hochul",
+            "firstName": "Kathy",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 61285,
+            "isIncumbent": true,
+            "candidacyKey": "2026-11-03.33.SW.0.G.G.61285",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": true,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Bruce Blakeman",
+            "lastName": "Blakeman",
+            "firstName": "Bruce",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 61145,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.33.SW.0.G.G.61145",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 51,
+                "candidateAnswers": [
+                  {
+                    "percentage": 97,
+                    "candidateId": 61285,
+                    "vPercentage": 93,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Hochul"
+                  },
+                  {
+                    "percentage": 3,
+                    "candidateId": 61145,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Blakeman"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 46,
+                "candidateAnswers": [
+                  {
+                    "percentage": 4,
+                    "candidateId": 61285,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Hochul"
+                  },
+                  {
+                    "percentage": 96,
+                    "candidateId": 61145,
+                    "vPercentage": 94,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Blakeman"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 1,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 61285,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Hochul"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 61145,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Blakeman"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 61285,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Hochul"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 61145,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Blakeman"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-TX.json",
+      "source_bytes": 220807,
+      "source_sha256": "53f9f81f8cc9ad1722cf986b7fbb22061ed0c9dfc273b9e820a2df0a6feececf",
+      "configuration_entry": {
+        "stateTitle": "Texas",
+        "stateAbbr": "TX",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-TX.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-TX",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Texas",
+          "stateId": 44,
+          "fipsCode": "48",
+          "abbreviation": "TX"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 5178,
+        "timestamp": "2026-11-04T20:42:02.000Z",
+        "extractedAt": "2026-11-07T00:30:04.321947",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Gina Hinojosa",
+            "lastName": "Hinojosa",
+            "firstName": "Gina",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 152027,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.44.SW.0.G.G.152027",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": false,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Greg Abbott",
+            "lastName": "Abbott",
+            "firstName": "Greg",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 41404,
+            "isIncumbent": true,
+            "candidacyKey": "2026-11-03.44.SW.0.G.G.41404",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": true,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 42,
+                "candidateAnswers": [
+                  {
+                    "percentage": 96,
+                    "candidateId": 152027,
+                    "vPercentage": 76,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Hinojosa"
+                  },
+                  {
+                    "percentage": 3,
+                    "candidateId": 41404,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Abbott"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 47,
+                "candidateAnswers": [
+                  {
+                    "percentage": 10,
+                    "candidateId": 152027,
+                    "vPercentage": 9,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Hinojosa"
+                  },
+                  {
+                    "percentage": 89,
+                    "candidateId": 41404,
+                    "vPercentage": 92,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Abbott"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": 66,
+                    "candidateId": 152027,
+                    "vPercentage": 3,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Hinojosa"
+                  },
+                  {
+                    "percentage": 21,
+                    "candidateId": 41404,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Abbott"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 8,
+                "candidateAnswers": [
+                  {
+                    "percentage": 76,
+                    "candidateId": 152027,
+                    "vPercentage": 12,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Hinojosa"
+                  },
+                  {
+                    "percentage": 20,
+                    "candidateId": 41404,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Abbott"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 11001,
+          "question": "Gender",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "Male",
+              "totalPercentage": 45
+            },
+            {
+              "answer": "Female",
+              "totalPercentage": 54
+            },
+            {
+              "answer": "Identify another way",
+              "totalPercentage": 1
+            }
+          ]
+        },
+        {
+          "mxId": 260,
+          "question": "Race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White",
+              "totalPercentage": 55
+            },
+            {
+              "answer": "Black",
+              "totalPercentage": 12
+            },
+            {
+              "answer": "Latino",
+              "totalPercentage": 24
+            },
+            {
+              "answer": "Asian",
+              "totalPercentage": 4
+            },
+            {
+              "answer": "Other racial/ethnic groups",
+              "totalPercentage": 4
+            }
+          ]
+        },
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": 13
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": 22
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": 35
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 30
+            }
+          ]
+        },
+        {
+          "mxId": 1949,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-44",
+              "totalPercentage": 35
+            },
+            {
+              "answer": "45 or older",
+              "totalPercentage": 65
+            }
+          ]
+        },
+        {
+          "mxId": 1974,
+          "question": "Education by race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White voters, college degree",
+              "totalPercentage": 28
+            },
+            {
+              "answer": "White voters, no degree",
+              "totalPercentage": 28
+            },
+            {
+              "answer": "Voters of color, college degree",
+              "totalPercentage": 18
+            },
+            {
+              "answer": "Voters of color, no degree",
+              "totalPercentage": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-TX-55.json",
+      "source_bytes": 220894,
+      "source_sha256": "9e4959b8699a6436948a53c88af6c19907f576337acfc519da14d90827e8ee59",
+      "configuration_entry": {
+        "stateTitle": "Texas",
+        "stateAbbr": "TX",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-GG-TX-55.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-TX-55",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Texas",
+          "stateId": 44,
+          "fipsCode": "48",
+          "abbreviation": "TX"
+        },
+        "subset": {
+          "sub": 55,
+          "longName": "Voters Age 65+",
+          "shortName": "65PLUS"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 1257,
+        "timestamp": "2026-11-04T20:42:02.000Z",
+        "extractedAt": "2026-11-07T00:30:04.321947",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Gina Hinojosa",
+            "lastName": "Hinojosa",
+            "firstName": "Gina",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 152027,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.44.SW.0.G.G.152027",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": false,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Greg Abbott",
+            "lastName": "Abbott",
+            "firstName": "Greg",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 41404,
+            "isIncumbent": true,
+            "candidacyKey": "2026-11-03.44.SW.0.G.G.41404",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": true,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 38,
+                "candidateAnswers": [
+                  {
+                    "percentage": 97,
+                    "candidateId": 152027,
+                    "vPercentage": 89,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Hinojosa"
+                  },
+                  {
+                    "percentage": 3,
+                    "candidateId": 41404,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Abbott"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 57,
+                "candidateAnswers": [
+                  {
+                    "percentage": 3,
+                    "candidateId": 152027,
+                    "vPercentage": 5,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Hinojosa"
+                  },
+                  {
+                    "percentage": 96,
+                    "candidateId": 41404,
+                    "vPercentage": 95,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Abbott"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 1,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 152027,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Hinojosa"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 41404,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Abbott"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 3,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 152027,
+                    "vPercentage": 5,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Hinojosa"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 41404,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Abbott"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-IL.json",
+      "source_bytes": 199665,
+      "source_sha256": "6a4f9dd2d24bd5fd474a77114b36353c485379da9cbf610a478ec3453852dc5c",
+      "configuration_entry": {
+        "stateTitle": "Illinois",
+        "stateAbbr": "IL",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-SG-IL.json",
+        "raceTypeCode": "SG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-SG-IL",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "S",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Illinois",
+          "stateId": 14,
+          "fipsCode": "17",
+          "abbreviation": "IL"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Senate",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 1636,
+        "timestamp": "2026-11-04T21:14:48.000Z",
+        "extractedAt": "2026-11-07T00:30:03.613897",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Juliana Stratton",
+            "lastName": "Stratton",
+            "firstName": "Juliana",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 118184,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.14.SW.0.G.S.118184",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": true,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Don Tracy",
+            "lastName": "Tracy",
+            "firstName": "Don",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 170432,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.14.SW.0.G.S.170432",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 57,
+                "candidateAnswers": [
+                  {
+                    "percentage": 97,
+                    "candidateId": 118184,
+                    "vPercentage": 90,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Stratton"
+                  },
+                  {
+                    "percentage": 3,
+                    "candidateId": 170432,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Tracy"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 37,
+                "candidateAnswers": [
+                  {
+                    "percentage": 6,
+                    "candidateId": 118184,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Stratton"
+                  },
+                  {
+                    "percentage": 93,
+                    "candidateId": 170432,
+                    "vPercentage": 92,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Tracy"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 118184,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Stratton"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 170432,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Tracy"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 4,
+                "candidateAnswers": [
+                  {
+                    "percentage": 74,
+                    "candidateId": 118184,
+                    "vPercentage": 5,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Stratton"
+                  },
+                  {
+                    "percentage": 22,
+                    "candidateId": 170432,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Tracy"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 11001,
+          "question": "Gender",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "Male",
+              "totalPercentage": 46
+            },
+            {
+              "answer": "Female",
+              "totalPercentage": 53
+            },
+            {
+              "answer": "Identify another way",
+              "totalPercentage": 1
+            }
+          ]
+        },
+        {
+          "mxId": 260,
+          "question": "Race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White",
+              "totalPercentage": 75
+            },
+            {
+              "answer": "Black",
+              "totalPercentage": 11
+            },
+            {
+              "answer": "Latino",
+              "totalPercentage": 7
+            },
+            {
+              "answer": "Asian",
+              "totalPercentage": 3
+            },
+            {
+              "answer": "Other racial/ethnic groups",
+              "totalPercentage": 3
+            }
+          ]
+        },
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": 9
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": 20
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": 35
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 36
+            }
+          ]
+        },
+        {
+          "mxId": 1949,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-44",
+              "totalPercentage": 29
+            },
+            {
+              "answer": "45 or older",
+              "totalPercentage": 71
+            }
+          ]
+        },
+        {
+          "mxId": 1974,
+          "question": "Education by race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White voters, college degree",
+              "totalPercentage": 40
+            },
+            {
+              "answer": "White voters, no degree",
+              "totalPercentage": 36
+            },
+            {
+              "answer": "Voters of color, college degree",
+              "totalPercentage": 11
+            },
+            {
+              "answer": "Voters of color, no degree",
+              "totalPercentage": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-IL-55.json",
+      "source_bytes": 199915,
+      "source_sha256": "515799fae74c8af70c2c53e5f9a0e589afeba817dba7d915d8d84ce06fe196ba",
+      "configuration_entry": {
+        "stateTitle": "Illinois",
+        "stateAbbr": "IL",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-SG-IL-55.json",
+        "raceTypeCode": "SG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-SG-IL-55",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "S",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Illinois",
+          "stateId": 14,
+          "fipsCode": "17",
+          "abbreviation": "IL"
+        },
+        "subset": {
+          "sub": 55,
+          "longName": "Voters Age 65+",
+          "shortName": "65PLUS"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Senate",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 484,
+        "timestamp": "2026-11-04T21:14:48.000Z",
+        "extractedAt": "2026-11-07T00:30:03.613897",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Juliana Stratton",
+            "lastName": "Stratton",
+            "firstName": "Juliana",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 118184,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.14.SW.0.G.S.118184",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": true,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Don Tracy",
+            "lastName": "Tracy",
+            "firstName": "Don",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 170432,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.14.SW.0.G.S.170432",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 52,
+                "candidateAnswers": [
+                  {
+                    "percentage": 96,
+                    "candidateId": 118184,
+                    "vPercentage": 95,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Stratton"
+                  },
+                  {
+                    "percentage": 4,
+                    "candidateId": 170432,
+                    "vPercentage": 5,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Tracy"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 45,
+                "candidateAnswers": [
+                  {
+                    "percentage": 2,
+                    "candidateId": 118184,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Stratton"
+                  },
+                  {
+                    "percentage": 97,
+                    "candidateId": 170432,
+                    "vPercentage": 93,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Tracy"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 1,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 118184,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Stratton"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 170432,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Tracy"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 118184,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Stratton"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 170432,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Tracy"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-TX.json",
+      "source_bytes": 236994,
+      "source_sha256": "6e5762657d4a1d5f3e055420189326822f703bb4bcbe220f61f2215915739565",
+      "configuration_entry": {
+        "stateTitle": "Texas",
+        "stateAbbr": "TX",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-SG-TX.json",
+        "raceTypeCode": "SG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-SG-TX",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "S",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Texas",
+          "stateId": 44,
+          "fipsCode": "48",
+          "abbreviation": "TX"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Senate",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 5163,
+        "timestamp": "2026-11-04T20:42:02.000Z",
+        "extractedAt": "2026-11-07T00:30:04.413590",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "James Talarico",
+            "lastName": "Talarico",
+            "firstName": "James",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 153037,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.44.SW.0.G.S.153037",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": false,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Ken Paxton",
+            "lastName": "Paxton",
+            "firstName": "Ken",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 58352,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.44.SW.0.G.S.58352",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": true,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 42,
+                "candidateAnswers": [
+                  {
+                    "percentage": 98,
+                    "candidateId": 153037,
+                    "vPercentage": 75,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Talarico"
+                  },
+                  {
+                    "percentage": 1,
+                    "candidateId": 58352,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Paxton"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 47,
+                "candidateAnswers": [
+                  {
+                    "percentage": 11,
+                    "candidateId": 153037,
+                    "vPercentage": 9,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Talarico"
+                  },
+                  {
+                    "percentage": 86,
+                    "candidateId": 58352,
+                    "vPercentage": 95,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Paxton"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": 74,
+                    "candidateId": 153037,
+                    "vPercentage": 3,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Talarico"
+                  },
+                  {
+                    "percentage": 16,
+                    "candidateId": 58352,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Paxton"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 8,
+                "candidateAnswers": [
+                  {
+                    "percentage": 81,
+                    "candidateId": 153037,
+                    "vPercentage": 12,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Talarico"
+                  },
+                  {
+                    "percentage": 16,
+                    "candidateId": 58352,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Paxton"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 11001,
+          "question": "Gender",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "Male",
+              "totalPercentage": 45
+            },
+            {
+              "answer": "Female",
+              "totalPercentage": 54
+            },
+            {
+              "answer": "Identify another way",
+              "totalPercentage": 1
+            }
+          ]
+        },
+        {
+          "mxId": 260,
+          "question": "Race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White",
+              "totalPercentage": 55
+            },
+            {
+              "answer": "Black",
+              "totalPercentage": 12
+            },
+            {
+              "answer": "Latino",
+              "totalPercentage": 24
+            },
+            {
+              "answer": "Asian",
+              "totalPercentage": 4
+            },
+            {
+              "answer": "Other racial/ethnic groups",
+              "totalPercentage": 4
+            }
+          ]
+        },
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": 13
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": 22
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": 35
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 30
+            }
+          ]
+        },
+        {
+          "mxId": 1949,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-44",
+              "totalPercentage": 36
+            },
+            {
+              "answer": "45 or older",
+              "totalPercentage": 64
+            }
+          ]
+        },
+        {
+          "mxId": 1974,
+          "question": "Education by race",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "White voters, college degree",
+              "totalPercentage": 28
+            },
+            {
+              "answer": "White voters, no degree",
+              "totalPercentage": 28
+            },
+            {
+              "answer": "Voters of color, college degree",
+              "totalPercentage": 18
+            },
+            {
+              "answer": "Voters of color, no degree",
+              "totalPercentage": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-TX-55.json",
+      "source_bytes": 237101,
+      "source_sha256": "649b8d6cd47e44ab0c1fe28fad1ba22de7c2311c6084c6e90a71ade0646432b6",
+      "configuration_entry": {
+        "stateTitle": "Texas",
+        "stateAbbr": "TX",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-SG-TX-55.json",
+        "raceTypeCode": "SG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-SG-TX-55",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "S",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Texas",
+          "stateId": 44,
+          "fipsCode": "48",
+          "abbreviation": "TX"
+        },
+        "subset": {
+          "sub": 55,
+          "longName": "Voters Age 65+",
+          "shortName": "65PLUS"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Senate",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 1252,
+        "timestamp": "2026-11-04T20:42:02.000Z",
+        "extractedAt": "2026-11-07T00:30:04.413590",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793757600000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793757600000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "James Talarico",
+            "lastName": "Talarico",
+            "firstName": "James",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 153037,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.44.SW.0.G.S.153037",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": false,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Ken Paxton",
+            "lastName": "Paxton",
+            "firstName": "Ken",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 58352,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.44.SW.0.G.S.58352",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": true,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": true,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 44,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 38,
+                "candidateAnswers": [
+                  {
+                    "percentage": 99,
+                    "candidateId": 153037,
+                    "vPercentage": 87,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Talarico"
+                  },
+                  {
+                    "percentage": 1,
+                    "candidateId": 58352,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Paxton"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 57,
+                "candidateAnswers": [
+                  {
+                    "percentage": 4,
+                    "candidateId": 153037,
+                    "vPercentage": 5,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Talarico"
+                  },
+                  {
+                    "percentage": 94,
+                    "candidateId": 58352,
+                    "vPercentage": 97,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Paxton"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 1,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 153037,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Talarico"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 58352,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Paxton"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 3,
+                "candidateAnswers": [
+                  {
+                    "percentage": -1,
+                    "candidateId": 153037,
+                    "vPercentage": 5,
+                    "leader": false,
+                    "vLeader": true,
+                    "lastName": "Talarico"
+                  },
+                  {
+                    "percentage": -1,
+                    "candidateId": 58352,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Paxton"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 100
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "demographic_selection": {
+    "original_snapshot_unchanged": true,
+    "native_files_refetched": false,
+    "selected_fields": "Direct demographic population percentages and subgroup identity self-cells",
+    "mode_population_share_identified": false
+  },
+  "selection_scope": "Six separately reviewed state65+cohorts,each with matched all-voter population and age self/joint source.",
+  "original_complete_selected_snapshot_sha256": "4b3ffcb23a9254a4149253e1ae9dcc08d1ed97932e97ca50a2ca32e2081ea4ae"
+}
