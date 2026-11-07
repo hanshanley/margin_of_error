@@ -1,0 +1,66 @@
+---
+import { readFileSync } from 'node:fs';
+const base = '/participation-slu-intentions/20261107-01/';
+type Row = { reported_2024_choice: string; raw_prior_base: number;
+	kish_weight_concentration_base: number; intended_house_pct: Record<string, number> };
+const review: { rows: Row[] } = JSON.parse(readFileSync(`public${base}intentions.json`, 'utf8'));
+const pct = (value: number) => `${value.toFixed(1)}%`;
+---
+
+<section id="participation-house-intentions" class="participation-current" aria-labelledby="house-intentions-title">
+	<header class="section-intro">
+		<p class="kicker">Earlier independent evidence · August intentions only</p>
+		<h2 id="house-intentions-title">Missouri: prior choice and intended House vote</h2>
+		<p>The SLU / YouGov poll interviewed 900 registered likely voters on August 13–24, 2026.
+			This table is <strong>not observed November switching or turnout</strong>. It records
+			intended House-party choice in each respondent's own district, not a statewide House race
+			or a named-candidate district result.</p>
+	</header>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Missouri August intended House choice by reported 2024 vote">
+		<table>
+			<caption>Weighted intentions among likely voters reporting each prior presidential choice.
+				All other and unsure responses remain in the denominator. These are not percentages
+				of the original 2024 coalitions.</caption>
+			<thead><tr><th scope="col">Reported 2024 choice</th><th scope="col">Raw prior n</th>
+				<th scope="col">Kish diagnostic</th><th scope="col">Intended D</th>
+				<th scope="col">Intended R</th><th scope="col">Other</th><th scope="col">Not sure</th></tr></thead>
+			<tbody>{review.rows.map(row => <tr data-slu-prior={row.reported_2024_choice}>
+				<th scope="row">{row.reported_2024_choice}</th>
+				<td data-slu-base>{row.raw_prior_base}</td>
+				<td data-slu-kish>{row.kish_weight_concentration_base.toFixed(1)}</td>
+				{['D', 'R', 'Other', 'Not sure'].map(party =>
+					<td data-slu-choice={party}>{pct(row.intended_house_pct[party])}</td>)}
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<p><strong>No drop-off estimate from this sample.</strong> Everyone was screened as almost
+		certain or probable to vote. The sample does not observe an eligible nonvoter comparison
+		group or completed November participation. We do not multiply these August intentions by
+		November ballot totals, infer mass switchers, or allocate district, county or precinct estimates.</p>
+	<p>Raw n and the Kish weight-concentration diagnostic are not design-aware conditional precision.
+		No subgroup confidence intervals are supplied; one-decimal display is not a precision guarantee.
+		Sampling, selection, recall and intention error remain. This separate earlier study does not
+		fill Missouri's missing post-election SSRS state table.</p>
+	<details class="explorer-notes"><summary>Methods, source versions and complete selected inputs</summary>
+		<p><a href="https://www.slu.edu/research/research-institute/big-ideas/slu-poll/-pdf/slu-poll-august-2026-topline-results.pdf">The wave-specific questionnaire and methods</a>
+			describe weighting 1,074 registered voters, including 2024 presidential-choice calibration,
+			before selecting 900 likely voters and trimming/recentering their weights. That does not
+			establish that the selected likely voters were forced to match the 2024 electorate.
+			No new historical reweighting is applied here.</p>
+		<p>The complete selected aggregate archive contains both broad prior groups and all four
+			weighted House responses, source URLs and hashes, qualification, exact code and tests.
+			Raw joint-cell counts, fine demographic cells, respondent records and copyrighted native
+			PDF/HTML documents are not mirrored. Offline reproduction starts from the complete selected
+			aggregates; re-running the original record aggregation separately requires obtaining
+			the pinned publicly offered native data from SLU. Analysis is not endorsed by SLU or YouGov.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete Missouri intention aggregates + code + results (ZIP)</a>
+		<a href={`${base}intentions.json`} download>Missouri intentions + qualifications (JSON)</a>
+		<a href={`${base}download.json`} download>Missouri archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-house-intentions { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>

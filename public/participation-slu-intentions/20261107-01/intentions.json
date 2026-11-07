@@ -1,0 +1,79 @@
+{
+  "status": "descriptive_august_intentions_not_observed_november_switching",
+  "study_id": "slu-yougov-2026-08-mo",
+  "geography": "MO",
+  "field_period": {
+    "start": "2026-08-13",
+    "end": "2026-08-24"
+  },
+  "source_files": {
+    "survey": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/public-data/august-2026-poll/stlu0016-output-numeric.csv",
+      "bytes": 532929,
+      "sha256": "ee9ef15692aebaaa35bd97947d26946a3a5e53cdb2ab6aface72ebc0d0d5509e"
+    },
+    "codebook": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/public-data/august-2026-poll/stlu0016-codebook.pdf",
+      "bytes": 86774,
+      "sha256": "ca771025ba2b2e40448d7cb69374e1d2f5bc0a0c84753fdc7cf04c5248e830aa"
+    },
+    "topline": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/-pdf/slu-poll-august-2026-topline-results.pdf",
+      "bytes": 1762710,
+      "sha256": "ba90493f673ba7d36b5d608b3d616b9d32dde237bc6b05726a97698bcaaf2f11"
+    }
+  },
+  "universe": "registered_likely_voters",
+  "contest_scope": "generic_US_House_party_in_respondents_own_district",
+  "rows": [
+    {
+      "prior_party": "R",
+      "reported_2024_choice": "Trump",
+      "raw_prior_base": 418,
+      "kish_weight_concentration_base": 299.54489524134334,
+      "intended_house_pct": {
+        "D": 4.222814434078959,
+        "R": 87.68558886717604,
+        "Other": 1.8495224535927774,
+        "Not sure": 6.24207424515223
+      }
+    },
+    {
+      "prior_party": "D",
+      "reported_2024_choice": "Harris",
+      "raw_prior_base": 383,
+      "kish_weight_concentration_base": 236.63998821606646,
+      "intended_house_pct": {
+        "D": 93.4937649688811,
+        "R": 1.0132893423173648,
+        "Other": 1.2486424464801784,
+        "Not sure": 4.244303242321368
+      }
+    }
+  ],
+  "population_switchers": null,
+  "apparent_absence": null,
+  "measured_staying_home": null,
+  "new_or_returning_identity": null,
+  "demographic_turnout": null,
+  "overall_swing_share": null,
+  "design_confidence_intervals": null,
+  "district_or_county_estimates": null,
+  "methodology": {
+    "status": "qualified_only_for_broad_descriptive_august_intentions",
+    "study_id": "slu-yougov-2026-08-mo",
+    "public_scope": "two_broad_prior_choice_groups_generic_House_intentions_only",
+    "selection": "Both major prior coalitions, selected without conditioning on their intended outcome. Every D, R, other and unsure response stays in its prior-group denominator.",
+    "source_review": "The declared CSV, native numeric codebook and wave-specific questionnaire were inspected. All 900 selected variable distributions and the rounded House topline reconcile. A second calculation using Decimal independently checks all 48 private joint House and likelihood cells.",
+    "weighting": "The wave methods weight 1074 registered voters using demographic and 2024 presidential-choice calibration before selecting 900 likely voters and trimming/recentering weights. This is not proof that the selected likely-voter composition was forced to match the 2024 electorate. No new historical-choice reweighting is applied.",
+    "field_period": "August 13-24, 2026, from the wave-specific questionnaire. Earlier source-lead dates and response-code guesses are superseded by the frozen native sources.",
+    "precision": "Weighted descriptive percentages are rounded to one decimal for display, not a precision guarantee. Broad raw bases and Kish weight-concentration diagnostics are supplied. Sampling, selection, recall and intention error remain. No subgroup joint-design confidence intervals are available; the overall reported margin of error and effective sample are not reused for these conditionals.",
+    "participation": "The entire released sample reports registration and almost-certain or probable voting. It does not observe an eligible nonvoter comparison group or completed November participation. Presidential nonvote in the native source is not all-race nonparticipation or first-ever voting.",
+    "disclosure": "Select only two broad prior-coalition bases and their complete four-response weighted conditional distributions. No raw joint-cell counts, joint weight sums, fine demographic cells, identifiers, respondent records or individual scores are included.",
+    "rights": "Derived numerical aggregates, source citations and our exact code only. The publicly offered native CSV can be consulted at its original source, but respondent records and copyrighted PDF/HTML documents are not mirrored or relicensed. No NORC material is included. This analysis is not endorsed by SLU or YouGov.",
+    "population_scaling_permitted": false,
+    "completed_participation_permitted": false,
+    "district_or_county_allocation_permitted": false,
+    "design_confidence_intervals_permitted": false
+  }
+}

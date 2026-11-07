@@ -1,0 +1,61 @@
+{
+  "study_id": "slu-yougov-2026-08-mo",
+  "geography": "MO",
+  "universe": "registered_likely_voters",
+  "completed_voting": false,
+  "contest_scope": "generic_US_House_party_in_respondents_own_district",
+  "field_period": {
+    "start": "2026-08-13",
+    "end": "2026-08-24"
+  },
+  "raw_sample": 900,
+  "native_variables": {
+    "prior": "presvote24post",
+    "house": "POLS025",
+    "likelihood": "QB",
+    "weight": "weight"
+  },
+  "source_files": {
+    "survey": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/public-data/august-2026-poll/stlu0016-output-numeric.csv",
+      "bytes": 532929,
+      "sha256": "ee9ef15692aebaaa35bd97947d26946a3a5e53cdb2ab6aface72ebc0d0d5509e"
+    },
+    "codebook": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/public-data/august-2026-poll/stlu0016-codebook.pdf",
+      "bytes": 86774,
+      "sha256": "ca771025ba2b2e40448d7cb69374e1d2f5bc0a0c84753fdc7cf04c5248e830aa"
+    },
+    "topline": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/-pdf/slu-poll-august-2026-topline-results.pdf",
+      "bytes": 1762710,
+      "sha256": "ba90493f673ba7d36b5d608b3d616b9d32dde237bc6b05726a97698bcaaf2f11"
+    }
+  },
+  "rows": [
+    {
+      "prior_party": "R",
+      "reported_2024_choice": "Trump",
+      "raw_prior_base": 418,
+      "kish_weight_concentration_base": 299.54489524134334,
+      "weighted_house_shares": {
+        "D": 0.042228144340789586,
+        "R": 0.8768558886717603,
+        "Other": 0.018495224535927775,
+        "Not sure": 0.06242074245152229
+      }
+    },
+    {
+      "prior_party": "D",
+      "reported_2024_choice": "Harris",
+      "raw_prior_base": 383,
+      "kish_weight_concentration_base": 236.63998821606646,
+      "weighted_house_shares": {
+        "D": 0.9349376496888109,
+        "R": 0.010132893423173648,
+        "Other": 0.012486424464801783,
+        "Not sure": 0.04244303242321368
+      }
+    }
+  ]
+}
