@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "node scripts/build-precinct-histories.mjs && node scripts/build-participation-swing.mjs && astro build && node scripts/build-website-charts.mjs && node --test scripts/caucus-issues.test.mjs",
-    "test:swing": "node --test scripts/participation-swing.test.mjs scripts/build-participation-swing.test.mjs && python3 scripts/test-review-nc-demographic-cohort.py && python3 scripts/test-review-nc-candidate-scope.py && python3 scripts/test-review-nc-linked-cohort.py && python3 scripts/test-build-swing-coverage.py && python3 scripts/test-review-nbc-voter-poll.py && python3 scripts/test-review-cnn-voter-poll.py && python3 scripts/test-estimate-survey-coalition-absence.py && python3 scripts/test-estimate-preliminary-coalitions.py",
+    "test:swing": "node --test scripts/participation-swing.test.mjs scripts/build-participation-swing.test.mjs && python3 scripts/test-review-nc-demographic-cohort.py && python3 scripts/test-review-nc-candidate-scope.py && python3 scripts/test-review-nc-linked-cohort.py && python3 scripts/test-build-swing-coverage.py && python3 scripts/test-review-nbc-voter-poll.py && python3 scripts/test-review-cnn-voter-poll.py && python3 scripts/test-estimate-survey-coalition-absence.py && python3 scripts/test-estimate-preliminary-coalitions.py && python3 scripts/test-estimate-demographic-current-counts.py",
     "test:swing:model": "python3 scripts/test-fit-historical-choice.py && python3 scripts/test-model-nc-swing.py",
     "package:swing": "node scripts/build-participation-swing.mjs && python3 scripts/package-participation-swing.py",
     "preview": "astro preview",

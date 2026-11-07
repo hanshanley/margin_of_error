@@ -1,0 +1,110 @@
+---
+import { readFileSync } from 'node:fs';
+const { names } = Astro.props as { names: Record<string, string> };
+const base = '/participation-demographic-counts/20261107-01/';
+type Composition = { estimated_current_group_count: number;
+	reported_current_choice_counts: Record<string, number | null> };
+type Row = { state_code: string; contest_code: string; subset: { sub: number; longName: string };
+	estimated_current_group_count: number; population_match: { group_share_pct_of_current_electorate: number };
+	composition: Record<string, Composition>;
+	sensitivity_scenarios: { reported_opposite_party_counts: Record<string, number | null> }[] };
+type Jurisdiction = { state_code: string; qualified_group_comparisons: number };
+const review: { estimates: Row[]; jurisdictions: Jurisdiction[] } = JSON.parse(
+	readFileSync(`public${base}demographic-current-counts.json`, 'utf8'));
+const count = (value: number | null) => value === null ? 'Unavailable'
+	: (Math.round(value / 1000) * 1000).toLocaleString('en-US');
+const office: Record<string, string> = { SG: 'Senate', GG: 'Governor', HG: 'House' };
+const states = new Set(review.estimates.filter(r => r.state_code !== 'US').map(r => r.state_code)).size;
+const codes = ['US', ...review.jurisdictions.filter(r => r.qualified_group_comparisons > 0).map(r => r.state_code)];
+const range = (row: Row, prior: string) => {
+	const values = row.sensitivity_scenarios.flatMap(s => s.reported_opposite_party_counts[prior] === null
+		? [] : [s.reported_opposite_party_counts[prior] as number]);
+	return values.length ? `${count(Math.min(...values))}–${count(Math.max(...values))}` : 'Unavailable';
+};
+---
+
+<section id="participation-demographic-counts" aria-labelledby="demographic-counts-title">
+	<h3 id="demographic-counts-title">Demographic switching: preliminary counts</h3>
+	<p><strong>{review.estimates.length} qualified group comparisons across {states} states plus national House.</strong>
+		These separate scenarios use each contest's actual published demographic population shares and
+		its matching subgroup's joint recalled-2024/current-2026 choices. They are conditional estimates,
+		not observed headcounts or causal persuasion.</p>
+	<p>Estimated current group = N26 × g; reported opposite-party choice = N26 × g × q × p.
+		N26 is UF Election Lab's <strong>Initial Estimate</strong> of ballots; g is the published current-group
+		share, q its recalled prior-choice share and p current choice within that prior group.
+		The reference assumes these response shares represent all ballot-casters. Some choices remain
+		pre-election responses after unsuccessful recontact.</p>
+	<p><strong>Group drop-off remains unavailable:</strong> corresponding 2024 demographic coalition
+		baselines are missing. These counts do not supply demographic turnout rates, percentages of the
+		original Trump/Harris group, or shares of overall swing. Demographics describe current voters,
+		not an unchanged 2024 cohort.</p>
+	{codes.map(code => {
+		const rows = review.estimates.filter(r => r.state_code === code);
+		return <details class="explorer-notes" open={code === 'US'} data-demographic-jurisdiction={code}>
+			<summary>{names[code]} · {rows.length} qualified group comparisons</summary>
+			<div class="table-wrap" tabindex="0" role="region" aria-label={`${names[code]} demographic switching counts`}>
+				<table><caption>Counts rounded to 1,000. Rounded zero does not establish zero switching.
+					Stress ranges are not confidence intervals. Never sum overlapping groups, offices or national/state estimates.</caption>
+					<thead><tr><th scope="col">2026 contest / current group</th><th scope="col">Published group share</th>
+						<th scope="col">Estimated current group</th><th scope="col">Reported Trump → D</th>
+						<th scope="col">Reported Harris → R</th></tr></thead>
+					<tbody>{rows.map(row => <tr data-demographic-state={code} data-demographic-contest={row.contest_code} data-demographic-subset={row.subset.sub}>
+						<th scope="row">{office[row.contest_code]} / {row.subset.longName}</th>
+						<td data-demographic-share>{row.population_match.group_share_pct_of_current_electorate}%</td>
+						<td data-demographic-population>{count(row.estimated_current_group_count)}</td>
+						<td data-demographic-trump-flow>{count(row.composition.R.reported_current_choice_counts.D)}
+							<br /><small>Stress: {range(row, 'R')}</small></td>
+						<td data-demographic-harris-flow>{count(row.composition.D.reported_current_choice_counts.R)}
+							<br /><small>Stress: {range(row, 'D')}</small></td>
+					</tr>)}</tbody>
+				</table>
+			</div>
+			<div class="table-wrap" tabindex="0" role="region" aria-label={`${names[code]} demographic prior presidential composition counts`}>
+				<table><caption>Prior presidential nonvote does not establish first-ever participation,
+					all-race nonvoting, eligibility entry or an identified returning voter. Suppressed choices remain unavailable.</caption>
+					<thead><tr><th scope="col">2026 contest / current group</th><th scope="col">No 2024 presidential vote</th>
+						<th scope="col">2026 D / R from that group</th><th scope="col">Other 2024 presidential choice</th>
+						<th scope="col">2026 D / R from that group</th></tr></thead>
+					<tbody>{rows.map(row => <tr data-demographic-composition-state={code} data-demographic-composition-contest={row.contest_code} data-demographic-composition-subset={row.subset.sub}>
+						<th scope="row">{office[row.contest_code]} / {row.subset.longName}</th>
+						<td>{count(row.composition.N.estimated_current_group_count)}</td>
+						<td>{count(row.composition.N.reported_current_choice_counts.D)} / {count(row.composition.N.reported_current_choice_counts.R)}</td>
+						<td>{count(row.composition.O.estimated_current_group_count)}</td>
+						<td data-demographic-other-flows>{count(row.composition.O.reported_current_choice_counts.D)} / {count(row.composition.O.reported_current_choice_counts.R)}</td>
+					</tr>)}</tbody>
+				</table>
+			</div>
+		</details>;
+	})}
+	<p class="caption">Stress varies estimated totals by −5%, 0 and +5%, and transfers −2, 0 or +2 recalled
+		composition points from Harris to Trump. The archive separately includes half-point rounding
+		envelopes in g, q and p; neither method supplies design-aware uncertainty. Percentages are not
+		renormalized. The 18–44 category uses its exact published question, not summed rounded age bins.</p>
+	<p>Age groups overlap, as do race and White-education groups. No county/precinct estimates or voting-mode
+		weights are inferred here. National House excludes unsampled D.C. and uses 123,267,000 estimated
+		ballots across the 50 states; complete native national and D.C. observations remain in the archive.</p>
+	<details class="explorer-notes"><summary>Demographic-count coverage: all 50 states and D.C.</summary>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Demographic count coverage">
+			<table><thead><tr><th scope="col">Jurisdiction</th><th scope="col">Qualified group comparisons / next evidence</th></tr></thead>
+				<tbody>{review.jurisdictions.map(row => <tr data-demographic-coverage={row.state_code}>
+					<th scope="row">{names[row.state_code]}</th><td>{row.qualified_group_comparisons
+						? `${row.qualified_group_comparisons} comparisons; acquire historical group coalitions and linked turnout`
+						: 'Acquire applicable qualified joint cells and matched demographic population shares; no allocation'}</td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+	</details>
+	<p class="caption">Turnout inputs: Michael McDonald, University of Florida Election Lab, CSV v0.2 and
+		documentation v0.1, CC BY 4.0, unchanged. Derived analysis is not endorsed by UF, SSRS or CNN.
+		Complete selected published facts, source hashes, all dispositions, native licensed turnout inputs,
+		methods, exact code and tests are included. No individual records or restricted NORC materials.</p>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete demographic counts + selected inputs + code (ZIP)</a>
+		<a href={`${base}demographic-current-counts.json`} download>Exact demographic counts + sensitivity + exclusions (JSON)</a>
+		<a href={`${base}download.json`} download>Demographic archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-demographic-counts { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>
