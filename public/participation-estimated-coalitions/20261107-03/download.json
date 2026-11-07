@@ -1,0 +1,10 @@
+{
+  "file": "complete-analysis.zip",
+  "bytes": 355625,
+  "sha256": "91f99be9779ddec465a96114903fe8afb080ae6adf21f038f057621e219a293a",
+  "members": 19,
+  "complete_selected_public_inputs_and_code": true,
+  "preliminary_estimated_total_scenarios": true,
+  "validated_dropoff_released": false,
+  "personal_records_included": false
+}
