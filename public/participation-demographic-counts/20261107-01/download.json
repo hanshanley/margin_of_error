@@ -1,0 +1,10 @@
+{
+  "file": "complete-analysis.zip",
+  "bytes": 272740,
+  "sha256": "43203e1e939292cc549dddbab076ff7fa94cc1b8b98716647622d6d17f655546",
+  "members": 16,
+  "complete_selected_public_inputs_and_code": true,
+  "historical_group_baselines_included": false,
+  "demographic_dropoff_released": false,
+  "personal_records_included": false
+}
