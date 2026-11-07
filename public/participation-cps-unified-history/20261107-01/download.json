@@ -1,0 +1,26 @@
+{
+  "release_id": 437618084,
+  "tag": "participation-cps-unified-history-20261107-01",
+  "target_sha": "28cd230b42e9e550356acb78d4947118529b35ab",
+  "immutable": true,
+  "published_at": "2026-11-07T14:12:50Z",
+  "assets": [
+    {
+      "file": "complete-analysis.zip",
+      "asset_id": 720892196,
+      "bytes": 1738524,
+      "sha256": "6cc997f42e015d4fa516d4b8d9fda9b651dd4176eefc2511007028f3d217207c",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-unified-history-20261107-01/complete-analysis.zip"
+    },
+    {
+      "file": "observations.csv",
+      "asset_id": 720892195,
+      "bytes": 1383519,
+      "sha256": "e0b595e90b3601728fb0854cc41b3a4d328eb93e7b482d208e92565660c98b6b",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-unified-history-20261107-01/observations.csv"
+    }
+  ],
+  "authenticated_assets_downloaded_in_full_and_verified": true,
+  "published_assets_anonymously_downloaded_in_full_and_verified": true,
+  "tag_commit_matches_verified_package": true
+}
