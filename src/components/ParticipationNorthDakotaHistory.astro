@@ -1,0 +1,86 @@
+---
+import { readFileSync } from 'node:fs';
+const base = '/participation-nd-ballot-history/20261107-01/';
+type Counts = { ballots_by_year: Record<string, number>;
+	reported_ballot_count_change_since_2024: number; reported_ballot_count_change_since_2022: number };
+type County = Counts & { county_name: string };
+const review: { statewide: Counts; counties: County[] } =
+	JSON.parse(readFileSync(`public${base}history.json`, 'utf8'));
+const number = (value: number) => value.toLocaleString('en-US');
+const change = (value: number) => `${value > 0 ? '+' : ''}${number(value)}`;
+---
+
+<section id="participation-nd-history" class="participation-current" aria-labelledby="nd-history-title">
+	<header class="section-intro">
+		<p class="kicker">Administrative ballot counts · county comparison</p>
+		<h2 id="nd-history-title">North Dakota: presidential and midterm participation</h2>
+		<p>Official 2022 and 2024 ballot totals alongside the <strong>unofficial 2026 snapshot</strong>
+			updated November 5, 2026 at 01:30 UTC. These are reported ballot-count changes,
+			<strong>not measured prior-voter drop-off or switching</strong>, and not an estimate of final 2026 turnout.</p>
+	</header>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="North Dakota statewide ballot counts">
+		<table>
+			<caption>Statewide general-election ballots. Midterm-to-midterm and presidential-to-midterm
+				comparisons are separate; candidate votes are not substituted for ballots.</caption>
+			<thead><tr><th scope="col">Geography</th><th scope="col">2022 official</th>
+				<th scope="col">2024 official</th><th scope="col">2026 snapshot</th>
+				<th scope="col">Change vs. 2022</th><th scope="col">Change vs. 2024</th></tr></thead>
+			<tbody><tr data-nd-state>
+				<th scope="row">North Dakota</th>
+				{['2022', '2024', '2026'].map(year =>
+					<td data-nd-year={year}>{number(review.statewide.ballots_by_year[year])}</td>)}
+				<td data-nd-change="2022">{change(review.statewide.reported_ballot_count_change_since_2022)}</td>
+				<td data-nd-change="2024">{change(review.statewide.reported_ballot_count_change_since_2024)}</td>
+			</tr></tbody>
+		</table>
+	</div>
+	<details class="explorer-notes" id="nd-history-counties">
+		<summary>All 53 county ballot comparisons</summary>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="North Dakota county ballot counts">
+			<table>
+				<caption>Exact source county-name matches. Historical county totals are sums of complete
+					native precinct rows, not independent county controls. No cross-year precinct match is claimed.</caption>
+				<thead><tr><th scope="col">County</th><th scope="col">2022 official</th>
+					<th scope="col">2024 official</th><th scope="col">2026 snapshot</th>
+					<th scope="col">Change vs. 2022</th><th scope="col">Change vs. 2024</th></tr></thead>
+				<tbody>{review.counties.map(row => <tr data-nd-county={row.county_name}>
+					<th scope="row">{row.county_name}</th>
+					{['2022', '2024', '2026'].map(year =>
+						<td data-nd-year={year}>{number(row.ballots_by_year[year])}</td>)}
+					<td data-nd-change="2022">{change(row.reported_ballot_count_change_since_2022)}</td>
+					<td data-nd-change="2024">{change(row.reported_ballot_count_change_since_2024)}</td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+	</details>
+	<p>The source contains 398 reporting units in 2022, 385 in 2024 and 358 in this 2026
+		snapshot. Matching county names does not establish a fixed-person cohort, analytical
+		boundary overlay or comparable precinct boundaries. No new map, demographic turnout rate,
+		individual drop-off, returning-voter identity or candidate switching is inferred.</p>
+	<details class="explorer-notes"><summary>Source clocks, definitions and complete reproduction</summary>
+		<p>The <a href="https://www.sos.nd.gov/elections/election-results">North Dakota Secretary of State archive</a>
+			declares the historical turnout pages. Their native update clocks are November 29, 2022
+			at 2:43:07 PM and April 21, 2026 at 1:33:23 PM for the 2024 election, with no supplied timezone.
+			The current source is election 348, revision v75; its November 5 UTC clock is not a certification
+			or final-count statement.</p>
+		<p>Historical “Eligible Voters” means estimated residents aged 18+, not registered voters,
+			a voting-eligible population or a fixed eligible cohort. Those native values remain in the
+			download but are not used for rates. Historical county IDs are portal ordinals, not FIPS;
+			current location IDs remain separate. Existing Morton and Towner mapping caveats remain.</p>
+		<p>The complete archive includes every selected precinct ballot count, all county and statewide
+			controls, election identities, status and source clocks, native source URLs and hashes,
+			qualification, exact code and tests. It reproduces offline from these complete selected facts.
+			Re-running the initial native extraction separately requires the pinned originals;
+			copyrighted site markup, unrelated contests and personal records are not mirrored.
+			This analysis is not endorsed by the source.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete North Dakota ballot inputs + code + results (ZIP)</a>
+		<a href={`${base}history.json`} download>North Dakota county comparison + qualifications (JSON)</a>
+		<a href={`${base}download.json`} download>North Dakota archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-nd-history { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>
