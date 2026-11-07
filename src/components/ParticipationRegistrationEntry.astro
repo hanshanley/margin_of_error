@@ -1,0 +1,69 @@
+---
+import { readFileSync } from 'node:fs';
+const base = '/participation-registration-entry/20261107-01/';
+type Row = { county: string; accepted_cohort: number; post_2024_registration: number;
+	positive_2024_nc_history: number; no_2024_nc_history_found: number;
+	positive_history_share_of_post_registration_pct: number };
+const analysis: { rows: Row[] } = JSON.parse(readFileSync(`public${base}summary.json`, 'utf8'));
+const integer = (value: number) => value.toLocaleString('en-US');
+---
+
+<section id="participation-registration-entry" class="participation-current" aria-labelledby="registration-entry-title">
+	<header class="section-intro">
+		<p class="kicker">Administrative participation evidence · Selected early/mail cohorts</p>
+		<h2 id="registration-entry-title">A new registration date does not mean a first-time voter</h2>
+		<p>In these two North Carolina counties, thousands of accepted 2026 early/mail voters
+			with a registration date after the 2024 election already have
+			<strong>positive 2024 North Carolina general-election history</strong>.
+			The current record's registration date is not a first-ever registration date.</p>
+	</header>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Registration dates and positive prior North Carolina participation">
+		<table>
+			<caption>Current-record registration dates after November 5, 2024, through November 3, 2026.
+				Percentages below are among that selected date group, not all voters.</caption>
+			<thead><tr><th scope="col">County</th><th scope="col">Accepted early/mail cohort</th>
+				<th scope="col">Registration after 2024</th><th scope="col">Of those: positive 2024 NC history</th>
+				<th scope="col">Of those: no 2024 NC history found</th></tr></thead>
+			<tbody>{analysis.rows.map(row => <tr data-registration-county={row.county}>
+				<th scope="row">{row.county === 'WAKE' ? 'Wake' : 'Mecklenburg'}</th>
+				<td data-registration-count="accepted_cohort">{integer(row.accepted_cohort)}</td>
+				<td data-registration-count="post_2024_registration">{integer(row.post_2024_registration)}</td>
+				<td><span data-registration-count="positive_2024_nc_history">{integer(row.positive_2024_nc_history)}</span>
+					<br /><span data-registration-positive-share>{row.positive_history_share_of_post_registration_pct.toFixed(1)}% of date group</span></td>
+				<td><span data-registration-count="no_2024_nc_history_found">{integer(row.no_2024_nc_history_found)}</span>
+					<br />National participation unresolved</td>
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<p><strong>No first-time-voter estimate.</strong> Movers and re-registrations can have later
+		registration dates despite earlier participation. No NC history match does not establish
+		no 2024 vote elsewhere. Neither group is labeled new to voting.</p>
+	<p><strong>Not final turnout or counted ballots.</strong> This is the source's accepted
+		early/mail cohort only, not all Election Day voters. Registration and history files were
+		last modified November 2; accepted records November 6. These snapshots are not one
+		synchronized final electorate. No candidate choice, persuasion or staying home is inferred.</p>
+	<details class="explorer-notes"><summary>Scope, source controls and complete reproduction</summary>
+		<p>The <a href="https://www.ncsbe.gov/results-data/voter-registration-data">NCSBE registration files</a>
+			supply the current record's <code>registr_dt</code>. We link the already reviewed, frozen
+			accepted early/mail cohort to
+			<a href="https://www.ncsbe.gov/results-data/voter-history-data">statewide NC general-election history</a>,
+			not just history in the current county. Every record for an ambiguous registration or
+			accepted identifier is excluded, never arbitrarily deduplicated.
+			Missing and all other registration dates remain outside the selected date interval.</p>
+		<p>Source URLs, acquisition and modification dates, full native hashes, private source-control
+			proof hashes, both selected county rows, both history outcomes, full accepted-cohort
+			controls, code, tests and results are included. Offline reproduction starts from the
+			complete selected aggregates; it does not recreate private native linkage. No individual
+			records, fine joint cells, identities or scores are redistributed. These two counties
+			are not estimates for North Carolina or the country; no demographic allocation is made.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete selected registration-date analysis + inputs + code + results (ZIP)</a>
+		<a href={`${base}summary.json`} download>Registration-date counts + qualifications (JSON)</a>
+		<a href={`${base}download.json`} download>Registration-date archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-registration-entry { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>

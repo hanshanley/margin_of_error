@@ -8,6 +8,7 @@ import ParticipationSurvey from '../components/ParticipationSurvey.astro';
 import ParticipationIndependentPoll from '../components/ParticipationIndependentPoll.astro';
 import ParticipationHouseIntentions from '../components/ParticipationHouseIntentions.astro';
 import ParticipationPanelIntentions from '../components/ParticipationPanelIntentions.astro';
+import ParticipationRegistrationEntry from '../components/ParticipationRegistrationEntry.astro';
 import ParticipationNorthDakotaHistory from '../components/ParticipationNorthDakotaHistory.astro';
 import ParticipationAgeScenarios from '../components/ParticipationAgeScenarios.astro';
 import ParticipationStateAgeScenarios from '../components/ParticipationStateAgeScenarios.astro';
@@ -249,6 +250,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<div id="tooltip" role="tooltip" hidden></div>
 		</section>
 
+		<ParticipationRegistrationEntry />
 		<ParticipationCountyScenarios version="20261107-02" />
 		<ParticipationSwing />
 		<ParticipationCountyScenarios />

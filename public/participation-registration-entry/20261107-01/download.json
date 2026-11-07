@@ -1,0 +1,11 @@
+{
+  "file": "complete-analysis.zip",
+  "bytes": 11432,
+  "sha256": "a93522e59b8e1f98b16097564aa1242c32ad06e2875cc8b6e66ec3b7e4ad6edd",
+  "members": 6,
+  "complete_selected_aggregate_inputs_and_code": true,
+  "personal_records_included": false,
+  "fine_joint_cells_included": false,
+  "fresh_native_linkage_reproduced": false,
+  "first_time_voter_estimates_released": false
+}
