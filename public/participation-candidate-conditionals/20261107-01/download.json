@@ -1,0 +1,13 @@
+{
+  "file": "complete-analysis.zip",
+  "bytes": 21052,
+  "sha256": "bb99bc96bb74137bf21d3d08bb5782ea504b905d14ac3802b4da9fcc447687a2",
+  "members": 10,
+  "complete_selected_public_inputs_and_code": true,
+  "states": [
+    "AK",
+    "NH"
+  ],
+  "contests": 4,
+  "population_scaling_performed": false
+}

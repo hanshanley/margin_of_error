@@ -1,0 +1,37 @@
+{
+  "status": "reviewed_for_unscaled_candidate_conditionals_only",
+  "source": "The Voter Poll by SSRS, CNN declared 2026 state Senate/Governor sources",
+  "source_universe": "Selected current poll participants recalling each 2024 presidential choice",
+  "interview_choice_qualification": "Successful recontacts use final choice; initial pre-election choice may remain after unsuccessful recontact. Not universally completed or administratively validated voting.",
+  "independence": "CNN/NBC/MS NOW use the same SSRS study, not independent samples.",
+  "original_gates_preserved": [
+    "AK GG and SG remain withheld as nonunique literal D/R comparisons; both published prior composition sums are97.",
+    "NH GG and SG remain withheld for unexplained prior composition sums95and97, not reconciled by four-row rounding.",
+    "A gap from100 is not assigned to nonvoters, an identifiable missing-response category or any prior coalition.",
+    "Alaska candidate-specific reported preferences do not identify a ranked-choice counting round or matched final-round transition."
+  ],
+  "display_interpretation": [
+    "Native candidateAnswers.percentage is conditional on the displayed recalled prior choice; totalPercentage is separate prior composition.",
+    "Report literal named-candidate percentages without multiplying them by current totals or prior shares.",
+    "No pooling of the multiple Alaska Republican candidates; retain the literal Independent separately.",
+    "Dan S. Sullivan and Daniel J. Sullivan have different candidate IDs and parties and must not be conflated.",
+    "Preserve all four prior-choice rows and every native candidate, rounding and suppressed/null cells.",
+    "Unshown current-choice residuals are not inferred to be other-party votes or abstention.",
+    "The same respondents/offices are not additive; current-participant percentages are not original2024coalition rates or causal persuasion."
+  ],
+  "unidentified": [
+    "Population returning/switcher counts",
+    "apparent absence",
+    "measured staying home",
+    "original coalition switching percentages",
+    "share of overall swing",
+    "design-aware confidence intervals",
+    "state-to-county/precinct allocation"
+  ],
+  "source_preservation": {
+    "native_source_hashes_urls_revisions_retained": true,
+    "selected_numerical_inputs_complete_for_this_view": true,
+    "individual_records_full_source_dashboards_pdfs_and_restricted_norc_materials_included": false,
+    "derived_analysis_not_endorsed_by_source": true
+  }
+}

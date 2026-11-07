@@ -6,6 +6,7 @@ import ParticipationSwing from '../components/ParticipationSwing.astro';
 import ParticipationSurvey from '../components/ParticipationSurvey.astro';
 import ParticipationIndependentPoll from '../components/ParticipationIndependentPoll.astro';
 import ParticipationAgeScenarios from '../components/ParticipationAgeScenarios.astro';
+import ParticipationCandidateConditionals from '../components/ParticipationCandidateConditionals.astro';
 import { participationCurrentRoot } from '../../public/scripts/participation-downloads.js';
 import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation } from '../../scripts/reviewed-county-participation.mjs';
 import { loadAdditionalParticipation } from '../../scripts/additional-participation.mjs';
@@ -245,6 +246,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 
 		<ParticipationSwing />
 		<ParticipationAgeScenarios />
+		<ParticipationCandidateConditionals />
 		<ParticipationIndependentPoll />
 		<ParticipationSurvey />
 

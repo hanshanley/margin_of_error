@@ -1,0 +1,70 @@
+---
+import { readFileSync } from 'node:fs';
+const base = '/participation-candidate-conditionals/20261107-01/';
+type Candidate = { candidate_id: number; full_name: string; literal_party: string; literal_party_name: string };
+type Prior = { current_candidate_percentages: { candidate_id: number; percentage: number | null }[] };
+type Contest = { state_code: string; contest_code: string; contest_title: string; source_url: string;
+	reported_prior_composition_sum_pct: number; unexplained_gap_from_100_pct: number;
+	candidates: Candidate[]; reported_choices_by_prior: Record<string, Prior> };
+const review: { contests: Contest[] } = JSON.parse(readFileSync(`public${base}candidate-conditionals.json`, 'utf8'));
+const states: Record<string, string> = { AK: 'Alaska', NH: 'New Hampshire' };
+const choice = (contest: Contest, prior: string, id: number) => {
+	const value = contest.reported_choices_by_prior[prior].current_candidate_percentages
+		.find(cell => cell.candidate_id === id)?.percentage;
+	return value === null || value === undefined ? 'Unavailable' : `${value}%`;
+};
+---
+
+<section id="participation-candidate-conditionals" class="participation-current" aria-labelledby="candidate-conditionals-title">
+	<header class="section-intro">
+		<p class="kicker">Alaska and New Hampshire · Unscaled native candidate choices</p>
+		<h2 id="candidate-conditionals-title">Reported choices where population scaling is withheld</h2>
+		<p>These four SSRS state tables report named-candidate choices among current participants
+			recalling each 2024 presidential choice. They add usable conditional evidence, not
+			population switcher counts or percentages of the original 2024 coalitions.</p>
+	</header>
+	<p><strong>The original comparison gates remain withheld.</strong> Alaska has multiple literal
+		Republican candidates; no ranked-choice round or matched final-round transition is inferred.
+		Both states have unexplained prior-composition gaps. We do not renormalize them, assign
+		the gap to nonvoters or multiply the conditional percentages by population totals.</p>
+	{review.contests.map(contest => <article data-candidate-contest={`${contest.state_code}-${contest.contest_code}`}>
+		<h3><a href={contest.source_url}>{states[contest.state_code]}: {contest.contest_title}</a></h3>
+		<p data-candidate-gap>Published prior composition totals {contest.reported_prior_composition_sum_pct}%:
+			an unexplained gap of {contest.unexplained_gap_from_100_pct} percentage points. Population scaling remains withheld.</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={`${states[contest.state_code]} ${contest.contest_title} conditional candidate choices`}>
+			<table>
+				<caption>Percentage reporting each current candidate, conditional on the column's recalled
+					prior choice. Other and no-presidential-vote rows are not identified returning-voter groups.</caption>
+				<thead><tr><th scope="col">Current candidate</th><th scope="col">Literal party</th>
+					<th scope="col">Prior Harris</th><th scope="col">Prior Trump</th>
+					<th scope="col">Prior other candidate</th><th scope="col">No 2024 presidential vote</th></tr></thead>
+				<tbody>{contest.candidates.map(candidate => <tr data-current-candidate={candidate.candidate_id}>
+					<th scope="row">{candidate.full_name}</th>
+					<td data-candidate-party>{candidate.literal_party_name} ({candidate.literal_party})</td>
+					<td data-prior-harris>{choice(contest, 'D', candidate.candidate_id)}</td>
+					<td data-prior-trump>{choice(contest, 'R', candidate.candidate_id)}</td>
+					<td>{choice(contest, 'O', candidate.candidate_id)}</td>
+					<td>{choice(contest, 'N', candidate.candidate_id)}</td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+	</article>)}
+	<p>Dan S. Sullivan and Daniel J. Sullivan are different candidates with different native IDs
+		and parties. Republican candidates are not pooled, and the Independent is not reassigned.
+		A published 0% is rounded, not proof of zero switching. Suppressed choices remain unavailable;
+		unshown current-choice residuals are not inferred to be other-party votes or abstention.</p>
+	<p>Current choice can retain pre-election intention after unsuccessful recontact; universally
+		completed voting is not claimed. Offices share respondents and are not additive.
+		CNN, NBC and MS NOW use one SSRS study. No measured staying home, apparent-absence count,
+		original-coalition switching rate, total-swing share, design confidence interval or
+		county/precinct allocation is released here.</p>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete state candidate inputs + code + results (ZIP)</a>
+		<a href={`${base}candidate-conditionals.json`} download>State candidate conditionals + withholding gates (JSON)</a>
+		<a href={`${base}download.json`} download>State candidate archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-candidate-conditionals { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>
