@@ -1,0 +1,1157 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "state_code": "PA",
+  "county": "Monroe",
+  "county_fips": "42089",
+  "participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county": "Monroe",
+    "geography_level": "county",
+    "total_ballots_tabulated": 61587,
+    "eligible_registered_voters": 118818,
+    "native_printed_turnout_pct": 51.83,
+    "registered_turnout_pct": 51.83305559763672,
+    "source_update_literal": "11/6/2026 2:25:30 PM",
+    "result_status": "UNOFFICIAL"
+  },
+  "county_receipt": {
+    "url": "https://agencies2.monroecountypa.gov/ElectionResults/",
+    "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/",
+    "method": "GET",
+    "status": 200,
+    "bytes": 81328,
+    "sha256": "7ab794de092c94cfb36c2ebc658fce73dc5f2237983c3f8382c4d57ce6218385",
+    "acquired_at": "2026-11-07T06:14:20.226819+00:00",
+    "content_type": "text/html; charset=utf-8",
+    "last_modified": null,
+    "etag": null,
+    "http_date": "Sat, 07 Nov 2026 06:14:20 GMT",
+    "role": "new_separately_dated_official_observation_not_overwrite_of_old_source"
+  },
+  "contests": [
+    {
+      "office": "governor",
+      "district": "",
+      "native_contest": "GOVERNOR AND LIEUTENANT GOVERNOR",
+      "source_updated_at": "11/6/2026 2:25:30 PM",
+      "candidates": [
+        {
+          "candidate_html": "JOSH SHAPIRO",
+          "party_html": "DEMOCRATIC",
+          "votes": 37229,
+          "modes": {
+            "Election Day": 23063,
+            "Mail-In/Absentee": 13870,
+            "Provisional": 296
+          }
+        },
+        {
+          "candidate_html": "STACY GARRITY",
+          "party_html": "REPUBLICAN",
+          "votes": 22857,
+          "modes": {
+            "Election Day": 18832,
+            "Mail-In/Absentee": 3928,
+            "Provisional": 97
+          }
+        },
+        {
+          "candidate_html": "KEN KRAWCHUK",
+          "party_html": "LIBERTARIAN",
+          "votes": 1003,
+          "modes": {
+            "Election Day": 786,
+            "Mail-In/Absentee": 210,
+            "Provisional": 7
+          }
+        },
+        {
+          "candidate_html": "Write-in",
+          "party_html": "",
+          "votes": 85,
+          "modes": {
+            "Election Day": 63,
+            "Mail-In/Absentee": 22,
+            "Provisional": 0
+          }
+        }
+      ],
+      "totals": {
+        "contest_votes": 61174,
+        "precincts_reported": 55,
+        "precincts_total": 55
+      },
+      "reporting_units": [
+        {
+          "name": "Barrett One",
+          "candidate_counts": [
+            367,
+            302,
+            13,
+            1
+          ]
+        },
+        {
+          "name": "Barrett Two",
+          "candidate_counts": [
+            612,
+            477,
+            12,
+            3
+          ]
+        },
+        {
+          "name": "Chestnuthill One",
+          "candidate_counts": [
+            1121,
+            913,
+            36,
+            2
+          ]
+        },
+        {
+          "name": "Chestnuthill Two",
+          "candidate_counts": [
+            890,
+            782,
+            24,
+            2
+          ]
+        },
+        {
+          "name": "Chestnuthill Three",
+          "candidate_counts": [
+            516,
+            471,
+            8,
+            0
+          ]
+        },
+        {
+          "name": "Chestnuthill Four",
+          "candidate_counts": [
+            653,
+            651,
+            30,
+            4
+          ]
+        },
+        {
+          "name": "Coolbaugh One",
+          "candidate_counts": [
+            832,
+            493,
+            10,
+            0
+          ]
+        },
+        {
+          "name": "Coolbaugh Two",
+          "candidate_counts": [
+            565,
+            278,
+            15,
+            0
+          ]
+        },
+        {
+          "name": "Coolbaugh Three",
+          "candidate_counts": [
+            1584,
+            424,
+            23,
+            2
+          ]
+        },
+        {
+          "name": "Coolbaugh Four",
+          "candidate_counts": [
+            1220,
+            364,
+            19,
+            0
+          ]
+        },
+        {
+          "name": "Delaware Water Gap",
+          "candidate_counts": [
+            219,
+            96,
+            1,
+            0
+          ]
+        },
+        {
+          "name": "East Stroudsburg First Ward",
+          "candidate_counts": [
+            319,
+            95,
+            6,
+            2
+          ]
+        },
+        {
+          "name": "East Stroudsburg Second Ward",
+          "candidate_counts": [
+            371,
+            64,
+            9,
+            3
+          ]
+        },
+        {
+          "name": "East Stroudsburg Third Ward",
+          "candidate_counts": [
+            139,
+            54,
+            6,
+            0
+          ]
+        },
+        {
+          "name": "East Stroudsburg Fourth Ward",
+          "candidate_counts": [
+            387,
+            150,
+            7,
+            2
+          ]
+        },
+        {
+          "name": "East Stroudsburg Fifth Ward",
+          "candidate_counts": [
+            302,
+            153,
+            14,
+            4
+          ]
+        },
+        {
+          "name": "East Stroudsburg Sixth Ward",
+          "candidate_counts": [
+            388,
+            156,
+            7,
+            2
+          ]
+        },
+        {
+          "name": "Eldred",
+          "candidate_counts": [
+            460,
+            676,
+            32,
+            3
+          ]
+        },
+        {
+          "name": "Hamilton Northern",
+          "candidate_counts": [
+            1193,
+            929,
+            43,
+            2
+          ]
+        },
+        {
+          "name": "Hamilton Southern",
+          "candidate_counts": [
+            780,
+            719,
+            32,
+            1
+          ]
+        },
+        {
+          "name": "Jackson North",
+          "candidate_counts": [
+            761,
+            532,
+            24,
+            0
+          ]
+        },
+        {
+          "name": "Jackson South",
+          "candidate_counts": [
+            769,
+            625,
+            22,
+            2
+          ]
+        },
+        {
+          "name": "Middle Smithfield One",
+          "candidate_counts": [
+            959,
+            526,
+            16,
+            2
+          ]
+        },
+        {
+          "name": "Middle Smithfield Two",
+          "candidate_counts": [
+            672,
+            495,
+            35,
+            2
+          ]
+        },
+        {
+          "name": "Middle Smithfield Three",
+          "candidate_counts": [
+            835,
+            419,
+            11,
+            0
+          ]
+        },
+        {
+          "name": "Middle Smithfield Four",
+          "candidate_counts": [
+            1167,
+            488,
+            30,
+            5
+          ]
+        },
+        {
+          "name": "Mount Pocono",
+          "candidate_counts": [
+            615,
+            308,
+            13,
+            0
+          ]
+        },
+        {
+          "name": "Paradise",
+          "candidate_counts": [
+            692,
+            573,
+            18,
+            4
+          ]
+        },
+        {
+          "name": "Pocono One",
+          "candidate_counts": [
+            465,
+            302,
+            20,
+            1
+          ]
+        },
+        {
+          "name": "Pocono Two",
+          "candidate_counts": [
+            616,
+            374,
+            25,
+            5
+          ]
+        },
+        {
+          "name": "Pocono Three",
+          "candidate_counts": [
+            677,
+            432,
+            11,
+            1
+          ]
+        },
+        {
+          "name": "Pocono Four",
+          "candidate_counts": [
+            886,
+            488,
+            22,
+            2
+          ]
+        },
+        {
+          "name": "Polk",
+          "candidate_counts": [
+            1327,
+            1610,
+            61,
+            0
+          ]
+        },
+        {
+          "name": "Price",
+          "candidate_counts": [
+            853,
+            561,
+            20,
+            3
+          ]
+        },
+        {
+          "name": "Ross One",
+          "candidate_counts": [
+            469,
+            580,
+            27,
+            1
+          ]
+        },
+        {
+          "name": "Ross Two",
+          "candidate_counts": [
+            558,
+            578,
+            22,
+            0
+          ]
+        },
+        {
+          "name": "Smithfield One",
+          "candidate_counts": [
+            831,
+            372,
+            12,
+            4
+          ]
+        },
+        {
+          "name": "Smithfield Two",
+          "candidate_counts": [
+            687,
+            384,
+            11,
+            3
+          ]
+        },
+        {
+          "name": "Smithfield Three",
+          "candidate_counts": [
+            495,
+            211,
+            15,
+            1
+          ]
+        },
+        {
+          "name": "Stroud One",
+          "candidate_counts": [
+            1204,
+            410,
+            28,
+            3
+          ]
+        },
+        {
+          "name": "Stroud Two",
+          "candidate_counts": [
+            1198,
+            341,
+            20,
+            3
+          ]
+        },
+        {
+          "name": "Stroud Three",
+          "candidate_counts": [
+            831,
+            337,
+            20,
+            3
+          ]
+        },
+        {
+          "name": "Stroud Four",
+          "candidate_counts": [
+            702,
+            390,
+            17,
+            1
+          ]
+        },
+        {
+          "name": "Stroud Five",
+          "candidate_counts": [
+            489,
+            261,
+            10,
+            0
+          ]
+        },
+        {
+          "name": "Stroud Six",
+          "candidate_counts": [
+            628,
+            327,
+            19,
+            0
+          ]
+        },
+        {
+          "name": "Stroud Seven",
+          "candidate_counts": [
+            176,
+            123,
+            2,
+            0
+          ]
+        },
+        {
+          "name": "Stroudsburg First Ward",
+          "candidate_counts": [
+            130,
+            25,
+            1,
+            0
+          ]
+        },
+        {
+          "name": "Stroudsburg Second Ward",
+          "candidate_counts": [
+            305,
+            84,
+            7,
+            1
+          ]
+        },
+        {
+          "name": "Stroudsburg Third Ward",
+          "candidate_counts": [
+            237,
+            87,
+            2,
+            1
+          ]
+        },
+        {
+          "name": "Stroudsburg Fourth Ward",
+          "candidate_counts": [
+            352,
+            92,
+            10,
+            0
+          ]
+        },
+        {
+          "name": "Stroudsburg Fifth Ward",
+          "candidate_counts": [
+            428,
+            184,
+            12,
+            2
+          ]
+        },
+        {
+          "name": "Tobyhanna Eastern",
+          "candidate_counts": [
+            1332,
+            639,
+            23,
+            0
+          ]
+        },
+        {
+          "name": "Tobyhanna Western",
+          "candidate_counts": [
+            606,
+            581,
+            20,
+            0
+          ]
+        },
+        {
+          "name": "Tunkhannock East",
+          "candidate_counts": [
+            727,
+            454,
+            29,
+            1
+          ]
+        },
+        {
+          "name": "Tunkhannock West",
+          "candidate_counts": [
+            632,
+            417,
+            21,
+            1
+          ]
+        }
+      ],
+      "receipt": {
+        "url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=GOVERNOR+AND+LIEUTENANT+GOVERNOR&id=10",
+        "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=GOVERNOR+AND+LIEUTENANT+GOVERNOR&id=10",
+        "method": "GET",
+        "status": 200,
+        "bytes": 45945,
+        "sha256": "2c28eab66c81b11661dd5c382d8d78ad7f82b89a0e56fbb9cf208f3ff602b2a3",
+        "acquired_at": "2026-11-07T06:14:20.408246+00:00",
+        "content_type": "text/html; charset=utf-8",
+        "last_modified": null,
+        "etag": null,
+        "http_date": "Sat, 07 Nov 2026 06:14:20 GMT",
+        "role": "new_separately_dated_official_observation_not_overwrite_of_old_source"
+      }
+    },
+    {
+      "office": "us_house",
+      "district": "7",
+      "native_contest": "REPRESENTATIVE IN CONGRESS 7TH DISTRICT",
+      "source_updated_at": "11/6/2026 2:25:30 PM",
+      "candidates": [
+        {
+          "candidate_html": "BOB BROOKS",
+          "party_html": "DEMOCRATIC",
+          "votes": 2052,
+          "modes": {
+            "Election Day": 1215,
+            "Mail-In/Absentee": 820,
+            "Provisional": 17
+          }
+        },
+        {
+          "candidate_html": "RYAN MACKENZIE",
+          "party_html": "REPUBLICAN",
+          "votes": 3162,
+          "modes": {
+            "Election Day": 2722,
+            "Mail-In/Absentee": 433,
+            "Provisional": 7
+          }
+        },
+        {
+          "candidate_html": "Write-in",
+          "party_html": "",
+          "votes": 16,
+          "modes": {
+            "Election Day": 10,
+            "Mail-In/Absentee": 6,
+            "Provisional": 0
+          }
+        }
+      ],
+      "totals": {
+        "contest_votes": 5230,
+        "precincts_reported": 3,
+        "precincts_total": 3
+      },
+      "reporting_units": [
+        {
+          "name": "Eldred",
+          "candidate_counts": [
+            395,
+            765,
+            2
+          ]
+        },
+        {
+          "name": "Polk",
+          "candidate_counts": [
+            1223,
+            1754,
+            12
+          ]
+        },
+        {
+          "name": "Ross One",
+          "candidate_counts": [
+            434,
+            643,
+            2
+          ]
+        }
+      ],
+      "receipt": {
+        "url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=REPRESENTATIVE+IN+CONGRESS+7TH+DISTRICT&id=10",
+        "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=REPRESENTATIVE+IN+CONGRESS+7TH+DISTRICT&id=10",
+        "method": "GET",
+        "status": 200,
+        "bytes": 16118,
+        "sha256": "c84f98bbd072cc624bc42ab9075e6bfc5fc73f10f96ee2cd88056f591c08b3aa",
+        "acquired_at": "2026-11-07T06:14:20.548549+00:00",
+        "content_type": "text/html; charset=utf-8",
+        "last_modified": null,
+        "etag": null,
+        "http_date": "Sat, 07 Nov 2026 06:14:20 GMT",
+        "role": "new_separately_dated_official_observation_not_overwrite_of_old_source"
+      }
+    },
+    {
+      "office": "us_house",
+      "district": "8",
+      "native_contest": "REPRESENTATIVE IN CONGRESS 8TH DISTRICT",
+      "source_updated_at": "11/6/2026 2:25:30 PM",
+      "candidates": [
+        {
+          "candidate_html": "PAIGE COGNETTI",
+          "party_html": "DEMOCRATIC",
+          "votes": 33567,
+          "modes": {
+            "Election Day": 20662,
+            "Mail-In/Absentee": 12622,
+            "Provisional": 283
+          }
+        },
+        {
+          "candidate_html": "ROB BRESNAHAN JR",
+          "party_html": "REPUBLICAN",
+          "votes": 22181,
+          "modes": {
+            "Election Day": 17905,
+            "Mail-In/Absentee": 4180,
+            "Provisional": 96
+          }
+        },
+        {
+          "candidate_html": "Write-in",
+          "party_html": "",
+          "votes": 118,
+          "modes": {
+            "Election Day": 84,
+            "Mail-In/Absentee": 34,
+            "Provisional": 0
+          }
+        }
+      ],
+      "totals": {
+        "contest_votes": 55866,
+        "precincts_reported": 52,
+        "precincts_total": 52
+      },
+      "reporting_units": [
+        {
+          "name": "Barrett One",
+          "candidate_counts": [
+            337,
+            338,
+            1
+          ]
+        },
+        {
+          "name": "Barrett Two",
+          "candidate_counts": [
+            554,
+            548,
+            2
+          ]
+        },
+        {
+          "name": "Chestnuthill One",
+          "candidate_counts": [
+            1080,
+            989,
+            5
+          ]
+        },
+        {
+          "name": "Chestnuthill Two",
+          "candidate_counts": [
+            838,
+            857,
+            3
+          ]
+        },
+        {
+          "name": "Chestnuthill Three",
+          "candidate_counts": [
+            482,
+            511,
+            1
+          ]
+        },
+        {
+          "name": "Chestnuthill Four",
+          "candidate_counts": [
+            602,
+            736,
+            4
+          ]
+        },
+        {
+          "name": "Coolbaugh One",
+          "candidate_counts": [
+            784,
+            551,
+            1
+          ]
+        },
+        {
+          "name": "Coolbaugh Two",
+          "candidate_counts": [
+            538,
+            321,
+            2
+          ]
+        },
+        {
+          "name": "Coolbaugh Three",
+          "candidate_counts": [
+            1548,
+            487,
+            3
+          ]
+        },
+        {
+          "name": "Coolbaugh Four",
+          "candidate_counts": [
+            1191,
+            402,
+            4
+          ]
+        },
+        {
+          "name": "Delaware Water Gap",
+          "candidate_counts": [
+            213,
+            102,
+            0
+          ]
+        },
+        {
+          "name": "East Stroudsburg First Ward",
+          "candidate_counts": [
+            308,
+            107,
+            1
+          ]
+        },
+        {
+          "name": "East Stroudsburg Second Ward",
+          "candidate_counts": [
+            370,
+            76,
+            3
+          ]
+        },
+        {
+          "name": "East Stroudsburg Third Ward",
+          "candidate_counts": [
+            140,
+            59,
+            0
+          ]
+        },
+        {
+          "name": "East Stroudsburg Fourth Ward",
+          "candidate_counts": [
+            361,
+            183,
+            2
+          ]
+        },
+        {
+          "name": "East Stroudsburg Fifth Ward",
+          "candidate_counts": [
+            300,
+            171,
+            2
+          ]
+        },
+        {
+          "name": "East Stroudsburg Sixth Ward",
+          "candidate_counts": [
+            362,
+            192,
+            0
+          ]
+        },
+        {
+          "name": "Hamilton Northern",
+          "candidate_counts": [
+            1114,
+            1061,
+            5
+          ]
+        },
+        {
+          "name": "Hamilton Southern",
+          "candidate_counts": [
+            754,
+            766,
+            3
+          ]
+        },
+        {
+          "name": "Jackson North",
+          "candidate_counts": [
+            727,
+            587,
+            1
+          ]
+        },
+        {
+          "name": "Jackson South",
+          "candidate_counts": [
+            725,
+            676,
+            7
+          ]
+        },
+        {
+          "name": "Middle Smithfield One",
+          "candidate_counts": [
+            916,
+            575,
+            2
+          ]
+        },
+        {
+          "name": "Middle Smithfield Two",
+          "candidate_counts": [
+            646,
+            552,
+            5
+          ]
+        },
+        {
+          "name": "Middle Smithfield Three",
+          "candidate_counts": [
+            806,
+            459,
+            1
+          ]
+        },
+        {
+          "name": "Middle Smithfield Four",
+          "candidate_counts": [
+            1157,
+            532,
+            3
+          ]
+        },
+        {
+          "name": "Mount Pocono",
+          "candidate_counts": [
+            609,
+            322,
+            3
+          ]
+        },
+        {
+          "name": "Paradise",
+          "candidate_counts": [
+            633,
+            651,
+            1
+          ]
+        },
+        {
+          "name": "Pocono One",
+          "candidate_counts": [
+            442,
+            344,
+            1
+          ]
+        },
+        {
+          "name": "Pocono Two",
+          "candidate_counts": [
+            599,
+            415,
+            3
+          ]
+        },
+        {
+          "name": "Pocono Three",
+          "candidate_counts": [
+            646,
+            469,
+            1
+          ]
+        },
+        {
+          "name": "Pocono Four",
+          "candidate_counts": [
+            854,
+            541,
+            6
+          ]
+        },
+        {
+          "name": "Price",
+          "candidate_counts": [
+            829,
+            606,
+            1
+          ]
+        },
+        {
+          "name": "Ross Two",
+          "candidate_counts": [
+            525,
+            632,
+            1
+          ]
+        },
+        {
+          "name": "Smithfield One",
+          "candidate_counts": [
+            813,
+            402,
+            1
+          ]
+        },
+        {
+          "name": "Smithfield Two",
+          "candidate_counts": [
+            658,
+            418,
+            3
+          ]
+        },
+        {
+          "name": "Smithfield Three",
+          "candidate_counts": [
+            483,
+            236,
+            2
+          ]
+        },
+        {
+          "name": "Stroud One",
+          "candidate_counts": [
+            1195,
+            447,
+            6
+          ]
+        },
+        {
+          "name": "Stroud Two",
+          "candidate_counts": [
+            1160,
+            400,
+            4
+          ]
+        },
+        {
+          "name": "Stroud Three",
+          "candidate_counts": [
+            799,
+            381,
+            3
+          ]
+        },
+        {
+          "name": "Stroud Four",
+          "candidate_counts": [
+            668,
+            435,
+            0
+          ]
+        },
+        {
+          "name": "Stroud Five",
+          "candidate_counts": [
+            484,
+            274,
+            2
+          ]
+        },
+        {
+          "name": "Stroud Six",
+          "candidate_counts": [
+            594,
+            370,
+            3
+          ]
+        },
+        {
+          "name": "Stroud Seven",
+          "candidate_counts": [
+            163,
+            137,
+            0
+          ]
+        },
+        {
+          "name": "Stroudsburg First Ward",
+          "candidate_counts": [
+            127,
+            29,
+            0
+          ]
+        },
+        {
+          "name": "Stroudsburg Second Ward",
+          "candidate_counts": [
+            304,
+            92,
+            1
+          ]
+        },
+        {
+          "name": "Stroudsburg Third Ward",
+          "candidate_counts": [
+            228,
+            97,
+            2
+          ]
+        },
+        {
+          "name": "Stroudsburg Fourth Ward",
+          "candidate_counts": [
+            339,
+            114,
+            1
+          ]
+        },
+        {
+          "name": "Stroudsburg Fifth Ward",
+          "candidate_counts": [
+            402,
+            218,
+            0
+          ]
+        },
+        {
+          "name": "Tobyhanna Eastern",
+          "candidate_counts": [
+            1251,
+            736,
+            4
+          ]
+        },
+        {
+          "name": "Tobyhanna Western",
+          "candidate_counts": [
+            575,
+            629,
+            2
+          ]
+        },
+        {
+          "name": "Tunkhannock East",
+          "candidate_counts": [
+            707,
+            500,
+            6
+          ]
+        },
+        {
+          "name": "Tunkhannock West",
+          "candidate_counts": [
+            627,
+            448,
+            0
+          ]
+        }
+      ],
+      "receipt": {
+        "url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=REPRESENTATIVE+IN+CONGRESS+8TH+DISTRICT&id=10",
+        "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=REPRESENTATIVE+IN+CONGRESS+8TH+DISTRICT&id=10",
+        "method": "GET",
+        "status": 200,
+        "bytes": 37756,
+        "sha256": "37c49ba911367f86ead0f5886a64ea1168d29c20e18a50bc36ca4736d12a5c4f",
+        "acquired_at": "2026-11-07T06:14:20.711014+00:00",
+        "content_type": "text/html; charset=utf-8",
+        "last_modified": null,
+        "etag": null,
+        "http_date": "Sat, 07 Nov 2026 06:14:20 GMT",
+        "role": "new_separately_dated_official_observation_not_overwrite_of_old_source"
+      }
+    }
+  ]
+}

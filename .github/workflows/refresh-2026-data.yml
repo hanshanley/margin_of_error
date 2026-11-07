@@ -39,7 +39,7 @@ jobs:
         run: python -m pip install -r scripts/requirements-precinct-results.txt pytest
 
       - name: Test full party reproduction and fail-closed refresh contracts
-        run: python -m pytest -q scripts/test-county-party-votes.py scripts/test-official-county-merge.py scripts/test-2026-refresh.py
+        run: python -m pytest -q scripts/test-county-party-votes.py scripts/test-official-county-merge.py scripts/test-2026-refresh.py scripts/test-review-monroe-house-selection.py
 
       - name: Configure the requested publishing identity
         run: |

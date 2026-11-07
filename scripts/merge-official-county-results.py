@@ -15,12 +15,13 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGES = [
-    ("42089", "Monroe", "20261105-monroe-official-01"),
+    ("42089", "Monroe", "20261107-monroe-selected-01"),
     ("42017", "Bucks", "20261105-bucks-reviewed-02"),
     ("42091", "Montgomery", "20261105-montgomery-reviewed-01"),
 ]
 APPROVED_MANIFESTS = {
     "20261105-monroe-official-01": "7e71657b7aba3b73519d4bc09f2c230e8b3325e1932e06370023a3c726df1846",
+    "20261107-monroe-selected-01": "3a86c916cda3fce6e60d6cc4f06dcf004eff19acb71f7518b0ff91b3818cce60",
     "20261105-bucks-reviewed-02": "baa595356ab930959fc60acbd7ba0cb01d55fe5b1f469b0bf45472326d88ebe0",
     "20261105-montgomery-reviewed-01": "389ad6c65ddf69a3624136bb5b3c7a98f66b34e1b3ec0c193548837478b38571",
 }
@@ -56,6 +57,16 @@ def official_row(folder, fips, name, reference):
         raise ValueError("Official county identity differs from 2026 Census reference")
     audit = read(folder / "audit.json")
     rows = list(csv.DictReader((folder / "county-candidate-results.csv").open()))
+    selected_monroe = name == "Monroe" and audit.get("package_kind") == "selected_native_facts_v1"
+    if selected_monroe:
+        spec = importlib.util.spec_from_file_location("monroe_selection",
+            Path(__file__).with_name("review-monroe-house-selection.py"))
+        selection = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(selection)
+        expected_audit, expected_rows, _ = selection.review(selection.load(folder / "selected-source-facts.json"))
+        if (audit != expected_audit
+                or rows != [{key: str(value) for key, value in row.items()} for row in expected_rows]):
+            raise ValueError("Selected Monroe outputs differ from the pinned native facts")
     selected = [r for r in rows if r["office"] == "us_house"]
     expected = {"Monroe": {"7", "8"}, "Bucks": {"1"}, "Montgomery": {"1", "4", "5"}}[name]
     fragments, seen = {}, set()
@@ -93,7 +104,7 @@ def official_row(folder, fips, name, reference):
                 dict(name=candidate, party=party, votes=votes))
     if set(fragments) != expected:
         raise ValueError("Official county House district inventory changed")
-    allowed = {"Monroe": {"DEMOCRATIC", "REPUBLICAN", "Nonpartisan"},
+    allowed = {"Monroe": {"DEMOCRATIC", "REPUBLICAN", "" if selected_monroe else "Nonpartisan"},
                "Bucks": {"Dem", "Rep", "Nonpart"}, "Montgomery": {"DEM", "REP", ""}}[name]
     if set(parties) != allowed:
         raise ValueError("Unreviewed literal party inventory")
@@ -273,6 +284,8 @@ def merge(folder, reference_folder, packages_root=ROOT / "data/county-source-rev
                      "Provider audit fields remain provider-only; composite coverage is in index.json.")
     write(folder / "audit.json", audit)
     shutil.copyfile(Path(__file__), folder / Path(__file__).name)
+    shutil.copyfile(Path(__file__).with_name("review-monroe-house-selection.py"),
+                    folder / "review-monroe-house-selection.py")
     write(folder / "checksums.json", {p.relative_to(folder).as_posix():checksum(p)
         for p in sorted(folder.rglob("*")) if p.is_file() and p != folder / "checksums.json"})
     return additions
