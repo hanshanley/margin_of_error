@@ -12,6 +12,28 @@ const modelRoot = 'data/participation-swing/20261106-conditional-model-01';
 export const swingVersion = '20261106-02';
 export const swingRoot = `public/participation-swing/${swingVersion}`;
 
+export function verifyFrozenSwingInputs(inputs, readBytes = readFileSync) {
+  for (const input of inputs) {
+    let bytes = readBytes(input.path);
+    const matches = value => value.length === input.bytes
+      && createHash('sha256').update(value).digest('hex') === input.sha256;
+    if (!matches(bytes) && input.path === 'public/county-results.json') {
+      const pointer = JSON.parse(bytes);
+      for (const [index, snapshot] of (pointer.previous_snapshots ?? []).entries()) {
+        const previous = Buffer.from(`${JSON.stringify({
+          ...pointer, ...snapshot, previous_snapshots: pointer.previous_snapshots.slice(index + 1),
+        }, null, 2)}\n`);
+        if (matches(previous)) {
+          bytes = previous;
+          break;
+        }
+      }
+    }
+    assert.ok(matches(bytes), `Changed frozen analysis input: ${input.path}`);
+  }
+  return true;
+}
+
 export function qualifyConditionalScenarios(model, observedSwing) {
   assert.equal(model.status, 'experimental_conditional_model_not_individually_identified');
   assert.equal(model.validated_individual_attribution, false);
@@ -116,6 +138,7 @@ export function demographicRegistry(records) {
 }
 
 export function buildSwingAnalysis() {
+  verifyFrozenSwingInputs(read(`${swingRoot}/inputs.json`));
   const audit = read(`${cohortRoot}/audit.json`);
   const records = read(`${cohortRoot}/aggregate-cohort.json`);
   const candidates = read(`${candidateRoot}/county-contest-methods.json`);
@@ -207,23 +230,6 @@ export function buildSwingAnalysis() {
   ]) {
     writeFileSync(`${swingRoot}/${name}`, `${JSON.stringify(value)}\n`);
   }
-  const inputs = [
-    `${cohortRoot}/audit.json`, `${cohortRoot}/aggregate-cohort.json`,
-    `${candidateRoot}/candidate-audit.json`, `${candidateRoot}/county-contest-methods.json`,
-    `${candidateRoot}/source-receipt.json`, `${candidateRoot}/NC-results-20241105.zip`,
-    'data/precinct-results/20261105T015000Z/originals/NC-results-20261103.zip',
-    ...['conditional-transitions.json', 'historical-choice-model.json', 'nationwide-scope.json',
-      'linked-cohort-audit.json'].map(file => `${modelRoot}/${file}`),
-    participationPath, 'public/county-results.json', 'public/participation-results/latest.json',
-  ];
-  const countyPointer = read('public/county-results.json');
-  const districtPointer = read('public/participation-results/latest.json');
-  inputs.push(`${countyPointer.party_votes.data_directory}/county-district-candidate-totals.csv.gz`,
-    `public/participation-results/${districtPointer.snapshot_id}/margins.json`);
-  writeFileSync(`${swingRoot}/inputs.json`, `${JSON.stringify(inputs.map(path => {
-    const bytes = readFileSync(path);
-    return { path, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') };
-  }), null, 2)}\n`);
   return output;
 }
 
