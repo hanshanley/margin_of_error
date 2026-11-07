@@ -1,0 +1,202 @@
+{
+  "study_id": "slu-yougov-2026-08-mo",
+  "geography": "MO",
+  "universe": "registered_likely_voters",
+  "completed_voting": false,
+  "contest_scope": "generic_US_House_party_in_respondents_own_district",
+  "field_period": {
+    "start": "2026-08-13",
+    "end": "2026-08-24"
+  },
+  "raw_sample": 900,
+  "native_variables": {
+    "prior": "presvote24post",
+    "house": "POLS025",
+    "likelihood": "QB",
+    "weight": "weight"
+  },
+  "source_files": {
+    "survey": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/public-data/august-2026-poll/stlu0016-output-numeric.csv",
+      "bytes": 532929,
+      "sha256": "ee9ef15692aebaaa35bd97947d26946a3a5e53cdb2ab6aface72ebc0d0d5509e"
+    },
+    "codebook": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/public-data/august-2026-poll/stlu0016-codebook.pdf",
+      "bytes": 86774,
+      "sha256": "ca771025ba2b2e40448d7cb69374e1d2f5bc0a0c84753fdc7cf04c5248e830aa"
+    },
+    "topline": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/-pdf/slu-poll-august-2026-topline-results.pdf",
+      "bytes": 1762710,
+      "sha256": "ba90493f673ba7d36b5d608b3d616b9d32dde237bc6b05726a97698bcaaf2f11"
+    }
+  },
+  "groups": [
+    {
+      "native_variable": "gender",
+      "native_code": "2",
+      "native_description": "Sex",
+      "native_label": "Female",
+      "display_label": "Female (native Sex category)",
+      "rows": [
+        {
+          "prior_party": "D",
+          "reported_2024_choice": "Harris",
+          "raw_prior_base": 238,
+          "kish_weight_concentration_base": 149.87287439252677,
+          "weighted_house_shares": {
+            "D": 0.9073920616422253,
+            "R": 0.0142866171351432,
+            "Other": 0.02034517017086606,
+            "Not sure": 0.057976151051765415
+          }
+        },
+        {
+          "prior_party": "R",
+          "reported_2024_choice": "Trump",
+          "raw_prior_base": 206,
+          "kish_weight_concentration_base": 156.10811996143252,
+          "weighted_house_shares": {
+            "D": 0.04278433518682422,
+            "R": 0.8595571890898527,
+            "Other": 0.028252786429654054,
+            "Not sure": 0.06940568929366908
+          }
+        }
+      ]
+    },
+    {
+      "native_variable": "race",
+      "native_code": "1",
+      "native_description": "Race",
+      "native_label": "White",
+      "display_label": "White (native Race category)",
+      "rows": [
+        {
+          "prior_party": "D",
+          "reported_2024_choice": "Harris",
+          "raw_prior_base": 283,
+          "kish_weight_concentration_base": 191.3354883472865,
+          "weighted_house_shares": {
+            "D": 0.942762722915372,
+            "R": 0.0,
+            "Other": 0.010418750314933096,
+            "Not sure": 0.04681852676969496
+          }
+        },
+        {
+          "prior_party": "R",
+          "reported_2024_choice": "Trump",
+          "raw_prior_base": 374,
+          "kish_weight_concentration_base": 286.1036199297394,
+          "weighted_house_shares": {
+            "D": 0.037022061198272824,
+            "R": 0.8940737419110065,
+            "Other": 0.012682618111370027,
+            "Not sure": 0.05622157877935047
+          }
+        }
+      ]
+    },
+    {
+      "native_variable": "USR_Classification",
+      "native_code": "3",
+      "native_description": "USR_Classification",
+      "native_label": "Suburban",
+      "display_label": "Suburban (native geographic context)",
+      "rows": [
+        {
+          "prior_party": "D",
+          "reported_2024_choice": "Harris",
+          "raw_prior_base": 163,
+          "kish_weight_concentration_base": 103.93008370053556,
+          "weighted_house_shares": {
+            "D": 0.9166013265665696,
+            "R": 0.02174492525222579,
+            "Other": 0.02455747523252624,
+            "Not sure": 0.03709627294867844
+          }
+        },
+        {
+          "prior_party": "R",
+          "reported_2024_choice": "Trump",
+          "raw_prior_base": 145,
+          "kish_weight_concentration_base": 106.6994077634978,
+          "weighted_house_shares": {
+            "D": 0.06977314805916986,
+            "R": 0.8784724491168727,
+            "Other": 0.020123259851498786,
+            "Not sure": 0.03163114297245873
+          }
+        }
+      ]
+    },
+    {
+      "native_variable": "marstat",
+      "native_code": "1",
+      "native_description": "Marital Status",
+      "native_label": "Married",
+      "display_label": "Married",
+      "rows": [
+        {
+          "prior_party": "D",
+          "reported_2024_choice": "Harris",
+          "raw_prior_base": 162,
+          "kish_weight_concentration_base": 114.77040560235159,
+          "weighted_house_shares": {
+            "D": 0.9342894055796324,
+            "R": 0.015705102313019897,
+            "Other": 0.0,
+            "Not sure": 0.05000549210734775
+          }
+        },
+        {
+          "prior_party": "R",
+          "reported_2024_choice": "Trump",
+          "raw_prior_base": 264,
+          "kish_weight_concentration_base": 206.3446641169723,
+          "weighted_house_shares": {
+            "D": 0.031714504077658405,
+            "R": 0.8725026231362778,
+            "Other": 0.026462371487911984,
+            "Not sure": 0.06932050129815173
+          }
+        }
+      ]
+    },
+    {
+      "native_variable": "child18",
+      "native_code": "2",
+      "native_description": "Children under age 18 in household",
+      "native_label": "No",
+      "display_label": "No children under 18 in household",
+      "rows": [
+        {
+          "prior_party": "D",
+          "reported_2024_choice": "Harris",
+          "raw_prior_base": 295,
+          "kish_weight_concentration_base": 181.89236111063622,
+          "weighted_house_shares": {
+            "D": 0.9375179578026239,
+            "R": 0.013039167794978717,
+            "Other": 0.010640375728886984,
+            "Not sure": 0.03880249867351048
+          }
+        },
+        {
+          "prior_party": "R",
+          "reported_2024_choice": "Trump",
+          "raw_prior_base": 320,
+          "kish_weight_concentration_base": 238.14680458604275,
+          "weighted_house_shares": {
+            "D": 0.024015937192088204,
+            "R": 0.8961509501073524,
+            "Other": 0.021582331402378245,
+            "Not sure": 0.05825078129818126
+          }
+        }
+      ]
+    }
+  ]
+}

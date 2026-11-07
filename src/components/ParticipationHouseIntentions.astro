@@ -4,6 +4,10 @@ const base = '/participation-slu-intentions/20261107-01/';
 type Row = { reported_2024_choice: string; raw_prior_base: number;
 	kish_weight_concentration_base: number; intended_house_pct: Record<string, number> };
 const review: { rows: Row[] } = JSON.parse(readFileSync(`public${base}intentions.json`, 'utf8'));
+const demographicBase = '/participation-slu-demographic-intentions/20261107-01/';
+type Group = { native_variable: string; native_code: string; display_label: string; rows: Row[] };
+const demographics: { groups: Group[] } = JSON.parse(
+	readFileSync(`public${demographicBase}intentions.json`, 'utf8'));
 const pct = (value: number) => `${value.toFixed(1)}%`;
 ---
 
@@ -41,6 +45,44 @@ const pct = (value: number) => `${value.toFixed(1)}%`;
 		No subgroup confidence intervals are supplied; one-decimal display is not a precision guarantee.
 		Sampling, selection, recall and intention error remain. This separate earlier study does not
 		fill Missouri's missing post-election SSRS state table.</p>
+	<details id="participation-house-demographic-intentions" class="explorer-notes">
+		<summary>Five broad native demographic groups: August intentions only</summary>
+		<p>These are actual joint responses, not multiplied demographic and vote-choice marginals.
+			The five groups passed an outcome-independent support screen and separate descriptive-scope
+			and disclosure review. <strong>Support screening is not a precision guarantee.</strong>
+			They overlap, are not additive, and are not tests of differences between demographic groups.</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Missouri native-group August intended House choice">
+			<table>
+				<caption>Among each native group reporting the prior choice: all D, R, other and unsure
+					responses remain in the denominator. Not original-coalition percentages or November transitions.</caption>
+				<thead><tr><th scope="col">Native group</th><th scope="col">Reported 2024 choice</th>
+					<th scope="col">Raw n</th><th scope="col">Kish diagnostic</th><th scope="col">Intended D</th>
+					<th scope="col">Intended R</th><th scope="col">Other</th><th scope="col">Not sure</th></tr></thead>
+				<tbody>{demographics.groups.flatMap(group => group.rows.map(row =>
+					<tr data-slu-demographic={`${group.native_variable}:${group.native_code}:${row.reported_2024_choice}`}>
+						<th scope="row">{group.display_label} — {row.reported_2024_choice}</th>
+						<td>{row.reported_2024_choice}</td>
+						<td data-demographic-base>{row.raw_prior_base}</td>
+						<td data-demographic-kish>{row.kish_weight_concentration_base.toFixed(1)}</td>
+						{['D', 'R', 'Other', 'Not sure'].map(party =>
+							<td data-demographic-choice={party}>{pct(row.intended_house_pct[party])}</td>)}
+					</tr>))}</tbody>
+			</table>
+		</div>
+		<p>Female retains the source's Sex category, not an administrative-sex or gender-identity equivalence.
+			White is the native Race category, not a harmonized non-Hispanic White definition.
+			Suburban is geographic context; its classification method and vintage remain unverified,
+			not measured individual residence type. Demographic measurement dates are unverified.</p>
+		<p>No subgroup design confidence intervals are available. Rare responses may be unstable;
+			a displayed zero does not establish population absence. <strong>No November scaling,
+			demographic turnout, drop-off or county/precinct estimates</strong> are inferred.
+			Fine cells and respondent records remain private; the original overall archive is unchanged.</p>
+		<div class="download-links">
+			<a href={`${demographicBase}complete-analysis.zip`} download>Complete native-group intentions + inputs + code + results (ZIP)</a>
+			<a href={`${demographicBase}intentions.json`} download>Native-group intentions + qualifications (JSON)</a>
+			<a href={`${demographicBase}download.json`} download>Native-group archive bytes and SHA-256</a>
+		</div>
+	</details>
 	<details class="explorer-notes"><summary>Methods, source versions and complete selected inputs</summary>
 		<p><a href="https://www.slu.edu/research/research-institute/big-ideas/slu-poll/-pdf/slu-poll-august-2026-topline-results.pdf">The wave-specific questionnaire and methods</a>
 			describe weighting 1,074 registered voters, including 2024 presidential-choice calibration,

@@ -1,0 +1,225 @@
+{
+  "status": "descriptive_native_group_august_intentions_not_november_transitions",
+  "study_id": "slu-yougov-2026-08-mo",
+  "geography": "MO",
+  "field_period": {
+    "start": "2026-08-13",
+    "end": "2026-08-24"
+  },
+  "universe": "registered_likely_voters",
+  "contest_scope": "generic_US_House_party_in_respondents_own_district",
+  "source_files": {
+    "survey": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/public-data/august-2026-poll/stlu0016-output-numeric.csv",
+      "bytes": 532929,
+      "sha256": "ee9ef15692aebaaa35bd97947d26946a3a5e53cdb2ab6aface72ebc0d0d5509e"
+    },
+    "codebook": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/public-data/august-2026-poll/stlu0016-codebook.pdf",
+      "bytes": 86774,
+      "sha256": "ca771025ba2b2e40448d7cb69374e1d2f5bc0a0c84753fdc7cf04c5248e830aa"
+    },
+    "topline": {
+      "url": "https://www.slu.edu/research/research-institute/big-ideas/slu-poll/-pdf/slu-poll-august-2026-topline-results.pdf",
+      "bytes": 1762710,
+      "sha256": "ba90493f673ba7d36b5d608b3d616b9d32dde237bc6b05726a97698bcaaf2f11"
+    }
+  },
+  "groups": [
+    {
+      "native_variable": "gender",
+      "native_code": "2",
+      "native_description": "Sex",
+      "native_label": "Female",
+      "display_label": "Female (native Sex category)",
+      "rows": [
+        {
+          "prior_party": "D",
+          "reported_2024_choice": "Harris",
+          "raw_prior_base": 238,
+          "kish_weight_concentration_base": 149.87287439252677,
+          "intended_house_pct": {
+            "D": 90.73920616422254,
+            "R": 1.42866171351432,
+            "Other": 2.034517017086606,
+            "Not sure": 5.797615105176542
+          }
+        },
+        {
+          "prior_party": "R",
+          "reported_2024_choice": "Trump",
+          "raw_prior_base": 206,
+          "kish_weight_concentration_base": 156.10811996143252,
+          "intended_house_pct": {
+            "D": 4.278433518682422,
+            "R": 85.95571890898526,
+            "Other": 2.8252786429654053,
+            "Not sure": 6.940568929366908
+          }
+        }
+      ]
+    },
+    {
+      "native_variable": "race",
+      "native_code": "1",
+      "native_description": "Race",
+      "native_label": "White",
+      "display_label": "White (native Race category)",
+      "rows": [
+        {
+          "prior_party": "D",
+          "reported_2024_choice": "Harris",
+          "raw_prior_base": 283,
+          "kish_weight_concentration_base": 191.3354883472865,
+          "intended_house_pct": {
+            "D": 94.2762722915372,
+            "R": 0.0,
+            "Other": 1.0418750314933096,
+            "Not sure": 4.681852676969496
+          }
+        },
+        {
+          "prior_party": "R",
+          "reported_2024_choice": "Trump",
+          "raw_prior_base": 374,
+          "kish_weight_concentration_base": 286.1036199297394,
+          "intended_house_pct": {
+            "D": 3.702206119827282,
+            "R": 89.40737419110066,
+            "Other": 1.2682618111370028,
+            "Not sure": 5.622157877935047
+          }
+        }
+      ]
+    },
+    {
+      "native_variable": "USR_Classification",
+      "native_code": "3",
+      "native_description": "USR_Classification",
+      "native_label": "Suburban",
+      "display_label": "Suburban (native geographic context)",
+      "rows": [
+        {
+          "prior_party": "D",
+          "reported_2024_choice": "Harris",
+          "raw_prior_base": 163,
+          "kish_weight_concentration_base": 103.93008370053556,
+          "intended_house_pct": {
+            "D": 91.66013265665696,
+            "R": 2.174492525222579,
+            "Other": 2.455747523252624,
+            "Not sure": 3.709627294867844
+          }
+        },
+        {
+          "prior_party": "R",
+          "reported_2024_choice": "Trump",
+          "raw_prior_base": 145,
+          "kish_weight_concentration_base": 106.6994077634978,
+          "intended_house_pct": {
+            "D": 6.977314805916985,
+            "R": 87.84724491168727,
+            "Other": 2.0123259851498787,
+            "Not sure": 3.1631142972458735
+          }
+        }
+      ]
+    },
+    {
+      "native_variable": "marstat",
+      "native_code": "1",
+      "native_description": "Marital Status",
+      "native_label": "Married",
+      "display_label": "Married",
+      "rows": [
+        {
+          "prior_party": "D",
+          "reported_2024_choice": "Harris",
+          "raw_prior_base": 162,
+          "kish_weight_concentration_base": 114.77040560235159,
+          "intended_house_pct": {
+            "D": 93.42894055796323,
+            "R": 1.5705102313019896,
+            "Other": 0.0,
+            "Not sure": 5.000549210734775
+          }
+        },
+        {
+          "prior_party": "R",
+          "reported_2024_choice": "Trump",
+          "raw_prior_base": 264,
+          "kish_weight_concentration_base": 206.3446641169723,
+          "intended_house_pct": {
+            "D": 3.1714504077658403,
+            "R": 87.25026231362779,
+            "Other": 2.646237148791198,
+            "Not sure": 6.932050129815173
+          }
+        }
+      ]
+    },
+    {
+      "native_variable": "child18",
+      "native_code": "2",
+      "native_description": "Children under age 18 in household",
+      "native_label": "No",
+      "display_label": "No children under 18 in household",
+      "rows": [
+        {
+          "prior_party": "D",
+          "reported_2024_choice": "Harris",
+          "raw_prior_base": 295,
+          "kish_weight_concentration_base": 181.89236111063622,
+          "intended_house_pct": {
+            "D": 93.7517957802624,
+            "R": 1.3039167794978717,
+            "Other": 1.0640375728886984,
+            "Not sure": 3.880249867351048
+          }
+        },
+        {
+          "prior_party": "R",
+          "reported_2024_choice": "Trump",
+          "raw_prior_base": 320,
+          "kish_weight_concentration_base": 238.14680458604275,
+          "intended_house_pct": {
+            "D": 2.4015937192088206,
+            "R": 89.61509501073523,
+            "Other": 2.1582331402378245,
+            "Not sure": 5.825078129818126
+          }
+        }
+      ]
+    }
+  ],
+  "methodology": {
+    "status": "qualified_only_for_selected_descriptive_august_intentions",
+    "study_id": "slu-yougov-2026-08-mo",
+    "public_scope": "five_broad_native_groups_two_prior_choices_all_four_intended_House_responses",
+    "selection": "An outcome-independent support screen of all native categories retained Female, White, Suburban, Married and No children under 18 in household: both major prior-choice raw and Kish bases reach 100. This is a conservative selection screen, NOT an automatic publication rule, universal precision threshold or evidence that other groups have no switching. Separate source-semantic, descriptive-estimand and disclosure review limits this release to the selected native categories.",
+    "source_review": "The pinned CSV, numeric codebook and wave-specific questionnaire were inspected. Nine demographic partitions reconcile every raw count, weight sum and squared-weight sum to the unchanged overall review. An independent Decimal calculation checked all 360 prior/group rows and 2160 joint House/likelihood cells. Selected fractions come from actual same-respondent joint observations, not products of unrelated marginal tables.",
+    "estimand": "For each selected native group and reported Harris/Trump choice, the sum of final weights for each intended House response divided by the sum of final weights for ALL respondents in that prior/group combination. Every D, R, Other and Not sure response remains in the denominator. This is descriptive conditional August intention, not a population switching rate or completed participation.",
+    "field_period": "August 13-24, 2026; 900 registered likely voters, all almost certain or probable to vote. The question concerns generic House-party intention in respondents' own districts, not a statewide House race, named-candidate result or completed November voting.",
+    "weighting": "Wave methods calibrate 1074 registered voters, including on recalled 2024 presidential choice, before selecting 900 likely voters and trimming/recentering weights. This does not establish that the selected likely voters were forced to match the 2024 electorate. No new historical-choice or demographic reweighting is applied.",
+    "native_semantics": "The source names gender but describes Sex, with a Female category; no administrative sex or gender-identity equivalence is asserted. White is the native Race category, not a harmonized non-Hispanic White definition. Suburban is native geographic context, constant within the observed native counties, with classification method and vintage unverified; it is not measured individual residence type. Married and children-under-18-in-household retain source wording. Demographic measurement dates are not independently established. No cross-source demographic harmonization, fixed-person cohort or intersection is claimed.",
+    "precision": "One decimal is display rounding, not a precision guarantee. Broad raw bases and Kish weight-concentration diagnostics are provided but do not establish design-aware joint precision. No subgroup joint-design or replicate-weight confidence intervals are supplied; the overall reported margin of error is not reused. Rare responses may be unstable and a displayed zero does not establish population absence. Sampling, selection, recall, profile-age and intention error remain. This is not a test of differences between demographic groups.",
+    "disclosure": "Select only ten broad prior/group bases and complete four-response weighted distributions. Exclude raw joint counts, joint weight sums, fine demographic cells, other demographic/profile fields, native county identifiers, respondent records and individual scores. Different dimensions overlap and are not additive. The full private demographic audit remains unqualified for public release.",
+    "rights": "Derived numerical aggregates, source citations and our exact code only. The frozen FAQ explicitly directs readers to the poll archive for independent analysis. The frozen general notice and endorsement sections were reviewed; no endorsement or source-document redistribution is claimed. Native respondent records and copyrighted PDF/HTML documents are not mirrored or relicensed. No NORC material is included. This analysis is not endorsed by SLU or YouGov.",
+    "participation": "The sample contains no observed unlikely/nonvoting comparison group or completed November turnout. Native presidential nonvote does not establish all-race nonparticipation or first-ever voting. Do not scale these intentions to November totals or use them to fill the missing post-election Missouri SSRS state table.",
+    "population_scaling_permitted": false,
+    "completed_participation_permitted": false,
+    "district_or_county_allocation_permitted": false,
+    "design_confidence_intervals_permitted": false,
+    "cross_source_demographic_harmonization_permitted": false
+  },
+  "groups_additive": false,
+  "demographic_measurement_date": null,
+  "population_switchers": null,
+  "apparent_absence": null,
+  "measured_staying_home": null,
+  "new_or_returning_identity": null,
+  "demographic_turnout": null,
+  "overall_swing_share": null,
+  "design_confidence_intervals": null,
+  "district_or_county_estimates": null
+}
