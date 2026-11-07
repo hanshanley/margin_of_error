@@ -1,0 +1,14 @@
+{
+  "file": "originals/documentation.txt",
+  "url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.1_doc.txt",
+  "status": 200,
+  "bytes": 6942,
+  "sha256": "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd",
+  "retrieved_at": "2026-11-07T05:54:08.348540+00:00",
+  "headers": {
+    "Date": "Sat, 07 Nov 2026 05:54:08 GMT",
+    "Last-Modified": "Sun, 01 Nov 2026 19:09:44 GMT",
+    "ETag": "\"1b1e-65f3bc5a68e00\"",
+    "Content-Type": "text/plain; charset=UTF-8"
+  }
+}
