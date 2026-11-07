@@ -1,0 +1,16 @@
+{
+  "file": "complete-analysis.zip",
+  "bytes": 70375,
+  "sha256": "3ae635779303cb18f205a26d2eaf76dcb3b84f205330573dc1bc941a74d91df0",
+  "members": 11,
+  "complete_selected_ballot_inputs_and_code": true,
+  "selected_reporting_unit_observations": 2419,
+  "county_election_observations": 318,
+  "county_comparisons": 53,
+  "elections": 6,
+  "source_receipts": 11,
+  "personal_records_included": false,
+  "source_page_markup_redistributed": false,
+  "individual_transitions_released": false,
+  "precinct_crosswalk_released": false
+}

@@ -1,0 +1,56 @@
+{
+  "complete_download": "All 2419 used unit ballot observations, 318 county observations, state controls, native dates/status/clocks/denominator definitions, all 11 used-source receipts, full methods, original independent check receipt, exact code/tests and results reproduce offline. Selected-fact reproduction does not reverify original HTML bytes or repeat initial native extraction. Initial extraction requires the hash-pinned private originals. Original 2022/2024/2026 package remains unchanged and available.",
+  "county_matching": "exact_source_names_not_fixed_people_or_precinct_boundaries",
+  "county_totals": "derived_sums_of_complete_native_reporting_units_not_independent_county_controls",
+  "current_snapshot": {
+    "election_id": "348",
+    "house_context_contest_id": "22055",
+    "official": false,
+    "source_version": "v75",
+    "updated_utc": "2026-11-05T01:30:08.5674284Z"
+  },
+  "demographic_turnout_rates_qualified": false,
+  "denominators": "Native historical Eligible Voters are estimated residents aged 18+, not registered voters, a fixed eligible electorate or a denominator used for demographic turnout.",
+  "endorsement": "This analysis is not endorsed by the source.",
+  "geographic_interpretation": "Exact county names only; old county IDs are portal ordinals, not FIPS. Named older units are not numeric IDs. No fixed people, analytical area overlay or precinct crosswalk.",
+  "geographic_overlay_qualified": false,
+  "independent_check": {
+    "all_selected_units": 2419,
+    "county_election_observations": 318,
+    "first_verifier_attempt": "Stopped before proof because it expected one link per county; native blocks also contain an explicit #maincontent back-to-top link. Corrected checker requires both links and reuses the same frozen originals. No source or accounting gate changed.",
+    "new_native_html_parser_independent_of_reviewer": true,
+    "new_native_named_units": 1278,
+    "old_native_extraction_repeated": false,
+    "old_observations_and_receipts_preserved_exactly": true,
+    "signed_count_changes": 265
+  },
+  "individual_transitions_qualified": false,
+  "measure": "source_reported_general_election_ballots_not_candidate_votes",
+  "named_native_units": [
+    2016,
+    2018,
+    2020
+  ],
+  "native_numeric_unit_ids": [
+    2022,
+    2024,
+    2026
+  ],
+  "original_native_markup_redistributed": false,
+  "personal_records_included": false,
+  "precinct_longitudinal_comparison_qualified": false,
+  "selected_factual_inputs_basis": "Complete aggregate election facts and source receipts, independently checked against frozen native pages; no copyrighted page code, unrelated contests or voter records.",
+  "source_attribution": "North Dakota Secretary of State and county election officials",
+  "state_code": "ND",
+  "status": "qualified_descriptive_reported_ballot_count_changes",
+  "temporal_interpretation": "Official historical counts and one unofficial frozen 2026 reported-count observation. 2026-minus-earlier counts are not final turnout change or individual transition estimates.",
+  "uncertainty": "Counts are native observations, not modeled population estimates. Their differences do not identify individual staying home, returning participation or candidate switching; no design confidence intervals are fabricated.",
+  "years": [
+    2016,
+    2018,
+    2020,
+    2022,
+    2024,
+    2026
+  ]
+}

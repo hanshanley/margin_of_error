@@ -1,0 +1,89 @@
+---
+import { readFileSync } from 'node:fs';
+const base = '/participation-nd-long-history/20261107-01/';
+type Counts = { ballots_by_year: Record<string, number>;
+	reported_count_change_since: Record<string, number> };
+type County = Counts & { county_name: string };
+const review: { statewide: Counts; counties: County[] } =
+	JSON.parse(readFileSync(`public${base}history.json`, 'utf8'));
+const years = ['2016', '2018', '2020', '2022', '2024', '2026'];
+const number = (value: number) => value.toLocaleString('en-US');
+const change = (value: number) => `${value > 0 ? '+' : ''}${number(value)}`;
+---
+
+<section id="participation-nd-long-history" class="participation-current" aria-labelledby="nd-long-history-title">
+	<header class="section-intro">
+		<p class="kicker">Administrative ballot counts · six elections</p>
+		<h2 id="nd-long-history-title">North Dakota participation, 2016–2026</h2>
+		<p>Presidential and midterm ballot counts for all 53 counties. The five historical elections
+			are official; <strong>2026 is an unofficial snapshot, not final turnout</strong>,
+			updated November 5, 2026 at 01:30 UTC.
+			Count changes are <strong>not measured prior-voter drop-off or switching</strong>.</p>
+	</header>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Six-election North Dakota statewide ballot counts">
+		<table>
+			<caption>Statewide general-election ballots. Compare midterms with midterms separately
+				from presidential elections; candidate votes are not substituted for ballots.</caption>
+			<thead><tr><th scope="col">Geography</th>
+				{years.map(year => <th scope="col">{year}{year === '2026' ? ' snapshot' : ' official'}</th>)}
+				<th scope="col">2026 vs. 2018</th><th scope="col">2026 vs. 2020</th></tr></thead>
+			<tbody><tr data-nd-long-state>
+				<th scope="row">North Dakota</th>
+				{years.map(year =>
+					<td data-nd-long-year={year}>{number(review.statewide.ballots_by_year[year])}</td>)}
+				{['2018', '2020'].map(year =>
+					<td data-nd-long-change={year}>{change(review.statewide.reported_count_change_since[year])}</td>)}
+			</tr></tbody>
+		</table>
+	</div>
+	<details class="explorer-notes" id="nd-long-history-counties">
+		<summary>All 53 counties across six elections</summary>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Six-election North Dakota county ballot counts">
+			<table>
+				<caption>Exact source county-name matches, not a fixed-person cohort. County totals
+					are sums of complete native reporting units, not independent county controls.</caption>
+				<thead><tr><th scope="col">County</th>
+					{years.map(year => <th scope="col">{year}{year === '2026' ? ' snapshot' : ''}</th>)}
+					<th scope="col">2026 vs. 2018</th><th scope="col">2026 vs. 2020</th></tr></thead>
+				<tbody>{review.counties.map(row => <tr data-nd-long-county={row.county_name}>
+					<th scope="row">{row.county_name}</th>
+					{years.map(year =>
+						<td data-nd-long-year={year}>{number(row.ballots_by_year[year])}</td>)}
+					{['2018', '2020'].map(year =>
+						<td data-nd-long-change={year}>{change(row.reported_count_change_since[year])}</td>)}
+				</tr>)}</tbody>
+			</table>
+		</div>
+	</details>
+	<p>The native sources contain 432, 424, 422, 398, 385 and 358 reporting units,
+		respectively. The older 2016–2020 tables use <strong>named reporting units, not numeric
+		precinct IDs</strong>. Names and IDs do not establish comparable precinct boundaries.
+		No new precinct map, demographic turnout rate, individual drop-off or returning-voter identity is inferred.</p>
+	<details class="explorer-notes"><summary>Source definitions, clocks and complete reproduction</summary>
+		<p>The <a href="https://www.sos.nd.gov/elections/election-results">North Dakota Secretary of State archive</a>
+			declares the historical pages. Native update clocks are November 18, 2016 at 10:32:46 AM;
+			November 20, 2018 at 10:38:27 AM; and November 12, 2020 at 3:08:14 PM.
+			No historical timezone is supplied. Every later source clock remains in the complete download.</p>
+		<p>Historical “Eligible Voters” means estimated residents aged 18+, not registered voters
+			or a fixed eligible cohort. Those values are preserved but not used to calculate rates.
+			Legacy county IDs are portal ordinals, not FIPS. Current identifiers and source clocks
+			remain separate. No longitudinal precinct crosswalk or analytical boundary overlay is established.</p>
+		<p>The complete archive contains all 2,419 selected reporting-unit observations, all 318
+			county observations, 265 signed county count comparisons, statewide controls, all 11 used-source
+			receipts, native definitions, methods, original independent source-check receipt, exact code and tests.
+			It reproduces offline from complete selected facts, not metadata alone.
+			Re-running initial extraction requires the pinned originals; native site code, unrelated contests
+			and personal records are not redistributed. The source check does not validate individual transitions.
+			This analysis is not endorsed by the source.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete six-election North Dakota inputs + code + results (ZIP)</a>
+		<a href={`${base}history.json`} download>Six-election county counts + qualifications (JSON)</a>
+		<a href={`${base}download.json`} download>Six-election archive bytes and SHA-256</a>
+		<a href="/participation-nd-ballot-history/20261107-01/complete-analysis.zip" download>Original three-election complete archive (unchanged)</a>
+	</div>
+</section>
+
+<style>
+	#participation-nd-long-history { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>
