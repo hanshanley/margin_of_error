@@ -1,0 +1,141 @@
+---
+import { readFileSync } from 'node:fs';
+const { names } = Astro.props as { names: Record<string, string> };
+const base = '/participation-estimated-coalitions/20261107-02/';
+type Values = { returning_count: number; reported_switcher_count: number; apparent_absence_count: number;
+	reported_switchers_pct_of_original_coalition: number; apparent_absence_pct_of_original_coalition: number;
+	infeasible_as_closed_original_coalition: boolean };
+type Composition = { conditional_current_electorate_count: number;
+	reported_share_pct_of_current_electorate: number; reported_current_choice_counts: Record<string, number | null> };
+type Comparison = { state_code: string; contest_code: string; reference: Record<string, Values>;
+	official_2024_baseline: Record<string, number>; current_electorate_composition: Record<string, Composition>;
+	sensitivity_scenarios: { coalitions: Record<string, Values> | null }[] };
+type Jurisdiction = { state_code: string; preliminary_turnout: { ballots: number }; conditional_contests: string[];
+	all_voter_joint_table_dispositions: { contest_code: string; status: string }[] };
+const review: { state_comparisons: Comparison[]; national_house_comparison: Comparison;
+	jurisdictions: Jurisdiction[] } = JSON.parse(readFileSync(`public${base}estimated-coalition-scenarios.json`, 'utf8'));
+const integer = (value: number) => value.toLocaleString('en-US');
+const count = (value: number) => integer(Math.round(value / 1000) * 1000);
+const flow = (value: number | null) => value === null ? 'Unavailable' : count(value);
+const pct = (value: number) => `${value.toFixed(1)}%`;
+const office: Record<string, string> = { SG: 'Senate', GG: 'Governor', HG: 'House' };
+const name = (row: Comparison) => `${row.state_code === 'US' ? 'United States' : names[row.state_code]} / ${office[row.contest_code]}`;
+const range = (row: Comparison, prior: string) => {
+	const values = row.sensitivity_scenarios.flatMap(scenario => scenario.coalitions
+		? [scenario.coalitions[prior].apparent_absence_pct_of_original_coalition] : []);
+	return `${pct(Math.min(...values))}–${pct(Math.max(...values))}`;
+};
+const groups = [
+	{ label: 'National House — 50 states, D.C. excluded', rows: [review.national_house_comparison], open: true },
+	{ label: 'State Senate and governor — 61 separate comparisons', rows: review.state_comparisons, open: false },
+];
+const states = new Set(review.state_comparisons.map(row => row.state_code)).size;
+---
+
+<section id="participation-estimated-coalitions" aria-labelledby="estimated-coalitions-title">
+	<h3 id="estimated-coalitions-title">Preliminary estimates across states</h3>
+	<p><strong>{states} states · {review.state_comparisons.length} separate contests, plus national House.</strong>
+		This separate tier scales qualified joint survey tables to UF Election Lab's preliminary turnout
+		estimates. Every source numerator is labeled <strong>Initial Estimate</strong>, not an official
+		observed or certified count. The reported-count snapshots below remain separate.</p>
+	<p><strong>Apparent absence is not measured staying home.</strong> It includes migration, mortality,
+		recall and population-estimation error. The reference assumes each contest's recalled-choice
+		composition represents all ballot-casters; exact response selection remains unverified.
+		Some current choices were retained from pre-election interviews after unsuccessful recontact.</p>
+	{groups.map(group => <details class="explorer-notes" open={group.open}>
+		<summary>{group.label}</summary>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={`${group.label}: original coalitions`}>
+			<table><caption>Scenario counts rounded to 1,000. Percentages use the original 2024 coalition.
+				Rounded zero does not establish no switching. Never add offices or national/state comparisons.</caption>
+				<thead><tr><th scope="col">2026 comparison</th><th scope="col">2024 coalition</th>
+					<th scope="col">Official 2024 votes</th><th scope="col">Estimated returning</th>
+					<th scope="col">Reported opposite-party choice</th><th scope="col">Apparent absence</th>
+					<th scope="col">Absence sensitivity<br />(not a confidence interval)</th></tr></thead>
+				<tbody>{group.rows.flatMap(row => ['R', 'D'].map(prior => {
+					const value = row.reference[prior];
+					return <tr data-estimated-state={row.state_code} data-estimated-contest={row.contest_code} data-estimated-prior={prior}>
+						<th scope="row">{name(row)}<br /><small>Preliminary estimated total</small></th>
+						<td>{prior === 'R' ? 'Trump' : 'Harris'}</td>
+						<td>{integer(row.official_2024_baseline[prior])}</td>
+						<td>{count(value.returning_count)}</td>
+						<td>{count(value.reported_switcher_count)}<br />{pct(value.reported_switchers_pct_of_original_coalition)}</td>
+						<td>{count(value.apparent_absence_count)}<br />{pct(value.apparent_absence_pct_of_original_coalition)}
+							{value.infeasible_as_closed_original_coalition && <><br />Incompatible with a closed original coalition</>}</td>
+						<td>{range(row, prior)}</td>
+					</tr>;
+				}))}</tbody>
+			</table>
+		</div>
+		<h4>Recalled prior nonvote and other presidential choice</h4>
+		<p>These are estimated composition counts of the current electorate, not first-time-voter,
+			eligibility-entry or demographic turnout rates. A reported presidential nonvoter may have
+			voted in another 2024 contest. Suppressed current-choice cells remain unavailable.</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={`${group.label}: prior presidential composition`}>
+			<table><caption>Composition count = estimated total × published recalled-choice share.
+				Choice counts additionally multiply by the published conditional choice; no suppressed values are reconstructed.</caption>
+				<thead><tr><th scope="col">2026 comparison</th><th scope="col">No 2024 presidential vote</th>
+					<th scope="col">2026 D / R from that group</th><th scope="col">Other 2024 presidential choice</th>
+					<th scope="col">2026 D / R from that group</th></tr></thead>
+				<tbody>{group.rows.map(row => {
+					const n = row.current_electorate_composition.N;
+					const o = row.current_electorate_composition.O;
+					return <tr data-estimated-composition-state={row.state_code} data-estimated-composition-contest={row.contest_code}>
+						<th scope="row">{name(row)}</th>
+						<td data-estimated-nonvote>{count(n.conditional_current_electorate_count)}<br />{pct(n.reported_share_pct_of_current_electorate)}</td>
+						<td data-estimated-nonvote-flows>{flow(n.reported_current_choice_counts.D)} / {flow(n.reported_current_choice_counts.R)}</td>
+						<td>{count(o.conditional_current_electorate_count)}<br />{pct(o.reported_share_pct_of_current_electorate)}</td>
+						<td>{flow(o.reported_current_choice_counts.D)} / {flow(o.reported_current_choice_counts.R)}</td>
+					</tr>;
+				})}</tbody>
+			</table>
+		</div>
+	</details>)}
+	<p class="caption">Returning = N26 × q; reported opposite-party choices = N26 × q × p;
+		apparent absence = T24 − N26 × q. The sensitivity varies estimated totals by −5%, 0 and +5%
+		and transfers −2, 0 or +2 recalled-composition points from Harris to Trump. These are stress
+		assumptions, not probability intervals or estimated missing ballots. Composition is not renormalized.</p>
+	<p>The national House comparison excludes D.C. from both 2024 coalitions and 2026 estimated totals
+		because SSRS did not sample it. Its 50-state population estimate is 123,267,000, not the native
+		51-jurisdiction total. This is matched-scope aggregation, not allocation to states.</p>
+	<details class="explorer-notes"><summary>Estimated-total coverage: all 50 states and D.C.</summary>
+		<p>Every jurisdiction has its own preliminary numerator. Missing qualified joint evidence is not zero.</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Nationwide estimated-total scenario coverage">
+			<table><thead><tr><th scope="col">Jurisdiction</th><th scope="col">Preliminary estimated ballots</th>
+				<th scope="col">Qualified comparisons / next evidence</th></tr></thead>
+				<tbody>{review.jurisdictions.map(row => <tr data-estimated-coverage={row.state_code}>
+					<th scope="row">{names[row.state_code]}</th><td>{integer(row.preliminary_turnout.ballots)}<br />Initial Estimate</td>
+					<td>{row.conditional_contests.length ? row.conditional_contests.map(code => office[code]).join(', ')
+						: 'Acquire applicable qualified state-specific joint choice evidence; no national allocation'}
+						{!row.conditional_contests.length && row.all_voter_joint_table_dispositions.length > 0 &&
+							<><br /><small>{row.all_voter_joint_table_dispositions.map(item => `${office[item.contest_code] ?? item.contest_code}: ${item.status}`).join('; ')}</small></>}
+					</td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+	</details>
+	<details class="explorer-notes"><summary>Source versions, attribution and limitations</summary>
+		<p>Michael McDonald, University of Florida Election Lab, CSV v0.2 and documentation v0.1,
+			licensed under Creative Commons Attribution 4.0. All 51 state/D.C. estimates sum to the
+			CSV's 123,490,000 national estimate. The current native webpage loads this same CSV;
+			a different search-snapshot number is excluded, not blended.</p>
+		<p>The turnout page says Nov. 6, 2026 at 10:30am without a timezone; the dataset page says Nov. 4.
+			The CSV's HTTP clock is separate. The native page defines estimated total ballots, not votes
+			for governor or senator; the older codebook still leaves this field's documentation as TBD.
+			The publisher notes substantial incomplete-reporting uncertainty, particularly California and Washington.</p>
+		<p>The ZIP contains full unchanged licensed turnout data/documentation, source receipts, the official
+			FEC workbook, permitted selected joint survey inputs, exact code, tests and outputs.
+			No demographic/county/precinct allocation, causal persuasion or share-of-overall-swing estimate
+			is released. No individual records or restricted NORC materials are included.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete preliminary estimates + licensed inputs + code (ZIP)</a>
+		<a href={`${base}estimated-coalition-scenarios.json`} download>Exact preliminary counts + composition + sensitivity (JSON)</a>
+		<a href={`${base}download.json`} download>Preliminary archive bytes and SHA-256</a>
+		<a href="https://election.lab.ufl.edu/dataset/2026-general-election-turnout-rates-v0-2/">UF source and documentation</a>
+		<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>
+	</div>
+</section>
+
+<style>
+	#participation-estimated-coalitions { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>
