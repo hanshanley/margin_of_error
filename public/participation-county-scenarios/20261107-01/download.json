@@ -1,0 +1,12 @@
+{
+  "file": "complete-analysis.zip",
+  "bytes": 428367,
+  "sha256": "f0b0352a95998cc809b4e2216cfc4bd408ff29a6ecad07af0af3d95b89df2330",
+  "members": 21,
+  "full_selected_scenarios": 86,
+  "selected_groups": 12,
+  "complete_selected_aggregate_inputs_and_code": true,
+  "private_fit_reproduced": false,
+  "personal_records_included": false,
+  "fine_joint_cells_included": false
+}

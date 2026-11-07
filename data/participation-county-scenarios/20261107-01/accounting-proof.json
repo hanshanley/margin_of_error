@@ -1,0 +1,27 @@
+{
+  "status": "independent_decimal_accounting_and_input_control_checks_pass",
+  "private_model_sha256": "2f5944088979bea41036d487adbe0eec2393804724788ad6d7de25292bd7e6e5",
+  "scenarios_checked": 86,
+  "base_grid_checked": 81,
+  "demographic_partitions_checked": 5,
+  "all_native_candidate_ballot_and_private_population_controls_match": true,
+  "all_component_and_demographic_sensitivity_extrema_match": true,
+  "all_demographic_participation_counts_prior_choice_flows_and_extrema_match": true,
+  "all_demographic_baseline_controls_match_hash_bound_source_cells": true,
+  "newly_adult_voters_never_in_prior_eligible_nonvoter_component": true,
+  "numerical_warnings": false,
+  "swing_margin_pp": 22.207301624424545,
+  "reference_contributions_margin_pp": {
+    "switching": 14.025670921411992,
+    "dropoff": 3.4814384530427143,
+    "new_returning": 1.6744649365304478,
+    "other_and_contest": 1.5240937872341296,
+    "eligibility_residence": 1.5016335261956772
+  },
+  "raw_retrospective_2022_calibration_error_pp": 9.738990186804353,
+  "known_total_conditioned_max_group_error_pp_n_at_least_100": 8.835569485825413,
+  "raw_temporal_brier_improves_on_constant": true,
+  "individual_attribution_independently_validated": false,
+  "fine_joint_cells_or_records_exported": false,
+  "scope": "Native controls and final numerical accounting, not an independent latent-transition identification or refit"
+}

@@ -1,6 +1,10 @@
 import importlib.util
+import hashlib
+import json
+import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import numpy as np
 
@@ -10,6 +14,122 @@ spec.loader.exec_module(model)
 
 
 class ConditionalModelTest(unittest.TestCase):
+    def test_explicit_county_requires_its_hash_bound_cells_and_population_controls(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            cells = [
+                dict(records=60, baseline_2024_voted_county=True,
+                     cohort_membership_2026="Accepted 2026 EARLY VOTING"),
+                dict(records=40, baseline_2024_voted_county=True,
+                     cohort_membership_2026="Not in selected early/mail cohort"),
+            ]
+            cells_path = root / "cells.json"
+            cells_path.write_text(json.dumps(cells))
+            audit = dict(state_code="NC", county="WAKE", aggregate_cells=2,
+                         joint_cells_sha256=hashlib.sha256(cells_path.read_bytes()).hexdigest(),
+                         history=dict(baseline_county_2024_unique_identifiers=100),
+                         accepted_cohort=dict(unambiguous_records=60))
+            audit_path = root / "audit.json"
+            audit_path.write_text(json.dumps(audit))
+            candidates = [
+                dict(county=county, year=year, contest=contest, method="Total Votes",
+                     party_literal=party, votes=count)
+                for county in ["WAKE", "DURHAM"]
+                for year, contest in [(2024, "US PRESIDENT"), (2026, "US SENATE")]
+                for party, count in [("DEM", 40), ("REP", 30), ("OTHER", 1)]
+            ]
+            for name, value in [
+                ("model.json", {}),
+                ("candidates.json", candidates),
+                ("participation.json", dict(state="North Carolina", election_date="2026-11-03",
+                                            reporting=[dict(county="WAKE", ballots_cast=80)])),
+            ]:
+                (root / name).write_text(json.dumps(value))
+
+            def run(**kwargs):
+                return model.run(cells_path, root / "model.json", root / "candidates.json",
+                                 root / "participation.json", root / "output", **kwargs)
+
+            with self.assertRaisesRegex(ValueError, "hash-bound linkage audit"):
+                run(county="WAKE")
+            with patch.object(model, "historical_turnout", side_effect=RuntimeError("WAKE_FIT_STARTED")):
+                with self.assertRaisesRegex(RuntimeError, "WAKE_FIT_STARTED"):
+                    run(county="WAKE", linkage_audit=audit_path)
+            for changed in [
+                dict(county="DURHAM"), dict(joint_cells_sha256="changed"),
+                dict(aggregate_cells=3),
+                dict(history=dict(baseline_county_2024_unique_identifiers=99)),
+                dict(accepted_cohort=dict(unambiguous_records=59)),
+            ]:
+                audit_path.write_text(json.dumps({**audit, **changed}))
+                with self.assertRaisesRegex(ValueError, "County linkage audit"):
+                    run(county="WAKE", linkage_audit=audit_path)
+            audit_path.write_text(json.dumps(audit))
+            (root / "participation.json").write_text(json.dumps(dict(
+                state="North Carolina", election_date="2026-11-03",
+                reporting=[dict(county="DURHAM", ballots_cast=80)])))
+            with self.assertRaisesRegex(ValueError, "county participation scope"):
+                run(county="WAKE", linkage_audit=audit_path)
+
+    def test_county_run_exports_every_scenarios_group_activity_and_sensitivity_extrema(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            cells = [
+                dict(records=count, baseline_2024_voted_county=True,
+                     cohort_membership_2026=membership, registration_status_2026="ACTIVE",
+                     age_2024="30-44", age_2026="30-44", race="W", ethnicity="NL", gender=gender,
+                     registered_party_2026=party, primary_2024="No matched primary",
+                     prior_2024_history="Positive 2024 NC history")
+                for count, membership, gender, party in [
+                    (60, "Accepted 2026 EARLY VOTING", "F", "DEM"),
+                    (40, "Not in selected early/mail cohort", "M", "REP")]
+            ]
+            (root / "cells.json").write_text(json.dumps(cells))
+            audit = dict(state_code="NC", county="WAKE", aggregate_cells=2,
+                         joint_cells_sha256=hashlib.sha256((root / "cells.json").read_bytes()).hexdigest(),
+                         history=dict(baseline_county_2024_unique_identifiers=100),
+                         accepted_cohort=dict(unambiguous_records=60))
+            candidates = [
+                dict(county="WAKE", year=year, contest=contest, method="Total Votes",
+                     party_literal=party, votes=count)
+                for year, contest in [(2024, "US PRESIDENT"), (2026, "US SENATE")]
+                for party, count in [("DEM", 40), ("REP", 30), ("OTHER", 1)]
+            ]
+            for name, value in [
+                ("audit.json", audit), ("candidates.json", candidates),
+                ("model.json", dict(models=[dict(model=name) for name in [
+                    "registered-party-and-primary", "registration", "primary", "demographics"]])),
+                ("participation.json", dict(state="North Carolina", election_date="2026-11-03",
+                                            reporting=[dict(county="WAKE", ballots_cast=80)])),
+            ]:
+                (root / name).write_text(json.dumps(value))
+            with patch.object(model, "historical_turnout", return_value=(np.array([.8, .6]), {})), \
+                    patch.object(model, "predict_choice", side_effect=lambda *args, **kwargs: np.array(
+                        [[.9, .09, .01], [.1, .89, .01]])), patch("builtins.print"):
+                model.run(root / "cells.json", root / "model.json", root / "candidates.json",
+                          root / "participation.json", root / "output",
+                          county="WAKE", linkage_audit=root / "audit.json")
+            result = json.loads((root / "output" / "conditional-transitions.json").read_text())
+            self.assertEqual(len(result["scenarios"]), 86)
+            for ranges in result["demographic_sensitivity_range_margin_pp"]:
+                groups = [next(group for group in scenario["demographics"]
+                               if (group["dimension"], group["group"]) == (ranges["dimension"], ranges["group"]))
+                          for scenario in result["scenarios"]]
+                for key in ["modeled_2024_county_participants", "modeled_2026_participants"]:
+                    self.assertEqual(ranges[key], dict(minimum=min(group[key] for group in groups),
+                                                       maximum=max(group[key] for group in groups)))
+                for key, extrema in ranges["modeled_cohort_counts"].items():
+                    values = [group["modeled_cohort_counts"][key] for group in groups]
+                    self.assertEqual(extrema, dict(minimum=min(values), maximum=max(values)))
+                for party, flows in ranges["modeled_prior_choice_transitions"].items():
+                    for key, extrema in flows.items():
+                        values = [group["modeled_prior_choice_transitions"][party][key] for group in groups]
+                        self.assertEqual(extrema, dict(minimum=min(values), maximum=max(values)))
+            overall = next(group for group in result["demographic_sensitivity_range_margin_pp"]
+                           if group["dimension"] == "overall")
+            switchers = overall["modeled_cohort_counts"]["republican_to_democratic"]
+            self.assertGreater(switchers["maximum"], switchers["minimum"])
+
     def test_choice_calibration_preserves_each_cohort_and_handles_zero_other(self):
         priors = np.array([[.9, .09, .01], [.1, .89, .01]])
         weights = np.array([50., 50.])
@@ -113,6 +233,7 @@ class ConditionalModelTest(unittest.TestCase):
         self.assertEqual(next(row["group"] for row in result["demographics"] if row["dimension"] == "administrative_gender"),
                          "FEMALE")
         counts = result["modeled_cohort_counts"]
+        self.assertTrue(all("modeled_prior_choice_transitions" not in group for group in result["demographics"]))
         self.assertAlmostEqual(counts["repeat_2024_county_participants"] +
                                counts["participants_without_2024_county_participation"], 80)
         self.assertAlmostEqual(counts["repeat_2024_county_participants"] +
@@ -124,6 +245,32 @@ class ConditionalModelTest(unittest.TestCase):
         self.assertAlmostEqual(younger["before"]["N"], 0)
         self.assertAlmostEqual(younger["before"]["X"], 20)
         self.assertGreater(younger["modeled_cohort_counts"]["participants_newly_adult_since_2024"], 0)
+        rows[-1]["gender"] = "M"
+        with_activity = model.scenario(
+            rows, prior, prior, np.array([.8, .8, .6, .3]), np.array([55., 44., 1.]),
+            np.array([50., 25., 1.]), 100, 80, group_participation=True)
+        for key in ["before", "after", "modeled_cohort_counts", "margin_pp_contributions"]:
+            self.assertEqual(with_activity[key], younger[key])
+        for dimension in {group["dimension"] for group in with_activity["demographics"]}:
+            groups = [group for group in with_activity["demographics"] if group["dimension"] == dimension]
+            self.assertAlmostEqual(sum(group["modeled_2024_county_participants"] for group in groups), 100)
+            for key, value in with_activity["modeled_cohort_counts"].items():
+                self.assertAlmostEqual(sum(group["modeled_cohort_counts"][key] for group in groups), value)
+            for party in ["D", "R"]:
+                flows = [group["modeled_prior_choice_transitions"][party] for group in groups]
+                self.assertAlmostEqual(sum(row["original_2024_county_presidential_voters"] for row in flows),
+                                       with_activity["before"][party])
+                for row in flows:
+                    self.assertAlmostEqual(sum(row[state] for state in model.STATES),
+                                           row["original_2024_county_presidential_voters"])
+        entrants = next(group for group in with_activity["demographics"]
+                        if group["dimension"] == "administrative_gender" and group["group"] == "MALE")
+        self.assertEqual(entrants["modeled_2024_county_participants"], 0)
+        self.assertGreater(entrants["modeled_cohort_counts"]["participants_newly_adult_since_2024"], 0)
+        self.assertIsNone(entrants["group_turnout_rate_pct"])
+        self.assertIsNone(entrants["measured_staying_home_count"])
+        self.assertTrue(all(value == 0 for row in entrants["modeled_prior_choice_transitions"].values()
+                            for value in row.values()))
 
 
 if __name__ == "__main__":

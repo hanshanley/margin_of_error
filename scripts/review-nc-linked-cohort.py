@@ -189,27 +189,37 @@ def verify(path, receipt):
     return expected
 
 
-def review(private, prior_private, output, county="DURHAM"):
+def review(private, prior_private, output, county="DURHAM", registration=None):
     if output.exists():
         raise ValueError("Refusing to overwrite an existing review")
-    receipts = [verify(private / name, private / f"{name}.receipt.json")
-                for name in ["registration-durham.zip", "history-statewide.zip"]]
+    if not county or county != county.strip().upper():
+        raise ValueError("Use the literal uppercase source county")
+    if county != "DURHAM" and registration is None:
+        raise ValueError("An explicit registration archive is required for another county")
+    registration_path = registration or private / "registration-durham.zip"
+    receipts = [
+        verify(registration_path, Path(f"{registration_path}.receipt.json")),
+        verify(private / "history-statewide.zip", private / "history-statewide.zip.receipt.json"),
+    ]
     original = json.loads((prior_private / "receipts.json").read_text())
     absentee = next(row for row in original if row["file"] == "absentee.zip")
     if hashlib.sha256((prior_private / "absentee.zip").read_bytes()).hexdigest() != absentee["sha256"]:
         raise ValueError("Changed cohort source")
     receipts.append(absentee)
     registrations, registration_audit = unique_records(
-        cohort.archive_rows(private / "registration-durham.zip", "\t"),
+        cohort.archive_rows(registration_path, "\t"),
         ["birth_year", "race_code", "ethnic_code", "party_cd", "gender_code", "registr_dt", "voter_status_desc"],
         county)
     accepted, accepted_audit = unique_records(
         cohort.archive_rows(prior_private / "absentee.zip", ","),
         ["race", "ethnicity", "gender", "age", "voter_party_code", "ballot_req_type"], county, accepted=True)
+    if not registrations or not accepted:
+        raise ValueError("No unambiguous registration or accepted-cohort records for target county")
     print(json.dumps({"phase": "sources_loaded", "registration": registration_audit, "cohort": accepted_audit}), flush=True)
     history, baseline, history_audit = linked_history(
         native_history(private / "history-statewide.zip"), registrations.keys() | accepted.keys(), county)
     cells = aggregate_linkage(registrations, accepted, history, baseline)
+    cells_bytes = (json.dumps(cells, indent=2) + "\n").encode()
     audit = {
         "version": "20261106-linked-cohort-03", "state_code": "NC", "county": county,
         "sources": receipts, "registration": registration_audit, "accepted_cohort": accepted_audit,
@@ -228,9 +238,12 @@ def review(private, prior_private, output, county="DURHAM"):
             "Only aggregate model cells are exported, never identifiers or individual scores.",
         ],
     }
+    if registration is not None or county != "DURHAM":
+        audit["version"] = "20261107-linked-county-cohort-01"
+        audit["joint_cells_sha256"] = hashlib.sha256(cells_bytes).hexdigest()
     output.mkdir(parents=True, exist_ok=False)
-    for name, value in [("audit.json", audit), ("joint-cells.json", cells)]:
-        (output / name).write_text(json.dumps(value, indent=2) + "\n")
+    (output / "audit.json").write_text(json.dumps(audit, indent=2) + "\n")
+    (output / "joint-cells.json").write_bytes(cells_bytes)
     print(json.dumps(audit, indent=2), flush=True)
 
 
@@ -239,5 +252,8 @@ if __name__ == "__main__":
     parser.add_argument("--private-directory", type=Path, required=True)
     parser.add_argument("--prior-private-directory", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--county", default="DURHAM")
+    parser.add_argument("--registration", type=Path)
     args = parser.parse_args()
-    review(args.private_directory, args.prior_private_directory, args.output)
+    review(args.private_directory, args.prior_private_directory, args.output,
+           county=args.county, registration=args.registration)

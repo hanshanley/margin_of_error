@@ -1,0 +1,188 @@
+---
+import { readFileSync } from 'node:fs';
+
+type Extrema = { minimum: number; maximum: number };
+type Group = {
+	dimension: string;
+	group: string;
+	modeled_2024_county_participants: number;
+	modeled_2026_participants: number;
+	modeled_cohort_counts: Record<string, number>;
+	modeled_prior_choice_transitions: Record<string, Record<string, number>>;
+	margin_pp_contributions: Record<string, number>;
+};
+type GroupRange = {
+	dimension: string;
+	group: string;
+	modeled_2024_county_participants: Extrema;
+	modeled_2026_participants: Extrema;
+	modeled_cohort_counts: Record<string, Extrema>;
+	modeled_prior_choice_transitions: Record<string, Record<string, Extrema>>;
+	margin_pp_contributions: Record<string, Extrema>;
+};
+type Analysis = {
+	default_conditional_scenario: { swing_margin_pp: number; demographics: Group[]; margin_pp_contributions: Record<string, number> };
+	demographic_sensitivity_range_margin_pp: GroupRange[];
+	sensitivity_range_margin_pp: Record<string, Extrema>;
+};
+const base = '/participation-county-scenarios/20261107-01/';
+const analysis: Analysis = JSON.parse(readFileSync(`public${base}summary.json`, 'utf8'));
+const reference = analysis.default_conditional_scenario;
+const dimensions = [
+	['overall', 'Whole county'], ['age_2024', 'Age in 2024'], ['race', 'Administrative race'],
+	['ethnicity', 'Administrative Hispanic ethnicity'], ['administrative_gender', 'Administrative gender'],
+];
+const activities = [
+	['modeled_2024_county_participants', '2024 participants'],
+	['modeled_2026_participants', '2026 participants'],
+	['repeat_2024_county_participants', 'Repeat participants'],
+	['prior_county_participants_now_nonvoting', 'Modeled nonvoting'],
+	['prior_county_participants_eligibility_residence_exit', 'Modeled exit'],
+	['participants_without_2024_county_participation', 'Without 2024 county participation'],
+	['republican_to_democratic', 'Trump → D'],
+	['democratic_to_republican', 'Harris → R'],
+];
+const components = [
+	['switching', 'Switching'], ['dropoff', 'Participation drop-off'],
+	['new_returning', 'Previously eligible new / returning'],
+	['eligibility_residence', 'Eligibility / residence change'], ['other_and_contest', 'Other / contest effects'],
+];
+const flows = ['original_2024_county_presidential_voters', 'D', 'R', 'O', 'B', 'N', 'X'];
+const count = (value: number) => (Math.round(value / 100) * 100).toLocaleString('en-US');
+const points = (value: number) => `${value >= 0 ? '+' : ''}${value.toFixed(2)}`;
+const counts = (group: Group): Record<string, number> => ({
+	...group.modeled_cohort_counts, modeled_2024_county_participants: group.modeled_2024_county_participants,
+	modeled_2026_participants: group.modeled_2026_participants,
+});
+const range = (group: Group): GroupRange => analysis.demographic_sensitivity_range_margin_pp.find(
+	row => row.dimension === group.dimension && row.group === group.group)!;
+const countRanges = (group: Group): Record<string, Extrema> => ({
+	...range(group).modeled_cohort_counts,
+	modeled_2024_county_participants: range(group).modeled_2024_county_participants,
+	modeled_2026_participants: range(group).modeled_2026_participants,
+});
+const labels: Record<string, string> = {
+	'All groups': 'Whole county', ASIAN: 'Asian', 'BLACK or AFRICAN AMERICAN': 'Black or African American',
+	WHITE: 'White', 'HISPANIC or LATINO': 'Hispanic or Latino',
+	'NOT HISPANIC or NOT LATINO': 'Not Hispanic or Latino', FEMALE: 'Female', MALE: 'Male',
+};
+---
+
+<section id="participation-county-scenarios" class="participation-current" aria-labelledby="county-scenarios-title">
+	<header class="section-intro">
+		<p class="kicker">Experimental county model · 2024 President → 2026 Senate</p>
+		<h2 id="county-scenarios-title">Wake County: participation and switching, separately estimated</h2>
+		<p>The observed two-party margin moved <strong>{points(reference.swing_margin_pp)} points toward Democrats</strong>.
+			The model separates switching, nonvoting, entry and exit, while matching the county’s
+			candidate and ballot totals. These are <strong>conditional scenarios, not observed individual persuasion</strong>.</p>
+	</header>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Wake conditional swing contributions">
+		<table>
+			<caption>Signed contributions to two-party margin change, in percentage points.
+				All 86 tested assumptions; sensitivity ranges are not confidence intervals and endpoints are not additive.</caption>
+			<thead><tr><th scope="col">Component</th><th scope="col">Reference</th><th scope="col">Tested range</th></tr></thead>
+			<tbody>{components.map(([key, label]) => <tr data-county-component={key}>
+				<th scope="row">{label}</th><td>{points(reference.margin_pp_contributions[key])}</td>
+				<td>{points(analysis.sensitivity_range_margin_pp[key].minimum)} to {points(analysis.sensitivity_range_margin_pp[key].maximum)}</td>
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<p><strong>Material calibration limits:</strong> retrospective 2022 turnout error was +9.74 percentage points.
+		Even after matching the known 2022 total, subgroup errors reached 8.84 points for groups of at least 100.
+		Matching totals verifies constraints, <strong>not individual transitions or demographic accuracy</strong>.</p>
+	<p>The frozen, provisional 2026 snapshot reports <strong>525,061 ballots and 216 of 216 reporting units</strong>
+		at November 3, 11:56 p.m., retrieved November 4. The 2024 history contains 656,871 county participants.
+		These are not final 2026 totals or proof of a counted fixed early-voter cohort.</p>
+	<p>Below, model counts are rounded to the nearest 100; smaller text gives the range across all 86 scenarios.
+		“Nonvoting” is modeled separately from assumed eligibility/residence exit.
+		<strong>Measured staying home and demographic eligible-population turnout rates are unavailable.</strong></p>
+
+	{dimensions.map(([dimension, title]) => <details class="explorer-notes" data-county-dimension={dimension}>
+		<summary>{title}: participation, prior-choice transitions and swing contributions</summary>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={`Wake ${title} modeled participation`}>
+			<table>
+				<caption>{title}. Reference counts and assumption ranges, not independently observed demographic outcomes.
+					Selected rows are not exhaustive partitions; withheld groups are not zero.</caption>
+				<thead><tr><th scope="col">Source-defined group</th>{activities.map(([, label]) => <th scope="col">{label}</th>)}</tr></thead>
+				<tbody>{reference.demographics.filter(group => group.dimension === dimension).map(group =>
+					<tr data-county-group={group.group} data-county-kind="activity">
+						<th scope="row" title={group.group}>{labels[group.group] || group.group}</th>
+						{activities.map(([key]) => <td data-county-count={key} data-value={counts(group)[key]}>
+							{count(counts(group)[key])}<small>{count(countRanges(group)[key].minimum)}–{count(countRanges(group)[key].maximum)}</small>
+						</td>)}
+					</tr>)}</tbody>
+			</table>
+		</div>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={`Wake ${title} modeled prior-choice destinations`}>
+			<table>
+				<caption>Within modeled prior Harris / Trump coalitions: all six 2026 destinations, not just returning voters.
+					D/R = Senate choice; O = other; B = ballot without selected-contest vote;
+					N = modeled nonvoting; X = modeled eligibility/residence exit. Original group choice is modeled.</caption>
+				<thead><tr><th scope="col">Source-defined group</th><th scope="col">Modeled 2024 choice</th>
+					<th scope="col">Original coalition</th>{['D', 'R', 'O', 'B', 'N', 'X'].map(key => <th scope="col">{key}</th>)}</tr></thead>
+				<tbody>{reference.demographics.filter(group => group.dimension === dimension).flatMap(group =>
+					['D', 'R'].map(prior => <tr data-county-group={group.group} data-county-prior={prior}>
+						<th scope="row" title={group.group}>{labels[group.group] || group.group}</th>
+						<td>{prior === 'D' ? 'Harris' : 'Trump'}</td>
+						{flows.map(key => <td data-county-flow={key} data-value={group.modeled_prior_choice_transitions[prior][key]}>
+							{count(group.modeled_prior_choice_transitions[prior][key])}
+							<small>{count(range(group).modeled_prior_choice_transitions[prior][key].minimum)}–{count(range(group).modeled_prior_choice_transitions[prior][key].maximum)}</small>
+						</td>)}
+					</tr>))}</tbody>
+			</table>
+		</div>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={`Wake ${title} modeled swing contributions`}>
+			<table>
+				<caption>Signed contribution to whole-county margin change, not the group’s own swing or a causal persuasion effect.
+					Values are percentage points; ranges are marginal, nonadditive sensitivity.</caption>
+				<thead><tr><th scope="col">Source-defined group</th>{components.map(([, label]) => <th scope="col">{label}</th>)}</tr></thead>
+				<tbody>{reference.demographics.filter(group => group.dimension === dimension).map(group =>
+					<tr data-county-group={group.group} data-county-kind="contribution">
+						<th scope="row" title={group.group}>{labels[group.group] || group.group}</th>
+						{components.map(([key]) => <td data-county-contribution={key}>
+							{points(group.margin_pp_contributions[key])}
+							<small>{points(range(group).margin_pp_contributions[key].minimum)} to {points(range(group).margin_pp_contributions[key].maximum)}</small>
+						</td>)}
+					</tr>)}</tbody>
+			</table>
+		</div>
+	</details>)}
+
+	<details class="explorer-notes"><summary>Scope, missing populations, entrant definitions and complete reproduction</summary>
+		<p>Age is measured in 2024; race, ethnicity and gender use current administrative attributes, not fixed observed
+			historical cohorts. Race and Hispanic ethnicity are separate, overlapping dimensions. Education and income
+			are not supplied. Do not sum dimensions, infer omitted categories, or allocate county results to precincts or other states.</p>
+		<p>The private linkage retains 24,904 prior participants without current registration. Missing or removed records
+			do not prove death, migration or ineligibility; exit fractions are assumed and varied. Unknown populations
+			remain in the whole-county accounting, not silently deleted. Several race categories are withheld together
+			so that a small category cannot be recovered by subtracting all other categories from the total.</p>
+		<p>“Without 2024 county participation” includes positive 2024 history elsewhere in North Carolina,
+			newly adult entrants and people without a North Carolina match whose national history remains unresolved.
+			The archive retains these three categories separately for every selected group and scenario.
+			Neither a new registration nor a missing history match proves first-ever voting.</p>
+		<p>Accepted early/mail membership is not counted contest membership; absence from that cohort is not Election Day
+			nonparticipation. Current-registration survivor selection, changing residence/attributes, mortality,
+			history coverage, choice-model error and distinct source clocks remain unresolved.
+			The county-specific comparison is President to Senate, not a pooled House or causal campaign effect.</p>
+		<p>The complete download includes every selected broad result for all 86 scenarios, full public candidate/ballot
+			inputs, fitted historical coefficients, source receipts, model/linkage code, tests and qualifications.
+			Offline reproduction regenerates the selected summary and archive.
+			<strong>A fresh latent fit needs excluded private records and fine joint cells.</strong>
+			Public reproduction is not an independent refit or verification of individual switching.</p>
+		<p>Sources: North Carolina State Board of Elections and CES 2024 release 9, DOI 10.7910/DVN/X11EP6 (CC0).
+			Analysis is not endorsed by the data providers. Existing Durham and survey releases are unchanged;
+			Wake is an additional pilot, not completed nationwide or precinct coverage.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete Wake scenarios + permitted inputs + code + results (ZIP)</a>
+		<a href={`${base}summary.json`} download>Wake reference, ranges + qualifications (JSON)</a>
+		<a href={`${base}download.json`} download>Wake archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-county-scenarios { min-width: 0; margin-block: 1.5rem 2rem; }
+	#participation-county-scenarios small { display: block; color: var(--color-text-muted, #666); font-size: .78rem; }
+	#participation-county-scenarios .table-wrap { max-width: 100%; overflow-x: auto; }
+	#participation-county-scenarios td { font-variant-numeric: tabular-nums; }
+</style>
