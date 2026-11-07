@@ -1,0 +1,11 @@
+{
+  "file": "complete-analysis.zip",
+  "bytes": 16069,
+  "sha256": "095a27032fa4718082313b479df24cce66e9fe9b7128c16ff665f9cd79919914",
+  "members": 9,
+  "complete_selected_aggregate_inputs_and_code": true,
+  "personal_records_included": false,
+  "raw_joint_cells_included": false,
+  "source_documents_redistributed": false,
+  "population_decomposition_released": false
+}

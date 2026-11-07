@@ -1,0 +1,17 @@
+{
+  "status": "qualified_only_for_broad_descriptive_august_intentions",
+  "study_id": "slu-yougov-2026-08-mo",
+  "public_scope": "two_broad_prior_choice_groups_generic_House_intentions_only",
+  "selection": "Both major prior coalitions, selected without conditioning on their intended outcome. Every D, R, other and unsure response stays in its prior-group denominator.",
+  "source_review": "The declared CSV, native numeric codebook and wave-specific questionnaire were inspected. All 900 selected variable distributions and the rounded House topline reconcile. A second calculation using Decimal independently checks all 48 private joint House and likelihood cells.",
+  "weighting": "The wave methods weight 1074 registered voters using demographic and 2024 presidential-choice calibration before selecting 900 likely voters and trimming/recentering weights. This is not proof that the selected likely-voter composition was forced to match the 2024 electorate. No new historical-choice reweighting is applied.",
+  "field_period": "August 13-24, 2026, from the wave-specific questionnaire. Earlier source-lead dates and response-code guesses are superseded by the frozen native sources.",
+  "precision": "Weighted descriptive percentages are rounded to one decimal for display, not a precision guarantee. Broad raw bases and Kish weight-concentration diagnostics are supplied. Sampling, selection, recall and intention error remain. No subgroup joint-design confidence intervals are available; the overall reported margin of error and effective sample are not reused for these conditionals.",
+  "participation": "The entire released sample reports registration and almost-certain or probable voting. It does not observe an eligible nonvoter comparison group or completed November participation. Presidential nonvote in the native source is not all-race nonparticipation or first-ever voting.",
+  "disclosure": "Select only two broad prior-coalition bases and their complete four-response weighted conditional distributions. No raw joint-cell counts, joint weight sums, fine demographic cells, identifiers, respondent records or individual scores are included.",
+  "rights": "Derived numerical aggregates, source citations and our exact code only. The publicly offered native CSV can be consulted at its original source, but respondent records and copyrighted PDF/HTML documents are not mirrored or relicensed. No NORC material is included. This analysis is not endorsed by SLU or YouGov.",
+  "population_scaling_permitted": false,
+  "completed_participation_permitted": false,
+  "district_or_county_allocation_permitted": false,
+  "design_confidence_intervals_permitted": false
+}
