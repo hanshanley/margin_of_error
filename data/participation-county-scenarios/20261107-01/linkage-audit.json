@@ -1,0 +1,77 @@
+{
+  "version": "20261107-linked-county-cohort-01",
+  "state_code": "NC",
+  "county": "WAKE",
+  "sources": [
+    {
+      "file": "registration-wake.zip",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvoter92.zip",
+      "final_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvoter92.zip",
+      "bytes": 62767015,
+      "sha256": "b927f437f3564d6ff77156897917f33f5412021a153ce65243862f1a185efc22",
+      "retrieved_at": "2026-11-07T05:07:59.178385+00:00",
+      "last_modified": "Mon, 02 Nov 2026 01:18:18 GMT",
+      "etag": "\"13ff777eeb9661b022c448e41c0cb0a0-8\"",
+      "http_status": 200,
+      "individual_records_exported": false
+    },
+    {
+      "file": "history-statewide.zip",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
+      "bytes": 351220317,
+      "sha256": "6e0d4fee2f0523ec0937d1939c56e2892f728624526b5d87337e26c8b7e8112c",
+      "md5": "6259055cb0e51b5c925d9c82690556e5",
+      "expected_md5": null,
+      "retrieved_at": "2026-11-06T23:11:22.816942+00:00",
+      "last_modified": "Mon, 02 Nov 2026 01:18:00 GMT",
+      "etag": "\"3301b0432e652fe9b4a58c1f972562b0-42\"",
+      "individual_records_exported": false
+    },
+    {
+      "file": "absentee.zip",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/absentee_20261103.zip",
+      "bytes": 127167072,
+      "sha256": "048c09258bb539caf594e0d1ea31fa5ffb0f4a1e495f04f09160dbabc10e2879",
+      "retrieved_at": "2026-11-06T22:55:02.757614+00:00",
+      "last_modified": "Fri, 06 Nov 2026 10:28:21 GMT",
+      "etag": "\"4f8acfb9fbafa2a741bd8cfdf75e2547-16\"",
+      "public_individual_records_exported": false
+    }
+  ],
+  "registration": {
+    "selected_source_records": 1009260,
+    "ambiguous_identifiers_excluded": 0,
+    "unambiguous_records": 1009260
+  },
+  "accepted_cohort": {
+    "selected_source_records": 351615,
+    "ambiguous_identifiers_excluded": 0,
+    "unambiguous_records": 351615
+  },
+  "history": {
+    "native_records": 35526599,
+    "general_2020_records": 5544109,
+    "general_2024_records": 5722843,
+    "general_2022_records": 3789853,
+    "general_2016_records": 4768199,
+    "general_2018_records": 3754145,
+    "baseline_county_2024_records": 656874,
+    "duplicate_selected_general_entries": 14,
+    "baseline_county_2024_unique_identifiers": 656871
+  },
+  "aggregate_cells": 167806,
+  "accepted_with_registration": 351603,
+  "baseline_with_registration": 631967,
+  "baseline_without_registration": 24904,
+  "limitations": [
+    "An absent statewide history match does not establish national nonparticipation.",
+    "Not in the early/mail cohort is not sitting out the 2026 election.",
+    "Registration after 2024 includes movers and re-registrations, not just first-time voters.",
+    "2026 registration party/status/demographics are not observed 2024 choice or necessarily 2024 attributes.",
+    "Race/ethnicity fields retain source codes or native descriptions; harmonization is a separate model step.",
+    "Every repeated accepted or registration identifier is excluded, never arbitrarily deduplicated.",
+    "Baseline voters outside the initial target set have incomplete other-year searches, explicitly unknown.",
+    "Only aggregate model cells are exported, never identifiers or individual scores."
+  ],
+  "joint_cells_sha256": "755a647b4d117298494f7b148b02f19363f4259b4070d47ab309910c0c7cbf83"
+}

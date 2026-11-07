@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ParticipationSwing from '../components/ParticipationSwing.astro';
+import ParticipationCountyScenarios from '../components/ParticipationCountyScenarios.astro';
 import ParticipationSurvey from '../components/ParticipationSurvey.astro';
 import ParticipationIndependentPoll from '../components/ParticipationIndependentPoll.astro';
 import ParticipationHouseIntentions from '../components/ParticipationHouseIntentions.astro';
@@ -249,6 +250,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		</section>
 
 		<ParticipationSwing />
+		<ParticipationCountyScenarios />
 		<ParticipationStateAgeScenarios />
 		<ParticipationAgeScenarios />
 		<ParticipationCandidateConditionals />
