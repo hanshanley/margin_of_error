@@ -16,6 +16,10 @@ math = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(math)
 CSV_SHA256 = "eef37c0606cc1406e76b84bae2216c592e74e6b8cf5034d8d0733f3ab942cf2b"
 DOC_SHA256 = "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd"
+REVIEWED_CSV_VERSIONS = {
+    "20261107-01": CSV_SHA256,
+    "20261107T055406Z": "ba4d9231f4da8daee738aec99c89101120132e9f39192339e9861af829b6f434",
+}
 
 
 def parse_rows(rows):
@@ -35,9 +39,11 @@ def parse_rows(rows):
     return result
 
 
-def read_turnout(csv_path, documentation):
+def read_turnout(csv_path, documentation, source_version="20261107-01"):
     raw, doc = csv_path.read_bytes(), documentation.read_bytes()
-    if hashlib.sha256(raw).hexdigest() != CSV_SHA256 or hashlib.sha256(doc).hexdigest() != DOC_SHA256:
+    if (source_version not in REVIEWED_CSV_VERSIONS
+            or hashlib.sha256(raw).hexdigest() != REVIEWED_CSV_VERSIONS[source_version]
+            or hashlib.sha256(doc).hexdigest() != DOC_SHA256):
         raise ValueError("Changed or unreviewed preliminary turnout source; review a new version")
     return parse_rows(csv.DictReader(io.StringIO(raw.decode("utf-8-sig"))))
 
@@ -129,10 +135,11 @@ def calculate(table, baseline, turnout):
     }
 
 
-def run(workbook, csv_path, documentation, survey_path, methodology, output):
+def run(workbook, csv_path, documentation, survey_path, methodology, output,
+        source_version="20261107-01"):
     if output.exists() and any(output.iterdir()):
         raise ValueError("Refusing to overwrite an existing preliminary analysis")
-    totals = read_turnout(csv_path, documentation)
+    totals = read_turnout(csv_path, documentation, source_version)
     baseline = math.fec_baselines(workbook)
     baseline["US"], totals["US"] = national_inputs(totals, baseline)
     tables = json.loads(survey_path.read_text())["tables"]
@@ -191,5 +198,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("workbook", "turnout-csv", "documentation", "survey-review", "methodology", "output"):
         parser.add_argument("--" + name, required=True, type=Path)
+    parser.add_argument("--turnout-source-version", choices=REVIEWED_CSV_VERSIONS,
+                        default="20261107-01")
     args = parser.parse_args()
-    run(args.workbook, args.turnout_csv, args.documentation, args.survey_review, args.methodology, args.output)
+    run(args.workbook, args.turnout_csv, args.documentation, args.survey_review, args.methodology,
+        args.output, args.turnout_source_version)

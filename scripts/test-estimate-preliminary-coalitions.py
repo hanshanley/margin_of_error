@@ -57,6 +57,47 @@ class PreliminaryTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 module.read_turnout(path, DATA / "Turnout_2026G_v0.1_doc.txt")
 
+    def test_refreshed_source_requires_explicit_reviewed_version_and_exact_bytes(self):
+        refreshed = ROOT / "data/participation-estimated-coalitions/20261107-03"
+        csv_path = refreshed / "Turnout_2026G_v0.2.csv"
+        doc_path = refreshed / "Turnout_2026G_v0.1_doc.txt"
+        for version in ("20261107-01", "unreviewed"):
+            with self.assertRaises(ValueError):
+                module.read_turnout(csv_path, doc_path, version)
+        with self.assertRaises(ValueError):
+            module.read_turnout(DATA / "Turnout_2026G_v0.2.csv", doc_path, "20261107T055406Z")
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "changed.csv"
+            path.write_bytes(csv_path.read_bytes() + b"\n")
+            with self.assertRaises(ValueError):
+                module.read_turnout(path, doc_path, "20261107T055406Z")
+            path.write_bytes(doc_path.read_bytes() + b"\n")
+            with self.assertRaises(ValueError):
+                module.read_turnout(csv_path, path, "20261107T055406Z")
+
+    def test_refreshed_national_scope_and_unchanged_supported_states(self):
+        refreshed = ROOT / "data/participation-estimated-coalitions/20261107-03"
+        totals = module.read_turnout(refreshed / "Turnout_2026G_v0.2.csv",
+                                    refreshed / "Turnout_2026G_v0.1_doc.txt", "20261107T055406Z")
+        baseline, turnout = module.national_inputs(totals, self.baselines)
+        result = module.calculate(self.table("US", "HG"), baseline, turnout)
+        self.assertEqual(turnout["ballots"], 123317000)
+        self.assertEqual(turnout["native_national_ballots"] - turnout["excluded_dc_ballots"], 123317000)
+        self.assertEqual(totals["WA"]["ballots"], 3250000)
+        old_baseline, old_turnout = module.national_inputs(self.totals, self.baselines)
+        previous = module.calculate(self.table("US", "HG"), old_baseline, old_turnout)
+        for prior, returning, switched in (("R", 22000, 1540), ("D", 24500, 490)):
+            self.assertAlmostEqual(result["reference"][prior]["returning_count"]
+                                   - previous["reference"][prior]["returning_count"], returning)
+            self.assertAlmostEqual(result["reference"][prior]["reported_switcher_count"]
+                                   - previous["reference"][prior]["reported_switcher_count"], switched)
+        for table in self.tables:
+            if (table["subset"]["sub"] == 0 and table["state_code"] != "US"
+                    and table["status"] == "published_joint_question_reviewed"):
+                code = table["state_code"]
+                self.assertEqual(module.calculate(table, self.baselines[code], totals[code]),
+                                 module.calculate(table, self.baselines[code], self.totals[code]))
+
     def test_source_denominators_and_symmetric_stress_without_mutation(self):
         table, turnout = self.table("NC"), copy.deepcopy(self.totals["NC"])
         original = copy.deepcopy((table, turnout))
