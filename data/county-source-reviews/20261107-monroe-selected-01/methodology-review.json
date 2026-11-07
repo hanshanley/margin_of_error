@@ -1,0 +1,20 @@
+{
+  "selection": "Complete used factual county participation, governor and both House tables: all candidate, method and reporting-unit counts and four source receipts. Governor units establish the current House partition, not a historical crosswalk. No source HTML, newly acquired workbook, unrelated contest or personal data.",
+  "native_verification": "Before selection, independent offline HTMLParser extraction checked all four frozen originals, 110 unit rows and 385 unit-candidate cells. This package reproduces selected facts, not a new native acquisition.",
+  "source_precedence": "The November 6 observation is separate from the preserved older official package. Never combine older participation with these candidate vectors. Provider district major-party vectors must agree before county replacement; official write-ins replace the provider's omitted other votes.",
+  "literal_party": "Write-in has a blank native HTML party. It is not the older workbook's Nonpartisan label. No party is inferred.",
+  "literal_name_alias": {
+    "district": "PA-08",
+    "official": "ROB BRESNAHAN JR",
+    "provider": "Rob Bresnahan",
+    "basis": "The older frozen official package also names BRESNAHAN JR, ROB. Only this literal suffix difference was reviewed; no general name waiver."
+  },
+  "limitations": [
+    "UNOFFICIAL snapshot; source update timezone is not supplied.",
+    "Registered voters are a changing administrative denominator, not VEP or a fixed cohort.",
+    "Candidate totals are not ballots. Source-reported units do not establish final completeness.",
+    "No new map approval, historical precinct identity, individual switching or staying-home estimate.",
+    "Provider state/district tables remain separate, not composite county sums."
+  ],
+  "reproduction": "Run python3 test-review-monroe-house-selection.py, then python3 review-monroe-house-selection.py --source selected-source-facts.json --output NEW_DIRECTORY. Compare every checksummed member. No network required."
+}

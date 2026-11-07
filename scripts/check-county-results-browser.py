@@ -224,6 +224,10 @@ with sync_playwright() as p:
                 continue
             expect(page.locator("#year")).to_have_value("2026")
             expect(page.locator("#map-level")).to_have_value("county")
+            expect(page.locator("svg.turnout-map")).to_be_visible(timeout=90000)
+            expect(page.locator("#map-color")).to_have_value("turnout")
+            mode["participation_default_preserved"] = True
+            page.locator("#map-color").select_option("margin")
             expect(page.locator("#map-color")).to_have_value("margin")
             overview = page.locator('.county-overview-feature[data-color-level="county"]')
             expect(overview).to_have_count(index["colored_counties"], timeout=90000)
@@ -319,6 +323,8 @@ with sync_playwright() as p:
         page.on("pageerror", lambda error: errors.append(str(error)))
         page.route(pattern, lambda route: route.abort())
         page.goto(url)
+        expect(page.locator("svg.turnout-map")).to_be_visible(timeout=90000)
+        page.locator("#map-color").select_option("margin")
         page.locator("#map-level").select_option("precinct")
         expect(page.locator("#state-select")).to_be_enabled()
         page.locator("#state-select").select_option("Washington")

@@ -3,7 +3,7 @@ import test from 'node:test';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { cohortSelection } from '../public/scripts/participation-swing.js';
-import { demographicRegistry, observedComparisons, qualifyConditionalScenarios, swingRoot } from './build-participation-swing.mjs';
+import { demographicRegistry, observedComparisons, qualifyConditionalScenarios, swingRoot, verifyFrozenSwingInputs } from './build-participation-swing.mjs';
 import { qualifyCohort } from './participation-swing.mjs';
 
 const read = file => JSON.parse(readFileSync(file, 'utf8'));
@@ -108,12 +108,47 @@ test('public complete-input manifest pins exact bytes and excludes private voter
   }
   for (const row of manifest) {
     assert.doesNotMatch(row.path, /absentee\.zip|history-durham\.zip|session-state|\.copilot/);
-    const bytes = readFileSync(row.path);
-    assert.equal(bytes.length, row.bytes);
-    assert.equal(createHash('sha256').update(bytes).digest('hex'), row.sha256);
   }
+  assert.equal(verifyFrozenSwingInputs(manifest), true);
   assert.equal(read(`${swingRoot}/analysis.json`).validation.release_point_estimates, false);
   assert.deepEqual(read(`${swingRoot}/observed-comparisons.json`), observedComparisons(candidates));
+});
+
+test('county refreshes retain the exact historical input manifest and its prior pointer', () => {
+  const original = {
+    data_directory: 'old', previous_snapshots: [], label: 'Old observation',
+    party_votes: { data_directory: 'old/party-votes' },
+  };
+  const bytes = Buffer.from(`${JSON.stringify(original, null, 2)}\n`);
+  const manifest = [{
+    path: 'public/county-results.json', bytes: bytes.length,
+    sha256: createHash('sha256').update(bytes).digest('hex'),
+  }];
+  const unchanged = structuredClone(manifest);
+  const { previous_snapshots, ...snapshot } = original;
+  const refreshed = {
+    ...original, data_directory: 'new', previous_snapshots: [snapshot],
+    label: 'New observation', party_votes: { data_directory: 'new/party-votes' },
+  };
+  const readPointer = () => Buffer.from(JSON.stringify(refreshed));
+  assert.equal(verifyFrozenSwingInputs(manifest, () => bytes), true);
+  assert.equal(verifyFrozenSwingInputs(manifest, readPointer), true);
+  assert.deepEqual(manifest, unchanged);
+  refreshed.previous_snapshots[0].label = 'Changed historical observation';
+  assert.throws(() => verifyFrozenSwingInputs(manifest, readPointer), /Changed frozen analysis input/);
+  refreshed.previous_snapshots = [];
+  assert.throws(() => verifyFrozenSwingInputs(manifest, readPointer), /Changed frozen analysis input/);
+});
+
+test('an unchanged historical pointer cannot hide changed frozen candidate inputs', () => {
+  const bytes = Buffer.from('original candidate counts');
+  const manifest = [{
+    path: 'data/county-results/old/candidates.csv.gz', bytes: bytes.length,
+    sha256: createHash('sha256').update(bytes).digest('hex'),
+  }];
+  assert.equal(verifyFrozenSwingInputs(manifest, () => bytes), true);
+  assert.throws(() => verifyFrozenSwingInputs(manifest, () => Buffer.from('changed candidate counts')),
+    /Changed frozen analysis input/);
 });
 
 test('experimental scenarios reconcile but never become independently validated persuasion', () => {

@@ -1,0 +1,30 @@
+{
+  "audit.json": {
+    "bytes": 1066,
+    "sha256": "5a6325c43067c3feca22643f20ce11ce3fcbb9734691f40864a63d73e8d0ae3c"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 416,
+    "sha256": "45007f50dda06e241bb8d515246a25404b21b166ee5f6e42d24e69c8bfa7fac1"
+  },
+  "methodology-review.json": {
+    "bytes": 1996,
+    "sha256": "2f92a0c0571f622216d7f1ce9f76372c5c570c525b8634d976e0f23793994b3c"
+  },
+  "review-monroe-house-selection.py": {
+    "bytes": 9774,
+    "sha256": "6be90d750262c61ea82c47f696434603f27ba092a363383ddac6824cc11f52db"
+  },
+  "selected-source-facts.json": {
+    "bytes": 24490,
+    "sha256": "282b424181a4aa4a511cb828da0861f82656bed11283dedbf5c8f8346e705d52"
+  },
+  "source-receipts.json": {
+    "bytes": 2625,
+    "sha256": "5239936e8e562ab760cdc5a311ec1267b8e5dc7830f1588985d5dae1c00cf477"
+  },
+  "test-review-monroe-house-selection.py": {
+    "bytes": 4153,
+    "sha256": "7dae46d913d177bc38e29896c9f6690e752489d119d2d61bbcbf511d9cce10fd"
+  }
+}

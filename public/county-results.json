@@ -1,10 +1,10 @@
 {
   "year": 2026,
-  "data_directory": "data/county-results/20261106T192048Z",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b405fd3f002bac180dbc0fdf79f0a2483365355d/data/county-results/20261106T192048Z/",
-  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261106t192048z/complete-county-results.zip",
-  "complete_download_bytes": 150792729,
-  "complete_download_sha256": "c4a924e02b6fdfe4935a8eba6639ab890d378f9288e84ebb74d3156707c537fa",
+  "data_directory": "data/county-results/20261107-monroe-selected-01",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b0bc7fe34bcfb5ded8eb4f8d8023cba2fe2c733b/data/county-results/20261107-monroe-selected-01/",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261107-monroe-selected-01/complete-county-results.zip",
+  "complete_download_bytes": 150025148,
+  "complete_download_sha256": "5fefb9fa4353fb07684af49b197363a1efe70caf92121c0ffc3782c7add9f47a",
   "label": "2026 U.S. House county / equivalent results",
   "overview_url": "/county-results-overview.geojson.gz",
   "states": 49,
@@ -12,6 +12,57 @@
   "participation_available": false,
   "publication": "reviewed_pending_live_verification",
   "previous_snapshots": [
+    {
+      "year": 2026,
+      "data_directory": "data/county-results/20261106T192048Z",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b405fd3f002bac180dbc0fdf79f0a2483365355d/data/county-results/20261106T192048Z/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261106t192048z/complete-county-results.zip",
+      "complete_download_bytes": 150792729,
+      "complete_download_sha256": "c4a924e02b6fdfe4935a8eba6639ab890d378f9288e84ebb74d3156707c537fa",
+      "label": "2026 U.S. House county / equivalent results",
+      "overview_url": "/county-results-overview.geojson.gz",
+      "states": 49,
+      "normalized_counties": 3127,
+      "participation_available": false,
+      "publication": "reviewed_pending_live_verification",
+      "official_supplement": {
+        "counties": [
+          "42089",
+          "42017",
+          "42091"
+        ],
+        "provider_counties_replaced": [
+          "42017",
+          "42089",
+          "42091"
+        ],
+        "new_precinct_coverage": 0,
+        "state_completion_promoted": false
+      },
+      "party_votes": {
+        "data_directory": "data/county-results/20261106T192048Z/party-votes",
+        "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b405fd3f002bac180dbc0fdf79f0a2483365355d/data/county-results/20261106T192048Z/party-votes/",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261106t192048z/complete-county-results.zip",
+        "tables": [
+          {
+            "file": "county-party-totals.csv.gz",
+            "label": "Every county-party total: 9746 rows"
+          },
+          {
+            "file": "county-district-candidate-totals.csv.gz",
+            "label": "Every county/district candidate: 12360 rows"
+          },
+          {
+            "file": "state-party-totals.csv.gz",
+            "label": "Every full-state party total: 223 rows"
+          },
+          {
+            "file": "district-candidate-totals.csv.gz",
+            "label": "Every accepted House district candidate: 1385 rows"
+          }
+        ]
+      }
+    },
     {
       "year": 2026,
       "data_directory": "data/county-results/20261106T063536Z",
@@ -267,9 +318,9 @@
     "state_completion_promoted": false
   },
   "party_votes": {
-    "data_directory": "data/county-results/20261106T192048Z/party-votes",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b405fd3f002bac180dbc0fdf79f0a2483365355d/data/county-results/20261106T192048Z/party-votes/",
-    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261106t192048z/complete-county-results.zip",
+    "data_directory": "data/county-results/20261107-monroe-selected-01/party-votes",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b0bc7fe34bcfb5ded8eb4f8d8023cba2fe2c733b/data/county-results/20261107-monroe-selected-01/party-votes/",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261107-monroe-selected-01/complete-county-results.zip",
     "tables": [
       {
         "file": "county-party-totals.csv.gz",
@@ -277,7 +328,7 @@
       },
       {
         "file": "county-district-candidate-totals.csv.gz",
-        "label": "Every county/district candidate: 12360 rows"
+        "label": "Every county/district candidate: 12405 rows"
       },
       {
         "file": "state-party-totals.csv.gz",
@@ -285,7 +336,7 @@
       },
       {
         "file": "district-candidate-totals.csv.gz",
-        "label": "Every accepted House district candidate: 1385 rows"
+        "label": "Every accepted House district candidate: 1400 rows"
       }
     ]
   }

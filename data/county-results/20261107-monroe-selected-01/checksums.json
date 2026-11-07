@@ -1,0 +1,58 @@
+{
+  "audit.json": {
+    "bytes": 3351643,
+    "sha256": "298581639ca8678c4f31dd3fdb3cb256f46696d5be30881745a045b9896b11e9"
+  },
+  "county-results.csv": {
+    "bytes": 400335,
+    "sha256": "13095467ae7891c5d16a9c58b858f20f0a7cac7489600352ea2d7254bf2ccf89"
+  },
+  "county-results.json.gz": {
+    "bytes": 265345,
+    "sha256": "c57c4e1f3f98c96312408c812cb830e0bc610c94bfeca1f3d8b34468d72ba817"
+  },
+  "geometry/AK.geojson.gz": {
+    "bytes": 535848,
+    "sha256": "4b1d18c1e56674d616f6d302cb4b6456dfb7a41141313ad86e620f76d12e444e"
+  },
+  "geometry/HI.geojson.gz": {
+    "bytes": 64296,
+    "sha256": "a0c2e40ad8ee9d44734b50dac15c5f3774ce21d2f1b3d5171ae794497dc26cc0"
+  },
+  "index.json": {
+    "bytes": 22964,
+    "sha256": "d71f39ebf22de0b1771358a7a6994c25fccaa1fb774932825732a741d8c87459"
+  },
+  "margins.json": {
+    "bytes": 2045939,
+    "sha256": "ad75834c037faf1a23fb12f997b8f4f58385578349623a3d1914e40074b058ed"
+  },
+  "party-votes/audit.json": {
+    "bytes": 2786,
+    "sha256": "ab33a7a835c7ef642185f33757a8955be4290885f673b9ecc59905c913ad39c0"
+  },
+  "party-votes/checksums.json": {
+    "bytes": 704,
+    "sha256": "05b08f442456ed7c7a9a9efe2abd4aa94de4d232954f7458cc5c53d8f8910a77"
+  },
+  "party-votes/county-district-candidate-totals.csv.gz": {
+    "bytes": 143309,
+    "sha256": "835d6fbb400cdafb79ea8a5ac7af3e01902efb37c2b362d9ba727d30d9dbeb09"
+  },
+  "party-votes/county-party-totals.csv.gz": {
+    "bytes": 76511,
+    "sha256": "4e1b4d6c9cb6dc52b0ccf56804e2eedabb30de16a3b27efa42a83e80971787f6"
+  },
+  "party-votes/district-candidate-totals.csv.gz": {
+    "bytes": 25649,
+    "sha256": "ae04bc2db2ae8b94bbd035069d2c9aace04e142e3c3cb8e8d2e6d9ef33793ad7"
+  },
+  "party-votes/state-party-totals.csv.gz": {
+    "bytes": 2426,
+    "sha256": "e2a5def9da9f150de624bb2aaf5f25c832685970abf68be7728bfd8bd6b1ff47"
+  },
+  "state-codes.json": {
+    "bytes": 717,
+    "sha256": "07e4919b7d6ca93929dade31248806afd886ac4fa47215640d976b33bba75f24"
+  }
+}

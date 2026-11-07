@@ -1,0 +1,58 @@
+[
+  {
+    "url": "https://agencies2.monroecountypa.gov/ElectionResults/",
+    "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/",
+    "method": "GET",
+    "status": 200,
+    "bytes": 81328,
+    "sha256": "7ab794de092c94cfb36c2ebc658fce73dc5f2237983c3f8382c4d57ce6218385",
+    "acquired_at": "2026-11-07T06:14:20.226819+00:00",
+    "content_type": "text/html; charset=utf-8",
+    "last_modified": null,
+    "etag": null,
+    "http_date": "Sat, 07 Nov 2026 06:14:20 GMT",
+    "role": "new_separately_dated_official_observation_not_overwrite_of_old_source"
+  },
+  {
+    "url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=GOVERNOR+AND+LIEUTENANT+GOVERNOR&id=10",
+    "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=GOVERNOR+AND+LIEUTENANT+GOVERNOR&id=10",
+    "method": "GET",
+    "status": 200,
+    "bytes": 45945,
+    "sha256": "2c28eab66c81b11661dd5c382d8d78ad7f82b89a0e56fbb9cf208f3ff602b2a3",
+    "acquired_at": "2026-11-07T06:14:20.408246+00:00",
+    "content_type": "text/html; charset=utf-8",
+    "last_modified": null,
+    "etag": null,
+    "http_date": "Sat, 07 Nov 2026 06:14:20 GMT",
+    "role": "new_separately_dated_official_observation_not_overwrite_of_old_source"
+  },
+  {
+    "url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=REPRESENTATIVE+IN+CONGRESS+7TH+DISTRICT&id=10",
+    "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=REPRESENTATIVE+IN+CONGRESS+7TH+DISTRICT&id=10",
+    "method": "GET",
+    "status": 200,
+    "bytes": 16118,
+    "sha256": "c84f98bbd072cc624bc42ab9075e6bfc5fc73f10f96ee2cd88056f591c08b3aa",
+    "acquired_at": "2026-11-07T06:14:20.548549+00:00",
+    "content_type": "text/html; charset=utf-8",
+    "last_modified": null,
+    "etag": null,
+    "http_date": "Sat, 07 Nov 2026 06:14:20 GMT",
+    "role": "new_separately_dated_official_observation_not_overwrite_of_old_source"
+  },
+  {
+    "url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=REPRESENTATIVE+IN+CONGRESS+8TH+DISTRICT&id=10",
+    "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=REPRESENTATIVE+IN+CONGRESS+8TH+DISTRICT&id=10",
+    "method": "GET",
+    "status": 200,
+    "bytes": 37756,
+    "sha256": "37c49ba911367f86ead0f5886a64ea1168d29c20e18a50bc36ca4736d12a5c4f",
+    "acquired_at": "2026-11-07T06:14:20.711014+00:00",
+    "content_type": "text/html; charset=utf-8",
+    "last_modified": null,
+    "etag": null,
+    "http_date": "Sat, 07 Nov 2026 06:14:20 GMT",
+    "role": "new_separately_dated_official_observation_not_overwrite_of_old_source"
+  }
+]

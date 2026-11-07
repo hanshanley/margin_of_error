@@ -17,7 +17,7 @@ REFERENCE = merge.read(ROOT / "data/county-results/20261105-house-02/county-refe
 
 
 @pytest.mark.parametrize("fips,name,package,total,dem,rep", [
-    (*merge.PACKAGES[0], 60481, 35157, 25190),
+    ("42089", "Monroe", "20261105-monroe-official-01", 60481, 35157, 25190),
     (*merge.PACKAGES[1], 302786, 158908, 142796),
     (*merge.PACKAGES[2], 389901, 268823, 120367),
 ])
@@ -65,7 +65,7 @@ def test_changed_county_identity_inventory_or_votes_fail_closed(tmp_path, change
 
 
 def test_unreceipted_original_changes_and_wrong_census_identity_are_rejected(tmp_path):
-    fips, name, package = merge.PACKAGES[0]
+    fips, name, package = "42089", "Monroe", "20261105-monroe-official-01"
     target = tmp_path / package
     shutil.copytree(ROOT / "data/county-source-reviews" / package, target)
     next((target / "originals").glob("*.html")).write_text("changed")
@@ -73,6 +73,49 @@ def test_unreceipted_original_changes_and_wrong_census_identity_are_rejected(tmp
         merge.official_row(target, fips, name, REFERENCE)
     with pytest.raises(ValueError, match="identity"):
         merge.official_row(ROOT / "data/county-source-reviews" / package, "42017", name, REFERENCE)
+
+
+def test_current_monroe_preserves_blank_party_and_both_district_vectors():
+    fips, name, package = merge.PACKAGES[0]
+    row = merge.official_row(ROOT / "data/county-source-reviews" / package, fips, name, REFERENCE)
+    assert (row["democratic_votes"], row["republican_votes"], row["other_votes"], row["total_votes"]) == (
+        35619, 25343, 134, 61096)
+    assert [(part["district"], [candidate["votes"] for candidate in part["candidates"]])
+            for part in row["district_fragments"]] == [
+                ("PA-07", [2052, 3162, 16]), ("PA-08", [33567, 22181, 118])]
+    assert {candidate["party"] for part in row["district_fragments"]
+            for candidate in part["candidates"]} == {"DEMOCRATIC", "REPUBLICAN", ""}
+    assert "ballots" not in row and "registered_voters" not in row
+
+
+@pytest.mark.parametrize("change", ["csv_vector", "audit_clock", "native_facts"])
+def test_selected_monroe_rejects_rechecksummed_changes(tmp_path, change):
+    fips, name, package = merge.PACKAGES[0]
+    target = tmp_path / package
+    shutil.copytree(ROOT / "data/county-source-reviews" / package, target)
+    if change == "csv_vector":
+        path = target / "county-candidate-results.csv"
+        with path.open() as stream:
+            reader = csv.DictReader(stream)
+            fields, rows = reader.fieldnames, list(reader)
+        rows[0]["votes"], rows[1]["votes"] = rows[1]["votes"], rows[0]["votes"]
+        with path.open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+            writer.writeheader()
+            writer.writerows(rows)
+    else:
+        path = target / ("audit.json" if change == "audit_clock" else "selected-source-facts.json")
+        value = merge.read(path)
+        if change == "audit_clock":
+            value["source_update_literal"] = "11/3/2026 9:19:27 PM"
+        else:
+            value["participation"]["total_ballots_tabulated"] += 1
+        merge.write(path, value)
+    inventory = merge.read(target / "checksums.json")
+    inventory[path.name] = merge.checksum(path)
+    merge.write(target / "checksums.json", inventory)
+    with pytest.raises(ValueError, match="pinned native facts|Changed selected source facts"):
+        merge.official_row(target, fips, name, REFERENCE)
 
 
 def overlap_snapshot():
