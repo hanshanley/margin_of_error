@@ -1,0 +1,70 @@
+---
+import { readFileSync } from 'node:fs';
+const base = '/participation-pew-intentions/20261107-01/';
+type Row = { source_group: string; intended_house_pct: Record<string, number> };
+const analysis: { rows: Row[] } = JSON.parse(readFileSync(`public${base}intentions.json`, 'utf8'));
+---
+
+<section id="participation-panel-intentions" class="participation-current" aria-labelledby="panel-intentions-title">
+	<header class="section-intro">
+		<p class="kicker">Independent historical panel · Pre-election intentions only</p>
+		<h2 id="panel-intentions-title">National panel: validated prior participation, intended House choice</h2>
+		<p>Pew Research Center interviewed 3,917 registered voters on September 28–October 4, 2026.
+			The prior groups have <strong>record-validated 2024 participation</strong> and surveyed
+			post-election candidate choice. This is stronger historical evidence than a new 2026-only
+			recall, but <strong>not completed November 2026 voting or turnout</strong>.</p>
+	</header>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Pew national House intentions by validated prior participation">
+		<table>
+			<caption>Among each prior-choice group in the current registered-voter sample.
+				House intentions include leaners; not percentages of the full original 2024 coalitions.</caption>
+			<thead><tr><th scope="col">Source prior-vote group</th><th scope="col">Intended D</th>
+				<th scope="col">Intended R</th><th scope="col">Another candidate</th>
+				<th scope="col">Not sure</th><th scope="col">Item nonresponse</th></tr></thead>
+			<tbody>{analysis.rows.map(row => <tr data-pew-prior={row.source_group}>
+				<th scope="row">{row.source_group}</th>
+				{['D', 'R', 'Other', 'Not sure'].map(party =>
+					<td data-pew-choice={party}>{row.intended_house_pct[party]}%</td>)}
+				<td data-pew-nonresponse>Not published</td>
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<p>The workbook omits no-answer responses. A rounded sum of 100 does not establish zero refusals;
+		we do not renormalize or treat unsure respondents as nonvoters. Validation concerns
+		<strong>participation, not administratively observed candidate choice</strong>.</p>
+	<p><strong>No population switching or drop-off counts.</strong> Current registered voters are
+		not the eventual 2026 electorate or everyone who belonged to either 2024 coalition.
+		These intentions are not multiplied by November ballot totals. Separate demographic
+		preferences do not supply demographic-by-prior-vote joints; no state, county or precinct
+		estimates or subgroup design confidence intervals are inferred.</p>
+	<details class="explorer-notes"><summary>Methods, historical timing and complete selected inputs</summary>
+		<p>The <a href="https://www.pewresearch.org/politics/2026/10/08/with-americans-in-a-sour-mood-democratic-voters-are-more-engaged-in-midterms/">October 8 report</a>
+			describes historical choice collection in the month after the 2024 election; its exported
+			workbook says the week after. We preserve both descriptions rather than assert exact
+			interview dates. The questions usually insert district candidates, with source-documented
+			generic-party exceptions; this is not a single named statewide House race.</p>
+		<p><a href="https://www.pewresearch.org/politics/2026/10/08/midterms-2026-methodology/">ATP weighting</a>
+			addresses recruitment, selection, nonresponse and attrition, and includes validated 2024
+			turnout and choice benchmarks. It does not establish 2026 electorate composition.
+			SSRS fielded this separate Pew panel; a shared contractor does not make it the SSRS
+			Voter Poll sample. We apply no new historical reweighting.</p>
+		<p>Whole percentages are publisher-rounded descriptives, not exact population probabilities.
+			Prior-group bases and joint design intervals are not supplied in these tables; the
+			overall registered-voter margin of error is not reused for these conditionals.
+			The complete archive contains both selected broad groups, all published response values,
+			explicit unknown nonresponse, source URLs and hashes, methods and exact code/tests/results.
+			Native HTML, PDFs, figures, the full workbook and respondent records are not redistributed.</p>
+		<p>Source: Pew Research Center, American Trends Panel Wave 200.
+			Copyright 2026 Pew Research Center. Limited factual excerpts; analysis is not endorsed
+			by Pew Research Center. <a href="https://www.pewresearch.org/about/terms-and-conditions/">Source terms</a>.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete selected panel intentions + inputs + code + results (ZIP)</a>
+		<a href={`${base}intentions.json`} download>Panel intentions + qualifications (JSON)</a>
+		<a href={`${base}download.json`} download>Panel archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-panel-intentions { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>
