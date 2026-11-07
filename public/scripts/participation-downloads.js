@@ -22,6 +22,9 @@ export const participationCountyContextRoots = {
 };
 
 export function participationDownload(path) {
+  const swingArchive = /^\/participation-swing\/(20261106-0[12])\/complete-analysis\.zip$/.exec(path);
+  if (swingArchive)
+    return `https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-swing-20261106-02/complete-analysis-${swingArchive[1]}.zip`;
   const contextArchive = /^\/participation-county-context\/(20261106-(0[1-9]|1[0-9]|2[012345]))\/complete-county-participation-context-\2\.zip$/.exec(path);
   if (contextArchive)
     return `https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-${contextArchive[1]}/complete-county-participation-context-${contextArchive[2]}.zip`;

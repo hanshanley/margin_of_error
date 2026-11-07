@@ -62,6 +62,7 @@ export async function preparePages(output, upload = false) {
 	}
 	assert.ok(files.length, 'Prepare a fresh, complete build before publishing');
 	const pinnedFiles = files.filter(file => [participationCurrentRoot, participationHistoricalRoot, ...Object.values(participationCountyContextRoots),
+		'https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-swing-20261106-02/',
 		'https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-']
 		.some(root => file.url.startsWith(root)));
 	const releaseFiles = files.filter(file => !pinnedFiles.includes(file));
