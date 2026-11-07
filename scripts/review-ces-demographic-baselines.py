@@ -76,7 +76,7 @@ def effective(bucket):
     return bucket["sum_weight"] ** 2 / bucket["sum_squared_weight"]
 
 
-def review(rows):
+def review(rows, demographics_fn=demographics):
     audit, totals, cells = Counter(), {}, {}
     for row in rows:
         audit["native_respondents"] += 1
@@ -99,7 +99,7 @@ def review(rows):
             audit["excluded_match_state_differs_from_survey_state"] += 1
             continue
         prior = {"1": "D", "2": "R"}.get(row["CC24_410"], "O")
-        groups = demographics(row)
+        groups = demographics_fn(row)
         audit["retained_respondents"] += 1
         for scope in (state, "US51") if state == "DC" else (state, "US50", "US51"):
             accumulate(totals.setdefault((scope, prior), Counter()), weight)
