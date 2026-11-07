@@ -1,0 +1,127 @@
+---
+import { readFileSync } from 'node:fs';
+
+type Election = { year: number; ballots: number; native_local_reporting_units: number;
+	native_unit_contest_vectors: number; native_contests: number; local_report_clock: string;
+	county_report_clock: string; status: string };
+type Contest = { year: number; native_contest: string; county_ballots: number;
+	candidate_votes: number; unclassified_ballot_minus_contest_votes: number;
+	two_party_margin_pp: number; candidates: { native_label: string; votes: number }[] };
+type Comparison = { baseline_contest: string; two_party_margin_change_pp: number };
+type Asset = { file: string; url: string; bytes: number; sha256: string };
+const data = 'data/participation-columbia-wisconsin-history/20261107-01';
+const history: { elections: Election[]; contest_context: Contest[]; descriptive_comparisons: Comparison[];
+	reported_ballot_count_change_2026_minus_2024: number } =
+	JSON.parse(readFileSync(`${data}/output/history.json`, 'utf8'));
+const receipt: { assets: Asset[] } = JSON.parse(readFileSync(
+	'public/participation-columbia-wisconsin-history/20261107-01/download.json', 'utf8'));
+const sources: { elections: { source_receipts: { requested_url: string }[] }[] } =
+	JSON.parse(readFileSync(`${data}/selected-observations.json`, 'utf8'));
+const number = (value: number) => value.toLocaleString('en-US');
+const signed = (value: number, precision = 0) => `${value > 0 ? '+' : ''}${value.toLocaleString('en-US',
+	{ minimumFractionDigits: precision, maximumFractionDigits: precision })}`;
+const fields = ['ballots', 'native_local_reporting_units', 'native_unit_contest_vectors', 'native_contests'] as const;
+const contextFields = ['county_ballots', 'candidate_votes', 'unclassified_ballot_minus_contest_votes', 'two_party_margin_pp'] as const;
+const labels: Record<string, string> = {
+	'complete-analysis.zip': 'Complete Columbia inputs + code + tests + results (ZIP)',
+	'native-ballots.csv': 'Every selected native ballot count (CSV)',
+	'native-contest-vectors.csv': 'All selected contest and candidate counts (CSV)',
+};
+---
+
+<section id="participation-columbia-wisconsin-history" class="participation-current" aria-labelledby="columbia-wisconsin-title">
+	<header class="section-intro">
+		<p class="kicker">County participation · presidential and midterm context</p>
+		<h2 id="columbia-wisconsin-title">Columbia County, Wisconsin, 2024–2026</h2>
+		<p>Two complete sets of native local and county reports.
+			<strong>Both elections are unofficial snapshots here.</strong>
+			Reported ballots fell by 7,725; that is <strong>not measured prior-voter drop-off</strong>,
+			individual switching or demographic turnout.</p>
+	</header>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Columbia Wisconsin reported participation counts">
+		<table>
+			<caption>Native ballot counts, not candidate votes or registered-voter turnout rates.
+				Local units are municipalities or grouped wards, not 37 proven individual precincts.</caption>
+			<thead><tr><th scope="col">Election</th><th scope="col">Reported ballots</th>
+				<th scope="col">Native local units</th><th scope="col">Local contest vectors</th>
+				<th scope="col">County contests</th></tr></thead>
+			<tbody>{history.elections.map(row => <tr data-columbia-year={row.year}>
+				<th scope="row">{row.year} unofficial</th>
+				{fields.map(field => <td data-columbia-field={field}>{number(row[field])}</td>)}
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<p>2026 minus 2024 reported ballots:
+		<strong data-columbia-ballot-change>{signed(history.reported_ballot_count_change_2026_minus_2024)}</strong>.
+		{' '}Different election electorates are not a fixed-person cohort. No registration denominator,
+		eligible-population rate, unique-person N26 or demographic denominator is qualified.</p>
+	<details class="explorer-notes" id="columbia-wisconsin-contests">
+		<summary>Separate whole-county presidential and House context, not individual persuasion</summary>
+		<p>Each displayed contest covers all 37 native units in its own election. Two-party margin is
+			100 × (Democratic − Republican votes) / (Democratic + Republican votes).
+			All literal parties and write-ins remain; independents are not reassigned.
+			Ballot-minus-contest-vote gaps stay <strong>unclassified</strong>, not measured abstention,
+			rejected ballots or missing voters.</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Columbia Wisconsin separate whole-county contests">
+			<table>
+				<caption>Presidential-to-House and House-to-House comparisons are separate context, not additive effects.</caption>
+				<thead><tr><th scope="col">Contest</th><th scope="col">Reported ballots</th>
+					<th scope="col">All candidate votes</th><th scope="col">Unclassified gap</th>
+					<th scope="col">D minus R, two-party pp</th></tr></thead>
+				<tbody>{history.contest_context.map((row, index) => <tr data-columbia-contest={index}>
+					<th scope="row">{row.year} {row.native_contest}</th>
+					{contextFields.map(field => <td data-columbia-field={field}>
+						{field === 'two_party_margin_pp' ? signed(row[field], 2) : number(row[field])}
+					</td>)}
+				</tr>)}</tbody>
+			</table>
+		</div>
+		{history.descriptive_comparisons.map((row, index) => <p>
+			2024 {row.baseline_contest} to 2026 House 6:
+			<strong data-columbia-margin-change={index}>{signed(row.two_party_margin_change_pp, 2)} pp</strong>
+			{' '}in the county two-party margin, not an estimated share of persuasion or turnout effects.
+		</p>)}
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Columbia Wisconsin every literal candidate">
+			<table>
+				<caption>All candidates and write-ins in the three displayed contests; every local contest remains in the complete download.</caption>
+				<thead><tr><th scope="col">Election / contest / native candidate</th><th scope="col">Candidate votes</th></tr></thead>
+				<tbody>{history.contest_context.map((contest, index) => contest.candidates.map((candidate, answer) =>
+					<tr data-columbia-candidate={`${index}-${answer}`}>
+						<th scope="row">{contest.year} {contest.native_contest}: {candidate.native_label}</th>
+						<td data-columbia-field="votes">{number(candidate.votes)}</td>
+					</tr>))}</tbody>
+			</table>
+		</div>
+	</details>
+	<details class="explorer-notes" id="columbia-wisconsin-methods">
+		<summary>Four separate source clocks, coverage and complete reproducibility</summary>
+		{history.elections.map((row, index) => <p data-columbia-clock={row.year}>
+			<a href={sources.elections[index].source_receipts[0].requested_url}>Columbia County {row.year} archive</a>:
+			{' '}local report {row.local_report_clock}; separate county report {row.county_report_clock}.
+			{' '}Both say “{row.status}.” No timezone is supplied. Report footers, filenames,
+			HTTP modification times and acquisition times are distinct.
+		</p>)}
+		<p>All 838 local contest vectors reconcile to 44 county contest controls.
+			Matching unit names do not establish unchanged precinct boundaries or the same voters.
+			No new longitudinal precinct map, individual transitions, original-coalition absence,
+			new/returning-voter identity, demographic turnout, final-count certification or design confidence
+			interval is inferred.</p>
+		<p>The complete immutable ZIP contains every selected permitted factual input, all 76 ballot cells,
+			2,647 candidate/answer cells, six sanitized original source receipts, methods, exact code,
+			seven tests, complete CSVs and results, not metadata alone.
+			Offline selected-fact reproduction does not rerun native PDF extraction or validate latent transitions.
+			Native PDF/HTML, cookies and personal records are not redistributed.
+			Selected governmental factual counts are not a native-document redistribution license.
+			This analysis is not endorsed by the source.</p>
+	</details>
+	<div class="download-links">
+		{receipt.assets.map(asset => <a href={asset.url} data-columbia-download={asset.file}>
+			{labels[asset.file]}
+		</a>)}
+		<a href="/participation-columbia-wisconsin-history/20261107-01/download.json" download>Immutable download bytes + SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-columbia-wisconsin-history { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>
