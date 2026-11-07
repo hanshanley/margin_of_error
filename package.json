@@ -6,6 +6,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "test:ces-hybrid-participation": "python3 scripts/test-review-ces-hybrid-participation.py",
     "test:ces-participation-records": "python3 scripts/test-review-ces-participation-records.py",
     "test:nd-long-history": "python3 scripts/test-review-north-dakota-long-ballot-history.py && python3 scripts/test-package-north-dakota-long-ballot-history.py",
     "dev": "astro dev",
@@ -18,7 +19,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "test": "npm run test:ces-participation-records && npm run test:nd-long-history && npm run test:clark-history && npm run test:registration-entry && npm run test:swing && python3 scripts/test-package-county-scenarios.py && python3 scripts/test-package-county-scenarios.py --version 20261107-02 && node --test scripts/build-website-charts.test.mjs scripts/platform-position-copy.test.mjs scripts/platform-density-comparison.test.mjs scripts/voter-participation.test.mjs scripts/reviewed-county-participation.test.mjs scripts/additional-participation.test.mjs scripts/county-participation-context.test.mjs && npm run build && node scripts/validate-build.mjs",
+    "test": "npm run test:ces-hybrid-participation && npm run test:ces-participation-records && npm run test:nd-long-history && npm run test:clark-history && npm run test:registration-entry && npm run test:swing && python3 scripts/test-package-county-scenarios.py && python3 scripts/test-package-county-scenarios.py --version 20261107-02 && node --test scripts/build-website-charts.test.mjs scripts/platform-position-copy.test.mjs scripts/platform-density-comparison.test.mjs scripts/voter-participation.test.mjs scripts/reviewed-county-participation.test.mjs scripts/additional-participation.test.mjs scripts/county-participation-context.test.mjs && npm run build && node scripts/validate-build.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "sync:external-thumbnails": "node scripts/download-external-thumbnails.mjs",
     "migrate:legacy": "node scripts/migrate-google-sites.mjs",
