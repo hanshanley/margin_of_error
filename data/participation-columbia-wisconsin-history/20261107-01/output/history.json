@@ -1,0 +1,207 @@
+{
+  "version": "20261107-01",
+  "county_fips": "55021",
+  "county_name": "Columbia",
+  "state_code": "WI",
+  "elections": [
+    {
+      "year": 2024,
+      "ballots": 35035,
+      "native_local_reporting_units": 37,
+      "native_contests": 23,
+      "native_unit_contest_vectors": 403,
+      "local_report_clock": "11/06/2024 12:25AM",
+      "county_report_clock": "11/06/2024 12:29AM",
+      "source_timezone": null,
+      "status": "UNOFFICIAL RESULTS"
+    },
+    {
+      "year": 2026,
+      "ballots": 27310,
+      "native_local_reporting_units": 37,
+      "native_contests": 21,
+      "native_unit_contest_vectors": 435,
+      "local_report_clock": "11/03/2026 10:26PM",
+      "county_report_clock": "11/03/2026 11:00PM",
+      "source_timezone": null,
+      "status": "UNOFFICIAL RESULTS"
+    }
+  ],
+  "reported_ballot_count_change_2026_minus_2024": -7725,
+  "contest_context": [
+    {
+      "year": 2024,
+      "native_contest": "President / Vice President",
+      "county_ballots": 35035,
+      "candidate_votes": 34908,
+      "unclassified_ballot_minus_contest_votes": 127,
+      "candidates": [
+        {
+          "native_label": "DEM Kamala D. Harris / Tim Walz",
+          "votes": 16386,
+          "source_page": 1
+        },
+        {
+          "native_label": "REP Donald J. Trump / JD Vance",
+          "votes": 17988,
+          "source_page": 1
+        },
+        {
+          "native_label": "CON Randall Terry / Stephen Broden",
+          "votes": 46,
+          "source_page": 1
+        },
+        {
+          "native_label": "LIB Chase Russell Oliver / Mike ter Maat",
+          "votes": 108,
+          "source_page": 1
+        },
+        {
+          "native_label": "WGR Jill Stein / Rudolph Ware",
+          "votes": 83,
+          "source_page": 1
+        },
+        {
+          "native_label": "IND Claudia De la Cruz / Karina Garcia",
+          "votes": 12,
+          "source_page": 1
+        },
+        {
+          "native_label": "IND Cornel West / Melina Abdullah",
+          "votes": 19,
+          "source_page": 1
+        },
+        {
+          "native_label": "IND Robert F. Kennedy, Jr. / Nicole Shanahan",
+          "votes": 199,
+          "source_page": 1
+        },
+        {
+          "native_label": "Write-In Totals",
+          "votes": 67,
+          "source_page": 1
+        }
+      ],
+      "two_party_margin_pp": -4.660499214522604
+    },
+    {
+      "year": 2024,
+      "native_contest": "Representative in Congress District 6",
+      "county_ballots": 35035,
+      "candidate_votes": 33291,
+      "unclassified_ballot_minus_contest_votes": 1744,
+      "candidates": [
+        {
+          "native_label": "DEM John Zarbano",
+          "votes": 15078,
+          "source_page": 1
+        },
+        {
+          "native_label": "REP Glenn Grothman",
+          "votes": 18177,
+          "source_page": 1
+        },
+        {
+          "native_label": "Write-In Totals",
+          "votes": 36,
+          "source_page": 1
+        }
+      ],
+      "two_party_margin_pp": -9.318899413622011
+    },
+    {
+      "year": 2026,
+      "native_contest": "Representative in Congress District 6",
+      "county_ballots": 27310,
+      "candidate_votes": 26985,
+      "unclassified_ballot_minus_contest_votes": 325,
+      "candidates": [
+        {
+          "native_label": "REP Glenn Grothman",
+          "votes": 12373,
+          "source_page": 1
+        },
+        {
+          "native_label": "DEM Brad Smith",
+          "votes": 13577,
+          "source_page": 1
+        },
+        {
+          "native_label": "WGR Matthew Arndt",
+          "votes": 319,
+          "source_page": 1
+        },
+        {
+          "native_label": "IND Elizabeth Anne Fitzgibbon",
+          "votes": 426,
+          "source_page": 1
+        },
+        {
+          "native_label": "IND Mike Thurow",
+          "votes": 286,
+          "source_page": 1
+        },
+        {
+          "native_label": "Write-In Totals",
+          "votes": 4,
+          "source_page": 1
+        }
+      ],
+      "two_party_margin_pp": 4.639691714836223
+    }
+  ],
+  "descriptive_comparisons": [
+    {
+      "baseline_contest": "President / Vice President",
+      "baseline_year": 2024,
+      "current_contest": "Representative in Congress District 6",
+      "current_year": 2026,
+      "two_party_margin_change_pp": 9.300190929358827
+    },
+    {
+      "baseline_contest": "Representative in Congress District 6",
+      "baseline_year": 2024,
+      "current_contest": "Representative in Congress District 6",
+      "current_year": 2026,
+      "two_party_margin_change_pp": 13.958591128458234
+    }
+  ],
+  "unsupported_estimates": {
+    "individual_switchers": null,
+    "measured_staying_home": null,
+    "original_coalition_absence": null,
+    "new_or_returning_voter_identity": null,
+    "demographic_turnout": null,
+    "unique_person_N26": null,
+    "precinct_cross_year_flows": null,
+    "design_confidence_interval": null
+  },
+  "methodology": {
+    "status": "qualified_selected_government_factual_counts_only",
+    "selection": "Both complete native county/local factual table sets, not selected political outcomes.",
+    "basis": "Selected government election counts, literal public candidate/answer labels and source provenance; no native PDF/HTML redistribution or document-license claim.",
+    "source_status": "Both years explicitly UNOFFICIAL RESULTS. Reporting completion does not establish certification or finality.",
+    "unit_definition": "37 native municipal and grouped-ward reporting units per year, not 37 proven individual precincts.",
+    "ballot_definition": "Literal Ballots Cast - Total; candidate votes remain a separate race-specific denominator.",
+    "wrapped_candidate": "2024 IND Robert F. Kennedy, Jr. / Nicole Shanahan is a native two-line label with a vertically centered count; both independent engines verify all 38 joins.",
+    "limits": [
+      "Report clocks differ within each election and supply no timezone. Preserve every observation separately.",
+      "2026 minus 2024 is a reported ballot-count change, not observed partisan drop-off or measured staying home.",
+      "Matching county scope permits a descriptive county comparison, not a fixed-person cohort.",
+      "Matching municipal/ward labels do not establish unchanged boundaries or longitudinal precinct identity.",
+      "Ballot-minus-contest-vote differences are unclassified, not measured undervotes, rejected ballots or abstention.",
+      "Keep every party, independent candidate, write-in and referendum answer literal; do not pool offices.",
+      "Two-party margin changes are descriptive cross-office/same-office context, not individual persuasion.",
+      "No registration/eligible-population denominator, demographic turnout, unique-person N26 or design confidence interval is qualified.",
+      "Independent extraction checks native consistency, not independent outcome truth or latent transitions."
+    ],
+    "qualified_precinct_geometry": false,
+    "qualified_longitudinal_units": false,
+    "qualified_unique_person_population": false,
+    "qualified_individual_transitions": false,
+    "qualified_demographic_turnout": false,
+    "qualified_final_counts": false,
+    "native_documents_redistributed": false,
+    "personal_records_included": false
+  }
+}

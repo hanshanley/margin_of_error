@@ -1,0 +1,8 @@
+{
+  "version": "20261107-01",
+  "bytes": 57096,
+  "sha256": "944d65020c04f0fb515d2e1b2987335edaf9344bf79b715152ebf165c9d62ee9",
+  "members": 10,
+  "native_ballot_cells": 76,
+  "native_candidate_answer_cells": 2647
+}

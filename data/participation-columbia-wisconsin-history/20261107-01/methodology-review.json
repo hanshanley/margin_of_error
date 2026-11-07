@@ -1,0 +1,28 @@
+{
+  "status": "qualified_selected_government_factual_counts_only",
+  "selection": "Both complete native county/local factual table sets, not selected political outcomes.",
+  "basis": "Selected government election counts, literal public candidate/answer labels and source provenance; no native PDF/HTML redistribution or document-license claim.",
+  "source_status": "Both years explicitly UNOFFICIAL RESULTS. Reporting completion does not establish certification or finality.",
+  "unit_definition": "37 native municipal and grouped-ward reporting units per year, not 37 proven individual precincts.",
+  "ballot_definition": "Literal Ballots Cast - Total; candidate votes remain a separate race-specific denominator.",
+  "wrapped_candidate": "2024 IND Robert F. Kennedy, Jr. / Nicole Shanahan is a native two-line label with a vertically centered count; both independent engines verify all 38 joins.",
+  "limits": [
+    "Report clocks differ within each election and supply no timezone. Preserve every observation separately.",
+    "2026 minus 2024 is a reported ballot-count change, not observed partisan drop-off or measured staying home.",
+    "Matching county scope permits a descriptive county comparison, not a fixed-person cohort.",
+    "Matching municipal/ward labels do not establish unchanged boundaries or longitudinal precinct identity.",
+    "Ballot-minus-contest-vote differences are unclassified, not measured undervotes, rejected ballots or abstention.",
+    "Keep every party, independent candidate, write-in and referendum answer literal; do not pool offices.",
+    "Two-party margin changes are descriptive cross-office/same-office context, not individual persuasion.",
+    "No registration/eligible-population denominator, demographic turnout, unique-person N26 or design confidence interval is qualified.",
+    "Independent extraction checks native consistency, not independent outcome truth or latent transitions."
+  ],
+  "qualified_precinct_geometry": false,
+  "qualified_longitudinal_units": false,
+  "qualified_unique_person_population": false,
+  "qualified_individual_transitions": false,
+  "qualified_demographic_turnout": false,
+  "qualified_final_counts": false,
+  "native_documents_redistributed": false,
+  "personal_records_included": false
+}

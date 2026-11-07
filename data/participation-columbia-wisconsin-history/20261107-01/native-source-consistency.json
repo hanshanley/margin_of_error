@@ -1,0 +1,41 @@
+{
+  "reviews": [
+    {
+      "year": 2024,
+      "native_review_sha256": "d3518cdfd53f1778dae2d8364d8bb3f79256f6be16a7790bbbb05b34243944ea",
+      "independent_proof_sha256": "0d1d0817c5e05fb933a66ea3b2e6e8995a82c9807eea1e0b8d00f57183aaaabe",
+      "status": "passed",
+      "independent_engine": "pypdf layout; independent table-block parser",
+      "reviewer_imported": false,
+      "pdfplumber_imported": false,
+      "network_blocked_and_probed": true,
+      "source_receipts_verified": 3,
+      "native_pages_verified": 79,
+      "native_ballot_cells_verified": 38,
+      "native_candidate_answer_cells_verified": 1344,
+      "native_reporting_controls_verified": 23,
+      "native_wrapped_candidate_cells_verified": 38,
+      "all_observations_and_review_fields_match": true,
+      "tamper_refusals": 7,
+      "limitation": "Native source consistency, not independent outcome truth or individual-transition validation."
+    },
+    {
+      "year": 2026,
+      "native_review_sha256": "1c7ed93dff4d216bd50245073f91e48247a6b97a693b839d5c01686bad75d967",
+      "independent_proof_sha256": "f2820509f842a03793e20bc8e2c03eee9ac92f9a4008e406a63487bc89ab0e5d",
+      "status": "passed",
+      "reviewer_imported": false,
+      "pdfplumber_imported": false,
+      "independent_engine": "pypdf layout; independent table-block parser",
+      "network_blocked_and_probed": true,
+      "source_receipts_verified": 3,
+      "native_pages_verified": 85,
+      "native_ballot_cells_verified": 38,
+      "native_candidate_answer_cells_verified": 1303,
+      "native_reporting_controls_verified": 21,
+      "all_observations_and_review_fields_match": true,
+      "tamper_refusals": 7,
+      "limitation": "Native source consistency, not independent outcome truth or individual-transition validation."
+    }
+  ]
+}
