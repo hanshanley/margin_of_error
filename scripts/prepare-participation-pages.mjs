@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
-import { execFileSync } from 'node:child_process';
+import { execFileSync, spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import { once } from 'node:events';
 import { copyFile, mkdtemp, readdir, readFile, rmdir, stat, unlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, relative, resolve } from 'node:path';
@@ -50,6 +51,33 @@ export async function verifyRemoteFiles(files, fetcher = fetch) {
 	}
 }
 
+export function verifyPagesByteCounts(bytes, archiveBytes) {
+	assert.ok(bytes < 1_000_000_000, `Published site exceeds the 1 GB Pages limit: ${bytes} bytes`);
+	assert.ok(archiveBytes < 1_000_000_000,
+		`Pages tar artifact exceeds the 1 GB limit including headers/padding: ${archiveBytes} bytes`);
+}
+
+export async function verifyPagesSize(output) {
+	const bytes = (await Promise.all((await filesUnder(output)).map(async path => (await stat(path)).size)))
+		.reduce((total, size) => total + size, 0);
+	assert.ok(bytes < 1_000_000_000, `Published site exceeds the 1 GB Pages limit: ${bytes} bytes`);
+	const archive = spawn('tar', [
+		'--dereference', ...(process.platform === 'darwin' ? [] : ['--hard-dereference']),
+		`--format=${process.platform === 'darwin' ? 'gnutar' : 'gnu'}`,
+		'--directory', output, '-cf', '-', '--exclude=.git', '--exclude=.github',
+		...(process.platform === 'darwin' ? ['--exclude=*/.[!.]*'] : ['--exclude=.[^/]*']), '.',
+	], { stdio: ['ignore', 'pipe', 'inherit'] });
+	let archiveBytes = 0;
+	const [[code]] = await Promise.all([
+		once(archive, 'close'),
+		(async () => { for await (const chunk of archive.stdout) archiveBytes += chunk.length; })(),
+	]);
+	assert.equal(code, 0, 'Could not measure the Pages tar artifact');
+	assert.ok(archiveBytes >= bytes + 1024, 'Pages tar measurement omitted site file contents');
+	verifyPagesByteCounts(bytes, archiveBytes);
+	return { bytes, archiveBytes };
+}
+
 export async function preparePages(output, upload = false) {
 	const paths = await filesUnder(output);
 	const files = [];
@@ -95,10 +123,9 @@ export async function preparePages(output, upload = false) {
 		release: participationRelease, files,
 	}, null, 2) + '\n');
 	for (const file of files) await unlink(join(output, file.path.slice(1)));
-	const bytes = (await Promise.all((await filesUnder(output)).map(async path => (await stat(path)).size)))
-		.reduce((total, size) => total + size, 0);
-	assert.ok(bytes < 1_000_000_000, `Published site exceeds the 1 GB Pages limit: ${bytes} bytes`);
+	const { bytes, archiveBytes } = await verifyPagesSize(output);
 	console.log(`Verified ${files.length} byte-identical bulk downloads; Pages site is ${bytes} bytes`);
+	console.log(`Verified Pages tar artifact is ${archiveBytes} bytes including headers/padding`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

@@ -3,6 +3,7 @@ export const participationReleaseRoot = `https://github.com/hanshanley/margin_of
 export const participationCurrentRoot = "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/";
 export const participationHistoricalRoot = "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/";
 export const participationCountyContextRoots = {
+  "20261106-09": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2f839e94dcbef8f35786bc7f8184f2b844ebaaf4/public/participation-county-context/20261106-09/",
   "20261106-10": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/",
   "20261106-11": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/",
   "20261106-12": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/",
@@ -28,7 +29,8 @@ export function participationDownload(path) {
   const contextArchive = /^\/participation-county-context\/(20261106-(0[1-9]|1[0-9]|2[012345]))\/complete-county-participation-context-\2\.zip$/.exec(path);
   if (contextArchive)
     return `https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-${contextArchive[1]}/complete-county-participation-context-${contextArchive[2]}.zip`;
-  const contextGeometry = /^\/participation-county-context\/(20261106-25)\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MN|MO|NJ|NV|OR|PA|UT|VA|WA|WI|WY)\.geojson)$/.exec(path)
+  const contextGeometry = /^\/participation-county-context\/(20261106-09)\/(geometry\/county-(?:AL|AR|AZ|DC|FL|IA|KY|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path)
+    || /^\/participation-county-context\/(20261106-25)\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MN|MO|NJ|NV|OR|PA|UT|VA|WA|WI|WY)\.geojson)$/.exec(path)
     || /^\/participation-county-context\/(20261106-2[34])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MN|MO|NJ|NV|OR|PA|UT|VA|WA|WY)\.geojson)$/.exec(path)
     || /^\/participation-county-context\/(20261106-1[34])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path)
     || /^\/participation-county-context\/(20261106-1[012])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|IA|KY|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path)

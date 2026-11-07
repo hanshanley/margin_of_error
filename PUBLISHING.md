@@ -113,6 +113,15 @@ of existing release files. Run the preparer after the normal build to reproduce 
 Pages artifact; `--upload` adds missing assets to the pre-created release without
 overwriting existing files. Publication fails on any missing or changed release asset,
 or if the resulting site exceeds 1 GB.
+The cap applies to both file contents and the actual uncompressed tar artifact,
+including headers and block padding. Preparation streams a GNU-format tar through
+a byte counter before upload; passing the summed-file check alone is insufficient.
+
+Context09's fifteen redundant geometry copies also use their complete originals at
+fixed revision `2f839e94dcbef8f35786bc7f8184f2b844ebaaf4`. Full byte/hash verification
+precedes removing only build-output copies. Together with the existing relocations,
+the download manifest must contain 432 complete files; no archive or source export
+is reduced or replaced.
 
 New releases have server-enforced immutability. Create each as a draft, attach
 and byte-verify every complete query asset, then publish the draft; assets and

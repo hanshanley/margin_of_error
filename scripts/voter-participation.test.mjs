@@ -2,9 +2,12 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { runInNewContext } from 'node:vm';
 import { createHash } from 'node:crypto';
+import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { previewSvg, publicationScript, sourceRevision } from './stage-voter-participation.mjs';
 import { participationDownload, participationHistoricalRoot } from '../public/scripts/participation-downloads.js';
-import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles } from './prepare-participation-pages.mjs';
+import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles, verifyPagesSize, verifyPagesByteCounts } from './prepare-participation-pages.mjs';
 import { appendPrecinctHistory } from './build-precinct-histories.mjs';
 
 test('precinct histories retain source counts, missing rates and groups without merging county IDs', () => {
@@ -38,6 +41,39 @@ test('bulk download routing preserves full snapshots and leaves interactive JSON
 	assert.equal(participationDownload('/participation-current/latest.json'), '/participation-current/latest.json');
 	assert.equal(rewriteDownloadHtml(`<a href="${path}" download>Full data</a><script>fetch("${path}")</script>`,
 		[{ path, url }]), `<a href="${url}" download>Full data</a><script>fetch("${path}")</script>`);
+});
+
+test('Pages size includes tar headers and padding, not just file contents', async () => {
+	const output = await mkdtemp(join(tmpdir(), 'pages-size-'));
+	try {
+		await mkdir(join(output, 'empty'));
+		await writeFile(join(output, 'x'.repeat(120)), Buffer.alloc(16384, 1));
+		const result = await verifyPagesSize(output);
+		assert.equal(result.bytes, 16384);
+		assert.equal(result.archiveBytes % 512, 0);
+		assert.ok(result.archiveBytes > result.bytes + 1024);
+		assert.throws(() => verifyPagesByteCounts(997_619_175, 1_000_099_840),
+			/tar artifact exceeds.*including headers\/padding/);
+		assert.throws(() => verifyPagesByteCounts(999_999_000, 1_000_000_000),
+			/tar artifact exceeds/);
+		assert.throws(() => verifyPagesByteCounts(1_000_000_000, 1_000_000_000),
+			/Published site exceeds/);
+	} finally {
+		await rm(output, { recursive: true, force: true });
+	}
+});
+
+test('context09 redundant geometry uses complete pinned originals without moving other versions', () => {
+	const revision = '2f839e94dcbef8f35786bc7f8184f2b844ebaaf4';
+	for (const code of ['AL', 'AR', 'AZ', 'DC', 'FL', 'IA', 'KY', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']) {
+		const path = `/participation-county-context/20261106-09/geometry/county-${code}.geojson`;
+		assert.equal(participationDownload(path),
+			`https://raw.githubusercontent.com/hanshanley/margin_of_error/${revision}/public${path}`);
+	}
+	for (const path of ['/participation-county-context/20261106-08/geometry/county-PA.geojson',
+		'/participation-county-context/20261106-09/geometry/county-TX.geojson',
+		'/participation-county-context/20261106-09/review.json'])
+		assert.equal(participationDownload(path), path);
 });
 
 test('historical NC year tables use the pinned complete originals without moving geometry or other data', () => {
@@ -183,8 +219,7 @@ test('published county contexts relocate only their independently verified redun
 	}
 	for (const path of ['/participation-county-context/20261106-12/geometry/county-MN.geojson',
 		'/participation-county-context/20261106-14/geometry/county-MN.geojson',
-		'/participation-context/20261104T183601Z/geometry/county-MN.geojson',
-		'/participation-county-context/20261106-09/geometry/county-PA.geojson'])
+		'/participation-context/20261104T183601Z/geometry/county-MN.geojson'])
 		assert.equal(participationDownload(path), path);
 });
 
