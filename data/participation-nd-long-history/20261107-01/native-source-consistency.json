@@ -1,0 +1,42 @@
+{
+  "all_selected_reporting_units": 2419,
+  "checker_sha256": "8189fd8bcb46b2e9212938a4b1c6aa1a2ee71e7b27d736442acaadcf18eef351",
+  "county_election_observations": 318,
+  "county_signed_count_changes": 265,
+  "individual_transitions_qualified": false,
+  "native_sources_refetched": false,
+  "network_blocked": true,
+  "new_elections": {
+    "2016": {
+      "ballots": 349945,
+      "counties": 53,
+      "native_html_sha256": "3ce4f21285c098ac134b1e17e2b2229d91621ef08c7a90bc8ad49511c2cc94fc",
+      "reporting_units": 432,
+      "source_updated_native": "11/18/2016 10:32:46 AM"
+    },
+    "2018": {
+      "ballots": 330598,
+      "counties": 53,
+      "native_html_sha256": "d13c448bff430657c0fe93dfcfdce8a5e8872994a3952197b6e02c8730d423d0",
+      "reporting_units": 424,
+      "source_updated_native": "11/20/2018 10:38:27 AM"
+    },
+    "2020": {
+      "ballots": 364251,
+      "counties": 53,
+      "native_html_sha256": "5e9ca49c3670fae5eb75c1def9b39dddb82074129befc1b894b6f1ca36bcccdf",
+      "reporting_units": 422,
+      "source_updated_native": "11/12/2020 3:08:14 PM"
+    }
+  },
+  "new_native_reporting_units": 1278,
+  "old_native_extraction_repeated": false,
+  "precinct_crosswalk_qualified": false,
+  "previously_qualified_observations_unchanged": true,
+  "previously_qualified_receipts_unchanged": true,
+  "prior_selected_sha256": "d837369711d2f09a91b6db6bfdef4f518d1f39b737cc4000f65c3a6ae9e8a701",
+  "review_bytes": 362113,
+  "review_sha256": "e6134dbba7bc397d1d63ca8c8f7004c1441987fe1da1fdf6dc769202e8a86a61",
+  "reviewer_imported": false,
+  "status": "independent_native_named_unit_verification_passed"
+}
