@@ -14,6 +14,33 @@ spec.loader.exec_module(model)
 
 
 class ConditionalModelTest(unittest.TestCase):
+    def test_conflicting_source_ages_become_unknown_without_dropping_history_or_mutating_inputs(self):
+        baseline = dict(records=1, baseline_2024_voted_county=True,
+                        prior_2024_history="Positive 2024 NC history", age_2024="Under 18 in 2024",
+                        age_2018="Under 18", age_2022="Under 18", age_2026="18-29")
+        earlier = dict(records=2, baseline_2024_voted_county=False, prior_2020_history=True,
+                       age_2018="Under 18", age_2022="Under 18", age_2024="18-29", age_2026="18-29")
+        original = json.dumps([baseline, earlier], sort_keys=True)
+        resolved, audit = model.reconcile_source_ages([baseline, earlier])
+        self.assertEqual(json.dumps([baseline, earlier], sort_keys=True), original)
+        self.assertEqual(audit["conflicting_source_records"], 3)
+        self.assertEqual(audit["conflicting_source_cells"], 2)
+        self.assertEqual(audit["baseline_2024_records_retained"], 1)
+        for before, after in zip([baseline, earlier], resolved):
+            self.assertEqual({key: value for key, value in before.items() if not key.startswith("age_")},
+                             {key: value for key, value in after.items() if not key.startswith("age_")})
+            self.assertTrue(all(after[f"age_{year}"] == "Unknown" for year in (2018, 2022, 2024, 2026)))
+
+    def test_newly_adult_and_nonconflicting_history_keep_source_ages(self):
+        entrant = dict(records=3, baseline_2024_voted_county=False, age_2024="Under 18 in 2024",
+                       age_2026="18-29", primary_2024="DEM")
+        ordinary = dict(records=4, prior_2020_history=True, age_2018="Under 18",
+                        age_2022="18-29", age_2024="18-29", age_2026="18-29")
+        rows = [entrant, ordinary]
+        resolved, audit = model.reconcile_source_ages(rows)
+        self.assertIsNone(audit)
+        self.assertEqual(resolved, rows)
+
     def test_explicit_county_requires_its_hash_bound_cells_and_population_controls(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -84,6 +111,7 @@ class ConditionalModelTest(unittest.TestCase):
                     (60, "Accepted 2026 EARLY VOTING", "F", "DEM"),
                     (40, "Not in selected early/mail cohort", "M", "REP")]
             ]
+            cells[0]["age_2024"] = "Under 18 in 2024"
             (root / "cells.json").write_text(json.dumps(cells))
             audit = dict(state_code="NC", county="WAKE", aggregate_cells=2,
                          joint_cells_sha256=hashlib.sha256((root / "cells.json").read_bytes()).hexdigest(),
@@ -111,6 +139,14 @@ class ConditionalModelTest(unittest.TestCase):
                           county="WAKE", linkage_audit=root / "audit.json")
             result = json.loads((root / "output" / "conditional-transitions.json").read_text())
             self.assertEqual(len(result["scenarios"]), 86)
+            self.assertEqual(result["source_age_handling"]["baseline_2024_records_retained"], 60)
+            self.assertEqual(json.loads((root / "cells.json").read_text()), cells)
+            for scenario in result["scenarios"]:
+                unknown = next(row for row in scenario["demographics"]
+                               if row["dimension"] == "age_2024" and row["group"] == "Unknown")
+                self.assertAlmostEqual(unknown["modeled_2024_county_participants"], 60)
+                self.assertFalse(any(row["dimension"] == "age_2024" and row["group"] == "Under 18 in 2024"
+                                     for row in scenario["demographics"]))
             for ranges in result["demographic_sensitivity_range_margin_pp"]:
                 groups = [next(group for group in scenario["demographics"]
                                if (group["dimension"], group["group"]) == (ranges["dimension"], ranges["group"]))

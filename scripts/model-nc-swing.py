@@ -351,6 +351,36 @@ def scenario(cells, prior_choices, entry_choices, turnout, before_votes, after_v
     return result
 
 
+def reconcile_source_ages(cells):
+    resolved = []
+    records = baseline_records = changed_cells = 0
+    for cell in cells:
+        histories = [year for year in (2016, 2018, 2020, 2022)
+                     if cell.get(f"prior_{year}_history") is True]
+        if (cell.get("baseline_2024_voted_county")
+                or cell.get("prior_2024_history") == "Positive 2024 NC history"):
+            histories.append(2024)
+        if cell.get("positive_2026_history") is True:
+            histories.append(2026)
+        conflict = any(
+            cell.get(f"age_{year}") in {"Under 18", "Under 18 in 2024"}
+            and any(history <= year for history in histories)
+            for year in (2018, 2022, 2024, 2026))
+        if conflict:
+            records += cell["records"]
+            baseline_records += cell["records"] if cell.get("baseline_2024_voted_county") else 0
+            changed_cells += 1
+            cell = {**cell, **{f"age_{year}": "Unknown" for year in (2018, 2022, 2024, 2026)}}
+        resolved.append(cell)
+    audit = None if not changed_cells else {
+        "conflicting_source_records": records,
+        "conflicting_source_cells": changed_cells,
+        "baseline_2024_records_retained": baseline_records,
+        "rule": "Positive general-election history incompatible with a later under-18 age label makes all age predictors unknown; participation and original source cells are retained.",
+    }
+    return resolved, audit
+
+
 def run(cells_path, model_path, candidates_path, participation_path, output,
         county="DURHAM", linkage_audit=None):
     if output.exists():
@@ -371,6 +401,9 @@ def run(cells_path, model_path, candidates_path, participation_path, output,
                 or sum(row["records"] for row in cells if row["cohort_membership_2026"].startswith("Accepted"))
                 != audit["accepted_cohort"]["unambiguous_records"]):
             raise ValueError("County linkage audit, hash or population controls do not match")
+    source_age_handling = None
+    if county != "DURHAM":
+        cells, source_age_handling = reconcile_source_ages(cells)
     artifact = json.loads(model_path.read_text())
     candidates = json.loads(candidates_path.read_text())
     participation = json.loads(participation_path.read_text())
@@ -485,6 +518,9 @@ def run(cells_path, model_path, candidates_path, participation_path, output,
                                       ("complete_candidate_methods", candidates_path), ("participation_snapshot", participation_path)]],
         "scenarios": results,
     }
+    if source_age_handling is not None:
+        result["source_age_handling"] = source_age_handling
+        result["limitations"].append(source_age_handling["rule"])
     if linkage_audit is not None:
         result["inputs"].append({
             "role": "county_linkage_audit", "file": linkage_audit.name,
