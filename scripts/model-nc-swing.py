@@ -260,9 +260,23 @@ def accounting(flows):
     }
 
 
+def cohort_counts(total, known_incoming, newly_adult, unresolved):
+    return {
+        "repeat_2024_county_participants": float(total[:4, :4].sum()),
+        "prior_county_participants_now_nonvoting": float(total[:4, 4].sum()),
+        "prior_county_participants_eligibility_residence_exit": float(total[:4, 5].sum()),
+        "participants_without_2024_county_participation": float(total[4:, :4].sum()),
+        "participants_with_2024_history_elsewhere_in_nc": float(known_incoming),
+        "participants_newly_adult_since_2024": float(newly_adult),
+        "participants_without_2024_nc_history_national_status_unresolved": float(unresolved),
+        "republican_to_democratic": float(total[1, 0]),
+        "democratic_to_republican": float(total[0, 1]),
+    }
+
+
 def scenario(cells, prior_choices, entry_choices, turnout, before_votes, after_votes,
              before_ballots, after_ballots, loyalty=.95, exit_fraction=1., partisan_offset=0.,
-             unresolved_mover_fraction=.25):
+             unresolved_mover_fraction=.25, group_participation=False):
     counts = np.asarray([row["records"] for row in cells], dtype=float)
     baseline = np.asarray([row["baseline_2024_voted_county"] for row in cells])
     prior = prior_choices.copy()
@@ -300,18 +314,11 @@ def scenario(cells, prior_choices, entry_choices, turnout, before_votes, after_v
         raise ValueError("Invalid individual-cell flow accounting")
     contributions, result = accounting(flows)
     total = flows.sum(axis=0)
-    result["modeled_cohort_counts"] = {
-        "repeat_2024_county_participants": float(total[:4, :4].sum()),
-        "prior_county_participants_now_nonvoting": float(total[:4, 4].sum()),
-        "prior_county_participants_eligibility_residence_exit": float(total[:4, 5].sum()),
-        "participants_without_2024_county_participation": float(total[4:, :4].sum()),
-        "participants_with_2024_history_elsewhere_in_nc": float((counts * ~baseline * membership * known_incoming).sum()),
-        "participants_newly_adult_since_2024": float((counts * ~baseline * membership * newly_eligible).sum()),
-        "participants_without_2024_nc_history_national_status_unresolved": float(
-            (counts * ~baseline * membership * ~known_incoming * ~newly_eligible).sum()),
-        "republican_to_democratic": float(total[1, 0]),
-        "democratic_to_republican": float(total[0, 1]),
-    }
+    known_mass = counts * ~baseline * membership * known_incoming
+    adult_mass = counts * ~baseline * membership * newly_eligible
+    unresolved_mass = counts * ~baseline * membership * ~known_incoming * ~newly_eligible
+    result["modeled_cohort_counts"] = cohort_counts(
+        total, known_mass.sum(), adult_mass.sum(), unresolved_mass.sum())
     result["assumptions"] = dict(loyalty=loyalty, exit_fraction=exit_fraction,
                                  republican_vs_democratic_late_log_odds_offset=partisan_offset,
                                  unresolved_mover_fraction=unresolved_mover_fraction)
@@ -324,6 +331,22 @@ def scenario(cells, prior_choices, entry_choices, turnout, before_votes, after_v
                            "registered_or_baseline_records": int(counts[selected].sum()),
                            "modeled_2026_participants": float((counts[selected] * membership[selected]).sum()),
                            "margin_pp_contributions": dict(zip(COMPONENTS, contributions[selected].sum(axis=0).tolist()))})
+            if group_participation:
+                group_total = flows[selected].sum(axis=0)
+                groups[-1].update({
+                    "modeled_2024_county_participants": float(group_total[:4].sum()),
+                    "modeled_cohort_counts": cohort_counts(
+                        group_total, known_mass[selected].sum(), adult_mass[selected].sum(),
+                        unresolved_mass[selected].sum()),
+                    "modeled_prior_choice_transitions": {
+                        party: {
+                            "original_2024_county_presidential_voters": float(group_total[source].sum()),
+                            **dict(zip(STATES, group_total[source].tolist())),
+                        } for source, party in enumerate(["D", "R"])
+                    },
+                    "group_turnout_rate_pct": None,
+                    "measured_staying_home_count": None,
+                })
     result["demographics"] = groups
     return result
 
@@ -375,22 +398,25 @@ def run(cells_path, model_path, candidates_path, participation_path, output,
         priors[model["model"]] = (predict_choice(cells, artifact, model),
                                   predict_choice(cells, artifact, model, entrant=True))
     base_prior, base_entry = priors["registered-party-and-primary"]
+    group_participation = county != "DURHAM"
     for loyalty, exit_fraction, partisan_offset, movers in itertools.product(
             [.8, .95, .99], [0., .5, 1.], [-.5, 0., .5], [0., .25, 1.]):
         result = scenario(cells, base_prior, base_entry, turnout, before_votes, after_votes,
-                          before_ballots, reported["ballots_cast"], loyalty, exit_fraction, partisan_offset, movers)
+                          before_ballots, reported["ballots_cast"], loyalty, exit_fraction, partisan_offset, movers,
+                          group_participation=group_participation)
         result["historical_choice_model"] = "registered-party-and-primary"
         results.append(result)
     for name, (prior, entry) in priors.items():
         if name != "registered-party-and-primary":
             result = scenario(cells, prior, entry, turnout, before_votes, after_votes,
-                              before_ballots, reported["ballots_cast"])
+                              before_ballots, reported["ballots_cast"], group_participation=group_participation)
             result["historical_choice_model"] = name
             results.append(result)
     for sensitivity in ["all_non_hispanic", "all_hispanic"]:
         prior = predict_choice(cells, artifact, artifact["models"][0], ethnicity_sensitivity=sensitivity)
         entry = predict_choice(cells, artifact, artifact["models"][0], entrant=True, ethnicity_sensitivity=sensitivity)
-        result = scenario(cells, prior, entry, turnout, before_votes, after_votes, before_ballots, reported["ballots_cast"])
+        result = scenario(cells, prior, entry, turnout, before_votes, after_votes, before_ballots, reported["ballots_cast"],
+                          group_participation=group_participation)
         result["unknown_ethnicity_sensitivity"] = sensitivity
         results.append(result)
     default = next(row for row in results if row["assumptions"] == dict(
@@ -409,6 +435,24 @@ def run(cells_path, model_path, candidates_path, participation_path, output,
                       "maximum": max(item["margin_pp_contributions"][key] for item in matches)}
                 for key in COMPONENTS},
         })
+        if group_participation:
+            demographic_ranges[-1].update({
+                key: {"minimum": min(item[key] for item in matches),
+                      "maximum": max(item[key] for item in matches)}
+                for key in ["modeled_2024_county_participants", "modeled_2026_participants"]
+            })
+            demographic_ranges[-1]["modeled_cohort_counts"] = {
+                key: {"minimum": min(item["modeled_cohort_counts"][key] for item in matches),
+                      "maximum": max(item["modeled_cohort_counts"][key] for item in matches)}
+                for key in group["modeled_cohort_counts"]
+            }
+            demographic_ranges[-1]["modeled_prior_choice_transitions"] = {
+                party: {
+                    key: {"minimum": min(item["modeled_prior_choice_transitions"][party][key] for item in matches),
+                          "maximum": max(item["modeled_prior_choice_transitions"][party][key] for item in matches)}
+                    for key in group["modeled_prior_choice_transitions"][party]
+                } for party in ["D", "R"]
+            }
     result = {
         "status": "experimental_conditional_model_not_individually_identified",
         "state": "NC", "county": county, "baseline_contest": "2024 President", "outcome_contest": "2026 Senate",
@@ -447,6 +491,9 @@ def run(cells_path, model_path, candidates_path, participation_path, output,
             "bytes": linkage_audit.stat().st_size,
             "sha256": hashlib.sha256(linkage_audit.read_bytes()).hexdigest(),
         })
+    if group_participation:
+        result["limitations"].append(
+            "Demographic participation and prior-choice flows are conditional model counts using current administrative attributes and age in 2024, not observed fixed-attribute historical cohorts or eligible-population turnout rates.")
     output.mkdir(parents=True, exist_ok=False)
     (output / "conditional-transitions.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps({key: value for key, value in result.items() if key not in {"scenarios", "inputs"}}, indent=2), flush=True)
