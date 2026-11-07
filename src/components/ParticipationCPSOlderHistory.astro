@@ -1,0 +1,159 @@
+---
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+
+type Value = [number, number] | [number];
+type Display = { years: number[]; states: string[]; groups: string[]; values: Value[][][] };
+const root = 'data/participation-cps-older-history/20261107-01/output';
+const raw = readFileSync(`${root}/display.json`);
+const display: Display = JSON.parse(raw.toString('utf8'));
+const archive: { bytes: number; sha256: string } = JSON.parse(readFileSync(`${root}/archive.json`, 'utf8'));
+const release = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-older-history-20261107-01';
+const displayUrl = `https://raw.githubusercontent.com/hanshanley/margin_of_error/1d6780950b9a0052cbd9b37d01dc0fdf8ff6b18f/${root}/display.json`;
+const displayHash = createHash('sha256').update(raw).digest('hex');
+const statuses: Record<number, string> = {
+	'-1': 'Not published (B or (B))',
+	'-2': 'Withheld: small population base',
+	'-3': 'Zero or rounds to zero',
+	'-4': 'Age group not supplied this year',
+};
+const text = (value: Value) => value.length === 2
+	? `${value[0].toFixed(1)}% +/- ${value[1].toFixed(1)} pp` : statuses[value[0]];
+const groups = [
+	['Overall', [0]],
+	['Source-reported sex', [1, 2]],
+	['Race and Hispanic origin: overlapping views', [3, 4, 5, 6, 7, 8, 9, 10]],
+	['Native age bins: coverage varies by year', [11, 12, 13, 14, 15, 16, 17, 18]],
+] as const;
+---
+
+<section id="participation-cps-older-history" class="participation-current" aria-labelledby="cps-older-title"
+	data-display-url={displayUrl} data-display-sha256={displayHash}>
+	<header class="section-intro">
+		<p class="kicker">Earlier participation histories · Census published estimates</p>
+		<h2 id="cps-older-title">Extend the comparison back to 2010</h2>
+		<p>Compare <strong>all 50 states and D.C.</strong> in 2010, 2012, 2014 and 2016.
+			The separate 2018–2024 table follows below. These are native Census estimates of
+			<strong>reported voting among adult citizens</strong>, not candidate preference,
+			administrative turnout or 2026 outcomes.</p>
+	</header>
+	<p>Cells retain the published percentage and its <strong>90% margin of error in percentage points</strong>.
+		They do not supply a confidence interval for a change between elections.
+		Age and group membership are measured anew each election, not fixed-person cohorts.</p>
+	<div data-cps-older-controls hidden>
+		<label for="cps-older-group">Demographic view
+			<select id="cps-older-group">
+				{groups.map(([label, indices]) => <optgroup label={label}>
+					{indices.map(index => <option value={index}>{index === 0 ? 'All adult citizens' : display.groups[index]}</option>)}
+				</optgroup>)}
+			</select>
+		</label>
+	</div>
+	<p class="caption" id="cps-older-selection" aria-live="polite">All adult citizens.
+		The all-citizen table and complete downloads remain available without JavaScript.</p>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Earlier state participation with native 90% margins">
+		<table>
+			<caption>Reported voting among adult citizens: percentage +/- native 90% margin (pp).
+				The national benchmark includes D.C.; do not add it to the states.</caption>
+			<thead><tr><th scope="col">Geography</th>
+				{display.years.map(year => <th scope="col">{year}<br />{year % 4 === 0 ? 'Presidential' : 'Midterm'}</th>)}
+			</tr></thead>
+			<tbody>
+				{display.states.map((state, index) => <tr data-cps-older-state={index}>
+					<th scope="row">{state}</th>
+					{display.values[index][0].map((value, year) => <td data-cps-older-year={year}>{text(value)}</td>)}
+				</tr>)}
+			</tbody>
+		</table>
+	</div>
+	<p><strong>Missing is not zero.</strong> The 2010 age bins include 25–44, 65–74 and 75+;
+		later tables instead supply 25–34, 35–44 and 65+. Unsupported age/year cells stay
+		<strong>unavailable</strong>: no age bin is split, and native percentages or margins are
+		never combined to manufacture another bin.</p>
+	<details class="explorer-notes" data-cps-older-methods>
+		<summary>Definitions, suppression and complete historical inputs</summary>
+		<p>Sources are the U.S. Census Bureau’s November CPS Voting and Registration Supplement,
+			state tables 4b (sex, race and Hispanic origin) and 4c (age). The denominator is the
+			civilian noninstitutionalized adult citizen population, not a legal-eligibility count.
+			Voting is self/proxy-reported and may be over-reported. Survey response, population
+			controls and election environments change; these are repeated cross-sections.</p>
+		<p>Native “(B)” in 2010–2014 and “B” in 2016 mean a rate was not published.
+			The native population-base threshold is 75,000 in 2010–2014 and 100,000 citizens in
+			2016. The display also withholds numeric cells at or below each rounded citizen-base
+			boundary. This is population, not sample size; passing it does not guarantee precision.
+			No suppressed rate is recovered. A native dash means zero or rounds to zero, not
+			an exact inferred zero. Neither native rates nor margins are recomputed from counts.</p>
+		<p>Race “alone,” “alone or in combination,” and Hispanic-origin views overlap. Do not add
+			them or multiply separate demographic marginals into intersections. Education, income
+			and urbanicity are not supplied in these state tables. Counts in the CSV are weighted
+			population estimates in thousands, not respondent counts. The duplicate overall controls
+			in tables 4b and 4c agree for all 52 geographies in each year.</p>
+		<p>No 2026 switching, staying-home, first-time-voter, demographic county/precinct estimate
+			or causal midterm effect is derived here. The native 90% margins exclude nonsampling
+			error, are not simultaneous intervals and do not establish significant group differences.</p>
+		<p>The complete download includes all 3,328 unique observations, eight unmodified public
+			aggregate workbooks, four frozen catalogs, full sanitized source receipts, native notes,
+			methods, code, tests and results. Install the pinned dependency with
+			<code>python3 -m pip install -r scripts/requirements-cps-older-history.txt</code>,
+			then run <code>python3 scripts/package-cps-older-history.py</code> from the extracted
+			archive to reproduce from the included inputs without source downloads or microdata.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${release}/complete-analysis.zip`} data-cps-older-download="complete" download>Complete 2010–2016 history + original aggregate inputs + code (ZIP)</a>
+		<a href={`${release}/observations.csv`} data-cps-older-download="observations" download>All earlier state/group observations and native cells (CSV)</a>
+	</div>
+	<p class="caption">Complete ZIP: {archive.bytes.toLocaleString('en-US')} bytes.
+		SHA-256: <code class="checksum">{archive.sha256}</code>.
+		Demographic controls load a checksum-verified, fixed-commit copy; complete downloads
+		and the all-citizen table do not depend on that request.</p>
+</section>
+
+<script>
+	const section = document.getElementById('participation-cps-older-history');
+	const select = document.querySelector<HTMLSelectElement>('#cps-older-group');
+	const note = document.getElementById('cps-older-selection');
+	if (section && select && note) {
+		const statuses: Record<number, string> = {
+			'-1': 'Not published (B or (B))',
+			'-2': 'Withheld: small population base',
+			'-3': 'Zero or rounds to zero',
+			'-4': 'Age group not supplied this year',
+		};
+		const load = async () => {
+			const response = await fetch(section.dataset.displayUrl || '');
+			if (!response.ok) throw new Error('Historical display unavailable');
+			const raw = await response.arrayBuffer();
+			const digest = await crypto.subtle.digest('SHA-256', raw);
+			const hash = [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('');
+			if (hash !== section.dataset.displaySha256) throw new Error('Historical display checksum mismatch');
+			const data: { groups: string[]; values: number[][][][] } = JSON.parse(new TextDecoder().decode(raw));
+			select.addEventListener('change', () => {
+				const group = Number(select.value);
+				section.querySelectorAll<HTMLTableRowElement>('[data-cps-older-state]').forEach(row => {
+					const state = Number(row.dataset.cpsOlderState);
+					row.querySelectorAll<HTMLTableCellElement>('[data-cps-older-year]').forEach(cell => {
+						const value = data.values[state][group][Number(cell.dataset.cpsOlderYear)];
+						cell.textContent = value.length === 2
+							? `${value[0].toFixed(1)}% +/- ${value[1].toFixed(1)} pp`
+							: statuses[value[0]];
+					});
+				});
+				note.textContent = `${group === 0 ? 'All adult citizens' : data.groups[group]}. Native age bins vary by year; unsupported cells remain unavailable.`;
+			});
+			const controls = section.querySelector<HTMLElement>('[data-cps-older-controls]');
+			if (controls) controls.hidden = false;
+		};
+		load().catch(() => {
+			note.textContent = 'Demographic controls unavailable. The all-citizen table and complete downloads remain available.';
+		});
+	}
+</script>
+
+<style>
+	#participation-cps-older-history { min-width: 0; margin-block: 1.5rem 2rem; }
+	.table-wrap { max-width: 100%; overflow-x: auto; }
+	table { width: 100%; min-width: 46rem; }
+	td { font-variant-numeric: tabular-nums; }
+	select { max-width: 100%; }
+	.checksum { overflow-wrap: anywhere; }
+</style>

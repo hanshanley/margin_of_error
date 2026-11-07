@@ -1,0 +1,26 @@
+{
+  "release_id": 437573660,
+  "tag": "participation-cps-older-history-20261107-01",
+  "target_sha": "1d6780950b9a0052cbd9b37d01dc0fdf8ff6b18f",
+  "immutable": true,
+  "published_at": "2026-11-07T12:48:48Z",
+  "assets": [
+    {
+      "file": "complete-analysis.zip",
+      "asset_id": 720696086,
+      "bytes": 560438,
+      "sha256": "49a6dece89b06214c2394b63e8c5d7281bb3b2be916004869bcfd91700fbb50f",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-older-history-20261107-01/complete-analysis.zip"
+    },
+    {
+      "file": "observations.csv",
+      "asset_id": 720696123,
+      "bytes": 460450,
+      "sha256": "30174c126eba45fcd1cea71d6cbe428ea2d4d66dfbc407e480dd588613401318",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-older-history-20261107-01/observations.csv"
+    }
+  ],
+  "authenticated_assets_downloaded_in_full_and_verified": true,
+  "published_assets_anonymously_downloaded_in_full_and_verified": true,
+  "tag_commit_matches_verified_package": true
+}
