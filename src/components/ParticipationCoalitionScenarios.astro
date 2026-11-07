@@ -1,17 +1,18 @@
 ---
 import { readFileSync } from 'node:fs';
 const { names } = Astro.props as { names: Record<string, string> };
-const base = '/participation-coalition-scenarios/20261107-01/';
+const base = '/participation-coalition-scenarios/20261107-02/';
 type Values = { returning_count: number; reported_switcher_count: number; apparent_absence_count: number;
 	reported_switchers_pct_of_original_coalition: number; apparent_absence_pct_of_original_coalition: number;
 	infeasible_as_closed_original_coalition: boolean };
 type Scenario = { state_code: string; contest_code: string; reference: Record<string, Values>;
 	official_2024_baseline: Record<string, number>;
 	turnout_source: { ballots: number; source_url: string; source_update_label: string };
+	turnout_input_qualification?: { all_ballot_population_scope_confirmed: boolean };
 	survey_source_url: string; survey_source_timestamp: string;
 	sensitivity_scenarios: { coalitions: Record<string, Values> | null }[] };
 type Jurisdiction = { state_code: string; has_existing_full_election_reported_ballots: boolean;
-	conditional_contests: string[] };
+	has_conditional_native_ballot_snapshot?: boolean; conditional_contests: string[] };
 const review: { estimates: Scenario[]; jurisdictions: Jurisdiction[] } = JSON.parse(
 	readFileSync(`public${base}conditional-coalition-scenarios.json`, 'utf8'));
 const integer = (value: number) => value.toLocaleString('en-US');
@@ -24,6 +25,7 @@ const range = (row: Scenario, prior: string) => {
 };
 const office: Record<string, string> = { SG: 'Senate', GG: 'Governor' };
 const codes = [...new Set(review.estimates.map(row => row.state_code))];
+const hasNativeScopeAssumptions = review.estimates.some(row => row.turnout_input_qualification);
 ---
 
 <section id="participation-coalition-scenarios" aria-labelledby="coalition-scenarios-title">
@@ -35,7 +37,11 @@ const codes = [...new Set(review.estimates.map(row => row.state_code))];
 	<p>The reference assumes each contest table represents all state ballot-casters. SSRS targets the
 		estimated state electorate, but exact contest-table response selection remains unverified.
 		Skipped contests, retained pre-election choices and recall error can break that assumption.
-		Source turnout snapshots are dated November 4, 2026, not current live or certified totals.</p>
+		Source snapshots are frozen, not current live or certified totals; individual clocks appear below.</p>
+	{hasNativeScopeAssumptions && <p><strong>Additional Georgia and Delaware scope assumption:</strong>
+		their source-defined Ballots Cast snapshots are scaled as if they cover the whole ballot-caster
+		population. That all-ballot scope is unverified. Native source warnings and approval flags remain
+		unchanged; Delaware supplies no turnout update clock. These rows are not newly approved all-mode counts.</p>}
 	<div class="table-wrap" tabindex="0" role="region" aria-label="Conditional original-coalition switching and apparent absence">
 		<table>
 			<caption>Official 2024 totals are exact; scenario counts are rounded to the nearest 1,000.
@@ -48,7 +54,8 @@ const codes = [...new Set(review.estimates.map(row => row.state_code))];
 			<tbody>{review.estimates.flatMap(row => ['R', 'D'].map(prior => {
 				const value = row.reference[prior];
 				return <tr data-coalition-state={row.state_code} data-coalition-contest={row.contest_code} data-coalition-prior={prior}>
-					<th scope="row">{names[row.state_code]} / {office[row.contest_code]}</th>
+					<th scope="row">{names[row.state_code]} / {office[row.contest_code]}
+						{row.turnout_input_qualification && <><br /><small>Unverified all-ballot scope</small></>}</th>
 					<td>{prior === 'R' ? 'Trump' : 'Harris'}</td>
 					<td>{integer(row.official_2024_baseline[prior])}</td>
 					<td>{count(value.returning_count)}</td>
@@ -81,11 +88,13 @@ const codes = [...new Set(review.estimates.map(row => row.state_code))];
 	<details class="explorer-notes"><summary>Population-scenario coverage: all 50 states and D.C.</summary>
 		<p>Official 2024 coalition totals are available for every jurisdiction. Missing current inputs are not zero.</p>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="Nationwide coalition scenario coverage">
-			<table><thead><tr><th scope="col">Jurisdiction</th><th scope="col">Frozen full-election ballots</th>
+			<table><thead><tr><th scope="col">Jurisdiction</th><th scope="col">Frozen ballot-count input</th>
 				<th scope="col">Conditional comparisons / next input</th></tr></thead>
 				<tbody>{review.jurisdictions.map(row => <tr data-coalition-coverage={row.state_code}>
 					<th scope="row">{names[row.state_code]}</th>
-					<td>{row.has_existing_full_election_reported_ballots ? 'Available' : 'Not yet in these qualified inputs'}</td>
+					<td>{row.has_existing_full_election_reported_ballots ? 'Reported full-election snapshot'
+						: row.has_conditional_native_ballot_snapshot ? 'Native Ballots Cast; scope assumed'
+						: 'Not yet in these qualified inputs'}</td>
 					<td>{row.conditional_contests.length ? row.conditional_contests.map(code => office[code]).join(', ')
 						: row.has_existing_full_election_reported_ballots ? 'Seek applicable joint choice evidence'
 						: 'Acquire qualified full-election ballots and match applicable joint evidence'}</td>
@@ -97,6 +106,7 @@ const codes = [...new Set(review.estimates.map(row => row.state_code))];
 		<a href={`${base}complete-analysis.zip`} download>Complete coalition scenarios + official inputs + code (ZIP)</a>
 		<a href={`${base}conditional-coalition-scenarios.json`} download>Exact conditional counts + sensitivities (JSON)</a>
 		<a href={`${base}download.json`} download>Scenario archive bytes and SHA-256</a>
+		<a href="/participation-coalition-scenarios/20261107-01/complete-analysis.zip" download>Earlier six-state archive (version 01)</a>
 		<a href="https://www.fec.gov/documents/5645/2024presgeresults.xlsx">Official FEC 2024 workbook</a>
 	</div>
 </section>
