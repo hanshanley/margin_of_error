@@ -1,13 +1,23 @@
 {
   "year": 2026,
-  "data_directory": "data/uf-turnout/20261106T192048Z",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7df424a6c131d06a2ffd898f96377725337012f3/data/uf-turnout/20261106T192048Z/",
-  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-uf-2026-20261106t192048z/complete-uf-turnout.zip",
-  "complete_download_bytes": 38038,
-  "complete_download_sha256": "879095f2a95c3d3a455d80206e026c7a99a90cf4398ef34c1e64c44e9b8afa94",
-  "label": "UF 2026 state/national turnout 20261106T192048Z; source estimates remain estimates",
+  "data_directory": "data/uf-turnout/20261107T055406Z",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1ad2ae2c1885e37f22b7ace6cd82e99f84d65399/data/uf-turnout/20261107T055406Z/",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-uf-2026-20261107t055406z/complete-uf-turnout.zip",
+  "complete_download_bytes": 38036,
+  "complete_download_sha256": "8b4a575b7a34eb188f07038da4c94127f6ab16697393f82581fa1c79d2fc8e45",
+  "label": "UF 2026 state/national turnout 20261107T055406Z; source estimates remain estimates",
   "publication": "reviewed_pending_live_verification",
   "previous_snapshots": [
+    {
+      "year": 2026,
+      "data_directory": "data/uf-turnout/20261106T192048Z",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7df424a6c131d06a2ffd898f96377725337012f3/data/uf-turnout/20261106T192048Z/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-uf-2026-20261106t192048z/complete-uf-turnout.zip",
+      "complete_download_bytes": 38038,
+      "complete_download_sha256": "879095f2a95c3d3a455d80206e026c7a99a90cf4398ef34c1e64c44e9b8afa94",
+      "label": "UF 2026 state/national turnout 20261106T192048Z; source estimates remain estimates",
+      "publication": "reviewed_pending_live_verification"
+    },
     {
       "year": 2026,
       "publication": "live_verified_source_estimates",
