@@ -13,7 +13,7 @@ spec.loader.exec_module(module)
 
 def row(**changes):
     result = dict(TS_g2022="4", TS_g2024="3", TS_state_22="NC", TS_state_24="NC",
-                  CL_2020gvm="1", commonpostweight_24="1", commonpostweight_22="2",
+                  CL_2020gvm="1", commonweight_24="1", commonpostweight_24="1", commonpostweight_22="2",
                   vvweight_post_22="3")
     result.update(changes)
     return result
@@ -49,6 +49,20 @@ class PanelParticipationTests(unittest.TestCase):
         self.assertEqual(result["source_rows"], 2)
         self.assertEqual(weighted["missing_or_zero_weight_rows"], 2)
         self.assertIsNone(weighted["return_pct_unknown_compatible_lower_not_ci"])
+
+    def test_administrative_only_full_weight_does_not_require_post_interview_response(self):
+        source = [row(TS_g2022="7", commonpostweight_24="NA"),
+                  row(TS_g2022="7", CL_2020gvm="NA", commonpostweight_24="0")]
+        result = module.review(source, primary_weight="commonweight_24")
+        overall = next(s for s in result["scopes"] if s["scope"] == "ALL_SOURCE")
+        full = overall["weight_frames"]["commonweight_24"]
+        post = overall["weight_frames"]["commonpostweight_24"]
+        self.assertEqual(full["used"]["n"], 2)
+        self.assertEqual(full["current_only_known_2020_participants"]["n"], 1)
+        self.assertEqual(full["current_only_first_ever_status_unresolved"]["n"], 1)
+        self.assertEqual(post["used"]["n"], 0)
+        self.assertEqual(result["primary_weight"], "commonweight_24")
+        self.assertEqual(module.review(source)["primary_weight"], "commonpostweight_24")
 
     def test_literal_matched_states_and_unlocated_cases_are_not_survey_fips(self):
         result = module.review([row(), row(TS_state_24="DC"), row(TS_state_24="NA")])

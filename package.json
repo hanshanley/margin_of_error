@@ -6,7 +6,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "test:all-state-history": "python3 scripts/test-review-ces-historical-recall.py && python3 scripts/test-review-all-state-historical-recall.py && python3 scripts/test-review-all-state-2026-validation-gates.py && python3 scripts/test-review-nc-statewide-history-transitions.py && python3 scripts/test-review-nc-statewide-history-controls.py && python3 scripts/test-integrate-state-participation-evidence.py && python3 scripts/test-review-ces-2022-current-electorate.py && python3 scripts/test-review-historical-entry-compatibility.py && python3 scripts/test-review-ces-three-wave-participation.py",
+    "test:all-state-history": "python3 scripts/test-review-ces-historical-recall.py && python3 scripts/test-review-all-state-historical-recall.py && python3 scripts/test-review-all-state-2026-validation-gates.py && python3 scripts/test-review-nc-statewide-history-transitions.py && python3 scripts/test-review-nc-statewide-history-controls.py && python3 scripts/test-integrate-state-participation-evidence.py && python3 scripts/test-review-ces-2022-current-electorate.py && python3 scripts/test-review-historical-entry-compatibility.py && python3 scripts/test-review-ces-three-wave-participation.py && python3 scripts/test-review-ces-three-wave-reporting.py",
     "test:cps-unified-history": "python3 scripts/test-package-cps-unified-history.py",
     "test:cps-early-history": "python3 scripts/test-package-cps-early-history.py",
     "test:cps-older-history": "python3 scripts/test-package-cps-older-history.py",

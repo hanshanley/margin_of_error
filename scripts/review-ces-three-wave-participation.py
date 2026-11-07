@@ -12,7 +12,7 @@ from pathlib import Path
 SOURCE_SHA256 = "e9921d391159cf8fcb68a0b69aa76c94a5bf73436f516606bf3fb310125ba5ac"
 STATES = tuple("AK AL AR AZ CA CO CT DC DE FL GA HI IA ID IL IN KS KY LA MA MD ME MI MN MO MS MT NC ND NE NH NJ NM NV NY OH OK OR PA RI SC SD TN TX UT VA VT WA WI WV WY".split())
 STATUS = ("POSITIVE", "EXPLICIT_NONVOTE", "UNKNOWN")
-WEIGHTS = ("commonpostweight_24", "commonpostweight_22", "vvweight_post_22")
+WEIGHTS = ("commonweight_24", "commonpostweight_24", "commonpostweight_22", "vvweight_post_22")
 SCOPES = STATES + ("UNLOCATED", "ALL_SOURCE")
 MISSING = {"", "NA"}
 ZERO = Decimal(0)
@@ -70,7 +70,9 @@ def scope():
     }
 
 
-def review(rows):
+def review(rows, primary_weight="commonpostweight_24"):
+    if primary_weight not in ("commonweight_24", "commonpostweight_24"):
+        raise ValueError("Earlier registered/adult weights are not current primary weights")
     scopes = {name: scope() for name in SCOPES}
     total = 0
     with localcontext() as context:
@@ -127,7 +129,7 @@ def review(rows):
     assert sum(scopes[name]["source_rows"] for name in SCOPES if name != "ALL_SOURCE") == total
     return {
         "status": "all_state_2022_to2024_selected_panel_participation_not_population_validation",
-        "source_rows": total, "scopes": output, "primary_weight": WEIGHTS[0],
+        "source_rows": total, "scopes": output, "primary_weight": primary_weight,
         "population_method_validated": False, "public_release_qualified": False,
         "limits": [
             "The same retained2020adult respondents supply2022 and2024 validated-history classifications.",
@@ -137,7 +139,8 @@ def review(rows):
             "State grouping is not a historical state-cohort or election-day residence definition.",
             "Only code7 is explicit nonvote in2022/2024; missing histories remain UNKNOWN on both axes.",
             "Unknown-compatible ranges are conditional on correct known records, not design CIs or false-match bounds.",
-            "Commonpostweight_24 is the documented postwave adult weight; earlier2022weights are retained-frame sensitivities, not2024voter weights.",
+            "This administrative-history-only analysis consumes no2024post-interview answers; commonweight_24 supports the full retained respondent frame.",
+            "Commonpostweight_24 is retained as a post-interview-frame sensitivity; earlier2022weights are not2024voter weights.",
             "Current-only explicit2022nonvoters with positive2020history are known earlier participants, not first-ever voters.",
             "Current-only people without positive2020history remain first-ever-unresolved; earlier elections are unobserved.",
             "Panel recruitment in2020 excludes people first age-eligible in2022/2024; this dataset cannot resolve all population entrants.",
@@ -151,6 +154,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("source", "qualification", "prespec", "output"):
         parser.add_argument("--" + name, type=Path, required=True)
+    parser.add_argument("--primary-weight", choices=("commonweight_24", "commonpostweight_24"),
+                        default="commonpostweight_24")
     args = parser.parse_args()
     if args.output.exists() or Path(__file__).resolve().parents[1] in args.output.resolve().parents:
         raise ValueError("Require new private output outside repository")
@@ -161,12 +166,15 @@ def main():
         "tests": digest(Path(__file__).with_name("test-review-ces-three-wave-participation.py")),
     }
     qualification = json.loads(args.qualification.read_text())
+    design = json.loads(args.prespec.read_text())
     if (hashes["source"] != SOURCE_SHA256 or qualification["source_sha256"] != SOURCE_SHA256
             or qualification["status"] != "three_wave_participation_codes_qualified_from_explicit_numbered_guide"
-            or json.loads(args.prespec.read_text())["input_sha256"] != hashes):
+            or design["input_sha256"] != hashes or design["primary_weight"] != args.primary_weight
+            or (args.primary_weight == "commonweight_24"
+                and qualification.get("administrative_only_primary_weight") != "commonweight_24")):
         raise ValueError("Native source/coding/design binding differs")
     with args.source.open(newline="", encoding="utf-8-sig") as source:
-        result = review(csv.DictReader(source))
+        result = review(csv.DictReader(source), args.primary_weight)
     if result["source_rows"] != 6175:
         raise ValueError("Native case count differs")
     result["input_sha256"] = hashes
