@@ -13,6 +13,7 @@ import ParticipationCESClassification from '../components/ParticipationCESClassi
 import ParticipationCPSStateHistory from '../components/ParticipationCPSStateHistory.astro';
 import ParticipationCPSOlderHistory from '../components/ParticipationCPSOlderHistory.astro';
 import ParticipationCPSEarlyHistory from '../components/ParticipationCPSEarlyHistory.astro';
+import ParticipationCPSUnifiedHistory from '../components/ParticipationCPSUnifiedHistory.astro';
 import ParticipationColumbiaWisconsinHistory from '../components/ParticipationColumbiaWisconsinHistory.astro';
 import ParticipationHamiltonIndianaHistory from '../components/ParticipationHamiltonIndianaHistory.astro';
 import ParticipationNorthDakotaHistory from '../components/ParticipationNorthDakotaHistory.astro';
@@ -259,6 +260,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		</section>
 
 		<ParticipationColumbiaWisconsinHistory />
+		<ParticipationCPSUnifiedHistory />
 		<ParticipationCPSEarlyHistory />
 		<ParticipationCPSOlderHistory />
 		<ParticipationCPSStateHistory />

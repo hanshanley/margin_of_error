@@ -1,0 +1,241 @@
+---
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+
+type Value = number[];
+type Display = { years: number[]; states: string[]; groups: string[]; values: Value[][][] };
+const root = 'data/participation-cps-unified-history/20261107-01/output';
+const raw = readFileSync(`${root}/display.json`);
+const data: Display = JSON.parse(raw.toString('utf8'));
+const archive = JSON.parse(readFileSync(`${root}/archive.json`, 'utf8'));
+const release = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-unified-history-20261107-01';
+const displayUrl = `https://raw.githubusercontent.com/hanshanley/margin_of_error/28cd230b42e9e550356acb78d4947118529b35ab/${root}/display.json`;
+const displayHash = createHash('sha256').update(raw).digest('hex');
+const statuses: Record<number, string> = {
+	'-1': 'Not published (B or (B))', '-2': 'Withheld: small population base',
+	'-3': 'Zero or rounds to zero', '-4': 'Not supplied for this geography/year/bin',
+	'-5': 'Withheld: conflicting native totals', '-6': 'Withheld: native out-of-range metric',
+	'-7': 'Withheld: conflicting extra label', '-8': 'Withheld: unlabeled geography',
+};
+const text = (value: Value) => value.length === 2
+	? `${value[0].toFixed(1)}% +/- ${value[1].toFixed(1)} pp` : statuses[value[0]];
+---
+
+<section id="participation-cps-unified-history" class="participation-current" aria-labelledby="cps-unified-title"
+	data-display-url={displayUrl} data-display-sha256={displayHash}>
+	<header class="section-intro">
+		<p class="kicker">Participation over time · Census published estimates</p>
+		<h2 id="cps-unified-title">Follow one state and group across elections</h2>
+		<p>Explore reported voting in <strong>all 50 states and D.C.</strong> across{' '}
+			<strong>2004–2024</strong>, including midterms. The national benchmark includes D.C.
+			These are repeated cross-sections, <strong>not fixed-person cohorts</strong>,
+			candidate preference or 2026 outcomes.</p>
+	</header>
+	<div class="history-controls" data-cps-unified-controls hidden>
+		<label for="cps-unified-state">Geography
+			<select id="cps-unified-state">
+				{data.states.map((state, index) => <option value={index}>{state}</option>)}
+			</select>
+		</label>
+		<label for="cps-unified-group">Demographic view
+			<select id="cps-unified-group">
+				{data.groups.map((group, index) => <option value={index}>{group === 'Total' ? 'Overall' : group}</option>)}
+			</select>
+		</label>
+		<label for="cps-unified-election">Citizen-series elections
+			<select id="cps-unified-election">
+				<option value="all">Presidential and midterm</option>
+				<option value="presidential">Presidential only</option>
+				<option value="midterm">Midterms only</option>
+			</select>
+		</label>
+	</div>
+	<p id="cps-unified-selection" class="caption" aria-live="polite">
+		United States (including D.C.) · Overall. The national table and complete downloads
+		work without JavaScript; the three original all-state tables follow below.</p>
+	<figure data-cps-unified-chart hidden>
+		<svg role="img" aria-label="Reported voting among adult citizens over time" width="720" height="300"></svg>
+		<figcaption class="caption">
+			<span class="presidential-key">Solid: presidential</span>{' '}·{' '}
+			<span class="midterm-key">Dashed: midterm</span>.
+			Bars show native 90% margins of error, not uncertainty in a change.
+			Lines stop at unavailable elections. The 2004 all-adult baseline is not plotted.</figcaption>
+	</figure>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Selected citizen participation history">
+		<table data-cps-unified-table="citizens">
+			<caption>Adult citizens 18+, 2006–2024: reported voting percentage +/- native 90% margin (pp).</caption>
+			<thead><tr><th scope="col">Election</th><th scope="col">Reported voting</th></tr></thead>
+			<tbody>{data.years.slice(1).map((year, index) => <tr data-cps-unified-year={year}>
+				<th scope="row">{year} · {year % 4 === 0 ? 'Presidential' : 'Midterm'}</th>
+				<td>{text(data.values[0][0][index + 1])}</td>
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Separate all-adult 2004 baseline">
+		<table data-cps-unified-table="adults">
+			<caption>Separate 2004 baseline: all adults 18+, including noncitizens. Not comparable to the citizen series.</caption>
+			<thead><tr><th scope="col">Election</th><th scope="col">Reported voting</th></tr></thead>
+			<tbody><tr data-cps-unified-year="2004"><th scope="row">2004 · Presidential</th>
+				<td>{text(data.values[0][0][0])}</td></tr></tbody>
+		</table>
+	</div>
+	<p><strong>Missing is not zero.</strong> Exact source age bins stay separate: for example,
+		a 25–44 observation is never split into 25–34 and 35–44. Unsupported cells remain
+		unavailable. Do not compare the 2004 all-adult rate to later citizen-denominator rates.</p>
+	<details class="explorer-notes" data-cps-unified-methods>
+		<summary>How the histories join, limitations and complete reproducible query</summary>
+		<p>The November CPS Voting and Registration Supplement measures self/proxy-reported voting
+			among civilian noninstitutionalized adults, not administrative turnout or legal eligibility.
+			Population controls, group membership and survey response change between elections.
+			Native sampling margins exclude nonsampling error and are not confidence intervals for
+			changes, simultaneous intervals or significance tests. No causal midterm effect is estimated.</p>
+		<p>Only explicit equivalent source labels are joined. Race-alone, race-in-combination and
+			Hispanic-origin views overlap; they must not be added or multiplied into intersections.
+			Education, income and urbanicity are not supplied by these state tables. No local group
+			rate, individual switching, measured staying home or first-time-voter estimate is inferred.</p>
+		<p>All original suppression and rounded population-base screens remain in force; these
+			bases are population, not respondent counts. Native percentages and margins are never
+			recomputed from rounded counts. The conflicting 2008 Florida, Georgia and Hawaii totals
+			and South Dakota out-of-range row remain withheld. Unlabeled 2006/2008 national
+			sex/race blocks are not assigned to the United States; only the explicitly labeled 2008
+			national age Total supplies that year's national overall rate.</p>
+		<p>The complete query contains all 13,156 state/group/year cells, including unavailable
+			cells and source-display pointers, plus all three original complete packages with their
+			unmodified aggregate inputs, receipts, code and tests. The join is a view of already
+			qualified estimates, not a new native extraction or a new estimate. Extract the ZIP and run
+			<code>python3 scripts/package-cps-unified-history.py</code>{' '}to reproduce the full query
+			offline using only the Python standard library. Original native-extraction instructions
+			and dependencies remain inside each included source package.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${release}/complete-analysis.zip`} data-cps-unified-download="complete" download>Complete 2004–2024 query + all original inputs + code (ZIP)</a>
+		<a href={`${release}/observations.csv`} data-cps-unified-download="observations" download>Every state/group/year query cell + provenance (CSV)</a>
+	</div>
+	<p class="caption">Complete ZIP: {archive.bytes.toLocaleString('en-US')} bytes.
+		SHA-256: <code class="checksum">{archive.sha256}</code>.
+		Controls use a checksum-verified fixed-commit copy. The original source tables and downloads remain below.</p>
+</section>
+
+<script>
+	const section = document.getElementById('participation-cps-unified-history');
+	const state = document.querySelector<HTMLSelectElement>('#cps-unified-state');
+	const group = document.querySelector<HTMLSelectElement>('#cps-unified-group');
+	const election = document.querySelector<HTMLSelectElement>('#cps-unified-election');
+	const note = document.getElementById('cps-unified-selection');
+	const chart = section?.querySelector<HTMLElement>('[data-cps-unified-chart]');
+	const svg = chart?.querySelector('svg');
+	if (section && state && group && election && note && chart && svg) {
+		const statuses: Record<number, string> = {
+			'-1': 'Not published (B or (B))', '-2': 'Withheld: small population base',
+			'-3': 'Zero or rounds to zero', '-4': 'Not supplied for this geography/year/bin',
+			'-5': 'Withheld: conflicting native totals', '-6': 'Withheld: native out-of-range metric',
+			'-7': 'Withheld: conflicting extra label', '-8': 'Withheld: unlabeled geography',
+		};
+		const load = async () => {
+			const response = await fetch(section.dataset.displayUrl || '');
+			if (!response.ok) throw new Error('History unavailable');
+			const raw = await response.arrayBuffer();
+			const digest = await crypto.subtle.digest('SHA-256', raw);
+			const hash = [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('');
+			if (hash !== section.dataset.displaySha256) throw new Error('History checksum mismatch');
+			const data: { years: number[]; states: string[]; groups: string[]; values: number[][][][] } =
+				JSON.parse(new TextDecoder().decode(raw));
+			const permitted = (year: number) => election.value === 'all'
+				|| (year % 4 === 0 ? 'presidential' : 'midterm') === election.value;
+			const element = (tag: string, attrs: Record<string, string | number>, text?: string) => {
+				const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+				for (const [name, value] of Object.entries(attrs)) node.setAttribute(name, String(value));
+				if (text !== undefined) node.textContent = text;
+				svg.append(node);
+				return node;
+			};
+			const draw = () => {
+				svg.replaceChildren();
+				const width = Math.max(300, chart.clientWidth), height = 280;
+				svg.setAttribute('width', String(width));
+				svg.setAttribute('height', String(height));
+				svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+				svg.setAttribute('aria-label', `${data.states[Number(state.value)]}, ${data.groups[Number(group.value)]}: adult-citizen reported voting; native 90% margins.`);
+				const values = data.values[Number(state.value)][Number(group.value)];
+				const available = values.filter((value, i) => i > 0 && permitted(data.years[i]) && value.length === 2);
+				const low = Math.min(0, ...available.map(value => value[0] - value[1]));
+				const high = Math.max(100, ...available.map(value => value[0] + value[1]));
+				const x = (year: number) => 46 + (year - 2006) / 18 * (width - 66);
+				const y = (rate: number) => 16 + (high - rate) / (high - low) * 224;
+				for (const rate of [0, 25, 50, 75, 100]) {
+					element('line', { x1: 46, x2: width - 20, y1: y(rate), y2: y(rate), stroke: '#c4c6c2', 'stroke-width': 0.6 });
+					element('text', { x: 37, y: y(rate) + 4, 'text-anchor': 'end', fill: 'currentColor', 'font-size': 12 }, `${rate}%`);
+				}
+				for (const year of width < 500 ? [2006, 2012, 2018, 2024] : [2006, 2010, 2014, 2018, 2022, 2024]) {
+					element('text', { x: x(year), y: 263, 'text-anchor': 'middle', fill: 'currentColor', 'font-size': 12 }, String(year));
+				}
+				for (const type of ['presidential', 'midterm']) {
+					if (election.value !== 'all' && election.value !== type) continue;
+					const color = type === 'presidential' ? '#3d7077' : '#8c633c';
+					let segment: string[] = [];
+					const flush = () => {
+						if (segment.length > 1) element('polyline', { points: segment.join(' '),
+							fill: 'none', stroke: color, 'stroke-width': 1.8,
+							'stroke-dasharray': type === 'midterm' ? '5 4' : 'none', 'data-series': type });
+						segment = [];
+					};
+					data.years.forEach((year, i) => {
+						if (year === 2004 || (year % 4 === 0 ? 'presidential' : 'midterm') !== type) return;
+						const value = values[i];
+						if (value.length !== 2) { flush(); return; }
+						segment.push(`${x(year)},${y(value[0])}`);
+						element('line', { x1: x(year), x2: x(year), y1: y(value[0] - value[1]),
+							y2: y(value[0] + value[1]), stroke: color, 'stroke-width': 1,
+							'data-cps-unified-margin': year });
+						const point = element('circle', { cx: x(year), cy: y(value[0]), r: 3.2,
+							fill: color, 'data-cps-unified-point': year, 'data-series': type });
+						const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+						title.textContent = `${year}: ${value[0].toFixed(1)}% +/- ${value[1].toFixed(1)} pp`;
+						point.append(title);
+					});
+					flush();
+				}
+				if (!available.length) element('text', { x: width / 2, y: 125, 'text-anchor': 'middle',
+					fill: 'currentColor', 'font-size': 12 }, 'No published rates for this selection.');
+			};
+			const update = () => {
+				const values = data.values[Number(state.value)][Number(group.value)];
+				section.querySelectorAll<HTMLTableRowElement>('[data-cps-unified-year]').forEach(row => {
+					const year = Number(row.dataset.cpsUnifiedYear), value = values[data.years.indexOf(year)];
+					row.hidden = year !== 2004 && !permitted(year);
+					const cell = row.querySelector('td');
+					if (cell) cell.textContent = value.length === 2
+						? `${value[0].toFixed(1)}% +/- ${value[1].toFixed(1)} pp` : statuses[value[0]];
+				});
+				note.textContent = `${data.states[Number(state.value)]} · ${data.groups[Number(group.value)]} · ${election.options[election.selectedIndex].text}. 2004: all adults; 2006–2024: adult citizens.`;
+				draw();
+			};
+			for (const select of [state, group, election]) select.addEventListener('change', update);
+			const controls = section.querySelector<HTMLElement>('[data-cps-unified-controls]');
+			if (controls) controls.hidden = false;
+			chart.hidden = false;
+			update();
+			new ResizeObserver(draw).observe(chart);
+		};
+		load().catch(() => {
+			note.textContent = 'History controls unavailable. The national table, original all-state tables and complete downloads remain available.';
+		});
+	}
+</script>
+
+<style>
+	#participation-cps-unified-history { min-width: 0; margin-block: 1.5rem 2rem; }
+	.history-controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+	.history-controls[hidden], figure[hidden] { display: none; }
+	label { display: grid; gap: .35rem; min-width: 0; }
+	select { width: 100%; max-width: 100%; }
+	figure { margin: 1.25rem 0; }
+	svg { display: block; width: 100%; height: auto; }
+	.presidential-key { color: #3d7077; }
+	.midterm-key { color: #8c633c; }
+	.table-wrap { max-width: 100%; overflow-x: auto; }
+	table { width: 100%; min-width: 20rem; }
+	td { font-variant-numeric: tabular-nums; }
+	.checksum { overflow-wrap: anywhere; }
+	@media (max-width: 700px) { .history-controls { grid-template-columns: 1fr; } }
+</style>
