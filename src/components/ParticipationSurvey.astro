@@ -1,0 +1,128 @@
+---
+import { readFileSync } from 'node:fs';
+const base = '/participation-survey/20261107-02/';
+type JointRow = { prior_choice_share_pct: number | null;
+	current_choice_pct_within_prior_choice: Record<string, number | null> | null };
+type Table = { state_code: string; contest_code: string; contest_title?: string;
+	subset: { sub: number; longName: string }; status: string; source_timestamp?: string;
+	source_url?: string; source_reported_respondents?: number;
+	joint_question_rows?: Record<string, JointRow>;
+	arithmetic_from_rounded_percentages_per_100_current_group_voters?: Record<string, number> };
+type Jurisdiction = { state_code: string; reviewed_joint_tables: number };
+const review: { tables: Table[]; jurisdictions: Jurisdiction[] } = JSON.parse(
+	readFileSync(`public${base}joint-table-review.json`, 'utf8'));
+const states = ['US', ...review.jurisdictions.map(row => row.state_code)];
+const names: Record<string, string> = {
+	AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
+	CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', FL: 'Florida', GA: 'Georgia',
+	HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa',
+	KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland',
+	MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri',
+	MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey',
+	NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio',
+	OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina',
+	SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont',
+	VA: 'Virginia', WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming',
+	DC: 'District of Columbia', US: 'National House',
+};
+const name = (code: string) => names[code];
+const qualified = review.tables.filter(row => row.status === 'published_joint_question_reviewed');
+const qualifiedStates = review.jurisdictions.filter(row => row.reviewed_joint_tables > 0).length;
+const labels: Record<string, string> = {
+	published_joint_question_reviewed: 'Rounded switching arithmetic reviewed',
+	withheld_source_disabled: 'Disabled by publisher',
+	withheld_source_not_acquired: 'Source not acquired',
+	withheld_suppressed_switching_cell: 'Required cell suppressed',
+	withheld_unreconciled_prior_composition: 'Prior composition does not reconcile',
+	withheld_nonunique_literal_dem_rep_comparison: 'No unique literal D/R comparison',
+	withheld_special_election_scope_review: 'Special-election scope review pending',
+};
+const pct = (value: number | null | undefined) => value == null ? 'Unavailable' : `${value}%`;
+const mass = (row: Table, key: string) => {
+	const value = row.arithmetic_from_rounded_percentages_per_100_current_group_voters?.[key];
+	return value == null ? 'Withheld' : value.toFixed(2);
+};
+---
+
+<section id="participation-survey" class="participation-current" aria-labelledby="participation-survey-title">
+	<header class="section-intro">
+		<p class="kicker">2024 to 2026 · Survey-reported switching</p>
+		<h2 id="participation-survey-title">What returning voters report</h2>
+		<p>State and demographic joint tables from CNN's Voter Poll by SSRS.
+			<strong>{qualified.length} qualified tables across {qualifiedStates} states and the national House poll</strong>;
+			not nationwide population attribution. Expand a jurisdiction to compare each available office separately.
+			These tables work without JavaScript.</p>
+	</header>
+	<p>Each conditional percentage is among the selected 2026 poll group's respondents who recalled that
+		2024 presidential choice, <strong>not all of the original Trump or Harris coalition</strong>.
+		The two mass columns are reported switchers per 100 members of the selected current poll group,
+		calculated from rounded joint cells. They are not margin points or percentages of overall swing.</p>
+	<p>Some unrecontacted respondents retain pre-election choices. This is not a validated record of individual
+		ballots or causal persuasion. CNN, NBC and MS NOW use the same SSRS study, not independent samples.
+		<strong>Population drop-off and design-aware subgroup confidence intervals remain unavailable.</strong></p>
+	{states.map(code => {
+		const tables = review.tables.filter(row => row.state_code === code);
+		const contests = [...new Set(tables.map(row => row.contest_code))];
+		return <details id={`survey-${code}`} class="explorer-notes" open={code === 'US'} data-survey-jurisdiction={code}>
+			<summary>{name(code)} · {tables.filter(row =>
+				row.status === 'published_joint_question_reviewed').length} qualified tables</summary>
+			{tables.length === 0 && <p>No applicable candidate table is declared in this publisher's configuration.
+				This is not a zero switching rate or evidence that other sources have no data.
+				{code === 'DC' && ' D.C. was not sampled in this SSRS study.'}</p>}
+			{contests.map(contest => {
+				const rows = tables.filter(row => row.contest_code === contest);
+				return <div data-survey-contest={contest}>
+					<h3>{rows.find(row => row.contest_title)?.contest_title ?? contest}</h3>
+					<div class="table-wrap" tabindex="0" role="region" aria-label={`${name(code)} ${contest} survey switching`}>
+						<table><caption>Conditional cells and masses have different denominators. Source cells can
+							remain visible when mass arithmetic is withheld; see qualification.</caption>
+							<thead><tr><th scope="col">Poll group</th><th scope="col">Trump to D<br />(within recalled Trump)</th>
+								<th scope="col">Harris to R<br />(within recalled Harris)</th>
+								<th scope="col">Trump to D<br />(per 100 current group)</th>
+								<th scope="col">Harris to R<br />(per 100 current group)</th>
+								<th scope="col">Source base</th><th scope="col">Qualification / source clock</th></tr></thead>
+							<tbody>{rows.map(row => <tr data-survey-status={row.status} data-survey-subset={row.subset.sub}>
+								<th scope="row">{row.subset.longName}</th>
+								<td>{pct(row.joint_question_rows?.R.current_choice_pct_within_prior_choice?.D)}</td>
+								<td>{pct(row.joint_question_rows?.D.current_choice_pct_within_prior_choice?.R)}</td>
+								<td>{mass(row, 'reported_trump_to_dem')}</td><td>{mass(row, 'reported_harris_to_rep')}</td>
+								<td>{row.source_reported_respondents == null || row.source_reported_respondents < 0
+									? 'Unavailable' : row.source_reported_respondents.toLocaleString('en-US')}</td>
+								<td>{labels[row.status] ?? row.status}
+									{row.source_url && <><br /><a href={row.source_url}>Native source</a></>}
+									{row.source_timestamp && <><br /><time>{row.source_timestamp}</time></>}</td>
+							</tr>)}</tbody>
+						</table>
+					</div>
+				</div>;
+			})}
+		</details>;
+	})}
+	<p class="caption">Groups overlap and must not be added. Native suppressed values stay unavailable;
+		they are not zero. Composition shortfalls are preserved, not renormalized. Independent candidates
+		and ambiguous major-party or special-election comparisons are not forced into ordinary D/R estimates.
+		Source bases are not effective prior-choice-cell samples. Prior presidential nonvoting is not
+		validated nonparticipation in every 2024 contest. No state estimate is allocated to counties or precincts.</p>
+	<details class="explorer-notes"><summary>How apparent absence can be estimated next</summary>
+		<p>With a qualified official 2024 coalition total T24, matched 2026 voter total N26, recalled
+			prior-choice share q and current-choice conditional p: returning voters = N26 × q;
+			reported switchers = N26 × q × p; apparent absence = T24 - N26 × q.</p>
+		<p>Apparent absence is not measured staying home: migration, mortality, recall, incomplete counts
+			and contest-denominator uncertainty remain. Those population calculations are not released
+			in this survey-only version. We do not force the 2026 electorate back to the 2024 partisan split.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete survey tables + inputs + code (ZIP)</a>
+		<a href={`${base}joint-table-review.json`} download>All reviewed cells and withholding reasons (JSON)</a>
+		<a href={`${base}download.json`} download>Archive bytes and SHA-256</a>
+		<a href="https://ssrs.com/wp-content/uploads/The-Voter-Poll-by-SSRS-Methodology-Statement_Final.pdf">SSRS methods</a>
+	</div>
+</section>
+
+<style>
+	#participation-survey { min-width: 0; }
+	#participation-survey details { margin-block: 0.8rem; }
+	#participation-survey th, #participation-survey td { vertical-align: top; }
+	#participation-survey time { font-size: 0.75rem; overflow-wrap: anywhere; }
+	#participation-survey summary { cursor: pointer; }
+</style>
