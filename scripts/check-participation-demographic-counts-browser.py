@@ -26,6 +26,7 @@ def check(base, proof):
                         context.route("**/participation-demographic-counts/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-demographic-counts")
                     expect(panel).to_contain_text("299 qualified group comparisons across 34 states plus national House")
                     expect(panel).to_contain_text("Group drop-off remains unavailable")

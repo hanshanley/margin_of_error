@@ -54,6 +54,7 @@ def check(base, proof, version="20261107-01"):
                         context.route("**/participation-county-scenarios/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#" + panel_id)
                     expect(panel).to_be_visible()
                     expect(panel.locator("[data-county-dimension]")).to_have_count(5)

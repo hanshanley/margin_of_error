@@ -24,6 +24,7 @@ def check(base, proof):
                         context.route("**/participation-slu-intentions/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-house-intentions")
                     expect(panel.locator("[data-slu-prior]")).to_have_count(2)
                     for prior, n, kish, values in [

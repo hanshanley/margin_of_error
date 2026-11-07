@@ -33,6 +33,7 @@ def check(base, proof):
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/",
                               wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-nd-long-history")
                     expect(panel).to_be_visible()
                     expect(panel.locator("[data-nd-long-county]")).to_have_count(53)

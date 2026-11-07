@@ -43,6 +43,7 @@ def check(base, proof, live_data=False, downloads=True):
                             content_type="application/json", headers={"Access-Control-Allow-Origin": "*"}))
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-cps-unified-history")
                     expect(panel).to_be_visible()
                     assert panel.get_attribute("data-display-url") == SOURCE
