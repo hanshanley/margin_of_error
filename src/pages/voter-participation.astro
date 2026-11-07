@@ -2,6 +2,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ParticipationSwing from '../components/ParticipationSwing.astro';
 import { participationCurrentRoot } from '../../public/scripts/participation-downloads.js';
 import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation } from '../../scripts/reviewed-county-participation.mjs';
 import { loadAdditionalParticipation } from '../../scripts/additional-participation.mjs';
@@ -151,6 +152,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<p class="kicker">An atlas of voter participation</p>
 			<h1>Who participates?</h1>
 			<p class="participation-deck">Voter turnout across elections, places and demographic groups.</p>
+			<p><a href="#participation-swing">2024–2026: persuasion or staying home? · demographic evidence</a></p>
 		</header>
 
 		<nav class="participation-nav" aria-label="Explore participation" role="tablist">
@@ -236,6 +238,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			</details>
 			<div id="tooltip" role="tooltip" hidden></div>
 		</section>
+
+		<ParticipationSwing />
 
 		<section id="methods-panel" class="participation-secondary" data-section="methods" aria-labelledby="methods-heading">
 		<header class="section-intro"><p class="kicker">Sources, definitions & research</p><h2 id="methods-heading">What is behind the numbers?</h2>

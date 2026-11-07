@@ -1,0 +1,44 @@
+{
+  "source_receipts": [
+    {
+      "file": "NC-results-20241105.zip",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2024_11_05/results_pct_20241105.zip",
+      "declared_by": "https://www.ncsbe.gov/results-data/election-results/historical-election-results-data",
+      "bytes": 3741131,
+      "sha256": "2fab44e9b12e03c0d88ef832c2e6dc8c569e2b020d64df06a8b551b62bbdb426",
+      "retrieved_at": "2026-11-06T22:59:26.010988+00:00",
+      "last_modified": "Tue, 03 Dec 2024 18:32:58 GMT",
+      "etag": "\"01cdf96556adfff064321c4714d38ad6\""
+    },
+    {
+      "file": "data/precinct-results/20261105T015000Z/originals/NC-results-20261103.zip",
+      "bytes": 2033810,
+      "sha256": "1d542e51b688deef41965adbe59e0e85f136ee16b83f22ceaac7f4e7cc2a09a3",
+      "url": "https://www.ncsbe.gov/results-data/election-results/historical-election-results-data",
+      "reporting_clock": null,
+      "election_date": "2026-11-03"
+    }
+  ],
+  "rows": 7395,
+  "years": [
+    2024,
+    2026
+  ],
+  "counties_by_year": {
+    "2024": 100,
+    "2026": 100
+  },
+  "method_reconciliation": "Every native candidate row reconciles exactly across four methods.",
+  "participation_measure": null,
+  "matched_fixed_cohort": false,
+  "precinct_panel_qualified": false,
+  "limits": [
+    "2026 counts are provisional; reporting clock is not established by this cached archive.",
+    "Every county's presidential baseline includes all county voters, not the fixed 2026 early cohort.",
+    "House contests remain separate; split counties need a qualified cross-year county/district presidential baseline.",
+    "Administrative units are retained in county method totals, never assigned to residential precincts.",
+    "Literal candidate parties and independent/other choices are retained.",
+    "Candidate counts do not measure turnout or identify demographic or individual choices.",
+    "Membership, valid contest votes, report clocks, and status coverage do not yet reconcile to the fixed cohort."
+  ]
+}

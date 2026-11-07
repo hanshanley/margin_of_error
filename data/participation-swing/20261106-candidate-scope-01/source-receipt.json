@@ -1,0 +1,10 @@
+{
+  "file": "NC-results-20241105.zip",
+  "url": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2024_11_05/results_pct_20241105.zip",
+  "declared_by": "https://www.ncsbe.gov/results-data/election-results/historical-election-results-data",
+  "bytes": 3741131,
+  "sha256": "2fab44e9b12e03c0d88ef832c2e6dc8c569e2b020d64df06a8b551b62bbdb426",
+  "retrieved_at": "2026-11-06T22:59:26.010988+00:00",
+  "last_modified": "Tue, 03 Dec 2024 18:32:58 GMT",
+  "etag": "\"01cdf96556adfff064321c4714d38ad6\""
+}

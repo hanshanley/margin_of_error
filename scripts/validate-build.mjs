@@ -267,6 +267,19 @@ assert.equal(participation('#downloads a[download]').length,
 	+ 3 * ufSnapshots.length
 	+ participationReviews.reduce((count, review) => count + review.tables.length +
 		(sourceReviews.some(source => source.complete_download_url === review.complete_download_url) ? 0 : 1), 0));
+assert.equal(participation('#participation-swing').length, 1);
+assert.match(participation('#participation-swing').text(), /individual persuasion is not observed or independently validated/);
+assert.equal(participation('[data-conditional-swing] tbody').first().find('tr').length, 5);
+assert.equal(participation('[data-model-dimension]').length, 4);
+assert.equal(participation('#participation-swing [data-swing-rows] tr').length, 4);
+assert.equal(participation('#participation-swing [data-swing-county] option').length, 100);
+const swingAnalysis = JSON.parse(await text('participation-swing/20261106-02/analysis.json'));
+const swingDownload = JSON.parse(await text('participation-swing/20261106-02/download.json'));
+const swingZip = await readFile(new URL('participation-swing/20261106-02/complete-analysis.zip', root));
+assert.equal(swingAnalysis.validation.release_point_estimates, false);
+assert.equal(swingZip.length, swingDownload.bytes);
+assert.equal(createHash('sha256').update(swingZip).digest('hex'), swingDownload.sha256);
+assert.equal(participation('#participation-swing a[download]').attr('href'), swingAnalysis.complete_download);
 for (const snapshot of [
 	...historicalHouseSnapshots, ...countySnapshots.flatMap(snapshot =>
 		snapshot.party_votes ? [snapshot.party_votes] : []),

@@ -1,0 +1,213 @@
+---
+import { readFileSync } from 'node:fs';
+import { swingRoot, swingVersion } from '../../scripts/build-participation-swing.mjs';
+import { cohortSelection } from '../../public/scripts/participation-swing.js';
+const analysis = JSON.parse(readFileSync(`${swingRoot}/analysis.json`, 'utf8'));
+const cohort = JSON.parse(readFileSync(`${swingRoot}/aggregate-cohort.json`, 'utf8'));
+const observed = JSON.parse(readFileSync(`${swingRoot}/observed-comparisons.json`, 'utf8'));
+const model = JSON.parse(readFileSync(`${swingRoot}/conditional-transitions.json`, 'utf8'));
+const coverage = JSON.parse(readFileSync(`${swingRoot}/nationwide-scope.json`, 'utf8'));
+const reference = model.default_conditional_scenario;
+const components = [
+	['switching', 'Cross-election switching'], ['dropoff', 'Sitting out'],
+	['new_returning', 'Previously eligible new / returning voters'],
+	['eligibility_residence', 'Eligibility / residence change'], ['other_and_contest', 'Other choices / contest participation'],
+];
+const modelDimensions = [
+	['age_2024', 'Age in 2024'], ['race', 'Administrative race'],
+	['ethnicity', 'Administrative ethnicity'], ['administrative_gender', 'Administrative gender'],
+];
+type ModelGroup = {dimension: string; group: string; modeled_2026_participants: number;
+	margin_pp_contributions: Record<string, number>};
+type GroupRange = {dimension: string; group: string;
+	margin_pp_contributions: Record<string, {minimum: number; maximum: number}>};
+const modelGroups: ModelGroup[] = reference.demographics;
+const ranges: GroupRange[] = model.demographic_sensitivity_range_margin_pp;
+const modelSigned = (value: number) => `${value >= 0 ? '+' : ''}${value.toFixed(1)}`;
+const modelRange = (range: {minimum: number; maximum: number}) =>
+	`${modelSigned(range.minimum)} to ${modelSigned(range.maximum)}`;
+const subgroupCalibrationError = Math.max(...model.turnout_temporal_diagnostics.groups
+	.filter((row: {registered_records: number}) => row.registered_records >= 100)
+	.map((row: {known_total_conditioned_calibration_error_pp: number}) =>
+		Math.abs(row.known_total_conditioned_calibration_error_pp)));
+const initial = cohortSelection(cohort, 'DURHAM', 'All included methods', 'age');
+const counties: string[] = [...new Set<string>(cohort.map((row: {county: string}) => row.county))].sort();
+const registry: { dimension: string; label: string; definition: string; composition_available: boolean }[]
+	= analysis.demographic_registry;
+const initialContests = observed.filter((row: {county: string}) => row.county === 'DURHAM');
+const senate = initialContests.find((row: {contest: string}) => row.contest === 'US SENATE');
+const signed = (value: number) => `${value >= 0 ? '+' : ''}${value.toFixed(2)}`;
+const number = (value: number | null) => value === null ? 'Not reviewed' : value.toLocaleString('en-US');
+---
+
+<section id="participation-swing" class="participation-current" aria-labelledby="participation-swing-title"
+	data-base={`/participation-swing/${swingVersion}/`}>
+	<header class="section-intro">
+		<p class="kicker">2024 to 2026 · Switching and participation</p>
+		<h2 id="participation-swing-title">Persuasion or staying home?</h2>
+		<p>First separate who participated from how they voted. This North Carolina pilot shows county
+			swings and demographic early/mail composition. <strong>Experimental Durham scenarios are below;
+			individual persuasion is not observed or independently validated.</strong></p>
+	</header>
+	<div data-conditional-swing>
+		<h3>Experimental model · Durham, North Carolina</h3>
+		<p class="measure">2024 President → 2026 Senate · all ballot methods ·
+			{modelSigned(reference.swing_margin_pp)} percentage-point Democratic-minus-Republican margin swing.</p>
+		<p>These are <strong>assumption-conditioned estimates, not measured individual switching</strong>.
+			The reference scenario separates switching, sitting out, previous nonvoters participating,
+			eligibility/residence changes and contest effects. Cross-office switching may be ticket-splitting,
+			not changed political beliefs or a causal effect of persuasion.</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Experimental county swing decomposition">
+			<table><caption>Contribution to the countywide margin swing · {model.scenario_count} model scenarios</caption>
+				<thead><tr><th scope="col">Component</th><th scope="col">Reference (pp)</th>
+					<th scope="col">Share of net swing</th><th scope="col">Assumption range (pp)</th></tr></thead>
+				<tbody>{components.map(([key, label]) => <tr><th scope="row">{label}</th>
+					<td class="numeric">{modelSigned(reference.margin_pp_contributions[key])}</td>
+					<td class="numeric">{reference.signed_share_of_swing_pct[key] === null ? 'Not defined'
+						: `${reference.signed_share_of_swing_pct[key].toFixed(1)}%`}</td>
+					<td class="numeric">{modelRange(model.sensitivity_range_margin_pp[key])}</td></tr>)}</tbody>
+			</table>
+		</div>
+		<p class="caption">Ranges are assumption sensitivity, <strong>not confidence or identification
+			intervals</strong>. Their endpoints come from different scenarios and cannot be added.
+			The 95% same-party prior is a reference assumption, not an observed retention rate.
+			Newly adult voters appear in eligibility change; known voters arriving from another county
+			are residence change, not new national voters. None of these estimates is a measured
+			same-person early-vote comparison.</p>
+		{modelDimensions.map(([dimension, label]) =>
+			<details class="explorer-notes" open={dimension === 'age_2024'} data-model-dimension={dimension}>
+				<summary>{label} · modeled contributions to countywide swing</summary>
+				<div class="table-wrap" tabindex="0" role="region" aria-label={`${label} conditional contributions`}>
+					<table><caption>Each cell: reference contribution in margin points; assumption range below.
+						These are contributions to Durham's swing, not each group's own swing or turnout rate.</caption>
+						<thead><tr><th scope="col">Group</th>{components.map(([, title]) =>
+							<th scope="col">{title}</th>)}</tr></thead>
+						<tbody>{modelGroups.filter(row => row.dimension === dimension).map(row =>
+							<tr><th scope="row">{row.group}</th>{components.map(([key]) =>
+								<td class="numeric">{modelSigned(row.margin_pp_contributions[key])}
+									<br /><small>{modelRange(ranges.find(group => group.dimension === dimension
+										&& group.group === row.group)!.margin_pp_contributions[key])}</small></td>)}</tr>)}</tbody>
+					</table>
+				</div>
+			</details>)}
+		<p class="caption">Demographic outcomes remain modeled, including small groups and unknowns.
+			Administrative gender partitions the results but is not a historical-choice predictor;
+			Native Hawaiian/Pacific Islander preferences use the broader survey Other category.
+			The retrospective turnout model's overall 2022 error was
+			{` ${model.turnout_temporal_diagnostics.validation_calibration_error_pp.toFixed(1)} pp `}
+			before conditioning on the known total; conditioning is not independent validation.
+			After conditioning, subgroup errors still reached {subgroupCalibrationError.toFixed(1)} pp
+			among groups with at least 100 records; smaller groups can be less stable.
+			Current-registration survivor selection, changing attributes and migration remain limitations.
+			Education, household income and residence-type estimates are not supplied.</p>
+		<p>Nationwide work remains in progress: the coverage ledger includes all 50 states, D.C.
+			separately and {number(coverage.county_contests.length)} county/contest entries.
+			<strong>That is not nationwide attribution coverage.</strong> No Durham or statewide
+			estimate is allocated down to another county or precinct.</p>
+		<div class="download-links">
+			<a href={`/participation-swing/${swingVersion}/conditional-transitions.json`}>All scenarios, demographic ranges & diagnostics · JSON</a>
+			<a href={`/participation-swing/${swingVersion}/nationwide-scope.json`}>Every jurisdiction & county/contest evidence tier · JSON</a>
+		</div>
+	</div>
+	<p>The same election totals can result from people switching parties, different people voting, or both.
+		County swing is observed accounting; individual switching needs additional evidence. Registered
+		party and primary participation do not disclose Trump or Harris votes.</p>
+	<p class="caption">The controls below change descriptive North Carolina tables, not the fixed
+		Durham experimental scenarios above.</p>
+	<div class="controls">
+		<label>County<select data-swing-county disabled>{counties.map(county =>
+			<option value={county} selected={county === 'DURHAM'}>{county}</option>)}</select></label>
+		<label>2026 cohort source method<select data-swing-method disabled>
+			<option>All included methods</option><option>EARLY VOTING</option><option>MAIL</option>
+		</select></label>
+		<label>Demographic dimension<select data-swing-dimension disabled>{registry.map(row =>
+			<option value={row.dimension} selected={row.dimension === 'age'}>{row.label}
+				{row.composition_available ? '' : ' · not supplied'}</option>)}</select></label>
+	</div>
+	<p class="measure" data-swing-status aria-live="polite">DURHAM · All included methods · accepted records,
+		not unique voters, turnout rates or vote choices.</p>
+	{registry.map(row => <p class="caption" data-dimension-note={row.dimension} hidden={row.dimension !== 'age'}>
+		{row.definition}</p>)}
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Demographic cohort composition">
+		<table><caption>Literal ACCEPTED records, November 6 snapshot. Only Durham has reviewed historical linkage.</caption>
+			<thead><tr><th scope="col">Group</th><th scope="col">Accepted records</th>
+				<th scope="col">Positive 2024 history matches</th><th scope="col">Unresolved history</th></tr></thead>
+			<tbody data-swing-rows>{initial.map((row: {group: string; accepted_records: number;
+				positive_2024_history_matches: number | null; history_unresolved: number | null}) =>
+				<tr><th scope="row">{row.group}</th><td class="numeric">{number(row.accepted_records)}</td>
+					<td class="numeric">{number(row.positive_2024_history_matches)}</td>
+					<td class="numeric">{number(row.history_unresolved)}</td></tr>)}</tbody>
+		</table>
+	</div>
+	<p class="caption">A positive history match establishes prior participation, not candidate choice.
+		A missing match is unresolved, not a 2024 nonvoter. The county history archive predates the 2026
+		election and cannot establish who stayed home in 2026. Eleven repeated accepted-record identifiers
+		statewide prevent interpreting these record totals as a unique-person panel. Cured and exception
+		statuses remain separate in the complete audit; they are not silently included.
+		This table preserves the original county-history review; the model uses separately audited
+		statewide history, including participation elsewhere in North Carolina.</p>
+	<h3>County election swing · separate from demographic attribution</h3>
+	<div class="controls"><label>2026 race<select data-swing-contest disabled>{initialContests.map(
+		(row: {contest: string}) => <option value={row.contest} selected={row.contest === 'US SENATE'}>{row.contest}</option>)}
+	</select></label></div>
+	<p class="measure" data-observed-swing aria-live="polite">{senate?.swing_margin_pp !== null && senate
+		? `${signed(senate.swing_margin_pp)} pp Democratic-minus-Republican margin change; ${signed(senate.democratic_share_change_pp)} pp Democratic two-party share change.`
+		: 'No comparable county result reviewed.'}
+		2024 President versus the selected 2026 race; all reported methods, different electorates, provisional 2026 counts.</p>
+	<p class="caption">The cohort method selector does not filter this all-method county comparison.
+		Senate and each House race remain separate. House comparisons for split counties are withheld
+		until a matching presidential baseline is reviewed. No county totals are spread into precincts.</p>
+	<details class="explorer-notes"><summary>What can and cannot be attributed</summary>
+		<p>Among people who actually voted in both elections, staying home in 2026 cannot explain a
+			within-cohort shift. But the cohort's 2024 preference must be modeled, and new voters,
+			other-party votes and contest abstention remain separate. Early voters do not represent all voters.</p>
+		<p>Illustration, not an estimate: 50 Democratic and 50 Republican votes becoming 50 Democratic
+			and 40 Republican votes fits both ten Republicans staying home, and ten Republicans switching
+			while ten Democrats stay home. Under that fixed-population illustration, switching contributes
+			between 0 and 20 net Democratic margin votes. The extremes belong to separate feasible histories.</p>
+		<p>A modeled R+6 baseline becoming D+12 within a genuinely matched two-party cohort is an
+			18-point margin shift, or a 9-point Democratic share change. It is not evidence that 18%
+			switched, nor a percentage of the entire election's swing caused by persuasion.</p>
+		<p>Signed component contributions can be negative or greater than 100% of net swing; zero swing
+			has no defined attribution percentage. We do not force a persuasion-versus-turnout pie chart.</p>
+	</details>
+	<details class="explorer-notes"><summary>Evidence, demographic gaps & complete reproducible inputs</summary>
+		<p>Education, household income and residence type are not supplied for this cohort. Race and
+			ethnicity overlap; marginal dimensions cannot be combined into invented joint groups.
+			Historical preference has internal held-out checks. Demographic 2026 choices,
+			same-person vote transitions and a matched early-vote outcome are not independently validated.</p>
+		<div class="table-wrap"><table><caption>Source capability review · November 6, 2026</caption>
+			<thead><tr><th scope="col">Source</th><th scope="col">Evidence and limit</th></tr></thead>
+			<tbody>{analysis.source_ledger.map((row: {source: string; source_url: string; conclusion: string}) =>
+				<tr><th scope="row"><a href={row.source_url}>{row.source}</a></th><td>{row.conclusion}</td></tr>)}</tbody>
+		</table></div>
+		<p>CES 2026's published schedule delivers team data in March 2027 and voter-file matching in
+			summer 2027. Historical CES/ANES choice data are useful potential baseline inputs, not evidence
+			that a 2026 cohort model or demographic switching estimate has passed validation.</p>
+		<p>The download includes all 100 NC counties, every reviewed demographic aggregate, every
+			county/contest/method candidate total, original public results archives, audits, source hashes,
+			fitted historical models, every experimental scenario, the nationwide ledger and its complete
+			candidate inputs, accounting code and tests. Re-fitting the private-source models requires
+			separately acquired voter and survey records. Personal records, fine joint cells and
+			individual scores are never included.</p>
+		<div class="download-links"><a href={analysis.complete_download} download>Complete aggregate analysis · ZIP</a>
+			<a href={`/participation-swing/${swingVersion}/analysis.json`}>Evidence and qualification audit · JSON</a>
+			<a href={`/participation-swing/${swingVersion}/observed-comparisons.json`}>Every county / race comparison · JSON</a>
+		</div>
+	</details>
+	<noscript><p>JavaScript is disabled. The Durham age table is saved above; the complete download includes every county and supported group.</p></noscript>
+</section>
+
+<script>
+	import { initializeSwing } from '../../public/scripts/participation-swing.js';
+	initializeSwing();
+</script>
+
+<style>
+	.controls { display: flex; flex-wrap: wrap; gap: .75rem; }
+	.controls label { display: flex; flex-direction: column; flex: 1 1 12rem; min-width: 0;
+		max-width: 24rem; gap: .35rem; font: .73rem var(--sans); color: var(--muted); }
+	.controls select { width: 100%; min-width: 0; min-height: 40px; padding: .45rem .65rem;
+		border: 1px solid var(--rule); border-radius: 2px; background: var(--paper);
+		color: var(--ink); font: .8rem var(--sans); }
+</style>
