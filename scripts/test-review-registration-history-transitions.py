@@ -19,6 +19,7 @@ def cell(before=False, middle=False, after=False, count=10, **extra):
         "registration_status_2026": "ACTIVE",
         "registration_by_2020": True,
         "historical_search_complete": True,
+        "prior_2016_history": False, "prior_2018_history": False,
         "prior_2020_history": before, "prior_2022_history": middle,
         "prior_2024_history": ("Positive 2024 NC history" if after else
                               "No 2024 NC history found; national participation unresolved"),
@@ -66,6 +67,25 @@ class HistoryTransitionTests(unittest.TestCase):
             self.assertIsNone(comparison["recorded_current_among_recorded_prior_pct"])
             self.assertIsNone(comparison["recorded_prior_among_recorded_current_pct"])
 
+    def test_older_positive_history_rules_out_first_time_without_promoting_no_match(self):
+        source = [
+            cell(False, True, False, 10, prior_2018_history=True),
+            cell(False, True, False, 20),
+            cell(True, False, True, 30),
+            cell(False, False, True, 40),
+        ]
+        first, second = module.summarize(source)["comparisons"]
+        self.assertEqual(first["current_only_record_split"], {
+            "positive_history_before_prior_election_not_first_ever": 10,
+            "no_earlier_record_found_first_ever_unresolved": 20})
+        self.assertEqual(second["current_only_record_split"], {
+            "positive_history_before_prior_election_not_first_ever": 30,
+            "no_earlier_record_found_first_ever_unresolved": 40})
+        self.assertIsNone(first["first_ever_voters"])
+        source[0]["prior_2018_history"] = None
+        with self.assertRaises(ValueError):
+            module.summarize(source)
+
     def test_unknown_flags_invalid_counts_and_unknown_2024_labels_fail(self):
         for edit in ({"records": True}, {"records": 0}, {"records": -1},
                      {"prior_2020_history": None}, {"prior_2022_history": 1},
@@ -93,7 +113,7 @@ class HistoryTransitionTests(unittest.TestCase):
             (root / "joint-cells.json").write_bytes(raw)
             audit = {"state_code": "NC", "county": "EXAMPLE", "joint_cells_sha256": digest,
                      "aggregate_cells": 1, "sources": [],
-                     "history": {f"general_{year}_records": 10 for year in (2020, 2022, 2024)}}
+                     "history": {f"general_{year}_records": 10 for year in (2016, 2018, 2020, 2022, 2024)}}
             controls = {"county": "EXAMPLE", "joint_cells_sha256": digest,
                         "all_linkage_control_signatures_match": True,
                         "controls": {"private_population": 10}}

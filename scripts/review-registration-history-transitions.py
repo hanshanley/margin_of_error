@@ -27,6 +27,7 @@ def summarize(cells):
     matrices = {period: Counter(dict.fromkeys(
         ("recorded_both", "recorded_prior_only", "recorded_current_only", "neither_recorded"), 0))
         for period in PERIODS}
+    earlier_participants = Counter()
     exclusions = Counter(dict.fromkeys(
         ("not_currently_active_or_inactive", "incomplete_history_search",
          "current_registration_not_established_by_2020"), 0))
@@ -57,6 +58,10 @@ def summarize(cells):
                         "recorded_prior_only" if before else
                         "recorded_current_only" if after else "neither_recorded")
             matrices[(prior, current)][category] += count
+            if not before and after:
+                earlier = [recorded(cell, year) for year in (2016, 2018, 2020) if year < prior]
+                if any(earlier):
+                    earlier_participants[(prior, current)] += count
     if total != retained + sum(exclusions.values()):
         raise ValueError("Frame exclusions do not reconcile")
     comparisons = []
@@ -70,6 +75,11 @@ def summarize(cells):
             "record_presence_matrix": dict(counts),
             "prior_positive_history_records": prior_positive,
             "current_positive_history_records": current_positive,
+            "current_only_record_split": {
+                "positive_history_before_prior_election_not_first_ever": earlier_participants[(prior, current)],
+                "no_earlier_record_found_first_ever_unresolved": (
+                    counts["recorded_current_only"] - earlier_participants[(prior, current)]),
+            },
             "recorded_current_among_recorded_prior_pct": (
                 100 * counts["recorded_both"] / prior_positive if prior_positive else None),
             "recorded_prior_among_recorded_current_pct": (
@@ -99,7 +109,7 @@ def qualified_summary(directory, controls_path):
             or audit.get("joint_cells_sha256") != digest
             or controls.get("joint_cells_sha256") != digest):
         raise ValueError("Missing or changed independent linkage controls")
-    for year in (2020, 2022, 2024):
+    for year in (2016, 2018, 2020, 2022, 2024):
         if audit["history"].get(f"general_{year}_records", 0) <= 0:
             raise ValueError("Missing completed-election history source coverage")
     cells = json.loads(cells_raw)
@@ -136,6 +146,7 @@ def review(directories, controls, output):
             "This is a retained 2026 registration frame, not either historical electorate or all eligible residents.",
             "Current-record registration dates and statuses are not reconstructed election-day registration or eligibility.",
             "No history record found is not proven national nonparticipation or first-ever voting.",
+            "A positive earlier history rules out first-ever voting; no earlier record since 2016 does not prove first-ever voting.",
             "The matrices concern recorded all-ballot participation, not presidential contest participation or candidate choice.",
             "Deaths, moves, removals, registration-date changes and unresolved record linkage can select the retained frame.",
             "No 2026 participation or nonparticipation is classified from incomplete current histories.",
