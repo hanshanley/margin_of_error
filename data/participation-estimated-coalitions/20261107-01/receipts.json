@@ -1,0 +1,32 @@
+{
+  "dataset_landing_page": "https://election.lab.ufl.edu/dataset/2026-general-election-turnout-rates-v0-2/",
+  "dataset_page_last_data_update_literal": "November 4, 2026",
+  "turnout_page": "https://election.lab.ufl.edu/2026-general-election-turnout/",
+  "turnout_page_update_literal": "Nov. 6, 2026 @ 10:30am",
+  "turnout_page_timezone_not_supplied": true,
+  "license_documentation": "Creative Commons 4.0 Attribution",
+  "receipts": [
+    {
+      "file": "Turnout_2026G_v0.2.csv",
+      "requested_url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.2.csv",
+      "response_url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.2.csv",
+      "status": 200,
+      "content_type": "text/csv",
+      "retrieved_at_utc": "2026-11-07T01:03:33.269507+00:00",
+      "bytes": 6019,
+      "sha256": "eef37c0606cc1406e76b84bae2216c592e74e6b8cf5034d8d0733f3ab942cf2b",
+      "http_last_modified": "Fri, 06 Nov 2026 15:25:36 GMT"
+    },
+    {
+      "file": "Turnout_2026G_v0.1_doc.txt",
+      "requested_url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.1_doc.txt",
+      "response_url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.1_doc.txt",
+      "status": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "retrieved_at_utc": "2026-11-07T01:03:33.486491+00:00",
+      "bytes": 6942,
+      "sha256": "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd",
+      "http_last_modified": "Sun, 01 Nov 2026 19:09:44 GMT"
+    }
+  ]
+}
