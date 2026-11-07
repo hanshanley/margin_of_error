@@ -29,6 +29,7 @@ import { loadCountyContextReview } from '../../scripts/build-county-participatio
 import '../styles/voter-participation.css';
 
 const dataRoot = resolve('public/voter-participation');
+const mapRepairRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-map-repairs-20261107-01/';
 const precinctResultsPointerPath = resolve('public/precinct-results.json');
 const precinctResultsPointer = existsSync(precinctResultsPointerPath)
 	? JSON.parse(readFileSync(precinctResultsPointerPath, 'utf8')) : null;
@@ -845,6 +846,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				</details>}
 			</>)}
 			<div class="download-links">
+				<a href={`${mapRepairRelease}complete-michigan-participation-map-repair-20261107-01.zip`} download>Michigan: complete precinct-count query, official 2026 geometry, all 63 mapped/withheld dispositions and verification (ZIP)</a>
+				<a href={`${mapRepairRelease}complete-vermont-2026-municipal-participation.zip`} download>Vermont: all 247 municipality observations, exact dated VCGI reference query, original responses and verification (ZIP)</a>
 				{countyContextReview.downloads.map((file: { url: string; label: string }) =>
 					<a href={file.url} download>{file.label}</a>)}
 				<a href="/precinct-coverage.csv" download>Every state and election, newest first: full precinct worklist (CSV)</a>

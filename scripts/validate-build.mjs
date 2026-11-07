@@ -255,7 +255,7 @@ for (const retiredArchive of [
 		`Withdrawn source archive is still linked: ${retiredArchive}`);
 }
 assert.equal(participation('#downloads a[download]').length,
-	21 + countyContextPointer.downloads.length + sourceReviews.reduce((count, review) =>
+	22 + countyContextPointer.downloads.length + sourceReviews.reduce((count, review) =>
 		count + 1 + (review.tables ?? []).length + (review.geometry_review ? 1 : 0), 0)
 	+ (precinctResultsPointer.source_batches ?? []).length
 	+ (precinctResultsPointer.additional_snapshots ?? []).reduce((count, snapshot) =>
@@ -264,9 +264,16 @@ assert.equal(participation('#downloads a[download]').length,
 	+ historicalHouseSnapshots.reduce((count, snapshot) => count + 1 + snapshot.tables.length, 0)
 	+ countySnapshots.reduce((count, snapshot) =>
 		count + (snapshot.party_votes ? 1 + snapshot.party_votes.tables.length : 0), 0)
-	+ 3 * ufSnapshots.length
+	+ 4 * ufSnapshots.length
 	+ participationReviews.reduce((count, review) => count + review.tables.length +
 		(sourceReviews.some(source => source.complete_download_url === review.complete_download_url) ? 0 : 1), 0));
+for (const archive of [
+	'complete-michigan-participation-map-repair-20261107-01.zip',
+	'complete-vermont-2026-municipal-participation.zip',
+]) {
+	assert.equal(participation(`#downloads a[href="https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-map-repairs-20261107-01/${archive}"]`).length, 1,
+		'Local map repairs must expose complete reproducible query archives without JavaScript');
+}
 assert.equal(participation('#participation-swing').length, 1);
 assert.match(participation('#participation-swing').text(), /individual persuasion is not observed or independently validated/);
 assert.equal(participation('[data-conditional-swing] tbody').first().find('tr').length, 5);
@@ -1129,6 +1136,11 @@ for (const article of externalArticles) {
 	);
 }
 assert.equal([...archive.matchAll(/class="external-list"/g)].length, 1);
+
+if (process.argv.includes('--participation-only')) {
+	console.log('Voter-participation artifact checks passed.');
+	process.exit(0);
+}
 
 const outputDirectory = fileURLToPath(root);
 const outputFiles = await collectFiles(outputDirectory);

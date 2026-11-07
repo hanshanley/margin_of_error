@@ -1,0 +1,51 @@
+{
+  "schema": "participation-map-repair-index-v1",
+  "year": 2026,
+  "election_date": "2026-11-03",
+  "municipalities": {
+    "VT": {
+      "file": "vermont-municipal-participation.geojson.gz",
+      "features": 247,
+      "rates": 241,
+      "geometry_sha256": "9748608fa00f0f5ea83c0c0f42115bb24984de662d12114c63c49849b083ab1d",
+      "boundary_label": "VCGI BNDHASH town reference polygons; data edited May 2, 2025",
+      "complete_download_file": "complete-vermont-2026-municipal-participation.zip"
+    }
+  },
+  "states": {
+    "MI": "MI-2026-qualified-precinct-counts.geojson.gz"
+  },
+  "state_metadata": {
+    "MI": {
+      "boundary_label": "Official State of Michigan 2026 election-cycle precinct boundaries",
+      "boundary_source": "https://services3.arcgis.com/dxRQUfTDNtfqZ301/arcgis/rest/services/VotingPrecinct/FeatureServer",
+      "boundary_item_id": "b7df95c78668407280a7dead8e26aad0",
+      "geometry_file": "MI-2026-qualified-precinct-counts.geojson.gz",
+      "geometry_bytes": 234932,
+      "geometry_sha256": "cd0c4c23bc60a18c1d2cdb32baaaa5905503af42a1b5c2c6b4c5a1e8da13d148",
+      "count_features": 58,
+      "rate_features": 0,
+      "qualified_counties": [
+        "Bay County",
+        "Isabella County"
+      ],
+      "withheld_rows": 5,
+      "notes": "Exact structured identities qualify all 35 Bay and 23 Isabella official precinct features for direct native counts. Rates remain withheld because native registration components are not defined. City of Clare's positive Isabella row cannot use the whole CountyFIPS 035 official polygon; four zero rows are official Gratiot/Midland precincts."
+    }
+  },
+  "boundary_features": 58,
+  "matched_precincts": 58,
+  "colored_precincts": 0,
+  "minimum_electorate": null,
+  "boundary_source": "https://services3.arcgis.com/dxRQUfTDNtfqZ301/arcgis/rest/services/VotingPrecinct/FeatureServer",
+  "boundary_item_id": "b7df95c78668407280a7dead8e26aad0",
+  "complete_download_file": "complete-michigan-participation-map-repair-20261107-01.zip",
+  "source_permissions_file": "SOURCE-PERMISSIONS.json",
+  "limitations": [
+    "Counts are unofficial native election observations; no certification is inferred.",
+    "All 58 matched shapes keep rates gray because native registration components are not defined.",
+    "Official geometry RegisteredVoters and ActiveVoters are reference-layer fields, not substituted election denominators.",
+    "City of Clare's 22 ballots / 43 registrations and four neighboring-county zero rows remain outside the map.",
+    "No county containers are summed or allocated to precincts."
+  ]
+}

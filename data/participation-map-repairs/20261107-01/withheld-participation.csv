@@ -1,0 +1,6 @@
+year,state_code,county_code,county,precinct,source_row_id,ballots_cast_total,registered_voters_total,geometry_approved,rate_approved,official_precinct_id,official_county_fips,withheld_reason
+2026,MI,isabella,Isabella County,"City of Clare, Precinct 1",isabella:uuid:01000000-c639-6905-679d-08df1d7ec1d0,22,43,false,false,WP-035-15920-00001,035,official_geometry_is_whole_clare_county_035_scope_not_isabella_split
+2026,MI,isabella,Isabella County,"Pine River Township, Precinct 1 (Gratiot)",isabella:uuid:01000000-c639-6905-67f7-08df1d7ec1d0,0,0,false,false,WP-057-64360-00001,057,official_geometry_confirms_neighbor_county_zero_row_outside_isabella
+2026,MI,isabella,Isabella County,"Seville Township, Precinct 1 (Gratiot)",isabella:uuid:01000000-c639-6905-6863-08df1d7ec1d0,0,0,false,false,WP-057-72580-00001,057,official_geometry_confirms_neighbor_county_zero_row_outside_isabella
+2026,MI,isabella,Isabella County,"Greendale Township, Precinct 1 (Midland)",isabella:uuid:01000000-c639-6905-68c2-08df1d7ec1d0,0,0,false,false,WP-111-34860-00001,111,official_geometry_confirms_neighbor_county_zero_row_outside_isabella
+2026,MI,isabella,Isabella County,"Jasper Township, Precinct 1 (Midland)",isabella:uuid:01000000-c639-6905-6920-08df1d7ec1d0,0,0,false,false,WP-111-41560-00001,111,official_geometry_confirms_neighbor_county_zero_row_outside_isabella
