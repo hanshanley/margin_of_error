@@ -1,0 +1,49 @@
+{
+  "status": "research_review_not_population_attribution",
+  "provider": "The Voter Poll by SSRS",
+  "document_url": "https://ssrs.com/wp-content/uploads/The-Voter-Poll-by-SSRS-Methodology-Statement_Final.pdf",
+  "document_sha256": "a986a389ea6c1a6db6acdf2bb550a30b4d3f88fd85e5f3bb4127a7e7c6710c5d",
+  "document_pages": 10,
+  "document_clock_as_printed": "11/4/2026 5:23 PM",
+  "document_clock_timezone": "not specified",
+  "coverage": {
+    "states_sampled": 50,
+    "dc_sampled": false,
+    "in_person_election_day_states": 15,
+    "national_table_1_pre_election_n": 81290,
+    "national_table_3_final_n": 81290,
+    "national_table_3_design_effect": 2.6,
+    "national_table_3_reported_overall_moe_pp": 0.5,
+    "joint_question_subgroup_bases_available": false
+  },
+  "recontact": {
+    "document_pages": [1, 2],
+    "attempts": "November 2 at 5 PM local time through near November 3 poll closing",
+    "completed_recontact": "Final choice uses recontact response.",
+    "unsuccessful_recontact": "Initial choice is retained.",
+    "all_current_choices_administratively_validated": false
+  },
+  "weighting": {
+    "document_pages": [6, 7],
+    "rv_calibration_includes_recalled_2024_choice_for_validated_2024_voters": true,
+    "rv_calibration_includes_voter_file_and_modeled_characteristics": true,
+    "final_weights_calibrated_to_2026_election_results": true,
+    "independent_validation_from_reproducing_current_results": false,
+    "selected_2026_electorate_forced_to_2024_composition_by_this_review": false
+  },
+  "selected_table_limits": [
+    "Tables describe the current electorate; they contain no 2026 nonvoter rows.",
+    "Recall and unrecontacted intentions are not observed individual ballot choices.",
+    "Overlapping national groups cannot be summed or allocated to states.",
+    "Overall bases and design effects do not establish joint-cell confidence intervals.",
+    "Table 1 component counts and Table 3 final bases are not interchangeable.",
+    "Legacy Presidential label conflicts with House wording; contest scope remains unqualified."
+  ],
+  "withheld": [
+    "2026 drop-off percentage",
+    "share of overall swing caused by switching",
+    "state, county or precinct allocation",
+    "design-aware subgroup confidence intervals",
+    "first-ever-voter percentage"
+  ]
+}

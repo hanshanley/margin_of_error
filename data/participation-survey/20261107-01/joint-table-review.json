@@ -1,0 +1,628 @@
+{
+  "source_url": "https://www.nbcnews.com/politics/2026-elections/exit-polls",
+  "source_sha256": "e6d82bddd3208d396cbae911fc55bdc516f350f9e22ff7749d087caba95690ef",
+  "source_bytes": 1992057,
+  "source_last_modified": "2026-11-05T03:52:07.249Z",
+  "selected_question": "In the 2024 election for president, did you vote for:",
+  "groups": [
+    {
+      "source_view_code": 0,
+      "source_group": "All Voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 49.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 97.0,
+            "R": 2.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 44.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 7.0,
+            "R": 91.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 57.0,
+            "R": 30.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 4.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 70.0,
+            "R": 25.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 99.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 3.08,
+        "reported_harris_to_rep": 0.98,
+        "net_reported_switching_toward_dem": 2.1
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 5,
+      "source_group": "White Voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 45.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 97.0,
+            "R": 2.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 50.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 6.0,
+            "R": 93.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 53.0,
+            "R": 34.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 3.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 61.0,
+            "R": 34.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 100.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 3.0,
+        "reported_harris_to_rep": 0.9,
+        "net_reported_switching_toward_dem": 2.1
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 6,
+      "source_group": "Black Voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 82.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 98.0,
+            "R": 1.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 9.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 27.0,
+            "R": 71.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 72.0,
+            "R": 10.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 6.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 89.0,
+            "R": 7.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 99.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 2.43,
+        "reported_harris_to_rep": 0.82,
+        "net_reported_switching_toward_dem": 1.61
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 7,
+      "source_group": "Hispanic Voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 53.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 96.0,
+            "R": 3.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 36.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 13.0,
+            "R": 84.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 3.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 52.0,
+            "R": 34.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 9.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 77.0,
+            "R": 17.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 101.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 4.68,
+        "reported_harris_to_rep": 1.59,
+        "net_reported_switching_toward_dem": 3.09
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 20,
+      "source_group": "Men Voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 44.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 97.0,
+            "R": 3.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 49.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 7.0,
+            "R": 91.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 3.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 54.0,
+            "R": 33.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 5.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 68.0,
+            "R": 27.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 101.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 3.43,
+        "reported_harris_to_rep": 1.32,
+        "net_reported_switching_toward_dem": 2.11
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 21,
+      "source_group": "Women Voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 54.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 97.0,
+            "R": 2.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 40.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 7.0,
+            "R": 91.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 59.0,
+            "R": 26.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 4.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 71.0,
+            "R": 24.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 100.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 2.8,
+        "reported_harris_to_rep": 1.08,
+        "net_reported_switching_toward_dem": 1.72
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 45,
+      "source_group": "White w/College Voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 57.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 97.0,
+            "R": 2.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 39.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 6.0,
+            "R": 93.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 53.0,
+            "R": 37.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 60.0,
+            "R": 36.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 100.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 2.34,
+        "reported_harris_to_rep": 1.14,
+        "net_reported_switching_toward_dem": 1.2
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 46,
+      "source_group": "White no College Voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 33.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 97.0,
+            "R": 2.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 61.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 5.0,
+            "R": 93.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 54.0,
+            "R": 28.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 4.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 62.0,
+            "R": 33.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 100.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 3.05,
+        "reported_harris_to_rep": 0.66,
+        "net_reported_switching_toward_dem": 2.39
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 52,
+      "source_group": "Election Day Voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 39.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 96.0,
+            "R": 3.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 55.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 7.0,
+            "R": 92.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 54.0,
+            "R": 31.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 4.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 63.0,
+            "R": 30.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 100.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 3.85,
+        "reported_harris_to_rep": 1.17,
+        "net_reported_switching_toward_dem": 2.68
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 51,
+      "source_group": "Early Voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 57.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 97.0,
+            "R": 2.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 36.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 7.0,
+            "R": 91.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 58.0,
+            "R": 29.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 5.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 74.0,
+            "R": 22.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 100.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 2.52,
+        "reported_harris_to_rep": 1.14,
+        "net_reported_switching_toward_dem": 1.38
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 53,
+      "source_group": "18-29 voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 53.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 97.0,
+            "R": 2.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 25.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 18.0,
+            "R": 79.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 70.0,
+            "R": 14.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 19.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 79.0,
+            "R": 18.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 99.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 4.5,
+        "reported_harris_to_rep": 1.06,
+        "net_reported_switching_toward_dem": 3.44
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 54,
+      "source_group": "18-44 voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 54.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 96.0,
+            "R": 2.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 33.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 13.0,
+            "R": 84.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 3.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 61.0,
+            "R": 23.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 10.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 76.0,
+            "R": 20.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 100.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 4.29,
+        "reported_harris_to_rep": 1.08,
+        "net_reported_switching_toward_dem": 3.21
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "source_view_code": 55,
+      "source_group": "65+ voters",
+      "source_poll_name": "National Presidential",
+      "source_display_clock": "5 PM ET",
+      "status": "published_joint_question_reviewed",
+      "joint_question_rows": {
+        "D": {
+          "prior_choice_share_pct": 47.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 97.0,
+            "R": 2.0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 50.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 4.0,
+            "R": 95.0
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 52.0,
+            "R": 35.0
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 2.0,
+          "current_choice_pct_within_prior_choice": {
+            "D": 57.0,
+            "R": 39.0
+          }
+        }
+      },
+      "reported_composition_sum_pct": 101.0,
+      "arithmetic_from_rounded_percentages_per_100_current_group_voters": {
+        "reported_trump_to_dem": 2.0,
+        "reported_harris_to_rep": 0.94,
+        "net_reported_switching_toward_dem": 1.06
+      },
+      "dropoff_estimate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    }
+  ],
+  "qualification": {
+    "complete_selected_question_tables": true,
+    "whole_dashboard_or_native_microdata_redistributed": false,
+    "independently_validated_transitions": false,
+    "population_decomposition_released": false,
+    "state_or_local_estimates_released": false,
+    "subgroup_bases_or_replicate_weights_supplied": false,
+    "renormalized_published_percentages": false,
+    "limitations": [
+      "Arithmetic describes the selected current-electorate subgroup only.",
+      "Prior choice and nonvoting are recalled, not observed ballots.",
+      "Prior N answers the presidential question, not validated all-ballot nonparticipation.",
+      "No 2026 nonvoter rows; drop-off is not measured by this table.",
+      "Groups overlap; do not sum groups or multiply separate marginals.",
+      "Whole-point rounding is retained; unshown choices remain unresolved.",
+      "No first-ever-voter inference from reported 2024 nonvoting.",
+      "Legacy National Presidential pollName requires contest-scope review.",
+      "Inspect final weighting and unrecontacted intended-choice treatment.",
+      "Overall sample size is not a subgroup or prior-choice sample base."
+    ]
+  }
+}
