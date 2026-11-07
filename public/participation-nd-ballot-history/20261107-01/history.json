@@ -1,0 +1,934 @@
+{
+  "status": "observed_ballot_count_change_not_linked_turnout",
+  "state_code": "ND",
+  "current_snapshot_official": false,
+  "county_matching": "exact_source_names_not_fixed_people_or_precinct_boundaries",
+  "precinct_longitudinal_comparison_qualified": false,
+  "limitations": [
+    "2026 is the frozen reported-count snapshot, not an estimate of final turnout.",
+    "Historical county totals are sums of their native precinct rows, not independent county controls.",
+    "Ballot-count changes do not identify individual dropoff, returning voters or candidate switching.",
+    "No geographic overlay, precinct crosswalk or current group denominator is established."
+  ],
+  "statewide": {
+    "ballots_by_year": {
+      "2022": 242526,
+      "2024": 371975,
+      "2026": 239057
+    },
+    "reported_ballot_count_change_since_2024": -132918,
+    "reported_ballot_count_change_since_2022": -3469,
+    "measured_prior_voter_dropoff": null,
+    "new_or_returning_voters": null,
+    "party_switchers": null,
+    "demographic_turnout_rate": null
+  },
+  "counties": [
+    {
+      "county_name": "Adams",
+      "current_native_county_id": "38001",
+      "ballots_by_year": {
+        "2022": 932,
+        "2024": 1213,
+        "2026": 838
+      },
+      "reported_ballot_count_change_since_2024": -375,
+      "reported_ballot_count_change_since_2022": -94,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Barnes",
+      "current_native_county_id": "38003",
+      "ballots_by_year": {
+        "2022": 3942,
+        "2024": 5413,
+        "2026": 3726
+      },
+      "reported_ballot_count_change_since_2024": -1687,
+      "reported_ballot_count_change_since_2022": -216,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Benson",
+      "current_native_county_id": "38005",
+      "ballots_by_year": {
+        "2022": 1506,
+        "2024": 2030,
+        "2026": 1335
+      },
+      "reported_ballot_count_change_since_2024": -695,
+      "reported_ballot_count_change_since_2022": -171,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Billings",
+      "current_native_county_id": "38007",
+      "ballots_by_year": {
+        "2022": 541,
+        "2024": 658,
+        "2026": 558
+      },
+      "reported_ballot_count_change_since_2024": -100,
+      "reported_ballot_count_change_since_2022": 17,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Bottineau",
+      "current_native_county_id": "38009",
+      "ballots_by_year": {
+        "2022": 2880,
+        "2024": 3485,
+        "2026": 2406
+      },
+      "reported_ballot_count_change_since_2024": -1079,
+      "reported_ballot_count_change_since_2022": -474,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Bowman",
+      "current_native_county_id": "38011",
+      "ballots_by_year": {
+        "2022": 1366,
+        "2024": 1637,
+        "2026": 1283
+      },
+      "reported_ballot_count_change_since_2024": -354,
+      "reported_ballot_count_change_since_2022": -83,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Burke",
+      "current_native_county_id": "38013",
+      "ballots_by_year": {
+        "2022": 787,
+        "2024": 1068,
+        "2026": 696
+      },
+      "reported_ballot_count_change_since_2024": -372,
+      "reported_ballot_count_change_since_2022": -91,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Burleigh",
+      "current_native_county_id": "38015",
+      "ballots_by_year": {
+        "2022": 35746,
+        "2024": 52867,
+        "2026": 34947
+      },
+      "reported_ballot_count_change_since_2024": -17920,
+      "reported_ballot_count_change_since_2022": -799,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Cass",
+      "current_native_county_id": "38017",
+      "ballots_by_year": {
+        "2022": 54272,
+        "2024": 91565,
+        "2026": 59126
+      },
+      "reported_ballot_count_change_since_2024": -32439,
+      "reported_ballot_count_change_since_2022": 4854,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Cavalier",
+      "current_native_county_id": "38019",
+      "ballots_by_year": {
+        "2022": 1586,
+        "2024": 2033,
+        "2026": 1488
+      },
+      "reported_ballot_count_change_since_2024": -545,
+      "reported_ballot_count_change_since_2022": -98,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Dickey",
+      "current_native_county_id": "38021",
+      "ballots_by_year": {
+        "2022": 1799,
+        "2024": 2483,
+        "2026": 1823
+      },
+      "reported_ballot_count_change_since_2024": -660,
+      "reported_ballot_count_change_since_2022": 24,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Divide",
+      "current_native_county_id": "38023",
+      "ballots_by_year": {
+        "2022": 1037,
+        "2024": 1223,
+        "2026": 1008
+      },
+      "reported_ballot_count_change_since_2024": -215,
+      "reported_ballot_count_change_since_2022": -29,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Dunn",
+      "current_native_county_id": "38025",
+      "ballots_by_year": {
+        "2022": 1677,
+        "2024": 2266,
+        "2026": 1586
+      },
+      "reported_ballot_count_change_since_2024": -680,
+      "reported_ballot_count_change_since_2022": -91,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Eddy",
+      "current_native_county_id": "38027",
+      "ballots_by_year": {
+        "2022": 953,
+        "2024": 1232,
+        "2026": 1026
+      },
+      "reported_ballot_count_change_since_2024": -206,
+      "reported_ballot_count_change_since_2022": 73,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Emmons",
+      "current_native_county_id": "38029",
+      "ballots_by_year": {
+        "2022": 1555,
+        "2024": 1956,
+        "2026": 1321
+      },
+      "reported_ballot_count_change_since_2024": -635,
+      "reported_ballot_count_change_since_2022": -234,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Foster",
+      "current_native_county_id": "38031",
+      "ballots_by_year": {
+        "2022": 1269,
+        "2024": 1720,
+        "2026": 1201
+      },
+      "reported_ballot_count_change_since_2024": -519,
+      "reported_ballot_count_change_since_2022": -68,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Golden Valley",
+      "current_native_county_id": "38033",
+      "ballots_by_year": {
+        "2022": 781,
+        "2024": 998,
+        "2026": 695
+      },
+      "reported_ballot_count_change_since_2024": -303,
+      "reported_ballot_count_change_since_2022": -86,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Grand Forks",
+      "current_native_county_id": "38035",
+      "ballots_by_year": {
+        "2022": 19100,
+        "2024": 31679,
+        "2026": 19936
+      },
+      "reported_ballot_count_change_since_2024": -11743,
+      "reported_ballot_count_change_since_2022": 836,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Grant",
+      "current_native_county_id": "38037",
+      "ballots_by_year": {
+        "2022": 1127,
+        "2024": 1324,
+        "2026": 1049
+      },
+      "reported_ballot_count_change_since_2024": -275,
+      "reported_ballot_count_change_since_2022": -78,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Griggs",
+      "current_native_county_id": "38039",
+      "ballots_by_year": {
+        "2022": 1006,
+        "2024": 1310,
+        "2026": 918
+      },
+      "reported_ballot_count_change_since_2024": -392,
+      "reported_ballot_count_change_since_2022": -88,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Hettinger",
+      "current_native_county_id": "38041",
+      "ballots_by_year": {
+        "2022": 1048,
+        "2024": 1318,
+        "2026": 1042
+      },
+      "reported_ballot_count_change_since_2024": -276,
+      "reported_ballot_count_change_since_2022": -6,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Kidder",
+      "current_native_county_id": "38043",
+      "ballots_by_year": {
+        "2022": 1078,
+        "2024": 1406,
+        "2026": 1077
+      },
+      "reported_ballot_count_change_since_2024": -329,
+      "reported_ballot_count_change_since_2022": -1,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "LaMoure",
+      "current_native_county_id": "38045",
+      "ballots_by_year": {
+        "2022": 1663,
+        "2024": 2166,
+        "2026": 1506
+      },
+      "reported_ballot_count_change_since_2024": -660,
+      "reported_ballot_count_change_since_2022": -157,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Logan",
+      "current_native_county_id": "38047",
+      "ballots_by_year": {
+        "2022": 840,
+        "2024": 1052,
+        "2026": 801
+      },
+      "reported_ballot_count_change_since_2024": -251,
+      "reported_ballot_count_change_since_2022": -39,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "McHenry",
+      "current_native_county_id": "38049",
+      "ballots_by_year": {
+        "2022": 2169,
+        "2024": 2787,
+        "2026": 1916
+      },
+      "reported_ballot_count_change_since_2024": -871,
+      "reported_ballot_count_change_since_2022": -253,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "McIntosh",
+      "current_native_county_id": "38051",
+      "ballots_by_year": {
+        "2022": 1117,
+        "2024": 1415,
+        "2026": 1056
+      },
+      "reported_ballot_count_change_since_2024": -359,
+      "reported_ballot_count_change_since_2022": -61,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "McKenzie",
+      "current_native_county_id": "38053",
+      "ballots_by_year": {
+        "2022": 3266,
+        "2024": 5556,
+        "2026": 3345
+      },
+      "reported_ballot_count_change_since_2024": -2211,
+      "reported_ballot_count_change_since_2022": 79,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "McLean",
+      "current_native_county_id": "38055",
+      "ballots_by_year": {
+        "2022": 4280,
+        "2024": 5470,
+        "2026": 3826
+      },
+      "reported_ballot_count_change_since_2024": -1644,
+      "reported_ballot_count_change_since_2022": -454,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Mercer",
+      "current_native_county_id": "38057",
+      "ballots_by_year": {
+        "2022": 3614,
+        "2024": 4603,
+        "2026": 3288
+      },
+      "reported_ballot_count_change_since_2024": -1315,
+      "reported_ballot_count_change_since_2022": -326,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Morton",
+      "current_native_county_id": "38059",
+      "ballots_by_year": {
+        "2022": 11460,
+        "2024": 17205,
+        "2026": 10363
+      },
+      "reported_ballot_count_change_since_2024": -6842,
+      "reported_ballot_count_change_since_2022": -1097,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Mountrail",
+      "current_native_county_id": "38061",
+      "ballots_by_year": {
+        "2022": 2640,
+        "2024": 4108,
+        "2026": 2580
+      },
+      "reported_ballot_count_change_since_2024": -1528,
+      "reported_ballot_count_change_since_2022": -60,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Nelson",
+      "current_native_county_id": "38063",
+      "ballots_by_year": {
+        "2022": 1550,
+        "2024": 1785,
+        "2026": 1261
+      },
+      "reported_ballot_count_change_since_2024": -524,
+      "reported_ballot_count_change_since_2022": -289,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Oliver",
+      "current_native_county_id": "38065",
+      "ballots_by_year": {
+        "2022": 839,
+        "2024": 1097,
+        "2026": 888
+      },
+      "reported_ballot_count_change_since_2024": -209,
+      "reported_ballot_count_change_since_2022": 49,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Pembina",
+      "current_native_county_id": "38067",
+      "ballots_by_year": {
+        "2022": 2483,
+        "2024": 3154,
+        "2026": 2328
+      },
+      "reported_ballot_count_change_since_2024": -826,
+      "reported_ballot_count_change_since_2022": -155,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Pierce",
+      "current_native_county_id": "38069",
+      "ballots_by_year": {
+        "2022": 1506,
+        "2024": 2006,
+        "2026": 1427
+      },
+      "reported_ballot_count_change_since_2024": -579,
+      "reported_ballot_count_change_since_2022": -79,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Ramsey",
+      "current_native_county_id": "38071",
+      "ballots_by_year": {
+        "2022": 4061,
+        "2024": 5316,
+        "2026": 3515
+      },
+      "reported_ballot_count_change_since_2024": -1801,
+      "reported_ballot_count_change_since_2022": -546,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Ransom",
+      "current_native_county_id": "38073",
+      "ballots_by_year": {
+        "2022": 1843,
+        "2024": 2758,
+        "2026": 1856
+      },
+      "reported_ballot_count_change_since_2024": -902,
+      "reported_ballot_count_change_since_2022": 13,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Renville",
+      "current_native_county_id": "38075",
+      "ballots_by_year": {
+        "2022": 906,
+        "2024": 1226,
+        "2026": 892
+      },
+      "reported_ballot_count_change_since_2024": -334,
+      "reported_ballot_count_change_since_2022": -14,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Richland",
+      "current_native_county_id": "38077",
+      "ballots_by_year": {
+        "2022": 6034,
+        "2024": 8346,
+        "2026": 5478
+      },
+      "reported_ballot_count_change_since_2024": -2868,
+      "reported_ballot_count_change_since_2022": -556,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Rolette",
+      "current_native_county_id": "38079",
+      "ballots_by_year": {
+        "2022": 2788,
+        "2024": 4121,
+        "2026": 2766
+      },
+      "reported_ballot_count_change_since_2024": -1355,
+      "reported_ballot_count_change_since_2022": -22,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Sargent",
+      "current_native_county_id": "38081",
+      "ballots_by_year": {
+        "2022": 1630,
+        "2024": 2077,
+        "2026": 1499
+      },
+      "reported_ballot_count_change_since_2024": -578,
+      "reported_ballot_count_change_since_2022": -131,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Sheridan",
+      "current_native_county_id": "38083",
+      "ballots_by_year": {
+        "2022": 631,
+        "2024": 766,
+        "2026": 608
+      },
+      "reported_ballot_count_change_since_2024": -158,
+      "reported_ballot_count_change_since_2022": -23,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Sioux",
+      "current_native_county_id": "38085",
+      "ballots_by_year": {
+        "2022": 606,
+        "2024": 963,
+        "2026": 671
+      },
+      "reported_ballot_count_change_since_2024": -292,
+      "reported_ballot_count_change_since_2022": 65,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Slope",
+      "current_native_county_id": "38087",
+      "ballots_by_year": {
+        "2022": 304,
+        "2024": 393,
+        "2026": 284
+      },
+      "reported_ballot_count_change_since_2024": -109,
+      "reported_ballot_count_change_since_2022": -20,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Stark",
+      "current_native_county_id": "38089",
+      "ballots_by_year": {
+        "2022": 9246,
+        "2024": 15234,
+        "2026": 8330
+      },
+      "reported_ballot_count_change_since_2024": -6904,
+      "reported_ballot_count_change_since_2022": -916,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Steele",
+      "current_native_county_id": "38091",
+      "ballots_by_year": {
+        "2022": 799,
+        "2024": 1021,
+        "2026": 711
+      },
+      "reported_ballot_count_change_since_2024": -310,
+      "reported_ballot_count_change_since_2022": -88,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Stutsman",
+      "current_native_county_id": "38093",
+      "ballots_by_year": {
+        "2022": 6805,
+        "2024": 10262,
+        "2026": 6397
+      },
+      "reported_ballot_count_change_since_2024": -3865,
+      "reported_ballot_count_change_since_2022": -408,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Towner",
+      "current_native_county_id": "38095",
+      "ballots_by_year": {
+        "2022": 864,
+        "2024": 1135,
+        "2026": 878
+      },
+      "reported_ballot_count_change_since_2024": -257,
+      "reported_ballot_count_change_since_2022": 14,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Traill",
+      "current_native_county_id": "38097",
+      "ballots_by_year": {
+        "2022": 2993,
+        "2024": 4178,
+        "2026": 3081
+      },
+      "reported_ballot_count_change_since_2024": -1097,
+      "reported_ballot_count_change_since_2022": 88,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Walsh",
+      "current_native_county_id": "38099",
+      "ballots_by_year": {
+        "2022": 3531,
+        "2024": 4575,
+        "2026": 3428
+      },
+      "reported_ballot_count_change_since_2024": -1147,
+      "reported_ballot_count_change_since_2022": -103,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Ward",
+      "current_native_county_id": "38101",
+      "ballots_by_year": {
+        "2022": 16870,
+        "2024": 28778,
+        "2026": 16645
+      },
+      "reported_ballot_count_change_since_2024": -12133,
+      "reported_ballot_count_change_since_2022": -225,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Wells",
+      "current_native_county_id": "38103",
+      "ballots_by_year": {
+        "2022": 1708,
+        "2024": 2279,
+        "2026": 1560
+      },
+      "reported_ballot_count_change_since_2024": -719,
+      "reported_ballot_count_change_since_2022": -148,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    },
+    {
+      "county_name": "Williams",
+      "current_native_county_id": "38105",
+      "ballots_by_year": {
+        "2022": 7492,
+        "2024": 15259,
+        "2026": 6788
+      },
+      "reported_ballot_count_change_since_2024": -8471,
+      "reported_ballot_count_change_since_2022": -704,
+      "measured_prior_voter_dropoff": null,
+      "new_or_returning_voters": null,
+      "party_switchers": null,
+      "demographic_turnout_rate": null
+    }
+  ],
+  "version": "20261107-01",
+  "source_observations": [
+    {
+      "ballots": 242526,
+      "election_date": "November 8, 2022",
+      "native_denominator_definition": "Source defines eligible voters as estimated residents aged 18+.",
+      "native_eligible_voters": 564935,
+      "official": true,
+      "reported_precincts": 398,
+      "source_clock_timezone": null,
+      "source_updated_native": "11/29/2022 2:43:07 PM",
+      "year": 2022
+    },
+    {
+      "ballots": 371975,
+      "election_date": "November 5, 2024",
+      "native_denominator_definition": "Source defines eligible voters as estimated residents aged 18+.",
+      "native_eligible_voters": 594140,
+      "official": true,
+      "reported_precincts": 385,
+      "source_clock_timezone": null,
+      "source_updated_native": "4/21/2026 1:33:23 PM",
+      "year": 2024
+    },
+    {
+      "ballots": 239057,
+      "election_date": "2026-11-03T00:00:00",
+      "native_denominator_definition": null,
+      "native_eligible_voters": null,
+      "official": false,
+      "reported_precincts": 358,
+      "source_clock_timezone": "UTC",
+      "source_updated_native": "2026-11-05T01:30:08.5674284Z",
+      "source_version": "v75",
+      "year": 2026
+    }
+  ],
+  "source_receipts": {
+    "2022": {
+      "bytes": 375394,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "final_url": "https://results.sos.nd.gov/VoterTurnoutDetails.aspx?eid=vxUYQ0lrpP4.",
+      "last_modified": null,
+      "retrieved_at": "2026-11-07T03:37:09.242507+00:00",
+      "sha256": "ce8a2a8c186654bb18fc220ab9fbc17cb016b0216cf21eaaa10319626c0f3d53",
+      "url": "https://results.sos.nd.gov/VoterTurnoutDetails.aspx?eid=vxUYQ0lrpP4."
+    },
+    "2024": {
+      "bytes": 367102,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "final_url": "https://results.sos.nd.gov/VoterTurnoutDetails.aspx",
+      "last_modified": null,
+      "retrieved_at": "2026-11-07T03:37:08.335037+00:00",
+      "sha256": "c34e1dda5652cd710d34548b7a4f67d6b1ec825cde272a8c7c4fb6e44a942976",
+      "url": "https://results.sos.nd.gov/VoterTurnoutDetails.aspx"
+    },
+    "election.json": {
+      "bytes": 159123,
+      "sha256": "c4c7d4d49ec2fcbb8356b3b25e10c61f26c30aad45443822c497c6bbe989af99",
+      "url": "https://api.resultsnd.sos.nd.gov/Election/GetElectionInfo?cId=north-dakota"
+    },
+    "full-results.json": {
+      "bytes": 5779260,
+      "sha256": "db08609d12a579ea2f3d140c951512455c04e78170f7c31276f34a54cf33d30a",
+      "url": "https://resultsnd.sos.nd.gov/results/north-dakota/348/FullDataFile.json"
+    },
+    "terminology_and_archive": {
+      "bytes": 264690,
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "final_url": "https://www.sos.nd.gov/elections/election-results",
+      "last_modified": "Fri, 06 Nov 2026 23:40:48 GMT",
+      "retrieved_at": "2026-11-07T03:37:07.386576+00:00",
+      "sha256": "752ff82ac5223e7adaf887a71f09cae3452223e180cd6cf7f240d03a90b7405d",
+      "url": "https://www.sos.nd.gov/elections/election-results"
+    }
+  },
+  "methodology": {
+    "status": "qualified_descriptive_reported_ballot_count_changes",
+    "state_code": "ND",
+    "measure": "source_reported_general_election_ballots_not_candidate_votes",
+    "current_snapshot": {
+      "election_id": "348",
+      "house_context_contest_id": "22055",
+      "source_version": "v75",
+      "official": false,
+      "updated_utc": "2026-11-05T01:30:08.5674284Z"
+    },
+    "historical_county_totals": "derived_sums_of_complete_native_precinct_rows_not_independent_county_controls",
+    "county_matching": "exact_source_names_not_fixed_people_or_precinct_boundaries",
+    "precinct_longitudinal_comparison_qualified": false,
+    "individual_transitions_qualified": false,
+    "demographic_turnout_rates_qualified": false,
+    "geographic_overlay_qualified": false,
+    "limitations": [
+      "Official historical 2022 and 2024 results are compared with a frozen unofficial 2026 reported-count observation, not an estimate of final turnout or counting completeness.",
+      "Counts are ballot observations, not House candidate votes. The separately reviewed 2026 House candidate total is 234595, not the 239057 ballot count used here.",
+      "Every selected native precinct ballot row is included. Each year reconciles precincts to all 53 counties and the native statewide control.",
+      "Historical county totals are derived precinct sums, not independently supplied county controls.",
+      "County names match exactly, without fuzzy aliases or geographic allocation. This is not a fixed-person cohort or analytical boundary-overlay certification.",
+      "Historical county identifiers are legacy portal ordinals, not FIPS. Current identifiers are separate native location IDs; precinct IDs need only be unique within their own current county.",
+      "The 398 historical 2022, 385 historical 2024 and 358 current reporting units are not a qualified longitudinal precinct panel. Existing Morton and Towner mapping caveats remain; no map or analytical crosswalk is added.",
+      "Native historical Eligible Voters means estimated residents aged 18 or older, not registered voters, voting-eligible population or a fixed eligible cohort. Those native denominators remain in the selected facts but are not used to calculate rates.",
+      "Historical native source clocks have no supplied timezone. Acquisition times, HTTP Last-Modified, source clocks and the current UTC revision are distinct provenance fields.",
+      "No individual dropoff, returning or newly eligible identity, party switching, demographic turnout rate or causal persuasion is identified by these counts.",
+      "Offline reproduction starts with the complete selected ballot facts. Re-running initial native extraction separately requires the pinned original sources; copyrighted site markup and unrelated contests are not mirrored or relicensed.",
+      "This analysis is not endorsed by the North Dakota Secretary of State and does not close the missing North Dakota joint-choice survey or individual-transition evidence gap."
+    ]
+  }
+}

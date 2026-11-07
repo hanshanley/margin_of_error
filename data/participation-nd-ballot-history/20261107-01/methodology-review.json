@@ -1,0 +1,32 @@
+{
+  "status": "qualified_descriptive_reported_ballot_count_changes",
+  "state_code": "ND",
+  "measure": "source_reported_general_election_ballots_not_candidate_votes",
+  "current_snapshot": {
+    "election_id": "348",
+    "house_context_contest_id": "22055",
+    "source_version": "v75",
+    "official": false,
+    "updated_utc": "2026-11-05T01:30:08.5674284Z"
+  },
+  "historical_county_totals": "derived_sums_of_complete_native_precinct_rows_not_independent_county_controls",
+  "county_matching": "exact_source_names_not_fixed_people_or_precinct_boundaries",
+  "precinct_longitudinal_comparison_qualified": false,
+  "individual_transitions_qualified": false,
+  "demographic_turnout_rates_qualified": false,
+  "geographic_overlay_qualified": false,
+  "limitations": [
+    "Official historical 2022 and 2024 results are compared with a frozen unofficial 2026 reported-count observation, not an estimate of final turnout or counting completeness.",
+    "Counts are ballot observations, not House candidate votes. The separately reviewed 2026 House candidate total is 234595, not the 239057 ballot count used here.",
+    "Every selected native precinct ballot row is included. Each year reconciles precincts to all 53 counties and the native statewide control.",
+    "Historical county totals are derived precinct sums, not independently supplied county controls.",
+    "County names match exactly, without fuzzy aliases or geographic allocation. This is not a fixed-person cohort or analytical boundary-overlay certification.",
+    "Historical county identifiers are legacy portal ordinals, not FIPS. Current identifiers are separate native location IDs; precinct IDs need only be unique within their own current county.",
+    "The 398 historical 2022, 385 historical 2024 and 358 current reporting units are not a qualified longitudinal precinct panel. Existing Morton and Towner mapping caveats remain; no map or analytical crosswalk is added.",
+    "Native historical Eligible Voters means estimated residents aged 18 or older, not registered voters, voting-eligible population or a fixed eligible cohort. Those native denominators remain in the selected facts but are not used to calculate rates.",
+    "Historical native source clocks have no supplied timezone. Acquisition times, HTTP Last-Modified, source clocks and the current UTC revision are distinct provenance fields.",
+    "No individual dropoff, returning or newly eligible identity, party switching, demographic turnout rate or causal persuasion is identified by these counts.",
+    "Offline reproduction starts with the complete selected ballot facts. Re-running initial native extraction separately requires the pinned original sources; copyrighted site markup and unrelated contests are not mirrored or relicensed.",
+    "This analysis is not endorsed by the North Dakota Secretary of State and does not close the missing North Dakota joint-choice survey or individual-transition evidence gap."
+  ]
+}

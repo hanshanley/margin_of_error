@@ -1,0 +1,5922 @@
+{
+  "observations": [
+    {
+      "ballots": 242526,
+      "counties": [
+        {
+          "ballots": 932,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Adams",
+          "native_county_id": "01",
+          "precincts": [
+            {
+              "ballots": 932,
+              "precinct_id": "013901"
+            }
+          ]
+        },
+        {
+          "ballots": 3942,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Barnes",
+          "native_county_id": "02",
+          "precincts": [
+            {
+              "ballots": 295,
+              "precinct_id": "022401"
+            },
+            {
+              "ballots": 487,
+              "precinct_id": "022402"
+            },
+            {
+              "ballots": 234,
+              "precinct_id": "022403"
+            },
+            {
+              "ballots": 484,
+              "precinct_id": "022404"
+            },
+            {
+              "ballots": 621,
+              "precinct_id": "022405"
+            },
+            {
+              "ballots": 293,
+              "precinct_id": "022406"
+            },
+            {
+              "ballots": 100,
+              "precinct_id": "022407"
+            },
+            {
+              "ballots": 111,
+              "precinct_id": "022408"
+            },
+            {
+              "ballots": 177,
+              "precinct_id": "022409"
+            },
+            {
+              "ballots": 63,
+              "precinct_id": "022410"
+            },
+            {
+              "ballots": 490,
+              "precinct_id": "022411"
+            },
+            {
+              "ballots": 174,
+              "precinct_id": "022412"
+            },
+            {
+              "ballots": 199,
+              "precinct_id": "022413"
+            },
+            {
+              "ballots": 68,
+              "precinct_id": "022414"
+            },
+            {
+              "ballots": 146,
+              "precinct_id": "022415"
+            }
+          ]
+        },
+        {
+          "ballots": 1506,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Benson",
+          "native_county_id": "03",
+          "precincts": [
+            {
+              "ballots": 810,
+              "precinct_id": "031401"
+            },
+            {
+              "ballots": 178,
+              "precinct_id": "031502"
+            },
+            {
+              "ballots": 363,
+              "precinct_id": "031503"
+            },
+            {
+              "ballots": 155,
+              "precinct_id": "031504"
+            }
+          ]
+        },
+        {
+          "ballots": 541,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Billings",
+          "native_county_id": "04",
+          "precincts": [
+            {
+              "ballots": 156,
+              "precinct_id": "043901"
+            },
+            {
+              "ballots": 286,
+              "precinct_id": "043902"
+            },
+            {
+              "ballots": 99,
+              "precinct_id": "043903"
+            }
+          ]
+        },
+        {
+          "ballots": 2880,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Bottineau",
+          "native_county_id": "05",
+          "precincts": [
+            {
+              "ballots": 598,
+              "precinct_id": "050601"
+            },
+            {
+              "ballots": 700,
+              "precinct_id": "050602"
+            },
+            {
+              "ballots": 519,
+              "precinct_id": "050603"
+            },
+            {
+              "ballots": 556,
+              "precinct_id": "050604"
+            },
+            {
+              "ballots": 507,
+              "precinct_id": "050605"
+            }
+          ]
+        },
+        {
+          "ballots": 1366,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Bowman",
+          "native_county_id": "06",
+          "precincts": [
+            {
+              "ballots": 591,
+              "precinct_id": "063901"
+            },
+            {
+              "ballots": 330,
+              "precinct_id": "063902"
+            },
+            {
+              "ballots": 190,
+              "precinct_id": "063903"
+            },
+            {
+              "ballots": 255,
+              "precinct_id": "063904"
+            }
+          ]
+        },
+        {
+          "ballots": 787,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Burke",
+          "native_county_id": "07",
+          "precincts": [
+            {
+              "ballots": 24,
+              "precinct_id": "070201"
+            },
+            {
+              "ballots": 231,
+              "precinct_id": "070202"
+            },
+            {
+              "ballots": 240,
+              "precinct_id": "070203"
+            },
+            {
+              "ballots": 130,
+              "precinct_id": "070204"
+            },
+            {
+              "ballots": 99,
+              "precinct_id": "070205"
+            },
+            {
+              "ballots": 63,
+              "precinct_id": "070206"
+            }
+          ]
+        },
+        {
+          "ballots": 35746,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Burleigh",
+          "native_county_id": "08",
+          "precincts": [
+            {
+              "ballots": 829,
+              "precinct_id": "080701"
+            },
+            {
+              "ballots": 1399,
+              "precinct_id": "080702"
+            },
+            {
+              "ballots": 1272,
+              "precinct_id": "080703"
+            },
+            {
+              "ballots": 2048,
+              "precinct_id": "080704"
+            },
+            {
+              "ballots": 1015,
+              "precinct_id": "080705"
+            },
+            {
+              "ballots": 118,
+              "precinct_id": "080801"
+            },
+            {
+              "ballots": 1330,
+              "precinct_id": "080802"
+            },
+            {
+              "ballots": 101,
+              "precinct_id": "080803"
+            },
+            {
+              "ballots": 2278,
+              "precinct_id": "080804"
+            },
+            {
+              "ballots": 1164,
+              "precinct_id": "080805"
+            },
+            {
+              "ballots": 324,
+              "precinct_id": "080806"
+            },
+            {
+              "ballots": 249,
+              "precinct_id": "081401"
+            },
+            {
+              "ballots": 138,
+              "precinct_id": "081402"
+            },
+            {
+              "ballots": 208,
+              "precinct_id": "081403"
+            },
+            {
+              "ballots": 1375,
+              "precinct_id": "083001"
+            },
+            {
+              "ballots": 30,
+              "precinct_id": "083002"
+            },
+            {
+              "ballots": 1911,
+              "precinct_id": "083003"
+            },
+            {
+              "ballots": 2017,
+              "precinct_id": "083004"
+            },
+            {
+              "ballots": 728,
+              "precinct_id": "083201"
+            },
+            {
+              "ballots": 1043,
+              "precinct_id": "083202"
+            },
+            {
+              "ballots": 859,
+              "precinct_id": "083203"
+            },
+            {
+              "ballots": 2258,
+              "precinct_id": "083204"
+            },
+            {
+              "ballots": 1574,
+              "precinct_id": "083501"
+            },
+            {
+              "ballots": 2120,
+              "precinct_id": "083502"
+            },
+            {
+              "ballots": 1182,
+              "precinct_id": "083503"
+            },
+            {
+              "ballots": 1347,
+              "precinct_id": "083504"
+            },
+            {
+              "ballots": 2650,
+              "precinct_id": "084701"
+            },
+            {
+              "ballots": 2117,
+              "precinct_id": "084702"
+            },
+            {
+              "ballots": 1121,
+              "precinct_id": "084703"
+            },
+            {
+              "ballots": 941,
+              "precinct_id": "084704"
+            }
+          ]
+        },
+        {
+          "ballots": 54272,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Cass",
+          "native_county_id": "09",
+          "precincts": [
+            {
+              "ballots": 1154,
+              "precinct_id": "091001"
+            },
+            {
+              "ballots": 952,
+              "precinct_id": "091002"
+            },
+            {
+              "ballots": 1099,
+              "precinct_id": "091003"
+            },
+            {
+              "ballots": 3058,
+              "precinct_id": "091101"
+            },
+            {
+              "ballots": 2035,
+              "precinct_id": "091102"
+            },
+            {
+              "ballots": 1577,
+              "precinct_id": "091301"
+            },
+            {
+              "ballots": 2039,
+              "precinct_id": "091302"
+            },
+            {
+              "ballots": 1940,
+              "precinct_id": "091303"
+            },
+            {
+              "ballots": 2261,
+              "precinct_id": "091601"
+            },
+            {
+              "ballots": 1870,
+              "precinct_id": "091602"
+            },
+            {
+              "ballots": 1286,
+              "precinct_id": "092101"
+            },
+            {
+              "ballots": 2426,
+              "precinct_id": "092102"
+            },
+            {
+              "ballots": 480,
+              "precinct_id": "092201"
+            },
+            {
+              "ballots": 275,
+              "precinct_id": "092202"
+            },
+            {
+              "ballots": 358,
+              "precinct_id": "092203"
+            },
+            {
+              "ballots": 1577,
+              "precinct_id": "092204"
+            },
+            {
+              "ballots": 1850,
+              "precinct_id": "092205"
+            },
+            {
+              "ballots": 874,
+              "precinct_id": "092206"
+            },
+            {
+              "ballots": 264,
+              "precinct_id": "092207"
+            },
+            {
+              "ballots": 2392,
+              "precinct_id": "092701"
+            },
+            {
+              "ballots": 2085,
+              "precinct_id": "092702"
+            },
+            {
+              "ballots": 764,
+              "precinct_id": "092703"
+            },
+            {
+              "ballots": 2491,
+              "precinct_id": "094101"
+            },
+            {
+              "ballots": 3323,
+              "precinct_id": "094102"
+            },
+            {
+              "ballots": 1882,
+              "precinct_id": "094401"
+            },
+            {
+              "ballots": 2616,
+              "precinct_id": "094402"
+            },
+            {
+              "ballots": 3218,
+              "precinct_id": "094501"
+            },
+            {
+              "ballots": 826,
+              "precinct_id": "094502"
+            },
+            {
+              "ballots": 748,
+              "precinct_id": "094503"
+            },
+            {
+              "ballots": 411,
+              "precinct_id": "094504"
+            },
+            {
+              "ballots": 1442,
+              "precinct_id": "094601"
+            },
+            {
+              "ballots": 1786,
+              "precinct_id": "094602"
+            },
+            {
+              "ballots": 1563,
+              "precinct_id": "094603"
+            },
+            {
+              "ballots": 1350,
+              "precinct_id": "094604"
+            }
+          ]
+        },
+        {
+          "ballots": 1586,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Cavalier",
+          "native_county_id": "10",
+          "precincts": [
+            {
+              "ballots": 1372,
+              "precinct_id": "100901"
+            },
+            {
+              "ballots": 214,
+              "precinct_id": "101902"
+            }
+          ]
+        },
+        {
+          "ballots": 1799,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Dickey",
+          "native_county_id": "11",
+          "precincts": [
+            {
+              "ballots": 760,
+              "precinct_id": "112801"
+            },
+            {
+              "ballots": 27,
+              "precinct_id": "112802"
+            },
+            {
+              "ballots": 576,
+              "precinct_id": "112803"
+            },
+            {
+              "ballots": 26,
+              "precinct_id": "112804"
+            },
+            {
+              "ballots": 410,
+              "precinct_id": "112805"
+            }
+          ]
+        },
+        {
+          "ballots": 1037,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Divide",
+          "native_county_id": "12",
+          "precincts": [
+            {
+              "ballots": 486,
+              "precinct_id": "120201"
+            },
+            {
+              "ballots": 273,
+              "precinct_id": "120202"
+            },
+            {
+              "ballots": 140,
+              "precinct_id": "120203"
+            },
+            {
+              "ballots": 138,
+              "precinct_id": "120204"
+            }
+          ]
+        },
+        {
+          "ballots": 1677,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Dunn",
+          "native_county_id": "13",
+          "precincts": [
+            {
+              "ballots": 118,
+              "precinct_id": "130401"
+            },
+            {
+              "ballots": 84,
+              "precinct_id": "132601"
+            },
+            {
+              "ballots": 162,
+              "precinct_id": "132602"
+            },
+            {
+              "ballots": 241,
+              "precinct_id": "132603"
+            },
+            {
+              "ballots": 229,
+              "precinct_id": "132604"
+            },
+            {
+              "ballots": 344,
+              "precinct_id": "132605"
+            },
+            {
+              "ballots": 231,
+              "precinct_id": "132606"
+            },
+            {
+              "ballots": 15,
+              "precinct_id": "133601"
+            },
+            {
+              "ballots": 60,
+              "precinct_id": "133901"
+            },
+            {
+              "ballots": 193,
+              "precinct_id": "133902"
+            }
+          ]
+        },
+        {
+          "ballots": 953,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Eddy",
+          "native_county_id": "14",
+          "precincts": [
+            {
+              "ballots": 492,
+              "precinct_id": "141401"
+            },
+            {
+              "ballots": 398,
+              "precinct_id": "141402"
+            },
+            {
+              "ballots": 63,
+              "precinct_id": "141503"
+            }
+          ]
+        },
+        {
+          "ballots": 1555,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Emmons",
+          "native_county_id": "15",
+          "precincts": [
+            {
+              "ballots": 324,
+              "precinct_id": "150801"
+            },
+            {
+              "ballots": 337,
+              "precinct_id": "150802"
+            },
+            {
+              "ballots": 301,
+              "precinct_id": "150803"
+            },
+            {
+              "ballots": 294,
+              "precinct_id": "150804"
+            },
+            {
+              "ballots": 299,
+              "precinct_id": "150805"
+            }
+          ]
+        },
+        {
+          "ballots": 1269,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Foster",
+          "native_county_id": "16",
+          "precincts": [
+            {
+              "ballots": 1269,
+              "precinct_id": "162901"
+            }
+          ]
+        },
+        {
+          "ballots": 781,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Golden Valley",
+          "native_county_id": "17",
+          "precincts": [
+            {
+              "ballots": 781,
+              "precinct_id": "173901"
+            }
+          ]
+        },
+        {
+          "ballots": 19100,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Grand Forks",
+          "native_county_id": "18",
+          "precincts": [
+            {
+              "ballots": 380,
+              "precinct_id": "181701"
+            },
+            {
+              "ballots": 2027,
+              "precinct_id": "181702"
+            },
+            {
+              "ballots": 2810,
+              "precinct_id": "181703"
+            },
+            {
+              "ballots": 399,
+              "precinct_id": "181704"
+            },
+            {
+              "ballots": 360,
+              "precinct_id": "181805"
+            },
+            {
+              "ballots": 986,
+              "precinct_id": "181807"
+            },
+            {
+              "ballots": 2069,
+              "precinct_id": "181808"
+            },
+            {
+              "ballots": 778,
+              "precinct_id": "181809"
+            },
+            {
+              "ballots": 279,
+              "precinct_id": "182010"
+            },
+            {
+              "ballots": 788,
+              "precinct_id": "182011"
+            },
+            {
+              "ballots": 63,
+              "precinct_id": "182012"
+            },
+            {
+              "ballots": 496,
+              "precinct_id": "182013"
+            },
+            {
+              "ballots": 269,
+              "precinct_id": "182014"
+            },
+            {
+              "ballots": 990,
+              "precinct_id": "182015"
+            },
+            {
+              "ballots": 953,
+              "precinct_id": "184206"
+            },
+            {
+              "ballots": 591,
+              "precinct_id": "184216"
+            },
+            {
+              "ballots": 1057,
+              "precinct_id": "184217"
+            },
+            {
+              "ballots": 241,
+              "precinct_id": "184318"
+            },
+            {
+              "ballots": 1449,
+              "precinct_id": "184319"
+            },
+            {
+              "ballots": 2115,
+              "precinct_id": "184320"
+            }
+          ]
+        },
+        {
+          "ballots": 1127,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Grant",
+          "native_county_id": "19",
+          "precincts": [
+            {
+              "ballots": 648,
+              "precinct_id": "193101"
+            },
+            {
+              "ballots": 114,
+              "precinct_id": "193102"
+            },
+            {
+              "ballots": 250,
+              "precinct_id": "193103"
+            },
+            {
+              "ballots": 115,
+              "precinct_id": "193104"
+            }
+          ]
+        },
+        {
+          "ballots": 1006,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Griggs",
+          "native_county_id": "20",
+          "precincts": [
+            {
+              "ballots": 214,
+              "precinct_id": "202901"
+            },
+            {
+              "ballots": 203,
+              "precinct_id": "202902"
+            },
+            {
+              "ballots": 163,
+              "precinct_id": "202903"
+            },
+            {
+              "ballots": 221,
+              "precinct_id": "202904"
+            },
+            {
+              "ballots": 205,
+              "precinct_id": "202905"
+            }
+          ]
+        },
+        {
+          "ballots": 1048,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Hettinger",
+          "native_county_id": "21",
+          "precincts": [
+            {
+              "ballots": 514,
+              "precinct_id": "213101"
+            },
+            {
+              "ballots": 74,
+              "precinct_id": "213102"
+            },
+            {
+              "ballots": 205,
+              "precinct_id": "213903"
+            },
+            {
+              "ballots": 255,
+              "precinct_id": "213904"
+            }
+          ]
+        },
+        {
+          "ballots": 1078,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Kidder",
+          "native_county_id": "22",
+          "precincts": [
+            {
+              "ballots": 95,
+              "precinct_id": "221401"
+            },
+            {
+              "ballots": 80,
+              "precinct_id": "221402"
+            },
+            {
+              "ballots": 79,
+              "precinct_id": "221403"
+            },
+            {
+              "ballots": 493,
+              "precinct_id": "221404"
+            },
+            {
+              "ballots": 124,
+              "precinct_id": "221405"
+            },
+            {
+              "ballots": 207,
+              "precinct_id": "221406"
+            }
+          ]
+        },
+        {
+          "ballots": 1663,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "LaMoure",
+          "native_county_id": "23",
+          "precincts": [
+            {
+              "ballots": 306,
+              "precinct_id": "232801"
+            },
+            {
+              "ballots": 636,
+              "precinct_id": "232802"
+            },
+            {
+              "ballots": 365,
+              "precinct_id": "232803"
+            },
+            {
+              "ballots": 356,
+              "precinct_id": "232804"
+            }
+          ]
+        },
+        {
+          "ballots": 840,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Logan",
+          "native_county_id": "24",
+          "precincts": [
+            {
+              "ballots": 217,
+              "precinct_id": "242801"
+            },
+            {
+              "ballots": 321,
+              "precinct_id": "242802"
+            },
+            {
+              "ballots": 185,
+              "precinct_id": "242803"
+            },
+            {
+              "ballots": 64,
+              "precinct_id": "242804"
+            },
+            {
+              "ballots": 53,
+              "precinct_id": "242805"
+            }
+          ]
+        },
+        {
+          "ballots": 2169,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "McHenry",
+          "native_county_id": "25",
+          "precincts": [
+            {
+              "ballots": 158,
+              "precinct_id": "250616"
+            },
+            {
+              "ballots": 502,
+              "precinct_id": "250618"
+            },
+            {
+              "ballots": 118,
+              "precinct_id": "250627"
+            },
+            {
+              "ballots": 209,
+              "precinct_id": "250641"
+            },
+            {
+              "ballots": 689,
+              "precinct_id": "250647"
+            },
+            {
+              "ballots": 140,
+              "precinct_id": "250655"
+            },
+            {
+              "ballots": 177,
+              "precinct_id": "250658"
+            },
+            {
+              "ballots": 176,
+              "precinct_id": "250662"
+            }
+          ]
+        },
+        {
+          "ballots": 1117,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "McIntosh",
+          "native_county_id": "26",
+          "precincts": [
+            {
+              "ballots": 299,
+              "precinct_id": "262801"
+            },
+            {
+              "ballots": 157,
+              "precinct_id": "262802"
+            },
+            {
+              "ballots": 53,
+              "precinct_id": "262803"
+            },
+            {
+              "ballots": 350,
+              "precinct_id": "262804"
+            },
+            {
+              "ballots": 125,
+              "precinct_id": "262805"
+            },
+            {
+              "ballots": 133,
+              "precinct_id": "262806"
+            }
+          ]
+        },
+        {
+          "ballots": 3266,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "McKenzie",
+          "native_county_id": "27",
+          "precincts": [
+            {
+              "ballots": 84,
+              "precinct_id": "270401"
+            },
+            {
+              "ballots": 154,
+              "precinct_id": "270402"
+            },
+            {
+              "ballots": 112,
+              "precinct_id": "272603"
+            },
+            {
+              "ballots": 102,
+              "precinct_id": "272604"
+            },
+            {
+              "ballots": 301,
+              "precinct_id": "272605"
+            },
+            {
+              "ballots": 189,
+              "precinct_id": "272606"
+            },
+            {
+              "ballots": 60,
+              "precinct_id": "272607"
+            },
+            {
+              "ballots": 120,
+              "precinct_id": "272608"
+            },
+            {
+              "ballots": 931,
+              "precinct_id": "272609"
+            },
+            {
+              "ballots": 1023,
+              "precinct_id": "272611"
+            },
+            {
+              "ballots": 190,
+              "precinct_id": "272612"
+            }
+          ]
+        },
+        {
+          "ballots": 4280,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "McLean",
+          "native_county_id": "28",
+          "precincts": [
+            {
+              "ballots": 1262,
+              "precinct_id": "280401"
+            },
+            {
+              "ballots": 351,
+              "precinct_id": "280402"
+            },
+            {
+              "ballots": 927,
+              "precinct_id": "280601"
+            },
+            {
+              "ballots": 137,
+              "precinct_id": "280602"
+            },
+            {
+              "ballots": 220,
+              "precinct_id": "280801"
+            },
+            {
+              "ballots": 1383,
+              "precinct_id": "283301"
+            }
+          ]
+        },
+        {
+          "ballots": 3614,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Mercer",
+          "native_county_id": "29",
+          "precincts": [
+            {
+              "ballots": 9,
+              "precinct_id": "290401"
+            },
+            {
+              "ballots": 280,
+              "precinct_id": "293301"
+            },
+            {
+              "ballots": 312,
+              "precinct_id": "293303"
+            },
+            {
+              "ballots": 308,
+              "precinct_id": "293313"
+            },
+            {
+              "ballots": 181,
+              "precinct_id": "293314"
+            },
+            {
+              "ballots": 155,
+              "precinct_id": "293316"
+            },
+            {
+              "ballots": 168,
+              "precinct_id": "293320"
+            },
+            {
+              "ballots": 360,
+              "precinct_id": "293321"
+            },
+            {
+              "ballots": 318,
+              "precinct_id": "293322"
+            },
+            {
+              "ballots": 335,
+              "precinct_id": "293323"
+            },
+            {
+              "ballots": 211,
+              "precinct_id": "293324"
+            },
+            {
+              "ballots": 287,
+              "precinct_id": "293381"
+            },
+            {
+              "ballots": 387,
+              "precinct_id": "293382"
+            },
+            {
+              "ballots": 303,
+              "precinct_id": "293383"
+            }
+          ]
+        },
+        {
+          "ballots": 11460,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Morton",
+          "native_county_id": "30",
+          "precincts": [
+            {
+              "ballots": 586,
+              "precinct_id": "303105"
+            },
+            {
+              "ballots": 921,
+              "precinct_id": "303117"
+            },
+            {
+              "ballots": 415,
+              "precinct_id": "303118"
+            },
+            {
+              "ballots": 164,
+              "precinct_id": "303120"
+            },
+            {
+              "ballots": 194,
+              "precinct_id": "303123"
+            },
+            {
+              "ballots": 620,
+              "precinct_id": "303124"
+            },
+            {
+              "ballots": 1644,
+              "precinct_id": "303332"
+            },
+            {
+              "ballots": 1391,
+              "precinct_id": "303401"
+            },
+            {
+              "ballots": 1743,
+              "precinct_id": "303402"
+            },
+            {
+              "ballots": 648,
+              "precinct_id": "303403"
+            },
+            {
+              "ballots": 617,
+              "precinct_id": "303404"
+            },
+            {
+              "ballots": 896,
+              "precinct_id": "303406"
+            },
+            {
+              "ballots": 338,
+              "precinct_id": "303408"
+            },
+            {
+              "ballots": 560,
+              "precinct_id": "303633"
+            },
+            {
+              "ballots": 120,
+              "precinct_id": "303634"
+            },
+            {
+              "ballots": 321,
+              "precinct_id": "303636"
+            },
+            {
+              "ballots": 282,
+              "precinct_id": "303638"
+            }
+          ]
+        },
+        {
+          "ballots": 2640,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Mountrail",
+          "native_county_id": "31",
+          "precincts": [
+            {
+              "ballots": 598,
+              "precinct_id": "310201"
+            },
+            {
+              "ballots": 474,
+              "precinct_id": "310202"
+            },
+            {
+              "ballots": 404,
+              "precinct_id": "310206"
+            },
+            {
+              "ballots": 200,
+              "precinct_id": "310403"
+            },
+            {
+              "ballots": 560,
+              "precinct_id": "310404"
+            },
+            {
+              "ballots": 404,
+              "precinct_id": "310405"
+            }
+          ]
+        },
+        {
+          "ballots": 1550,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Nelson",
+          "native_county_id": "32",
+          "precincts": [
+            {
+              "ballots": 1550,
+              "precinct_id": "322901"
+            }
+          ]
+        },
+        {
+          "ballots": 839,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Oliver",
+          "native_county_id": "33",
+          "precincts": [
+            {
+              "ballots": 177,
+              "precinct_id": "333301"
+            },
+            {
+              "ballots": 109,
+              "precinct_id": "333302"
+            },
+            {
+              "ballots": 95,
+              "precinct_id": "333303"
+            },
+            {
+              "ballots": 63,
+              "precinct_id": "333304"
+            },
+            {
+              "ballots": 107,
+              "precinct_id": "333305"
+            },
+            {
+              "ballots": 155,
+              "precinct_id": "333306"
+            },
+            {
+              "ballots": 133,
+              "precinct_id": "333307"
+            }
+          ]
+        },
+        {
+          "ballots": 2483,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Pembina",
+          "native_county_id": "34",
+          "precincts": [
+            {
+              "ballots": 431,
+              "precinct_id": "341901"
+            },
+            {
+              "ballots": 512,
+              "precinct_id": "341902"
+            },
+            {
+              "ballots": 583,
+              "precinct_id": "341903"
+            },
+            {
+              "ballots": 528,
+              "precinct_id": "341904"
+            },
+            {
+              "ballots": 193,
+              "precinct_id": "341905"
+            },
+            {
+              "ballots": 236,
+              "precinct_id": "341906"
+            }
+          ]
+        },
+        {
+          "ballots": 1506,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Pierce",
+          "native_county_id": "35",
+          "precincts": [
+            {
+              "ballots": 102,
+              "precinct_id": "351401"
+            },
+            {
+              "ballots": 113,
+              "precinct_id": "351402"
+            },
+            {
+              "ballots": 222,
+              "precinct_id": "351403"
+            },
+            {
+              "ballots": 154,
+              "precinct_id": "351404"
+            },
+            {
+              "ballots": 66,
+              "precinct_id": "351405"
+            },
+            {
+              "ballots": 289,
+              "precinct_id": "351406"
+            },
+            {
+              "ballots": 219,
+              "precinct_id": "351407"
+            },
+            {
+              "ballots": 341,
+              "precinct_id": "351408"
+            }
+          ]
+        },
+        {
+          "ballots": 4061,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Ramsey",
+          "native_county_id": "36",
+          "precincts": [
+            {
+              "ballots": 2129,
+              "precinct_id": "361501"
+            },
+            {
+              "ballots": 582,
+              "precinct_id": "361502"
+            },
+            {
+              "ballots": 996,
+              "precinct_id": "361503"
+            },
+            {
+              "ballots": 354,
+              "precinct_id": "361504"
+            }
+          ]
+        },
+        {
+          "ballots": 1843,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Ransom",
+          "native_county_id": "37",
+          "precincts": [
+            {
+              "ballots": 287,
+              "precinct_id": "372401"
+            },
+            {
+              "ballots": 840,
+              "precinct_id": "372402"
+            },
+            {
+              "ballots": 716,
+              "precinct_id": "372403"
+            }
+          ]
+        },
+        {
+          "ballots": 906,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Renville",
+          "native_county_id": "38",
+          "precincts": [
+            {
+              "ballots": 169,
+              "precinct_id": "380601"
+            },
+            {
+              "ballots": 102,
+              "precinct_id": "380602"
+            },
+            {
+              "ballots": 396,
+              "precinct_id": "380603"
+            },
+            {
+              "ballots": 56,
+              "precinct_id": "380604"
+            },
+            {
+              "ballots": 183,
+              "precinct_id": "380605"
+            }
+          ]
+        },
+        {
+          "ballots": 6034,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Richland",
+          "native_county_id": "39",
+          "precincts": [
+            {
+              "ballots": 349,
+              "precinct_id": "392537"
+            },
+            {
+              "ballots": 316,
+              "precinct_id": "392538"
+            },
+            {
+              "ballots": 249,
+              "precinct_id": "392539"
+            },
+            {
+              "ballots": 188,
+              "precinct_id": "392541"
+            },
+            {
+              "ballots": 538,
+              "precinct_id": "392545"
+            },
+            {
+              "ballots": 275,
+              "precinct_id": "392546"
+            },
+            {
+              "ballots": 426,
+              "precinct_id": "392547"
+            },
+            {
+              "ballots": 665,
+              "precinct_id": "392548"
+            },
+            {
+              "ballots": 144,
+              "precinct_id": "392549"
+            },
+            {
+              "ballots": 616,
+              "precinct_id": "392551"
+            },
+            {
+              "ballots": 791,
+              "precinct_id": "392552"
+            },
+            {
+              "ballots": 740,
+              "precinct_id": "392553"
+            },
+            {
+              "ballots": 737,
+              "precinct_id": "392554"
+            }
+          ]
+        },
+        {
+          "ballots": 2788,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Rolette",
+          "native_county_id": "40",
+          "precincts": [
+            {
+              "ballots": 483,
+              "precinct_id": "400901"
+            },
+            {
+              "ballots": 738,
+              "precinct_id": "400902"
+            },
+            {
+              "ballots": 857,
+              "precinct_id": "400903"
+            },
+            {
+              "ballots": 254,
+              "precinct_id": "400904"
+            },
+            {
+              "ballots": 456,
+              "precinct_id": "400905"
+            }
+          ]
+        },
+        {
+          "ballots": 1630,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Sargent",
+          "native_county_id": "41",
+          "precincts": [
+            {
+              "ballots": 41,
+              "precinct_id": "412502"
+            },
+            {
+              "ballots": 1589,
+              "precinct_id": "412801"
+            }
+          ]
+        },
+        {
+          "ballots": 631,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Sheridan",
+          "native_county_id": "42",
+          "precincts": [
+            {
+              "ballots": 631,
+              "precinct_id": "421401"
+            }
+          ]
+        },
+        {
+          "ballots": 606,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Sioux",
+          "native_county_id": "43",
+          "precincts": [
+            {
+              "ballots": 62,
+              "precinct_id": "433101"
+            },
+            {
+              "ballots": 37,
+              "precinct_id": "433102"
+            },
+            {
+              "ballots": 167,
+              "precinct_id": "433103"
+            },
+            {
+              "ballots": 155,
+              "precinct_id": "433104"
+            },
+            {
+              "ballots": 135,
+              "precinct_id": "433105"
+            },
+            {
+              "ballots": 50,
+              "precinct_id": "433106"
+            }
+          ]
+        },
+        {
+          "ballots": 304,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Slope",
+          "native_county_id": "44",
+          "precincts": [
+            {
+              "ballots": 109,
+              "precinct_id": "443901"
+            },
+            {
+              "ballots": 108,
+              "precinct_id": "443902"
+            },
+            {
+              "ballots": 87,
+              "precinct_id": "443903"
+            }
+          ]
+        },
+        {
+          "ballots": 9246,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Stark",
+          "native_county_id": "45",
+          "precincts": [
+            {
+              "ballots": 421,
+              "precinct_id": "453601"
+            },
+            {
+              "ballots": 179,
+              "precinct_id": "453602"
+            },
+            {
+              "ballots": 202,
+              "precinct_id": "453603"
+            },
+            {
+              "ballots": 2475,
+              "precinct_id": "453604"
+            },
+            {
+              "ballots": 4118,
+              "precinct_id": "453701"
+            },
+            {
+              "ballots": 846,
+              "precinct_id": "453901"
+            },
+            {
+              "ballots": 565,
+              "precinct_id": "453902"
+            },
+            {
+              "ballots": 440,
+              "precinct_id": "453903"
+            }
+          ]
+        },
+        {
+          "ballots": 799,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Steele",
+          "native_county_id": "46",
+          "precincts": [
+            {
+              "ballots": 163,
+              "precinct_id": "462901"
+            },
+            {
+              "ballots": 166,
+              "precinct_id": "462902"
+            },
+            {
+              "ballots": 164,
+              "precinct_id": "462903"
+            },
+            {
+              "ballots": 139,
+              "precinct_id": "462904"
+            },
+            {
+              "ballots": 167,
+              "precinct_id": "462905"
+            }
+          ]
+        },
+        {
+          "ballots": 6805,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Stutsman",
+          "native_county_id": "47",
+          "precincts": [
+            {
+              "ballots": 638,
+              "precinct_id": "471240"
+            },
+            {
+              "ballots": 810,
+              "precinct_id": "471250"
+            },
+            {
+              "ballots": 971,
+              "precinct_id": "471260"
+            },
+            {
+              "ballots": 728,
+              "precinct_id": "471270"
+            },
+            {
+              "ballots": 890,
+              "precinct_id": "471280"
+            },
+            {
+              "ballots": 574,
+              "precinct_id": "471290"
+            },
+            {
+              "ballots": 461,
+              "precinct_id": "472910"
+            },
+            {
+              "ballots": 1187,
+              "precinct_id": "472920"
+            },
+            {
+              "ballots": 546,
+              "precinct_id": "472930"
+            }
+          ]
+        },
+        {
+          "ballots": 864,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Towner",
+          "native_county_id": "48",
+          "precincts": [
+            {
+              "ballots": 148,
+              "precinct_id": "480902"
+            },
+            {
+              "ballots": 166,
+              "precinct_id": "480903"
+            },
+            {
+              "ballots": 550,
+              "precinct_id": "481501"
+            }
+          ]
+        },
+        {
+          "ballots": 2993,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Traill",
+          "native_county_id": "49",
+          "precincts": [
+            {
+              "ballots": 166,
+              "precinct_id": "492001"
+            },
+            {
+              "ballots": 323,
+              "precinct_id": "492002"
+            },
+            {
+              "ballots": 155,
+              "precinct_id": "492003"
+            },
+            {
+              "ballots": 150,
+              "precinct_id": "492004"
+            },
+            {
+              "ballots": 98,
+              "precinct_id": "492005"
+            },
+            {
+              "ballots": 69,
+              "precinct_id": "492006"
+            },
+            {
+              "ballots": 372,
+              "precinct_id": "492007"
+            },
+            {
+              "ballots": 190,
+              "precinct_id": "492008"
+            },
+            {
+              "ballots": 308,
+              "precinct_id": "492009"
+            },
+            {
+              "ballots": 302,
+              "precinct_id": "492010"
+            },
+            {
+              "ballots": 591,
+              "precinct_id": "492011"
+            },
+            {
+              "ballots": 269,
+              "precinct_id": "492012"
+            }
+          ]
+        },
+        {
+          "ballots": 3531,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Walsh",
+          "native_county_id": "50",
+          "precincts": [
+            {
+              "ballots": 3271,
+              "precinct_id": "501902"
+            },
+            {
+              "ballots": 260,
+              "precinct_id": "502001"
+            }
+          ]
+        },
+        {
+          "ballots": 16870,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Ward",
+          "native_county_id": "51",
+          "precincts": [
+            {
+              "ballots": 474,
+              "precinct_id": "510301"
+            },
+            {
+              "ballots": 643,
+              "precinct_id": "510302"
+            },
+            {
+              "ballots": 520,
+              "precinct_id": "510303"
+            },
+            {
+              "ballots": 2001,
+              "precinct_id": "510304"
+            },
+            {
+              "ballots": 524,
+              "precinct_id": "510405"
+            },
+            {
+              "ballots": 484,
+              "precinct_id": "510406"
+            },
+            {
+              "ballots": 15,
+              "precinct_id": "510407"
+            },
+            {
+              "ballots": 321,
+              "precinct_id": "510408"
+            },
+            {
+              "ballots": 4572,
+              "precinct_id": "510509"
+            },
+            {
+              "ballots": 371,
+              "precinct_id": "510610"
+            },
+            {
+              "ballots": 77,
+              "precinct_id": "513811"
+            },
+            {
+              "ballots": 2516,
+              "precinct_id": "513812"
+            },
+            {
+              "ballots": 1041,
+              "precinct_id": "513813"
+            },
+            {
+              "ballots": 657,
+              "precinct_id": "513814"
+            },
+            {
+              "ballots": 290,
+              "precinct_id": "514015"
+            },
+            {
+              "ballots": 2364,
+              "precinct_id": "514016"
+            }
+          ]
+        },
+        {
+          "ballots": 1708,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Wells",
+          "native_county_id": "52",
+          "precincts": [
+            {
+              "ballots": 256,
+              "precinct_id": "521401"
+            },
+            {
+              "ballots": 197,
+              "precinct_id": "521402"
+            },
+            {
+              "ballots": 199,
+              "precinct_id": "521403"
+            },
+            {
+              "ballots": 193,
+              "precinct_id": "521404"
+            },
+            {
+              "ballots": 658,
+              "precinct_id": "521405"
+            },
+            {
+              "ballots": 205,
+              "precinct_id": "521406"
+            }
+          ]
+        },
+        {
+          "ballots": 7492,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Williams",
+          "native_county_id": "53",
+          "precincts": [
+            {
+              "ballots": 1100,
+              "precinct_id": "530121"
+            },
+            {
+              "ballots": 2,
+              "precinct_id": "530124"
+            },
+            {
+              "ballots": 783,
+              "precinct_id": "530131"
+            },
+            {
+              "ballots": 0,
+              "precinct_id": "530140"
+            },
+            {
+              "ballots": 1445,
+              "precinct_id": "530141"
+            },
+            {
+              "ballots": 0,
+              "precinct_id": "530151"
+            },
+            {
+              "ballots": 60,
+              "precinct_id": "530156"
+            },
+            {
+              "ballots": 234,
+              "precinct_id": "530212"
+            },
+            {
+              "ballots": 0,
+              "precinct_id": "530220"
+            },
+            {
+              "ballots": 1132,
+              "precinct_id": "530254"
+            },
+            {
+              "ballots": 34,
+              "precinct_id": "530262"
+            },
+            {
+              "ballots": 244,
+              "precinct_id": "530263"
+            },
+            {
+              "ballots": 492,
+              "precinct_id": "530264"
+            },
+            {
+              "ballots": 54,
+              "precinct_id": "530265"
+            },
+            {
+              "ballots": 7,
+              "precinct_id": "530266"
+            },
+            {
+              "ballots": 89,
+              "precinct_id": "530267"
+            },
+            {
+              "ballots": 16,
+              "precinct_id": "530268"
+            },
+            {
+              "ballots": 570,
+              "precinct_id": "532313"
+            },
+            {
+              "ballots": 305,
+              "precinct_id": "532314"
+            },
+            {
+              "ballots": 292,
+              "precinct_id": "532322"
+            },
+            {
+              "ballots": 48,
+              "precinct_id": "532323"
+            },
+            {
+              "ballots": 306,
+              "precinct_id": "532333"
+            },
+            {
+              "ballots": 235,
+              "precinct_id": "532343"
+            },
+            {
+              "ballots": 44,
+              "precinct_id": "532352"
+            }
+          ]
+        }
+      ],
+      "election_date": "November 8, 2022",
+      "native_denominator_definition": "Source defines eligible voters as estimated residents aged 18+.",
+      "native_eligible_voters": 564935,
+      "official": true,
+      "reported_precincts": 398,
+      "source_clock_timezone": null,
+      "source_updated_native": "11/29/2022 2:43:07 PM",
+      "year": 2022
+    },
+    {
+      "ballots": 371975,
+      "counties": [
+        {
+          "ballots": 1213,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Adams",
+          "native_county_id": "01",
+          "precincts": [
+            {
+              "ballots": 1213,
+              "precinct_id": "013901"
+            }
+          ]
+        },
+        {
+          "ballots": 5413,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Barnes",
+          "native_county_id": "02",
+          "precincts": [
+            {
+              "ballots": 384,
+              "precinct_id": "022401"
+            },
+            {
+              "ballots": 715,
+              "precinct_id": "022402"
+            },
+            {
+              "ballots": 361,
+              "precinct_id": "022403"
+            },
+            {
+              "ballots": 620,
+              "precinct_id": "022404"
+            },
+            {
+              "ballots": 881,
+              "precinct_id": "022405"
+            },
+            {
+              "ballots": 367,
+              "precinct_id": "022406"
+            },
+            {
+              "ballots": 143,
+              "precinct_id": "022407"
+            },
+            {
+              "ballots": 152,
+              "precinct_id": "022408"
+            },
+            {
+              "ballots": 232,
+              "precinct_id": "022409"
+            },
+            {
+              "ballots": 84,
+              "precinct_id": "022410"
+            },
+            {
+              "ballots": 663,
+              "precinct_id": "022411"
+            },
+            {
+              "ballots": 240,
+              "precinct_id": "022412"
+            },
+            {
+              "ballots": 284,
+              "precinct_id": "022413"
+            },
+            {
+              "ballots": 88,
+              "precinct_id": "022414"
+            },
+            {
+              "ballots": 199,
+              "precinct_id": "022415"
+            }
+          ]
+        },
+        {
+          "ballots": 2030,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Benson",
+          "native_county_id": "03",
+          "precincts": [
+            {
+              "ballots": 415,
+              "precinct_id": "030901"
+            },
+            {
+              "ballots": 211,
+              "precinct_id": "030902"
+            },
+            {
+              "ballots": 317,
+              "precinct_id": "030903"
+            },
+            {
+              "ballots": 209,
+              "precinct_id": "030904"
+            },
+            {
+              "ballots": 306,
+              "precinct_id": "030905"
+            },
+            {
+              "ballots": 254,
+              "precinct_id": "031401"
+            },
+            {
+              "ballots": 289,
+              "precinct_id": "031402"
+            },
+            {
+              "ballots": 29,
+              "precinct_id": "031403"
+            }
+          ]
+        },
+        {
+          "ballots": 658,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Billings",
+          "native_county_id": "04",
+          "precincts": [
+            {
+              "ballots": 215,
+              "precinct_id": "043901"
+            },
+            {
+              "ballots": 334,
+              "precinct_id": "043902"
+            },
+            {
+              "ballots": 109,
+              "precinct_id": "043903"
+            }
+          ]
+        },
+        {
+          "ballots": 3485,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Bottineau",
+          "native_county_id": "05",
+          "precincts": [
+            {
+              "ballots": 631,
+              "precinct_id": "050601"
+            },
+            {
+              "ballots": 817,
+              "precinct_id": "050602"
+            },
+            {
+              "ballots": 624,
+              "precinct_id": "050603"
+            },
+            {
+              "ballots": 750,
+              "precinct_id": "050604"
+            },
+            {
+              "ballots": 663,
+              "precinct_id": "050605"
+            }
+          ]
+        },
+        {
+          "ballots": 1637,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Bowman",
+          "native_county_id": "06",
+          "precincts": [
+            {
+              "ballots": 707,
+              "precinct_id": "063901"
+            },
+            {
+              "ballots": 413,
+              "precinct_id": "063902"
+            },
+            {
+              "ballots": 216,
+              "precinct_id": "063903"
+            },
+            {
+              "ballots": 301,
+              "precinct_id": "063904"
+            }
+          ]
+        },
+        {
+          "ballots": 1068,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Burke",
+          "native_county_id": "07",
+          "precincts": [
+            {
+              "ballots": 39,
+              "precinct_id": "070201"
+            },
+            {
+              "ballots": 319,
+              "precinct_id": "070202"
+            },
+            {
+              "ballots": 349,
+              "precinct_id": "070203"
+            },
+            {
+              "ballots": 150,
+              "precinct_id": "070204"
+            },
+            {
+              "ballots": 133,
+              "precinct_id": "070205"
+            },
+            {
+              "ballots": 78,
+              "precinct_id": "070206"
+            }
+          ]
+        },
+        {
+          "ballots": 52867,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Burleigh",
+          "native_county_id": "08",
+          "precincts": [
+            {
+              "ballots": 1124,
+              "precinct_id": "080701"
+            },
+            {
+              "ballots": 2065,
+              "precinct_id": "080702"
+            },
+            {
+              "ballots": 2023,
+              "precinct_id": "080703"
+            },
+            {
+              "ballots": 3189,
+              "precinct_id": "080704"
+            },
+            {
+              "ballots": 1421,
+              "precinct_id": "080705"
+            },
+            {
+              "ballots": 179,
+              "precinct_id": "080801"
+            },
+            {
+              "ballots": 1882,
+              "precinct_id": "080802"
+            },
+            {
+              "ballots": 336,
+              "precinct_id": "080803"
+            },
+            {
+              "ballots": 3388,
+              "precinct_id": "080804"
+            },
+            {
+              "ballots": 2165,
+              "precinct_id": "080805"
+            },
+            {
+              "ballots": 435,
+              "precinct_id": "080806"
+            },
+            {
+              "ballots": 346,
+              "precinct_id": "081401"
+            },
+            {
+              "ballots": 172,
+              "precinct_id": "081402"
+            },
+            {
+              "ballots": 304,
+              "precinct_id": "081403"
+            },
+            {
+              "ballots": 2128,
+              "precinct_id": "083001"
+            },
+            {
+              "ballots": 47,
+              "precinct_id": "083002"
+            },
+            {
+              "ballots": 2735,
+              "precinct_id": "083003"
+            },
+            {
+              "ballots": 2882,
+              "precinct_id": "083004"
+            },
+            {
+              "ballots": 1161,
+              "precinct_id": "083201"
+            },
+            {
+              "ballots": 1638,
+              "precinct_id": "083202"
+            },
+            {
+              "ballots": 1486,
+              "precinct_id": "083203"
+            },
+            {
+              "ballots": 3394,
+              "precinct_id": "083204"
+            },
+            {
+              "ballots": 2222,
+              "precinct_id": "083501"
+            },
+            {
+              "ballots": 2983,
+              "precinct_id": "083502"
+            },
+            {
+              "ballots": 1744,
+              "precinct_id": "083503"
+            },
+            {
+              "ballots": 1846,
+              "precinct_id": "083504"
+            },
+            {
+              "ballots": 3573,
+              "precinct_id": "084701"
+            },
+            {
+              "ballots": 2998,
+              "precinct_id": "084702"
+            },
+            {
+              "ballots": 1691,
+              "precinct_id": "084703"
+            },
+            {
+              "ballots": 1310,
+              "precinct_id": "084704"
+            }
+          ]
+        },
+        {
+          "ballots": 91565,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Cass",
+          "native_county_id": "09",
+          "precincts": [
+            {
+              "ballots": 2211,
+              "precinct_id": "091001"
+            },
+            {
+              "ballots": 2011,
+              "precinct_id": "091002"
+            },
+            {
+              "ballots": 2110,
+              "precinct_id": "091003"
+            },
+            {
+              "ballots": 4570,
+              "precinct_id": "091101"
+            },
+            {
+              "ballots": 3230,
+              "precinct_id": "091102"
+            },
+            {
+              "ballots": 2463,
+              "precinct_id": "091301"
+            },
+            {
+              "ballots": 3389,
+              "precinct_id": "091302"
+            },
+            {
+              "ballots": 3049,
+              "precinct_id": "091303"
+            },
+            {
+              "ballots": 4326,
+              "precinct_id": "091601"
+            },
+            {
+              "ballots": 3934,
+              "precinct_id": "091602"
+            },
+            {
+              "ballots": 2393,
+              "precinct_id": "092101"
+            },
+            {
+              "ballots": 3725,
+              "precinct_id": "092102"
+            },
+            {
+              "ballots": 692,
+              "precinct_id": "092201"
+            },
+            {
+              "ballots": 424,
+              "precinct_id": "092202"
+            },
+            {
+              "ballots": 609,
+              "precinct_id": "092203"
+            },
+            {
+              "ballots": 2478,
+              "precinct_id": "092204"
+            },
+            {
+              "ballots": 3741,
+              "precinct_id": "092205"
+            },
+            {
+              "ballots": 1524,
+              "precinct_id": "092206"
+            },
+            {
+              "ballots": 386,
+              "precinct_id": "092207"
+            },
+            {
+              "ballots": 4631,
+              "precinct_id": "092701"
+            },
+            {
+              "ballots": 4190,
+              "precinct_id": "092702"
+            },
+            {
+              "ballots": 1372,
+              "precinct_id": "092703"
+            },
+            {
+              "ballots": 3820,
+              "precinct_id": "094101"
+            },
+            {
+              "ballots": 5433,
+              "precinct_id": "094102"
+            },
+            {
+              "ballots": 3090,
+              "precinct_id": "094401"
+            },
+            {
+              "ballots": 3996,
+              "precinct_id": "094402"
+            },
+            {
+              "ballots": 4825,
+              "precinct_id": "094501"
+            },
+            {
+              "ballots": 1351,
+              "precinct_id": "094502"
+            },
+            {
+              "ballots": 1227,
+              "precinct_id": "094503"
+            },
+            {
+              "ballots": 705,
+              "precinct_id": "094504"
+            },
+            {
+              "ballots": 2107,
+              "precinct_id": "094601"
+            },
+            {
+              "ballots": 2638,
+              "precinct_id": "094602"
+            },
+            {
+              "ballots": 2291,
+              "precinct_id": "094603"
+            },
+            {
+              "ballots": 2624,
+              "precinct_id": "094604"
+            }
+          ]
+        },
+        {
+          "ballots": 2033,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Cavalier",
+          "native_county_id": "10",
+          "precincts": [
+            {
+              "ballots": 964,
+              "precinct_id": "101501"
+            },
+            {
+              "ballots": 784,
+              "precinct_id": "101502"
+            },
+            {
+              "ballots": 285,
+              "precinct_id": "101903"
+            }
+          ]
+        },
+        {
+          "ballots": 2483,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Dickey",
+          "native_county_id": "11",
+          "precincts": [
+            {
+              "ballots": 2483,
+              "precinct_id": "112801"
+            }
+          ]
+        },
+        {
+          "ballots": 1223,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Divide",
+          "native_county_id": "12",
+          "precincts": [
+            {
+              "ballots": 579,
+              "precinct_id": "120201"
+            },
+            {
+              "ballots": 310,
+              "precinct_id": "120202"
+            },
+            {
+              "ballots": 172,
+              "precinct_id": "120203"
+            },
+            {
+              "ballots": 162,
+              "precinct_id": "120204"
+            }
+          ]
+        },
+        {
+          "ballots": 2266,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Dunn",
+          "native_county_id": "13",
+          "precincts": [
+            {
+              "ballots": 189,
+              "precinct_id": "130401"
+            },
+            {
+              "ballots": 110,
+              "precinct_id": "132601"
+            },
+            {
+              "ballots": 135,
+              "precinct_id": "132602"
+            },
+            {
+              "ballots": 377,
+              "precinct_id": "132603"
+            },
+            {
+              "ballots": 289,
+              "precinct_id": "132604"
+            },
+            {
+              "ballots": 476,
+              "precinct_id": "132605"
+            },
+            {
+              "ballots": 297,
+              "precinct_id": "132606"
+            },
+            {
+              "ballots": 26,
+              "precinct_id": "133601"
+            },
+            {
+              "ballots": 76,
+              "precinct_id": "133901"
+            },
+            {
+              "ballots": 291,
+              "precinct_id": "133902"
+            }
+          ]
+        },
+        {
+          "ballots": 1232,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Eddy",
+          "native_county_id": "14",
+          "precincts": [
+            {
+              "ballots": 63,
+              "precinct_id": "140903"
+            },
+            {
+              "ballots": 639,
+              "precinct_id": "141401"
+            },
+            {
+              "ballots": 530,
+              "precinct_id": "141402"
+            }
+          ]
+        },
+        {
+          "ballots": 1956,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Emmons",
+          "native_county_id": "15",
+          "precincts": [
+            {
+              "ballots": 410,
+              "precinct_id": "150801"
+            },
+            {
+              "ballots": 425,
+              "precinct_id": "150802"
+            },
+            {
+              "ballots": 386,
+              "precinct_id": "150803"
+            },
+            {
+              "ballots": 366,
+              "precinct_id": "150804"
+            },
+            {
+              "ballots": 369,
+              "precinct_id": "150805"
+            }
+          ]
+        },
+        {
+          "ballots": 1720,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Foster",
+          "native_county_id": "16",
+          "precincts": [
+            {
+              "ballots": 1720,
+              "precinct_id": "162901"
+            }
+          ]
+        },
+        {
+          "ballots": 998,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Golden Valley",
+          "native_county_id": "17",
+          "precincts": [
+            {
+              "ballots": 998,
+              "precinct_id": "173901"
+            }
+          ]
+        },
+        {
+          "ballots": 31679,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Grand Forks",
+          "native_county_id": "18",
+          "precincts": [
+            {
+              "ballots": 617,
+              "precinct_id": "181701"
+            },
+            {
+              "ballots": 2938,
+              "precinct_id": "181702"
+            },
+            {
+              "ballots": 4613,
+              "precinct_id": "181703"
+            },
+            {
+              "ballots": 776,
+              "precinct_id": "181704"
+            },
+            {
+              "ballots": 552,
+              "precinct_id": "181805"
+            },
+            {
+              "ballots": 1660,
+              "precinct_id": "181807"
+            },
+            {
+              "ballots": 3431,
+              "precinct_id": "181808"
+            },
+            {
+              "ballots": 1143,
+              "precinct_id": "181809"
+            },
+            {
+              "ballots": 402,
+              "precinct_id": "182010"
+            },
+            {
+              "ballots": 1156,
+              "precinct_id": "182011"
+            },
+            {
+              "ballots": 117,
+              "precinct_id": "182012"
+            },
+            {
+              "ballots": 746,
+              "precinct_id": "182013"
+            },
+            {
+              "ballots": 420,
+              "precinct_id": "182014"
+            },
+            {
+              "ballots": 1537,
+              "precinct_id": "182015"
+            },
+            {
+              "ballots": 1711,
+              "precinct_id": "184206"
+            },
+            {
+              "ballots": 1095,
+              "precinct_id": "184216"
+            },
+            {
+              "ballots": 2330,
+              "precinct_id": "184217"
+            },
+            {
+              "ballots": 423,
+              "precinct_id": "184318"
+            },
+            {
+              "ballots": 2558,
+              "precinct_id": "184319"
+            },
+            {
+              "ballots": 3454,
+              "precinct_id": "184320"
+            }
+          ]
+        },
+        {
+          "ballots": 1324,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Grant",
+          "native_county_id": "19",
+          "precincts": [
+            {
+              "ballots": 758,
+              "precinct_id": "193101"
+            },
+            {
+              "ballots": 149,
+              "precinct_id": "193102"
+            },
+            {
+              "ballots": 276,
+              "precinct_id": "193103"
+            },
+            {
+              "ballots": 126,
+              "precinct_id": "193104"
+            },
+            {
+              "ballots": 15,
+              "precinct_id": "193105"
+            }
+          ]
+        },
+        {
+          "ballots": 1310,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Griggs",
+          "native_county_id": "20",
+          "precincts": [
+            {
+              "ballots": 272,
+              "precinct_id": "202901"
+            },
+            {
+              "ballots": 275,
+              "precinct_id": "202902"
+            },
+            {
+              "ballots": 217,
+              "precinct_id": "202903"
+            },
+            {
+              "ballots": 280,
+              "precinct_id": "202904"
+            },
+            {
+              "ballots": 266,
+              "precinct_id": "202905"
+            }
+          ]
+        },
+        {
+          "ballots": 1318,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Hettinger",
+          "native_county_id": "21",
+          "precincts": [
+            {
+              "ballots": 736,
+              "precinct_id": "213101"
+            },
+            {
+              "ballots": 582,
+              "precinct_id": "213901"
+            }
+          ]
+        },
+        {
+          "ballots": 1406,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Kidder",
+          "native_county_id": "22",
+          "precincts": [
+            {
+              "ballots": 117,
+              "precinct_id": "221401"
+            },
+            {
+              "ballots": 92,
+              "precinct_id": "221402"
+            },
+            {
+              "ballots": 79,
+              "precinct_id": "221403"
+            },
+            {
+              "ballots": 663,
+              "precinct_id": "221404"
+            },
+            {
+              "ballots": 168,
+              "precinct_id": "221405"
+            },
+            {
+              "ballots": 287,
+              "precinct_id": "221406"
+            }
+          ]
+        },
+        {
+          "ballots": 2166,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "LaMoure",
+          "native_county_id": "23",
+          "precincts": [
+            {
+              "ballots": 391,
+              "precinct_id": "232801"
+            },
+            {
+              "ballots": 855,
+              "precinct_id": "232802"
+            },
+            {
+              "ballots": 440,
+              "precinct_id": "232803"
+            },
+            {
+              "ballots": 480,
+              "precinct_id": "232804"
+            }
+          ]
+        },
+        {
+          "ballots": 1052,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Logan",
+          "native_county_id": "24",
+          "precincts": [
+            {
+              "ballots": 252,
+              "precinct_id": "242801"
+            },
+            {
+              "ballots": 423,
+              "precinct_id": "242802"
+            },
+            {
+              "ballots": 230,
+              "precinct_id": "242803"
+            },
+            {
+              "ballots": 66,
+              "precinct_id": "242804"
+            },
+            {
+              "ballots": 81,
+              "precinct_id": "242805"
+            }
+          ]
+        },
+        {
+          "ballots": 2787,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "McHenry",
+          "native_county_id": "25",
+          "precincts": [
+            {
+              "ballots": 195,
+              "precinct_id": "250616"
+            },
+            {
+              "ballots": 603,
+              "precinct_id": "250618"
+            },
+            {
+              "ballots": 150,
+              "precinct_id": "250627"
+            },
+            {
+              "ballots": 299,
+              "precinct_id": "250641"
+            },
+            {
+              "ballots": 891,
+              "precinct_id": "250647"
+            },
+            {
+              "ballots": 195,
+              "precinct_id": "250655"
+            },
+            {
+              "ballots": 222,
+              "precinct_id": "250658"
+            },
+            {
+              "ballots": 232,
+              "precinct_id": "250662"
+            }
+          ]
+        },
+        {
+          "ballots": 1415,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "McIntosh",
+          "native_county_id": "26",
+          "precincts": [
+            {
+              "ballots": 364,
+              "precinct_id": "262801"
+            },
+            {
+              "ballots": 222,
+              "precinct_id": "262802"
+            },
+            {
+              "ballots": 75,
+              "precinct_id": "262803"
+            },
+            {
+              "ballots": 439,
+              "precinct_id": "262804"
+            },
+            {
+              "ballots": 160,
+              "precinct_id": "262805"
+            },
+            {
+              "ballots": 155,
+              "precinct_id": "262806"
+            }
+          ]
+        },
+        {
+          "ballots": 5556,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "McKenzie",
+          "native_county_id": "27",
+          "precincts": [
+            {
+              "ballots": 202,
+              "precinct_id": "270401"
+            },
+            {
+              "ballots": 208,
+              "precinct_id": "270402"
+            },
+            {
+              "ballots": 163,
+              "precinct_id": "272603"
+            },
+            {
+              "ballots": 128,
+              "precinct_id": "272604"
+            },
+            {
+              "ballots": 504,
+              "precinct_id": "272605"
+            },
+            {
+              "ballots": 305,
+              "precinct_id": "272606"
+            },
+            {
+              "ballots": 81,
+              "precinct_id": "272607"
+            },
+            {
+              "ballots": 182,
+              "precinct_id": "272608"
+            },
+            {
+              "ballots": 1539,
+              "precinct_id": "272609"
+            },
+            {
+              "ballots": 2004,
+              "precinct_id": "272611"
+            },
+            {
+              "ballots": 240,
+              "precinct_id": "272612"
+            }
+          ]
+        },
+        {
+          "ballots": 5470,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "McLean",
+          "native_county_id": "28",
+          "precincts": [
+            {
+              "ballots": 1637,
+              "precinct_id": "280401"
+            },
+            {
+              "ballots": 410,
+              "precinct_id": "280402"
+            },
+            {
+              "ballots": 1166,
+              "precinct_id": "280601"
+            },
+            {
+              "ballots": 185,
+              "precinct_id": "280602"
+            },
+            {
+              "ballots": 294,
+              "precinct_id": "280801"
+            },
+            {
+              "ballots": 1778,
+              "precinct_id": "283301"
+            }
+          ]
+        },
+        {
+          "ballots": 4603,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Mercer",
+          "native_county_id": "29",
+          "precincts": [
+            {
+              "ballots": 10,
+              "precinct_id": "290401"
+            },
+            {
+              "ballots": 323,
+              "precinct_id": "293301"
+            },
+            {
+              "ballots": 377,
+              "precinct_id": "293303"
+            },
+            {
+              "ballots": 383,
+              "precinct_id": "293313"
+            },
+            {
+              "ballots": 239,
+              "precinct_id": "293314"
+            },
+            {
+              "ballots": 192,
+              "precinct_id": "293316"
+            },
+            {
+              "ballots": 236,
+              "precinct_id": "293320"
+            },
+            {
+              "ballots": 446,
+              "precinct_id": "293321"
+            },
+            {
+              "ballots": 421,
+              "precinct_id": "293322"
+            },
+            {
+              "ballots": 413,
+              "precinct_id": "293323"
+            },
+            {
+              "ballots": 275,
+              "precinct_id": "293324"
+            },
+            {
+              "ballots": 355,
+              "precinct_id": "293381"
+            },
+            {
+              "ballots": 497,
+              "precinct_id": "293382"
+            },
+            {
+              "ballots": 436,
+              "precinct_id": "293383"
+            }
+          ]
+        },
+        {
+          "ballots": 17205,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Morton",
+          "native_county_id": "30",
+          "precincts": [
+            {
+              "ballots": 902,
+              "precinct_id": "303105"
+            },
+            {
+              "ballots": 1526,
+              "precinct_id": "303117"
+            },
+            {
+              "ballots": 570,
+              "precinct_id": "303118"
+            },
+            {
+              "ballots": 247,
+              "precinct_id": "303120"
+            },
+            {
+              "ballots": 264,
+              "precinct_id": "303123"
+            },
+            {
+              "ballots": 991,
+              "precinct_id": "303124"
+            },
+            {
+              "ballots": 2319,
+              "precinct_id": "303332"
+            },
+            {
+              "ballots": 2031,
+              "precinct_id": "303401"
+            },
+            {
+              "ballots": 2756,
+              "precinct_id": "303402"
+            },
+            {
+              "ballots": 1018,
+              "precinct_id": "303403"
+            },
+            {
+              "ballots": 869,
+              "precinct_id": "303404"
+            },
+            {
+              "ballots": 1277,
+              "precinct_id": "303406"
+            },
+            {
+              "ballots": 520,
+              "precinct_id": "303408"
+            },
+            {
+              "ballots": 820,
+              "precinct_id": "303633"
+            },
+            {
+              "ballots": 144,
+              "precinct_id": "303634"
+            },
+            {
+              "ballots": 526,
+              "precinct_id": "303636"
+            },
+            {
+              "ballots": 425,
+              "precinct_id": "303638"
+            }
+          ]
+        },
+        {
+          "ballots": 4108,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Mountrail",
+          "native_county_id": "31",
+          "precincts": [
+            {
+              "ballots": 1013,
+              "precinct_id": "310201"
+            },
+            {
+              "ballots": 592,
+              "precinct_id": "310206"
+            },
+            {
+              "ballots": 730,
+              "precinct_id": "310402"
+            },
+            {
+              "ballots": 285,
+              "precinct_id": "310403"
+            },
+            {
+              "ballots": 902,
+              "precinct_id": "310404"
+            },
+            {
+              "ballots": 586,
+              "precinct_id": "310405"
+            }
+          ]
+        },
+        {
+          "ballots": 1785,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Nelson",
+          "native_county_id": "32",
+          "precincts": [
+            {
+              "ballots": 2,
+              "precinct_id": "320902"
+            },
+            {
+              "ballots": 1783,
+              "precinct_id": "322901"
+            }
+          ]
+        },
+        {
+          "ballots": 1097,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Oliver",
+          "native_county_id": "33",
+          "precincts": [
+            {
+              "ballots": 1097,
+              "precinct_id": "333301"
+            }
+          ]
+        },
+        {
+          "ballots": 3154,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Pembina",
+          "native_county_id": "34",
+          "precincts": [
+            {
+              "ballots": 555,
+              "precinct_id": "341901"
+            },
+            {
+              "ballots": 646,
+              "precinct_id": "341902"
+            },
+            {
+              "ballots": 717,
+              "precinct_id": "341903"
+            },
+            {
+              "ballots": 692,
+              "precinct_id": "341904"
+            },
+            {
+              "ballots": 218,
+              "precinct_id": "341905"
+            },
+            {
+              "ballots": 326,
+              "precinct_id": "341906"
+            }
+          ]
+        },
+        {
+          "ballots": 2006,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Pierce",
+          "native_county_id": "35",
+          "precincts": [
+            {
+              "ballots": 58,
+              "precinct_id": "350909"
+            },
+            {
+              "ballots": 72,
+              "precinct_id": "351401"
+            },
+            {
+              "ballots": 149,
+              "precinct_id": "351402"
+            },
+            {
+              "ballots": 231,
+              "precinct_id": "351403"
+            },
+            {
+              "ballots": 200,
+              "precinct_id": "351404"
+            },
+            {
+              "ballots": 88,
+              "precinct_id": "351405"
+            },
+            {
+              "ballots": 410,
+              "precinct_id": "351406"
+            },
+            {
+              "ballots": 277,
+              "precinct_id": "351407"
+            },
+            {
+              "ballots": 521,
+              "precinct_id": "351408"
+            }
+          ]
+        },
+        {
+          "ballots": 5316,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Ramsey",
+          "native_county_id": "36",
+          "precincts": [
+            {
+              "ballots": 1,
+              "precinct_id": "360905"
+            },
+            {
+              "ballots": 2791,
+              "precinct_id": "361501"
+            },
+            {
+              "ballots": 757,
+              "precinct_id": "361502"
+            },
+            {
+              "ballots": 1329,
+              "precinct_id": "361503"
+            },
+            {
+              "ballots": 438,
+              "precinct_id": "361504"
+            }
+          ]
+        },
+        {
+          "ballots": 2758,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Ransom",
+          "native_county_id": "37",
+          "precincts": [
+            {
+              "ballots": 2758,
+              "precinct_id": "372401"
+            }
+          ]
+        },
+        {
+          "ballots": 1226,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Renville",
+          "native_county_id": "38",
+          "precincts": [
+            {
+              "ballots": 232,
+              "precinct_id": "380601"
+            },
+            {
+              "ballots": 123,
+              "precinct_id": "380602"
+            },
+            {
+              "ballots": 521,
+              "precinct_id": "380603"
+            },
+            {
+              "ballots": 83,
+              "precinct_id": "380604"
+            },
+            {
+              "ballots": 267,
+              "precinct_id": "380605"
+            }
+          ]
+        },
+        {
+          "ballots": 8346,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Richland",
+          "native_county_id": "39",
+          "precincts": [
+            {
+              "ballots": 543,
+              "precinct_id": "392537"
+            },
+            {
+              "ballots": 437,
+              "precinct_id": "392538"
+            },
+            {
+              "ballots": 348,
+              "precinct_id": "392539"
+            },
+            {
+              "ballots": 221,
+              "precinct_id": "392541"
+            },
+            {
+              "ballots": 696,
+              "precinct_id": "392545"
+            },
+            {
+              "ballots": 323,
+              "precinct_id": "392546"
+            },
+            {
+              "ballots": 572,
+              "precinct_id": "392547"
+            },
+            {
+              "ballots": 904,
+              "precinct_id": "392548"
+            },
+            {
+              "ballots": 219,
+              "precinct_id": "392549"
+            },
+            {
+              "ballots": 920,
+              "precinct_id": "392551"
+            },
+            {
+              "ballots": 1152,
+              "precinct_id": "392552"
+            },
+            {
+              "ballots": 1000,
+              "precinct_id": "392553"
+            },
+            {
+              "ballots": 1011,
+              "precinct_id": "392554"
+            }
+          ]
+        },
+        {
+          "ballots": 4121,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Rolette",
+          "native_county_id": "40",
+          "precincts": [
+            {
+              "ballots": 583,
+              "precinct_id": "400901"
+            },
+            {
+              "ballots": 989,
+              "precinct_id": "400902"
+            },
+            {
+              "ballots": 1565,
+              "precinct_id": "400903"
+            },
+            {
+              "ballots": 395,
+              "precinct_id": "400904"
+            },
+            {
+              "ballots": 589,
+              "precinct_id": "400905"
+            }
+          ]
+        },
+        {
+          "ballots": 2077,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Sargent",
+          "native_county_id": "41",
+          "precincts": [
+            {
+              "ballots": 46,
+              "precinct_id": "412502"
+            },
+            {
+              "ballots": 2031,
+              "precinct_id": "412801"
+            }
+          ]
+        },
+        {
+          "ballots": 766,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Sheridan",
+          "native_county_id": "42",
+          "precincts": [
+            {
+              "ballots": 766,
+              "precinct_id": "421401"
+            }
+          ]
+        },
+        {
+          "ballots": 963,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Sioux",
+          "native_county_id": "43",
+          "precincts": [
+            {
+              "ballots": 278,
+              "precinct_id": "433101"
+            },
+            {
+              "ballots": 274,
+              "precinct_id": "433102"
+            },
+            {
+              "ballots": 411,
+              "precinct_id": "433103"
+            }
+          ]
+        },
+        {
+          "ballots": 393,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Slope",
+          "native_county_id": "44",
+          "precincts": [
+            {
+              "ballots": 139,
+              "precinct_id": "443901"
+            },
+            {
+              "ballots": 134,
+              "precinct_id": "443902"
+            },
+            {
+              "ballots": 120,
+              "precinct_id": "443903"
+            }
+          ]
+        },
+        {
+          "ballots": 15234,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Stark",
+          "native_county_id": "45",
+          "precincts": [
+            {
+              "ballots": 595,
+              "precinct_id": "453601"
+            },
+            {
+              "ballots": 256,
+              "precinct_id": "453602"
+            },
+            {
+              "ballots": 314,
+              "precinct_id": "453603"
+            },
+            {
+              "ballots": 4287,
+              "precinct_id": "453604"
+            },
+            {
+              "ballots": 6941,
+              "precinct_id": "453701"
+            },
+            {
+              "ballots": 1299,
+              "precinct_id": "453901"
+            },
+            {
+              "ballots": 844,
+              "precinct_id": "453902"
+            },
+            {
+              "ballots": 698,
+              "precinct_id": "453903"
+            }
+          ]
+        },
+        {
+          "ballots": 1021,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Steele",
+          "native_county_id": "46",
+          "precincts": [
+            {
+              "ballots": 192,
+              "precinct_id": "462901"
+            },
+            {
+              "ballots": 238,
+              "precinct_id": "462902"
+            },
+            {
+              "ballots": 159,
+              "precinct_id": "462903"
+            },
+            {
+              "ballots": 238,
+              "precinct_id": "462904"
+            },
+            {
+              "ballots": 194,
+              "precinct_id": "462905"
+            }
+          ]
+        },
+        {
+          "ballots": 10262,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Stutsman",
+          "native_county_id": "47",
+          "precincts": [
+            {
+              "ballots": 899,
+              "precinct_id": "471240"
+            },
+            {
+              "ballots": 1167,
+              "precinct_id": "471250"
+            },
+            {
+              "ballots": 1484,
+              "precinct_id": "471260"
+            },
+            {
+              "ballots": 1160,
+              "precinct_id": "471270"
+            },
+            {
+              "ballots": 1412,
+              "precinct_id": "471280"
+            },
+            {
+              "ballots": 894,
+              "precinct_id": "471290"
+            },
+            {
+              "ballots": 686,
+              "precinct_id": "472910"
+            },
+            {
+              "ballots": 1788,
+              "precinct_id": "472920"
+            },
+            {
+              "ballots": 772,
+              "precinct_id": "472930"
+            }
+          ]
+        },
+        {
+          "ballots": 1135,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Towner",
+          "native_county_id": "48",
+          "precincts": [
+            {
+              "ballots": 720,
+              "precinct_id": "481501"
+            },
+            {
+              "ballots": 197,
+              "precinct_id": "481502"
+            },
+            {
+              "ballots": 218,
+              "precinct_id": "481503"
+            }
+          ]
+        },
+        {
+          "ballots": 4178,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Traill",
+          "native_county_id": "49",
+          "precincts": [
+            {
+              "ballots": 208,
+              "precinct_id": "492001"
+            },
+            {
+              "ballots": 417,
+              "precinct_id": "492002"
+            },
+            {
+              "ballots": 227,
+              "precinct_id": "492003"
+            },
+            {
+              "ballots": 196,
+              "precinct_id": "492004"
+            },
+            {
+              "ballots": 131,
+              "precinct_id": "492005"
+            },
+            {
+              "ballots": 94,
+              "precinct_id": "492006"
+            },
+            {
+              "ballots": 504,
+              "precinct_id": "492007"
+            },
+            {
+              "ballots": 286,
+              "precinct_id": "492008"
+            },
+            {
+              "ballots": 457,
+              "precinct_id": "492009"
+            },
+            {
+              "ballots": 409,
+              "precinct_id": "492010"
+            },
+            {
+              "ballots": 835,
+              "precinct_id": "492011"
+            },
+            {
+              "ballots": 414,
+              "precinct_id": "492012"
+            }
+          ]
+        },
+        {
+          "ballots": 4575,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Walsh",
+          "native_county_id": "50",
+          "precincts": [
+            {
+              "ballots": 4185,
+              "precinct_id": "501902"
+            },
+            {
+              "ballots": 390,
+              "precinct_id": "502001"
+            }
+          ]
+        },
+        {
+          "ballots": 28778,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Ward",
+          "native_county_id": "51",
+          "precincts": [
+            {
+              "ballots": 982,
+              "precinct_id": "510301"
+            },
+            {
+              "ballots": 1010,
+              "precinct_id": "510302"
+            },
+            {
+              "ballots": 842,
+              "precinct_id": "510303"
+            },
+            {
+              "ballots": 3621,
+              "precinct_id": "510304"
+            },
+            {
+              "ballots": 799,
+              "precinct_id": "510405"
+            },
+            {
+              "ballots": 710,
+              "precinct_id": "510406"
+            },
+            {
+              "ballots": 28,
+              "precinct_id": "510407"
+            },
+            {
+              "ballots": 451,
+              "precinct_id": "510408"
+            },
+            {
+              "ballots": 7334,
+              "precinct_id": "510509"
+            },
+            {
+              "ballots": 573,
+              "precinct_id": "510610"
+            },
+            {
+              "ballots": 234,
+              "precinct_id": "513811"
+            },
+            {
+              "ballots": 4239,
+              "precinct_id": "513812"
+            },
+            {
+              "ballots": 1678,
+              "precinct_id": "513813"
+            },
+            {
+              "ballots": 1217,
+              "precinct_id": "513814"
+            },
+            {
+              "ballots": 612,
+              "precinct_id": "514015"
+            },
+            {
+              "ballots": 4448,
+              "precinct_id": "514016"
+            }
+          ]
+        },
+        {
+          "ballots": 2279,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Wells",
+          "native_county_id": "52",
+          "precincts": [
+            {
+              "ballots": 2279,
+              "precinct_id": "521401"
+            }
+          ]
+        },
+        {
+          "ballots": 15259,
+          "county_identifier_system": "legacy_portal_ordinal_not_FIPS",
+          "county_name": "Williams",
+          "native_county_id": "53",
+          "precincts": [
+            {
+              "ballots": 2237,
+              "precinct_id": "530121"
+            },
+            {
+              "ballots": 3,
+              "precinct_id": "530124"
+            },
+            {
+              "ballots": 1340,
+              "precinct_id": "530131"
+            },
+            {
+              "ballots": 0,
+              "precinct_id": "530140"
+            },
+            {
+              "ballots": 2484,
+              "precinct_id": "530141"
+            },
+            {
+              "ballots": 0,
+              "precinct_id": "530151"
+            },
+            {
+              "ballots": 121,
+              "precinct_id": "530156"
+            },
+            {
+              "ballots": 435,
+              "precinct_id": "530212"
+            },
+            {
+              "ballots": 1,
+              "precinct_id": "530220"
+            },
+            {
+              "ballots": 2155,
+              "precinct_id": "530254"
+            },
+            {
+              "ballots": 50,
+              "precinct_id": "530262"
+            },
+            {
+              "ballots": 406,
+              "precinct_id": "530263"
+            },
+            {
+              "ballots": 867,
+              "precinct_id": "530264"
+            },
+            {
+              "ballots": 77,
+              "precinct_id": "530265"
+            },
+            {
+              "ballots": 17,
+              "precinct_id": "530266"
+            },
+            {
+              "ballots": 123,
+              "precinct_id": "530267"
+            },
+            {
+              "ballots": 21,
+              "precinct_id": "530268"
+            },
+            {
+              "ballots": 1781,
+              "precinct_id": "532313"
+            },
+            {
+              "ballots": 697,
+              "precinct_id": "532314"
+            },
+            {
+              "ballots": 549,
+              "precinct_id": "532322"
+            },
+            {
+              "ballots": 230,
+              "precinct_id": "532323"
+            },
+            {
+              "ballots": 946,
+              "precinct_id": "532333"
+            },
+            {
+              "ballots": 627,
+              "precinct_id": "532343"
+            },
+            {
+              "ballots": 92,
+              "precinct_id": "532352"
+            }
+          ]
+        }
+      ],
+      "election_date": "November 5, 2024",
+      "native_denominator_definition": "Source defines eligible voters as estimated residents aged 18+.",
+      "native_eligible_voters": 594140,
+      "official": true,
+      "reported_precincts": 385,
+      "source_clock_timezone": null,
+      "source_updated_native": "4/21/2026 1:33:23 PM",
+      "year": 2024
+    },
+    {
+      "ballots": 239057,
+      "counties": [
+        {
+          "ballots": 838,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Adams",
+          "native_county_id": "38001",
+          "precincts": [
+            {
+              "ballots": 838,
+              "precinct_id": "3901"
+            }
+          ]
+        },
+        {
+          "ballots": 3726,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Barnes",
+          "native_county_id": "38003",
+          "precincts": [
+            {
+              "ballots": 277,
+              "precinct_id": "2401"
+            },
+            {
+              "ballots": 460,
+              "precinct_id": "2402"
+            },
+            {
+              "ballots": 238,
+              "precinct_id": "2403"
+            },
+            {
+              "ballots": 428,
+              "precinct_id": "2404"
+            },
+            {
+              "ballots": 592,
+              "precinct_id": "2405"
+            },
+            {
+              "ballots": 285,
+              "precinct_id": "2406"
+            },
+            {
+              "ballots": 96,
+              "precinct_id": "2407"
+            },
+            {
+              "ballots": 110,
+              "precinct_id": "2408"
+            },
+            {
+              "ballots": 163,
+              "precinct_id": "2409"
+            },
+            {
+              "ballots": 61,
+              "precinct_id": "2410"
+            },
+            {
+              "ballots": 472,
+              "precinct_id": "2411"
+            },
+            {
+              "ballots": 173,
+              "precinct_id": "2412"
+            },
+            {
+              "ballots": 182,
+              "precinct_id": "2413"
+            },
+            {
+              "ballots": 63,
+              "precinct_id": "2414"
+            },
+            {
+              "ballots": 126,
+              "precinct_id": "2415"
+            }
+          ]
+        },
+        {
+          "ballots": 1335,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Benson",
+          "native_county_id": "38005",
+          "precincts": [
+            {
+              "ballots": 252,
+              "precinct_id": "0901"
+            },
+            {
+              "ballots": 154,
+              "precinct_id": "0902"
+            },
+            {
+              "ballots": 230,
+              "precinct_id": "0903"
+            },
+            {
+              "ballots": 148,
+              "precinct_id": "0904"
+            },
+            {
+              "ballots": 176,
+              "precinct_id": "0905"
+            },
+            {
+              "ballots": 164,
+              "precinct_id": "1401"
+            },
+            {
+              "ballots": 189,
+              "precinct_id": "1402"
+            },
+            {
+              "ballots": 22,
+              "precinct_id": "1403"
+            }
+          ]
+        },
+        {
+          "ballots": 558,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Billings",
+          "native_county_id": "38007",
+          "precincts": [
+            {
+              "ballots": 171,
+              "precinct_id": "3901"
+            },
+            {
+              "ballots": 294,
+              "precinct_id": "3902"
+            },
+            {
+              "ballots": 93,
+              "precinct_id": "3903"
+            }
+          ]
+        },
+        {
+          "ballots": 2406,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Bottineau",
+          "native_county_id": "38009",
+          "precincts": [
+            {
+              "ballots": 466,
+              "precinct_id": "0601"
+            },
+            {
+              "ballots": 576,
+              "precinct_id": "0602"
+            },
+            {
+              "ballots": 412,
+              "precinct_id": "0603"
+            },
+            {
+              "ballots": 502,
+              "precinct_id": "0604"
+            },
+            {
+              "ballots": 450,
+              "precinct_id": "0605"
+            }
+          ]
+        },
+        {
+          "ballots": 1283,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Bowman",
+          "native_county_id": "38011",
+          "precincts": [
+            {
+              "ballots": 569,
+              "precinct_id": "3901"
+            },
+            {
+              "ballots": 330,
+              "precinct_id": "3902"
+            },
+            {
+              "ballots": 156,
+              "precinct_id": "3903"
+            },
+            {
+              "ballots": 228,
+              "precinct_id": "3904"
+            }
+          ]
+        },
+        {
+          "ballots": 696,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Burke",
+          "native_county_id": "38013",
+          "precincts": [
+            {
+              "ballots": 29,
+              "precinct_id": "0201"
+            },
+            {
+              "ballots": 194,
+              "precinct_id": "0202"
+            },
+            {
+              "ballots": 215,
+              "precinct_id": "0203"
+            },
+            {
+              "ballots": 104,
+              "precinct_id": "0204"
+            },
+            {
+              "ballots": 90,
+              "precinct_id": "0205"
+            },
+            {
+              "ballots": 64,
+              "precinct_id": "0206"
+            }
+          ]
+        },
+        {
+          "ballots": 34947,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Burleigh",
+          "native_county_id": "38015",
+          "precincts": [
+            {
+              "ballots": 800,
+              "precinct_id": "0701"
+            },
+            {
+              "ballots": 1445,
+              "precinct_id": "0702"
+            },
+            {
+              "ballots": 1204,
+              "precinct_id": "0703"
+            },
+            {
+              "ballots": 2075,
+              "precinct_id": "0704"
+            },
+            {
+              "ballots": 1001,
+              "precinct_id": "0705"
+            },
+            {
+              "ballots": 96,
+              "precinct_id": "0801"
+            },
+            {
+              "ballots": 1401,
+              "precinct_id": "0802"
+            },
+            {
+              "ballots": 262,
+              "precinct_id": "0803"
+            },
+            {
+              "ballots": 2224,
+              "precinct_id": "0804"
+            },
+            {
+              "ballots": 1155,
+              "precinct_id": "0805"
+            },
+            {
+              "ballots": 293,
+              "precinct_id": "0806"
+            },
+            {
+              "ballots": 229,
+              "precinct_id": "1401"
+            },
+            {
+              "ballots": 116,
+              "precinct_id": "1402"
+            },
+            {
+              "ballots": 179,
+              "precinct_id": "1403"
+            },
+            {
+              "ballots": 1311,
+              "precinct_id": "3001"
+            },
+            {
+              "ballots": 24,
+              "precinct_id": "3002"
+            },
+            {
+              "ballots": 1693,
+              "precinct_id": "3003"
+            },
+            {
+              "ballots": 1926,
+              "precinct_id": "3004"
+            },
+            {
+              "ballots": 705,
+              "precinct_id": "3201"
+            },
+            {
+              "ballots": 972,
+              "precinct_id": "3202"
+            },
+            {
+              "ballots": 762,
+              "precinct_id": "3203"
+            },
+            {
+              "ballots": 2296,
+              "precinct_id": "3204"
+            },
+            {
+              "ballots": 1480,
+              "precinct_id": "3501"
+            },
+            {
+              "ballots": 2013,
+              "precinct_id": "3502"
+            },
+            {
+              "ballots": 1086,
+              "precinct_id": "3503"
+            },
+            {
+              "ballots": 1293,
+              "precinct_id": "3504"
+            },
+            {
+              "ballots": 2684,
+              "precinct_id": "4701"
+            },
+            {
+              "ballots": 2020,
+              "precinct_id": "4702"
+            },
+            {
+              "ballots": 1178,
+              "precinct_id": "4703"
+            },
+            {
+              "ballots": 1024,
+              "precinct_id": "4704"
+            }
+          ]
+        },
+        {
+          "ballots": 59126,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Cass",
+          "native_county_id": "38017",
+          "precincts": [
+            {
+              "ballots": 1154,
+              "precinct_id": "1001"
+            },
+            {
+              "ballots": 1121,
+              "precinct_id": "1002"
+            },
+            {
+              "ballots": 1290,
+              "precinct_id": "1003"
+            },
+            {
+              "ballots": 3166,
+              "precinct_id": "1101"
+            },
+            {
+              "ballots": 2084,
+              "precinct_id": "1102"
+            },
+            {
+              "ballots": 1537,
+              "precinct_id": "1301"
+            },
+            {
+              "ballots": 2089,
+              "precinct_id": "1302"
+            },
+            {
+              "ballots": 2094,
+              "precinct_id": "1303"
+            },
+            {
+              "ballots": 2657,
+              "precinct_id": "1601"
+            },
+            {
+              "ballots": 2168,
+              "precinct_id": "1602"
+            },
+            {
+              "ballots": 1304,
+              "precinct_id": "2101"
+            },
+            {
+              "ballots": 2519,
+              "precinct_id": "2102"
+            },
+            {
+              "ballots": 489,
+              "precinct_id": "2201"
+            },
+            {
+              "ballots": 261,
+              "precinct_id": "2202"
+            },
+            {
+              "ballots": 384,
+              "precinct_id": "2203"
+            },
+            {
+              "ballots": 1577,
+              "precinct_id": "2204"
+            },
+            {
+              "ballots": 2470,
+              "precinct_id": "2205"
+            },
+            {
+              "ballots": 963,
+              "precinct_id": "2206"
+            },
+            {
+              "ballots": 237,
+              "precinct_id": "2207"
+            },
+            {
+              "ballots": 2622,
+              "precinct_id": "2701"
+            },
+            {
+              "ballots": 2817,
+              "precinct_id": "2702"
+            },
+            {
+              "ballots": 906,
+              "precinct_id": "2703"
+            },
+            {
+              "ballots": 2588,
+              "precinct_id": "4101"
+            },
+            {
+              "ballots": 3724,
+              "precinct_id": "4102"
+            },
+            {
+              "ballots": 1943,
+              "precinct_id": "4401"
+            },
+            {
+              "ballots": 2811,
+              "precinct_id": "4402"
+            },
+            {
+              "ballots": 3309,
+              "precinct_id": "4501"
+            },
+            {
+              "ballots": 880,
+              "precinct_id": "4502"
+            },
+            {
+              "ballots": 867,
+              "precinct_id": "4503"
+            },
+            {
+              "ballots": 442,
+              "precinct_id": "4504"
+            },
+            {
+              "ballots": 1429,
+              "precinct_id": "4601"
+            },
+            {
+              "ballots": 1822,
+              "precinct_id": "4602"
+            },
+            {
+              "ballots": 1599,
+              "precinct_id": "4603"
+            },
+            {
+              "ballots": 1803,
+              "precinct_id": "4604"
+            }
+          ]
+        },
+        {
+          "ballots": 1488,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Cavalier",
+          "native_county_id": "38019",
+          "precincts": [
+            {
+              "ballots": 683,
+              "precinct_id": "1501"
+            },
+            {
+              "ballots": 604,
+              "precinct_id": "1502"
+            },
+            {
+              "ballots": 201,
+              "precinct_id": "1903"
+            }
+          ]
+        },
+        {
+          "ballots": 1823,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Dickey",
+          "native_county_id": "38021",
+          "precincts": [
+            {
+              "ballots": 1823,
+              "precinct_id": "2801"
+            }
+          ]
+        },
+        {
+          "ballots": 1008,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Divide",
+          "native_county_id": "38023",
+          "precincts": [
+            {
+              "ballots": 516,
+              "precinct_id": "0201"
+            },
+            {
+              "ballots": 240,
+              "precinct_id": "0202"
+            },
+            {
+              "ballots": 115,
+              "precinct_id": "0203"
+            },
+            {
+              "ballots": 137,
+              "precinct_id": "0204"
+            }
+          ]
+        },
+        {
+          "ballots": 1586,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Dunn",
+          "native_county_id": "38025",
+          "precincts": [
+            {
+              "ballots": 134,
+              "precinct_id": "0401"
+            },
+            {
+              "ballots": 1185,
+              "precinct_id": "2601"
+            },
+            {
+              "ballots": 12,
+              "precinct_id": "3601"
+            },
+            {
+              "ballots": 255,
+              "precinct_id": "3901"
+            }
+          ]
+        },
+        {
+          "ballots": 1026,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Eddy",
+          "native_county_id": "38027",
+          "precincts": [
+            {
+              "ballots": 56,
+              "precinct_id": "0903"
+            },
+            {
+              "ballots": 543,
+              "precinct_id": "1401"
+            },
+            {
+              "ballots": 427,
+              "precinct_id": "1402"
+            }
+          ]
+        },
+        {
+          "ballots": 1321,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Emmons",
+          "native_county_id": "38029",
+          "precincts": [
+            {
+              "ballots": 275,
+              "precinct_id": "0801"
+            },
+            {
+              "ballots": 280,
+              "precinct_id": "0802"
+            },
+            {
+              "ballots": 286,
+              "precinct_id": "0803"
+            },
+            {
+              "ballots": 225,
+              "precinct_id": "0804"
+            },
+            {
+              "ballots": 255,
+              "precinct_id": "0805"
+            }
+          ]
+        },
+        {
+          "ballots": 1201,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Foster",
+          "native_county_id": "38031",
+          "precincts": [
+            {
+              "ballots": 1201,
+              "precinct_id": "2901"
+            }
+          ]
+        },
+        {
+          "ballots": 695,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Golden Valley",
+          "native_county_id": "38033",
+          "precincts": [
+            {
+              "ballots": 695,
+              "precinct_id": "3901"
+            }
+          ]
+        },
+        {
+          "ballots": 19936,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Grand Forks",
+          "native_county_id": "38035",
+          "precincts": [
+            {
+              "ballots": 426,
+              "precinct_id": "1701"
+            },
+            {
+              "ballots": 1981,
+              "precinct_id": "1702"
+            },
+            {
+              "ballots": 3108,
+              "precinct_id": "1703"
+            },
+            {
+              "ballots": 461,
+              "precinct_id": "1704"
+            },
+            {
+              "ballots": 356,
+              "precinct_id": "1805"
+            },
+            {
+              "ballots": 992,
+              "precinct_id": "1807"
+            },
+            {
+              "ballots": 2138,
+              "precinct_id": "1808"
+            },
+            {
+              "ballots": 759,
+              "precinct_id": "1809"
+            },
+            {
+              "ballots": 252,
+              "precinct_id": "2010"
+            },
+            {
+              "ballots": 795,
+              "precinct_id": "2011"
+            },
+            {
+              "ballots": 67,
+              "precinct_id": "2012"
+            },
+            {
+              "ballots": 471,
+              "precinct_id": "2013"
+            },
+            {
+              "ballots": 261,
+              "precinct_id": "2014"
+            },
+            {
+              "ballots": 1003,
+              "precinct_id": "2015"
+            },
+            {
+              "ballots": 987,
+              "precinct_id": "4206"
+            },
+            {
+              "ballots": 621,
+              "precinct_id": "4216"
+            },
+            {
+              "ballots": 1208,
+              "precinct_id": "4217"
+            },
+            {
+              "ballots": 263,
+              "precinct_id": "4318"
+            },
+            {
+              "ballots": 1557,
+              "precinct_id": "4319"
+            },
+            {
+              "ballots": 2230,
+              "precinct_id": "4320"
+            }
+          ]
+        },
+        {
+          "ballots": 1049,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Grant",
+          "native_county_id": "38037",
+          "precincts": [
+            {
+              "ballots": 587,
+              "precinct_id": "3101"
+            },
+            {
+              "ballots": 117,
+              "precinct_id": "3102"
+            },
+            {
+              "ballots": 220,
+              "precinct_id": "3103"
+            },
+            {
+              "ballots": 110,
+              "precinct_id": "3104"
+            },
+            {
+              "ballots": 15,
+              "precinct_id": "3105"
+            }
+          ]
+        },
+        {
+          "ballots": 918,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Griggs",
+          "native_county_id": "38039",
+          "precincts": [
+            {
+              "ballots": 203,
+              "precinct_id": "2901"
+            },
+            {
+              "ballots": 187,
+              "precinct_id": "2902"
+            },
+            {
+              "ballots": 149,
+              "precinct_id": "2903"
+            },
+            {
+              "ballots": 183,
+              "precinct_id": "2904"
+            },
+            {
+              "ballots": 196,
+              "precinct_id": "2905"
+            }
+          ]
+        },
+        {
+          "ballots": 1042,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Hettinger",
+          "native_county_id": "38041",
+          "precincts": [
+            {
+              "ballots": 590,
+              "precinct_id": "3101"
+            },
+            {
+              "ballots": 452,
+              "precinct_id": "3901"
+            }
+          ]
+        },
+        {
+          "ballots": 1077,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Kidder",
+          "native_county_id": "38043",
+          "precincts": [
+            {
+              "ballots": 94,
+              "precinct_id": "1401"
+            },
+            {
+              "ballots": 75,
+              "precinct_id": "1402"
+            },
+            {
+              "ballots": 62,
+              "precinct_id": "1403"
+            },
+            {
+              "ballots": 506,
+              "precinct_id": "1404"
+            },
+            {
+              "ballots": 121,
+              "precinct_id": "1405"
+            },
+            {
+              "ballots": 219,
+              "precinct_id": "1406"
+            }
+          ]
+        },
+        {
+          "ballots": 1506,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "LaMoure",
+          "native_county_id": "38045",
+          "precincts": [
+            {
+              "ballots": 245,
+              "precinct_id": "2801"
+            },
+            {
+              "ballots": 579,
+              "precinct_id": "2802"
+            },
+            {
+              "ballots": 323,
+              "precinct_id": "2803"
+            },
+            {
+              "ballots": 359,
+              "precinct_id": "2804"
+            }
+          ]
+        },
+        {
+          "ballots": 801,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Logan",
+          "native_county_id": "38047",
+          "precincts": [
+            {
+              "ballots": 206,
+              "precinct_id": "2801"
+            },
+            {
+              "ballots": 299,
+              "precinct_id": "2802"
+            },
+            {
+              "ballots": 186,
+              "precinct_id": "2803"
+            },
+            {
+              "ballots": 50,
+              "precinct_id": "2804"
+            },
+            {
+              "ballots": 60,
+              "precinct_id": "2805"
+            }
+          ]
+        },
+        {
+          "ballots": 1916,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "McHenry",
+          "native_county_id": "38049",
+          "precincts": [
+            {
+              "ballots": 133,
+              "precinct_id": "0616"
+            },
+            {
+              "ballots": 415,
+              "precinct_id": "0618"
+            },
+            {
+              "ballots": 105,
+              "precinct_id": "0627"
+            },
+            {
+              "ballots": 173,
+              "precinct_id": "0641"
+            },
+            {
+              "ballots": 621,
+              "precinct_id": "0647"
+            },
+            {
+              "ballots": 142,
+              "precinct_id": "0655"
+            },
+            {
+              "ballots": 167,
+              "precinct_id": "0658"
+            },
+            {
+              "ballots": 160,
+              "precinct_id": "0662"
+            }
+          ]
+        },
+        {
+          "ballots": 1056,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "McIntosh",
+          "native_county_id": "38051",
+          "precincts": [
+            {
+              "ballots": 278,
+              "precinct_id": "2801"
+            },
+            {
+              "ballots": 162,
+              "precinct_id": "2802"
+            },
+            {
+              "ballots": 55,
+              "precinct_id": "2803"
+            },
+            {
+              "ballots": 304,
+              "precinct_id": "2804"
+            },
+            {
+              "ballots": 137,
+              "precinct_id": "2805"
+            },
+            {
+              "ballots": 120,
+              "precinct_id": "2806"
+            }
+          ]
+        },
+        {
+          "ballots": 3345,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "McKenzie",
+          "native_county_id": "38053",
+          "precincts": [
+            {
+              "ballots": 249,
+              "precinct_id": "0401"
+            },
+            {
+              "ballots": 3096,
+              "precinct_id": "2602"
+            }
+          ]
+        },
+        {
+          "ballots": 3826,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "McLean",
+          "native_county_id": "38055",
+          "precincts": [
+            {
+              "ballots": 1108,
+              "precinct_id": "0401"
+            },
+            {
+              "ballots": 362,
+              "precinct_id": "0402"
+            },
+            {
+              "ballots": 820,
+              "precinct_id": "0601"
+            },
+            {
+              "ballots": 120,
+              "precinct_id": "0602"
+            },
+            {
+              "ballots": 185,
+              "precinct_id": "0801"
+            },
+            {
+              "ballots": 1231,
+              "precinct_id": "3301"
+            }
+          ]
+        },
+        {
+          "ballots": 3288,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Mercer",
+          "native_county_id": "38057",
+          "precincts": [
+            {
+              "ballots": 7,
+              "precinct_id": "0401"
+            },
+            {
+              "ballots": 242,
+              "precinct_id": "3301"
+            },
+            {
+              "ballots": 296,
+              "precinct_id": "3303"
+            },
+            {
+              "ballots": 288,
+              "precinct_id": "3313"
+            },
+            {
+              "ballots": 163,
+              "precinct_id": "3314"
+            },
+            {
+              "ballots": 151,
+              "precinct_id": "3316"
+            },
+            {
+              "ballots": 150,
+              "precinct_id": "3320"
+            },
+            {
+              "ballots": 316,
+              "precinct_id": "3321"
+            },
+            {
+              "ballots": 308,
+              "precinct_id": "3322"
+            },
+            {
+              "ballots": 272,
+              "precinct_id": "3323"
+            },
+            {
+              "ballots": 195,
+              "precinct_id": "3324"
+            },
+            {
+              "ballots": 241,
+              "precinct_id": "3381"
+            },
+            {
+              "ballots": 342,
+              "precinct_id": "3382"
+            },
+            {
+              "ballots": 317,
+              "precinct_id": "3383"
+            }
+          ]
+        },
+        {
+          "ballots": 10363,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Morton",
+          "native_county_id": "38059",
+          "precincts": [
+            {
+              "ballots": 555,
+              "precinct_id": "3105"
+            },
+            {
+              "ballots": 928,
+              "precinct_id": "3117"
+            },
+            {
+              "ballots": 353,
+              "precinct_id": "3118"
+            },
+            {
+              "ballots": 134,
+              "precinct_id": "3120"
+            },
+            {
+              "ballots": 177,
+              "precinct_id": "3123"
+            },
+            {
+              "ballots": 594,
+              "precinct_id": "3124"
+            },
+            {
+              "ballots": 1450,
+              "precinct_id": "3332"
+            },
+            {
+              "ballots": 1266,
+              "precinct_id": "3401"
+            },
+            {
+              "ballots": 1597,
+              "precinct_id": "3402"
+            },
+            {
+              "ballots": 559,
+              "precinct_id": "3403"
+            },
+            {
+              "ballots": 587,
+              "precinct_id": "3404"
+            },
+            {
+              "ballots": 814,
+              "precinct_id": "3406"
+            },
+            {
+              "ballots": 247,
+              "precinct_id": "3408"
+            },
+            {
+              "ballots": 497,
+              "precinct_id": "3633"
+            },
+            {
+              "ballots": 83,
+              "precinct_id": "3634"
+            },
+            {
+              "ballots": 281,
+              "precinct_id": "3636"
+            },
+            {
+              "ballots": 241,
+              "precinct_id": "3638"
+            }
+          ]
+        },
+        {
+          "ballots": 2580,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Mountrail",
+          "native_county_id": "38061",
+          "precincts": [
+            {
+              "ballots": 582,
+              "precinct_id": "0201"
+            },
+            {
+              "ballots": 328,
+              "precinct_id": "0206"
+            },
+            {
+              "ballots": 453,
+              "precinct_id": "0402"
+            },
+            {
+              "ballots": 206,
+              "precinct_id": "0403"
+            },
+            {
+              "ballots": 610,
+              "precinct_id": "0404"
+            },
+            {
+              "ballots": 401,
+              "precinct_id": "0405"
+            }
+          ]
+        },
+        {
+          "ballots": 1261,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Nelson",
+          "native_county_id": "38063",
+          "precincts": [
+            {
+              "ballots": 1,
+              "precinct_id": "0902"
+            },
+            {
+              "ballots": 1260,
+              "precinct_id": "2901"
+            }
+          ]
+        },
+        {
+          "ballots": 888,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Oliver",
+          "native_county_id": "38065",
+          "precincts": [
+            {
+              "ballots": 888,
+              "precinct_id": "3301"
+            }
+          ]
+        },
+        {
+          "ballots": 2328,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Pembina",
+          "native_county_id": "38067",
+          "precincts": [
+            {
+              "ballots": 410,
+              "precinct_id": "1901"
+            },
+            {
+              "ballots": 444,
+              "precinct_id": "1902"
+            },
+            {
+              "ballots": 538,
+              "precinct_id": "1903"
+            },
+            {
+              "ballots": 524,
+              "precinct_id": "1904"
+            },
+            {
+              "ballots": 178,
+              "precinct_id": "1905"
+            },
+            {
+              "ballots": 234,
+              "precinct_id": "1906"
+            }
+          ]
+        },
+        {
+          "ballots": 1427,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Pierce",
+          "native_county_id": "38069",
+          "precincts": [
+            {
+              "ballots": 39,
+              "precinct_id": "0909"
+            },
+            {
+              "ballots": 50,
+              "precinct_id": "1401"
+            },
+            {
+              "ballots": 108,
+              "precinct_id": "1402"
+            },
+            {
+              "ballots": 171,
+              "precinct_id": "1403"
+            },
+            {
+              "ballots": 141,
+              "precinct_id": "1404"
+            },
+            {
+              "ballots": 65,
+              "precinct_id": "1405"
+            },
+            {
+              "ballots": 275,
+              "precinct_id": "1406"
+            },
+            {
+              "ballots": 199,
+              "precinct_id": "1407"
+            },
+            {
+              "ballots": 379,
+              "precinct_id": "1408"
+            }
+          ]
+        },
+        {
+          "ballots": 3515,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Ramsey",
+          "native_county_id": "38071",
+          "precincts": [
+            {
+              "ballots": 2,
+              "precinct_id": "0905"
+            },
+            {
+              "ballots": 1813,
+              "precinct_id": "1501"
+            },
+            {
+              "ballots": 531,
+              "precinct_id": "1502"
+            },
+            {
+              "ballots": 911,
+              "precinct_id": "1503"
+            },
+            {
+              "ballots": 258,
+              "precinct_id": "1504"
+            }
+          ]
+        },
+        {
+          "ballots": 1856,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Ransom",
+          "native_county_id": "38073",
+          "precincts": [
+            {
+              "ballots": 1856,
+              "precinct_id": "2401"
+            }
+          ]
+        },
+        {
+          "ballots": 892,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Renville",
+          "native_county_id": "38075",
+          "precincts": [
+            {
+              "ballots": 354,
+              "precinct_id": "0611"
+            },
+            {
+              "ballots": 307,
+              "precinct_id": "0612"
+            },
+            {
+              "ballots": 231,
+              "precinct_id": "0613"
+            }
+          ]
+        },
+        {
+          "ballots": 5478,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Richland",
+          "native_county_id": "38077",
+          "precincts": [
+            {
+              "ballots": 382,
+              "precinct_id": "2502"
+            },
+            {
+              "ballots": 604,
+              "precinct_id": "2508"
+            },
+            {
+              "ballots": 219,
+              "precinct_id": "2518"
+            },
+            {
+              "ballots": 358,
+              "precinct_id": "2528"
+            },
+            {
+              "ballots": 2738,
+              "precinct_id": "2537"
+            },
+            {
+              "ballots": 508,
+              "precinct_id": "2542"
+            },
+            {
+              "ballots": 669,
+              "precinct_id": "2544"
+            }
+          ]
+        },
+        {
+          "ballots": 2766,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Rolette",
+          "native_county_id": "38079",
+          "precincts": [
+            {
+              "ballots": 320,
+              "precinct_id": "0901"
+            },
+            {
+              "ballots": 690,
+              "precinct_id": "0902"
+            },
+            {
+              "ballots": 1164,
+              "precinct_id": "0903"
+            },
+            {
+              "ballots": 255,
+              "precinct_id": "0904"
+            },
+            {
+              "ballots": 337,
+              "precinct_id": "0905"
+            }
+          ]
+        },
+        {
+          "ballots": 1499,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Sargent",
+          "native_county_id": "38081",
+          "precincts": [
+            {
+              "ballots": 34,
+              "precinct_id": "2502"
+            },
+            {
+              "ballots": 1465,
+              "precinct_id": "2801"
+            }
+          ]
+        },
+        {
+          "ballots": 608,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Sheridan",
+          "native_county_id": "38083",
+          "precincts": [
+            {
+              "ballots": 608,
+              "precinct_id": "1401"
+            }
+          ]
+        },
+        {
+          "ballots": 671,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Sioux",
+          "native_county_id": "38085",
+          "precincts": [
+            {
+              "ballots": 183,
+              "precinct_id": "3101"
+            },
+            {
+              "ballots": 174,
+              "precinct_id": "3102"
+            },
+            {
+              "ballots": 314,
+              "precinct_id": "3103"
+            }
+          ]
+        },
+        {
+          "ballots": 284,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Slope",
+          "native_county_id": "38087",
+          "precincts": [
+            {
+              "ballots": 102,
+              "precinct_id": "3901"
+            },
+            {
+              "ballots": 107,
+              "precinct_id": "3902"
+            },
+            {
+              "ballots": 75,
+              "precinct_id": "3903"
+            }
+          ]
+        },
+        {
+          "ballots": 8330,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Stark",
+          "native_county_id": "38089",
+          "precincts": [
+            {
+              "ballots": 373,
+              "precinct_id": "3601"
+            },
+            {
+              "ballots": 148,
+              "precinct_id": "3602"
+            },
+            {
+              "ballots": 183,
+              "precinct_id": "3603"
+            },
+            {
+              "ballots": 2216,
+              "precinct_id": "3604"
+            },
+            {
+              "ballots": 3831,
+              "precinct_id": "3701"
+            },
+            {
+              "ballots": 728,
+              "precinct_id": "3901"
+            },
+            {
+              "ballots": 478,
+              "precinct_id": "3902"
+            },
+            {
+              "ballots": 373,
+              "precinct_id": "3903"
+            }
+          ]
+        },
+        {
+          "ballots": 711,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Steele",
+          "native_county_id": "38091",
+          "precincts": [
+            {
+              "ballots": 146,
+              "precinct_id": "2901"
+            },
+            {
+              "ballots": 172,
+              "precinct_id": "2902"
+            },
+            {
+              "ballots": 145,
+              "precinct_id": "2903"
+            },
+            {
+              "ballots": 120,
+              "precinct_id": "2904"
+            },
+            {
+              "ballots": 128,
+              "precinct_id": "2905"
+            }
+          ]
+        },
+        {
+          "ballots": 6397,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Stutsman",
+          "native_county_id": "38093",
+          "precincts": [
+            {
+              "ballots": 596,
+              "precinct_id": "1240"
+            },
+            {
+              "ballots": 3780,
+              "precinct_id": "1250"
+            },
+            {
+              "ballots": 422,
+              "precinct_id": "2910"
+            },
+            {
+              "ballots": 1102,
+              "precinct_id": "2920"
+            },
+            {
+              "ballots": 497,
+              "precinct_id": "2930"
+            }
+          ]
+        },
+        {
+          "ballots": 878,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Towner",
+          "native_county_id": "38095",
+          "precincts": [
+            {
+              "ballots": 566,
+              "precinct_id": "1501"
+            },
+            {
+              "ballots": 131,
+              "precinct_id": "1502"
+            },
+            {
+              "ballots": 181,
+              "precinct_id": "1503"
+            }
+          ]
+        },
+        {
+          "ballots": 3081,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Traill",
+          "native_county_id": "38097",
+          "precincts": [
+            {
+              "ballots": 163,
+              "precinct_id": "2001"
+            },
+            {
+              "ballots": 331,
+              "precinct_id": "2002"
+            },
+            {
+              "ballots": 163,
+              "precinct_id": "2003"
+            },
+            {
+              "ballots": 145,
+              "precinct_id": "2004"
+            },
+            {
+              "ballots": 93,
+              "precinct_id": "2005"
+            },
+            {
+              "ballots": 68,
+              "precinct_id": "2006"
+            },
+            {
+              "ballots": 375,
+              "precinct_id": "2007"
+            },
+            {
+              "ballots": 195,
+              "precinct_id": "2008"
+            },
+            {
+              "ballots": 344,
+              "precinct_id": "2009"
+            },
+            {
+              "ballots": 309,
+              "precinct_id": "2010"
+            },
+            {
+              "ballots": 597,
+              "precinct_id": "2011"
+            },
+            {
+              "ballots": 298,
+              "precinct_id": "2012"
+            }
+          ]
+        },
+        {
+          "ballots": 3428,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Walsh",
+          "native_county_id": "38099",
+          "precincts": [
+            {
+              "ballots": 3203,
+              "precinct_id": "1902"
+            },
+            {
+              "ballots": 225,
+              "precinct_id": "2001"
+            }
+          ]
+        },
+        {
+          "ballots": 16645,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Ward",
+          "native_county_id": "38101",
+          "precincts": [
+            {
+              "ballots": 701,
+              "precinct_id": "0301"
+            },
+            {
+              "ballots": 581,
+              "precinct_id": "0302"
+            },
+            {
+              "ballots": 512,
+              "precinct_id": "0303"
+            },
+            {
+              "ballots": 1999,
+              "precinct_id": "0304"
+            },
+            {
+              "ballots": 448,
+              "precinct_id": "0405"
+            },
+            {
+              "ballots": 413,
+              "precinct_id": "0406"
+            },
+            {
+              "ballots": 21,
+              "precinct_id": "0407"
+            },
+            {
+              "ballots": 250,
+              "precinct_id": "0408"
+            },
+            {
+              "ballots": 4400,
+              "precinct_id": "0509"
+            },
+            {
+              "ballots": 309,
+              "precinct_id": "0610"
+            },
+            {
+              "ballots": 100,
+              "precinct_id": "3811"
+            },
+            {
+              "ballots": 2445,
+              "precinct_id": "3812"
+            },
+            {
+              "ballots": 973,
+              "precinct_id": "3813"
+            },
+            {
+              "ballots": 712,
+              "precinct_id": "3814"
+            },
+            {
+              "ballots": 320,
+              "precinct_id": "4015"
+            },
+            {
+              "ballots": 2461,
+              "precinct_id": "4016"
+            }
+          ]
+        },
+        {
+          "ballots": 1560,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Wells",
+          "native_county_id": "38103",
+          "precincts": [
+            {
+              "ballots": 1560,
+              "precinct_id": "1401"
+            }
+          ]
+        },
+        {
+          "ballots": 6788,
+          "county_identifier_system": "current_portal_location_id",
+          "county_name": "Williams",
+          "native_county_id": "38105",
+          "precincts": [
+            {
+              "ballots": 1013,
+              "precinct_id": "0121"
+            },
+            {
+              "ballots": 1,
+              "precinct_id": "0124"
+            },
+            {
+              "ballots": 699,
+              "precinct_id": "0131"
+            },
+            {
+              "ballots": 0,
+              "precinct_id": "0140"
+            },
+            {
+              "ballots": 1278,
+              "precinct_id": "0141"
+            },
+            {
+              "ballots": 0,
+              "precinct_id": "0151"
+            },
+            {
+              "ballots": 62,
+              "precinct_id": "0156"
+            },
+            {
+              "ballots": 221,
+              "precinct_id": "0212"
+            },
+            {
+              "ballots": 0,
+              "precinct_id": "0220"
+            },
+            {
+              "ballots": 971,
+              "precinct_id": "0254"
+            },
+            {
+              "ballots": 23,
+              "precinct_id": "0262"
+            },
+            {
+              "ballots": 217,
+              "precinct_id": "0263"
+            },
+            {
+              "ballots": 402,
+              "precinct_id": "0264"
+            },
+            {
+              "ballots": 41,
+              "precinct_id": "0265"
+            },
+            {
+              "ballots": 8,
+              "precinct_id": "0266"
+            },
+            {
+              "ballots": 79,
+              "precinct_id": "0267"
+            },
+            {
+              "ballots": 10,
+              "precinct_id": "0268"
+            },
+            {
+              "ballots": 551,
+              "precinct_id": "2313"
+            },
+            {
+              "ballots": 292,
+              "precinct_id": "2314"
+            },
+            {
+              "ballots": 270,
+              "precinct_id": "2322"
+            },
+            {
+              "ballots": 52,
+              "precinct_id": "2323"
+            },
+            {
+              "ballots": 338,
+              "precinct_id": "2333"
+            },
+            {
+              "ballots": 227,
+              "precinct_id": "2343"
+            },
+            {
+              "ballots": 33,
+              "precinct_id": "2352"
+            }
+          ]
+        }
+      ],
+      "election_date": "2026-11-03T00:00:00",
+      "native_denominator_definition": null,
+      "native_eligible_voters": null,
+      "official": false,
+      "reported_precincts": 358,
+      "source_clock_timezone": "UTC",
+      "source_updated_native": "2026-11-05T01:30:08.5674284Z",
+      "source_version": "v75",
+      "year": 2026
+    }
+  ],
+  "source_receipts": {
+    "2022": {
+      "bytes": 375394,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "final_url": "https://results.sos.nd.gov/VoterTurnoutDetails.aspx?eid=vxUYQ0lrpP4.",
+      "last_modified": null,
+      "retrieved_at": "2026-11-07T03:37:09.242507+00:00",
+      "sha256": "ce8a2a8c186654bb18fc220ab9fbc17cb016b0216cf21eaaa10319626c0f3d53",
+      "url": "https://results.sos.nd.gov/VoterTurnoutDetails.aspx?eid=vxUYQ0lrpP4."
+    },
+    "2024": {
+      "bytes": 367102,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "final_url": "https://results.sos.nd.gov/VoterTurnoutDetails.aspx",
+      "last_modified": null,
+      "retrieved_at": "2026-11-07T03:37:08.335037+00:00",
+      "sha256": "c34e1dda5652cd710d34548b7a4f67d6b1ec825cde272a8c7c4fb6e44a942976",
+      "url": "https://results.sos.nd.gov/VoterTurnoutDetails.aspx"
+    },
+    "election.json": {
+      "bytes": 159123,
+      "sha256": "c4c7d4d49ec2fcbb8356b3b25e10c61f26c30aad45443822c497c6bbe989af99",
+      "url": "https://api.resultsnd.sos.nd.gov/Election/GetElectionInfo?cId=north-dakota"
+    },
+    "full-results.json": {
+      "bytes": 5779260,
+      "sha256": "db08609d12a579ea2f3d140c951512455c04e78170f7c31276f34a54cf33d30a",
+      "url": "https://resultsnd.sos.nd.gov/results/north-dakota/348/FullDataFile.json"
+    },
+    "terminology_and_archive": {
+      "bytes": 264690,
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "final_url": "https://www.sos.nd.gov/elections/election-results",
+      "last_modified": "Fri, 06 Nov 2026 23:40:48 GMT",
+      "retrieved_at": "2026-11-07T03:37:07.386576+00:00",
+      "sha256": "752ff82ac5223e7adaf887a71f09cae3452223e180cd6cf7f240d03a90b7405d",
+      "url": "https://www.sos.nd.gov/elections/election-results"
+    }
+  }
+}
