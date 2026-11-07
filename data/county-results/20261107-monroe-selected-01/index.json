@@ -1,0 +1,387 @@
+{
+  "year": 2026,
+  "coverage": {
+    "AK": {
+      "file": "geometry/AK.geojson.gz",
+      "counties": 30,
+      "colored_counties": 30,
+      "sha256": "4b1d18c1e56674d616f6d302cb4b6456dfb7a41141313ad86e620f76d12e444e",
+      "uncompressed_sha256": "796714ded6a602c479ed919b52d290ac77dff0ecf6f979cf60e3aca65d70e51d"
+    },
+    "AL": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/AL.geojson.gz",
+      "counties": 67,
+      "colored_counties": 67,
+      "sha256": "4ef6f03ec7f8f65ecae37a418d25e5c803775458048806a9e28110a1e9ecc6b0",
+      "uncompressed_sha256": "3b17b781577064cd4fe6eff7aadc6e41b54d34d42c2ee2a5e971414c81a58f21"
+    },
+    "AR": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/AR.geojson.gz",
+      "counties": 75,
+      "colored_counties": 75,
+      "sha256": "9ed51d2d19200444c49a9e2fde9edd5ab9797ea81842c470b27fcfa65e65cb55",
+      "uncompressed_sha256": "3a2afac478b87d3ef197f44e664a9b3995a743904d1566e13d95e7d0684655ff"
+    },
+    "AZ": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/AZ.geojson.gz",
+      "counties": 15,
+      "colored_counties": 15,
+      "sha256": "4dfb2870e0934e6f60c0f11cc0bd0d91f178a4b91b9a47fabfd9e689d3a42bed",
+      "uncompressed_sha256": "0ae029c7cbc509d9de99b8dffcf5a99264b09c95151eefaffa8585985c180472"
+    },
+    "CA": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/CA.geojson.gz",
+      "counties": 58,
+      "colored_counties": 58,
+      "sha256": "1ad1c97f14e5ce3cfcdc977bd3d5142f364f26552c691b68dd170d927e82cfca",
+      "uncompressed_sha256": "2cb0168f0668a218682ade5aee62a2e14f643440f0f2bbb5d126bd33127641b9"
+    },
+    "CO": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/CO.geojson.gz",
+      "counties": 64,
+      "colored_counties": 64,
+      "sha256": "69c2b7e8caa4bfe29deb77e6565286376791b9e345fb6c5bfdb2db6077838475",
+      "uncompressed_sha256": "8e8c840bc99f2dc41592e000ce822184b2a7c15ea8cfc79f474b691f19d0d688"
+    },
+    "CT": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/CT.geojson.gz",
+      "counties": 9,
+      "colored_counties": 9,
+      "sha256": "91db697ba37f5d0ffce3f547672068e27354e2693fa2e757142ecdac9457abdb",
+      "uncompressed_sha256": "801896e4ad67704cd688426e7e167da7685e8a5fa93db478935216301ea83b3e"
+    },
+    "DE": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/DE.geojson.gz",
+      "counties": 3,
+      "colored_counties": 3,
+      "sha256": "1166cbe39d9ff0dda0cb3122ba784913cb2a1648d7c0ead49d26c13ca1980aed",
+      "uncompressed_sha256": "25ed55c8fcdc0eddcc4483793743e76e14aa14c6cc0529b8a625775ba402b65f"
+    },
+    "FL": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/FL.geojson.gz",
+      "counties": 67,
+      "colored_counties": 67,
+      "sha256": "6e9c973fe0ae14c9f7e93dff072bfde3e3259b9a9c43f1cf647d0f3723830dea",
+      "uncompressed_sha256": "14a3d1882365ec4398225e0a5b9ce65e3c67942e1bf1fa8104cdd850b5d5bbf3"
+    },
+    "GA": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/GA.geojson.gz",
+      "counties": 159,
+      "colored_counties": 159,
+      "sha256": "219c1cd18773865615eebeb9eeccc92e3095dcab0b1af4b4150226d4af105249",
+      "uncompressed_sha256": "21d028eb4b69105f4e7927857f073f69f57bdb3aadf9aaf16de7833252d082b9"
+    },
+    "HI": {
+      "file": "geometry/HI.geojson.gz",
+      "counties": 5,
+      "colored_counties": 4,
+      "sha256": "a0c2e40ad8ee9d44734b50dac15c5f3774ce21d2f1b3d5171ae794497dc26cc0",
+      "uncompressed_sha256": "f10685882ef0696f2f4552af978c91b59ca47db0d09a3955a604a2895c5b7a05"
+    },
+    "IA": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/IA.geojson.gz",
+      "counties": 99,
+      "colored_counties": 99,
+      "sha256": "0589f3b0dafa88ff8936a0b2e1613cb57de5eda405313ac88667b47517a0032a",
+      "uncompressed_sha256": "881ea4969d508468a0c5d5e570c0a1d7ed8ee867d06557ab3596f29d3977c44d"
+    },
+    "ID": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/ID.geojson.gz",
+      "counties": 44,
+      "colored_counties": 44,
+      "sha256": "73b19435d5cc579acb37d6ac03b080e0121270c960f6792f1eb631db71f18574",
+      "uncompressed_sha256": "3656026443ed4ec77bb83fa64d87728733b640071a57b75e3c71f64fd2518690"
+    },
+    "IL": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/IL.geojson.gz",
+      "counties": 102,
+      "colored_counties": 101,
+      "sha256": "ddc8ec595021ed04413207a23410d297a8c538d4c5ebbbe135f37c5d8bde5039",
+      "uncompressed_sha256": "f64beba3d72e3aadf7a900d44a72a6d854eeb85eb2491e7dfc66edb55ebfefcc"
+    },
+    "IN": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/IN.geojson.gz",
+      "counties": 92,
+      "colored_counties": 92,
+      "sha256": "ddcaae3590bc8040717b611fd4aaf7000b9a359d2530b99b5a7776ed926a579c",
+      "uncompressed_sha256": "fac02a3e2ac291829cd74801effc2be4cec37bab06fbb54165ea32aa97bf7301"
+    },
+    "KS": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/KS.geojson.gz",
+      "counties": 105,
+      "colored_counties": 105,
+      "sha256": "cdaa1428516a3a75a94a022e0a57009e42a28e17348cda5861a144bb23182082",
+      "uncompressed_sha256": "5c7b88cebce775ec240a9b001553870419d02ffc64397e60d26c3d353fe79d65"
+    },
+    "KY": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/KY.geojson.gz",
+      "counties": 120,
+      "colored_counties": 120,
+      "sha256": "7b53087b5e6fd66d226553f233cc3569cb693622a11f109d5897cc993e331fa6",
+      "uncompressed_sha256": "22bfa71bed1c5dfa86483c6cf00db33a03d8005dc8a24d74e9683eac77f9dffe"
+    },
+    "LA": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/LA.geojson.gz",
+      "counties": 64,
+      "colored_counties": 64,
+      "sha256": "7eeec4d3ebb2ca1fd2897e5f914e925a3b1fb88748bc25c51bd7977bfd930eac",
+      "uncompressed_sha256": "bd3036cab0f54812cd61110942b6604791185a837eafb86e72e974fef52d49a4"
+    },
+    "MA": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MA.geojson.gz",
+      "counties": 14,
+      "colored_counties": 14,
+      "sha256": "3cfb10d32d0af6a84c7abc6ff62538ab62607bd6e243be5f283b0e45aee68f40",
+      "uncompressed_sha256": "e6885afb1e8374e9dbcfc8bd15b29aac0d684732e265e0fab93efef270aa69ae"
+    },
+    "MD": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MD.geojson.gz",
+      "counties": 24,
+      "colored_counties": 24,
+      "sha256": "d393ff433013bdcb4b496cc4228620d90a6156f7e8d056320bc9c3610bdad924",
+      "uncompressed_sha256": "d54ba735214da8add882de9e60b628c1dc1d9da5687d5d0ec74e50c540adcb80"
+    },
+    "MI": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MI.geojson.gz",
+      "counties": 83,
+      "colored_counties": 83,
+      "sha256": "cbe4a45667430678549ea8c28e5b0a43652b914373ef41f9d75e6adb0fc2fa87",
+      "uncompressed_sha256": "adc7255289c3758064edaa0992797983249b36500f7fa094347d69c154d63614"
+    },
+    "MN": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MN.geojson.gz",
+      "counties": 87,
+      "colored_counties": 87,
+      "sha256": "ef2672107b15e32332b185baa3e878ec64133dd0ee272b288ead7af51516c13a",
+      "uncompressed_sha256": "f67bc7cb3596b0286e5570cc188677fd736a835033c33cd2e6731fed6fa1502c"
+    },
+    "MO": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MO.geojson.gz",
+      "counties": 115,
+      "colored_counties": 115,
+      "sha256": "adf0fe9ec17e9643a3c370b63a85a90661c6d68b0f0e6f5f932a6b59fb42d6d7",
+      "uncompressed_sha256": "541c8883b464d3c360c8c03dadc174ac5980bc8ceb9d5eec7e38efddcacfeb37"
+    },
+    "MS": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MS.geojson.gz",
+      "counties": 82,
+      "colored_counties": 82,
+      "sha256": "f92866ca5d6384cc3db5caaa52a66a442753296f8cf8de06ec62a355b32066ea",
+      "uncompressed_sha256": "88003644239657f6fdea3e64decd8c19b5f6141e5afe85f2f1f07e54cedd19b1"
+    },
+    "MT": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MT.geojson.gz",
+      "counties": 56,
+      "colored_counties": 56,
+      "sha256": "2e429197f0b18238cb850019d7ebd19e87adc773438352ea1b317e9487a82ecc",
+      "uncompressed_sha256": "bad5c764bfea21d314e777ba72394e069845fb905f7ea4ba1c54051f28d8cfd4"
+    },
+    "NC": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NC.geojson.gz",
+      "counties": 100,
+      "colored_counties": 100,
+      "sha256": "c8e748cd82e869d9da4507ebc2f6996dd8eec8099ca96603bbfda76eb609b1a9",
+      "uncompressed_sha256": "3e95978cee8daa0eaaca52d3dd25a5a48ca36f6496ca647bef7abf179518a231"
+    },
+    "ND": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/ND.geojson.gz",
+      "counties": 53,
+      "colored_counties": 53,
+      "sha256": "2725f586b52b9f7949086f03b0acb2ea0959dfd01a14bb56268d2025b1ec1951",
+      "uncompressed_sha256": "306f3d2f56d63aed7ad4fc1c4ed0834ef3a80ae9d2bf66266e72e6d655e500a4"
+    },
+    "NE": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NE.geojson.gz",
+      "counties": 93,
+      "colored_counties": 93,
+      "sha256": "d9f70281006d90a95fb77c21314de01a906b48c25875ce9d3db6f74f34e2ca7d",
+      "uncompressed_sha256": "521a033d2acd72ecea6833629a9ee3da066d6c05eb05f46c080ef512ec3a0de4"
+    },
+    "NH": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NH.geojson.gz",
+      "counties": 10,
+      "colored_counties": 10,
+      "sha256": "689b0b057e5625f5a30da528b4417b405e81c4ba7ae39ac6d5d449dad8626efd",
+      "uncompressed_sha256": "1ed6e807a52ee0e5644d1b37f1b018f7efd1dc14e1f57c294f9ae2d8a897a2a6"
+    },
+    "NJ": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NJ.geojson.gz",
+      "counties": 21,
+      "colored_counties": 21,
+      "sha256": "1aa41dc4965b02375bdeb52a4f10285d0e680ba21ab793ef663ff18961b6c19d",
+      "uncompressed_sha256": "b706dd6ca705862207af21772e94dccb6ebb35ff82773c5d6f07d1e912ae3c66"
+    },
+    "NM": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NM.geojson.gz",
+      "counties": 33,
+      "colored_counties": 33,
+      "sha256": "97abeb2b992f05db92aae2385558e2584cd685493525f3e45bc7ecdfd2d2dfe6",
+      "uncompressed_sha256": "d51bf8bb1481d69b02ed3ec1983c3d698df82e1ceb7a12b61384553bc67b1281"
+    },
+    "NV": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NV.geojson.gz",
+      "counties": 17,
+      "colored_counties": 17,
+      "sha256": "d77d017973187fd7a42204c58301daf804594c39394b85a888633d304f46d511",
+      "uncompressed_sha256": "efb213979d3756f49df1f4807f5eb7817a0ade59452e5f096c2e3d9db82b50d1"
+    },
+    "NY": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NY.geojson.gz",
+      "counties": 62,
+      "colored_counties": 62,
+      "sha256": "d47b51ec1da084ee36aaefafc21bebe506a4e5e245a529139968223884d5595a",
+      "uncompressed_sha256": "7573cb6e11b7981f2e0ab95f8c18967bb65b540c4b66ecc007a7d987a14bc57d"
+    },
+    "OH": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/OH.geojson.gz",
+      "counties": 88,
+      "colored_counties": 88,
+      "sha256": "a9cb5f455b746d94a0ccf9c18c36d804ef0e728d9f63e119da69b40ce5e764e8",
+      "uncompressed_sha256": "8f0913c3ddc1de2f117f09238ff546d5763c6e22117cb6b817f0b0d796f7ce85"
+    },
+    "OK": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/OK.geojson.gz",
+      "counties": 77,
+      "colored_counties": 77,
+      "sha256": "c0707afad36682624a155b051f66cb2ec5a864c03d6dc82d763abd579e98edb9",
+      "uncompressed_sha256": "0f2e0f29c7d5fb6acf93c963050e5d44f79ea34ca58debcc539da593106e665d"
+    },
+    "OR": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/OR.geojson.gz",
+      "counties": 36,
+      "colored_counties": 36,
+      "sha256": "c4b28b42e815e0870ee309ba21edc690479b7efce1fb68f5930dbbd05fcfcdf2",
+      "uncompressed_sha256": "4fe9eb0c8e5b709853261728b2988708b5835aeb21026de3e7d3fd828e4a8b76"
+    },
+    "PA": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/geometry/PA.geojson.gz",
+      "counties": 67,
+      "colored_counties": 67,
+      "reference_counties": 67,
+      "coverage_status": "provider_with_official_county_overrides",
+      "scope_note": "All 67 Pennsylvania county identities are covered. Monroe, Bucks and Montgomery use separate official reports, preserving write-ins omitted by the provider; their district major-party vectors match. Other counties retain provider counts. Not final counting.",
+      "sha256": "76496baea4bf48228d8c9891aafdf76090f1267764ea38f4305889e36d9249e6",
+      "uncompressed_sha256": "24bf8849626e1aed74c909eedcc2fc48e6a46067b1a781444483f30948f07c07"
+    },
+    "RI": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/RI.geojson.gz",
+      "counties": 5,
+      "colored_counties": 5,
+      "sha256": "81c95c061de31db0e589f8bf3028d36b911d63b078d70d3f3f1928c7a47f4dab",
+      "uncompressed_sha256": "d427f9cc34ea81c916dbde56c9184243b46126a4ede3b4faaad5ea744d7534f6"
+    },
+    "SC": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/SC.geojson.gz",
+      "counties": 46,
+      "colored_counties": 46,
+      "sha256": "48fec02fa5c997e7ef0d0a64c050d3773c4404410998c0b605b12a0ce1e6bc71",
+      "uncompressed_sha256": "e3a5b7b9691d6463ad7a5e2cc2dc2285eb4613a174281dea0ebe6fab3ab22832"
+    },
+    "SD": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/SD.geojson.gz",
+      "counties": 66,
+      "colored_counties": 66,
+      "sha256": "09b8eacb1af342542991c29531990e23344d00863ec81fadf73fa7e3bed74376",
+      "uncompressed_sha256": "a4a1d23651876bd9d51de5c8c45c32909c9e6122d380129c9864ab738bd3a714"
+    },
+    "TN": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/TN.geojson.gz",
+      "counties": 95,
+      "colored_counties": 95,
+      "sha256": "458587d28a6301475c907be4e2a0385e05b5acaad2cf622baafcae0578e8b67d",
+      "uncompressed_sha256": "516016fc7bca79420b657fc25876a3f4902f938abe0808a35fdb510df3d46eaf"
+    },
+    "TX": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/TX.geojson.gz",
+      "counties": 254,
+      "colored_counties": 254,
+      "sha256": "6dec632a2eeb7ec21f9da35873e154636aa42be3681d6890e1ba23023061cad5",
+      "uncompressed_sha256": "c068d086f11fcf9e91fed06581d521c0b3def8226cd4de182d27bd6d9425b25e"
+    },
+    "UT": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/UT.geojson.gz",
+      "counties": 29,
+      "colored_counties": 29,
+      "sha256": "4e93c0aca53e7a701361351263b66d15ade19a44d97db01e63e444091974eb48",
+      "uncompressed_sha256": "85a46fa4c557e0e05159fdc84a3b214a491f477ed3f6e1d53b2aadbbb93353b3"
+    },
+    "VA": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/VA.geojson.gz",
+      "counties": 133,
+      "colored_counties": 133,
+      "sha256": "502e9646e382b0e4ce74846648f0f4614eb19922516dd44ccdc4f95d1140ecf5",
+      "uncompressed_sha256": "63d5801bb0572155f606f4f86f12cf54321acf134c460d0f90e6816bd692b708"
+    },
+    "VT": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/VT.geojson.gz",
+      "counties": 14,
+      "colored_counties": 14,
+      "sha256": "b487d60a9b921b9e5db11359ca659c35fd7e5dfdff6c2ecc54b5bd7a3794a863",
+      "uncompressed_sha256": "f120b29af6175504601d6755731a95c786e58a2aa61e11958ca090a66f65ad25"
+    },
+    "WA": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/WA.geojson.gz",
+      "counties": 39,
+      "colored_counties": 39,
+      "sha256": "9f86f0ff1a12b3fd6a0033aa93902cac7311fefec3f90049a074e806f109abad",
+      "uncompressed_sha256": "6af5c0d7903b396a7756fd3e25a1e45b3cfe7b518e0f113fe20266ac349668a7"
+    },
+    "WI": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/WI.geojson.gz",
+      "counties": 72,
+      "colored_counties": 72,
+      "sha256": "4f53e9b43faa1cf6dd9e1f9b893993fe6f4aa42a78cfbb1afbeb39d3f6db5f74",
+      "uncompressed_sha256": "f5deb118d9aaf82b5b0d6915b924e6a4a617035935026189f72e1bb100037bc6"
+    },
+    "WV": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/WV.geojson.gz",
+      "counties": 55,
+      "colored_counties": 55,
+      "sha256": "9114e1c6309189a97408bed9571c9f3e2403629129c373dc2cebe032954796a7",
+      "uncompressed_sha256": "06dd104328c9fb9b90835f94c6c680d46bbb68a8c6b8d7c842cae7848f3fcd17"
+    },
+    "WY": {
+      "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/WY.geojson.gz",
+      "counties": 23,
+      "colored_counties": 23,
+      "sha256": "384538df298546097d10fd3f7b6bc959aa7f054e8de7e635e029e13057aff6d3",
+      "uncompressed_sha256": "883c2d83af37cf3de88e10608a365a7ad60c0194f429d02ce0e8b16620496733"
+    }
+  },
+  "margins_file": "margins.json",
+  "geographic_level": "county_equivalent",
+  "office": "U.S. House aggregate",
+  "normalized_counties": 3127,
+  "mapped_counties": 3127,
+  "colored_counties": 3125,
+  "boundary_reference_year": 2026,
+  "participation_available": false,
+  "scope": "County candidate votes aggregated across each county's actual House district fragments. Unofficial counts, not precinct results or turnout. Complete state district and candidate-vector reconciliation required. Explicit overseas regions and zero-only unresolved Chicago reporting placeholders remain separately unlocated in audit.json; no votes are allocated or merged. Unsimplified 2026 Census county reference shapes transformed from NAD83 to WGS84; invalid native polygons withheld, not repaired. Not certified election-precinct boundaries. Official county supplements are independently joined to exact 2026 Census county identities; Pennsylvania covers 67 of 67 county identities, not final counting. Provider test data remains excluded. D.C. delegate counts are not added.",
+  "withheld_states": {
+    "ME": {
+      "status": "withheld",
+      "error": "Not every declared state district passed source and vector reconciliation"
+    }
+  },
+  "excluded_geometry": {},
+  "provider_withheld_states": {
+    "ME": {
+      "status": "withheld",
+      "error": "Not every declared state district passed source and vector reconciliation"
+    }
+  },
+  "official_supplement": {
+    "counties": [
+      "42089",
+      "42017",
+      "42091"
+    ],
+    "provider_counties_replaced": [
+      "42017",
+      "42089",
+      "42091"
+    ],
+    "new_precinct_coverage": 0,
+    "state_completion_promoted": false
+  }
+}
