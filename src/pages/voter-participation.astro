@@ -112,6 +112,22 @@ const currentRace = current.demographics.filter((row: { county: string; request_
 const currentMaximum = Math.max(1, ...currentRace.map((row: { ballots: number }) => row.ballots));
 const currentSource = (name: string) => current.sources.find((row: { file: string }) => row.file === name);
 const formatNumber = (value: number) => value.toLocaleString('en-US');
+type EvidenceObservation = { id: string; jurisdiction: string; scope: string; measure: string;
+	numerator: number; denominator: number | null; denominator_label: string;
+	source_time_label: string; source_url: string; status: string; coverage_note: string;
+	history_note: string; previous_numerator: number | null; numeric_change: number | null;
+	comparison_note: string };
+type EvidenceBatch = { as_of_label: string; observations: EvidenceObservation[];
+	colorado_composition: { measure: string; frame_note: string; source_url: string; source_time_label: string;
+		age: { group: string; returned_ballots: number }[]; gender: { group: string; returned_ballots: number }[] };
+	butler: { current_records: number; cells: { prior_credit: boolean; current_credit: boolean; records: number }[];
+		official_2024_ballots: number; current_2024_credits: number;
+		official_2026_ballots: number; current_2026_credits: number; frame_note: string; source_url: string };
+	complete_download_filename: string };
+const latestEvidence: EvidenceBatch = JSON.parse(readFileSync(
+	resolve('data/participation-2026-evidence/20261107-01/summary.json'), 'utf8'));
+const evidenceDownload = 'https://github.com/hanshanley/margin_of_error/releases/download/'
+	+ 'voter-participation-2026-evidence-20261107-01/' + latestEvidence.complete_download_filename;
 const formatTime = (value: string) => new Date(value).toLocaleString('en-US', {
 	timeZone: 'America/New_York', month: 'long', day: 'numeric', year: 'numeric',
 	hour: 'numeric', minute: '2-digit', timeZoneName: 'short',
@@ -393,6 +409,82 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		<summary>2026 source coverage, reporting audits & complete downloads</summary>
 		<p>Explore 2026 through the regular year selector. These saved source tables preserve the reporting details;
 			demographic ballot counts are not group turnout rates.</p>
+		<h3 id="latest-2026-evidence-title">Newer 2026 participation observations</h3>
+		<p data-evidence-as-of>{latestEvidence.as_of_label}. These are separately scoped source observations,
+			not a combined national total. Returned ballots, reported ballots cast and posted participation
+			credits are different measures. Earlier atlas snapshots below remain unchanged and retain their own clocks.</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-labelledby="latest-2026-evidence-title">
+			<table><caption>Native quantities and denominator definitions, not population-scaled coalition estimates.
+				Partial processing and absent histories are not evidence of nonvoting.</caption>
+				<thead><tr><th scope="col">Jurisdiction / scope</th><th scope="col">Measure / quantity</th>
+					<th scope="col">Source denominator</th><th scope="col">Source clock / status</th>
+					<th scope="col">Coverage and historical linkage</th></tr></thead>
+				<tbody>{latestEvidence.observations.map(row => <tr data-2026-evidence={row.id}>
+					<th scope="row">{row.jurisdiction}<br /><small>{row.scope}</small></th>
+					<td><strong>{formatNumber(row.numerator)}</strong><br />{row.measure}
+						{row.numeric_change !== null && <><br /><small>Numerical snapshot difference:
+							{' '}{row.numeric_change >= 0 ? '+' : ''}{formatNumber(row.numeric_change)}.
+							{' '}{row.comparison_note}</small></>}
+						{row.numeric_change === null && <><br /><small>{row.comparison_note}</small></>}</td>
+					<td>{row.denominator === null ? 'Not qualified / supplied' : formatNumber(row.denominator)}
+						<br /><small>{row.denominator_label}</small></td>
+					<td>{row.source_time_label}<br />{row.status}<br /><a href={row.source_url}>Native source</a></td>
+					<td>{row.coverage_note}<br /><small>{row.history_note}</small></td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+		<details class="explorer-notes" id="colorado-2026-composition">
+			<summary>Colorado: returned ballots by source-defined age and recorded gender</summary>
+			<p>{latestEvidence.colorado_composition.measure}. {latestEvidence.colorado_composition.frame_note}</p>
+			<p>Counts describe this returned-ballot snapshot, not demographic turnout rates:
+				matching age/gender registration denominators are not supplied. Each table is a separate
+				classification of the same ballots; do not add them together. Native age and recorded-gender
+				labels, including unknown categories, are retained without cross-source harmonization.
+				Recorded ages are not independently verified election-day ages.</p>
+			{(['age', 'gender'] as const).map(dimension => <div class="table-wrap" tabindex="0"
+				role="region" aria-label={`Colorado returned ballots by ${dimension}`}>
+				<table><caption>{dimension === 'age' ? 'Source-defined age groups' : 'Source-recorded gender categories'}.
+					Returned-and-processed ballot counts, not accepted or counted votes.</caption>
+					<thead><tr><th scope="col">Native group</th><th scope="col">Returned ballots</th></tr></thead>
+					<tbody>{latestEvidence.colorado_composition[dimension].map(row => <tr data-colorado-composition={dimension}>
+						<th scope="row">{row.group}</th><td>{formatNumber(row.returned_ballots)}</td>
+					</tr>)}</tbody>
+				</table>
+			</div>)}
+			<p>{latestEvidence.colorado_composition.source_time_label}.
+				{' '}<a href={latestEvidence.colorado_composition.source_url}>Native activity report</a>.
+				Complete combined/mail/in-person aggregate cells are retained in the query download.</p>
+		</details>
+		<details class="explorer-notes" id="butler-2026-record-diagnostic">
+			<summary>Butler County: 2024 and 2026 credits in the current registration file</summary>
+			<p>{latestEvidence.butler.frame_note}</p>
+			<div class="table-wrap" tabindex="0" role="region" aria-label="Butler current-file participation-credit presence">
+				<table><caption>{formatNumber(latestEvidence.butler.current_records)} current-file records.
+					No credit present means no credit in this snapshot—not measured abstention, first-time voting,
+					or absence from the original 2024 electorate. These are not candidate-choice cohorts.</caption>
+					<thead><tr><th scope="col">2024 general-election credit</th>
+						<th scope="col">2026 general-election credit</th><th scope="col">Current-file records</th></tr></thead>
+					<tbody>{latestEvidence.butler.cells.map(row => <tr
+						data-butler-credit-cell={`${row.prior_credit ? '1' : '0'}${row.current_credit ? '1' : '0'}`}>
+						<th scope="row">{row.prior_credit ? 'Present' : 'No credit present'}</th>
+						<td>{row.current_credit ? 'Present' : 'No credit present'}</td>
+						<td>{formatNumber(row.records)}</td>
+					</tr>)}</tbody>
+				</table>
+			</div>
+			<p>Current-file 2024 credits: {formatNumber(latestEvidence.butler.current_2024_credits)};
+				separate official ballot control: {formatNumber(latestEvidence.butler.official_2024_ballots)}.
+				Credit-minus-ballot difference: {formatNumber(latestEvidence.butler.current_2024_credits
+					- latestEvidence.butler.official_2024_ballots)}.
+				Current-file 2026 credits: {formatNumber(latestEvidence.butler.current_2026_credits)};
+				separate reported ballots: {formatNumber(latestEvidence.butler.official_2026_ballots)}.
+				Credit-minus-ballot difference: {formatNumber(latestEvidence.butler.current_2026_credits
+					- latestEvidence.butler.official_2026_ballots)}.
+				These gaps are not forced to zero or interpreted as measured removals or nonvoting.
+				{' '}<a href={latestEvidence.butler.source_url}>County source</a>.</p>
+		</details>
+		<p><a href={evidenceDownload} download>Complete 2026 aggregate queries, source records, county tables and verification (ZIP)</a>.
+			Individual voter files and identifiers are not included. Historical-coalition publication safeguards remain in force.</p>
 		<section class="participation-current" aria-labelledby="reviewed-county-participation-title">
 			<h2 id="reviewed-county-participation-title">Additional reviewed county participation · 2026</h2>
 			<p>{reviewedCounties.filter(row => row.state_code === 'CA').length} California county observations,

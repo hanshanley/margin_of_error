@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "release_id": "voter-participation-2026-evidence-20261107-01",
+  "qualified_row_counts": {
+    "north_carolina_counties": 100,
+    "georgia_counties": 159,
+    "colorado_counties": 64,
+    "butler_credit_cells": 4,
+    "texas_harris_aggregate_rows": 13,
+    "colorado_age_groups": 8,
+    "colorado_gender_groups": 4,
+    "colorado_native_cells": 4982,
+    "california_counties": 58,
+    "california_mode_rows": 58
+  },
+  "scope_flags": {
+    "north_carolina": [
+      "reported/unofficial",
+      "history header only",
+      "early/mail/provisional context nonadditive"
+    ],
+    "georgia": [
+      "7 incomplete-mode counties",
+      "2 null registration/rate counties",
+      "native 56.07% not validated"
+    ],
+    "colorado": [
+      "returned-and-processed measure",
+      "source timezone undeclared",
+      "county denominators absent",
+      "8 age and 4 recorded-gender count-composition groups retained",
+      "no group denominators or group turnout rates inferred"
+    ],
+    "duval": [
+      "FIRST UNOFFICIAL RESULTS",
+      "provisionals included without separate completion",
+      "ten-day overseas partially included",
+      "denominator definition differs from prior snapshot"
+    ],
+    "butler": [
+      "current-registration frame only",
+      "not original 2024 frame",
+      "not_observed is not nonvoting"
+    ],
+    "clark": [
+      "county only",
+      "unofficial",
+      "provisional credits unknown",
+      "linked-history presence unknown"
+    ],
+    "texas_harris": [
+      "Harris County only",
+      "preliminary unofficial reconciliation",
+      "1,392,280 counted ballots distinct from 1,393,495 roster voters",
+      "pending/rejected mail and provisional categories remain",
+      "older early/returned observation not equivalent"
+    ],
+    "california": [
+      "native voterTurnout label retained without all-mode or unique-voter reinterpretation",
+      "58 county participation rows and 58 separate November 3 mode rows retained",
+      "43.4% preserved as printed but not automatically qualified",
+      "counting incomplete and uncertified despite complete precinct reporting",
+      "mode accepted-total definition/arithmetic conflict retained unresolved"
+    ]
+  },
+  "privacy_and_redistribution": {
+    "allowlist_assembly": true,
+    "raw_person_files_included": false,
+    "person_ids_names_dob_addresses_included": false,
+    "candidate_choice_payloads_included": false,
+    "private_fine_cells_included": false,
+    "unlicensed_html_presentations_included": false,
+    "washington_included": false,
+    "washington_reason": "Official owner pages returned 403 and exact embedded attribution was not verified; excluded by publication qualification.",
+    "qualified_colorado_age_gender_composition_counts_included": true,
+    "unqualified_group_denominators_or_turnout_rates_included": false
+  },
+  "california_complete_query": {
+    "bytes": 25118,
+    "sha256": "d3255beab418cefe4f9bc8b8ed3dd5a93fec8096617c187ffdc3eaad33e36bf5",
+    "verified_upstream": true
+  },
+  "prior_unpublished_draft_preserved": {
+    "filename": "complete-2026-participation-evidence-20261107-01.zip",
+    "bytes": 234339,
+    "sha256": "9c61b10cce8892f33c8fa3e2eb850f9139f3f425bd93eff61ed512cbba098bc7",
+    "mutated": false
+  }
+}

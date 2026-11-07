@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "as_of_label": "2026-11-07 qualified public-source snapshots; literal source clocks vary by observation",
+  "observations": [
+    {
+      "id": "nc-2026-reported-ballots-20261106",
+      "jurisdiction": "North Carolina",
+      "scope": "statewide",
+      "measure": "reported ballots cast (official ENR aggregate across reported modes)",
+      "numerator": 4223355,
+      "denominator": 7885046,
+      "denominator_label": "NCSBE ENR rtl; existing pipeline label active_and_inactive_registered_voters",
+      "source_time_label": "Last county upload 'November 6, 2026 5:01 pm'; submit 'November 6, 2026 5:02 pm' (source timezone not declared; HTTP Last-Modified Fri, 06 Nov 2026 22:05:40 GMT)",
+      "source_url": "https://er.ncsbe.gov/enr/20261103/data/county.txt",
+      "status": "reported, unofficial; 2,626 of 2,626 precincts reporting",
+      "coverage_note": "All 100 county rows retained. Accepted early/mail and provisional workload figures are nonadditive context and are not added to the ENR total.",
+      "history_note": "history_stats_20261103.zip contained only its header and zero data rows; 2026 history-credit availability is unavailable, not zero participation.",
+      "previous_numerator": 4223102,
+      "numeric_change": 253,
+      "comparison_note": "Same official source and election versus the November 4 snapshot; +216 Hyde and +37 Pamlico. Prior snapshot remains preserved."
+    },
+    {
+      "id": "ga-2026-reported-ballots-20261107",
+      "jurisdiction": "Georgia",
+      "scope": "statewide sum of 159 county rows",
+      "measure": "reported ballots cast (official results-system county aggregates)",
+      "numerator": 4214671,
+      "denominator": null,
+      "denominator_label": "not qualified statewide: two county registration denominators are missing; native rendered 'Voters' aggregate 7,516,484 is retained only in source outputs",
+      "source_time_label": "API asOf '2026-11-07T00:58:49.5754876Z' (UTC); rendered 'Friday, November 6, 2026 at 7:58:49 PM' (rendered timezone not declared)",
+      "source_url": "https://results.sos.ga.gov/results/public/Georgia/elections/11032026GeneralAndSpecialElection/voters?fr=true",
+      "status": "24 county rows official; 135 unofficial; counting not complete",
+      "coverage_note": "All 159 counties retained; seven counties have incomplete mode reporting and Jeff Davis and Screven have null registration/rate fields. Native 56.07% is preserved only as printed, not validated.",
+      "history_note": "Aggregate results only; no linked-person history, first-vote, candidate-choice, VAP, VEP, or CVAP inference is included.",
+      "previous_numerator": 4210155,
+      "numeric_change": 4516,
+      "comparison_note": "Same aggregate county measure versus the November 6 package; 42 counties changed and all 159 comparison rows are retained."
+    },
+    {
+      "id": "co-2026-returned-processed-20261105",
+      "jurisdiction": "Colorado",
+      "scope": "statewide",
+      "measure": "returned and processed ballots (mail and in-person combined)",
+      "numerator": 2761449,
+      "denominator": 4627940,
+      "denominator_label": "Total Eligible Registered Voter Counts (includes pre-registrants who will be 18 by 11/03/2026)",
+      "source_time_label": "Period end '11:59 PM November 5, 2026' (source timezone not declared); publication date 2026-11-06",
+      "source_url": "https://www.coloradosos.gov/pubs/newsRoom/pressReleases/2026/20261105GenElectionActivity.xlsx",
+      "status": "preliminary returned-and-processed ballot activity; not final or certified",
+      "coverage_note": "All 64 counties retained. County registered-voter denominators are not supplied; county rates and demographic rates are withheld. Mail and in-person mode outputs are retained only in the nested query package.",
+      "history_note": "Aggregate returned-ballot activity only; no linked voter history or original-voter cohort is present.",
+      "previous_numerator": 2681614,
+      "numeric_change": 79835,
+      "comparison_note": "Arithmetic comparison to the November 4 provider mail-returned plus in-person-early sum only; not like-for-like because the official report is later and its in-person scope is broader than early in-person."
+    },
+    {
+      "id": "fl-duval-2026-reported-ballots-20261107",
+      "jurisdiction": "Florida — Duval County",
+      "scope": "Duval County only",
+      "measure": "reported ballots cast (county unofficial all-ballot aggregate)",
+      "numerator": 361032,
+      "denominator": 655219,
+      "denominator_label": "county page literal 'Registered Voters'; active/inactive and timing definition not stated",
+      "source_time_label": "Source update '11/07/2026 11:48:36 am' (source timezone not declared)",
+      "source_url": "https://enr.electionsfl.org/DUV/4076/Summary/",
+      "status": "FIRST UNOFFICIAL RESULTS; 159 of 159 precincts; provisional ballots included; ten-day overseas partially included",
+      "coverage_note": "County-only observation. The source prints 55.1%, but this batch publishes counts and denominator definition rather than an unqualified turnout rate.",
+      "history_note": "November 2026 linked/history data are unavailable from the qualified public routes and are not treated as zero.",
+      "previous_numerator": 360840,
+      "numeric_change": 192,
+      "comparison_note": "The ballot total is 192 higher than the preserved consolidated snapshot. Its denominator is seven higher but uses the county page's 'Registered Voters' label rather than the prior 'Eligible Active Registered Voters'; do not call this a like-for-like voter increase."
+    },
+    {
+      "id": "nv-clark-2026-reported-ballots-20261106",
+      "jurisdiction": "Nevada — Clark County",
+      "scope": "Clark County only; not Nevada statewide",
+      "measure": "reported ballots cast (county registration-and-turnout aggregate)",
+      "numerator": 744385,
+      "denominator": 1528706,
+      "denominator_label": "current 2026 Clark County registered-voter result frame",
+      "source_time_label": "Source update '11/06/26 03:50 PM' (source timezone not declared); retrieved 2026-11-07T15:07:02-08:00",
+      "source_url": "https://elections.clarkcountynv.gov/ElectionResults_NV/EnrEng/EnrMain",
+      "status": "Unofficial Results; mail receipt, signature cure, canvass, and provisional disposition not complete at retrieval",
+      "coverage_note": "Clark County only. Displayed provisional zeroes are posting status, not proof of zero people or final credits.",
+      "history_note": "The historical form had no 2026 General option; linked-history presence is UNKNOWN, not zero. No statewide, first-vote, or candidate-choice inference is approved.",
+      "previous_numerator": null,
+      "numeric_change": null,
+      "comparison_note": "Prior provider rows covered early in-person and returned mail, not the same all-mode county total, so no numeric change is asserted here."
+    },
+    {
+      "id": "oh-butler-2026-recorded-credit-20261107",
+      "jurisdiction": "Ohio — Butler County",
+      "scope": "current county voter-registration records only",
+      "measure": "current registration records with recorded 2026 general-election participation credit",
+      "numerator": 148569,
+      "denominator": 249106,
+      "denominator_label": "current voter-registration records in the November 7 file; not the original 2024 or full 2026 voter universe",
+      "source_time_label": "Current file declared updated 'Saturday, November 7, 2026 4:03 AM' (local timezone not declared); 2026 official control refreshed 'Friday, November 6, 2026 3:52 PM' (local timezone not declared)",
+      "source_url": "https://electionlink.bcohio.gov/portals/ElectionVault/PublicRecords.aspx",
+      "status": "public-safe aggregate current-registrant diagnostic; 2026 ballot control remains unofficial",
+      "coverage_note": "Exact 11/03/2026 history-token presence only. The count is 115 below the 148,684 official unofficial ballot control; missing posting remains unknown.",
+      "history_note": "Current-file record presence is not original-2024-voter retention. Not-observed credits do not establish nonvoting, removal, death, migration, or never-voted status.",
+      "previous_numerator": null,
+      "numeric_change": null,
+      "comparison_note": "The 2024 credit marginal and all four cross-year cells are provided separately; no sequential voter-change claim is made."
+    },
+    {
+      "id": "tx-harris-2026-counted-ballots-20261104",
+      "jurisdiction": "Texas — Harris County",
+      "scope": "Harris County only; not Texas statewide",
+      "measure": "counted ballots (official preliminary election-reconciliation aggregate)",
+      "numerator": 1392280,
+      "denominator": 2761770,
+      "denominator_label": "native 'Registered Voters'; active, inactive, suspense, cutoff, and report-generation scope not declared",
+      "source_time_label": "Report date '11/4/2026'; no native report time or timezone (HTTP Last-Modified 2026-11-04T16:23:10Z)",
+      "source_url": "https://www.harrisvotes.com/Portals/harrisvotes/Documents/2026/Reports/1126%20Preliminary%20Election%20Reconciliation%20-%20Unofficial%20Totals.pdf?ver=UZziX2HoKRKkYolHPwg9EQ%3D%3D",
+      "status": "Preliminary Election Reconciliation - Unofficial Totals; subject to change",
+      "coverage_note": "Separate election-roster total C. Total Voters (A+B) is 1,393,495. Counted ballots are 1,345,094 in person plus 47,186 mail. The report also shows 5,300 rejected or pending ballots and 13,357 mail/provisional ballots that could be added; Harris County only.",
+      "history_note": "Aggregate reconciliation only; no linked history, first-ever-voter, cohort-retention, demographic, party, or candidate-choice claim is supported.",
+      "previous_numerator": null,
+      "numeric_change": null,
+      "comparison_note": "The October 30 observation covered early in-person and returned mail with different dates and units; returned, rostered, and counted ballots are not interchangeable, so no like-for-like delta is asserted."
+    },
+    {
+      "id": "ca-2026-native-voter-turnout-20261106",
+      "jurisdiction": "California",
+      "scope": "statewide sum of 58 county rows",
+      "measure": "source-labeled voterTurnout (not proven as an all-mode ballot count or independently deduplicated unique voters)",
+      "numerator": 10098551,
+      "denominator": 23273590,
+      "denominator_label": "source-labeled totalRegisteredVoters",
+      "source_time_label": "Native last report 'November 6, 2026, 11:00 p.m.' (timezone not declared); V26 generation date 20261107, time literal 1518432 (timezone not declared)",
+      "source_url": "https://media.sos.ca.gov/media/status_GG.json",
+      "status": "native report type SF/F; 23,860 of 23,860 precincts reporting; counting incomplete and uncertified",
+      "coverage_note": "All 58 county rows retain the native voterTurnout measure and totalRegisteredVoters denominator. The source prints 43.4%, but the rate is not automatically qualified. All-mode unique-ballot status is unproven. A separate November 3 mode snapshot is retained with its unresolved 110,212 accepted-total arithmetic conflict.",
+      "history_note": "No public aggregate table linking the same people across elections was found in the completed audit; missing linked histories remain UNKNOWN and no group, first-time-voter, coalition, or candidate-choice claim is made.",
+      "previous_numerator": 8928966,
+      "numeric_change": 1169585,
+      "comparison_note": "Same native voterTurnout and totalRegisteredVoters fields versus the preserved prior observation. The source-labeled increase is valid, but neither snapshot proves a certified all-mode unique-ballot count."
+    }
+  ],
+  "butler": {
+    "current_records": 249106,
+    "cells": [
+      {
+        "prior_credit": true,
+        "current_credit": true,
+        "records": 132229
+      },
+      {
+        "prior_credit": true,
+        "current_credit": false,
+        "records": 44306
+      },
+      {
+        "prior_credit": false,
+        "current_credit": true,
+        "records": 16340
+      },
+      {
+        "prior_credit": false,
+        "current_credit": false,
+        "records": 56231
+      }
+    ],
+    "official_2024_ballots": 185804,
+    "current_2024_credits": 176535,
+    "official_2026_ballots": 148684,
+    "current_2026_credits": 148569,
+    "frame_note": "All cells count current November 7, 2026 Butler County registration records by exact 2024 and 2026 general-election credit-token presence. This is not the original 2024 all-voter frame; not_observed is not a measured nonvote.",
+    "source_url": "https://electionlink.bcohio.gov/portals/ElectionVault/PublicRecords.aspx"
+  },
+  "complete_download_filename": "complete-2026-participation-evidence-20261107-01.zip",
+  "colorado_composition": {
+    "measure": "returned and processed ballots (count composition only)",
+    "frame_note": "Each age and recorded-gender dimension independently partitions the same 2,761,449 statewide returned-and-processed ballot frame. No group registered-voter denominator or group turnout rate is supplied or inferred. The nested Colorado package retains complete combined, mail, and in-person native aggregate cells.",
+    "source_url": "https://www.coloradosos.gov/pubs/newsRoom/pressReleases/2026/20261105GenElectionActivity.xlsx",
+    "source_time_label": "Period end '11:59 PM November 5, 2026' (source timezone not declared); publication date 2026-11-06",
+    "age": [
+      {
+        "group": "<18",
+        "returned_ballots": 179
+      },
+      {
+        "group": "18-24",
+        "returned_ballots": 203561
+      },
+      {
+        "group": "25-34",
+        "returned_ballots": 386331
+      },
+      {
+        "group": "35-44",
+        "returned_ballots": 470490
+      },
+      {
+        "group": "45-54",
+        "returned_ballots": 425372
+      },
+      {
+        "group": "55-64",
+        "returned_ballots": 449043
+      },
+      {
+        "group": "65-74",
+        "returned_ballots": 472976
+      },
+      {
+        "group": "75 AND OVER",
+        "returned_ballots": 353497
+      }
+    ],
+    "gender": [
+      {
+        "group": "Female",
+        "returned_ballots": 1443438
+      },
+      {
+        "group": "Male",
+        "returned_ballots": 1298825
+      },
+      {
+        "group": "Not Disclosed",
+        "returned_ballots": 13033
+      },
+      {
+        "group": "X",
+        "returned_ballots": 6153
+      }
+    ]
+  }
+}

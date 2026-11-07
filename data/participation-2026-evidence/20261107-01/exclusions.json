@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "policy": "Allowlist-only public evidence assembly; source trees and upstream complete-query archives were not copied wholesale.",
+  "excluded_categories": [
+    "raw voter-person files and receipts containing or leading to person records",
+    "names, voter identifiers, dates of birth, addresses, and private fine cells",
+    "candidate/contest choice payloads",
+    "invented demographic denominators, group turnout rates, and person-level demographic records",
+    "unlicensed HTML presentation templates and source documents without cleared redistribution",
+    "operational/personnel worksheets",
+    "California raw/private voter-linked history and source presentations outside the qualified aggregate query package"
+  ],
+  "retained_colorado_composition": "Qualified native statewide age and recorded-gender returned-ballot counts plus complete combined/mail/in-person native aggregate cells; no group denominator or turnout-rate invention.",
+  "retained_california_query": "Entire verified public-safe aggregate complete-query.zip retained byte-for-byte; raw/private/copyright-restricted source inputs remain excluded.",
+  "jurisdiction_exclusion": {
+    "Washington": "Not public-approved: owner pages 403 and exact embedded attribution unverified."
+  }
+}
