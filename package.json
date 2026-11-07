@@ -14,7 +14,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "test": "npm run test:swing && python3 scripts/test-package-county-scenarios.py && node --test scripts/build-website-charts.test.mjs scripts/platform-position-copy.test.mjs scripts/platform-density-comparison.test.mjs scripts/voter-participation.test.mjs scripts/reviewed-county-participation.test.mjs scripts/additional-participation.test.mjs scripts/county-participation-context.test.mjs && npm run build && node scripts/validate-build.mjs",
+    "test": "npm run test:swing && python3 scripts/test-package-county-scenarios.py && python3 scripts/test-package-county-scenarios.py --version 20261107-02 && node --test scripts/build-website-charts.test.mjs scripts/platform-position-copy.test.mjs scripts/platform-density-comparison.test.mjs scripts/voter-participation.test.mjs scripts/reviewed-county-participation.test.mjs scripts/additional-participation.test.mjs scripts/county-participation-context.test.mjs && npm run build && node scripts/validate-build.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "sync:external-thumbnails": "node scripts/download-external-thumbnails.mjs",
     "migrate:legacy": "node scripts/migrate-google-sites.mjs",

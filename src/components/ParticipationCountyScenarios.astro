@@ -21,13 +21,36 @@ type GroupRange = {
 	margin_pp_contributions: Record<string, Extrema>;
 };
 type Analysis = {
-	default_conditional_scenario: { swing_margin_pp: number; demographics: Group[]; margin_pp_contributions: Record<string, number> };
+	county: string;
+	default_conditional_scenario: {
+		swing_margin_pp: number; demographics: Group[]; margin_pp_contributions: Record<string, number>;
+		before: Record<string, number>; after: Record<string, number>;
+	};
 	demographic_sensitivity_range_margin_pp: GroupRange[];
 	sensitivity_range_margin_pp: Record<string, Extrema>;
+	turnout_temporal_diagnostics: {
+		validation_calibration_error_pp: number;
+		known_total_conditioned_max_group_error_pp_n_at_least_100: number;
+	};
 };
-const base = '/participation-county-scenarios/20261107-01/';
+interface Props {
+	version?: '20261107-01' | '20261107-02';
+}
+const { version = '20261107-01' } = Astro.props;
+const releases = {
+	'20261107-01': { county: 'Wake', units: 216, clock: '11:56 p.m.', id: 'participation-county-scenarios' },
+	'20261107-02': { county: 'Mecklenburg', units: 195, clock: '11:39 p.m.', id: 'participation-mecklenburg-scenarios' },
+};
+const release = releases[version];
+const titleId = version === '20261107-01' ? 'county-scenarios-title' : 'mecklenburg-scenarios-title';
+const base = `/participation-county-scenarios/${version}/`;
 const analysis: Analysis = JSON.parse(readFileSync(`public${base}summary.json`, 'utf8'));
+const audit: { baseline_without_registration: number } = JSON.parse(
+	readFileSync(`data/participation-county-scenarios/${version}/linkage-audit.json`, 'utf8'));
 const reference = analysis.default_conditional_scenario;
+const ballotCount = ['D', 'R', 'O', 'B'].reduce((sum, key) => sum + reference.after[key], 0);
+const baselineCount = ['D', 'R', 'O', 'B'].reduce((sum, key) => sum + reference.before[key], 0);
+const fullCount = (value: number) => Math.round(value).toLocaleString('en-US');
 const dimensions = [
 	['overall', 'Whole county'], ['age_2024', 'Age in 2024'], ['race', 'Administrative race'],
 	['ethnicity', 'Administrative Hispanic ethnicity'], ['administrative_gender', 'Administrative gender'],
@@ -68,15 +91,15 @@ const labels: Record<string, string> = {
 };
 ---
 
-<section id="participation-county-scenarios" class="participation-current" aria-labelledby="county-scenarios-title">
+<section id={release.id} class="participation-current participation-county-scenarios" aria-labelledby={titleId}>
 	<header class="section-intro">
 		<p class="kicker">Experimental county model · 2024 President → 2026 Senate</p>
-		<h2 id="county-scenarios-title">Wake County: participation and switching, separately estimated</h2>
+		<h2 id={titleId}>{release.county} County: participation and switching, separately estimated</h2>
 		<p>The observed two-party margin moved <strong>{points(reference.swing_margin_pp)} points toward Democrats</strong>.
 			The model separates switching, nonvoting, entry and exit, while matching the county’s
 			candidate and ballot totals. These are <strong>conditional scenarios, not observed individual persuasion</strong>.</p>
 	</header>
-	<div class="table-wrap" tabindex="0" role="region" aria-label="Wake conditional swing contributions">
+	<div class="table-wrap" tabindex="0" role="region" aria-label={`${release.county} conditional swing contributions`}>
 		<table>
 			<caption>Signed contributions to two-party margin change, in percentage points.
 				All 86 tested assumptions; sensitivity ranges are not confidence intervals and endpoints are not additive.</caption>
@@ -87,11 +110,10 @@ const labels: Record<string, string> = {
 			</tr>)}</tbody>
 		</table>
 	</div>
-	<p><strong>Material calibration limits:</strong> retrospective 2022 turnout error was +9.74 percentage points.
-		Even after matching the known 2022 total, subgroup errors reached 8.84 points for groups of at least 100.
+	<p><strong>Material calibration limits:</strong> retrospective 2022 turnout error was {points(analysis.turnout_temporal_diagnostics.validation_calibration_error_pp)} percentage points.
+		Even after matching the known 2022 total, subgroup errors reached {analysis.turnout_temporal_diagnostics.known_total_conditioned_max_group_error_pp_n_at_least_100.toFixed(2)} points for groups of at least 100.
 		Matching totals verifies constraints, <strong>not individual transitions or demographic accuracy</strong>.</p>
-	<p>The frozen, provisional 2026 snapshot reports <strong>525,061 ballots and 216 of 216 reporting units</strong>
-		at November 3, 11:56 p.m., retrieved November 4. The 2024 history contains 656,871 county participants.
+	<p>The frozen, provisional 2026 snapshot reports <strong>{fullCount(ballotCount)} ballots and {release.units} of {release.units} reporting units</strong> at November 3, {release.clock}, retrieved November 4. The 2024 history contains {fullCount(baselineCount)} county participants.
 		These are not final 2026 totals or proof of a counted fixed early-voter cohort.</p>
 	<p>Below, model counts are rounded to the nearest 100; smaller text gives the range across all 86 scenarios.
 		“Nonvoting” is modeled separately from assumed eligibility/residence exit.
@@ -99,7 +121,7 @@ const labels: Record<string, string> = {
 
 	{dimensions.map(([dimension, title]) => <details class="explorer-notes" data-county-dimension={dimension}>
 		<summary>{title}: participation, prior-choice transitions and swing contributions</summary>
-		<div class="table-wrap" tabindex="0" role="region" aria-label={`Wake ${title} modeled participation`}>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={`${release.county} ${title} modeled participation`}>
 			<table>
 				<caption>{title}. Reference counts and assumption ranges, not independently observed demographic outcomes.
 					Selected rows are not exhaustive partitions; withheld groups are not zero.</caption>
@@ -113,7 +135,7 @@ const labels: Record<string, string> = {
 					</tr>)}</tbody>
 			</table>
 		</div>
-		<div class="table-wrap" tabindex="0" role="region" aria-label={`Wake ${title} modeled prior-choice destinations`}>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={`${release.county} ${title} modeled prior-choice destinations`}>
 			<table>
 				<caption>Within modeled prior Harris / Trump coalitions: all six 2026 destinations, not just returning voters.
 					D/R = Senate choice; O = other; B = ballot without selected-contest vote;
@@ -131,7 +153,7 @@ const labels: Record<string, string> = {
 					</tr>))}</tbody>
 			</table>
 		</div>
-		<div class="table-wrap" tabindex="0" role="region" aria-label={`Wake ${title} modeled swing contributions`}>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={`${release.county} ${title} modeled swing contributions`}>
 			<table>
 				<caption>Signed contribution to whole-county margin change, not the group’s own swing or a causal persuasion effect.
 					Values are percentage points; ranges are marginal, nonadditive sensitivity.</caption>
@@ -152,10 +174,14 @@ const labels: Record<string, string> = {
 		<p>Age is measured in 2024; race, ethnicity and gender use current administrative attributes, not fixed observed
 			historical cohorts. Race and Hispanic ethnicity are separate, overlapping dimensions. Education and income
 			are not supplied. Do not sum dimensions, infer omitted categories, or allocate county results to precincts or other states.</p>
-		<p>The private linkage retains 24,904 prior participants without current registration. Missing or removed records
+		<p>The private linkage retains {fullCount(audit.baseline_without_registration)} prior participants without current registration. Missing or removed records
 			do not prove death, migration or ineligibility; exit fractions are assumed and varied. Unknown populations
 			remain in the whole-county accounting, not silently deleted. Several race categories are withheld together
 			so that a small category cannot be recovered by subtracting all other categories from the total.</p>
+		{version === '20261107-02' && <p>Positive general-election history that contradicts a later under-18 label
+			makes all modeled age predictors unknown. Participation and original source inputs are retained;
+			birthdays are not imputed. No calibrated subgroup error interval is available, and model group
+			differences are not evidence of statistically significant population differences.</p>}
 		<p>“Without 2024 county participation” includes positive 2024 history elsewhere in North Carolina,
 			newly adult entrants and people without a North Carolina match whose national history remains unresolved.
 			The archive retains these three categories separately for every selected group and scenario.
@@ -171,18 +197,18 @@ const labels: Record<string, string> = {
 			Public reproduction is not an independent refit or verification of individual switching.</p>
 		<p>Sources: North Carolina State Board of Elections and CES 2024 release 9, DOI 10.7910/DVN/X11EP6 (CC0).
 			Analysis is not endorsed by the data providers. Existing Durham and survey releases are unchanged;
-			Wake is an additional pilot, not completed nationwide or precinct coverage.</p>
+			{release.county} is an additional pilot, not completed nationwide or precinct coverage.</p>
 	</details>
 	<div class="download-links">
-		<a href={`${base}complete-analysis.zip`} download>Complete Wake scenarios + permitted inputs + code + results (ZIP)</a>
-		<a href={`${base}summary.json`} download>Wake reference, ranges + qualifications (JSON)</a>
-		<a href={`${base}download.json`} download>Wake archive bytes and SHA-256</a>
+		<a href={`${base}complete-analysis.zip`} download>Complete {release.county} scenarios + permitted inputs + code + results (ZIP)</a>
+		<a href={`${base}summary.json`} download>{release.county} reference, ranges + qualifications (JSON)</a>
+		<a href={`${base}download.json`} download>{release.county} archive bytes and SHA-256</a>
 	</div>
 </section>
 
 <style>
-	#participation-county-scenarios { min-width: 0; margin-block: 1.5rem 2rem; }
-	#participation-county-scenarios small { display: block; color: var(--color-text-muted, #666); font-size: .78rem; }
-	#participation-county-scenarios .table-wrap { max-width: 100%; overflow-x: auto; }
-	#participation-county-scenarios td { font-variant-numeric: tabular-nums; }
+	.participation-county-scenarios { min-width: 0; margin-block: 1.5rem 2rem; }
+	.participation-county-scenarios small { display: block; color: var(--color-text-muted, #666); font-size: .78rem; }
+	.participation-county-scenarios .table-wrap { max-width: 100%; overflow-x: auto; }
+	.participation-county-scenarios td { font-variant-numeric: tabular-nums; }
 </style>

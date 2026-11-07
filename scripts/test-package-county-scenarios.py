@@ -1,8 +1,10 @@
+import argparse
 import copy
 import importlib.util
 import json
 from pathlib import Path
 import tempfile
+import sys
 import unittest
 from unittest.mock import patch
 
@@ -11,6 +13,7 @@ SPEC = importlib.util.spec_from_file_location("county", Path(__file__).with_name
 county = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(county)
 DATA = county.ROOT / county.DATA
+VERSION = county.VERSION
 
 
 class CountySelectionTests(unittest.TestCase):
@@ -24,15 +27,20 @@ class CountySelectionTests(unittest.TestCase):
         with self.assertRaises((ValueError, KeyError)):
             county.review(snapshot if snapshot is not None else self.snapshot,
                           methods if methods is not None else self.methods,
-                          proof if proof is not None else self.proof)
+                          proof if proof is not None else self.proof, VERSION)
 
     def test_complete_real_selected_grid_and_summary(self):
-        summary = county.review(self.snapshot, self.methods, self.proof)
+        summary = county.review(self.snapshot, self.methods, self.proof, VERSION)
         self.assertNotIn("scenarios", summary)
         self.assertEqual(summary["default_conditional_scenario"], self.snapshot["default_conditional_scenario"])
         self.assertFalse(summary["demographic_partitions_exhaustive"])
         self.assertEqual(summary["demographic_sensitivity_range_margin_pp"],
                          self.snapshot["demographic_sensitivity_range_margin_pp"])
+
+    def test_release_version_cannot_relabel_another_county(self):
+        other = next(version for version in county.RELEASES if version != VERSION)
+        with self.assertRaisesRegex(ValueError, "scope or qualification"):
+            county.review(self.snapshot, self.methods, self.proof, other)
 
     def test_missing_scenarios_or_missing_broad_groups_rejected(self):
         value = copy.deepcopy(self.snapshot)
@@ -85,14 +93,19 @@ class CountySelectionTests(unittest.TestCase):
     def test_changed_frozen_input_refused_before_packaging(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            target = root / county.DATA
+            target = root / "data/participation-county-scenarios" / VERSION
             target.mkdir(parents=True)
-            for name in county.PINS:
+            for name in county.RELEASES[VERSION]["pins"]:
                 (target / name).write_bytes((DATA / name).read_bytes())
             (target / "accounting-proof.json").write_text("{}\n")
             with patch.object(county, "ROOT", root), self.assertRaisesRegex(ValueError, "Frozen county selection"):
-                county.package()
+                county.package(VERSION)
 
 
 if __name__ == "__main__":
-    unittest.main()
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument("--version", choices=county.RELEASES, default=county.VERSION)
+    args, remaining = parser.parse_known_args()
+    VERSION = args.version
+    DATA = county.ROOT / "data/participation-county-scenarios" / VERSION
+    unittest.main(argv=[sys.argv[0], *remaining])
