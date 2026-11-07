@@ -56,6 +56,21 @@ test('historical NC year tables use the pinned complete originals without moving
 		assert.equal(participationDownload(path), path);
 });
 
+test('only published swing ZIPs route to their complete immutable release assets', () => {
+	for (const version of ['20261106-01', '20261106-02']) {
+		const path = `/participation-swing/${version}/complete-analysis.zip`;
+		const url = participationDownload(path);
+		assert.equal(url, `https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-swing-20261106-02/complete-analysis-${version}.zip`);
+		assert.equal(participationDownload(url), url);
+		assert.equal(rewriteDownloadHtml(`<a href="${path}" download>Full analysis</a>`,
+			[{ path, url }]), `<a href="${url}" download>Full analysis</a>`);
+	}
+	for (const path of ['/participation-swing/20261106-03/complete-analysis.zip',
+		'/participation-swing/20261106-02/conditional-transitions.json',
+		'/participation-swing/20261106-02/download.json'])
+		assert.equal(participationDownload(path), path);
+});
+
 test('only reviewed county context archives move to their complete release assets', () => {
 	for (const version of ['01', '05', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25']) {
 		const path = `/participation-county-context/20261106-${version}/complete-county-participation-context-${version}.zip`;
@@ -230,6 +245,7 @@ test('standalone compatibility renderer includes every dependency of the shared 
 		'/voter-participation/data/nc/2024.json',
 		'/participation-methods/20261104T183000Z/complete-methods.zip',
 		'/participation-current/20261104T220424Z/local.json',
+		'/participation-swing/20261106-02/complete-analysis.zip',
 	]) assert.equal(window.download(path), participationDownload(path));
 });
 
