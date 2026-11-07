@@ -1,0 +1,726 @@
+{
+  "configuration_sha256": "534095dec72492470be2a2c7018044d53ae6774001f4b7212e26e49a4005510a",
+  "selected_configuration": [
+    {
+      "stateTitle": "Alaska",
+      "stateAbbr": "AK",
+      "subsetTitle": "Main",
+      "subsetNumber": 0,
+      "url": "exit-poll/2026-GG-AK.json",
+      "raceTypeCode": "GG",
+      "isDisabled": false
+    },
+    {
+      "stateTitle": "New Hampshire",
+      "stateAbbr": "NH",
+      "subsetTitle": "Main",
+      "subsetNumber": 0,
+      "url": "exit-poll/2026-GG-NH.json",
+      "raceTypeCode": "GG",
+      "isDisabled": false
+    },
+    {
+      "stateTitle": "Alaska",
+      "stateAbbr": "AK",
+      "subsetTitle": "Main",
+      "subsetNumber": 0,
+      "url": "exit-poll/2026-SG-AK.json",
+      "raceTypeCode": "SG",
+      "isDisabled": false
+    },
+    {
+      "stateTitle": "New Hampshire",
+      "stateAbbr": "NH",
+      "subsetTitle": "Main",
+      "subsetNumber": 0,
+      "url": "exit-poll/2026-SG-NH.json",
+      "raceTypeCode": "SG",
+      "isDisabled": false
+    }
+  ],
+  "sources": [
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-AK.json",
+      "source_bytes": 300992,
+      "source_sha256": "a771325aea06cf2c0903542c6617384d103a9ea2db210dbdcc4243319e91175b",
+      "configuration_entry": {
+        "stateTitle": "Alaska",
+        "stateAbbr": "AK",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-AK.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-AK",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Alaska",
+          "stateId": 2,
+          "fipsCode": "02",
+          "abbreviation": "AK"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 2899,
+        "timestamp": "2026-11-04T16:35:23.000Z",
+        "extractedAt": "2026-11-07T00:30:18.697571",
+        "hasData": true,
+        "stage": 7,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793772000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793772000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793772000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793772000000
+        },
+        "candidates": [
+          {
+            "candidateId": 101017,
+            "fullName": "Jonathan Kreiss-Tomkins",
+            "firstName": "Jonathan",
+            "lastName": "Kreiss-Tomkins",
+            "partyName": "Democratic",
+            "partyAbbreviation": "D",
+            "lastNameConflict": false
+          },
+          {
+            "candidateId": 177699,
+            "fullName": "Dave Bronson",
+            "firstName": "Dave",
+            "lastName": "Bronson",
+            "partyName": "Republican",
+            "partyAbbreviation": "R",
+            "lastNameConflict": false
+          },
+          {
+            "candidateId": 177706,
+            "fullName": "Treg Taylor",
+            "firstName": "Treg",
+            "lastName": "Taylor",
+            "partyName": "Republican",
+            "partyAbbreviation": "R",
+            "lastNameConflict": false
+          },
+          {
+            "candidateId": 177707,
+            "fullName": "Bernadette Wilson",
+            "firstName": "Bernadette",
+            "lastName": "Wilson",
+            "partyName": "Republican",
+            "partyAbbreviation": "R",
+            "lastNameConflict": false
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onDigital": true,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "answer": "Harris",
+                "totalPercentage": 38,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 101017,
+                    "percentage": 98
+                  },
+                  {
+                    "candidateId": 177699,
+                    "percentage": 1
+                  },
+                  {
+                    "candidateId": 177706,
+                    "percentage": 0
+                  },
+                  {
+                    "candidateId": 177707,
+                    "percentage": 0
+                  }
+                ]
+              },
+              {
+                "answer": "Trump",
+                "totalPercentage": 48,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 101017,
+                    "percentage": 6
+                  },
+                  {
+                    "candidateId": 177699,
+                    "percentage": 24
+                  },
+                  {
+                    "candidateId": 177706,
+                    "percentage": 13
+                  },
+                  {
+                    "candidateId": 177707,
+                    "percentage": 56
+                  }
+                ]
+              },
+              {
+                "answer": "Another candidate",
+                "totalPercentage": 5,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 101017,
+                    "percentage": 70
+                  },
+                  {
+                    "candidateId": 177699,
+                    "percentage": 18
+                  },
+                  {
+                    "candidateId": 177706,
+                    "percentage": 2
+                  },
+                  {
+                    "candidateId": 177707,
+                    "percentage": 6
+                  }
+                ]
+              },
+              {
+                "answer": "Did not vote",
+                "totalPercentage": 6,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 101017,
+                    "percentage": 69
+                  },
+                  {
+                    "candidateId": 177699,
+                    "percentage": 9
+                  },
+                  {
+                    "candidateId": 177706,
+                    "percentage": 5
+                  },
+                  {
+                    "candidateId": 177707,
+                    "percentage": 16
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-NH.json",
+      "source_bytes": 214743,
+      "source_sha256": "004f3d8827a82fc0833bc38c7917e8fa51cb94b4880849a41c2953bfa81740c7",
+      "configuration_entry": {
+        "stateTitle": "New Hampshire",
+        "stateAbbr": "NH",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-GG-NH.json",
+        "raceTypeCode": "GG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-GG-NH",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "G",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "New Hampshire",
+          "stateId": 30,
+          "fipsCode": "33",
+          "abbreviation": "NH"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Governor",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 4305,
+        "timestamp": "2026-11-04T17:55:56.000Z",
+        "extractedAt": "2026-11-07T00:30:08.782859",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "candidateId": 139961,
+            "fullName": "Cinde Warmington",
+            "firstName": "Cinde",
+            "lastName": "Warmington",
+            "partyName": "Democratic",
+            "partyAbbreviation": "D",
+            "lastNameConflict": false
+          },
+          {
+            "candidateId": 61040,
+            "fullName": "Kelly Ayotte",
+            "firstName": "Kelly",
+            "lastName": "Ayotte",
+            "partyName": "Republican",
+            "partyAbbreviation": "R",
+            "lastNameConflict": false
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onDigital": true,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "answer": "Harris",
+                "totalPercentage": 48,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 139961,
+                    "percentage": 84
+                  },
+                  {
+                    "candidateId": 61040,
+                    "percentage": 15
+                  }
+                ]
+              },
+              {
+                "answer": "Trump",
+                "totalPercentage": 42,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 139961,
+                    "percentage": 4
+                  },
+                  {
+                    "candidateId": 61040,
+                    "percentage": 94
+                  }
+                ]
+              },
+              {
+                "answer": "Another candidate",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 139961,
+                    "percentage": 35
+                  },
+                  {
+                    "candidateId": 61040,
+                    "percentage": 50
+                  }
+                ]
+              },
+              {
+                "answer": "Did not vote",
+                "totalPercentage": 3,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 139961,
+                    "percentage": 55
+                  },
+                  {
+                    "candidateId": 61040,
+                    "percentage": 38
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-AK.json",
+      "source_bytes": 320458,
+      "source_sha256": "67452c4b97536515fd18697d0aecbb4bbd8539cc0adba3fe489cb7c862454d60",
+      "configuration_entry": {
+        "stateTitle": "Alaska",
+        "stateAbbr": "AK",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-SG-AK.json",
+        "raceTypeCode": "SG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-SG-AK",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "S",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "Alaska",
+          "stateId": 2,
+          "fipsCode": "02",
+          "abbreviation": "AK"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Senate",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 2923,
+        "timestamp": "2026-11-04T16:35:23.000Z",
+        "extractedAt": "2026-11-07T00:30:04.030194",
+        "hasData": true,
+        "stage": 7,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793772000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793772000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793772000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793772000000
+        },
+        "candidates": [
+          {
+            "candidateId": 70718,
+            "fullName": "Mary Peltola",
+            "firstName": "Mary",
+            "lastName": "Peltola",
+            "partyName": "Democratic",
+            "partyAbbreviation": "D",
+            "lastNameConflict": false
+          },
+          {
+            "candidateId": 57566,
+            "fullName": "Gerald Heikes",
+            "firstName": "Gerald",
+            "lastName": "Heikes",
+            "partyName": "Republican",
+            "partyAbbreviation": "R",
+            "lastNameConflict": false
+          },
+          {
+            "candidateId": 64262,
+            "fullName": "Dan S. Sullivan",
+            "firstName": "Dan S.",
+            "lastName": "Sullivan",
+            "partyName": "Republican",
+            "partyAbbreviation": "R",
+            "lastNameConflict": false
+          },
+          {
+            "candidateId": 177716,
+            "fullName": "Daniel J. Sullivan",
+            "firstName": "Daniel J.",
+            "lastName": "Sullivan",
+            "partyName": "Independent",
+            "partyAbbreviation": "I",
+            "lastNameConflict": true
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onDigital": true,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "answer": "Harris",
+                "totalPercentage": 38,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 70718,
+                    "percentage": 98
+                  },
+                  {
+                    "candidateId": 57566,
+                    "percentage": 0
+                  },
+                  {
+                    "candidateId": 64262,
+                    "percentage": 1
+                  },
+                  {
+                    "candidateId": 177716,
+                    "percentage": 1
+                  }
+                ]
+              },
+              {
+                "answer": "Trump",
+                "totalPercentage": 48,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 70718,
+                    "percentage": 5
+                  },
+                  {
+                    "candidateId": 57566,
+                    "percentage": 3
+                  },
+                  {
+                    "candidateId": 64262,
+                    "percentage": 90
+                  },
+                  {
+                    "candidateId": 177716,
+                    "percentage": 1
+                  }
+                ]
+              },
+              {
+                "answer": "Another candidate",
+                "totalPercentage": 5,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 70718,
+                    "percentage": 62
+                  },
+                  {
+                    "candidateId": 57566,
+                    "percentage": 5
+                  },
+                  {
+                    "candidateId": 64262,
+                    "percentage": 19
+                  },
+                  {
+                    "candidateId": 177716,
+                    "percentage": 5
+                  }
+                ]
+              },
+              {
+                "answer": "Did not vote",
+                "totalPercentage": 6,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 70718,
+                    "percentage": 69
+                  },
+                  {
+                    "candidateId": 57566,
+                    "percentage": 4
+                  },
+                  {
+                    "candidateId": 64262,
+                    "percentage": 24
+                  },
+                  {
+                    "candidateId": 177716,
+                    "percentage": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-NH.json",
+      "source_bytes": 228932,
+      "source_sha256": "e8f4e9764c392d9766aff52426890983bc19ff931e614b787a005beeaa64a606",
+      "configuration_entry": {
+        "stateTitle": "New Hampshire",
+        "stateAbbr": "NH",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-SG-NH.json",
+        "raceTypeCode": "SG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-SG-NH",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "S",
+        "jurisdictionType": "SW",
+        "state": {
+          "title": "New Hampshire",
+          "stateId": 30,
+          "fipsCode": "33",
+          "abbreviation": "NH"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "Senate",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 4322,
+        "timestamp": "2026-11-04T17:55:56.000Z",
+        "extractedAt": "2026-11-07T00:30:08.756690",
+        "hasData": true,
+        "stage": 9,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "candidateId": 56360,
+            "fullName": "Chris Pappas",
+            "firstName": "Chris",
+            "lastName": "Pappas",
+            "partyName": "Democratic",
+            "partyAbbreviation": "D",
+            "lastNameConflict": false
+          },
+          {
+            "candidateId": 176348,
+            "fullName": "John Sununu",
+            "firstName": "John",
+            "lastName": "Sununu",
+            "partyName": "Republican",
+            "partyAbbreviation": "R",
+            "lastNameConflict": false
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onDigital": true,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "answer": "Harris",
+                "totalPercentage": 49,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 56360,
+                    "percentage": 98
+                  },
+                  {
+                    "candidateId": 176348,
+                    "percentage": 2
+                  }
+                ]
+              },
+              {
+                "answer": "Trump",
+                "totalPercentage": 42,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 56360,
+                    "percentage": 7
+                  },
+                  {
+                    "candidateId": 176348,
+                    "percentage": 91
+                  }
+                ]
+              },
+              {
+                "answer": "Another candidate",
+                "totalPercentage": 3,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 56360,
+                    "percentage": 48
+                  },
+                  {
+                    "candidateId": 176348,
+                    "percentage": 38
+                  }
+                ]
+              },
+              {
+                "answer": "Did not vote",
+                "totalPercentage": 3,
+                "candidateAnswers": [
+                  {
+                    "candidateId": 56360,
+                    "percentage": 67
+                  },
+                  {
+                    "candidateId": 176348,
+                    "percentage": 28
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "selection_review": {
+    "scope": "four_selected_all_voter_state_candidate_conditionals_only",
+    "basis_snapshot_sha256": "4b3ffcb23a9254a4149253e1ae9dcc08d1ed97932e97ca50a2ca32e2081ea4ae",
+    "no_native_source_refetch": true,
+    "not_full_provider_configuration": true,
+    "no_reverse_percentage_recovery_or_composition_renormalization": true
+  }
+}

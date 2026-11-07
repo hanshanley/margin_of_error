@@ -1,0 +1,467 @@
+{
+  "status": "published_candidate_specific_conditionals_unscaled",
+  "states": [
+    "AK",
+    "NH"
+  ],
+  "ordinary_population_comparisons_still_withheld": true,
+  "population_or_original_coalition_scaling_performed": false,
+  "current_choice_can_retain_pre_election_intent": true,
+  "limits": [
+    "Native candidate percentages condition on recalled prior choice among current survey participants.",
+    "No q scaling, prior-composition renormalization, inferred omitted category or reconstructed suppression.",
+    "Multiple Republican candidates are not pooled; the literal Independent remains independent.",
+    "No ranked-choice round, matched final-round transition or ordinary two-party attribution is inferred.",
+    "Unexplained prior-composition gaps retain the original population-arithmetic withholding gates.",
+    "No population switcher/absence count, original-coalition rate, design CI or county/precinct allocation.",
+    "SSRS current choice can retain pre-election intent; source calibration is not independent validation.",
+    "Offices share respondents and are not additive; CNN/NBC/MS NOW are one study."
+  ],
+  "contests": [
+    {
+      "state_code": "AK",
+      "contest_code": "GG",
+      "contest_title": "Governor",
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-AK.json",
+      "source_sha256": "a771325aea06cf2c0903542c6617384d103a9ea2db210dbdcc4243319e91175b",
+      "source_timestamp": "2026-11-04T16:35:23.000Z",
+      "native_stage": 7,
+      "inferred_ranked_choice_round": null,
+      "ordinary_comparison_status": "withheld_nonunique_literal_dem_rep_comparison",
+      "reported_prior_composition_sum_pct": 97,
+      "unexplained_gap_from_100_pct": 3,
+      "candidates": [
+        {
+          "candidate_id": 101017,
+          "full_name": "Jonathan Kreiss-Tomkins",
+          "literal_party": "D",
+          "literal_party_name": "Democratic"
+        },
+        {
+          "candidate_id": 177699,
+          "full_name": "Dave Bronson",
+          "literal_party": "R",
+          "literal_party_name": "Republican"
+        },
+        {
+          "candidate_id": 177706,
+          "full_name": "Treg Taylor",
+          "literal_party": "R",
+          "literal_party_name": "Republican"
+        },
+        {
+          "candidate_id": 177707,
+          "full_name": "Bernadette Wilson",
+          "literal_party": "R",
+          "literal_party_name": "Republican"
+        }
+      ],
+      "reported_choices_by_prior": {
+        "D": {
+          "reported_prior_share_pct": 38,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 101017,
+              "percentage": 98
+            },
+            {
+              "candidate_id": 177699,
+              "percentage": 1
+            },
+            {
+              "candidate_id": 177706,
+              "percentage": 0
+            },
+            {
+              "candidate_id": 177707,
+              "percentage": 0
+            }
+          ]
+        },
+        "R": {
+          "reported_prior_share_pct": 48,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 101017,
+              "percentage": 6
+            },
+            {
+              "candidate_id": 177699,
+              "percentage": 24
+            },
+            {
+              "candidate_id": 177706,
+              "percentage": 13
+            },
+            {
+              "candidate_id": 177707,
+              "percentage": 56
+            }
+          ]
+        },
+        "O": {
+          "reported_prior_share_pct": 5,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 101017,
+              "percentage": 70
+            },
+            {
+              "candidate_id": 177699,
+              "percentage": 18
+            },
+            {
+              "candidate_id": 177706,
+              "percentage": 2
+            },
+            {
+              "candidate_id": 177707,
+              "percentage": 6
+            }
+          ]
+        },
+        "N": {
+          "reported_prior_share_pct": 6,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 101017,
+              "percentage": 69
+            },
+            {
+              "candidate_id": 177699,
+              "percentage": 9
+            },
+            {
+              "candidate_id": 177706,
+              "percentage": 5
+            },
+            {
+              "candidate_id": 177707,
+              "percentage": 16
+            }
+          ]
+        }
+      },
+      "estimated_returning_count": null,
+      "estimated_switcher_count": null,
+      "apparent_absence_count": null,
+      "measured_staying_home_count": null,
+      "original_coalition_switching_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "state_code": "AK",
+      "contest_code": "SG",
+      "contest_title": "Senate",
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-AK.json",
+      "source_sha256": "67452c4b97536515fd18697d0aecbb4bbd8539cc0adba3fe489cb7c862454d60",
+      "source_timestamp": "2026-11-04T16:35:23.000Z",
+      "native_stage": 7,
+      "inferred_ranked_choice_round": null,
+      "ordinary_comparison_status": "withheld_nonunique_literal_dem_rep_comparison",
+      "reported_prior_composition_sum_pct": 97,
+      "unexplained_gap_from_100_pct": 3,
+      "candidates": [
+        {
+          "candidate_id": 70718,
+          "full_name": "Mary Peltola",
+          "literal_party": "D",
+          "literal_party_name": "Democratic"
+        },
+        {
+          "candidate_id": 57566,
+          "full_name": "Gerald Heikes",
+          "literal_party": "R",
+          "literal_party_name": "Republican"
+        },
+        {
+          "candidate_id": 64262,
+          "full_name": "Dan S. Sullivan",
+          "literal_party": "R",
+          "literal_party_name": "Republican"
+        },
+        {
+          "candidate_id": 177716,
+          "full_name": "Daniel J. Sullivan",
+          "literal_party": "I",
+          "literal_party_name": "Independent"
+        }
+      ],
+      "reported_choices_by_prior": {
+        "D": {
+          "reported_prior_share_pct": 38,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 70718,
+              "percentage": 98
+            },
+            {
+              "candidate_id": 57566,
+              "percentage": 0
+            },
+            {
+              "candidate_id": 64262,
+              "percentage": 1
+            },
+            {
+              "candidate_id": 177716,
+              "percentage": 1
+            }
+          ]
+        },
+        "R": {
+          "reported_prior_share_pct": 48,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 70718,
+              "percentage": 5
+            },
+            {
+              "candidate_id": 57566,
+              "percentage": 3
+            },
+            {
+              "candidate_id": 64262,
+              "percentage": 90
+            },
+            {
+              "candidate_id": 177716,
+              "percentage": 1
+            }
+          ]
+        },
+        "O": {
+          "reported_prior_share_pct": 5,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 70718,
+              "percentage": 62
+            },
+            {
+              "candidate_id": 57566,
+              "percentage": 5
+            },
+            {
+              "candidate_id": 64262,
+              "percentage": 19
+            },
+            {
+              "candidate_id": 177716,
+              "percentage": 5
+            }
+          ]
+        },
+        "N": {
+          "reported_prior_share_pct": 6,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 70718,
+              "percentage": 69
+            },
+            {
+              "candidate_id": 57566,
+              "percentage": 4
+            },
+            {
+              "candidate_id": 64262,
+              "percentage": 24
+            },
+            {
+              "candidate_id": 177716,
+              "percentage": 1
+            }
+          ]
+        }
+      },
+      "estimated_returning_count": null,
+      "estimated_switcher_count": null,
+      "apparent_absence_count": null,
+      "measured_staying_home_count": null,
+      "original_coalition_switching_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "state_code": "NH",
+      "contest_code": "GG",
+      "contest_title": "Governor",
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-NH.json",
+      "source_sha256": "004f3d8827a82fc0833bc38c7917e8fa51cb94b4880849a41c2953bfa81740c7",
+      "source_timestamp": "2026-11-04T17:55:56.000Z",
+      "native_stage": 9,
+      "inferred_ranked_choice_round": null,
+      "ordinary_comparison_status": "withheld_unreconciled_prior_composition",
+      "reported_prior_composition_sum_pct": 95,
+      "unexplained_gap_from_100_pct": 5,
+      "candidates": [
+        {
+          "candidate_id": 139961,
+          "full_name": "Cinde Warmington",
+          "literal_party": "D",
+          "literal_party_name": "Democratic"
+        },
+        {
+          "candidate_id": 61040,
+          "full_name": "Kelly Ayotte",
+          "literal_party": "R",
+          "literal_party_name": "Republican"
+        }
+      ],
+      "reported_choices_by_prior": {
+        "D": {
+          "reported_prior_share_pct": 48,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 139961,
+              "percentage": 84
+            },
+            {
+              "candidate_id": 61040,
+              "percentage": 15
+            }
+          ]
+        },
+        "R": {
+          "reported_prior_share_pct": 42,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 139961,
+              "percentage": 4
+            },
+            {
+              "candidate_id": 61040,
+              "percentage": 94
+            }
+          ]
+        },
+        "O": {
+          "reported_prior_share_pct": 2,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 139961,
+              "percentage": 35
+            },
+            {
+              "candidate_id": 61040,
+              "percentage": 50
+            }
+          ]
+        },
+        "N": {
+          "reported_prior_share_pct": 3,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 139961,
+              "percentage": 55
+            },
+            {
+              "candidate_id": 61040,
+              "percentage": 38
+            }
+          ]
+        }
+      },
+      "estimated_returning_count": null,
+      "estimated_switcher_count": null,
+      "apparent_absence_count": null,
+      "measured_staying_home_count": null,
+      "original_coalition_switching_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    },
+    {
+      "state_code": "NH",
+      "contest_code": "SG",
+      "contest_title": "Senate",
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-NH.json",
+      "source_sha256": "e8f4e9764c392d9766aff52426890983bc19ff931e614b787a005beeaa64a606",
+      "source_timestamp": "2026-11-04T17:55:56.000Z",
+      "native_stage": 9,
+      "inferred_ranked_choice_round": null,
+      "ordinary_comparison_status": "withheld_unreconciled_prior_composition",
+      "reported_prior_composition_sum_pct": 97,
+      "unexplained_gap_from_100_pct": 3,
+      "candidates": [
+        {
+          "candidate_id": 56360,
+          "full_name": "Chris Pappas",
+          "literal_party": "D",
+          "literal_party_name": "Democratic"
+        },
+        {
+          "candidate_id": 176348,
+          "full_name": "John Sununu",
+          "literal_party": "R",
+          "literal_party_name": "Republican"
+        }
+      ],
+      "reported_choices_by_prior": {
+        "D": {
+          "reported_prior_share_pct": 49,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 56360,
+              "percentage": 98
+            },
+            {
+              "candidate_id": 176348,
+              "percentage": 2
+            }
+          ]
+        },
+        "R": {
+          "reported_prior_share_pct": 42,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 56360,
+              "percentage": 7
+            },
+            {
+              "candidate_id": 176348,
+              "percentage": 91
+            }
+          ]
+        },
+        "O": {
+          "reported_prior_share_pct": 3,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 56360,
+              "percentage": 48
+            },
+            {
+              "candidate_id": 176348,
+              "percentage": 38
+            }
+          ]
+        },
+        "N": {
+          "reported_prior_share_pct": 3,
+          "current_candidate_percentages": [
+            {
+              "candidate_id": 56360,
+              "percentage": 67
+            },
+            {
+              "candidate_id": 176348,
+              "percentage": 28
+            }
+          ]
+        }
+      },
+      "estimated_returning_count": null,
+      "estimated_switcher_count": null,
+      "apparent_absence_count": null,
+      "measured_staying_home_count": null,
+      "original_coalition_switching_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null
+    }
+  ],
+  "version": "20261107-01",
+  "selected_input_sha256": {
+    "selected-source-tables.json": "8001a735d2e73b69038570a6c822b13685587409fe066614d5cf46d3794a26e6",
+    "methodology-review.json": "3c00e46ed3121bb169d66dba47e48df714bd892f3df185bcefd47e93cee6f046"
+  }
+}
