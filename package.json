@@ -6,6 +6,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "test:cps-early-history": "python3 scripts/test-package-cps-early-history.py",
     "test:cps-older-history": "python3 scripts/test-package-cps-older-history.py",
     "test:columbia-wisconsin-history": "python3 scripts/test-package-columbia-wisconsin-history.py",
     "test:cps-state-history": "python3 scripts/test-package-cps-state-history.py",
@@ -24,7 +25,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "test": "npm run test:cps-older-history && npm run test:columbia-wisconsin-history && npm run test:hamilton-indiana-history && npm run test:ces-classification && npm run test:ces-hybrid-participation && npm run test:ces-participation-records && npm run test:nd-long-history && npm run test:clark-history && npm run test:registration-entry && npm run test:swing && python3 scripts/test-package-county-scenarios.py && python3 scripts/test-package-county-scenarios.py --version 20261107-02 && node --test scripts/build-website-charts.test.mjs scripts/platform-position-copy.test.mjs scripts/platform-density-comparison.test.mjs scripts/voter-participation.test.mjs scripts/reviewed-county-participation.test.mjs scripts/additional-participation.test.mjs scripts/county-participation-context.test.mjs && npm run build && node scripts/validate-build.mjs",
+    "test": "npm run test:cps-early-history && npm run test:cps-older-history && npm run test:columbia-wisconsin-history && npm run test:hamilton-indiana-history && npm run test:ces-classification && npm run test:ces-hybrid-participation && npm run test:ces-participation-records && npm run test:nd-long-history && npm run test:clark-history && npm run test:registration-entry && npm run test:swing && python3 scripts/test-package-county-scenarios.py && python3 scripts/test-package-county-scenarios.py --version 20261107-02 && node --test scripts/build-website-charts.test.mjs scripts/platform-position-copy.test.mjs scripts/platform-density-comparison.test.mjs scripts/voter-participation.test.mjs scripts/reviewed-county-participation.test.mjs scripts/additional-participation.test.mjs scripts/county-participation-context.test.mjs && npm run build && node scripts/validate-build.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "sync:external-thumbnails": "node scripts/download-external-thumbnails.mjs",
     "migrate:legacy": "node scripts/migrate-google-sites.mjs",

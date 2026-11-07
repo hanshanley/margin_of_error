@@ -1,0 +1,1508 @@
+{
+  "agreeing_total_controls": 101,
+  "catalog_dispositions": [
+    {
+      "catalog_file": "catalog-2006.html",
+      "not_evidence_no_other_native_table_can_exist": true,
+      "role": "age",
+      "status": "not_declared_in_this_catalog",
+      "year": 2006
+    }
+  ],
+  "compared_total_controls": 104,
+  "conflicting_total_controls": 3,
+  "display_status_counts": {
+    "native_B_not_published": 412,
+    "published_native_rate": 1932,
+    "withheld_conflicting_extra_native_label": 1,
+    "withheld_conflicting_same_year_total": 6,
+    "withheld_native_out_of_range_metric": 1,
+    "withheld_small_rounded_population_base": 1,
+    "withheld_unlabeled_native_geography": 22
+  },
+  "duplicate_controls": [
+    {
+      "equivalent_metrics": 10,
+      "geography": "UNITED STATES",
+      "left_file": "2004-table4a.xls",
+      "left_row": 8,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 8,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "ALABAMA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 21,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 15,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "ALASKA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 34,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 22,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "ARIZONA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 47,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 29,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "ARKANSAS",
+      "left_file": "2004-table4a.xls",
+      "left_row": 61,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 36,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "CALIFORNIA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 74,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 43,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "COLORADO",
+      "left_file": "2004-table4a.xls",
+      "left_row": 87,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 50,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "CONNECTICUT",
+      "left_file": "2004-table4a.xls",
+      "left_row": 100,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 57,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "DELAWARE",
+      "left_file": "2004-table4a.xls",
+      "left_row": 113,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 64,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "DISTRICT OF COLUMBIA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 126,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 71,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "FLORIDA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 139,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 78,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "GEORGIA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 152,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 85,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "HAWAII",
+      "left_file": "2004-table4a.xls",
+      "left_row": 165,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 92,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "IDAHO",
+      "left_file": "2004-table4a.xls",
+      "left_row": 178,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 99,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "ILLINOIS",
+      "left_file": "2004-table4a.xls",
+      "left_row": 191,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 106,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "INDIANA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 204,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 113,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "IOWA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 217,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 120,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "KANSAS",
+      "left_file": "2004-table4a.xls",
+      "left_row": 230,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 127,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "KENTUCKY",
+      "left_file": "2004-table4a.xls",
+      "left_row": 243,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 134,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "LOUISIANA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 256,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 141,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "MAINE",
+      "left_file": "2004-table4a.xls",
+      "left_row": 269,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 148,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "MARYLAND",
+      "left_file": "2004-table4a.xls",
+      "left_row": 282,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 155,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "MASSACHUSETTS",
+      "left_file": "2004-table4a.xls",
+      "left_row": 295,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 162,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "MICHIGAN",
+      "left_file": "2004-table4a.xls",
+      "left_row": 308,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 169,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "MINNESOTA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 321,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 176,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "MISSISSIPPI",
+      "left_file": "2004-table4a.xls",
+      "left_row": 334,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 183,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "MISSOURI",
+      "left_file": "2004-table4a.xls",
+      "left_row": 347,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 190,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "MONTANA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 360,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 197,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "NEBRASKA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 373,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 204,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "NEVADA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 386,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 211,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "NEW HAMPSHIRE",
+      "left_file": "2004-table4a.xls",
+      "left_row": 399,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 218,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "NEW JERSEY",
+      "left_file": "2004-table4a.xls",
+      "left_row": 412,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 225,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "NEW MEXICO",
+      "left_file": "2004-table4a.xls",
+      "left_row": 425,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 232,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "NEW YORK",
+      "left_file": "2004-table4a.xls",
+      "left_row": 438,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 239,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "NORTH CAROLINA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 451,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 246,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "NORTH DAKOTA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 464,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 253,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "OHIO",
+      "left_file": "2004-table4a.xls",
+      "left_row": 477,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 260,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "OKLAHOMA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 490,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 267,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "OREGON",
+      "left_file": "2004-table4a.xls",
+      "left_row": 503,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 274,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "PENNSYLVANIA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 516,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 281,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "RHODE ISLAND",
+      "left_file": "2004-table4a.xls",
+      "left_row": 529,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 288,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "SOUTH CAROLINA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 542,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 295,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "SOUTH DAKOTA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 555,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 302,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "TENNESSEE",
+      "left_file": "2004-table4a.xls",
+      "left_row": 568,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 309,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "TEXAS",
+      "left_file": "2004-table4a.xls",
+      "left_row": 581,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 316,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "UTAH",
+      "left_file": "2004-table4a.xls",
+      "left_row": 594,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 323,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "VERMONT",
+      "left_file": "2004-table4a.xls",
+      "left_row": 607,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 330,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "VIRGINIA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 620,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 337,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "WASHINGTON",
+      "left_file": "2004-table4a.xls",
+      "left_row": 633,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 344,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "WEST VIRGINIA",
+      "left_file": "2004-table4a.xls",
+      "left_row": 646,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 351,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "WISCONSIN",
+      "left_file": "2004-table4a.xls",
+      "left_row": 659,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 358,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 10,
+      "geography": "WYOMING",
+      "left_file": "2004-table4a.xls",
+      "left_row": 672,
+      "literal_conflicting_metrics": {},
+      "right_file": "2004-table4b.xls",
+      "right_row": 365,
+      "year": 2004
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "UNITED STATES",
+      "left_file": "2008-table4b.xls",
+      "left_row": 8,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 8,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "ALABAMA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 20,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 17,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "ALASKA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 32,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 24,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "ARIZONA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 44,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 29,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "ARKANSAS",
+      "left_file": "2008-table4b.xls",
+      "left_row": 56,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 36,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "CALIFORNIA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 68,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 43,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "COLORADO",
+      "left_file": "2008-table4b.xls",
+      "left_row": 80,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 50,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "CONNECTICUT",
+      "left_file": "2008-table4b.xls",
+      "left_row": 92,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 57,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "DELAWARE",
+      "left_file": "2008-table4b.xls",
+      "left_row": 104,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 64,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "DISTRICT OF COLUMBIA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 116,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 69,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 11,
+      "geography": "FLORIDA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 128,
+      "literal_conflicting_metrics": {
+        "voted_citizens_pct": [
+          63.8,
+          64.2
+        ]
+      },
+      "right_file": "2008-table4c.xls",
+      "right_row": 74,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 11,
+      "geography": "GEORGIA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 140,
+      "literal_conflicting_metrics": {
+        "voted_citizens_pct": [
+          64.2,
+          51.8
+        ]
+      },
+      "right_file": "2008-table4c.xls",
+      "right_row": 81,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 11,
+      "geography": "HAWAII",
+      "left_file": "2008-table4b.xls",
+      "left_row": 152,
+      "literal_conflicting_metrics": {
+        "voted_citizens_pct": [
+          51.8,
+          61.4
+        ]
+      },
+      "right_file": "2008-table4c.xls",
+      "right_row": 88,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "IDAHO",
+      "left_file": "2008-table4b.xls",
+      "left_row": 164,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 95,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "ILLINOIS",
+      "left_file": "2008-table4b.xls",
+      "left_row": 176,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 100,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "INDIANA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 188,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 107,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "IOWA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 200,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 114,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "KANSAS",
+      "left_file": "2008-table4b.xls",
+      "left_row": 212,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 121,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "KENTUCKY",
+      "left_file": "2008-table4b.xls",
+      "left_row": 224,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 128,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "LOUISIANA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 236,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 135,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "MAINE",
+      "left_file": "2008-table4b.xls",
+      "left_row": 248,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 142,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "MARYLAND",
+      "left_file": "2008-table4b.xls",
+      "left_row": 260,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 149,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "MASSACHUSETTS",
+      "left_file": "2008-table4b.xls",
+      "left_row": 272,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 156,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "MICHIGAN",
+      "left_file": "2008-table4b.xls",
+      "left_row": 284,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 163,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "MINNESOTA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 296,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 170,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "MISSISSIPPI",
+      "left_file": "2008-table4b.xls",
+      "left_row": 308,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 177,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "MISSOURI",
+      "left_file": "2008-table4b.xls",
+      "left_row": 320,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 184,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "MONTANA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 332,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 191,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "NEBRASKA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 344,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 196,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "NEVADA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 356,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 203,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "NEW HAMPSHIRE",
+      "left_file": "2008-table4b.xls",
+      "left_row": 368,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 210,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "NEW JERSEY",
+      "left_file": "2008-table4b.xls",
+      "left_row": 380,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 217,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "NEW MEXICO",
+      "left_file": "2008-table4b.xls",
+      "left_row": 392,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 224,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "NEW YORK",
+      "left_file": "2008-table4b.xls",
+      "left_row": 404,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 231,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "NORTH CAROLINA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 416,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 238,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "NORTH DAKOTA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 428,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 245,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "OHIO",
+      "left_file": "2008-table4b.xls",
+      "left_row": 440,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 250,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "OKLAHOMA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 452,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 257,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "OREGON",
+      "left_file": "2008-table4b.xls",
+      "left_row": 464,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 264,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "PENNSYLVANIA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 476,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 271,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "RHODE ISLAND",
+      "left_file": "2008-table4b.xls",
+      "left_row": 488,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 278,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "SOUTH CAROLINA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 500,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 283,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "SOUTH DAKOTA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 512,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 290,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "TENNESSEE",
+      "left_file": "2008-table4b.xls",
+      "left_row": 524,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 295,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "TEXAS",
+      "left_file": "2008-table4b.xls",
+      "left_row": 536,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 302,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "UTAH",
+      "left_file": "2008-table4b.xls",
+      "left_row": 548,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 309,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "VERMONT",
+      "left_file": "2008-table4b.xls",
+      "left_row": 560,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 316,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "VIRGINIA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 572,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 321,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "WASHINGTON",
+      "left_file": "2008-table4b.xls",
+      "left_row": 584,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 328,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "WEST VIRGINIA",
+      "left_file": "2008-table4b.xls",
+      "left_row": 596,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 335,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "WISCONSIN",
+      "left_file": "2008-table4b.xls",
+      "left_row": 608,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 342,
+      "year": 2008
+    },
+    {
+      "equivalent_metrics": 12,
+      "geography": "WYOMING",
+      "left_file": "2008-table4b.xls",
+      "left_row": 620,
+      "literal_conflicting_metrics": {},
+      "right_file": "2008-table4c.xls",
+      "right_row": 349,
+      "year": 2008
+    }
+  ],
+  "individual_or_2026_transitions_qualified": false,
+  "limits": [
+    "Census CPS Voting and Registration Supplement, November 2004/2006/2008. 2006 is a midterm; 2004/2008 are presidential elections. These are repeated cross-sections, not fixed-person cohorts.",
+    "2004 native rates/MOEs use ALL adults18+, not citizen adults. No citizen voting rate/MOE is derived from rounded counts. Do not splice adult and citizen rates into one comparable series.",
+    "2006/2008 use native citizen-adult voting rates. Civilian noninstitutionalized citizen adults are not established legal eligibility. Self/proxy-reported voting can over-report administrative participation.",
+    "Counts are native weighted population estimates in rounded thousands, NOT respondent n/effective n. Native percentages/MOEs are never recalculated from those counts.",
+    "Native90% margins do not establish precision for cross-year differences, simultaneous intervals, nonsampling error or significance of group differences.",
+    "Sex,race-alone,race-in-combination,Hispanic and age views overlap. They are not intersections or an exclusive partition. These tables do not supply education,income or urbanicity.",
+    "Native(B) suppression and dash(zero or rounds to zero) remain literal. Do not recover suppressed rates or replace dash by an exact zero. Eleven suppressed-rate/numeric-margin pairs are retained, never used to recover missing rates.",
+    "2006/2008sex-race notes state a75000population suppression base. 2004/2008age notes do not supply a numeric threshold. The additional citizen-base<=75000 display screen is not native respondent support or a precision guarantee.",
+    "2006/2008first sex-race blocks have no native geography label; all22rows are display-withheld. 2008first total matches every explicit national age-total metric, but this does not create a native national label.",
+    "Arizona2004extra.Non-HispanicWhite row duplicates White-alone values; preserve all literal rows and withhold the ambiguous extra row, not alias/delete it.",
+    "SouthDakota2008White-alone-or-combination citizen registration percentage is literal423. Preserve and flag it; withhold the row's voting display rather than silently repair source data.",
+    "2008Florida/Georgia/Hawaii total citizen voting rates disagree between sex-race and age tables. Preserve BOTH native vectors and withhold BOTH total voting displays for each state. 104control pairs comprise101agreeing and3conflicting pairs, not104matching pairs.",
+    "Native2004age bins are18-24/25-44/45-64/65-74/75+. 2008US uses18-24/25-34/35-44/45-54/55-64/65-74/75+;41larger states use2004bins;10small jurisdictions use18-44/45-64/65+. No common-bin splitting or combined margins are invented.",
+    "2008age notes literally refer toTable4b and say Internet Release date: Month xx,2009. Both are retained; no release date is imputed. Native geography suffix2 is normalized only for the10specified small jurisdictions.",
+    "2006state-age table is not declared in THIScatalog; this is not evidence that no other native table exists. Unsupported combinations remain unavailable, not zero.",
+    "All2375native observations and26626metric cells, including104repeated total-control pairs and unqualified/small-base rows, are retained. Repeated controls are not independent observations. Qualified displays do not promote the remaining native rows.",
+    "NativeUS scope includesDC where explicitly labeled. Do not reconstruct national values by summing rounded states. Current attributes and changing populations do not establish fixed demographic cohorts.",
+    "No2026participation,individual switching,measured stayinghome,first-time/returning identity,county/precinct demographic rates,causal effects or cross-year significance is established.",
+    "All eight frozen governmental originals and complete sanitized native receipts are included with attribution toU.S.CensusBureau. Historical acquisition-only qualification flags remain provenance, not this package's publication decision. Existing2010-2024packages remain unchanged.",
+    "Offline: install scripts/requirements-cps-older-history.txt; run python scripts/test-package-cps-early-history.py and python scripts/package-cps-early-history.py --output NEW_DIRECTORY from the extracted archive root. The package reextracts every XLS metric, not just selected JSON results."
+  ],
+  "native_definitions": [
+    {
+      "citizen_voting_rate_supplied": false,
+      "file": "2004-table4a.xls",
+      "major_header": [
+        "State, sex, race, and Hispanic origin",
+        "Population 18 and over",
+        "Total citizen",
+        "",
+        "",
+        "Total registered",
+        "",
+        "",
+        "Total voted",
+        "",
+        ""
+      ],
+      "metric_names": [
+        "adults_thousands",
+        "adult_citizens_thousands",
+        "citizen_adults_pct",
+        "citizen_adults_moe90_pp",
+        "registered_thousands",
+        "registered_adults_pct",
+        "registered_adults_moe90_pp",
+        "voted_thousands",
+        "voted_adults_pct",
+        "voted_adults_moe90_pp"
+      ],
+      "minor_header": [
+        "",
+        "",
+        "Total  ",
+        "Percent citizen (18+)",
+        "Margin of error1",
+        "Total  ",
+        "Percent registered (18+)",
+        "Margin of error1",
+        "Total  ",
+        "Percent voted (18+)",
+        "Margin of error1"
+      ],
+      "native_rows": 625,
+      "notes": [
+        {
+          "literal": "Footnotes:",
+          "source_row": 685
+        },
+        {
+          "literal": "1This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+          "source_row": 686
+        },
+        {
+          "literal": "Note: The symbol (B) means that the base is too small to show the derived measure.",
+          "source_row": 687
+        },
+        {
+          "literal": "Note: \" - \" Represents zero or rounds to zero.",
+          "source_row": 688
+        },
+        {
+          "literal": "Source: U.S. Census Bureau, Current Population Survey, November 2004.",
+          "source_row": 690
+        },
+        {
+          "literal": "Internet Release date: May 25, 2005",
+          "source_row": 691
+        }
+      ],
+      "numeric_suppression_threshold_supplied": null,
+      "role": "sex_race",
+      "sheet_name": "Sheet1",
+      "title": "Table 4a. Reported Voting and Registration of the Total Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2004",
+      "year": 2004
+    },
+    {
+      "citizen_voting_rate_supplied": false,
+      "file": "2004-table4b.xls",
+      "major_header": [
+        "State and age",
+        "Population 18 and over",
+        "Total citizen",
+        "",
+        "",
+        "Total registered",
+        "",
+        "",
+        "Total voted",
+        "",
+        ""
+      ],
+      "metric_names": [
+        "adults_thousands",
+        "adult_citizens_thousands",
+        "citizen_adults_pct",
+        "citizen_adults_moe90_pp",
+        "registered_thousands",
+        "registered_adults_pct",
+        "registered_adults_moe90_pp",
+        "voted_thousands",
+        "voted_adults_pct",
+        "voted_adults_moe90_pp"
+      ],
+      "minor_header": [
+        "",
+        "",
+        "Total  ",
+        "Percent citizen (18+)",
+        "Margin of error1",
+        "Total  ",
+        "Percent registered (18+)",
+        "Margin of error1",
+        "Total  ",
+        "Percent voted (18+)",
+        "Margin of error1"
+      ],
+      "native_rows": 312,
+      "notes": [
+        {
+          "literal": "Footnotes:",
+          "source_row": 372
+        },
+        {
+          "literal": "1This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+          "source_row": 373
+        },
+        {
+          "literal": "Note: The symbol (B) means that the base is too small to show the derived measure.",
+          "source_row": 374
+        },
+        {
+          "literal": "\" - \" Represents zero or rounds to zero.",
+          "source_row": 375
+        },
+        {
+          "literal": "Source: U.S. Census Bureau, Current Population Survey, November 2004.",
+          "source_row": 377
+        },
+        {
+          "literal": "Internet Release date: May 25, 2005",
+          "source_row": 378
+        }
+      ],
+      "numeric_suppression_threshold_supplied": null,
+      "role": "age",
+      "sheet_name": "Sheet1",
+      "title": "Table 4b. Reported Voting and Registration of the Total Voting-Age Population, by Age, for States: November 2004",
+      "year": 2004
+    },
+    {
+      "citizen_voting_rate_supplied": true,
+      "file": "2006-table4b.xls",
+      "major_header": [
+        "State, sex, race, and Hispanic origin",
+        "Total Population",
+        "Total Citizen Population",
+        "Registered",
+        "",
+        "",
+        "",
+        "",
+        "Total Voted",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "metric_names": [
+        "adults_thousands",
+        "adult_citizens_thousands",
+        "registered_thousands",
+        "registered_adults_pct",
+        "registered_adults_moe90_pp",
+        "registered_citizens_pct",
+        "registered_citizens_moe90_pp",
+        "voted_thousands",
+        "voted_adults_pct",
+        "voted_adults_moe90_pp",
+        "voted_citizens_pct",
+        "voted_citizens_moe90_pp"
+      ],
+      "minor_header": [
+        "",
+        "",
+        "",
+        "Total Registered",
+        "Percent registered (Total 18+)",
+        "Margin of error1",
+        "Percent registered (Citizen 18+)",
+        "Margin of error1",
+        "Total Voted",
+        "Percent voted (Total 18+)",
+        "Margin of error1",
+        "Percent voted (Citizen 18+)",
+        "Margin of error1"
+      ],
+      "native_rows": 572,
+      "notes": [
+        {
+          "literal": "1This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+          "source_row": 632
+        },
+        {
+          "literal": "NOTE: The symbol (B) means that the base is less than 75,000 and therefore too small to show the derived measure.",
+          "source_row": 634
+        },
+        {
+          "literal": "NOTE: \" - \" Represents zero or rounds to zero.",
+          "source_row": 636
+        },
+        {
+          "literal": "Separate estimates for the race group \u201cWhite Non-Hispanic Alone or in Combination,\u201d which were included in 2004, have been removed from this ",
+          "source_row": 638
+        },
+        {
+          "literal": "table. Please contact the Education and Social Stratification Branch if you have any questions (301-763-2468)",
+          "source_row": 639
+        },
+        {
+          "literal": "Source: U.S. Census Bureau, Current Population Survey, November 2006.",
+          "source_row": 641
+        },
+        {
+          "literal": "Internet Release date:  July 1, 2008",
+          "source_row": 643
+        }
+      ],
+      "numeric_suppression_threshold_supplied": 75000,
+      "role": "sex_race",
+      "sheet_name": "Table 4b",
+      "title": "Table 4b. Reported Voting and Registration of the Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2006",
+      "year": 2006
+    },
+    {
+      "citizen_voting_rate_supplied": true,
+      "file": "2008-table4b.xls",
+      "major_header": [
+        "State, sex, race, and Hispanic origin",
+        "Total Population",
+        "Total Citizen Population",
+        "Registered",
+        "",
+        "",
+        "",
+        "",
+        "Total Voted",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "metric_names": [
+        "adults_thousands",
+        "adult_citizens_thousands",
+        "registered_thousands",
+        "registered_adults_pct",
+        "registered_adults_moe90_pp",
+        "registered_citizens_pct",
+        "registered_citizens_moe90_pp",
+        "voted_thousands",
+        "voted_adults_pct",
+        "voted_adults_moe90_pp",
+        "voted_citizens_pct",
+        "voted_citizens_moe90_pp"
+      ],
+      "minor_header": [
+        "",
+        "",
+        "",
+        "Total Registered",
+        "Percent registered (Total 18+)",
+        "Margin of error1",
+        "Percent registered (Citizen 18+)",
+        "Margin of error1",
+        "Total Voted",
+        "Percent voted (Total 18+)",
+        "Margin of error1",
+        "Percent voted (Citizen 18+)",
+        "Margin of error1"
+      ],
+      "native_rows": 572,
+      "notes": [
+        {
+          "literal": "1This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+          "source_row": 632
+        },
+        {
+          "literal": "NOTE: The symbol (B) means that the base is less than 75,000 and therefore too small to show the derived measure.",
+          "source_row": 634
+        },
+        {
+          "literal": "NOTE: \" - \" Represents zero or rounds to zero.",
+          "source_row": 636
+        },
+        {
+          "literal": "Note: Federal surveys now give respondents the option of reporting more than one race.  Therefore, two basic ways of defining a race group are possible.  A group such as Asian may be defined as those who reported Asian and no other race (the race-alone or single-race concept) or as those who reported Asian regardless of whether they also reported another race (the race-alone-or-in-combination concept).  This table shows data for people who reported they were the single race White and not Hispanic, people who reported the single race Black, and people who reported the single race Asian.  Use of the single-race populations does not imply that it is the preferred method of presenting or analyzing data.",
+          "source_row": 638
+        },
+        {
+          "literal": "Source: U.S. Census Bureau, Current Population Survey, November 2008.",
+          "source_row": 640
+        },
+        {
+          "literal": "Internet Release date:  February, 2009",
+          "source_row": 641
+        }
+      ],
+      "numeric_suppression_threshold_supplied": 75000,
+      "role": "sex_race",
+      "sheet_name": "Table 4b",
+      "title": "Table 4b. Reported Voting and Registration of the Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2008",
+      "year": 2008
+    },
+    {
+      "citizen_voting_rate_supplied": true,
+      "file": "2008-table4c.xls",
+      "major_header": [
+        "State and Age",
+        "Total Population",
+        "Total Citizen Population",
+        "Registered",
+        "",
+        "",
+        "",
+        "",
+        "Total Voted",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "metric_names": [
+        "adults_thousands",
+        "adult_citizens_thousands",
+        "registered_thousands",
+        "registered_adults_pct",
+        "registered_adults_moe90_pp",
+        "registered_citizens_pct",
+        "registered_citizens_moe90_pp",
+        "voted_thousands",
+        "voted_adults_pct",
+        "voted_adults_moe90_pp",
+        "voted_citizens_pct",
+        "voted_citizens_moe90_pp"
+      ],
+      "minor_header": [
+        "",
+        "",
+        "",
+        "Total Registered",
+        "Percent registered (Total 18+)",
+        "Margin of error1",
+        "Percent registered (Citizen 18+)",
+        "Margin of error1",
+        "Total Voted",
+        "Percent voted (Total 18+)",
+        "Margin of error1",
+        "Percent voted (Citizen 18+)",
+        "Margin of error1"
+      ],
+      "native_rows": 294,
+      "notes": [
+        {
+          "literal": "1This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+          "source_row": 354
+        },
+        {
+          "literal": "Note: The symbol (B) means that the base is too small to show the derived measure.",
+          "source_row": 355
+        },
+        {
+          "literal": "\" - \" Represents zero or rounds to zero.",
+          "source_row": 356
+        },
+        {
+          "literal": "2 For smaller states, Table 4b utilizes a collapsed set of age-groups to increase the overall number of publishable estimates.  ",
+          "source_row": 358
+        },
+        {
+          "literal": "Source: U.S. Census Bureau, Current Population Survey, November 2008.",
+          "source_row": 360
+        },
+        {
+          "literal": "Internet Release date:  Month xx, 2009",
+          "source_row": 361
+        }
+      ],
+      "numeric_suppression_threshold_supplied": null,
+      "role": "age",
+      "sheet_name": "Table 4c",
+      "title": "Table 4c. Reported Voting and Registration of the Total Voting-Age Population, by Age, for States: November 2008",
+      "year": 2008
+    }
+  ],
+  "native_metric_cells": 26626,
+  "native_observations_including_repeated_controls": 2375,
+  "public_qualification": "Historical native aggregate transcription and conservative display only.",
+  "source_acquisition_sha256": "a825beb5690259e58819eaef3bb62c94e53dbd5e5f0a2f1cb8a6d412f01e6c35",
+  "states_and_DC": 51,
+  "status": "qualified_historical_CPS_self_report_not_2026_or_individual_transitions",
+  "years": [
+    2004,
+    2006,
+    2008
+  ]
+}
