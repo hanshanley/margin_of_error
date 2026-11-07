@@ -1,0 +1,55 @@
+{
+  "status": "reported_joint_survey_tables_not_population_decomposition",
+  "provider": "The Voter Poll by SSRS",
+  "publisher_dashboard": "https://www.cnn.com/elections/2026/voter-polls",
+  "configuration_url": "https://politics.api.cnn.io/config/exit-poll-dropdown-config/2026-11-03-GE.json",
+  "methods_url": "https://ssrs.com/wp-content/uploads/The-Voter-Poll-by-SSRS-Methodology-Statement_Final.pdf",
+  "methods_sha256": "a986a389ea6c1a6db6acdf2bb550a30b4d3f88fd85e5f3bb4127a7e7c6710c5d",
+  "methods_clock_as_printed": "11/4/2026 5:23 PM",
+  "methods_clock_timezone": "not specified",
+  "methods_pages": 10,
+  "source_contract": {
+    "joint_question_mxId": 10003,
+    "prior_question": "2024 presidential vote",
+    "current_contest": "Native raceType/electionType/race title; national HG is House.",
+    "composition": "Native totalPercentage; not renormalized.",
+    "current_choice_given_prior": "Native candidateAnswers.percentage, bound by literal candidateId and party.",
+    "not_interchangeable": "vPercentage is a reverse conditional.",
+    "suppression": "Native -1 and null remain unavailable; never reconstructed from other cells.",
+    "composition_shortfall": "Below 98 across four whole-point prior shares exceeds rounding tolerance. Preserve cells and difference from 100; withhold composition-based arithmetic without attributing the residual.",
+    "special_elections": "Native SP uses electionType P with title Senate Special Election; ordinary binary arithmetic withheld pending official scope review.",
+    "nonunique_major_parties": "No forced assignment of independents, multiple same-party candidates or ranked-choice rounds."
+  },
+  "sample_and_weighting": {
+    "shared_study": "CNN, NBC and MS NOW tables are not independent samples.",
+    "successful_recontact": "Final choice from November 2-3 recontact.",
+    "unsuccessful_recontact": "Initial choice retained; not universally completed-ballot responses.",
+    "rv_calibration_includes_recalled_2024_choice_for_validated_prior_voters": true,
+    "final_weights_match_2026_results": true,
+    "independent_validation_from_matching_current_results": false,
+    "review_forces_selected_2026_electorate_to_2024_composition": false,
+    "dc_sampled": false,
+    "methods_table_3_national_n": 81290,
+    "methods_table_3_national_design_effect": 2.6,
+    "methods_table_3_national_reported_overall_moe_pp": 0.5,
+    "dashboard_national_reported_respondents": 79668,
+    "joint_cell_effective_bases_or_replicate_weights_available": false
+  },
+  "limits": [
+    "Conditional switching among current poll groups is not an original-2024-coalition switching rate or a share of overall election swing.",
+    "Prior presidential nonvoting is not validated all-ballot nonparticipation.",
+    "No 2026 nonvoter rows; direct population drop-off remains unavailable.",
+    "Rounded products are descriptive arithmetic, not design-aware confidence intervals.",
+    "Subsets overlap; never add them or allocate state or national estimates to counties or precincts.",
+    "Source respondent bases are not effective prior-choice-cell bases.",
+    "Office differences can reflect ticket-splitting rather than changed beliefs or causal persuasion."
+  ],
+  "preliminary_population_extension": {
+    "required": "Qualified official prior coalition total T24, matched current voter total N26, joint prior share q and current conditional p.",
+    "returning": "N26*q",
+    "reported_switchers": "N26*q*p",
+    "apparent_absence": "T24-N26*q",
+    "released_in_this_version": false,
+    "qualification": "Not measured staying home: migration, mortality, recall, incomplete reporting and contest-denominator uncertainty remain. Preserve infeasible residuals as diagnostics rather than clamping them."
+  }
+}
