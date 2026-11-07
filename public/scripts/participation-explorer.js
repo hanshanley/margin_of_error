@@ -1683,6 +1683,11 @@ function stateDetail() {
     panel.append(button);
   }
   for (const path of state.mapPaths) path.classList.toggle("selected", path.dataset.state === state.selectedState);
+  const outline = state.map?.stateSelectionOutline;
+  if (outline) {
+    outline.setAttribute("d", state.map.statePaths.get(stateCode())?.getAttribute("d") || "");
+    outline.dataset.selectedState = state.selectedState;
+  }
 }
 function statesView() {
   const year = Number($("year").value), basis = $("basis").value;
@@ -2010,6 +2015,12 @@ function stateMap(byName, provisional = false) {
   }
   svg.append(svgNode("text", { x: 60, y: 590, class: "map-label inset-caption" }, "Alaska"),
     svgNode("text", { x: 275, y: 590, class: "map-label inset-caption" }, "Hawaii · insets not to scale"));
+  state.map.stateSelectionOutline = svgNode("path", {
+    class: "state-selection-outline", fill: "none", stroke: "#172e48", "stroke-width": 2,
+    "stroke-linejoin": "round", "vector-effect": "non-scaling-stroke",
+    "pointer-events": "none", "aria-hidden": "true",
+  });
+  svg.append(state.map.stateSelectionOutline);
   setViewport(previousViewport || state.viewport);
 }
 function projectInside(feature, point) {

@@ -41,6 +41,9 @@
 .participation-page[data-active-view="precincts"] .map-feature { stroke-width: .25; }
 .participation-explorer .map-feature:hover { stroke: var(--ink); stroke-width: 1.5; }
 .participation-explorer .map-feature.selected { stroke: #172e48; stroke-width: 2; }
+.participation-explorer .map-feature:focus { outline: none; }
+.participation-explorer .map-feature:focus-visible { stroke: var(--signal); stroke-width: 2; }
+.participation-explorer .turnout-map:has(.map-feature.selected:focus-visible) .state-selection-outline { stroke: var(--signal); }
 .participation-explorer .map-label { fill: #253447; stroke: none; font: 500 12px var(--sans); pointer-events: none; }
 .participation-explorer .precinct-label { stroke: #fff; paint-order: stroke; }
 .participation-explorer .map-callout-line { fill: none; stroke: #a6b0bd; stroke-width: .65; vector-effect: non-scaling-stroke; pointer-events: none; }
