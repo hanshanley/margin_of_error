@@ -1,0 +1,261 @@
+{
+  "version": "20261106-demographic-cohort-01",
+  "state_code": "NC",
+  "pilot_county": "DURHAM",
+  "cohort_date": "2026-11-03",
+  "prior_election_date": "2024-11-05",
+  "source_receipts": [
+    {
+      "file": "absentee.zip",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/absentee_20261103.zip",
+      "bytes": 127167072,
+      "sha256": "048c09258bb539caf594e0d1ea31fa5ffb0f4a1e495f04f09160dbabc10e2879",
+      "retrieved_at": "2026-11-06T22:55:02.757614+00:00",
+      "last_modified": "Fri, 06 Nov 2026 10:28:21 GMT",
+      "etag": "\"4f8acfb9fbafa2a741bd8cfdf75e2547-16\"",
+      "public_individual_records_exported": false
+    },
+    {
+      "file": "history-durham.zip",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis32.zip",
+      "bytes": 11187116,
+      "sha256": "d3640dba5ff100f03d8b5bf95866032f173cfc6c5002072cb3b6e33e551e2705",
+      "retrieved_at": "2026-11-06T22:55:03.178275+00:00",
+      "last_modified": "Mon, 02 Nov 2026 01:17:54 GMT",
+      "etag": "\"d076036e84ae324bd7a14d7915d393a3-2\"",
+      "public_individual_records_exported": false
+    },
+    {
+      "file": "absentee-layout.txt",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/layout_absentee.txt",
+      "bytes": 14304,
+      "sha256": "3b2bb7adc590780c43fa8e9d32a1dc137a007c20faf4cd92536403a27c24029c",
+      "retrieved_at": "2026-11-06T22:55:03.286735+00:00",
+      "last_modified": "Sat, 27 Jan 2024 21:41:23 GMT",
+      "etag": "\"60feb0365d5b252b7f2368eaf012d057\"",
+      "public_individual_records_exported": false
+    },
+    {
+      "file": "history-layout.txt",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/layout_ncvhis.txt",
+      "bytes": 4898,
+      "sha256": "87a14b8405e23dbd43be151a52e6180bd1edca870429b18f0126f9924518ca07",
+      "retrieved_at": "2026-11-06T22:55:03.422388+00:00",
+      "last_modified": "Wed, 07 Jul 2021 14:46:27 GMT",
+      "etag": "\"6f93aff6b3f2929affb5c9b658d6bed2\"",
+      "public_individual_records_exported": false
+    }
+  ],
+  "cohort_audit": {
+    "source_rows": 2903664,
+    "accepted_records": 2823876,
+    "unique_nonempty_accepted_identifiers": 2823865,
+    "duplicate_accepted_identifier_records": 11,
+    "accepted_records_missing_identifier": 0,
+    "county_count": 100,
+    "native_method_status_counts": [
+      {
+        "method": "EARLY VOTING",
+        "status": "ACCEPTED",
+        "records": 2728945
+      },
+      {
+        "method": "EARLY VOTING",
+        "status": "CANCELLED",
+        "records": 4522
+      },
+      {
+        "method": "EARLY VOTING",
+        "status": "CONFLICT",
+        "records": 155
+      },
+      {
+        "method": "EARLY VOTING",
+        "status": "DUPLICATE",
+        "records": 11
+      },
+      {
+        "method": "EARLY VOTING",
+        "status": "NOT VOTED",
+        "records": 775
+      },
+      {
+        "method": "EARLY VOTING",
+        "status": "SDR-FAILED VERIFICATION",
+        "records": 159
+      },
+      {
+        "method": "EARLY VOTING",
+        "status": "WRONG VOTER",
+        "records": 377
+      },
+      {
+        "method": "MAIL",
+        "status": "",
+        "records": 33246
+      },
+      {
+        "method": "MAIL",
+        "status": "ACCEPTED",
+        "records": 94931
+      },
+      {
+        "method": "MAIL",
+        "status": "ACCEPTED - CURED",
+        "records": 1620
+      },
+      {
+        "method": "MAIL",
+        "status": "ACCEPTED - EXCEPTION",
+        "records": 11825
+      },
+      {
+        "method": "MAIL",
+        "status": "AFFIDAVIT DECLINED",
+        "records": 1
+      },
+      {
+        "method": "MAIL",
+        "status": "ASSISTANT INFO INCOMPLETE",
+        "records": 27
+      },
+      {
+        "method": "MAIL",
+        "status": "CONFLICT",
+        "records": 25
+      },
+      {
+        "method": "MAIL",
+        "status": "DUPLICATE",
+        "records": 10
+      },
+      {
+        "method": "MAIL",
+        "status": "ID NOT PROVIDED",
+        "records": 3
+      },
+      {
+        "method": "MAIL",
+        "status": "NO TIME FOR CURE - CONTACTED",
+        "records": 20
+      },
+      {
+        "method": "MAIL",
+        "status": "NOT PROPERLY NOTARIZED",
+        "records": 11
+      },
+      {
+        "method": "MAIL",
+        "status": "PENDING",
+        "records": 68
+      },
+      {
+        "method": "MAIL",
+        "status": "PENDING CURE",
+        "records": 710
+      },
+      {
+        "method": "MAIL",
+        "status": "PHOTO ID CURABLE",
+        "records": 10
+      },
+      {
+        "method": "MAIL",
+        "status": "RETURNED AFTER DEADLINE",
+        "records": 657
+      },
+      {
+        "method": "MAIL",
+        "status": "RETURNED UNDELIVERABLE",
+        "records": 362
+      },
+      {
+        "method": "MAIL",
+        "status": "SIGNATURE DIFFERENT",
+        "records": 7
+      },
+      {
+        "method": "MAIL",
+        "status": "SPOILED",
+        "records": 5070
+      },
+      {
+        "method": "MAIL",
+        "status": "SPOILED-EV",
+        "records": 18865
+      },
+      {
+        "method": "MAIL",
+        "status": "WITNESS INFO INCOMPLETE",
+        "records": 1252
+      }
+    ],
+    "membership_unique": false
+  },
+  "history_audit": {
+    "history_records": 1370595,
+    "native_election_dates": {
+      "03/03/2020": 90090,
+      "03/03/2026": 66184,
+      "03/05/2024": 63879,
+      "04/30/2019": 84,
+      "05/08/2018": 33606,
+      "05/14/2019": 23,
+      "05/14/2024": 1417,
+      "05/17/2022": 56115,
+      "06/23/2020": 16,
+      "06/26/2018": 8,
+      "07/09/2019": 19,
+      "07/23/2019": 2,
+      "07/26/2022": 485,
+      "09/09/2025": 16,
+      "09/10/2019": 397,
+      "09/12/2017": 81,
+      "09/12/2023": 21,
+      "10/05/2021": 19167,
+      "10/07/2025": 25157,
+      "10/08/2019": 16879,
+      "10/10/2017": 24000,
+      "10/10/2023": 23251,
+      "11/02/2021": 30291,
+      "11/03/2020": 176971,
+      "11/04/2025": 46420,
+      "11/05/2019": 34280,
+      "11/05/2024": 181644,
+      "11/06/2018": 126482,
+      "11/07/2017": 35148,
+      "11/07/2023": 38614,
+      "11/08/2016": 152578,
+      "11/08/2022": 127269,
+      "12/06/2022": 1
+    },
+    "positive_2024_history_matches_available": 181642,
+    "duplicate_2024_history_records": 2
+  },
+  "evidence": {
+    "membership_verified": false,
+    "same_people": false,
+    "methods_matched": false,
+    "geography_matched": false,
+    "cutoff_matched": false,
+    "valid_vote_universe_matched": false,
+    "prior_turnout_verified": false,
+    "prior_preference_validated": false,
+    "demographic_choice_validated": false
+  },
+  "status": "aggregate_cohort_audit_only",
+  "persuasion_estimates_released": false,
+  "limitations": [
+    "Accepted records are a source status, not proof of counted ballots or candidate selections.",
+    "Only the literal ACCEPTED status is selected. ACCEPTED - CURED and ACCEPTED - EXCEPTION remain separate in the complete status audit, not silently included.",
+    "No-match to one county's history is unresolved, not proof of 2024 nonvoting or 2026 staying home.",
+    "History archive predates the 2026 election and cannot measure 2026 drop-off.",
+    "Primary participation and registered party are not candidate choices.",
+    "Age bins are derived from source-supplied age; its reference date is not independently established.",
+    "Race and ethnicity are separate overlapping dimensions; dimensions cannot be summed.",
+    "Education, household income and residence type are not supplied by these archives.",
+    "Group sizes are accepted-record composition, not group turnout rates.",
+    "No historical-choice model, matched 2026 cohort returns, or demographic-choice validation is supplied.",
+    "Personal source archives stay private. The public package contains complete aggregate review inputs and outputs, not individual records."
+  ]
+}

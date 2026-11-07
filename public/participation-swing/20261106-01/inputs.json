@@ -1,0 +1,37 @@
+[
+  {
+    "path": "data/participation-swing/20261106-demographic-cohort-01/audit.json",
+    "bytes": 7806,
+    "sha256": "75e54439ddbb3d0befee6ecb802d25d15b538739161fbf1b53d4c29717169543"
+  },
+  {
+    "path": "data/participation-swing/20261106-demographic-cohort-01/aggregate-cohort.json",
+    "bytes": 1537014,
+    "sha256": "b6e6e808cb74e09c11032f4f842695e192957bbf40269aca715772455ea998d3"
+  },
+  {
+    "path": "data/participation-swing/20261106-candidate-scope-01/candidate-audit.json",
+    "bytes": 1991,
+    "sha256": "ebbcbbed78205592e63fb96a182de5d5ebfcce0ee85e0a44555bf67e7990a312"
+  },
+  {
+    "path": "data/participation-swing/20261106-candidate-scope-01/county-contest-methods.json",
+    "bytes": 1464479,
+    "sha256": "5f5bd1c1a029a1fe269ec6ac3ea911d0c8eb35a3b2cfbd38b58f6a9af16a2199"
+  },
+  {
+    "path": "data/participation-swing/20261106-candidate-scope-01/source-receipt.json",
+    "bytes": 492,
+    "sha256": "e6e9021e23da6bddbace098bab96aa9dc7b0b0828298b945dce4ae5f803bb056"
+  },
+  {
+    "path": "data/participation-swing/20261106-candidate-scope-01/NC-results-20241105.zip",
+    "bytes": 3741131,
+    "sha256": "2fab44e9b12e03c0d88ef832c2e6dc8c569e2b020d64df06a8b551b62bbdb426"
+  },
+  {
+    "path": "data/precinct-results/20261105T015000Z/originals/NC-results-20261103.zip",
+    "bytes": 2033810,
+    "sha256": "1d542e51b688deef41965adbe59e0e85f136ee16b83f22ceaac7f4e7cc2a09a3"
+  }
+]

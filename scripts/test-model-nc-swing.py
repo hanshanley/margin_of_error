@@ -1,0 +1,130 @@
+import importlib.util
+import unittest
+from pathlib import Path
+
+import numpy as np
+
+spec = importlib.util.spec_from_file_location("model", Path(__file__).with_name("model-nc-swing.py"))
+model = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(model)
+
+
+class ConditionalModelTest(unittest.TestCase):
+    def test_choice_calibration_preserves_each_cohort_and_handles_zero_other(self):
+        priors = np.array([[.9, .09, .01], [.1, .89, .01]])
+        weights = np.array([50., 50.])
+        target = np.array([70., 30., 0.])
+        fitted = model.calibrate(priors, weights, target)
+        np.testing.assert_allclose(fitted.sum(axis=1), 1)
+        np.testing.assert_allclose(weights @ fitted, target, atol=1e-4)
+        self.assertGreater(fitted[0, 0], fitted[1, 0])
+        with self.assertRaises(ValueError):
+            model.calibrate(priors, weights, np.array([70., 40., 0.]))
+        for invalid_weights, invalid_target in [(np.array([np.nan, 50.]), target),
+                                                (weights, np.array([70., 31., -1.]))]:
+            with self.assertRaises(ValueError):
+                model.calibrate(priors, invalid_weights, invalid_target)
+
+    def test_prior_turnout_encoding_matches_across_years_and_preserves_unknowns(self):
+        row = dict(race="W", ethnicity="NL", registered_party_2026="DEM", primary_2024="DEM",
+                   age_2022="45-64", age_2026="45-64", prior_2020_history=True,
+                   prior_2024_history="Positive 2024 NC history", historical_search_complete=True)
+        self.assertEqual(model.turnout_features(row, 2022, 2020),
+                         model.turnout_features(row, 2026, 2024))
+        row["prior_2024_history"] = "No 2024 NC history found; national participation unresolved"
+        self.assertEqual(model.turnout_features(row, 2026, 2024)["prior_general"], "False")
+        row["historical_search_complete"] = False
+        self.assertEqual(model.turnout_features(row, 2026, 2024)["prior_general"], "None")
+
+    def test_identical_observations_can_hide_distinct_switching_and_dropoff(self):
+        pure_dropoff = np.zeros((1, 6, 6))
+        pure_dropoff[0, 0, 0], pure_dropoff[0, 1, 1], pure_dropoff[0, 1, 4] = 50, 40, 10
+        switching = np.zeros((1, 6, 6))
+        switching[0, 0, 0], switching[0, 0, 4] = 40, 10
+        switching[0, 1, 0], switching[0, 1, 1] = 10, 40
+        _, first = model.accounting(pure_dropoff)
+        _, second = model.accounting(switching)
+        self.assertEqual(first["before"], second["before"])
+        self.assertEqual(first["after"], second["after"])
+        self.assertEqual(first["swing_margin_pp"], second["swing_margin_pp"])
+        self.assertEqual(first["gross_major_party_switchers"], 0)
+        self.assertEqual(second["gross_major_party_switchers"], 10)
+        self.assertNotEqual(first["margin_pp_contributions"], second["margin_pp_contributions"])
+
+    def test_pure_dropoff_receives_the_entire_percentage_point_swing(self):
+        flows = np.zeros((1, 6, 6))
+        flows[0, 0, 0], flows[0, 1, 1], flows[0, 1, 4] = 50, 40, 10
+        _, result = model.accounting(flows)
+        self.assertAlmostEqual(result["swing_margin_pp"], 100 / 9)
+        self.assertAlmostEqual(result["margin_pp_contributions"]["dropoff"], 100 / 9)
+        self.assertAlmostEqual(result["signed_share_of_swing_pct"]["dropoff"], 100)
+
+    def test_switching_factor_two_and_additive_demographic_contributions(self):
+        flows = np.zeros((2, 6, 6))
+        flows[0, 0, 0], flows[0, 1, 0], flows[0, 1, 1] = 50, 10, 40
+        flows[1, 0, 0], flows[1, 0, 4], flows[1, 1, 1] = 40, 10, 50
+        contributions, result = model.accounting(flows)
+        self.assertEqual(result["gross_major_party_switchers"], 10)
+        self.assertGreater(result["signed_share_of_swing_pct"]["switching"], 100)
+        self.assertLess(result["signed_share_of_swing_pct"]["dropoff"], 0)
+        self.assertAlmostEqual(contributions.sum(), result["swing_margin_pp"])
+
+    def test_zero_swing_does_not_have_component_percentages(self):
+        flows = np.zeros((1, 6, 6))
+        flows[0, 0, 0], flows[0, 1, 1] = 50, 50
+        _, result = model.accounting(flows)
+        self.assertTrue(all(value is None for value in result["signed_share_of_swing_pct"].values()))
+
+    def test_early_absence_is_a_probability_not_a_nonvoter_label(self):
+        rows = [
+            dict(records=40, cohort_membership_2026="Accepted 2026 EARLY VOTING",
+                 baseline_2024_voted_county=True, registration_status_2026="ACTIVE",
+                 race="W", ethnicity="NL", registered_party_2026="DEM", primary_2024="DEM"),
+            dict(records=60, cohort_membership_2026="Not in selected early/mail cohort",
+                 baseline_2024_voted_county=True, registration_status_2026="ACTIVE",
+                 race="W", ethnicity="NL", registered_party_2026="REP", primary_2024="REP"),
+        ]
+        membership, exits = model.late_membership(rows, np.array([.7, .7]), 70, 1., 0.)
+        self.assertEqual(membership[0], 1)
+        self.assertAlmostEqual(membership[1], .5)
+        self.assertEqual(exits.sum(), 0)
+        with self.assertRaises(ValueError):
+            model.late_membership(rows, np.array([.7, .7]), 30, 1., 0.)
+
+    def test_complete_transition_model_reconciles_votes_ballots_and_all_group_partitions(self):
+        rows = []
+        for count, party, early, old in [(20, "DEM", True, True), (40, "DEM", False, True),
+                                         (40, "REP", False, True), (20, "UNA", False, False)]:
+            rows.append(dict(records=count, registered_party_2026=party, primary_2024="No matched primary",
+                             cohort_membership_2026="Accepted 2026 EARLY VOTING" if early else "Not in selected early/mail cohort",
+                             baseline_2024_voted_county=old, registration_status_2026="ACTIVE",
+                             age_2024="30-44", age_2026="30-44", race="W", ethnicity="NL", gender="F",
+                             prior_2024_history="Positive 2024 NC history" if old else "Unresolved"))
+        prior = np.array([[.9, .09, .01], [.9, .09, .01], [.1, .89, .01], [.5, .49, .01]])
+        result = model.scenario(rows, prior, prior, np.array([.8, .8, .6, .3]),
+                                np.array([55., 44., 1.]), np.array([50., 25., 1.]), 100, 80)
+        np.testing.assert_allclose([result["before"][key] for key in ["D", "R", "O"]], [55, 44, 1], atol=1e-4)
+        np.testing.assert_allclose([result["after"][key] for key in ["D", "R", "O", "B"]], [50, 25, 1, 4], atol=1e-4)
+        for dimension in {row["dimension"] for row in result["demographics"]}:
+            groups = [row for row in result["demographics"] if row["dimension"] == dimension]
+            self.assertAlmostEqual(sum(row["modeled_2026_participants"] for row in groups), 80)
+            self.assertAlmostEqual(sum(sum(row["margin_pp_contributions"].values()) for row in groups),
+                                   result["swing_margin_pp"])
+        self.assertEqual(next(row["group"] for row in result["demographics"] if row["dimension"] == "administrative_gender"),
+                         "FEMALE")
+        counts = result["modeled_cohort_counts"]
+        self.assertAlmostEqual(counts["repeat_2024_county_participants"] +
+                               counts["participants_without_2024_county_participation"], 80)
+        self.assertAlmostEqual(counts["repeat_2024_county_participants"] +
+                               counts["prior_county_participants_now_nonvoting"] +
+                               counts["prior_county_participants_eligibility_residence_exit"], 100)
+        rows[-1]["age_2024"] = "Under 18 in 2024"
+        younger = model.scenario(rows, prior, prior, np.array([.8, .8, .6, .3]),
+                                 np.array([55., 44., 1.]), np.array([50., 25., 1.]), 100, 80)
+        self.assertAlmostEqual(younger["before"]["N"], 0)
+        self.assertAlmostEqual(younger["before"]["X"], 20)
+        self.assertGreater(younger["modeled_cohort_counts"]["participants_newly_adult_since_2024"], 0)
+
+
+if __name__ == "__main__":
+    unittest.main()
