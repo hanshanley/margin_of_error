@@ -1,0 +1,33 @@
+{
+  "release_id": 437560232,
+  "tag": "participation-columbia-wisconsin-history-20261107-01",
+  "target_sha": "4a7e27d0a5b5d7d1f2134520a1612ed3c875556c",
+  "immutable": true,
+  "published_at": "2026-11-07T12:23:05Z",
+  "assets": [
+    {
+      "file": "complete-analysis.zip",
+      "asset_id": 720635564,
+      "bytes": 57096,
+      "sha256": "944d65020c04f0fb515d2e1b2987335edaf9344bf79b715152ebf165c9d62ee9",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-columbia-wisconsin-history-20261107-01/complete-analysis.zip"
+    },
+    {
+      "file": "native-ballots.csv",
+      "asset_id": 720635609,
+      "bytes": 6907,
+      "sha256": "7394fd01c6c9babdee5a6b07419b8c027894180e9695a4ba3bb12c64c64bbe70",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-columbia-wisconsin-history-20261107-01/native-ballots.csv"
+    },
+    {
+      "file": "native-contest-vectors.csv",
+      "asset_id": 720635650,
+      "bytes": 262622,
+      "sha256": "592b3b41330d27ea85cb2a1919d1b5bf38a22d54850c62a62956b15fbcc08368",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-columbia-wisconsin-history-20261107-01/native-contest-vectors.csv"
+    }
+  ],
+  "authenticated_assets_downloaded_in_full_and_verified": true,
+  "published_assets_anonymously_downloaded_in_full_and_verified": true,
+  "tag_commit_matches_verified_package": true
+}
