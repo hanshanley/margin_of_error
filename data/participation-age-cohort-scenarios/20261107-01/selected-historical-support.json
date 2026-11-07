@@ -1,0 +1,170 @@
+{
+  "status": "reviewed_selected_national_prospective_age_support",
+  "historical_controls_checked": true,
+  "source_pins": {
+    "survey_sha256": "8a5e9fbc982961ad910bad9aed8d521fa0a85e85cded43fb308cce0ab22ba5d9",
+    "guide_md5": "b1b24ed55a20193bb0301bc84cf6da9a",
+    "control_sha256": "80fff0c5cd3df49d7d6a2a782c339e62f1286041170ddafd73c090495e9cb88a",
+    "native_label_audit_sha256": "643469ba7e1f7ecfee478672733ade493cdf67542feb8c80af6ec193079113a5",
+    "doi": "10.7910/DVN/X11EP6",
+    "release": "9.0",
+    "license": "CC0 1.0"
+  },
+  "source_audit_sha256": "6d7a262d3f14c4f7bb849de6d996870d557daa2a725e844d174a83711310c312",
+  "release_scope": "national_conditional_scenarios_only",
+  "cohorts": [
+    {
+      "scope": "50_states_excluding_DC",
+      "prior_choice": "D",
+      "native_current_survey_subset": 53,
+      "minimum_age": 18,
+      "maximum_age": 29,
+      "coalition": {
+        "respondents": 18048,
+        "sum_weight": 15719.616570466058,
+        "sum_squared_weight": 41172.21578477004,
+        "effective_sample_size": 6001.774264815688
+      },
+      "certain_age_support": {
+        "respondents": 739,
+        "sum_weight": 2061.3043763497085,
+        "sum_squared_weight": 13422.940351174218,
+        "fraction_within_reported_2024_coalition": 0.13112943099531305,
+        "effective_sample_size": 316.5458253404789
+      },
+      "possible_age_support_including_unknown_birth_year": {
+        "sum_weight": 2432.120649342217,
+        "fraction_within_reported_2024_coalition": 0.15471882780599583
+      }
+    },
+    {
+      "scope": "50_states_excluding_DC",
+      "prior_choice": "D",
+      "native_current_survey_subset": 54,
+      "minimum_age": 18,
+      "maximum_age": 44,
+      "coalition": {
+        "respondents": 18048,
+        "sum_weight": 15719.616570466058,
+        "sum_squared_weight": 41172.21578477004,
+        "effective_sample_size": 6001.774264815688
+      },
+      "certain_age_support": {
+        "respondents": 3811,
+        "sum_weight": 5953.082869608729,
+        "sum_squared_weight": 24639.287907354552,
+        "fraction_within_reported_2024_coalition": 0.3787040760773614,
+        "effective_sample_size": 1438.3206116054473
+      },
+      "possible_age_support_including_unknown_birth_year": {
+        "sum_weight": 6318.1229134909545,
+        "fraction_within_reported_2024_coalition": 0.40192601932552313
+      }
+    },
+    {
+      "scope": "50_states_excluding_DC",
+      "prior_choice": "D",
+      "native_current_survey_subset": 55,
+      "minimum_age": 65,
+      "maximum_age": null,
+      "coalition": {
+        "respondents": 18048,
+        "sum_weight": 15719.616570466058,
+        "sum_squared_weight": 41172.21578477004,
+        "effective_sample_size": 6001.774264815688
+      },
+      "certain_age_support": {
+        "respondents": 7269,
+        "sum_weight": 4202.919576314935,
+        "sum_squared_weight": 6909.084686776746,
+        "fraction_within_reported_2024_coalition": 0.26736781762294126,
+        "effective_sample_size": 2556.711021183363
+      },
+      "possible_age_support_including_unknown_birth_year": {
+        "sum_weight": 4628.26163972194,
+        "fraction_within_reported_2024_coalition": 0.294425860769244
+      }
+    },
+    {
+      "scope": "50_states_excluding_DC",
+      "prior_choice": "R",
+      "native_current_survey_subset": 53,
+      "minimum_age": 18,
+      "maximum_age": 29,
+      "coalition": {
+        "respondents": 13666,
+        "sum_weight": 16296.578245150376,
+        "sum_squared_weight": 45733.464632708405,
+        "effective_sample_size": 5807.0925663123235
+      },
+      "certain_age_support": {
+        "respondents": 194,
+        "sum_weight": 991.0467380785349,
+        "sum_squared_weight": 8604.042285708114,
+        "fraction_within_reported_2024_coalition": 0.06081317950125241,
+        "effective_sample_size": 114.15258136138635
+      },
+      "possible_age_support_including_unknown_birth_year": {
+        "sum_weight": 1291.20180406282,
+        "fraction_within_reported_2024_coalition": 0.07923146716072516
+      }
+    },
+    {
+      "scope": "50_states_excluding_DC",
+      "prior_choice": "R",
+      "native_current_survey_subset": 54,
+      "minimum_age": 18,
+      "maximum_age": 44,
+      "coalition": {
+        "respondents": 13666,
+        "sum_weight": 16296.578245150376,
+        "sum_squared_weight": 45733.464632708405,
+        "effective_sample_size": 5807.0925663123235
+      },
+      "certain_age_support": {
+        "respondents": 1530,
+        "sum_weight": 4131.9876817300055,
+        "sum_squared_weight": 23133.90496328318,
+        "fraction_within_reported_2024_coalition": 0.2535494027993039,
+        "effective_sample_size": 738.0216279554322
+      },
+      "possible_age_support_including_unknown_birth_year": {
+        "sum_weight": 4397.702036158906,
+        "fraction_within_reported_2024_coalition": 0.2698543197230742
+      }
+    },
+    {
+      "scope": "50_states_excluding_DC",
+      "prior_choice": "R",
+      "native_current_survey_subset": 55,
+      "minimum_age": 65,
+      "maximum_age": null,
+      "coalition": {
+        "respondents": 13666,
+        "sum_weight": 16296.578245150376,
+        "sum_squared_weight": 45733.464632708405,
+        "effective_sample_size": 5807.0925663123235
+      },
+      "certain_age_support": {
+        "respondents": 6224,
+        "sum_weight": 5822.342236003177,
+        "sum_squared_weight": 10033.097126445535,
+        "fraction_within_reported_2024_coalition": 0.357273910413422,
+        "effective_sample_size": 3378.784106833046
+      },
+      "possible_age_support_including_unknown_birth_year": {
+        "sum_weight": 6372.124277597667,
+        "fraction_within_reported_2024_coalition": 0.3910099520120991
+      }
+    }
+  ],
+  "disclosure_and_precision_review": {
+    "selection": "Only six broad national coalition/age aggregates; no state, fine intersection, birthday-boundary or unknown-birth count is exported.",
+    "minimum_certain_raw_base": 194,
+    "minimum_certain_effective_base": 114.15258136138635,
+    "base_diagnostics_are_not_automatic_publication_or_precision_thresholds": true,
+    "design_confidence_intervals_available": false,
+    "empirical_sensitivity_bounds_estimated": false,
+    "release_restriction": "Explicitly hypothetical scaling scenarios only; no observed staying-home or demographic turnout result."
+  }
+}
