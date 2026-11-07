@@ -1,0 +1,678 @@
+{
+  "version": "20261107-01",
+  "scope": {
+    "state_code": "IN",
+    "county_name": "Hamilton",
+    "county_fips": "18057"
+  },
+  "methodology": {
+    "anomalies": "Ten erroneous native total cells retained beside independently recomputed children/mode totals. Never silently repaired or treated as additional precincts.",
+    "contest_comparison": "Separate whole-county 2024 President and 2024 House 5 baselines against 2026 House 5. Two-party margin changes are descriptive, not individual persuasion; all literal other parties and write-ins retained.",
+    "count_comparison": "Signed county report-count changes against the unofficial frozen 2026 observation; not measured prior-voter dropout.",
+    "current_count_finality_qualified": false,
+    "demographic_turnout_qualified": false,
+    "denominator": "Native Registered Voters in each report, not VEP, CVAP, fixed people or demographic eligibility.",
+    "geography": "Native within-election precinct IDs and labels retained; no cross-year identity or analytical geographic overlay.",
+    "individual_transitions_qualified": false,
+    "measure": "Native Total Votes Cast, not selected-contest candidate votes.",
+    "native_documents_redistributed": false,
+    "native_mode_labels": "2020 At Polls/Absentee/Walk-In Absentee retained separately from later E-Election Day/A-Paper Absentee/W-Walk-In Absentee; no unsupported shift attribution.",
+    "personal_records_included": false,
+    "precinct_cross_year_identity_qualified": false,
+    "publication_basis": "Selected public government factual counts and functional source identifiers only, with attribution; not a claimed license to redistribute the native documents or site code. No source endorsement.",
+    "receipt_headers": "All used receipt URLs/status/bytes/hashes/acquisition clocks retained. Only content type/length/disposition/date/last-modified/etag/cache-control headers selected; Set-Cookie, session values and unrelated security headers excluded.",
+    "reproduction": "Complete selected aggregate inputs, receipts, CSVs, exact standard-library calculator/tests, methods and results. Does not rerun original native PDF/HTML extraction or independently validate outcomes.",
+    "selection": "Every native precinct and control in all four declared turnout reports; every candidate and precinct in three county-wide contests. No outcome-based unit selection.",
+    "source_attribution": "Hamilton County, Indiana Election Office; historical and current official election reports.",
+    "source_clocks": "PDF footer dates, native HTML clocks, HTTP dates and acquisition dates are distinct. 2020 footer year is literally truncated; no missing timezone or year imputed.",
+    "status": "qualified_descriptive_native_report_counts_only",
+    "unique_person_population_qualified": false
+  },
+  "elections": [
+    {
+      "year": 2020,
+      "election_date": "2020-11-03",
+      "registered_voters": 260082,
+      "election_day": 53147,
+      "paper_absentee": 44376,
+      "walk_in_absentee": 98465,
+      "total_votes_cast": 195988,
+      "native_turnout_percent": "75.4",
+      "precinct_count": 221,
+      "status": "historical_general_report_not_independently_certification_qualified",
+      "native_mode_labels": [
+        "At Polls",
+        "Absentee",
+        "Walk-In Absentee"
+      ],
+      "native_footer_date_literal": "Friday, November 13, 202",
+      "receipt_key": "turnout-2020"
+    },
+    {
+      "year": 2022,
+      "election_date": "2022-11-08",
+      "registered_voters": 270921,
+      "election_day": 77171,
+      "paper_absentee": 12748,
+      "walk_in_absentee": 40457,
+      "total_votes_cast": 130376,
+      "native_turnout_percent": "48.1",
+      "precinct_count": 217,
+      "status": "historical_general_report_not_independently_certification_qualified",
+      "native_mode_labels": [
+        "E-Election Day",
+        "A-Paper Absentee",
+        "W-Walk-In Absentee"
+      ],
+      "native_footer_date_literal": "Friday, November 18, 2022",
+      "receipt_key": "turnout-2022"
+    },
+    {
+      "year": 2024,
+      "election_date": "2024-11-05",
+      "registered_voters": 283202,
+      "election_day": 81443,
+      "paper_absentee": 20196,
+      "walk_in_absentee": 98092,
+      "total_votes_cast": 199731,
+      "native_turnout_percent": "70.5",
+      "precinct_count": 220,
+      "status": "final_certified_in_declaring_link_label",
+      "native_mode_labels": [
+        "E-Election Day",
+        "A-Paper Absentee",
+        "W-Walk-In Absentee"
+      ],
+      "native_footer_date_literal": "Saturday, November 16, 2024",
+      "receipt_key": "turnout-2024"
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "registered_voters": 290805,
+      "election_day": 70925,
+      "paper_absentee": 9690,
+      "walk_in_absentee": 70189,
+      "total_votes_cast": 150804,
+      "native_turnout_percent": "51.9",
+      "precinct_count": 234,
+      "status": "UNOFFICIAL",
+      "native_mode_labels": [
+        "E-Election Day",
+        "A-Paper Absentee",
+        "W-Walk-In Absentee"
+      ],
+      "native_footer_date_literal": "Tuesday, November 3, 2026",
+      "receipt_key": "turnout-2026"
+    }
+  ],
+  "native_total_cell_discrepancies": [
+    {
+      "year": 2022,
+      "native_label": "Totals",
+      "source_page": 5,
+      "native_total_votes_cast": 478,
+      "derived_precinct_and_mode_sum": 130376
+    },
+    {
+      "year": 2024,
+      "native_label": "Totals",
+      "source_page": 5,
+      "native_total_votes_cast": 826,
+      "derived_precinct_and_mode_sum": 199731
+    },
+    {
+      "year": 2026,
+      "native_label": "Clay Totals",
+      "source_page": 2,
+      "native_total_votes_cast": 434,
+      "derived_precinct_and_mode_sum": 43738
+    },
+    {
+      "year": 2026,
+      "native_label": "Delaware Totals",
+      "source_page": 2,
+      "native_total_votes_cast": 669,
+      "derived_precinct_and_mode_sum": 13659
+    },
+    {
+      "year": 2026,
+      "native_label": "Fall Creek Totals",
+      "source_page": 3,
+      "native_total_votes_cast": 1006,
+      "derived_precinct_and_mode_sum": 28200
+    },
+    {
+      "year": 2026,
+      "native_label": "Jackson Totals",
+      "source_page": 3,
+      "native_total_votes_cast": 577,
+      "derived_precinct_and_mode_sum": 4469
+    },
+    {
+      "year": 2026,
+      "native_label": "Noblesville Totals",
+      "source_page": 4,
+      "native_total_votes_cast": 480,
+      "derived_precinct_and_mode_sum": 27446
+    },
+    {
+      "year": 2026,
+      "native_label": "Sheridan Totals",
+      "source_page": 4,
+      "native_total_votes_cast": 565,
+      "derived_precinct_and_mode_sum": 2040
+    },
+    {
+      "year": 2026,
+      "native_label": "Wayne Totals",
+      "source_page": 4,
+      "native_total_votes_cast": 418,
+      "derived_precinct_and_mode_sum": 3638
+    },
+    {
+      "year": 2026,
+      "native_label": "Westfield Totals",
+      "source_page": 5,
+      "native_total_votes_cast": 807,
+      "derived_precinct_and_mode_sum": 26622
+    }
+  ],
+  "contests": [
+    {
+      "year": 2024,
+      "title": "President and Vice-President of the U.S.",
+      "scope": {
+        "county_fips": "18057",
+        "county_name": "Hamilton",
+        "election_date": "2024-11-05",
+        "native_election_id": "INHAMG24",
+        "native_status": "Final Certified Results",
+        "source_report_time_literal": "11/16/2024 - 12:02:55 AM",
+        "source_report_timezone": null,
+        "state_code": "IN",
+        "year": 2024
+      },
+      "precinct_count": 220,
+      "reported_public_count": 199731,
+      "candidate_total": 197767,
+      "unclassified_reported_count_gap": 1964,
+      "candidates": [
+        {
+          "candidate_name": "Trump \\ Vance",
+          "election_day": 45656,
+          "native_label": "(R) Trump \\ Vance",
+          "native_percent": "51.74%",
+          "paper_absentee": 8395,
+          "party": "R",
+          "total_votes": 102318,
+          "walk_in_absentee": 48267
+        },
+        {
+          "candidate_name": "Harris \\ Walz",
+          "election_day": 31822,
+          "native_label": "(D) Harris \\ Walz",
+          "native_percent": "45.71%",
+          "paper_absentee": 11128,
+          "party": "D",
+          "total_votes": 90394,
+          "walk_in_absentee": 47444
+        },
+        {
+          "candidate_name": "Oliver \\ Ter Maat",
+          "election_day": 1089,
+          "native_label": "(L) Oliver \\ Ter Maat",
+          "native_percent": "0.92%",
+          "paper_absentee": 167,
+          "party": "L",
+          "total_votes": 1817,
+          "walk_in_absentee": 561
+        },
+        {
+          "candidate_name": "Kennedy Jr. \\ Shanahan",
+          "election_day": 1169,
+          "native_label": "(WTP) Kennedy Jr. \\ Shanahan",
+          "native_percent": "0.97%",
+          "paper_absentee": 152,
+          "party": "WTP",
+          "total_votes": 1912,
+          "walk_in_absentee": 591
+        },
+        {
+          "candidate_name": "Write-In",
+          "election_day": 769,
+          "native_label": "Write-In",
+          "native_percent": "0.67%",
+          "paper_absentee": 111,
+          "party": null,
+          "total_votes": 1326,
+          "walk_in_absentee": 446
+        }
+      ],
+      "two_party_margin_pp": -6.187471460002491,
+      "receipt_key": "contest-2024-president"
+    },
+    {
+      "year": 2024,
+      "title": "United States Representative District 5",
+      "scope": {
+        "county_fips": "18057",
+        "county_name": "Hamilton",
+        "election_date": "2024-11-05",
+        "native_election_id": "INHAMG24",
+        "native_status": "Final Certified Results",
+        "source_report_time_literal": "11/16/2024 - 12:02:55 AM",
+        "source_report_timezone": null,
+        "state_code": "IN",
+        "year": 2024
+      },
+      "precinct_count": 220,
+      "reported_public_count": 199731,
+      "candidate_total": 191181,
+      "unclassified_reported_count_gap": 8550,
+      "candidates": [
+        {
+          "candidate_name": "Victoria Spartz",
+          "election_day": 45238,
+          "native_label": "(R) Victoria Spartz",
+          "native_percent": "53.42%",
+          "paper_absentee": 8854,
+          "party": "R",
+          "total_votes": 102120,
+          "walk_in_absentee": 48028
+        },
+        {
+          "candidate_name": "Deborah A Pickett",
+          "election_day": 27293,
+          "native_label": "(D) Deborah A Pickett",
+          "native_percent": "41.99%",
+          "paper_absentee": 9921,
+          "party": "D",
+          "total_votes": 80280,
+          "walk_in_absentee": 43066
+        },
+        {
+          "candidate_name": "Lauri Shillings",
+          "election_day": 2476,
+          "native_label": "(L) Lauri Shillings",
+          "native_percent": "2.41%",
+          "paper_absentee": 396,
+          "party": "L",
+          "total_votes": 4613,
+          "walk_in_absentee": 1741
+        },
+        {
+          "candidate_name": "Robby Slaughter",
+          "election_day": 2134,
+          "native_label": "(I) Robby Slaughter",
+          "native_percent": "2.15%",
+          "paper_absentee": 369,
+          "party": "I",
+          "total_votes": 4113,
+          "walk_in_absentee": 1610
+        },
+        {
+          "candidate_name": "Write-In",
+          "election_day": 34,
+          "native_label": "Write-In",
+          "native_percent": "0.03%",
+          "paper_absentee": 5,
+          "party": null,
+          "total_votes": 55,
+          "walk_in_absentee": 16
+        }
+      ],
+      "two_party_margin_pp": -11.973684210526315,
+      "receipt_key": "contest-2024-house-5"
+    },
+    {
+      "year": 2026,
+      "title": "United States Representative District 5",
+      "scope": {
+        "county_fips": "18057",
+        "county_name": "Hamilton",
+        "election_date": "2026-11-03",
+        "native_election_id": "INHAMG26",
+        "native_status": "Election Night Unofficial Results",
+        "source_report_time_literal": "11/3/2026 - 10:38:45 PM",
+        "source_report_timezone": null,
+        "state_code": "IN",
+        "year": 2026
+      },
+      "precinct_count": 234,
+      "reported_public_count": 150804,
+      "candidate_total": 147217,
+      "unclassified_reported_count_gap": 3587,
+      "candidates": [
+        {
+          "candidate_name": "Victoria Spartz",
+          "election_day": 37171,
+          "native_label": "(R) Victoria Spartz",
+          "native_percent": "44.54%",
+          "paper_absentee": 3769,
+          "party": "R",
+          "total_votes": 65570,
+          "walk_in_absentee": 24630
+        },
+        {
+          "candidate_name": "J.D. Ford",
+          "election_day": 31940,
+          "native_label": "(D) J.D. Ford",
+          "native_percent": "55.36%",
+          "paper_absentee": 5663,
+          "party": "D",
+          "total_votes": 81500,
+          "walk_in_absentee": 43897
+        },
+        {
+          "candidate_name": "Write-In",
+          "election_day": 96,
+          "native_label": "Write-In",
+          "native_percent": "0.10%",
+          "paper_absentee": 11,
+          "party": null,
+          "total_votes": 147,
+          "walk_in_absentee": 40
+        }
+      ],
+      "two_party_margin_pp": 10.831576800163187,
+      "receipt_key": "contest-2026-house-5"
+    }
+  ],
+  "reported_count_comparisons": [
+    {
+      "baseline_year": 2020,
+      "current_year": 2026,
+      "reported_count_change": -45184
+    },
+    {
+      "baseline_year": 2022,
+      "current_year": 2026,
+      "reported_count_change": 20428
+    },
+    {
+      "baseline_year": 2024,
+      "current_year": 2026,
+      "reported_count_change": -48927
+    }
+  ],
+  "descriptive_contest_comparisons": [
+    {
+      "baseline_year": 2024,
+      "baseline_contest": "President and Vice-President of the U.S.",
+      "current_year": 2026,
+      "current_contest": "United States Representative District 5",
+      "two_party_margin_change_pp": 17.01904826016568
+    },
+    {
+      "baseline_year": 2024,
+      "baseline_contest": "United States Representative District 5",
+      "current_year": 2026,
+      "current_contest": "United States Representative District 5",
+      "two_party_margin_change_pp": 22.805261010689502
+    }
+  ],
+  "unsupported_estimates": {
+    "individual_switchers": null,
+    "measured_staying_home": null,
+    "new_or_returning_voter_identity": null,
+    "demographic_turnout": null,
+    "original_coalition_absence": null,
+    "causal_persuasion": null,
+    "precinct_cross_year_flows": null,
+    "design_confidence_interval": null
+  },
+  "source_receipts": {
+    "contest-2024-house-5": {
+      "bytes": 62689,
+      "filename": "house-5-2024.html",
+      "final_url": "https://secure2.hamiltoncounty.in.gov/Elections/2024G/results/datafiles/United-States-Representative-District-5.htm",
+      "finished_at_utc": "2026-11-07T11:07:45.671859+00:00",
+      "headers": {
+        "Cache-Control": "max-age=1200, must-revalidate",
+        "Content-Type": "text/html",
+        "Date": "Sat, 07 Nov 2026 11:07:45 GMT",
+        "ETag": "W/\"aebbedd8fd39db1:0\"",
+        "Last-Modified": "Mon, 18 Nov 2024 21:07:16 GMT"
+      },
+      "requested_url": "https://secure2.hamiltoncounty.in.gov/Elections/2024G/results/datafiles/United-States-Representative-District-5.htm",
+      "sha256": "5942d974d9b415c3d18bc9d804efcbef03285ee6f803aa0550a1593ed0e5e9d1",
+      "started_at_utc": "2026-11-07T11:07:45.058440+00:00",
+      "status": 200
+    },
+    "contest-2024-president": {
+      "bytes": 62533,
+      "filename": "president-2024.html",
+      "final_url": "https://secure2.hamiltoncounty.in.gov/Elections/2024G/results/datafiles/President-and-Vice-President-of-the-U-S-.htm",
+      "finished_at_utc": "2026-11-07T11:07:45.056960+00:00",
+      "headers": {
+        "Cache-Control": "max-age=1200, must-revalidate",
+        "Content-Type": "text/html",
+        "Date": "Sat, 07 Nov 2026 11:07:45 GMT",
+        "ETag": "W/\"5ae8ead8fd39db1:0\"",
+        "Last-Modified": "Mon, 18 Nov 2024 21:07:16 GMT"
+      },
+      "requested_url": "https://secure2.hamiltoncounty.in.gov/Elections/2024G/results/datafiles/President-and-Vice-President-of-the-U-S-.htm",
+      "sha256": "1b994c3c851f0ab9277575bc6240a72824be1bbf6f80cbad82f28f9d45f98e52",
+      "started_at_utc": "2026-11-07T11:07:44.879558+00:00",
+      "status": 200
+    },
+    "contest-2026-house-5": {
+      "bytes": 50596,
+      "filename": "house-5-2026.html",
+      "final_url": "https://secure2.hamiltoncounty.in.gov/Elections/2026G/results/datafiles/United-States-Representative-District-5.htm",
+      "finished_at_utc": "2026-11-07T11:05:33.575260+00:00",
+      "headers": {
+        "Cache-Control": "max-age=1200, must-revalidate",
+        "Content-Type": "text/html",
+        "Date": "Sat, 07 Nov 2026 11:05:33 GMT",
+        "ETag": "W/\"cae6386d116cdd1:0\"",
+        "Last-Modified": "Wed, 04 Nov 2026 04:03:19 GMT"
+      },
+      "requested_url": "https://secure2.hamiltoncounty.in.gov/Elections/2026G/results/datafiles/United-States-Representative-District-5.htm",
+      "sha256": "4a87f72e4c24e7b76e47ee65a4505b009ec19c01d1f4b982fe2dd3baaafe8e8b",
+      "started_at_utc": "2026-11-07T11:05:32.683022+00:00",
+      "status": 200
+    },
+    "current-copyright.html": {
+      "bytes": 90595,
+      "filename": "copyright.html",
+      "final_url": "https://www.hamiltoncounty.in.gov/site/copyright",
+      "finished_at_utc": "2026-11-07T10:57:03.254451+00:00",
+      "headers": {
+        "Cache-Control": "private, s-maxage=600,no-transform",
+        "Content-Length": "90595",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sat, 07 Nov 2026 10:57:02 GMT"
+      },
+      "requested_url": "https://www.hamiltoncounty.in.gov/site/copyright",
+      "sha256": "a8a98b0f2878fe13401244c9d0c563c9a2466b5e8117e6217bef234ed0f68f9e",
+      "started_at_utc": "2026-11-07T10:57:02.778728+00:00",
+      "status": 200
+    },
+    "current-current-election.html": {
+      "bytes": 106319,
+      "filename": "current-election.html",
+      "final_url": "https://www.hamiltoncounty.in.gov/222/Current-Election-Information",
+      "finished_at_utc": "2026-11-07T10:57:02.290322+00:00",
+      "headers": {
+        "Cache-Control": "private, s-maxage=600,no-transform",
+        "Content-Length": "106319",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sat, 07 Nov 2026 10:57:01 GMT"
+      },
+      "requested_url": "https://www.hamiltoncounty.in.gov/222/Current-Election-Information",
+      "sha256": "6f6e736d75b30effe49f16580e46884716e140ba6863b781b16b41f769e99803",
+      "started_at_utc": "2026-11-07T10:57:01.597535+00:00",
+      "status": 200
+    },
+    "current-terms.html": {
+      "bytes": 94269,
+      "filename": "terms.html",
+      "final_url": "https://www.hamiltoncounty.in.gov/125/Terms-of-Use",
+      "finished_at_utc": "2026-11-07T10:57:02.777318+00:00",
+      "headers": {
+        "Cache-Control": "private, s-maxage=600,no-transform",
+        "Content-Length": "94269",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sat, 07 Nov 2026 10:57:02 GMT"
+      },
+      "requested_url": "https://www.hamiltoncounty.in.gov/125/Terms-of-Use",
+      "sha256": "8b661002f1d5bc5f8504f0f4393b3bb07ace03e291905a88b5763b13d7f491e9",
+      "started_at_utc": "2026-11-07T10:57:02.301125+00:00",
+      "status": 200
+    },
+    "historical-landing": {
+      "bytes": 114018,
+      "filename": "past-elections.html",
+      "final_url": "https://www.hamiltoncounty.in.gov/225/Past-Election-Information",
+      "finished_at_utc": "2026-11-07T11:02:46.553859+00:00",
+      "headers": {
+        "Cache-Control": "private, s-maxage=600,no-transform",
+        "Content-Length": "114018",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Sat, 07 Nov 2026 11:02:45 GMT"
+      },
+      "requested_url": "https://www.hamiltoncounty.in.gov/225/Past-Election-Information",
+      "sha256": "aea50191ee546911078e00e186ab7479196d736df689138caace7f60bf77059d",
+      "started_at_utc": "2026-11-07T11:02:45.082345+00:00",
+      "status": 200
+    },
+    "results-index-2024": {
+      "bytes": 7043,
+      "filename": "results-index-2024.html",
+      "final_url": "https://secure2.hamiltoncounty.in.gov/Elections/2024G/results/index.htm",
+      "finished_at_utc": "2026-11-07T11:07:26.475822+00:00",
+      "headers": {
+        "Cache-Control": "max-age=1200, must-revalidate",
+        "Content-Type": "text/html",
+        "Date": "Sat, 07 Nov 2026 11:07:26 GMT",
+        "ETag": "W/\"32cac5ddfd39db1:0\"",
+        "Last-Modified": "Mon, 18 Nov 2024 21:07:24 GMT"
+      },
+      "requested_url": "https://secure2.hamiltoncounty.in.gov/Elections/2024G/results/index.htm",
+      "sha256": "8d789aa771dc8a39532d0ed6dfd462cd14e2b60784b6b88d73caea8e5e5091fb",
+      "started_at_utc": "2026-11-07T11:07:26.280571+00:00",
+      "status": 200
+    },
+    "results-index-2026": {
+      "bytes": 10902,
+      "filename": "results-index-2026.html",
+      "final_url": "https://secure2.hamiltoncounty.in.gov/Elections/2026G/results/index.htm",
+      "finished_at_utc": "2026-11-07T11:05:04.054744+00:00",
+      "headers": {
+        "Cache-Control": "max-age=1200, must-revalidate",
+        "Content-Type": "text/html",
+        "Date": "Sat, 07 Nov 2026 11:05:04 GMT",
+        "ETag": "W/\"9561970116cdd1:0\"",
+        "Last-Modified": "Wed, 04 Nov 2026 04:03:24 GMT"
+      },
+      "requested_url": "https://secure2.hamiltoncounty.in.gov/Elections/2026G/results/index.htm",
+      "sha256": "96b60297963f8314f1a5a0ede882324327b67f2d5395898750102abe1dca15b3",
+      "started_at_utc": "2026-11-07T11:05:03.841134+00:00",
+      "status": 200
+    },
+    "results-summary-2024": {
+      "bytes": 58585,
+      "filename": "summary-2024.html",
+      "final_url": "https://secure2.hamiltoncounty.in.gov/Elections/2024G/results/datafiles/ElectionSummary.htm",
+      "finished_at_utc": "2026-11-07T11:07:44.877235+00:00",
+      "headers": {
+        "Cache-Control": "max-age=1200, must-revalidate",
+        "Content-Type": "text/html",
+        "Date": "Sat, 07 Nov 2026 11:07:44 GMT",
+        "ETag": "W/\"b87a3846a04cdb1:0\"",
+        "Last-Modified": "Thu, 12 Dec 2024 14:15:19 GMT"
+      },
+      "requested_url": "https://secure2.hamiltoncounty.in.gov/Elections/2024G/results/datafiles/ElectionSummary.htm",
+      "sha256": "800d16a28ec6bd71e43587f0f1c4ed7b77b0e3a48df954383c0087801a7a3de0",
+      "started_at_utc": "2026-11-07T11:07:44.674877+00:00",
+      "status": 200
+    },
+    "results-summary-2026": {
+      "bytes": 99017,
+      "filename": "summary-2026.html",
+      "final_url": "https://secure2.hamiltoncounty.in.gov/Elections/2026G/results/datafiles/ElectionSummary.htm",
+      "finished_at_utc": "2026-11-07T11:05:32.681497+00:00",
+      "headers": {
+        "Cache-Control": "max-age=1200, must-revalidate",
+        "Content-Type": "text/html",
+        "Date": "Sat, 07 Nov 2026 11:05:32 GMT",
+        "ETag": "W/\"d7da6f2156cdd1:0\"",
+        "Last-Modified": "Wed, 04 Nov 2026 04:35:41 GMT"
+      },
+      "requested_url": "https://secure2.hamiltoncounty.in.gov/Elections/2026G/results/datafiles/ElectionSummary.htm",
+      "sha256": "e1b6fbab2d42de60b787f9c58d174b06f8e6c52abd91deedbddeae79f333f6d7",
+      "started_at_utc": "2026-11-07T11:05:32.478634+00:00",
+      "status": 200
+    },
+    "turnout-2020": {
+      "bytes": 77672,
+      "filename": "turnout-2020.pdf",
+      "final_url": "https://www.hamiltoncounty.in.gov/DocumentCenter/View/15366/2020-General-Turnout-Report-",
+      "finished_at_utc": "2026-11-07T11:02:47.526188+00:00",
+      "headers": {
+        "Cache-Control": "private, s-maxage=600,no-transform",
+        "Content-Disposition": "inline;filename=Turnout%20Report%20Final.pdf",
+        "Content-Length": "77672",
+        "Content-Type": "application/pdf",
+        "Date": "Sat, 07 Nov 2026 11:02:46 GMT"
+      },
+      "requested_url": "https://www.hamiltoncounty.in.gov/DocumentCenter/View/15366/2020-General-Turnout-Report-",
+      "sha256": "3b8757dc50776345b67d05d52fc14e6e831e8fc2d663593050b33bcd2b6db813",
+      "started_at_utc": "2026-11-07T11:02:46.559975+00:00",
+      "status": 200
+    },
+    "turnout-2022": {
+      "bytes": 114422,
+      "filename": "turnout-2022.pdf",
+      "final_url": "https://www.hamiltoncounty.in.gov/DocumentCenter/View/17820/2022-General-Turnout-Report",
+      "finished_at_utc": "2026-11-07T11:02:47.951620+00:00",
+      "headers": {
+        "Cache-Control": "private, s-maxage=600,no-transform",
+        "Content-Disposition": "inline;filename=2022%20General%20Election%20Final%20Turnout%20Report.pdf",
+        "Content-Length": "114422",
+        "Content-Type": "application/pdf",
+        "Date": "Sat, 07 Nov 2026 11:02:46 GMT"
+      },
+      "requested_url": "https://www.hamiltoncounty.in.gov/DocumentCenter/View/17820/2022-General-Turnout-Report",
+      "sha256": "4bf5a2ea41c5be7c5bdb27fb5ce6fbdfce99f0b63bb92ac757f8aa5b5c4f5dc2",
+      "started_at_utc": "2026-11-07T11:02:47.527206+00:00",
+      "status": 200
+    },
+    "turnout-2024": {
+      "bytes": 115271,
+      "filename": "turnout-2024.pdf",
+      "final_url": "https://www.hamiltoncounty.in.gov/DocumentCenter/View/27310/2024-General-Election-Final-Certified-Turnout-Report-PDF",
+      "finished_at_utc": "2026-11-07T11:02:48.276000+00:00",
+      "headers": {
+        "Cache-Control": "private, s-maxage=600,no-transform",
+        "Content-Disposition": "inline;filename=2024%20General%20Election%20Final%20Certified%20Turnout%20Report%20%28PDF%29.pdf",
+        "Content-Length": "115271",
+        "Content-Type": "application/pdf",
+        "Date": "Sat, 07 Nov 2026 11:02:47 GMT"
+      },
+      "requested_url": "https://www.hamiltoncounty.in.gov/DocumentCenter/View/27310/2024-General-Election-Final-Certified-Turnout-Report-PDF",
+      "sha256": "2a9f80e628243a9326e122054036d4e77b2ae98c3f9893d2755b4f593da03fae",
+      "started_at_utc": "2026-11-07T11:02:47.952908+00:00",
+      "status": 200
+    },
+    "turnout-2026": {
+      "bytes": 121626,
+      "filename": "turnout-2026.pdf",
+      "final_url": "https://www.hamiltoncounty.in.gov/DocumentCenter/View/33496/Turnout-Report?bidId=",
+      "finished_at_utc": "2026-11-07T10:57:03.716034+00:00",
+      "headers": {
+        "Cache-Control": "private, s-maxage=600,no-transform",
+        "Content-Disposition": "inline;filename=Turnout%20Report.pdf",
+        "Content-Length": "121626",
+        "Content-Type": "application/pdf",
+        "Date": "Sat, 07 Nov 2026 10:57:03 GMT"
+      },
+      "requested_url": "https://www.hamiltoncounty.in.gov/DocumentCenter/View/33496",
+      "sha256": "2071cf88f896d533b1f8e6129fea5cdb8853954a5fe00eeef13d1fac6042f886",
+      "started_at_utc": "2026-11-07T10:57:03.256456+00:00",
+      "status": 200
+    }
+  }
+}

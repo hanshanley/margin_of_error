@@ -1,0 +1,23 @@
+{
+  "anomalies": "Ten erroneous native total cells retained beside independently recomputed children/mode totals. Never silently repaired or treated as additional precincts.",
+  "contest_comparison": "Separate whole-county 2024 President and 2024 House 5 baselines against 2026 House 5. Two-party margin changes are descriptive, not individual persuasion; all literal other parties and write-ins retained.",
+  "count_comparison": "Signed county report-count changes against the unofficial frozen 2026 observation; not measured prior-voter dropout.",
+  "current_count_finality_qualified": false,
+  "demographic_turnout_qualified": false,
+  "denominator": "Native Registered Voters in each report, not VEP, CVAP, fixed people or demographic eligibility.",
+  "geography": "Native within-election precinct IDs and labels retained; no cross-year identity or analytical geographic overlay.",
+  "individual_transitions_qualified": false,
+  "measure": "Native Total Votes Cast, not selected-contest candidate votes.",
+  "native_documents_redistributed": false,
+  "native_mode_labels": "2020 At Polls/Absentee/Walk-In Absentee retained separately from later E-Election Day/A-Paper Absentee/W-Walk-In Absentee; no unsupported shift attribution.",
+  "personal_records_included": false,
+  "precinct_cross_year_identity_qualified": false,
+  "publication_basis": "Selected public government factual counts and functional source identifiers only, with attribution; not a claimed license to redistribute the native documents or site code. No source endorsement.",
+  "receipt_headers": "All used receipt URLs/status/bytes/hashes/acquisition clocks retained. Only content type/length/disposition/date/last-modified/etag/cache-control headers selected; Set-Cookie, session values and unrelated security headers excluded.",
+  "reproduction": "Complete selected aggregate inputs, receipts, CSVs, exact standard-library calculator/tests, methods and results. Does not rerun original native PDF/HTML extraction or independently validate outcomes.",
+  "selection": "Every native precinct and control in all four declared turnout reports; every candidate and precinct in three county-wide contests. No outcome-based unit selection.",
+  "source_attribution": "Hamilton County, Indiana Election Office; historical and current official election reports.",
+  "source_clocks": "PDF footer dates, native HTML clocks, HTTP dates and acquisition dates are distinct. 2020 footer year is literally truncated; no missing timezone or year imputed.",
+  "status": "qualified_descriptive_native_report_counts_only",
+  "unique_person_population_qualified": false
+}

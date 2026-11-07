@@ -1,0 +1,13 @@
+{
+  "file": "complete-analysis.zip",
+  "bytes": 115763,
+  "sha256": "d05f51c92a18d8571bc32a2bf10d1b7be4cfe459be992410832113938862b916",
+  "members": 11,
+  "complete_selected_aggregate_inputs_and_code": true,
+  "participation_precinct_observations": 892,
+  "native_controls": 24,
+  "contest_precinct_vectors": 674,
+  "source_receipts": 15,
+  "native_documents_or_personal_records_included": false,
+  "individual_transitions_released": false
+}

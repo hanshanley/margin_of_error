@@ -1,0 +1,35 @@
+{
+  "contest_precinct_rows": 674,
+  "native_consistency_not_independent_outcome_or_transition_validation": true,
+  "preserved_bad_total_cells": 10,
+  "reviews": {
+    "current_results": {
+      "independent_native_verification_passed": true,
+      "independent_proof_sha256": "baea2fc7a4f97830568a7bcc179bc45dc5de7822005104a3cc6153d85d75f52b",
+      "network_blocked_and_probed": true,
+      "review_sha256": "8ed8e259226f7cb7640e9d606c4bf7786764cf26a77073e6e9a74054d61bda8b"
+    },
+    "current_turnout": {
+      "independent_native_verification_passed": true,
+      "independent_proof_sha256": "f98d5e079aa01c4e9f63e8307f5dbb21518eff486cff167605bd2e2b88508f33",
+      "network_blocked_and_probed": true,
+      "review_sha256": "f3fad9bf287d2ed7d84e483ac4412c89b57b4a89c53e4cc7253eefaa6b75ec2f"
+    },
+    "historical_results": {
+      "independent_native_verification_passed": true,
+      "independent_proof_sha256": "986e0fb4bffadca19aaa43b3e4c89a08a7df18c84841909e0c0bbafde53b0fe0",
+      "network_blocked_and_probed": true,
+      "review_sha256": "d2175eef1f6dd87d409da23b74ca4662dc630f22e0d7ca3c6103fc9163285d3b"
+    },
+    "historical_turnout": {
+      "independent_native_verification_passed": true,
+      "independent_proof_sha256": "ccc08b677c1df308f00f25d09d02d09d4a72458d09bbca8fef333a4afa6ba441",
+      "network_blocked_and_probed": true,
+      "review_sha256": "eb71c3481fedbe6857ede97f5db8616f40a369cc129258b8e9f919b455674277"
+    }
+  },
+  "status": "four_completed_independent_native_checks",
+  "turnout_controls": 24,
+  "turnout_precinct_rows": 892,
+  "turnout_rows": 916
+}
