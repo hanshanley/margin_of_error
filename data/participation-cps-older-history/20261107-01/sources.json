@@ -1,0 +1,273 @@
+{
+  "native_acquisition_passed": true,
+  "catalogs": 4,
+  "workbooks": 8,
+  "declarations": [
+    {
+      "year": 2010,
+      "table": "4b",
+      "file": "2010-table4b.xls",
+      "catalog_url": "https://www.census.gov/data/tables/2010/demo/voting-and-registration/voting-registration-2010-election.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/voting-registration-2010-election/table4b_2010.xls",
+      "literal_label": "Reported Voting and Registration by Sex, Race and Hispanic Origin, for States: November 2010"
+    },
+    {
+      "year": 2010,
+      "table": "4c",
+      "file": "2010-table4c.xls",
+      "catalog_url": "https://www.census.gov/data/tables/2010/demo/voting-and-registration/voting-registration-2010-election.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/voting-registration-2010-election/table4c_2010.xls",
+      "literal_label": "Reported Voting and Registration by Age, for States: November 2010 (Table revised October 2015)"
+    },
+    {
+      "year": 2012,
+      "table": "4b",
+      "file": "2012-table4b.xls",
+      "catalog_url": "https://www.census.gov/data/tables/2012/demo/voting-and-registration/p20-568.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/568/table04b.xls",
+      "literal_label": "Reported Voting and Registration by Sex, Race and Hispanic Origin, for States: November 2012"
+    },
+    {
+      "year": 2012,
+      "table": "4c",
+      "file": "2012-table4c.xls",
+      "catalog_url": "https://www.census.gov/data/tables/2012/demo/voting-and-registration/p20-568.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/568/table04c.xls",
+      "literal_label": "Reported Voting and Registration by Age, for States: November 2012 (Table revised October 2015)"
+    },
+    {
+      "year": 2014,
+      "table": "4b",
+      "file": "2014-table4b.xls",
+      "catalog_url": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-577.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/577/table04b.xls",
+      "literal_label": "Reported Voting and Registration by Sex, Race and Hispanic Origin, for States: November 2014"
+    },
+    {
+      "year": 2014,
+      "table": "4c",
+      "file": "2014-table4c.xls",
+      "catalog_url": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-577.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/577/table04c.xls",
+      "literal_label": "Reported Voting and Registration by Age, for States: November 2014 (Table revised October 2015)"
+    },
+    {
+      "year": 2016,
+      "table": "4b",
+      "file": "2016-table4b.xlsx",
+      "catalog_url": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-580.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/580/table04b.xlsx",
+      "literal_label": "Reported Voting and Registration by Sex, Race and Hispanic Origin, for States: November 2016"
+    },
+    {
+      "year": 2016,
+      "table": "4c",
+      "file": "2016-table4c.xlsx",
+      "catalog_url": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-580.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/580/table04c.xlsx",
+      "literal_label": "Reported Voting and Registration by Age, for States: November 2016"
+    }
+  ],
+  "receipts": [
+    {
+      "requested_url": "https://www.census.gov/data/tables/2010/demo/voting-and-registration/voting-registration-2010-election.html",
+      "final_url": "https://www.census.gov/data/tables/2010/demo/voting-and-registration/voting-registration-2010-election.html",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:38:47.744189+00:00",
+      "file": "catalog-2010.html",
+      "bytes": 370917,
+      "sha256": "75bc911d334e163d7d8a8c1bae737c482c9f61f8d09de4827dfc9214b1970920",
+      "http_headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Date": "Sat, 07 Nov 2026 12:38:47 GMT"
+      },
+      "declared_by": null,
+      "declared_link_label": null
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/voting-registration-2010-election/table4b_2010.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/voting-registration-2010-election/table4b_2010.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:38:49.628100+00:00",
+      "file": "2010-table4b.xls",
+      "bytes": 121856,
+      "sha256": "8e0bfc1e3d6a162500249c125106c2b89d0de1d139dd43bbf49987f9c58395ac",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "121856",
+        "Last-Modified": "Mon, 22 Feb 2016 23:26:26 GMT",
+        "Date": "Sat, 07 Nov 2026 12:38:49 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/2010/demo/voting-and-registration/voting-registration-2010-election.html",
+      "declared_link_label": "Reported Voting and Registration by Sex, Race and Hispanic Origin, for States: November 2010"
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/voting-registration-2010-election/table4c_2010.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/voting-registration-2010-election/table4c_2010.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:38:49.704718+00:00",
+      "file": "2010-table4c.xls",
+      "bytes": 78848,
+      "sha256": "1fdf164e66027f49b67ad0d266aad1651a6cbfc90e839336ea48ad8842da164c",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "78848",
+        "Last-Modified": "Mon, 22 Feb 2016 23:26:26 GMT",
+        "Date": "Sat, 07 Nov 2026 12:38:49 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/2010/demo/voting-and-registration/voting-registration-2010-election.html",
+      "declared_link_label": "Reported Voting and Registration by Age, for States: November 2010 (Table revised October 2015)"
+    },
+    {
+      "requested_url": "https://www.census.gov/data/tables/2012/demo/voting-and-registration/p20-568.html",
+      "final_url": "https://www.census.gov/data/tables/2012/demo/voting-and-registration/p20-568.html",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:38:49.769811+00:00",
+      "file": "catalog-2012.html",
+      "bytes": 371372,
+      "sha256": "069d25fb891cee55b42de89da04ffef251d4d07af56db7491d84451834921f21",
+      "http_headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Date": "Sat, 07 Nov 2026 12:38:49 GMT"
+      },
+      "declared_by": null,
+      "declared_link_label": null
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/568/table04b.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/568/table04b.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:39:02.290371+00:00",
+      "file": "2012-table4b.xls",
+      "bytes": 130048,
+      "sha256": "d10b7ae1ca2f1b468b54c1a96d3ccf93edf975de600b9dcae8c5db8ea597384c",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "130048",
+        "Last-Modified": "Mon, 22 Feb 2016 23:26:13 GMT",
+        "Date": "Sat, 07 Nov 2026 12:39:02 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/2012/demo/voting-and-registration/p20-568.html",
+      "declared_link_label": "Reported Voting and Registration by Sex, Race and Hispanic Origin, for States: November 2012"
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/568/table04c.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/568/table04c.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:39:02.360521+00:00",
+      "file": "2012-table4c.xls",
+      "bytes": 75264,
+      "sha256": "ace3cda08d99cba9c6edf4e744674a7d73de310f688b7f778dfde1f1d107df67",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "75264",
+        "Last-Modified": "Mon, 22 Feb 2016 23:26:13 GMT",
+        "Date": "Sat, 07 Nov 2026 12:39:02 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/2012/demo/voting-and-registration/p20-568.html",
+      "declared_link_label": "Reported Voting and Registration by Age, for States: November 2012 (Table revised October 2015)"
+    },
+    {
+      "requested_url": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-577.html",
+      "final_url": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-577.html",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:39:02.447179+00:00",
+      "file": "catalog-2014.html",
+      "bytes": 371619,
+      "sha256": "98df5b3de5be3dd9cd67241c1cfa259a7f06e41720b1bcf605380c9e5e0978ad",
+      "http_headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Date": "Sat, 07 Nov 2026 12:39:02 GMT"
+      },
+      "declared_by": null,
+      "declared_link_label": null
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/577/table04b.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/577/table04b.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:39:13.528070+00:00",
+      "file": "2014-table4b.xls",
+      "bytes": 121856,
+      "sha256": "28ee984ce0ca1e81005227a6c5c4c1d4abc3665b9ffd4c272624762bb7d69e5b",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "121856",
+        "Last-Modified": "Mon, 22 Feb 2016 23:26:19 GMT",
+        "Date": "Sat, 07 Nov 2026 12:39:13 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-577.html",
+      "declared_link_label": "Reported Voting and Registration by Sex, Race and Hispanic Origin, for States: November 2014"
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/577/table04c.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/577/table04c.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:39:13.604064+00:00",
+      "file": "2014-table4c.xls",
+      "bytes": 74752,
+      "sha256": "b5f656ad7585ff536bb605477cbb38ee5624af87e77098cb1065e04310597f30",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "74752",
+        "Last-Modified": "Mon, 22 Feb 2016 23:26:19 GMT",
+        "Date": "Sat, 07 Nov 2026 12:39:13 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-577.html",
+      "declared_link_label": "Reported Voting and Registration by Age, for States: November 2014 (Table revised October 2015)"
+    },
+    {
+      "requested_url": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-580.html",
+      "final_url": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-580.html",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:39:13.663497+00:00",
+      "file": "catalog-2016.html",
+      "bytes": 373696,
+      "sha256": "30e55222ea47399091adc58d65f92764c384475eb1e80572e7ada450e9f72b02",
+      "http_headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Date": "Sat, 07 Nov 2026 12:39:13 GMT"
+      },
+      "declared_by": null,
+      "declared_link_label": null
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/580/table04b.xlsx",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/580/table04b.xlsx",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:39:15.384402+00:00",
+      "file": "2016-table4b.xlsx",
+      "bytes": 63328,
+      "sha256": "fde2be5f1e3f6ebf6a35e0d7a850a17316af6066904c427019e573f9db6fcdfa",
+      "http_headers": {
+        "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "Content-Length": "63328",
+        "Last-Modified": "Thu, 11 Oct 2018 13:58:33 GMT",
+        "Date": "Sat, 07 Nov 2026 12:39:15 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-580.html",
+      "declared_link_label": "Reported Voting and Registration by Sex, Race and Hispanic Origin, for States: November 2016"
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/580/table04c.xlsx",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/580/table04c.xlsx",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T12:39:15.450806+00:00",
+      "file": "2016-table4c.xlsx",
+      "bytes": 41761,
+      "sha256": "87103295ed5aaed8bb01d3b49c96c5894f0bdab19f60fbf7b9f8909dee295f0b",
+      "http_headers": {
+        "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "Content-Length": "41761",
+        "Last-Modified": "Thu, 11 Oct 2018 13:58:33 GMT",
+        "Date": "Sat, 07 Nov 2026 12:39:15 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-580.html",
+      "declared_link_label": "Reported Voting and Registration by Age, for States: November 2016"
+    }
+  ],
+  "no_prior_sources_refetched": true,
+  "native_cells_or_estimands_not_yet_verified": true,
+  "public_package_qualified": false,
+  "individual_transitions_or_2026_participation_qualified": false
+}
