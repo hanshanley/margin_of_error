@@ -1,0 +1,131 @@
+{
+  "status": "reviewed_for_selected_state_conditional_scenarios_not_observed_demographic_dropoff",
+  "current_count_control_sha256": "a62b6a1a6a7c346124b80bae5474e6eb149751cd2775de918439996a287967c1",
+  "historical_control_sha256": "80fff0c5cd3df49d7d6a2a782c339e62f1286041170ddafd73c090495e9cb88a",
+  "historical_native_source": {
+    "survey_sha256": "8a5e9fbc982961ad910bad9aed8d521fa0a85e85cded43fb308cce0ab22ba5d9",
+    "guide_md5": "b1b24ed55a20193bb0301bc84cf6da9a",
+    "control_sha256": "80fff0c5cd3df49d7d6a2a782c339e62f1286041170ddafd73c090495e9cb88a",
+    "native_label_audit_sha256": "643469ba7e1f7ecfee478672733ade493cdf67542feb8c80af6ec193079113a5",
+    "doi": "10.7910/DVN/X11EP6",
+    "release": "9.0",
+    "license": "CC0 1.0",
+    "age_measure": "Respondent birth year; no birthday was supplied or imputed.",
+    "turnout": "Retain the existing validated2024turnout, reported presidential choice, weight and state filters.",
+    "cohort_interpretation": "2024participants aged hypothetically into2026bands, not verified survivors/residents/2026participants."
+  },
+  "current_survey_source": {
+    "methods_url": "https://ssrs.com/wp-content/uploads/The-Voter-Poll-by-SSRS-Methodology-Statement_Final.pdf",
+    "selected_method_pages": [
+      2,
+      6
+    ],
+    "age_measure": "Self-reported current age, rather than a public birth-year cohort variable.",
+    "choice": "Includes retained initial pre-election choices after failed recontact; no universal completed-vote or administrative choice validation.",
+    "scope": "Each state's separate ordinary governor/Senate contest,using its own same-revision all-voter population and age65+self/joint table; no national-to-state allocation.",
+    "population_assumption": "Published group/response composition is assumed to apply to all preliminary estimated ballot-casters; exact response selection remains unresolved.",
+    "calibration": "Final result weighting is a constraint, not independent outcome validation.",
+    "group_matching": "53=18-29,54=exact18-44from1949,55=65+; do not sum overlapping age groups or rounded159bins."
+  },
+  "preliminary_turnout": {
+    "source": "University of Florida Election Lab",
+    "author": "Michael McDonald",
+    "license": "Creative Commons Attribution 4.0 International",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "dataset_page": "https://election.lab.ufl.edu/dataset/2026-general-election-turnout-rates-v0-2/",
+    "dataset_page_update_literal": "November 4, 2026",
+    "turnout_page": "https://election.lab.ufl.edu/2026-general-election-turnout/",
+    "turnout_page_update_literal": "Nov. 6, 2026 @ 10:30am",
+    "turnout_page_timezone_supplied": false,
+    "native_page_review_bytes": 35700,
+    "native_page_review_sha256": "ff8757fcc67b420dba3769eca6f21aa51763c36efc3019c2a70b0df5c432c660",
+    "native_page_csvfile_literal": "turnoutdata/Turnout_2026G_v0.2.csv",
+    "declared_csv_loader": "https://election.lab.ufl.edu/wp-content/themes/electionlab2023/functions-csvtables.js?ver=7.1.4",
+    "declared_csv_url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.2.csv",
+    "csv_version": "0.2",
+    "documentation_version": "0.1",
+    "csv_native_source_value": "Initial Estimate",
+    "source_population_definition": "The native turnout page defines the numerator as total ballots counted, not votes for governor or U.S. Senator. Preliminary numerators are estimated primarily from Associated Press day-after turnout estimates until reporting and certification progress.",
+    "source_uncertainty": "The publisher identifies substantial uncertainty where turnout reporting is incomplete, especially California and Washington. No state-specific uncertainty intervals are supplied by these selected files.",
+    "documentation_limit": "The older linked v0.1 documentation still says TBD for TOTAL_BALLOTS_COUNTED and SOURCE. The definition above comes from the current native turnout page, not an invented codebook definition.",
+    "clock_limit": "The dataset page, native turnout page and CSV HTTP Last-Modified are separate provenance observations. No native page timezone is supplied; retrieval/HTTP clocks are not substituted for it.",
+    "search_snapshot_resolution": {
+      "search_snapshot_national_total_not_used": 124330000,
+      "frozen_csv_national_total": 123490000,
+      "current_native_page_uses_the_same_csv": true,
+      "resolution": "Inspecting the native HTML and declared CSV loader resolves the apparent disagreement. The current page points to the exact frozen CSV. The search-index number is not a second current observation and is excluded."
+    },
+    "republication": "Complete native CSV and documentation are included under their documented CC-BY4.0 license with attribution. This selected factual review is not a mirror of the full webpage or its JavaScript."
+  },
+  "uncertainty": {
+    "birthday_range": "Retain certain/possible classification without imputing a birthday.",
+    "historical_mix_stress_pp": [
+      -2,
+      0,
+      2
+    ],
+    "estimated_total_scales": [
+      0.95,
+      1,
+      1.05
+    ],
+    "balanced_harris_to_trump_composition_transfer_pp": [
+      -2,
+      0,
+      2
+    ],
+    "current_group_and_prior_rounding_pp": [
+      -0.5,
+      0,
+      0.5
+    ],
+    "native_conditional_choice_rounding": "A separate half-point rounding envelope; p is held fixed in the main sensitivity grid.",
+    "interpretation": "Assumed sensitivity scenarios, not confidence intervals, empirical error bounds or exhaustive uncertainty.",
+    "state_limit": "Historical state sampling/composition and current joint-cell uncertainty are not empirically covered by the assumed+-2pp stress. No designCI or total uncertainty interval is released."
+  },
+  "residual": "Original hypothetical age-coalition minus estimated current reported prior voters includes death,migration,recall,response-population and historical composition error. Negative values remain source/model diagnostics, not physical nonvoting counts. Death/survival uncertainty is especially consequential for these older cohorts.",
+  "withheld": [
+    "measured staying home",
+    "identified new/returning voters",
+    "demographic turnout",
+    "causal persuasion",
+    "share of total swing",
+    "design confidence intervals",
+    "county/precinct allocation",
+    "unselected state-age original-coalition estimates"
+  ],
+  "privacy": "No native respondents, personal identifiers/scores, small boundary counts or restricted NORC materials.",
+  "historical_state_age_audit_sha256": "52c2ce85a6e992ba2eb1ffd4701ddc3759e6436d8c6a2d6cc8857db4462f19d7",
+  "selection_without_estimated_outcome_screening": "Both prior coalitions have certain-group raw/effective support>=100. This is only a conservative review shortlist,not a design precision guarantee or automatic publication rule.",
+  "separate_state_review": [
+    "State-specific weights,validated2024turnout,self-reported presidential choice and birth-year definitions reviewed.",
+    "All historical state/national controls reconcile; all selected current state/contest/population/joint-source scopes match.",
+    "Only12broad historical supports selected; no raw boundary/unknown cells,weight sums or original records exported.",
+    "Released only as conditional scaling scenarios with unvalidated population matching and incomplete assumed sensitivities.",
+    "No state-specific joint/subgroup designCI,measured stayinghome or independently validated2026transition is supplied."
+  ],
+  "historical_state_weight_scope": {
+    "frozen_guide_text_lines": [
+      500,
+      565
+    ],
+    "finding": "CES explicitly supports vvweight_post with validated turnout for state estimates. Presidential calibration is by design,not independent validation.",
+    "uncertainty": "The guide's weighted/effective-n illustration is not a supplied joint/subgroup state survey design. Raw/effective support is diagnostic,not precision qualification."
+  },
+  "release_inventory": {
+    "states": [
+      "CA",
+      "FL",
+      "IL",
+      "MI",
+      "NY",
+      "TX"
+    ],
+    "historical_state_age_coalition_supports": 12,
+    "state_contest_age_tables": 8,
+    "age_coalition_contest_comparisons": 16,
+    "current_native_selected_sources": 16,
+    "jurisdictions_explicit": 51,
+    "full_assumed_sensitivity_scenarios": 7776
+  }
+}
