@@ -1,0 +1,416 @@
+{
+  "study_id": "bsp-aarc-mevp-2026",
+  "question_id": "Q10",
+  "contest_scope": "respondent_district_house_party_choice",
+  "prior_question_universe": "previous_voters_18plus_in_2024",
+  "methodology_url": "https://2026electionpoll.us/methodology/",
+  "methods_field_end": "2026-11-03",
+  "pdf_field_end": "2026-11-02",
+  "tables": [
+    {
+      "group_id": "latino",
+      "source_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/Latino-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "source_sha256": "9b1a198d1756dfe32ebd82daf8c513ae8aaf3a8559a644d84e78b230db9f1c19",
+      "source_bytes": 728838,
+      "source_pages": {
+        "raw_bases": 2,
+        "Q1": 2,
+        "Q10": 44,
+        "Q29": 106
+      },
+      "columns": [
+        "Latino",
+        "Trump24/HouseDem26",
+        "Abstain+Other24/HouseDem26",
+        "Trump24",
+        "Harris24",
+        "Abstain/Other24",
+        "NewVoter",
+        "Men",
+        "Women"
+      ],
+      "raw_respondent_bases": [
+        3014,
+        131,
+        143,
+        819,
+        1479,
+        248,
+        461,
+        1468,
+        1538
+      ],
+      "house_choice_pct": {
+        "R": [
+          31,
+          0,
+          0,
+          83,
+          3,
+          21,
+          28,
+          35,
+          28
+        ],
+        "D": [
+          67,
+          100,
+          100,
+          17,
+          96,
+          67,
+          69,
+          64,
+          70
+        ],
+        "O": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          12,
+          3,
+          1,
+          3
+        ]
+      },
+      "first_november_election_pct": {
+        "2026": 17,
+        "2024": 12,
+        "2022": 12,
+        "earlier": 60
+      },
+      "prior_choice_pct_among_previous_voters": {
+        "D": 56,
+        "R": 34,
+        "O": 7,
+        "N": 3
+      }
+    },
+    {
+      "group_id": "aapi",
+      "source_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/AAPI-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "source_sha256": "fdfd46d91bea7af75253b4b268590743ff5e050b87b7acaa9a179f6fee7d3252",
+      "source_bytes": 728913,
+      "source_pages": {
+        "raw_bases": 2,
+        "Q1": 2,
+        "Q10": 44,
+        "Q29": 106
+      },
+      "columns": [
+        "AAPI",
+        "Trump24/HouseDem26",
+        "Abstain+Other24/HouseDem26",
+        "Trump24",
+        "Harris24",
+        "Abstain/Other24",
+        "NewVoter",
+        "Men",
+        "Women"
+      ],
+      "raw_respondent_bases": [
+        2130,
+        104,
+        107,
+        621,
+        1058,
+        202,
+        244,
+        1094,
+        1019
+      ],
+      "house_choice_pct": {
+        "R": [
+          33,
+          0,
+          0,
+          81,
+          6,
+          28,
+          30,
+          34,
+          33
+        ],
+        "D": [
+          64,
+          100,
+          100,
+          17,
+          93,
+          61,
+          67,
+          64,
+          65
+        ],
+        "O": [
+          2,
+          0,
+          0,
+          2,
+          1,
+          10,
+          3,
+          2,
+          2
+        ]
+      },
+      "first_november_election_pct": {
+        "2026": 12,
+        "2024": 12,
+        "2022": 10,
+        "earlier": 67
+      },
+      "prior_choice_pct_among_previous_voters": {
+        "D": 56,
+        "R": 34,
+        "O": 6,
+        "N": 4
+      }
+    },
+    {
+      "group_id": "white",
+      "source_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/White-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "source_sha256": "f364d87271be2194da3dde48afbf64f149a0aa93f79c076b26862a4ee6852879",
+      "source_bytes": 654257,
+      "source_pages": {
+        "raw_bases": 2,
+        "Q1": 2,
+        "Q10": 38,
+        "Q29": 91
+      },
+      "columns": [
+        "White",
+        "Trump24/HouseDem26",
+        "Abstain+Other24/HouseDem26",
+        "Trump24",
+        "Harris24",
+        "Abstain/Other24",
+        "NewVoter",
+        "Men",
+        "Women"
+      ],
+      "raw_respondent_bases": [
+        1806,
+        80,
+        66,
+        800,
+        778,
+        105,
+        123,
+        843,
+        961
+      ],
+      "house_choice_pct": {
+        "R": [
+          53,
+          0,
+          0,
+          92,
+          4,
+          21,
+          64,
+          57,
+          50
+        ],
+        "D": [
+          44,
+          100,
+          100,
+          7,
+          95,
+          55,
+          32,
+          41,
+          47
+        ],
+        "O": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          24,
+          4,
+          2,
+          3
+        ]
+      },
+      "first_november_election_pct": {
+        "2026": 8,
+        "2024": 7,
+        "2022": 9,
+        "earlier": 76
+      },
+      "prior_choice_pct_among_previous_voters": {
+        "D": 41,
+        "R": 54,
+        "O": 4,
+        "N": 2
+      }
+    },
+    {
+      "group_id": "black",
+      "source_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/Black-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "source_sha256": "08230beb28717e4e0d451291a06c7b5621feeb52028edc70672f76e66ae77ca4",
+      "source_bytes": 658118,
+      "source_pages": {
+        "raw_bases": 2,
+        "Q1": 2,
+        "Q10": 38,
+        "Q29": 91
+      },
+      "columns": [
+        "Black",
+        "Trump24/HouseDem26",
+        "Abstain+Other24/HouseDem26",
+        "Trump24",
+        "Harris24",
+        "Abstain/Other24",
+        "NewVoter",
+        "Men",
+        "Women"
+      ],
+      "raw_respondent_bases": [
+        1804,
+        86,
+        93,
+        298,
+        1077,
+        133,
+        293,
+        848,
+        953
+      ],
+      "house_choice_pct": {
+        "R": [
+          13,
+          0,
+          0,
+          63,
+          3,
+          13,
+          19,
+          18,
+          8
+        ],
+        "D": [
+          85,
+          100,
+          100,
+          35,
+          96,
+          78,
+          76,
+          80,
+          90
+        ],
+        "O": [
+          2,
+          0,
+          0,
+          2,
+          1,
+          9,
+          4,
+          2,
+          2
+        ]
+      },
+      "first_november_election_pct": {
+        "2026": 14,
+        "2024": 12,
+        "2022": 9,
+        "earlier": 66
+      },
+      "prior_choice_pct_among_previous_voters": {
+        "D": 78,
+        "R": 14,
+        "O": 3,
+        "N": 5
+      }
+    },
+    {
+      "group_id": "native-american",
+      "source_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/Native-American-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "source_sha256": "1b125389fcaeeb8368c1855ee97946d570bab2d2239913f6def32c0935e4e283",
+      "source_bytes": 860368,
+      "source_pages": {
+        "raw_bases": 2,
+        "Q1": 2,
+        "Q10": 56,
+        "Q29": 136
+      },
+      "columns": [
+        "NativeAm",
+        "Trump24/HouseDem26",
+        "Abstain+Other24/HouseDem26",
+        "Trump24",
+        "Harris24",
+        "Abstain/Other24",
+        "NewVoter",
+        "Men",
+        "Women"
+      ],
+      "raw_respondent_bases": [
+        1387,
+        71,
+        127,
+        468,
+        577,
+        213,
+        128,
+        680,
+        699
+      ],
+      "house_choice_pct": {
+        "R": [
+          41,
+          0,
+          0,
+          86,
+          5,
+          38,
+          42,
+          44,
+          37
+        ],
+        "D": [
+          57,
+          100,
+          100,
+          13,
+          93,
+          59,
+          52,
+          54,
+          61
+        ],
+        "O": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          4,
+          6,
+          2,
+          2
+        ]
+      },
+      "first_november_election_pct": {
+        "2026": 10,
+        "2024": 11,
+        "2022": 9,
+        "earlier": 70
+      },
+      "prior_choice_pct_among_previous_voters": {
+        "D": 49,
+        "R": 39,
+        "O": 6,
+        "N": 7
+      }
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "study": "BSP Research / African American Research Collaborative 2026 Midterm Election Voter Poll",
+  "source_methodology_url": "https://2026electionpoll.us/methodology/",
+  "source_crosstab_index_url": "https://2026electionpoll.us/crosstabs/",
+  "raw_total_respondents": 10141,
+  "methods_field_end": "2026-11-03",
+  "selected_pdf_field_end": "2026-11-02",
+  "source_reported_group_samples": [
+    {
+      "group_id": "latino",
+      "methodology_group_label": "Latina/o",
+      "raw_respondents": 3014,
+      "source_reported_whole_group_moe_pct": 1.8,
+      "moe_applied_to_prior_choice_conditional_cells": false
+    },
+    {
+      "group_id": "aapi",
+      "methodology_group_label": "Asian American",
+      "raw_respondents": 2130,
+      "source_reported_whole_group_moe_pct": 2.1,
+      "moe_applied_to_prior_choice_conditional_cells": false
+    },
+    {
+      "group_id": "white",
+      "methodology_group_label": "White, non-Hispanic",
+      "raw_respondents": 1806,
+      "source_reported_whole_group_moe_pct": 2.3,
+      "moe_applied_to_prior_choice_conditional_cells": false
+    },
+    {
+      "group_id": "black",
+      "methodology_group_label": "African American",
+      "raw_respondents": 1804,
+      "source_reported_whole_group_moe_pct": 2.3,
+      "moe_applied_to_prior_choice_conditional_cells": false
+    },
+    {
+      "group_id": "native-american",
+      "methodology_group_label": "Native American",
+      "raw_respondents": 1387,
+      "source_reported_whole_group_moe_pct": 2.6,
+      "moe_applied_to_prior_choice_conditional_cells": false
+    }
+  ],
+  "selected_methodological_facts": {
+    "registered_voters": true,
+    "includes_reported_early_voters": true,
+    "includes_certain_intended_election_day_voters": true,
+    "racial_and_geographic_oversamples": true,
+    "weights_use_demographics_and_turnout_models": true,
+    "final_comparisons_with_key_state_and_district_results": true,
+    "administrative_turnout_or_choice_validation_supplied": false,
+    "independent_outcome_validation_established": false,
+    "design_information_for_prior_choice_joint_cells_supplied": false,
+    "population_fractions_inferred_from_raw_sample_sizes": false
+  },
+  "source_receipts": [
+    {
+      "declared_url": "https://2026electionpoll.us/methodology/",
+      "http_status": 200,
+      "bytes": 41167,
+      "sha256": "a86f679e8a2614307199179bf5ac4c950c0786ac85cf0780b9ea5ddcf0b9bd0a",
+      "retrieved_utc": "2026-11-07T01:51:09.589151+00:00",
+      "http_last_modified": null,
+      "http_date": "Sat, 07 Nov 2026 01:51:09 GMT",
+      "redistribution": "Private source cache; do not mirror the copyrighted source documents in public exports"
+    },
+    {
+      "declared_url": "https://2026electionpoll.us/crosstabs/",
+      "http_status": 200,
+      "bytes": 50782,
+      "sha256": "749086cf27acf4a44c80fbe6bb94e77193ba60238eba123ee51ec1beba3eba5b",
+      "retrieved_utc": "2026-11-07T01:51:09.868576+00:00",
+      "http_last_modified": null,
+      "http_date": "Sat, 07 Nov 2026 01:51:09 GMT",
+      "redistribution": "Private source cache; do not mirror the copyrighted source documents in public exports"
+    },
+    {
+      "declared_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/Topline-Midterm-Election-Voter-Poll-2026.pdf",
+      "http_status": 200,
+      "bytes": 327011,
+      "sha256": "682bc67575d48dc3a7f12d41b10d59dc9b619cf76b192e8efe9fdd590f17f114",
+      "retrieved_utc": "2026-11-07T01:51:10.239894+00:00",
+      "http_last_modified": "Wed, 04 Nov 2026 06:11:52 GMT",
+      "http_date": "Sat, 07 Nov 2026 01:51:10 GMT",
+      "redistribution": "Private source cache; do not mirror the copyrighted source documents in public exports"
+    },
+    {
+      "declared_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/Latino-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "http_status": 200,
+      "bytes": 728838,
+      "sha256": "9b1a198d1756dfe32ebd82daf8c513ae8aaf3a8559a644d84e78b230db9f1c19",
+      "retrieved_utc": "2026-11-07T01:51:10.908523+00:00",
+      "http_last_modified": "Wed, 04 Nov 2026 06:10:01 GMT",
+      "http_date": "Sat, 07 Nov 2026 01:51:10 GMT",
+      "redistribution": "Private source cache; do not mirror the copyrighted source documents in public exports"
+    },
+    {
+      "declared_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/White-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "http_status": 200,
+      "bytes": 654257,
+      "sha256": "f364d87271be2194da3dde48afbf64f149a0aa93f79c076b26862a4ee6852879",
+      "retrieved_utc": "2026-11-07T01:51:13.022773+00:00",
+      "http_last_modified": "Wed, 04 Nov 2026 06:14:53 GMT",
+      "http_date": "Sat, 07 Nov 2026 01:51:12 GMT",
+      "redistribution": "Private source cache; do not mirror the copyrighted source documents in public exports"
+    },
+    {
+      "declared_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/Black-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "http_status": 200,
+      "bytes": 658118,
+      "sha256": "08230beb28717e4e0d451291a06c7b5621feeb52028edc70672f76e66ae77ca4",
+      "retrieved_utc": "2026-11-07T01:51:14.858196+00:00",
+      "http_last_modified": "Wed, 04 Nov 2026 06:10:00 GMT",
+      "http_date": "Sat, 07 Nov 2026 01:51:14 GMT",
+      "redistribution": "Private source cache; do not mirror the copyrighted source documents in public exports"
+    },
+    {
+      "declared_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/AAPI-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "http_status": 200,
+      "bytes": 728913,
+      "sha256": "fdfd46d91bea7af75253b4b268590743ff5e050b87b7acaa9a179f6fee7d3252",
+      "retrieved_utc": "2026-11-07T01:51:16.714695+00:00",
+      "http_last_modified": "Wed, 04 Nov 2026 06:10:00 GMT",
+      "http_date": "Sat, 07 Nov 2026 01:51:16 GMT",
+      "redistribution": "Private source cache; do not mirror the copyrighted source documents in public exports"
+    },
+    {
+      "declared_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/Native-American-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "http_status": 200,
+      "bytes": 860368,
+      "sha256": "1b125389fcaeeb8368c1855ee97946d570bab2d2239913f6def32c0935e4e283",
+      "retrieved_utc": "2026-11-07T01:51:18.840333+00:00",
+      "http_last_modified": "Wed, 04 Nov 2026 06:10:01 GMT",
+      "http_date": "Sat, 07 Nov 2026 01:51:18 GMT",
+      "redistribution": "Private source cache; do not mirror the copyrighted source documents in public exports"
+    }
+  ],
+  "source_selection": {
+    "groups": [
+      "latino",
+      "aapi",
+      "white",
+      "black",
+      "native-american"
+    ],
+    "current_choice_question": "Q10",
+    "complete_selected_house_party_rows": [
+      "R",
+      "D",
+      "O"
+    ],
+    "complete_selected_house_banner_columns": [
+      "Trump24/HouseDem26",
+      "Abstain+Other24/HouseDem26",
+      "Trump24",
+      "Harris24",
+      "Abstain/Other24",
+      "NewVoter",
+      "Men",
+      "Women"
+    ],
+    "raw_banner_bases_included": true,
+    "first_november_question": "Q1",
+    "prior_question": "Q29",
+    "prior_question_filtered_to_previous_voters_18plus_in_2024": true
+  },
+  "redistribution": {
+    "selected_numerical_facts_and_citations_only": true,
+    "source_copyright_retained": true,
+    "original_pdf_or_html_mirrored": false,
+    "source_microdata_included": false,
+    "source_endorsement": false
+  }
+}

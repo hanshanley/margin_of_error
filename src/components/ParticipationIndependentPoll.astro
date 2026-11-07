@@ -1,0 +1,75 @@
+---
+import { readFileSync } from 'node:fs';
+const base = '/participation-mevp/20261107-01/';
+type Prior = { raw_respondents: number; reported_opposite_party_pct: number | null };
+type Group = { group_id: string; source_url: string; raw_group_respondents: number;
+	reported_choices_among_current_voters_by_reported_prior: Record<string, Prior>;
+	reported_first_november_2026_pct: number };
+const review: { groups: Group[] } = JSON.parse(readFileSync(`public${base}joint-choices.json`, 'utf8'));
+const labels: Record<string, string> = { latino: 'Latino', aapi: 'Asian American / Pacific Islander',
+	white: 'White, non-Hispanic', black: 'Black', 'native-american': 'Native American' };
+const pct = (value: number | null) => value === null ? 'Unavailable' : `${value}%`;
+---
+
+<section id="participation-independent-poll" class="participation-current" aria-labelledby="independent-poll-title">
+	<header class="section-intro">
+		<p class="kicker">Separate study · Reported switching and first-November voters</p>
+		<h2 id="independent-poll-title">Another view of the current electorate</h2>
+		<p>The BSP Research / African American Research Collaborative Midterm Election Voter Poll
+			provides five national racial-group cross-tabs. This is a different study from SSRS,
+			not an additional SSRS sample or an independent validation of its estimates.</p>
+	</header>
+	<p>Switching percentages below are <strong>among current participants recalling each prior vote</strong>,
+		not all original 2024 Trump or Harris voters. The study includes reported early voters and people
+		certain they would vote on Election Day; it is not universally completed or administratively
+		validated voting. The House question records generic party choice in the respondent's district,
+		not candidate-ID-reconciled returns.</p>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Independent survey conditional choices and first-November composition">
+		<table>
+			<caption>Published weighted percentages, not population headcounts. n is the raw prior-choice
+				banner base, not an effective sample size. No design-aware confidence intervals are supplied.</caption>
+			<thead><tr><th scope="col">Current poll group</th><th scope="col">Prior Trump n</th>
+				<th scope="col">Reported Trump → D</th><th scope="col">Prior Harris n</th>
+				<th scope="col">Reported Harris → R</th><th scope="col">First November election: 2026</th></tr></thead>
+			<tbody>{review.groups.map(group => {
+				const prior = group.reported_choices_among_current_voters_by_reported_prior;
+				return <tr data-mevp-group={group.group_id}>
+					<th scope="row"><a href={group.source_url}>{labels[group.group_id]}</a></th>
+					<td data-mevp-trump-base>{prior.R.raw_respondents.toLocaleString('en-US')}</td>
+					<td data-mevp-trump-switch>{pct(prior.R.reported_opposite_party_pct)}</td>
+					<td data-mevp-harris-base>{prior.D.raw_respondents.toLocaleString('en-US')}</td>
+					<td data-mevp-harris-switch>{pct(prior.D.reported_opposite_party_pct)}</td>
+					<td data-mevp-first-november>{group.reported_first_november_2026_pct}%</td>
+				</tr>;
+			})}</tbody>
+		</table>
+	</div>
+	<p><strong>First November does not mean first-ever voting:</strong> someone may have voted in a
+		primary, special or other election. This column is a share of the current poll group, not a
+		demographic turnout rate or the number of newly eligible or returning voters.</p>
+	<p><strong>No population drop-off is released here.</strong> The prior-presidential marginal
+		question excludes first-November-2026 voters and requires 2024 eligibility; it is not the whole
+		current electorate's prior composition. Racial/geographic oversamples do not supply population
+		fractions. We do not multiply these marginals by all-voter totals, infer group headcounts, allocate
+		state/local estimates or combine this study with SSRS.</p>
+	<details class="explorer-notes"><summary>Methods, source versions and complete selected inputs</summary>
+		<p><a href="https://2026electionpoll.us/methodology/">The source methodology</a> describes
+			10,141 respondents, turnout-model weighting and final comparisons with results. That is
+			calibration, not independent validation. Its fieldwork ends November 3, 2026; all five selected
+			PDFs say November 2. Both source observations are preserved, not silently treated as one clock.</p>
+		<p>The complete archive preserves every selected party choice, including other-party responses,
+			raw bases, unknown-response diagnostics, rounded totals and source page numbers/hashes.
+			The exact Trump24/Harris24 columns are used, not the outcome-selected switching banners.
+			Original copyrighted source PDFs and HTML, individual records and restricted NORC materials
+			are not mirrored. Derived analysis is not endorsed by the source organizations.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete independent-poll inputs + code + results (ZIP)</a>
+		<a href={`${base}joint-choices.json`} download>Independent-poll conditional choices + qualifications (JSON)</a>
+		<a href={`${base}download.json`} download>Independent-poll archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-independent-poll { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>
