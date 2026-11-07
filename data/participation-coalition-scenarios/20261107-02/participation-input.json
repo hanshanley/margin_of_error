@@ -1,0 +1,586 @@
+{
+  "election_date": "2026-11-03",
+  "snapshot_id": "20261104T220425Z",
+  "reporting": [
+    {
+      "state_code": "AL",
+      "state": "Alabama",
+      "source_date": null,
+      "source_update_label": "11/04/2026 11:16:06 AM",
+      "source_retrieved_at": "2026-11-04T22:04:30.255635+00:00",
+      "status": "reported",
+      "source_url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
+      "source_snapshot": "20261104T220425Z",
+      "quality": [],
+      "reported_units": 67,
+      "total_units": 67,
+      "reporting_unit": "counties",
+      "ballots": 1693621,
+      "denominator": 3852947,
+      "denominator_basis": "registered_voters_source_definition",
+      "published_pct": 43.96,
+      "validated_pct": 43.957
+    },
+    {
+      "state_code": "NE",
+      "state": "Nebraska",
+      "source_date": null,
+      "source_update_label": "11/4/2026 1:33 PM CT",
+      "source_retrieved_at": "2026-11-04T22:04:37.444100+00:00",
+      "status": "reported",
+      "source_url": "https://electionresults.nebraska.gov/VoterTurnoutDetails.aspx?map=PREC",
+      "source_snapshot": "20261104T220425Z",
+      "quality": [],
+      "reported_units": 1322,
+      "total_units": 1322,
+      "reporting_unit": "precincts",
+      "ballots": 752061,
+      "denominator": 1265162,
+      "denominator_basis": "registered_voters_source_definition",
+      "published_pct": 59.44,
+      "validated_pct": 59.444
+    },
+    {
+      "state_code": "NM",
+      "state": "New Mexico",
+      "source_date": null,
+      "source_update_label": "11/4/2026 4:56 AM MT",
+      "source_retrieved_at": "2026-11-04T22:04:38.372233+00:00",
+      "status": "reported",
+      "source_url": "https://electionresults.sos.nm.gov/VoterTurnoutDetails.aspx?map=PREC",
+      "source_snapshot": "20261104T220425Z",
+      "quality": [],
+      "reported_units": 2204,
+      "total_units": 2204,
+      "reporting_unit": "precincts",
+      "ballots": 726684,
+      "denominator": 1463716,
+      "denominator_basis": "eligible_voters_source_definition",
+      "published_pct": 49.65,
+      "validated_pct": 49.647
+    },
+    {
+      "state_code": "NC",
+      "state": "North Carolina",
+      "source_date": null,
+      "source_update_label": "November 4, 2026 4:13 pm",
+      "source_retrieved_at": "2026-11-04T22:04:39.486884+00:00",
+      "status": "reported",
+      "source_url": "https://er.ncsbe.gov/enr/20261103/data/county.txt",
+      "source_snapshot": "20261104T220425Z",
+      "quality": [],
+      "ballots": 4223102,
+      "denominator": 7885046,
+      "denominator_basis": "active_and_inactive_registered_voters",
+      "published_pct": 53.56,
+      "validated_pct": 53.558,
+      "reported_units": 2626,
+      "total_units": 2626,
+      "reporting_unit": "precincts"
+    },
+    {
+      "state_code": "ND",
+      "state": "North Dakota",
+      "source_date": null,
+      "source_update_label": "Tuesday, November 3, 2026 - 11:30pm",
+      "source_retrieved_at": "2026-11-04T22:04:34.783546+00:00",
+      "status": "reported",
+      "source_url": "https://www.sos.nd.gov/news/398-voter-turnout-north-dakota-general-election",
+      "source_snapshot": "20261104T220425Z",
+      "quality": [],
+      "reported_units": null,
+      "total_units": null,
+      "reporting_unit": null,
+      "ballots": 239057,
+      "denominator": null,
+      "denominator_basis": "eligible_voters_source_estimate",
+      "published_pct": 39.8,
+      "validated_pct": null
+    },
+    {
+      "state_code": "OR",
+      "state": "Oregon",
+      "source_date": null,
+      "source_update_label": "11/4/2026 | 2:00 PM PT",
+      "source_retrieved_at": "2026-11-04T22:04:36.025726+00:00",
+      "status": "reported",
+      "source_url": "https://results.oregonvotes.gov/?ID=39",
+      "source_snapshot": "20261104T220425Z",
+      "quality": [],
+      "reported_units": null,
+      "total_units": null,
+      "reporting_unit": null,
+      "ballots": 1551077,
+      "denominator": 3109089,
+      "denominator_basis": "active_registered_voters",
+      "published_pct": 49.89,
+      "validated_pct": 49.888
+    },
+    {
+      "state_code": "SD",
+      "state": "South Dakota",
+      "source_date": null,
+      "source_update_label": "11/4/2026 4:00 PM CT",
+      "source_retrieved_at": "2026-11-04T22:04:39.158046+00:00",
+      "status": "reported",
+      "source_url": "https://electionresults.sd.gov/VoterTurnoutDetails.aspx?map=PREC",
+      "source_snapshot": "20261104T220425Z",
+      "quality": [],
+      "reported_units": 671,
+      "total_units": 671,
+      "reporting_unit": "precincts",
+      "ballots": 310298,
+      "denominator": 628563,
+      "denominator_basis": "registered_voters_source_definition",
+      "published_pct": 49.37,
+      "validated_pct": 49.366
+    }
+  ],
+  "source_receipts": [
+    {
+      "file": "AL-official.html",
+      "snapshot_id": "20261104T220425Z",
+      "url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
+      "retrieved_at": "2026-11-04T22:04:30.255635+00:00",
+      "bytes": 112442,
+      "sha256": "cd367668a687b4412ae32d311f40d1804bf102cc102807ba508f02ddffb80dd3",
+      "http_status": 200,
+      "last_modified": "Wed, 04 Nov 2026 22:04:03 GMT",
+      "etag": null
+    },
+    {
+      "file": "NC-official.json",
+      "snapshot_id": "20261104T220425Z",
+      "url": "https://er.ncsbe.gov/enr/20261103/data/county.txt",
+      "retrieved_at": "2026-11-04T22:04:36.561268+00:00",
+      "bytes": 26951,
+      "sha256": "ae2fe4f65951a8d48731414107944647008b94bda4245a34e922345ba97a5730",
+      "http_status": 200,
+      "last_modified": "Wed, 04 Nov 2026 21:14:36 GMT",
+      "etag": "W/\"c14b65907acf01efbed895e34bffde81\""
+    },
+    {
+      "file": "ND-official.html",
+      "snapshot_id": "20261104T220425Z",
+      "url": "https://www.sos.nd.gov/news/398-voter-turnout-north-dakota-general-election",
+      "retrieved_at": "2026-11-04T22:04:34.783546+00:00",
+      "bytes": 136301,
+      "sha256": "405fc66688c4844f8484d879328fa2b03a8e2dc7ddd04cb47a05d7fc9ae6ae2e",
+      "http_status": 200,
+      "last_modified": "Wed, 04 Nov 2026 20:26:24 GMT",
+      "etag": null
+    },
+    {
+      "file": "NE-official.html",
+      "snapshot_id": "20261104T220425Z",
+      "url": "https://electionresults.nebraska.gov/VoterTurnoutDetails.aspx?map=PREC",
+      "retrieved_at": "2026-11-04T22:04:34.035797+00:00",
+      "bytes": 1256046,
+      "sha256": "d72428dd89f3a064da5df29b35d310e1276945567757b971754b2451c29bd435",
+      "http_status": 200,
+      "last_modified": null,
+      "etag": null
+    },
+    {
+      "file": "OR-official.html",
+      "snapshot_id": "20261104T220425Z",
+      "url": "https://results.oregonvotes.gov/?ID=39",
+      "retrieved_at": "2026-11-04T22:04:36.025726+00:00",
+      "bytes": 36834,
+      "sha256": "5b30879314d7ba88919cccf2789399ff60a6cf8db9f727c93aaa9ae377d92beb",
+      "http_status": 200,
+      "last_modified": null,
+      "etag": null
+    },
+    {
+      "file": "NE-precincts.html",
+      "url": "https://electionresults.nebraska.gov/VoterTurnoutDetails.aspx?map=PREC",
+      "http_status": 200,
+      "retrieved_at": "2026-11-04T22:04:37.444100+00:00",
+      "bytes": 1256046,
+      "sha256": "6dbe51e3bbb58bf1d3ef9d0bc7ec6577cb09025fcc6da6f43659b0e562ce6888"
+    },
+    {
+      "file": "NM-precincts.html",
+      "url": "https://electionresults.sos.nm.gov/VoterTurnoutDetails.aspx?map=PREC",
+      "http_status": 200,
+      "retrieved_at": "2026-11-04T22:04:38.372233+00:00",
+      "bytes": 1488197,
+      "sha256": "f22d08b629310a534de922189a86d5a3a2ce4d6f57ccdee0956d28eab4a67936"
+    },
+    {
+      "file": "SD-precincts.html",
+      "url": "https://electionresults.sd.gov/VoterTurnoutDetails.aspx?map=PREC",
+      "http_status": 200,
+      "retrieved_at": "2026-11-04T22:04:39.158046+00:00",
+      "bytes": 742496,
+      "sha256": "027e742d40d448d62dcbdccc798a545a3c94916766ccd92fccbb3c53094aaa1f"
+    },
+    {
+      "file": "NC-counties.json",
+      "url": "https://er.ncsbe.gov/enr/20261103/data/county.txt",
+      "http_status": 200,
+      "retrieved_at": "2026-11-04T22:04:39.486884+00:00",
+      "bytes": 26951,
+      "sha256": "ae2fe4f65951a8d48731414107944647008b94bda4245a34e922345ba97a5730"
+    }
+  ],
+  "provenance": {
+    "snapshot_path": "public/participation-current/20261104T220424Z/snapshot.json",
+    "snapshot_bytes": 2595019,
+    "snapshot_sha256": "3686633a86c1ca71890015bf98e690ed48540e519d3312a07251bca5a5c70578",
+    "snapshot_url": "https://www.themarginoferror.com/participation-current/20261104T220424Z/snapshot.json",
+    "definition": "Complete selected official statewide full-election ballot observations; not early-vote rows."
+  },
+  "reviewed_scaling_observations": [
+    {
+      "year": 2026,
+      "state_code": "GA",
+      "state": "Georgia",
+      "geography_level": "statewide",
+      "mode": "official",
+      "review_id": "georgia-bulk-participation-20261106-01",
+      "ballots": 4210155,
+      "denominator": 7516484,
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": null,
+      "validated_pct": null,
+      "native_printed_pct": "56.01%",
+      "participation_measure_kind": "native_ballot_total",
+      "participation_measure_literal": "Ballots Cast",
+      "participation_measure_label": "Native Ballots Cast (reported ballots)",
+      "observation_type": "Native Ballots Cast",
+      "source_status_literal": "Native isOfficialResults=false (unofficial)",
+      "source_date": "Thursday, November 5, 2026 at 12:29:04 PM",
+      "source_update_label": "Thursday, November 5, 2026 at 12:29:04 PM (timezone not declared)",
+      "status": "reviewed_unofficial_snapshot",
+      "native_record": {
+        "voters": "7516484",
+        "ballots": "4210155",
+        "printed_turnout": "56.01",
+        "source_update_literal": "Thursday, November 5, 2026 at 12:29:04 PM",
+        "printed_timezone": "",
+        "original_conflicting_api_root_ballots": "0",
+        "statewide_is_official_results": "False",
+        "missing_county_registration_denominators": "2",
+        "counting_complete": "False",
+        "rate_comparable_to_cvap": "False"
+      },
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/statewide-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/complete-georgia-native-query-01.zip",
+      "quality": [
+        "Native ballotsCast separately agrees with the rendered Voters page, not a candidate sum or mail receipt count.",
+        "Native Voters/totalVoters is a registration denominator of unspecified active/inactive scope, not CVAP, VAP, VEP, CPS or demographic turnout.",
+        "Screven and Jeff Davis have native zero denominators and blank rates, not zero turnout. No active/inactive decomposition is inferred.",
+        "Native media county IDs are not FIPS. Reporting statuses and official flags do not independently establish completed counting or certification.",
+        "Candidate, party and voting-mode queries remain separate; 372 missing candidate-mode cells are not zero or inferred participation modes.",
+        "Printed statewide 56.01% is retained, not an approved analysis rate: two county registration denominators are missing.",
+        "Original API root ballotsCast=0 remains a conflicting field; the rendered Voters header separately reports 4,210,155."
+      ]
+    },
+    {
+      "year": 2026,
+      "state_code": "DE",
+      "state": "Delaware",
+      "geography_level": "statewide",
+      "ballots": 384862,
+      "denominator": 810407,
+      "mode": "official",
+      "status": "reviewed_unofficial_snapshot",
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_literal": "Ballots Cast",
+      "participation_measure_label": "Native Ballots Cast (reported statewide snapshot)",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": 47.48996491886176,
+      "validated_pct": 47.48996491886176,
+      "native_printed_pct": "47.49%",
+      "source_status_literal": "UNOFFICIAL RESULTS",
+      "reported_units": null,
+      "total_units": null,
+      "source_rows": 1,
+      "maps_approved": false,
+      "review_id": "delaware-statewide-participation-20261106-01",
+      "native_record": {
+        "geography_level": "statewide",
+        "native_representative_district": "ALL",
+        "ballots_cast": "384862",
+        "registered_voters": "810407",
+        "native_printed_percent": "47.49",
+        "independently_derived_registered_fraction_percent": "47.48996491886175711710288781",
+        "native_measure_literal": "Ballots Cast",
+        "native_denominator_literal": "Reg Voters",
+        "source_status_literal": "UNOFFICIAL RESULTS",
+        "native_update_clock": "",
+        "declared_timezone": "",
+        "native_fips": "",
+        "maps_approved": "False",
+        "analysis_rate_approved": "False",
+        "all_mode_complete": "False",
+        "certified": "False"
+      },
+      "native_source_updates": [],
+      "source_update_label": "Native turnout update clock/timezone not supplied; candidate clock is separate and not substituted.",
+      "source_date": "Native turnout update clock/timezone not supplied; candidate clock is separate and not substituted.",
+      "source_reporting_label": "Native statewide ALL Ballots Cast snapshot; all 41 representative-district ballots and registrations reconcile to this separate aggregate. Same-report Reg Voters fraction only, not CVAP, VAP, VEP, CPS or demographic turnout. The source does not supply a separate denominator reference date. Native turnout update clock and timezone not supplied; candidate ReportTime, retrieval time and client cache keys are not turnout clocks. UNOFFICIAL RESULTS does not establish completed all-mode counting, certification or final independently deduplicated unique voters. All 124 state candidate vectors, 124 county/city vectors and literal party labels remain separate. Senate selections 378111 are not the 384862 participation count. No representative-district turnout is apportioned to counties; the immutable afternoon county observation remains separately preserved.",
+      "quality": [
+        "Native statewide ALL Ballots Cast snapshot; all 41 representative-district ballots and registrations reconcile to this separate aggregate.",
+        "Same-report Reg Voters fraction only, not CVAP, VAP, VEP, CPS or demographic turnout. The source does not supply a separate denominator reference date.",
+        "Native turnout update clock and timezone not supplied; candidate ReportTime, retrieval time and client cache keys are not turnout clocks.",
+        "UNOFFICIAL RESULTS does not establish completed all-mode counting, certification or final independently deduplicated unique voters.",
+        "All 124 state candidate vectors, 124 county/city vectors and literal party labels remain separate. Senate selections 378111 are not the 384862 participation count.",
+        "No representative-district turnout is apportioned to counties; the immutable afternoon county observation remains separately preserved."
+      ],
+      "observation_type": "Native Ballots Cast (reported statewide snapshot)",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/statewide-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/complete-query.zip"
+    }
+  ],
+  "scope_withholdings": [
+    {
+      "state_code": "CA",
+      "reason": "Native voterTurnout is not proved a Ballots Cast/all-ballot count; no automatic population scaling.",
+      "native_observation": {
+        "year": 2026,
+        "state_code": "CA",
+        "county_id": "reviewed:CA:59",
+        "county": "Statewide",
+        "geography_level": "statewide",
+        "ballots": 8928966,
+        "denominator": 23273590,
+        "participation_measure_kind": "native_voter_turnout",
+        "participation_measure_literal": "voterTurnout",
+        "participation_measure_label": "Native voterTurnout (reported participation)",
+        "denominator_basis": "native_registered_voters",
+        "reported_pct": 38.36522857023777,
+        "native_printed_pct": "38.4%",
+        "source_status_literal": "reportType: SF; reportTypeCode: F",
+        "reported_units": 23860,
+        "total_units": 23860,
+        "source_rows": 1,
+        "maps_approved": false,
+        "review_id": "california-bulk-participation-20261106-01",
+        "native_record": {
+          "year": "2026",
+          "election_date": "2026-11-03",
+          "state_code": "CA",
+          "geography_level": "statewide",
+          "native_county_code": "59",
+          "county": "Statewide",
+          "native_county_name_in_code_file": "State of California",
+          "county_fips": "",
+          "reported_participation": "8928966",
+          "registered_voters": "23273590",
+          "native_participation_measure_literal": "voterTurnout",
+          "native_denominator_measure_literal": "totalRegisteredVoters",
+          "native_printed_turnout": "38.4",
+          "native_report_type": "SF",
+          "native_report_type_code": "F",
+          "native_report_number": "0",
+          "native_correction_report_number": "0",
+          "precincts_reporting": "23860",
+          "precincts_total": "23860",
+          "native_reporting_percent": "100.0",
+          "native_first_report_timestamp": "202611032001",
+          "native_last_report_timestamp": "202611051858",
+          "native_timestamp_literal": "November 5, 2026, 6:58 p.m.",
+          "declared_timezone": "",
+          "counting_complete": "false",
+          "maps_approved": "false"
+        },
+        "native_source_updates": [
+          {
+            "source": "firstReportTimestamp",
+            "native_update_literal": "202611032001",
+            "declared_timezone": ""
+          },
+          {
+            "source": "lastReportTimestamp",
+            "native_update_literal": "202611051858",
+            "declared_timezone": ""
+          },
+          {
+            "source": "timestamp",
+            "native_update_literal": "November 5, 2026, 6:58 p.m.",
+            "declared_timezone": ""
+          }
+        ],
+        "source_update_label": "November 5, 2026, 6:58 p.m.; firstReportTimestamp: 202611032001; lastReportTimestamp: 202611051858 (timezone not declared)",
+        "source_reporting_label": "23860/23860 precincts reporting; 100.0% native reporting. This does not establish completed counting or certification. Voting-mode, demographic, blank, overvote, undervote and provisional totals are not supplied.",
+        "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/statewide-participation.csv",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/complete-query.zip",
+        "quality": [
+          "Native voterTurnout / totalRegisteredVoters, not candidate sums, a proved all-mode ballot count or independently deduplicated unique voters.",
+          "Registered-voter fraction, not CVAP, VAP, VEP, CPS or demographic turnout. No counting completion or certification inferred from U, F, SF or reporting completeness.",
+          "Native county codes are not FIPS; source mapping remains unapproved. Native clocks retain their missing timezone."
+        ],
+        "state": "California",
+        "mode": "official",
+        "validated_pct": 38.36522857023777,
+        "source_date": "November 5, 2026, 6:58 p.m.; firstReportTimestamp: 202611032001; lastReportTimestamp: 202611051858 (timezone not declared)",
+        "status": "reviewed_unofficial_snapshot",
+        "observation_type": "Native voterTurnout (reported participation)"
+      }
+    }
+  ],
+  "additional_source_reviews": [
+    {
+      "registry_entry": {
+        "id": "georgia-bulk-participation-20261106-01",
+        "label": "Georgia 2026: all 159 county participation observations and complete native results query",
+        "data_directory": "data/county-source-reviews/20261106-georgia-facts-01",
+        "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/complete-georgia-native-query-01.zip",
+        "complete_download_bytes": 4739339,
+        "complete_download_sha256": "f8900610f3731dd10cb191637b35ec572013961ff4d2a29aa24c3fe0809b8932",
+        "review_status": "complete_bulk_native_participation_and_results_query_reviewed",
+        "maps_approved": false,
+        "scope_note": "All 159 native county ballotsCast and registration totals agree with the rendered Voters page; 157 usable county fractions and two missing rates remain separate. The native Voters header independently prints 4,210,155 Ballots Cast / 7,516,484 Voters / 56.01%; the original conflicting API root zero survives, never as actual zero participation. The statewide printed fraction remains informational, not an approved analysis rate while two county denominators are missing. Wilkinson alone retains its true native official flag; the root remains unofficial. All 273 root contests/457 choices and their literal parties/modes reconcile between API and media export. The complete export includes 3,894 county contests, 7,067 county choices and 102,214 precinct-choice records with nested modes. All 372 missing mode cells, 116 party-attribute differences, wording aliases, precinct residuals and unresolved party/stage scopes survive without filling, pooling or inferred undervotes. Candidate-party votes are not voter participation by party. Native county media IDs are not FIPS. Contextual identities are independently reviewed separately; no certified 2026 election geometry, demographic turnout, completed counting or certification is inferred. Complete factual data, ten CSV queries, offline code/tests and the full archive are provided, not metadata-only downloads. Original HTML, browser traffic and application configuration remain private.",
+        "tables": [
+          {
+            "file": "county-participation.csv",
+            "label": "Georgia: all 159 native county participation counts, registration fields, fractions and clocks (CSV)"
+          },
+          {
+            "file": "statewide-participation.csv",
+            "label": "Georgia: separate native statewide Voters totals and retained conflicting API root zero (CSV)"
+          },
+          {
+            "file": "candidate-results.csv",
+            "label": "Georgia: all 7,524 statewide/county candidate-choice rows and literal parties (CSV)"
+          },
+          {
+            "file": "native-contests.csv",
+            "label": "Georgia: all 4,167 statewide/county contest scopes, titles and native reporting fields (CSV)"
+          },
+          {
+            "file": "candidate-mode-results.csv",
+            "label": "Georgia: all native candidate-mode rows, retaining 372 missing cells (CSV)"
+          },
+          {
+            "file": "precinct-choice-results.csv.gz",
+            "label": "Georgia: all 102,214 native precinct-choice records and complete nested mode data (CSV \u00b7 gzip)"
+          },
+          {
+            "file": "literal-party-totals.csv",
+            "label": "Georgia: separate native contest/literal-party choice totals, not party participation (CSV)"
+          },
+          {
+            "file": "choice-accounting.csv",
+            "label": "Georgia: all known/missing mode cells and unclassified precinct residuals by choice (CSV)"
+          },
+          {
+            "file": "native-reporting-statuses.csv",
+            "label": "Georgia: complete statewide/county native mode reporting statuses (CSV)"
+          },
+          {
+            "file": "source-receipts.csv",
+            "label": "Georgia: complete API, media export and clean rendered Voters observation receipts (CSV)"
+          },
+          {
+            "file": "source-records.json.gz",
+            "label": "Georgia: complete factual native queries, every nested precinct mode and rendered Voters evidence (JSON \u00b7 gzip)"
+          },
+          {
+            "file": "review-georgia-native-query.py",
+            "label": "Georgia: portable standard-library complete query reproducer (Python)"
+          },
+          {
+            "file": "test-georgia-native-query.py",
+            "label": "Georgia: seven focused native-query and missingness regression tests (Python)"
+          }
+        ],
+        "coverage": []
+      },
+      "selected_observation_preserved_entire": true,
+      "native_complete_query_reproduction_not_claimed": true,
+      "frozen_derived_statewide_table": {
+        "path": "data/county-source-reviews/20261106-georgia-facts-01/statewide-participation.csv",
+        "text": "voters,ballots,printed_turnout,source_update_literal,printed_timezone,original_conflicting_api_root_ballots,statewide_is_official_results,missing_county_registration_denominators,counting_complete,rate_comparable_to_cvap\n7516484,4210155,56.01,\"Thursday, November 5, 2026 at 12:29:04 PM\",,0,False,2,False,False\n",
+        "bytes": 310,
+        "sha256": "b882f7f97f0df02fc9b94cbbb18c60416cf3331fa9eb3f34c6b484514a368067"
+      }
+    },
+    {
+      "registry_entry": {
+        "id": "delaware-statewide-participation-20261106-01",
+        "label": "Delaware 2026: statewide participation and complete district/candidate numerical query",
+        "data_directory": "data/county-source-reviews/20261106-delaware-statewide-native-01",
+        "usability_review_path": "data/county-source-reviews/20261106-delaware-statewide-explorer-01/state-usability-review.json",
+        "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/complete-query.zip",
+        "complete_download_bytes": 36548,
+        "complete_download_sha256": "521c0849acedf949e7e31bd75ab5053d91630b2ec55118e03cd42275e82c9cd0",
+        "checksums_file": "checksums.json",
+        "review_status": "complete_numerical_query_reviewed_unofficial",
+        "maps_approved": false,
+        "scope_note": "One source-defined statewide ALL snapshot: 384,862 Ballots Cast / 810,407 same-report Reg Voters, printed 47.49%. All 41 representative districts sum exactly to the separate statewide row and all 42 native fractions reconcile. No turnout update clock or timezone is supplied; the separate candidate clock 2026-11-04T03:03:18.364-05:00 is not substituted, and the site's hardcoded registration display is not evidence. Preserve all 290 native records / 4510 fields, all 124 state candidate vectors / 124 county/city vectors / 124 literal party labels separately. Candidate reporting denominators vary by contest, including 530 and 527 statewide; Senate selections 378,111 are not participation. No district turnout is apportioned to counties and the immutable earlier afternoon county snapshot remains distinct. All fifteen immutable numerical files and fourteen ZIP members reproduce exactly; eight portable tests pass. Native FIPS and all approval flags stay missing/false; separate statewide usability permits the reported count and registered-voter fraction, not county joins, completed all-mode counting, certification, final unique voters, CVAP/VAP/VEP or demographic turnout. Original page/script templates remain private.",
+        "tables": [
+          {
+            "file": "statewide-participation.csv",
+            "label": "Delaware: separate native statewide ballots, registrations and fraction (CSV)"
+          },
+          {
+            "file": "district-participation.csv",
+            "label": "Delaware: all 41 native representative-district participation records (CSV)"
+          },
+          {
+            "file": "state-candidate-results.csv",
+            "label": "Delaware: all 124 native state candidate and literal-party mode vectors (CSV)"
+          },
+          {
+            "file": "county-candidate-vectors.csv",
+            "label": "Delaware: all 124 native county/city/state candidate vectors, not turnout (CSV)"
+          },
+          {
+            "file": "literal-party-labels.csv",
+            "label": "Delaware: all 124 literal party labels, preserving null versus empty (CSV)"
+          },
+          {
+            "file": "native-turnout.json",
+            "label": "Delaware: entire original 42-record native participation feed (JSON)"
+          },
+          {
+            "file": "native-state-candidate-results.json",
+            "label": "Delaware: entire original 124-record state candidate feed (JSON)"
+          },
+          {
+            "file": "native-county-candidate-results.json",
+            "label": "Delaware: entire original 124-record county/city candidate feed (JSON)"
+          },
+          {
+            "file": "source-qualification.json",
+            "label": "Delaware: complete source receipts, missing clocks and independent decoding (JSON)"
+          },
+          {
+            "file": "audit.json",
+            "label": "Delaware: complete district sums, fractions and candidate-vector audit (JSON)"
+          },
+          {
+            "file": "methods.json",
+            "label": "Delaware: full scope and offline reproduction methods (JSON)"
+          },
+          {
+            "file": "checksums.json",
+            "label": "Delaware: complete fifteen-file numerical query byte inventory (JSON)"
+          },
+          {
+            "file": "review-state.py",
+            "label": "Delaware: standard-library offline complete query reproducer (Python)"
+          },
+          {
+            "file": "test_review_state.py",
+            "label": "Delaware: eight portable numerical and archive tests (Python)"
+          }
+        ]
+      },
+      "selected_observation_preserved_entire": true,
+      "native_complete_query_reproduction_not_claimed": true,
+      "frozen_derived_statewide_table": {
+        "path": "data/county-source-reviews/20261106-delaware-statewide-native-01/statewide-participation.csv",
+        "text": "geography_level,native_representative_district,ballots_cast,registered_voters,native_printed_percent,independently_derived_registered_fraction_percent,native_measure_literal,native_denominator_literal,source_status_literal,native_update_clock,declared_timezone,native_fips,maps_approved,analysis_rate_approved,all_mode_complete,certified\nstatewide,ALL,384862,810407,47.49,47.48996491886175711710288781,Ballots Cast,Reg Voters,UNOFFICIAL RESULTS,,,,False,False,False,False\n",
+        "bytes": 472,
+        "sha256": "38eeaed4835291cd60b4a7068c184ab3c160ef257d2506c8c044d552259ce245"
+      }
+    }
+  ]
+}

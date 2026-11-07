@@ -1,0 +1,257 @@
+{
+  "AL": {
+    "D": 772412,
+    "R": 1462616,
+    "all_presidential_votes": 2265090
+  },
+  "AK": {
+    "D": 140026,
+    "R": 184458,
+    "all_presidential_votes": 338177
+  },
+  "AZ": {
+    "D": 1582860,
+    "R": 1770242,
+    "all_presidential_votes": 3390161
+  },
+  "AR": {
+    "D": 396905,
+    "R": 759241,
+    "all_presidential_votes": 1182676
+  },
+  "CA": {
+    "D": 9276179,
+    "R": 6081697,
+    "all_presidential_votes": 15865475
+  },
+  "CO": {
+    "D": 1728159,
+    "R": 1377441,
+    "all_presidential_votes": 3192745
+  },
+  "CT": {
+    "D": 992053,
+    "R": 736918,
+    "all_presidential_votes": 1759010
+  },
+  "DE": {
+    "D": 289758,
+    "R": 214351,
+    "all_presidential_votes": 512912
+  },
+  "DC": {
+    "D": 294185,
+    "R": 21076,
+    "all_presidential_votes": 325869
+  },
+  "FL": {
+    "D": 4683038,
+    "R": 6110125,
+    "all_presidential_votes": 10893752
+  },
+  "GA": {
+    "D": 2548017,
+    "R": 2663117,
+    "all_presidential_votes": 5250905
+  },
+  "HI": {
+    "D": 313044,
+    "R": 193661,
+    "all_presidential_votes": 516701
+  },
+  "ID": {
+    "D": 274972,
+    "R": 605246,
+    "all_presidential_votes": 905057
+  },
+  "IL": {
+    "D": 3062863,
+    "R": 2449079,
+    "all_presidential_votes": 5633310
+  },
+  "IN": {
+    "D": 1163603,
+    "R": 1720347,
+    "all_presidential_votes": 2936677
+  },
+  "IA": {
+    "D": 707278,
+    "R": 927019,
+    "all_presidential_votes": 1663506
+  },
+  "KS": {
+    "D": 544853,
+    "R": 758802,
+    "all_presidential_votes": 1327591
+  },
+  "KY": {
+    "D": 704043,
+    "R": 1337494,
+    "all_presidential_votes": 2074530
+  },
+  "LA": {
+    "D": 766870,
+    "R": 1208505,
+    "all_presidential_votes": 2006975
+  },
+  "ME": {
+    "D": 435652,
+    "R": 377977,
+    "all_presidential_votes": 831375
+  },
+  "MD": {
+    "D": 1902577,
+    "R": 1035550,
+    "all_presidential_votes": 3038334
+  },
+  "MA": {
+    "D": 2126518,
+    "R": 1251303,
+    "all_presidential_votes": 3473668
+  },
+  "MI": {
+    "D": 2736533,
+    "R": 2816636,
+    "all_presidential_votes": 5664186
+  },
+  "MN": {
+    "D": 1656979,
+    "R": 1519032,
+    "all_presidential_votes": 3253920
+  },
+  "MS": {
+    "D": 466668,
+    "R": 747744,
+    "all_presidential_votes": 1228008
+  },
+  "MO": {
+    "D": 1200599,
+    "R": 1751986,
+    "all_presidential_votes": 2995327
+  },
+  "MT": {
+    "D": 231906,
+    "R": 352079,
+    "all_presidential_votes": 602990
+  },
+  "NE": {
+    "D": 369995,
+    "R": 564816,
+    "all_presidential_votes": 952182
+  },
+  "NV": {
+    "D": 705197,
+    "R": 751205,
+    "all_presidential_votes": 1484840
+  },
+  "NH": {
+    "D": 418488,
+    "R": 395523,
+    "all_presidential_votes": 826189
+  },
+  "NJ": {
+    "D": 2220713,
+    "R": 1968215,
+    "all_presidential_votes": 4272725
+  },
+  "NM": {
+    "D": 478802,
+    "R": 423391,
+    "all_presidential_votes": 923403
+  },
+  "NY": {
+    "D": 4619195,
+    "R": 3578899,
+    "all_presidential_votes": 8262495
+  },
+  "NC": {
+    "D": 2715375,
+    "R": 2898423,
+    "all_presidential_votes": 5699141
+  },
+  "ND": {
+    "D": 112327,
+    "R": 246505,
+    "all_presidential_votes": 368155
+  },
+  "OH": {
+    "D": 2533699,
+    "R": 3180116,
+    "all_presidential_votes": 5767788
+  },
+  "OK": {
+    "D": 499599,
+    "R": 1036213,
+    "all_presidential_votes": 1566173
+  },
+  "OR": {
+    "D": 1240600,
+    "R": 919480,
+    "all_presidential_votes": 2244493
+  },
+  "PA": {
+    "D": 3423042,
+    "R": 3543308,
+    "all_presidential_votes": 7058732
+  },
+  "RI": {
+    "D": 285156,
+    "R": 214406,
+    "all_presidential_votes": 513386
+  },
+  "SC": {
+    "D": 1028452,
+    "R": 1483747,
+    "all_presidential_votes": 2548140
+  },
+  "SD": {
+    "D": 146859,
+    "R": 272081,
+    "all_presidential_votes": 428922
+  },
+  "TN": {
+    "D": 1056265,
+    "R": 1966865,
+    "all_presidential_votes": 3063942
+  },
+  "TX": {
+    "D": 4835250,
+    "R": 6393597,
+    "all_presidential_votes": 11388674
+  },
+  "UT": {
+    "D": 562566,
+    "R": 883818,
+    "all_presidential_votes": 1488494
+  },
+  "VT": {
+    "D": 235791,
+    "R": 119395,
+    "all_presidential_votes": 369422
+  },
+  "VA": {
+    "D": 2333778,
+    "R": 2074097,
+    "all_presidential_votes": 4503288
+  },
+  "WA": {
+    "D": 2245849,
+    "R": 1530923,
+    "all_presidential_votes": 3924243
+  },
+  "WV": {
+    "D": 214309,
+    "R": 533556,
+    "all_presidential_votes": 762582
+  },
+  "WI": {
+    "D": 1668229,
+    "R": 1697626,
+    "all_presidential_votes": 3422918
+  },
+  "WY": {
+    "D": 69527,
+    "R": 192633,
+    "all_presidential_votes": 269048
+  }
+}

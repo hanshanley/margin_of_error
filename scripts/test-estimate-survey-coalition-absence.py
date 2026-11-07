@@ -1,5 +1,6 @@
 import copy
 import importlib.util
+import json
 import math
 from pathlib import Path
 import tempfile
@@ -118,6 +119,40 @@ class AbsenceTests(unittest.TestCase):
         self.assertEqual(result["reported_switcher_count"], [0, 2.025])
         self.assertEqual(result["apparent_absence_count"], [595, 605])
         self.assertIsNone(absence.rounding_envelope(1000, 1000, 40.2, 1))
+
+    def test_reviewed_native_snapshots_keep_every_warning_and_false_approval(self):
+        root = Path(__file__).resolve().parents[1]
+        inputs = json.loads((root / "data/participation-coalition-scenarios/20261107-02/participation-input.json").read_text())
+        tables = json.loads((root / "public/participation-survey/20261107-02/joint-table-review.json").read_text())["tables"]
+        for native in inputs["reviewed_scaling_observations"]:
+            original = copy.deepcopy(native)
+            table = next(row for row in tables if row["state_code"] == native["state_code"]
+                         and row["contest_code"] == "SG" and row["subset"]["sub"] == 0)
+            with self.assertRaises(ValueError):
+                absence.estimate(table, {"D": 9000000, "R": 9000000}, native)
+            result = absence.estimate_reviewed_snapshot(table, {"D": 9000000, "R": 9000000}, native)
+            self.assertEqual(native, original)
+            self.assertEqual(result["turnout_source"], original)
+            self.assertTrue(result["turnout_source"]["quality"])
+            self.assertFalse(result["turnout_input_qualification"]["all_ballot_population_scope_confirmed"])
+            self.assertFalse(result["turnout_input_qualification"]["native_source_approval_flags_changed"])
+            if native["state_code"] == "DE":
+                self.assertEqual(result["turnout_source"]["native_record"]["all_mode_complete"], "False")
+                self.assertEqual(result["turnout_source"]["native_source_updates"], [])
+                self.assertEqual(result["turnout_source"]["native_record"]["native_update_clock"], "")
+
+    def test_changed_reviewed_records_and_unsupported_voter_turnout_fail_closed(self):
+        root = Path(__file__).resolve().parents[1]
+        inputs = json.loads((root / "data/participation-coalition-scenarios/20261107-02/participation-input.json").read_text())
+        native = inputs["reviewed_scaling_observations"][0]
+        for field, value in [("quality", []), ("ballots", native["ballots"] + 1),
+                             ("source_date", "invented clock"), ("state_code", "CA")]:
+            changed = copy.deepcopy(native)
+            changed[field] = value
+            with self.assertRaises(ValueError):
+                absence.validate_reviewed_snapshot(changed)
+        with self.assertRaises(ValueError):
+            absence.validate_reviewed_snapshot(inputs["scope_withholdings"][0]["native_observation"])
 
 
 if __name__ == "__main__":

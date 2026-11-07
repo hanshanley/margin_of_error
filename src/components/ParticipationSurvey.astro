@@ -47,8 +47,8 @@ const mass = (row: Table, key: string) => {
 
 <section id="participation-survey" class="participation-current" aria-labelledby="participation-survey-title">
 	<header class="section-intro">
-		<p class="kicker">2024 to 2026 · Survey-reported switching</p>
-		<h2 id="participation-survey-title">What returning voters report</h2>
+		<p class="kicker">2024 to 2026 · Survey-reported switching and composition</p>
+		<h2 id="participation-survey-title">What the current electorate reports</h2>
 		<p>State and demographic joint tables from CNN's Voter Poll by SSRS.
 			<strong>{qualified.length} qualified tables across {qualifiedStates} states and the national House poll</strong>;
 			not nationwide population attribution. Expand a jurisdiction to compare each available office separately.
@@ -61,6 +61,10 @@ const mass = (row: Table, key: string) => {
 	<p>Some unrecontacted respondents retain pre-election choices. This is not a validated record of individual
 		ballots or causal persuasion. CNN, NBC and MS NOW use the same SSRS study, not independent samples.
 		<strong>Population drop-off and design-aware subgroup confidence intervals remain unavailable.</strong></p>
+	<p>The prior nonvote and other-choice columns describe each current poll group's recalled 2024
+		presidential composition. They are not demographic turnout rates. A reported presidential nonvoter
+		may have voted in another 2024 contest; these tables cannot distinguish first-time voters,
+		returning voters or newly eligible residents.</p>
 	<ParticipationCoalitionScenarios names={names} />
 	{states.map(code => {
 		const tables = review.tables.filter(row => row.state_code === code);
@@ -82,12 +86,16 @@ const mass = (row: Table, key: string) => {
 								<th scope="col">Harris to R<br />(within recalled Harris)</th>
 								<th scope="col">Trump to D<br />(per 100 current group)</th>
 								<th scope="col">Harris to R<br />(per 100 current group)</th>
+								<th scope="col">No 2024 presidential vote<br />(% of current group)</th>
+								<th scope="col">Other 2024 presidential choice<br />(% of current group)</th>
 								<th scope="col">Source base</th><th scope="col">Qualification / source clock</th></tr></thead>
 							<tbody>{rows.map(row => <tr data-survey-status={row.status} data-survey-subset={row.subset.sub}>
 								<th scope="row">{row.subset.longName}</th>
 								<td>{pct(row.joint_question_rows?.R.current_choice_pct_within_prior_choice?.D)}</td>
 								<td>{pct(row.joint_question_rows?.D.current_choice_pct_within_prior_choice?.R)}</td>
 								<td>{mass(row, 'reported_trump_to_dem')}</td><td>{mass(row, 'reported_harris_to_rep')}</td>
+								<td data-survey-prior-nonvoter-share>{pct(row.joint_question_rows?.N?.prior_choice_share_pct)}</td>
+								<td data-survey-prior-other-share>{pct(row.joint_question_rows?.O?.prior_choice_share_pct)}</td>
 								<td>{row.source_reported_respondents == null || row.source_reported_respondents < 0
 									? 'Unavailable' : row.source_reported_respondents.toLocaleString('en-US')}</td>
 								<td>{labels[row.status] ?? row.status}

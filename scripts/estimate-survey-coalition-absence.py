@@ -11,6 +11,12 @@ import zipfile
 
 CODES = "AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC".split()
 NS = {"s": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
+REVIEWED_SNAPSHOTS = {
+    "georgia-bulk-participation-20261106-01":
+        "f2b9f12f0687ee94f7a6faceeb04bf76f559f0acd26bb4137e6862e9aace206f",
+    "delaware-statewide-participation-20261106-01":
+        "adfd1b147cd4e3bca42a7d3c6bc02cef3b25e85e8605af47bdb24828aec44e9a",
+}
 
 
 def fec_baselines(path):
@@ -159,6 +165,37 @@ def estimate(table, baseline, reporting):
     return output
 
 
+def validate_reviewed_snapshot(row):
+    digest = hashlib.sha256(json.dumps(row, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+    if (REVIEWED_SNAPSHOTS.get(row.get("review_id")) != digest
+            or row.get("status") != "reviewed_unofficial_snapshot"
+            or row.get("geography_level") != "statewide"
+            or row.get("participation_measure_literal") != "Ballots Cast"):
+        raise ValueError("Unreviewed or changed native ballot snapshot")
+
+
+def estimate_reviewed_snapshot(table, baseline, reporting):
+    validate_reviewed_snapshot(reporting)
+    calculation_input = {
+        "state_code": reporting["state_code"], "ballots": reporting["ballots"],
+        "status": "reported", "quality": [],
+    }
+    output = estimate(table, baseline, calculation_input)
+    output["turnout_source"] = reporting
+    output["turnout_input_qualification"] = {
+        "tier": "source_defined_ballots_conditional_scope_only",
+        "all_ballot_population_scope_confirmed": False,
+        "native_observation_and_qualifications_preserved": True,
+        "native_source_approval_flags_changed": False,
+        "additional_assumption": (
+            "The native Ballots Cast snapshot is assumed to apply to the state's entire "
+            "ballot-caster population. Its all-mode definition, completed counting and final "
+            "unique-voter coverage are not established. This is not a new source approval."
+        ),
+    }
+    return output
+
+
 def run(workbook, snapshot, survey, output):
     if output.exists() and any(output.iterdir()):
         raise ValueError("Refusing to overwrite an existing population review")
@@ -169,10 +206,23 @@ def run(workbook, snapshot, survey, output):
     reporting = {row["state_code"]: row for row in current["reporting"]}
     if len(reporting) != len(current["reporting"]):
         raise ValueError("Duplicate statewide participation row")
+    reviewed = {}
+    for row in current.get("reviewed_scaling_observations", []):
+        validate_reviewed_snapshot(row)
+        code = row["state_code"]
+        if code in reporting or code in reviewed:
+            raise ValueError("Duplicate original/reviewed statewide participation row")
+        reviewed[code] = row
     tables = json.loads(survey.read_text())["tables"]
-    results = [estimate(table, baseline[table["state_code"]], reporting[table["state_code"]])
-               for table in tables if table["state_code"] in reporting and table["subset"]["sub"] == 0
-               and table["status"] == "published_joint_question_reviewed"]
+    results = []
+    for table in tables:
+        code = table["state_code"]
+        if table["subset"]["sub"] != 0 or table["status"] != "published_joint_question_reviewed":
+            continue
+        if code in reporting:
+            results.append(estimate(table, baseline[code], reporting[code]))
+        elif code in reviewed:
+            results.append(estimate_reviewed_snapshot(table, baseline[code], reviewed[code]))
     result = {
         "status": "conditional_survey_scaling_not_measured_dropoff",
         "estimates": results,
@@ -204,6 +254,14 @@ def run(workbook, snapshot, survey, output):
         "survey_methods_source_url": "https://ssrs.com/wp-content/uploads/The-Voter-Poll-by-SSRS-Methodology-Statement_Final.pdf",
         "survey_universe_review": "SSRS methods pages 6-7 target the estimated 2026 electorate in each state across voting modes. The public table's exact contest-specific response selection is not established.",
     }
+    if reviewed:
+        result["assumptions_and_limits"].insert(
+            1, "Georgia and Delaware additionally assume their source-defined Ballots Cast snapshots "
+            "apply to the entire ballot-caster population; their all-mode definition and completed "
+            "coverage are unconfirmed. Every native qualification and approval flag remains unchanged.")
+        for row in result["jurisdictions"]:
+            row["has_conditional_native_ballot_snapshot"] = row["state_code"] in reviewed
+        result["native_scope_withholdings"] = current.get("scope_withholdings", [])
     output.mkdir(parents=True, exist_ok=True)
     (output / "official-2024-baselines.json").write_text(json.dumps(baseline, indent=2) + "\n")
     (output / "conditional-coalition-scenarios.json").write_text(json.dumps(result, indent=2) + "\n")

@@ -8,7 +8,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "20261107-01"
+VERSION = "20261107-02"
 DATA = f"data/participation-coalition-scenarios/{VERSION}"
 PUBLIC = f"public/participation-coalition-scenarios/{VERSION}"
 SURVEY = "20261107-02"
@@ -46,6 +46,9 @@ def package():
         "the selected immutable observations are inputs here, not a fresh live website extraction.\n"
         "No native voter/respondent records, restricted NORC materials or full copyrighted dashboard are included.\n"
         "These are conditional all-ballot scaling scenarios. Exact contest-table response universes remain unverified.\n"
+        "Georgia and Delaware also assume source-defined Ballots Cast snapshots cover the entire ballot population.\n"
+        "Their native observations, warnings and approval flags remain intact; all-mode scope is unconfirmed.\n"
+        "The pinned adapter rejects any changed native observation; California voterTurnout is not admitted.\n"
         "Apparent absence is not measured staying home. Read every assumption in the scenario JSON.\n"
         "Rounding and response/recall/count sensitivity are not confidence intervals or exhaustive uncertainty.\n"
         "Different contests share voters. Do not sum offices, marginal endpoints or overlapping groups.\n"
