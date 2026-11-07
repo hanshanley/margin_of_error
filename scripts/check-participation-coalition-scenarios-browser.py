@@ -26,6 +26,7 @@ def check(base, proof, version):
                         context.route("**/participation-coalition-scenarios/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-coalition-scenarios")
                     states, contests = (6, 9) if version == "20261107-01" else (8, 12)
                     expect(panel).to_contain_text(f"{states} states · {contests} separate contests")

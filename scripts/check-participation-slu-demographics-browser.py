@@ -30,6 +30,7 @@ def check(base, proof):
                                       lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-house-demographic-intentions")
                     panel.locator("summary").click()
                     expect(panel.locator("[data-slu-demographic]")).to_have_count(10)

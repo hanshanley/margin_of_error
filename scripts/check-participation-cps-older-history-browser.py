@@ -34,6 +34,7 @@ def check(base, proof, verify_downloads=True):
                         context.route("**/*.json*", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-cps-older-history")
                     expect(panel).to_be_visible()
                     for text in ("all 50 states and D.C.", "90% margin of error", "Missing is not zero.",

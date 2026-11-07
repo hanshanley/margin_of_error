@@ -27,6 +27,7 @@ def check(base, proof):
                         context.route("**/participation-candidate-conditionals/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-candidate-conditionals")
                     expect(panel.locator("[data-candidate-contest]")).to_have_count(4)
                     expect(panel.locator("[data-current-candidate]")).to_have_count(12)

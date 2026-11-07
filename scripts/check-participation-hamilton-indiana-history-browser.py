@@ -37,6 +37,7 @@ def check(base, proof):
                         context.route("**/participation-hamilton-indiana-history/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-hamilton-indiana-history")
                     expect(panel).to_be_visible()
                     for text in (

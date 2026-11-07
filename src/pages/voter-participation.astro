@@ -171,8 +171,6 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<p class="kicker">An atlas of voter participation</p>
 			<h1>Who participates?</h1>
 			<p class="participation-deck">Voter turnout across elections, places and demographic groups.</p>
-			<p><a href="#participation-swing">2024–2026: persuasion or staying home? · demographic evidence</a></p>
-			<p><a href="#participation-survey">State and demographic survey-reported switching</a></p>
 		</header>
 
 		<nav class="participation-nav" aria-label="Explore participation" role="tablist">
@@ -259,27 +257,33 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<div id="tooltip" role="tooltip" hidden></div>
 		</section>
 
-		<ParticipationColumbiaWisconsinHistory />
-		<ParticipationCPSUnifiedHistory />
-		<ParticipationCPSEarlyHistory />
-		<ParticipationCPSOlderHistory />
-		<ParticipationCPSStateHistory />
-		<ParticipationHamiltonIndianaHistory />
-		<ParticipationCESClassification />
-		<ParticipationRegistrationEntry />
-		<ParticipationCountyScenarios version="20261107-02" />
-		<ParticipationSwing />
-		<ParticipationCountyScenarios />
-		<ParticipationStateAgeScenarios />
-		<ParticipationAgeScenarios />
-		<ParticipationCandidateConditionals />
-		<ParticipationIndependentPoll />
-		<ParticipationPanelIntentions />
-		<ParticipationHouseIntentions />
-		<ParticipationClarkHistory />
-		<ParticipationNorthDakotaLongHistory />
-		<ParticipationNorthDakotaHistory />
-		<ParticipationSurvey />
+		<details id="participation-research" class="participation-reference">
+			<summary>Research studies &amp; experimental models</summary>
+			<p>Historical source studies, local case studies and assumption-dependent estimates.
+				Local findings do not establish nationwide coverage, and modeled switching is not
+				observed individual persuasion. Each study retains its own scope, limitations and complete data.</p>
+			<ParticipationColumbiaWisconsinHistory />
+			<ParticipationCPSUnifiedHistory />
+			<ParticipationCPSEarlyHistory />
+			<ParticipationCPSOlderHistory />
+			<ParticipationCPSStateHistory />
+			<ParticipationHamiltonIndianaHistory />
+			<ParticipationCESClassification />
+			<ParticipationRegistrationEntry />
+			<ParticipationCountyScenarios version="20261107-02" />
+			<ParticipationSwing />
+			<ParticipationCountyScenarios />
+			<ParticipationStateAgeScenarios />
+			<ParticipationAgeScenarios />
+			<ParticipationCandidateConditionals />
+			<ParticipationIndependentPoll />
+			<ParticipationPanelIntentions />
+			<ParticipationHouseIntentions />
+			<ParticipationClarkHistory />
+			<ParticipationNorthDakotaLongHistory />
+			<ParticipationNorthDakotaHistory />
+			<ParticipationSurvey />
+		</details>
 
 		<section id="methods-panel" class="participation-secondary" data-section="methods" aria-labelledby="methods-heading">
 		<header class="section-intro"><p class="kicker">Sources, definitions & research</p><h2 id="methods-heading">What is behind the numbers?</h2>

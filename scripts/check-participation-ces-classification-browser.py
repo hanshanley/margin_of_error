@@ -35,6 +35,7 @@ def check(base, proof):
                         context.route("**/participation-ces-classification/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-ces-classification")
                     expect(panel.locator("[data-ces-row]")).to_have_count(29)
                     expect(panel.locator("[data-ces-table]")).to_have_count(7)
