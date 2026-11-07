@@ -120,6 +120,53 @@ class AbsenceTests(unittest.TestCase):
         self.assertEqual(result["apparent_absence_count"], [595, 605])
         self.assertIsNone(absence.rounding_envelope(1000, 1000, 40.2, 1))
 
+    def test_nonvote_other_and_missing_choice_accounting_does_not_invent_first_voters(self):
+        root = Path(__file__).resolve().parents[1]
+        tables = json.loads((root / "public/participation-survey/20261107-02/joint-table-review.json").read_text())["tables"]
+        table = next(row for row in tables if row["state_code"] == "DE"
+                     and row["contest_code"] == "SG" and row["subset"]["sub"] == 0)
+        reporting = {"state_code": "DE", "status": "reported", "quality": [], "ballots": 1000}
+        result = absence.estimate(table, {"D": 900, "R": 1000}, reporting)
+        composition = result["current_electorate_composition"]
+        self.assertEqual(composition["N"]["conditional_current_electorate_count"], 30)
+        self.assertEqual(composition["N"]["reported_current_choice_counts"], {"D": None, "R": None})
+        self.assertEqual(result["signed_composition_rounding_difference_pct"], 1)
+        self.assertEqual(sum(row["conditional_current_electorate_count"] for row in composition.values()), 990)
+        identification = result["participation_entry_identification"]
+        self.assertTrue(identification["all_four_prior_choice_categories_present"])
+        self.assertFalse(identification["complete_participation_entry_exit_decomposition"])
+        for key in ("first_ever_voters", "newly_registered_current_voters",
+                    "newly_eligible_current_voters", "previously_eligible_nonparticipants",
+                    "current_voters_without_prior_ballot"):
+            self.assertIsNone(identification[key])
+        self.assertNotIn("N", result["reference"])
+
+    def test_partial_categories_and_overfull_composition_are_not_zero_filled_or_normalized(self):
+        rows = {
+            "D": {"prior_choice_share_pct": 50, "current_choice_pct_within_prior_choice": {"D": 97, "R": 4}},
+            "R": {"prior_choice_share_pct": 51, "current_choice_pct_within_prior_choice": {"R": 90}},
+        }
+        original = copy.deepcopy(rows)
+        result = absence.electorate_accounting(rows, 1000)
+        self.assertEqual(result["signed_composition_rounding_difference_pct"], -1)
+        self.assertEqual(set(result["current_electorate_composition"]), {"D", "R"})
+        self.assertFalse(result["participation_entry_identification"]["all_four_prior_choice_categories_present"])
+        self.assertEqual(result["current_electorate_composition"]["D"]["reported_current_choice_counts"],
+                         {"D": 485, "R": 20})
+        self.assertEqual(rows, original)
+        for category, field, value in (("D", "prior_choice_share_pct", True),
+                                       ("R", "prior_choice_share_pct", math.nan)):
+            changed = copy.deepcopy(rows)
+            changed[category][field] = value
+            with self.assertRaises(ValueError):
+                absence.electorate_accounting(changed, 1000)
+        changed = copy.deepcopy(rows)
+        changed["R"]["current_choice_pct_within_prior_choice"]["D"] = 101
+        with self.assertRaises(ValueError):
+            absence.electorate_accounting(changed, 1000)
+        with self.assertRaises(ValueError):
+            absence.electorate_accounting({**rows, "unknown_code": {}}, 1000)
+
     def test_reviewed_native_snapshots_keep_every_warning_and_false_approval(self):
         root = Path(__file__).resolve().parents[1]
         inputs = json.loads((root / "data/participation-coalition-scenarios/20261107-02/participation-input.json").read_text())

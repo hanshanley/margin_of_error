@@ -119,6 +119,11 @@ class PreliminaryTests(unittest.TestCase):
         self.assertEqual(nonvote["reported_current_choice_counts"], {"D": None, "R": None})
         self.assertNotIn("first_time_voter_count", result)
         self.assertEqual(result["signed_composition_rounding_difference_pct"], 1)
+        identification = result["participation_entry_identification"]
+        self.assertTrue(identification["all_four_prior_choice_categories_present"])
+        self.assertIsNone(identification["first_ever_voters"])
+        self.assertIsNone(identification["previously_eligible_nonparticipants"])
+        self.assertFalse(identification["complete_participation_entry_exit_decomposition"])
 
     def test_negative_absence_and_overfull_rounding_are_diagnostics_not_clamped(self):
         table = self.table("NC")
@@ -137,6 +142,12 @@ class PreliminaryTests(unittest.TestCase):
                              ("reported_composition_sum_pct", 90)]:
             changed = copy.deepcopy(table)
             changed[field] = value
+            with self.assertRaises(ValueError):
+                module.calculate(changed, self.baselines["NC"], self.totals["NC"])
+        for rows in ({key: value for key, value in table["joint_question_rows"].items() if key != "N"},
+                     {**table["joint_question_rows"], "unknown_code": {}}):
+            changed = copy.deepcopy(table)
+            changed["joint_question_rows"] = rows
             with self.assertRaises(ValueError):
                 module.calculate(changed, self.baselines["NC"], self.totals["NC"])
 

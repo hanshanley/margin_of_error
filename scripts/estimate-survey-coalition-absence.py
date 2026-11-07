@@ -103,6 +103,64 @@ def rounding_envelope(prior_total, current_total, share, switched):
     }
 
 
+def electorate_accounting(rows, current_total):
+    if finite(current_total, "current total") < 0:
+        raise ValueError("Invalid population total")
+    if not {"D", "R"} <= set(rows) <= {"D", "R", "O", "N"}:
+        raise ValueError("Unrecognized or missing prior-choice category")
+    composition = {}
+    for prior in ("D", "R", "O", "N"):
+        if prior not in rows:
+            continue
+        row = rows[prior]
+        share = finite(row["prior_choice_share_pct"], "composition")
+        if not 0 <= share <= 100:
+            raise ValueError("Invalid recalled presidential composition")
+        count = current_total * share / 100
+        flows = {}
+        for party in ("D", "R"):
+            value = row["current_choice_pct_within_prior_choice"].get(party)
+            if value is not None and not 0 <= finite(value, "conditional choice") <= 100:
+                raise ValueError("Invalid conditional choice")
+            flows[party] = None if value is None else count * value / 100
+        composition[prior] = {
+            "reported_share_pct_of_current_electorate": share,
+            "conditional_current_electorate_count": count,
+            "reported_current_choice_counts": flows,
+        }
+    difference = 100 - sum(row["reported_share_pct_of_current_electorate"]
+                           for row in composition.values())
+    return {
+        "current_electorate_composition": composition,
+        "signed_composition_rounding_difference_pct": difference,
+        "signed_composition_rounding_difference_is_not_a_person_count": True,
+        "participation_entry_identification": {
+            "status": "prior_presidential_choice_composition_not_entry_classification",
+            "all_four_prior_choice_categories_present": set(rows) == {"D", "R", "O", "N"},
+            "category_meanings": {
+                "D": "Reported prior Democratic presidential vote",
+                "R": "Reported prior Republican presidential vote",
+                "O": "Reported prior other-candidate presidential vote",
+                "N": "Reported no prior presidential vote; prior all-ballot participation unresolved",
+            },
+            "newly_registered_current_voters": None,
+            "newly_eligible_current_voters": None,
+            "first_ever_voters": None,
+            "previously_eligible_nonparticipants": None,
+            "current_voters_without_prior_ballot": None,
+            "complete_participation_entry_exit_decomposition": False,
+            "limits": [
+                "Current total already includes entrants; do not subtract them again.",
+                "N is not a switcher cohort and is not proof of no ballot in the prior election.",
+                "New registration is not first-ever participation; registration recency and voting history are separate attributes.",
+                "Missing categories and suppressed choices stay unavailable, not zero.",
+                "Signed composition residual is a rounding or coverage diagnostic, not identified unknown people.",
+                "Registration snapshots and completed comparable participation histories are required to distinguish entry from prior nonparticipation.",
+            ],
+        },
+    }
+
+
 def estimate(table, baseline, reporting):
     if (table["state_code"] != reporting["state_code"] or table["subset"]["sub"] != 0
             or table["status"] != "published_joint_question_reviewed"
@@ -121,6 +179,7 @@ def estimate(table, baseline, reporting):
               "turnout_source": reporting, "official_2024_baseline": baseline,
               "reference": {}, "rounding_only_envelopes": {}, "sensitivity_scenarios": [],
               "response_scope_sensitivity": []}
+    output.update(electorate_accounting(rows, reporting["ballots"]))
     for prior, other in [("R", "D"), ("D", "R")]:
         row = rows[prior]
         share, switched = row["prior_choice_share_pct"], row["current_choice_pct_within_prior_choice"][other]

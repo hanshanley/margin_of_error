@@ -74,25 +74,10 @@ def calculate(table, baseline, turnout):
         raise ValueError("Unqualified joint survey scope")
     rows = table["joint_question_rows"]
     total = turnout["ballots"]
-    composition = {}
-    for prior in ("D", "R", "O", "N"):
-        row = rows[prior]
-        share = math.finite(row["prior_choice_share_pct"], "composition")
-        if not 0 <= share <= 100:
-            raise ValueError("Invalid recalled presidential composition")
-        count = total * share / 100
-        choices = row["current_choice_pct_within_prior_choice"]
-        flows = {}
-        for party in ("D", "R"):
-            value = choices.get(party)
-            if value is not None and not 0 <= math.finite(value, "conditional choice") <= 100:
-                raise ValueError("Invalid conditional choice")
-            flows[party] = None if value is None else count * value / 100
-        composition[prior] = {
-            "reported_share_pct_of_current_electorate": share,
-            "conditional_current_electorate_count": count,
-            "reported_current_choice_counts": flows,
-        }
+    if set(rows) != {"D", "R", "O", "N"}:
+        raise ValueError("Missing or unexpected prior-choice category")
+    accounting = math.electorate_accounting(rows, total)
+    composition = accounting["current_electorate_composition"]
     composition_sum = sum(row["reported_share_pct_of_current_electorate"] for row in composition.values())
     if not 98 <= composition_sum <= 102 or composition_sum != table["reported_composition_sum_pct"]:
         raise ValueError("Unqualified or changed joint composition")
@@ -128,9 +113,7 @@ def calculate(table, baseline, turnout):
         "survey_source_timestamp": table["source_timestamp"],
         "reported_joint_rows": rows,
         "reference": reference, "rounding_only_envelopes": rounding,
-        "current_electorate_composition": composition,
-        "signed_composition_rounding_difference_pct": 100 - composition_sum,
-        "signed_composition_rounding_difference_is_not_a_person_count": True,
+        **accounting,
         "sensitivity_scenarios": scenarios,
     }
 
