@@ -1,0 +1,278 @@
+{
+  "version": "20261107-01",
+  "status": "qualified_selected_native_statement_turnout_counts_only",
+  "state_code": "NV",
+  "county_name": "Clark",
+  "county_fips": "32003",
+  "observations": [
+    {
+      "year": 2020,
+      "native_contest": "PRESIDENT",
+      "native_reporting_units": 1150,
+      "native_turnout": 974185,
+      "summed_native_registration_once_per_unit": 1316573,
+      "native_footer": {
+        "Election Day": {
+          "native_turnout": 109190,
+          "native_percentage_unused": "0.0%"
+        },
+        "Early Vote": {
+          "native_turnout": 411747,
+          "native_percentage_unused": "0.0%"
+        },
+        "Mail": {
+          "native_turnout": 453248,
+          "native_percentage_unused": "0.0%"
+        }
+      },
+      "turnout_exceeds_registration_units": 9,
+      "qualified_turnout_rate": null,
+      "source_receipts": {
+        "2020/154.txt": {
+          "year": 2020,
+          "native_election_choice": "20G",
+          "native_category": "3",
+          "declared_index": "official-20G-precinct-statement-index.html",
+          "url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/20G/PRESIDENT.txt",
+          "resolved_url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/20G/PRESIDENT.txt",
+          "status": 200,
+          "content_type": "text/plain",
+          "retrieved_at": "2026-11-05T06:03:34.240310+00:00",
+          "bytes": 247550,
+          "sha256": "c48fd26b3de7aa3a5396c30101a31b149784863e9b1e245c10947b757af97143",
+          "file": "2020/154.txt",
+          "format_valid": true
+        },
+        "2020/153.pdf": {
+          "year": 2020,
+          "native_election_choice": "20G",
+          "native_category": "3",
+          "declared_index": "official-20G-precinct-statement-index.html",
+          "url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/20G/PRESIDENT.pdf",
+          "resolved_url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/20G/PRESIDENT.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_at": "2026-11-05T06:03:34.370911+00:00",
+          "bytes": 267385,
+          "sha256": "abf9f358cc96f92b11b019f725e36c29206f1f7dd58d73051177cd4ab9f8cbe6",
+          "file": "2020/153.pdf",
+          "format_valid": true
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "native_contest": "UNITED STATES SENATE",
+      "native_reporting_units": 913,
+      "native_turnout": 683687,
+      "summed_native_registration_once_per_unit": 1315438,
+      "native_footer": {
+        "Election Day": {
+          "native_turnout": 146998,
+          "native_percentage_unused": "21.50%"
+        },
+        "Early Vote": {
+          "native_turnout": 196181,
+          "native_percentage_unused": "28.69%"
+        },
+        "Mail": {
+          "native_turnout": 340508,
+          "native_percentage_unused": "49.80%"
+        }
+      },
+      "turnout_exceeds_registration_units": 7,
+      "qualified_turnout_rate": null,
+      "source_receipts": {
+        "2022/200.txt": {
+          "year": 2022,
+          "native_election_choice": "22G",
+          "native_category": "3",
+          "declared_index": "official-22G-precinct-statement-index.html",
+          "url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/22G/UNITED%20STATES%20SENATE.txt",
+          "resolved_url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/22G/UNITED%20STATES%20SENATE.txt",
+          "status": 200,
+          "content_type": "text/plain",
+          "retrieved_at": "2026-11-05T06:03:17.050623+00:00",
+          "bytes": 209251,
+          "sha256": "e6942890128027035fb8e2dd0ad7d658c7cf0ee2268ee9f7c7ba697ff70ce115",
+          "file": "2022/200.txt",
+          "format_valid": true
+        },
+        "2022/199.pdf": {
+          "year": 2022,
+          "native_election_choice": "22G",
+          "native_category": "3",
+          "declared_index": "official-22G-precinct-statement-index.html",
+          "url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/22G/UNITED%20STATES%20SENATE.pdf",
+          "resolved_url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/22G/UNITED%20STATES%20SENATE.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_at": "2026-11-05T06:03:17.233738+00:00",
+          "bytes": 247926,
+          "sha256": "76cd7ecbcdfbb643828122857d9cd57c65b334fdb81b6074c349eb09acd4572c",
+          "file": "2022/199.pdf",
+          "format_valid": true
+        }
+      }
+    },
+    {
+      "year": 2024,
+      "native_contest": "PRESIDENT",
+      "native_reporting_units": 916,
+      "native_turnout": 1033285,
+      "summed_native_registration_once_per_unit": 1491072,
+      "native_footer": {
+        "Election Day": {
+          "native_turnout": 194024,
+          "native_percentage_unused": "18.78%"
+        },
+        "Early Vote": {
+          "native_turnout": 395438,
+          "native_percentage_unused": "38.27%"
+        },
+        "Mail": {
+          "native_turnout": 443823,
+          "native_percentage_unused": "42.95%"
+        }
+      },
+      "turnout_exceeds_registration_units": 7,
+      "qualified_turnout_rate": null,
+      "source_receipts": {
+        "2024/082.txt": {
+          "year": 2024,
+          "native_election_choice": "24G",
+          "native_category": "3",
+          "declared_index": "official-24G-precinct-statement-index.html",
+          "url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/24G/PRESIDENT.txt",
+          "resolved_url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/24G/PRESIDENT.txt",
+          "status": 200,
+          "content_type": "text/plain",
+          "retrieved_at": "2026-11-05T06:02:48.837630+00:00",
+          "bytes": 197621,
+          "sha256": "2fedeb8f8457b9a66d05ee9f6141a2bbf6b1074281198858dec1c0cbd0041380",
+          "file": "2024/082.txt",
+          "format_valid": true
+        },
+        "2024/081.pdf": {
+          "year": 2024,
+          "native_election_choice": "24G",
+          "native_category": "3",
+          "declared_index": "official-24G-precinct-statement-index.html",
+          "url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/24G/PRESIDENT.pdf",
+          "resolved_url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/24G/PRESIDENT.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_at": "2026-11-05T06:02:48.893807+00:00",
+          "bytes": 238613,
+          "sha256": "4ce70bd885f404b86bdc821fc356314a080ff3853a583516c08f1325fb8fb806",
+          "file": "2024/081.pdf",
+          "format_valid": true
+        }
+      }
+    },
+    {
+      "year": 2024,
+      "native_contest": "UNITED STATES SENATE",
+      "native_reporting_units": 915,
+      "native_turnout": 1033245,
+      "summed_native_registration_once_per_unit": 1491030,
+      "native_footer": {
+        "Election Day": {
+          "native_turnout": 194024,
+          "native_percentage_unused": "18.78%"
+        },
+        "Early Vote": {
+          "native_turnout": 395438,
+          "native_percentage_unused": "38.27%"
+        },
+        "Mail": {
+          "native_turnout": 443783,
+          "native_percentage_unused": "42.95%"
+        }
+      },
+      "turnout_exceeds_registration_units": 7,
+      "qualified_turnout_rate": null,
+      "source_receipts": {
+        "2024/200.txt": {
+          "year": 2024,
+          "native_election_choice": "24G",
+          "native_category": "3",
+          "declared_index": "official-24G-precinct-statement-index.html",
+          "url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/24G/UNITED%20STATES%20SENATE.txt",
+          "resolved_url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/24G/UNITED%20STATES%20SENATE.txt",
+          "status": 200,
+          "content_type": "text/plain",
+          "retrieved_at": "2026-11-05T06:02:58.804149+00:00",
+          "bytes": 200297,
+          "sha256": "6615785700cbc6f9bf2c0e237bd53d66c735ab94f2235f284de429b39a6bc5af",
+          "file": "2024/200.txt",
+          "format_valid": true
+        },
+        "2024/199.pdf": {
+          "year": 2024,
+          "native_election_choice": "24G",
+          "native_category": "3",
+          "declared_index": "official-24G-precinct-statement-index.html",
+          "url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/24G/UNITED%20STATES%20SENATE.pdf",
+          "resolved_url": "https://elections.clarkcountynv.gov/electionresultsTV/SOV/24G/UNITED%20STATES%20SENATE.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_at": "2026-11-05T06:02:58.921437+00:00",
+          "bytes": 243863,
+          "sha256": "2143f4a2bbadcc051809169e5c590a8c18a14f669cf2f5b01705f8115b12d426",
+          "file": "2024/199.pdf",
+          "format_valid": true
+        }
+      }
+    }
+  ],
+  "same_year_contest_scope": {
+    "year": 2024,
+    "shared_native_reporting_units": 915,
+    "shared_units_with_different_participation_fields": [],
+    "president_only_units": [
+      {
+        "native_precinct_id": "9996",
+        "native_registration": 42,
+        "native_turnout": 40,
+        "native_turnout_by_mode": {
+          "Election Day": 0,
+          "Early Vote": 0,
+          "Mail": 40
+        },
+        "turnout_exceeds_registration": false,
+        "qualified_turnout_rate": null
+      }
+    ],
+    "senate_only_units": [],
+    "president_minus_senate_native_turnout": 40,
+    "same_electorate_qualified": false,
+    "reason": "Keep literal contest scope; do not infer why a unit is absent or allocate its voters."
+  },
+  "limitations": [
+    "Counts are native Turnout fields in the selected contest statements, not candidate votes.",
+    "Do not assume different contests contain the same electorate or add repeated contest counts.",
+    "Registration repeats across modes; retain it only once per native reporting unit.",
+    "Registration timing and eligibility definitions are not independently qualified denominators.",
+    "Some native units report turnout above registration; retain them, without a turnout rate.",
+    "Precinct codes are source reporting identifiers, not a cross-year boundary crosswalk.",
+    "Native footer percentages are preserved but not used; some are 0.0% despite positive counts.",
+    "Candidate columns, including suppressed values, are neither extracted nor reconstructed.",
+    "Paired PDF/Data agreement is a source-consistency check, not independent outcome evidence.",
+    "No separate certification review, 2026 observation, demographic rate or voter linkage is supplied."
+  ],
+  "independent_pdf_check": {
+    "proof_sha256": "6f287d0e216d238cd97c4756bc74a1b66b431377a3d555db3fc39f99e47de2fb",
+    "native_unit_observations_verified": 3894,
+    "native_unit_mode_counts_verified": 11682,
+    "different_representation_not_independent_outcome_data": true,
+    "fresh_pdf_check_rerun_by_packager": false
+  },
+  "precinct_maps_qualified": false,
+  "cross_year_precinct_comparisons_qualified": false,
+  "all_county_ballot_universe_independently_qualified": false,
+  "measured_prior_voter_dropoff": null,
+  "new_or_returning_voters": null,
+  "party_switchers": null,
+  "demographic_turnout_rate": null
+}

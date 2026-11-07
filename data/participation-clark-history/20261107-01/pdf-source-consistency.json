@@ -1,0 +1,87 @@
+{
+  "success": true,
+  "network_blocked": true,
+  "reviewer_or_csv_parser_imported": false,
+  "review_sha256": "5c97cbcdc16d91c75c382bd3b589b26fcecac9ea24abc796a06dd64057ac31aa",
+  "review_bytes": 853409,
+  "repeat_review_byte_identical": true,
+  "reviewer_sha256": "d1690ea89b51e4e1e2324f95d1394b749df118d312f3e18e1188fd705b716a2e",
+  "selected_native_file_hashes": {
+    "2020/154.txt": "c48fd26b3de7aa3a5396c30101a31b149784863e9b1e245c10947b757af97143",
+    "2020/153.pdf": "abf9f358cc96f92b11b019f725e36c29206f1f7dd58d73051177cd4ab9f8cbe6",
+    "2022/200.txt": "e6942890128027035fb8e2dd0ad7d658c7cf0ee2268ee9f7c7ba697ff70ce115",
+    "2022/199.pdf": "76cd7ecbcdfbb643828122857d9cd57c65b334fdb81b6074c349eb09acd4572c",
+    "2024/082.txt": "2fedeb8f8457b9a66d05ee9f6141a2bbf6b1074281198858dec1c0cbd0041380",
+    "2024/081.pdf": "4ce70bd885f404b86bdc821fc356314a080ff3853a583516c08f1325fb8fb806",
+    "2024/200.txt": "6615785700cbc6f9bf2c0e237bd53d66c735ab94f2235f284de429b39a6bc5af",
+    "2024/199.pdf": "2143f4a2bbadcc051809169e5c590a8c18a14f669cf2f5b01705f8115b12d426"
+  },
+  "observations": [
+    {
+      "year": 2020,
+      "native_contest": "PRESIDENT",
+      "pages": 114,
+      "native_pdf_registered_total": 1316573,
+      "native_pdf_turnout_total": 974185,
+      "native_pdf_total_percentage_unused": "73.99%",
+      "pdf_reporting_units_verified": 1150,
+      "pdf_mode_counts_verified": 3450,
+      "source_registration_anomaly_units": 9,
+      "candidate_columns_not_extracted_or_reconstructed": true,
+      "data_key": "2020/154.txt",
+      "pdf_key": "2020/153.pdf"
+    },
+    {
+      "year": 2022,
+      "native_contest": "UNITED STATES SENATE",
+      "pages": 132,
+      "native_pdf_registered_total": 1315438,
+      "native_pdf_turnout_total": 683687,
+      "native_pdf_total_percentage_unused": "51.97%",
+      "pdf_reporting_units_verified": 913,
+      "pdf_mode_counts_verified": 2739,
+      "source_registration_anomaly_units": 7,
+      "candidate_columns_not_extracted_or_reconstructed": true,
+      "data_key": "2022/200.txt",
+      "pdf_key": "2022/199.pdf"
+    },
+    {
+      "year": 2024,
+      "native_contest": "PRESIDENT",
+      "pages": 132,
+      "native_pdf_registered_total": 1491072,
+      "native_pdf_turnout_total": 1033285,
+      "native_pdf_total_percentage_unused": "69.30%",
+      "pdf_reporting_units_verified": 916,
+      "pdf_mode_counts_verified": 2748,
+      "source_registration_anomaly_units": 7,
+      "candidate_columns_not_extracted_or_reconstructed": true,
+      "data_key": "2024/082.txt",
+      "pdf_key": "2024/081.pdf"
+    },
+    {
+      "year": 2024,
+      "native_contest": "UNITED STATES SENATE",
+      "pages": 132,
+      "native_pdf_registered_total": 1491030,
+      "native_pdf_turnout_total": 1033245,
+      "native_pdf_total_percentage_unused": "69.30%",
+      "pdf_reporting_units_verified": 915,
+      "pdf_mode_counts_verified": 2745,
+      "source_registration_anomaly_units": 7,
+      "candidate_columns_not_extracted_or_reconstructed": true,
+      "data_key": "2024/200.txt",
+      "pdf_key": "2024/199.pdf"
+    }
+  ],
+  "pdf_native_unit_observations_verified": 3894,
+  "pdf_native_unit_mode_counts_verified": 11682,
+  "different_native_representation_not_independent_outcome_data": true,
+  "same_year_contest_scope_difference_verified": true,
+  "public_release_qualified": false,
+  "remaining_qualification": [
+    "Qualify selected publication scope and full reproducible package.",
+    "Do not infer registration timing, cross-year geography or a common contest electorate.",
+    "Keep candidate suppression and all unsupported outcomes unmodified."
+  ]
+}
