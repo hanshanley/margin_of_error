@@ -13,6 +13,13 @@ PRIOR_2024 = {
     "Positive 2024 NC history": True,
     "No 2024 NC history found; national participation unresolved": False,
 }
+DATE_GROUPS = (
+    "dated_by_2020",
+    "after_2020_through_2024",
+    "after_2024_through_2026",
+    "after_2026",
+    "unknown_date",
+)
 
 
 def recorded(cell, year):
@@ -23,15 +30,88 @@ def recorded(cell, year):
     return value
 
 
-def summarize(cells):
-    matrices = {period: Counter(dict.fromkeys(
+def history_counts():
+    return {
+        "records": 0,
+        "any_2016_through_2024_history": 0,
+        "matrices": {period: Counter(dict.fromkeys(
         ("recorded_both", "recorded_prior_only", "recorded_current_only", "neither_recorded"), 0))
-        for period in PERIODS}
-    earlier_participants = Counter()
+            for period in PERIODS},
+        "earlier_participants": Counter(),
+    }
+
+
+def registration_date_group(cell):
+    by_2020, period = cell["registration_by_2020"], cell["registration_period"]
+    if by_2020 is not None and type(by_2020) is not bool:
+        raise ValueError("Unknown registration-date flag")
+    if by_2020 is None and period == "Unknown registration date":
+        return "unknown_date"
+    if by_2020 is True and period == "Registered by 2024 election":
+        return "dated_by_2020"
+    if by_2020 is False:
+        group = {
+            "Registered by 2024 election": "after_2020_through_2024",
+            "Registration after 2024 election": "after_2024_through_2026",
+            "Registration after 2026 election": "after_2026",
+        }.get(period)
+        if group is not None:
+            return group
+    raise ValueError("Inconsistent registration-date interval")
+
+
+def add_history(counts, cell):
+    count = cell["records"]
+    positive = {year: recorded(cell, year) for year in (2016, 2018, 2020, 2022, 2024)}
+    counts["records"] += count
+    if any(positive.values()):
+        counts["any_2016_through_2024_history"] += count
+    for prior, current in PERIODS:
+        before, after = positive[prior], positive[current]
+        category = ("recorded_both" if before and after else
+                    "recorded_prior_only" if before else
+                    "recorded_current_only" if after else "neither_recorded")
+        counts["matrices"][(prior, current)][category] += count
+        if not before and after and any(value for year, value in positive.items() if year < prior):
+            counts["earlier_participants"][(prior, current)] += count
+
+
+def comparisons(counts):
+    comparisons = []
+    for (prior, current), matrix in counts["matrices"].items():
+        if sum(matrix.values()) != counts["records"]:
+            raise ValueError("History matrix does not reconcile to the retained frame")
+        prior_positive = matrix["recorded_both"] + matrix["recorded_prior_only"]
+        current_positive = matrix["recorded_both"] + matrix["recorded_current_only"]
+        earlier = counts["earlier_participants"][(prior, current)]
+        comparisons.append({
+            "prior_year": prior, "current_year": current,
+            "record_presence_matrix": dict(matrix),
+            "prior_positive_history_records": prior_positive,
+            "current_positive_history_records": current_positive,
+            "current_only_record_split": {
+                "positive_history_before_prior_election_not_first_ever": earlier,
+                "no_earlier_record_found_first_ever_unresolved": (
+                    matrix["recorded_current_only"] - earlier),
+            },
+            "recorded_current_among_recorded_prior_pct": (
+                100 * matrix["recorded_both"] / prior_positive if prior_positive else None),
+            "recorded_prior_among_recorded_current_pct": (
+                100 * matrix["recorded_both"] / current_positive if current_positive else None),
+            "first_ever_voters": None,
+            "confirmed_previously_eligible_nonparticipants": None,
+            "population_turnout_rate": None,
+            "candidate_choice_retention": None,
+        })
+    return comparisons
+
+
+def summarize(cells):
+    groups = {name: history_counts() for name in DATE_GROUPS}
     exclusions = Counter(dict.fromkeys(
         ("not_currently_active_or_inactive", "incomplete_history_search",
          "current_registration_not_established_by_2020"), 0))
-    total = retained = 0
+    total = 0
     for cell in cells:
         count = cell["records"]
         if type(count) is not int or count <= 0:
@@ -45,55 +125,34 @@ def summarize(cells):
         if not cell["historical_search_complete"]:
             exclusions["incomplete_history_search"] += count
             continue
-        by_2020 = cell["registration_by_2020"]
-        if by_2020 is not None and type(by_2020) is not bool:
-            raise ValueError("Unknown registration-date flag")
-        if by_2020 is not True:
+        group = registration_date_group(cell)
+        add_history(groups[group], cell)
+        if group != "dated_by_2020":
             exclusions["current_registration_not_established_by_2020"] += count
-            continue
-        retained += count
-        for prior, current in PERIODS:
-            before, after = recorded(cell, prior), recorded(cell, current)
-            category = ("recorded_both" if before and after else
-                        "recorded_prior_only" if before else
-                        "recorded_current_only" if after else "neither_recorded")
-            matrices[(prior, current)][category] += count
-            if not before and after:
-                earlier = [recorded(cell, year) for year in (2016, 2018, 2020) if year < prior]
-                if any(earlier):
-                    earlier_participants[(prior, current)] += count
-    if total != retained + sum(exclusions.values()):
+    retained = groups["dated_by_2020"]["records"]
+    complete = sum(group["records"] for group in groups.values())
+    if (total != retained + sum(exclusions.values())
+            or complete != total - exclusions["not_currently_active_or_inactive"]
+            - exclusions["incomplete_history_search"]):
         raise ValueError("Frame exclusions do not reconcile")
-    comparisons = []
-    for (prior, current), counts in matrices.items():
-        if sum(counts.values()) != retained:
-            raise ValueError("History matrix does not reconcile to the retained frame")
-        prior_positive = counts["recorded_both"] + counts["recorded_prior_only"]
-        current_positive = counts["recorded_both"] + counts["recorded_current_only"]
-        comparisons.append({
-            "prior_year": prior, "current_year": current,
-            "record_presence_matrix": dict(counts),
-            "prior_positive_history_records": prior_positive,
-            "current_positive_history_records": current_positive,
-            "current_only_record_split": {
-                "positive_history_before_prior_election_not_first_ever": earlier_participants[(prior, current)],
-                "no_earlier_record_found_first_ever_unresolved": (
-                    counts["recorded_current_only"] - earlier_participants[(prior, current)]),
-            },
-            "recorded_current_among_recorded_prior_pct": (
-                100 * counts["recorded_both"] / prior_positive if prior_positive else None),
-            "recorded_prior_among_recorded_current_pct": (
-                100 * counts["recorded_both"] / current_positive if current_positive else None),
-            "first_ever_voters": None,
-            "confirmed_previously_eligible_nonparticipants": None,
-            "population_turnout_rate": None,
-            "candidate_choice_retention": None,
-        })
     return {
         "input_aggregate_population": total,
         "retained_registration_frame": retained,
         "mutually_exclusive_frame_exclusions": dict(exclusions),
-        "comparisons": comparisons,
+        "comparisons": comparisons(groups["dated_by_2020"]),
+        "registration_date_coverage": {
+            "complete_search_current_active_inactive_records": complete,
+            "mutually_exclusive_date_groups": [{
+                "date_group": name,
+                "records": group["records"],
+                "positive_2016_through_2024_history_not_first_ever": group["any_2016_through_2024_history"],
+                "no_2016_through_2024_record_found_first_ever_unresolved": (
+                    group["records"] - group["any_2016_through_2024_history"]),
+                "comparisons": comparisons(group),
+                "first_ever_voters": None,
+                "newly_eligible_voters": None,
+            } for name, group in groups.items()],
+        },
     }
 
 
@@ -145,6 +204,7 @@ def review(directories, controls, output):
         "limitations": [
             "This is a retained 2026 registration frame, not either historical electorate or all eligible residents.",
             "Current-record registration dates and statuses are not reconstructed election-day registration or eligibility.",
+            "The separate date-coverage groups include later and unknown current registration dates without changing the original pre-2020 frame.",
             "No history record found is not proven national nonparticipation or first-ever voting.",
             "A positive earlier history rules out first-ever voting; no earlier record since 2016 does not prove first-ever voting.",
             "The matrices concern recorded all-ballot participation, not presidential contest participation or candidate choice.",

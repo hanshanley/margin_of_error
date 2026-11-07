@@ -18,6 +18,9 @@ def cell(before=False, middle=False, after=False, count=10, **extra):
         "records": count,
         "registration_status_2026": "ACTIVE",
         "registration_by_2020": True,
+        "registration_period": ("Unknown registration date"
+                                if extra.get("registration_by_2020", True) is None
+                                else "Registered by 2024 election"),
         "historical_search_complete": True,
         "prior_2016_history": False, "prior_2018_history": False,
         "prior_2020_history": before, "prior_2022_history": middle,
@@ -66,6 +69,40 @@ class HistoryTransitionTests(unittest.TestCase):
         for comparison in result["comparisons"]:
             self.assertIsNone(comparison["recorded_current_among_recorded_prior_pct"])
             self.assertIsNone(comparison["recorded_prior_among_recorded_current_pct"])
+
+    def test_later_and_unknown_registration_dates_are_included_without_changing_original_frame(self):
+        source = [
+            cell(True, True, True, 10),
+            cell(True, False, True, 20, registration_by_2020=False),
+            cell(False, True, True, 30, registration_by_2020=False,
+                 registration_period="Registration after 2024 election"),
+            cell(False, False, False, 40, registration_by_2020=None),
+            cell(False, False, False, 50, registration_by_2020=False,
+                 registration_period="Registration after 2026 election"),
+        ]
+        result = module.summarize(source)
+        self.assertEqual(result["retained_registration_frame"], 10)
+        self.assertEqual(result["comparisons"][0]["record_presence_matrix"]["recorded_both"], 10)
+        coverage = result["registration_date_coverage"]
+        self.assertEqual(coverage["complete_search_current_active_inactive_records"], 150)
+        groups = {row["date_group"]: row for row in coverage["mutually_exclusive_date_groups"]}
+        self.assertEqual([groups[name]["records"] for name in module.DATE_GROUPS], [10, 20, 30, 50, 40])
+        post = groups["after_2024_through_2026"]
+        self.assertEqual(post["positive_2016_through_2024_history_not_first_ever"], 30)
+        self.assertIsNone(post["first_ever_voters"])
+        self.assertIsNone(post["newly_eligible_voters"])
+        self.assertEqual(groups["unknown_date"][
+            "no_2016_through_2024_record_found_first_ever_unresolved"], 40)
+
+    def test_inconsistent_date_flags_cannot_be_silently_assigned_to_new_registrations(self):
+        for edit in (
+            {"registration_period": "Unknown registration date"},
+            {"registration_by_2020": None, "registration_period": "Registered by 2024 election"},
+            {"registration_period": "Registration after 2024 election"},
+            {"registration_by_2020": False, "registration_period": "unknown"},
+        ):
+            with self.subTest(edit=edit), self.assertRaises(ValueError):
+                module.summarize([cell(**edit)])
 
     def test_older_positive_history_rules_out_first_time_without_promoting_no_match(self):
         source = [
