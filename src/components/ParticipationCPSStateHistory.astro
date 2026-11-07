@@ -1,0 +1,149 @@
+---
+import { readFileSync } from 'node:fs';
+
+type Value = [number, number] | [number];
+type Display = { years: number[]; states: string[]; groups: string[]; values: Value[][][] };
+const root = 'data/participation-cps-state-history/20261107-01/output';
+const display: Display = JSON.parse(readFileSync(`${root}/display.json`, 'utf8'));
+const archive: { bytes: number; sha256: string } = JSON.parse(readFileSync(`${root}/archive.json`, 'utf8'));
+const release = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-history-20261107-01';
+const statuses: Record<number, string> = {
+	'-1': 'Not published (B)',
+	'-2': 'Withheld: small population base',
+	'-3': 'Zero or rounds to zero',
+};
+const text = (value: Value) => value.length === 2
+	? `${value[0].toFixed(1)}% +/- ${value[1].toFixed(1)} pp` : statuses[value[0]];
+const groups = [
+	['Overall', [0]],
+	['Source-reported sex', [1, 2]],
+	['Race and Hispanic origin: overlapping views', [3, 4, 5, 6, 7, 8, 9, 10]],
+	['Age at each election', [11, 12, 13, 14, 15]],
+] as const;
+---
+
+<section id="participation-cps-state-history" class="participation-current" aria-labelledby="cps-state-title">
+	<header class="section-intro">
+		<p class="kicker">Participation by state and group · Census published estimates</p>
+		<h2 id="cps-state-title">Who reported voting in midterms and presidential elections?</h2>
+		<p>Compare <strong>all 50 states and D.C.</strong> in 2018, 2020, 2022 and 2024.
+			These are native Census estimates of <strong>reported voting among adult citizens</strong>,
+			not candidate preference, administrative turnout or 2026 outcomes.</p>
+	</header>
+	<p>Each cell shows the published percentage and its <strong>90% margin of error in percentage points</strong>.
+		For example, 58.7% +/- 4.5 pp means the source estimate plus or minus 4.5 points.
+		These margins do not cover nonsampling error or establish whether a difference is statistically significant.</p>
+	<div data-cps-controls hidden>
+		<label for="cps-state-group">Demographic view
+			<select id="cps-state-group">
+				{groups.map(([label, indices]) => <optgroup label={label}>
+					{indices.map(index => <option value={index}>{index === 0 ? 'All adult citizens' : display.groups[index]}</option>)}
+				</optgroup>)}
+			</select>
+		</label>
+	</div>
+	<p class="caption" id="cps-state-selection" aria-live="polite">All adult citizens. Age and group membership are measured anew each election, not fixed-person cohorts.</p>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="State reported participation, with native 90% margins">
+		<table>
+			<caption>Reported voting among adult citizens: percentage +/- native 90% margin (pp).
+				The national benchmark includes D.C.; do not add it to the state rows.</caption>
+			<thead><tr><th scope="col">Geography</th>
+				{display.years.map(year => <th scope="col">{year}<br />{year % 4 === 0 ? 'Presidential' : 'Midterm'}</th>)}
+			</tr></thead>
+			<tbody>
+				{display.states.map((state, index) => <tr data-cps-state={index}>
+					<th scope="row">{state}</th>
+					{display.values[index][0].map((value, year) => <td data-cps-year={year}>{text(value)}</td>)}
+				</tr>)}
+			</tbody>
+		</table>
+	</div>
+	<p><strong>Missing is not zero.</strong> Native “B” means the source did not publish the rate because
+		its population base was too small. We also withhold display rates when the rounded citizen-population
+		base is 75,000 or less, including the ambiguous rounding boundary. This is <strong>population, not
+		sample size</strong>, and passing it does not guarantee precision. Neither rates nor margins
+		are reconstructed from rounded counts.</p>
+	<details class="explorer-notes" data-cps-methods>
+		<summary>Definitions, comparability and complete data</summary>
+		<p>Sources are the U.S. Census Bureau’s November CPS Voting and Registration Supplement,
+			published state tables 4b (sex, race and Hispanic origin) and 4c (age) for
+			<a href="https://www2.census.gov/programs-surveys/cps/tables/p20/583/">2018</a>,
+			<a href="https://www2.census.gov/programs-surveys/cps/tables/p20/585/">2020</a>,
+			<a href="https://www2.census.gov/programs-surveys/cps/tables/p20/586/">2022</a> and
+			<a href="https://www2.census.gov/programs-surveys/cps/tables/p20/587/">2024</a>.
+			The denominator is the civilian noninstitutionalized adult citizen population,
+			not a legal-eligibility count. Voting is self/proxy-reported and may be over-reported.</p>
+		<p>The source’s “alone,” “alone or in combination,” and Hispanic-origin views overlap.
+			Do not add them, infer an exclusive residual, or combine sex, age and race marginals
+			into intersections. Hispanic “of any race” and “any race” are the same labeled view here;
+			other native labels are retained in the complete transcription. Education, income and
+			urbanicity are not in these state tables.</p>
+		<p>Native 2018/2020 “B” suppression is preserved. The 2022/2024 workbooks publish some
+			numeric rates for smaller population bases; the additional display rule applies consistently
+			across all four years. Complete, unmodified governmental aggregate workbooks and native-cell
+			transcriptions retain their original values and flags. No suppressed rate is recovered.
+			A native dash means zero or rounds to zero, not an exact inferred zero.</p>
+		<p>Counts in the CSV are weighted population estimates <strong>in thousands</strong>, not
+			survey respondent counts. Counts need not sum because of rounding. The duplicate overall
+			controls in both tables agree for all 52 geographies in each year. Native national values
+			include D.C.; no 50-state-only aggregate is manufactured from rounded counts.</p>
+		<p>Repeated cross-sections, changing population controls, survey response and election
+			environments do not identify individual transitions or causal midterm effects.
+			No 2026 switching, staying-home, first-time-voter, county or precinct estimate is
+			derived from this table. The margins are not simultaneous intervals and are never
+			pooled into unsupported confidence intervals for changes.</p>
+		<p>The complete download includes all 3,328 unique observations, eight original public
+			aggregate workbooks, four frozen catalogs, source timestamps and checksums, native notes,
+			code, tests and results. Extract it and run
+			<code>python3 scripts/package-cps-state-history.py</code> to reproduce offline without
+			microdata, network access or added Python packages.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${release}/complete-analysis.zip`} data-cps-download="complete" download>Complete state/group history + original aggregate inputs + code (ZIP)</a>
+		<a href={`${release}/observations.csv`} data-cps-download="observations" download>All state/group historical observations and native cells (CSV)</a>
+	</div>
+	<p class="caption">Complete ZIP: {archive.bytes.toLocaleString('en-US')} bytes.
+		SHA-256: <code class="checksum">{archive.sha256}</code>.
+		Without JavaScript, the all-citizen table and both complete downloads remain available.</p>
+	<script is:inline type="application/json" id="cps-state-history-data" set:html={JSON.stringify(display).replace(/</g, '\\u003c')} />
+</section>
+
+<script>
+	const section = document.getElementById('participation-cps-state-history');
+	const payload = document.getElementById('cps-state-history-data');
+	const select = document.querySelector<HTMLSelectElement>('#cps-state-group');
+	if (section && payload && select) {
+		type Display = { groups: string[]; values: number[][][][] };
+		const data: Display = JSON.parse(payload.textContent || '{}');
+		const statuses: Record<number, string> = {
+			'-1': 'Not published (B)',
+			'-2': 'Withheld: small population base',
+			'-3': 'Zero or rounds to zero',
+		};
+		select.addEventListener('change', () => {
+			const group = Number(select.value);
+			section.querySelectorAll<HTMLTableRowElement>('[data-cps-state]').forEach(row => {
+				const state = Number(row.dataset.cpsState);
+				row.querySelectorAll<HTMLTableCellElement>('[data-cps-year]').forEach(cell => {
+					const value = data.values[state][group][Number(cell.dataset.cpsYear)];
+					cell.textContent = value.length === 2
+						? `${value[0].toFixed(1)}% +/- ${value[1].toFixed(1)} pp`
+						: statuses[value[0]];
+				});
+			});
+			const note = document.getElementById('cps-state-selection');
+			if (note) note.textContent = `${group === 0 ? 'All adult citizens' : data.groups[group]}. Age and group membership are measured anew each election, not fixed-person cohorts.`;
+		});
+		const controls = section.querySelector<HTMLElement>('[data-cps-controls]');
+		if (controls) controls.hidden = false;
+	}
+</script>
+
+<style>
+	#participation-cps-state-history { min-width: 0; margin-block: 1.5rem 2rem; }
+	.table-wrap { max-width: 100%; overflow-x: auto; }
+	table { width: 100%; min-width: 46rem; }
+	td { font-variant-numeric: tabular-nums; }
+	select { max-width: 100%; }
+	.checksum { overflow-wrap: anywhere; }
+</style>

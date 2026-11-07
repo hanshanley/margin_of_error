@@ -1,0 +1,24 @@
+{
+  "release_id": 437542821,
+  "tag": "participation-cps-state-history-20261107-01",
+  "target_sha": "a9bae9377680f2f33b693b624778192d1485006f",
+  "immutable": true,
+  "published_at": "2026-11-07T11:50:54Z",
+  "published_assets_anonymously_downloaded_in_full_and_verified": true,
+  "assets": [
+    {
+      "file": "complete-analysis.zip",
+      "asset_id": 720559734,
+      "bytes": 525493,
+      "sha256": "1aa69c635001efd19dec69fc2f1cd3d40ae524adc3c5f9fd766b36f4d08bbd8c",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-history-20261107-01/complete-analysis.zip"
+    },
+    {
+      "file": "observations.csv",
+      "asset_id": 720559735,
+      "bytes": 479418,
+      "sha256": "5581d15e64c82d2487565cadc2a6bde0147b49bc7d5ba188500cfd32a9fbfa82",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-history-20261107-01/observations.csv"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "sources": [
+    {
+      "bytes": 61366,
+      "catalog_path": "catalog-2018.html",
+      "catalog_retrieved_at": "2026-11-03T20:39:03.458083+00:00",
+      "catalog_sha256": "c6378dfb46229c1f90e980f63c5df76796d54d575ab04eee2b2d364f373efae3",
+      "catalog_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/583/",
+      "native_sha256_verified": true,
+      "path": "2018-table04b.xlsx",
+      "response_headers": {
+        "content-length": "61366",
+        "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "date": "Sat, 07 Nov 2026 11:42:17 GMT",
+        "last-modified": "Tue, 23 Apr 2019 13:58:23 GMT"
+      },
+      "response_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/583/table04b.xlsx",
+      "retrieved_at": "2026-11-07T11:42:17.623109+00:00",
+      "sha256": "0a7aa533c7c571f269a0138400118d9d26982e2effce52ba82359f730975af02",
+      "table": "4b",
+      "url": "https://www2.census.gov/programs-surveys/cps/tables/p20/583/table04b.xlsx",
+      "year": 2018
+    },
+    {
+      "bytes": 39685,
+      "catalog_path": "catalog-2018.html",
+      "catalog_retrieved_at": "2026-11-03T20:39:03.458083+00:00",
+      "catalog_sha256": "c6378dfb46229c1f90e980f63c5df76796d54d575ab04eee2b2d364f373efae3",
+      "catalog_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/583/",
+      "native_sha256_verified": true,
+      "path": "2018-table04c.xlsx",
+      "response_headers": {
+        "content-length": "39685",
+        "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "date": "Sat, 07 Nov 2026 11:42:17 GMT",
+        "last-modified": "Tue, 23 Apr 2019 13:58:23 GMT"
+      },
+      "response_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/583/table04c.xlsx",
+      "retrieved_at": "2026-11-07T11:42:17.643280+00:00",
+      "sha256": "76a3a0dc48631f7c70eb173d45dc337293514ea3f80aa06f80238940452de381",
+      "table": "4c",
+      "url": "https://www2.census.gov/programs-surveys/cps/tables/p20/583/table04c.xlsx",
+      "year": 2018
+    },
+    {
+      "bytes": 60194,
+      "catalog_path": "catalog-2020.html",
+      "catalog_retrieved_at": "2026-11-03T20:39:03.464313+00:00",
+      "catalog_sha256": "ed9359613ebd4e5f69fffa2512917e24f8288f2316500afeacaf2063c3144150",
+      "catalog_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/585/",
+      "native_sha256_verified": true,
+      "path": "2020-table04b.xlsx",
+      "response_headers": {
+        "content-length": "60194",
+        "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "date": "Sat, 07 Nov 2026 11:42:17 GMT",
+        "last-modified": "Thu, 29 Apr 2021 13:40:52 GMT"
+      },
+      "response_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/585/table04b.xlsx",
+      "retrieved_at": "2026-11-07T11:42:17.629589+00:00",
+      "sha256": "15fbea6da2024009f7d4c2e9914e2e9b087e4e96c4e2b695aac0e6512bc81688",
+      "table": "4b",
+      "url": "https://www2.census.gov/programs-surveys/cps/tables/p20/585/table04b.xlsx",
+      "year": 2020
+    },
+    {
+      "bytes": 38480,
+      "catalog_path": "catalog-2020.html",
+      "catalog_retrieved_at": "2026-11-03T20:39:03.464313+00:00",
+      "catalog_sha256": "ed9359613ebd4e5f69fffa2512917e24f8288f2316500afeacaf2063c3144150",
+      "catalog_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/585/",
+      "native_sha256_verified": true,
+      "path": "2020-table04c.xlsx",
+      "response_headers": {
+        "content-length": "38480",
+        "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "date": "Sat, 07 Nov 2026 11:42:17 GMT",
+        "last-modified": "Thu, 29 Apr 2021 13:40:53 GMT"
+      },
+      "response_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/585/table04c.xlsx",
+      "retrieved_at": "2026-11-07T11:42:17.634295+00:00",
+      "sha256": "680ec052d70101259bd1052e7a79cc70e4d8c446546cb02b189e219fadd6482f",
+      "table": "4c",
+      "url": "https://www2.census.gov/programs-surveys/cps/tables/p20/585/table04c.xlsx",
+      "year": 2020
+    },
+    {
+      "bytes": 61184,
+      "catalog_path": "catalog-2022.html",
+      "catalog_retrieved_at": "2026-11-03T20:39:03.485219+00:00",
+      "catalog_sha256": "d1db6978ed9e0b7d94befbaebfa38671fb1829c785d732f18bffa4e31e06317b",
+      "catalog_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/586/",
+      "native_sha256_verified": true,
+      "path": "2022-vote04b_2022.xlsx",
+      "response_headers": {
+        "content-length": "61184",
+        "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "date": "Sat, 07 Nov 2026 11:42:17 GMT",
+        "last-modified": "Tue, 02 May 2023 13:37:08 GMT"
+      },
+      "response_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/586/vote04b_2022.xlsx",
+      "retrieved_at": "2026-11-07T11:42:17.697605+00:00",
+      "sha256": "9f9e7f12e4232955f35290700ed62c02d14ded6b20004bf7f5a32199412bbbc5",
+      "table": "4b",
+      "url": "https://www2.census.gov/programs-surveys/cps/tables/p20/586/vote04b_2022.xlsx",
+      "year": 2022
+    },
+    {
+      "bytes": 38352,
+      "catalog_path": "catalog-2022.html",
+      "catalog_retrieved_at": "2026-11-03T20:39:03.485219+00:00",
+      "catalog_sha256": "d1db6978ed9e0b7d94befbaebfa38671fb1829c785d732f18bffa4e31e06317b",
+      "catalog_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/586/",
+      "native_sha256_verified": true,
+      "path": "2022-vote04c_2022.xlsx",
+      "response_headers": {
+        "content-length": "38352",
+        "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "date": "Sat, 07 Nov 2026 11:42:17 GMT",
+        "last-modified": "Tue, 02 May 2023 13:37:08 GMT"
+      },
+      "response_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/586/vote04c_2022.xlsx",
+      "retrieved_at": "2026-11-07T11:42:17.695350+00:00",
+      "sha256": "48de128c98e345cafa0f47110afa9922a789973e3b543952f7f4aed8a4884d08",
+      "table": "4c",
+      "url": "https://www2.census.gov/programs-surveys/cps/tables/p20/586/vote04c_2022.xlsx",
+      "year": 2022
+    },
+    {
+      "bytes": 61561,
+      "catalog_path": "catalog-2024.html",
+      "catalog_retrieved_at": "2026-11-03T20:39:03.530091+00:00",
+      "catalog_sha256": "7849b11c17b2fcf3aaf350261504cabe14f86ecf572d61cdf8863947701f1ade",
+      "catalog_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/587/",
+      "native_sha256_verified": true,
+      "path": "2024-vote04b_2024.xlsx",
+      "response_headers": {
+        "content-length": "61561",
+        "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "date": "Sat, 07 Nov 2026 11:42:17 GMT",
+        "last-modified": "Tue, 29 Apr 2025 18:14:43 GMT"
+      },
+      "response_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/587/vote04b_2024.xlsx",
+      "retrieved_at": "2026-11-07T11:42:17.691324+00:00",
+      "sha256": "fa33c7db6986e49eab1b1930fa1e9bd64f966b9be74a056d0e237cbc1431155b",
+      "table": "4b",
+      "url": "https://www2.census.gov/programs-surveys/cps/tables/p20/587/vote04b_2024.xlsx",
+      "year": 2024
+    },
+    {
+      "bytes": 38664,
+      "catalog_path": "catalog-2024.html",
+      "catalog_retrieved_at": "2026-11-03T20:39:03.530091+00:00",
+      "catalog_sha256": "7849b11c17b2fcf3aaf350261504cabe14f86ecf572d61cdf8863947701f1ade",
+      "catalog_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/587/",
+      "native_sha256_verified": true,
+      "path": "2024-vote04c_2024.xlsx",
+      "response_headers": {
+        "content-length": "38664",
+        "content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "date": "Sat, 07 Nov 2026 11:42:17 GMT",
+        "last-modified": "Tue, 29 Apr 2025 18:14:43 GMT"
+      },
+      "response_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/587/vote04c_2024.xlsx",
+      "retrieved_at": "2026-11-07T11:42:17.697585+00:00",
+      "sha256": "dacbb628705ba82e578531b227ef3d82925027491bdbc13067a6c86525992b8e",
+      "table": "4c",
+      "url": "https://www2.census.gov/programs-surveys/cps/tables/p20/587/vote04c_2024.xlsx",
+      "year": 2024
+    }
+  ]
+}

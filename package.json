@@ -6,6 +6,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "test:cps-state-history": "python3 scripts/test-package-cps-state-history.py",
     "test:hamilton-indiana-history": "python3 scripts/test-package-hamilton-indiana-history.py",
     "test:ces-classification": "python3 scripts/test-package-ces-classification.py",
     "test:ces-hybrid-participation": "python3 scripts/test-review-ces-hybrid-participation.py",
