@@ -1,0 +1,299 @@
+{
+  "study_id": "bsp-aarc-mevp-2026",
+  "methodology_url": "https://2026electionpoll.us/methodology/",
+  "source_snapshot_sha256": "d846e89417b87fa1e3224430f6e926d4e4b74cb931bf47481d94460daf3c625c",
+  "methods_field_end": "2026-11-03",
+  "pdf_field_end": "2026-11-02",
+  "groups": [
+    {
+      "group_id": "latino",
+      "source_group": "Latino",
+      "source_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/Latino-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "source_sha256": "9b1a198d1756dfe32ebd82daf8c513ae8aaf3a8559a644d84e78b230db9f1c19",
+      "source_pages": {
+        "raw_bases": 2,
+        "Q1": 2,
+        "Q10": 44,
+        "Q29": 106
+      },
+      "raw_group_respondents": 3014,
+      "raw_unclassified_prior_or_first_november_respondents": 7,
+      "reported_choices_among_current_voters_by_reported_prior": {
+        "R": {
+          "raw_respondents": 819,
+          "status": "published_conditional_percentage",
+          "current_house_choice_pct": {
+            "R": 83,
+            "D": 17,
+            "O": 1
+          },
+          "reported_opposite_party_pct": 17,
+          "reported_choice_sum_pct": 101,
+          "design_confidence_interval": null
+        },
+        "D": {
+          "raw_respondents": 1479,
+          "status": "published_conditional_percentage",
+          "current_house_choice_pct": {
+            "R": 3,
+            "D": 96,
+            "O": 1
+          },
+          "reported_opposite_party_pct": 3,
+          "reported_choice_sum_pct": 100,
+          "design_confidence_interval": null
+        }
+      },
+      "reported_first_november_2026_pct": 17,
+      "reported_prior_composition_among_previous_voters": {
+        "D": 56,
+        "R": 34,
+        "O": 7,
+        "N": 3
+      },
+      "prior_composition_among_all_current_group_voters": null,
+      "current_electorate_group_population_share": null,
+      "switcher_population_count": null,
+      "original_2024_coalition_switching_pct": null,
+      "apparent_absence": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null
+    },
+    {
+      "group_id": "aapi",
+      "source_group": "AAPI",
+      "source_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/AAPI-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "source_sha256": "fdfd46d91bea7af75253b4b268590743ff5e050b87b7acaa9a179f6fee7d3252",
+      "source_pages": {
+        "raw_bases": 2,
+        "Q1": 2,
+        "Q10": 44,
+        "Q29": 106
+      },
+      "raw_group_respondents": 2130,
+      "raw_unclassified_prior_or_first_november_respondents": 5,
+      "reported_choices_among_current_voters_by_reported_prior": {
+        "R": {
+          "raw_respondents": 621,
+          "status": "published_conditional_percentage",
+          "current_house_choice_pct": {
+            "R": 81,
+            "D": 17,
+            "O": 2
+          },
+          "reported_opposite_party_pct": 17,
+          "reported_choice_sum_pct": 100,
+          "design_confidence_interval": null
+        },
+        "D": {
+          "raw_respondents": 1058,
+          "status": "published_conditional_percentage",
+          "current_house_choice_pct": {
+            "R": 6,
+            "D": 93,
+            "O": 1
+          },
+          "reported_opposite_party_pct": 6,
+          "reported_choice_sum_pct": 100,
+          "design_confidence_interval": null
+        }
+      },
+      "reported_first_november_2026_pct": 12,
+      "reported_prior_composition_among_previous_voters": {
+        "D": 56,
+        "R": 34,
+        "O": 6,
+        "N": 4
+      },
+      "prior_composition_among_all_current_group_voters": null,
+      "current_electorate_group_population_share": null,
+      "switcher_population_count": null,
+      "original_2024_coalition_switching_pct": null,
+      "apparent_absence": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null
+    },
+    {
+      "group_id": "white",
+      "source_group": "White",
+      "source_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/White-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "source_sha256": "f364d87271be2194da3dde48afbf64f149a0aa93f79c076b26862a4ee6852879",
+      "source_pages": {
+        "raw_bases": 2,
+        "Q1": 2,
+        "Q10": 38,
+        "Q29": 91
+      },
+      "raw_group_respondents": 1806,
+      "raw_unclassified_prior_or_first_november_respondents": 0,
+      "reported_choices_among_current_voters_by_reported_prior": {
+        "R": {
+          "raw_respondents": 800,
+          "status": "published_conditional_percentage",
+          "current_house_choice_pct": {
+            "R": 92,
+            "D": 7,
+            "O": 1
+          },
+          "reported_opposite_party_pct": 7,
+          "reported_choice_sum_pct": 100,
+          "design_confidence_interval": null
+        },
+        "D": {
+          "raw_respondents": 778,
+          "status": "published_conditional_percentage",
+          "current_house_choice_pct": {
+            "R": 4,
+            "D": 95,
+            "O": 1
+          },
+          "reported_opposite_party_pct": 4,
+          "reported_choice_sum_pct": 100,
+          "design_confidence_interval": null
+        }
+      },
+      "reported_first_november_2026_pct": 8,
+      "reported_prior_composition_among_previous_voters": {
+        "D": 41,
+        "R": 54,
+        "O": 4,
+        "N": 2
+      },
+      "prior_composition_among_all_current_group_voters": null,
+      "current_electorate_group_population_share": null,
+      "switcher_population_count": null,
+      "original_2024_coalition_switching_pct": null,
+      "apparent_absence": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null
+    },
+    {
+      "group_id": "black",
+      "source_group": "Black",
+      "source_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/Black-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "source_sha256": "08230beb28717e4e0d451291a06c7b5621feeb52028edc70672f76e66ae77ca4",
+      "source_pages": {
+        "raw_bases": 2,
+        "Q1": 2,
+        "Q10": 38,
+        "Q29": 91
+      },
+      "raw_group_respondents": 1804,
+      "raw_unclassified_prior_or_first_november_respondents": 3,
+      "reported_choices_among_current_voters_by_reported_prior": {
+        "R": {
+          "raw_respondents": 298,
+          "status": "published_conditional_percentage",
+          "current_house_choice_pct": {
+            "R": 63,
+            "D": 35,
+            "O": 2
+          },
+          "reported_opposite_party_pct": 35,
+          "reported_choice_sum_pct": 100,
+          "design_confidence_interval": null
+        },
+        "D": {
+          "raw_respondents": 1077,
+          "status": "published_conditional_percentage",
+          "current_house_choice_pct": {
+            "R": 3,
+            "D": 96,
+            "O": 1
+          },
+          "reported_opposite_party_pct": 3,
+          "reported_choice_sum_pct": 100,
+          "design_confidence_interval": null
+        }
+      },
+      "reported_first_november_2026_pct": 14,
+      "reported_prior_composition_among_previous_voters": {
+        "D": 78,
+        "R": 14,
+        "O": 3,
+        "N": 5
+      },
+      "prior_composition_among_all_current_group_voters": null,
+      "current_electorate_group_population_share": null,
+      "switcher_population_count": null,
+      "original_2024_coalition_switching_pct": null,
+      "apparent_absence": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null
+    },
+    {
+      "group_id": "native-american",
+      "source_group": "NativeAm",
+      "source_url": "https://2026electionpoll.us/wp-content/uploads/2026/11/Native-American-Xtabs-Midterm-Election-Voter-Poll-2026.pdf",
+      "source_sha256": "1b125389fcaeeb8368c1855ee97946d570bab2d2239913f6def32c0935e4e283",
+      "source_pages": {
+        "raw_bases": 2,
+        "Q1": 2,
+        "Q10": 56,
+        "Q29": 136
+      },
+      "raw_group_respondents": 1387,
+      "raw_unclassified_prior_or_first_november_respondents": 1,
+      "reported_choices_among_current_voters_by_reported_prior": {
+        "R": {
+          "raw_respondents": 468,
+          "status": "published_conditional_percentage",
+          "current_house_choice_pct": {
+            "R": 86,
+            "D": 13,
+            "O": 1
+          },
+          "reported_opposite_party_pct": 13,
+          "reported_choice_sum_pct": 100,
+          "design_confidence_interval": null
+        },
+        "D": {
+          "raw_respondents": 577,
+          "status": "published_conditional_percentage",
+          "current_house_choice_pct": {
+            "R": 5,
+            "D": 93,
+            "O": 1
+          },
+          "reported_opposite_party_pct": 5,
+          "reported_choice_sum_pct": 99,
+          "design_confidence_interval": null
+        }
+      },
+      "reported_first_november_2026_pct": 10,
+      "reported_prior_composition_among_previous_voters": {
+        "D": 49,
+        "R": 39,
+        "O": 6,
+        "N": 7
+      },
+      "prior_composition_among_all_current_group_voters": null,
+      "current_electorate_group_population_share": null,
+      "switcher_population_count": null,
+      "original_2024_coalition_switching_pct": null,
+      "apparent_absence": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null
+    }
+  ],
+  "qualification": {
+    "source_published_conditional_house_choices": true,
+    "state_or_local_estimates_released": false,
+    "population_decomposition_released": false,
+    "renormalized_published_percentages": false,
+    "limitations": [
+      "The universe includes reported early voters and respondents certain they would vote on Election Day.",
+      "Reported past presidential choice and intended/completed House party choice are not administrative ballot validation.",
+      "Q29 excludes first-November-2026 voters; its marginals are not the whole current electorate.",
+      "The first-November-election response does not establish first-ever participation in any election.",
+      "Raw banner bases are not weighted population fractions, effective samples or design confidence intervals.",
+      "Unknown prior/first-November responses remain unclassified, not inferred nonvoters.",
+      "The study oversamples racial groups and geographies; do not infer population shares from sample counts.",
+      "House party choices are generic respondent-district answers, not candidate-ID-reconciled returns.",
+      "National Senate/governor answers cover applicable subsets, not the same nationwide House electorate.",
+      "Weights use turnout models and final comparisons with results; agreement is not independent validation.",
+      "The methods end November 3 while all selected PDFs say November 2; retain both source observations.",
+      "Do not pool this study with SSRS as if samples, weights and question universes were interchangeable."
+    ]
+  }
+}
