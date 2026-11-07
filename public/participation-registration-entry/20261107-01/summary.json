@@ -1,0 +1,104 @@
+{
+  "version": "20261107-01",
+  "status": "selected_accepted_cohort_registration_date_descriptives",
+  "scope": {
+    "state": "NC",
+    "cohort_election": "2026-11-03",
+    "accepted_status": "ACCEPTED",
+    "accepted_methods": [
+      "EARLY VOTING",
+      "MAIL"
+    ],
+    "registration_field": "registr_dt",
+    "registration_after_exclusive": "2024-11-05",
+    "registration_through_inclusive": "2026-11-03",
+    "history_election": "2024-11-05",
+    "history_search": "statewide_NC_general_election",
+    "deduplication": "exclude_every_record_for_ambiguous_identifiers"
+  },
+  "rows": [
+    {
+      "post_2024_registration": 38282,
+      "county": "WAKE",
+      "no_2024_nc_history_found": 26533,
+      "accepted_cohort": 351615,
+      "positive_2024_nc_history": 11749,
+      "post_registration_share_of_accepted_pct": 10.887476359085932,
+      "positive_history_share_of_post_registration_pct": 30.690664019643698
+    },
+    {
+      "post_2024_registration": 33780,
+      "county": "MECKLENBURG",
+      "no_2024_nc_history_found": 25408,
+      "accepted_cohort": 300361,
+      "positive_2024_nc_history": 8372,
+      "post_registration_share_of_accepted_pct": 11.246466751675484,
+      "positive_history_share_of_post_registration_pct": 24.78389579632919
+    }
+  ],
+  "limitations": [
+    "The date on the current registration record is not a first-ever registration date.",
+    "Registration after 2024 can include movers or re-registrations with prior participation.",
+    "No 2024 North Carolina history match leaves national participation unresolved.",
+    "Accepted early/mail records are not all-mode final turnout or proof of a counted ballot.",
+    "The registration/history snapshots precede Election Day; the accepted snapshot is later.",
+    "Unmatched registration dates and all other dates remain outside the selected date interval.",
+    "No candidate choice, first-time-voter count, staying-home count or turnout rate is inferred.",
+    "These two selected counties do not estimate North Carolina or nationwide entry.",
+    "No individual records, fine joint cells, identities or individual scores are released."
+  ],
+  "sources": [
+    {
+      "source_id": "registration_wake",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvoter92.zip",
+      "sha256": "b927f437f3564d6ff77156897917f33f5412021a153ce65243862f1a185efc22",
+      "bytes": 62767015,
+      "retrieved_at": "2026-11-07T05:07:59.178385+00:00",
+      "last_modified": "Mon, 02 Nov 2026 01:18:18 GMT"
+    },
+    {
+      "source_id": "statewide_history",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
+      "sha256": "6e0d4fee2f0523ec0937d1939c56e2892f728624526b5d87337e26c8b7e8112c",
+      "bytes": 351220317,
+      "retrieved_at": "2026-11-06T23:11:22.816942+00:00",
+      "last_modified": "Mon, 02 Nov 2026 01:18:00 GMT"
+    },
+    {
+      "source_id": "accepted_early_mail",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/absentee_20261103.zip",
+      "sha256": "048c09258bb539caf594e0d1ea31fa5ffb0f4a1e495f04f09160dbabc10e2879",
+      "bytes": 127167072,
+      "retrieved_at": "2026-11-06T22:55:02.757614+00:00",
+      "last_modified": "Fri, 06 Nov 2026 10:28:21 GMT"
+    },
+    {
+      "source_id": "registration_mecklenburg",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvoter60.zip",
+      "sha256": "6b596b344530df770871921113b478834d5b75f9309ac68d867cf27a43aacc78",
+      "bytes": 63334733,
+      "retrieved_at": "2026-11-07T07:07:09.921866+00:00",
+      "last_modified": "Mon, 02 Nov 2026 01:18:14 GMT"
+    }
+  ],
+  "private_provenance": {
+    "WAKE": {
+      "joint_cells_sha256": "755a647b4d117298494f7b148b02f19363f4259b4070d47ab309910c0c7cbf83",
+      "linkage_audit_sha256": "ed5542efe41c02cd4730cfdd724a65ddffe364156a9a90cacc8febb08b6b3a81",
+      "independent_controls_sha256": "5973481254465689edfc32dfd89101933040e4b21658e514ad03b11673082191"
+    },
+    "MECKLENBURG": {
+      "joint_cells_sha256": "aaffe4d523bbc4c8c7e32e5573d12a14326dd5d79f45c4be9d458b2c70650076",
+      "linkage_audit_sha256": "f7ab5f193427d150eb691a0e1024560469f2e6cfb8404c7cc741fa0bba1b5a7c",
+      "independent_controls_sha256": "67346fb11360567762d096c9e5025d051ea64fb52d34aa53fb268c826ba74539"
+    }
+  },
+  "first_time_voters": null,
+  "nationally_new_voters": null,
+  "all_mode_turnout": null,
+  "turnout_rates": null,
+  "candidate_choice": null,
+  "persuasion": null,
+  "measured_staying_home": null,
+  "statewide_or_national_estimates": null
+}
