@@ -1,0 +1,4496 @@
+{
+  "status": "conditional_survey_scaling_not_measured_dropoff",
+  "estimates": [
+    {
+      "state_code": "AL",
+      "contest_code": "GG",
+      "status": "conditional_universe_assumption_not_validated_dropoff",
+      "survey_source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-AL.json",
+      "survey_source_sha256": "82b62a18bc9687159951192e0afd65ac9de064a85d75eb991d3ca9d5836fd337",
+      "survey_source_timestamp": "2026-11-04T20:57:00.000Z",
+      "survey_source_reported_respondents": 940,
+      "reported_joint_rows": {
+        "D": {
+          "prior_choice_share_pct": 40,
+          "current_choice_pct_within_prior_choice": {
+            "D": 100,
+            "R": 0
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 57,
+          "current_choice_pct_within_prior_choice": {
+            "D": 10,
+            "R": 90
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 2,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        }
+      },
+      "reported_prior_composition_sum_pct": 101,
+      "turnout_source": {
+        "state_code": "AL",
+        "state": "Alabama",
+        "source_date": null,
+        "source_update_label": "11/04/2026 11:16:06 AM",
+        "source_retrieved_at": "2026-11-04T22:04:30.255635+00:00",
+        "status": "reported",
+        "source_url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
+        "source_snapshot": "20261104T220425Z",
+        "quality": [],
+        "reported_units": 67,
+        "total_units": 67,
+        "reporting_unit": "counties",
+        "ballots": 1693621,
+        "denominator": 3852947,
+        "denominator_basis": "registered_voters_source_definition",
+        "published_pct": 43.96,
+        "validated_pct": 43.957
+      },
+      "official_2024_baseline": {
+        "D": 772412,
+        "R": 1462616,
+        "all_presidential_votes": 2265090
+      },
+      "reference": {
+        "R": {
+          "returning_count": 965363.97,
+          "reported_switcher_count": 96536.397,
+          "apparent_absence_count": 497252.03,
+          "returning_pct_of_original_coalition": 66.00255774584717,
+          "reported_switchers_pct_of_current_electorate": 5.7,
+          "reported_switchers_pct_of_original_coalition": 6.600255774584716,
+          "apparent_absence_pct_of_original_coalition": 33.99744225415283,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 868827.573,
+          "signed_unshown_current_choice_count": 0.0
+        },
+        "D": {
+          "returning_count": 677448.4,
+          "reported_switcher_count": 0.0,
+          "apparent_absence_count": 94963.59999999998,
+          "returning_pct_of_original_coalition": 87.7055768165176,
+          "reported_switchers_pct_of_current_electorate": 0.0,
+          "reported_switchers_pct_of_original_coalition": 0.0,
+          "apparent_absence_pct_of_original_coalition": 12.294423183482388,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 677448.4,
+          "signed_unshown_current_choice_count": 0.0
+        }
+      },
+      "rounding_only_envelopes": {
+        "R": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            956895.865,
+            973832.075
+          ],
+          "reported_switcher_count": [
+            90905.107175,
+            102252.367875
+          ],
+          "apparent_absence_count": [
+            488783.92500000005,
+            505720.135
+          ]
+        },
+        "D": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            668980.295,
+            685916.505
+          ],
+          "reported_switcher_count": [
+            0.0,
+            3429.582525
+          ],
+          "apparent_absence_count": [
+            86495.495,
+            103431.70499999996
+          ]
+        }
+      },
+      "sensitivity_scenarios": [
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 931491.55,
+              "reported_switcher_count": 93149.155,
+              "apparent_absence_count": 531124.45,
+              "returning_pct_of_original_coalition": 63.686678526694635,
+              "reported_switchers_pct_of_current_electorate": 5.5,
+              "reported_switchers_pct_of_original_coalition": 6.368667852669463,
+              "apparent_absence_pct_of_original_coalition": 36.31332147330536,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 711320.82,
+              "reported_switcher_count": 0.0,
+              "apparent_absence_count": 61091.18000000005,
+              "returning_pct_of_original_coalition": 92.0908556573435,
+              "reported_switchers_pct_of_current_electorate": 0.0,
+              "reported_switchers_pct_of_original_coalition": 0.0,
+              "apparent_absence_pct_of_original_coalition": 7.909144342656517,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 965363.97,
+              "reported_switcher_count": 96536.397,
+              "apparent_absence_count": 497252.03,
+              "returning_pct_of_original_coalition": 66.00255774584717,
+              "reported_switchers_pct_of_current_electorate": 5.7,
+              "reported_switchers_pct_of_original_coalition": 6.600255774584716,
+              "apparent_absence_pct_of_original_coalition": 33.99744225415283,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 677448.4,
+              "reported_switcher_count": 0.0,
+              "apparent_absence_count": 94963.59999999998,
+              "returning_pct_of_original_coalition": 87.7055768165176,
+              "reported_switchers_pct_of_current_electorate": 0.0,
+              "reported_switchers_pct_of_original_coalition": 0.0,
+              "apparent_absence_pct_of_original_coalition": 12.294423183482388,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 999236.39,
+              "reported_switcher_count": 99923.63900000001,
+              "apparent_absence_count": 463379.61,
+              "returning_pct_of_original_coalition": 68.3184369649997,
+              "reported_switchers_pct_of_current_electorate": 5.9,
+              "reported_switchers_pct_of_original_coalition": 6.83184369649997,
+              "apparent_absence_pct_of_original_coalition": 31.681563035000302,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 643575.98,
+              "reported_switcher_count": 0.0,
+              "apparent_absence_count": 128836.02000000002,
+              "returning_pct_of_original_coalition": 83.32029797569173,
+              "reported_switchers_pct_of_current_electorate": 0.0,
+              "reported_switchers_pct_of_original_coalition": 0.0,
+              "apparent_absence_pct_of_original_coalition": 16.679702024308273,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 954778.83875,
+              "reported_switcher_count": 95477.883875,
+              "apparent_absence_count": 507837.16125,
+              "returning_pct_of_original_coalition": 65.27884548986201,
+              "reported_switchers_pct_of_current_electorate": 5.5,
+              "reported_switchers_pct_of_original_coalition": 6.5278845489862,
+              "apparent_absence_pct_of_original_coalition": 34.721154510138,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 729103.8404999999,
+              "reported_switcher_count": 0.0,
+              "apparent_absence_count": 43308.15950000007,
+              "returning_pct_of_original_coalition": 94.39312704877707,
+              "reported_switchers_pct_of_current_electorate": 0.0,
+              "reported_switchers_pct_of_original_coalition": 0.0,
+              "apparent_absence_pct_of_original_coalition": 5.606872951222931,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 989498.06925,
+              "reported_switcher_count": 98949.80692499998,
+              "apparent_absence_count": 473117.93075000006,
+              "returning_pct_of_original_coalition": 67.65262168949334,
+              "reported_switchers_pct_of_current_electorate": 5.7,
+              "reported_switchers_pct_of_original_coalition": 6.7652621689493335,
+              "apparent_absence_pct_of_original_coalition": 32.347378310506656,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 694384.61,
+              "reported_switcher_count": 0.0,
+              "apparent_absence_count": 78027.39000000001,
+              "returning_pct_of_original_coalition": 89.89821623693055,
+              "reported_switchers_pct_of_current_electorate": 0.0,
+              "reported_switchers_pct_of_original_coalition": 0.0,
+              "apparent_absence_pct_of_original_coalition": 10.101783763069452,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 1024217.2997499999,
+              "reported_switcher_count": 102421.72997499998,
+              "apparent_absence_count": 438398.7002500001,
+              "returning_pct_of_original_coalition": 70.02639788912468,
+              "reported_switchers_pct_of_current_electorate": 5.9,
+              "reported_switchers_pct_of_original_coalition": 7.002639788912468,
+              "apparent_absence_pct_of_original_coalition": 29.97360211087532,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 659665.3794999999,
+              "reported_switcher_count": 0.0,
+              "apparent_absence_count": 112746.62050000008,
+              "returning_pct_of_original_coalition": 85.40330542508401,
+              "reported_switchers_pct_of_current_electorate": 0.0,
+              "reported_switchers_pct_of_original_coalition": 0.0,
+              "apparent_absence_pct_of_original_coalition": 14.596694574915988,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 978066.1275,
+              "reported_switcher_count": 97806.61274999999,
+              "apparent_absence_count": 484549.87250000006,
+              "returning_pct_of_original_coalition": 66.87101245302937,
+              "reported_switchers_pct_of_current_electorate": 5.5,
+              "reported_switchers_pct_of_original_coalition": 6.6871012453029355,
+              "apparent_absence_pct_of_original_coalition": 33.12898754697064,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 746886.861,
+              "reported_switcher_count": 0.0,
+              "apparent_absence_count": 25525.138999999966,
+              "returning_pct_of_original_coalition": 96.69539844021068,
+              "reported_switchers_pct_of_current_electorate": 0.0,
+              "reported_switchers_pct_of_original_coalition": 0.0,
+              "apparent_absence_pct_of_original_coalition": 3.304601559789331,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 1013632.1685000001,
+              "reported_switcher_count": 101363.21685000003,
+              "apparent_absence_count": 448983.83149999985,
+              "returning_pct_of_original_coalition": 69.30268563313953,
+              "reported_switchers_pct_of_current_electorate": 5.7,
+              "reported_switchers_pct_of_original_coalition": 6.9302685633139545,
+              "apparent_absence_pct_of_original_coalition": 30.697314366860464,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 711320.82,
+              "reported_switcher_count": 0.0,
+              "apparent_absence_count": 61091.18000000005,
+              "returning_pct_of_original_coalition": 92.0908556573435,
+              "reported_switchers_pct_of_current_electorate": 0.0,
+              "reported_switchers_pct_of_original_coalition": 0.0,
+              "apparent_absence_pct_of_original_coalition": 7.909144342656517,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 1049198.2095,
+              "reported_switcher_count": 104919.82095000001,
+              "apparent_absence_count": 413417.7904999999,
+              "returning_pct_of_original_coalition": 71.7343588132497,
+              "reported_switchers_pct_of_current_electorate": 5.9,
+              "reported_switchers_pct_of_original_coalition": 7.173435881324969,
+              "apparent_absence_pct_of_original_coalition": 28.265641186750308,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 675754.7790000001,
+              "reported_switcher_count": 0.0,
+              "apparent_absence_count": 96657.2209999999,
+              "returning_pct_of_original_coalition": 87.48631287447633,
+              "reported_switchers_pct_of_current_electorate": 0.0,
+              "reported_switchers_pct_of_original_coalition": 0.0,
+              "apparent_absence_pct_of_original_coalition": 12.513687125523672,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        }
+      ],
+      "response_scope_sensitivity": [
+        {
+          "assumed_unrepresented_ballot_caster_pct": 0,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                965363.97,
+                965363.97
+              ],
+              "reported_switcher_count": [
+                96536.397,
+                96536.397
+              ],
+              "apparent_absence_count": [
+                497252.03,
+                497252.03
+              ]
+            },
+            "D": {
+              "returning_count": [
+                677448.4,
+                677448.4
+              ],
+              "reported_switcher_count": [
+                0.0,
+                0.0
+              ],
+              "apparent_absence_count": [
+                94963.59999999998,
+                94963.59999999998
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 2.5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                941229.87075,
+                983570.39575
+              ],
+              "reported_switcher_count": [
+                94122.987075,
+                136463.512075
+              ],
+              "apparent_absence_count": [
+                479045.60425,
+                521386.12925
+              ]
+            },
+            "D": {
+              "returning_count": [
+                660512.19,
+                702852.715
+              ],
+              "reported_switcher_count": [
+                0.0,
+                42340.525
+              ],
+              "apparent_absence_count": [
+                69559.28500000006,
+                111899.81000000006
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                917095.7714999999,
+                1001776.8215
+              ],
+              "reported_switcher_count": [
+                91709.57715,
+                176390.62715000001
+              ],
+              "apparent_absence_count": [
+                460839.1785000001,
+                545520.2285000001
+              ]
+            },
+            "D": {
+              "returning_count": [
+                643575.98,
+                728257.03
+              ],
+              "reported_switcher_count": [
+                0.0,
+                84681.05
+              ],
+              "apparent_absence_count": [
+                44154.970000000016,
+                128836.02000000002
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "state_code": "NE",
+      "contest_code": "GG",
+      "status": "conditional_universe_assumption_not_validated_dropoff",
+      "survey_source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-NE.json",
+      "survey_source_sha256": "e07f8b607287df999673f8fe755a55ec51017e7677f233d2d8151d367969f7b6",
+      "survey_source_timestamp": "2026-11-04T20:07:27.000Z",
+      "survey_source_reported_respondents": 4146,
+      "reported_joint_rows": {
+        "D": {
+          "prior_choice_share_pct": 37,
+          "current_choice_pct_within_prior_choice": {
+            "D": 95,
+            "R": 3
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 55,
+          "current_choice_pct_within_prior_choice": {
+            "D": 6,
+            "R": 85
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2,
+          "current_choice_pct_within_prior_choice": {
+            "D": 56,
+            "R": 24
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 4,
+          "current_choice_pct_within_prior_choice": {
+            "D": 60,
+            "R": 30
+          }
+        }
+      },
+      "reported_prior_composition_sum_pct": 98,
+      "turnout_source": {
+        "state_code": "NE",
+        "state": "Nebraska",
+        "source_date": null,
+        "source_update_label": "11/4/2026 1:33 PM CT",
+        "source_retrieved_at": "2026-11-04T22:04:37.444100+00:00",
+        "status": "reported",
+        "source_url": "https://electionresults.nebraska.gov/VoterTurnoutDetails.aspx?map=PREC",
+        "source_snapshot": "20261104T220425Z",
+        "quality": [],
+        "reported_units": 1322,
+        "total_units": 1322,
+        "reporting_unit": "precincts",
+        "ballots": 752061,
+        "denominator": 1265162,
+        "denominator_basis": "registered_voters_source_definition",
+        "published_pct": 59.44,
+        "validated_pct": 59.444
+      },
+      "official_2024_baseline": {
+        "D": 369995,
+        "R": 564816,
+        "all_presidential_votes": 952182
+      },
+      "reference": {
+        "R": {
+          "returning_count": 413633.55,
+          "reported_switcher_count": 24818.013,
+          "apparent_absence_count": 151182.45,
+          "returning_pct_of_original_coalition": 73.23332731367384,
+          "reported_switchers_pct_of_current_electorate": 3.3,
+          "reported_switchers_pct_of_original_coalition": 4.393999638820429,
+          "apparent_absence_pct_of_original_coalition": 26.76667268632617,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 351588.5175,
+          "signed_unshown_current_choice_count": 37227.019499999995
+        },
+        "D": {
+          "returning_count": 278262.57,
+          "reported_switcher_count": 8347.8771,
+          "apparent_absence_count": 91732.43,
+          "returning_pct_of_original_coalition": 75.2071163123826,
+          "reported_switchers_pct_of_current_electorate": 1.11,
+          "reported_switchers_pct_of_original_coalition": 2.256213489371478,
+          "apparent_absence_pct_of_original_coalition": 24.7928836876174,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 264349.4415,
+          "signed_unshown_current_choice_count": 5565.2514
+        }
+      },
+      "rounding_only_envelopes": {
+        "R": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            409873.245,
+            417393.855
+          ],
+          "reported_switcher_count": [
+            22543.028475000003,
+            27130.600575
+          ],
+          "apparent_absence_count": [
+            147422.14500000002,
+            154942.755
+          ]
+        },
+        "D": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            274502.265,
+            282022.875
+          ],
+          "reported_switcher_count": [
+            6862.556625000001,
+            9870.800625
+          ],
+          "apparent_absence_count": [
+            87972.125,
+            95492.73499999999
+          ]
+        }
+      },
+      "sensitivity_scenarios": [
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 398592.33,
+              "reported_switcher_count": 23915.5398,
+              "apparent_absence_count": 166223.66999999998,
+              "returning_pct_of_original_coalition": 70.57029722954024,
+              "reported_switchers_pct_of_current_electorate": 3.18,
+              "reported_switchers_pct_of_original_coalition": 4.234217833772415,
+              "apparent_absence_pct_of_original_coalition": 29.429702770459755,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 293303.79,
+              "reported_switcher_count": 8799.113699999998,
+              "apparent_absence_count": 76691.21000000002,
+              "returning_pct_of_original_coalition": 79.27236584278165,
+              "reported_switchers_pct_of_current_electorate": 1.17,
+              "reported_switchers_pct_of_original_coalition": 2.378170975283449,
+              "apparent_absence_pct_of_original_coalition": 20.727634157218347,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 413633.55,
+              "reported_switcher_count": 24818.013,
+              "apparent_absence_count": 151182.45,
+              "returning_pct_of_original_coalition": 73.23332731367384,
+              "reported_switchers_pct_of_current_electorate": 3.3,
+              "reported_switchers_pct_of_original_coalition": 4.393999638820429,
+              "apparent_absence_pct_of_original_coalition": 26.76667268632617,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 278262.57,
+              "reported_switcher_count": 8347.8771,
+              "apparent_absence_count": 91732.43,
+              "returning_pct_of_original_coalition": 75.2071163123826,
+              "reported_switchers_pct_of_current_electorate": 1.11,
+              "reported_switchers_pct_of_original_coalition": 2.256213489371478,
+              "apparent_absence_pct_of_original_coalition": 24.7928836876174,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 428674.77,
+              "reported_switcher_count": 25720.4862,
+              "apparent_absence_count": 136141.22999999998,
+              "returning_pct_of_original_coalition": 75.89635739780742,
+              "reported_switchers_pct_of_current_electorate": 3.42,
+              "reported_switchers_pct_of_original_coalition": 4.553781443868446,
+              "apparent_absence_pct_of_original_coalition": 24.10364260219257,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 263221.35,
+              "reported_switcher_count": 7896.6404999999995,
+              "apparent_absence_count": 106773.65000000002,
+              "returning_pct_of_original_coalition": 71.14186678198352,
+              "reported_switchers_pct_of_current_electorate": 1.05,
+              "reported_switchers_pct_of_original_coalition": 2.134256003459506,
+              "apparent_absence_pct_of_original_coalition": 28.858133218016466,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 408557.13824999996,
+              "reported_switcher_count": 24513.428295,
+              "apparent_absence_count": 156258.86175000004,
+              "returning_pct_of_original_coalition": 72.33455466027874,
+              "reported_switchers_pct_of_current_electorate": 3.18,
+              "reported_switchers_pct_of_original_coalition": 4.340073279616725,
+              "apparent_absence_pct_of_original_coalition": 27.665445339721263,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 300636.38474999997,
+              "reported_switcher_count": 9019.091542499998,
+              "apparent_absence_count": 69358.61525000003,
+              "returning_pct_of_original_coalition": 81.25417498885119,
+              "reported_switchers_pct_of_current_electorate": 1.17,
+              "reported_switchers_pct_of_original_coalition": 2.437625249665536,
+              "apparent_absence_pct_of_original_coalition": 18.745825011148806,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 423974.3887499999,
+              "reported_switcher_count": 25438.463324999997,
+              "apparent_absence_count": 140841.61125000007,
+              "returning_pct_of_original_coalition": 75.06416049651567,
+              "reported_switchers_pct_of_current_electorate": 3.3,
+              "reported_switchers_pct_of_original_coalition": 4.50384962979094,
+              "apparent_absence_pct_of_original_coalition": 24.935839503484335,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 285219.13424999994,
+              "reported_switcher_count": 8556.574027499999,
+              "apparent_absence_count": 84775.86575000006,
+              "returning_pct_of_original_coalition": 77.08729422019215,
+              "reported_switchers_pct_of_current_electorate": 1.11,
+              "reported_switchers_pct_of_original_coalition": 2.312618826605765,
+              "apparent_absence_pct_of_original_coalition": 22.912705779807848,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 439391.63924999995,
+              "reported_switcher_count": 26363.498354999996,
+              "apparent_absence_count": 125424.36075000005,
+              "returning_pct_of_original_coalition": 77.79376633275261,
+              "reported_switchers_pct_of_current_electorate": 3.42,
+              "reported_switchers_pct_of_original_coalition": 4.667625979965156,
+              "apparent_absence_pct_of_original_coalition": 22.206233667247396,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 269801.88375,
+              "reported_switcher_count": 8094.0565124999985,
+              "apparent_absence_count": 100193.11625000002,
+              "returning_pct_of_original_coalition": 72.92041345153312,
+              "reported_switchers_pct_of_current_electorate": 1.05,
+              "reported_switchers_pct_of_original_coalition": 2.1876124035459936,
+              "apparent_absence_pct_of_original_coalition": 27.079586548466875,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 418521.9465000001,
+              "reported_switcher_count": 25111.316790000004,
+              "apparent_absence_count": 146294.05349999992,
+              "returning_pct_of_original_coalition": 74.09881209101727,
+              "reported_switchers_pct_of_current_electorate": 3.18,
+              "reported_switchers_pct_of_original_coalition": 4.445928725461036,
+              "apparent_absence_pct_of_original_coalition": 25.901187908982735,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 307968.9795,
+              "reported_switcher_count": 9239.069385,
+              "apparent_absence_count": 62026.020499999984,
+              "returning_pct_of_original_coalition": 83.23598413492076,
+              "reported_switchers_pct_of_current_electorate": 1.17,
+              "reported_switchers_pct_of_original_coalition": 2.4970795240476225,
+              "apparent_absence_pct_of_original_coalition": 16.764015865079255,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 434315.2275,
+              "reported_switcher_count": 26058.91365,
+              "apparent_absence_count": 130500.77250000002,
+              "returning_pct_of_original_coalition": 76.89499367935753,
+              "reported_switchers_pct_of_current_electorate": 3.3,
+              "reported_switchers_pct_of_original_coalition": 4.613699620761451,
+              "apparent_absence_pct_of_original_coalition": 23.105006320642477,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 292175.6985,
+              "reported_switcher_count": 8765.270955,
+              "apparent_absence_count": 77819.3015,
+              "returning_pct_of_original_coalition": 78.96747212800173,
+              "reported_switchers_pct_of_current_electorate": 1.11,
+              "reported_switchers_pct_of_original_coalition": 2.369024163840052,
+              "apparent_absence_pct_of_original_coalition": 21.032527871998273,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 450108.5085,
+              "reported_switcher_count": 27006.51051,
+              "apparent_absence_count": 114707.4915,
+              "returning_pct_of_original_coalition": 79.6911752676978,
+              "reported_switchers_pct_of_current_electorate": 3.42,
+              "reported_switchers_pct_of_original_coalition": 4.781470516061868,
+              "apparent_absence_pct_of_original_coalition": 20.308824732302202,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 276382.4175,
+              "reported_switcher_count": 8291.472525,
+              "apparent_absence_count": 93612.58250000002,
+              "returning_pct_of_original_coalition": 74.69896012108272,
+              "reported_switchers_pct_of_current_electorate": 1.05,
+              "reported_switchers_pct_of_original_coalition": 2.2409688036324815,
+              "apparent_absence_pct_of_original_coalition": 25.301039878917287,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        }
+      ],
+      "response_scope_sensitivity": [
+        {
+          "assumed_unrepresented_ballot_caster_pct": 0,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                413633.55,
+                413633.55
+              ],
+              "reported_switcher_count": [
+                24818.013,
+                24818.013
+              ],
+              "apparent_absence_count": [
+                151182.45,
+                151182.45
+              ]
+            },
+            "D": {
+              "returning_count": [
+                278262.57,
+                278262.57
+              ],
+              "reported_switcher_count": [
+                8347.8771,
+                8347.8771
+              ],
+              "apparent_absence_count": [
+                91732.43,
+                91732.43
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 2.5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                403292.71125,
+                422094.23625
+              ],
+              "reported_switcher_count": [
+                24197.562675,
+                42999.087675
+              ],
+              "apparent_absence_count": [
+                142721.76375,
+                161523.28875
+              ]
+            },
+            "D": {
+              "returning_count": [
+                271306.00575,
+                290107.53075000003
+              ],
+              "reported_switcher_count": [
+                8139.1801725000005,
+                26940.705172500002
+              ],
+              "apparent_absence_count": [
+                79887.46925,
+                98688.99424999999
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                392951.8725,
+                430554.9225
+              ],
+              "reported_switcher_count": [
+                23577.11235,
+                61180.16235
+              ],
+              "apparent_absence_count": [
+                134261.0775,
+                171864.1275
+              ]
+            },
+            "D": {
+              "returning_count": [
+                264349.44149999996,
+                301952.49149999995
+              ],
+              "reported_switcher_count": [
+                7930.4832449999985,
+                45533.533245
+              ],
+              "apparent_absence_count": [
+                68042.50850000004,
+                105645.55850000004
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "state_code": "NM",
+      "contest_code": "GG",
+      "status": "conditional_universe_assumption_not_validated_dropoff",
+      "survey_source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-NM.json",
+      "survey_source_sha256": "9cdd1f37f864c7fdcffb96a0d5913945a3edc64801d4eb4afeb00209385717a1",
+      "survey_source_timestamp": "2026-11-04T21:04:49.000Z",
+      "survey_source_reported_respondents": 943,
+      "reported_joint_rows": {
+        "D": {
+          "prior_choice_share_pct": 53,
+          "current_choice_pct_within_prior_choice": {
+            "D": 94,
+            "R": 6
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 36,
+          "current_choice_pct_within_prior_choice": {
+            "D": 1,
+            "R": 99
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 8,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        }
+      },
+      "reported_prior_composition_sum_pct": 99,
+      "turnout_source": {
+        "state_code": "NM",
+        "state": "New Mexico",
+        "source_date": null,
+        "source_update_label": "11/4/2026 4:56 AM MT",
+        "source_retrieved_at": "2026-11-04T22:04:38.372233+00:00",
+        "status": "reported",
+        "source_url": "https://electionresults.sos.nm.gov/VoterTurnoutDetails.aspx?map=PREC",
+        "source_snapshot": "20261104T220425Z",
+        "quality": [],
+        "reported_units": 2204,
+        "total_units": 2204,
+        "reporting_unit": "precincts",
+        "ballots": 726684,
+        "denominator": 1463716,
+        "denominator_basis": "eligible_voters_source_definition",
+        "published_pct": 49.65,
+        "validated_pct": 49.647
+      },
+      "official_2024_baseline": {
+        "D": 478802,
+        "R": 423391,
+        "all_presidential_votes": 923403
+      },
+      "reference": {
+        "R": {
+          "returning_count": 261606.24,
+          "reported_switcher_count": 2616.0624,
+          "apparent_absence_count": 161784.76,
+          "returning_pct_of_original_coalition": 61.78833277041789,
+          "reported_switchers_pct_of_current_electorate": 0.36,
+          "reported_switchers_pct_of_original_coalition": 0.6178833277041789,
+          "apparent_absence_pct_of_original_coalition": 38.21166722958211,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 258990.17759999997,
+          "signed_unshown_current_choice_count": 0.0
+        },
+        "D": {
+          "returning_count": 385142.52,
+          "reported_switcher_count": 23108.5512,
+          "apparent_absence_count": 93659.47999999998,
+          "returning_pct_of_original_coalition": 80.43878680540182,
+          "reported_switchers_pct_of_current_electorate": 3.18,
+          "reported_switchers_pct_of_original_coalition": 4.826327208324109,
+          "apparent_absence_pct_of_original_coalition": 19.56121319459818,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 362033.96880000003,
+          "signed_unshown_current_choice_count": 0.0
+        }
+      },
+      "rounding_only_envelopes": {
+        "R": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            257972.82,
+            265239.66
+          ],
+          "reported_switcher_count": [
+            1289.8641,
+            3978.5949
+          ],
+          "apparent_absence_count": [
+            158151.34000000003,
+            165418.18
+          ]
+        },
+        "D": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            381509.1,
+            388775.94
+          ],
+          "reported_switcher_count": [
+            20983.0005,
+            25270.4361
+          ],
+          "apparent_absence_count": [
+            90026.06,
+            97292.90000000002
+          ]
+        }
+      },
+      "sensitivity_scenarios": [
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 247072.56,
+              "reported_switcher_count": 2470.7255999999998,
+              "apparent_absence_count": 176318.44,
+              "returning_pct_of_original_coalition": 58.355647616505784,
+              "reported_switchers_pct_of_current_electorate": 0.34,
+              "reported_switchers_pct_of_original_coalition": 0.5835564761650578,
+              "apparent_absence_pct_of_original_coalition": 41.644352383494216,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 399676.2,
+              "reported_switcher_count": 23980.572,
+              "apparent_absence_count": 79125.79999999999,
+              "returning_pct_of_original_coalition": 83.47421272258678,
+              "reported_switchers_pct_of_current_electorate": 3.3,
+              "reported_switchers_pct_of_original_coalition": 5.008452763355208,
+              "apparent_absence_pct_of_original_coalition": 16.525787277413208,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 261606.24,
+              "reported_switcher_count": 2616.0624,
+              "apparent_absence_count": 161784.76,
+              "returning_pct_of_original_coalition": 61.78833277041789,
+              "reported_switchers_pct_of_current_electorate": 0.36,
+              "reported_switchers_pct_of_original_coalition": 0.6178833277041789,
+              "apparent_absence_pct_of_original_coalition": 38.21166722958211,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 385142.52,
+              "reported_switcher_count": 23108.5512,
+              "apparent_absence_count": 93659.47999999998,
+              "returning_pct_of_original_coalition": 80.43878680540182,
+              "reported_switchers_pct_of_current_electorate": 3.18,
+              "reported_switchers_pct_of_original_coalition": 4.826327208324109,
+              "apparent_absence_pct_of_original_coalition": 19.56121319459818,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 276139.92,
+              "reported_switcher_count": 2761.3992,
+              "apparent_absence_count": 147251.08000000002,
+              "returning_pct_of_original_coalition": 65.22101792433,
+              "reported_switchers_pct_of_current_electorate": 0.38,
+              "reported_switchers_pct_of_original_coalition": 0.6522101792432999,
+              "apparent_absence_pct_of_original_coalition": 34.77898207567001,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 370608.84,
+              "reported_switcher_count": 22236.5304,
+              "apparent_absence_count": 108193.15999999997,
+              "returning_pct_of_original_coalition": 77.40336088821684,
+              "reported_switchers_pct_of_current_electorate": 3.06,
+              "reported_switchers_pct_of_original_coalition": 4.644201653293011,
+              "apparent_absence_pct_of_original_coalition": 22.596639111783155,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 253249.37399999998,
+              "reported_switcher_count": 2532.49374,
+              "apparent_absence_count": 170141.62600000002,
+              "returning_pct_of_original_coalition": 59.81453880691842,
+              "reported_switchers_pct_of_current_electorate": 0.34,
+              "reported_switchers_pct_of_original_coalition": 0.5981453880691843,
+              "apparent_absence_pct_of_original_coalition": 40.18546119308158,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 409668.105,
+              "reported_switcher_count": 24580.0863,
+              "apparent_absence_count": 69133.89500000002,
+              "returning_pct_of_original_coalition": 85.56106804065146,
+              "reported_switchers_pct_of_current_electorate": 3.3,
+              "reported_switchers_pct_of_original_coalition": 5.133664082439087,
+              "apparent_absence_pct_of_original_coalition": 14.438931959348544,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 268146.39599999995,
+              "reported_switcher_count": 2681.4639599999996,
+              "apparent_absence_count": 155244.60400000005,
+              "returning_pct_of_original_coalition": 63.33304108967832,
+              "reported_switchers_pct_of_current_electorate": 0.36,
+              "reported_switchers_pct_of_original_coalition": 0.6333304108967832,
+              "apparent_absence_pct_of_original_coalition": 36.66695891032168,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 394771.083,
+              "reported_switcher_count": 23686.264979999996,
+              "apparent_absence_count": 84030.91700000002,
+              "returning_pct_of_original_coalition": 82.44975647553686,
+              "reported_switchers_pct_of_current_electorate": 3.18,
+              "reported_switchers_pct_of_original_coalition": 4.946985388532211,
+              "apparent_absence_pct_of_original_coalition": 17.55024352446314,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 283043.418,
+              "reported_switcher_count": 2830.43418,
+              "apparent_absence_count": 140347.582,
+              "returning_pct_of_original_coalition": 66.85154337243824,
+              "reported_switchers_pct_of_current_electorate": 0.38,
+              "reported_switchers_pct_of_original_coalition": 0.6685154337243825,
+              "apparent_absence_pct_of_original_coalition": 33.14845662756176,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 379874.061,
+              "reported_switcher_count": 22792.44366,
+              "apparent_absence_count": 98927.93900000001,
+              "returning_pct_of_original_coalition": 79.33844491042227,
+              "reported_switchers_pct_of_current_electorate": 3.06,
+              "reported_switchers_pct_of_original_coalition": 4.760306694625336,
+              "apparent_absence_pct_of_original_coalition": 20.661555089577742,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 259426.188,
+              "reported_switcher_count": 2594.26188,
+              "apparent_absence_count": 163964.812,
+              "returning_pct_of_original_coalition": 61.27342999733107,
+              "reported_switchers_pct_of_current_electorate": 0.34,
+              "reported_switchers_pct_of_original_coalition": 0.6127342999733107,
+              "apparent_absence_pct_of_original_coalition": 38.72657000266893,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 419660.01000000007,
+              "reported_switcher_count": 25179.600600000005,
+              "apparent_absence_count": 59141.98999999993,
+              "returning_pct_of_original_coalition": 87.64792335871614,
+              "reported_switchers_pct_of_current_electorate": 3.3,
+              "reported_switchers_pct_of_original_coalition": 5.258875401522968,
+              "apparent_absence_pct_of_original_coalition": 12.352076641283857,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 274686.552,
+              "reported_switcher_count": 2746.8655200000003,
+              "apparent_absence_count": 148704.44799999997,
+              "returning_pct_of_original_coalition": 64.87774940893878,
+              "reported_switchers_pct_of_current_electorate": 0.36,
+              "reported_switchers_pct_of_original_coalition": 0.6487774940893879,
+              "apparent_absence_pct_of_original_coalition": 35.12225059106121,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 404399.646,
+              "reported_switcher_count": 24263.97876,
+              "apparent_absence_count": 74402.35399999999,
+              "returning_pct_of_original_coalition": 84.46072614567191,
+              "reported_switchers_pct_of_current_electorate": 3.18,
+              "reported_switchers_pct_of_original_coalition": 5.067643568740315,
+              "apparent_absence_pct_of_original_coalition": 15.539273854328092,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 289946.916,
+              "reported_switcher_count": 2899.46916,
+              "apparent_absence_count": 133444.08399999997,
+              "returning_pct_of_original_coalition": 68.4820688205465,
+              "reported_switchers_pct_of_current_electorate": 0.38,
+              "reported_switchers_pct_of_original_coalition": 0.6848206882054649,
+              "apparent_absence_pct_of_original_coalition": 31.517931179453498,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 389139.282,
+              "reported_switcher_count": 23348.35692,
+              "apparent_absence_count": 89662.718,
+              "returning_pct_of_original_coalition": 81.27352893262768,
+              "reported_switchers_pct_of_current_electorate": 3.06,
+              "reported_switchers_pct_of_original_coalition": 4.87641173595766,
+              "apparent_absence_pct_of_original_coalition": 18.726471067372316,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        }
+      ],
+      "response_scope_sensitivity": [
+        {
+          "assumed_unrepresented_ballot_caster_pct": 0,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                261606.24,
+                261606.24
+              ],
+              "reported_switcher_count": [
+                2616.0624,
+                2616.0624
+              ],
+              "apparent_absence_count": [
+                161784.76,
+                161784.76
+              ]
+            },
+            "D": {
+              "returning_count": [
+                385142.52,
+                385142.52
+              ],
+              "reported_switcher_count": [
+                23108.5512,
+                23108.5512
+              ],
+              "apparent_absence_count": [
+                93659.47999999998,
+                93659.47999999998
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 2.5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                255066.08400000003,
+                273233.184
+              ],
+              "reported_switcher_count": [
+                2550.6608400000005,
+                20717.76084
+              ],
+              "apparent_absence_count": [
+                150157.81599999996,
+                168324.91599999997
+              ]
+            },
+            "D": {
+              "returning_count": [
+                375513.95700000005,
+                393681.05700000003
+              ],
+              "reported_switcher_count": [
+                22530.837420000007,
+                40697.93742
+              ],
+              "apparent_absence_count": [
+                85120.94299999994,
+                103288.04299999995
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                248525.928,
+                284860.128
+              ],
+              "reported_switcher_count": [
+                2485.25928,
+                38819.459279999995
+              ],
+              "apparent_absence_count": [
+                138530.87199999997,
+                174865.072
+              ]
+            },
+            "D": {
+              "returning_count": [
+                365885.3940000001,
+                402219.5940000001
+              ],
+              "reported_switcher_count": [
+                21953.123640000005,
+                58287.32364
+              ],
+              "apparent_absence_count": [
+                76582.40599999992,
+                112916.60599999991
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "state_code": "OR",
+      "contest_code": "GG",
+      "status": "conditional_universe_assumption_not_validated_dropoff",
+      "survey_source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-OR.json",
+      "survey_source_sha256": "972707350cb2c5fe62e0e4759d247410ea60e89bbe9c63a18b2af8ae6e025838",
+      "survey_source_timestamp": "2026-11-04T20:20:50.000Z",
+      "survey_source_reported_respondents": 989,
+      "reported_joint_rows": {
+        "D": {
+          "prior_choice_share_pct": 53,
+          "current_choice_pct_within_prior_choice": {
+            "D": 90,
+            "R": 8
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 39,
+          "current_choice_pct_within_prior_choice": {
+            "D": 2,
+            "R": 97
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 4,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 4,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        }
+      },
+      "reported_prior_composition_sum_pct": 100,
+      "turnout_source": {
+        "state_code": "OR",
+        "state": "Oregon",
+        "source_date": null,
+        "source_update_label": "11/4/2026 | 2:00 PM PT",
+        "source_retrieved_at": "2026-11-04T22:04:36.025726+00:00",
+        "status": "reported",
+        "source_url": "https://results.oregonvotes.gov/?ID=39",
+        "source_snapshot": "20261104T220425Z",
+        "quality": [],
+        "reported_units": null,
+        "total_units": null,
+        "reporting_unit": null,
+        "ballots": 1551077,
+        "denominator": 3109089,
+        "denominator_basis": "active_registered_voters",
+        "published_pct": 49.89,
+        "validated_pct": 49.888
+      },
+      "official_2024_baseline": {
+        "D": 1240600,
+        "R": 919480,
+        "all_presidential_votes": 2244493
+      },
+      "reference": {
+        "R": {
+          "returning_count": 604920.03,
+          "reported_switcher_count": 12098.4006,
+          "apparent_absence_count": 314559.97,
+          "returning_pct_of_original_coalition": 65.7893624657415,
+          "reported_switchers_pct_of_current_electorate": 0.78,
+          "reported_switchers_pct_of_original_coalition": 1.3157872493148302,
+          "apparent_absence_pct_of_original_coalition": 34.21063753425849,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 586772.4291000001,
+          "signed_unshown_current_choice_count": 6049.2003
+        },
+        "D": {
+          "returning_count": 822070.81,
+          "reported_switcher_count": 65765.6648,
+          "apparent_absence_count": 418529.18999999994,
+          "returning_pct_of_original_coalition": 66.26396985329679,
+          "reported_switchers_pct_of_current_electorate": 4.24,
+          "reported_switchers_pct_of_original_coalition": 5.301117588263743,
+          "apparent_absence_pct_of_original_coalition": 33.7360301467032,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 739863.729,
+          "signed_unshown_current_choice_count": 16441.4162
+        }
+      },
+      "rounding_only_envelopes": {
+        "R": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            597164.645,
+            612675.415
+          ],
+          "reported_switcher_count": [
+            8957.469675,
+            15316.885375000002
+          ],
+          "apparent_absence_count": [
+            306804.58499999996,
+            322315.355
+          ]
+        },
+        "D": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            814315.425,
+            829826.195
+          ],
+          "reported_switcher_count": [
+            61073.656875,
+            70535.226575
+          ],
+          "apparent_absence_count": [
+            410773.80500000005,
+            426284.57499999995
+          ]
+        }
+      },
+      "sensitivity_scenarios": [
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 573898.49,
+              "reported_switcher_count": 11477.969799999999,
+              "apparent_absence_count": 345581.51,
+              "returning_pct_of_original_coalition": 62.41554900595989,
+              "reported_switchers_pct_of_current_electorate": 0.74,
+              "reported_switchers_pct_of_original_coalition": 1.2483109801191978,
+              "apparent_absence_pct_of_original_coalition": 37.58445099404011,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 853092.35,
+              "reported_switcher_count": 68247.38799999999,
+              "apparent_absence_count": 387507.65,
+              "returning_pct_of_original_coalition": 68.76449701757214,
+              "reported_switchers_pct_of_current_electorate": 4.4,
+              "reported_switchers_pct_of_original_coalition": 5.501159761405771,
+              "apparent_absence_pct_of_original_coalition": 31.235502982427857,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 604920.03,
+              "reported_switcher_count": 12098.4006,
+              "apparent_absence_count": 314559.97,
+              "returning_pct_of_original_coalition": 65.7893624657415,
+              "reported_switchers_pct_of_current_electorate": 0.78,
+              "reported_switchers_pct_of_original_coalition": 1.3157872493148302,
+              "apparent_absence_pct_of_original_coalition": 34.21063753425849,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 822070.81,
+              "reported_switcher_count": 65765.6648,
+              "apparent_absence_count": 418529.18999999994,
+              "returning_pct_of_original_coalition": 66.26396985329679,
+              "reported_switchers_pct_of_current_electorate": 4.24,
+              "reported_switchers_pct_of_original_coalition": 5.301117588263743,
+              "apparent_absence_pct_of_original_coalition": 33.7360301467032,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 635941.57,
+              "reported_switcher_count": 12718.8314,
+              "apparent_absence_count": 283538.43000000005,
+              "returning_pct_of_original_coalition": 69.16317592552312,
+              "reported_switchers_pct_of_current_electorate": 0.82,
+              "reported_switchers_pct_of_original_coalition": 1.3832635185104623,
+              "apparent_absence_pct_of_original_coalition": 30.836824074476883,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 791049.27,
+              "reported_switcher_count": 63283.9416,
+              "apparent_absence_count": 449550.73,
+              "returning_pct_of_original_coalition": 63.76344268902144,
+              "reported_switchers_pct_of_current_electorate": 4.08,
+              "reported_switchers_pct_of_original_coalition": 5.1010754151217155,
+              "apparent_absence_pct_of_original_coalition": 36.23655731097856,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 588245.95225,
+              "reported_switcher_count": 11764.919044999999,
+              "apparent_absence_count": 331234.04775,
+              "returning_pct_of_original_coalition": 63.97593773110888,
+              "reported_switchers_pct_of_current_electorate": 0.74,
+              "reported_switchers_pct_of_original_coalition": 1.2795187546221778,
+              "apparent_absence_pct_of_original_coalition": 36.024062268891115,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 874419.6587499998,
+              "reported_switcher_count": 69953.57269999999,
+              "apparent_absence_count": 366180.3412500002,
+              "returning_pct_of_original_coalition": 70.48360944301143,
+              "reported_switchers_pct_of_current_electorate": 4.4,
+              "reported_switchers_pct_of_original_coalition": 5.638688755440914,
+              "apparent_absence_pct_of_original_coalition": 29.516390556988565,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 620043.0307499999,
+              "reported_switcher_count": 12400.860614999998,
+              "apparent_absence_count": 299436.9692500001,
+              "returning_pct_of_original_coalition": 67.43409652738504,
+              "reported_switchers_pct_of_current_electorate": 0.78,
+              "reported_switchers_pct_of_original_coalition": 1.3486819305477007,
+              "apparent_absence_pct_of_original_coalition": 32.56590347261496,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 842622.5802499999,
+              "reported_switcher_count": 67409.80642,
+              "apparent_absence_count": 397977.4197500001,
+              "returning_pct_of_original_coalition": 67.9205690996292,
+              "reported_switchers_pct_of_current_electorate": 4.24,
+              "reported_switchers_pct_of_original_coalition": 5.433645527970336,
+              "apparent_absence_pct_of_original_coalition": 32.079430900370795,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 651840.1092499999,
+              "reported_switcher_count": 13036.802184999997,
+              "apparent_absence_count": 267639.89075000014,
+              "returning_pct_of_original_coalition": 70.89225532366119,
+              "reported_switchers_pct_of_current_electorate": 0.82,
+              "reported_switchers_pct_of_original_coalition": 1.4178451064732236,
+              "apparent_absence_pct_of_original_coalition": 29.107744676338815,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 810825.5017499999,
+              "reported_switcher_count": 64866.04014,
+              "apparent_absence_count": 429774.49825000006,
+              "returning_pct_of_original_coalition": 65.35752875624698,
+              "reported_switchers_pct_of_current_electorate": 4.08,
+              "reported_switchers_pct_of_original_coalition": 5.228602300499758,
+              "apparent_absence_pct_of_original_coalition": 34.64247124375302,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 602593.4145000001,
+              "reported_switcher_count": 12051.868290000002,
+              "apparent_absence_count": 316886.5854999999,
+              "returning_pct_of_original_coalition": 65.5363264562579,
+              "reported_switchers_pct_of_current_electorate": 0.74,
+              "reported_switchers_pct_of_original_coalition": 1.3107265291251577,
+              "apparent_absence_pct_of_original_coalition": 34.46367354374211,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 895746.9675,
+              "reported_switcher_count": 71659.7574,
+              "apparent_absence_count": 344853.0325,
+              "returning_pct_of_original_coalition": 72.20272186845075,
+              "reported_switchers_pct_of_current_electorate": 4.4,
+              "reported_switchers_pct_of_original_coalition": 5.77621774947606,
+              "apparent_absence_pct_of_original_coalition": 27.797278131549252,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 635166.0315,
+              "reported_switcher_count": 12703.32063,
+              "apparent_absence_count": 284313.96849999996,
+              "returning_pct_of_original_coalition": 69.07883058902858,
+              "reported_switchers_pct_of_current_electorate": 0.78,
+              "reported_switchers_pct_of_original_coalition": 1.3815766117805717,
+              "apparent_absence_pct_of_original_coalition": 30.921169410971412,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 863174.3505000002,
+              "reported_switcher_count": 69053.94804000002,
+              "apparent_absence_count": 377425.6494999998,
+              "returning_pct_of_original_coalition": 69.57716834596164,
+              "reported_switchers_pct_of_current_electorate": 4.24,
+              "reported_switchers_pct_of_original_coalition": 5.566173467676932,
+              "apparent_absence_pct_of_original_coalition": 30.422831654038355,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 667738.6485,
+              "reported_switcher_count": 13354.77297,
+              "apparent_absence_count": 251741.3515,
+              "returning_pct_of_original_coalition": 72.62133472179929,
+              "reported_switchers_pct_of_current_electorate": 0.82,
+              "reported_switchers_pct_of_original_coalition": 1.4524266944359856,
+              "apparent_absence_pct_of_original_coalition": 27.37866527820072,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 830601.7335000001,
+              "reported_switcher_count": 66448.13868,
+              "apparent_absence_count": 409998.2664999999,
+              "returning_pct_of_original_coalition": 66.95161482347253,
+              "reported_switchers_pct_of_current_electorate": 4.08,
+              "reported_switchers_pct_of_original_coalition": 5.356129185877801,
+              "apparent_absence_pct_of_original_coalition": 33.04838517652748,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        }
+      ],
+      "response_scope_sensitivity": [
+        {
+          "assumed_unrepresented_ballot_caster_pct": 0,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                604920.03,
+                604920.03
+              ],
+              "reported_switcher_count": [
+                12098.4006,
+                12098.4006
+              ],
+              "apparent_absence_count": [
+                314559.97,
+                314559.97
+              ]
+            },
+            "D": {
+              "returning_count": [
+                822070.81,
+                822070.81
+              ],
+              "reported_switcher_count": [
+                65765.6648,
+                65765.6648
+              ],
+              "apparent_absence_count": [
+                418529.18999999994,
+                418529.18999999994
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 2.5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                589797.02925,
+                628573.9542500001
+              ],
+              "reported_switcher_count": [
+                11795.940585,
+                50572.86558500001
+              ],
+              "apparent_absence_count": [
+                290906.04575,
+                329682.97075
+              ]
+            },
+            "D": {
+              "returning_count": [
+                801519.03975,
+                840295.96475
+              ],
+              "reported_switcher_count": [
+                64121.52318,
+                102898.44818
+              ],
+              "apparent_absence_count": [
+                400304.03525,
+                439080.96025
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                574674.0284999999,
+                652227.8784999999
+              ],
+              "reported_switcher_count": [
+                11493.480569999998,
+                89047.33057
+              ],
+              "apparent_absence_count": [
+                267252.1215000001,
+                344805.9715000001
+              ]
+            },
+            "D": {
+              "returning_count": [
+                780967.2694999999,
+                858521.1194999999
+              ],
+              "reported_switcher_count": [
+                62477.381559999994,
+                140031.23156
+              ],
+              "apparent_absence_count": [
+                382078.8805000001,
+                459632.73050000006
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "state_code": "SD",
+      "contest_code": "GG",
+      "status": "conditional_universe_assumption_not_validated_dropoff",
+      "survey_source_url": "https://politics.api.cnn.io/results/exit-poll/2026-GG-SD.json",
+      "survey_source_sha256": "51af6985a93547a8999d387202e6f84afbdc8c1278dd3c272cc607f9a57b2892",
+      "survey_source_timestamp": "2026-11-04T18:37:59.000Z",
+      "survey_source_reported_respondents": 904,
+      "reported_joint_rows": {
+        "D": {
+          "prior_choice_share_pct": 28,
+          "current_choice_pct_within_prior_choice": {
+            "D": 91,
+            "R": 9
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 64,
+          "current_choice_pct_within_prior_choice": {
+            "D": 10,
+            "R": 90
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 3,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 5,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        }
+      },
+      "reported_prior_composition_sum_pct": 100,
+      "turnout_source": {
+        "state_code": "SD",
+        "state": "South Dakota",
+        "source_date": null,
+        "source_update_label": "11/4/2026 4:00 PM CT",
+        "source_retrieved_at": "2026-11-04T22:04:39.158046+00:00",
+        "status": "reported",
+        "source_url": "https://electionresults.sd.gov/VoterTurnoutDetails.aspx?map=PREC",
+        "source_snapshot": "20261104T220425Z",
+        "quality": [],
+        "reported_units": 671,
+        "total_units": 671,
+        "reporting_unit": "precincts",
+        "ballots": 310298,
+        "denominator": 628563,
+        "denominator_basis": "registered_voters_source_definition",
+        "published_pct": 49.37,
+        "validated_pct": 49.366
+      },
+      "official_2024_baseline": {
+        "D": 146859,
+        "R": 272081,
+        "all_presidential_votes": 428922
+      },
+      "reference": {
+        "R": {
+          "returning_count": 198590.72,
+          "reported_switcher_count": 19859.072,
+          "apparent_absence_count": 73490.28,
+          "returning_pct_of_original_coalition": 72.9895582565486,
+          "reported_switchers_pct_of_current_electorate": 6.4,
+          "reported_switchers_pct_of_original_coalition": 7.29895582565486,
+          "apparent_absence_pct_of_original_coalition": 27.0104417434514,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 178731.64800000002,
+          "signed_unshown_current_choice_count": 0.0
+        },
+        "D": {
+          "returning_count": 86883.44,
+          "reported_switcher_count": 7819.509599999999,
+          "apparent_absence_count": 59975.56,
+          "returning_pct_of_original_coalition": 59.16112733982936,
+          "reported_switchers_pct_of_current_electorate": 2.52,
+          "reported_switchers_pct_of_original_coalition": 5.324501460584642,
+          "apparent_absence_pct_of_original_coalition": 40.83887266017064,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 79063.9304,
+          "signed_unshown_current_choice_count": 0.0
+        }
+      },
+      "rounding_only_envelopes": {
+        "R": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            197039.23,
+            200142.21
+          ],
+          "reported_switcher_count": [
+            18718.72685,
+            21014.93205
+          ],
+          "apparent_absence_count": [
+            71938.79000000001,
+            75041.76999999999
+          ]
+        },
+        "D": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            85331.95,
+            88434.93
+          ],
+          "reported_switcher_count": [
+            7253.215749999999,
+            8401.31835
+          ],
+          "apparent_absence_count": [
+            58424.07000000001,
+            61527.05
+          ]
+        }
+      },
+      "sensitivity_scenarios": [
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 192384.76,
+              "reported_switcher_count": 19238.476000000002,
+              "apparent_absence_count": 79696.23999999999,
+              "returning_pct_of_original_coalition": 70.70863456103146,
+              "reported_switchers_pct_of_current_electorate": 6.2,
+              "reported_switchers_pct_of_original_coalition": 7.070863456103147,
+              "apparent_absence_pct_of_original_coalition": 29.29136543896854,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 93089.4,
+              "reported_switcher_count": 8378.046,
+              "apparent_absence_count": 53769.600000000006,
+              "returning_pct_of_original_coalition": 63.386922149817174,
+              "reported_switchers_pct_of_current_electorate": 2.7,
+              "reported_switchers_pct_of_original_coalition": 5.704822993483545,
+              "apparent_absence_pct_of_original_coalition": 36.61307785018283,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 198590.72,
+              "reported_switcher_count": 19859.072,
+              "apparent_absence_count": 73490.28,
+              "returning_pct_of_original_coalition": 72.9895582565486,
+              "reported_switchers_pct_of_current_electorate": 6.4,
+              "reported_switchers_pct_of_original_coalition": 7.29895582565486,
+              "apparent_absence_pct_of_original_coalition": 27.0104417434514,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 86883.44,
+              "reported_switcher_count": 7819.509599999999,
+              "apparent_absence_count": 59975.56,
+              "returning_pct_of_original_coalition": 59.16112733982936,
+              "reported_switchers_pct_of_current_electorate": 2.52,
+              "reported_switchers_pct_of_original_coalition": 5.324501460584642,
+              "apparent_absence_pct_of_original_coalition": 40.83887266017064,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 204796.68,
+              "reported_switcher_count": 20479.667999999998,
+              "apparent_absence_count": 67284.32,
+              "returning_pct_of_original_coalition": 75.27048195206575,
+              "reported_switchers_pct_of_current_electorate": 6.6,
+              "reported_switchers_pct_of_original_coalition": 7.527048195206574,
+              "apparent_absence_pct_of_original_coalition": 24.72951804793426,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 80677.48,
+              "reported_switcher_count": 7260.973199999999,
+              "apparent_absence_count": 66181.52,
+              "returning_pct_of_original_coalition": 54.935332529841546,
+              "reported_switchers_pct_of_current_electorate": 2.34,
+              "reported_switchers_pct_of_original_coalition": 4.944179927685739,
+              "apparent_absence_pct_of_original_coalition": 45.064667470158454,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 197194.379,
+              "reported_switcher_count": 19719.437899999997,
+              "apparent_absence_count": 74886.62100000001,
+              "returning_pct_of_original_coalition": 72.47635042505723,
+              "reported_switchers_pct_of_current_electorate": 6.2,
+              "reported_switchers_pct_of_original_coalition": 7.247635042505724,
+              "apparent_absence_pct_of_original_coalition": 27.523649574942763,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 95416.63499999998,
+              "reported_switcher_count": 8587.49715,
+              "apparent_absence_count": 51442.36500000002,
+              "returning_pct_of_original_coalition": 64.97159520356259,
+              "reported_switchers_pct_of_current_electorate": 2.7,
+              "reported_switchers_pct_of_original_coalition": 5.847443568320634,
+              "apparent_absence_pct_of_original_coalition": 35.028404796437414,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 203555.48799999998,
+              "reported_switcher_count": 20355.5488,
+              "apparent_absence_count": 68525.51200000002,
+              "returning_pct_of_original_coalition": 74.8142972129623,
+              "reported_switchers_pct_of_current_electorate": 6.4,
+              "reported_switchers_pct_of_original_coalition": 7.481429721296232,
+              "apparent_absence_pct_of_original_coalition": 25.18570278703769,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 89055.52599999998,
+              "reported_switcher_count": 8014.997339999998,
+              "apparent_absence_count": 57803.47400000002,
+              "returning_pct_of_original_coalition": 60.64015552332508,
+              "reported_switchers_pct_of_current_electorate": 2.52,
+              "reported_switchers_pct_of_original_coalition": 5.457613997099258,
+              "apparent_absence_pct_of_original_coalition": 39.359844476674915,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 209916.59699999995,
+              "reported_switcher_count": 20991.659699999997,
+              "apparent_absence_count": 62164.40300000005,
+              "returning_pct_of_original_coalition": 77.15224400086737,
+              "reported_switchers_pct_of_current_electorate": 6.6,
+              "reported_switchers_pct_of_original_coalition": 7.715224400086738,
+              "apparent_absence_pct_of_original_coalition": 22.847755999132627,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 82694.41699999999,
+              "reported_switcher_count": 7442.497529999999,
+              "apparent_absence_count": 64164.58300000001,
+              "returning_pct_of_original_coalition": 56.308715843087576,
+              "reported_switchers_pct_of_current_electorate": 2.34,
+              "reported_switchers_pct_of_original_coalition": 5.067784425877882,
+              "apparent_absence_pct_of_original_coalition": 43.691284156912424,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 202003.99800000002,
+              "reported_switcher_count": 20200.399800000003,
+              "apparent_absence_count": 70077.00199999998,
+              "returning_pct_of_original_coalition": 74.24406628908304,
+              "reported_switchers_pct_of_current_electorate": 6.2,
+              "reported_switchers_pct_of_original_coalition": 7.4244066289083035,
+              "apparent_absence_pct_of_original_coalition": 25.75593371091696,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 97743.87,
+              "reported_switcher_count": 8796.9483,
+              "apparent_absence_count": 49115.130000000005,
+              "returning_pct_of_original_coalition": 66.55626825730803,
+              "reported_switchers_pct_of_current_electorate": 2.7,
+              "reported_switchers_pct_of_original_coalition": 5.990064143157722,
+              "apparent_absence_pct_of_original_coalition": 33.44373174269197,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 208520.25600000002,
+              "reported_switcher_count": 20852.025600000004,
+              "apparent_absence_count": 63560.74399999998,
+              "returning_pct_of_original_coalition": 76.63903616937604,
+              "reported_switchers_pct_of_current_electorate": 6.4,
+              "reported_switchers_pct_of_original_coalition": 7.663903616937605,
+              "apparent_absence_pct_of_original_coalition": 23.36096383062396,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 91227.61200000001,
+              "reported_switcher_count": 8210.48508,
+              "apparent_absence_count": 55631.38799999999,
+              "returning_pct_of_original_coalition": 62.119183706820834,
+              "reported_switchers_pct_of_current_electorate": 2.52,
+              "reported_switchers_pct_of_original_coalition": 5.590726533613875,
+              "apparent_absence_pct_of_original_coalition": 37.880816293179166,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 215036.51400000002,
+              "reported_switcher_count": 21503.651400000002,
+              "apparent_absence_count": 57044.485999999975,
+              "returning_pct_of_original_coalition": 79.03400604966905,
+              "reported_switchers_pct_of_current_electorate": 6.6,
+              "reported_switchers_pct_of_original_coalition": 7.903400604966904,
+              "apparent_absence_pct_of_original_coalition": 20.965993950330958,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 84711.354,
+              "reported_switcher_count": 7624.021860000001,
+              "apparent_absence_count": 62147.64599999999,
+              "returning_pct_of_original_coalition": 57.68209915633363,
+              "reported_switchers_pct_of_current_electorate": 2.34,
+              "reported_switchers_pct_of_original_coalition": 5.1913889240700275,
+              "apparent_absence_pct_of_original_coalition": 42.31790084366637,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        }
+      ],
+      "response_scope_sensitivity": [
+        {
+          "assumed_unrepresented_ballot_caster_pct": 0,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                198590.72,
+                198590.72
+              ],
+              "reported_switcher_count": [
+                19859.072,
+                19859.072
+              ],
+              "apparent_absence_count": [
+                73490.28,
+                73490.28
+              ]
+            },
+            "D": {
+              "returning_count": [
+                86883.44,
+                86883.44
+              ],
+              "reported_switcher_count": [
+                7819.509599999999,
+                7819.509599999999
+              ],
+              "apparent_absence_count": [
+                59975.56,
+                59975.56
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 2.5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                193625.952,
+                201383.402
+              ],
+              "reported_switcher_count": [
+                19362.5952,
+                27120.0452
+              ],
+              "apparent_absence_count": [
+                70697.59800000001,
+                78455.04800000001
+              ]
+            },
+            "D": {
+              "returning_count": [
+                84711.354,
+                92468.804
+              ],
+              "reported_switcher_count": [
+                7624.021860000001,
+                15381.471860000001
+              ],
+              "apparent_absence_count": [
+                54390.195999999996,
+                62147.64599999999
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                188661.18399999998,
+                204176.08399999997
+              ],
+              "reported_switcher_count": [
+                18866.1184,
+                34381.0184
+              ],
+              "apparent_absence_count": [
+                67904.91600000003,
+                83419.81600000002
+              ]
+            },
+            "D": {
+              "returning_count": [
+                82539.26799999998,
+                98054.16799999998
+              ],
+              "reported_switcher_count": [
+                7428.5341199999975,
+                22943.434119999998
+              ],
+              "apparent_absence_count": [
+                48804.83200000002,
+                64319.73200000002
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "state_code": "AL",
+      "contest_code": "SG",
+      "status": "conditional_universe_assumption_not_validated_dropoff",
+      "survey_source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-AL.json",
+      "survey_source_sha256": "8d7b5d8fe15c2d7d3c49716160dd4f776277a03c2bd21aa05baaeb2b0f8ffcbe",
+      "survey_source_timestamp": "2026-11-04T20:57:00.000Z",
+      "survey_source_reported_respondents": 934,
+      "reported_joint_rows": {
+        "D": {
+          "prior_choice_share_pct": 40,
+          "current_choice_pct_within_prior_choice": {
+            "D": 96,
+            "R": 3
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 56,
+          "current_choice_pct_within_prior_choice": {
+            "D": 8,
+            "R": 92
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 2,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        }
+      },
+      "reported_prior_composition_sum_pct": 100,
+      "turnout_source": {
+        "state_code": "AL",
+        "state": "Alabama",
+        "source_date": null,
+        "source_update_label": "11/04/2026 11:16:06 AM",
+        "source_retrieved_at": "2026-11-04T22:04:30.255635+00:00",
+        "status": "reported",
+        "source_url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
+        "source_snapshot": "20261104T220425Z",
+        "quality": [],
+        "reported_units": 67,
+        "total_units": 67,
+        "reporting_unit": "counties",
+        "ballots": 1693621,
+        "denominator": 3852947,
+        "denominator_basis": "registered_voters_source_definition",
+        "published_pct": 43.96,
+        "validated_pct": 43.957
+      },
+      "official_2024_baseline": {
+        "D": 772412,
+        "R": 1462616,
+        "all_presidential_votes": 2265090
+      },
+      "reference": {
+        "R": {
+          "returning_count": 948427.76,
+          "reported_switcher_count": 75874.2208,
+          "apparent_absence_count": 514188.24,
+          "returning_pct_of_original_coalition": 64.8446181362709,
+          "reported_switchers_pct_of_current_electorate": 4.48,
+          "reported_switchers_pct_of_original_coalition": 5.187569450901671,
+          "apparent_absence_pct_of_original_coalition": 35.1553818637291,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 872553.5392,
+          "signed_unshown_current_choice_count": 0.0
+        },
+        "D": {
+          "returning_count": 677448.4,
+          "reported_switcher_count": 20323.452,
+          "apparent_absence_count": 94963.59999999998,
+          "returning_pct_of_original_coalition": 87.7055768165176,
+          "reported_switchers_pct_of_current_electorate": 1.2,
+          "reported_switchers_pct_of_original_coalition": 2.6311673044955284,
+          "apparent_absence_pct_of_original_coalition": 12.294423183482388,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 650350.464,
+          "signed_unshown_current_choice_count": 6774.484
+        }
+      },
+      "rounding_only_envelopes": {
+        "R": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            939959.655,
+            956895.865
+          ],
+          "reported_switcher_count": [
+            70496.97412500001,
+            81336.148525
+          ],
+          "apparent_absence_count": [
+            505720.135,
+            522656.345
+          ]
+        },
+        "D": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            668980.295,
+            685916.505
+          ],
+          "reported_switcher_count": [
+            16724.507375,
+            24007.077675
+          ],
+          "apparent_absence_count": [
+            86495.495,
+            103431.70499999996
+          ]
+        }
+      },
+      "sensitivity_scenarios": [
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 914555.34,
+              "reported_switcher_count": 73164.42719999999,
+              "apparent_absence_count": 548060.66,
+              "returning_pct_of_original_coalition": 62.52873891711837,
+              "reported_switchers_pct_of_current_electorate": 4.32,
+              "reported_switchers_pct_of_original_coalition": 5.002299113369468,
+              "apparent_absence_pct_of_original_coalition": 37.47126108288163,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 711320.82,
+              "reported_switcher_count": 21339.6246,
+              "apparent_absence_count": 61091.18000000005,
+              "returning_pct_of_original_coalition": 92.0908556573435,
+              "reported_switchers_pct_of_current_electorate": 1.26,
+              "reported_switchers_pct_of_original_coalition": 2.7627256697203046,
+              "apparent_absence_pct_of_original_coalition": 7.909144342656517,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 948427.76,
+              "reported_switcher_count": 75874.2208,
+              "apparent_absence_count": 514188.24,
+              "returning_pct_of_original_coalition": 64.8446181362709,
+              "reported_switchers_pct_of_current_electorate": 4.48,
+              "reported_switchers_pct_of_original_coalition": 5.187569450901671,
+              "apparent_absence_pct_of_original_coalition": 35.1553818637291,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 677448.4,
+              "reported_switcher_count": 20323.452,
+              "apparent_absence_count": 94963.59999999998,
+              "returning_pct_of_original_coalition": 87.7055768165176,
+              "reported_switchers_pct_of_current_electorate": 1.2,
+              "reported_switchers_pct_of_original_coalition": 2.6311673044955284,
+              "apparent_absence_pct_of_original_coalition": 12.294423183482388,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 982300.18,
+              "reported_switcher_count": 78584.0144,
+              "apparent_absence_count": 480315.81999999995,
+              "returning_pct_of_original_coalition": 67.16049735542343,
+              "reported_switchers_pct_of_current_electorate": 4.64,
+              "reported_switchers_pct_of_original_coalition": 5.3728397884338746,
+              "apparent_absence_pct_of_original_coalition": 32.83950264457656,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 643575.98,
+              "reported_switcher_count": 19307.2794,
+              "apparent_absence_count": 128836.02000000002,
+              "returning_pct_of_original_coalition": 83.32029797569173,
+              "reported_switchers_pct_of_current_electorate": 1.14,
+              "reported_switchers_pct_of_original_coalition": 2.4996089392707517,
+              "apparent_absence_pct_of_original_coalition": 16.679702024308273,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 937419.2235,
+              "reported_switcher_count": 74993.53788,
+              "apparent_absence_count": 525196.7765,
+              "returning_pct_of_original_coalition": 64.09195739004632,
+              "reported_switchers_pct_of_current_electorate": 4.32,
+              "reported_switchers_pct_of_original_coalition": 5.127356591203706,
+              "apparent_absence_pct_of_original_coalition": 35.908042609953675,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 729103.8404999999,
+              "reported_switcher_count": 21873.115214999998,
+              "apparent_absence_count": 43308.15950000007,
+              "returning_pct_of_original_coalition": 94.39312704877707,
+              "reported_switchers_pct_of_current_electorate": 1.26,
+              "reported_switchers_pct_of_original_coalition": 2.831793811463312,
+              "apparent_absence_pct_of_original_coalition": 5.606872951222931,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 972138.4539999999,
+              "reported_switcher_count": 77771.07632,
+              "apparent_absence_count": 490477.5460000001,
+              "returning_pct_of_original_coalition": 66.46573358967767,
+              "reported_switchers_pct_of_current_electorate": 4.48,
+              "reported_switchers_pct_of_original_coalition": 5.317258687174213,
+              "apparent_absence_pct_of_original_coalition": 33.53426641032233,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 694384.61,
+              "reported_switcher_count": 20831.5383,
+              "apparent_absence_count": 78027.39000000001,
+              "returning_pct_of_original_coalition": 89.89821623693055,
+              "reported_switchers_pct_of_current_electorate": 1.2,
+              "reported_switchers_pct_of_original_coalition": 2.6969464871079167,
+              "apparent_absence_pct_of_original_coalition": 10.101783763069452,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 1006857.6844999999,
+              "reported_switcher_count": 80548.61475999998,
+              "apparent_absence_count": 455758.31550000014,
+              "returning_pct_of_original_coalition": 68.839509789309,
+              "reported_switchers_pct_of_current_electorate": 4.64,
+              "reported_switchers_pct_of_original_coalition": 5.5071607831447205,
+              "apparent_absence_pct_of_original_coalition": 31.160490210690988,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 659665.3794999999,
+              "reported_switcher_count": 19789.961385,
+              "apparent_absence_count": 112746.62050000008,
+              "returning_pct_of_original_coalition": 85.40330542508401,
+              "reported_switchers_pct_of_current_electorate": 1.14,
+              "reported_switchers_pct_of_original_coalition": 2.5620991627525207,
+              "apparent_absence_pct_of_original_coalition": 14.596694574915988,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 960283.1070000001,
+              "reported_switcher_count": 76822.64856,
+              "apparent_absence_count": 502332.8929999999,
+              "returning_pct_of_original_coalition": 65.65517586297429,
+              "reported_switchers_pct_of_current_electorate": 4.32,
+              "reported_switchers_pct_of_original_coalition": 5.252414069037943,
+              "apparent_absence_pct_of_original_coalition": 34.344824137025704,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 746886.861,
+              "reported_switcher_count": 22406.60583,
+              "apparent_absence_count": 25525.138999999966,
+              "returning_pct_of_original_coalition": 96.69539844021068,
+              "reported_switchers_pct_of_current_electorate": 1.26,
+              "reported_switchers_pct_of_original_coalition": 2.90086195320632,
+              "apparent_absence_pct_of_original_coalition": 3.304601559789331,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 995849.1479999999,
+              "reported_switcher_count": 79667.93183999999,
+              "apparent_absence_count": 466766.8520000001,
+              "returning_pct_of_original_coalition": 68.08684904308444,
+              "reported_switchers_pct_of_current_electorate": 4.48,
+              "reported_switchers_pct_of_original_coalition": 5.446947923446755,
+              "apparent_absence_pct_of_original_coalition": 31.913150956915562,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 711320.82,
+              "reported_switcher_count": 21339.6246,
+              "apparent_absence_count": 61091.18000000005,
+              "returning_pct_of_original_coalition": 92.0908556573435,
+              "reported_switchers_pct_of_current_electorate": 1.2,
+              "reported_switchers_pct_of_original_coalition": 2.7627256697203046,
+              "apparent_absence_pct_of_original_coalition": 7.909144342656517,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 1031415.189,
+              "reported_switcher_count": 82513.21512000001,
+              "apparent_absence_count": 431200.811,
+              "returning_pct_of_original_coalition": 70.51852222319461,
+              "reported_switchers_pct_of_current_electorate": 4.64,
+              "reported_switchers_pct_of_original_coalition": 5.641481777855569,
+              "apparent_absence_pct_of_original_coalition": 29.481477776805395,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 675754.7790000001,
+              "reported_switcher_count": 20272.64337,
+              "apparent_absence_count": 96657.2209999999,
+              "returning_pct_of_original_coalition": 87.48631287447633,
+              "reported_switchers_pct_of_current_electorate": 1.14,
+              "reported_switchers_pct_of_original_coalition": 2.6245893862342897,
+              "apparent_absence_pct_of_original_coalition": 12.513687125523672,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        }
+      ],
+      "response_scope_sensitivity": [
+        {
+          "assumed_unrepresented_ballot_caster_pct": 0,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                948427.76,
+                948427.76
+              ],
+              "reported_switcher_count": [
+                75874.2208,
+                75874.2208
+              ],
+              "apparent_absence_count": [
+                514188.24,
+                514188.24
+              ]
+            },
+            "D": {
+              "returning_count": [
+                677448.4,
+                677448.4
+              ],
+              "reported_switcher_count": [
+                20323.452,
+                20323.452
+              ],
+              "apparent_absence_count": [
+                94963.59999999998,
+                94963.59999999998
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 2.5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                924717.0660000001,
+                967057.5910000001
+              ],
+              "reported_switcher_count": [
+                73977.36528000001,
+                116317.89028000002
+              ],
+              "apparent_absence_count": [
+                495558.40899999987,
+                537898.9339999999
+              ]
+            },
+            "D": {
+              "returning_count": [
+                660512.19,
+                702852.715
+              ],
+              "reported_switcher_count": [
+                19815.3657,
+                62155.8907
+              ],
+              "apparent_absence_count": [
+                69559.28500000006,
+                111899.81000000006
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                901006.372,
+                985687.422
+              ],
+              "reported_switcher_count": [
+                72080.50976,
+                156761.55976
+              ],
+              "apparent_absence_count": [
+                476928.57800000004,
+                561609.628
+              ]
+            },
+            "D": {
+              "returning_count": [
+                643575.98,
+                728257.03
+              ],
+              "reported_switcher_count": [
+                19307.2794,
+                103988.3294
+              ],
+              "apparent_absence_count": [
+                44154.970000000016,
+                128836.02000000002
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "state_code": "NC",
+      "contest_code": "SG",
+      "status": "conditional_universe_assumption_not_validated_dropoff",
+      "survey_source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-NC.json",
+      "survey_source_sha256": "0320d0de4f99874436da7473d38da1478cf1d92556741c7fdb98cefea578faee",
+      "survey_source_timestamp": "2026-11-04T19:54:41.000Z",
+      "survey_source_reported_respondents": 4872,
+      "reported_joint_rows": {
+        "D": {
+          "prior_choice_share_pct": 49,
+          "current_choice_pct_within_prior_choice": {
+            "D": 99,
+            "R": 1
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 43,
+          "current_choice_pct_within_prior_choice": {
+            "D": 10,
+            "R": 87
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2,
+          "current_choice_pct_within_prior_choice": {
+            "D": 79,
+            "R": 11
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 4,
+          "current_choice_pct_within_prior_choice": {
+            "D": 81,
+            "R": 14
+          }
+        }
+      },
+      "reported_prior_composition_sum_pct": 98,
+      "turnout_source": {
+        "state_code": "NC",
+        "state": "North Carolina",
+        "source_date": null,
+        "source_update_label": "November 4, 2026 4:13 pm",
+        "source_retrieved_at": "2026-11-04T22:04:39.486884+00:00",
+        "status": "reported",
+        "source_url": "https://er.ncsbe.gov/enr/20261103/data/county.txt",
+        "source_snapshot": "20261104T220425Z",
+        "quality": [],
+        "ballots": 4223102,
+        "denominator": 7885046,
+        "denominator_basis": "active_and_inactive_registered_voters",
+        "published_pct": 53.56,
+        "validated_pct": 53.558,
+        "reported_units": 2626,
+        "total_units": 2626,
+        "reporting_unit": "precincts"
+      },
+      "official_2024_baseline": {
+        "D": 2715375,
+        "R": 2898423,
+        "all_presidential_votes": 5699141
+      },
+      "reference": {
+        "R": {
+          "returning_count": 1815933.86,
+          "reported_switcher_count": 181593.38600000003,
+          "apparent_absence_count": 1082489.14,
+          "returning_pct_of_original_coalition": 62.652478951484994,
+          "reported_switchers_pct_of_current_electorate": 4.3,
+          "reported_switchers_pct_of_original_coalition": 6.265247895148501,
+          "apparent_absence_pct_of_original_coalition": 37.347521048515,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 1579862.4582000002,
+          "signed_unshown_current_choice_count": 54478.0158
+        },
+        "D": {
+          "returning_count": 2069319.98,
+          "reported_switcher_count": 20693.1998,
+          "apparent_absence_count": 646055.02,
+          "returning_pct_of_original_coalition": 76.20752124476361,
+          "reported_switchers_pct_of_current_electorate": 0.49,
+          "reported_switchers_pct_of_original_coalition": 0.7620752124476361,
+          "apparent_absence_pct_of_original_coalition": 23.792478755236385,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 2048626.7802000002,
+          "signed_unshown_current_choice_count": 0.0
+        }
+      },
+      "rounding_only_envelopes": {
+        "R": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            1794818.35,
+            1837049.37
+          ],
+          "reported_switcher_count": [
+            170507.74325,
+            192890.18385000003
+          ],
+          "apparent_absence_count": [
+            1061373.63,
+            1103604.65
+          ]
+        },
+        "D": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            2048204.47,
+            2090435.49
+          ],
+          "reported_switcher_count": [
+            10241.02235,
+            31356.532349999998
+          ],
+          "apparent_absence_count": [
+            624939.51,
+            667170.53
+          ]
+        }
+      },
+      "sensitivity_scenarios": [
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 1731471.82,
+              "reported_switcher_count": 173147.182,
+              "apparent_absence_count": 1166951.18,
+              "returning_pct_of_original_coalition": 59.73841016304384,
+              "reported_switchers_pct_of_current_electorate": 4.1,
+              "reported_switchers_pct_of_original_coalition": 5.973841016304383,
+              "apparent_absence_pct_of_original_coalition": 40.26158983695616,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 2153782.02,
+              "reported_switcher_count": 21537.820200000002,
+              "apparent_absence_count": 561592.98,
+              "returning_pct_of_original_coalition": 79.31803231597846,
+              "reported_switchers_pct_of_current_electorate": 0.51,
+              "reported_switchers_pct_of_original_coalition": 0.7931803231597846,
+              "apparent_absence_pct_of_original_coalition": 20.681967684021544,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 1815933.86,
+              "reported_switcher_count": 181593.38600000003,
+              "apparent_absence_count": 1082489.14,
+              "returning_pct_of_original_coalition": 62.652478951484994,
+              "reported_switchers_pct_of_current_electorate": 4.3,
+              "reported_switchers_pct_of_original_coalition": 6.265247895148501,
+              "apparent_absence_pct_of_original_coalition": 37.347521048515,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 2069319.98,
+              "reported_switcher_count": 20693.1998,
+              "apparent_absence_count": 646055.02,
+              "returning_pct_of_original_coalition": 76.20752124476361,
+              "reported_switchers_pct_of_current_electorate": 0.49,
+              "reported_switchers_pct_of_original_coalition": 0.7620752124476361,
+              "apparent_absence_pct_of_original_coalition": 23.792478755236385,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 1900395.9,
+              "reported_switcher_count": 190039.59,
+              "apparent_absence_count": 998027.1000000001,
+              "returning_pct_of_original_coalition": 65.56654773992616,
+              "reported_switchers_pct_of_current_electorate": 4.5,
+              "reported_switchers_pct_of_original_coalition": 6.556654773992616,
+              "apparent_absence_pct_of_original_coalition": 34.43345226007384,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 1984857.94,
+              "reported_switcher_count": 19848.5794,
+              "apparent_absence_count": 730517.06,
+              "returning_pct_of_original_coalition": 73.09701017354877,
+              "reported_switchers_pct_of_current_electorate": 0.47,
+              "reported_switchers_pct_of_original_coalition": 0.7309701017354877,
+              "apparent_absence_pct_of_original_coalition": 26.902989826451225,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 1774758.6154999998,
+              "reported_switcher_count": 177475.86154999997,
+              "apparent_absence_count": 1123664.3845000002,
+              "returning_pct_of_original_coalition": 61.23187041711992,
+              "reported_switchers_pct_of_current_electorate": 4.1,
+              "reported_switchers_pct_of_original_coalition": 6.123187041711992,
+              "apparent_absence_pct_of_original_coalition": 38.76812958288008,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 2207626.5705,
+              "reported_switcher_count": 22076.265704999998,
+              "apparent_absence_count": 507748.4295000001,
+              "returning_pct_of_original_coalition": 81.30098312387791,
+              "reported_switchers_pct_of_current_electorate": 0.51,
+              "reported_switchers_pct_of_original_coalition": 0.8130098312387791,
+              "apparent_absence_pct_of_original_coalition": 18.699016876122087,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 1861332.2065,
+              "reported_switcher_count": 186133.22065,
+              "apparent_absence_count": 1037090.7934999999,
+              "returning_pct_of_original_coalition": 64.21879092527213,
+              "reported_switchers_pct_of_current_electorate": 4.3,
+              "reported_switchers_pct_of_original_coalition": 6.421879092527213,
+              "apparent_absence_pct_of_original_coalition": 35.781209074727876,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 2121052.9795,
+              "reported_switcher_count": 21210.529795,
+              "apparent_absence_count": 594322.0205000001,
+              "returning_pct_of_original_coalition": 78.11270927588271,
+              "reported_switchers_pct_of_current_electorate": 0.49,
+              "reported_switchers_pct_of_original_coalition": 0.781127092758827,
+              "apparent_absence_pct_of_original_coalition": 21.8872907241173,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 1947905.7975,
+              "reported_switcher_count": 194790.57975,
+              "apparent_absence_count": 950517.2024999999,
+              "returning_pct_of_original_coalition": 67.20571143342431,
+              "reported_switchers_pct_of_current_electorate": 4.5,
+              "reported_switchers_pct_of_original_coalition": 6.720571143342432,
+              "apparent_absence_pct_of_original_coalition": 32.79428856657568,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 2034479.3885,
+              "reported_switcher_count": 20344.793885,
+              "apparent_absence_count": 680895.6115000001,
+              "returning_pct_of_original_coalition": 74.92443542788749,
+              "reported_switchers_pct_of_current_electorate": 0.47,
+              "reported_switchers_pct_of_original_coalition": 0.7492443542788749,
+              "apparent_absence_pct_of_original_coalition": 25.07556457211251,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 1818045.4110000003,
+              "reported_switcher_count": 181804.54110000003,
+              "apparent_absence_count": 1080377.5889999997,
+              "returning_pct_of_original_coalition": 62.72533067119603,
+              "reported_switchers_pct_of_current_electorate": 4.1,
+              "reported_switchers_pct_of_original_coalition": 6.272533067119603,
+              "apparent_absence_pct_of_original_coalition": 37.27466932880397,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 2261471.1210000003,
+              "reported_switcher_count": 22614.71121,
+              "apparent_absence_count": 453903.8789999997,
+              "returning_pct_of_original_coalition": 83.28393393177738,
+              "reported_switchers_pct_of_current_electorate": 0.51,
+              "reported_switchers_pct_of_original_coalition": 0.8328393393177739,
+              "apparent_absence_pct_of_original_coalition": 16.716066068222613,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 1906730.553,
+              "reported_switcher_count": 190673.0553,
+              "apparent_absence_count": 991692.4469999999,
+              "returning_pct_of_original_coalition": 65.78510289905925,
+              "reported_switchers_pct_of_current_electorate": 4.3,
+              "reported_switchers_pct_of_original_coalition": 6.578510289905925,
+              "apparent_absence_pct_of_original_coalition": 34.214897100940746,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 2172785.9790000003,
+              "reported_switcher_count": 21727.859790000002,
+              "apparent_absence_count": 542589.0209999997,
+              "returning_pct_of_original_coalition": 80.0178973070018,
+              "reported_switchers_pct_of_current_electorate": 0.49,
+              "reported_switchers_pct_of_original_coalition": 0.8001789730700181,
+              "apparent_absence_pct_of_original_coalition": 19.982102692998193,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 1995415.6950000003,
+              "reported_switcher_count": 199541.56950000004,
+              "apparent_absence_count": 903007.3049999997,
+              "returning_pct_of_original_coalition": 68.84487512692247,
+              "reported_switchers_pct_of_current_electorate": 4.5,
+              "reported_switchers_pct_of_original_coalition": 6.884487512692248,
+              "apparent_absence_pct_of_original_coalition": 31.155124873077522,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 2084100.8370000003,
+              "reported_switcher_count": 20841.008370000003,
+              "apparent_absence_count": 631274.1629999997,
+              "returning_pct_of_original_coalition": 76.75186068222622,
+              "reported_switchers_pct_of_current_electorate": 0.47,
+              "reported_switchers_pct_of_original_coalition": 0.7675186068222623,
+              "apparent_absence_pct_of_original_coalition": 23.248139317773777,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        }
+      ],
+      "response_scope_sensitivity": [
+        {
+          "assumed_unrepresented_ballot_caster_pct": 0,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                1815933.86,
+                1815933.86
+              ],
+              "reported_switcher_count": [
+                181593.38600000003,
+                181593.38600000003
+              ],
+              "apparent_absence_count": [
+                1082489.14,
+                1082489.14
+              ]
+            },
+            "D": {
+              "returning_count": [
+                2069319.98,
+                2069319.98
+              ],
+              "reported_switcher_count": [
+                20693.1998,
+                20693.1998
+              ],
+              "apparent_absence_count": [
+                646055.02,
+                646055.02
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 2.5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                1770535.5135,
+                1876113.0635
+              ],
+              "reported_switcher_count": [
+                177053.55134999997,
+                282631.10134999995
+              ],
+              "apparent_absence_count": [
+                1022309.9365000001,
+                1127887.4865
+              ]
+            },
+            "D": {
+              "returning_count": [
+                2017586.9805,
+                2123164.5305
+              ],
+              "reported_switcher_count": [
+                20175.869805000002,
+                125753.41980500001
+              ],
+              "apparent_absence_count": [
+                592210.4694999999,
+                697788.0194999999
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                1725137.167,
+                1936292.267
+              ],
+              "reported_switcher_count": [
+                172513.7167,
+                383668.81669999997
+              ],
+              "apparent_absence_count": [
+                962130.7330000001,
+                1173285.833
+              ]
+            },
+            "D": {
+              "returning_count": [
+                1965853.981,
+                2177009.081
+              ],
+              "reported_switcher_count": [
+                19658.53981,
+                230813.63981
+              ],
+              "apparent_absence_count": [
+                538365.9190000001,
+                749521.0190000001
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "state_code": "NM",
+      "contest_code": "SG",
+      "status": "conditional_universe_assumption_not_validated_dropoff",
+      "survey_source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-NM.json",
+      "survey_source_sha256": "61a1141969817930bad678e83d2cb393e67b422e36efd909805da3ee1ff95a6f",
+      "survey_source_timestamp": "2026-11-04T21:04:49.000Z",
+      "survey_source_reported_respondents": 929,
+      "reported_joint_rows": {
+        "D": {
+          "prior_choice_share_pct": 53,
+          "current_choice_pct_within_prior_choice": {
+            "D": 99,
+            "R": 1
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 36,
+          "current_choice_pct_within_prior_choice": {
+            "D": 8,
+            "R": 92
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 2,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 8,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        }
+      },
+      "reported_prior_composition_sum_pct": 99,
+      "turnout_source": {
+        "state_code": "NM",
+        "state": "New Mexico",
+        "source_date": null,
+        "source_update_label": "11/4/2026 4:56 AM MT",
+        "source_retrieved_at": "2026-11-04T22:04:38.372233+00:00",
+        "status": "reported",
+        "source_url": "https://electionresults.sos.nm.gov/VoterTurnoutDetails.aspx?map=PREC",
+        "source_snapshot": "20261104T220425Z",
+        "quality": [],
+        "reported_units": 2204,
+        "total_units": 2204,
+        "reporting_unit": "precincts",
+        "ballots": 726684,
+        "denominator": 1463716,
+        "denominator_basis": "eligible_voters_source_definition",
+        "published_pct": 49.65,
+        "validated_pct": 49.647
+      },
+      "official_2024_baseline": {
+        "D": 478802,
+        "R": 423391,
+        "all_presidential_votes": 923403
+      },
+      "reference": {
+        "R": {
+          "returning_count": 261606.24,
+          "reported_switcher_count": 20928.4992,
+          "apparent_absence_count": 161784.76,
+          "returning_pct_of_original_coalition": 61.78833277041789,
+          "reported_switchers_pct_of_current_electorate": 2.88,
+          "reported_switchers_pct_of_original_coalition": 4.943066621633431,
+          "apparent_absence_pct_of_original_coalition": 38.21166722958211,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 240677.74079999997,
+          "signed_unshown_current_choice_count": 0.0
+        },
+        "D": {
+          "returning_count": 385142.52,
+          "reported_switcher_count": 3851.4252,
+          "apparent_absence_count": 93659.47999999998,
+          "returning_pct_of_original_coalition": 80.43878680540182,
+          "reported_switchers_pct_of_current_electorate": 0.53,
+          "reported_switchers_pct_of_original_coalition": 0.8043878680540182,
+          "apparent_absence_pct_of_original_coalition": 19.56121319459818,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 381291.0948,
+          "signed_unshown_current_choice_count": 0.0
+        }
+      },
+      "rounding_only_envelopes": {
+        "R": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            257972.82,
+            265239.66
+          ],
+          "reported_switcher_count": [
+            19347.9615,
+            22545.3711
+          ],
+          "apparent_absence_count": [
+            158151.34000000003,
+            165418.18
+          ]
+        },
+        "D": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            381509.1,
+            388775.94
+          ],
+          "reported_switcher_count": [
+            1907.5455,
+            5831.6391
+          ],
+          "apparent_absence_count": [
+            90026.06,
+            97292.90000000002
+          ]
+        }
+      },
+      "sensitivity_scenarios": [
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 247072.56,
+              "reported_switcher_count": 19765.804799999998,
+              "apparent_absence_count": 176318.44,
+              "returning_pct_of_original_coalition": 58.355647616505784,
+              "reported_switchers_pct_of_current_electorate": 2.72,
+              "reported_switchers_pct_of_original_coalition": 4.668451809320462,
+              "apparent_absence_pct_of_original_coalition": 41.644352383494216,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 399676.2,
+              "reported_switcher_count": 3996.762,
+              "apparent_absence_count": 79125.79999999999,
+              "returning_pct_of_original_coalition": 83.47421272258678,
+              "reported_switchers_pct_of_current_electorate": 0.55,
+              "reported_switchers_pct_of_original_coalition": 0.8347421272258679,
+              "apparent_absence_pct_of_original_coalition": 16.525787277413208,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 261606.24,
+              "reported_switcher_count": 20928.4992,
+              "apparent_absence_count": 161784.76,
+              "returning_pct_of_original_coalition": 61.78833277041789,
+              "reported_switchers_pct_of_current_electorate": 2.88,
+              "reported_switchers_pct_of_original_coalition": 4.943066621633431,
+              "apparent_absence_pct_of_original_coalition": 38.21166722958211,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 385142.52,
+              "reported_switcher_count": 3851.4252,
+              "apparent_absence_count": 93659.47999999998,
+              "returning_pct_of_original_coalition": 80.43878680540182,
+              "reported_switchers_pct_of_current_electorate": 0.53,
+              "reported_switchers_pct_of_original_coalition": 0.8043878680540182,
+              "apparent_absence_pct_of_original_coalition": 19.56121319459818,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 276139.92,
+              "reported_switcher_count": 22091.1936,
+              "apparent_absence_count": 147251.08000000002,
+              "returning_pct_of_original_coalition": 65.22101792433,
+              "reported_switchers_pct_of_current_electorate": 3.04,
+              "reported_switchers_pct_of_original_coalition": 5.2176814339463995,
+              "apparent_absence_pct_of_original_coalition": 34.77898207567001,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 370608.84,
+              "reported_switcher_count": 3706.0884,
+              "apparent_absence_count": 108193.15999999997,
+              "returning_pct_of_original_coalition": 77.40336088821684,
+              "reported_switchers_pct_of_current_electorate": 0.51,
+              "reported_switchers_pct_of_original_coalition": 0.7740336088821684,
+              "apparent_absence_pct_of_original_coalition": 22.596639111783155,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 253249.37399999998,
+              "reported_switcher_count": 20259.94992,
+              "apparent_absence_count": 170141.62600000002,
+              "returning_pct_of_original_coalition": 59.81453880691842,
+              "reported_switchers_pct_of_current_electorate": 2.72,
+              "reported_switchers_pct_of_original_coalition": 4.785163104553474,
+              "apparent_absence_pct_of_original_coalition": 40.18546119308158,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 409668.105,
+              "reported_switcher_count": 4096.68105,
+              "apparent_absence_count": 69133.89500000002,
+              "returning_pct_of_original_coalition": 85.56106804065146,
+              "reported_switchers_pct_of_current_electorate": 0.55,
+              "reported_switchers_pct_of_original_coalition": 0.8556106804065147,
+              "apparent_absence_pct_of_original_coalition": 14.438931959348544,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 268146.39599999995,
+              "reported_switcher_count": 21451.711679999997,
+              "apparent_absence_count": 155244.60400000005,
+              "returning_pct_of_original_coalition": 63.33304108967832,
+              "reported_switchers_pct_of_current_electorate": 2.88,
+              "reported_switchers_pct_of_original_coalition": 5.066643287174266,
+              "apparent_absence_pct_of_original_coalition": 36.66695891032168,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 394771.083,
+              "reported_switcher_count": 3947.71083,
+              "apparent_absence_count": 84030.91700000002,
+              "returning_pct_of_original_coalition": 82.44975647553686,
+              "reported_switchers_pct_of_current_electorate": 0.53,
+              "reported_switchers_pct_of_original_coalition": 0.8244975647553686,
+              "apparent_absence_pct_of_original_coalition": 17.55024352446314,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 283043.418,
+              "reported_switcher_count": 22643.47344,
+              "apparent_absence_count": 140347.582,
+              "returning_pct_of_original_coalition": 66.85154337243824,
+              "reported_switchers_pct_of_current_electorate": 3.04,
+              "reported_switchers_pct_of_original_coalition": 5.34812346979506,
+              "apparent_absence_pct_of_original_coalition": 33.14845662756176,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 379874.061,
+              "reported_switcher_count": 3798.74061,
+              "apparent_absence_count": 98927.93900000001,
+              "returning_pct_of_original_coalition": 79.33844491042227,
+              "reported_switchers_pct_of_current_electorate": 0.51,
+              "reported_switchers_pct_of_original_coalition": 0.7933844491042226,
+              "apparent_absence_pct_of_original_coalition": 20.661555089577742,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 259426.188,
+              "reported_switcher_count": 20754.09504,
+              "apparent_absence_count": 163964.812,
+              "returning_pct_of_original_coalition": 61.27342999733107,
+              "reported_switchers_pct_of_current_electorate": 2.72,
+              "reported_switchers_pct_of_original_coalition": 4.901874399786486,
+              "apparent_absence_pct_of_original_coalition": 38.72657000266893,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 419660.01000000007,
+              "reported_switcher_count": 4196.600100000001,
+              "apparent_absence_count": 59141.98999999993,
+              "returning_pct_of_original_coalition": 87.64792335871614,
+              "reported_switchers_pct_of_current_electorate": 0.55,
+              "reported_switchers_pct_of_original_coalition": 0.8764792335871614,
+              "apparent_absence_pct_of_original_coalition": 12.352076641283857,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 274686.552,
+              "reported_switcher_count": 21974.924160000002,
+              "apparent_absence_count": 148704.44799999997,
+              "returning_pct_of_original_coalition": 64.87774940893878,
+              "reported_switchers_pct_of_current_electorate": 2.88,
+              "reported_switchers_pct_of_original_coalition": 5.190219952715103,
+              "apparent_absence_pct_of_original_coalition": 35.12225059106121,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 404399.646,
+              "reported_switcher_count": 4043.9964600000003,
+              "apparent_absence_count": 74402.35399999999,
+              "returning_pct_of_original_coalition": 84.46072614567191,
+              "reported_switchers_pct_of_current_electorate": 0.53,
+              "reported_switchers_pct_of_original_coalition": 0.844607261456719,
+              "apparent_absence_pct_of_original_coalition": 15.539273854328092,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 289946.916,
+              "reported_switcher_count": 23195.75328,
+              "apparent_absence_count": 133444.08399999997,
+              "returning_pct_of_original_coalition": 68.4820688205465,
+              "reported_switchers_pct_of_current_electorate": 3.04,
+              "reported_switchers_pct_of_original_coalition": 5.4785655056437195,
+              "apparent_absence_pct_of_original_coalition": 31.517931179453498,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 389139.282,
+              "reported_switcher_count": 3891.39282,
+              "apparent_absence_count": 89662.718,
+              "returning_pct_of_original_coalition": 81.27352893262768,
+              "reported_switchers_pct_of_current_electorate": 0.51,
+              "reported_switchers_pct_of_original_coalition": 0.8127352893262768,
+              "apparent_absence_pct_of_original_coalition": 18.726471067372316,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        }
+      ],
+      "response_scope_sensitivity": [
+        {
+          "assumed_unrepresented_ballot_caster_pct": 0,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                261606.24,
+                261606.24
+              ],
+              "reported_switcher_count": [
+                20928.4992,
+                20928.4992
+              ],
+              "apparent_absence_count": [
+                161784.76,
+                161784.76
+              ]
+            },
+            "D": {
+              "returning_count": [
+                385142.52,
+                385142.52
+              ],
+              "reported_switcher_count": [
+                3851.4252,
+                3851.4252
+              ],
+              "apparent_absence_count": [
+                93659.47999999998,
+                93659.47999999998
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 2.5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                255066.08400000003,
+                273233.184
+              ],
+              "reported_switcher_count": [
+                20405.286720000004,
+                38572.38672
+              ],
+              "apparent_absence_count": [
+                150157.81599999996,
+                168324.91599999997
+              ]
+            },
+            "D": {
+              "returning_count": [
+                375513.95700000005,
+                393681.05700000003
+              ],
+              "reported_switcher_count": [
+                3755.1395700000007,
+                21922.239569999998
+              ],
+              "apparent_absence_count": [
+                85120.94299999994,
+                103288.04299999995
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                248525.928,
+                284860.128
+              ],
+              "reported_switcher_count": [
+                19882.07424,
+                56216.27424
+              ],
+              "apparent_absence_count": [
+                138530.87199999997,
+                174865.072
+              ]
+            },
+            "D": {
+              "returning_count": [
+                365885.3940000001,
+                402219.5940000001
+              ],
+              "reported_switcher_count": [
+                3658.853940000001,
+                39993.05394
+              ],
+              "apparent_absence_count": [
+                76582.40599999992,
+                112916.60599999991
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "state_code": "OR",
+      "contest_code": "SG",
+      "status": "conditional_universe_assumption_not_validated_dropoff",
+      "survey_source_url": "https://politics.api.cnn.io/results/exit-poll/2026-SG-OR.json",
+      "survey_source_sha256": "3231d355d5b09e7facf5b8565b84c9ed22dc7e5c45c3c5fc0b00b94e33fd11fd",
+      "survey_source_timestamp": "2026-11-04T20:20:50.000Z",
+      "survey_source_reported_respondents": 980,
+      "reported_joint_rows": {
+        "D": {
+          "prior_choice_share_pct": 54,
+          "current_choice_pct_within_prior_choice": {
+            "D": 98,
+            "R": 1
+          }
+        },
+        "R": {
+          "prior_choice_share_pct": 39,
+          "current_choice_pct_within_prior_choice": {
+            "D": 4,
+            "R": 94
+          }
+        },
+        "O": {
+          "prior_choice_share_pct": 4,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        },
+        "N": {
+          "prior_choice_share_pct": 4,
+          "current_choice_pct_within_prior_choice": {
+            "D": null,
+            "R": null
+          }
+        }
+      },
+      "reported_prior_composition_sum_pct": 101,
+      "turnout_source": {
+        "state_code": "OR",
+        "state": "Oregon",
+        "source_date": null,
+        "source_update_label": "11/4/2026 | 2:00 PM PT",
+        "source_retrieved_at": "2026-11-04T22:04:36.025726+00:00",
+        "status": "reported",
+        "source_url": "https://results.oregonvotes.gov/?ID=39",
+        "source_snapshot": "20261104T220425Z",
+        "quality": [],
+        "reported_units": null,
+        "total_units": null,
+        "reporting_unit": null,
+        "ballots": 1551077,
+        "denominator": 3109089,
+        "denominator_basis": "active_registered_voters",
+        "published_pct": 49.89,
+        "validated_pct": 49.888
+      },
+      "official_2024_baseline": {
+        "D": 1240600,
+        "R": 919480,
+        "all_presidential_votes": 2244493
+      },
+      "reference": {
+        "R": {
+          "returning_count": 604920.03,
+          "reported_switcher_count": 24196.8012,
+          "apparent_absence_count": 314559.97,
+          "returning_pct_of_original_coalition": 65.7893624657415,
+          "reported_switchers_pct_of_current_electorate": 1.56,
+          "reported_switchers_pct_of_original_coalition": 2.6315744986296603,
+          "apparent_absence_pct_of_original_coalition": 34.21063753425849,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 568624.8282,
+          "signed_unshown_current_choice_count": 12098.4006
+        },
+        "D": {
+          "returning_count": 837581.58,
+          "reported_switcher_count": 8375.8158,
+          "apparent_absence_count": 403018.42000000004,
+          "returning_pct_of_original_coalition": 67.51423343543446,
+          "reported_switchers_pct_of_current_electorate": 0.54,
+          "reported_switchers_pct_of_original_coalition": 0.6751423343543448,
+          "apparent_absence_pct_of_original_coalition": 32.48576656456554,
+          "infeasible_as_closed_original_coalition": false,
+          "reported_same_party_count": 820829.9483999999,
+          "signed_unshown_current_choice_count": 8375.8158
+        }
+      },
+      "rounding_only_envelopes": {
+        "R": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            597164.645,
+            612675.415
+          ],
+          "reported_switcher_count": [
+            20900.762575,
+            27570.393675000003
+          ],
+          "apparent_absence_count": [
+            306804.58499999996,
+            322315.355
+          ]
+        },
+        "D": {
+          "status": "marginal_whole_percentage_rounding_only_not_confidence_interval",
+          "returning_count": [
+            829826.195,
+            845336.965
+          ],
+          "reported_switcher_count": [
+            4149.130975,
+            12680.054475
+          ],
+          "apparent_absence_count": [
+            395263.03500000003,
+            410773.80500000005
+          ]
+        }
+      },
+      "sensitivity_scenarios": [
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 573898.49,
+              "reported_switcher_count": 22955.939599999998,
+              "apparent_absence_count": 345581.51,
+              "returning_pct_of_original_coalition": 62.41554900595989,
+              "reported_switchers_pct_of_current_electorate": 1.48,
+              "reported_switchers_pct_of_original_coalition": 2.4966219602383957,
+              "apparent_absence_pct_of_original_coalition": 37.58445099404011,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 868603.12,
+              "reported_switcher_count": 8686.0312,
+              "apparent_absence_count": 371996.88,
+              "returning_pct_of_original_coalition": 70.01476059970982,
+              "reported_switchers_pct_of_current_electorate": 0.56,
+              "reported_switchers_pct_of_original_coalition": 0.7001476059970981,
+              "apparent_absence_pct_of_original_coalition": 29.985239400290183,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 604920.03,
+              "reported_switcher_count": 24196.8012,
+              "apparent_absence_count": 314559.97,
+              "returning_pct_of_original_coalition": 65.7893624657415,
+              "reported_switchers_pct_of_current_electorate": 1.56,
+              "reported_switchers_pct_of_original_coalition": 2.6315744986296603,
+              "apparent_absence_pct_of_original_coalition": 34.21063753425849,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 837581.58,
+              "reported_switcher_count": 8375.8158,
+              "apparent_absence_count": 403018.42000000004,
+              "returning_pct_of_original_coalition": 67.51423343543446,
+              "reported_switchers_pct_of_current_electorate": 0.54,
+              "reported_switchers_pct_of_original_coalition": 0.6751423343543448,
+              "apparent_absence_pct_of_original_coalition": 32.48576656456554,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 635941.57,
+              "reported_switcher_count": 25437.6628,
+              "apparent_absence_count": 283538.43000000005,
+              "returning_pct_of_original_coalition": 69.16317592552312,
+              "reported_switchers_pct_of_current_electorate": 1.64,
+              "reported_switchers_pct_of_original_coalition": 2.7665270370209245,
+              "apparent_absence_pct_of_original_coalition": 30.836824074476883,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 806560.04,
+              "reported_switcher_count": 8065.6004,
+              "apparent_absence_count": 434039.95999999996,
+              "returning_pct_of_original_coalition": 65.01370627115912,
+              "reported_switchers_pct_of_current_electorate": 0.52,
+              "reported_switchers_pct_of_original_coalition": 0.6501370627115912,
+              "apparent_absence_pct_of_original_coalition": 34.986293728840884,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 588245.95225,
+              "reported_switcher_count": 23529.838089999997,
+              "apparent_absence_count": 331234.04775,
+              "returning_pct_of_original_coalition": 63.97593773110888,
+              "reported_switchers_pct_of_current_electorate": 1.48,
+              "reported_switchers_pct_of_original_coalition": 2.5590375092443556,
+              "apparent_absence_pct_of_original_coalition": 36.024062268891115,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 890318.1979999999,
+              "reported_switcher_count": 8903.18198,
+              "apparent_absence_count": 350281.80200000014,
+              "returning_pct_of_original_coalition": 71.76512961470254,
+              "reported_switchers_pct_of_current_electorate": 0.56,
+              "reported_switchers_pct_of_original_coalition": 0.7176512961470256,
+              "apparent_absence_pct_of_original_coalition": 28.23487038529745,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 620043.0307499999,
+              "reported_switcher_count": 24801.721229999996,
+              "apparent_absence_count": 299436.9692500001,
+              "returning_pct_of_original_coalition": 67.43409652738504,
+              "reported_switchers_pct_of_current_electorate": 1.56,
+              "reported_switchers_pct_of_original_coalition": 2.6973638610954014,
+              "apparent_absence_pct_of_original_coalition": 32.56590347261496,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 858521.1194999999,
+              "reported_switcher_count": 8585.211195,
+              "apparent_absence_count": 382078.8805000001,
+              "returning_pct_of_original_coalition": 69.20208927132032,
+              "reported_switchers_pct_of_current_electorate": 0.54,
+              "reported_switchers_pct_of_original_coalition": 0.6920208927132033,
+              "apparent_absence_pct_of_original_coalition": 30.797910728679682,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.025,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 651840.1092499999,
+              "reported_switcher_count": 26073.604369999994,
+              "apparent_absence_count": 267639.89075000014,
+              "returning_pct_of_original_coalition": 70.89225532366119,
+              "reported_switchers_pct_of_current_electorate": 1.64,
+              "reported_switchers_pct_of_original_coalition": 2.835690212946447,
+              "apparent_absence_pct_of_original_coalition": 29.107744676338815,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 826724.041,
+              "reported_switcher_count": 8267.24041,
+              "apparent_absence_count": 413875.95900000003,
+              "returning_pct_of_original_coalition": 66.63904892793809,
+              "reported_switchers_pct_of_current_electorate": 0.52,
+              "reported_switchers_pct_of_original_coalition": 0.666390489279381,
+              "apparent_absence_pct_of_original_coalition": 33.36095107206191,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": -2,
+          "coalitions": {
+            "R": {
+              "returning_count": 602593.4145000001,
+              "reported_switcher_count": 24103.736580000004,
+              "apparent_absence_count": 316886.5854999999,
+              "returning_pct_of_original_coalition": 65.5363264562579,
+              "reported_switchers_pct_of_current_electorate": 1.48,
+              "reported_switchers_pct_of_original_coalition": 2.6214530582503155,
+              "apparent_absence_pct_of_original_coalition": 34.46367354374211,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 912033.2760000001,
+              "reported_switcher_count": 9120.332760000001,
+              "apparent_absence_count": 328566.72399999993,
+              "returning_pct_of_original_coalition": 73.51549862969532,
+              "reported_switchers_pct_of_current_electorate": 0.56,
+              "reported_switchers_pct_of_original_coalition": 0.7351549862969532,
+              "apparent_absence_pct_of_original_coalition": 26.484501370304685,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 0,
+          "coalitions": {
+            "R": {
+              "returning_count": 635166.0315,
+              "reported_switcher_count": 25406.64126,
+              "apparent_absence_count": 284313.96849999996,
+              "returning_pct_of_original_coalition": 69.07883058902858,
+              "reported_switchers_pct_of_current_electorate": 1.56,
+              "reported_switchers_pct_of_original_coalition": 2.7631532235611433,
+              "apparent_absence_pct_of_original_coalition": 30.921169410971412,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 879460.6590000001,
+              "reported_switcher_count": 8794.606590000001,
+              "apparent_absence_count": 361139.3409999999,
+              "returning_pct_of_original_coalition": 70.8899451072062,
+              "reported_switchers_pct_of_current_electorate": 0.54,
+              "reported_switchers_pct_of_original_coalition": 0.708899451072062,
+              "apparent_absence_pct_of_original_coalition": 29.110054892793798,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        },
+        {
+          "current_ballot_count_scale": 1.05,
+          "harris_to_trump_composition_transfer_pp": 2,
+          "coalitions": {
+            "R": {
+              "returning_count": 667738.6485,
+              "reported_switcher_count": 26709.54594,
+              "apparent_absence_count": 251741.3515,
+              "returning_pct_of_original_coalition": 72.62133472179929,
+              "reported_switchers_pct_of_current_electorate": 1.64,
+              "reported_switchers_pct_of_original_coalition": 2.904853388871971,
+              "apparent_absence_pct_of_original_coalition": 27.37866527820072,
+              "infeasible_as_closed_original_coalition": false
+            },
+            "D": {
+              "returning_count": 846888.042,
+              "reported_switcher_count": 8468.88042,
+              "apparent_absence_count": 393711.958,
+              "returning_pct_of_original_coalition": 68.26439158471707,
+              "reported_switchers_pct_of_current_electorate": 0.52,
+              "reported_switchers_pct_of_original_coalition": 0.6826439158471707,
+              "apparent_absence_pct_of_original_coalition": 31.735608415282925,
+              "infeasible_as_closed_original_coalition": false
+            }
+          }
+        }
+      ],
+      "response_scope_sensitivity": [
+        {
+          "assumed_unrepresented_ballot_caster_pct": 0,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                604920.03,
+                604920.03
+              ],
+              "reported_switcher_count": [
+                24196.8012,
+                24196.8012
+              ],
+              "apparent_absence_count": [
+                314559.97,
+                314559.97
+              ]
+            },
+            "D": {
+              "returning_count": [
+                837581.58,
+                837581.58
+              ],
+              "reported_switcher_count": [
+                8375.8158,
+                8375.8158
+              ],
+              "apparent_absence_count": [
+                403018.42000000004,
+                403018.42000000004
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 2.5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                589797.02925,
+                628573.9542500001
+              ],
+              "reported_switcher_count": [
+                23591.88117,
+                62368.80617
+              ],
+              "apparent_absence_count": [
+                290906.04575,
+                329682.97075
+              ]
+            },
+            "D": {
+              "returning_count": [
+                816642.0405,
+                855418.9655
+              ],
+              "reported_switcher_count": [
+                8166.420405,
+                46943.345405
+              ],
+              "apparent_absence_count": [
+                385181.0345,
+                423957.9595
+              ]
+            }
+          }
+        },
+        {
+          "assumed_unrepresented_ballot_caster_pct": 5,
+          "marginal_coalition_envelopes": {
+            "R": {
+              "returning_count": [
+                574674.0284999999,
+                652227.8784999999
+              ],
+              "reported_switcher_count": [
+                22986.961139999996,
+                100540.81114
+              ],
+              "apparent_absence_count": [
+                267252.1215000001,
+                344805.9715000001
+              ]
+            },
+            "D": {
+              "returning_count": [
+                795702.5009999999,
+                873256.3509999999
+              ],
+              "reported_switcher_count": [
+                7957.025009999999,
+                85510.87501
+              ],
+              "apparent_absence_count": [
+                367343.6490000001,
+                444897.49900000007
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "jurisdictions": [
+    {
+      "state_code": "AL",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": true,
+      "conditional_contests": [
+        "GG",
+        "SG"
+      ]
+    },
+    {
+      "state_code": "AK",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "AZ",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "AR",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "CA",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "CO",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "CT",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "DE",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "FL",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "GA",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "HI",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "ID",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "IL",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "IN",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "IA",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "KS",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "KY",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "LA",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "ME",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "MD",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "MA",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "MI",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "MN",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "MS",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "MO",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "MT",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "NE",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": true,
+      "conditional_contests": [
+        "GG"
+      ]
+    },
+    {
+      "state_code": "NV",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "NH",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "NJ",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "NM",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": true,
+      "conditional_contests": [
+        "GG",
+        "SG"
+      ]
+    },
+    {
+      "state_code": "NY",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "NC",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": true,
+      "conditional_contests": [
+        "SG"
+      ]
+    },
+    {
+      "state_code": "ND",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": true,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "OH",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "OK",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "OR",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": true,
+      "conditional_contests": [
+        "GG",
+        "SG"
+      ]
+    },
+    {
+      "state_code": "PA",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "RI",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "SC",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "SD",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": true,
+      "conditional_contests": [
+        "GG"
+      ]
+    },
+    {
+      "state_code": "TN",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "TX",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "UT",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "VT",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "VA",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "WA",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "WV",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "WI",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "WY",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    },
+    {
+      "state_code": "DC",
+      "has_official_2024_baseline": true,
+      "has_existing_full_election_reported_ballots": false,
+      "conditional_contests": []
+    }
+  ],
+  "assumptions_and_limits": [
+    "Reference assumes published prior-choice composition represents all 2026 state ballot-casters. Exact contest-specific response universes remain unverified.",
+    "Published current-choice conditional responses include recall and retained pre-election choices, not validated individual ballots.",
+    "Reported ballot totals are provisional snapshots, not certified final turnout.",
+    "Apparent absence includes mortality, migration, recall error and incomplete reporting, not only staying home.",
+    "Sensitivity transfers 2 composition points between Harris and Trump, preserving their sum; ballot scales of 1, 1.025 and 1.05 are assumptions, not estimated missing ballots.",
+    "Response-scope sensitivity assumes 0, 2.5 or 5 percent of ballot-casters are unrepresented by the table. Their prior/current choices are unconstrained; coalition endpoints are marginal and cannot be jointly added.",
+    "Unshown current-choice residuals are signed rounding diagnostics, not identified other-candidate votes or contest abstentions.",
+    "Rounding envelopes allow half a percentage point in each whole-point cell, marginally; they exclude sampling and other errors and are not confidence intervals.",
+    "Scenario ranges are not confidence intervals and do not exhaust sampling, recall or population uncertainty.",
+    "Different offices share respondents and ballots; never sum their counts.",
+    "A negative absence residual is an incompatibility diagnostic, never clamped to zero.",
+    "No subgroup, county or precinct allocation; no share-of-overall-swing estimate."
+  ],
+  "inputs": [
+    {
+      "role": "official_2024_workbook",
+      "file": "official-2024.xlsx",
+      "bytes": 21376,
+      "sha256": "68acdee2924d771b92a05cd950dec850b462c633c05563207ac7e206116e7366"
+    },
+    {
+      "role": "existing_participation_snapshot",
+      "file": "participation-input.json",
+      "bytes": 8675,
+      "sha256": "607e1a2d903ec623dfd8eaf29d4494801ca8a70cbd9f668590ee29d92d675433"
+    },
+    {
+      "role": "reviewed_joint_surveys",
+      "file": "joint-table-review.json",
+      "bytes": 1169800,
+      "sha256": "4b7325d992295710ce99a853d20002db18db5e4f99d1ea2f14112329397a6b28"
+    }
+  ],
+  "official_2024_source_url": "https://www.fec.gov/documents/5645/2024presgeresults.xlsx",
+  "survey_methods_source_url": "https://ssrs.com/wp-content/uploads/The-Voter-Poll-by-SSRS-Methodology-Statement_Final.pdf",
+  "survey_universe_review": "SSRS methods pages 6-7 target the estimated 2026 electorate in each state across voting modes. The public table's exact contest-specific response selection is not established."
+}

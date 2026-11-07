@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from 'node:fs';
+import ParticipationCoalitionScenarios from './ParticipationCoalitionScenarios.astro';
 const base = '/participation-survey/20261107-02/';
 type JointRow = { prior_choice_share_pct: number | null;
 	current_choice_pct_within_prior_choice: Record<string, number | null> | null };
@@ -60,6 +61,7 @@ const mass = (row: Table, key: string) => {
 	<p>Some unrecontacted respondents retain pre-election choices. This is not a validated record of individual
 		ballots or causal persuasion. CNN, NBC and MS NOW use the same SSRS study, not independent samples.
 		<strong>Population drop-off and design-aware subgroup confidence intervals remain unavailable.</strong></p>
+	<ParticipationCoalitionScenarios names={names} />
 	{states.map(code => {
 		const tables = review.tables.filter(row => row.state_code === code);
 		const contests = [...new Set(tables.map(row => row.contest_code))];
@@ -103,13 +105,14 @@ const mass = (row: Table, key: string) => {
 		and ambiguous major-party or special-election comparisons are not forced into ordinary D/R estimates.
 		Source bases are not effective prior-choice-cell samples. Prior presidential nonvoting is not
 		validated nonparticipation in every 2024 contest. No state estimate is allocated to counties or precincts.</p>
-	<details class="explorer-notes"><summary>How apparent absence can be estimated next</summary>
+	<details class="explorer-notes"><summary>How the conditional population extension differs</summary>
 		<p>With a qualified official 2024 coalition total T24, matched 2026 voter total N26, recalled
 			prior-choice share q and current-choice conditional p: returning voters = N26 × q;
 			reported switchers = N26 × q × p; apparent absence = T24 - N26 × q.</p>
 		<p>Apparent absence is not measured staying home: migration, mortality, recall, incomplete counts
-			and contest-denominator uncertainty remain. Those population calculations are not released
-			in this survey-only version. We do not force the 2026 electorate back to the 2024 partisan split.</p>
+			and contest-denominator uncertainty remain. The survey-only archive below excludes those calculations;
+			the separately versioned extension above supplies conditional scenarios with additional assumptions.
+			We do not force the 2026 electorate back to the 2024 partisan split.</p>
 	</details>
 	<div class="download-links">
 		<a href={`${base}complete-analysis.zip`} download>Complete survey tables + inputs + code (ZIP)</a>
