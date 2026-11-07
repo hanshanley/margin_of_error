@@ -1,0 +1,2468 @@
+{
+  "status": "experimental_conditional_model_not_individually_identified",
+  "state": "NC",
+  "county": "MECKLENBURG",
+  "baseline_contest": "2024 President",
+  "outcome_contest": "2026 Senate",
+  "validated_individual_attribution": false,
+  "scenario_count": 86,
+  "default_conditional_scenario": {
+    "before": {
+      "D": 376453.99999994825,
+      "R": 187769.99999999744,
+      "O": 13281.000000045682,
+      "B": 2649.9999999999463,
+      "N": 201729.00000000326,
+      "X": 102139.00000000556
+    },
+    "after": {
+      "D": 333549.0000000022,
+      "R": 97841.00000000698,
+      "O": 8565.000000001455,
+      "B": 1193.0000000000632,
+      "N": 411004.9999999894,
+      "X": 31869.999999999996
+    },
+    "swing_margin_pp": 21.197861329636446,
+    "margin_pp_contributions": {
+      "switching": 12.475378982154393,
+      "dropoff": 3.7256770248279656,
+      "new_returning": 1.8595440276385575,
+      "other_and_contest": 1.4413127544142144,
+      "eligibility_residence": 1.695948540599987
+    },
+    "signed_share_of_swing_pct": {
+      "switching": 58.85206431043463,
+      "dropoff": 17.57572128099143,
+      "new_returning": 8.772319050123956,
+      "other_and_contest": 6.7993309891084825,
+      "eligibility_residence": 8.00056436933524
+    },
+    "gross_major_party_switchers": 32577.075081543862,
+    "modeled_cohort_counts": {
+      "repeat_2024_county_participants": 387937.62239676947,
+      "prior_county_participants_now_nonvoting": 160347.3776032218,
+      "prior_county_participants_eligibility_residence_exit": 31869.999999999996,
+      "participants_without_2024_county_participation": 53210.37760324121,
+      "participants_with_2024_history_elsewhere_in_nc": 10626.639931814716,
+      "participants_newly_adult_since_2024": 5732.948494947897,
+      "participants_without_2024_nc_history_national_status_unresolved": 36850.78917648035,
+      "republican_to_democratic": 31462.242846826808,
+      "democratic_to_republican": 1114.8322347170542
+    },
+    "assumptions": {
+      "loyalty": 0.95,
+      "exit_fraction": 1.0,
+      "republican_vs_democratic_late_log_odds_offset": 0.0,
+      "unresolved_mover_fraction": 0.25
+    },
+    "demographics": [
+      {
+        "dimension": "overall",
+        "group": "All groups",
+        "registered_or_baseline_records": 884023,
+        "modeled_2026_participants": 441148.0000000201,
+        "margin_pp_contributions": {
+          "switching": 12.475378982154393,
+          "dropoff": 3.7256770248279656,
+          "new_returning": 1.8595440276385575,
+          "other_and_contest": 1.4413127544142144,
+          "eligibility_residence": 1.695948540599987
+        },
+        "modeled_2024_county_participants": 580154.9999999913,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 387937.62239676947,
+          "prior_county_participants_now_nonvoting": 160347.3776032218,
+          "prior_county_participants_eligibility_residence_exit": 31869.999999999996,
+          "participants_without_2024_county_participation": 53210.37760324121,
+          "participants_with_2024_history_elsewhere_in_nc": 10626.639931814716,
+          "participants_newly_adult_since_2024": 5732.948494947897,
+          "participants_without_2024_nc_history_national_status_unresolved": 36850.78917648035,
+          "republican_to_democratic": 31462.242846826808,
+          "democratic_to_republican": 1114.8322347170542
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 376453.99999994825,
+            "D": 250117.84959639783,
+            "R": 1114.8322347170542,
+            "O": 1241.8816901972386,
+            "B": 684.6203686307756,
+            "N": 101382.27754053171,
+            "X": 21912.53856947361
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 187769.99999999744,
+            "D": 31462.242846826808,
+            "R": 89999.31116883826,
+            "O": 3957.469298861373,
+            "B": 340.09136119425835,
+            "N": 53635.53088122966,
+            "X": 8375.354443047087
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "age_2024",
+        "group": "18-29",
+        "registered_or_baseline_records": 210540,
+        "modeled_2026_participants": 67076.82570987125,
+        "margin_pp_contributions": {
+          "switching": 0.989959123563734,
+          "dropoff": -0.018849762291866468,
+          "new_returning": 0.8308857119639064,
+          "other_and_contest": 0.1773525699288693,
+          "eligibility_residence": 0.6452508394800134
+        },
+        "modeled_2024_county_participants": 103327.00000000102,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 50310.471474792226,
+          "prior_county_participants_now_nonvoting": 51480.528525208785,
+          "prior_county_participants_eligibility_residence_exit": 1536.0000000000002,
+          "participants_without_2024_county_participation": 16766.354235079358,
+          "participants_with_2024_history_elsewhere_in_nc": 4513.2889340335605,
+          "participants_newly_adult_since_2024": 0.0,
+          "participants_without_2024_nc_history_national_status_unresolved": 12253.065301046005,
+          "republican_to_democratic": 2574.5437091844797,
+          "democratic_to_republican": 166.38472219348571
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 73870.97100208722,
+            "D": 37329.194137708844,
+            "R": 166.38472219348571,
+            "O": 185.34639884455416,
+            "B": 102.1771404659237,
+            "N": 35007.40968949419,
+            "X": 1080.4589133802174
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 24678.387715072055,
+            "D": 2574.5437091844797,
+            "R": 7364.610384857658,
+            "O": 323.83825073364545,
+            "B": 27.829550447926728,
+            "N": 14005.757502844475,
+            "X": 381.80831700387165
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "age_2024",
+        "group": "30-44",
+        "registered_or_baseline_records": 244822,
+        "modeled_2026_participants": 108862.27054816726,
+        "margin_pp_contributions": {
+          "switching": 2.511735241782674,
+          "dropoff": 1.0639879351620658,
+          "new_returning": 0.5637740935868157,
+          "other_and_contest": 0.35528932319534673,
+          "eligibility_residence": 0.3761173225244974
+        },
+        "modeled_2024_county_participants": 154600.99999999936,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 96810.50749880029,
+          "prior_county_participants_now_nonvoting": 56082.49250119905,
+          "prior_county_participants_eligibility_residence_exit": 1708.0000000000018,
+          "participants_without_2024_county_participation": 12051.763049367888,
+          "participants_with_2024_history_elsewhere_in_nc": 2327.6119302444117,
+          "participants_newly_adult_since_2024": 0.0,
+          "participants_without_2024_nc_history_national_status_unresolved": 9724.15111912358,
+          "republican_to_democratic": 6408.839310608536,
+          "democratic_to_republican": 298.8316835598016
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 104889.17577169856,
+            "D": 67044.2921864585,
+            "R": 298.8316835598016,
+            "O": 332.8873930147138,
+            "B": 183.51304437226284,
+            "N": 35921.2721421167,
+            "X": 1108.3793221765955
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 44276.744227575284,
+            "D": 6408.839310608536,
+            "R": 18332.80374048928,
+            "O": 806.1340361698419,
+            "B": 69.27639887059203,
+            "N": 18118.208448272628,
+            "X": 541.4822931644105
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "age_2024",
+        "group": "45-64",
+        "registered_or_baseline_records": 245630,
+        "modeled_2026_participants": 155110.34638900054,
+        "margin_pp_contributions": {
+          "switching": 5.046446295338982,
+          "dropoff": 1.877000904038363,
+          "new_returning": 0.34851684631198354,
+          "other_and_contest": 0.5289692705000132,
+          "eligibility_residence": 0.29318922724125523
+        },
+        "modeled_2024_county_participants": 186606.0000000036,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 143948.02887007414,
+          "prior_county_participants_now_nonvoting": 40076.97112992952,
+          "prior_county_participants_eligibility_residence_exit": 2580.99999999999,
+          "participants_without_2024_county_participation": 11162.317518930235,
+          "participants_with_2024_history_elsewhere_in_nc": 2294.103365260244,
+          "participants_newly_adult_since_2024": 0.0,
+          "participants_without_2024_nc_history_national_status_unresolved": 8868.214153670106,
+          "republican_to_democratic": 12676.4120496765,
+          "democratic_to_republican": 400.5061973828781
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 115976.53270214415,
+            "D": 89855.44705286024,
+            "R": 400.5061973828781,
+            "O": 446.1490239080803,
+            "B": 245.95153598222055,
+            "N": 23477.770232222934,
+            "X": 1550.7086597877983
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 67589.14841430951,
+            "D": 12676.4120496765,
+            "R": 36261.507423915,
+            "O": 1594.4988966789876,
+            "B": 137.02577562643697,
+            "N": 15928.549346622993,
+            "X": 991.1549217895932
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "age_2024",
+        "group": "65+",
+        "registered_or_baseline_records": 142387,
+        "modeled_2026_participants": 103808.2674828157,
+        "margin_pp_contributions": {
+          "switching": 3.927069477842731,
+          "dropoff": 0.8035880188659639,
+          "new_returning": 0.0905729753694069,
+          "other_and_contest": 0.3796742500907445,
+          "eligibility_residence": 0.38233854541861473
+        },
+        "modeled_2024_county_participants": 115795.99999999946,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 96855.27317789811,
+          "prior_county_participants_now_nonvoting": 12706.726822101333,
+          "prior_county_participants_eligibility_residence_exit": 6234.00000000001,
+          "participants_without_2024_county_participation": 6952.994304917197,
+          "participants_with_2024_history_elsewhere_in_nc": 1312.6357022765014,
+          "participants_newly_adult_since_2024": 0.0,
+          "participants_without_2024_nc_history_national_status_unresolved": 5640.358602640656,
+          "republican_to_democratic": 9801.987902500709,
+          "democratic_to_republican": 249.06048307272727
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 67091.27746525304,
+            "D": 55877.889520659686,
+            "R": 249.06048307272727,
+            "O": 277.4441248177384,
+            "B": 152.9484656279874,
+            "N": 6975.2552865202115,
+            "X": 3558.679584554682
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 47371.003789037364,
+            "D": 9801.987902500709,
+            "R": 28039.07412466287,
+            "O": 1232.9402700503904,
+            "B": 105.95466522843843,
+            "N": 5582.9595767489,
+            "X": 2608.0872498460553
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "race",
+        "group": "ASIAN",
+        "registered_or_baseline_records": 27582,
+        "modeled_2026_participants": 11713.423597573263,
+        "margin_pp_contributions": {
+          "switching": 0.2930284833511921,
+          "dropoff": 0.16036800245685595,
+          "new_returning": 0.07858198212345585,
+          "other_and_contest": 0.04727573857881398,
+          "eligibility_residence": 0.07181829467456763
+        },
+        "modeled_2024_county_participants": 16723.99999999991,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 9768.969942722439,
+          "prior_county_participants_now_nonvoting": 6763.030057277471,
+          "prior_county_participants_eligibility_residence_exit": 191.99999999999972,
+          "participants_without_2024_county_participation": 1944.453654850695,
+          "participants_with_2024_history_elsewhere_in_nc": 260.9221622521944,
+          "participants_newly_adult_since_2024": 248.8975642964554,
+          "participants_without_2024_nc_history_national_status_unresolved": 1434.6339283020443,
+          "republican_to_democratic": 740.5774735580978,
+          "democratic_to_republican": 27.760995756260897
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 10563.21354725122,
+            "D": 6228.309825444629,
+            "R": 27.760995756260897,
+            "O": 30.92471787030069,
+            "B": 17.048074639706716,
+            "N": 4127.088413690385,
+            "X": 132.08151984993665
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 5223.726769487309,
+            "D": 740.5774735580978,
+            "R": 2118.4587129364995,
+            "O": 93.15332760296245,
+            "B": 8.00527801779395,
+            "N": 2213.503609151256,
+            "X": 50.02836822070008
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "race",
+        "group": "BLACK or AFRICAN AMERICAN",
+        "registered_or_baseline_records": 257436,
+        "modeled_2026_participants": 126889.5238396819,
+        "margin_pp_contributions": {
+          "switching": 0.31937167425329405,
+          "dropoff": -4.145964208334039,
+          "new_returning": 0.9136355523940589,
+          "other_and_contest": 0.09135168184599729,
+          "eligibility_residence": 0.5225457293698123
+        },
+        "modeled_2024_county_participants": 161341.0000000035,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 111210.04730604758,
+          "prior_county_participants_now_nonvoting": 47175.9526939559,
+          "prior_county_participants_eligibility_residence_exit": 2955.000000000011,
+          "participants_without_2024_county_participation": 15679.47653363754,
+          "participants_with_2024_history_elsewhere_in_nc": 2720.834326974481,
+          "participants_newly_adult_since_2024": 1740.9283485894048,
+          "participants_without_2024_nc_history_national_status_unresolved": 11217.713858073503,
+          "republican_to_democratic": 1234.935486857428,
+          "democratic_to_republican": 458.03697737682944
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 149662.35183906154,
+            "D": 102762.74783730604,
+            "R": 458.03697737682944,
+            "O": 510.2361753846273,
+            "B": 281.2812856795494,
+            "N": 42888.166396015054,
+            "X": 2761.8831672994265
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 7980.4484244817795,
+            "D": 1234.935486857428,
+            "R": 3532.5944083584436,
+            "O": 155.33601018546588,
+            "B": 13.34904484582235,
+            "N": 2899.2180325826102,
+            "X": 145.0154416520094
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "race",
+        "group": "WHITE",
+        "registered_or_baseline_records": 429767,
+        "modeled_2026_participants": 252602.4617932996,
+        "margin_pp_contributions": {
+          "switching": 10.72181452262441,
+          "dropoff": 7.053300128713668,
+          "new_returning": 0.4543197077301656,
+          "other_and_contest": 1.1469753349598657,
+          "eligibility_residence": 1.2052183780603885
+        },
+        "modeled_2024_county_participants": 309708.00000000955,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 227318.58619546215,
+          "prior_county_participants_now_nonvoting": 74834.41380454748,
+          "prior_county_participants_eligibility_residence_exit": 7554.99999999995,
+          "participants_without_2024_county_participation": 25283.87559784644,
+          "participants_with_2024_history_elsewhere_in_nc": 5856.59556708699,
+          "participants_newly_adult_since_2024": 2196.6050834001785,
+          "participants_without_2024_nc_history_national_status_unresolved": 17230.674947359363,
+          "republican_to_democratic": 26592.955826463418,
+          "democratic_to_republican": 511.2385263006308
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 154019.63801764278,
+            "D": 114698.76529145899,
+            "R": 511.2385263006308,
+            "O": 569.5007242926966,
+            "B": 313.95244722450497,
+            "N": 34404.987985180545,
+            "X": 3521.193043185398
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 148421.71219590987,
+            "D": 26592.955826463418,
+            "R": 76070.4733599924,
+            "O": 3344.9874111509544,
+            "B": 287.45676489854884,
+            "N": 38223.54385554164,
+            "X": 3902.2949778629
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "ethnicity",
+        "group": "HISPANIC or LATINO",
+        "registered_or_baseline_records": 57901,
+        "modeled_2026_participants": 22397.803574941747,
+        "margin_pp_contributions": {
+          "switching": 0.425957397690339,
+          "dropoff": 0.09998763211137768,
+          "new_returning": 0.231111495001129,
+          "other_and_contest": 0.052031530844188066,
+          "eligibility_residence": 0.23710275991344631
+        },
+        "modeled_2024_county_participants": 29498.999999999975,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 17052.078778829866,
+          "prior_county_participants_now_nonvoting": 12079.921221170112,
+          "prior_county_participants_eligibility_residence_exit": 366.99999999999994,
+          "participants_without_2024_county_participation": 5345.7247961118055,
+          "participants_with_2024_history_elsewhere_in_nc": 561.1216300459693,
+          "participants_newly_adult_since_2024": 1065.2557829944735,
+          "participants_without_2024_nc_history_national_status_unresolved": 3719.3473830713674,
+          "republican_to_democratic": 1090.4182968878442,
+          "democratic_to_republican": 54.241033698808195
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 20696.287446622096,
+            "D": 12169.23074714862,
+            "R": 54.241033698808195,
+            "O": 60.42249632745225,
+            "B": 33.309510910593,
+            "N": 8133.728952375795,
+            "X": 245.35470616082762
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 8087.067881905518,
+            "D": 1090.4182968878442,
+            "R": 3119.195795531118,
+            "O": 137.15795640696203,
+            "B": 11.7868851456384,
+            "N": 3615.1079752358573,
+            "X": 113.40097269809856
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "ethnicity",
+        "group": "NOT HISPANIC or NOT LATINO",
+        "registered_or_baseline_records": 541284,
+        "modeled_2026_participants": 305698.31566103135,
+        "margin_pp_contributions": {
+          "switching": 9.509053226767987,
+          "dropoff": 2.926442044602059,
+          "new_returning": 0.9151321779961027,
+          "other_and_contest": 1.067520954625212,
+          "eligibility_residence": 1.1729259804078627
+        },
+        "modeled_2024_county_participants": 385424.99999999977,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 279718.38316160627,
+          "prior_county_participants_now_nonvoting": 97175.61683839347,
+          "prior_county_participants_eligibility_residence_exit": 8530.999999999978,
+          "participants_without_2024_county_participation": 25979.932499427123,
+          "participants_with_2024_history_elsewhere_in_nc": 3890.1727790820387,
+          "participants_newly_adult_since_2024": 2398.6763603302165,
+          "participants_without_2024_nc_history_national_status_unresolved": 19691.083360014985,
+          "republican_to_democratic": 23915.374980593206,
+          "democratic_to_republican": 783.8017259514975
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 242880.09890642052,
+            "D": 175849.59969757503,
+            "R": 783.8017259514975,
+            "O": 873.1260021838015,
+            "B": 481.3339710172041,
+            "N": 59914.05659433128,
+            "X": 4978.180915361712
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 133200.57408285033,
+            "D": 23915.374980593206,
+            "R": 68411.12011869805,
+            "O": 3008.1886633838076,
+            "B": 258.5134337122314,
+            "N": 34203.45176313071,
+            "X": 3403.9251233323394
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "administrative_gender",
+        "group": "FEMALE",
+        "registered_or_baseline_records": 430584,
+        "modeled_2026_participants": 239356.88164150078,
+        "margin_pp_contributions": {
+          "switching": 6.024379414357088,
+          "dropoff": 0.7128359606956327,
+          "new_returning": 1.034672295985342,
+          "other_and_contest": 0.699217309461691,
+          "eligibility_residence": 1.1969497760300387
+        },
+        "modeled_2024_county_participants": 297108.0000000022,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 211490.5913307537,
+          "prior_county_participants_now_nonvoting": 79763.40866924857,
+          "prior_county_participants_eligibility_residence_exit": 5853.999999999979,
+          "participants_without_2024_county_participation": 27866.29031075046,
+          "participants_with_2024_history_elsewhere_in_nc": 5583.381380281259,
+          "participants_newly_adult_since_2024": 3146.0631532281154,
+          "participants_without_2024_nc_history_national_status_unresolved": 19136.845777241022,
+          "republican_to_democratic": 15296.486570987629,
+          "democratic_to_republican": 641.6760011317051
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 202772.002145483,
+            "D": 143963.025594986,
+            "R": 641.6760011317051,
+            "O": 714.8032251208042,
+            "B": 394.0543220368805,
+            "N": 53363.70319879901,
+            "X": 3694.739803408612
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 87110.77129320567,
+            "D": 15296.486570987629,
+            "R": 43756.36096239315,
+            "O": 1924.0642277107895,
+            "B": 165.34749174570717,
+            "N": 23914.552305179426,
+            "X": 2053.959735188986
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      },
+      {
+        "dimension": "administrative_gender",
+        "group": "MALE",
+        "registered_or_baseline_records": 359579,
+        "modeled_2026_participants": 180109.14685763328,
+        "margin_pp_contributions": {
+          "switching": 5.933939558983893,
+          "dropoff": 2.7197024772295744,
+          "new_returning": 0.6784632728097436,
+          "other_and_contest": 0.6722137512917028,
+          "eligibility_residence": 0.8898878560877453
+        },
+        "modeled_2024_county_participants": 230065.00000000073,
+        "modeled_cohort_counts": {
+          "repeat_2024_county_participants": 158769.07258560593,
+          "prior_county_participants_now_nonvoting": 65887.92741439483,
+          "prior_county_participants_eligibility_residence_exit": 5407.999999999994,
+          "participants_without_2024_county_participation": 21340.074272028072,
+          "participants_with_2024_history_elsewhere_in_nc": 3812.6867285438248,
+          "participants_newly_adult_since_2024": 2269.116135383527,
+          "participants_without_2024_nc_history_national_status_unresolved": 15258.271408100889,
+          "republican_to_democratic": 14855.741625895782,
+          "democratic_to_republican": 420.93362515117656
+        },
+        "modeled_prior_choice_transitions": {
+          "D": {
+            "original_2024_county_presidential_voters": 137368.29344787225,
+            "D": 94438.43644542007,
+            "R": 420.93362515117656,
+            "O": 468.9044195033162,
+            "B": 258.49605406611846,
+            "N": 38699.351121827094,
+            "X": 3082.1717819044666
+          },
+          "R": {
+            "original_2024_county_presidential_voters": 86565.3258650226,
+            "D": 14855.741625895782,
+            "R": 42495.58811627025,
+            "O": 1868.6252497167366,
+            "B": 160.5832557996057,
+            "N": 24961.333534561472,
+            "X": 2223.4540827787573
+          }
+        },
+        "group_turnout_rate_pct": null,
+        "measured_staying_home_count": null
+      }
+    ],
+    "historical_choice_model": "registered-party-and-primary"
+  },
+  "sensitivity_range_margin_pp": {
+    "switching": {
+      "minimum": 7.742388825986401,
+      "maximum": 17.6497201811892
+    },
+    "dropoff": {
+      "minimum": 0.3874970718895233,
+      "maximum": 7.219176066084451
+    },
+    "new_returning": {
+      "minimum": 0.0,
+      "maximum": 3.4390353907546425
+    },
+    "other_and_contest": {
+      "minimum": 0.6522869881905049,
+      "maximum": 1.9301930793387907
+    },
+    "eligibility_residence": {
+      "minimum": 0.6981004545131447,
+      "maximum": 4.915492470182994
+    }
+  },
+  "demographic_sensitivity_range_margin_pp": [
+    {
+      "dimension": "overall",
+      "group": "All groups",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 7.742388825986401,
+          "maximum": 17.6497201811892
+        },
+        "dropoff": {
+          "minimum": 0.3874970718895233,
+          "maximum": 7.219176066084451
+        },
+        "new_returning": {
+          "minimum": 0.0,
+          "maximum": 3.4390353907546425
+        },
+        "other_and_contest": {
+          "minimum": 0.6522869881905049,
+          "maximum": 1.9301930793387907
+        },
+        "eligibility_residence": {
+          "minimum": 0.6981004545131447,
+          "maximum": 4.915492470182994
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 580154.999999977,
+        "maximum": 580155.0000000366
+      },
+      "modeled_2026_participants": {
+        "minimum": 441147.9999999966,
+        "maximum": 441148.0000000201
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 387391.67159516434,
+          "maximum": 389381.6801933678
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 160347.3776032173,
+          "maximum": 191266.3444363718
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 31870.00000000015
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 51766.31980665344,
+          "maximum": 53756.32840482361
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 10370.114061396816,
+          "maximum": 10680.564357631478
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 5703.864015012161,
+          "maximum": 5740.219581383847
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 35642.570417851275,
+          "maximum": 37445.26130883903
+        },
+        "republican_to_democratic": {
+          "minimum": 18770.160727115715,
+          "maximum": 54092.41985719025
+        },
+        "democratic_to_republican": {
+          "minimum": 39.441058730842514,
+          "maximum": 15022.576575539942
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 376453.9999998786,
+            "maximum": 376454.0000000059
+          },
+          "D": {
+            "minimum": 230449.19597355678,
+            "maximum": 261322.85762923327
+          },
+          "R": {
+            "minimum": 39.441058730842514,
+            "maximum": 15022.576575539942
+          },
+          "O": {
+            "minimum": 249.14286590720727,
+            "maximum": 3405.5774785856256
+          },
+          "B": {
+            "minimum": 663.3647409405852,
+            "maximum": 709.8520653633605
+          },
+          "N": {
+            "minimum": 93771.28125869118,
+            "maximum": 129982.4538870478
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 22179.595132441802
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 187769.99999998297,
+            "maximum": 187770.00000000902
+          },
+          "D": {
+            "minimum": 18770.160727115715,
+            "maximum": 54092.41985719025
+          },
+          "R": {
+            "minimum": 72537.19590773033,
+            "maximum": 94885.63888504608
+          },
+          "O": {
+            "minimum": 3083.746207315084,
+            "maximum": 4551.164080758216
+          },
+          "B": {
+            "minimum": 317.12402379766417,
+            "maximum": 360.9952770644563
+          },
+          "N": {
+            "minimum": 46069.396408938665,
+            "maximum": 70503.75620260667
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 9601.122169478767
+          }
+        }
+      }
+    },
+    {
+      "dimension": "age_2024",
+      "group": "18-29",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 0.3634345124429283,
+          "maximum": 1.3424085717132124
+        },
+        "dropoff": {
+          "minimum": -1.1250760263915778,
+          "maximum": 0.5161377144898636
+        },
+        "new_returning": {
+          "minimum": 0.0,
+          "maximum": 1.3053994744484179
+        },
+        "other_and_contest": {
+          "minimum": 0.03987655226379019,
+          "maximum": 0.25577476820099454
+        },
+        "eligibility_residence": {
+          "minimum": 0.277466955317827,
+          "maximum": 1.7604273412217355
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 103326.9999999991,
+        "maximum": 103327.00000000151
+      },
+      "modeled_2026_participants": {
+        "minimum": 65197.27434001439,
+        "maximum": 67404.67255550441
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 48731.5783193349,
+          "maximum": 50555.38902616382
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 51235.61097383643,
+          "maximum": 54595.42168066465
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 1536.000000000003
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 16465.696020678613,
+          "maximum": 16849.28352934037
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 4417.22772504841,
+          "maximum": 4539.540438855544
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 12039.091607454193,
+          "maximum": 12348.435019528888
+        },
+        "republican_to_democratic": {
+          "minimum": 1391.4542750438538,
+          "maximum": 4747.960111493447
+        },
+        "democratic_to_republican": {
+          "minimum": 5.719318520821867,
+          "maximum": 2227.3252191771853
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 73795.0678205926,
+            "maximum": 76182.88766052864
+          },
+          "D": {
+            "minimum": 33396.33847382813,
+            "maximum": 39066.89937389983
+          },
+          "R": {
+            "minimum": 5.719318520821867,
+            "maximum": 2227.3252191771853
+          },
+          "O": {
+            "minimum": 35.942685216954125,
+            "maximum": 510.8777916986166
+          },
+          "B": {
+            "minimum": 96.1579026139949,
+            "maximum": 106.11968984322677
+          },
+          "N": {
+            "minimum": 33549.53226057722,
+            "maximum": 38313.664696674554
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 1120.2929731104077
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 22348.027639900225,
+            "maximum": 24790.285309934257
+          },
+          "D": {
+            "minimum": 1391.4542750438538,
+            "maximum": 4747.960111493447
+          },
+          "R": {
+            "minimum": 5378.1382946285685,
+            "maximum": 8315.026028170381
+          },
+          "O": {
+            "minimum": 228.60176349582753,
+            "maximum": 399.47825542560895
+          },
+          "B": {
+            "minimum": 23.5087799751711,
+            "maximum": 31.647483664597384
+          },
+          "N": {
+            "minimum": 11326.835214987597,
+            "maximum": 15985.301991277609
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 383.77964625139754
+          }
+        }
+      }
+    },
+    {
+      "dimension": "age_2024",
+      "group": "30-44",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 1.4847965018968687,
+          "maximum": 3.4181689930421992
+        },
+        "dropoff": {
+          "minimum": 0.09060926225633628,
+          "maximum": 2.1205432304147585
+        },
+        "new_returning": {
+          "minimum": 0.0,
+          "maximum": 0.9677000843836671
+        },
+        "other_and_contest": {
+          "minimum": 0.1187212498632418,
+          "maximum": 0.4890726460196389
+        },
+        "eligibility_residence": {
+          "minimum": 0.09212672446940172,
+          "maximum": 1.2152388729023724
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 154600.9999999946,
+        "maximum": 154601.0000000043
+      },
+      "modeled_2026_participants": {
+        "minimum": 105496.82229157965,
+        "maximum": 109385.62548305426
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 93856.13132630022,
+          "maximum": 97133.36462838955
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 55759.63537161476,
+          "maximum": 60744.868673699195
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 1708.0000000000064
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 11640.690965279513,
+          "maximum": 12252.260854669948
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 2262.7961727154966,
+          "maximum": 2333.4043993351656
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 9368.006722040429,
+          "maximum": 9930.994503691156
+        },
+        "republican_to_democratic": {
+          "minimum": 3604.9630926485747,
+          "maximum": 11309.612948486598
+        },
+        "democratic_to_republican": {
+          "minimum": 10.243982302389668,
+          "maximum": 3997.8032192584606
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 104564.74233167437,
+            "maximum": 104941.1076555395
+          },
+          "D": {
+            "minimum": 59816.82940808698,
+            "maximum": 70120.77748624324
+          },
+          "R": {
+            "minimum": 10.243982302389668,
+            "maximum": 3997.8032192584606
+          },
+          "O": {
+            "minimum": 64.37764043432051,
+            "maximum": 916.9693149053977
+          },
+          "B": {
+            "minimum": 172.23028390994475,
+            "maximum": 190.47314421315892
+          },
+          "N": {
+            "minimum": 33347.56373925438,
+            "maximum": 41201.79497848131
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 1113.0963443632754
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 44086.92373962881,
+            "maximum": 44384.24711669757
+          },
+          "D": {
+            "minimum": 3604.9630926485747,
+            "maximum": 11309.612948486598
+          },
+          "R": {
+            "minimum": 13933.616366002088,
+            "maximum": 19806.342898196785
+          },
+          "O": {
+            "minimum": 592.2587145674024,
+            "maximum": 951.5548454721816
+          },
+          "B": {
+            "minimum": 60.90626597198791,
+            "maximum": 75.38411920810279
+          },
+          "N": {
+            "minimum": 15859.693266836684,
+            "maximum": 21754.80171206033
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 544.0183432405685
+          }
+        }
+      }
+    },
+    {
+      "dimension": "age_2024",
+      "group": "45-64",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 3.080304430504432,
+          "maximum": 7.242623098740594
+        },
+        "dropoff": {
+          "minimum": 0.7547014217312226,
+          "maximum": 3.359245622001901
+        },
+        "new_returning": {
+          "minimum": 0.0,
+          "maximum": 0.7620383697602762
+        },
+        "other_and_contest": {
+          "minimum": 0.26146400048180846,
+          "maximum": 0.6903024241127219
+        },
+        "eligibility_residence": {
+          "minimum": -0.00973591318732725,
+          "maximum": 1.0261729656281908
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 186605.9999999943,
+        "maximum": 186606.00000000774
+      },
+      "modeled_2026_participants": {
+        "minimum": 152318.57757517646,
+        "maximum": 155166.13386944216
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 141439.83903918287,
+          "maximum": 143948.02887007533
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 40076.97112992936,
+          "maximum": 45166.16096081195
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 2581.000000000006
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 10737.78235046962,
+          "maximum": 11319.918755516253
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 2224.3340011387468,
+          "maximum": 2310.5651760743535
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 8488.957906371192,
+          "maximum": 9051.340954596366
+        },
+        "republican_to_democratic": {
+          "minimum": 7464.266767783743,
+          "maximum": 21657.19072561008
+        },
+        "democratic_to_republican": {
+          "minimum": 13.997993660678429,
+          "maximum": 5303.459969629698
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 115170.38130881013,
+            "maximum": 116066.55726107964
+          },
+          "D": {
+            "minimum": 81737.31407764333,
+            "maximum": 93021.77121828763
+          },
+          "R": {
+            "minimum": 13.997993660678429,
+            "maximum": 5303.459969629698
+          },
+          "O": {
+            "minimum": 87.96948062658787,
+            "maximum": 1216.445579800502
+          },
+          "B": {
+            "minimum": 235.3458207152542,
+            "maximum": 252.6804447897106
+          },
+          "N": {
+            "minimum": 20989.551738837526,
+            "maximum": 28950.26437280871
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 1565.4139991020995
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 67496.86268384327,
+            "maximum": 68245.64881679525
+          },
+          "D": {
+            "minimum": 7464.266767783743,
+            "maximum": 21657.19072561008
+          },
+          "R": {
+            "minimum": 28850.28970418336,
+            "maximum": 38184.776205254864
+          },
+          "O": {
+            "minimum": 1226.3029960254687,
+            "maximum": 1822.1671128920589
+          },
+          "B": {
+            "minimum": 126.10964533079272,
+            "maximum": 144.35580198971687
+          },
+          "N": {
+            "minimum": 13218.049371680963,
+            "maximum": 20956.27513820766
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 998.1288248035836
+          }
+        }
+      }
+    },
+    {
+      "dimension": "age_2024",
+      "group": "65+",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 2.5107362605782693,
+          "maximum": 5.9147463964698295
+        },
+        "dropoff": {
+          "minimum": 0.2993994118621438,
+          "maximum": 1.6932254539439047
+        },
+        "new_returning": {
+          "minimum": -0.15560243179450958,
+          "maximum": 0.3791765964918487
+        },
+        "other_and_contest": {
+          "minimum": 0.22201419753884594,
+          "maximum": 0.494357719840996
+        },
+        "eligibility_residence": {
+          "minimum": -0.1912303852937811,
+          "maximum": 0.790426620019095
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 115795.99999999648,
+        "maximum": 115796.00000000266
+      },
+      "modeled_2026_participants": {
+        "minimum": 103444.64051608898,
+        "maximum": 106226.9088860833
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 96393.99483217667,
+          "maximum": 99555.63717847902
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 12706.726822101333,
+          "maximum": 16686.443306673726
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 6234.00000000003
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 6671.271707606847,
+          "maximum": 7055.146477519942
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 1286.7561624941648,
+          "maximum": 1318.0543433664138
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 5373.0385901260615,
+          "maximum": 5749.490831022616
+        },
+        "republican_to_democratic": {
+          "minimum": 6124.390375169628,
+          "maximum": 16875.614310258894
+        },
+        "democratic_to_republican": {
+          "minimum": 8.878747788683425,
+          "maximum": 3403.6634222598514
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 66645.84965160937,
+            "maximum": 67157.07026947895
+          },
+          "D": {
+            "minimum": 51877.41797493845,
+            "maximum": 59207.88936840825
+          },
+          "R": {
+            "minimum": 8.878747788683425,
+            "maximum": 3403.6634222598514
+          },
+          "O": {
+            "minimum": 56.306065642625015,
+            "maximum": 771.6012920450627
+          },
+          "B": {
+            "minimum": 149.332913878164,
+            "maximum": 160.83109964149375
+          },
+          "N": {
+            "minimum": 5884.0519843684415,
+            "maximum": 10648.718565470586
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 3562.516631193979
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 47252.01009507836,
+            "maximum": 47672.14604146301
+          },
+          "D": {
+            "minimum": 6124.390375169628,
+            "maximum": 16875.614310258894
+          },
+          "R": {
+            "minimum": 22771.99298138681,
+            "maximum": 31042.169243879067
+          },
+          "O": {
+            "minimum": 997.8222905578167,
+            "maximum": 1412.6903728992684
+          },
+          "B": {
+            "minimum": 101.7638095539105,
+            "maximum": 112.89006296522011
+          },
+          "N": {
+            "minimum": 4397.637829169935,
+            "maximum": 8877.13059962085
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 2608.114541774761
+          }
+        }
+      }
+    },
+    {
+      "dimension": "race",
+      "group": "ASIAN",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 0.17738100146817962,
+          "maximum": 0.4153025573776628
+        },
+        "dropoff": {
+          "minimum": -0.031988927635522184,
+          "maximum": 0.24337066609946417
+        },
+        "new_returning": {
+          "minimum": 0.0,
+          "maximum": 0.14278791387217024
+        },
+        "other_and_contest": {
+          "minimum": 0.01768541008396034,
+          "maximum": 0.0638541263757525
+        },
+        "eligibility_residence": {
+          "minimum": 0.036207181041457745,
+          "maximum": 0.1962558597360237
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 16723.999999999793,
+        "maximum": 16724.0000000003
+      },
+      "modeled_2026_participants": {
+        "minimum": 11420.85565820884,
+        "maximum": 11803.196912436848
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 9497.804664072442,
+          "maximum": 9852.917123352188
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 6679.082876647825,
+          "maximum": 7226.195335927507
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 192.0
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 1913.68047840698,
+          "maximum": 1954.8228446831245
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 257.2570083809239,
+          "maximum": 261.6126631595483
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 247.91544128657637,
+          "maximum": 249.31929448918982
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 1408.3751782325696,
+          "maximum": 1444.6314963616746
+        },
+        "republican_to_democratic": {
+          "minimum": 430.12027070524147,
+          "maximum": 1292.430154772514
+        },
+        "democratic_to_republican": {
+          "minimum": 0.9680330842765844,
+          "maximum": 366.65360020047007
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 10531.47111378293,
+            "maximum": 11242.927739776522
+          },
+          "D": {
+            "minimum": 5652.554656410056,
+            "maximum": 6431.040775177934
+          },
+          "R": {
+            "minimum": 0.9680330842765844,
+            "maximum": 366.65360020047007
+          },
+          "O": {
+            "minimum": 6.083540950041301,
+            "maximum": 84.0987117534467
+          },
+          "B": {
+            "minimum": 16.275371043963595,
+            "maximum": 17.507121156931056
+          },
+          "N": {
+            "minimum": 3971.4348060440266,
+            "maximum": 4639.6235220728595
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 132.10234699674882
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 4685.381873994038,
+            "maximum": 5350.215122066807
+          },
+          "D": {
+            "minimum": 430.12027070524147,
+            "maximum": 1292.430154772514
+          },
+          "R": {
+            "minimum": 1662.4666298164132,
+            "maximum": 2263.4121020755
+          },
+          "O": {
+            "minimum": 70.66437910467462,
+            "maximum": 108.74096061551879
+          },
+          "B": {
+            "minimum": 7.266931431542341,
+            "maximum": 8.614681094684006
+          },
+          "N": {
+            "minimum": 1760.6940171585074,
+            "maximum": 2536.5580627296367
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 53.65498721165101
+          }
+        }
+      }
+    },
+    {
+      "dimension": "race",
+      "group": "BLACK or AFRICAN AMERICAN",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": -1.868053041137276,
+          "maximum": 0.8204116759559854
+        },
+        "dropoff": {
+          "minimum": -5.214191112682255,
+          "maximum": -3.52962440985788
+        },
+        "new_returning": {
+          "minimum": 0.0,
+          "maximum": 1.3275519393061235
+        },
+        "other_and_contest": {
+          "minimum": -0.0815688895592522,
+          "maximum": 0.18685732230424876
+        },
+        "eligibility_residence": {
+          "minimum": 0.19492435228347124,
+          "maximum": 1.797740728579701
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 161340.99999999523,
+        "maximum": 161341.00000000704
+      },
+      "modeled_2026_participants": {
+        "minimum": 120006.69262910682,
+        "maximum": 132528.04828952524
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 105122.00492439765,
+          "maximum": 116105.02202598992
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 42280.97797401324,
+          "maximum": 56218.99507559976
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 2955.000000000011
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 14884.687704706539,
+          "maximum": 16423.026263538224
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 2627.8754856916653,
+          "maximum": 2780.6157722875805
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 1728.8099714749403,
+          "maximum": 1751.032895715751
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 10528.002247540147,
+          "maximum": 11891.377595534357
+        },
+        "republican_to_democratic": {
+          "minimum": 763.0864720237988,
+          "maximum": 2409.4637436417424
+        },
+        "democratic_to_republican": {
+          "minimum": 15.76390662133126,
+          "maximum": 6185.303205726831
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 142569.60361453288,
+            "maximum": 149718.75052972892
+          },
+          "D": {
+            "minimum": 92048.86198926925,
+            "maximum": 108470.26123721857
+          },
+          "R": {
+            "minimum": 15.76390662133126,
+            "maximum": 6185.303205726831
+          },
+          "O": {
+            "minimum": 99.0672457596516,
+            "maximum": 1418.4654634471935
+          },
+          "B": {
+            "minimum": 265.03580665974636,
+            "maximum": 294.64407629434373
+          },
+          "N": {
+            "minimum": 37946.86853001816,
+            "maximum": 51657.30905922935
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 2763.0794405380047
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 7960.315126749953,
+            "maximum": 13754.941257546438
+          },
+          "D": {
+            "minimum": 763.0864720237988,
+            "maximum": 2409.4637436417424
+          },
+          "R": {
+            "minimum": 2796.882373805205,
+            "maximum": 6552.867269496086
+          },
+          "O": {
+            "minimum": 125.36733425821109,
+            "maximum": 284.4620141150243
+          },
+          "B": {
+            "minimum": 12.89243368940083,
+            "maximum": 25.073982751674826
+          },
+          "N": {
+            "minimum": 2794.889513475121,
+            "maximum": 4201.129493338578
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 281.9447542033323
+          }
+        }
+      }
+    },
+    {
+      "dimension": "race",
+      "group": "WHITE",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 6.492824847864308,
+          "maximum": 16.69115340482792
+        },
+        "dropoff": {
+          "minimum": 4.262092882482155,
+          "maximum": 10.355453958394875
+        },
+        "new_returning": {
+          "minimum": -0.18984141554212938,
+          "maximum": 1.3593942753753752
+        },
+        "other_and_contest": {
+          "minimum": 0.6473791545191434,
+          "maximum": 1.4712481232882446
+        },
+        "eligibility_residence": {
+          "minimum": -0.09591044565391497,
+          "maximum": 2.7400945043954055
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 309707.9999999888,
+        "maximum": 309708.0000000108
+      },
+      "modeled_2026_participants": {
+        "minimum": 244552.4024588356,
+        "maximum": 257937.3020016736
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 220382.70345116052,
+          "maximum": 231881.16917240043
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 70271.8308276034,
+          "maximum": 89325.29654883772
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 7555.000000000023
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 24169.699007667412,
+          "maximum": 26056.132829279162
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 5616.331637596555,
+          "maximum": 5959.616403685575
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 2175.7152344222427,
+          "maximum": 2210.7075295026507
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 16377.652135648888,
+          "maximum": 17885.808896090675
+        },
+        "republican_to_democratic": {
+          "minimum": 15711.241461101288,
+          "maximum": 45786.20661985579
+        },
+        "democratic_to_republican": {
+          "minimum": 18.224466297577926,
+          "maximum": 6722.080554681735
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 153990.95460362258,
+            "maximum": 163810.184433858
+          },
+          "D": {
+            "minimum": 106416.60239117748,
+            "maximum": 117349.81199801205
+          },
+          "R": {
+            "minimum": 18.224466297577926,
+            "maximum": 6722.080554681735
+          },
+          "O": {
+            "minimum": 114.53047299186288,
+            "maximum": 1532.3757828285268
+          },
+          "B": {
+            "minimum": 306.4047664165858,
+            "maximum": 321.0419747051051
+          },
+          "N": {
+            "minimum": 32795.29138235082,
+            "maximum": 41328.00298092872
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 3767.1562582960682
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 139051.52674194044,
+            "maximum": 148458.2664048696
+          },
+          "D": {
+            "minimum": 15711.241461101288,
+            "maximum": 45786.20661985579
+          },
+          "R": {
+            "minimum": 60725.839773239255,
+            "maximum": 80184.64579214113
+          },
+          "O": {
+            "minimum": 2581.1969312489955,
+            "maximum": 3852.3057299454754
+          },
+          "B": {
+            "minimum": 265.4432310642583,
+            "maximum": 305.18753149552487
+          },
+          "N": {
+            "minimum": 31426.090227235403,
+            "maximum": 50266.01186269305
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 3904.556481399185
+          }
+        }
+      }
+    },
+    {
+      "dimension": "ethnicity",
+      "group": "HISPANIC or LATINO",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 0.26417135530047087,
+          "maximum": 0.5495097536003887
+        },
+        "dropoff": {
+          "minimum": -0.04011279437890189,
+          "maximum": 0.23829693479295536
+        },
+        "new_returning": {
+          "minimum": 0.0,
+          "maximum": 0.3833466229346527
+        },
+        "other_and_contest": {
+          "minimum": 0.019034184447031987,
+          "maximum": 0.07059891448853865
+        },
+        "eligibility_residence": {
+          "minimum": 0.1240062219376301,
+          "maximum": 0.5651280698234243
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 29498.99999999948,
+        "maximum": 29499.00000000059
+      },
+      "modeled_2026_participants": {
+        "minimum": 21709.935653786182,
+        "maximum": 22722.309846054493
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 16458.77961909424,
+          "maximum": 17312.096868725745
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 11819.903131274668,
+          "maximum": 13040.220380905243
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 367.00000000000074
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 5251.1560346913375,
+          "maximum": 5410.212977329036
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 551.1701175548219,
+          "maximum": 564.5270202345524
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 1061.4625549866726,
+          "maximum": 1067.6107191168408
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 3638.5233621498696,
+          "maximum": 3778.0752379776122
+        },
+        "republican_to_democratic": {
+          "minimum": 641.4784735267712,
+          "maximum": 1879.7877220940884
+        },
+        "democratic_to_republican": {
+          "minimum": 1.864280568331384,
+          "maximum": 727.694570090922
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 19812.294934907623,
+            "maximum": 20765.151231143045
+          },
+          "D": {
+            "minimum": 10885.937659096046,
+            "maximum": 12763.636984803261
+          },
+          "R": {
+            "minimum": 1.864280568331384,
+            "maximum": 727.694570090922
+          },
+          "O": {
+            "minimum": 11.715949964960876,
+            "maximum": 166.9100640527237
+          },
+          "B": {
+            "minimum": 30.695740386731035,
+            "maximum": 34.67060912962383
+          },
+          "N": {
+            "minimum": 7630.421528127109,
+            "maximum": 9105.956366781775
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 246.34533333628258
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 7948.5465161393995,
+            "maximum": 8947.92800206942
+          },
+          "D": {
+            "minimum": 641.4784735267712,
+            "maximum": 1879.7877220940884
+          },
+          "R": {
+            "minimum": 2479.391529804787,
+            "maximum": 3747.823002811706
+          },
+          "O": {
+            "minimum": 105.38837885148128,
+            "maximum": 162.69416670306205
+          },
+          "B": {
+            "minimum": 10.837852571528916,
+            "maximum": 14.340722231057086
+          },
+          "N": {
+            "minimum": 3340.4268534802036,
+            "maximum": 4079.442579118356
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 118.43361659670998
+          }
+        }
+      }
+    },
+    {
+      "dimension": "ethnicity",
+      "group": "NOT HISPANIC or NOT LATINO",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 5.864944016186013,
+          "maximum": 13.605619613283709
+        },
+        "dropoff": {
+          "minimum": 0.6902695499099208,
+          "maximum": 5.84058400775812
+        },
+        "new_returning": {
+          "minimum": 0.0,
+          "maximum": 1.7808443424739673
+        },
+        "other_and_contest": {
+          "minimum": 0.5032622928858475,
+          "maximum": 1.4065473703829203
+        },
+        "eligibility_residence": {
+          "minimum": 0.2963109404292513,
+          "maximum": 2.7835489250291547
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 385424.9999999887,
+        "maximum": 385425.00000001735
+      },
+      "modeled_2026_participants": {
+        "minimum": 302460.5226856665,
+        "maximum": 306080.4955129377
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 277027.8772575069,
+          "maximum": 279885.3088251126
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 97008.69117490022,
+          "maximum": 108397.12274248556
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 8531.000000000058
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 25130.92767888424,
+          "maximum": 26312.553924640273
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 3797.565721771359,
+          "maximum": 3909.805263370138
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 2384.4837927308836,
+          "maximum": 2403.3008025171603
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 18930.056003714686,
+          "maximum": 20041.422093731635
+        },
+        "republican_to_democratic": {
+          "minimum": 14213.817476994069,
+          "maximum": 40994.729461963005
+        },
+        "democratic_to_republican": {
+          "minimum": 27.548818855730218,
+          "maximum": 10428.617621077114
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 242880.09890641505,
+            "maximum": 244736.60621894622
+          },
+          "D": {
+            "minimum": 160863.51471956505,
+            "maximum": 182193.24933408262
+          },
+          "R": {
+            "minimum": 27.548818855730218,
+            "maximum": 10428.617621077114
+          },
+          "O": {
+            "minimum": 173.12876011808572,
+            "maximum": 2382.5408817668404
+          },
+          "B": {
+            "minimum": 463.1734761782443,
+            "maximum": 494.9021145962298
+          },
+          "N": {
+            "minimum": 54896.823230035974,
+            "maximum": 71607.63229361363
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 5051.497591001503
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 130813.65879663911,
+            "maximum": 133288.8137026127
+          },
+          "D": {
+            "minimum": 14213.817476994069,
+            "maximum": 40994.729461963005
+          },
+          "R": {
+            "minimum": 54938.115795054306,
+            "maximum": 72008.65780334495
+          },
+          "O": {
+            "minimum": 2335.1854240028083,
+            "maximum": 3449.166088710199
+          },
+          "B": {
+            "minimum": 240.1440806693752,
+            "maximum": 273.24998536561964
+          },
+          "N": {
+            "minimum": 28754.164010585002,
+            "maximum": 44400.003337554284
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 3407.5573550598547
+          }
+        }
+      }
+    },
+    {
+      "dimension": "administrative_gender",
+      "group": "FEMALE",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 3.7472121429178875,
+          "maximum": 8.109816453191412
+        },
+        "dropoff": {
+          "minimum": -0.8805530322146634,
+          "maximum": 2.6085608644520244
+        },
+        "new_returning": {
+          "minimum": 0.0,
+          "maximum": 1.831101365122894
+        },
+        "other_and_contest": {
+          "minimum": 0.28759106412057567,
+          "maximum": 0.9367804680624741
+        },
+        "eligibility_residence": {
+          "minimum": 0.49881571411073655,
+          "maximum": 2.8408421965190356
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 297107.9999999945,
+        "maximum": 297108.00000001
+      },
+      "modeled_2026_participants": {
+        "minimum": 235113.36638222405,
+        "maximum": 240925.58039863018
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 207956.9196093478,
+          "maximum": 212626.45913997066
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 78627.54086003287,
+          "maximum": 89151.08039064992
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 5854.0000000000055
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 27156.446772872787,
+          "maximum": 28299.121258662704
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 5475.122405330129,
+          "maximum": 5591.765922862081
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 3131.957613550482,
+          "maximum": 3154.0127759268307
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 18549.366753992937,
+          "maximum": 19553.342559873407
+        },
+        "republican_to_democratic": {
+          "minimum": 9090.975319393065,
+          "maximum": 26178.36032266682
+        },
+        "democratic_to_republican": {
+          "minimum": 22.402333069401504,
+          "maximum": 8557.01468285031
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 197982.37995018743,
+            "maximum": 202866.12067758144
+          },
+          "D": {
+            "minimum": 130812.07054046582,
+            "maximum": 149890.56510755228
+          },
+          "R": {
+            "minimum": 22.402333069401504,
+            "maximum": 8557.01468285031
+          },
+          "O": {
+            "minimum": 140.78600495974808,
+            "maximum": 1960.1187226483596
+          },
+          "B": {
+            "minimum": 376.64651020418023,
+            "maximum": 407.15645558154256
+          },
+          "N": {
+            "minimum": 48518.79120469024,
+            "maximum": 63495.51037385562
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 3697.5828969566073
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 86836.03249862362,
+            "maximum": 91092.4288094912
+          },
+          "D": {
+            "minimum": 9090.975319393065,
+            "maximum": 26178.36032266682
+          },
+          "R": {
+            "minimum": 35137.71410074365,
+            "maximum": 46810.938942328066
+          },
+          "O": {
+            "minimum": 1493.5546407695417,
+            "maximum": 2202.5639360969512
+          },
+          "B": {
+            "minimum": 153.59307335957325,
+            "maximum": 179.11802991850874
+          },
+          "N": {
+            "minimum": 20533.234659067108,
+            "maximum": 30315.065403490178
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 2075.5517839154236
+          }
+        }
+      }
+    },
+    {
+      "dimension": "administrative_gender",
+      "group": "MALE",
+      "margin_pp_contributions": {
+        "switching": {
+          "minimum": 3.620104876068282,
+          "maximum": 8.787083184049411
+        },
+        "dropoff": {
+          "minimum": 0.9413618306892941,
+          "maximum": 4.599766438873981
+        },
+        "new_returning": {
+          "minimum": 0.0,
+          "maximum": 1.372094029558327
+        },
+        "other_and_contest": {
+          "minimum": 0.33070120862566216,
+          "maximum": 0.8826033881583623
+        },
+        "eligibility_residence": {
+          "minimum": 0.20434251945072066,
+          "maximum": 2.2203108191664764
+        }
+      },
+      "modeled_2024_county_participants": {
+        "minimum": 230064.9999999932,
+        "maximum": 230065.00000000562
+      },
+      "modeled_2026_participants": {
+        "minimum": 176839.9904421176,
+        "maximum": 181572.62031160566
+      },
+      "modeled_cohort_counts": {
+        "repeat_2024_county_participants": {
+          "minimum": 156028.39759469376,
+          "maximum": 159977.23044961714
+        },
+        "prior_county_participants_now_nonvoting": {
+          "minimum": 64679.7695503846,
+          "maximum": 74036.6024053052
+        },
+        "prior_county_participants_eligibility_residence_exit": {
+          "minimum": 0.0,
+          "maximum": 5408.000000000011
+        },
+        "participants_without_2024_county_participation": {
+          "minimum": 20706.378073076256,
+          "maximum": 21595.389861992036
+        },
+        "participants_with_2024_history_elsewhere_in_nc": {
+          "minimum": 3688.124094328453,
+          "maximum": 3860.480565131408
+        },
+        "participants_newly_adult_since_2024": {
+          "minimum": 2255.280067549173,
+          "maximum": 2276.3393758832867
+        },
+        "participants_without_2024_nc_history_national_status_unresolved": {
+          "minimum": 14717.6978324433,
+          "maximum": 15458.569920977196
+        },
+        "republican_to_democratic": {
+          "minimum": 8769.104778815099,
+          "maximum": 25631.105458542188
+        },
+        "democratic_to_republican": {
+          "minimum": 14.813126476788621,
+          "maximum": 5582.70951569415
+        }
+      },
+      "modeled_prior_choice_transitions": {
+        "D": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 137339.46137398193,
+            "maximum": 143019.20889414122
+          },
+          "D": {
+            "minimum": 86497.05098141196,
+            "maximum": 97633.92381428472
+          },
+          "R": {
+            "minimum": 14.813126476788621,
+            "maximum": 5582.70951569415
+          },
+          "O": {
+            "minimum": 93.09212978710457,
+            "maximum": 1276.7586932285167
+          },
+          "B": {
+            "minimum": 249.05050627588471,
+            "maximum": 265.2087030042195
+          },
+          "N": {
+            "minimum": 36217.14520921288,
+            "maximum": 45274.301207641096
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 3175.8036515096624
+          }
+        },
+        "R": {
+          "original_2024_county_presidential_voters": {
+            "minimum": 80972.42343441238,
+            "maximum": 86660.07164640228
+          },
+          "D": {
+            "minimum": 8769.104778815099,
+            "maximum": 25631.105458542188
+          },
+          "R": {
+            "minimum": 33893.64571039674,
+            "maximum": 44887.34193504566
+          },
+          "O": {
+            "minimum": 1440.6745896509397,
+            "maximum": 2156.5196532343666
+          },
+          "B": {
+            "minimum": 148.15503356577443,
+            "maximum": 170.84389343145844
+          },
+          "N": {
+            "minimum": 20626.609946126864,
+            "maximum": 31780.50042707081
+          },
+          "X": {
+            "minimum": 0.0,
+            "maximum": 2226.1543732426126
+          }
+        }
+      }
+    }
+  ],
+  "uncertainty_type": "Assumption sensitivity, NOT a confidence or identification interval",
+  "turnout_temporal_diagnostics": {
+    "training_2018_registered_records": 359008,
+    "validation_2022_registered_records": 527626,
+    "validation_brier": 0.21468922073218735,
+    "historical_rate_baseline_brier": 0.274152419789832,
+    "validation_calibration_error_pp": 15.013429169779648,
+    "scope": "Retrospective prediction in the surviving current-registration panel, not independent 2026 validation",
+    "known_2022_total_conditioned_brier": 0.18935637471423536,
+    "known_2022_total_constant_baseline_brier": 0.2474159699742068,
+    "known_total_conditioning_log_odds_adjustment": -0.8008382145379721,
+    "known_total_conditioning_note": "Uses only the observed overall 2022 participation total; matching that total is a constraint, not independent calibration evidence",
+    "known_total_conditioned_max_group_error_pp_n_at_least_100": 8.067876507323357
+  },
+  "normalization": "Exact five-component Shapley attribution of two-party margin; signed percentages, suppressed below 1 pp net swing",
+  "limitations": [
+    "Neither the registered-population model nor its latent transitions are observed 2026 individual histories.",
+    "Late participation is modeled from retrospective historical midterms and raked to provisional all-mode ballots.",
+    "Current registration predates Election Day; neither absence nor REMOVED proves an eligibility/residence exit.",
+    "Unmatched 2024 NC history includes unresolved interstate participants; the mover fraction is an assumption.",
+    "Conditional independence of turnout and prior choice within administrative cells is unvalidated.",
+    "Known prior votes outside Mecklenburg enter the geographic component, not new nationwide voters.",
+    "Voters under 18 throughout 2024 enter the eligibility component, never the prior-eligible-nonvoter component.",
+    "The historical choice model is calibrated to county 2024 totals; that is not independent validation.",
+    "A common choice-tilt calibrates entropy-regularized transitions to 2026 totals; aggregate fit cannot validate switching.",
+    "Contest abstention is assumed uniform within each year; other choices and contest effects stay separate.",
+    "Cohort and results snapshots have different clocks; accepted membership is a modeling constraint, not a proven counted-cohort match.",
+    "Administrative gender is not survey gender; it is an output partition, not a survey-gender predictor.",
+    "Education, income and residence-type estimates are unavailable in these administrative inputs.",
+    "Small joint cells and person-level scores are not included in the exported model results.",
+    "No nationwide transition estimate follows from this county pilot.",
+    "Positive general-election history incompatible with a later under-18 age label makes all age predictors unknown; participation and original source cells are retained.",
+    "Demographic participation and prior-choice flows are conditional model counts using current administrative attributes and age in 2024, not observed fixed-attribute historical cohorts or eligible-population turnout rates."
+  ],
+  "inputs": [
+    {
+      "role": "private_aggregate_cells",
+      "file": "joint-cells.json",
+      "bytes": 142744115,
+      "sha256": "aaffe4d523bbc4c8c7e32e5573d12a14326dd5d79f45c4be9d458b2c70650076"
+    },
+    {
+      "role": "fitted_choice_models",
+      "file": "historical-choice-model.json",
+      "bytes": 323716,
+      "sha256": "d297da0c4fd187252f21bba033e2e11c13000ee2fcf011f348ee8cd947d7c96f"
+    },
+    {
+      "role": "complete_candidate_methods",
+      "file": "county-contest-methods.json",
+      "bytes": 1464479,
+      "sha256": "5f5bd1c1a029a1fe269ec6ac3ea911d0c8eb35a3b2cfbd38b58f6a9af16a2199"
+    },
+    {
+      "role": "participation_snapshot",
+      "file": "snapshot.json",
+      "bytes": 1708735,
+      "sha256": "788144ce660a97f03974b4760fe3aa8787af17463611d636356fa2321f034fac"
+    },
+    {
+      "role": "county_linkage_audit",
+      "file": "audit.json",
+      "bytes": 3442,
+      "sha256": "f7ab5f193427d150eb691a0e1024560469f2e6cfb8404c7cc741fa0bba1b5a7c"
+    }
+  ],
+  "withheld_demographic_groups": [
+    {
+      "dimension": "age_2024",
+      "group": "Under 18 in 2024",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "age_2024",
+      "group": "Unknown",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "race",
+      "group": "INDIAN AMERICAN or ALASKA NATIVE",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "race",
+      "group": "NATIVE HAWAIIAN or PACIFIC ISLANDER",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "race",
+      "group": "OTHER",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "race",
+      "group": "TWO or MORE RACES",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "race",
+      "group": "UNDESIGNATED",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "race",
+      "group": "Unknown",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "ethnicity",
+      "group": "UNDESIGNATED",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "ethnicity",
+      "group": "Unknown",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "administrative_gender",
+      "group": "UNDESIGNATED",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    },
+    {
+      "dimension": "administrative_gender",
+      "group": "Unknown",
+      "reason": "Not selected for this nonexhaustive broad conditional release; not zero."
+    }
+  ],
+  "selection_provenance": {
+    "private_model_sha256": "fb5e1e18ceeeb37ed7da4db874b58cb818b8fd349b30a448753bbe45313996f4",
+    "independent_accounting_proof_sha256": "b15d61950ef69bc23b7929a4ffdb53256ae7bddaa10183e5c4791a91dd0dddbd",
+    "independent_native_control_proof_sha256": "67346fb11360567762d096c9e5025d051ea64fb52d34aa53fb268c826ba74539",
+    "estimator_commit": "a019cfff3a7d35266d8f502485ab4ac499ae2313",
+    "scope": "Broad selected conditional scenarios; accounting is not independent latent identification."
+  },
+  "version": "20261107-02",
+  "source_qualification": {
+    "status": "qualified_only_for_conditional_broad_aggregate_scenarios",
+    "state": "NC",
+    "county": "MECKLENBURG",
+    "selection_basis": "Broad native demographic categories selected after fitting for source support, descriptive relevance and disclosure protection, not estimated electoral outcomes. Selected rows are not exhaustive partitions. Multiple omitted race categories prevent recovering a small category by subtraction. The same broad definitions as the earlier Wake release were screened from source support, then reviewed after corrected fitting. This is not preregistration, an automatic support-count precision threshold, or a claim that subgroup differences have been empirically validated.",
+    "selected_groups": [
+      [
+        "overall",
+        "All groups"
+      ],
+      [
+        "age_2024",
+        "18-29"
+      ],
+      [
+        "age_2024",
+        "30-44"
+      ],
+      [
+        "age_2024",
+        "45-64"
+      ],
+      [
+        "age_2024",
+        "65+"
+      ],
+      [
+        "race",
+        "ASIAN"
+      ],
+      [
+        "race",
+        "BLACK or AFRICAN AMERICAN"
+      ],
+      [
+        "race",
+        "WHITE"
+      ],
+      [
+        "ethnicity",
+        "HISPANIC or LATINO"
+      ],
+      [
+        "ethnicity",
+        "NOT HISPANIC or NOT LATINO"
+      ],
+      [
+        "administrative_gender",
+        "FEMALE"
+      ],
+      [
+        "administrative_gender",
+        "MALE"
+      ]
+    ],
+    "estimand": "Assumption-conditioned transitions between actual 2024 Mecklenburg participation and a modeled 2026 electorate constrained to the frozen provisional county ballot total. Candidate choice and nonvoting transitions are latent, not individual observations.",
+    "historical_attributes": "Age is assigned to 2024; other attributes are current administrative fields. These are not observed fixed-attribute historical demographic cohorts. Race and Hispanic ethnicity are separate native dimensions. Administrative gender is not survey gender. Where positive general-election history contradicts a later under-18 label, all modeled age predictors are unknown; participation and original source inputs are retained. Birthdays are not imputed.",
+    "population": "The privately linked registration/baseline pool is not an eligible-population denominator. Unmatched history does not prove national nonparticipation; registration dates do not identify first-time voters. Known prior participants elsewhere enter a geographic component. The retained pool contains 884,023 subjects and 580,155 actual 2024 county participants; 19,823 baseline participants lack current registration and remain unresolved, not observed exits.",
+    "membership": "Accepted early/mail membership is a modeling constraint, not proof of a matching counted cohort. Absence from this cohort is not absence from Election Day voting. Registration, history, accepted records and provisional results have different clocks.",
+    "model": "Retrospective turnout probabilities and historical survey choice models are calibrated to county totals. Common choice tilts and conditional independence within cells are assumptions. Calibration to observed totals cannot validate latent switching or subgroup estimates.",
+    "diagnostics": "Raw retrospective 2022 turnout calibration error is +15.013429169779648 percentage points. Even after conditioning on the known 2022 total, absolute subgroup error reaches 8.067876507323357 points for groups of at least 100. These material errors preclude treating scenario outputs as validated demographic outcomes. Brier improvement and arithmetic recovery do not validate individual transitions.",
+    "uncertainty": "All 86 tested scenarios and marginal extrema are retained. Ranges vary loyalty, exit fractions, partisan late-turnout odds, unresolved movers, historical choice models and missing ethnicity. They are assumption sensitivity, not confidence intervals, identification bounds or exhaustive empirical uncertainty. Endpoints are not additive. No calibrated joint/subgroup empirical error interval is available; numerical detail in the download is for reproducible conditional arithmetic, not estimated population precision.",
+    "limits": "Modeled nonvoting is separated from modeled eligibility/residence exit and contest blanks/other votes. Source missingness, survivor selection, migration, mortality, timing, recall, choice-model error and changing attributes remain. These results do not identify causal campaign persuasion, state totals or precinct transitions. Do not interpret group differences as significant or the reference switching share as an identified population fraction. The limited release describes conditional model behavior only.",
+    "reproduction": "All selected broad outputs for every scenario, fitted coefficients, complete public candidate/participation inputs, source receipts, model/linkage code and tests are included. Offline public reproduction verifies selected accounting and regenerates summaries and the archive. A fresh latent fit requires the deliberately excluded private native records and fine joint cells; the public package does not independently refit or identify them.",
+    "attribution": "North Carolina State Board of Elections administrative participation/results and CES 2024 release 9, DOI 10.7910/DVN/X11EP6, CC0 historical survey models. Analysis is not endorsed by the data providers.",
+    "validated_individual_attribution": false,
+    "demographic_turnout_rates_available": false,
+    "design_confidence_intervals_available": false,
+    "individual_records_or_fine_cells_released": false,
+    "downward_geographic_allocation_permitted": false
+  },
+  "complete_selected_scenarios_in_download": true,
+  "demographic_partitions_exhaustive": false
+}

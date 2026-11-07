@@ -1,0 +1,71 @@
+{
+  "status": "qualified_only_for_conditional_broad_aggregate_scenarios",
+  "state": "NC",
+  "county": "MECKLENBURG",
+  "selection_basis": "Broad native demographic categories selected after fitting for source support, descriptive relevance and disclosure protection, not estimated electoral outcomes. Selected rows are not exhaustive partitions. Multiple omitted race categories prevent recovering a small category by subtraction. The same broad definitions as the earlier Wake release were screened from source support, then reviewed after corrected fitting. This is not preregistration, an automatic support-count precision threshold, or a claim that subgroup differences have been empirically validated.",
+  "selected_groups": [
+    [
+      "overall",
+      "All groups"
+    ],
+    [
+      "age_2024",
+      "18-29"
+    ],
+    [
+      "age_2024",
+      "30-44"
+    ],
+    [
+      "age_2024",
+      "45-64"
+    ],
+    [
+      "age_2024",
+      "65+"
+    ],
+    [
+      "race",
+      "ASIAN"
+    ],
+    [
+      "race",
+      "BLACK or AFRICAN AMERICAN"
+    ],
+    [
+      "race",
+      "WHITE"
+    ],
+    [
+      "ethnicity",
+      "HISPANIC or LATINO"
+    ],
+    [
+      "ethnicity",
+      "NOT HISPANIC or NOT LATINO"
+    ],
+    [
+      "administrative_gender",
+      "FEMALE"
+    ],
+    [
+      "administrative_gender",
+      "MALE"
+    ]
+  ],
+  "estimand": "Assumption-conditioned transitions between actual 2024 Mecklenburg participation and a modeled 2026 electorate constrained to the frozen provisional county ballot total. Candidate choice and nonvoting transitions are latent, not individual observations.",
+  "historical_attributes": "Age is assigned to 2024; other attributes are current administrative fields. These are not observed fixed-attribute historical demographic cohorts. Race and Hispanic ethnicity are separate native dimensions. Administrative gender is not survey gender. Where positive general-election history contradicts a later under-18 label, all modeled age predictors are unknown; participation and original source inputs are retained. Birthdays are not imputed.",
+  "population": "The privately linked registration/baseline pool is not an eligible-population denominator. Unmatched history does not prove national nonparticipation; registration dates do not identify first-time voters. Known prior participants elsewhere enter a geographic component. The retained pool contains 884,023 subjects and 580,155 actual 2024 county participants; 19,823 baseline participants lack current registration and remain unresolved, not observed exits.",
+  "membership": "Accepted early/mail membership is a modeling constraint, not proof of a matching counted cohort. Absence from this cohort is not absence from Election Day voting. Registration, history, accepted records and provisional results have different clocks.",
+  "model": "Retrospective turnout probabilities and historical survey choice models are calibrated to county totals. Common choice tilts and conditional independence within cells are assumptions. Calibration to observed totals cannot validate latent switching or subgroup estimates.",
+  "diagnostics": "Raw retrospective 2022 turnout calibration error is +15.013429169779648 percentage points. Even after conditioning on the known 2022 total, absolute subgroup error reaches 8.067876507323357 points for groups of at least 100. These material errors preclude treating scenario outputs as validated demographic outcomes. Brier improvement and arithmetic recovery do not validate individual transitions.",
+  "uncertainty": "All 86 tested scenarios and marginal extrema are retained. Ranges vary loyalty, exit fractions, partisan late-turnout odds, unresolved movers, historical choice models and missing ethnicity. They are assumption sensitivity, not confidence intervals, identification bounds or exhaustive empirical uncertainty. Endpoints are not additive. No calibrated joint/subgroup empirical error interval is available; numerical detail in the download is for reproducible conditional arithmetic, not estimated population precision.",
+  "limits": "Modeled nonvoting is separated from modeled eligibility/residence exit and contest blanks/other votes. Source missingness, survivor selection, migration, mortality, timing, recall, choice-model error and changing attributes remain. These results do not identify causal campaign persuasion, state totals or precinct transitions. Do not interpret group differences as significant or the reference switching share as an identified population fraction. The limited release describes conditional model behavior only.",
+  "reproduction": "All selected broad outputs for every scenario, fitted coefficients, complete public candidate/participation inputs, source receipts, model/linkage code and tests are included. Offline public reproduction verifies selected accounting and regenerates summaries and the archive. A fresh latent fit requires the deliberately excluded private native records and fine joint cells; the public package does not independently refit or identify them.",
+  "attribution": "North Carolina State Board of Elections administrative participation/results and CES 2024 release 9, DOI 10.7910/DVN/X11EP6, CC0 historical survey models. Analysis is not endorsed by the data providers.",
+  "validated_individual_attribution": false,
+  "demographic_turnout_rates_available": false,
+  "design_confidence_intervals_available": false,
+  "individual_records_or_fine_cells_released": false,
+  "downward_geographic_allocation_permitted": false
+}

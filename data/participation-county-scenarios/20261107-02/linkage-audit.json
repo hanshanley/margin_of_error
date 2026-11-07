@@ -1,0 +1,78 @@
+{
+  "version": "20261107-linked-county-cohort-01",
+  "state_code": "NC",
+  "county": "MECKLENBURG",
+  "sources": [
+    {
+      "file": "registration-mecklenburg.zip",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvoter60.zip",
+      "final_url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvoter60.zip",
+      "bytes": 63334733,
+      "sha256": "6b596b344530df770871921113b478834d5b75f9309ac68d867cf27a43aacc78",
+      "retrieved_at": "2026-11-07T07:07:09.921866+00:00",
+      "last_modified": "Mon, 02 Nov 2026 01:18:14 GMT",
+      "etag": "\"6c58029981a7d902efd00e86a627ef1f-8\"",
+      "http_status": 200,
+      "individual_records_exported": false
+    },
+    {
+      "file": "history-statewide.zip",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis_Statewide.zip",
+      "bytes": 351220317,
+      "sha256": "6e0d4fee2f0523ec0937d1939c56e2892f728624526b5d87337e26c8b7e8112c",
+      "md5": "6259055cb0e51b5c925d9c82690556e5",
+      "expected_md5": null,
+      "retrieved_at": "2026-11-06T23:11:22.816942+00:00",
+      "last_modified": "Mon, 02 Nov 2026 01:18:00 GMT",
+      "etag": "\"3301b0432e652fe9b4a58c1f972562b0-42\"",
+      "individual_records_exported": false
+    },
+    {
+      "file": "absentee.zip",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/absentee_20261103.zip",
+      "bytes": 127167072,
+      "sha256": "048c09258bb539caf594e0d1ea31fa5ffb0f4a1e495f04f09160dbabc10e2879",
+      "retrieved_at": "2026-11-06T22:55:02.757614+00:00",
+      "last_modified": "Fri, 06 Nov 2026 10:28:21 GMT",
+      "etag": "\"4f8acfb9fbafa2a741bd8cfdf75e2547-16\"",
+      "public_individual_records_exported": false
+    }
+  ],
+  "registration": {
+    "selected_source_records": 988741,
+    "ambiguous_identifiers_excluded": 0,
+    "unambiguous_records": 988741
+  },
+  "accepted_cohort": {
+    "selected_source_records": 300363,
+    "repeated_identifier_records_beyond_first": 1,
+    "ambiguous_identifiers_excluded": 1,
+    "unambiguous_records": 300361
+  },
+  "history": {
+    "native_records": 35526599,
+    "general_2020_records": 5544109,
+    "general_2024_records": 5722843,
+    "general_2022_records": 3789853,
+    "general_2016_records": 4768199,
+    "general_2018_records": 3754145,
+    "baseline_county_2024_records": 580159,
+    "duplicate_selected_general_entries": 16,
+    "baseline_county_2024_unique_identifiers": 580155
+  },
+  "aggregate_cells": 156730,
+  "accepted_with_registration": 299805,
+  "baseline_with_registration": 560332,
+  "baseline_without_registration": 19823,
+  "limitations": [
+    "An absent statewide history match does not establish national nonparticipation.",
+    "Not in the early/mail cohort is not sitting out the 2026 election.",
+    "Registration after 2024 includes movers and re-registrations, not just first-time voters.",
+    "2026 registration party/status/demographics are not observed 2024 choice or necessarily 2024 attributes.",
+    "Race/ethnicity fields retain source codes or native descriptions; harmonization is a separate model step.",
+    "Every repeated accepted or registration identifier is excluded, never arbitrarily deduplicated.",
+    "Baseline voters outside the initial target set have incomplete other-year searches, explicitly unknown.",
+    "Only aggregate model cells are exported, never identifiers or individual scores."
+  ],
+  "joint_cells_sha256": "aaffe4d523bbc4c8c7e32e5573d12a14326dd5d79f45c4be9d458b2c70650076"
+}

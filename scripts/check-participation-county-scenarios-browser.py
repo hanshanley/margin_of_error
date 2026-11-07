@@ -1,4 +1,4 @@
-"""Verify every selected Wake count, prior-choice destination and range in four browser modes."""
+"""Verify every selected county count, prior-choice destination and range in four browser modes."""
 
 import argparse
 import hashlib
@@ -10,7 +10,10 @@ from playwright.sync_api import expect, sync_playwright
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PATH = "/participation-county-scenarios/20261107-01/"
+VERSIONS = {
+    "20261107-01": ("participation-county-scenarios", 216),
+    "20261107-02": ("participation-mecklenburg-scenarios", 195),
+}
 
 
 def count(value):
@@ -25,11 +28,16 @@ def text(locator):
     return " ".join(locator.inner_text().split())
 
 
-def check(base, proof):
+def check(base, proof, version="20261107-01"):
     if proof and proof.exists():
         raise ValueError("Refuse to replace an existing county browser receipt")
-    expected = json.loads((ROOT / f"public{PATH}summary.json").read_text())
+    path = f"/participation-county-scenarios/{version}/"
+    panel_id, units = VERSIONS[version]
+    expected = json.loads((ROOT / f"public{path}summary.json").read_text())
+    audit = json.loads((ROOT / f"data/participation-county-scenarios/{version}/linkage-audit.json").read_text())
     reference = expected["default_conditional_scenario"]
+    diagnostics = expected["turnout_temporal_diagnostics"]
+    ballots = sum(reference["after"][key] for key in ("D", "R", "O", "B"))
     results = []
     with sync_playwright() as p:
         browser = p.chromium.launch()
@@ -46,21 +54,29 @@ def check(base, proof):
                         context.route("**/participation-county-scenarios/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
-                    panel = page.locator("#participation-county-scenarios")
+                    panel = page.locator("#" + panel_id)
                     expect(panel).to_be_visible()
                     expect(panel.locator("[data-county-dimension]")).to_have_count(5)
                     for details in panel.locator("details").all():
                         details.locator("summary").click()
                     for phrase in (
-                        "+22.21 points toward Democrats", "conditional scenarios, not observed individual persuasion",
-                        "sensitivity ranges are not confidence intervals", "+9.74 percentage points",
-                        "subgroup errors reached 8.84", "525,061 ballots and 216 of 216",
+                        f'{reference["swing_margin_pp"]:+.2f} points toward Democrats',
+                        "conditional scenarios, not observed individual persuasion",
+                        "sensitivity ranges are not confidence intervals",
+                        f'{diagnostics["validation_calibration_error_pp"]:+.2f} percentage points',
+                        f'subgroup errors reached {diagnostics["known_total_conditioned_max_group_error_pp_n_at_least_100"]:.2f}',
+                        f'{round(ballots):,} ballots and {units} of {units}',
                         "not final 2026 totals", "Measured staying home",
-                        "Selected rows are not exhaustive partitions", "24,904 prior participants",
+                        "Selected rows are not exhaustive partitions",
+                        f'{audit["baseline_without_registration"]:,} prior participants',
                         "exit fractions are assumed", "not silently deleted", "several race categories",
                         "A fresh latent fit needs excluded private records and fine joint cells",
                         "not completed nationwide or precinct coverage"):
                         assert phrase.casefold() in text(panel).casefold(), (mode, phrase)
+                    if version == "20261107-02":
+                        for phrase in ("all modeled age predictors unknown", "birthdays are not imputed",
+                                       "No calibrated subgroup error interval"):
+                            assert phrase.casefold() in text(panel).casefold(), (mode, phrase)
                     numeric_cells = 0
                     for group in reference["demographics"]:
                         dimension, label = group["dimension"], group["group"]
@@ -106,18 +122,18 @@ def check(base, proof):
                     if mode == "failed_json":
                         assert page.evaluate("""async path => {
                             try { await fetch(path); return false; } catch { return true; }
-                        }""", PATH + "summary.json")
+                        }""", path + "summary.json")
                         expect(panel.locator('[data-county-kind="activity"]')).to_have_count(12)
                     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), mode
                     expect(page.locator("#participation-panel-intentions")).to_be_attached()
                     expect(page.locator("#participation-survey")).to_be_attached()
                     if mode == "desktop":
                         for name in ("summary.json", "download.json", "complete-analysis.zip"):
-                            response = context.request.get(base.rstrip("/") + PATH + name)
+                            response = context.request.get(base.rstrip("/") + path + name)
                             assert response.ok
                             raw = response.body()
-                            assert raw == (ROOT / f"public{PATH}{name}").read_bytes()
-                        info = json.loads((ROOT / f"public{PATH}download.json").read_text())
+                            assert raw == (ROOT / f"public{path}{name}").read_bytes()
+                        info = json.loads((ROOT / f"public{path}download.json").read_text())
                         assert len(raw) == info["bytes"] and hashlib.sha256(raw).hexdigest() == info["sha256"]
                     results.append({"mode": mode, "passed": True, "numeric_cells_checked": numeric_cells})
                 finally:
@@ -125,7 +141,7 @@ def check(base, proof):
         finally:
             browser.close()
     if proof:
-        proof.write_text(json.dumps({"base_url": base, "checks": results}, indent=2) + "\n")
+        proof.write_text(json.dumps({"base_url": base, "version": version, "checks": results}, indent=2) + "\n")
     print(json.dumps(results))
 
 
@@ -133,5 +149,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base-url", default="http://127.0.0.1:4331")
     parser.add_argument("--proof", type=Path)
+    parser.add_argument("--version", choices=VERSIONS, default="20261107-01")
     args = parser.parse_args()
-    check(args.base_url, args.proof)
+    check(args.base_url, args.proof, args.version)

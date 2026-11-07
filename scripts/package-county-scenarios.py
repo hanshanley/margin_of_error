@@ -1,5 +1,6 @@
 """Reproduce selected conditional county scenarios without publishing private model cells."""
 
+import argparse
 import copy
 import hashlib
 import io
@@ -19,6 +20,18 @@ PINS = {
     "linkage-audit.json": "ed5542efe41c02cd4730cfdd724a65ddffe364156a9a90cacc8febb08b6b3a81",
     "methodology-review.json": "2fa0bc4f350be181b2015d0de1bce7a83781c905bdaaf54aabe85b675dbd5c4b",
     "selected-scenarios.json": "2413ded08e9cbc47c1c9fe0a3657a8623e461ccba5d75c4f0e23b9e4d40b7cbb",
+}
+RELEASES = {
+    VERSION: {"county": "WAKE", "pins": PINS},
+    "20261107-02": {
+        "county": "MECKLENBURG",
+        "pins": {
+            "accounting-proof.json": "b15d61950ef69bc23b7929a4ffdb53256ae7bddaa10183e5c4791a91dd0dddbd",
+            "linkage-audit.json": "f7ab5f193427d150eb691a0e1024560469f2e6cfb8404c7cc741fa0bba1b5a7c",
+            "methodology-review.json": "696e8580881d5b2f5785173c3ca1d86c9de351be9d7be0904ad59b4816a2e691",
+            "selected-scenarios.json": "24dbbd9c7615be09f5503ee401045327fe17bb1c4c2686a352a613622098941f",
+        },
+    },
 }
 COMPONENTS = ("switching", "dropoff", "new_returning", "other_and_contest", "eligibility_residence")
 STATES = ("D", "R", "O", "B", "N", "X")
@@ -61,7 +74,8 @@ def close(actual, expected):
         raise ValueError("Selected county participation or transition accounting differs")
 
 
-def review(snapshot, methods, proof):
+def review(snapshot, methods, proof, version=VERSION):
+    release = RELEASES[version]
     fields(snapshot, (
         "status", "state", "county", "baseline_contest", "outcome_contest",
         "validated_individual_attribution", "scenario_count", "default_conditional_scenario",
@@ -92,7 +106,7 @@ def review(snapshot, methods, proof):
     if (methods["status"] != "qualified_only_for_conditional_broad_aggregate_scenarios"
             or any(methods[key] is not False for key in FORBIDDEN_CLAIMS)
             or snapshot["state"] != methods["state"] or snapshot["county"] != methods["county"]
-            or snapshot["county"] != "WAKE" or snapshot["state"] != "NC"
+            or snapshot["county"] != release["county"] or snapshot["state"] != "NC"
             or snapshot["validated_individual_attribution"] is not False
             or snapshot["status"] != "experimental_conditional_model_not_individually_identified"
             or snapshot["uncertainty_type"] != "Assumption sensitivity, NOT a confidence or identification interval"):
@@ -216,32 +230,35 @@ def review(snapshot, methods, proof):
         if snapshot["sensitivity_range_margin_pp"][component] != {"minimum": min(values), "maximum": max(values)}:
             raise ValueError("County sensitivity endpoint differs")
     summary = copy.deepcopy({key: value for key, value in snapshot.items() if key != "scenarios"})
-    summary["version"] = VERSION
+    summary["version"] = version
     summary["source_qualification"] = methods
     summary["complete_selected_scenarios_in_download"] = True
     summary["demographic_partitions_exhaustive"] = False
     return summary
 
 
-def package():
+def package(version=VERSION):
+    pins = RELEASES[version]["pins"]
+    data = f"data/participation-county-scenarios/{version}"
+    public = f"public/participation-county-scenarios/{version}"
     selected = {}
-    for name, digest in PINS.items():
-        raw = (ROOT / DATA / name).read_bytes()
+    for name, digest in pins.items():
+        raw = (ROOT / data / name).read_bytes()
         if hashlib.sha256(raw).hexdigest() != digest:
             raise ValueError("Frozen county selection changed; create a new immutable version")
         selected[name] = json.loads(raw)
     summary = review(selected["selected-scenarios.json"], selected["methodology-review.json"],
-                     selected["accounting-proof.json"])
+                     selected["accounting-proof.json"], version)
     snapshot = selected["selected-scenarios.json"]
     inputs = {row["sha256"]: row for row in snapshot["inputs"]}
-    contents = {f"{DATA}/{name}": (ROOT / DATA / name).read_bytes() for name in PINS}
+    contents = {f"{data}/{name}": (ROOT / data / name).read_bytes() for name in pins}
     for name in INPUTS:
         raw = (ROOT / name).read_bytes()
         receipt = inputs.get(hashlib.sha256(raw).hexdigest())
         if receipt is None or receipt["bytes"] != len(raw):
             raise ValueError("Frozen public model input receipt differs")
         contents[name] = raw
-    contents[f"{PUBLIC}/summary.json"] = encoded(summary)
+    contents[f"{public}/summary.json"] = encoded(summary)
     for name in (
         "package-county-scenarios.py", "test-package-county-scenarios.py",
         "model-nc-swing.py", "test-model-nc-swing.py",
@@ -253,8 +270,8 @@ def package():
         contents[f"scripts/{name}"] = (ROOT / "scripts" / name).read_bytes()
     contents["REPRODUCTION.txt"] = (
         "Extract preserving paths. Python>=3.9 standard library reproduces the selected release:\n"
-        "python3 scripts/test-package-county-scenarios.py\n"
-        "python3 scripts/package-county-scenarios.py\n"
+        f"python3 scripts/test-package-county-scenarios.py --version {version}\n"
+        f"python3 scripts/package-county-scenarios.py --version {version}\n"
         "Verify every checksums.json member; summary/ZIP/download metadata reproduce exactly offline.\n"
         "ALL86 full SELECTED scenarios, source receipts, full public candidate/ballot inputs,\n"
         "historical model coefficients, qualification, exact model/linkage code and tests included.\n"
@@ -285,7 +302,7 @@ def package():
                     members=len(contents), full_selected_scenarios=86, selected_groups=12,
                     complete_selected_aggregate_inputs_and_code=True, private_fit_reproduced=False,
                     personal_records_included=False, fine_joint_cells_included=False)
-    output = ROOT / PUBLIC
+    output = ROOT / public
     output.mkdir(parents=True, exist_ok=True)
     for name, value in (("summary.json", encoded(summary)), ("complete-analysis.zip", raw),
                         ("download.json", encoded(metadata))):
@@ -297,4 +314,6 @@ def package():
 
 
 if __name__ == "__main__":
-    package()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--version", choices=RELEASES, default=VERSION)
+    package(parser.parse_args().version)
