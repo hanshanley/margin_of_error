@@ -1,0 +1,21 @@
+{
+  "study_id": "pew-atp-wave200-2026-10",
+  "status": "qualified_only_for_published_broad_pre_election_intentions",
+  "selection": "Both major prior-choice groups, with every published D/R/other/unsure percentage and the unreported nonresponse explicitly unknown. No outcome-selected subgroup or respondent records.",
+  "historical_evidence": "Participation in 2024 is matched to official records; candidate choice was surveyed after that election, not administratively observed. The article says the month after and the exported workbook says the week after; exact historical interview dates are unverified.",
+  "current_evidence": "September 28-October 4, 2026 House intentions including leaners, among current registered voters. This is not completed November choice, a fixed original 2024 coalition, or the selected 2026 electorate.",
+  "question_scope": "CONG and CONGA normally insert district candidate names. The source retains generic party choices in Alaska/some Louisiana races, Missouri map litigation, unopposed races and one unknown district. No named statewide House race is inferred.",
+  "weights": "ATP recruitment/selection and nonresponse/attrition adjustments, then wave calibration and 1st/99th percentile trimming. Native benchmarks include validated 2024 turnout/choice using FEC results, UF Election Lab turnout and 2023 ACS VEP. These are not 2026 electorate weights; no new 2024 reweighting or N26 scaling is applied.",
+  "study_identity": "Independent American Trends Panel study, fielded by SSRS for Pew. A shared contractor does not make it the SSRS Voter Poll sample.",
+  "nonresponse_and_rounding": "The workbook explicitly omits no-answer responses. A displayed four-response sum of 100 does not establish zero refusals. Unknown stays null; no renormalization or subtraction of unsure/nonresponse into nonvoting.",
+  "precision": "Whole percentages are publisher-rounded descriptives, not exact population probabilities. Prior-group bases and joint design intervals were not supplied in these selected tables. The overall registered-voter 1.8 pp MoE is not assigned to prior groups or comparisons.",
+  "demographic_and_local_limits": "The released workbook supplies separate demographic House preferences but not demographic-by-prior-vote joints. Do not multiply disconnected marginals or transfer Pew category definitions to other studies. No state/county/precinct allocation.",
+  "rights": "Limited attributed factual excerpts, source receipts and our code only. Native report HTML/PDFs/figures and full workbook remain private and are not mirrored or relicensed. No respondent-level dataset or personal records acquired. No Pew endorsement is implied.",
+  "copyright_notice": "Copyright 2026 Pew Research Center",
+  "attribution": "Pew Research Center, American Trends Panel Wave 200, survey September 28-October 4, 2026, published October 8, 2026.",
+  "population_scaling_permitted": false,
+  "completed_participation_permitted": false,
+  "demographic_joint_estimation_permitted": false,
+  "state_or_local_allocation_permitted": false,
+  "design_confidence_intervals_permitted": false
+}

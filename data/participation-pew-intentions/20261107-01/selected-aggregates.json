@@ -1,0 +1,98 @@
+{
+  "study_id": "pew-atp-wave200-2026-10",
+  "publisher": "Pew Research Center",
+  "geography": "national",
+  "universe": "current_registered_voters",
+  "field_period": {
+    "start": "2026-09-28",
+    "end": "2026-10-04",
+    "completed_november_2026_votes": false
+  },
+  "raw_registered_voter_sample": 3917,
+  "contest_scope": "House_intentions_in_respondents_own_district_including_leaners",
+  "prior_turnout_validated": true,
+  "prior_choice_administratively_observed": false,
+  "source_files": [
+    {
+      "file": "publisher-article.html",
+      "source_url": "https://www.pewresearch.org/politics/2026/10/08/with-americans-in-a-sour-mood-democratic-voters-are-more-engaged-in-midterms/",
+      "bytes": 600125,
+      "sha256": "8aaeeafe5e4f5be783a2f4fa7169ad0c04d218b70a131c77c3d880fd3db9fbbf",
+      "acquired_at": "2026-11-07T04:25:20.359239+00:00"
+    },
+    {
+      "file": "topline.pdf",
+      "source_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms-economy_topline.pdf",
+      "bytes": 588800,
+      "sha256": "1033a1e13318f637003d7e7ab4930406505d1db6cdf2b36b39958e53b4681565",
+      "acquired_at": "2026-11-07T04:25:20.463292+00:00"
+    },
+    {
+      "file": "questionnaire.pdf",
+      "source_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms-economy_questionnaire.pdf",
+      "bytes": 192679,
+      "sha256": "54f6c780697461b8beb9faa5ec544d33bc3baff78e6afe59aa986ccc7c48dc9d",
+      "acquired_at": "2026-11-07T04:25:21.700494+00:00"
+    },
+    {
+      "file": "methodology.html",
+      "source_url": "https://www.pewresearch.org/politics/2026/10/08/midterms-2026-methodology/",
+      "bytes": 437490,
+      "sha256": "ddddf82be1ffbe608a751cc4a38723f066b4db685f6d5eacbcff449b9307af63",
+      "acquired_at": "2026-11-07T04:25:22.263126+00:00"
+    },
+    {
+      "file": "terms.html",
+      "source_url": "https://www.pewresearch.org/about/terms-and-conditions/",
+      "bytes": 324288,
+      "sha256": "39329f4521db39aabdcfa140074063c4e1dba2a2dda2dd068cb9b84ef5fc0bea",
+      "acquired_at": "2026-11-07T04:25:22.966102+00:00"
+    },
+    {
+      "file": "weighting-dimensions.png",
+      "source_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms_M-03.png?w=420",
+      "bytes": 31153,
+      "sha256": "d684bf20a0c9889a29c9c9e7d0474d98134b8a31a37e658f1a83d2eeea3ff918",
+      "acquired_at": "2026-11-07T04:27:20.958836+00:00"
+    },
+    {
+      "file": "sample-bases.png",
+      "source_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms_M-04.png?w=640",
+      "bytes": 29616,
+      "sha256": "7f036d40465d0fb906ec2ca9fc18bd23571d817747c9560184e4de8a2a046cba",
+      "acquired_at": "2026-11-07T04:27:21.245629+00:00"
+    },
+    {
+      "file": "detailed-tables.xlsx",
+      "bytes": 32828,
+      "sha256": "918a3379affc5d4f804d3dc452986967cbe4641d79a4ed51b4e49dd165dcd116",
+      "source_url": "https://docs.google.com/spreadsheets/d/1Xm-bp_uZKnHqbFwyRAhisydugmJ2Q8tECL3GA1t2WrM/edit?gid=1526669780#gid=1526669780",
+      "acquired_at": "2026-11-07T04:29:28.232415+00:00",
+      "acquisition": "Publisher-declared public viewer: File > Download > Microsoft Excel"
+    }
+  ],
+  "rows": [
+    {
+      "source_group": "Trump 2024 voters",
+      "intended_house_pct": {
+        "D": 5,
+        "R": 77,
+        "Other": 5,
+        "Not sure": 13
+      },
+      "no_answer_pct": null,
+      "published_sum_minus_100_pp": 0
+    },
+    {
+      "source_group": "Harris 2024 voters",
+      "intended_house_pct": {
+        "D": 87,
+        "R": 3,
+        "Other": 3,
+        "Not sure": 7
+      },
+      "no_answer_pct": null,
+      "published_sum_minus_100_pp": 0
+    }
+  ]
+}
