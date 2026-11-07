@@ -1,0 +1,157 @@
+{
+  "status": "published_historical_CPS_self_report_not_2026_or_individual_transitions",
+  "years": [
+    2018,
+    2020,
+    2022,
+    2024
+  ],
+  "states_and_DC": 51,
+  "national_scope": "United States (including D.C.)",
+  "groups": [
+    "Total",
+    "Male",
+    "Female",
+    "White alone",
+    "White non-Hispanic alone",
+    "Black alone",
+    "Asian alone",
+    "Hispanic (any race)",
+    "White alone or in combination",
+    "Black alone or in combination",
+    "Asian alone or in combination",
+    "18 to 24",
+    "25 to 34",
+    "35 to 44",
+    "45 to 64",
+    "65+"
+  ],
+  "unique_observations": 3328,
+  "native_rows_including_duplicate_overall_controls": 3536,
+  "duplicate_overall_controls_verified": 208,
+  "display_dispositions": {
+    "published": 2900,
+    "native_B_not_published": 214,
+    "withheld_small_rounded_population_base": 214
+  },
+  "units": "Native weighted population counts in thousands; rates and 90% margins in percentage points.",
+  "denominator": "Native civilian noninstitutionalized adult citizen population, not legal eligibility.",
+  "native_definitions": [
+    {
+      "year": 2018,
+      "table": "4b",
+      "title": "Table 4b.  Reported Voting and Registration, by Sex, Race and Hispanic Origin, for States:  November 2018",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES: ",
+        "A dash '-' represents zero or rounds to zero. ",
+        "The symbol B means that the base is less than 75,000 and therefore too small to show the derived measure.",
+        "Estimates may not sum to totals due to rounding.",
+        "For information on confidentiality protection, sampling error, nonsampling error, and definitions, see https://www2.census.gov/programs-surveys/cps/techdocs/cpsnov18.pdf",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2018"
+      ]
+    },
+    {
+      "year": 2018,
+      "table": "4c",
+      "title": "Table 4c.  Reported Voting and Registration, by Age, for States:  November 2018",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES: ",
+        "The symbol B means that the base is less than 75,000 and therefore too small to show the derived measure.",
+        "Estimates may not sum to totals due to rounding.",
+        "For information on confidentiality protection, sampling error, nonsampling error, and definitions, see https://www2.census.gov/programs-surveys/cps/techdocs/cpsnov18.pdf",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2018"
+      ]
+    },
+    {
+      "year": 2020,
+      "table": "4b",
+      "title": "Table 4b.  Reported Voting and Registration, by Sex, Race and Hispanic Origin, for States: November 2020",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES: ",
+        "A dash '-' represents zero or rounds to zero. ",
+        "The symbol B means that the base is less than 75,000 and therefore too small to show the derived measure.",
+        "Estimates may not sum to totals due to rounding.",
+        "For information on confidentiality protection, sampling error, nonsampling error, and definitions, see https://www.census.gov/programs-surveys/cps/technical-documentation/complete.2020.html",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2020"
+      ]
+    },
+    {
+      "year": 2020,
+      "table": "4c",
+      "title": "Table 4c.  Reported Voting and Registration, by Age, for States: November 2020",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES: ",
+        "The symbol B means that the base is less than 75,000 and therefore too small to show the derived measure.",
+        "Estimates may not sum to totals due to rounding.",
+        "For information on confidentiality protection, sampling error, nonsampling error, and definitions, see hthttps://www.census.gov/programs-surveys/cps/technical-documentation/complete.2020.html",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2020"
+      ]
+    },
+    {
+      "year": 2022,
+      "table": "4b",
+      "title": "Table 4b. Reported Voting and Registration of the Total Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2022",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES:",
+        "Estimates may not sum to totals due to rounding.",
+        "Information on confidentiality protection, sampling error, nonsampling error, and definitions is available at <https://www.census.gov/programs-surveys/cps/technical-documentation/complete.22.html>",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2022"
+      ]
+    },
+    {
+      "year": 2022,
+      "table": "4c",
+      "title": "Table 4c. Reported Voting and Registration of the Total Voting-Age Population, by Age, for States: November 2022",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES:",
+        "Estimates may not sum to totals due to rounding.",
+        "Information on confidentiality protection, sampling error, nonsampling error, and definitions is available at <https://www.census.gov/programs-surveys/cps/technical-documentation/complete.22.html>",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2022"
+      ]
+    },
+    {
+      "year": 2024,
+      "table": "4b",
+      "title": "Table 4b. Reported Voting and Registration of the Total Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2024",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES:",
+        "Estimates may not sum to totals due to rounding.",
+        "Information on confidentiality protection, sampling error, nonsampling error, and definitions is available at <https://www.census.gov/programs-surveys/cps/technical-documentation/complete.24.html>",
+        "Source: U.S. Census Bureau, Current Population Survey Public-Use Data, November 2024"
+      ]
+    },
+    {
+      "year": 2024,
+      "table": "4c",
+      "title": "Table 4c. Reported Voting and Registration of the Total Voting-Age Population, by Age, for States: November 2024",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES:",
+        "Estimates may not sum to totals due to rounding.",
+        "Information on confidentiality protection, sampling error, nonsampling error, and definitions is available at <https://www.census.gov/programs-surveys/cps/technical-documentation/complete.24.html>",
+        "Source: U.S. Census Bureau, Current Population Survey Public-Use Data, November 2024"
+      ]
+    }
+  ],
+  "limits": [
+    "2018/2022 are midterms; 2020/2024 are presidential elections. These are repeated cross-sections.",
+    "No 2026 participation, individual switching, cohort retention, first-time voting, county or precinct estimates.",
+    "Percentages and margins are native published cells, never reconstructed from rounded counts.",
+    "B remains not published; dash means zero or rounds to zero, never an exact inferred zero.",
+    "Display also withholds rounded citizen population bases <=75 thousand, including the ambiguous rounding boundary. This is population, NOT respondent n or effective n, and is not a guarantee of precision.",
+    "Small-base native numbers remain only in the complete unmodified governmental source tables and native-cell transcription, not qualified display estimates. Native B is never recovered.",
+    "Native estimate +/- native margin gives the source's 90% interval, not a simultaneous interval or confidence interval for a difference. No interval clipping, pooled variance or significance tests.",
+    "Self/proxy-reported participation can over-report administrative turnout; sampling margins do not cover nonsampling errors.",
+    "Race-alone, race-in-combination and Hispanic views overlap. Do not sum them, cross with sex/age, or fabricate an exclusive residual.",
+    "Education, income and urbanicity are not present in these tables; no intersections are manufactured.",
+    "Native national observations include D.C.; they are not labeled US50 or reconstructed by summing rounded states.",
+    "No revisions, changing population controls, sources or fieldwork are blended into a fixed-person panel."
+  ]
+}
