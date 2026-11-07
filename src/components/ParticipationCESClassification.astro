@@ -1,0 +1,127 @@
+---
+import { readFileSync } from 'node:fs';
+
+const base = '/participation-ces-classification/20261107-01/';
+type Row = {
+	dimension: string; group: string; respondents: number;
+	record_positive_weight_fraction: number; classified_nonvote_weight_fraction: number;
+	unresolved_weight_fraction: number; conditional_compatible_fraction: number[];
+	effective_sample_size_not_design_precision: number;
+};
+const analysis: {
+	rows: Row[];
+	source_accounting: {
+		native_respondents: number; postwave_respondents: number;
+		missing_postwave_weight_nonresponse: number; selected_US50_postwave_respondents: number;
+		DC_postwave_respondents_excluded_from_US50: number;
+	};
+	record_only_compatible_fraction_same_post_frame_overall_only: number[];
+} = JSON.parse(readFileSync(`public${base}classification-evidence.json`, 'utf8'));
+const integer = (value: number) => value.toLocaleString('en-US', { maximumFractionDigits: 0 });
+const percent = (value: number) => `${(100 * value).toFixed(1)}%`;
+const counts = analysis.source_accounting;
+const dimensions = [
+	['overall', 'Overall: 50-state adult post-wave sample',
+		'The same 50-state post-wave frame used for every table below; D.C. is excluded.'],
+	['calendar_year_age_2024', 'Age in calendar year 2024',
+		'2024 minus documented birth year, not exact election-day age or a fixed 2026 age cohort.'],
+	['education_2024', 'Source-reported education',
+		'Native educational attainment, not neighborhood college share.'],
+	['gender_2024', 'Survey-reported gender',
+		'Native Man/Woman labels, not administrative sex. Non-binary and Other remain in overall totals.'],
+	['race_education_2024', 'Combined race/ethnicity and education',
+		'A native-derived joint partition, not a product of demographic marginals. College degree means 4-year or post-graduate.'],
+	['race_ethnicity_2024', 'Combined race and Hispanic ethnicity',
+		'Hispanic if either the native Hispanic-origin field is Yes or native race is Hispanic; otherwise non-Hispanic requires an explicit No to Hispanic origin.'],
+	['source_race_2024', 'Native source race, kept separate',
+		'The source race answer includes Hispanic as a category. It is not interchangeable with the combined race/ethnicity table or SSRS categories.'],
+];
+---
+
+<section id="participation-ces-classification" class="participation-current" aria-labelledby="ces-classification-title">
+	<header class="section-intro">
+		<p class="kicker">Historical participation evidence · 2024 Cooperative Election Study</p>
+		<h2 id="ces-classification-title">Keep unresolved voting histories in the denominator</h2>
+		<p>These selected national demographic tables describe <strong>2024 participation classifications</strong>
+			in an adult survey sample. They are not population-turnout point estimates or evidence of
+			2026 switching, staying home or first-time voting.</p>
+	</header>
+	<p data-ces-response-accounting>{`Of ${integer(counts.native_respondents)} source respondents, ${integer(counts.postwave_respondents)} have post-wave weights; ${integer(counts.missing_postwave_weight_nonresponse)} without those weights remain in source nonresponse accounting. These tables retain ${integer(counts.selected_US50_postwave_respondents)} respondents across the 50 states and exclude ${integer(counts.DC_postwave_respondents_excluded_from_US50)} D.C. respondents. Sample counts are not population totals or an eligible-voter denominator.`}</p>
+	<p><strong>All unresolved histories stay in the full group denominator.</strong> The conditional
+		range lets unresolved histories be either votes or nonvotes, assuming the known classifications
+		are correct. It is <strong>not a confidence interval</strong> and does not cover matching,
+		reporting, nonresponse or calibration errors. Differences between groups are not significance tests.</p>
+	{dimensions.map(([dimension, label, definition]) => <details class="explorer-notes" open={dimension === 'overall'} data-ces-table={dimension}>
+		<summary>{label}</summary>
+		<p>{definition}</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={`${label}: conditional participation classification`}>
+			<table>
+				<caption>Weighted fractions of the full selected group, including unresolved histories.
+					Raw and Kish sample sizes are support diagnostics, not design precision.</caption>
+				<thead><tr><th scope="col">Group</th><th scope="col">Raw respondents</th>
+					<th scope="col">Recorded vote</th><th scope="col">Classified nonvote</th>
+					<th scope="col">Unresolved</th><th scope="col">Conditional compatible fraction</th>
+					<th scope="col">Kish diagnostic</th></tr></thead>
+				<tbody>{analysis.rows.filter(row => row.dimension === dimension).map(row => <tr
+					data-ces-row data-ces-dimension={dimension} data-ces-group={row.group}>
+					<th scope="row">{dimension === 'overall' ? '50-state sample' : row.group}</th>
+					<td data-ces-value="respondents">{integer(row.respondents)}</td>
+					<td data-ces-value="record_positive_weight_fraction">{percent(row.record_positive_weight_fraction)}</td>
+					<td data-ces-value="classified_nonvote_weight_fraction">{percent(row.classified_nonvote_weight_fraction)}</td>
+					<td data-ces-value="unresolved_weight_fraction">{percent(row.unresolved_weight_fraction)}</td>
+					<td><span data-ces-value="lower">{percent(row.conditional_compatible_fraction[0])}</span>
+						{' to '}<span data-ces-value="upper">{percent(row.conditional_compatible_fraction[1])}</span></td>
+					<td data-ces-value="effective_sample_size_not_design_precision">{integer(row.effective_sample_size_not_design_precision)}</td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+	</details>)}
+	<p><strong>Nonexhaustive, overlapping demographic views.</strong> Groups omitted together for
+		disclosure protection remain in overall totals, not zero or missing-as-nonvote.
+		Do not add tables across dimensions. Income, urban/suburban/rural residence and additional
+		intersections are not qualified here. All 51 state/D.C. withholding dispositions remain
+		in the complete output; national rows are not allocated to states, counties or precincts.</p>
+	<details class="explorer-notes" data-ces-methods>
+		<summary>Classification assumptions, source limitations and complete reproduction</summary>
+		<p>Recorded votes and explicit recorded nonvotes take precedence over self-reports.
+			Unmatched self-reported nonregistration/nonvoting can classify a nonvote.
+			Unmatched reported voters, missing histories and contradictory unmatched reports remain
+			unresolved in this conservative conflict-as-unknown specification.</p>
+		<p>With full weight <code>W = P + N + U</code>, recorded-vote weight P, classified-nonvote
+			weight N and unresolved weight U, the range is <code>[P/W, (P+U)/W]</code>.
+			Using <code>P/(P+N)</code> would improperly remove unresolved respondents.
+			Only positive <code>commonpostweight</code> is used; adult, matched-active-registered and
+			validated-voter weight frames are not pooled.</p>
+		<p>Using only recorded nonvotes in this exact same post-wave frame gives an overall-only
+			comparator of <span data-ces-comparator="lower">{percent(analysis.record_only_compatible_fraction_same_post_frame_overall_only[0])}</span>
+			{' to '}<span data-ces-comparator="upper">{percent(analysis.record_only_compatible_fraction_same_post_frame_overall_only[1])}</span>.
+			It is not a second population-turnout estimate or another demographic table.</p>
+		<p>Validation uses active matched registration in June-July 2025, not a demonstrated
+			election-day eligible population or continuing residence. Utah private/withheld records
+			can limit matching. Truthful reported nonparticipation and correct validation are
+			assumptions. Unknowns, changing attributes, nonresponse and calibration limitations remain.
+			Neither raw support nor Kish weight concentration establishes anonymity or design precision.</p>
+		<p>The complete selected aggregates, native CSV/guide receipts, relevant native numeric-label
+			definitions, methodology, calculations, exact code, tests and results reproduce offline.
+			This does not recreate private respondent extraction or independently validate individual
+			histories. Original native respondent files, fine cells, private audits, joins and scores
+			are not redistributed. The source CSV does not supply 2020/2022 histories; these are not
+			a longitudinal panel across those elections.</p>
+		<p>Source: <a href="https://doi.org/10.7910/DVN/X11EP6">2024 Cooperative Election Study, Common Content</a>,
+			Harvard Dataverse release 9.0, CC0 1.0. Independent analysis, not endorsed by the study.
+			The full Stata respondent file was not downloaded or hash verified; bounded metadata
+			receipts are distinct from the original CSV and guide receipts.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete selected classification analysis + inputs + code + results (ZIP)</a>
+		<a href={`${base}classification-evidence.json`} download>Classification fractions + all state/D.C. dispositions (JSON)</a>
+		<a href={`${base}download.json`} download>Classification archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-ces-classification { min-width: 0; margin-block: 1.5rem 2rem; }
+	.table-wrap { max-width: 100%; overflow-x: auto; }
+	table { width: 100%; min-width: 50rem; }
+	td { font-variant-numeric: tabular-nums; }
+</style>

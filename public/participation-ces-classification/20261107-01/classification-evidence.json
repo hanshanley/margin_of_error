@@ -1,0 +1,993 @@
+{
+  "status": "conditional_2024_classification_evidence_not_population_turnout",
+  "study_id": "ces2024-postwave-participation-classification",
+  "election": "2024 general",
+  "survey_scope": "US50",
+  "weight_frame": "adult_postwave_commonpostweight",
+  "classification": "conflict_as_unknown",
+  "source_accounting": {
+    "native_respondents": 60000,
+    "postwave_respondents": 49432,
+    "missing_postwave_weight_nonresponse": 10568,
+    "selected_US50_postwave_respondents": 49304,
+    "DC_postwave_respondents_excluded_from_US50": 128
+  },
+  "source_files": [
+    {
+      "file": "ces2024.csv",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/12050325",
+      "bytes": 183679005,
+      "sha256": "8a5e9fbc982961ad910bad9aed8d521fa0a85e85cded43fb308cce0ab22ba5d9",
+      "md5": "b740b9305fee50e1a34656b513f55c57",
+      "expected_md5": "b740b9305fee50e1a34656b513f55c57",
+      "retrieved_at": "2026-11-06T23:09:46.330464+00:00",
+      "last_modified": "Thu, 19 Feb 2026 04:18:48 GMT",
+      "etag": "\"9171bee0251000d42679e886b78c2195-3\"",
+      "individual_records_exported": false
+    },
+    {
+      "file": "ces2024-guide.pdf",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/12050326",
+      "bytes": 1162260,
+      "sha256": "48ef8f229980b4778dd26f321062e9d9e089abdd849cc8db2529377f3e8b0c10",
+      "md5": "b1b24ed55a20193bb0301bc84cf6da9a",
+      "expected_md5": "b1b24ed55a20193bb0301bc84cf6da9a",
+      "retrieved_at": "2026-11-06T23:09:42.020846+00:00",
+      "last_modified": "Thu, 19 Feb 2026 04:18:49 GMT",
+      "etag": "\"b1b24ed55a20193bb0301bc84cf6da9a\"",
+      "individual_records_exported": false
+    }
+  ],
+  "rows": [
+    {
+      "dimension": "overall",
+      "group": "overall",
+      "respondents": 49304,
+      "record_positive_weight_fraction": 0.5912114396915269,
+      "classified_nonvote_weight_fraction": 0.15807890744948705,
+      "unresolved_weight_fraction": 0.250709652858986,
+      "conditional_compatible_fraction": [
+        0.5912114396915269,
+        0.841921092550513
+      ],
+      "effective_sample_size_not_design_precision": 12527.838905261651,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "calendar_year_age_2024",
+      "group": "18-29",
+      "respondents": 4254,
+      "record_positive_weight_fraction": 0.32482625908747986,
+      "classified_nonvote_weight_fraction": 0.2573537421855178,
+      "unresolved_weight_fraction": 0.41781999872700243,
+      "conditional_compatible_fraction": [
+        0.32482625908747986,
+        0.7426462578144822
+      ],
+      "effective_sample_size_not_design_precision": 1214.3890699534982,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "calendar_year_age_2024",
+      "group": "30-44",
+      "respondents": 9058,
+      "record_positive_weight_fraction": 0.547131165765773,
+      "classified_nonvote_weight_fraction": 0.1922179257835231,
+      "unresolved_weight_fraction": 0.26065090845070393,
+      "conditional_compatible_fraction": [
+        0.547131165765773,
+        0.8077820742164769
+      ],
+      "effective_sample_size_not_design_precision": 3092.8205978972906,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "calendar_year_age_2024",
+      "group": "45-64",
+      "respondents": 19702,
+      "record_positive_weight_fraction": 0.659562344937695,
+      "classified_nonvote_weight_fraction": 0.13728800841994485,
+      "unresolved_weight_fraction": 0.20314964664235996,
+      "conditional_compatible_fraction": [
+        0.659562344937695,
+        0.8627119915800551
+      ],
+      "effective_sample_size_not_design_precision": 5290.103267620074,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "calendar_year_age_2024",
+      "group": "65+",
+      "respondents": 16290,
+      "record_positive_weight_fraction": 0.7572584672523228,
+      "classified_nonvote_weight_fraction": 0.07156375293616532,
+      "unresolved_weight_fraction": 0.1711777798115119,
+      "conditional_compatible_fraction": [
+        0.7572584672523228,
+        0.9284362470638348
+      ],
+      "effective_sample_size_not_design_precision": 5524.300682421058,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "education_2024",
+      "group": "2-year",
+      "respondents": 5817,
+      "record_positive_weight_fraction": 0.6345388476957988,
+      "classified_nonvote_weight_fraction": 0.122689359624971,
+      "unresolved_weight_fraction": 0.24277179267923013,
+      "conditional_compatible_fraction": [
+        0.6345388476957988,
+        0.8773106403750289
+      ],
+      "effective_sample_size_not_design_precision": 1502.0523749822305,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "education_2024",
+      "group": "4-year",
+      "respondents": 11595,
+      "record_positive_weight_fraction": 0.7449874733978356,
+      "classified_nonvote_weight_fraction": 0.07839053149780631,
+      "unresolved_weight_fraction": 0.17662199510435836,
+      "conditional_compatible_fraction": [
+        0.7449874733978356,
+        0.9216094685021938
+      ],
+      "effective_sample_size_not_design_precision": 4198.601279791401,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "education_2024",
+      "group": "High school graduate",
+      "respondents": 12160,
+      "record_positive_weight_fraction": 0.42704816287009134,
+      "classified_nonvote_weight_fraction": 0.22158303737513874,
+      "unresolved_weight_fraction": 0.35136879975476987,
+      "conditional_compatible_fraction": [
+        0.42704816287009134,
+        0.7784169626248614
+      ],
+      "effective_sample_size_not_design_precision": 2741.831834779799,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "education_2024",
+      "group": "No HS",
+      "respondents": 1113,
+      "record_positive_weight_fraction": 0.37632457730879215,
+      "classified_nonvote_weight_fraction": 0.37703143393316174,
+      "unresolved_weight_fraction": 0.2466439887580461,
+      "conditional_compatible_fraction": [
+        0.37632457730879215,
+        0.6229685660668383
+      ],
+      "effective_sample_size_not_design_precision": 418.2814120150136,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "education_2024",
+      "group": "Post-grad",
+      "respondents": 7155,
+      "record_positive_weight_fraction": 0.8003233565157455,
+      "classified_nonvote_weight_fraction": 0.06290982998060535,
+      "unresolved_weight_fraction": 0.13676681350364908,
+      "conditional_compatible_fraction": [
+        0.8003233565157455,
+        0.9370901700193945
+      ],
+      "effective_sample_size_not_design_precision": 3285.46582605035,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "education_2024",
+      "group": "Some college",
+      "respondents": 11464,
+      "record_positive_weight_fraction": 0.5770183878104835,
+      "classified_nonvote_weight_fraction": 0.16073583917452558,
+      "unresolved_weight_fraction": 0.26224577301499097,
+      "conditional_compatible_fraction": [
+        0.5770183878104835,
+        0.8392641608254746
+      ],
+      "effective_sample_size_not_design_precision": 2452.812341086153,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "gender_2024",
+      "group": "Man",
+      "respondents": 22913,
+      "record_positive_weight_fraction": 0.5970475836773357,
+      "classified_nonvote_weight_fraction": 0.13562321525289597,
+      "unresolved_weight_fraction": 0.26732920106976843,
+      "conditional_compatible_fraction": [
+        0.5970475836773357,
+        0.8643767847471041
+      ],
+      "effective_sample_size_not_design_precision": 5515.272828716145,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "gender_2024",
+      "group": "Woman",
+      "respondents": 26073,
+      "record_positive_weight_fraction": 0.5875221963258048,
+      "classified_nonvote_weight_fraction": 0.17967059740561803,
+      "unresolved_weight_fraction": 0.23280720626857718,
+      "conditional_compatible_fraction": [
+        0.5875221963258048,
+        0.8203294025943819
+      ],
+      "effective_sample_size_not_design_precision": 7043.539472444377,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "race_education_2024",
+      "group": "Non-Hispanic White; College degree",
+      "respondents": 13902,
+      "record_positive_weight_fraction": 0.8109650347584518,
+      "classified_nonvote_weight_fraction": 0.05096976643727842,
+      "unresolved_weight_fraction": 0.13806519880426996,
+      "conditional_compatible_fraction": [
+        0.8109650347584518,
+        0.9490302335627218
+      ],
+      "effective_sample_size_not_design_precision": 6051.4365931977545,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "race_education_2024",
+      "group": "Non-Hispanic White; No college degree",
+      "respondents": 22519,
+      "record_positive_weight_fraction": 0.571241832829823,
+      "classified_nonvote_weight_fraction": 0.15494724324691272,
+      "unresolved_weight_fraction": 0.2738109239232642,
+      "conditional_compatible_fraction": [
+        0.571241832829823,
+        0.8450527567530872
+      ],
+      "effective_sample_size_not_design_precision": 4916.683725043158,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "race_education_2024",
+      "group": "Not non-Hispanic White; College degree",
+      "respondents": 4848,
+      "record_positive_weight_fraction": 0.6447447866338032,
+      "classified_nonvote_weight_fraction": 0.13059922982758904,
+      "unresolved_weight_fraction": 0.22465598353860772,
+      "conditional_compatible_fraction": [
+        0.6447447866338032,
+        0.8694007701724109
+      ],
+      "effective_sample_size_not_design_precision": 1537.719128315762,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "race_education_2024",
+      "group": "Not non-Hispanic White; No college degree",
+      "respondents": 8035,
+      "record_positive_weight_fraction": 0.3875383627163379,
+      "classified_nonvote_weight_fraction": 0.27805780057264123,
+      "unresolved_weight_fraction": 0.3344038367110208,
+      "conditional_compatible_fraction": [
+        0.3875383627163379,
+        0.7219421994273587
+      ],
+      "effective_sample_size_not_design_precision": 2097.038435942761,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "race_ethnicity_2024",
+      "group": "Hispanic",
+      "respondents": 4542,
+      "record_positive_weight_fraction": 0.4498909061859662,
+      "classified_nonvote_weight_fraction": 0.2348114687554028,
+      "unresolved_weight_fraction": 0.3152976250586311,
+      "conditional_compatible_fraction": [
+        0.4498909061859662,
+        0.7651885312445974
+      ],
+      "effective_sample_size_not_design_precision": 1143.1218441962646,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "race_ethnicity_2024",
+      "group": "Non-Hispanic Asian",
+      "respondents": 1427,
+      "record_positive_weight_fraction": 0.4594216893520491,
+      "classified_nonvote_weight_fraction": 0.2343901758540208,
+      "unresolved_weight_fraction": 0.3061881347939303,
+      "conditional_compatible_fraction": [
+        0.4594216893520491,
+        0.7656098241459793
+      ],
+      "effective_sample_size_not_design_precision": 473.9647512251891,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "race_ethnicity_2024",
+      "group": "Non-Hispanic Black",
+      "respondents": 4686,
+      "record_positive_weight_fraction": 0.4226840860992919,
+      "classified_nonvote_weight_fraction": 0.26315769513288806,
+      "unresolved_weight_fraction": 0.3141582187678201,
+      "conditional_compatible_fraction": [
+        0.4226840860992919,
+        0.736842304867112
+      ],
+      "effective_sample_size_not_design_precision": 1155.945158155675,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "race_ethnicity_2024",
+      "group": "Non-Hispanic Native American",
+      "respondents": 378,
+      "record_positive_weight_fraction": 0.44509362866889446,
+      "classified_nonvote_weight_fraction": 0.2382842297491799,
+      "unresolved_weight_fraction": 0.3166221415819256,
+      "conditional_compatible_fraction": [
+        0.44509362866889446,
+        0.76171577025082
+      ],
+      "effective_sample_size_not_design_precision": 120.22147817924811,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "race_ethnicity_2024",
+      "group": "Non-Hispanic Two or more races",
+      "respondents": 985,
+      "record_positive_weight_fraction": 0.5499760096679513,
+      "classified_nonvote_weight_fraction": 0.19266175909548017,
+      "unresolved_weight_fraction": 0.25736223123656854,
+      "conditional_compatible_fraction": [
+        0.5499760096679513,
+        0.8073382409045198
+      ],
+      "effective_sample_size_not_design_precision": 237.88158763972373,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "race_ethnicity_2024",
+      "group": "Non-Hispanic White",
+      "respondents": 36421,
+      "record_positive_weight_fraction": 0.6634093195332765,
+      "classified_nonvote_weight_fraction": 0.11497054247614726,
+      "unresolved_weight_fraction": 0.22162013799057634,
+      "conditional_compatible_fraction": [
+        0.6634093195332765,
+        0.8850294575238529
+      ],
+      "effective_sample_size_not_design_precision": 9853.603017012045,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "source_race_2024",
+      "group": "Asian",
+      "respondents": 1451,
+      "record_positive_weight_fraction": 0.4570653768097654,
+      "classified_nonvote_weight_fraction": 0.23382510061382789,
+      "unresolved_weight_fraction": 0.3091095225764067,
+      "conditional_compatible_fraction": [
+        0.4570653768097654,
+        0.7661748993861721
+      ],
+      "effective_sample_size_not_design_precision": 478.1923637237929,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "source_race_2024",
+      "group": "Black",
+      "respondents": 4740,
+      "record_positive_weight_fraction": 0.4189709394471447,
+      "classified_nonvote_weight_fraction": 0.2637188533285719,
+      "unresolved_weight_fraction": 0.31731020722428327,
+      "conditional_compatible_fraction": [
+        0.4189709394471447,
+        0.736281146671428
+      ],
+      "effective_sample_size_not_design_precision": 1168.4737610388443,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "source_race_2024",
+      "group": "Hispanic",
+      "respondents": 3056,
+      "record_positive_weight_fraction": 0.44455529326482496,
+      "classified_nonvote_weight_fraction": 0.2542185127251147,
+      "unresolved_weight_fraction": 0.3012261940100604,
+      "conditional_compatible_fraction": [
+        0.44455529326482496,
+        0.7457814872748854
+      ],
+      "effective_sample_size_not_design_precision": 800.6502082352778,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "source_race_2024",
+      "group": "Native American",
+      "respondents": 424,
+      "record_positive_weight_fraction": 0.4322379082269048,
+      "classified_nonvote_weight_fraction": 0.22155232437491348,
+      "unresolved_weight_fraction": 0.34620976739818177,
+      "conditional_compatible_fraction": [
+        0.4322379082269048,
+        0.7784476756250865
+      ],
+      "effective_sample_size_not_design_precision": 132.6904155800428,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "source_race_2024",
+      "group": "Two or more races",
+      "respondents": 1390,
+      "record_positive_weight_fraction": 0.5241203673106541,
+      "classified_nonvote_weight_fraction": 0.2101295680921873,
+      "unresolved_weight_fraction": 0.26575006459715866,
+      "conditional_compatible_fraction": [
+        0.5241203673106541,
+        0.7898704319078128
+      ],
+      "effective_sample_size_not_design_precision": 327.78538514178825,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    },
+    {
+      "dimension": "source_race_2024",
+      "group": "White",
+      "respondents": 37289,
+      "record_positive_weight_fraction": 0.657502290475836,
+      "classified_nonvote_weight_fraction": 0.11636402261986946,
+      "unresolved_weight_fraction": 0.2261336869042946,
+      "conditional_compatible_fraction": [
+        0.657502290475836,
+        0.8836359773801306
+      ],
+      "effective_sample_size_not_design_precision": 9975.295733341869,
+      "adult_population_turnout_rate": null,
+      "eligible_population_turnout_rate": null,
+      "design_confidence_interval": null,
+      "completed_2026_participation": null
+    }
+  ],
+  "jurisdictions": [
+    {
+      "survey_scope": "AK",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "AL",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "AR",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "AZ",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "CA",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "CO",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "CT",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "DC",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "DE",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "FL",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "GA",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "HI",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "IA",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "ID",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "IL",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "IN",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "KS",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "KY",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "LA",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "MA",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "MD",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "ME",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "MI",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "MN",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "MO",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "MS",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "MT",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "NC",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "ND",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "NE",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "NH",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "NJ",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "NM",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "NV",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "NY",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "OH",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "OK",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "OR",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "PA",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "RI",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "SC",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "SD",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "TN",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "TX",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "UT",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "VA",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "VT",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "WA",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "WI",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "WV",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    },
+    {
+      "survey_scope": "WY",
+      "source_reviewed_privately": true,
+      "public_estimate": null,
+      "status": "state_specific_public_qualification_incomplete",
+      "reason": "State-specific public estimand, source-error/precision and disclosure review is not complete. National rows are not allocated to states, counties or precincts.",
+      "next_step": "Qualify this survey-state frame and its unresolved histories, precision limits and disclosure support before any separately selected public statistics."
+    }
+  ],
+  "methodology": {
+    "study_id": "ces2024-postwave-participation-classification",
+    "status": "qualified_only_for_conditional_2024_classification_evidence",
+    "estimand": "Descriptive weighted participation-classification evidence within the 50-state adult post-wave sample, not a population-turnout point estimate.",
+    "selection": "29 national rows: overall, four calendar-year age groups, six education groups, Man/Woman, four combined race/education groups and six groups each for source race and combined race/ethnicity. Selection uses source-native definitions, broad support and disclosure protection, not estimated participation magnitudes. Native groups omitted from gender and each race partition are omitted in pairs and remain in overall totals. This nonexhaustive selection does not imply zero omitted populations.",
+    "weights_and_nonresponse": "Use positive commonpostweight only: 49,432 both-wave adult respondents, with 10,568 without post-wave weight retained as source nonresponse. US50 retains 49,304 and excludes 128 survey-state D.C. respondents, not by new raking or downward allocation. Do not pool commonweight, vvweight or vvweight_post denominators with this frame. Weights/calibration do not remove all selection, nonresponse or measurement error.",
+    "record_classification": "Recorded votes and explicit recorded nonvotes have precedence over self-reports. Validation uses active matched registration in June-July 2025, not a demonstrated election-day registered/eligible population. False matching and Utah private/withheld registration can affect coverage. Survey state and later validation state are not proven election-day ballot geography or continuing residence.",
+    "selfreport_classification": "The guide's third specification uses unmatched self-reported nonregistration/nonvoting and leaves unmatched reported voters unresolved. This explicitly named conservative conflict-as-unknown variant also leaves contradictory unmatched nonregistration/voting reports unresolved. Only three coarsened outcome categories are selected. No observed rare-conflict diagnostic or alternative-variant difference is exported. Truthful reported nonparticipation and correct validation classifications are assumptions, not independently established outcomes.",
+    "formulas": "Let W be positive post-wave weight, P recorded-vote weight, N classified-nonvote weight, U unresolved weight, with P+N+U=W. Conditional compatible fraction is [P/W,(P+U)/W]. The overall-only record comparator in exactly the SAME post-wave frame is [P/W,(W-E)/W], where E is explicit-recorded-nonvote weight. Neither is a design confidence interval or a complete validation/selection-error bound. All unresolved outcomes remain in W. Do not publish P/(P+N) as unconditional turnout: that excludes unresolved respondents.",
+    "denominator_limits": "Adult respondents are not an eligible/citizen-only denominator. No adult-population or eligible-population turnout rate, denominator count, original candidate coalition, 2026 participation or transition is inferred. Classification fractions are not estimated numbers of people in the population.",
+    "precision_review": "Selection supports descriptive classification fractions/ranges and missingness diagnostics only. Raw support and W^2/sum(w^2) are support/weight-concentration diagnostics, not design precision or automatic publication thresholds. No joint/subgroup design-aware CI is available here, no group-difference significance is tested, and nonresponse, calibration, reporting and validation errors remain outside these ranges. Do not interpret nonoverlap as significance. Survey-weight uncertainty and validation error are not quantified by the compatible range.",
+    "disclosure_review": "Only national coarsened outcome statistics, total group support and weights/squares are selected. Each selected outcome bucket has at least 75 respondents; the smallest omitted-pair residual outcome bucket has 42. A guard of 30 is a disclosure diagnostic, NOT an automatic anonymity guarantee or a precision rule. No intersections beyond the native broad race/education partition, state group counts, record/self-report conflict cells, validation-state cells, personal records, joins or scores are exported. The two conflict variants are not published together. The explicit recorded-nonvote comparator is exported only overall, not by group.",
+    "definitions": {
+      "calendar_year_age_2024": "2024 minus documented birth year, not exact election-day birthday or a fixed 2026 cohort. Unknown birth years remain in source/overall accounting.",
+      "education_2024": "Native educ: 1 No HS, 2 High school graduate, 3 Some college, 4 2-year, 5 4-year, 6 Post-grad. Not neighborhood education.",
+      "gender_2024": "Native surveyed gender4 labels, not administrative sex. Non-binary and Other are omitted together from this nonexhaustive table but retained overall.",
+      "source_race_2024": "Native race codes/labels, including its Hispanic answer; not interchangeable with separate Hispanic-origin or combined race/ethnicity.",
+      "race_ethnicity_2024": "Hispanic if native hispanic=1 OR race=3; otherwise Non-Hispanic plus native race only when hispanic=2. Unknowns remain in source/overall accounting. Not harmonized to SSRS groups.",
+      "race_education_2024": "Source-derived non-Hispanic White versus all other known race/ethnicity and native 4-year/post-grad versus other known education. A mutually exclusive native-derived partition, not a product of marginal percentages."
+    },
+    "additional_demographic_capability": {
+      "household_income": "Not qualified/selected in this increment; no family or neighborhood income is relabeled household income.",
+      "residence_type": "No urban/suburban/rural definition or vintage is qualified/selected in this increment.",
+      "additional_intersections": "Not qualified; do not multiply demographic marginals or infer individual attributes."
+    },
+    "geographic_and_time_limits": "Each of the 51 state/DC rows retains an explicit public withholding disposition. No state/county/precinct estimates are allocated from national rows. No cross-year geography, 2020/2022 histories absent from this source, 2026 choice, switching, staying-home, first-time-voter identity or fixed historical attributes are inferred. Six dimensions overlap and are not additive. Survey-state D.C. is excluded from all US50 results.",
+    "reproduction": "Every selected aggregate, used native CSV/guide receipt and relevant numeric-label definition is included. Offline reproduction is from these complete selected aggregates, not fresh respondent extraction or independent validation of individual histories. Archived original reviewer/helper code and tests document native extraction, but fresh extraction additionally requires the original CSV, guide and full native-label audit. The original source files and private fine audit/proof are not redistributed. Two regrouped floating upper endpoints differ from the frozen native audit by at most two ulps; independent Decimal coarsening and range checks pass without changing source facts.",
+    "source_qualification": "CC0 1.0, frozen Harvard Dataverse release 9.0, DOI10.7910/DVN/X11EP6. Selected facts were independently checked against all 29 rows of the hash-pinned native audit already exhaustively verified from the original CSV using independent Decimal arithmetic and native definitions. Full source hashes, native clocks and metadata-range receipts remain distinct; the full Stata respondent file was not downloaded or hash verified.",
+    "attribution": "2024 Cooperative Election Study, Common Content, Harvard Dataverse release 9.0, DOI10.7910/DVN/X11EP6, CC0 1.0. Independent analysis; not endorsed by the study.",
+    "adult_population_turnout_rate_permitted": false,
+    "eligible_population_turnout_rate_permitted": false,
+    "design_confidence_intervals_permitted": false,
+    "population_scaling_permitted": false,
+    "state_or_local_allocation_permitted": false,
+    "completed_2026_participation_or_choice_permitted": false
+  },
+  "record_only_compatible_fraction_same_post_frame_overall_only": [
+    0.5912114396915269,
+    0.9636057657082983
+  ],
+  "adult_population_turnout_rate": null,
+  "eligible_population_turnout_rate": null,
+  "completed_2026_participation_or_choice": null,
+  "switching_or_staying_home": null,
+  "population_scaling": null,
+  "state_or_local_estimates": null,
+  "design_confidence_intervals": null
+}
