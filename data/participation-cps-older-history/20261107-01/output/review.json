@@ -1,0 +1,251 @@
+{
+  "status": "published_historical_CPS_self_report_not_2026_or_individual_transitions",
+  "years": [
+    2010,
+    2012,
+    2014,
+    2016
+  ],
+  "states_and_DC": 51,
+  "national_scope": "United States (including D.C.)",
+  "groups": [
+    "Total",
+    "Male",
+    "Female",
+    "White alone",
+    "White non-Hispanic alone",
+    "Black alone",
+    "Asian alone",
+    "Hispanic (any race)",
+    "White alone or in combination",
+    "Black alone or in combination",
+    "Asian alone or in combination",
+    "18 to 24",
+    "25 to 34",
+    "35 to 44",
+    "25 to 44",
+    "45 to 64",
+    "65+",
+    "65 to 74",
+    "75+"
+  ],
+  "unique_observations": 3328,
+  "native_rows_including_duplicate_overall_controls": 3536,
+  "duplicate_overall_controls_verified": 208,
+  "display_dispositions": {
+    "native_B_not_published": 482,
+    "published": 2780,
+    "withheld_small_rounded_population_base": 66
+  },
+  "denominator": "Native civilian noninstitutionalized adult citizen population, not legal eligibility.",
+  "units": "Native weighted counts in thousands; rates and native90% margins in percentage points.",
+  "native_definitions": [
+    {
+      "year": 2010,
+      "table": "4b",
+      "title": "Table 4b.  Reported Voting and Registration, by Sex, Race and Hispanic Origin, for States: November 2010",
+      "notes": [
+        "1This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES:",
+        "Federal surveys now give respondents the option of reporting more than one race.  Therefore, two basic ways of defining a race group are possible.A group such as Asian may be defined as those who reported Asian and no other race (the race-alone or single-race concept) or as those who reported Asian regardless of whether they also reported another race (the race-alone-or-in-combination concept).  ",
+        "A dash '-' represents zero or rounds to zero.",
+        "The symbol (B) means that the base is less than 75,000 and therefore too small to show the derived measure.",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2010."
+      ],
+      "citizen_base_display_withhold_thousands": 75,
+      "native_group_order": [
+        "Total",
+        "Male",
+        "Female",
+        "White alone",
+        "White non-Hispanic alone",
+        "Black alone",
+        "Asian alone",
+        "Hispanic (any race)",
+        "White alone or in combination",
+        "Black alone or in combination",
+        "Asian alone or in combination"
+      ],
+      "file": "2010-table4b.xls"
+    },
+    {
+      "year": 2010,
+      "table": "4c",
+      "title": "Table 4c.  Reported Voting and Registration, by Age, for States: November 2010",
+      "notes": [
+        "1This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES:",
+        "A dash '-' represents zero or rounds to zero.",
+        "The symbol (B) means that the base is less than 75,000 and therefore too small to show the derived measure.",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2010."
+      ],
+      "citizen_base_display_withhold_thousands": 75,
+      "native_group_order": [
+        "Total",
+        "18 to 24",
+        "25 to 44",
+        "45 to 64",
+        "65 to 74",
+        "75+"
+      ],
+      "file": "2010-table4c.xls"
+    },
+    {
+      "year": 2012,
+      "table": "4b",
+      "title": "Table 4b.  Reported Voting and Registration, by Sex, Race and Hispanic Origin, for States: November 2012",
+      "notes": [
+        "Source: U.S. Census Bureau, Current Population Survey, November 2012",
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES:",
+        "Federal surveys now give respondents the option of reporting more than one race.  Therefore, two basic ways of defining a race group are possible.A group such as Asian may be defined as those who reported Asian and no other race (the race-alone or single-race concept) or as those who reported Asian regardless of whether they also reported another race (the race-alone-or-in-combination concept).  ",
+        "A dash '-' represents zero or rounds to zero.",
+        "The symbol (B) means that the base is less than 75,000 and therefore too small to show the derived measure."
+      ],
+      "citizen_base_display_withhold_thousands": 75,
+      "native_group_order": [
+        "Total",
+        "Male",
+        "Female",
+        "White alone",
+        "White non-Hispanic alone",
+        "Black alone",
+        "Asian alone",
+        "Hispanic (any race)",
+        "White alone or in combination",
+        "Black alone or in combination",
+        "Asian alone or in combination"
+      ],
+      "file": "2012-table4b.xls"
+    },
+    {
+      "year": 2012,
+      "table": "4c",
+      "title": "Table 4c.  Reported Voting and Registration of the Total Voting-Age Population, by Age, for States: November 2012",
+      "notes": [
+        "Source: U.S. Census Bureau, Current Population Survey, November 2012",
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES:",
+        "A dash '-' represents zero or rounds to zero.",
+        "The symbol (B) means that the base is less than 75,000 and therefore too small to show the derived measure."
+      ],
+      "citizen_base_display_withhold_thousands": 75,
+      "native_group_order": [
+        "Total",
+        "18 to 24",
+        "25 to 34",
+        "35 to 44",
+        "45 to 64",
+        "65+"
+      ],
+      "file": "2012-table4c.xls"
+    },
+    {
+      "year": 2014,
+      "table": "4b",
+      "title": "Table 4b.  Reported Voting and Registration, by Sex, Race and Hispanic Origin, for States: November 2014",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "Note: Federal surveys now give respondents the option of reporting more than one race.  Therefore, two basic ways of defining a race group are possible.A group such as Asian may be defined as those who reported Asian and no other race (the race-alone or single-race concept) or as those who reportedAsian regardless of whether they also reported another race (the race-alone-or-in-combination concept). Unless labeled \"non-Hispanic,\" the race-alone or race-alone-or-in-combination categories can include individuals of Hispanic-origin.",
+        "A dash '-' represents zero or rounds to zero.",
+        "The symbol (B) means that the base is less than 75,000 and therefore too small to show the derived measure.",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2014"
+      ],
+      "citizen_base_display_withhold_thousands": 75,
+      "native_group_order": [
+        "Total",
+        "Male",
+        "Female",
+        "White alone",
+        "White non-Hispanic alone",
+        "Black alone",
+        "Asian alone",
+        "Hispanic (any race)",
+        "White alone or in combination",
+        "Black alone or in combination",
+        "Asian alone or in combination"
+      ],
+      "file": "2014-table4b.xls"
+    },
+    {
+      "year": 2014,
+      "table": "4c",
+      "title": "Table 4c.  Reported Voting and Registration of the Total Voting-Age Population, by Age, for States: November 2014",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "A dash '-' represents zero or rounds to zero.",
+        "The symbol (B) means that the base is less than 75,000 and therefore too small to show the derived measure.",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2014"
+      ],
+      "citizen_base_display_withhold_thousands": 75,
+      "native_group_order": [
+        "Total",
+        "18 to 24",
+        "25 to 34",
+        "35 to 44",
+        "45 to 64",
+        "65+"
+      ],
+      "file": "2014-table4c.xls"
+    },
+    {
+      "year": 2016,
+      "table": "4b",
+      "title": "Table 4b.  Reported Voting and Registration, by Sex, Race and Hispanic Origin, for States: November 2016",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES: A dash '-' represents zero or rounds to zero. The symbol B means that the citizen population base is less than 100,000 and therefore too small to show the derived measure.",
+        "Source: U.S. Census Bureau, Current Population Survey,November 2016"
+      ],
+      "citizen_base_display_withhold_thousands": 100,
+      "native_group_order": [
+        "Total",
+        "Male",
+        "Female",
+        "White alone",
+        "White non-Hispanic alone",
+        "Black alone",
+        "Asian alone",
+        "Hispanic (any race)",
+        "White alone or in combination",
+        "Black alone or in combination",
+        "Asian alone or in combination"
+      ],
+      "file": "2016-table4b.xlsx"
+    },
+    {
+      "year": 2016,
+      "table": "4c",
+      "title": "Table 4c.  Reported Voting and Registration, by Age, for States: November 2016",
+      "notes": [
+        "1 This figure added to or subtracted from the estimate provides the 90-percent confidence interval.",
+        "NOTES: A dash '-' represents zero or rounds to zero. The symbol B means that the citizen population base is less than 100,000 and therefore too small to show the derived measure.",
+        "Source: U.S. Census Bureau, Current Population Survey, November 2016"
+      ],
+      "citizen_base_display_withhold_thousands": 100,
+      "native_group_order": [
+        "Total",
+        "18 to 24",
+        "25 to 34",
+        "35 to 44",
+        "45 to 64",
+        "65+"
+      ],
+      "file": "2016-table4c.xlsx"
+    }
+  ],
+  "limits": [
+    "2010/2014 are midterms; 2012/2016 presidential elections. These are repeated cross-sections.",
+    "Native 2010 ages 25-44,65-74,75+ are not the later age bins. Unsupported year/group combinations stay unavailable; no split bins or combined margins are invented.",
+    "Native citizen-population B threshold is 100000 in2016,75000 earlier. Population base is NOT respondent sample size/effective n. Display also withholds the rounded boundary and smaller bases; this is not a precision guarantee.",
+    "B and (B) retain literal source suppression; dash means zero or rounds to zero. Never recover suppressed cells or replace dash with an inferred exact zero.",
+    "Native percentages and 90% margins are transcribed, never calculated from rounded thousands. Margins do not describe cross-year differences, simultaneous intervals or nonsampling errors.",
+    "The native civilian noninstitutionalized adult citizen population is not established legal eligibility. Self/proxy-reported voting can over-report administrative participation.",
+    "Sex,race-alone,race-in-combination,Hispanic and age are separate overlapping views,not intersections or an exclusive partition. Education,income,urbanicity are absent.",
+    "Native US includes D.C. and is not reconstructed by summing rounded states. Current attributes and changing population controls do not establish fixed-person cohorts.",
+    "No2026participation,individual switching,measured stayinghome,first-time/returning identity,county/precinct estimates,causal effects or group-difference significance is established.",
+    "Full native governmental tables and transcription retain small-base cells; those are not qualified display estimates. Historical acquisition-only flags in sources.json are preserved provenance,not a replacement for this package's checks.",
+    "The complete separate 2018-2024 package is unchanged. No source clocks,revisions,age groups or fieldwork are blended.",
+    "Offline: install scripts/requirements-cps-older-history.txt,run python scripts/test-package-cps-older-history.py and python scripts/package-cps-older-history.py --output NEW_DIRECTORY."
+  ]
+}
