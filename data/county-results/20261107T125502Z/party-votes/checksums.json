@@ -1,0 +1,22 @@
+{
+  "audit.json": {
+    "bytes": 2777,
+    "sha256": "207178c823de42fcbe7227bc907f2e774d8f699a84638ed858a199d4f2c3747e"
+  },
+  "county-district-candidate-totals.csv.gz": {
+    "bytes": 143359,
+    "sha256": "08172f8d889e349864f5007389f216a334c15560ff4ccaf2c1dd401a3095f80f"
+  },
+  "county-party-totals.csv.gz": {
+    "bytes": 76500,
+    "sha256": "2f4f345fca3c4fd3ce41b6f35fe1ed86e1db8a4320966834c6c4a0a7f8eb672b"
+  },
+  "district-candidate-totals.csv.gz": {
+    "bytes": 25651,
+    "sha256": "31af5b11d473397ca7928d3f0ef9c455709f0655bf7b2f29cc9ef653d09111f3"
+  },
+  "state-party-totals.csv.gz": {
+    "bytes": 2432,
+    "sha256": "6876650742df9f642c9764b10a7895bc08ea4adcd6ffeab5355585abb1d04b14"
+  }
+}
