@@ -1,0 +1,194 @@
+---
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+
+type Observation = {
+	geography: string; year: number; role: string; native_group: string;
+	display: { status: string; rate_pct: number | null; native_moe90_pp: number | null };
+};
+const root = 'data/participation-cps-early-history/20261107-01/output';
+const raw = readFileSync(`${root}/display.json`);
+const observations: Observation[] = JSON.parse(raw.toString('utf8'));
+const archive: { bytes: number; sha256: string } = JSON.parse(readFileSync(`${root}/archive.json`, 'utf8'));
+const release = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-early-history-20261107-01';
+const displayUrl = `https://raw.githubusercontent.com/hanshanley/margin_of_error/8e3c850e99e22750ae55362e8d188654e58d527c/${root}/display.json`;
+const displayHash = createHash('sha256').update(raw).digest('hex');
+const view = (row: Observation) => `${row.role}|${row.native_group.trim()}`;
+const views = [...new Set(observations.map(view))];
+const geographies = ['UNITED STATES', ...[...new Set(observations.map(row => row.geography))]
+	.filter(name => name !== 'UNITED STATES' && name !== 'UNLABELED_FIRST_BLOCK').sort(), 'UNLABELED_FIRST_BLOCK'];
+const key = (geography: string, year: number, group: string) => JSON.stringify([geography, year, group]);
+const indexed = new Map(observations.map(row => [key(row.geography, row.year, view(row)), row]));
+if (indexed.size !== observations.length) throw new Error('Duplicate early Census display observation');
+const statuses: Record<string, string> = {
+	native_B_not_published: 'Not published (B)',
+	withheld_unlabeled_native_geography: 'Withheld: unlabeled geography',
+	withheld_conflicting_same_year_total: 'Withheld: conflicting native totals',
+	withheld_conflicting_extra_native_label: 'Withheld: conflicting extra label',
+	withheld_native_out_of_range_metric: 'Withheld: native out-of-range metric',
+	withheld_small_rounded_population_base: 'Withheld: small population base',
+};
+const text = (row?: Observation) => !row ? 'Not supplied for this geography/view'
+	: row.display.status === 'published_native_rate'
+		? `${row.display.rate_pct!.toFixed(1)}% +/- ${row.display.native_moe90_pp!.toFixed(1)} pp`
+		: statuses[row.display.status];
+const label = (group: string) => group.split('|')[1].replace(/^\.+/, '');
+const tables = [
+	{ id: 'adults', title: '2004: all adults, not citizens only', years: [2004], denominator: 'All adults 18+' },
+	{ id: 'citizens', title: '2006 and 2008: adult citizens', years: [2006, 2008], denominator: 'Adult citizens 18+' },
+];
+---
+
+<section id="participation-cps-early-history" class="participation-current" aria-labelledby="cps-early-title"
+	data-display-url={displayUrl} data-display-sha256={displayHash}>
+	<header class="section-intro">
+		<p class="kicker">Early participation histories · Census published estimates</p>
+		<h2 id="cps-early-title">Go back to 2004, with denominators kept separate</h2>
+		<p>Explore reported voting for <strong>all 50 states and D.C.</strong> in 2004, 2006 and 2008.
+			The 2004 table reports <strong>all-adult rates</strong>; the 2006 and 2008 table uses
+			<strong>citizen rates</strong>. They are not one comparable rate series.
+			The separate 2010–2024 citizen histories follow below.</p>
+	</header>
+	<p>Cells retain the native percentage and <strong>90% margin of error in percentage points</strong>.
+		Do not subtract a 2004 adult rate from a later citizen rate as a turnout change.
+		These are reported participation estimates, not candidate preference or 2026 outcomes.</p>
+	<div data-cps-early-controls hidden>
+		<label for="cps-early-group">Native demographic view
+			<select id="cps-early-group">
+				{(['sex_race', 'age'] as const).map(role => <optgroup label={role === 'age'
+					? 'Age: native bins and coverage vary' : 'Sex, race and Hispanic origin: overlapping views'}>
+					{views.filter(group => group.startsWith(`${role}|`)).map(group =>
+						<option value={group}>{label(group)}{role === 'age' ? ' (age table)' : ''}</option>)}
+				</optgroup>)}
+			</select>
+		</label>
+	</div>
+	<p class="caption" id="cps-early-selection" aria-live="polite">Total (sex/race table).
+		These overall tables and complete downloads remain available without JavaScript.</p>
+	{tables.map(table => <div data-cps-early-table={table.id}>
+		<h3>{table.title}</h3>
+		<div class="table-wrap" tabindex="0" role="region" aria-label={table.title}>
+			<table>
+				<caption>{table.denominator}: reported voting, percentage +/- native 90% margin (pp).
+					The national benchmark includes D.C.; do not add it to the states.</caption>
+				<thead><tr><th scope="col">Geography</th>
+					{table.years.map(year => <th scope="col">{year}<br />{year === 2006 ? 'Midterm' : 'Presidential'}</th>)}
+				</tr></thead>
+				<tbody>
+					{geographies.map(geography => <tr>
+						<th scope="row">{geography === 'UNLABELED_FIRST_BLOCK' ? 'Unlabeled native block (not assigned to U.S.)' : geography}</th>
+						{table.years.map(year => <td data-cps-early-geography={geography} data-cps-early-year={year}>
+							{text(indexed.get(key(geography, year, 'sex_race|.Total')))}
+						</td>)}
+					</tr>)}
+				</tbody>
+			</table>
+		</div>
+	</div>)}
+	<p><strong>Missing is not zero.</strong> Age tables are supplied here for 2004 and 2008,
+		not 2006. The 2008 national, larger-state and smaller-state age bins differ:
+		no bins are split or combined, and missing cells stay unavailable.
+		Sex/race and age totals remain separate source observations, not silently deduplicated.</p>
+	<details class="explorer-notes" data-cps-early-methods>
+		<summary>Native conflicts, definitions and complete original inputs</summary>
+		<p>Sources are the U.S. Census Bureau’s November CPS Voting and Registration Supplement:
+			2004 tables 4a/4b, 2006 table 4b and 2008 tables 4b/4c. The universe is civilian
+			noninstitutionalized adults, not a legal-eligibility count. Voting is self/proxy-reported,
+			not administrative validation. These are repeated cross-sections, not fixed-person cohorts.
+			The 2004 source does not supply citizen rates or their margins; none is recovered from
+			rounded counts. Full native adult and citizen metrics, where supplied, remain in the CSV.</p>
+		<p>In 2008, the sex/race and age tables disagree on total citizen voting rates for
+			Florida (63.8 vs 64.2), Georgia (64.2 vs 51.8) and Hawaii (51.8 vs 61.4).
+			All six conflicting totals are withheld, not averaged or repaired.
+			Of 104 same-year total comparisons, 101 agree and three conflict.
+			South Dakota’s native registration percentage 423 is retained as an out-of-range
+			source value and that voting display row is withheld. Arizona’s extra 2004
+			Non-Hispanic White label is withheld, not merged into another category.</p>
+		<p>The first 2006 and 2008 sex/race blocks have no geography label: all 22 rows
+			are withheld, not relabeled United States. Use the explicitly labeled 2008 age
+			table for its national observation. Native “(B)” rates remain unpublished even
+			where a numeric margin appears; no suppressed rate is recovered.
+			The additional rounded citizen-base screen at or below 75,000 is a display rule,
+			not a universal native rule, respondent count or precision guarantee.
+			All literal native notes, dates and anomalies remain in the complete package.</p>
+		<p>Race “alone,” “alone or in combination,” and Hispanic-origin views overlap and are
+			not additive. Separate demographic margins do not identify intersections.
+			Only label indentation and outer whitespace are removed for control labels;
+			raw labels remain in the exports. Education, income and urbanicity are not supplied
+			by these tables. Weighted counts in thousands are population estimates, not sample sizes.
+			Native 90% margins are not intervals for differences, simultaneous intervals or
+			complete uncertainty measures; they exclude nonsampling error.</p>
+		<p>No 2026 switching, measured staying home, first-time-voter identity, demographic
+			county/precinct rate or causal midterm effect is derived here.
+			The complete download retains all 2,375 observations, five unmodified workbooks,
+			three frozen catalogs, full sanitized receipts, definitions, code, tests and results.
+			Install <code>scripts/requirements-cps-older-history.txt</code>, then run
+			<code>python3 scripts/package-cps-early-history.py</code> from the extracted archive.
+			Reproduction uses the included public aggregate inputs, without source downloads.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${release}/complete-analysis.zip`} data-cps-early-download="complete" download>Complete 2004–2008 history + original aggregate inputs + code (ZIP)</a>
+		<a href={`${release}/observations.csv`} data-cps-early-download="observations" download>All early state/group observations and native cells (CSV)</a>
+	</div>
+	<p class="caption">Complete ZIP: {archive.bytes.toLocaleString('en-US')} bytes.
+		SHA-256: <code class="checksum">{archive.sha256}</code>.
+		Demographic controls load a checksum-verified, fixed-commit copy; the overall
+		tables and complete downloads do not depend on that request.</p>
+</section>
+
+<script>
+	const section = document.getElementById('participation-cps-early-history');
+	const select = document.querySelector<HTMLSelectElement>('#cps-early-group');
+	const note = document.getElementById('cps-early-selection');
+	if (section && select && note) {
+		const statuses: Record<string, string> = {
+			native_B_not_published: 'Not published (B)',
+			withheld_unlabeled_native_geography: 'Withheld: unlabeled geography',
+			withheld_conflicting_same_year_total: 'Withheld: conflicting native totals',
+			withheld_conflicting_extra_native_label: 'Withheld: conflicting extra label',
+			withheld_native_out_of_range_metric: 'Withheld: native out-of-range metric',
+			withheld_small_rounded_population_base: 'Withheld: small population base',
+		};
+		const load = async () => {
+			const response = await fetch(section.dataset.displayUrl || '');
+			if (!response.ok) throw new Error('Early history unavailable');
+			const raw = await response.arrayBuffer();
+			const digest = await crypto.subtle.digest('SHA-256', raw);
+			const hash = [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('');
+			if (hash !== section.dataset.displaySha256) throw new Error('Early history checksum mismatch');
+			const data: {
+				geography: string; year: number; role: string; native_group: string;
+				display: { status: string; rate_pct: number; native_moe90_pp: number };
+			}[] = JSON.parse(new TextDecoder().decode(raw));
+			const indexed = new Map(data.map(row => [
+				JSON.stringify([row.geography, row.year, `${row.role}|${row.native_group.trim()}`]), row.display,
+			]));
+			select.addEventListener('change', () => {
+				section.querySelectorAll<HTMLTableCellElement>('[data-cps-early-year]').forEach(cell => {
+					const value = indexed.get(JSON.stringify([
+						cell.dataset.cpsEarlyGeography, Number(cell.dataset.cpsEarlyYear), select.value,
+					]));
+					cell.textContent = !value ? 'Not supplied for this geography/view'
+						: value.status === 'published_native_rate'
+							? `${value.rate_pct.toFixed(1)}% +/- ${value.native_moe90_pp.toFixed(1)} pp`
+							: statuses[value.status];
+				});
+				note.textContent = `${select.selectedOptions[0].textContent}. 2004: all adults; 2006/2008: adult citizens. Native bins and coverage vary; missing is not zero.`;
+			});
+			const controls = section.querySelector<HTMLElement>('[data-cps-early-controls]');
+			if (controls) controls.hidden = false;
+		};
+		load().catch(() => {
+			note.textContent = 'Demographic controls unavailable. The overall tables and complete downloads remain available.';
+		});
+	}
+</script>
+
+<style>
+	#participation-cps-early-history { min-width: 0; margin-block: 1.5rem 2rem; }
+	.table-wrap { max-width: 100%; overflow-x: auto; }
+	table { width: 100%; min-width: 36rem; }
+	td { font-variant-numeric: tabular-nums; }
+	select { width: 100%; max-width: 36rem; }
+	.checksum { overflow-wrap: anywhere; }
+</style>

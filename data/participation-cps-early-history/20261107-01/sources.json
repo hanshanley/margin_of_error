@@ -1,0 +1,197 @@
+{
+  "native_acquisition_passed": true,
+  "catalogs": 3,
+  "workbooks": 5,
+  "declarations": [
+    {
+      "year": 2004,
+      "table": "4a",
+      "role": "sex_race",
+      "file": "2004-table4a.xls",
+      "catalog_url": "https://www.census.gov/data/tables/2004/demo/voting-and-registration/p20-556.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/556/tab04a.xls",
+      "literal_label": "Reported Voting and Registration of the Total Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2004"
+    },
+    {
+      "year": 2004,
+      "table": "4b",
+      "role": "age",
+      "file": "2004-table4b.xls",
+      "catalog_url": "https://www.census.gov/data/tables/2004/demo/voting-and-registration/p20-556.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/556/tab04b.xls",
+      "literal_label": "Reported Voting and Registration of the Total Voting-Age Population, by Age, for States: November 2004"
+    },
+    {
+      "year": 2006,
+      "table": "4b",
+      "role": "sex_race",
+      "file": "2006-table4b.xls",
+      "catalog_url": "https://www.census.gov/data/tables/2006/demo/voting-and-registration/p20-557.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/557/tab04b.xls",
+      "literal_label": "Reported Voting and Registration of the Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2006"
+    },
+    {
+      "year": 2008,
+      "table": "4b",
+      "role": "sex_race",
+      "file": "2008-table4b.xls",
+      "catalog_url": "https://www.census.gov/data/tables/2008/demo/voting-and-registration/p20-562-rv.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/562-rv/table-04b.xls",
+      "literal_label": "Reported Voting and Registration of the Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2008"
+    },
+    {
+      "year": 2008,
+      "table": "4c",
+      "role": "age",
+      "file": "2008-table4c.xls",
+      "catalog_url": "https://www.census.gov/data/tables/2008/demo/voting-and-registration/p20-562-rv.html",
+      "declared_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/562-rv/table-04c.xls",
+      "literal_label": "Reported Voting and Registration of the Total Voting-Age Population, by Age, for States: November 2008"
+    }
+  ],
+  "catalog_dispositions": [
+    {
+      "year": 2006,
+      "role": "age",
+      "status": "not_declared_in_this_catalog",
+      "catalog_file": "catalog-2006.html",
+      "not_evidence_no_other_native_table_can_exist": true
+    }
+  ],
+  "receipts": [
+    {
+      "requested_url": "https://www.census.gov/data/tables/2004/demo/voting-and-registration/p20-556.html",
+      "final_url": "https://www.census.gov/data/tables/2004/demo/voting-and-registration/p20-556.html",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T13:25:55.441857+00:00",
+      "file": "catalog-2004.html",
+      "bytes": 412813,
+      "sha256": "0df79b7efab4337be918d4e9abaca0a17a0e602ef695c0a3ae1f643721d8e04b",
+      "http_headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Date": "Sat, 07 Nov 2026 13:25:55 GMT"
+      },
+      "declared_by": null,
+      "declared_link_label": null
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/556/tab04a.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/556/tab04a.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T13:26:12.938999+00:00",
+      "file": "2004-table4a.xls",
+      "bytes": 95744,
+      "sha256": "790a565b8556410403e36ae5816bfad31f56653cd503f23768aaba61fc45f9ee",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "95744",
+        "Last-Modified": "Mon, 22 Feb 2016 23:25:24 GMT",
+        "Date": "Sat, 07 Nov 2026 13:26:13 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/2004/demo/voting-and-registration/p20-556.html",
+      "declared_link_label": "Reported Voting and Registration of the Total Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2004"
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/556/tab04b.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/556/tab04b.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T13:26:13.046246+00:00",
+      "file": "2004-table4b.xls",
+      "bytes": 55808,
+      "sha256": "5a188bfa4160498599e62b53f5cfceb6b5bd4556c37e27abc862f6933af74535",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "55808",
+        "Last-Modified": "Mon, 22 Feb 2016 23:25:24 GMT",
+        "Date": "Sat, 07 Nov 2026 13:26:13 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/2004/demo/voting-and-registration/p20-556.html",
+      "declared_link_label": "Reported Voting and Registration of the Total Voting-Age Population, by Age, for States: November 2004"
+    },
+    {
+      "requested_url": "https://www.census.gov/data/tables/2006/demo/voting-and-registration/p20-557.html",
+      "final_url": "https://www.census.gov/data/tables/2006/demo/voting-and-registration/p20-557.html",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T13:26:13.103060+00:00",
+      "file": "catalog-2006.html",
+      "bytes": 398044,
+      "sha256": "8361aa59d7eb068dacd34ae6ea7386c8f54c5c5c772a022686a9c53ce9b67399",
+      "http_headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Date": "Sat, 07 Nov 2026 13:26:13 GMT"
+      },
+      "declared_by": null,
+      "declared_link_label": null
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/557/tab04b.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/557/tab04b.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T13:26:15.089800+00:00",
+      "file": "2006-table4b.xls",
+      "bytes": 92672,
+      "sha256": "494e46569849ad11bcdc91b6c6b6f9896bde17bb4cde5599cff03d7a5861b7a5",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "92672",
+        "Last-Modified": "Mon, 22 Feb 2016 23:25:43 GMT",
+        "Date": "Sat, 07 Nov 2026 13:26:15 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/2006/demo/voting-and-registration/p20-557.html",
+      "declared_link_label": "Reported Voting and Registration of the Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2006"
+    },
+    {
+      "requested_url": "https://www.census.gov/data/tables/2008/demo/voting-and-registration/p20-562-rv.html",
+      "final_url": "https://www.census.gov/data/tables/2008/demo/voting-and-registration/p20-562-rv.html",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T13:26:15.151195+00:00",
+      "file": "catalog-2008.html",
+      "bytes": 400300,
+      "sha256": "979ec643d56dbad9bb331072117ab9f66751362d5a01d347327d6157f288de5b",
+      "http_headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Date": "Sat, 07 Nov 2026 13:26:15 GMT"
+      },
+      "declared_by": null,
+      "declared_link_label": null
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/562-rv/table-04b.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/562-rv/table-04b.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T13:26:31.135978+00:00",
+      "file": "2008-table4b.xls",
+      "bytes": 101376,
+      "sha256": "105678634d1af9dd2ee10f04872d6547df015d254c5c440f159128a4952f5015",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "101376",
+        "Last-Modified": "Mon, 22 Feb 2016 23:25:58 GMT",
+        "Date": "Sat, 07 Nov 2026 13:26:31 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/2008/demo/voting-and-registration/p20-562-rv.html",
+      "declared_link_label": "Reported Voting and Registration of the Voting-Age Population, by Sex, Race and Hispanic Origin, for States: November 2008"
+    },
+    {
+      "requested_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/562-rv/table-04c.xls",
+      "final_url": "https://www2.census.gov/programs-surveys/cps/tables/p20/562-rv/table-04c.xls",
+      "http_status": 200,
+      "acquired_at_utc": "2026-11-07T13:26:31.216868+00:00",
+      "file": "2008-table4c.xls",
+      "bytes": 58368,
+      "sha256": "9c19941a037c81aa554f89adaced2cf673280dd352a18b3fc889d4f8206ba720",
+      "http_headers": {
+        "Content-Type": "application/vnd.ms-excel",
+        "Content-Length": "58368",
+        "Last-Modified": "Mon, 22 Feb 2016 23:25:58 GMT",
+        "Date": "Sat, 07 Nov 2026 13:26:31 GMT"
+      },
+      "declared_by": "https://www.census.gov/data/tables/2008/demo/voting-and-registration/p20-562-rv.html",
+      "declared_link_label": "Reported Voting and Registration of the Total Voting-Age Population, by Age, for States: November 2008"
+    }
+  ],
+  "no_prior_sources_refetched": true,
+  "native_cells_or_estimands_not_yet_verified": true,
+  "public_package_qualified": false,
+  "individual_transitions_or_2026_participation_qualified": false
+}

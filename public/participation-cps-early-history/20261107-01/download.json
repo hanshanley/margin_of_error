@@ -1,0 +1,26 @@
+{
+  "release_id": 437597528,
+  "tag": "participation-cps-early-history-20261107-01",
+  "target_sha": "8e3c850e99e22750ae55362e8d188654e58d527c",
+  "immutable": true,
+  "published_at": "2026-11-07T13:35:06Z",
+  "assets": [
+    {
+      "file": "complete-analysis.zip",
+      "asset_id": 720802058,
+      "bytes": 467840,
+      "sha256": "52560a64af8ee826036752b18d3aa84723647bf8298418a4c12e5e64c3e8524d",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-early-history-20261107-01/complete-analysis.zip"
+    },
+    {
+      "file": "observations.csv",
+      "asset_id": 720802118,
+      "bytes": 419010,
+      "sha256": "78bbfa509ffc181b8711de0f8735fbe8d61bec618d04f55b86a6a01d51a1ae02",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-early-history-20261107-01/observations.csv"
+    }
+  ],
+  "authenticated_assets_downloaded_in_full_and_verified": true,
+  "published_assets_anonymously_downloaded_in_full_and_verified": true,
+  "tag_commit_matches_verified_package": true
+}
