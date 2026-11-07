@@ -26,6 +26,7 @@ def check(base, proof):
                         context.route("**/participation-mevp/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-independent-poll")
                     expect(panel.locator("[data-mevp-group]")).to_have_count(5)
                     for group, n, rd, dr, first in [

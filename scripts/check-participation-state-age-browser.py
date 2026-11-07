@@ -41,6 +41,7 @@ def check(base, proof):
                         context.route("**/participation-state-age-scenarios/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-state-age-scenarios")
                     expect(panel.locator("[data-state-age-coalition]")).to_have_count(16)
                     expect(panel.locator("[data-state-age-support]")).to_have_count(16)

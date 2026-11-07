@@ -26,6 +26,7 @@ def check(base, proof):
                         context.route("**/participation-survey/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-survey")
                     expect(panel).to_contain_text("433 qualified tables across 43 states")
                     expect(panel).to_contain_text("not all of the original Trump or Harris coalition")

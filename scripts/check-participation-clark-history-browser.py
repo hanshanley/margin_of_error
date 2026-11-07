@@ -31,6 +31,7 @@ def check(base, proof):
                         context.route("**/participation-clark-history/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-clark-history")
                     expect(panel.locator("[data-clark-observation]")).to_have_count(4)
                     for observation in expected["observations"]:

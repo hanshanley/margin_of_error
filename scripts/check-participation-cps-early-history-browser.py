@@ -52,6 +52,7 @@ def check(base, proof, verify_downloads=True):
                                                                   headers={"Access-Control-Allow-Origin": "*"}))
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-cps-early-history")
                     expect(panel).to_be_visible()
                     assert panel.get_attribute("data-display-sha256") == hashlib.sha256(source).hexdigest()

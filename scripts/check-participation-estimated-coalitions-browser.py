@@ -26,6 +26,7 @@ def check(base, proof, version="20261107-03"):
                         context.route("**/participation-estimated-coalitions/**/*.json", lambda route: route.abort())
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-estimated-coalitions")
                     expect(panel).to_contain_text("43 states · 61 separate contests, plus national House")
                     expect(panel).to_contain_text("not an official observed or certified count")

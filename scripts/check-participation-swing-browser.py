@@ -28,6 +28,7 @@ def check(base_url, proof):
                     page = context.new_page()
                     page.goto(base_url.rstrip("/") + "/voter-participation/",
                               wait_until="domcontentloaded")
+                    page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-swing")
                     model = panel.locator("[data-conditional-swing]")
                     expect(model).to_contain_text("Experimental model")
