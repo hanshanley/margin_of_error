@@ -56,9 +56,9 @@ const fmt = value => value == null ? "—" : value.toLocaleString("en-US");
 const pct = value => value == null ? "Not available" : value.toFixed(1) + "%";
 const typeFor = year => year % 4 === 0 ? "presidential" : "midterm";
 const isProvisional = () => $("year").value === "2026" && state.view !== "precincts";
-const modeLabels = { available: "Turnout estimates + official counts",
+const modeLabels = { available: "Nationwide turnout estimates + official counts",
   uf_vep: "Turnout · eligible population (UF)", uf_vap: "Turnout · voting-age population (UF)",
-  official: "Official administrative ballots", in_person_early: "In-person early voting", mail_returned: "Returned mail ballots" };
+  official: "Official administrative ballots · partial coverage", in_person_early: "In-person early voting", mail_returned: "Returned mail ballots" };
 const currentDimension = () => ({ sex: "gender", age: "age_range" }[$("dimension").value] || $("dimension").value);
 const unique = items => [...new Set(items)];
 const ufMode = () => isProvisional() && state.view === "states"
@@ -879,7 +879,7 @@ function currentPrecinctDetail(p) {
 }
 async function drawCurrentPrecinctGeography(map, selected, code, token) {
   const file = state.currentPrecincts?.states[code];
-  if (!file || !["available", "official"].includes($("mode").value)) {
+  if (!file || !(ufMode() || ["available", "official"].includes($("mode").value))) {
     $("geography-note").textContent = state.currentPrecinctError
       || `No matched 2026 precinct participation map for ${state.selectedState} and this ballot mode. `
         + "Other years' boundaries and county rates are not substituted. New Mexico has partial verified coverage. State-level rates, where available, remain a separate layer.";
@@ -1609,6 +1609,12 @@ function stateDetail() {
       ? `${fmt(selected.ballots)} source-estimated ballots / ${fmt(selected.denominator)} ${selected.denominator_basis}. `
         + `${selected.source_date}. Not final official counts, a CPS estimate or a demographic turnout rate.`
       : sourceNote(selected)));
+    if ($("mode").value === "official" && state.ufTurnout.length && $("map-color").value !== "margin") {
+      const restore = html("button", "selection-link", "Show nationwide turnout estimates");
+      restore.id = "show-nationwide-turnout"; restore.type = "button";
+      restore.addEventListener("click", () => { $("mode").value = "available"; render(); resetMap(); });
+      panel.append(restore);
+    }
     if (selected) {
       panel.append(sourceLink(selected));
       if (!selected.uf_source && selected.validated_pct != null) panel.append(html("p", "selection-note",
@@ -1634,7 +1640,9 @@ function stateDetail() {
       const button = html("button", "selection-link", `Show ${fmt(countyAudit.counties)} counties' participation`);
       button.id = "show-current-counties"; button.type = "button";
       button.addEventListener("click", () => {
-        $("map-level").value = "county"; $("map-color").value = "turnout"; $("mode").value = "official"; render();
+        $("map-level").value = "county"; $("map-color").value = "turnout";
+        if (!ufMode()) $("mode").value = "official";
+        render();
         const item = state.map?.stateItems?.get(stateCode());
         if (item) fit(item.bounds);
       });
@@ -1721,6 +1729,11 @@ function statesView() {
     + "UF VEP and VAP are distinct population denominators, not registered voters. "
     + "Use the 2026 measure selector for official full-election counts or separate early/mail observations. "
     + "County participation is available through the selected state's county button where verified; demographic turnout rates remain unavailable.";
+  if (provisional && $("mode").value === "official") {
+    $("coverage-note").textContent = `${rows.length} jurisdictions have official full-election observations; `
+      + `${rows.filter(row => row.turnout_pct != null).length} have a source-defined participation rate. `
+      + "Gray means no comparable rate in this partial administrative view, not zero participation.";
+  }
   if ($("map-color").value === "margin") {
     const office = year % 4 === 0 ? "President" : "U.S. House";
     const count = state.margins.filter(row => row.year === year && row.level === "state" && row.office === office).length;
@@ -2032,7 +2045,7 @@ function projectInside(feature, point) {
     if (level === "auto" && $("map-color").value === "margin"
       && zoomLevel >= 2.3 && state.precinctResults?.coverage[year]?.[code]) level = "precinct";
     if (level === "auto") level = zoomLevel >= 8 && (code === "NC" && state.audits.some(row => row.year === year)
-      || year === 2026 && state.currentPrecincts?.states[code] && ["available", "official"].includes($("mode").value))
+      || year === 2026 && state.currentPrecincts?.states[code] && (ufMode() || ["available", "official"].includes($("mode").value)))
       ? "precinct" : state.local?.years.includes(year) ? "county"
         : state.margins.some(row => row.year === year && row.state_code === code && row.level === "county")
         ? "county" : state.context?.district_result_years.includes(year) ? "district" : "county";
@@ -2089,7 +2102,7 @@ function projectInside(feature, point) {
     if (year === 2026 && level === "precinct"
       && !state.currentPrecincts?.states[code]
       && state.current?.local_audit?.some(row => row.state_code === code && row.counties > 0)
-      && ["available", "official"].includes($("mode").value)) {
+      && (ufMode() || ["available", "official"].includes($("mode").value))) {
       if (zoomLevel < 2.3) {
         $("geography-note").textContent = `No verified 2026 precinct participation geography for ${state.selectedState}. `
           + "State-level turnout remains visible; use the county participation button or select the state to see verified county observations.";
@@ -2103,7 +2116,7 @@ function projectInside(feature, point) {
     if (year === 2026 && level === "county" && $("map-color").value !== "margin"
       && (state.current?.local_file || state.reviewedCounties.some(row => row.state_code === code)
         || state.additionalCoverage.some(row => row.state_code === code))
-      && ["available", "official"].includes($("mode").value))
+      && (ufMode() || ["available", "official"].includes($("mode").value)))
       return drawCurrentGeography(map, selected, code, token);
     if (level === "county" && state.local?.years.includes(year) && $("map-color").value !== "margin")
       return drawLocalGeography(map, selected, code, year, token);

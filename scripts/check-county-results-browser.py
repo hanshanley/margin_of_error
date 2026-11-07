@@ -18,6 +18,8 @@ parser.add_argument("--output", type=Path, required=True)
 parser.add_argument("--baseline-downloads", type=Path)
 parser.add_argument("--tables-only", action="store_true",
                     help="Check table/download changes without repeating the unchanged map suite")
+parser.add_argument("--turnout-navigation-only", action="store_true",
+                    help="Check 2026 national/local turnout navigation on desktop and mobile")
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
 base = args.base_url.rstrip("/")
@@ -77,6 +79,8 @@ for name in ["county-results.json", "precinct-results.json", "precinct-coverage.
              *(["county-candidate-coverage.csv"] if historical_audit else []),
              *(["historical-house-counties.json"] if house_pointer else []),
              "scripts/participation-explorer.js"] + (["uf-turnout.json"] if uf_pointer else []):
+    if args.turnout_navigation_only and name != "scripts/participation-explorer.js":
+        continue
     response = requests.get(base + "/" + name, timeout=90)
     response.raise_for_status()
     assert response.content == (root / "public" / name).read_bytes(), f"Not current source: {name}"
@@ -133,12 +137,69 @@ def width(page):
     return float(page.locator("svg.turnout-map").get_attribute("viewBox").split()[2])
 
 
+def turnout_navigation(page):
+    expected = {row["STATE"]: row for row in uf_rows if row["STATE_ABV"] != "US"}
+    assert len(expected) == 51
+
+    def national_rates(basis):
+        actual = page.locator("path.map-feature[data-state]").evaluate_all(
+            "paths => Object.fromEntries(paths.map(p => [p.dataset.state,"
+            "[p.dataset.rate,p.dataset.rateSource,p.getAttribute('fill')]]))")
+        assert set(actual) == set(expected)
+        for name, row in expected.items():
+            rate, source, fill = actual[name]
+            assert float(rate) == row[basis + "_TURNOUT_RATE"], name
+            assert source == "uf_estimate" and fill != "#edf0f3", name
+
+    expect(page.locator("#year")).to_have_value("2026")
+    expect(page.locator("#mode")).to_have_value("available")
+    expect(page.locator("svg.turnout-map")).to_be_visible(timeout=90000)
+    national_rates("VEP")
+    for mode, basis in [("available", "VEP"), ("uf_vep", "VEP"), ("uf_vap", "VAP")]:
+        page.locator("#mode").select_option(mode)
+        page.locator("#state-select").select_option("North Carolina")
+        page.locator("#show-current-counties").click()
+        expect(page.locator("#mode")).to_have_value(mode)
+        expect(page.locator("#title")).to_have_text("Local participation in North Carolina", timeout=90000)
+        counties = page.locator('.substate-feature[data-level="county"]')
+        expect(counties).to_have_count(100)
+        assert counties.evaluate_all(
+            "paths => paths.every(p => p.hasAttribute('data-count') && p.dataset.sourceCountyId)")
+        expect(page.locator("#caption")).to_contain_text("not the UF state population denominator")
+        page.locator("#map-reset").click()
+        expect(page.locator("#title")).to_have_text("Participation across the United States")
+        expect(counties).to_have_count(0)
+        expect(page.locator("#mode")).to_have_value(mode)
+        national_rates(basis)
+        page.locator("#state-select").select_option("Virginia")
+        expect(page.locator("#selection-panel .selection-rate")).to_have_text(
+            f'{expected["Virginia"][basis + "_TURNOUT_RATE"]:.2f}%')
+        page.locator("#map-reset").click()
+    page.locator("#mode").select_option("official")
+    expect(page.locator("#mode")).to_have_value("official")
+    expect(page.locator("#coverage-note")).to_contain_text("partial administrative view")
+    expect(page.locator("#selection-panel .selection-rate")).to_have_text("Not reported")
+    page.locator("#show-nationwide-turnout").click()
+    expect(page.locator("#mode")).to_have_value("available")
+    national_rates("VEP")
+    page.reload()
+    expect(page.locator("svg.turnout-map")).to_be_visible(timeout=90000)
+    expect(page.locator("#mode")).to_have_value("available")
+    national_rates("VEP")
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+    return {"national_source_matched_rates": 51, "county_round_trip_modes": ["available", "uf_vep", "uf_vap"],
+            "county_rates_remain_administrative": True, "explicit_official_choice_preserved": True,
+            "nationwide_recovery_and_url_reload": True}
+
+
 proof = {"base_url": base, "county_states": len(index["coverage"]), "modes": [], "failures_tested": []}
 errors = []
 with sync_playwright() as p:
     browser = p.chromium.launch()
     for mobile in [False, True]:
         for javascript in [True, False]:
+            if args.turnout_navigation_only and not javascript:
+                continue
             context = browser.new_context(
                 viewport={"width": 390, "height": 844} if mobile else {"width": 1360, "height": 1000},
                 is_mobile=mobile, has_touch=mobile, java_script_enabled=javascript)
@@ -149,6 +210,12 @@ with sync_playwright() as p:
                     body=(root / "public/county-results-overview.geojson.gz").read_bytes()))
             page.on("pageerror", lambda error: errors.append(str(error)))
             page.goto(url)
+            if args.turnout_navigation_only:
+                mode = {"mobile": mobile, "javascript": javascript, **turnout_navigation(page)}
+                proof["modes"].append(mode)
+                print(json.dumps(mode), flush=True)
+                context.close()
+                continue
             links = page.locator("#downloads a[download]")
             assert links.count() >= download_count, "A complete source download is missing"
             downloads = set(links.evaluate_all("links => links.map(a => a.getAttribute('href'))"))
@@ -227,6 +294,7 @@ with sync_playwright() as p:
             expect(page.locator("svg.turnout-map")).to_be_visible(timeout=90000)
             expect(page.locator("#map-color")).to_have_value("turnout")
             mode["participation_default_preserved"] = True
+            mode["turnout_navigation"] = turnout_navigation(page)
             page.locator("#map-color").select_option("margin")
             expect(page.locator("#map-color")).to_have_value("margin")
             overview = page.locator('.county-overview-feature[data-color-level="county"]')
@@ -317,7 +385,7 @@ with sync_playwright() as p:
             proof["modes"].append(mode)
             print(json.dumps(mode), flush=True)
             context.close()
-    for pattern in ([] if args.tables_only else ["**/county-results.json", "**/geometry/WA.geojson.gz"]):
+    for pattern in ([] if args.tables_only or args.turnout_navigation_only else ["**/county-results.json", "**/geometry/WA.geojson.gz"]):
         context = browser.new_context()
         page = context.new_page()
         page.on("pageerror", lambda error: errors.append(str(error)))
@@ -338,5 +406,7 @@ proof.update(status="passed", renderer_sha256=hashlib.sha256(
     (root / "public/scripts/participation-explorer.js").read_bytes()).hexdigest())
 args.output.parent.mkdir(parents=True, exist_ok=True)
 args.output.write_text(json.dumps(proof, indent=2) + "\n")
-print("Passed: source-matched tables and complete downloads in four display modes." if args.tables_only else
+print("Passed: source-matched 2026 national/county round trips and recovery on desktop and mobile."
+      if args.turnout_navigation_only else
+      "Passed: source-matched tables and complete downloads in four display modes." if args.tables_only else
       "Passed: county counts/colors, precinct priority, zoom, historical isolation, four display modes and failure fallbacks.")
