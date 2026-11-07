@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from 'node:fs';
+import { publicationAllows, publicationDecision } from '../lib/participation-publication-decision.mjs';
 const base = '/participation-age-cohort-scenarios/20261107-01/';
 type Range = { lower: number; upper: number } | null;
 type Estimate = { subset: number; prior_choice: string;
@@ -17,13 +18,15 @@ const range = (value: Range) => value === null ? 'Unavailable' : `${count(value.
 const rate = (value: Range) => value === null ? 'Unavailable'
 	: `${value.lower.toFixed(1)}% to ${value.upper.toFixed(1)}%`;
 const prior = (value: string) => value === 'D' ? 'Harris to R' : 'Trump to D';
+const publishAgeScaledScalars = publicationAllows(
+	publicationDecision, 'age_scaled_original_coalition_counts_rates');
 ---
 
 <section id="participation-age-scenarios" class="participation-current" aria-labelledby="age-scenarios-title">
 	<header class="section-intro">
 		<p class="kicker">Conditional national scenarios · 2024 coalitions, prospective 2026 ages</p>
-		<h2 id="age-scenarios-title">Switching and apparent absence by age</h2>
-		<p>These scenarios scale the official 2024 Harris and Trump coalitions using CES survey
+		<h2 id="age-scenarios-title">Historical age support and withheld cohort estimates</h2>
+		<p>The archived scenarios scale the official 2024 Harris and Trump coalitions using CES survey
 			birth-year composition, then compare them with matched SSRS current-age House cross-tabs
 			and UF preliminary 2026 ballot estimates. Both years cover the 50 states excluding D.C.
 			This is not a linked panel of the same people.</p>
@@ -33,7 +36,10 @@ const prior = (value: string) => value === 'D' ? 'Harris to R' : 'Trump to D';
 		is that hypothetical total minus estimated current participants reporting the same prior vote;
 		it includes mortality, migration, recall and source-population error. Negative residuals are
 		retained as source/model diagnostics, not physical nonvoting counts.</p>
-	<div class="table-wrap" tabindex="0" role="region" aria-label="Conditional national age-coalition reference scenarios">
+	{!publishAgeScaledScalars && <p data-publication-decision="historical-scalars-withheld"><strong>Historical evidence decision:</strong>
+		age-scaled original-coalition, switching and apparent-absence quantities are withheld. Historical
+		raw/effective support diagnostics and source qualifications remain below.</p>}
+	{publishAgeScaledScalars && <><div class="table-wrap" tabindex="0" role="region" aria-label="Conditional national age-coalition reference scenarios">
 		<table>
 			<caption>Counts rounded to the nearest thousand for display. Birthday-only ranges vary
 				calendar-year age ambiguity, not sampling or survival uncertainty. None is a confidence interval.</caption>
@@ -54,29 +60,29 @@ const prior = (value: string) => value === 'D' ? 'Harris to R' : 'Trump to D';
 	<p>The original-coalition denominator above differs from switching among current voters.
 		SSRS choices can retain pre-election intentions. The calculation assumes the published
 		group/prior-choice composition applies to the matching ballot-caster population, which
-		has not been independently validated. Ages 18-29 and 18-44 overlap; do not add them.</p>
+		has not been independently validated. Ages 18-29 and 18-44 overlap; do not add them.</p></>}
 	<div class="table-wrap" tabindex="0" role="region" aria-label="Historical age support and wider assumed sensitivity">
 		<table>
 			<caption>Historical bases cover the certain-age support only, not the boundary-year
 				respondents. Effective n is a weight diagnostic, not a design-aware precision guarantee.</caption>
 			<thead><tr><th scope="col">Prospective age</th><th scope="col">Prior vote</th>
 				<th scope="col">Historical raw n</th><th scope="col">Historical effective n</th>
-				<th scope="col">Apparent absence: wider assumed stress</th></tr></thead>
+				{publishAgeScaledScalars && <th scope="col">Apparent absence: wider assumed stress</th>}</tr></thead>
 			<tbody>{review.estimates.map(row => <tr data-age-diagnostics={`${row.subset}-${row.prior_choice}`}>
 				<th scope="row">{ages[row.subset]}</th><td>{row.prior_choice === 'D' ? 'Harris' : 'Trump'}</td>
 				<td data-age-raw-base>{row.historical_certain_group_raw_n.toLocaleString('en-US')}</td>
 				<td data-age-effective-base>{row.historical_certain_group_effective_n.toFixed(1)}</td>
-				<td data-age-stress-absence>{range(row.marginal_sensitivity_apparent_absence)}</td>
+				{publishAgeScaledScalars && <td data-age-stress-absence>{range(row.marginal_sensitivity_apparent_absence)}</td>}
 			</tr>)}</tbody>
 		</table>
 	</div>
-	<p><strong>Wider stress is not a confidence interval.</strong> Each coalition has 486 scenarios:
+	{publishAgeScaledScalars && <p><strong>Wider stress is not a confidence interval.</strong> Each coalition has 486 scenarios:
 		two birthday endpoints, historical fractions shifted by -2/0/+2 percentage points, estimated
 		ballots scaled by 95/100/105%, group and prior-share rounding by -0.5/0/+0.5 points, and
 		balanced recalled-choice transfers by -2/0/+2 points. The main grid holds conditional choice
 		fixed; a separate group/prior/choice rounding envelope is preserved in the download.
 		These are assumed stresses, not exhaustive empirically estimated uncertainty. Marginal
-		endpoints must not be added.</p>
+		endpoints must not be added.</p>}
 	<details class="explorer-notes"><summary>Source matching, historical support and withheld quantities</summary>
 		<p>CES uses validated 2024 participation, self-reported presidential choice and the documented
 			post-election validated-voter weight. Unknown birth years remain in the coalition denominator;
@@ -92,8 +98,8 @@ const prior = (value: string) => value === 'D' ? 'Harris to R' : 'Trump to D';
 			no personal records, small boundary cells or restricted NORC materials are included.</p>
 	</details>
 	<div class="download-links">
-		<a href={`${base}complete-analysis.zip`} download>Complete age-scenario inputs + code + results (ZIP)</a>
-		<a href={`${base}summary.json`} download>Age-scenario summary + qualifications (JSON)</a>
+		<a href={`${base}complete-analysis.zip`} download>Complete archived age-scenario inputs + code + results (ZIP; unsupported population scalars)</a>
+		<a href={`${base}summary.json`} download>Archived age-scenario summary + qualifications (JSON)</a>
 		<a href={`${base}download.json`} download>Age-scenario archive bytes and SHA-256</a>
 	</div>
 </section>

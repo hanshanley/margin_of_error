@@ -1,4 +1,4 @@
-"""Verify conditional age scenarios, signed diagnostics and complete downloads."""
+"""Verify withheld age scalars, retained support and complete archived calculations."""
 
 import argparse
 import hashlib
@@ -30,19 +30,14 @@ def check(base, proof):
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
                     page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-age-scenarios")
-                    expect(panel.locator("[data-age-coalition]")).to_have_count(6)
+                    expect(panel.locator("[data-age-coalition]")).to_have_count(0)
+                    expect(panel.locator("[data-age-stress-absence]")).to_have_count(0)
+                    expect(panel).to_contain_text("Historical evidence decision")
                     expect(panel.locator("[data-age-diagnostics]")).to_have_count(6)
-                    expect(panel.locator('[data-age-coalition="55-D"] [data-age-birthday-absence]')).to_have_text(
-                        "-878,000 to 1,144,000")
-                    expect(panel.locator('[data-age-diagnostics="55-D"] [data-age-stress-absence]')).to_have_text(
-                        "-4,901,000 to 4,996,000")
-                    expect(panel.locator('[data-age-diagnostics="53-R"] [data-age-stress-absence]')).to_have_text(
-                        "-939,000 to 4,902,000")
                     expect(panel.locator('[data-age-diagnostics="53-R"] [data-age-raw-base]')).to_have_text("194")
                     expect(panel.locator('[data-age-diagnostics="53-R"] [data-age-effective-base]')).to_have_text("114.2")
                     for text in ("No measured staying-home rate is identified", "not a linked panel",
-                                 "50 states excluding D.C.", "Wider stress is not a confidence interval",
-                                 "18-29 and 18-44 overlap", "main grid holds conditional choice",
+                                 "50 states excluding D.C.",
                                  "No state, county or precinct allocation"):
                         expect(panel).to_contain_text(text)
                     expect(page.locator("#participation-demographic-counts")).to_contain_text("299 qualified")

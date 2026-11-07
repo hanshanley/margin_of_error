@@ -1137,6 +1137,19 @@ for (const article of externalArticles) {
 }
 assert.equal([...archive.matchAll(/class="external-list"/g)].length, 1);
 
+const historicalPublication = JSON.parse(await text('participation-publication-decision/20261107-01/decision.json'));
+assert.equal(historicalPublication.jurisdictions.length, 51);
+assert.equal(historicalPublication.summary.candidate_cohort_population_validated_jurisdictions, 0);
+for (const selector of [
+	'[data-estimated-state]', '[data-estimated-composition-state]', '[data-coalition-state]',
+	'[data-age-coalition]', '[data-state-age-coalition]', '[data-age-stress-absence]',
+	'[data-state-age-stress]',
+]) assert.equal(participation(selector).length, 0, `Unsupported historical scalar rendered: ${selector}`);
+assert.equal(participation('[data-publication-decision="historical-scalars-withheld"]').length, 4);
+assert.equal(participation('[data-estimated-coverage]').length, 51);
+assert.equal(participation('[data-state-age-coverage]').length, 51);
+assert.ok(participation('[data-publication-class="unscaled-qualified-survey-shares"]').length > 0);
+
 if (process.argv.includes('--participation-only')) {
 	console.log('Voter-participation artifact checks passed.');
 	process.exit(0);

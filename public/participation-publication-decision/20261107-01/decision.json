@@ -1,0 +1,550 @@
+{
+  "schema_version": 1,
+  "decision_id": "historical-evidence-publication-20261107-01",
+  "status": "public_safe_metric_specific_historical_evidence_decision",
+  "as_of": "2026-11-07T17:12:58.802-05:00",
+  "scope": {
+    "jurisdictions": 51,
+    "state_dc_flags": true,
+    "national_rule": "global_metric_flags_apply; no state allocation",
+    "person_records": false,
+    "fine_cells": false
+  },
+  "metrics": {
+    "source_backed_turnout_observations": true,
+    "provider_initial_estimates": true,
+    "unscaled_qualified_survey_shares": true,
+    "original_coalition_returning_counts": false,
+    "original_coalition_switching_counts_rates": false,
+    "signed_apparent_absence_counts_rates": false,
+    "population_scaled_prior_composition_counts": false,
+    "age_scaled_original_coalition_counts_rates": false
+  },
+  "rules": {
+    "source_backed_turnout_observations": "Allow only with native observed/preliminary/final status and definition.",
+    "provider_initial_estimates": "Allow only while visibly labeled Initial Estimate.",
+    "unscaled_qualified_survey_shares": "Allow with native denominator, response universe and suppression.",
+    "original_coalition_returning_counts": "Suppress.",
+    "original_coalition_switching_counts_rates": "Suppress.",
+    "signed_apparent_absence_counts_rates": "Suppress; residual is not measured abstention.",
+    "population_scaled_prior_composition_counts": "Suppress; retain unscaled survey composition shares.",
+    "age_scaled_original_coalition_counts_rates": "Suppress; retain historical support diagnostics."
+  },
+  "summary": {
+    "candidate_cohort_population_validated_jurisdictions": 0,
+    "qualified_independent_admin_joint_history_states": [
+      "NC"
+    ],
+    "official_2024_marginals": 28
+  },
+  "source_bindings": [
+    {
+      "role": "finite_historical_evidence_matrix",
+      "public_role": "Binds the 51-jurisdiction evidence classification and publication decision.",
+      "sha256": "3f12a44fcad9896cfe1d2eb897db17007cf356fa7f1a2733f04807fc245ea2ae",
+      "bytes": 201852
+    },
+    {
+      "role": "official_2024_marginal_inventory",
+      "public_role": "Binds official marginal availability; does not supply joint histories.",
+      "sha256": "f4fc37c6c0d8ab959c6e03d090384c4739672bef6233ebd886adb3b1872efa68",
+      "bytes": 112365
+    },
+    {
+      "role": "official_2024_marginal_proof",
+      "public_role": "Binds 335 provenance and lower-bound checks.",
+      "sha256": "bb5daa14df1b68a5084396fdff1ae465352355e285df21dc9aa46f3ec289ae7c",
+      "bytes": 581
+    },
+    {
+      "role": "ces_turnout_compatibility",
+      "public_role": "Binds survey-only conditional ranges; not population validation.",
+      "sha256": "e6e2150639e89692d2f93a0a41a9fc8572c172c468e9185aeee0129ec0c4ea06",
+      "bytes": 1960322
+    },
+    {
+      "role": "historical_entry_compatibility",
+      "public_role": "Binds conditional first-record proxy gaps; not first-ever voting.",
+      "sha256": "0a989b0be2300042220d1f69c61973558f5785f662f373811b2a185e65e5a620",
+      "bytes": 455301
+    },
+    {
+      "role": "nc_statewide_admin_joint_history",
+      "public_role": "Binds the sole qualified statewide adjacent-period administrative joint benchmark.",
+      "sha256": "932cdac9d7c58076dccf7c04fc51bbb01e9d49ed24270e15b94bff73cbc608da",
+      "bytes": 2810
+    },
+    {
+      "role": "nc_statewide_admin_joint_history_proof",
+      "public_role": "Binds independent native statewide intersection checks.",
+      "sha256": "f5aeff1f4798ed613b8690b88d06b2e20b4bfb6a60e0ac3881446f657a9d3bf8",
+      "bytes": 453
+    },
+    {
+      "role": "public_2026_initial_estimates",
+      "public_role": "Binds provider Initial Estimate totals and existing conditional-contest coverage.",
+      "sha256": "1b72525c5c1a64006916ac046107a4f2daabdcb7f193684701c4c6913dd677f9",
+      "bytes": 1061872
+    },
+    {
+      "role": "public_unscaled_joint_survey_review",
+      "public_role": "Binds qualified unscaled survey shares and suppression dispositions.",
+      "sha256": "4b7325d992295710ce99a853d20002db18db5e4f99d1ea2f14112329397a6b28",
+      "bytes": 1169800
+    },
+    {
+      "role": "active_estimated_coalition_scalar_renderer",
+      "public_role": "Active via ParticipationSurvey; gates original-coalition and scaled-composition counts.",
+      "sha256": "17b4d63750acc387a738bf37825dcf0aa6008f113d44f28c6a6f153422a850aa",
+      "bytes": 12567
+    },
+    {
+      "role": "active_reported_ballot_coalition_scalar_renderer",
+      "public_role": "Active via ParticipationSurvey; gates reported-ballot original-coalition scalars.",
+      "sha256": "da80c889ddb13a534d6498b5d8bad857ab5b04fa8b1965a34a9ae3423c8f6ec8",
+      "bytes": 9368
+    },
+    {
+      "role": "active_national_age_scalar_renderer",
+      "public_role": "Active via voter-participation; gates national age-scaled coalition scalars.",
+      "sha256": "ec0215404c577b5270b157e2b8ae5257dcff96cba961c6735190a7450f9869f3",
+      "bytes": 8104
+    },
+    {
+      "role": "active_state_age_scalar_renderer",
+      "public_role": "Active via voter-participation; gates state age-scaled coalition scalars.",
+      "sha256": "08951ae2f54e80f99f4e281a45595663a95d26a24797388b992fc27e41987c0b",
+      "bytes": 8879
+    },
+    {
+      "role": "safe_unscaled_survey_renderer",
+      "public_role": "Active unscaled survey-share display retained by the decision.",
+      "sha256": "65457eee9a16fe998de485dd208a9662066e39346c2defed28711e5f6c974a9e",
+      "bytes": 10165
+    },
+    {
+      "role": "active_component_call_sites",
+      "public_role": "Binds direct age-component call sites; ParticipationSurvey binds the two coalition components.",
+      "sha256": "4d3f0385698b4a26503d8eba21250c05156ee20606eb34e0b79d3796e871f43c",
+      "bytes": 79201
+    }
+  ],
+  "jurisdiction_fields": [
+    "state_code",
+    "official_2024_marginal_available",
+    "provider_2026_initial_estimate_available",
+    "qualified_unscaled_survey_tables",
+    "independent_admin_joint_history",
+    "candidate_cohort_population_validated"
+  ],
+  "jurisdictions": [
+    [
+      "AK",
+      true,
+      true,
+      0,
+      false,
+      false
+    ],
+    [
+      "AL",
+      true,
+      true,
+      14,
+      false,
+      false
+    ],
+    [
+      "AR",
+      false,
+      true,
+      2,
+      false,
+      false
+    ],
+    [
+      "AZ",
+      false,
+      true,
+      11,
+      false,
+      false
+    ],
+    [
+      "CA",
+      true,
+      true,
+      11,
+      false,
+      false
+    ],
+    [
+      "CO",
+      true,
+      true,
+      14,
+      false,
+      false
+    ],
+    [
+      "CT",
+      true,
+      true,
+      7,
+      false,
+      false
+    ],
+    [
+      "DC",
+      true,
+      true,
+      0,
+      false,
+      false
+    ],
+    [
+      "DE",
+      true,
+      true,
+      1,
+      false,
+      false
+    ],
+    [
+      "FL",
+      false,
+      true,
+      11,
+      false,
+      false
+    ],
+    [
+      "GA",
+      false,
+      true,
+      20,
+      false,
+      false
+    ],
+    [
+      "HI",
+      true,
+      true,
+      1,
+      false,
+      false
+    ],
+    [
+      "IA",
+      false,
+      true,
+      20,
+      false,
+      false
+    ],
+    [
+      "ID",
+      true,
+      true,
+      1,
+      false,
+      false
+    ],
+    [
+      "IL",
+      true,
+      true,
+      20,
+      false,
+      false
+    ],
+    [
+      "IN",
+      true,
+      true,
+      0,
+      false,
+      false
+    ],
+    [
+      "KS",
+      true,
+      true,
+      16,
+      false,
+      false
+    ],
+    [
+      "KY",
+      false,
+      true,
+      8,
+      false,
+      false
+    ],
+    [
+      "LA",
+      true,
+      true,
+      6,
+      false,
+      false
+    ],
+    [
+      "MA",
+      false,
+      true,
+      16,
+      false,
+      false
+    ],
+    [
+      "MD",
+      true,
+      true,
+      7,
+      false,
+      false
+    ],
+    [
+      "ME",
+      true,
+      true,
+      11,
+      false,
+      false
+    ],
+    [
+      "MI",
+      false,
+      true,
+      9,
+      false,
+      false
+    ],
+    [
+      "MN",
+      true,
+      true,
+      19,
+      false,
+      false
+    ],
+    [
+      "MO",
+      false,
+      true,
+      0,
+      false,
+      false
+    ],
+    [
+      "MS",
+      false,
+      true,
+      6,
+      false,
+      false
+    ],
+    [
+      "MT",
+      false,
+      true,
+      7,
+      false,
+      false
+    ],
+    [
+      "NC",
+      true,
+      true,
+      11,
+      true,
+      false
+    ],
+    [
+      "ND",
+      true,
+      true,
+      0,
+      false,
+      false
+    ],
+    [
+      "NE",
+      true,
+      true,
+      9,
+      false,
+      false
+    ],
+    [
+      "NH",
+      false,
+      true,
+      0,
+      false,
+      false
+    ],
+    [
+      "NJ",
+      true,
+      true,
+      8,
+      false,
+      false
+    ],
+    [
+      "NM",
+      true,
+      true,
+      12,
+      false,
+      false
+    ],
+    [
+      "NV",
+      false,
+      true,
+      10,
+      false,
+      false
+    ],
+    [
+      "NY",
+      false,
+      true,
+      11,
+      false,
+      false
+    ],
+    [
+      "OH",
+      false,
+      true,
+      9,
+      false,
+      false
+    ],
+    [
+      "OK",
+      true,
+      true,
+      14,
+      false,
+      false
+    ],
+    [
+      "OR",
+      false,
+      true,
+      12,
+      false,
+      false
+    ],
+    [
+      "PA",
+      false,
+      true,
+      6,
+      false,
+      false
+    ],
+    [
+      "RI",
+      true,
+      true,
+      2,
+      false,
+      false
+    ],
+    [
+      "SC",
+      true,
+      true,
+      14,
+      false,
+      false
+    ],
+    [
+      "SD",
+      true,
+      true,
+      1,
+      false,
+      false
+    ],
+    [
+      "TN",
+      false,
+      true,
+      18,
+      false,
+      false
+    ],
+    [
+      "TX",
+      false,
+      true,
+      22,
+      false,
+      false
+    ],
+    [
+      "UT",
+      false,
+      true,
+      0,
+      false,
+      false
+    ],
+    [
+      "VA",
+      true,
+      true,
+      10,
+      false,
+      false
+    ],
+    [
+      "VT",
+      false,
+      true,
+      1,
+      false,
+      false
+    ],
+    [
+      "WA",
+      true,
+      true,
+      0,
+      false,
+      false
+    ],
+    [
+      "WI",
+      false,
+      true,
+      9,
+      false,
+      false
+    ],
+    [
+      "WV",
+      false,
+      true,
+      1,
+      false,
+      false
+    ],
+    [
+      "WY",
+      true,
+      true,
+      2,
+      false,
+      false
+    ]
+  ]
+}

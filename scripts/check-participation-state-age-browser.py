@@ -1,10 +1,9 @@
-"""Verify state age scenarios, coverage, fallbacks and complete archive bytes."""
+"""Verify withheld state-age scalars, retained support and complete archive bytes."""
 
 import argparse
 import hashlib
 import io
 import json
-import math
 from pathlib import Path
 import zipfile
 
@@ -13,14 +12,6 @@ from playwright.sync_api import expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = "/participation-state-age-scenarios/20261107-01/"
-
-
-def count(value):
-    return "Unavailable" if value is None else f"{math.floor(value / 1000 + .5) * 1000:,}"
-
-
-def count_range(value):
-    return "Unavailable" if value is None else f'{count(value["lower"])} to {count(value["upper"])}'
 
 
 def check(base, proof):
@@ -43,24 +34,23 @@ def check(base, proof):
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
                     page.locator("#participation-research > summary").click()
                     panel = page.locator("#participation-state-age-scenarios")
-                    expect(panel.locator("[data-state-age-coalition]")).to_have_count(16)
+                    expect(panel.locator("[data-state-age-coalition]")).to_have_count(0)
+                    expect(panel.locator("[data-state-age-stress]")).to_have_count(0)
+                    expect(panel).to_contain_text("Historical evidence decision")
                     expect(panel.locator("[data-state-age-support]")).to_have_count(16)
                     expect(panel.locator("[data-state-age-coverage]")).to_have_count(51)
-                    for row in expected["estimates"]:
-                        key = f'{row["state_code"]}-{row["contest_code"]}-{row["prior_choice"]}'
-                        element = panel.locator(f'[data-state-age-coalition="{key}"]')
-                        expect(element.locator("[data-state-age-switchers]")).to_have_text(
-                            count(row["reported_opposite_choice_count"]))
-                        expect(element.locator("[data-state-age-absence]")).to_have_text(
-                            count_range(row["birth_year_only_apparent_absence"]))
-                        expect(element.locator("[data-state-age-stress]")).to_have_text(
-                            count_range(row["marginal_sensitivity_apparent_absence_count"]))
+                    for index, row in enumerate(expected["estimates"]):
+                        support = panel.locator("[data-state-age-support]").nth(index)
+                        expect(support.locator("td").nth(1)).to_have_text(
+                            f'{row["historical_certain_group_raw_n"]:,}')
+                        expect(support.locator("td").nth(2)).to_have_text(
+                            f'{row["historical_certain_group_effective_n"]:.1f}')
                     for text in ("Six states, eight separate", "not measured staying home or turnout rates",
-                                 "No design confidence intervals", "especially consequential for older cohorts",
+                                 "especially consequential for older cohorts",
                                  "not a precision", "all 7,776 scenarios", "not zero turnout",
-                                 "No national estimate is allocated", "not empirically cover"):
+                                 "No national estimate is allocated"):
                         expect(panel).to_contain_text(text)
-                    expect(page.locator("#participation-age-scenarios [data-age-coalition]")).to_have_count(6)
+                    expect(page.locator("#participation-age-scenarios [data-age-coalition]")).to_have_count(0)
                     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), mode
                     if mode == "desktop":
                         metadata = context.request.get(base.rstrip("/") + PREFIX + "download.json")

@@ -84,7 +84,7 @@ const mass = (row: Table, key: string) => {
 				return <div data-survey-contest={contest}>
 					<h3>{rows.find(row => row.contest_title)?.contest_title ?? contest}</h3>
 					<div class="table-wrap" tabindex="0" role="region" aria-label={`${name(code)} ${contest} survey switching`}>
-						<table><caption>Conditional cells and masses have different denominators. Source cells can
+						<table data-publication-class="unscaled-qualified-survey-shares"><caption>Conditional cells and masses have different denominators. Source cells can
 							remain visible when mass arithmetic is withheld; see qualification.</caption>
 							<thead><tr><th scope="col">Poll group</th><th scope="col">Trump to D<br />(within recalled Trump)</th>
 								<th scope="col">Harris to R<br />(within recalled Harris)</th>
@@ -117,14 +117,14 @@ const mass = (row: Table, key: string) => {
 		and ambiguous major-party or special-election comparisons are not forced into ordinary D/R estimates.
 		Source bases are not effective prior-choice-cell samples. Prior presidential nonvoting is not
 		validated nonparticipation in every 2024 contest. No state estimate is allocated to counties or precincts.</p>
-	<details class="explorer-notes"><summary>How the conditional population extension differs</summary>
-		<p>With a qualified official 2024 coalition total T24, matched 2026 voter total N26, recalled
-			prior-choice share q and current-choice conditional p: returning voters = N26 × q;
-			reported switchers = N26 × q × p; apparent absence = T24 - N26 × q.</p>
-		<p>Apparent absence is not measured staying home: migration, mortality, recall, incomplete counts
-			and contest-denominator uncertainty remain. The survey-only archive below excludes those calculations;
-			the separately versioned extension above supplies conditional scenarios with additional assumptions.
-			We do not force the 2026 electorate back to the 2024 partisan split.</p>
+	<details class="explorer-notes"><summary>Why population-scaled historical transitions are withheld</summary>
+		<p>The <a href="/participation-publication-decision/20261107-01/decision.json">historical evidence decision for all 51 jurisdictions</a>
+			preserves denominator-labeled survey shares, provider Initial Estimates and source observations.
+			Original-coalition returning, switching and apparent-absence quantities are withheld because
+			our candidate-cohort method has not passed population validation in any jurisdiction.</p>
+		<p>Apparent absence is not measured staying home. Missing history is not nonvoting, prior presidential
+			nonvote is not never voted, and new registration is not first-time voting. Complete frozen
+			calculation archives remain available for reproducibility, not as supported population estimates.</p>
 	</details>
 	<div class="download-links">
 		<a href={`${base}complete-analysis.zip`} download>Complete survey tables + inputs + code (ZIP)</a>

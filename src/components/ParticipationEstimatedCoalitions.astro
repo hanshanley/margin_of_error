@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from 'node:fs';
+import { publicationAllows, publicationDecision } from '../lib/participation-publication-decision.mjs';
 const { names } = Astro.props as { names: Record<string, string> };
 const base = '/participation-estimated-coalitions/20261107-03/';
 type Values = { returning_count: number; reported_switcher_count: number; apparent_absence_count: number;
@@ -31,21 +32,27 @@ const groups = [
 	{ label: 'State Senate and governor — 61 separate comparisons', rows: review.state_comparisons, open: false },
 ];
 const states = new Set(review.state_comparisons.map(row => row.state_code)).size;
+const publishOriginalCoalitionScalars = ['original_coalition_returning_counts',
+	'original_coalition_switching_counts_rates', 'signed_apparent_absence_counts_rates']
+	.every(metric => publicationAllows(publicationDecision, metric));
+const publishPopulationCompositionCounts = publicationAllows(
+	publicationDecision, 'population_scaled_prior_composition_counts');
 ---
 
 <section id="participation-estimated-coalitions" aria-labelledby="estimated-coalitions-title">
-	<h3 id="estimated-coalitions-title">Preliminary estimates across states</h3>
+	<h3 id="estimated-coalitions-title">State turnout estimates and historical-coalition evidence</h3>
 	<p><strong>{states} states · {review.state_comparisons.length} separate contests, plus national House.</strong>
-		This separate tier scales qualified joint survey tables to UF Election Lab's preliminary turnout
-		estimates. Every source numerator is labeled <strong>Initial Estimate</strong>, not an official
-		observed or certified count. The reported-count snapshots below remain separate.</p>
+		UF Election Lab's preliminary totals remain labeled <strong>Initial Estimate</strong>,
+		not official observed or certified counts. Historical-coalition scaling has a separate
+		evidence gate; source-reported ballot snapshots remain distinct.</p>
 	<p><strong>Apparent absence is not measured staying home.</strong> It includes migration, mortality,
 		recall and population-estimation error. The reference assumes each contest's recalled-choice
 		composition represents all ballot-casters; exact response selection remains unverified.
 		Some current choices were retained from pre-election interviews after unsuccessful recontact.</p>
-	{groups.map(group => <details class="explorer-notes" open={group.open}>
+	{(publishOriginalCoalitionScalars || publishPopulationCompositionCounts)
+		? groups.map(group => <details class="explorer-notes" open={group.open}>
 		<summary>{group.label}</summary>
-		<div class="table-wrap" tabindex="0" role="region" aria-label={`${group.label}: original coalitions`}>
+		{publishOriginalCoalitionScalars && <div class="table-wrap" tabindex="0" role="region" aria-label={`${group.label}: original coalitions`}>
 			<table><caption>Scenario counts rounded to 1,000. Percentages use the original 2024 coalition.
 				Rounded zero does not establish no switching. Never add offices or national/state comparisons.</caption>
 				<thead><tr><th scope="col">2026 comparison</th><th scope="col">2024 coalition</th>
@@ -66,8 +73,8 @@ const states = new Set(review.state_comparisons.map(row => row.state_code)).size
 					</tr>;
 				}))}</tbody>
 			</table>
-		</div>
-		<h4>Recalled prior nonvote and other presidential choice</h4>
+		</div>}
+		{publishPopulationCompositionCounts && <><h4>Recalled prior nonvote and other presidential choice</h4>
 		<p>These are estimated composition counts of the current electorate, not first-time-voter,
 			eligibility-entry or demographic turnout rates. A reported presidential nonvoter may have
 			voted in another 2024 contest. Suppressed current-choice cells remain unavailable.</p>
@@ -89,25 +96,28 @@ const states = new Set(review.state_comparisons.map(row => row.state_code)).size
 					</tr>;
 				})}</tbody>
 			</table>
-		</div>
-	</details>)}
-	<p class="caption">Returning = N26 × q; reported opposite-party choices = N26 × q × p;
+		</div></>}
+	</details>) : <p data-publication-decision="historical-scalars-withheld"><strong>Historical evidence decision:</strong>
+		population-scaled original-coalition and prior-composition counts are withheld. Provider
+		Initial Estimates remain below; qualified unscaled survey shares remain in the state tables.</p>}
+	{publishOriginalCoalitionScalars && <p class="caption">Returning = N26 × q; reported opposite-party choices = N26 × q × p;
 		apparent absence = T24 − N26 × q. The sensitivity varies estimated totals by −5%, 0 and +5%
 		and transfers −2, 0 or +2 recalled-composition points from Harris to Trump. These are stress
-		assumptions, not probability intervals or estimated missing ballots. Composition is not renormalized.</p>
+		assumptions, not probability intervals or estimated missing ballots. Composition is not renormalized.</p>}
 	<p>The national House comparison excludes D.C. from both 2024 coalitions and 2026 estimated totals
 		because SSRS did not sample it. Its 50-state population estimate is
 		{integer(review.national_house_comparison.preliminary_turnout.ballots)}, not the native
 		51-jurisdiction total. This is matched-scope aggregation, not allocation to states.</p>
-	<p>This version uses the November 7 source snapshot. All 61 supported state-contest estimates
-		are unchanged; the national estimate and Washington's ballot-total coverage row are revised.
+	<p>This version uses the November 7 source snapshot. The 61 archived conditional state-contest
+		calculations remain unchanged for reproducibility, not as validated population estimates.
+		The national turnout estimate and Washington's ballot-total coverage row were revised.
 		Other demographic and age panels retain their separately dated, frozen inputs and are not
 		silently recalculated with this newer total.</p>
 	<details class="explorer-notes"><summary>Estimated-total coverage: all 50 states and D.C.</summary>
 		<p>Every jurisdiction has its own preliminary numerator. Missing qualified joint evidence is not zero.</p>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="Nationwide estimated-total scenario coverage">
 			<table><thead><tr><th scope="col">Jurisdiction</th><th scope="col">Preliminary estimated ballots</th>
-				<th scope="col">Qualified comparisons / next evidence</th></tr></thead>
+				<th scope="col">Joint-survey inputs / next evidence, not population validation</th></tr></thead>
 				<tbody>{review.jurisdictions.map(row => <tr data-estimated-coverage={row.state_code}>
 					<th scope="row">{names[row.state_code]}</th><td>{integer(row.preliminary_turnout.ballots)}<br />Initial Estimate</td>
 					<td>{row.conditional_contests.length ? row.conditional_contests.map(code => office[code]).join(', ')
@@ -135,8 +145,8 @@ const states = new Set(review.state_comparisons.map(row => row.state_code)).size
 			is released. No individual records or restricted NORC materials are included.</p>
 	</details>
 	<div class="download-links">
-		<a href={`${base}complete-analysis.zip`} download>Complete preliminary estimates + licensed inputs + code (ZIP)</a>
-		<a href={`${base}estimated-coalition-scenarios.json`} download>Exact preliminary counts + composition + sensitivity (JSON)</a>
+		<a href={`${base}complete-analysis.zip`} download>Complete archived calculations + licensed inputs + code (ZIP; unsupported population scalars)</a>
+		<a href={`${base}estimated-coalition-scenarios.json`} download>Archived conditional arithmetic + composition + sensitivity, not released population estimates (JSON)</a>
 		<a href={`${base}download.json`} download>Preliminary archive bytes and SHA-256</a>
 		<a href="/participation-estimated-coalitions/20261107-02/complete-analysis.zip" download>Previous complete version (ZIP)</a>
 		<a href="https://election.lab.ufl.edu/dataset/2026-general-election-turnout-rates-v0-2/">UF source and documentation</a>

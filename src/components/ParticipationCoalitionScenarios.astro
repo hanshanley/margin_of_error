@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from 'node:fs';
+import { publicationAllows, publicationDecision } from '../lib/participation-publication-decision.mjs';
 const { names } = Astro.props as { names: Record<string, string> };
 const base = '/participation-coalition-scenarios/20261107-02/';
 type Values = { returning_count: number; reported_switcher_count: number; apparent_absence_count: number;
@@ -26,12 +27,15 @@ const range = (row: Scenario, prior: string) => {
 const office: Record<string, string> = { SG: 'Senate', GG: 'Governor' };
 const codes = [...new Set(review.estimates.map(row => row.state_code))];
 const hasNativeScopeAssumptions = review.estimates.some(row => row.turnout_input_qualification);
+const publishOriginalCoalitionScalars = ['original_coalition_returning_counts',
+	'original_coalition_switching_counts_rates', 'signed_apparent_absence_counts_rates']
+	.every(metric => publicationAllows(publicationDecision, metric));
 ---
 
 <section id="participation-coalition-scenarios" aria-labelledby="coalition-scenarios-title">
 	<h3 id="coalition-scenarios-title">Preliminary coalition scaling scenarios</h3>
 	<p><strong>{codes.length} states · {review.estimates.length} separate contests.</strong>
-		This applies the poll's recalled-2024 composition to official provisional ballot counts,
+		The archived calculation applies the poll's recalled-2024 composition to provisional source ballot counts,
 		then compares with the FEC's official 2024 presidential coalitions.
 		<strong>These are conditional estimates, not measured staying home.</strong></p>
 	<p>The reference assumes each contest table represents all state ballot-casters. SSRS targets the
@@ -42,7 +46,10 @@ const hasNativeScopeAssumptions = review.estimates.some(row => row.turnout_input
 		their source-defined Ballots Cast snapshots are scaled as if they cover the whole ballot-caster
 		population. That all-ballot scope is unverified. Native source warnings and approval flags remain
 		unchanged; Delaware supplies no turnout update clock. These rows are not newly approved all-mode counts.</p>}
-	<div class="table-wrap" tabindex="0" role="region" aria-label="Conditional original-coalition switching and apparent absence">
+	{!publishOriginalCoalitionScalars && <p data-publication-decision="historical-scalars-withheld"><strong>Historical evidence decision:</strong>
+		population-scaled returning, switching and apparent-absence quantities are withheld. Source-reported
+		ballot observations, coverage and qualified unscaled survey shares remain available.</p>}
+	{publishOriginalCoalitionScalars && <div class="table-wrap" tabindex="0" role="region" aria-label="Conditional original-coalition switching and apparent absence">
 		<table>
 			<caption>Official 2024 totals are exact; scenario counts are rounded to the nearest 1,000.
 				Percentages below use the original 2024 coalition, not current voters.
@@ -66,12 +73,12 @@ const hasNativeScopeAssumptions = review.estimates.some(row => row.turnout_input
 				</tr>;
 			}))}</tbody>
 		</table>
-	</div>
-	<p class="caption">Returning = N26 × q; reported switching = N26 × q × p; apparent absence = T24 − N26 × q.
+	</div>}
+	{publishOriginalCoalitionScalars && <p class="caption">Returning = N26 × q; reported switching = N26 × q × p; apparent absence = T24 − N26 × q.
 		Absence also includes mortality, migration and source/recall error. It is not a validated nonvoter count.
-		No 2026 reweighting to the original Trump–Harris split is imposed.</p>
+		No 2026 reweighting to the original Trump–Harris split is imposed.</p>}
 	<details class="explorer-notes"><summary>Assumptions, sensitivity and source clocks</summary>
-		<p>The displayed sensitivity varies the ballot count by factors 1, 1.025 and 1.05 and transfers
+		<p>The archived sensitivity varies the ballot count by factors 1, 1.025 and 1.05 and transfers
 			−2, 0 or +2 percentage points of recalled composition from Harris to Trump, preserving their sum.
 			These are stress scenarios, not estimated missing ballots or probability intervals.
 			They do not exhaust sampling, recall or population uncertainty.</p>
@@ -103,8 +110,8 @@ const hasNativeScopeAssumptions = review.estimates.some(row => row.turnout_input
 		</div>
 	</details>
 	<div class="download-links">
-		<a href={`${base}complete-analysis.zip`} download>Complete coalition scenarios + official inputs + code (ZIP)</a>
-		<a href={`${base}conditional-coalition-scenarios.json`} download>Exact conditional counts + sensitivities (JSON)</a>
+		<a href={`${base}complete-analysis.zip`} download>Complete archived coalition calculations + source inputs + code (ZIP; unsupported population scalars)</a>
+		<a href={`${base}conditional-coalition-scenarios.json`} download>Archived conditional arithmetic + sensitivities, not released population estimates (JSON)</a>
 		<a href={`${base}download.json`} download>Scenario archive bytes and SHA-256</a>
 		<a href="/participation-coalition-scenarios/20261107-01/complete-analysis.zip" download>Earlier six-state archive (version 01)</a>
 		<a href="https://www.fec.gov/documents/5645/2024presgeresults.xlsx">Official FEC 2024 workbook</a>

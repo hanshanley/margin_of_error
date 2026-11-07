@@ -1,4 +1,4 @@
-"""Verify conditional scaling, explicit qualification, coverage and complete downloads."""
+"""Verify withheld coalition scalars, retained source observations and complete downloads."""
 
 import argparse
 import hashlib
@@ -33,12 +33,8 @@ def check(base, proof, version):
                     expect(panel).to_contain_text("conditional estimates, not measured staying home")
                     expect(panel).to_contain_text("response selection remains unverified")
                     expect(panel).to_contain_text("not current live or certified totals")
-                    expect(panel.locator("[data-coalition-state]")).to_have_count(contests * 2)
-                    row = panel.locator('[data-coalition-state="NC"][data-coalition-prior="R"]')
-                    expect(row.locator("td").nth(1)).to_have_text("2,898,423")
-                    expect(row.locator("td").nth(2)).to_have_text("1,816,000")
-                    expect(row.locator("td").nth(3)).to_have_text("182,0006.3%")
-                    expect(row.locator("td").nth(4)).to_have_text("1,082,00037.3%")
+                    expect(panel).to_contain_text("Historical evidence decision")
+                    expect(panel.locator("[data-coalition-state]")).to_have_count(0)
                     details = panel.locator("details").nth(1)
                     details.locator(":scope > summary").click()
                     expect(panel.locator("[data-coalition-coverage]")).to_have_count(51)
@@ -60,7 +56,7 @@ def check(base, proof, version):
                         expect(missing.locator("[data-survey-prior-nonvoter-share]")).to_have_text("Unavailable")
                     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), mode
                     if mode == "desktop":
-                        link = panel.get_by_role("link", name="Complete coalition scenarios + official inputs + code (ZIP)")
+                        link = panel.locator(f'a[href$="/{version}/complete-analysis.zip"]')
                         response = context.request.get(urljoin(base, link.get_attribute("href")))
                         assert f"/{version}/" in link.get_attribute("href")
                         metadata = context.request.get(base.rstrip("/") + f"/participation-coalition-scenarios/{version}/download.json")

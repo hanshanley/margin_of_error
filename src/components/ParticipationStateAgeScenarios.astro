@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from 'node:fs';
+import { publicationAllows, publicationDecision } from '../lib/participation-publication-decision.mjs';
 const base = '/participation-state-age-scenarios/20261107-01/';
 type Range = { lower: number; upper: number } | null;
 type Estimate = { state_code: string; contest_code: string; subset: number; prior_choice: string;
@@ -17,14 +18,16 @@ const count = (value: number | null) => value === null ? 'Unavailable'
 	: (Math.round(value / 1000) * 1000).toLocaleString('en-US');
 const range = (value: Range) => value === null ? 'Unavailable' : `${count(value.lower)} to ${count(value.upper)}`;
 const coverageLabel = (value: string) => value === 'conditional_selected65plus_scenarios'
-	? 'Conditional age-65+ scenarios' : value === 'withheld_historical_precision_disclosure'
+	? 'Reviewed age-65+ inputs; population results withheld' : value === 'withheld_historical_precision_disclosure'
 		? 'Historical cohort not qualified for release' : 'No qualified current age comparison';
+const publishAgeScaledScalars = publicationAllows(
+	publicationDecision, 'age_scaled_original_coalition_counts_rates');
 ---
 
 <section id="participation-state-age-scenarios" class="participation-current" aria-labelledby="state-age-title">
 	<header class="section-intro">
 		<p class="kicker">Conditional state scenarios · prospective age 65+</p>
-		<h2 id="state-age-title">State-specific switching and apparent absence</h2>
+		<h2 id="state-age-title">State age support and withheld cohort estimates</h2>
 		<p>Six states, eight separate governor or Senate comparisons. Each uses its own state's
 			2024 Harris or Trump coalition and CES birth-year composition, matched to that state's
 			SSRS age-65+ population and joint-choice table and UF preliminary 2026 ballot estimate.
@@ -35,7 +38,10 @@ const coverageLabel = (value: string) => value === 'conditional_selected65plus_s
 		residents. Apparent absence includes death, migration, recall and population/composition
 		error. Survival is especially consequential for older cohorts. Negative residuals remain
 		source/model diagnostics, not physical nonvoting counts.</p>
-	<div class="table-wrap" tabindex="0" role="region" aria-label="State age-65+ conditional reference scenarios">
+	{!publishAgeScaledScalars && <p data-publication-decision="historical-scalars-withheld"><strong>Historical evidence decision:</strong>
+		state age-scaled original-coalition, switching and apparent-absence quantities are withheld. Historical
+		support diagnostics and 51-jurisdiction coverage remain below.</p>}
+	{publishAgeScaledScalars && <div class="table-wrap" tabindex="0" role="region" aria-label="State age-65+ conditional reference scenarios">
 		<table>
 			<caption>All rows concern prospective age 65+. Counts rounded to the nearest thousand.
 				Birthday-only ranges are not sampling, survival or total uncertainty intervals.</caption>
@@ -53,14 +59,14 @@ const coverageLabel = (value: string) => value === 'conditional_selected65plus_s
 				<td data-state-age-stress>{range(row.marginal_sensitivity_apparent_absence_count)}</td>
 			</tr>)}</tbody>
 		</table>
-	</div>
-	<p><strong>No design confidence intervals are available.</strong> The 486 scenarios per row
+	</div>}
+	{publishAgeScaledScalars && <p><strong>No design confidence intervals are available.</strong> The 486 scenarios per row
 		vary birthday endpoints, assumed historical composition by -2/0/+2 percentage points,
 		preliminary ballots by 95/100/105%, group/prior rounding by -0.5/0/+0.5 points and balanced
 		recalled-choice transfers by -2/0/+2 points. These stresses do not empirically cover
 		historical state sampling error or current joint-cell uncertainty. Conditional choice is
 		held fixed; a separate rounding envelope is in the download. Offices and marginal endpoints
-		are not additive.</p>
+		are not additive.</p>}
 	<details class="explorer-notes"><summary>Historical support, source matching and withheld estimates</summary>
 		<p>A conservative historical-support screen informed the review, but is not a precision
 			guarantee or automatic publication rule. State-specific weights, validated 2024 turnout,
@@ -90,13 +96,13 @@ const coverageLabel = (value: string) => value === 'conditional_selected65plus_s
 			records, small birthday-boundary cells or restricted NORC materials.</p>
 	</details>
 	<details class="explorer-notes"><summary>All 50 states and D.C.: release coverage</summary>
-		<p>Six states have selected conditional scenarios; other jurisdictions are explicitly
-			withheld. Missing observations are not zero turnout. The complete download also records
+		<p>Six states have archived conditional inputs, not currently released population estimates.
+			Missing observations are not zero turnout. The complete download also records
 			all 54 matched current age tables not qualified for this historical-cohort release.</p>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All-jurisdiction state age scenario coverage">
 			<table>
 				<thead><tr><th scope="col">Jurisdiction</th><th scope="col">Matched current age tables</th>
-					<th scope="col">Released contest-age tables</th><th scope="col">Status</th></tr></thead>
+					<th scope="col">Archived contest-age tables</th><th scope="col">Current status</th></tr></thead>
 				<tbody>{review.jurisdiction_coverage.map(row => <tr data-state-age-coverage={row.state_code}>
 					<th scope="row">{row.state_code}</th><td>{row.qualified_current_age_tables_in_frozen_release}</td>
 					<td>{row.released_state_contest_age_tables}</td><td>{coverageLabel(row.status)}</td>
@@ -105,8 +111,8 @@ const coverageLabel = (value: string) => value === 'conditional_selected65plus_s
 		</div>
 	</details>
 	<div class="download-links">
-		<a href={`${base}complete-analysis.zip`} download>Complete state-age inputs + code + results (ZIP)</a>
-		<a href={`${base}summary.json`} download>State-age summary + coverage (JSON)</a>
+		<a href={`${base}complete-analysis.zip`} download>Complete archived state-age inputs + code + results (ZIP; unsupported population scalars)</a>
+		<a href={`${base}summary.json`} download>Archived state-age summary + coverage (JSON)</a>
 		<a href={`${base}download.json`} download>State-age archive bytes and SHA-256</a>
 	</div>
 </section>
