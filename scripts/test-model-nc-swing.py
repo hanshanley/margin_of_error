@@ -1,6 +1,10 @@
 import importlib.util
+import hashlib
+import json
+import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import numpy as np
 
@@ -10,6 +14,63 @@ spec.loader.exec_module(model)
 
 
 class ConditionalModelTest(unittest.TestCase):
+    def test_explicit_county_requires_its_hash_bound_cells_and_population_controls(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            cells = [
+                dict(records=60, baseline_2024_voted_county=True,
+                     cohort_membership_2026="Accepted 2026 EARLY VOTING"),
+                dict(records=40, baseline_2024_voted_county=True,
+                     cohort_membership_2026="Not in selected early/mail cohort"),
+            ]
+            cells_path = root / "cells.json"
+            cells_path.write_text(json.dumps(cells))
+            audit = dict(state_code="NC", county="WAKE", aggregate_cells=2,
+                         joint_cells_sha256=hashlib.sha256(cells_path.read_bytes()).hexdigest(),
+                         history=dict(baseline_county_2024_unique_identifiers=100),
+                         accepted_cohort=dict(unambiguous_records=60))
+            audit_path = root / "audit.json"
+            audit_path.write_text(json.dumps(audit))
+            candidates = [
+                dict(county=county, year=year, contest=contest, method="Total Votes",
+                     party_literal=party, votes=count)
+                for county in ["WAKE", "DURHAM"]
+                for year, contest in [(2024, "US PRESIDENT"), (2026, "US SENATE")]
+                for party, count in [("DEM", 40), ("REP", 30), ("OTHER", 1)]
+            ]
+            for name, value in [
+                ("model.json", {}),
+                ("candidates.json", candidates),
+                ("participation.json", dict(state="North Carolina", election_date="2026-11-03",
+                                            reporting=[dict(county="WAKE", ballots_cast=80)])),
+            ]:
+                (root / name).write_text(json.dumps(value))
+
+            def run(**kwargs):
+                return model.run(cells_path, root / "model.json", root / "candidates.json",
+                                 root / "participation.json", root / "output", **kwargs)
+
+            with self.assertRaisesRegex(ValueError, "hash-bound linkage audit"):
+                run(county="WAKE")
+            with patch.object(model, "historical_turnout", side_effect=RuntimeError("WAKE_FIT_STARTED")):
+                with self.assertRaisesRegex(RuntimeError, "WAKE_FIT_STARTED"):
+                    run(county="WAKE", linkage_audit=audit_path)
+            for changed in [
+                dict(county="DURHAM"), dict(joint_cells_sha256="changed"),
+                dict(aggregate_cells=3),
+                dict(history=dict(baseline_county_2024_unique_identifiers=99)),
+                dict(accepted_cohort=dict(unambiguous_records=59)),
+            ]:
+                audit_path.write_text(json.dumps({**audit, **changed}))
+                with self.assertRaisesRegex(ValueError, "County linkage audit"):
+                    run(county="WAKE", linkage_audit=audit_path)
+            audit_path.write_text(json.dumps(audit))
+            (root / "participation.json").write_text(json.dumps(dict(
+                state="North Carolina", election_date="2026-11-03",
+                reporting=[dict(county="DURHAM", ballots_cast=80)])))
+            with self.assertRaisesRegex(ValueError, "county participation scope"):
+                run(county="WAKE", linkage_audit=audit_path)
+
     def test_choice_calibration_preserves_each_cohort_and_handles_zero_other(self):
         priors = np.array([[.9, .09, .01], [.1, .89, .01]])
         weights = np.array([50., 50.])

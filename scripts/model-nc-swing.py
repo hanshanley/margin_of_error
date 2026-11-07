@@ -328,17 +328,38 @@ def scenario(cells, prior_choices, entry_choices, turnout, before_votes, after_v
     return result
 
 
-def run(cells_path, model_path, candidates_path, participation_path, output):
+def run(cells_path, model_path, candidates_path, participation_path, output,
+        county="DURHAM", linkage_audit=None):
     if output.exists():
         raise ValueError("Refusing to overwrite an existing transition review")
+    if not county or county != county.strip().upper():
+        raise ValueError("Use the literal uppercase source county")
+    if county != "DURHAM" and linkage_audit is None:
+        raise ValueError("A hash-bound linkage audit is required for another county")
     cells = json.loads(cells_path.read_text())
+    if linkage_audit is not None:
+        audit = json.loads(linkage_audit.read_text())
+        if (audit["state_code"] != "NC" or audit["county"] != county
+                or audit["joint_cells_sha256"] != hashlib.sha256(cells_path.read_bytes()).hexdigest()
+                or audit["aggregate_cells"] != len(cells)
+                or any(type(row["records"]) is not int or row["records"] <= 0 for row in cells)
+                or sum(row["records"] for row in cells if row["baseline_2024_voted_county"])
+                != audit["history"]["baseline_county_2024_unique_identifiers"]
+                or sum(row["records"] for row in cells if row["cohort_membership_2026"].startswith("Accepted"))
+                != audit["accepted_cohort"]["unambiguous_records"]):
+            raise ValueError("County linkage audit, hash or population controls do not match")
     artifact = json.loads(model_path.read_text())
     candidates = json.loads(candidates_path.read_text())
-    reporting = json.loads(participation_path.read_text())["reporting"]
-    reported = next(row for row in reporting if row["county"] == "DURHAM")
+    participation = json.loads(participation_path.read_text())
+    reporting = [row for row in participation["reporting"] if row["county"] == county]
+    if (participation["state"] != "North Carolina" or participation["election_date"] != "2026-11-03"
+            or len(reporting) != 1 or type(reporting[0]["ballots_cast"]) is not int
+            or reporting[0]["ballots_cast"] <= 0):
+        raise ValueError("Missing or conflicting county participation scope")
+    reported = reporting[0]
 
     def votes(year, contest):
-        rows = [row for row in candidates if row["county"] == "DURHAM" and row["year"] == year
+        rows = [row for row in candidates if row["county"] == county and row["year"] == year
                 and row["contest"] == contest and row["method"] == "Total Votes"]
         counts = [sum(row["votes"] for row in rows if row["party_literal"] == party) for party in ["DEM", "REP"]]
         return np.asarray([*counts, sum(row["votes"] for row in rows) - sum(counts)], dtype=float)
@@ -390,7 +411,7 @@ def run(cells_path, model_path, candidates_path, participation_path, output):
         })
     result = {
         "status": "experimental_conditional_model_not_individually_identified",
-        "state": "NC", "county": "DURHAM", "baseline_contest": "2024 President", "outcome_contest": "2026 Senate",
+        "state": "NC", "county": county, "baseline_contest": "2024 President", "outcome_contest": "2026 Senate",
         "validated_individual_attribution": False, "scenario_count": len(results),
         "default_conditional_scenario": default, "sensitivity_range_margin_pp": intervals,
         "demographic_sensitivity_range_margin_pp": demographic_ranges,
@@ -403,7 +424,7 @@ def run(cells_path, model_path, candidates_path, participation_path, output):
             "Current registration predates Election Day; neither absence nor REMOVED proves an eligibility/residence exit.",
             "Unmatched 2024 NC history includes unresolved interstate participants; the mover fraction is an assumption.",
             "Conditional independence of turnout and prior choice within administrative cells is unvalidated.",
-            "Known prior votes outside Durham enter the geographic component, not new nationwide voters.",
+            f"Known prior votes outside {county.title()} enter the geographic component, not new nationwide voters.",
             "Voters under 18 throughout 2024 enter the eligibility component, never the prior-eligible-nonvoter component.",
             "The historical choice model is calibrated to county 2024 totals; that is not independent validation.",
             "A common choice-tilt calibrates entropy-regularized transitions to 2026 totals; aggregate fit cannot validate switching.",
@@ -420,6 +441,12 @@ def run(cells_path, model_path, candidates_path, participation_path, output):
                                       ("complete_candidate_methods", candidates_path), ("participation_snapshot", participation_path)]],
         "scenarios": results,
     }
+    if linkage_audit is not None:
+        result["inputs"].append({
+            "role": "county_linkage_audit", "file": linkage_audit.name,
+            "bytes": linkage_audit.stat().st_size,
+            "sha256": hashlib.sha256(linkage_audit.read_bytes()).hexdigest(),
+        })
     output.mkdir(parents=True, exist_ok=False)
     (output / "conditional-transitions.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps({key: value for key, value in result.items() if key not in {"scenarios", "inputs"}}, indent=2), flush=True)
@@ -429,5 +456,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ["cells", "choice-model", "candidates", "participation", "output"]:
         parser.add_argument(f"--{name}", type=Path, required=True)
+    parser.add_argument("--county", default="DURHAM")
+    parser.add_argument("--linkage-audit", type=Path)
     args = parser.parse_args()
-    run(args.cells, args.choice_model, args.candidates, args.participation, args.output)
+    run(args.cells, args.choice_model, args.candidates, args.participation, args.output,
+        county=args.county, linkage_audit=args.linkage_audit)
