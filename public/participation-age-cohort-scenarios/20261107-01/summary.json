@@ -1,0 +1,315 @@
+{
+  "status": "conditional_national_prospective_age_scaling_scenarios",
+  "population_scope": "50_states_excluding_DC",
+  "national_official_prior_coalitions": {
+    "D": 74723428,
+    "R": 77281504
+  },
+  "assumptions_and_limits": [
+    "Official2024coalitions are scaled by coalition-conditioned CES weighted birth-year support, not current preference calibration.",
+    "The same prospective2026age bands are used; a2024age18-29category is not substituted.",
+    "Calendar-year birthday ambiguity is retained without imputing a birthday or survival.",
+    "The current total/group/prior counts remain conditional on UF preliminary totals and the SSRS response-population assumption.",
+    "Apparent absence includes death,migration,recall,source-population and historical composition error; it is not measured staying home.",
+    "Birth-year ranges,rounding envelopes,and prespecified historical-mix/recall/turnout stresses are not confidence intervals.",
+    "The main sensitivity grid holds explicit native conditional choice percentages fixed; their rounding is shown separately.",
+    "Historical fraction shifts+-2pp and estimated-total scales95/100/105percent are assumptions, not empirically estimated uncertainty bounds.",
+    "Negative residuals and rates exceeding100percent remain model/source diagnostics, not physical nonvoter counts.",
+    "Rounded zero and absent conditional cells do not establish zero switching; suppressed values are never reconstructed.",
+    "Current House choices can retain pre-election intentions; no administrative candidate-choice validation is claimed.",
+    "National age groups18-29and18-44overlap; offices,groups and marginal endpoints must not be added.",
+    "No state/local allocation,demographic turnout,new/returning identity,causal persuasion or overall-swing share is identified.",
+    "Released only as national conditional scaling scenarios, not observed nonvoting or a validated demographic decomposition."
+  ],
+  "version": "20261107-01",
+  "source_qualification": {
+    "release_scope": "national_conditional_scenarios_only",
+    "historical_controls_and_broad_aggregate_disclosure_reviewed": true,
+    "current_native_age_population_and_joint_choice_matching_required": true,
+    "independent_2026_transition_validation": false,
+    "design_confidence_intervals_available": false,
+    "methods_review": "data/participation-age-cohort-scenarios/20261107-01/methodology-review.json"
+  },
+  "input_sha256": {
+    "data/participation-age-cohort-scenarios/20261107-01/selected-historical-support.json": "084f8f308838c5ce73e847fdb23d6d8d03915b2199b6cf41d2c152c9db95a925",
+    "data/participation-age-cohort-scenarios/20261107-01/selected-current-survey.json": "bbe9c799248d4d5a1840369a6e6ae18abd099138054ed8afa751b81ecb8addf6",
+    "data/participation-age-cohort-scenarios/20261107-01/methodology-review.json": "f2ce81968ce52896cb7b76297f5b87f63aa8e9a904db97cfba1c2ae782c20227",
+    "data/participation-estimated-coalitions/20261107-01/Turnout_2026G_v0.2.csv": "eef37c0606cc1406e76b84bae2216c592e74e6b8cf5034d8d0733f3ab942cf2b",
+    "data/participation-estimated-coalitions/20261107-01/Turnout_2026G_v0.1_doc.txt": "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd",
+    "data/participation-coalition-scenarios/20261107-01/official-2024.xlsx": "68acdee2924d771b92a05cd950dec850b462c633c05563207ac7e206116e7366",
+    "public/participation-coalition-scenarios/20261107-01/official-2024-baselines.json": "2dce916659a3d4b6b1d450bd3d6a6e7a80a063bbfe8304b23eec43e075b12a27"
+  },
+  "complete_scenarios_in_download": true,
+  "estimates": [
+    {
+      "subset": 53,
+      "group": "Voters Age 18-29",
+      "prior_choice": "D",
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 9798440.595659243,
+        "upper": 11561121.189805727
+      },
+      "estimated_current_reported_prior_count": 7186466.1,
+      "reported_opposite_choice_count": 143729.322,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 101926.400625,
+        "upper": 189600.054375
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 2611974.4956592433,
+        "upper": 4374655.089805728
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 1.2432126576679818,
+        "upper": 1.46685914556315
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "marginal_sensitivity_apparent_absence": {
+        "lower": 43079.94690924231,
+        "upper": 6846168.708555726
+      },
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 739,
+      "historical_certain_group_effective_n": 316.5458253404789,
+      "historical_coalition_raw_n": 18048,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 124188.420825,
+        "upper": 165217.841775
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 0.9512279659894183,
+        "upper": 1.9896242553023429
+      }
+    },
+    {
+      "subset": 54,
+      "group": "Voters Age 18-44",
+      "prior_choice": "D",
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 28298066.762073237,
+        "upper": 30033289.966397338
+      },
+      "estimated_current_reported_prior_count": 19969254.0,
+      "reported_opposite_choice_count": 399385.08,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 291819.214125,
+        "upper": 512251.426875
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 8328812.762073237,
+        "upper": 10064035.966397338
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 1.3298079579255249,
+        "upper": 1.4113511122790896
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "marginal_sensitivity_apparent_absence": {
+        "lower": 4499513.138323236,
+        "upper": 13736786.500147335
+      },
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 3811,
+      "historical_certain_group_effective_n": 1438.3206116054473,
+      "historical_coalition_raw_n": 18048,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 355819.44052500004,
+        "upper": 446081.701275
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 1.128590985074572,
+        "upper": 1.664260514248777
+      }
+    },
+    {
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "D",
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 19978639.869664982,
+        "upper": 22000509.60852863
+      },
+      "estimated_current_reported_prior_count": 20856776.4,
+      "reported_opposite_choice_count": 417135.528,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 305224.500375,
+        "upper": 534285.403125
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": -878136.5303350165,
+        "upper": 1143733.2085286304
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 1.8960266622110193,
+        "upper": 2.0879075388578734
+      },
+      "negative_birth_year_residual_endpoint": true,
+      "marginal_sensitivity_apparent_absence": {
+        "lower": -4900657.176585015,
+        "upper": 4995529.059778627
+      },
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 7269,
+      "historical_certain_group_effective_n": 2556.711021183363,
+      "historical_coalition_raw_n": 18048,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 369988.982175,
+        "upper": 467696.56972499995
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 1.574757718526412,
+        "upper": 2.530254464155779
+      }
+    },
+    {
+      "subset": 53,
+      "group": "Voters Age 18-29",
+      "prior_choice": "R",
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 4699733.974878756,
+        "upper": 6123126.94630745
+      },
+      "estimated_current_reported_prior_count": 3389842.5,
+      "reported_opposite_choice_count": 610171.65,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 554932.625625,
+        "upper": 668738.883375
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 1309891.4748787563,
+        "upper": 2733284.4463074496
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 9.965033476367232,
+        "upper": 12.983110390109713
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "marginal_sensitivity_apparent_absence": {
+        "lower": -939130.9238712443,
+        "upper": 4902183.2950574495
+      },
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 194,
+      "historical_certain_group_effective_n": 114.15258136138635,
+      "historical_coalition_raw_n": 13666,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 497983.271625,
+        "upper": 736782.2673749999
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 6.493663443980331,
+        "upper": 23.359479964223627
+      }
+    },
+    {
+      "subset": 54,
+      "group": "Voters Age 18-44",
+      "prior_choice": "R",
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 19594679.186632015,
+        "upper": 20854747.68909604
+      },
+      "estimated_current_reported_prior_count": 12203433.0,
+      "reported_opposite_choice_count": 1586446.29,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 1477277.953125,
+        "upper": 1700298.772875
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 7391246.186632015,
+        "upper": 8651314.689096041
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 7.607122913452833,
+        "upper": 8.096311630773286
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "marginal_sensitivity_apparent_absence": {
+        "lower": 4034977.9603820164,
+        "upper": 11863976.86034604
+      },
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 1530,
+      "historical_certain_group_effective_n": 738.0216279554322,
+      "historical_coalition_raw_n": 13666,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 1369732.1181375,
+        "upper": 1821829.2490125
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 6.114772403647615,
+        "upper": 10.093768587194322
+      }
+    },
+    {
+      "subset": 55,
+      "group": "Voters Age 65+",
+      "prior_choice": "R",
+      "birth_year_only_hypothetical_original_cohort": {
+        "lower": 27610665.136710513,
+        "upper": 30217837.170462843
+      },
+      "estimated_current_reported_prior_count": 22188060.0,
+      "reported_opposite_choice_count": 887522.4,
+      "current_switcher_rounding_only_envelope": {
+        "lower": 758138.275125,
+        "upper": 1022453.539875
+      },
+      "birth_year_only_apparent_absence": {
+        "lower": 5422605.136710513,
+        "upper": 8029777.170462843
+      },
+      "birth_year_only_original_coalition_scaled_switching_pct": {
+        "lower": 2.9370811517494384,
+        "upper": 3.2144187603071193
+      },
+      "negative_birth_year_residual_endpoint": false,
+      "marginal_sensitivity_apparent_absence": {
+        "lower": 1262944.23796051,
+        "upper": 12016864.269212846
+      },
+      "measured_staying_home_count": null,
+      "identified_new_or_returning_count": null,
+      "demographic_turnout_rate": null,
+      "share_of_total_swing": null,
+      "design_confidence_interval": null,
+      "historical_certain_group_raw_n": 6224,
+      "historical_certain_group_effective_n": 3378.784106833046,
+      "historical_coalition_raw_n": 13666,
+      "sensitivity_scenario_count": 486,
+      "marginal_sensitivity_reported_opposite_choice_count": {
+        "lower": 789864.11925,
+        "upper": 992083.6327500001
+      },
+      "marginal_sensitivity_original_coalition_scaled_switching_pct": {
+        "lower": 2.4867062308460373,
+        "upper": 3.806185683585281
+      }
+    }
+  ]
+}

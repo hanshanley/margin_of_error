@@ -1,0 +1,1059 @@
+{
+  "configuration_sha256": "534095dec72492470be2a2c7018044d53ae6774001f4b7212e26e49a4005510a",
+  "selected_configuration": {
+    "HG": [
+      {
+        "stateTitle": "UNITED STATES",
+        "stateAbbr": "US",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-HG-US.json",
+        "raceTypeCode": "HG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "UNITED STATES",
+        "stateAbbr": "US",
+        "subsetTitle": "Voters Age 18-29",
+        "subsetNumber": 53,
+        "url": "exit-poll/2026-HG-US-53.json",
+        "raceTypeCode": "HG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "UNITED STATES",
+        "stateAbbr": "US",
+        "subsetTitle": "Voters Age 18-44",
+        "subsetNumber": 54,
+        "url": "exit-poll/2026-HG-US-54.json",
+        "raceTypeCode": "HG",
+        "isDisabled": false
+      },
+      {
+        "stateTitle": "UNITED STATES",
+        "stateAbbr": "US",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-HG-US-55.json",
+        "raceTypeCode": "HG",
+        "isDisabled": false
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-HG-US.json",
+      "source_bytes": 205769,
+      "source_sha256": "d163d873394566bac70267d132e9f914d4a1bb09151f913b2093517244ec6841",
+      "configuration_entry": {
+        "stateTitle": "UNITED STATES",
+        "stateAbbr": "US",
+        "subsetTitle": "Main",
+        "subsetNumber": 0,
+        "url": "exit-poll/2026-HG-US.json",
+        "raceTypeCode": "HG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-HG-US",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "H",
+        "jurisdictionType": "NR",
+        "state": {
+          "title": "UNITED STATES",
+          "stateId": 0,
+          "fipsCode": "00",
+          "abbreviation": "US"
+        },
+        "subset": {
+          "sub": 0,
+          "longName": "Main",
+          "shortName": "MN"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "House",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 79668,
+        "timestamp": "2026-11-04T16:30:50.000Z",
+        "extractedAt": "2026-11-07T00:30:03.474549",
+        "hasData": true,
+        "stage": 8,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Democrats",
+            "lastName": "Democrats",
+            "firstName": "",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 178506,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.0.NR.0.G.H.178506",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": false,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Republicans",
+            "lastName": "Republicans",
+            "firstName": "",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 178507,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.0.NR.0.G.H.178507",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 45,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 49,
+                "candidateAnswers": [
+                  {
+                    "percentage": 97,
+                    "candidateId": 178506,
+                    "vPercentage": 87,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 2,
+                    "candidateId": 178507,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 44,
+                "candidateAnswers": [
+                  {
+                    "percentage": 7,
+                    "candidateId": 178506,
+                    "vPercentage": 6,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 91,
+                    "candidateId": 178507,
+                    "vPercentage": 93,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": 57,
+                    "candidateId": 178506,
+                    "vPercentage": 2,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 30,
+                    "candidateId": 178507,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 4,
+                "candidateAnswers": [
+                  {
+                    "percentage": 70,
+                    "candidateId": 178506,
+                    "vPercentage": 6,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 25,
+                    "candidateId": 178507,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": 11
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": 20
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": 34
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 36
+            }
+          ]
+        },
+        {
+          "mxId": 1949,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-44",
+              "totalPercentage": 30
+            },
+            {
+              "answer": "45 or older",
+              "totalPercentage": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-HG-US-53.json",
+      "source_bytes": 205850,
+      "source_sha256": "74a6cba31a871afd530c3dc804a9bb5eb0e641aa2f1f1a57c6477fe87fc8dcf4",
+      "configuration_entry": {
+        "stateTitle": "UNITED STATES",
+        "stateAbbr": "US",
+        "subsetTitle": "Voters Age 18-29",
+        "subsetNumber": 53,
+        "url": "exit-poll/2026-HG-US-53.json",
+        "raceTypeCode": "HG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-HG-US-53",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "H",
+        "jurisdictionType": "NR",
+        "state": {
+          "title": "UNITED STATES",
+          "stateId": 0,
+          "fipsCode": "00",
+          "abbreviation": "US"
+        },
+        "subset": {
+          "sub": 53,
+          "longName": "Voters Age 18-29",
+          "shortName": "UNDER30"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "House",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 8531,
+        "timestamp": "2026-11-04T16:30:50.000Z",
+        "extractedAt": "2026-11-07T00:30:03.474549",
+        "hasData": true,
+        "stage": 8,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Democrats",
+            "lastName": "Democrats",
+            "firstName": "",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 178506,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.0.NR.0.G.H.178506",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": false,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Republicans",
+            "lastName": "Republicans",
+            "firstName": "",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 178507,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.0.NR.0.G.H.178507",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 45,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 53,
+                "candidateAnswers": [
+                  {
+                    "percentage": 97,
+                    "candidateId": 178506,
+                    "vPercentage": 71,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 2,
+                    "candidateId": 178507,
+                    "vPercentage": 3,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 25,
+                "candidateAnswers": [
+                  {
+                    "percentage": 18,
+                    "candidateId": 178506,
+                    "vPercentage": 6,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 79,
+                    "candidateId": 178507,
+                    "vPercentage": 82,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": 70,
+                    "candidateId": 178506,
+                    "vPercentage": 2,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 14,
+                    "candidateId": 178507,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 19,
+                "candidateAnswers": [
+                  {
+                    "percentage": 79,
+                    "candidateId": 178506,
+                    "vPercentage": 21,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 18,
+                    "candidateId": 178507,
+                    "vPercentage": 14,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": 100
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-HG-US-54.json",
+      "source_bytes": 205842,
+      "source_sha256": "1e076e3816dd00d8197bafd4378e590a7d4b36940335ad752ba57c8ed35b1b83",
+      "configuration_entry": {
+        "stateTitle": "UNITED STATES",
+        "stateAbbr": "US",
+        "subsetTitle": "Voters Age 18-44",
+        "subsetNumber": 54,
+        "url": "exit-poll/2026-HG-US-54.json",
+        "raceTypeCode": "HG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-HG-US-54",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "H",
+        "jurisdictionType": "NR",
+        "state": {
+          "title": "UNITED STATES",
+          "stateId": 0,
+          "fipsCode": "00",
+          "abbreviation": "US"
+        },
+        "subset": {
+          "sub": 54,
+          "longName": "Voters Age 18-44",
+          "shortName": "18TO44"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "House",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 24837,
+        "timestamp": "2026-11-04T16:30:50.000Z",
+        "extractedAt": "2026-11-07T00:30:03.474549",
+        "hasData": true,
+        "stage": 8,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Democrats",
+            "lastName": "Democrats",
+            "firstName": "",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 178506,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.0.NR.0.G.H.178506",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": false,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Republicans",
+            "lastName": "Republicans",
+            "firstName": "",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 178507,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.0.NR.0.G.H.178507",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 45,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 54,
+                "candidateAnswers": [
+                  {
+                    "percentage": 96,
+                    "candidateId": 178506,
+                    "vPercentage": 79,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 2,
+                    "candidateId": 178507,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 33,
+                "candidateAnswers": [
+                  {
+                    "percentage": 13,
+                    "candidateId": 178506,
+                    "vPercentage": 7,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 84,
+                    "candidateId": 178507,
+                    "vPercentage": 88,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 3,
+                "candidateAnswers": [
+                  {
+                    "percentage": 61,
+                    "candidateId": 178506,
+                    "vPercentage": 3,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 23,
+                    "candidateId": 178507,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 10,
+                "candidateAnswers": [
+                  {
+                    "percentage": 76,
+                    "candidateId": 178506,
+                    "vPercentage": 11,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 20,
+                    "candidateId": 178507,
+                    "vPercentage": 6,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 1949,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-44",
+              "totalPercentage": 100
+            },
+            {
+              "answer": "45 or older",
+              "totalPercentage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_url": "https://politics.api.cnn.io/results/exit-poll/2026-HG-US-55.json",
+      "source_bytes": 205782,
+      "source_sha256": "dcce9a663aa34da09897b358700d85a83bfc6239e9fa6e72680bafb196239358",
+      "configuration_entry": {
+        "stateTitle": "UNITED STATES",
+        "stateAbbr": "US",
+        "subsetTitle": "Voters Age 65+",
+        "subsetNumber": 55,
+        "url": "exit-poll/2026-HG-US-55.json",
+        "raceTypeCode": "HG",
+        "isDisabled": false
+      },
+      "selected_native_data": {
+        "ecKey": "2026-HG-US-55",
+        "electionDate": "2026-11-03",
+        "electionType": "G",
+        "raceType": "H",
+        "jurisdictionType": "NR",
+        "state": {
+          "title": "UNITED STATES",
+          "stateId": 0,
+          "fipsCode": "00",
+          "abbreviation": "US"
+        },
+        "subset": {
+          "sub": 55,
+          "longName": "Voters Age 65+",
+          "shortName": "65PLUS"
+        },
+        "titles": {
+          "raceTitle": {
+            "title": "House",
+            "subtitle": "",
+            "shortTitle": ""
+          },
+          "electionTitle": {
+            "title": "General Election",
+            "subtitle": "",
+            "shortTitle": "General"
+          }
+        },
+        "respondents": 27089,
+        "timestamp": "2026-11-04T16:30:50.000Z",
+        "extractedAt": "2026-11-07T00:30:03.474549",
+        "hasData": true,
+        "stage": 8,
+        "exitPollEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "raceEmbargo": {
+          "exitPollsRelease": 1793754000000,
+          "exitPollsReleased": true,
+          "assignedPollsClose": 1793754000000
+        },
+        "candidates": [
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Democrats",
+            "lastName": "Democrats",
+            "firstName": "",
+            "partyName": "Democratic",
+            "bopPartyId": "DEM",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 178506,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.0.NR.0.G.H.178506",
+            "majorPartyId": "DEM",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "D",
+            "isIncumbentBopParty": false,
+            "majorParty": "DEM"
+          },
+          {
+            "onAir": true,
+            "onWeb": true,
+            "gender": "",
+            "fullName": "Republicans",
+            "lastName": "Republicans",
+            "firstName": "",
+            "partyName": "Republican",
+            "bopPartyId": "REP",
+            "middleName": "",
+            "onExitPoll": true,
+            "candidateId": 178507,
+            "isIncumbent": false,
+            "candidacyKey": "2026-11-03.0.NR.0.G.H.178507",
+            "majorPartyId": "REP",
+            "delegateTracking": true,
+            "isIncumbentParty": false,
+            "lastNameConflict": false,
+            "headshotAvailable": true,
+            "partyAbbreviation": "R",
+            "isIncumbentBopParty": false,
+            "majorParty": "REP"
+          }
+        ],
+        "questions": [
+          {
+            "mxId": 10003,
+            "onTv": true,
+            "type": 0,
+            "numRows": 4,
+            "questionShort": "2024 presidential vote ",
+            "sequence": 45,
+            "onDigital": true,
+            "isMacroView": true,
+            "isDemographic": false,
+            "onBannerboard": true,
+            "sortVerticalPercent": false,
+            "question": "2024 presidential vote ",
+            "answers": [
+              {
+                "row": 1,
+                "mxId": 10003,
+                "answerShort": "Harris",
+                "totalPercentage": 47,
+                "candidateAnswers": [
+                  {
+                    "percentage": 97,
+                    "candidateId": 178506,
+                    "vPercentage": 92,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 2,
+                    "candidateId": 178507,
+                    "vPercentage": 2,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Harris"
+              },
+              {
+                "row": 2,
+                "mxId": 10003,
+                "answerShort": "Trump",
+                "totalPercentage": 50,
+                "candidateAnswers": [
+                  {
+                    "percentage": 4,
+                    "candidateId": 178506,
+                    "vPercentage": 4,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 95,
+                    "candidateId": 178507,
+                    "vPercentage": 96,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Trump"
+              },
+              {
+                "row": 3,
+                "mxId": 10003,
+                "answerShort": "Another candidate",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": 52,
+                    "candidateId": 178506,
+                    "vPercentage": 2,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 35,
+                    "candidateId": 178507,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Another candidate"
+              },
+              {
+                "row": 4,
+                "mxId": 10003,
+                "answerShort": "Did not vote",
+                "totalPercentage": 2,
+                "candidateAnswers": [
+                  {
+                    "percentage": 57,
+                    "candidateId": 178506,
+                    "vPercentage": 2,
+                    "leader": true,
+                    "vLeader": true,
+                    "lastName": "Democrats"
+                  },
+                  {
+                    "percentage": 39,
+                    "candidateId": 178507,
+                    "vPercentage": 1,
+                    "leader": false,
+                    "vLeader": false,
+                    "lastName": "Republicans"
+                  }
+                ],
+                "answer": "Did not vote"
+              }
+            ]
+          }
+        ]
+      },
+      "selected_demographic_questions": [
+        {
+          "mxId": 159,
+          "question": "Age",
+          "onDigital": true,
+          "isDemographic": true,
+          "answers": [
+            {
+              "answer": "18-29",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "30-44",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "45-64",
+              "totalPercentage": -1
+            },
+            {
+              "answer": "65 or older",
+              "totalPercentage": 100
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "selection_scope": "Only national House/all-voter plus the three source-defined age tables; this is not the full provider inventory.",
+  "original_complete_selected_snapshot_sha256": "4b3ffcb23a9254a4149253e1ae9dcc08d1ed97932e97ca50a2ca32e2081ea4ae"
+}
