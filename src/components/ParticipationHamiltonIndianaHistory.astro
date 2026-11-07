@@ -1,0 +1,149 @@
+---
+import { readFileSync } from 'node:fs';
+const base = '/participation-hamilton-indiana-history/20261107-01/';
+type Election = { year: number; registered_voters: number; election_day: number;
+	paper_absentee: number; walk_in_absentee: number; total_votes_cast: number;
+	native_turnout_percent: string; precinct_count: number; native_footer_date_literal: string };
+type Candidate = { native_label: string; election_day: number; paper_absentee: number;
+	walk_in_absentee: number; total_votes: number; native_percent: string };
+type Contest = { year: number; title: string; reported_public_count: number;
+	candidate_total: number; unclassified_reported_count_gap: number;
+	two_party_margin_pp: number; candidates: Candidate[]; scope: { source_report_time_literal: string } };
+type Anomaly = { year: number; native_label: string; native_total_votes_cast: number;
+	derived_precinct_and_mode_sum: number };
+const history: { elections: Election[]; contests: Contest[]; native_total_cell_discrepancies: Anomaly[];
+	reported_count_comparisons: { baseline_year: number; reported_count_change: number }[];
+	descriptive_contest_comparisons: { baseline_contest: string; two_party_margin_change_pp: number }[] } =
+	JSON.parse(readFileSync(`public${base}history.json`, 'utf8'));
+const number = (value: number | string) => typeof value === 'number' ? value.toLocaleString('en-US') : value;
+const signed = (value: number, precision = 0) =>
+	`${value > 0 ? '+' : ''}${value.toLocaleString('en-US', { minimumFractionDigits: precision, maximumFractionDigits: precision })}`;
+const countFields = ['registered_voters', 'election_day', 'paper_absentee', 'walk_in_absentee', 'total_votes_cast', 'precinct_count'] as const;
+const candidateFields = ['election_day', 'paper_absentee', 'walk_in_absentee', 'total_votes'] as const;
+---
+
+<section id="participation-hamilton-indiana-history" class="participation-current" aria-labelledby="hamilton-indiana-history-title">
+	<header class="section-intro">
+		<p class="kicker">County participation · presidential and midterm elections</p>
+		<h2 id="hamilton-indiana-history-title">Hamilton County, Indiana, 2020–2026</h2>
+		<p>Four complete native precinct reports, including the 2022 and 2026 midterms.
+			<strong>2026 is an unofficial snapshot, not final turnout.</strong>
+			These are reported counts and native registration rates, not a fixed-person cohort
+			or measured demographic turnout. Count changes do not identify who stayed home.</p>
+	</header>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Hamilton Indiana four-election participation counts">
+		<table>
+			<caption>Native “Total Votes Cast,” not candidate votes. The first mode is “At Polls”
+				in 2020 and “Election Day” later; source mode definitions are not silently harmonized.</caption>
+			<thead><tr><th scope="col">Election</th><th scope="col">Registered</th>
+				<th scope="col">At polls / Election Day</th><th scope="col">Paper / absentee</th>
+				<th scope="col">Walk-in absentee</th><th scope="col">Total Votes Cast</th>
+				<th scope="col">Precincts</th><th scope="col">Native registration rate</th></tr></thead>
+			<tbody>{history.elections.map(row => <tr data-hamilton-year={row.year}>
+				<th scope="row">{row.year}{row.year === 2026 ? ' unofficial' : ''}</th>
+				{countFields.map(field => <td data-hamilton-field={field}>{number(row[field])}</td>)}
+				<td data-hamilton-field="native_turnout_percent">{row.native_turnout_percent}%</td>
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<p>The registered-voter denominator changes with each report. It is not VEP, CVAP,
+		a matched eligibility population or a demographic denominator.
+		2020 and 2022 certification is not independently established here; the 2024 archive link
+		explicitly identifies its report as final certified.</p>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Hamilton Indiana signed reported count changes">
+		<table>
+			<caption>2026 reported count minus each historical report. Midterm-to-midterm context
+				is separate from presidential-to-midterm context; none measures prior-voter dropout.</caption>
+			<thead><tr><th scope="col">Comparison</th><th scope="col">Reported count change</th></tr></thead>
+			<tbody>{history.reported_count_comparisons.map(row => <tr>
+				<th scope="row">2026 vs. {row.baseline_year}</th>
+				<td data-hamilton-change={row.baseline_year}>{signed(row.reported_count_change)}</td>
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<details class="explorer-notes" id="hamilton-indiana-contests">
+		<summary>Separate whole-county President and House context, not individual persuasion</summary>
+		<p>Each contest covers every native precinct in that election, not a partial-county House
+			segment paired with a whole-county presidential baseline. Same-year name matches do not
+			establish cross-year precinct boundaries or the same voters.
+			The count-minus-candidate gaps remain <strong>unclassified</strong>, not measured abstention.</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Hamilton Indiana separate whole-county contests">
+			<table>
+				<caption>Two-party margin = 100 × (Democratic − Republican votes) / (Democratic + Republican votes).
+					Other literal parties and write-ins remain in candidate totals, not forced into either party.</caption>
+				<thead><tr><th scope="col">Contest</th><th scope="col">Reported public count</th>
+					<th scope="col">All candidate votes</th><th scope="col">Unclassified gap</th>
+					<th scope="col">D minus R, two-party pp</th></tr></thead>
+				<tbody>{history.contests.map((row, index) => <tr data-hamilton-contest={index}>
+					<th scope="row">{row.year} {row.title}</th>
+					<td data-hamilton-field="reported_public_count">{number(row.reported_public_count)}</td>
+					<td data-hamilton-field="candidate_total">{number(row.candidate_total)}</td>
+					<td data-hamilton-field="unclassified_reported_count_gap">{number(row.unclassified_reported_count_gap)}</td>
+					<td data-hamilton-field="two_party_margin_pp">{signed(row.two_party_margin_pp, 2)}</td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+		{history.descriptive_contest_comparisons.map((row, index) => <p>
+			2024 {row.baseline_contest} to 2026 House 5:
+			<strong data-hamilton-margin-change={index}>{signed(row.two_party_margin_change_pp, 2)} pp</strong>
+			{' '}in the county two-party margin. A same-office House comparison and a cross-office
+			presidential comparison are different context, not additive persuasion estimates.
+		</p>)}
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Hamilton Indiana all literal candidates and voting modes">
+			<table>
+				<caption>Every candidate, literal party and write-in; percentages use all candidate votes, not participation.</caption>
+				<thead><tr><th scope="col">Election / contest / native candidate</th><th scope="col">Election Day</th>
+					<th scope="col">Paper absentee</th><th scope="col">Walk-in absentee</th>
+					<th scope="col">Candidate votes</th><th scope="col">Native percent</th></tr></thead>
+				<tbody>{history.contests.map((contest, index) => contest.candidates.map((row, candidate) =>
+					<tr data-hamilton-candidate={`${index}-${candidate}`}>
+						<th scope="row">{contest.year} {contest.title}: {row.native_label}</th>
+						{candidateFields.map(field => <td data-hamilton-field={field}>{number(row[field])}</td>)}
+						<td data-hamilton-field="native_percent">{row.native_percent}</td>
+					</tr>))}</tbody>
+			</table>
+		</div>
+		<p>Native result clocks: 2024, November 16, 2024 at 12:02:55 AM;
+			2026, November 3, 2026 at 10:38:45 PM. No timezone is supplied.
+			The 2024 result index says “Final Certified Results”; 2026 says “Election Night Unofficial Results.”
+			All reported precincts does not independently establish final counting completeness or unique-person N26.</p>
+	</details>
+	<details class="explorer-notes" id="hamilton-indiana-native-anomalies">
+		<summary>Ten literal source-total discrepancies, retained rather than silently corrected</summary>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Hamilton Indiana preserved native total discrepancies">
+			<table>
+				<caption>Each erroneous total equals its first precinct. Other native controls and all child observations remain in the archive.</caption>
+				<thead><tr><th scope="col">Election / native row</th><th scope="col">Printed total</th>
+					<th scope="col">Child / mode sum</th></tr></thead>
+				<tbody>{history.native_total_cell_discrepancies.map((row, index) => <tr data-hamilton-anomaly={index}>
+					<th scope="row">{row.year} {row.native_label}</th>
+					<td data-hamilton-field="native_total_votes_cast">{number(row.native_total_votes_cast)}</td>
+					<td data-hamilton-field="derived_precinct_and_mode_sum">{number(row.derived_precinct_and_mode_sum)}</td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+	</details>
+	<details class="explorer-notes"><summary>Sources, clocks and complete reproducibility</summary>
+		<p>Source: Hamilton County, Indiana Election Office. Native PDF footers are November 13
+			with the literal truncated year “202” in 2020; November 18, 2022; November 16, 2024;
+			and November 3, 2026. A report title identifies 2020 separately; the footer is not repaired.
+			PDF dates, HTML update clocks, HTTP dates and acquisition dates are distinct.</p>
+		<p>The complete download includes every one of 892 native precinct participation observations,
+			24 controls, ten literal bad total cells, 674 contest-precinct vectors, all candidates,
+			15 sanitized used-source receipts, methods, exact code, tests, CSVs and results.
+			It reproduces offline from complete selected facts, not metadata alone.
+			Native documents, cookies and personal records are not redistributed.
+			Selected-fact reproduction does not rerun native extraction or validate individual transitions.
+			No new longitudinal precinct map, demographic turnout, original-coalition absence,
+			new/returning-voter identity or causal persuasion is inferred. This analysis is not endorsed by the source.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete Hamilton Indiana inputs + code + results (ZIP)</a>
+		<a href={`${base}history.json`} download>Four-election counts + separate contest context (JSON)</a>
+		<a href={`${base}download.json`} download>Complete archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-hamilton-indiana-history { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>

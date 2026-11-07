@@ -10,6 +10,7 @@ import ParticipationHouseIntentions from '../components/ParticipationHouseIntent
 import ParticipationPanelIntentions from '../components/ParticipationPanelIntentions.astro';
 import ParticipationRegistrationEntry from '../components/ParticipationRegistrationEntry.astro';
 import ParticipationCESClassification from '../components/ParticipationCESClassification.astro';
+import ParticipationHamiltonIndianaHistory from '../components/ParticipationHamiltonIndianaHistory.astro';
 import ParticipationNorthDakotaHistory from '../components/ParticipationNorthDakotaHistory.astro';
 import ParticipationNorthDakotaLongHistory from '../components/ParticipationNorthDakotaLongHistory.astro';
 import ParticipationClarkHistory from '../components/ParticipationClarkHistory.astro';
@@ -253,6 +254,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<div id="tooltip" role="tooltip" hidden></div>
 		</section>
 
+		<ParticipationHamiltonIndianaHistory />
 		<ParticipationCESClassification />
 		<ParticipationRegistrationEntry />
 		<ParticipationCountyScenarios version="20261107-02" />
