@@ -1,0 +1,74 @@
+{
+  "year": 2026,
+  "office": "U.S. House",
+  "declared_districts": 435,
+  "source_districts": 435,
+  "withheld_states": [],
+  "excluded_districts": {},
+  "state_party_coverage": 50,
+  "county_party_coverage": 49,
+  "counties": 3127,
+  "literal_parties": [
+    "America First",
+    "American Constitution",
+    "Conservative",
+    "Constitution",
+    "Democratic",
+    "Florida Forward Party",
+    "Green",
+    "Independent",
+    "Independent American",
+    "Independent Party of Florida",
+    "Independent/Unenrolled",
+    "Kentucky Party",
+    "Legal Marijuana Now",
+    "Libertarian",
+    "Natural Law",
+    "Nebraska Working People",
+    "No Labels",
+    "No Party Affiliation",
+    "No Party Preference",
+    "No Political Party",
+    "Nonpartisan",
+    "Other",
+    "Pacific Green",
+    "Republican",
+    "Socialism PSL",
+    "Socialist Workers",
+    "The Independent Party",
+    "U.S. Taxpayers",
+    "Unaffiliated",
+    "Unenrolled",
+    "Unity",
+    "Workers",
+    "Working Class",
+    "Working Class Party",
+    "Write-In"
+  ],
+  "scope": "Unofficial candidate votes, not ballots, unique voters, party registration or demographic turnout. Party labels and candidate names are literal, including independents and fusion lines; no inferred affiliation. County party totals aggregate only actual county fragments. State party totals include all declared district candidate votes in accepted states, including unlocated returns; an invalid district withholds its entire state rather than publishing a partial state total. Withheld county states retain missing located counts. Absent parties have no invented zero rows; explicitly reported zero candidate votes remain zero.",
+  "source_snapshot": "reviewed",
+  "files": {
+    "county-party-totals.csv.gz": {
+      "rows": 9746,
+      "bytes": 76531,
+      "sha256": "da1020712d11030d3c79ac46b32f0c298c910ed721c581985caee951701395d5"
+    },
+    "county-district-candidate-totals.csv.gz": {
+      "rows": 12405,
+      "bytes": 143338,
+      "sha256": "1f1bb89c935801fe615f73ed937fef4e87c0e37e43e5abfeeebe7bdfc542c36c"
+    },
+    "state-party-totals.csv.gz": {
+      "rows": 223,
+      "bytes": 2415,
+      "sha256": "1f534c82e5684e93353d3ba983904af9b393301fbbe77e795baa8ca39f2a7851"
+    },
+    "district-candidate-totals.csv.gz": {
+      "rows": 1400,
+      "bytes": 25673,
+      "sha256": "6b165289846ec4f689488b74cb68ae65f040814889f758e05aa642fe97d5644a"
+    }
+  },
+  "official_county_scope": "PA county fragments only; not full-state or full-district totals.",
+  "source_precedence": "County tables use complete official vectors for Monroe, Bucks and Montgomery. Provider-only state and district tables remain unchanged and omit those known write-ins; they are separate source scopes, not recomputed composite totals."
+}
