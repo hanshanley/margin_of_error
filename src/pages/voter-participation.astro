@@ -29,6 +29,9 @@ import { loadCountyContextReview } from '../../scripts/build-county-participatio
 import '../styles/voter-participation.css';
 
 const dataRoot = resolve('public/voter-participation');
+const stateDemographics = JSON.parse(readFileSync(
+	resolve('data/participation-state-demographics/20261108-01/viewer-data.json'), 'utf8')).rows;
+const demographicRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-demographics-20261108-01/';
 const mapRepairRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-map-repairs-20261107-01/';
 const precinctResultsPointerPath = resolve('public/precinct-results.json');
 const precinctResultsPointer = existsSync(precinctResultsPointerPath)
@@ -214,6 +217,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<label id="map-color-label">Map color<select id="map-color"><option value="turnout" selected>Participation</option><option value="margin">Election results · red / blue</option></select></label>
 					<label id="map-level-label">Detail<select id="map-level"><option value="county">Counties / equivalents</option><option value="precinct">Precincts · existing coverage</option><option value="auto">As you zoom</option><option value="district">Congressional districts</option></select></label>
 					<label id="current-state-label" hidden>State<select id="current-state-select"></select></label>
+					<label id="demographic-state-label" hidden>Geography<select id="demographic-state"><option value="US">United States</option></select></label>
 					<label id="mode-label" hidden>2026 measure<select id="mode"></select></label>
 					<label id="dimension-label" hidden>Compare<select id="dimension"></select></label>
 					<label id="group-label" hidden>Group<select id="group"></select></label>
@@ -277,6 +281,29 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			</details>
 			<div id="tooltip" role="tooltip" hidden></div>
 		</section>
+			<noscript><details class="participation-reference" id="state-demographic-snapshot">
+				<summary>Every-state historical participation, 2022 and 2024</summary>
+				<p>Reported voting among all source-weighted adult citizens, including unknown responses.
+					Separate CPS cross-sections, not administrative turnout, fixed cohorts or 2026 estimates.
+					The complete CSV also contains every age, sex, education and exclusive race/Hispanic-origin group.</p>
+				<div class="table-wrap"><table>
+					<caption>All 50 states plus D.C. · source-weighted CPS participation</caption>
+					<thead><tr><th scope="col">State</th><th scope="col">Year</th><th scope="col">Reported voting</th>
+						<th scope="col">Unknown</th><th scope="col">Source cases</th></tr></thead>
+					<tbody>{stateDemographics.filter((row: { dimension: string }) => row.dimension === 'overall')
+						.map((row: { state_code: string; state_name: string; year: string; reported_voting_pct: string;
+							unknown_pct: string; sample_n: string }) => <tr data-demographic-state={row.state_code} data-year={row.year}
+								data-rate={row.reported_voting_pct} data-unknown={row.unknown_pct} data-sample-n={row.sample_n}>
+							<th scope="row">{row.state_name}</th><td>{row.year}</td>
+							<td>{Number(row.reported_voting_pct).toFixed(1)}%</td>
+							<td>{Number(row.unknown_pct).toFixed(1)}%</td><td>{row.sample_n}</td>
+						</tr>)}</tbody>
+				</table></div>
+				<div class="download-links">
+					<a href={`${demographicRelease}complete-analysis.zip`} download>Complete all-state inputs, code and queries (ZIP)</a>
+					<a href={`${demographicRelease}complete-state-demographic-participation.csv`} download>Every state and demographic estimate (CSV)</a>
+				</div>
+			</details></noscript>
 
 		<details id="participation-research" class="participation-reference">
 			<summary>Research studies &amp; experimental models</summary>

@@ -1,0 +1,58 @@
+{
+  "status": "published_and_fully_verified",
+  "id": 438552376,
+  "tag": "participation-cps-state-demographics-20261108-01",
+  "target": "418d2b9d1341b064a000add9ca5ec05756ce6d03",
+  "immutable": true,
+  "assets": [
+    {
+      "name": "complete-analysis.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-demographics-20261108-01/complete-analysis.zip",
+      "bytes": 26243365,
+      "sha256": "4e5bb73ce17229474eb3f2a549ddb0dced20a4569dd6b13e8fbbb11677788756",
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true
+    },
+    {
+      "name": "complete-exclusive-state-partition-checks.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-demographics-20261108-01/complete-exclusive-state-partition-checks.csv",
+      "bytes": 353901,
+      "sha256": "e97e0368834c2155e751753d3903262cf13ffd918adb30047c0a53897baa7ced",
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true
+    },
+    {
+      "name": "complete-published-state-comparisons.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-demographics-20261108-01/complete-published-state-comparisons.csv",
+      "bytes": 38848,
+      "sha256": "281675399647d68e4e0367917e707f2d94b8dd53efdf9cb486fde2e888caf7b0",
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true
+    },
+    {
+      "name": "complete-source-joint-cell-decisions.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-demographics-20261108-01/complete-source-joint-cell-decisions.csv",
+      "bytes": 1870871,
+      "sha256": "5402ccd1b3981384de82c0fc9557ee8f1439984adbea7866d0ea75b8fb8d3882",
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true
+    },
+    {
+      "name": "complete-state-demographic-nonresponse-scenarios.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-demographics-20261108-01/complete-state-demographic-nonresponse-scenarios.csv",
+      "bytes": 848614,
+      "sha256": "52b5d29c5c987a822bf7281c7b472f57dbd3f3f875f736f3795937f856183101",
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true
+    },
+    {
+      "name": "complete-state-demographic-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-demographics-20261108-01/complete-state-demographic-participation.csv",
+      "bytes": 1087540,
+      "sha256": "2a9e8286388851e9ad10781e0b295abd0f57b6f18db7a880f60bb55bc65318e0",
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true
+    },
+    {
+      "name": "summary.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-demographics-20261108-01/summary.json",
+      "bytes": 1472,
+      "sha256": "97e4d87f8e57eb5e33e56ab0cec42b722ba910522e7e7000745a8bb5cfbe4ab5",
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true
+    }
+  ]
+}

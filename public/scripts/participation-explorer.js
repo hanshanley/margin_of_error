@@ -1,5 +1,6 @@
 import { installParticipationDownloads, participationDownload } from "./participation-downloads.js";
 import { contextualCountyRows } from "./participation-county-context.js";
+import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -58,6 +59,9 @@ const fmt = value => value == null ? "—" : value.toLocaleString("en-US");
 const pct = value => value == null ? "Not available" : value.toFixed(1) + "%";
 const typeFor = year => year % 4 === 0 ? "presidential" : "midterm";
 const isProvisional = () => $("year").value === "2026";
+const stateDemographicView = () => state.view === "national" && !isProvisional()
+  && $("demographic-state").value && $("demographic-state").value !== "US";
+let demographicsPromise;
 const modeLabels = { available: "Nationwide turnout estimates + official counts",
   uf_vep: "Turnout · eligible population (UF)", uf_vap: "Turnout · voting-age population (UF)",
   official: "Official administrative ballots · partial coverage", in_person_early: "In-person early voting", mail_returned: "Returned mail ballots" };
@@ -1270,7 +1274,7 @@ function options(element, values, preferred = element.value) {
 }
 const viewControlIds = {
   states: ["year", "basis", "mode", "map-color", "map-level"],
-  national: ["year", "basis", "dimension", "group", "mode"],
+  national: ["year", "basis", "dimension", "group", "mode", "demographic-state"],
   precincts: ["precinct-state-select", "year", "precinct-layer", "dimension", "group", "minimum"],
 };
 function viewSelection(view = state.view) {
@@ -1426,7 +1430,7 @@ function methodHistory(rows, mode, national) {
 }
 function methodsView() {
   const host = $("voting-methods"), national = state.view === "national", year = Number($("year").value);
-  host.hidden = !["states", "national"].includes(state.view) || year === 2026;
+  host.hidden = !["states", "national"].includes(state.view) || year === 2026 || stateDemographicView();
   if (host.hidden) return;
   const code = stateCode();
   $("voting-methods-title").textContent = `${year} · ${national ? "United States" : state.selectedState}`;
@@ -1538,6 +1542,7 @@ function syncURL() {
       if ($(id).value) url.searchParams.set(id, $(id).value);
   }
   if (state.view === "national" && isProvisional()) url.searchParams.set("countState", state.countState);
+  if (stateDemographicView()) url.searchParams.set("demographic-state", $("demographic-state").value);
   if (state.view === "states") url.searchParams.set("state", state.selectedState);
   if (state.view === "precincts") {
     url.searchParams.set("state", state.selectedState);
@@ -1549,6 +1554,10 @@ function syncURL() {
 }
 function configure(preferred = viewSelection()) {
   const precincts = state.view === "precincts";
+  if (state.view === "national") options($("demographic-state"),
+    [["US", "United States"], ...demographicStates.map(code => [code, stateName(code)])],
+    preferred["demographic-state"] || (!state.initialized && params.get("demographic-state"))
+      || $("demographic-state").value || "US");
   if ([...$("basis").options].some(option => option.value === preferred.basis))
     $("basis").value = preferred.basis;
   if (state.view === "states") for (const [id, fallback] of [["map-color", "turnout"], ["map-level", "county"]]) {
@@ -1573,7 +1582,8 @@ function configure(preferred = viewSelection()) {
     rows = state.view === "states"
       ? state.states.filter(row => row.denominator === $("basis").value && row.turnout_pct != null)
       : state.national.filter(row => row.denominator === $("basis").value && row.turnout_pct != null);
-    years = unique([...rows.map(row => row.year), 2026]).sort((a, b) => b - a);
+    years = state.view === "national" && $("demographic-state").value !== "US"
+      ? [2024, 2022] : unique([...rows.map(row => row.year), 2026]).sort((a, b) => b - a);
   }
   const requestedYear = (precincts && params.get("view") === "precincts" && !state.initialized
     ? params.get("year") : "") || preferred.year
@@ -1605,6 +1615,7 @@ function configure(preferred = viewSelection()) {
     ["state-label", state.view === "states"], ["precinct-state-label", precincts],
     ["precinct-layer-label", precincts],
     ["current-state-label", state.view === "national" && provisional],
+    ["demographic-state-label", state.view === "national" && !provisional],
     ["mode-label", provisional && state.view !== "precincts"],
     ["county-label", ncParticipation], ["precinct-search-label", ncParticipation],
     ["basis-label", !precincts && !provisional], ["minimum-label", ncParticipation],
@@ -1624,6 +1635,8 @@ function configureGroups(preferred = $("group").value) {
     groups = ["All available reporting units"];
   } else if (isProvisional()) {
     groups = ["All groups", ...unique(currentGroups().map(row => row.group))];
+  } else if (stateDemographicView()) {
+    groups = ["All groups", ...demographicGroups(dimension)];
   } else {
     groups = ["All groups", ...unique(state.national.filter(row => row.denominator === $("basis").value
       && (dimension === "age" ? row.dimension === "overall" && row.age_group !== "All ages"
@@ -1861,6 +1874,7 @@ function nationalRows(dimension, basis, group) {
 }
 function nationalView() {
   if (isProvisional()) { provisionalGroupsView(); return; }
+  if (stateDemographicView()) return stateDemographicsView(state.generation);
   const dimension = $("dimension").value, basis = $("basis").value, group = $("group").value;
   const rows = nationalRows(dimension, basis, group);
   header(`${$("year").value} selected · National Census survey estimates`,
@@ -1919,6 +1933,64 @@ function nationalView() {
     : "This series has no estimate for the selected election. Missing is not zero turnout."));
   setTable(rows.sort((a, b) => b.year - a.year), [["year", "Year"], ["election_type", "Election"],
     ["series", "Group"], ["turnout_pct", "Turnout"], ["denominator", "Population"], ["warnings", "Notes"]]);
+}
+async function stateDemographicsView(generation) {
+  const code = $("demographic-state").value, year = Number($("year").value);
+  const dimension = $("dimension").value, group = $("group").value;
+  header(`${year} ${typeFor(year)} election · ${stateName(code)} · CPS`,
+    `Participation in ${stateName(code)}`,
+    "Reported voting / all source-weighted civilian noninstitutionalized adult citizens, including unknown responses.",
+    "2022 and 2024 are separate survey cross-sections, not the same people. These are descriptive estimates, not administrative turnout or 2026 forecasts.");
+  $("map-tools").hidden = true; $("map-help").hidden = true; state.map = null;
+  $("key").replaceChildren();
+  const panel = $("selection-panel");
+  panel.replaceChildren(html("h3", "", `${stateName(code)} · ${year}`),
+    html("p", "selection-note", "Unknown responses remain in the denominator. Small samples are flagged; no design confidence interval is supplied."));
+  for (const [file, text] of [["complete-analysis.zip", "Complete inputs, code and all queries (ZIP)"],
+    ["complete-state-demographic-participation.csv", "Every state and demographic estimate (CSV)"]]) {
+    const link = html("a", "source-link", text); link.href = demographicSource.release + file; panel.append(link);
+  }
+  if ($("basis").value !== "cvap") {
+    $("visualization").replaceChildren(html("p", "empty",
+      "State demographic estimates here use adult citizens only. Select Adult citizens (CPS) under More options; no all-resident rate is inferred."));
+    setTable([], [["year", "Year"], ["series", "Group"], ["turnout_pct", "Participation"]]);
+    return;
+  }
+  $("visualization").replaceChildren(html("p", "empty", "Loading source-verified state demographic estimates…"));
+  try {
+    demographicsPromise ||= loadDemographics();
+    const data = await demographicsPromise;
+    if (generation !== state.generation || !stateDemographicView()) return;
+    const rows = demographicRows(data, code, dimension, group);
+    const grid = html("div", "demographic-grid");
+    for (const name of unique(rows.map(row => row.series))) {
+      const history = rows.filter(row => row.series === name);
+      const row = history.find(row => row.year === year);
+      const card = html("section", "demographic-card");
+      Object.assign(card.dataset, { group: name, state: code, year: String(year),
+        rate: row?.reported_voting_pct || "", sampleN: String(row?.sample_n ?? ""),
+        unknown: row?.unknown_pct || "", smallSample: String(Boolean(row?.low_n)) });
+      const heading = html("div", "demographic-card-heading");
+      heading.append(html("h3", "", name), html("strong", "demographic-value", pct(row?.turnout_pct)));
+      const chart = html("div");
+      card.append(heading, chart, html("p", "demographic-period",
+        `Source cases: ${fmt(row?.sample_n)} · Unknown: ${row?.unknown_response ?? "Not available"}`));
+      seriesChart(chart, history, { width: 360, height: 245, dimension });
+      if (row?.low_n) card.append(html("p", "selection-note", "Small sample · interpret cautiously; no design confidence interval."));
+      if (row?.turnout_pct == null) card.append(html("p", "selection-note", "No observed source cell, not zero participation."));
+      grid.append(card);
+    }
+    $("visualization").replaceChildren(grid);
+    setTable(rows.sort((a, b) => b.year - a.year), [["year", "Year"], ["election_type", "Election"],
+      ["series", "Group"], ["turnout_pct", "Reported voting"], ["sample_n", "Source cases"],
+      ["unknown_response", "Unknown response"], ["warnings", "Notes"]]);
+    note(dimension === "race" ? "Exclusive source race/Hispanic-origin groups, not the overlapping national race-alone series. Other non-Hispanic is pooled; AP/Civic definitions are not harmonized." : "");
+  } catch (error) {
+    if (generation !== state.generation) return;
+    $("visualization").replaceChildren(html("p", "empty",
+      `State demographic source unavailable: ${error.message}. No values inferred; complete downloads and United States histories remain available.`));
+    setTable([], [["year", "Year"], ["series", "Group"], ["turnout_pct", "Participation"]]);
+  }
 }
 function currentOfficialRows() {
   return [...(state.current?.reporting ?? []).filter(row =>
@@ -2918,7 +2990,7 @@ async function render() {
   $("provisional-status").hidden = !isProvisional();
   try {
     if (state.view === "states") statesView();
-    else if (state.view === "national") nationalView();
+    else if (state.view === "national") await nationalView();
     else if (state.view === "precincts") await precinctsView(generation);
     methodsView();
     if (generation === state.generation) syncURL();
@@ -2964,6 +3036,7 @@ async function main() {
   $("dimension").addEventListener("change", () => { configure(); render(); });
   $("year").addEventListener("change", () => { configure(); render(); });
   $("group").addEventListener("change", () => { configure(); render(); });
+  $("demographic-state").addEventListener("change", () => { configure(); render(); });
   $("mode").addEventListener("change", () => { configureGroups(); render(); });
   $("current-state-select").addEventListener("change", () => {
     state.countState = $("current-state-select").value; configureGroups(); render();
@@ -3038,6 +3111,8 @@ async function main() {
   const names = unique(geometry.features.map(f => f.properties.NAME)).filter(name => states.some(row => row.state === name)).sort();
   options($("state-select"), names.map(name => [name, name]), state.selectedState);
   state.selectedState = $("state-select").value;
+  options($("demographic-state"), [["US", "United States"],
+    ...demographicStates.map(code => [code, stateName(code)])], params.get("demographic-state") || "US");
   options($("current-state-select"), (state.current?.coverage ?? []).map(row => [row.state_code, row.state]), state.countState);
   state.countState = $("current-state-select").value || "GA";
   for (const id of ["basis", "map-color", "map-level"])
