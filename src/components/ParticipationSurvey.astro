@@ -4,6 +4,7 @@ import ParticipationCoalitionScenarios from './ParticipationCoalitionScenarios.a
 import ParticipationEstimatedCoalitions from './ParticipationEstimatedCoalitions.astro';
 import ParticipationDemographicCounts from './ParticipationDemographicCounts.astro';
 import ParticipationCivicEstimates from './ParticipationCivicEstimates.astro';
+import ParticipationAPHistory from './ParticipationAPHistory.astro';
 const base = '/participation-survey/20261107-02/';
 type JointRow = { prior_choice_share_pct: number | null;
 	current_choice_pct_within_prior_choice: Record<string, number | null> | null };
@@ -69,6 +70,7 @@ const mass = (row: Table, key: string) => {
 		may have voted in another 2024 contest; these tables cannot distinguish first-time voters,
 		returning voters or newly eligible residents.</p>
 	<ParticipationCivicEstimates names={names} />
+	<ParticipationAPHistory names={names} />
 	<ParticipationDemographicCounts names={names} />
 	<ParticipationEstimatedCoalitions names={names} />
 	<ParticipationCoalitionScenarios names={names} />

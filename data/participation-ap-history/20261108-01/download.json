@@ -1,0 +1,47 @@
+{
+  "assets": [
+    {
+      "bytes": 236316,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-analysis.zip",
+      "sha256": "dbab5b50a99882780ae8febe76f564acebc3b1acaf7ef23f3b21aa0693a58190",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-ap-history-20261108-01/complete-analysis.zip"
+    },
+    {
+      "bytes": 338490,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "participation.csv",
+      "sha256": "9c898f2a97a3af3f8ab008b26fd3e83b2f83f9ebf930aa0a88d1b4480f5dc4fc",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-ap-history-20261108-01/participation.csv"
+    },
+    {
+      "bytes": 63175,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "selection-dispositions.csv",
+      "sha256": "a7a4b0fc5b54d54f8113becc46288a93b5a264dd00117ecb4f6590e8263f0518",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-ap-history-20261108-01/selection-dispositions.csv"
+    },
+    {
+      "bytes": 7906,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "summary.json",
+      "sha256": "ad1c7040fb0c19ee716ed65e7c9831f6336044bd78aca4a012898d6549ae76fb",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-ap-history-20261108-01/summary.json"
+    },
+    {
+      "bytes": 339721,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "viewer-data.json",
+      "sha256": "c5c204c82679d1cb372ad63f120d956548967c8ffb148de5d69d64ac35e17049",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-ap-history-20261108-01/viewer-data.json"
+    }
+  ],
+  "immutable": true,
+  "release_id": 437994558,
+  "viewer": {
+    "bytes": 339721,
+    "sha256": "c5c204c82679d1cb372ad63f120d956548967c8ffb148de5d69d64ac35e17049",
+    "source_commit": "3a9d85994e59a6112d3756ef1f7f0ea15038a135",
+    "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/3a9d85994e59a6112d3756ef1f7f0ea15038a135/data/ap-votecast-aggregates/20261108-01/viewer-data.json"
+  }
+}

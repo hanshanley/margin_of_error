@@ -1,0 +1,98 @@
+---
+import { readFileSync } from 'node:fs';
+type Row = { year: string; weight_field: string; scope: string; dimension: string; group: string;
+	n: string; modeled_voter_pct: string; modeled_nonvoter_pct: string;
+	already_voted_self_report_pct: string };
+const { names } = Astro.props as { names: Record<string, string> };
+const base = 'data/participation-ap-history/20261108-01/';
+const result: { national_overall: Row[] } = JSON.parse(readFileSync(base + 'summary.json', 'utf8'));
+const download = JSON.parse(readFileSync(base + 'download.json', 'utf8'));
+const states = Object.keys(names).filter(code => !['US', 'DC'].includes(code)).sort();
+const pct = (value: string) => `${Number(value).toFixed(2)}%`;
+---
+
+<section id="participation-ap-history" class="participation-current" aria-labelledby="ap-history-title"
+	data-ap-source={download.viewer.url} data-ap-sha256={download.viewer.sha256}
+	data-publication-class="source-weighted-repeated-cross-section-descriptive">
+	<h3 id="ap-history-title">Historical voter-and-nonvoter studies: 2018 to 2024</h3>
+	<p>AP/NORC VoteCast provides separate source-weighted participation descriptions for
+		<strong>2018, 2020, 2022 and 2024</strong>. These are modeled participation shares in each
+		study's registered-source frame, <strong>not administratively observed turnout or a linked panel</strong>.
+		Native poll-close and final weights are separate views of the same respondents, not independent samples.</p>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Historical national source-frame participation">
+		<table><caption>All eight national source/weight views. Same-year rows reuse respondents; do not sum them.</caption>
+			<thead><tr><th scope="col">Year</th><th scope="col">Native weights</th><th scope="col">Modeled voter</th>
+				<th scope="col">Modeled nonvoter</th><th scope="col">Self-reported already voted</th>
+				<th scope="col">Source n</th></tr></thead>
+			<tbody>{result.national_overall.map(row => <tr data-ap-overall={`${row.year}:${row.weight_field}`}>
+				<th scope="row">{row.year}</th>
+				<td>{row.weight_field.startsWith('FINALVOTE') ? 'Final' : 'Poll-close'}</td>
+				<td data-ap-voter>{pct(row.modeled_voter_pct)}</td>
+				<td data-ap-nonvoter>{pct(row.modeled_nonvoter_pct)}</td>
+				<td data-ap-reported>{pct(row.already_voted_self_report_pct)}</td>
+				<td>{Number(row.n).toLocaleString('en-US')}</td>
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<p data-ap-status role="status">The national table and complete downloads work without JavaScript.
+		Open research to load the selected state and national-group views.</p>
+	<fieldset data-ap-controls disabled>
+		<legend>Explore the permitted historical source aggregates</legend>
+		<label>Election year
+			<select data-ap-year><option>2018</option><option>2020</option><option>2022</option><option selected>2024</option></select>
+		</label>
+		<label>Native weights
+			<select data-ap-frame><option value="FINALVOTE">Final</option><option value="POLLCLOSE">Poll-close</option></select>
+		</label>
+		<label>Source scope
+			<select data-ap-scope><option value="US50_SOURCE">National source: 50 states, no D.C.</option>
+				{states.map(code => <option value={code}>{names[code]}</option>)}
+			</select>
+		</label>
+	</fieldset>
+	<div data-ap-dynamic hidden>
+		<p data-ap-qualification></p>
+		<p><code data-ap-weight></code></p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Selected historical participation view">
+			<table><caption data-ap-caption></caption>
+				<thead><tr><th scope="col">Source group</th><th scope="col">Modeled voter</th>
+					<th scope="col">Modeled nonvoter</th><th scope="col">Self-reported already voted</th>
+					<th scope="col">Source n</th></tr></thead>
+				<tbody data-ap-rows></tbody>
+			</table>
+		</div>
+	</div>
+	<details class="explorer-notes"><summary>Source frames, changing groups and withheld estimates</summary>
+		<p>2018 state values are source descriptives only: the publisher reports estimates for
+			<strong>47 inference states despite sampling all 50</strong>. Delaware and West Virginia
+			<strong>2022 state inference is withheld</strong>. A documented 2022 race field,
+			<code>RACETH5</code>, was absent from the released file and is not reconstructed.</p>
+		<p>Native SEX/GENDER and race/ethnicity definitions differ across years. Current group membership
+			is not a fixed historical cohort. State demographics remain private; no state survey estimate
+			is allocated to counties or precincts. Unknown and disclosure-removed responses remain in the
+			full overall denominators, not recovered or redistributed.</p>
+		<p>The broad selection requires 500 positive-weight source cases for whole-state overall rows
+			and 1,000 for national groups. This is <strong>not an anonymity or precision guarantee</strong>;
+			raw per-model-class support is not available in the cached statistics. Weight units are not
+			population people, and no confidence interval is invented.</p>
+		<p>Final weights reflect outcome calibration, not independent outcome validation.
+			These repeated cross-sections are not a linked panel. No cross-study turnout change or
+			individual switching estimate is inferred by joining AP rows to Civic.</p>
+	</details>
+	<p>The complete selected package contains <strong>602 participation rows and all 710 broad-query
+		selection decisions</strong>, including withheld requests. It includes all permitted aggregate
+		inputs, full queries, source hashes, code and tests, not respondent records or private fine cells.</p>
+	<p>{download.assets.map((asset: { name: string; url: string }, index: number) => <>
+		{index > 0 && ' | '}<a href={asset.url} data-ap-download={asset.name}>
+			{asset.name === 'complete-analysis.zip' ? 'Complete historical AP analysis (ZIP)' : asset.name}
+		</a>
+	</>)}</p>
+</section>
+<script is:inline type="module" src="/scripts/participation-ap-history.js"></script>
+<style>
+	#participation-ap-history { min-width: 0; }
+	fieldset { display: flex; flex-wrap: wrap; gap: .75rem 1rem; margin-block: 1rem; }
+	label { display: grid; gap: .25rem; min-width: 0; max-width: 100%; }
+	select { min-height: 2.5rem; max-width: 100%; }
+	code { overflow-wrap: anywhere; }
+</style>
