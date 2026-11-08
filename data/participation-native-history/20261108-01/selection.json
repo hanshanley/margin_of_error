@@ -1,0 +1,84 @@
+{
+  "coverage": "Selected Hawaii/Wyoming histories only, not nationwide historical controls",
+  "publication_class": "native_administrative_snapshots_with_explicit_holds",
+  "rows": [
+    {
+      "control_measure": "reported_cast_ballots",
+      "native_ballot_count": 398657,
+      "registered": 756751,
+      "reported_cast_ballots": 398657,
+      "source_labeled_final": true,
+      "source_scope_notes": "",
+      "source_time_label": "Printed on: 11/15/2018 at 05:13:49 pm",
+      "state_code": "HI",
+      "year": 2018
+    },
+    {
+      "control_measure": "reported_cast_ballots",
+      "native_ballot_count": 579784,
+      "registered": 832466,
+      "reported_cast_ballots": 579784,
+      "source_labeled_final": true,
+      "source_scope_notes": "",
+      "source_time_label": "Printed on: 11/19/2020 at 10:21:05 am",
+      "state_code": "HI",
+      "year": 2020
+    },
+    {
+      "control_measure": "reported_cast_ballots",
+      "native_ballot_count": 419363,
+      "registered": 861358,
+      "reported_cast_ballots": 419363,
+      "source_labeled_final": true,
+      "source_scope_notes": "",
+      "source_time_label": "Printed on: 11/22/2022 at 12:39:46 pm",
+      "state_code": "HI",
+      "year": 2022
+    },
+    {
+      "control_measure": "reported_cast_ballots",
+      "native_ballot_count": 522236,
+      "registered": 860868,
+      "reported_cast_ballots": 522236,
+      "source_labeled_final": true,
+      "source_scope_notes": "",
+      "source_time_label": "Printed on: 11/13/2024 at 06:51:06 pm",
+      "state_code": "HI",
+      "year": 2024
+    },
+    {
+      "control_measure": "reported_cast_ballots",
+      "native_ballot_count": 365897,
+      "registered": 853399,
+      "reported_cast_ballots": 365897,
+      "source_labeled_final": false,
+      "source_scope_notes": "REPORT 3, uncertified. Native unit ballots exceed the state summary by 6; precinct registrations/rates remain unrepaired and withheld. State registration is repeated across contest rows, not added.",
+      "source_time_label": "Printed on: 11/04/2026 at 09:09:04 am",
+      "state_code": "HI",
+      "year": 2026
+    },
+    {
+      "control_measure": "native_workbook_ballot_sum_printed_conflict_held",
+      "native_ballot_count": 198198,
+      "registered": null,
+      "reported_cast_ballots": null,
+      "source_labeled_final": false,
+      "source_scope_notes": "{\"ballot_approval\": \"withheld\", \"printed_ballot_conflicts\": [{\"county\": \"Natrona\", \"precinct_sum\": 22955, \"printed_county_total\": 22957, \"statewide_county_value\": 22955}]}",
+      "source_time_label": "Native county/workbook clocks retained; no common statewide clock qualified",
+      "state_code": "WY",
+      "year": 2022
+    },
+    {
+      "control_measure": "reported_cast_ballots",
+      "native_ballot_count": 191688,
+      "registered": null,
+      "reported_cast_ballots": 191688,
+      "source_labeled_final": false,
+      "source_scope_notes": "Separate native ballots reconcile across all counties. Registration remains null; the Washakie candidate-category conflict is retained.",
+      "source_time_label": "Held November 5, 2026 snapshot; county-native clocks retained, no common statewide clock qualified",
+      "state_code": "WY",
+      "year": 2026
+    }
+  ],
+  "source_query_sha256": "cc8de61b8d31d8f50ae780222ab12644a6c974123c0e117a06cb98057e1b5780"
+}

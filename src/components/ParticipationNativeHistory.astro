@@ -1,0 +1,61 @@
+---
+import { readFileSync } from 'node:fs';
+type NativeRow = { state_code: string; year: number; control_measure: string;
+	native_ballot_count: number; reported_cast_ballots: number | null; registered: number | null;
+	source_labeled_final: boolean; source_time_label: string };
+const { names } = Astro.props as { names: Record<string, string> };
+const base = 'data/participation-native-history/20261108-01/';
+const result: { rows: NativeRow[] } = JSON.parse(readFileSync(base + 'selection.json', 'utf8'));
+const download = JSON.parse(readFileSync(base + 'download.json', 'utf8'));
+const number = (value: number) => value.toLocaleString('en-US');
+const labels: Record<string, string> = {
+	'complete-analysis.zip': 'Complete native-history analysis (ZIP)',
+	'complete-state-year-controls.csv': 'All 255 state/year controls (CSV)',
+	'complete-source-specific-survey-comparison.csv': 'All 434 study/frame comparisons (CSV)',
+	'complete-administrative-time-comparisons.csv': 'All administrative comparisons (CSV)',
+	'complete-native-mode-accounting.csv': 'Native mode accounting (CSV)',
+	'summary.json': 'Scope and methods (JSON)',
+};
+---
+<section id="participation-native-history" aria-labelledby="native-history-title"
+	data-source-query-sha256={download.source_query.sha256}
+	data-publication-class="native-administrative-snapshots-with-explicit-holds">
+	<h4 id="native-history-title">Administrative snapshots, separately measured</h4>
+	<p>These selected <strong>Hawaii and Wyoming</strong> histories use native ballot and registration
+		reports, not candidate vote shares. They are <strong>not nationwide historical coverage</strong>.
+		The complete query retains every state/year combination, including missing controls.</p>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Selected administrative participation histories">
+		<table><caption>Native state reports. Registration definitions are not harmonized; 2026 counts are preliminary.</caption>
+			<thead><tr><th scope="col">State</th><th scope="col">Year</th><th scope="col">Native ballot count</th>
+				<th scope="col">Native registered</th><th scope="col">Ballots / native registered</th>
+				<th scope="col">Report status</th></tr></thead>
+			<tbody>{result.rows.map(row => {
+				const held = row.control_measure !== 'reported_cast_ballots';
+				return <tr data-native-history-row={`${row.state_code}:${row.year}`}
+					data-native-qualified-cast={held ? 'false' : 'true'} title={row.source_time_label}>
+					<th scope="row">{names[row.state_code]}</th><td>{row.year}</td>
+					<td data-native-count>{number(row.native_ballot_count)}{held && ' (held)'}</td>
+					<td data-native-registered>{row.registered === null ? 'Not supplied' : number(row.registered)}</td>
+					<td data-native-fraction>{!held && row.reported_cast_ballots !== null && row.registered
+						? `${(100 * row.reported_cast_ballots / row.registered).toFixed(2)}%` : 'Not comparable'}</td>
+					<td data-native-status>{held ? 'Held: conflicting printed total'
+						: row.source_labeled_final ? 'Source-labeled final' : 'Preliminary snapshot'}</td>
+				</tr>;
+			})}</tbody>
+		</table>
+	</div>
+	<p>Hawaii's historical statewide totals reconcile separate native summaries and PDFs.
+		Its 2026 state summary is six ballots below the native unit sum; the difference stays visible
+		in the full query. Wyoming's 2022 native workbook sum is <strong>held</strong>: Natrona's
+		printed county total is two ballots higher than its precinct and statewide figures.
+		No registration denominator is inferred for Wyoming.</p>
+	<p>These source-frame fractions are not eligibility rates, original-cohort retention or independent
+		validation of the survey model. AP final weights may already use outcome calibration.
+		Comparisons with unfinished 2026 counts are snapshot differences, not final-count turnout declines.
+		Native voting-mode labels are not silently harmonized across years.</p>
+	<p>{download.assets.map((asset: { name: string; url: string }, index: number) => <>
+		{index > 0 && ' | '}<a href={asset.url} data-native-history-download={asset.name}>
+			{labels[asset.name]}
+		</a>
+	</>)}</p>
+</section>
