@@ -78,6 +78,12 @@ def check_round_trip(page, mode, screenshots):
     select_tab(page, "methods")
     expect(page.locator("#historical-explorer")).to_be_hidden()
     expect(page.locator("#methods-panel")).to_be_visible()
+    expect(page.locator(".methods-overview")).to_be_visible()
+    expect(page.locator("#methods-archive")).to_be_hidden()
+    expect(page.locator("#methods-github-link")).to_be_visible()
+    assert len(page.locator(".methods-overview").inner_text().split()) <= 180
+    assert page.locator("#methods-github-link").get_attribute("href") == (
+        "https://github.com/hanshanley/voter-participation/blob/main/METHODOLOGY.md")
     expect(page.locator(".methods-guide a")).to_have_count(4)
     expect(page.locator("#definitions")).not_to_have_attribute("open", "")
     expect(page.locator("#updates-panel")).not_to_have_attribute("open", "")
@@ -99,6 +105,7 @@ def check_round_trip(page, mode, screenshots):
         assert snapshot(page, precincts.keys()) == precincts
         select_tab(page, "methods")
         expect(page.locator("#methods-panel")).to_be_visible()
+        expect(page.locator("#methods-archive")).to_be_hidden()
 
     select_tab(page, "national")
     page.select_option("#year", "2026")
@@ -214,6 +221,12 @@ def check(base, proof, screenshots=None, explorer_script=None):
                 expect(page.locator("#tab-methods")).to_have_attribute("aria-selected", "true", timeout=90000)
                 expect(page.locator("#methods-panel")).to_be_visible()
                 expect(page.locator("#definitions")).to_have_attribute("open", "")
+                expect(page.locator("#methods-archive")).to_be_visible()
+                select_tab(page, "states")
+                select_tab(page, "methods")
+                expect(page.locator("#methods-archive")).to_be_hidden()
+                expect(page.locator("#methods-github-link")).to_be_visible()
+                assert not page.url.endswith("#definitions")
                 results.append({"mode": "methods_deep_link", "selected_tab": "methods",
                                 "target_disclosure_open": True})
             finally:
@@ -230,11 +243,13 @@ def check(base, proof, screenshots=None, explorer_script=None):
                 expect(page.locator("#method-observations")).to_contain_text(
                     "Historical voting methods could not be loaded", timeout=90000)
                 select_tab(page, "methods")
-                expect(page.locator("#definitions")).to_be_visible()
+                expect(page.locator(".methods-overview")).to_be_visible()
+                expect(page.locator("#methods-github-link")).to_be_visible()
+                expect(page.locator("#methods-archive")).to_be_hidden()
                 assert page.locator("#downloads a[download]").count() >= 900
                 assert not errors, errors
                 results.append({"mode": "method_source_failure", "explicit_error": True,
-                                "static_definitions_and_downloads_available": True})
+                                "short_static_overview_and_github_available": True})
             finally:
                 failed.close()
 
@@ -262,6 +277,7 @@ def check(base, proof, screenshots=None, explorer_script=None):
                 assert response.ok
                 expect(page.locator("#methods-panel")).to_be_visible()
                 expect(page.locator("#definitions")).to_be_visible()
+                expect(page.locator("#methods-archive")).to_be_visible()
                 expect(page.locator("#participation-research")).not_to_have_attribute("open", "")
                 assert page.locator("#downloads a[download]").count() >= 900
                 results.append({"mode": "mobile_no_javascript", "methods_visible": True,

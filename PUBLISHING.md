@@ -87,6 +87,17 @@ The author-supplied editorial thumbnail is stored byte-for-byte at
 Use it for the Interactive analysis preview and the explorer's social image,
 not as an in-page chart. Keep it outside chart recoloring and the pinned research export.
 
+Keep the Methods tab a short overview of the estimation process, not a
+source inventory: weighted rates, matched denominators, historical checks
+and supported geography. Link directly to the research repository's
+`METHODOLOGY.md`; its README, data catalog and reproduction guide organize
+the technical details. The
+legacy detail/archive markup remains only for existing direct anchors and
+download compatibility; normal Methods navigation must not expose it.
+Resetting a legacy fragment on tab navigation must also hide the archive.
+Check desktop/mobile round trips, legacy links, source-failure behavior and
+the short default overview without JavaScript.
+
 The page separates citizen/resident CPS denominators from NC registered-voter
 participation. National/state series are not nationwide precinct data. NC has seven
 election-year boundary snapshots; missing geometry never borrows a different year.

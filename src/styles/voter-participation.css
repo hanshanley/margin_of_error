@@ -11,6 +11,14 @@
 .js .participation-explorer { display: block; }
 .js .participation-secondary { display: none; }
 .js .participation-secondary.is-visible { display: block; }
+.methods-overview { max-width: 70ch; margin-bottom: 2.5rem; }
+.methods-overview .section-intro { margin-bottom: 1.25rem; }
+.methods-overview ul { padding-left: 1.25rem; }
+.methods-overview li { margin: .75rem 0; line-height: 1.6; }
+.methods-archive { display: none; }
+.methods-archive.is-visible { display: block; }
+html:not(.js) .methods-archive:has(:target) { display: block; }
+.participation-page[data-active-view="methods"] #participation-research { display: none; }
 .participation-page :is(button, select, input, summary, [tabindex]):focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
 .explorer-toolbar { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
 .participation-explorer .controls { display: flex; flex-wrap: wrap; gap: .75rem; }

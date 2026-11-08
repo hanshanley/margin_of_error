@@ -1651,6 +1651,8 @@ function showView(view) {
   for (const panel of document.querySelectorAll("[data-section]"))
     panel.classList.toggle("is-visible", panel.dataset.section === view);
   const methodsPanel = $("methods-panel");
+  $("methods-archive").classList.toggle("is-visible", view === "methods"
+    && Boolean(hashTarget()?.closest("#methods-archive")));
   $("historical-explorer").hidden = view === "methods";
   methodsPanel.hidden = view !== "methods";
   $("historical-explorer").setAttribute("role", "tabpanel");
@@ -2941,6 +2943,8 @@ function hashTarget() {
 function revealHashTarget(target = hashTarget()) {
   if (!target) return;
   if (target.closest("#methods-panel") && state.view !== "methods") showView("methods");
+  if (target.closest("#methods-archive")) $("methods-archive").classList.add("is-visible");
+  if (target.closest("#participation-research") && state.view === "methods") showView("states");
   for (let element = target; element && element !== root; element = element.parentElement)
     if (element instanceof HTMLDetailsElement) element.open = true;
 }
@@ -2948,7 +2952,14 @@ async function main() {
   loadUfTurnout();
   loadReviewedCounties();
   for (const button of document.querySelectorAll(".participation-nav button"))
-    button.addEventListener("click", () => showView(button.dataset.view));
+    button.addEventListener("click", () => {
+      if (button.dataset.view === "methods" && hashTarget()?.closest("#methods-archive")) {
+        const url = new URL(location.href);
+        url.hash = "";
+        history.replaceState(null, "", url);
+      }
+      showView(button.dataset.view);
+    });
   $("basis").addEventListener("change", () => { configure(); render(); });
   $("dimension").addEventListener("change", () => { configure(); render(); });
   $("year").addEventListener("change", () => { configure(); render(); });

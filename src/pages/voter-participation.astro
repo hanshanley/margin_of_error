@@ -192,7 +192,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 
 		<nav class="participation-nav" aria-label="Explore participation" role="tablist">
 			{[['states', 'States'], ['national', 'Demographics'], ['precincts', 'Precincts'],
-				['methods', 'Methods & data']].map(([view, label]) =>
+				['methods', 'Methods']].map(([view, label]) =>
 				<button type="button" id={`tab-${view}`} role="tab" data-view={view}
 					aria-selected={view === 'states' ? 'true' : 'false'}
 					aria-controls={view === 'methods' ? 'methods-panel' : 'historical-explorer'}
@@ -308,9 +308,25 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 
 		<section id="methods-panel" class="participation-secondary" data-section="methods" role="tabpanel"
 			aria-labelledby="tab-methods" tabindex="0">
-		<header class="section-intro"><p class="kicker">Sources, definitions & research</p><h2 id="methods-heading">Methods & data</h2>
-			<p>Choose the definitions, source period, research audit or download ledger you need.
-				Survey turnout, administrative ballot counts and candidate votes remain separate.</p></header>
+		<div class="methods-overview">
+			<header class="section-intro"><p class="kicker">How we estimate participation</p><h2 id="methods-heading">Methods</h2>
+				<p>We estimate participation by demographic group from weighted surveys and compare
+					it with election records. Observed counts, self-reported voting and modeled
+					participation stay distinct.</p></header>
+			<ul>
+				<li><strong>Estimate rates.</strong> Use each study's published weights and original
+					participation definitions, retaining missing or unknown responses.</li>
+				<li><strong>Match the population.</strong> Convert rates to counts only with a matching
+					denominator and explicit assumptions. Candidate votes are not ballots.</li>
+				<li><strong>Check comparisons.</strong> Keep presidential and midterm histories
+					separate; test historical projections against simple baselines.</li>
+				<li><strong>Respect geography.</strong> Map precinct participation only with supported
+					election-year counts and boundaries. Never allocate state survey estimates to precincts.</li>
+			</ul>
+			<p><a id="methods-github-link" href={`${manifest.source_repository}/blob/main/METHODOLOGY.md`}>
+				Estimation methods, assumptions and complete data on GitHub</a>.</p>
+		</div>
+		<div id="methods-archive" class="methods-archive">
 		<nav class="methods-guide" aria-label="Methods and data sections">
 			<a href="#definitions"><strong>Definitions</strong><span>Denominators, historical breaks and missing data</span></a>
 			<a href="#updates-panel"><strong>2026 sources</strong><span>Reporting clocks, coverage audits and native measures</span></a>
@@ -1070,6 +1086,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			</div>
 			</details>
 		</section>
+		</div>
 		<p class="participation-sources">Sources:{' '}
 			<a href="https://www.census.gov/data/tables/time-series/demo/voting-and-registration/voting-historical-time-series.html">U.S. Census Bureau</a>{' '}
 			and <a href="https://www.ncsbe.gov/results-data/voter-history-data">North Carolina State Board of Elections</a>.{' '}

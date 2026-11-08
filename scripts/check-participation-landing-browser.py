@@ -75,12 +75,11 @@ def check(base, proof=None, baseline_html=None):
                     if baseline:
                         actual = Inventory(response.text())
                         additions = Counter({
-                            "precinct-state-select": 1,
-                            "precinct-layer-label": 1,
-                            "precinct-layer": 1,
+                            key: 1 for key in (
+                                "precinct-state-select", "precinct-layer-label", "precinct-layer",
+                                "participation-research", "methods-archive", "methods-github-link",
+                            ) if not baseline.ids[key]
                         })
-                        if not baseline.ids["participation-research"]:
-                            additions["participation-research"] = 1
                         assert actual.ids == baseline.ids + additions
                         assert actual.downloads == baseline.downloads, "A complete download changed"
                     downloads = page.locator("#downloads a[download]").evaluate_all(
