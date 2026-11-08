@@ -1,6 +1,7 @@
 ---
 import { readFileSync } from 'node:fs';
 import ParticipationNativeHistory from './ParticipationNativeHistory.astro';
+import ParticipationWyomingRegisterFrames from './ParticipationWyomingRegisterFrames.astro';
 type Row = { year: string; weight_field: string; scope: string; dimension: string; group: string;
 	n: string; modeled_voter_pct: string; modeled_nonvoter_pct: string;
 	already_voted_self_report_pct: string };
@@ -89,6 +90,7 @@ const pct = (value: string) => `${Number(value).toFixed(2)}%`;
 		</a>
 	</>)}</p>
 	<ParticipationNativeHistory names={names} />
+	<ParticipationWyomingRegisterFrames />
 </section>
 <script is:inline type="module" src="/scripts/participation-ap-history.js"></script>
 <style>

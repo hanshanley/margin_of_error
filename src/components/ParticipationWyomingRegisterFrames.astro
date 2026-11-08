@@ -1,0 +1,64 @@
+---
+import { readFileSync } from 'node:fs';
+type Row = { year: string; study: string; weight_field: string; registration_snapshot_date: string;
+	native_registration_snapshot: string; modeled_voter_share: string;
+	conditional_modeled_voter_count: string; conditional_modeled_nonvoter_count: string;
+	conditional_model_unknown_count: string };
+const base = 'data/participation-wyoming-registration/20261108-01/';
+const result: { rows: Row[] } = JSON.parse(readFileSync(base + 'selection.json', 'utf8'));
+const download = JSON.parse(readFileSync(base + 'download.json', 'utf8'));
+const number = (value: string) => Math.round(Number(value)).toLocaleString('en-US');
+const frame = (row: Row) => row.study === 'Civic' ? 'Civic / source weights'
+	: row.weight_field.startsWith('FINALVOTE') ? 'AP VoteCast / final' : 'AP VoteCast / poll-close';
+const labels: Record<string, string> = {
+	'complete-analysis.zip': 'Complete registration and scenario analysis (ZIP)',
+	'complete-native-registration.csv': 'All 360 native registration rows (CSV)',
+	'complete-county-state-accounting.csv': 'All 105 county/state checks (CSV)',
+	'complete-registration-snapshot-changes.csv': 'All registration snapshot changes (CSV)',
+	'complete-general-source-comparison.csv': 'Separate source comparisons (CSV)',
+	'complete-source-weighted-conditional-scenarios.csv': 'All three conditional frames (CSV)',
+	'complete-survey-dispositions.csv': 'All 681 survey dispositions (CSV)',
+	'summary.json': 'Scope and assumptions (JSON)',
+};
+---
+<section id="participation-wyoming-registration" aria-labelledby="wyoming-registration-title"
+	data-source-query-sha256={download.source_query.sha256}
+	data-publication-class="conditional-native-register-scenarios-not-observed-turnout">
+	<h4 id="wyoming-registration-title">Wyoming: separate registration-snapshot scenarios</h4>
+	<p>These <strong>conditional statewide counts are not observed turnout or staying home</strong>.
+		Each source-weighted modeled share is applied to its same-year native registration snapshot
+		(<code>R * p</code>), assuming <strong>unvalidated exchangeability to that exact register</strong>.
+		The separate reports do not fill the missing election-time denominators above.</p>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Separate Wyoming registration-snapshot scenarios">
+		<table><caption>Different source frames, not a turnout trend. Conditional counts are rounded; do not sum same-year rows.</caption>
+			<thead><tr><th scope="col">Year / source weights</th><th scope="col">Register snapshot</th>
+				<th scope="col">Native registered</th><th scope="col">Modeled participation</th>
+				<th scope="col">Conditional participants</th><th scope="col">Conditional nonparticipants</th>
+				<th scope="col">Unassigned model mass</th></tr></thead>
+			<tbody>{result.rows.map(row => <tr data-wy-register-row={`${row.year}:${row.weight_field}`}>
+				<th scope="row">{row.year} / {frame(row)}</th>
+				<td data-wy-register-date>{row.registration_snapshot_date}</td>
+				<td data-wy-register-total>{number(row.native_registration_snapshot)}</td>
+				<td data-wy-register-share>{(100 * Number(row.modeled_voter_share)).toFixed(2)}%</td>
+				<td data-wy-register-voter>{number(row.conditional_modeled_voter_count)}</td>
+				<td data-wy-register-nonvoter>{number(row.conditional_modeled_nonvoter_count)}</td>
+				<td data-wy-register-unknown>{number(row.conditional_model_unknown_count)}</td>
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<p>The 2022 register equals the profile's explicitly pre-election count, excluding Election Day
+		registrants. The new registration PDFs do not declare active/inactive scope or Election Day
+		registration inclusion; an election-day label is not a final electorate definition.
+		AP poll-close and final weights reuse respondents and may reflect outcome calibration.
+		Civic and AP constructs are not harmonized; no cross-study change or independent model
+		validation is inferred. No state survey propensity is allocated to counties or precincts.</p>
+	<p>All native county/state registration categories and accounting, source-clock differences,
+		unknown model mass and held survey requests remain in the full queries. Registration-party
+		categories are accounting, not voting behavior. No confidence interval or original-cohort
+		retention is inferred; eligibility, deaths and migration remain unknown.</p>
+	<p>{download.assets.map((asset: { name: string; url: string }, index: number) => <>
+		{index > 0 && ' | '}<a href={asset.url} data-wy-register-download={asset.name}>
+			{labels[asset.name]}
+		</a>
+	</>)}</p>
+</section>

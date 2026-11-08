@@ -1,0 +1,67 @@
+{
+  "assets": [
+    {
+      "bytes": 642261,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-analysis.zip",
+      "sha256": "0c1181e6106516c8b37eda7a10d0b2861a6c478d2de816280fa38d34dce1f273",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-wyoming-registration-20261108-01/complete-analysis.zip"
+    },
+    {
+      "bytes": 4631,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-county-state-accounting.csv",
+      "sha256": "0c3a50b9a558aea3a4b54a9757948a892c8cc84fbdd794bc5f00469d8bd64fea",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-wyoming-registration-20261108-01/complete-county-state-accounting.csv"
+    },
+    {
+      "bytes": 1125,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-general-source-comparison.csv",
+      "sha256": "efeb62f8c77a297a4bb5c04740ce27e3196ada346695e6ed737bb6ec4a21309e",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-wyoming-registration-20261108-01/complete-general-source-comparison.csv"
+    },
+    {
+      "bytes": 78023,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-native-registration.csv",
+      "sha256": "9f63de95143138818a7d32b064880fcd45a546485f851ca7674a5b30e3c10347",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-wyoming-registration-20261108-01/complete-native-registration.csv"
+    },
+    {
+      "bytes": 1792,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-registration-snapshot-changes.csv",
+      "sha256": "dcde19fc9e20e9b87296f9a9caf137814aa7f611c04098a701cd3f08a011611b",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-wyoming-registration-20261108-01/complete-registration-snapshot-changes.csv"
+    },
+    {
+      "bytes": 2379,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-source-weighted-conditional-scenarios.csv",
+      "sha256": "0f287a7a45bafceb7799edbdfc9c85bb12a0768d3e7c058a618ca41baf49dcff",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-wyoming-registration-20261108-01/complete-source-weighted-conditional-scenarios.csv"
+    },
+    {
+      "bytes": 61013,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-survey-dispositions.csv",
+      "sha256": "5895d536420cfd5687002163b3641f3c8efc3459d9ba6540e0f76be509153288",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-wyoming-registration-20261108-01/complete-survey-dispositions.csv"
+    },
+    {
+      "bytes": 1467,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "summary.json",
+      "sha256": "8b0e2403c8ee0cc586e5be771a527e9c4b4cb34555bde755b7dcc724cc3549f4",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-wyoming-registration-20261108-01/summary.json"
+    }
+  ],
+  "immutable": true,
+  "release_id": 438053365,
+  "source_query": {
+    "bytes": 2379,
+    "rows": 3,
+    "sha256": "0f287a7a45bafceb7799edbdfc9c85bb12a0768d3e7c058a618ca41baf49dcff"
+  }
+}
