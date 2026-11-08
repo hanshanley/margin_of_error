@@ -1,6 +1,7 @@
 import { installParticipationDownloads, participationDownload } from "./participation-downloads.js";
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
+import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -62,9 +63,12 @@ const isProvisional = () => $("year").value === "2026";
 const stateDemographicView = () => state.view === "national" && !isProvisional()
   && $("demographic-state").value && $("demographic-state").value !== "US";
 let demographicsPromise;
+let civicStatesPromise, civicStatesData, civicModelInitialized = false;
+const civicModelView = () => state.view === "national" && isProvisional() && $("mode").value === "civic_model";
 const modeLabels = { available: "Nationwide turnout estimates + official counts",
   uf_vep: "Turnout · eligible population (UF)", uf_vap: "Turnout · voting-age population (UF)",
-  official: "Official administrative ballots · partial coverage", in_person_early: "In-person early voting", mail_returned: "Returned mail ballots" };
+  official: "Official administrative ballots · partial coverage", in_person_early: "In-person early voting", mail_returned: "Returned mail ballots",
+  civic_model: "Civic · modeled participation" };
 const currentDimension = () => ({ sex: "gender", age: "age_range" }[$("dimension").value] || $("dimension").value);
 const unique = items => [...new Set(items)];
 const ufMode = () => isProvisional() && state.view === "states"
@@ -1607,9 +1611,11 @@ function configure(preferred = viewSelection()) {
       ...($("year").value === "2026" ? [["ethnicity", "Ethnicity"]] : [])], preferred.dimension);
   const provisional = isProvisional();
   document.querySelector(".explorer-options").hidden = provisional || precincts && !ncParticipation;
-  options($("mode"), Object.entries(modeLabels).filter(([mode]) => state.view !== "national"
-    || !["official", "available", "uf_vep", "uf_vap"].includes(mode)),
-    precincts ? "official" : preferred.mode);
+  options($("mode"), Object.entries(modeLabels).filter(([mode]) => mode === "civic_model"
+    ? state.view === "national" : state.view !== "national"
+      || !["official", "available", "uf_vep", "uf_vap"].includes(mode)),
+    precincts ? "official" : preferred.mode || (state.view === "national" && provisional ? "civic_model" : undefined));
+  if (civicModelView()) options($("dimension"), civicDimensions, preferred.dimension);
   configureGroups(preferred.group);
   for (const [id, visible] of [
     ["state-label", state.view === "states"], ["precinct-state-label", precincts],
@@ -1633,6 +1639,10 @@ function configureGroups(preferred = $("group").value) {
       .filter(row => row.dimension === dimension).map(row => row.group));
   } else if (state.view === "precincts") {
     groups = ["All available reporting units"];
+  } else if (civicModelView()) {
+    const choices = civicStatesData ? civicGroupOptions(civicStatesData, dimension) : [];
+    options($("group"), [["All groups", "All groups"], ...choices], preferred);
+    return;
   } else if (isProvisional()) {
     groups = ["All groups", ...unique(currentGroups().map(row => row.group))];
   } else if (stateDemographicView()) {
@@ -1873,6 +1883,7 @@ function nationalRows(dimension, basis, group) {
   return group && group !== "All groups" ? rows.filter(row => row.series === group) : rows;
 }
 function nationalView() {
+  if (civicModelView()) return civicStateModelView(state.generation);
   if (isProvisional()) { provisionalGroupsView(); return; }
   if (stateDemographicView()) return stateDemographicsView(state.generation);
   const dimension = $("dimension").value, basis = $("basis").value, group = $("group").value;
@@ -2059,6 +2070,65 @@ function provisionalGroupsView() {
   note(state.currentError || (rows.length ? "Group definitions differ across states. Counts do not cover the full election and must not be pooled into a national turnout rate." : ""));
   setTable(rows, [["state", "State"], ["mode", "Voting mode"], ["group", "Group"],
     ["ballots", "Ballots reported"], ["source_date", "Source date"], ["status", "Status"], ["quality", "Notes"]]);
+}
+async function civicStateModelView(generation) {
+  const code = state.countState, dimension = $("dimension").value, group = $("group").value;
+  header("2026 midterm · Civic source-weighted model", `Modeled participation in ${stateName(code)}`,
+    "Source-weighted share classified as likely voters. Not reported ballots or certified demographic turnout.",
+    "No 2024 extrapolation, group-population scaling or local allocation. Source field period, calibration and state representativeness remain unqualified; no design confidence interval.");
+  $("map-tools").hidden = true; $("map-help").hidden = true; state.map = null; state.mapPaths = [];
+  $("key").replaceChildren();
+  const panel = $("selection-panel");
+  panel.replaceChildren(html("h3", "", `${stateName(code)} · 2026`),
+    html("p", "selection-note", "Native LIKELYVOTER model, not administrative voting. All source weight remains in each group's denominator; unknown demographics remain in statewide totals."));
+  for (const [file, label] of [["complete-analysis.zip", "Complete 2026 inputs, code and results (ZIP)"],
+    ["complete-state-demographic-query.csv", "Every state/group estimate and holding (CSV)"]]) {
+    const link = html("a", "source-link", label); link.href = civicStateSource.release + file; panel.append(link);
+  }
+  $("visualization").replaceChildren(html("p", "empty", "Loading source-verified 2026 model estimates…"));
+  try {
+    civicStatesPromise ||= loadCivicStates();
+    civicStatesData = await civicStatesPromise;
+    if (generation !== state.generation || !civicModelView()) return;
+    configureGroups(!civicModelInitialized && params.get("mode") === "civic_model"
+      ? params.get("group") || group : group);
+    civicModelInitialized = true;
+    const selectedGroup = $("group").value;
+    const rows = civicStateRows(civicStatesData, code, dimension)
+      .filter(row => selectedGroup === "All groups" || row.group === selectedGroup);
+    const grid = html("div", "demographic-grid");
+    for (const row of rows) {
+      const card = html("section", "demographic-card");
+      Object.assign(card.dataset, { civicState: code, group: row.group,
+        rate: row.modeled_voter_pct ?? "", disposition: row.disposition, sampleN: String(row.n ?? "") });
+      const value = row.modeled_voter_pct === null ? null : Number(row.modeled_voter_pct);
+      const heading = html("div", "demographic-card-heading");
+      heading.append(html("h3", "", row.label), html("strong", "demographic-value",
+        value === null ? "Not publicly estimated" : pct(value)));
+      card.append(heading);
+      if (value !== null) {
+        const track = html("div", "count-track"), bar = html("i");
+        bar.style.width = `${value}%`; track.setAttribute("aria-hidden", "true"); track.append(bar);
+        card.append(track, html("p", "demographic-period", `${fmt(row.n)} source cases · modeled voter share`));
+      } else card.append(html("p", "selection-note", row.disposition === "no_dc_source_sample"
+        ? "No D.C. survey sample; no value is inferred."
+        : "Held for source support or disclosure protection, including complementary cells. Missing is not zero."));
+      grid.append(card);
+    }
+    $("visualization").replaceChildren(grid);
+    setTable(rows.map(row => ({ ...row, modeled_share: row.modeled_voter_pct === null
+      ? "Not publicly estimated" : pct(Number(row.modeled_voter_pct)) })),
+    [["state_code", "State"], ["label", "Source group"], ["modeled_share", "Modeled voter share"],
+      ["n", "Source cases"], ["disposition", "Evidence / holding"]]);
+    note(dimension === "county_context" ? "Native urban/suburban/rural county context, not measured individual residence or local turnout."
+      : dimension === "income" ? "Source income bins; household-income definition is not independently qualified."
+        : "Native/coarsened study categories are not harmonized to CPS. Sparse and within/across-state complementary groups remain held.");
+  } catch (error) {
+    if (generation !== state.generation) return;
+    $("visualization").replaceChildren(html("p", "empty",
+      `2026 model source unavailable: ${error.message}. Complete downloads and separate reported observations remain available; no values inferred.`));
+    setTable([], [["label", "Source group"], ["modeled_share", "Modeled voter share"]]);
+  }
 }
 function stateDetail() {
   const basis = $("basis").value, year = Number($("year").value);
@@ -3037,7 +3107,7 @@ async function main() {
   $("year").addEventListener("change", () => { configure(); render(); });
   $("group").addEventListener("change", () => { configure(); render(); });
   $("demographic-state").addEventListener("change", () => { configure(); render(); });
-  $("mode").addEventListener("change", () => { configureGroups(); render(); });
+  $("mode").addEventListener("change", () => { configure(); render(); });
   $("current-state-select").addEventListener("change", () => {
     state.countState = $("current-state-select").value; configureGroups(); render();
   });
@@ -3120,8 +3190,10 @@ async function main() {
   configure();
   if ([...$("year").options].some(o => o.value === params.get("year"))) $("year").value = params.get("year");
   configure();
-  for (const id of ["dimension", "mode"])
+  for (const id of ["mode"])
     if ([...$(id).options].some(o => o.value === params.get(id))) $(id).value = params.get(id);
+  configure();
+  if ([...$("dimension").options].some(o => o.value === params.get("dimension"))) $("dimension").value = params.get("dimension");
   configureGroups();
   if ([...$("group").options].some(o => o.value === params.get("group"))) $("group").value = params.get("group");
   if (hashTarget()?.closest("#methods-panel")) state.view = "methods";
