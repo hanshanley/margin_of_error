@@ -12,7 +12,7 @@ from playwright.sync_api import expect, sync_playwright
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data/participation-native-history/20261108-01"
+DATA = ROOT / "data/participation-native-history/20261108-02"
 
 
 def check(base, proof):
@@ -65,6 +65,8 @@ def check(base, proof):
                                     else "Not comparable")
                         expect(target.locator("[data-native-fraction]")).to_have_text(fraction)
                         status = ("Held: conflicting printed total" if held else
+                                  "Native statewide summary" if row["source_report_status"] ==
+                                  "native_statewide_summary_no_independent_certification" else
                                   "Source-labeled final" if row["source_labeled_final"] == "True"
                                   else "Preliminary snapshot")
                         expect(target.locator("[data-native-status]")).to_have_text(status)
@@ -76,12 +78,22 @@ def check(base, proof):
                         "printed county total is two ballots higher", "No registration denominator is inferred",
                         "not eligibility rates, original-cohort retention or independent validation",
                         "not final-count turnout declines", "not silently harmonized",
+                        "separate statewide ballot PDF and native summary workbook",
+                        "Both observations and the explicit state-source selection",
                     ):
                         expect(panel).to_contain_text(text)
                     expect(page.locator("#participation-ap-history [data-ap-overall]")).to_have_count(8)
                     expect(page.locator("#participation-civic-estimates [data-civic-flow]")).to_have_count(112)
                     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), mode
-                    expect(panel.locator("[data-native-history-download]")).to_have_count(6)
+                    expect(panel.locator("[data-native-history-download]")).to_have_count(7)
+                    previous = panel.locator("[data-native-history-previous-versions]")
+                    assert not previous.evaluate("element => element.open")
+                    previous.locator(":scope > summary").click()
+                    expect(previous.locator("[data-native-history-previous-download]")).to_have_count(6)
+                    for asset in metadata["previous_assets"]:
+                        link = previous.locator(f'[data-native-history-previous-download="{asset["name"]}"]')
+                        expect(link).to_be_visible()
+                        assert link.get_attribute("href") == asset["url"]
                     if mode == "desktop":
                         for asset in metadata["assets"]:
                             link = panel.locator(f'[data-native-history-download="{asset["name"]}"]')
@@ -91,6 +103,16 @@ def check(base, proof):
                             body = response.body()
                             assert len(body) == asset["bytes"]
                             assert hashlib.sha256(body).hexdigest() == asset["sha256"]
+                            if asset["name"] == "complete-native-source-selection.csv":
+                                ledger = list(csv.DictReader(io.StringIO(body.decode())))
+                                assert len(ledger) == 25
+                                held_row = next(r for r in ledger if r["observation_id"] == "wy-native-general-2022")
+                                state_row = next(r for r in ledger if r["observation_id"] ==
+                                                 "wy-native-general-2022-statewide")
+                                assert held_row["selected_state_reference"] == "False"
+                                assert held_row["native_aggregate_ballot_approval"] == "withheld"
+                                assert state_row["selected_state_reference"] == "True"
+                                assert held_row["native_numerator"] == state_row["native_numerator"] == "198198"
                             if asset["name"] == "complete-analysis.zip":
                                 with zipfile.ZipFile(io.BytesIO(body)) as archive:
                                     assert archive.testzip() is None
@@ -103,7 +125,8 @@ def check(base, proof):
                         panel.screenshot(path=str(proof.with_suffix(".mobile.png")))
                     results.append(dict(
                         mode=mode, passed=True, rows=7, source_query_rows=255,
-                        wyoming_held_and_missing_registration_preserved=True,
+                        wyoming_held_source_and_missing_registration_preserved=True,
+                        separate_statewide_source_selected=True, all_previous_complete_links_preserved=True,
                         all_native_values_and_statuses_source_matched=True,
                         default_closed_research_preserved=True))
                 finally:

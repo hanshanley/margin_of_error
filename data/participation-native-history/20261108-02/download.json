@@ -1,0 +1,106 @@
+{
+  "assets": [
+    {
+      "bytes": 4711,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-administrative-time-comparisons.csv",
+      "sha256": "cfa0e23ea872d60b3da1339cded4d0f2d512429131d202c94969c055dfa40896",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-02/complete-administrative-time-comparisons.csv"
+    },
+    {
+      "bytes": 4976404,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-analysis.zip",
+      "sha256": "e2cc5cfdf19220a20204405fd10329f2f38bb1c3822c06667e3b1513c53407c0",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-02/complete-analysis.zip"
+    },
+    {
+      "bytes": 942,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-native-mode-accounting.csv",
+      "sha256": "c60822931dce2cf895001ac43d2bbcd5cb74a7c160b942c6911b0f111fea50bc",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-02/complete-native-mode-accounting.csv"
+    },
+    {
+      "bytes": 9442,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-native-source-selection.csv",
+      "sha256": "ca439cc2ff575b906be499668ea24d4c2d36471cd0aaa0e094dc1d43ee76f6da",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-02/complete-native-source-selection.csv"
+    },
+    {
+      "bytes": 169571,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-source-specific-survey-comparison.csv",
+      "sha256": "35ee9292f67cb38036812b2851a65998809bcb732c0c7742b5853d7d57007d3b",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-02/complete-source-specific-survey-comparison.csv"
+    },
+    {
+      "bytes": 18463,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-state-year-controls.csv",
+      "sha256": "7f7a9c1fb0f6c6aeeea4a6f892050dc623355ef3d08356803bee26e243130357",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-02/complete-state-year-controls.csv"
+    },
+    {
+      "bytes": 2164,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "summary.json",
+      "sha256": "791aba2edc8c056badd2c2ebb26623639d88a62cc9aefb328f41585fa390a2d4",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-02/summary.json"
+    }
+  ],
+  "immutable": true,
+  "previous_assets": [
+    {
+      "bytes": 4746,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-administrative-time-comparisons.csv",
+      "sha256": "fd64d1a3b02991758040349e632dc064e7c80e90bc29822d229f5ca42a845ff1",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-01/complete-administrative-time-comparisons.csv"
+    },
+    {
+      "bytes": 4969563,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-analysis.zip",
+      "sha256": "6d4fe13ddb5772ca6a9986ad83ec1b2eb31a03b537979300a25797e2fc6ce9c0",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-01/complete-analysis.zip"
+    },
+    {
+      "bytes": 942,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-native-mode-accounting.csv",
+      "sha256": "c60822931dce2cf895001ac43d2bbcd5cb74a7c160b942c6911b0f111fea50bc",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-01/complete-native-mode-accounting.csv"
+    },
+    {
+      "bytes": 169593,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-source-specific-survey-comparison.csv",
+      "sha256": "e5b19653b5387ba29687acf4ba85a6d260772cae7f6291a968d8ced710acdebd",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-01/complete-source-specific-survey-comparison.csv"
+    },
+    {
+      "bytes": 18466,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "complete-state-year-controls.csv",
+      "sha256": "cc8de61b8d31d8f50ae780222ab12644a6c974123c0e117a06cb98057e1b5780",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-01/complete-state-year-controls.csv"
+    },
+    {
+      "bytes": 2057,
+      "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+      "name": "summary.json",
+      "sha256": "4882c0059b51b1894ad1d924d7abcf2958c79b5928fca2cc7e7c32b245f225a7",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-01/summary.json"
+    }
+  ],
+  "release_id": 438041499,
+  "source_query": {
+    "bytes": 18463,
+    "full_authenticated_draft_and_anonymous_published_bytes_verified": true,
+    "name": "complete-state-year-controls.csv",
+    "sha256": "7f7a9c1fb0f6c6aeeea4a6f892050dc623355ef3d08356803bee26e243130357",
+    "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-historical-controls-20261108-02/complete-state-year-controls.csv"
+  }
+}

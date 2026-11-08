@@ -2,9 +2,9 @@
 import { readFileSync } from 'node:fs';
 type NativeRow = { state_code: string; year: number; control_measure: string;
 	native_ballot_count: number; reported_cast_ballots: number | null; registered: number | null;
-	source_labeled_final: boolean; source_time_label: string };
+	source_labeled_final: boolean; source_time_label: string; source_report_status: string };
 const { names } = Astro.props as { names: Record<string, string> };
-const base = 'data/participation-native-history/20261108-01/';
+const base = 'data/participation-native-history/20261108-02/';
 const result: { rows: NativeRow[] } = JSON.parse(readFileSync(base + 'selection.json', 'utf8'));
 const download = JSON.parse(readFileSync(base + 'download.json', 'utf8'));
 const number = (value: number) => value.toLocaleString('en-US');
@@ -14,6 +14,7 @@ const labels: Record<string, string> = {
 	'complete-source-specific-survey-comparison.csv': 'All 434 study/frame comparisons (CSV)',
 	'complete-administrative-time-comparisons.csv': 'All administrative comparisons (CSV)',
 	'complete-native-mode-accounting.csv': 'Native mode accounting (CSV)',
+	'complete-native-source-selection.csv': 'All 25 native source observations (CSV)',
 	'summary.json': 'Scope and methods (JSON)',
 };
 ---
@@ -39,6 +40,8 @@ const labels: Record<string, string> = {
 					<td data-native-fraction>{!held && row.reported_cast_ballots !== null && row.registered
 						? `${(100 * row.reported_cast_ballots / row.registered).toFixed(2)}%` : 'Not comparable'}</td>
 					<td data-native-status>{held ? 'Held: conflicting printed total'
+						: row.source_report_status === 'native_statewide_summary_no_independent_certification'
+							? 'Native statewide summary'
 						: row.source_labeled_final ? 'Source-labeled final' : 'Preliminary snapshot'}</td>
 				</tr>;
 			})}</tbody>
@@ -46,8 +49,10 @@ const labels: Record<string, string> = {
 	</div>
 	<p>Hawaii's historical statewide totals reconcile separate native summaries and PDFs.
 		Its 2026 state summary is six ballots below the native unit sum; the difference stays visible
-		in the full query. Wyoming's 2022 native workbook sum is <strong>held</strong>: Natrona's
+		in the full query. Wyoming's 2022 count uses the separate statewide ballot PDF and native
+		summary workbook. Its original unit aggregate remains <strong>held</strong>: Natrona's
 		printed county total is two ballots higher than its precinct and statewide figures.
+		Both observations and the explicit state-source selection remain in the full source ledger.
 		No registration denominator is inferred for Wyoming.</p>
 	<p>These source-frame fractions are not eligibility rates, original-cohort retention or independent
 		validation of the survey model. AP final weights may already use outcome calibration.
@@ -58,4 +63,12 @@ const labels: Record<string, string> = {
 			{labels[asset.name]}
 		</a>
 	</>)}</p>
+	<details class="explorer-notes" data-native-history-previous-versions>
+		<summary>Previous complete source-specific version</summary>
+		<p>{download.previous_assets.map((asset: { name: string; url: string }, index: number) => <>
+			{index > 0 && ' | '}<a href={asset.url} data-native-history-previous-download={asset.name}>
+				{labels[asset.name]}
+			</a>
+		</>)}</p>
+	</details>
 </section>
