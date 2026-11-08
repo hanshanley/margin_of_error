@@ -203,7 +203,11 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<div class="explorer-toolbar">
 				<div class="controls" aria-label="Data filters">
 					<label id="state-label">State<select id="state-select"><option>North Carolina</option></select></label>
-					<label id="precinct-state-label" hidden>State<select disabled aria-label="Precinct coverage"><option>North Carolina</option></select></label>
+					<label id="precinct-state-label" hidden>State<select id="precinct-state-select"><option>North Carolina</option></select></label>
+					<label id="precinct-layer-label" hidden>Precinct layer<select id="precinct-layer">
+						<option value="participation">Participation counts / rates</option>
+						<option value="results">Candidate results · red / blue</option>
+					</select></label>
 					<label id="county-label" hidden>County<select id="precinct-county"><option value="">All counties</option></select></label>
 					<label id="precinct-search-label" hidden>Find a precinct<input id="precinct-search" type="search" list="precinct-options" placeholder="ID or precinct name" autocomplete="off" /><datalist id="precinct-options"></datalist></label>
 					<label>Year<select id="year"></select></label>
@@ -302,10 +306,22 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<ParticipationSurvey />
 		</details>
 
-		<section id="methods-panel" class="participation-secondary" data-section="methods" aria-labelledby="methods-heading">
-		<header class="section-intro"><p class="kicker">Sources, definitions & research</p><h2 id="methods-heading">What is behind the numbers?</h2>
-			<p>Public inputs, complete downloads and explicit limits. Our independent 2026 demographic model is not yet validated.</p></header>
+		<section id="methods-panel" class="participation-secondary" data-section="methods" role="tabpanel"
+			aria-labelledby="tab-methods" tabindex="0">
+		<header class="section-intro"><p class="kicker">Sources, definitions & research</p><h2 id="methods-heading">Methods & data</h2>
+			<p>Choose the definitions, source period, research audit or download ledger you need.
+				Survey turnout, administrative ballot counts and candidate votes remain separate.</p></header>
+		<nav class="methods-guide" aria-label="Methods and data sections">
+			<a href="#definitions"><strong>Definitions</strong><span>Denominators, historical breaks and missing data</span></a>
+			<a href="#updates-panel"><strong>2026 sources</strong><span>Reporting clocks, coverage audits and native measures</span></a>
+			<a href="#participation-model"><strong>Experimental research</strong><span>Model tests and independent survey inputs</span></a>
+			<a href="#downloads"><strong>Complete data</strong><span>Original files, checksums, licenses and source ledgers</span></a>
+		</nav>
 
+		<section class="methods-cluster" aria-label="Model tests and survey inputs">
+		<header class="methods-cluster-heading"><p class="eyebrow">Experimental research</p>
+			<h2>Model tests and survey inputs</h2>
+			<p>The prototype and input audit are shown separately from observed participation. Neither is a 2026 estimate.</p></header>
 		<details class="participation-current participation-model" id="participation-model"
 			data-data-root="/voter-participation/data/">
 			<summary>Our independent method and reliability tests</summary>
@@ -405,7 +421,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		</details>
 
 		</section>
-		<details id="updates-panel" class="participation-reference participation-secondary" data-section="methods">
+		<details id="updates-panel" class="participation-reference methods-primary-disclosure">
 		<summary>2026 source coverage, reporting audits & complete downloads</summary>
 		<p>Explore 2026 through the regular year selector. These saved source tables preserve the reporting details;
 			demographic ballot counts are not group turnout rates.</p>
@@ -798,7 +814,11 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			The 2024 national snapshot, source definitions, and complete downloads below
 			remain available without it.</p></noscript>
 
-		<details class="participation-reference participation-secondary" id="national-snapshot" data-section="methods">
+		<section class="methods-cluster" aria-label="Definitions and historical series">
+		<header class="methods-cluster-heading"><p class="eyebrow">Definitions & historical series</p>
+			<h2>What the atlas measures</h2>
+			<p>Choose a concise definition, a static 2024 survey snapshot or the complete voting-method history.</p></header>
+		<details class="participation-reference" id="national-snapshot">
 			<summary>Read the 2024 national snapshot</summary>
 			<p>Percent of civilian noninstitutionalized adult citizens who reported voting.
 				These are CPS survey estimates, not validated individual voting records.
@@ -811,7 +831,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				</tr>)}</tbody>
 			</table></div>
 		</details>
-		<details class="participation-reference participation-secondary" id="definitions" data-section="methods">
+		<details class="participation-reference" id="definitions">
 			<summary>What is being measured?</summary>
 			<dl>
 				<dt>Adult citizens (CPS)</dt><dd>Civilian noninstitutionalized adults who are citizens.
@@ -844,7 +864,21 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				do not fill those gaps.</p>
 			<div id="methods"></div>
 		</details>
-		<section class="participation-downloads participation-secondary" id="downloads" data-section="methods" aria-labelledby="download-title">
+		{methodsPointer && <details id="method-reference" class="participation-reference">
+			<summary>National voting methods, 1996–2024 · complete survey history</summary>
+			<p>CPS shares among voters, not turnout rates among eligible citizens. The 1996–2016 series excludes
+				unknown method/timing responses; 2018–2024 retains them. The questionnaire also changed in 2004.
+				State administrative reporting starts in 2008 and may combine absentee methods or omit categories.</p>
+			<div class="table-wrap"><table><caption>Percent of voters by method; definitions differ across the 2018 break.</caption>
+				<thead><tr><th>Year</th><th>Election Day · in person</th><th>Early · in person</th><th>Mail</th><th>Unknown</th><th>Survey universe</th></tr></thead>
+				<tbody>{methodOverall.map(row => <tr><th scope="row">{row.year}</th>
+					{['election_day', 'early_in_person', 'mail', 'unknown'].map(mode =>
+						<td>{row.methods[mode] == null ? 'Excluded / not reported' : `${row.methods[mode]!.toFixed(1)}%`}</td>)}
+					<td>{row.universe.replaceAll('_', ' ')}</td></tr>)}</tbody>
+			</table></div>
+		</details>}
+		</section>
+		<section class="participation-downloads" id="downloads" aria-labelledby="download-title">
 			<h2 id="download-title">Data behind the analysis</h2>
 			<p>Complete ZIPs and CSV tables are hosted on GitHub with their original bytes preserved.
 				<a href="/participation-downloads.json">Download locations and checksums</a>.</p>
@@ -937,6 +971,9 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					</div>
 				</details>}
 			</>)}
+			<details class="download-ledger">
+				<summary>Browse every complete file, audit and source ledger</summary>
+				<p>Links retain their full labels so scope, office, geography, source family and review status remain explicit.</p>
 			<div class="download-links">
 				<a href={`${mapRepairRelease}complete-michigan-participation-map-repair-20261107-01.zip`} download>Michigan: complete precinct-count query, official 2026 geometry, all 63 mapped/withheld dispositions and verification (ZIP)</a>
 				<a href={`${mapRepairRelease}complete-vermont-2026-municipal-participation.zip`} download>Vermont: all 247 municipality observations, exact dated VCGI reference query, original responses and verification (ZIP)</a>
@@ -1031,26 +1068,15 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<a href={`${nationwidePath}counties.csv`} download>All 2026 county counts (CSV)</a>
 					<a href={`${nationwidePath}precincts.csv`} download>All 2026 precinct / reporting-row counts (CSV)</a></>}
 			</div>
+			</details>
 		</section>
-		{methodsPointer && <details id="method-reference" class="participation-reference participation-secondary" data-section="methods">
-			<summary>National voting methods, 1996–2024 · complete survey history</summary>
-			<p>CPS shares among voters, not turnout rates among eligible citizens. The 1996–2016 series excludes
-				unknown method/timing responses; 2018–2024 retains them. The questionnaire also changed in 2004.
-				State administrative reporting starts in 2008 and may combine absentee methods or omit categories.</p>
-			<div class="table-wrap"><table><caption>Percent of voters by method; definitions differ across the 2018 break.</caption>
-				<thead><tr><th>Year</th><th>Election Day · in person</th><th>Early · in person</th><th>Mail</th><th>Unknown</th><th>Survey universe</th></tr></thead>
-				<tbody>{methodOverall.map(row => <tr><th scope="row">{row.year}</th>
-					{['election_day', 'early_in_person', 'mail', 'unknown'].map(mode =>
-						<td>{row.methods[mode] == null ? 'Excluded / not reported' : `${row.methods[mode]!.toFixed(1)}%`}</td>)}
-					<td>{row.universe.replaceAll('_', ' ')}</td></tr>)}</tbody>
-			</table></div>
-		</details>}
-		<p class="participation-sources participation-secondary" data-section="methods">Sources:{' '}
+		<p class="participation-sources">Sources:{' '}
 			<a href="https://www.census.gov/data/tables/time-series/demo/voting-and-registration/voting-historical-time-series.html">U.S. Census Bureau</a>{' '}
 			and <a href="https://www.ncsbe.gov/results-data/voter-history-data">North Carolina State Board of Elections</a>.{' '}
 			Candidate vote totals are never used as demographic participation.{' '}
 			<a href={`${manifest.source_repository}/tree/${manifest.source_revision}`}>Code, full data, and methods</a>.
 		</p>
+		</section>
 	</div>
 	<script is:inline src="/scripts/participation-explorer.js" type="module"></script>
 	<script is:inline src="/voter-participation/current.js" defer></script>

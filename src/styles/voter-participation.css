@@ -160,6 +160,21 @@
 .section-intro { max-width: 750px; margin: 2rem 0; }
 .section-intro h2 { font: 400 2rem var(--serif); margin: .5rem 0; }
 .section-intro p { font-size: .95rem; color: var(--muted); }
+.methods-guide { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin: 0 0 2.5rem; border: 1px solid var(--rule); background: var(--rule); }
+.methods-guide a { display: flex; flex-direction: column; gap: .35rem; min-width: 0; padding: 1rem; background: var(--paper); color: var(--ink); text-decoration: none; }
+.methods-guide strong { font: 500 .78rem var(--sans); }
+.methods-guide span { color: var(--muted); font: .7rem/1.45 var(--sans); }
+.methods-guide a:hover strong { text-decoration: underline; text-underline-offset: .2em; }
+.methods-cluster { margin: 2rem 0 2.5rem; }
+.methods-cluster-heading { max-width: 760px; margin-bottom: 1rem; }
+.methods-cluster-heading .eyebrow { margin: 0 0 .45rem; color: var(--muted); font: .65rem var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.methods-cluster-heading h2 { margin: 0; font: 400 clamp(1.35rem, 2.5vw, 1.7rem) var(--serif); }
+.methods-cluster-heading p { max-width: 70ch; margin: .55rem 0 0; color: var(--muted); font-size: .82rem; }
+.methods-primary-disclosure { margin: 2.5rem 0; border-block: 1px solid var(--rule); }
+.methods-primary-disclosure > summary { padding: 1.15rem 0; font-size: .95rem; }
+.download-ledger { margin-top: 1.5rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+.download-ledger > summary { font-size: .82rem; }
+.download-ledger .download-links { margin-top: 1rem; padding-left: 1rem; border-left: 1px solid var(--rule); }
 .participation-current { margin: 1.5rem 0 2rem; padding: 1.25rem 0; border-block: 1px solid var(--rule); }
 .participation-current h2 { font: 400 clamp(1.5rem, 3vw, 1.9rem) var(--serif); margin: .5rem 0 1rem; }
 .participation-current h3 { font-size: 1.2rem; margin-top: 1.75rem; }
@@ -206,6 +221,9 @@
 	.map-tools button { min-width: 40px; min-height: 40px; }
 	.map-help { font-size: .6rem; }
 	.participation-page th, .participation-page td { padding: .6rem .4rem; }
+	.methods-guide { grid-template-columns: 1fr 1fr; }
+	.methods-guide a { padding: .85rem; }
+	.download-ledger .download-links { padding-left: .75rem; }
 	.js .nc-current-controls { grid-template-columns: 1fr; }
 	.nc-current-stats { grid-template-columns: 1fr; }
 }

@@ -6,7 +6,7 @@ import { copyFile, mkdtemp, readdir, readFile, rmdir, stat, unlink, writeFile } 
 import { tmpdir } from 'node:os';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { participationCurrentRoot, participationHistoricalRoot, participationCountyContextRoots, participationDownload, participationRelease } from '../public/scripts/participation-downloads.js';
+import { participationCurrentRoot, participationHistoricalRoot, participationArchivedNationwideRoot, participationCountyContextRoots, participationDownload, participationRelease } from '../public/scripts/participation-downloads.js';
 
 const repository = 'hanshanley/margin_of_error';
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -89,7 +89,7 @@ export async function preparePages(output, upload = false) {
 		files.push({ path: name, name: url.split('/').at(-1), url, bytes: bytes.length, sha256: sha256(bytes) });
 	}
 	assert.ok(files.length, 'Prepare a fresh, complete build before publishing');
-	const pinnedFiles = files.filter(file => [participationCurrentRoot, participationHistoricalRoot, ...Object.values(participationCountyContextRoots),
+	const pinnedFiles = files.filter(file => [participationCurrentRoot, participationHistoricalRoot, participationArchivedNationwideRoot, ...Object.values(participationCountyContextRoots),
 		'https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-swing-20261106-02/',
 		'https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-']
 		.some(root => file.url.startsWith(root)));

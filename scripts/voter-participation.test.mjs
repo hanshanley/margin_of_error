@@ -6,7 +6,7 @@ import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { previewSvg, publicationScript, sourceRevision } from './stage-voter-participation.mjs';
-import { participationDownload, participationHistoricalRoot } from '../public/scripts/participation-downloads.js';
+import { participationDownload, participationHistoricalRoot, participationArchivedNationwideRoot } from '../public/scripts/participation-downloads.js';
 import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles, verifyPagesSize, verifyPagesByteCounts } from './prepare-participation-pages.mjs';
 import { appendPrecinctHistory } from './build-precinct-histories.mjs';
 
@@ -41,6 +41,25 @@ test('bulk download routing preserves full snapshots and leaves interactive JSON
 	assert.equal(participationDownload('/participation-current/latest.json'), '/participation-current/latest.json');
 	assert.equal(rewriteDownloadHtml(`<a href="${path}" download>Full data</a><script>fetch("${path}")</script>`,
 		[{ path, url }]), `<a href="${url}" download>Full data</a><script>fetch("${path}")</script>`);
+});
+
+test('only four byte-verified archived nationwide snapshots route to complete pinned originals', () => {
+	for (const date of ['20261104T152630Z', '20261104T144402Z', '20261104T144145Z', '20261104T143957Z']) {
+		const path = `/voter-participation/data/nationwide/${date}/snapshot.json`;
+		const url = participationArchivedNationwideRoot + `${date}/snapshot.json`;
+		assert.equal(participationDownload(path), url);
+		assert.equal(rewriteDownloadHtml(`<a href="${path}">Full snapshot</a>`, [{ path, url }]),
+			`<a href="${url}">Full snapshot</a>`);
+		assert.equal(participationDownload(url), url);
+	}
+	for (const path of [
+		'/voter-participation/data/nationwide/latest.json',
+		'/voter-participation/data/nationwide/20261108T104314Z/snapshot.json',
+		'/voter-participation/data/nationwide/20261104T152630Z/reporting.csv',
+	]) {
+		if (!path.endsWith('.csv')) assert.equal(participationDownload(path), path);
+		else assert.ok(!participationDownload(path).startsWith(participationArchivedNationwideRoot));
+	}
 });
 
 test('Pages size includes tar headers and padding, not just file contents', async () => {

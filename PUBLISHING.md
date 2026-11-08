@@ -120,8 +120,17 @@ a byte counter before upload; passing the summed-file check alone is insufficien
 Context09's fifteen redundant geometry copies also use their complete originals at
 fixed revision `2f839e94dcbef8f35786bc7f8184f2b844ebaaf4`. Full byte/hash verification
 precedes removing only build-output copies. Together with the existing relocations,
-the download manifest must contain 432 complete files; no archive or source export
+the download manifest originally contained 432 complete files; no archive or source export
 is reduced or replaced.
+
+Four archived nationwide `snapshot.json` files from November 4, 2026
+(`20261104T143957Z`, `20261104T144145Z`, `20261104T144402Z`, `20261104T152630Z`)
+now use their complete originals at the same pinned research revision. Preparation
+verifies all 16,260,811 bytes before removing only redundant build-output copies;
+their sources, complete archives, other snapshots and current interactive inputs
+remain unchanged. The shared router and standalone compatibility renderer both
+retain the exact pinned URLs. The complete relocation manifest now contains
+436 files. Do not broaden this rule to unverified snapshots or change the source pin.
 
 New releases have server-enforced immutability. Create each as a draft, attach
 and byte-verify every complete query asset, then publish the draft; assets and

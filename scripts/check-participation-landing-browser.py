@@ -74,7 +74,14 @@ def check(base, proof=None, baseline_html=None):
                             expect(page.locator("#mode")).to_have_value("available")
                     if baseline:
                         actual = Inventory(response.text())
-                        assert actual.ids == baseline.ids + Counter({"participation-research": 1})
+                        additions = Counter({
+                            "precinct-state-select": 1,
+                            "precinct-layer-label": 1,
+                            "precinct-layer": 1,
+                        })
+                        if not baseline.ids["participation-research"]:
+                            additions["participation-research"] = 1
+                        assert actual.ids == baseline.ids + additions
                         assert actual.downloads == baseline.downloads, "A complete download changed"
                     downloads = page.locator("#downloads a[download]").evaluate_all(
                         "links => links.map(link => link.getAttribute('href'))")
