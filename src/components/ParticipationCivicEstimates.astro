@@ -1,0 +1,155 @@
+---
+import { readFileSync } from 'node:fs';
+type Participation = { scope: string; dimension: string; group: string; label: string; n: number;
+	modeled_voter_pct: string; modeled_nonvoter_pct: string; already_voted_self_report_pct: string };
+type Flow = { prior_election: string; dimension: string; group: string; label: string;
+	prior_choice: string; n: number; D_pct: string; R_pct: string; O_U_pct: string; N_pct: string };
+type Margin = { prior_election: string; switching_pp: string; modeled_nonparticipation_pp: string;
+	no_prior_contest_vote_entry_pp: string; other_or_unresolved_pp: string; denominator_pp: string;
+	total_within_source_margin_change_pp: string };
+const { names } = Astro.props as { names: Record<string, string> };
+const data = 'data/participation-civic-estimates/20261108-01/';
+const result: { participation: Participation[]; conditional_flows: Flow[]; margin_components: Margin[];
+	conditional_flow_dispositions: { status: string }[] } =
+	JSON.parse(readFileSync(`${data}output/summary.json`, 'utf8'));
+const download = JSON.parse(readFileSync(`${data}output/download.json`, 'utf8'));
+const release = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-civic-estimates-20261108-01/';
+const pct = (value: string) => `${Number(value).toFixed(2)}%`;
+const pp = (value: string) => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)}`;
+const states = result.participation.filter(row => row.scope !== 'POOLED_SOURCE');
+const pooled = result.participation.filter(row => row.scope === 'POOLED_SOURCE');
+const overall = pooled.find(row => row.dimension === 'overall')!;
+const dimensions: Record<string, string> = { AGE6: 'Age in the current study', RACETH5: 'Source race / ethnicity',
+	EDUC: 'Education', SEX: 'Sex assigned at birth', GENDER3: 'Gender identity',
+	INCOME: '2025 household income', RUCC: 'County urban / suburban / rural context' };
+const prior = (year: string, value: string) => value === 'N' ? `No recalled ${year} contest vote`
+	: year === '2024' ? (value === 'D' ? 'Recalled Harris' : 'Recalled Trump')
+		: (value === 'D' ? 'Recalled Democratic House' : 'Recalled Republican House');
+const withheld = result.conditional_flow_dispositions.filter(row =>
+	row.status === 'withheld_sparse_source_joint_support').length;
+---
+
+<section id="participation-civic-estimates" class="participation-current" aria-labelledby="civic-estimates-title"
+	data-publication-class="exploratory-source-weighted-survey-model">
+	<h3 id="civic-estimates-title">A voter-and-nonvoter study: exploratory 2026 estimates</h3>
+	<p>NORC's Civic Health and Elections Project includes <strong>113,020 source respondents in all 50 states</strong>.
+		Unlike the current-voter-only SSRS tables, this separate file also includes model-classified nonvoters.
+		These are <strong>source-weighted estimates, not administratively observed turnout or measured staying home</strong>.</p>
+	<p>The supplied weight's exact target, calibration and field period remain unqualified.
+		“Pooled source” is not a certified national population estimate. Choices mix reported and intended votes;
+		recalled past choices do not identify the full original electorate. No current response is reweighted to
+		the old Trump/Harris split, and no design-aware confidence interval is invented.</p>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Pooled study-frame participation">
+		<table><caption>Pooled source frame, not national turnout. Already-voted reports and model classifications differ.</caption>
+			<thead><tr><th scope="col">Study frame</th><th scope="col">Modeled voter</th><th scope="col">Modeled nonvoter</th>
+				<th scope="col">Self-reported already voted</th><th scope="col">Source n</th></tr></thead>
+			<tbody><tr data-civic-overall>
+				<th scope="row">Pooled source</th><td data-civic-voter>{pct(overall.modeled_voter_pct)}</td>
+				<td data-civic-nonvoter>{pct(overall.modeled_nonvoter_pct)}</td>
+				<td data-civic-reported>{pct(overall.already_voted_self_report_pct)}</td>
+				<td>{overall.n.toLocaleString('en-US')}</td>
+			</tr></tbody>
+		</table>
+	</div>
+	<details class="explorer-notes"><summary>All 50 state source estimates; D.C. not sampled</summary>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="All state study-frame participation estimates">
+			<table><caption>Each row uses that state's respondents and native weights, not a national allocation.
+				Source-weighted modeled participation is not certified state turnout.</caption>
+				<thead><tr><th scope="col">State</th><th scope="col">Modeled voter</th><th scope="col">Modeled nonvoter</th>
+					<th scope="col">Self-reported already voted</th><th scope="col">Source n</th></tr></thead>
+				<tbody>{states.map(row => <tr data-civic-state={row.scope}>
+					<th scope="row">{names[row.scope]}</th><td data-civic-voter>{pct(row.modeled_voter_pct)}</td>
+					<td data-civic-nonvoter>{pct(row.modeled_nonvoter_pct)}</td>
+					<td data-civic-reported>{pct(row.already_voted_self_report_pct)}</td>
+					<td>{row.n.toLocaleString('en-US')}</td>
+				</tr>)}
+					<tr data-civic-state="DC"><th scope="row">District of Columbia</th>
+						<td colspan="4">Not sampled; no estimate allocated</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</details>
+	<details class="explorer-notes"><summary>Broad demographic source comparisons and conditional choices</summary>
+		<p>Current attributes are not fixed 2024 cohorts. Unknown and disclosure-removed attributes remain in the
+			overall denominator, not recovered or assigned to named groups. Dimensions overlap and must not be added.
+			The {withheld} sparse conditional rows stay withheld; source support is not a precision guarantee.</p>
+		{Object.entries(dimensions).map(([dimension, label]) => <details class="explorer-notes">
+			<summary>{label}</summary>
+			<div class="table-wrap" tabindex="0" role="region" aria-label={`${label} modeled participation`}>
+				<table><thead><tr><th scope="col">Pooled source group</th><th scope="col">Modeled voter</th>
+					<th scope="col">Modeled nonvoter</th><th scope="col">Already-voted report</th><th scope="col">Source n</th></tr></thead>
+					<tbody>{pooled.filter(row => row.dimension === dimension).map(row =>
+						<tr data-civic-demographic={`${dimension}:${row.group}`}>
+							<th scope="row">{row.label}</th><td data-civic-voter>{pct(row.modeled_voter_pct)}</td>
+							<td data-civic-nonvoter>{pct(row.modeled_nonvoter_pct)}</td>
+							<td data-civic-reported>{pct(row.already_voted_self_report_pct)}</td>
+							<td>{row.n.toLocaleString('en-US')}</td>
+						</tr>)}</tbody>
+				</table>
+			</div>
+			<div class="table-wrap" tabindex="0" role="region" aria-label={`${label} conditional current choices`}>
+				<table><caption>Percent of the full recalled prior-choice group within this current study frame.
+					Not percentages of all original historical voters.</caption>
+					<thead><tr><th scope="col">Group / recalled prior choice</th><th scope="col">Modeled voter, D House</th>
+						<th scope="col">Modeled voter, R House</th><th scope="col">Modeled voter, other / unresolved</th>
+						<th scope="col">Modeled nonvoter</th></tr></thead>
+					<tbody>{result.conditional_flows.filter(row => row.dimension === dimension).map(row =>
+						<tr data-civic-flow={`${row.prior_election}:${dimension}:${row.group}:${row.prior_choice}`}>
+							<th scope="row">{row.label} · {prior(row.prior_election, row.prior_choice)}</th>
+							<td>{pct(row.D_pct)}</td><td>{pct(row.R_pct)}</td><td>{pct(row.O_U_pct)}</td><td>{pct(row.N_pct)}</td>
+						</tr>)}</tbody>
+				</table>
+			</div>
+		</details>)}
+	</details>
+	<details class="explorer-notes"><summary>Within-source switching and participation components</summary>
+		<p>The comparison holds the current source frame fixed: recalled 2024 President or 2022 House choice
+			versus modeled 2026 House choice. It is not the observed national swing or causal persuasion.
+			No prior contest vote is not first-ever voting, no prior ballot, or newly eligible status.
+			Eligibility, death and migration remain unknown. Other and unresolved terms are combined here.</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Pooled source prior-choice current destinations">
+			<table><caption>Full recalled prior-choice groups, including model-classified nonvoters.</caption>
+				<thead><tr><th scope="col">Recalled prior choice</th><th scope="col">Modeled voter, D House</th>
+					<th scope="col">Modeled voter, R House</th><th scope="col">Modeled voter, other / unresolved</th>
+					<th scope="col">Modeled nonvoter</th></tr></thead>
+				<tbody>{result.conditional_flows.filter(row => row.dimension === 'overall').map(row =>
+					<tr data-civic-flow={`${row.prior_election}:overall:all:${row.prior_choice}`}>
+						<th scope="row">{prior(row.prior_election, row.prior_choice)}</th>
+						<td>{pct(row.D_pct)}</td><td>{pct(row.R_pct)}</td><td>{pct(row.O_U_pct)}</td><td>{pct(row.N_pct)}</td>
+					</tr>)}</tbody>
+			</table>
+		</div>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Within-source normalized margin components">
+			<table><caption>Signed known-major-party margin points; the denominator term is required for exact accounting.</caption>
+				<thead><tr><th scope="col">Prior comparison</th><th scope="col">Switching</th><th scope="col">Modeled nonparticipation</th>
+					<th scope="col">No-prior-contest-vote entry</th><th scope="col">Other / unresolved</th>
+					<th scope="col">Denominator</th><th scope="col">Within-source total</th></tr></thead>
+				<tbody>{result.margin_components.map(row => <tr data-civic-margin={row.prior_election}>
+					<th scope="row">{row.prior_election} {row.prior_election === '2024' ? 'President' : 'House'} → 2026 House</th>
+					<td>{pp(row.switching_pp)}</td><td>{pp(row.modeled_nonparticipation_pp)}</td>
+					<td>{pp(row.no_prior_contest_vote_entry_pp)}</td><td>{pp(row.other_or_unresolved_pp)}</td>
+					<td>{pp(row.denominator_pp)}</td><td>{pp(row.total_within_source_margin_change_pp)}</td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+	</details>
+	<p class="caption">Native weights are not people. Rounding can prevent displayed percentages from summing to 100;
+		a displayed zero is not proof of no switching. No state survey estimate is allocated to counties or precincts.
+		Complete permitted aggregate inputs, all selected queries, all withholding dispositions and exact calculation code
+		are included in the download. Respondent records and original source documents are not redistributed.</p>
+	<div class="download-links">
+		<a href={`${release}complete-analysis.zip`} download data-civic-download="zip">Complete Civic aggregate analysis + inputs + code (ZIP)</a>
+		<a href={`${release}participation.csv`} download data-civic-download="participation">All selected state / demographic participation estimates (CSV)</a>
+		<a href={`${release}conditional-flows.csv`} download data-civic-download="flows">All selected conditional choice estimates (CSV)</a>
+		<a href={`${release}margin-components.csv`} download data-civic-download="margins">Exact within-source margin components (CSV)</a>
+		<a href={`${release}flow-dispositions.csv`} download>All conditional selection / withholding dispositions (CSV)</a>
+		<a href="https://civichealth.norc.org/">NORC study</a>
+	</div>
+	<p class="caption" data-civic-archive>Complete ZIP: {download.bytes.toLocaleString('en-US')} bytes · SHA-256
+		<code>{download.sha256}</code>. Attribution to NORC does not imply endorsement.</p>
+</section>
+
+<style>
+	#participation-civic-estimates { min-width: 0; }
+	#participation-civic-estimates code { overflow-wrap: anywhere; }
+</style>

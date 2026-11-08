@@ -1,0 +1,18 @@
+{
+  "status": "broad_factual_aggregate_selection_not_raw_source_redistribution",
+  "participation_rows": 79,
+  "selected_conditional_rows": 112,
+  "conditional_dispositions": 118,
+  "pooled_margin_comparisons": 2,
+  "state_participation_only_no_state_choice_flows_published": true,
+  "unknown_and_disclosure_removed_demographics_not_selected": true,
+  "private_queries_keep_all_unknowns_and_original_components": true,
+  "source_frame_unknowns_retained_in_every_overall_denominator": true,
+  "current_other_and_unknown_choices_combined_explicitly_for_public_coarse_cells": true,
+  "support_screen_not_precision_or_anonymity_guarantee": true,
+  "selection_after_analysis_not_preregistered": true,
+  "minimum_raw_binary_class_support": 52,
+  "source_dataset_or_document_license_not_claimed": true,
+  "rights_basis": "Original attributed numerical aggregate analysis; no respondent records or source documents redistributed.",
+  "public_input_sha256": "00cc086a15eb2f287d1dd210df3e5a65a52345d3f0de8760fed3f57054e2345d"
+}

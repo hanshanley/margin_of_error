@@ -1,0 +1,3398 @@
+{
+  "study": "NORC Civic Health and Elections Project 2026",
+  "status": "exploratory_source_weighted_not_population_certified",
+  "raw_source_rows": 113020,
+  "states_present": 50,
+  "dc_present": false,
+  "csv_sha256": "496a5b57fbc435210bdf78e2c1c3717879c0689c74081bee830d121b548c792f",
+  "codebook_sha256": "5c0e522820d36562d2610ea514ae693079f871b3352584ee070b628b02ac59c8",
+  "source_urls": {
+    "study": "https://civichealth.norc.org/",
+    "csv": "https://civichealth.norc.org/downloads/civichealth_datafile.csv",
+    "codebook": "https://civichealth.norc.org/downloads/civichealth_codebook.zip"
+  },
+  "field_period": null,
+  "weight_target_and_calibration": null,
+  "administrative_turnout_validation": false,
+  "original_coalition_population_validation": false,
+  "source_weight_units_are_people": false,
+  "participation": [
+    {
+      "scope": "AK",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1086,
+      "weight": "295.5246644974",
+      "weight_squared": "600.07641442717708881446",
+      "modeled_voter_weight": "142.0492205242",
+      "modeled_nonvoter_weight": "153.4754439732",
+      "already_voted_self_report_weight": "37.2637038146"
+    },
+    {
+      "scope": "AL",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1811,
+      "weight": "1886.2779655732",
+      "weight_squared": "7428.25985991941204937926",
+      "modeled_voter_weight": "870.8280351410",
+      "modeled_nonvoter_weight": "1015.4499304322",
+      "already_voted_self_report_weight": "42.3276067277"
+    },
+    {
+      "scope": "AR",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1509,
+      "weight": "906.2818470106",
+      "weight_squared": "1411.54058243347059948938",
+      "modeled_voter_weight": "461.6242014876",
+      "modeled_nonvoter_weight": "444.6576455230",
+      "already_voted_self_report_weight": "152.2754852869"
+    },
+    {
+      "scope": "AZ",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 3435,
+      "weight": "2470.9504670378",
+      "weight_squared": "6535.38649286604368652440",
+      "modeled_voter_weight": "1240.2243901407",
+      "modeled_nonvoter_weight": "1230.7260768971",
+      "already_voted_self_report_weight": "478.9533320367"
+    },
+    {
+      "scope": "CA",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 6101,
+      "weight": "11413.1548893564",
+      "weight_squared": "98449.07102144018948093016",
+      "modeled_voter_weight": "6798.3867321524",
+      "modeled_nonvoter_weight": "4614.7681572040",
+      "already_voted_self_report_weight": "2066.2253811244"
+    },
+    {
+      "scope": "CO",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1886,
+      "weight": "2256.5740308491",
+      "weight_squared": "14051.74056854359066756365",
+      "modeled_voter_weight": "1375.1096259924",
+      "modeled_nonvoter_weight": "881.4644048567",
+      "already_voted_self_report_weight": "539.2174247070"
+    },
+    {
+      "scope": "CT",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1625,
+      "weight": "1221.6616652070",
+      "weight_squared": "4486.61203011832437930086",
+      "modeled_voter_weight": "665.9408543127",
+      "modeled_nonvoter_weight": "555.7208108943",
+      "already_voted_self_report_weight": "168.4506882830"
+    },
+    {
+      "scope": "DE",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1000,
+      "weight": "399.3248858751",
+      "weight_squared": "547.43257167766950601093",
+      "modeled_voter_weight": "195.9565228566",
+      "modeled_nonvoter_weight": "203.3683630185",
+      "already_voted_self_report_weight": "48.9034647382"
+    },
+    {
+      "scope": "FL",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 4180,
+      "weight": "7941.4892475816",
+      "weight_squared": "64067.84684285874860031580",
+      "modeled_voter_weight": "4331.9933494448",
+      "modeled_nonvoter_weight": "3609.4958981368",
+      "already_voted_self_report_weight": "1471.3734655900"
+    },
+    {
+      "scope": "GA",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 3826,
+      "weight": "4048.9555024010",
+      "weight_squared": "15313.31177614702457392846",
+      "modeled_voter_weight": "2166.5914467903",
+      "modeled_nonvoter_weight": "1882.3640556107",
+      "already_voted_self_report_weight": "796.1332326634"
+    },
+    {
+      "scope": "HI",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 695,
+      "weight": "414.9628417319",
+      "weight_squared": "952.20902569064824166719",
+      "modeled_voter_weight": "200.1151891939",
+      "modeled_nonvoter_weight": "214.8476525380",
+      "already_voted_self_report_weight": "60.6140192261"
+    },
+    {
+      "scope": "IA",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 2587,
+      "weight": "1080.1250465718",
+      "weight_squared": "1311.88884720720280363948",
+      "modeled_voter_weight": "695.9118914633",
+      "modeled_nonvoter_weight": "384.2131551085",
+      "already_voted_self_report_weight": "178.8714099482"
+    },
+    {
+      "scope": "ID",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1087,
+      "weight": "511.6535173134",
+      "weight_squared": "1092.37842506493037523418",
+      "modeled_voter_weight": "366.1171307384",
+      "modeled_nonvoter_weight": "145.5363865750",
+      "already_voted_self_report_weight": "112.1987282167"
+    },
+    {
+      "scope": "IL",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 3852,
+      "weight": "4382.0164853833",
+      "weight_squared": "26203.93212845606994583987",
+      "modeled_voter_weight": "2093.4717629361",
+      "modeled_nonvoter_weight": "2288.5447224472",
+      "already_voted_self_report_weight": "537.4214024040"
+    },
+    {
+      "scope": "IN",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1260,
+      "weight": "2328.7746724804",
+      "weight_squared": "18012.54813208513906457076",
+      "modeled_voter_weight": "1018.2438562264",
+      "modeled_nonvoter_weight": "1310.5308162540",
+      "already_voted_self_report_weight": "265.9037384241"
+    },
+    {
+      "scope": "KS",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 2483,
+      "weight": "1004.3661713888",
+      "weight_squared": "1247.58627546301400536396",
+      "modeled_voter_weight": "564.8816406874",
+      "modeled_nonvoter_weight": "439.4845307014",
+      "already_voted_self_report_weight": "165.8186916347"
+    },
+    {
+      "scope": "KY",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1783,
+      "weight": "1668.5213241595",
+      "weight_squared": "5335.48475953012775197627",
+      "modeled_voter_weight": "738.2483265994",
+      "modeled_nonvoter_weight": "930.2729975601",
+      "already_voted_self_report_weight": "113.0310682170"
+    },
+    {
+      "scope": "LA",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1852,
+      "weight": "1477.4817313007",
+      "weight_squared": "3750.17744932381900873937",
+      "modeled_voter_weight": "769.7176926455",
+      "modeled_nonvoter_weight": "707.7640386552",
+      "already_voted_self_report_weight": "161.2217332024"
+    },
+    {
+      "scope": "MA",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1956,
+      "weight": "2526.0184637535",
+      "weight_squared": "11359.98845884632689571955",
+      "modeled_voter_weight": "1364.1557203199",
+      "modeled_nonvoter_weight": "1161.8627434336",
+      "already_voted_self_report_weight": "391.1662122815"
+    },
+    {
+      "scope": "MD",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1905,
+      "weight": "2230.1313699364",
+      "weight_squared": "9843.21091481293509112544",
+      "modeled_voter_weight": "1203.0252078618",
+      "modeled_nonvoter_weight": "1027.1061620746",
+      "already_voted_self_report_weight": "351.0156387608"
+    },
+    {
+      "scope": "ME",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 2134,
+      "weight": "519.0517571854",
+      "weight_squared": "343.43075449756854371770",
+      "modeled_voter_weight": "362.8474056204",
+      "modeled_nonvoter_weight": "156.2043515650",
+      "already_voted_self_report_weight": "118.1844393620"
+    },
+    {
+      "scope": "MI",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 4303,
+      "weight": "4143.3320910909",
+      "weight_squared": "12815.76168898018110829961",
+      "modeled_voter_weight": "2505.0842071382",
+      "modeled_nonvoter_weight": "1638.2478839527",
+      "already_voted_self_report_weight": "733.3814318488"
+    },
+    {
+      "scope": "MN",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 2965,
+      "weight": "1940.2648547858",
+      "weight_squared": "2802.50573367343877514392",
+      "modeled_voter_weight": "1451.3110154709",
+      "modeled_nonvoter_weight": "488.9538393149",
+      "already_voted_self_report_weight": "360.9705068049"
+    },
+    {
+      "scope": "MO",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1741,
+      "weight": "2168.1519720040",
+      "weight_squared": "11219.51254289342299448808",
+      "modeled_voter_weight": "1110.9136427959",
+      "modeled_nonvoter_weight": "1057.2383292081",
+      "already_voted_self_report_weight": "200.2680532648"
+    },
+    {
+      "scope": "MS",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1443,
+      "weight": "1020.1132709062",
+      "weight_squared": "2682.67871971676309040452",
+      "modeled_voter_weight": "501.4968246102",
+      "modeled_nonvoter_weight": "518.6164462960",
+      "already_voted_self_report_weight": "49.0316900359"
+    },
+    {
+      "scope": "MT",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 955,
+      "weight": "400.3803062787",
+      "weight_squared": "531.60880207060516218629",
+      "modeled_voter_weight": "248.9265726163",
+      "modeled_nonvoter_weight": "151.4537336624",
+      "already_voted_self_report_weight": "85.2285386696"
+    },
+    {
+      "scope": "NC",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 3895,
+      "weight": "3884.9699749167",
+      "weight_squared": "13745.07510576240604066485",
+      "modeled_voter_weight": "2181.6378137158",
+      "modeled_nonvoter_weight": "1703.3321612009",
+      "already_voted_self_report_weight": "837.6375989013"
+    },
+    {
+      "scope": "ND",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 282,
+      "weight": "195.3575020920",
+      "weight_squared": "291.79050228981694517306",
+      "modeled_voter_weight": "119.0285548044",
+      "modeled_nonvoter_weight": "76.3289472876",
+      "already_voted_self_report_weight": "21.3893778252"
+    },
+    {
+      "scope": "NE",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1900,
+      "weight": "627.0239822402",
+      "weight_squared": "722.25023207295754746646",
+      "modeled_voter_weight": "385.9840996880",
+      "modeled_nonvoter_weight": "241.0398825522",
+      "already_voted_self_report_weight": "89.6810469463"
+    },
+    {
+      "scope": "NH",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1659,
+      "weight": "433.9589974509",
+      "weight_squared": "502.58240756589881047887",
+      "modeled_voter_weight": "327.3672994768",
+      "modeled_nonvoter_weight": "106.5916979741",
+      "already_voted_self_report_weight": "19.8372326394"
+    },
+    {
+      "scope": "NJ",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 2105,
+      "weight": "3296.6667060581",
+      "weight_squared": "28440.84121330708038894371",
+      "modeled_voter_weight": "1540.6630840294",
+      "modeled_nonvoter_weight": "1756.0036220287",
+      "already_voted_self_report_weight": "324.7741961796"
+    },
+    {
+      "scope": "NM",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1936,
+      "weight": "721.4388446705",
+      "weight_squared": "1069.07063072675196572521",
+      "modeled_voter_weight": "375.8558041586",
+      "modeled_nonvoter_weight": "345.5830405119",
+      "already_voted_self_report_weight": "141.8380633108"
+    },
+    {
+      "scope": "NV",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 2682,
+      "weight": "1231.1303842669",
+      "weight_squared": "2597.97539435400354947713",
+      "modeled_voter_weight": "562.5907526184",
+      "modeled_nonvoter_weight": "668.5396316485",
+      "already_voted_self_report_weight": "216.9977128229"
+    },
+    {
+      "scope": "NY",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 4511,
+      "weight": "6601.8096585748",
+      "weight_squared": "30519.28239215631289171298",
+      "modeled_voter_weight": "3381.7234827354",
+      "modeled_nonvoter_weight": "3220.0861758394",
+      "already_voted_self_report_weight": "752.7443139581"
+    },
+    {
+      "scope": "OH",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 4005,
+      "weight": "3983.1684852739",
+      "weight_squared": "12553.36223218821220473483",
+      "modeled_voter_weight": "2396.4929912930",
+      "modeled_nonvoter_weight": "1586.6754939809",
+      "already_voted_self_report_weight": "653.7344402121"
+    },
+    {
+      "scope": "OK",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1565,
+      "weight": "1202.9231582676",
+      "weight_squared": "2667.60696165056441519362",
+      "modeled_voter_weight": "576.1696329239",
+      "modeled_nonvoter_weight": "626.7535253437",
+      "already_voted_self_report_weight": "78.4026982359"
+    },
+    {
+      "scope": "OR",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1655,
+      "weight": "1873.2159368986",
+      "weight_squared": "5466.01941988573128330478",
+      "modeled_voter_weight": "1255.1957299847",
+      "modeled_nonvoter_weight": "618.0202069139",
+      "already_voted_self_report_weight": "453.0228481038"
+    },
+    {
+      "scope": "PA",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 3665,
+      "weight": "4455.1495280310",
+      "weight_squared": "16078.38241750684647127016",
+      "modeled_voter_weight": "2593.8392384404",
+      "modeled_nonvoter_weight": "1861.3102895906",
+      "already_voted_self_report_weight": "452.1993003461"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "AGE6",
+      "group": "1",
+      "label": "18-24",
+      "n": 6946,
+      "weight": "14912.3449464995",
+      "weight_squared": "142788.81534388941353904619",
+      "modeled_voter_weight": "3104.3151309972",
+      "modeled_nonvoter_weight": "11808.0298155023",
+      "already_voted_self_report_weight": "567.0839045573"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "AGE6",
+      "group": "2",
+      "label": "25-29",
+      "n": 7525,
+      "weight": "12911.4117543418",
+      "weight_squared": "96276.47525000921057713390",
+      "modeled_voter_weight": "3956.0900304705",
+      "modeled_nonvoter_weight": "8955.3217238713",
+      "already_voted_self_report_weight": "674.9429102634"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "AGE6",
+      "group": "3",
+      "label": "30-39",
+      "n": 18756,
+      "weight": "22234.2685470678",
+      "weight_squared": "140577.41300973081167821624",
+      "modeled_voter_weight": "8012.2555592263",
+      "modeled_nonvoter_weight": "14222.0129878415",
+      "already_voted_self_report_weight": "1483.2016460052"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "AGE6",
+      "group": "4",
+      "label": "40-49",
+      "n": 21062,
+      "weight": "19301.1861885824",
+      "weight_squared": "87866.19740005391965423620",
+      "modeled_voter_weight": "9924.1066639348",
+      "modeled_nonvoter_weight": "9377.0795246476",
+      "already_voted_self_report_weight": "2070.2948045061"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "AGE6",
+      "group": "5",
+      "label": "50-64",
+      "n": 29344,
+      "weight": "20983.9569513013",
+      "weight_squared": "46454.29564011231416847291",
+      "modeled_voter_weight": "15964.6548832518",
+      "modeled_nonvoter_weight": "5019.3020680495",
+      "already_voted_self_report_weight": "4468.7015855123"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "AGE6",
+      "group": "6",
+      "label": "65+",
+      "n": 28883,
+      "weight": "22166.6024959993",
+      "weight_squared": "36632.77772820172830214595",
+      "modeled_voter_weight": "21705.0378595475",
+      "modeled_nonvoter_weight": "461.5646364518",
+      "already_voted_self_report_weight": "9128.4089435850"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "EDUC",
+      "group": "1",
+      "label": "High school or less",
+      "n": 28719,
+      "weight": "40854.3061741623",
+      "weight_squared": "258259.93086811380233997959",
+      "modeled_voter_weight": "15487.9741511245",
+      "modeled_nonvoter_weight": "25366.3320230378",
+      "already_voted_self_report_weight": "3606.6868624094"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "EDUC",
+      "group": "2",
+      "label": "Some college/assoc. degree",
+      "n": 39696,
+      "weight": "33758.5960032613",
+      "weight_squared": "144016.03998521768488247319",
+      "modeled_voter_weight": "19217.9737924955",
+      "modeled_nonvoter_weight": "14540.6222107658",
+      "already_voted_self_report_weight": "5505.2756488785"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "EDUC",
+      "group": "3",
+      "label": "College graduate",
+      "n": 24417,
+      "weight": "23798.7515803482",
+      "weight_squared": "101951.01257963290731752914",
+      "modeled_voter_weight": "16831.1493887814",
+      "modeled_nonvoter_weight": "6967.6021915668",
+      "already_voted_self_report_weight": "5318.8335412178"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "EDUC",
+      "group": "4",
+      "label": "Postgraduate study",
+      "n": 19588,
+      "weight": "13986.9203263772",
+      "weight_squared": "45675.55853577649334121284",
+      "modeled_voter_weight": "11093.3576905996",
+      "modeled_nonvoter_weight": "2893.5626357776",
+      "already_voted_self_report_weight": "3942.4574228987"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "GENDER3",
+      "group": "1",
+      "label": "Male",
+      "n": 47541,
+      "weight": "53493.0932312793",
+      "weight_squared": "307569.54992430698063672645",
+      "modeled_voter_weight": "28634.1307896089",
+      "modeled_nonvoter_weight": "24858.9624416704",
+      "already_voted_self_report_weight": "8060.3878403751"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "GENDER3",
+      "group": "2",
+      "label": "Female",
+      "n": 63237,
+      "weight": "57036.9912038912",
+      "weight_squared": "231646.10871954444110313098",
+      "modeled_voter_weight": "33250.5661596970",
+      "modeled_nonvoter_weight": "23786.4250441942",
+      "already_voted_self_report_weight": "10097.9393263770"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "GENDER3",
+      "group": "3",
+      "label": "Transgender/other",
+      "n": 1420,
+      "weight": "1710.9952049435",
+      "weight_squared": "10146.95967524981954502691",
+      "modeled_voter_weight": "623.6301960086",
+      "modeled_nonvoter_weight": "1087.3650089349",
+      "already_voted_self_report_weight": "178.7962969186"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "INCOME",
+      "group": "1",
+      "label": "Under $25,000",
+      "n": 19627,
+      "weight": "22515.6554953074",
+      "weight_squared": "128174.89764197027768630788",
+      "modeled_voter_weight": "7542.6160568730",
+      "modeled_nonvoter_weight": "14973.0394384344",
+      "already_voted_self_report_weight": "1981.6064604511"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "INCOME",
+      "group": "2",
+      "label": "$25,000-$49,999",
+      "n": 25467,
+      "weight": "25303.5320022839",
+      "weight_squared": "125784.83459002935843570483",
+      "modeled_voter_weight": "12684.3177693919",
+      "modeled_nonvoter_weight": "12619.2142328920",
+      "already_voted_self_report_weight": "3529.6277258100"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "INCOME",
+      "group": "3",
+      "label": "$50,000-$74,999",
+      "n": 22214,
+      "weight": "22360.9104611344",
+      "weight_squared": "111188.40087563762845856996",
+      "modeled_voter_weight": "12566.2623777092",
+      "modeled_nonvoter_weight": "9794.6480834252",
+      "already_voted_self_report_weight": "3674.6868632600"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "INCOME",
+      "group": "4",
+      "label": "$75,000-$99,999",
+      "n": 16696,
+      "weight": "16101.8840830341",
+      "weight_squared": "71518.10668086518484954875",
+      "modeled_voter_weight": "10453.9623214170",
+      "modeled_nonvoter_weight": "5647.9217616171",
+      "already_voted_self_report_weight": "2905.3323351103"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "INCOME",
+      "group": "5",
+      "label": "$100,000 or more",
+      "n": 27805,
+      "weight": "25608.8713296856",
+      "weight_squared": "111376.97481534488910183626",
+      "modeled_voter_weight": "19010.9150122658",
+      "modeled_nonvoter_weight": "6597.9563174198",
+      "already_voted_self_report_weight": "6150.0978496749"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "RACETH5",
+      "group": "1",
+      "label": "White",
+      "n": 73457,
+      "weight": "63462.4998682822",
+      "weight_squared": "143115.28076885205549696694",
+      "modeled_voter_weight": "48197.2979702450",
+      "modeled_nonvoter_weight": "15265.2018980372",
+      "already_voted_self_report_weight": "14751.5952912962"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "RACETH5",
+      "group": "2",
+      "label": "African American or Black",
+      "n": 15048,
+      "weight": "16346.3610834290",
+      "weight_squared": "81265.93779224824253415642",
+      "modeled_voter_weight": "6190.7790976742",
+      "modeled_nonvoter_weight": "10155.5819857548",
+      "already_voted_self_report_weight": "1473.3340841485"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "RACETH5",
+      "group": "3",
+      "label": "Latino or Hispanic",
+      "n": 12293,
+      "weight": "19416.0910356248",
+      "weight_squared": "183576.66913165428998079000",
+      "modeled_voter_weight": "5145.0865154773",
+      "modeled_nonvoter_weight": "14271.0045201475",
+      "already_voted_self_report_weight": "1260.4735808932"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "RACETH5",
+      "group": "4",
+      "label": "Asian, Native Hawaiian or Other Pacific Islander",
+      "n": 3429,
+      "weight": "5599.6117188535",
+      "weight_squared": "75624.68221933370632204523",
+      "modeled_voter_weight": "1221.3951669419",
+      "modeled_nonvoter_weight": "4378.2165519116",
+      "already_voted_self_report_weight": "346.6446861364"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "RACETH5",
+      "group": "5",
+      "label": "Other",
+      "n": 6711,
+      "weight": "6712.9775420244",
+      "weight_squared": "63968.19870505140144744072",
+      "modeled_voter_weight": "1294.4508992602",
+      "modeled_nonvoter_weight": "5418.5266427642",
+      "already_voted_self_report_weight": "373.4633579907"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "RUCC",
+      "group": "1",
+      "label": "Urban county",
+      "n": 53984,
+      "weight": "63796.2891993471",
+      "weight_squared": "363340.51296258043275379641",
+      "modeled_voter_weight": "35109.5899414172",
+      "modeled_nonvoter_weight": "28686.6992579299",
+      "already_voted_self_report_weight": "10739.8015843362"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "RUCC",
+      "group": "2",
+      "label": "Suburban county",
+      "n": 38749,
+      "weight": "33618.0171356857",
+      "weight_squared": "141707.37107955033503011925",
+      "modeled_voter_weight": "19186.3755450533",
+      "modeled_nonvoter_weight": "14431.6415906324",
+      "already_voted_self_report_weight": "5529.7815898751"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "RUCC",
+      "group": "3",
+      "label": "Rural county",
+      "n": 20287,
+      "weight": "15605.6936649608",
+      "weight_squared": "48518.89805468988749480262",
+      "modeled_voter_weight": "8673.2945418505",
+      "modeled_nonvoter_weight": "6932.3991231103",
+      "already_voted_self_report_weight": "2201.9856169876"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "SEX",
+      "group": "1",
+      "label": "Male",
+      "n": 48088,
+      "weight": "54241.6843443665",
+      "weight_squared": "313045.51864169759419752319",
+      "modeled_voter_weight": "28878.9146982260",
+      "modeled_nonvoter_weight": "25362.7696461405",
+      "already_voted_self_report_weight": "8108.2769935693"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "SEX",
+      "group": "2",
+      "label": "Female",
+      "n": 64112,
+      "weight": "57990.5139916070",
+      "weight_squared": "236280.54581632798731830664",
+      "modeled_voter_weight": "33623.3848424409",
+      "modeled_nonvoter_weight": "24367.1291491661",
+      "already_voted_self_report_weight": "10228.9607767543"
+    },
+    {
+      "scope": "POOLED_SOURCE",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 113020,
+      "weight": "113019.9999999936",
+      "weight_squared": "553566.78209682065527871828",
+      "modeled_voter_weight": "62969.2600283210",
+      "modeled_nonvoter_weight": "50050.7399716726",
+      "already_voted_self_report_weight": "18471.5687911989"
+    },
+    {
+      "scope": "RI",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 946,
+      "weight": "392.4340125206",
+      "weight_squared": "681.63739672869435138090",
+      "modeled_voter_weight": "187.1750989056",
+      "modeled_nonvoter_weight": "205.2589136150",
+      "already_voted_self_report_weight": "50.5460387927"
+    },
+    {
+      "scope": "SC",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 2068,
+      "weight": "1865.3857425700",
+      "weight_squared": "4641.09161881645461833146",
+      "modeled_voter_weight": "1041.9772473406",
+      "modeled_nonvoter_weight": "823.4084952294",
+      "already_voted_self_report_weight": "293.3363193801"
+    },
+    {
+      "scope": "SD",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 942,
+      "weight": "334.6305855779",
+      "weight_squared": "391.59134097751681074247",
+      "modeled_voter_weight": "157.8906253490",
+      "modeled_nonvoter_weight": "176.7399602289",
+      "already_voted_self_report_weight": "30.5684449127"
+    },
+    {
+      "scope": "TN",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 2026,
+      "weight": "2348.6649924297",
+      "weight_squared": "8927.52995439833388966939",
+      "modeled_voter_weight": "1074.8807765586",
+      "modeled_nonvoter_weight": "1273.7842158711",
+      "already_voted_self_report_weight": "339.8476878941"
+    },
+    {
+      "scope": "TX",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 5853,
+      "weight": "9175.7911310050",
+      "weight_squared": "59940.98582079908483952810",
+      "modeled_voter_weight": "5168.7362388174",
+      "modeled_nonvoter_weight": "4007.0548921876",
+      "already_voted_self_report_weight": "2117.6918904957"
+    },
+    {
+      "scope": "UT",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 754,
+      "weight": "1014.7939951125",
+      "weight_squared": "3707.14559870153118794779",
+      "modeled_voter_weight": "644.7853117389",
+      "modeled_nonvoter_weight": "370.0086833736",
+      "already_voted_self_report_weight": "222.4270813488"
+    },
+    {
+      "scope": "VA",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 3512,
+      "weight": "3198.2312066434",
+      "weight_squared": "10129.16257717713015372358",
+      "modeled_voter_weight": "1853.0571915403",
+      "modeled_nonvoter_weight": "1345.1740151031",
+      "already_voted_self_report_weight": "541.1145649759"
+    },
+    {
+      "scope": "VT",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 754,
+      "weight": "250.2665563419",
+      "weight_squared": "443.38277102509726549197",
+      "modeled_voter_weight": "161.7026706267",
+      "modeled_nonvoter_weight": "88.5638857152",
+      "already_voted_self_report_weight": "52.5670555155"
+    },
+    {
+      "scope": "WA",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1262,
+      "weight": "2761.8425154339",
+      "weight_squared": "23463.70716108171584274753",
+      "modeled_voter_weight": "1833.0223234370",
+      "modeled_nonvoter_weight": "928.8201919969",
+      "already_voted_self_report_weight": "679.6457145133"
+    },
+    {
+      "scope": "WI",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 3289,
+      "weight": "1780.2774346926",
+      "weight_squared": "3065.37442882858797632168",
+      "modeled_voter_weight": "1375.2437146685",
+      "modeled_nonvoter_weight": "405.0337200241",
+      "already_voted_self_report_weight": "342.0850639659"
+    },
+    {
+      "scope": "WV",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 1513,
+      "weight": "596.0949930377",
+      "weight_squared": "1030.45968650028075014297",
+      "modeled_voter_weight": "234.4518996912",
+      "modeled_nonvoter_weight": "361.6430933465",
+      "already_voted_self_report_weight": "49.4776700806"
+    },
+    {
+      "scope": "WY",
+      "dimension": "overall",
+      "group": "all",
+      "label": "All respondents",
+      "n": 781,
+      "weight": "139.2326342273",
+      "weight_squared": "94.29401357580158817123",
+      "modeled_voter_weight": "96.6159800117",
+      "modeled_nonvoter_weight": "42.6166542156",
+      "already_voted_self_report_weight": "24.5513425687"
+    }
+  ],
+  "conditional_flows": [
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "18-24",
+      "n": 2024,
+      "weights": {
+        "D": "1090.2693854743",
+        "R": "23.8136787454",
+        "O_U": "37.7129649260",
+        "N": "405.4562598687"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "18-24",
+      "n": 912,
+      "weights": {
+        "D": "101.8660357882",
+        "R": "464.5347019317",
+        "O_U": "29.1854436816",
+        "N": "375.3410602972"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "18-24",
+      "n": 1016,
+      "weights": {
+        "D": "536.8846705480",
+        "R": "15.1243762184",
+        "O_U": "7.2036818136",
+        "N": "269.5074459725"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "25-29",
+      "n": 2785,
+      "weights": {
+        "D": "1586.9549206284",
+        "R": "49.7442082833",
+        "O_U": "24.0307718056",
+        "N": "258.2557314750"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "25-29",
+      "n": 1511,
+      "weights": {
+        "D": "169.0730126455",
+        "R": "881.2850251780",
+        "O_U": "54.3857667937",
+        "N": "483.6370309484"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "25-29",
+      "n": 2365,
+      "weights": {
+        "D": "1441.7997735703",
+        "R": "49.5205037994",
+        "O_U": "20.6401814786",
+        "N": "243.0935069540"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "25-29",
+      "n": 1056,
+      "weights": {
+        "D": "88.7016344012",
+        "R": "722.8591267200",
+        "O_U": "18.9108901215",
+        "N": "276.9580446463"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "3",
+      "prior_choice": "D",
+      "label": "30-39",
+      "n": 6800,
+      "weights": {
+        "D": "3065.0168142602",
+        "R": "87.0794762926",
+        "O_U": "83.2572278675",
+        "N": "494.7632760824"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "3",
+      "prior_choice": "R",
+      "label": "30-39",
+      "n": 4715,
+      "weights": {
+        "D": "285.2532816816",
+        "R": "2113.9077879311",
+        "O_U": "102.7555378279",
+        "N": "861.8078770559"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "3",
+      "prior_choice": "D",
+      "label": "30-39",
+      "n": 6320,
+      "weights": {
+        "D": "3018.0215389404",
+        "R": "105.0392061233",
+        "O_U": "72.7874962440",
+        "N": "383.7614875597"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "3",
+      "prior_choice": "R",
+      "label": "30-39",
+      "n": 3663,
+      "weights": {
+        "D": "180.3048114534",
+        "R": "1916.6835136753",
+        "O_U": "68.1785216296",
+        "N": "467.2445531506"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "4",
+      "prior_choice": "D",
+      "label": "40-49",
+      "n": 7882,
+      "weights": {
+        "D": "3774.2463373056",
+        "R": "104.5212490321",
+        "O_U": "90.6523761373",
+        "N": "354.5513555172"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "4",
+      "prior_choice": "R",
+      "label": "40-49",
+      "n": 6333,
+      "weights": {
+        "D": "335.4798811597",
+        "R": "3224.3598282177",
+        "O_U": "112.0043134371",
+        "N": "669.7375319625"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "4",
+      "prior_choice": "D",
+      "label": "40-49",
+      "n": 7436,
+      "weights": {
+        "D": "3711.9347976491",
+        "R": "120.9538016253",
+        "O_U": "62.4492022264",
+        "N": "315.0582412559"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "4",
+      "prior_choice": "R",
+      "label": "40-49",
+      "n": 5146,
+      "weights": {
+        "D": "209.6125707729",
+        "R": "2936.7176239071",
+        "O_U": "80.7778086176",
+        "N": "390.4936205019"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "5",
+      "prior_choice": "D",
+      "label": "50-64",
+      "n": 11664,
+      "weights": {
+        "D": "6210.0925530875",
+        "R": "185.7531412200",
+        "O_U": "134.1661535980",
+        "N": "208.2136239981"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "5",
+      "prior_choice": "R",
+      "label": "50-64",
+      "n": 10955,
+      "weights": {
+        "D": "407.5917925306",
+        "R": "6201.2708619501",
+        "O_U": "204.2693100867",
+        "N": "355.5998907857"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "5",
+      "prior_choice": "D",
+      "label": "50-64",
+      "n": 10760,
+      "weights": {
+        "D": "5932.9685269593",
+        "R": "146.0770402251",
+        "O_U": "104.7072630627",
+        "N": "236.5199595028"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "5",
+      "prior_choice": "R",
+      "label": "50-64",
+      "n": 9566,
+      "weights": {
+        "D": "378.0686969386",
+        "R": "5853.0781679857",
+        "O_U": "106.4400835741",
+        "N": "261.0386748830"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "6",
+      "prior_choice": "D",
+      "label": "65+",
+      "n": 13997,
+      "weights": {
+        "D": "9796.8548148163",
+        "R": "300.4438525431",
+        "O_U": "213.0870623705",
+        "N": "38.8147206005"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "6",
+      "prior_choice": "R",
+      "label": "65+",
+      "n": 11637,
+      "weights": {
+        "D": "416.6342331904",
+        "R": "8695.8691757586",
+        "O_U": "194.9197154994",
+        "N": "51.7468892891"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "6",
+      "prior_choice": "D",
+      "label": "65+",
+      "n": 12961,
+      "weights": {
+        "D": "9360.8781409018",
+        "R": "236.9647015946",
+        "O_U": "146.9378311070",
+        "N": "23.7884641158"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "6",
+      "prior_choice": "R",
+      "label": "65+",
+      "n": 11155,
+      "weights": {
+        "D": "496.9611033672",
+        "R": "8439.0096742806",
+        "O_U": "154.9165105397",
+        "N": "31.1268343271"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "High school or less",
+      "n": 7572,
+      "weights": {
+        "D": "4793.1981627021",
+        "R": "158.4922097001",
+        "O_U": "97.7462714242",
+        "N": "745.3379151719"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "High school or less",
+      "n": 8517,
+      "weights": {
+        "D": "498.2999002867",
+        "R": "5798.0308694088",
+        "O_U": "196.4643554051",
+        "N": "1035.9786043802"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "High school or less",
+      "n": 6641,
+      "weights": {
+        "D": "4406.7988667150",
+        "R": "139.7239951501",
+        "O_U": "59.3267204400",
+        "N": "546.7147315925"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "High school or less",
+      "n": 6798,
+      "weights": {
+        "D": "300.2386943570",
+        "R": "5136.5176326295",
+        "O_U": "95.2107175270",
+        "N": "663.9577353812"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "Some college/assoc. degree",
+      "n": 14859,
+      "weights": {
+        "D": "7210.8329308453",
+        "R": "177.1762822125",
+        "O_U": "185.0702051818",
+        "N": "501.7329431879"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "Some college/assoc. degree",
+      "n": 13841,
+      "weights": {
+        "D": "499.8577616109",
+        "R": "7183.6742940292",
+        "O_U": "263.6268555387",
+        "N": "1042.7843679463"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "Some college/assoc. degree",
+      "n": 13248,
+      "weights": {
+        "D": "6785.9949056475",
+        "R": "189.9759461531",
+        "O_U": "131.3391021139",
+        "N": "485.7698360434"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "Some college/assoc. degree",
+      "n": 11440,
+      "weights": {
+        "D": "361.2397784646",
+        "R": "6589.8843604788",
+        "O_U": "168.6248308904",
+        "N": "519.1407402229"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "3",
+      "prior_choice": "D",
+      "label": "College graduate",
+      "n": 11660,
+      "weights": {
+        "D": "7794.7513629036",
+        "R": "235.0830420010",
+        "O_U": "183.3257603263",
+        "N": "321.9186372809"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "3",
+      "prior_choice": "R",
+      "label": "College graduate",
+      "n": 8190,
+      "weights": {
+        "D": "480.5393526202",
+        "R": "5462.7875379380",
+        "O_U": "157.6905559428",
+        "N": "506.6525975371"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "3",
+      "prior_choice": "D",
+      "label": "College graduate",
+      "n": 10638,
+      "weights": {
+        "D": "7289.7441258962",
+        "R": "222.2996318645",
+        "O_U": "127.6154875865",
+        "N": "285.5393843616"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "3",
+      "prior_choice": "R",
+      "label": "College graduate",
+      "n": 7330,
+      "weights": {
+        "D": "437.2910790595",
+        "R": "5216.6900702745",
+        "O_U": "119.3151700251",
+        "N": "283.8888500982"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "4",
+      "prior_choice": "D",
+      "label": "Postgraduate study",
+      "n": 11032,
+      "weights": {
+        "D": "5709.6193530619",
+        "R": "180.4112538314",
+        "O_U": "116.4473756444",
+        "N": "185.3955238571"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "4",
+      "prior_choice": "R",
+      "label": "Postgraduate study",
+      "n": 5484,
+      "weights": {
+        "D": "237.4765429456",
+        "R": "3124.8466942555",
+        "O_U": "76.8520638385",
+        "N": "207.7538246679"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "4",
+      "prior_choice": "D",
+      "label": "Postgraduate study",
+      "n": 10310,
+      "weights": {
+        "D": "5510.3971525719",
+        "R": "121.6800564184",
+        "O_U": "96.0938295454",
+        "N": "155.8983887805"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "4",
+      "prior_choice": "R",
+      "label": "Postgraduate study",
+      "n": 5421,
+      "weights": {
+        "D": "299.7110842513",
+        "R": "3172.4962608686",
+        "O_U": "53.4384815478",
+        "N": "132.3333549133"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "GENDER3",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "Male",
+      "n": 17581,
+      "weights": {
+        "D": "10772.8048935468",
+        "R": "356.5843821304",
+        "O_U": "257.1653804825",
+        "N": "648.7404086089"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "GENDER3",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "Male",
+      "n": 16932,
+      "weights": {
+        "D": "882.4687091724",
+        "R": "10631.2649298450",
+        "O_U": "291.3029202297",
+        "N": "1404.6873719363"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "GENDER3",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "Male",
+      "n": 16306,
+      "weights": {
+        "D": "10274.0570292107",
+        "R": "321.7505317363",
+        "O_U": "197.7293426174",
+        "N": "605.3212956534"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "GENDER3",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "Male",
+      "n": 15123,
+      "weights": {
+        "D": "756.6770282110",
+        "R": "10191.8451905489",
+        "O_U": "217.2117000886",
+        "N": "863.2361583825"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "GENDER3",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "Female",
+      "n": 26810,
+      "weights": {
+        "D": "14361.3256437896",
+        "R": "387.9966393598",
+        "O_U": "315.9847031998",
+        "N": "1033.4577024952"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "GENDER3",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "Female",
+      "n": 18941,
+      "weights": {
+        "D": "825.3248444781",
+        "R": "10855.0921626450",
+        "O_U": "397.3993056807",
+        "N": "1359.8002234722"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "GENDER3",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "Female",
+      "n": 23938,
+      "weights": {
+        "D": "13417.1738257162",
+        "R": "344.9110148773",
+        "O_U": "211.8272216643",
+        "N": "833.2600972051"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "GENDER3",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "Female",
+      "n": 15745,
+      "weights": {
+        "D": "639.1108920215",
+        "R": "9852.6258174985",
+        "O_U": "218.4601536240",
+        "N": "725.2634886418"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "Under $25,000",
+      "n": 6037,
+      "weights": {
+        "D": "2665.4277566271",
+        "R": "87.0837929883",
+        "O_U": "69.1032002819",
+        "N": "501.3484556329"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "Under $25,000",
+      "n": 4292,
+      "weights": {
+        "D": "216.1550459435",
+        "R": "1921.7070079560",
+        "O_U": "110.4240389227",
+        "N": "551.6266934348"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "Under $25,000",
+      "n": 5307,
+      "weights": {
+        "D": "2500.7768358941",
+        "R": "72.9725118472",
+        "O_U": "46.9621766462",
+        "N": "420.9485671559"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "Under $25,000",
+      "n": 3305,
+      "weights": {
+        "D": "137.9201726338",
+        "R": "1694.9856139077",
+        "O_U": "59.3168363677",
+        "N": "405.5435700415"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "$25,000-$49,999",
+      "n": 9538,
+      "weights": {
+        "D": "4970.2388132160",
+        "R": "126.8962116754",
+        "O_U": "131.8311582680",
+        "N": "422.0221360057"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "$25,000-$49,999",
+      "n": 7733,
+      "weights": {
+        "D": "329.8252890528",
+        "R": "4253.0945063737",
+        "O_U": "156.3992144183",
+        "N": "582.1403735551"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "$25,000-$49,999",
+      "n": 8563,
+      "weights": {
+        "D": "4685.7246208148",
+        "R": "135.0683120964",
+        "O_U": "88.7953597492",
+        "N": "452.8134147544"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "$25,000-$49,999",
+      "n": 6244,
+      "weights": {
+        "D": "231.0495416557",
+        "R": "3801.0712080449",
+        "O_U": "85.8024309954",
+        "N": "266.5913764572"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "3",
+      "prior_choice": "D",
+      "label": "$50,000-$74,999",
+      "n": 8900,
+      "weights": {
+        "D": "4960.6825614907",
+        "R": "120.5760683589",
+        "O_U": "113.5929178547",
+        "N": "351.0944187609"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "3",
+      "prior_choice": "R",
+      "label": "$50,000-$74,999",
+      "n": 7556,
+      "weights": {
+        "D": "363.4147884780",
+        "R": "4609.7227528042",
+        "O_U": "137.6654864526",
+        "N": "627.6298445819"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "3",
+      "prior_choice": "D",
+      "label": "$50,000-$74,999",
+      "n": 8016,
+      "weights": {
+        "D": "4655.8079823439",
+        "R": "116.1241125475",
+        "O_U": "74.4979288159",
+        "N": "209.3806359366"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "3",
+      "prior_choice": "R",
+      "label": "$50,000-$74,999",
+      "n": 6349,
+      "weights": {
+        "D": "276.0378461205",
+        "R": "4262.0928056531",
+        "O_U": "75.1586530056",
+        "N": "305.0838158937"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "4",
+      "prior_choice": "D",
+      "label": "$75,000-$99,999",
+      "n": 7078,
+      "weights": {
+        "D": "4221.4735076703",
+        "R": "139.5937639311",
+        "O_U": "86.8343072899",
+        "N": "203.9035113178"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "4",
+      "prior_choice": "R",
+      "label": "$75,000-$99,999",
+      "n": 6080,
+      "weights": {
+        "D": "310.3172888798",
+        "R": "3849.8853407895",
+        "O_U": "86.4780211816",
+        "N": "316.5274311383"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "4",
+      "prior_choice": "D",
+      "label": "$75,000-$99,999",
+      "n": 6406,
+      "weights": {
+        "D": "3946.4314691037",
+        "R": "117.3710768678",
+        "O_U": "65.6248558842",
+        "N": "124.3156394172"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "4",
+      "prior_choice": "R",
+      "label": "$75,000-$99,999",
+      "n": 5399,
+      "weights": {
+        "D": "237.5816801021",
+        "R": "3645.6321520715",
+        "O_U": "62.4519033538",
+        "N": "233.6466658904"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "5",
+      "prior_choice": "D",
+      "label": "$100,000 or more",
+      "n": 13363,
+      "weights": {
+        "D": "8594.9427572715",
+        "R": "272.6278998922",
+        "O_U": "179.0985111741",
+        "N": "275.4639625392"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "5",
+      "prior_choice": "R",
+      "label": "$100,000 or more",
+      "n": 10126,
+      "weights": {
+        "D": "490.6909668877",
+        "R": "6787.5709452542",
+        "O_U": "194.0646070428",
+        "N": "710.6713229252"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "5",
+      "prior_choice": "D",
+      "label": "$100,000 or more",
+      "n": 12349,
+      "weights": {
+        "D": "8111.9000000002",
+        "R": "223.8167385944",
+        "O_U": "137.1442042656",
+        "N": "265.0096832899"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "5",
+      "prior_choice": "R",
+      "label": "$100,000 or more",
+      "n": 9470,
+      "weights": {
+        "D": "512.6275410032",
+        "R": "6576.2168582615",
+        "O_U": "148.0979081528",
+        "N": "385.7014085093"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "White",
+      "n": 28146,
+      "weights": {
+        "D": "18604.2824779417",
+        "R": "599.5948397455",
+        "O_U": "418.7137506345",
+        "N": "497.9468541581"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "White",
+      "n": 28693,
+      "weights": {
+        "D": "1236.0926058913",
+        "R": "19216.0730464144",
+        "O_U": "576.0623998561",
+        "N": "1545.5584352922"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "White",
+      "n": 25242,
+      "weights": {
+        "D": "17130.3810500839",
+        "R": "505.4154385710",
+        "O_U": "312.4281608390",
+        "N": "371.5967759224"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "White",
+      "n": 25396,
+      "weights": {
+        "D": "1143.1724426393",
+        "R": "17965.9306289609",
+        "O_U": "360.7288574228",
+        "N": "831.7817493765"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "African American or Black",
+      "n": 7977,
+      "weights": {
+        "D": "3666.8231584683",
+        "R": "48.9018744098",
+        "O_U": "66.2007784982",
+        "N": "505.8005887334"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "African American or Black",
+      "n": 1400,
+      "weights": {
+        "D": "165.7643818590",
+        "R": "372.9890554866",
+        "O_U": "26.9792707262",
+        "N": "175.9136055516"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "African American or Black",
+      "n": 7525,
+      "weights": {
+        "D": "3653.6065640852",
+        "R": "59.5083165667",
+        "O_U": "45.2752710876",
+        "N": "455.7126140966"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "African American or Black",
+      "n": 1012,
+      "weights": {
+        "D": "70.6252539723",
+        "R": "352.2408986737",
+        "O_U": "17.8495646506",
+        "N": "128.9587415986"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "3",
+      "prior_choice": "D",
+      "label": "Latino or Hispanic",
+      "n": 4657,
+      "weights": {
+        "D": "2032.1203940807",
+        "R": "62.8375072494",
+        "O_U": "46.4060903710",
+        "N": "426.9635660327"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "3",
+      "prior_choice": "R",
+      "label": "Latino or Hispanic",
+      "n": 2795,
+      "weights": {
+        "D": "209.3142523333",
+        "R": "1098.0886953421",
+        "O_U": "44.3877038931",
+        "N": "564.5330034292"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "3",
+      "prior_choice": "D",
+      "label": "Latino or Hispanic",
+      "n": 4178,
+      "weights": {
+        "D": "2040.1825162619",
+        "R": "66.1040551421",
+        "O_U": "28.9025900834",
+        "N": "260.9208336869"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "3",
+      "prior_choice": "R",
+      "label": "Latino or Hispanic",
+      "n": 2101,
+      "weights": {
+        "D": "113.8850917052",
+        "R": "992.1243100250",
+        "O_U": "25.2313996088",
+        "N": "367.4260741016"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "4",
+      "prior_choice": "D",
+      "label": "Asian, Native Hawaiian or Other Pacific Islander",
+      "n": 1515,
+      "weights": {
+        "D": "590.0328730780",
+        "R": "18.6572146410",
+        "O_U": "19.7634711989",
+        "N": "177.7855489414"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "4",
+      "prior_choice": "R",
+      "label": "Asian, Native Hawaiian or Other Pacific Islander",
+      "n": 754,
+      "weights": {
+        "D": "57.0840746483",
+        "R": "243.6843834686",
+        "O_U": "11.7471772295",
+        "N": "177.1749530649"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "4",
+      "prior_choice": "D",
+      "label": "Asian, Native Hawaiian or Other Pacific Islander",
+      "n": 1362,
+      "weights": {
+        "D": "587.0114008741",
+        "R": "18.1363672450",
+        "O_U": "6.7920394040",
+        "N": "180.0402812029"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "5",
+      "prior_choice": "D",
+      "label": "Other",
+      "n": 2350,
+      "weights": {
+        "D": "468.8459620406",
+        "R": "10.2462990094",
+        "O_U": "25.6577577285",
+        "N": "126.8606487454"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "5",
+      "prior_choice": "R",
+      "label": "Other",
+      "n": 1791,
+      "weights": {
+        "D": "34.1851052667",
+        "R": "366.8860927012",
+        "O_U": "21.3183756126",
+        "N": "277.6703805281"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "5",
+      "prior_choice": "D",
+      "label": "Other",
+      "n": 2146,
+      "weights": {
+        "D": "463.4635555356",
+        "R": "20.5501184544",
+        "O_U": "16.9999803551",
+        "N": "189.1571558740"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "5",
+      "prior_choice": "R",
+      "label": "Other",
+      "n": 1382,
+      "weights": {
+        "D": "19.9762546163",
+        "R": "337.2325035228",
+        "O_U": "8.7294411664",
+        "N": "173.4396640324"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "Urban county",
+      "n": 23902,
+      "weights": {
+        "D": "15849.4446664002",
+        "R": "456.7228254379",
+        "O_U": "334.1166446787",
+        "N": "1083.2690431250"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "Urban county",
+      "n": 15167,
+      "weights": {
+        "D": "988.9117333810",
+        "R": "10063.6271684932",
+        "O_U": "310.7279019775",
+        "N": "1210.9944682571"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "Urban county",
+      "n": 22000,
+      "weights": {
+        "D": "15065.5162748260",
+        "R": "405.9654892550",
+        "O_U": "240.8668693708",
+        "N": "820.6285933714"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "Urban county",
+      "n": 12923,
+      "weights": {
+        "D": "769.4766116462",
+        "R": "9571.4398475284",
+        "O_U": "185.8299475811",
+        "N": "773.2672226329"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "Suburban county",
+      "n": 15094,
+      "weights": {
+        "D": "7341.6509850339",
+        "R": "204.6089553842",
+        "O_U": "188.5232132304",
+        "N": "466.4936378844"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "Suburban county",
+      "n": 12952,
+      "weights": {
+        "D": "517.8856750651",
+        "R": "7348.3679721107",
+        "O_U": "230.8215319954",
+        "N": "1055.6016208403"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "Suburban county",
+      "n": 13414,
+      "weights": {
+        "D": "6773.1772059774",
+        "R": "190.1279313238",
+        "O_U": "132.6964073696",
+        "N": "503.7130922645"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "Suburban county",
+      "n": 11193,
+      "weights": {
+        "D": "447.4509884377",
+        "R": "6739.0167426474",
+        "O_U": "157.5724245245",
+        "N": "531.1421541598"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "3",
+      "prior_choice": "D",
+      "label": "Rural county",
+      "n": 6206,
+      "weights": {
+        "D": "2359.9305333406",
+        "R": "90.1349095232",
+        "O_U": "60.4534984252",
+        "N": "210.2922865325"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "3",
+      "prior_choice": "R",
+      "label": "Rural county",
+      "n": 7994,
+      "weights": {
+        "D": "210.3066799900",
+        "R": "4194.3926439044",
+        "O_U": "156.6079616855",
+        "N": "533.6926002896"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "3",
+      "prior_choice": "D",
+      "label": "Rural county",
+      "n": 5470,
+      "weights": {
+        "D": "2185.1326128929",
+        "R": "77.6560479300",
+        "O_U": "41.1623791919",
+        "N": "151.6143974784"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "3",
+      "prior_choice": "R",
+      "label": "Rural county",
+      "n": 6926,
+      "weights": {
+        "D": "182.5619628822",
+        "R": "3834.7373451961",
+        "O_U": "93.1868278847",
+        "N": "300.9664127845"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "SEX",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "Male",
+      "n": 17789,
+      "weights": {
+        "D": "10886.7392856779",
+        "R": "361.2028321654",
+        "O_U": "257.3638435443",
+        "N": "686.5839183848"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "SEX",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "Male",
+      "n": 16983,
+      "weights": {
+        "D": "881.6083793533",
+        "R": "10667.1129969992",
+        "O_U": "292.9126471286",
+        "N": "1407.2132634894"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "SEX",
+      "group": "1",
+      "prior_choice": "D",
+      "label": "Male",
+      "n": 16483,
+      "weights": {
+        "D": "10369.3767487642",
+        "R": "326.3835955831",
+        "O_U": "198.3842589629",
+        "N": "623.9092083489"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "SEX",
+      "group": "1",
+      "prior_choice": "R",
+      "label": "Male",
+      "n": 15173,
+      "weights": {
+        "D": "761.5768826400",
+        "R": "10226.5230208861",
+        "O_U": "217.3869546261",
+        "N": "853.2246245773"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "SEX",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "Female",
+      "n": 27263,
+      "weights": {
+        "D": "14592.4444592721",
+        "R": "388.9433493914",
+        "O_U": "324.2898091512",
+        "N": "1068.6800627451"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "SEX",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "Female",
+      "n": 18988,
+      "weights": {
+        "D": "834.4953485306",
+        "R": "10859.4254638307",
+        "O_U": "400.3616584136",
+        "N": "1382.2569725754"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "SEX",
+      "group": "2",
+      "prior_choice": "D",
+      "label": "Female",
+      "n": 24282,
+      "weights": {
+        "D": "13595.2044740845",
+        "R": "346.1582616213",
+        "O_U": "215.8127386691",
+        "N": "848.5815627586"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "SEX",
+      "group": "2",
+      "prior_choice": "R",
+      "label": "Female",
+      "n": 15767,
+      "weights": {
+        "D": "636.9037534924",
+        "R": "9848.3960477318",
+        "O_U": "218.7210545474",
+        "N": "744.2899323427"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "D",
+      "label": "All respondents",
+      "n": 45202,
+      "weights": {
+        "D": "25551.0261847747",
+        "R": "751.4666903453",
+        "O_U": "583.0933563343",
+        "N": "1760.0549675419"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "R",
+      "label": "All respondents",
+      "n": 36113,
+      "weights": {
+        "D": "1717.1040884361",
+        "R": "21606.3877845083",
+        "O_U": "698.1573956584",
+        "N": "2800.2886893870"
+      }
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "N",
+      "label": "All respondents",
+      "n": 25875,
+      "weights": {
+        "D": "5115.2996183796",
+        "R": "3113.6473093568",
+        "O_U": "997.5127743396",
+        "N": "43720.6554842528"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "D",
+      "label": "All respondents",
+      "n": 40884,
+      "weights": {
+        "D": "24023.8260936963",
+        "R": "673.7494685088",
+        "O_U": "414.7256559323",
+        "N": "1475.9560831143"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "R",
+      "label": "All respondents",
+      "n": 31042,
+      "weights": {
+        "D": "1399.4895629661",
+        "R": "20145.1939353719",
+        "O_U": "436.5891999903",
+        "N": "1605.3757895772"
+      }
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "N",
+      "label": "All respondents",
+      "n": 35970,
+      "weights": {
+        "D": "7148.2411676608",
+        "R": "4881.0009566730",
+        "O_U": "1277.4557863148",
+        "N": "44967.2763355685"
+      }
+    }
+  ],
+  "conditional_flow_dispositions": [
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "withheld_sparse_source_joint_support"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "4",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "4",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "4",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "4",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "5",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "5",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "5",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "5",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "6",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "AGE6",
+      "group": "6",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "6",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "AGE6",
+      "group": "6",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "4",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "EDUC",
+      "group": "4",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "4",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "EDUC",
+      "group": "4",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "GENDER3",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "GENDER3",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "GENDER3",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "GENDER3",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "GENDER3",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "GENDER3",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "GENDER3",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "GENDER3",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "GENDER3",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "withheld_sparse_source_joint_support"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "GENDER3",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "withheld_sparse_source_joint_support"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "GENDER3",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "withheld_sparse_source_joint_support"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "GENDER3",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "withheld_sparse_source_joint_support"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "4",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "4",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "4",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "4",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "5",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "INCOME",
+      "group": "5",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "5",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "INCOME",
+      "group": "5",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "4",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "4",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "4",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "4",
+      "prior_choice": "R",
+      "status": "withheld_sparse_source_joint_support"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "5",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RACETH5",
+      "group": "5",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "5",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RACETH5",
+      "group": "5",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "RUCC",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "3",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "RUCC",
+      "group": "3",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "SEX",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "SEX",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "SEX",
+      "group": "1",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "SEX",
+      "group": "1",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "SEX",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "SEX",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "SEX",
+      "group": "2",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "SEX",
+      "group": "2",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2024",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "N",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "D",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "R",
+      "status": "selected_broad_conditional_source_estimate"
+    },
+    {
+      "prior_election": "2022",
+      "dimension": "overall",
+      "group": "all",
+      "prior_choice": "N",
+      "status": "selected_broad_conditional_source_estimate"
+    }
+  ],
+  "pooled_margin_primitives": [
+    {
+      "prior_election": "2024",
+      "m24": "1823.7032410064",
+      "m26": "7317.8869355064",
+      "t24": "55467.5791569860",
+      "t26": "59877.7491086628",
+      "switching": "1931.2747961816",
+      "modeled_nonparticipation": "1040.2337218451",
+      "no_prior_contest_vote_entry": "2001.6523090228",
+      "other_or_unresolved": "521.0228674505"
+    },
+    {
+      "prior_election": "2022",
+      "m24": "3001.6088133462",
+      "m26": "7317.8869355064",
+      "t24": "50174.9057891572",
+      "t26": "59877.7491086628",
+      "switching": "1451.4801889146",
+      "modeled_nonparticipation": "129.4197064629",
+      "no_prior_contest_vote_entry": "2267.2402109878",
+      "other_or_unresolved": "468.1380157949"
+    }
+  ],
+  "independent_native_verification": {
+    "proof_sha256": "6e081b12ad705ceec5e78ebb04f082d5569af7f82e46ee3a4842c6df3f678011",
+    "native_rows": 113020,
+    "joint_cells": 97700,
+    "decompositions": 3908,
+    "checks": 246204
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version": "20261108-01",
+  "file": "complete-analysis.zip",
+  "bytes": 98019,
+  "sha256": "cf76fce026c20adf0d581af33de399808c033722f67d26cb15db0e2673d636cd",
+  "members": 11,
+  "complete_selected_queries_inputs_and_code": true,
+  "raw_respondent_data_included": false,
+  "population_validation": false,
+  "participation_rows": 79,
+  "conditional_rows": 112,
+  "dispositions": 118,
+  "margin_comparisons": 2
+}

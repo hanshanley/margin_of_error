@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import ParticipationCoalitionScenarios from './ParticipationCoalitionScenarios.astro';
 import ParticipationEstimatedCoalitions from './ParticipationEstimatedCoalitions.astro';
 import ParticipationDemographicCounts from './ParticipationDemographicCounts.astro';
+import ParticipationCivicEstimates from './ParticipationCivicEstimates.astro';
 const base = '/participation-survey/20261107-02/';
 type JointRow = { prior_choice_share_pct: number | null;
 	current_choice_pct_within_prior_choice: Record<string, number | null> | null };
@@ -67,6 +68,7 @@ const mass = (row: Table, key: string) => {
 		presidential composition. They are not demographic turnout rates. A reported presidential nonvoter
 		may have voted in another 2024 contest; these tables cannot distinguish first-time voters,
 		returning voters or newly eligible residents.</p>
+	<ParticipationCivicEstimates names={names} />
 	<ParticipationDemographicCounts names={names} />
 	<ParticipationEstimatedCoalitions names={names} />
 	<ParticipationCoalitionScenarios names={names} />
