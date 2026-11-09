@@ -12,6 +12,25 @@ import { loadMichiganCountyParents, reviewMichiganCountyParents } from './michig
 const data = loadAdditionalParticipation({ nativeCountyParents: true });
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, skip_empty_lines: true });
 
+test('live Colorado counties use all64 native returned totals without changing the frozen source frame', () => {
+  const rows = data.counties.filter(row => row.state_code === 'CO');
+  assert.equal(rows.length, 64);
+  assert.equal(loadAdditionalParticipation().counties.filter(row => row.state_code === 'CO').length, 0);
+  const native = csv('data/county-source-reviews/20261109-colorado-returned-01/native-county-query.csv');
+  for (const original of native) {
+    const row = rows.find(row =>
+      row.native_record.All_Returned_Ballots_By_County.county === original.native_county);
+    assert.equal(row.ballots, Number(original.returned_ballots));
+    assert.equal(row.denominator, null);
+    assert.equal(row.reported_pct, null);
+    assert.equal(row.cast_ballot_count_qualified, false);
+    assert.equal(row.unique_voter_count_qualified, false);
+    assert.equal(row.reference_geometry.boundary_year, 2026);
+    assert.match(row.source_update_label, /November 5, 2026/);
+    assert.match(row.participation_measure_label, /Returned and processed/);
+  }
+});
+
 test('connects explicit Michigan county parents only in the live frame without changing any native unit', () => {
   const legacy = loadAdditionalParticipation();
   const rows = data.counties.filter(row => row.state_code === 'MI');

@@ -7,6 +7,7 @@ import { loadMichiganCountyParents } from './michigan-county-parents.mjs';
 import { loadMarylandCardCounts } from './maryland-county-cards.mjs';
 import { loadIndianaVoterStatistics } from './indiana-voter-statistics.mjs';
 import { loadWestVirginiaCountyModes } from './west-virginia-county-modes.mjs';
+import { loadColoradoCountyReturns } from './colorado-returned-counties.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -351,6 +352,24 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
       source_update_label: row.source_update_label, source_reporting_label: row.source_reporting_label,
       quality: [row.source_reporting_label, row.boundary_label, row.rate_withheld_reason,
         ...(row.geometry_withheld_reason ? [row.geometry_withheld_reason] : [])],
+    }));
+  }
+  if (nativeCountyParents) {
+    for (const row of loadColoradoCountyReturns().counties) counties.push(observation({
+      data_directory: 'data/county-source-reviews/20261109-colorado-returned-01',
+      base_url: '', complete_download_url: row.complete_download_url,
+    }, '', 'CO', row.county, row.county_fips, row.native_record, {
+      ballots: row.source_count, denominator: null, denominator_basis: 'county_electorate_not_supplied',
+      reported_pct: null, maps_approved: true, county_fips: row.county_fips,
+      reference_geometry: row.reference_geometry, native_record: row.native_record,
+      participation_measure_label: row.participation_measure_label,
+      source_mode: 'native_all_returned_and_processed',
+      source_count_qualified: true, cast_ballot_count_qualified: false, unique_voter_count_qualified: false,
+      source_url: row.source_url, source_update_label: row.source_update_label,
+      source_status_literal: row.source_status_literal, source_reporting_label: row.source_reporting_label,
+      quality: [row.source_reporting_label,
+        'Separate exact county identity review against the complete 2026 Census reference; not precincts.',
+        'Older provider mail-returned and early-in-person observations are not overwritten or relabelled.'],
     }));
   }
   const countyFrames = {};

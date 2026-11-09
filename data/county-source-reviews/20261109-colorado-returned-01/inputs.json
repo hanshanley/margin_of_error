@@ -1,0 +1,40 @@
+{
+  "year": 2026,
+  "state_code": "CO",
+  "files": {
+    "data/county-source-reviews/20261109-colorado-returned-01/workbook-original.xlsx": {
+      "bytes": 65836,
+      "sha256": "84eeee2797b0f442f82a8eb509a250eea72c7cd0923f5c8947003316aecebea7"
+    },
+    "data/county-source-reviews/20261109-colorado-returned-01/workbook-cells.json.gz": {
+      "bytes": 29843,
+      "sha256": "4daffed309787b10db4efe893e0c83b08b095d4354190d01dd25d14c3e1ba882"
+    },
+    "data/county-source-reviews/20261109-colorado-returned-01/native-county-query.csv": {
+      "bytes": 16079,
+      "sha256": "0971cc193da5af76a60f350cffbb98c57d58f79baddbd2a170109175a185a26e"
+    },
+    "data/county-results/20261105-house-02/geometry/CO.geojson.gz": {
+      "bytes": 907484,
+      "sha256": "69c2b7e8caa4bfe29deb77e6565286376791b9e345fb6c5bfdb2db6077838475"
+    }
+  },
+  "source_url": "https://www.coloradosos.gov/pubs/newsRoom/pressReleases/2026/20261105GenElectionActivity.xlsx",
+  "publication_date": "2026-11-06",
+  "source_period_end": "11:59 PM November 5, 2026",
+  "source_timezone": null,
+  "rates_approved": false,
+  "cast_ballot_count_qualified": false,
+  "unique_voter_count_qualified": false,
+  "precincts_approved": false,
+  "reference": {
+    "path": "data/county-results/20261105-house-02/geometry/CO.geojson.gz",
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/CO.geojson.gz",
+    "boundary_year": 2026,
+    "counties": 64,
+    "sha256": "69c2b7e8caa4bfe29deb77e6565286376791b9e345fb6c5bfdb2db6077838475",
+    "uncompressed_sha256": "8e8c840bc99f2dc41592e000ce822184b2a7c15ea8cfc79f474b691f19d0d688",
+    "review_id": "colorado-returned-native-counties-20261109-01"
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-colorado-returned-20261109-01/complete-analysis.zip"
+}

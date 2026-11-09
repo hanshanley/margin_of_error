@@ -1,0 +1,9 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-colorado-returned-20261109-01/complete-analysis.zip",
+  "bytes": 1023255,
+  "sha256": "3551b8f7035000f047a1b9c98c19e521bb4cccd8c459b3263b26218e2fc5a9b1",
+  "members": 16,
+  "county_queries": 64,
+  "county_counts": 64,
+  "analysis_rates_approved": false
+}
