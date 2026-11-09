@@ -3,7 +3,7 @@ import { gzipSync } from 'node:zlib';
 import { loadAdditionalParticipation } from '../../../scripts/additional-participation.mjs';
 
 export function getStaticPaths() {
-	const data = loadAdditionalParticipation();
+	const data = loadAdditionalParticipation({ nativeCountyParents: true });
 	return [...new Set(data.counties.map(row => row.state_code))].map(state => ({
 		params: { state },
 		props: {

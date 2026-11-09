@@ -1,0 +1,88 @@
+{
+  "version": "20261109-native-county-parents-01",
+  "queries": 97,
+  "selected_rates": 43,
+  "withheld_rates": 54,
+  "files": {
+    "data/county-results/20261105-house-02/geometry/ID.geojson.gz": {
+      "bytes": 1212218,
+      "sha256": "73b19435d5cc579acb37d6ac03b080e0121270c960f6792f1eb631db71f18574"
+    },
+    "data/county-results/20261105-house-02/geometry/ND.geojson.gz": {
+      "bytes": 731852,
+      "sha256": "2725f586b52b9f7949086f03b0acb2ea0959dfd01a14bb56268d2025b1ec1951"
+    },
+    "data/county-results/20261109T061804Z/index.json": {
+      "bytes": 23242,
+      "sha256": "ffa47c0ae4ed393275431ca90794b317c128b88fe77bee0398e22972d8c18b84"
+    },
+    "data/precinct-results/20261105-idaho-01/checksums.json": {
+      "bytes": 3017,
+      "sha256": "4a8089de186cb8f3cc2ae658589db4100080d96a06d2fdd46eccf20df1a3fa82"
+    },
+    "data/precinct-results/20261105-idaho-01/count-review/originals/ballots-by-precinct.xlsx.gz": {
+      "bytes": 40473,
+      "sha256": "d2dfd29e7e915c1ee9b53e5544b4a89053a4d2a3baeb5e30fd7ea6ede9bb0714"
+    },
+    "data/precinct-results/20261105-idaho-01/count-review/originals/public-response-02.json.gz": {
+      "bytes": 33827,
+      "sha256": "0f2d04147b5e4b2a1e4b21f72a20dd1a32704fcb02b443dfa74e47624a871c25"
+    },
+    "data/precinct-results/20261105-idaho-01/participation.json.gz": {
+      "bytes": 36414,
+      "sha256": "45a0720c1770af7647124e13d62263d5f3f2161b06f5c35ee21426478fc689f8"
+    },
+    "data/precinct-results/20261105-north-dakota-02/checksums.json": {
+      "bytes": 2288,
+      "sha256": "036f70f7f24d4a2fd2baa7ea3784da890deaa9e7cf1fc42cbb026e554bce16ea"
+    },
+    "data/precinct-results/20261105-north-dakota-02/originals/election.json.gz": {
+      "bytes": 11818,
+      "sha256": "4948790500fcc11c427c60b9e83a29b479bf84de33008bba7d8fc966c9aac2ed"
+    },
+    "data/precinct-results/20261105-north-dakota-02/originals/full-results.json.gz": {
+      "bytes": 379537,
+      "sha256": "e5c3ca0777622bf5a20140201a47715b3b50e896769315e10d7d29a578792fdf"
+    },
+    "data/precinct-results/20261105-north-dakota-02/originals/turnout.json.gz": {
+      "bytes": 1852,
+      "sha256": "09196f79ba35a783a100a782152b25c24008ca195bf77740c5d93e52b28865e8"
+    },
+    "data/precinct-results/20261105-north-dakota-02/participation.json.gz": {
+      "bytes": 5339,
+      "sha256": "b0ef27a3112a5ad80850fe611dfcb16d3c433dba9aa9345b20c44c7b906c7dc2"
+    },
+    "public/county-results.json": {
+      "bytes": 27222,
+      "sha256": "668aab4741171d534515b524ea5514125ff30afeaab5271f5bca18ba5f535566"
+    },
+    "public/precinct-results.json": {
+      "bytes": 16908,
+      "sha256": "1284181fbf2ae8493ec3949cde08bf4b12ac7639f0a0d2d72fe1c179aab1c419"
+    },
+    "scripts/native-county-parents.mjs": {
+      "bytes": 11299,
+      "sha256": "76ea676f5ce3392f0d8caaa194522ece3ada7e5690b5df675713711d70f1202e"
+    },
+    "scripts/package-native-county-parents.py": {
+      "bytes": 5110,
+      "sha256": "dc57219abeb31d2f539cb8259873ed64b1037bf8ce0004fdca5f0f9aa38119ae"
+    },
+    "reproduce.mjs": {
+      "bytes": 160,
+      "sha256": "36bf96d96588bf6b74de0c94c2ca465e3f335af49ba99362278d17985b23b80f"
+    },
+    "queries.json": {
+      "bytes": 845590,
+      "sha256": "99309926e29876f2eeb8d2aa63c235637c81590efad6580040363a26c7c674cd"
+    },
+    "queries.csv": {
+      "bytes": 19205,
+      "sha256": "00ade3bb7b5985d6af6f6b53c2ceff18b97d3b2d4adad887273de6b5a571f94a"
+    },
+    "README.txt": {
+      "bytes": 1141,
+      "sha256": "fcec48fd344ac82cf6e92e355b9f40811504dbc91a6c70bde9ff88a76cc794c4"
+    }
+  }
+}

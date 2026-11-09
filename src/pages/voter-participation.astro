@@ -92,12 +92,17 @@ const reviewedStates = loadReviewedStatewideParticipation(participationReviews);
 const reviewedMeasure = (row: typeof reviewedCounties[number]) =>
 	'participation_measure_label' in row ? row.participation_measure_label
 		: 'participation_measure_literal' in row ? row.participation_measure_literal : undefined;
-const additionalParticipation = loadAdditionalParticipation();
-const countyContextReview = loadCountyContextReview([...additionalParticipation.counties, ...reviewedCounties]);
+const additionalParticipation = loadAdditionalParticipation({ nativeCountyParents: true });
+const countyParentDownload = (row: typeof additionalParticipation.counties[number]) =>
+	'county_parent_complete_download_url' in row ? String(row.county_parent_complete_download_url) : undefined;
+const countyContextReview = loadCountyContextReview([
+	...loadAdditionalParticipation().counties, ...reviewedCounties,
+]);
 const additionalParticipationStates = [...new Set(additionalParticipation.counties.map(row => row.state_code))]
 	.map(code => ({
 		code, name: ufRows.find(row => row.STATE_ABV === code)?.STATE ?? code,
 		counties: additionalParticipation.counties.filter(row => row.state_code === code),
+		countyParentDownload: countyParentDownload(additionalParticipation.counties.find(row => row.state_code === code)!),
 		units: additionalParticipation.precincts.filter(row => row.state_code === code).length,
 		nongeographic: additionalParticipation.nongeographic.filter(row => row.state_code === code),
 	}));
@@ -650,7 +655,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				not candidate-vote totals or UF estimates. Counties, independent cities and municipalities retain
 				their native scope. Reporting-unit tables do not establish county totals:
 				those rows are available separately, not summed. Missing denominators and withheld rates are not zero.
-				These imports alone do not approve new county or precinct map joins.
+				Only separately checked county identities are mapped. Idaho and North Dakota use explicit
+				native county parents on 2026 Census county references, without assigning pooled ballots to precincts.
 				Independent county identity review is documented separately below.
 				Florida's earlier Monroe observation is retained here unchanged. It exactly matches the new
 				statewide table's count and registrations; the current county map selects the statewide
@@ -659,7 +665,11 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<summary>{group.name}: {group.counties.length} counties / localities
 					{group.units ? ` · ${formatNumber(group.units)} source reporting-unit observations` : ''}</summary>
 				<p><a href={`/participation-local/${group.code}.json.gz`}>All imported participation observations (JSON · gzip)</a>
-					{' · '}<a href={group.counties[0].complete_download_url}>Complete original source package</a></p>
+					{' · '}<a href={group.counties[0].complete_download_url}>Complete original source package</a>
+					{group.countyParentDownload && <>
+						{' · '}<a href={group.countyParentDownload}>
+							Complete county-parent queries and sufficient inputs (ZIP)</a>
+					</>}</p>
 				{group.nongeographic.map(row => <p>{row.county}: {row.ballots === null ? 'Not supplied' : formatNumber(row.ballots)}
 					{' '}ballots in a separate nongeographic reporting unit, not assigned to a county or municipality.</p>)}
 				<div class="table-wrap" tabindex="0" role="region" aria-label={`${group.name} native participation`}>

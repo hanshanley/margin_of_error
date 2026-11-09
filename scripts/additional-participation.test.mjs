@@ -5,8 +5,9 @@ import { gunzipSync } from 'node:zlib';
 import { parse } from 'csv-parse/sync';
 import test from 'node:test';
 import { loadAdditionalParticipation, participationCount } from './additional-participation.mjs';
+import { loadNativeCountyParents, reviewCountyParents } from './native-county-parents.mjs';
 
-const data = loadAdditionalParticipation();
+const data = loadAdditionalParticipation({ nativeCountyParents: true });
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, skip_empty_lines: true });
 
 test('exposes whole native county and locality counts instead of candidate results', () => {
@@ -90,7 +91,7 @@ test('connects reviewed Florida, Missouri and Wyoming ballots without substituti
 });
 
 test('retains individual source rows without inventing county totals or merging special units', () => {
-  for (const [code, countyCount, unitCount] of [['MN', 87, 4105], ['ND', 53, 358], ['ID', 44, 986], ['MI', 2, 63]]) {
+  for (const [code, countyCount, unitCount] of [['MN', 87, 4105], ['MI', 2, 63]]) {
     const rows = data.counties.filter(row => row.state_code === code);
     assert.equal(rows.length, countyCount);
     assert.ok(rows.every(row => row.ballots === null && row.denominator === null && row.reported_pct === null));
@@ -107,6 +108,72 @@ test('retains individual source rows without inventing county totals or merging 
   assert.equal(pooled.length, 8);
   assert.ok(pooled.every(row => row.unit_kind === row.native_record.reporting_unit_kind
     && row.unit_kind === 'pooled_absentee_or_early_unit' && row.maps_approved === false));
+});
+
+test('connects all Idaho and North Dakota native county parents without substituting House votes', () => {
+  const legacy = loadAdditionalParticipation();
+  assert.ok(legacy.counties.filter(row => ['ID', 'ND'].includes(row.state_code))
+    .every(row => row.ballots === null && row.denominator === null && row.reported_pct === null
+      && row.maps_approved === false && row.native_record === null));
+  assert.deepEqual(legacy.precincts, data.precincts);
+  const parents = loadNativeCountyParents();
+  const published = JSON.parse(gunzipSync(readFileSync(
+    'data/county-source-reviews/20261109-native-county-parents-01/queries.json.gz')));
+  assert.deepEqual(parents, published);
+  for (const [code, count, ballots, units, rates] of [
+    ['ID', 44, 731980, 986, 43], ['ND', 53, 239057, 358, 0],
+  ]) {
+    const rows = data.counties.filter(row => row.state_code === code);
+    assert.equal(rows.length, count);
+    assert.equal(rows.reduce((sum, row) => sum + row.ballots, 0), ballots);
+    assert.equal(rows.reduce((sum, row) => sum + row.source_rows, 0), units);
+    assert.equal(rows.filter(row => row.reported_pct !== null).length, rates);
+    assert.equal(data.precincts.filter(row => row.state_code === code).length, units);
+    for (const row of rows) {
+      const parent = parents.find(parent => parent.code === code && parent.county === row.county);
+      assert.deepEqual(row.native_record, parent.native);
+      assert.equal(row.ballots, parent.ballots);
+      assert.equal(row.maps_approved, true);
+      assert.equal(row.county_fips, parent.fips);
+      assert.equal(row.reference_geometry.boundary_year, 2026);
+      assert.match(row.source_url, /originals\/.*json\.gz$/);
+      assert.match(row.quality.join(' '), /not certified election-precinct/);
+      if (row.reported_pct !== null) assert.equal(row.reported_pct, 100 * row.ballots / row.denominator);
+    }
+  }
+  const twinFalls = data.counties.find(row => row.state_code === 'ID' && row.county === 'Twin Falls County');
+  assert.equal(twinFalls.ballots, 28906);
+  assert.equal(twinFalls.denominator, 42990);
+  assert.equal(twinFalls.reported_pct, null);
+  assert.match(twinFalls.quality.join(' '), /registration_does_not_reconcile/);
+  assert.ok(data.precincts.filter(row => row.state_code === 'ID' && row.county === 'Twin Falls County')
+    .every(row => row.reported_pct === null));
+  assert.ok(data.counties.filter(row => row.state_code === 'ND').every(row =>
+    row.denominator === null && row.reported_pct === null
+    && row.denominator_basis === 'electorate_not_qualified'
+    && row.native_record.RegisteredVoters > 0));
+});
+
+test('native county-parent review rejects missing, mismatched and cross-election inputs', () => {
+  const directory = 'data/precinct-results/20261105-north-dakota-02';
+  const original = name => JSON.parse(gunzipSync(readFileSync(`${directory}/originals/${name}.json.gz`)));
+  const source = { full: original('full-results'), election: original('election'), turnout: original('turnout') };
+  const units = JSON.parse(gunzipSync(readFileSync(`${directory}/participation.json.gz`)));
+  const geometry = JSON.parse(gunzipSync(readFileSync('data/county-results/20261105-house-02/geometry/ND.geojson.gz')));
+  const mismatch = structuredClone(source);
+  mismatch.full.TurnoutData.Locations['38001'].TotalBallotsCast += 1;
+  assert.throws(() => reviewCountyParents('ND', mismatch, units, geometry, {}), /disagrees/);
+  const missingZero = structuredClone(source);
+  delete missingZero.full.TurnoutData.Locations['38105'].Locations['0140'].BallotsCast;
+  assert.throws(() => reviewCountyParents('ND', missingZero, units, geometry, {}), /explicit All/);
+  const wrongElection = structuredClone(source);
+  wrongElection.turnout.electionID = 'other';
+  assert.throws(() => reviewCountyParents('ND', wrongElection, units, geometry, {}), /election/);
+  assert.throws(() => reviewCountyParents('ND', source, units.slice(1), geometry, {}), /scope|identity/);
+  assert.throws(() => reviewCountyParents('ND', source, [...units, units[0]], geometry, {}), /Duplicate/);
+  const wrongGeometry = structuredClone(geometry);
+  wrongGeometry.features[0].properties.state_code = 'SD';
+  assert.throws(() => reviewCountyParents('ND', source, units, wrongGeometry, {}), /reference/);
 });
 
 test('preserves every Washington county record and King ballots without using native statewide or unit zeroes', () => {

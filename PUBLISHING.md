@@ -108,6 +108,18 @@ Publication was explicitly approved on November 4, 2026. Publish the reviewed
 integration to `main`; pushing `main` deploys the site automatically. Source
 updates remain pinned to reviewed snapshots rather than following live research changes.
 
+The live additional-participation reader explicitly enables `nativeCountyParents`.
+Its default remains the frozen legacy source frame so old county-context exports
+reproduce unchanged. `scripts/native-county-parents.mjs` verifies Idaho's 44 and
+North Dakota's 53 native county parents, independent ballot totals and complete
+2026 Census county identities. Twin Falls' conflicting registration frame and
+all North Dakota rates remain withheld. The browser verifies the compressed
+geometry hash before using these new joins; other county layers retain their
+separate original reviews. The versioned complete download under
+`participation-county-parents/20261109-01/` includes every query/hold, sufficient
+originals, reference geometry and a dependency-free offline Node reproduction.
+Its packaging command refuses to overwrite an existing version.
+
 The complete site exceeds GitHub Pages' 1 GB limit when bulk participation downloads
 are duplicated in its artifact. `scripts/prepare-participation-pages.mjs` verifies
 CSV/ZIP downloads and jurisdiction-detail JSON against the version-pinned

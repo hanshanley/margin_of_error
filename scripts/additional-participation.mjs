@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { basename, dirname, resolve } from 'node:path';
 import { gunzipSync } from 'node:zlib';
 import { parse } from 'csv-parse/sync';
+import { loadNativeCountyParents } from './native-county-parents.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -38,7 +39,7 @@ function observation(review, file, code, name, identity, native, values = {}) {
   };
 }
 
-export function loadAdditionalParticipation() {
+export function loadAdditionalParticipation({ nativeCountyParents = false } = {}) {
   const counties = [], precincts = [], nongeographic = [];
   const pointer = json('public/precinct-results.json');
   const reviews = pointer.source_reviews.map(path => {
@@ -251,6 +252,27 @@ export function loadAdditionalParticipation() {
       source_reporting_label: 'Separate native reporting-unit observations; unit scope is not reconciled. '
         + 'No county total or registration sum is inferred.',
     });
+  }
+  for (const parent of nativeCountyParents ? loadNativeCountyParents(pointer) : []) {
+    const index = counties.findIndex(row => row.state_code === parent.code
+      && row.county_id === `additional:${parent.code}:${parent.identity}`);
+    if (index < 0 || counties[index].ballots !== null)
+      throw new Error('Native county parent must replace exactly one empty reporting-unit container');
+    counties[index] = observation(parent.snapshot, parent.sourceFile, parent.code,
+      parent.county, parent.identity, parent.native, {
+        ballots: parent.ballots, denominator: parent.denominator, reported_pct: parent.reported_pct,
+        denominator_basis: parent.denominator_basis, native_printed_pct: parent.native_printed_pct ?? null,
+        source_update_label: parent.source_update_label, source_status_literal: parent.source_status_literal,
+        reported_units: parent.reported_units, total_units: parent.total_units,
+        source_reporting_label: parent.source_reporting_label,
+        maps_approved: true, county_fips: parent.fips, reference_geometry: parent.reference,
+        participation_measure_label: 'Native whole-county ballots reported',
+        county_parent_complete_download_url: '/participation-county-parents/20261109-01/complete-analysis.zip',
+        quality: ['Whole-county native parent, not candidate votes or a reporting-unit sum.',
+          'Complete native county inventory matches the separately checksum-verified 2026 Census county reference; not certified election-precinct boundaries.',
+          'Unofficial source snapshot, not final, CPS, demographic or precinct turnout.',
+          ...parent.flags],
+      });
   }
   const seen = new Set(), unitSeen = new Set();
   for (const row of counties) {
