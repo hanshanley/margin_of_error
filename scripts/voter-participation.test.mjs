@@ -9,6 +9,24 @@ import { previewSvg, publicationScript, sourceRevision } from './stage-voter-par
 import { participationDownload, participationHistoricalRoot, participationArchivedNationwideRoot } from '../public/scripts/participation-downloads.js';
 import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles, verifyPagesSize, verifyPagesByteCounts } from './prepare-participation-pages.mjs';
 import { appendPrecinctHistory } from './build-precinct-histories.mjs';
+import { countFill, precinctSelectionYears } from '../public/scripts/participation-geography.js';
+
+test('2026 remains selectable when only historical precinct sources are loaded', () => {
+	assert.deepEqual(precinctSelectionYears([2024, 2020], '2026', [2024, 2022]),
+		[2026, 2024, 2020]);
+	assert.deepEqual(precinctSelectionYears([2024], '2022', [2024, 2022]),
+		[2026, 2024, 2022]);
+	assert.deepEqual(precinctSelectionYears([], '2099', [2024, 2022]), [2026]);
+});
+
+test('count maps distinguish positive counts and real zeros without coloring missing observations', () => {
+	assert.notEqual(countFill(0, 1000), countFill(null, 1000));
+	assert.notEqual(countFill(1, 1000), countFill(1000, 1000));
+	assert.notEqual(countFill(100, 1000), countFill(900, 1000));
+	assert.equal(countFill(-1, 1000), countFill(undefined, 1000));
+	assert.equal(countFill(NaN, 1000), '#edf0f3');
+	assert.equal(countFill(0, 0), 'rgb(218,230,241)');
+});
 
 test('precinct histories retain source counts, missing rates and groups without merging county IDs', () => {
 	const histories = new Map();

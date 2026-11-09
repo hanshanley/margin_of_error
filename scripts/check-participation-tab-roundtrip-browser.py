@@ -54,6 +54,9 @@ def check_round_trip(page, mode, screenshots):
     select_tab(page, "precincts")
     expect(page.locator("#precinct-state-select")).to_have_value("Texas")
     expect(page.locator("#year")).to_have_value("2024")
+    expect(page.locator("#precinct-layer")).to_have_value("participation")
+    expect(page.locator("#title")).to_have_text("Precinct data unavailable in Texas")
+    page.select_option("#precinct-layer", "results")
     expect(page.locator("#precinct-layer")).to_have_value("results")
     expect(page.locator("#title")).to_have_text("Precinct election results in Texas", timeout=90000)
     page.wait_for_function(
@@ -64,6 +67,7 @@ def check_round_trip(page, mode, screenshots):
 
     page.select_option("#precinct-state-select", "North Carolina")
     page.select_option("#year", "2022")
+    page.select_option("#precinct-layer", "participation")
     expect(page.locator("#precinct-layer")).to_have_value("participation")
     page.select_option("#dimension", "race")
     precinct_group = choose_group(page)
@@ -201,15 +205,16 @@ def check(base, proof, screenshots=None, explorer_script=None):
                           "&layer=participation&dimension=education&group=unsupported",
                           wait_until="domcontentloaded")
                 expect(page.locator("svg.turnout-map")).to_be_visible(timeout=90000)
-                expect(page.locator("#year")).to_have_value("2024")
-                expect(page.locator("#precinct-layer")).to_have_value("results")
+                expect(page.locator("#year")).to_have_value("2022")
+                expect(page.locator("#precinct-layer")).to_have_value("participation")
                 expect(page.locator("#dimension")).to_have_value("overall")
                 assert page.locator("#group").input_value() in values(page, "#group")
-                expect(page.locator("#notice")).to_contain_text(
-                    "Other years' boundaries are not substituted")
-                assert "year=2024" in page.url and "dimension=overall" in page.url
-                results.append({"mode": "unsupported_deep_link", "year_fallback": "2024",
-                                "layer_fallback": "results",
+                expect(page.locator("#coverage-note")).to_contain_text(
+                    "No loaded 2022 precinct participation map for Texas")
+                assert "year=2022" in page.url and "dimension=overall" in page.url
+                assert page.locator(".geographic-detail .map-feature").count() == 0
+                results.append({"mode": "unsupported_deep_link", "retained_year": "2022",
+                                "retained_layer": "participation",
                                 "dimension_fallback": "overall", "blank_view": False})
             finally:
                 unsupported.close()
@@ -259,10 +264,13 @@ def check(base, proof, screenshots=None, explorer_script=None):
                 page = failed_precinct.new_page()
                 page.goto(base + "/voter-participation/?view=precincts&state=Texas"
                           "&year=2024&layer=results", wait_until="domcontentloaded")
-                expect(page.locator("#notice")).to_contain_text(
-                    "The saved data could not be loaded", timeout=90000)
-                expect(page.locator("#notice")).to_contain_text("No values have been inferred")
-                expect(page.locator("#visualization")).to_contain_text("Data unavailable")
+                expect(page.locator("#coverage-note")).to_contain_text(
+                    "precinct source could not be loaded", timeout=90000)
+                expect(page.locator("svg.turnout-map")).to_be_visible()
+                expect(page.locator("#selection-panel > h3")).to_have_text("Texas")
+                expect(page.locator("#year")).to_have_value("2024")
+                expect(page.get_by_role("button", name="Retry precinct source")).to_be_visible()
+                assert page.locator(".geographic-detail .map-feature").count() == 0
                 results.append({"mode": "precinct_source_failure", "explicit_error": True,
                                 "no_inferred_values": True})
             finally:
@@ -289,6 +297,7 @@ def check(base, proof, screenshots=None, explorer_script=None):
 
     sources = [
         "public/scripts/participation-explorer.js",
+        "public/scripts/participation-geography.js",
         "src/pages/voter-participation.astro",
         "src/styles/voter-participation.css",
         "scripts/check-participation-tab-roundtrip-browser.py",

@@ -2,6 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
+import { countFill, precinctSelectionYears } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -588,6 +589,7 @@ function stateParticipationRows() {
           || p.registered_turnout_pct !== row.reported_pct;
       })) throw new Error("Frozen Vermont observations differ from the qualified municipality join");
       const reference = vermont ? metadata.boundary_label : "2024 Census reference boundaries";
+      const maximum = Math.max(0, ...observations.map(row => row.ballots ?? 0));
       for (const feature of collection.features) {
         const row = byName.get(countyName(feature.properties.name));
         const item = projectInside(feature, selected.point);
@@ -604,7 +606,8 @@ function stateParticipationRows() {
           }, { class: "map-feature substate-feature", "data-geography": feature.properties.key,
             "data-level": "municipality", "data-rate": row.reported_pct ?? "", "data-count": row.ballots,
             "data-registered": row.denominator,
-            "data-source-county-id": row.county_id, tabindex: "-1" });
+            "data-source-county-id": row.county_id, tabindex: "-1",
+            ...(!vermont ? { fill: countFill(row.ballots, maximum), "data-count-measure": "reported_ballots" } : {}) });
         map.detail.append(path);
       }
       map.localLayer = true;
@@ -620,12 +623,14 @@ function stateParticipationRows() {
         ramp();
         const complete = html("a", "source-link", "Complete municipality counts, exact boundary query and verification (ZIP)");
         complete.href = metadata.complete_download_url; $("caption").append(" ", complete);
-      } else legend([["Municipality counts available; rate withheld", fill(null)]]);
+      } else countLegend(maximum, "Municipality ballots · no rate");
       $("coverage-note").textContent = vermont
         ? "247 municipality observations; 241 reviewed rates and six withheld. Nine unincorporated reference polygons have no source observation and remain excluded."
         : "39 municipality observations; all analysis rates remain withheld. Federal and limited-only units are not assigned to towns or precincts.";
       $("geography-note").textContent = `${state.selectedState} · ${count} municipality observations on ${reference} · `
-        + `${vermont ? metadata.rates : 0} approved rates. Gray is withheld, not zero. Select a municipality for native ballots and registrations. No municipal count or registration is assigned to a precinct; Federal/limited-only units remain unallocated.`;
+        + `${vermont ? metadata.rates : 0} approved rates. `
+        + (vermont ? "Gray is withheld, not zero. " : "Color shows ballot counts, not a rate. ")
+        + "Select a municipality for native ballots and registrations. No municipal count or registration is assigned to a precinct; Federal/limited-only units remain unallocated.";
     }
     async function drawCurrentGeography(map, selected, code, token) {
       if (code === "VT") return drawCurrentMunicipalityGeography(map, selected, code, token);
@@ -635,6 +640,15 @@ function stateParticipationRows() {
       if (!observations.length && state.countyResults?.year === 2026 && state.countyResults.coverage[code])
         return drawCountyCountFallback(map, selected, code, 2026, token,
           "County participation is unavailable.");
+      if (!observations.length) {
+        const message = `No loaded 2026 county participation observations for ${state.selectedState}.`;
+        header("2026 · county coverage", `County turnout unavailable in ${state.selectedState}`,
+          message, "The statewide estimate remains visible. Missing county observations are not zero turnout.");
+        $("coverage-note").textContent = message;
+        $("geography-note").textContent = "State context only; no county rates are inferred.";
+        $("substate-detail")?.replaceChildren(html("h4", "", message));
+        return;
+      }
       if (!file) {
         $("geography-note").textContent = "County context boundaries could not be loaded. Verified 2026 county/precinct counts remain accessible in the sidebar.";
         return;
@@ -675,6 +689,8 @@ function stateParticipationRows() {
         shapeCounts.set(key, (shapeCounts.get(key) || 0) + 1);
       }
       let observed = 0;
+      const countsOnly = !counties.some(row => row.reported_pct != null);
+      const maximum = Math.max(0, ...counties.map(row => row.ballots ?? 0));
       for (const feature of features) {
         const key = countyName(feature.properties.name);
         const contextual = contextRows.get(feature.properties.key);
@@ -695,7 +711,8 @@ function stateParticipationRows() {
           }, { class: "map-feature substate-feature", "data-geography": feature.properties.key,
             "data-level": "county", "data-rate": rate ?? "", "data-count": row?.ballots ?? "",
             "data-source-county-id": row?.county_id ?? "", "data-context-review": contextual ? state.countyContext.base_url.split("/").filter(Boolean).at(-1) : "",
-            tabindex: "-1" });
+            tabindex: "-1",
+            ...(countsOnly ? { fill: countFill(row?.ballots, maximum), "data-count-measure": "source_participation_count" } : {}) });
         map.detail.append(path);
       }
       map.localLayer = true;
@@ -704,13 +721,17 @@ function stateParticipationRows() {
         ["denominator", "Source electorate"], ["reported_pct", "Reported-ballot fraction"],
         ["reported_units", "Precincts reporting"], ["total_units", "Total precincts"], ["quality", "Notes"]]);
       header("2026 midterms · unofficial administrative counts", `Local participation in ${state.selectedState}`,
-        "Reported ballots / source-defined electorate. Select a county, then a precinct or reporting row in the sidebar.",
-        "Not final turnout. County colors use their own reviewed reported fraction, not the UF state population denominator. Counts with missing or withheld rates remain gray. Separately reviewed identity joins retain the original source records. Approximate 2024 Census counties are contextual shapes, not certified 2026 election or precinct boundaries.");
-      ramp();
+        countsOnly ? "Color shows source participation counts; no county turnout rates are qualified. Select a county for its original counts."
+          : "Reported ballots / source-defined electorate. Select a county, then a precinct or reporting row in the sidebar.",
+        (countsOnly ? "Not final turnout. Color shows counts, not a fraction; counties have different population sizes. "
+          : "Not final turnout. County colors use their own reviewed reported fraction, not the UF state population denominator. Counts with missing or withheld rates remain gray. ")
+        + "Separately reviewed identity joins retain the original source records. Approximate 2024 Census counties are contextual shapes, not certified 2026 election or precinct boundaries.");
+      if (countsOnly) countLegend(maximum, "Source participation counts · no rate");
+      else ramp();
       $("geography-note").textContent = `${state.selectedState} · ${fmt(counties.length)} county observations · `
         + `${fmt(observed)} reviewed county rates on 2024 contextual boundaries; ${fmt(contextRows.size)} independently audited identity joins. `
         + "Gray does not mean zero participation; select a county to inspect its actual counts and missingness. "
-        + "Precinct counts are available through the sidebar where verified; precinct polygons are not yet verified. "
+        + "Precinct mapping uses a separate, source-specific layer; use the sidebar where a qualified 2026 layer is available. "
         + contextError
         + ($("map-color").value === "margin" ? "This local layer shows participation, not party margins." : "");
     }
@@ -845,8 +866,17 @@ async function loadCurrentPrecincts() {
       $("geography-note").textContent = "County colors are visible at national scale. Select a county to zoom; "
         + "full 2026 Census county shapes load as you zoom. The national overview uses display-simplified copies.";
   }
-  function countyResultDetail(p, election) {
+  function countyResultDetail(p, election, countsOnly = false) {
     const panel = $("substate-detail");
+    if (countsOnly) {
+      panel.replaceChildren(html("h4", "", p.name),
+        html("p", "selection-rate", fmt(election.contest_votes)),
+        html("p", "selection-basis", `${election.office} contest votes · not ballots cast or turnout`),
+        html("p", "selection-note", "This is the sum of votes recorded in the tracked contest, not a count of all voters. No county participation rate is available. County population sizes differ."),
+        sourceLink(election));
+      panel.parentElement.prepend(panel);
+      return;
+    }
     panel.replaceChildren(html("h4", "", p.name), html("p", "selection-rate", marginLabel(election)),
       html("p", "selection-note", `${election.office} · ${fmt(election.contest_votes)} candidate votes. `
         + `${fmt(election.democratic_votes)} Democratic; ${fmt(election.republican_votes)} Republican; `
@@ -873,25 +903,33 @@ async function loadCurrentPrecincts() {
     if (token !== state.drillToken || state.map !== map) return;
     const returns = new Map(state.margins.filter(row => row.year === year
       && row.state_code === code && row.level === "county").map(row => [row.geography, row]));
+    const maximum = Math.max(0, ...[...returns.values()].map(row => row.contest_votes ?? 0));
     for (const feature of data.features) {
       const p = feature.properties, election = returns.get(p.key);
       if (!election || (!countsOnly && election.margin_pp == null)) continue;
       const item = projectInside(feature, selected.point);
-      const description = `${election.office} · ${marginLabel(election)} · ${fmt(election.contest_votes)} candidate votes`;
+      const description = `${election.office} · ${countsOnly ? "" : marginLabel(election) + " · "}${fmt(election.contest_votes)} contest votes`;
       const path = featurePath(item, null, `${p.name} · ${year}\n${description}\nCounty result, not precinct results or turnout`, () => {
         state.countySelection = { year, code, key: p.key };
-        countyResultDetail(p, election);
+        countyResultDetail(p, election, countsOnly);
         for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
         path.classList.add("selected"); fit(item.bounds);
       }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": "county",
-        "data-color-level": countsOnly ? "none" : "county", "data-margin": election.margin_pp ?? "",
+        "data-color-level": countsOnly ? "county-count" : "county",
+        ...(countsOnly ? { "data-count-measure": "contest_votes" } : { "data-margin": election.margin_pp ?? "" }),
         "data-total-votes": election.contest_votes, "data-candidate-count-fallback": countsOnly ? "true" : "false",
-        "data-year": year, fill: countsOnly ? "#edf0f3" : marginFill(election.margin_pp), tabindex: "-1" });
+        "data-year": year, fill: countsOnly ? countFill(election.contest_votes, maximum) : marginFill(election.margin_pp), tabindex: "-1" });
       map.detail.append(path);
     }
     map.countyLayer = true;
     if (background) return;
-    if (countsOnly) return;
+    if (countsOnly) {
+      countLegend(maximum, "Contest votes · not turnout");
+      setTable(data.features.filter(feature => returns.has(feature.properties.key)).map(feature => ({
+        county: feature.properties.name, contest_votes: returns.get(feature.properties.key).contest_votes,
+      })), [["county", "County"], ["contest_votes", "Contest votes (not ballots)"]]);
+      return;
+    }
     header(`${year} midterm election · county candidate returns`,
       `County election results in ${selected.feature.properties.NAME}`,
       "Red / blue uses each county's own House candidate votes, not participation.",
@@ -917,18 +955,18 @@ async function loadCurrentPrecincts() {
     map.candidateCountFallback = true;
     map.countyLayer = true;
     map.stateTable ||= { rows: state.table, columns: state.columns };
-    setTable(rows,
-      [["geography", "County ID"], ["democratic_votes", "Democratic votes"],
-        ["republican_votes", "Republican votes"], ["other_votes", "Other votes"], ["contest_votes", "Candidate votes"]]);
-    header(`${year} · county candidate counts`,
-      `County candidate counts in ${selected.feature.properties.NAME}`,
-      reason, "County candidate votes, not turnout or precinct results.");
-    legend([["Candidate counts · not turnout", "#edf0f3"]]);
-    $("coverage-note").textContent = `${fmt(rows.length)} county records. State turnout stays separate; red / blue shows election results.`;
+    setTable(rows, [["geography", "County ID"], ["contest_votes", "Contest votes (not ballots)"]]);
+    header(`${year} · county turnout unavailable`,
+      `County contest counts in ${selected.feature.properties.NAME}`,
+      `${reason} Color shows recorded contest vote counts, not a participation rate.`,
+      "No party colors. Contest votes are not ballots cast, unique voters or precinct results. County population sizes differ.");
+    $("coverage-note").textContent = `${fmt(rows.length)} county contest-count records; no county turnout rate. The statewide turnout estimate remains separate in the sidebar.`;
     await drawCountyResults(map, selected, code, year, token, false, true);
     if (token !== state.drillToken || state.map !== map) return;
     $("geography-note").hidden = false;
-    $("geography-note").textContent = "County candidate counts instead; not county turnout or precinct results.";
+    $("geography-note").textContent = `${selected.feature.properties.NAME} · ${fmt(rows.length)} county contest counts, not turnout. `
+      + (state.countyResults.coverage[code].scope_note || "")
+      + " Select a county to inspect its total. No state turnout estimate is allocated to counties.";
   }
   async function precinctResultData(code, year) {
     const coverage = state.precinctResults?.coverage[year]?.[code], key = `${year}|${code}`;
@@ -968,7 +1006,7 @@ async function loadCurrentPrecincts() {
       html("p", "selection-note", row.basis || row.quality),
       html("p", "selection-note", row.quality_flags?.length
         ? `Rate review: ${row.quality_flags.map(flag => flag.replaceAll("_", " ")).join("; ")}.`
-        : countsOnly ? "Gray means no denominator/rate, not zero participation."
+        : countsOnly ? "Color shows reported ballot counts; no precinct denominator or participation rate is available."
           : "Source inputs passed the published rate checks."),
       html("p", "selection-note", "Only this approved reporting-unit join is shown. Unmatched and conflicting units remain excluded; pooled absentee/early units are never allocated. Candidate votes are not ballots cast."),
       sourceLink(row.source_url ? row : p));
@@ -1003,6 +1041,7 @@ async function loadCurrentPrecincts() {
     if (data.features.length !== coverage.features)
       throw new Error(`Verified ${code} participation payload count disagrees with the approved geometry inventory`);
     const observed = data.features.filter(feature => feature.properties.participation.reported_pct != null).length;
+    const maximum = Math.max(0, ...data.features.map(feature => feature.properties.participation.ballots));
     for (const feature of data.features) {
       const p = feature.properties, row = p.participation, item = projectInside(feature, selected.point);
       const path = featurePath(item, row.reported_pct,
@@ -1014,7 +1053,8 @@ async function loadCurrentPrecincts() {
         }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": "precinct",
           "data-color-level": row.reported_pct == null ? "none" : "precinct",
           "data-rate": row.reported_pct ?? "", "data-count": row.ballots,
-          "data-registered": row.registered ?? row.denominator ?? "", "data-year": year, tabindex: "-1" });
+          "data-registered": row.registered ?? row.denominator ?? "", "data-year": year, tabindex: "-1",
+          ...(countsOnly ? { fill: countFill(row.ballots, maximum), "data-count-measure": "reported_ballots" } : {}) });
       path.classList.toggle("selected", p.key === state.precinctResultSelection);
       map.detail.append(path);
     }
@@ -1040,7 +1080,7 @@ async function loadCurrentPrecincts() {
       + (countsOnly ? "All shapes carry native ballot counts but no precinct electorate denominator or rate. "
         : `${fmt(observed)} source-defined participation rates. `)
       + "Select a shape for its exact counts and review notes. No county/state rate is painted onto a precinct.";
-    if (countsOnly) legend([["Ballot count available · no rate", "#d6d3cb"]]);
+    if (countsOnly) countLegend(maximum, "Reported ballots · no rate");
     else ramp();
     const chosen = data.features.find(feature => feature.properties.key === state.precinctResultSelection);
     if (chosen) matchedPrecinctParticipationDetail(chosen.properties);
@@ -1178,6 +1218,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
   if (token !== state.drillToken || state.map !== map) return;
   const features = state.currentPrecinctShapes.get(code).features;
   const name = selected.feature.properties.NAME;
+  const countsOnly = code === "MI";
+  const maximum = Math.max(0, ...features.map(feature => feature.properties.ballots ?? 0));
   for (const feature of features) {
     const p = feature.properties, item = projectInside(feature, selected.point);
     const description = currentPrecinctDescription(p);
@@ -1203,7 +1245,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
         path.classList.add("selected"); fit(item.bounds);
       }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": "precinct",
         "data-match": p.match_status, "data-rate": p.reported_pct ?? "", "data-count": p.ballots,
-        "data-registered": p.denominator ?? "", tabindex: "-1" });
+        "data-registered": p.denominator ?? "", tabindex: "-1",
+        ...(countsOnly ? { fill: countFill(p.ballots, maximum), "data-count-measure": "reported_ballots" } : {}) });
     path.classList.toggle("selected", p.key === state.currentPrecinctSelection);
     map.detail.append(path);
   }
@@ -1215,7 +1258,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     ["reported_pct", "Participation rate"], ["rate_withheld_reason", "Rate review"]]);
   header("2026 midterms · unofficial precinct observations · partial coverage",
     map.full[0] / state.viewport[2] < 2.3 ? "Precinct participation · available coverage" : `Precinct participation in ${name}`,
-    "Reported ballots / source-defined electorate where qualified. Gray shapes can still carry direct counts.",
+    countsOnly ? "Color shows reported ballot counts, not turnout rates. All precinct rates remain withheld."
+      : "Reported ballots / source-defined electorate where qualified. Gray shapes can still carry direct counts.",
     `${metadata.boundary_label || "Reviewed 2026 reference boundaries"}. Rates remain withheld where inputs or electorate definitions are unqualified. State-level colors underneath are separate, never assigned to precincts.`);
   if (metadata.complete_download_url) {
     const complete = html("a", "source-link", "Complete originals, matched/withheld rows and exact geometry (ZIP)");
@@ -1227,6 +1271,7 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
       + "This is partial coverage, not a nationwide precinct map."
     : `${fmt(features.length)} approved count-bearing shapes; ${fmt(observed)} rates. ${metadata.notes || "Partial coverage only."}`;
   if (observed) ramp();
+  else if (countsOnly) countLegend(maximum, "Reported ballots · no rate");
   else legend([["Direct counts available · rate withheld", fill(null)]]);
   $("geography-note").textContent = `${name} · ${fmt(features.length)} ${metadata.boundary_label || "reviewed 2026 precinct shapes"} · `
     + `${fmt(observed)} with precinct participation rates. No county or state values are painted onto precincts. `
@@ -1306,7 +1351,8 @@ function precinctParticipationCoverage(code, year) {
   return "";
 }
 function precinctCoverageCodes() {
-  const codes = new Set(["NC", ...Object.keys(state.currentPrecincts?.states || {})]);
+  const codes = new Set(state.geometry.features.filter(feature =>
+    state.states.some(row => row.state === feature.properties.NAME)).map(feature => feature.properties.STUSAB));
   for (const states of Object.values(state.precinctResults?.coverage || {}))
     for (const code of Object.keys(states)) codes.add(code);
   return [...codes].filter(code => stateName(code) !== code || code === "DC")
@@ -1320,14 +1366,15 @@ function precinctYears(code) {
     years.add(2026);
   return [...years].sort((a, b) => b - a);
 }
-function precinctLayerOptions(code, year) {
-  const values = [];
-  if (precinctParticipationCoverage(code, year))
-    values.push(["participation", code === "NC" && year !== 2026
+function precinctLayerOptions(code, year, requestedLayer) {
+  const values = [["participation", precinctParticipationCoverage(code, year)
+    ? code === "NC" && year !== 2026
       ? "Registered-voter participation · North Carolina"
-      : "Participation counts / rates · qualified sources"]);
-  if (precinctResultCoverage(code, year))
-    values.push(["results", "Candidate results · red / blue"]);
+      : "Participation counts / rates · qualified sources"
+    : "Participation · no loaded source"]];
+  if (precinctResultCoverage(code, year) || requestedLayer === "results")
+    values.push(["results", precinctResultCoverage(code, year)
+      ? "Candidate results · red / blue" : "Candidate results · no loaded source"]);
   return values;
 }
 function ncParticipationView() {
@@ -1581,7 +1628,8 @@ function configure(preferred = viewSelection()) {
       ? `No loaded precinct map source for ${requestedState}; showing ${state.selectedState}. Other states' shapes are not substituted.`
       : "";
     const code = stateCode();
-    years = precinctYears(code);
+    years = precinctSelectionYears(precinctYears(code), preferred.year || params.get("year"),
+      unique(state.states.map(row => row.year)));
   } else {
     rows = state.view === "states"
       ? state.states.filter(row => row.denominator === $("basis").value && row.turnout_pct != null)
@@ -1591,14 +1639,14 @@ function configure(preferred = viewSelection()) {
   }
   const requestedYear = (precincts && params.get("view") === "precincts" && !state.initialized
     ? params.get("year") : "") || preferred.year
-    || (precincts && stateCode() === "NC" && years.includes(2024) ? "2024" : String(years[0] ?? ""));
+    || String(years[0] ?? "");
   options($("year"), years.map(year => [String(year), year === 2026 ? "2026 · Provisional" : String(year)]), requestedYear);
   if (precincts && requestedYear && requestedYear !== $("year").value)
     state.precinctControlNote += `${state.precinctControlNote ? " " : ""}No loaded ${requestedYear} precinct layer for ${state.selectedState}; showing ${$("year").value}. Other years' boundaries are not substituted.`;
   if (precincts) {
-    const layers = precinctLayerOptions(stateCode(), Number($("year").value));
     const requestedLayer = (params.get("view") === "precincts" && !state.initialized ? params.get("layer") : "")
-      || preferred["precinct-layer"] || (stateCode() === "NC" ? "participation" : layers[0]?.[0]);
+      || preferred["precinct-layer"] || "participation";
+    const layers = precinctLayerOptions(stateCode(), Number($("year").value), requestedLayer);
     options($("precinct-layer"), layers, requestedLayer);
     if (requestedLayer && requestedLayer !== $("precinct-layer").value)
       state.precinctControlNote += `${state.precinctControlNote ? " " : ""}The requested ${requestedLayer} layer is unavailable for this state and year; showing ${$("precinct-layer").selectedOptions[0]?.textContent || "the available layer"}.`;
@@ -1658,6 +1706,10 @@ function configureGroups(preferred = $("group").value) {
 function showView(view) {
   const updates = view === "updates";
   if (updates) view = "states";
+  const enteringPrecincts = view === "precincts" && state.view !== "precincts"
+    && !state.viewSelections.precincts;
+  const precinctDefaults = enteringPrecincts
+    ? { year: $("year").value, "precinct-state-select": state.selectedState } : {};
   rememberView();
   state.view = view;
   if (view === "states" && state.viewSelections.states?.selectedState) {
@@ -1689,7 +1741,7 @@ function showView(view) {
     return;
   }
   if (view !== "methods") {
-    const preferred = { ...state.viewSelections[view] };
+    const preferred = { ...precinctDefaults, ...state.viewSelections[view] };
     if (updates) preferred.year = "2026";
     configure(preferred);
   }
@@ -1737,6 +1789,11 @@ function fill(value) {
   if (value == null) return "#edf0f3";
   const t = Math.max(0, Math.min(1, (value - 20) / 65));
   return `rgb(${[240, 244, 249].map((c, i) => Math.round(c + t * ([40, 71, 102][i] - c))).join(",")})`;
+}
+function countLegend(maximum, label) {
+  legend([[`${label} · 0`, countFill(0, maximum)],
+    [fmt(Math.round(maximum / 4)), countFill(maximum / 4, maximum)],
+    [fmt(maximum), countFill(maximum, maximum)]]);
 }
 function marginFill(value) {
   if (value == null) return "#d6d3cb";
@@ -2179,8 +2236,10 @@ function stateDetail() {
     navigation.id = "current-local-navigation"; panel.append(navigation);
     currentNavigation(navigation);
     const precinctCoverage = matchedPrecinctParticipationCoverage(stateCode());
-    if (precinctCoverage) {
-      const button = html("button", "selection-link", `Show ${fmt(precinctCoverage.features)} matched precincts' participation`);
+    if (precinctCoverage || state.currentPrecincts?.states[stateCode()]) {
+      const button = html("button", "selection-link", precinctCoverage
+        ? `Show ${fmt(precinctCoverage.features)} matched precincts' participation`
+        : "Show loaded 2026 precinct participation");
       button.id = "show-matched-precinct-participation"; button.type = "button";
       button.addEventListener("click", () => {
         $("map-level").value = "precinct"; $("map-color").value = "turnout";
@@ -2385,10 +2444,7 @@ function setViewport(view) {
   state.map.svg.classList.toggle("compact-map", screenWidth < 500 && fullWidth / width < 2);
   if (state.view === "states" && state.map.stateItems) {
     clearTimeout(state.drillTimer);
-    state.drillTimer = setTimeout(() => updateGeography().catch(error => {
-      $("geography-note").hidden = false;
-      $("geography-note").textContent = `Geographic detail could not be loaded: ${error.message}. No results have been inferred.`;
-    }), 80);
+    state.drillTimer = setTimeout(loadGeography, 80);
   }
 }
 function zoom(factor, client) {
@@ -2608,6 +2664,23 @@ function projectInside(feature, point) {
     return { feature, bounds: boundsFor(projected.flat()),
       d: projected.map(ring => ring.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(3)},${y.toFixed(3)}`).join("") + "Z").join("") };
   }
+  async function loadGeography() {
+    const map = state.map, pending = updateGeography(), token = state.drillToken;
+    try {
+      await pending;
+    } catch (error) {
+      if (state.map !== map || state.drillToken !== token) return;
+      state.drillKey = "";
+      $("geography-note").hidden = false;
+      $("geography-note").textContent = `Geographic detail could not be loaded: ${error.message}. State context is retained; no results have been inferred.`;
+      const panel = $("substate-detail");
+      if (panel) {
+        const retry = html("button", "selection-link", "Retry geographic detail");
+        retry.type = "button"; retry.addEventListener("click", loadGeography);
+        panel.replaceChildren(html("p", "selection-note", $("geography-note").textContent), retry);
+      }
+    }
+  }
   async function updateGeography() {
     const map = state.map;
     if (state.view !== "states" || !map?.stateItems || (!state.context && !state.local && !state.precinctResults)) return;
@@ -2683,6 +2756,8 @@ function projectInside(feature, point) {
       return;
     }
     if (!selected) return;
+    $("geography-note").hidden = false;
+    $("geography-note").textContent = `Loading ${year} ${level} detail for ${state.selectedState}…`;
     const unavailable = text => {
       $("geography-note").textContent = text;
       if ($("map-color").value === "margin") marginLegend(year % 4 === 0 ? "President" : "U.S. House aggregate");
@@ -2933,6 +3008,50 @@ function precinctSourcePanel(year, layer) {
       : "Only source-qualified precinct or reporting-unit participation is shown. Gray can carry a direct count with no qualified rate."));
   const detail = html("div", "substate-detail"); detail.id = "substate-detail"; panel.append(detail);
 }
+function precinctCoverageNavigation(panel, year) {
+  const codes = precinctCoverageCodes().filter(code => precinctParticipationCoverage(code, year));
+  const details = html("details");
+  details.append(html("summary", "", `Loaded ${year} precinct participation sources (${codes.length})`));
+  if (!codes.length) details.append(html("p", "selection-note", "No qualified precinct participation map is loaded for this year."));
+  for (const code of codes) {
+    const button = html("button", "selection-link", stateName(code));
+    button.type = "button"; button.dataset.precinctCoverageState = code;
+    button.addEventListener("click", () => {
+      state.selectedState = stateName(code); state.county = ""; state.precinct = "";
+      configure({ year: String(year), "precinct-state-select": state.selectedState, "precinct-layer": "participation" });
+      render();
+    });
+    details.append(button);
+  }
+  panel.append(details);
+}
+function unavailablePrecincts(year, code, layer) {
+  const message = `No loaded ${year} precinct ${layer === "results" ? "candidate-result" : "participation"} map for ${state.selectedState}.`;
+  header(`${year} · precinct coverage`, `Precinct data unavailable in ${state.selectedState}`,
+    message, "The selected state and year are retained. Other years' precincts and county shapes are not substituted.");
+  $("coverage-note").textContent = message + " This is a data gap, not zero participation.";
+  $("geography-note").hidden = false;
+  $("geography-note").textContent = "State outline only; no precinct values are drawn.";
+  legend([["State outline · no precinct data", "#edf0f3"]]);
+  const panel = $("substate-detail");
+  panel.append(html("h4", "", message),
+    html("p", "selection-note", "County data and statewide estimates are separate from precinct participation."));
+  const estimate = year === 2026 && state.ufTurnout.find(row => row.state_code === code);
+  if (estimate?.vep_rate != null) panel.append(html("p", "selection-basis",
+    `${estimate.vep_rate.toFixed(2)}% statewide VEP turnout · UF estimate, not precinct turnout.`));
+  const counties = html("button", "selection-link", `View ${state.selectedState} state / county data`);
+  counties.type = "button"; counties.id = "show-state-county-data";
+  counties.addEventListener("click", () => {
+    state.viewSelections.states = { ...state.viewSelections.states, year: String(year),
+      selectedState: state.selectedState, "map-color": "turnout", "map-level": "county", mode: "available" };
+    showView("states");
+    const selected = state.map?.stateItems?.get(code);
+    if (selected) fit(selected.bounds);
+  });
+  panel.append(counties);
+  precinctCoverageNavigation(panel, year);
+  $("table-note").textContent = message + " Missing observations are not zero.";
+}
 async function sourcedPrecinctsView(generation) {
   const year = Number($("year").value), code = stateCode(), layer = $("precinct-layer").value;
   const sourceKey = `${year}|${code}|${layer}`;
@@ -2965,21 +3084,31 @@ async function sourcedPrecinctsView(generation) {
   state.precinctItems = new Map(); state.precinctRows = new Map(); state.searchItems = new Map();
   $("precinct-options").replaceChildren();
   setTable([], [["county", "County"], ["precinct", "Reporting unit"]]);
+  if (layer === "results" ? !precinctResultCoverage(code, year) : !precinctParticipationCoverage(code, year)) {
+    unavailablePrecincts(year, code, layer);
+    return;
+  }
   const token = ++state.drillToken;
-  if (layer === "results") {
-    if (!precinctResultCoverage(code, year))
-      throw new Error(`No verified ${year} precinct candidate-result layer for ${state.selectedState}`);
-    await drawPrecinctResults(state.map, selected, code, year, token);
-  } else {
-    const coverage = precinctParticipationCoverage(code, year);
-    if (coverage === "matched_results")
-      await drawMatchedPrecinctParticipation(state.map, selected, code, year, token);
-    else if (coverage === "current_participation")
-      await drawCurrentPrecinctGeography(state.map, selected, code, token);
-    else throw new Error(`No verified ${year} precinct participation layer for ${state.selectedState}`);
+  try {
+    if (layer === "results") {
+      await drawPrecinctResults(state.map, selected, code, year, token);
+    } else {
+      const coverage = precinctParticipationCoverage(code, year);
+      if (coverage === "matched_results")
+        await drawMatchedPrecinctParticipation(state.map, selected, code, year, token);
+      else await drawCurrentPrecinctGeography(state.map, selected, code, token);
+    }
+  } catch (error) {
+    if (generation !== state.generation || token !== state.drillToken) return;
+    $("coverage-note").textContent = `The ${year} precinct source could not be loaded: ${error.message}. State context is retained.`;
+    $("geography-note").textContent = "Source load failed, not zero participation.";
+    const retry = html("button", "selection-link", "Retry precinct source");
+    retry.type = "button"; retry.addEventListener("click", render);
+    $("substate-detail").replaceChildren(html("p", "selection-note", $("coverage-note").textContent), retry);
   }
   if (generation !== state.generation) return;
   $("geography-note").hidden = false;
+  precinctCoverageNavigation($("selection-panel"), year);
   note(state.precinctControlNote);
 }
 async function ncPrecinctsView(generation) {
