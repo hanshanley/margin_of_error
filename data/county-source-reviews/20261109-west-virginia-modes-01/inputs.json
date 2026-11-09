@@ -1,0 +1,63 @@
+{
+  "version": "data/county-source-reviews/20261109-west-virginia-modes-01",
+  "year": 2026,
+  "state_code": "WV",
+  "files": {
+    "data/county-source-reviews/20261109-west-virginia-modes-01/early-in-person-cast-original.xlsx": {
+      "bytes": 20922,
+      "sha256": "232a085c9c2a7ea578fa65f43ed27a7bce2b0f709a49dd84efa66e372e6519e5"
+    },
+    "data/county-source-reviews/20261109-west-virginia-modes-01/absentee-requested-original.xlsx": {
+      "bytes": 15326,
+      "sha256": "86645bc2d66237944c7af1e8826676f754032033adedc31ca18cbd034f86f1ee"
+    },
+    "data/county-source-reviews/20261109-west-virginia-modes-01/absentee-returned-original.xlsx": {
+      "bytes": 12049,
+      "sha256": "972926a8e7075213fecc69fae75130110e22d5369917090a459f121522a3d71b"
+    },
+    "data/county-source-reviews/20261109-west-virginia-modes-01/originals/54107.pdf": {
+      "bytes": 27355,
+      "sha256": "0092dcb588bce3e6c6fe75d603cb64a355959991b311dda625a6b9114c47746f"
+    },
+    "data/county-source-reviews/20261109-west-virginia-modes-01/originals/54039.pdf": {
+      "bytes": 36562,
+      "sha256": "be50e9aac7eff9835c17cc6203aef3102f18cbc94404e870bf2eabcf842750ca"
+    },
+    "data/county-source-reviews/20261109-west-virginia-modes-01/originals/54061.html": {
+      "bytes": 172683,
+      "sha256": "a39a691de544fb7340e76e7e743dc312e09b620cb2c6d0372386d2414913231c"
+    },
+    "data/county-source-reviews/20261109-west-virginia-modes-01/native-mode-queries.json.gz": {
+      "bytes": 19570,
+      "sha256": "ff4327e92451eae6416780438c8d98373f763b076fac51db7ff34e0970f4694e"
+    },
+    "data/county-source-reviews/20261109-west-virginia-modes-01/native-county-parents.json": {
+      "bytes": 6427,
+      "sha256": "de2c3c6249f02b8b9efe2f5f667ca3baa8800b97ea5e157411dcfcf67b727751"
+    },
+    "data/county-source-reviews/20261109-west-virginia-modes-01/publisher-definitions.json": {
+      "bytes": 3824,
+      "sha256": "6816f327272ada017b8cd5da6a0fd2aa5d86037f0e5689f9113deecdfac807f1"
+    },
+    "data/county-results/20261105-house-02/geometry/WV.geojson.gz": {
+      "bytes": 988736,
+      "sha256": "9114e1c6309189a97408bed9571c9f3e2403629129c373dc2cebe032954796a7"
+    }
+  },
+  "reference": {
+    "path": "data/county-results/20261105-house-02/geometry/WV.geojson.gz",
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/WV.geojson.gz",
+    "counties": 55,
+    "boundary_year": 2026,
+    "sha256": "9114e1c6309189a97408bed9571c9f3e2403629129c373dc2cebe032954796a7",
+    "uncompressed_sha256": "06dd104328c9fb9b90835f94c6c680d46bbb68a8c6b8d7c842cae7848f3fcd17",
+    "review_id": "west-virginia-native-modes-20261109-01"
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-west-virginia-modes-20261109-01/complete-analysis.zip",
+  "all_method_county_queries": 55,
+  "selected_all_method_counts": 3,
+  "mode_county_queries": 165,
+  "analysis_rates_approved": false,
+  "precincts_approved": false,
+  "statewide_full_election_parent_qualified": false
+}

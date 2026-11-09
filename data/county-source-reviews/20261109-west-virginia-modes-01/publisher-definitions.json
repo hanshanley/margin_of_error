@@ -1,0 +1,69 @@
+{
+  "source_url": "https://sos.wv.gov/article/secretary-warner-reports-increase-early-voter-turnout-24-higher-turnout-last-midterm",
+  "publication_date": "2026-11-02",
+  "source_period_start": "2026-10-21",
+  "source_period_end": "2026-10-31",
+  "source_clock": null,
+  "timezone": null,
+  "original_workbook_receipts": {
+    "early-in-person-cast": {
+      "product": "early-in-person-cast",
+      "requested_url": "https://files.constantcontact.com/e949222d701/6d190d12-de47-4a9e-bf3a-13b667f3013a.xlsx",
+      "declared_by": "https://sos.wv.gov/article/secretary-warner-reports-increase-early-voter-turnout-24-higher-turnout-last-midterm",
+      "declaration_published_date": "2026-11-02",
+      "captured_at_utc": "2026-11-09T22:17:29.854077+00:00",
+      "native_counts_qualified": false,
+      "acquisition_session_headers_saved": false,
+      "http_status": 200,
+      "final_url": "https://files.constantcontact.com/e949222d701/6d190d12-de47-4a9e-bf3a-13b667f3013a.xlsx",
+      "bytes": 20922,
+      "sha256": "232a085c9c2a7ea578fa65f43ed27a7bce2b0f709a49dd84efa66e372e6519e5",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "original_file": "early-in-person-cast-original.xlsx",
+      "disposition": "native_original_acquired_scope_review_pending"
+    },
+    "absentee-requested": {
+      "product": "absentee-requested",
+      "requested_url": "https://files.constantcontact.com/e949222d701/df69dbaf-a546-4d78-9f18-a52bd50bf663.xlsx",
+      "declared_by": "https://sos.wv.gov/article/secretary-warner-reports-increase-early-voter-turnout-24-higher-turnout-last-midterm",
+      "declaration_published_date": "2026-11-02",
+      "captured_at_utc": "2026-11-09T22:17:29.966559+00:00",
+      "native_counts_qualified": false,
+      "acquisition_session_headers_saved": false,
+      "http_status": 200,
+      "final_url": "https://files.constantcontact.com/e949222d701/df69dbaf-a546-4d78-9f18-a52bd50bf663.xlsx",
+      "bytes": 15326,
+      "sha256": "86645bc2d66237944c7af1e8826676f754032033adedc31ca18cbd034f86f1ee",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "original_file": "absentee-requested-original.xlsx",
+      "disposition": "native_original_acquired_scope_review_pending"
+    },
+    "absentee-returned": {
+      "product": "absentee-returned",
+      "requested_url": "https://files.constantcontact.com/e949222d701/114b5b93-1729-466e-894b-20b80ecd5e45.xlsx",
+      "declared_by": "https://sos.wv.gov/article/secretary-warner-reports-increase-early-voter-turnout-24-higher-turnout-last-midterm",
+      "declaration_published_date": "2026-11-02",
+      "captured_at_utc": "2026-11-09T22:17:30.041339+00:00",
+      "native_counts_qualified": false,
+      "acquisition_session_headers_saved": false,
+      "http_status": 200,
+      "final_url": "https://files.constantcontact.com/e949222d701/114b5b93-1729-466e-894b-20b80ecd5e45.xlsx",
+      "bytes": 12049,
+      "sha256": "972926a8e7075213fecc69fae75130110e22d5369917090a459f121522a3d71b",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "original_file": "absentee-returned-original.xlsx",
+      "disposition": "native_original_acquired_scope_review_pending"
+    }
+  },
+  "mode_meanings": {
+    "in_person_early": "Early in-person period cast count, source TOTAL VOTERS",
+    "mail_returned": "Absentee returned, not qualified cast or accepted ballots",
+    "absentee_requested": "Absentee requested, not cast or returned"
+  },
+  "native_combined_figure": 169350,
+  "combined_figure_qualified_as_cast": false,
+  "party_scope": "Native party categories; operational affiliation definition unqualified, never vote choice.",
+  "no_mode_addition": true,
+  "no_rates": true,
+  "no_candidate_allocation": true
+}

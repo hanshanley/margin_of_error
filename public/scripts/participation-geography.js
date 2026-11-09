@@ -54,3 +54,22 @@ export function qualifiedIndianaMonroePrecinct(p) {
     && row.Precinct_Reporting === "Partially Reporting"
     && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null;
 }
+
+export function hasCountySourceMode(code, mode) {
+  return code === "WV" && ["in_person_early", "mail_returned"].includes(mode);
+}
+
+export function selectCountySourceFrame(data, code, mode) {
+  if (!hasCountySourceMode(code, mode)) return data.counties;
+  const rows = data.county_frames?.[mode];
+  if (!Array.isArray(rows) || rows.length !== 55
+    || new Set(rows.map(row => row.county_fips)).size !== 55
+    || rows.some(row => row.year !== 2026 || row.state_code !== code || row.source_mode !== mode
+      || !/^54\d{3}$/.test(row.county_fips) || row.county_id !== `additional:WV:${row.county_fips}`
+      || !Number.isSafeInteger(row.ballots) || row.ballots < 0
+      || row.ballots !== row.native_record?.["TOTAL VOTERS"]
+      || row.denominator !== null || row.reported_pct !== null
+      || row.unique_voter_count_qualified !== false || row.cast_ballot_count_qualified !== false))
+    throw new Error("Unqualified WV county source mode; all-method counts are not substituted");
+  return rows;
+}

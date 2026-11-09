@@ -6,6 +6,7 @@ import { loadNativeCountyParents } from './native-county-parents.mjs';
 import { loadMichiganCountyParents } from './michigan-county-parents.mjs';
 import { loadMarylandCardCounts } from './maryland-county-cards.mjs';
 import { loadIndianaVoterStatistics } from './indiana-voter-statistics.mjs';
+import { loadWestVirginiaCountyModes } from './west-virginia-county-modes.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -352,6 +353,31 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
         ...(row.geometry_withheld_reason ? [row.geometry_withheld_reason] : [])],
     }));
   }
+  const countyFrames = {};
+  if (nativeCountyParents) {
+    const westVirginia = loadWestVirginiaCountyModes();
+    const imported = row => observation({
+      data_directory: 'data/county-source-reviews/20261109-west-virginia-modes-01',
+      base_url: '', complete_download_url: row.complete_download_url,
+    }, '', 'WV', row.county, row.county_fips, row.native_record || {}, {
+      ballots: row.source_count, denominator: null, denominator_basis: 'source_electorate_not_qualified',
+      reported_pct: null, maps_approved: true, county_fips: row.county_fips,
+      reference_geometry: row.reference_geometry, native_record: row.native_record,
+      participation_measure_label: row.participation_measure_label,
+      source_mode: row.mode || 'all_method_county_snapshot',
+      native_party_counts: row.native_party_counts,
+      source_url: row.source_url, source_update_label: row.source_update_label,
+      source_status_literal: row.source_status_literal, source_reporting_label: row.source_reporting_label,
+      cast_ballot_count_qualified: row.cast_ballot_count_qualified,
+      unique_voter_count_qualified: false, source_count_qualified: row.source_count_qualified,
+      quality: [row.source_reporting_label,
+        'Full 55-county identities match the separately checksum-verified 2026 Census reference; not precincts.',
+        'No mode addition, candidate-choice inference, demographic allocation or analysis rate.'],
+    });
+    counties.push(...westVirginia.counties.map(imported));
+    countyFrames.WV = Object.fromEntries(Object.entries(westVirginia.county_frames)
+      .map(([mode, rows]) => [mode, rows.map(imported)]));
+  }
   const seen = new Set(), unitSeen = new Set();
   for (const row of counties) {
     if (seen.has(row.county_id)) throw new Error(`Duplicate participation locality: ${row.county_id}`);
@@ -363,5 +389,5 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
     if (!row.unit_key || unitSeen.has(id)) throw new Error(`Duplicate participation reporting unit: ${id}`);
     unitSeen.add(id);
   }
-  return { counties, precincts, nongeographic };
+  return { counties, precincts, nongeographic, ...(nativeCountyParents ? { county_frames: countyFrames } : {}) };
 }

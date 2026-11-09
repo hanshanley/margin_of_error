@@ -1,0 +1,9 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-west-virginia-modes-20261109-01/complete-analysis.zip",
+  "bytes": 1165420,
+  "sha256": "6c7656675b751b662162c29d0a282b667980c5412c1db707d7bc6fe1e2221c66",
+  "members": 25,
+  "all_method_county_queries": 55,
+  "native_mode_county_queries": 165,
+  "analysis_rates_approved": false
+}

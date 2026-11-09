@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, hasCountySourceMode, selectCountySourceFrame } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -398,11 +398,20 @@ function stateParticipationRows() {
           return { counties: [], precincts: [], additional_error: error.message };
         }));
       const additional = await additionalLocal.get(code);
+      const scoped = hasCountySourceMode(code, $("mode").value);
+      let selectedCounties;
+      try {
+        selectedCounties = selectCountySourceFrame(additional, code, $("mode").value);
+      } catch (error) {
+        additionalLocal.delete(code);
+        throw error;
+      }
+      const baseCounties = scoped ? data.counties.filter(row => row.state_code !== code) : data.counties;
       return { ...data,
-        counties: [...data.counties, ...additional.counties.filter(row =>
-          !data.counties.some(other => other.state_code === row.state_code
+        counties: [...baseCounties, ...selectedCounties.filter(row =>
+          !baseCounties.some(other => other.state_code === row.state_code
             && countyName(other.county) === countyName(row.county)))],
-        precincts: [...data.precincts, ...additional.precincts],
+        precincts: scoped ? [] : [...data.precincts, ...additional.precincts],
         nongeographic: additional.nongeographic || [], additional_error: additional.additional_error,
       };
     }
@@ -787,15 +796,20 @@ function stateParticipationRows() {
         ["denominator", "Source electorate"], ["reported_pct", "Reported-ballot fraction"],
         ["reported_units", "Precincts reporting"], ["total_units", "Total precincts"], ["quality", "Notes"]]);
       header("2026 midterms · unofficial administrative counts", `Local participation in ${state.selectedState}`,
-        countsOnly ? (code === "MD"
+        countsOnly ? (code === "WV"
+          ? `${countLabel}. Counts are source-specific snapshots, not full-election turnout rates; early, returned and all-method frames stay separate.`
+          : code === "MD"
           ? "Color shows native Cards Cast, not unique voters or qualified cast ballots. No county turnout rates are qualified."
           : "Color shows source participation counts; no county turnout rates are qualified. Select a county for its original counts.")
           : "Reported ballots / source-defined electorate. Select a county, then a precinct or reporting row in the sidebar.",
         (countsOnly ? "Not final turnout. Color shows counts, not a fraction; counties have different population sizes. "
           : "Not final turnout. County colors use their own reviewed reported fraction, not the UF state population denominator. Counts with missing or withheld rates remain gray. ")
         + (reference ? "Whole-county native parents use checksum-verified 2026 Census county references, not precincts. "
-          : "Separately reviewed identity joins retain the original source records. Approximate 2024 Census counties are contextual shapes, not certified 2026 election or precinct boundaries."));
-      if (countsOnly) countLegend(maximum, code === "MD" ? "Native Cards Cast · not unique voters" : "Source participation counts · no rate");
+          : "Separately reviewed identity joins retain the original source records. Approximate 2024 Census counties are contextual shapes, not certified 2026 election or precinct boundaries.")
+        + (code === "WV" ? "Early in-person and returned tables are through October 31, released November 2; native clocks/timezones are absent. "
+          + "Full-election county reports are separate November 3 snapshots, not a common statewide cutoff." : ""));
+      if (countsOnly) countLegend(maximum, code === "WV" ? countLabel + " · no rate"
+        : code === "MD" ? "Native Cards Cast · not unique voters" : "Source participation counts · no rate");
       else ramp();
       $("geography-note").textContent = `${state.selectedState} · ${fmt(counties.length)} county observations · `
         + `${fmt(observed)} reviewed county rates on ${reference?.boundary_year ?? 2024} Census reference boundaries; `
@@ -2389,7 +2403,7 @@ function stateDetail() {
       button.id = "show-current-counties"; button.type = "button";
       button.addEventListener("click", () => {
         $("map-level").value = "county"; $("map-color").value = "turnout";
-        if (!ufMode()) $("mode").value = "official";
+        if (!ufMode() && !hasCountySourceMode(stateCode(), $("mode").value)) $("mode").value = "official";
         render();
         const item = state.map?.stateItems?.get(stateCode());
         if (item) fit(item.bounds);
@@ -2928,7 +2942,8 @@ function projectInside(feature, point) {
     if (year === 2026 && level === "county" && $("map-color").value !== "margin"
       && (state.current?.local_file || state.reviewedCounties.some(row => row.state_code === code)
         || state.additionalCoverage.some(row => row.state_code === code))
-      && (ufMode() || ["available", "official"].includes($("mode").value)))
+      && (ufMode() || ["available", "official"].includes($("mode").value)
+        || hasCountySourceMode(code, $("mode").value)))
       return drawCurrentGeography(map, selected, code, token);
     if (level === "county" && state.local?.years.includes(year) && $("map-color").value !== "margin")
       return drawLocalGeography(map, selected, code, year, token);

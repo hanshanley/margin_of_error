@@ -290,6 +290,26 @@ test('adds Indiana county and Monroe reporting-unit counts only to the live opt-
   assert.ok([...counties, ...units].every(row => row.denominator === null && row.reported_pct === null));
 });
 
+test('keeps WV all-method county holds distinct from every early and returned source-mode row', () => {
+  const legacy = loadAdditionalParticipation();
+  assert.equal(legacy.counties.filter(row => row.state_code === 'WV').length, 0);
+  assert.equal(legacy.county_frames, undefined);
+  const counties = data.counties.filter(row => row.state_code === 'WV');
+  assert.equal(counties.length, 55);
+  assert.equal(counties.filter(row => row.ballots !== null).length, 3);
+  for (const [mode, total] of [['in_person_early', 162349], ['mail_returned', 7001]]) {
+    const rows = data.county_frames.WV[mode];
+    assert.equal(rows.length, 55);
+    assert.equal(rows.reduce((sum, row) => sum + row.ballots, 0), total);
+    assert.ok(rows.every(row => row.source_mode === mode && row.denominator === null
+      && row.reported_pct === null && row.cast_ballot_count_qualified === false));
+    assert.equal(rows.find(row => row.county_id === 'additional:WV:54107').native_record.COUNTY, 'WOOD');
+  }
+  assert.equal(counties.find(row => row.county_id === 'additional:WV:54107').ballots, 22935);
+  assert.equal(data.county_frames.WV.in_person_early.find(row => row.county_id === 'additional:WV:54107').ballots, 9828);
+  assert.equal(data.county_frames.WV.mail_returned.find(row => row.county_id === 'additional:WV:54107').ballots, 340);
+});
+
 test('native county-parent review rejects missing, mismatched and cross-election inputs', () => {
   const directory = 'data/precinct-results/20261105-north-dakota-02';
   const original = name => JSON.parse(gunzipSync(readFileSync(`${directory}/originals/${name}.json.gz`)));

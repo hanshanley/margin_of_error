@@ -10,6 +10,7 @@ export function getStaticPaths() {
 			counties: data.counties.filter(row => row.state_code === state),
 			precincts: data.precincts.filter(row => row.state_code === state),
 			nongeographic: data.nongeographic.filter(row => row.state_code === state),
+			county_frames: state === 'WV' ? data.county_frames?.WV : undefined,
 		},
 	}));
 }

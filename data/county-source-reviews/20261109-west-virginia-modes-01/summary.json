@@ -1,0 +1,11 @@
+{
+  "all_method_county_queries": 55,
+  "all_method_counts": 3,
+  "all_method_holds": 52,
+  "early_county_queries": 55,
+  "returned_county_queries": 55,
+  "requested_county_queries": 55,
+  "native_source_party_categories": 7,
+  "no_additive_cast_total": true,
+  "analysis_rates_approved": false
+}
