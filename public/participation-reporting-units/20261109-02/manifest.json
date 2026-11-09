@@ -1,0 +1,29 @@
+{
+  "AZ": {
+    "source_file": "data/precinct-source-reviews/20261105/AZ-2026-native-counts/precinct-participation.csv",
+    "source_bytes": 401307,
+    "source_sha256": "32078a79ca64e5b68c376090e02dbc9c60f22740031f1a4e44c334afb00cc8f1",
+    "rows": 1763,
+    "missing_ballots": 1,
+    "observed_ballot_sum_not_statewide_estimate": 2248900,
+    "output_sha256": "bc9f1e93785e4a83148b96afa6855701f511be995f7469b8e9e4dfcb7e6cb51f"
+  },
+  "AR": {
+    "source_file": "data/precinct-source-reviews/20261105/AR-2026-native-counts/precinct-participation.csv",
+    "source_bytes": 369249,
+    "source_sha256": "c7d9dc75ac9f412ff051dea27e24f68ecb1c7ee5c07a0b31b5cae7b957583ff4",
+    "rows": 2768,
+    "missing_ballots": 82,
+    "observed_ballot_sum_not_statewide_estimate": 893026,
+    "output_sha256": "b128dc3cef02ae063e840495611b3747dc9454692d2788a8cb94e3b160f4908a"
+  },
+  "WY": {
+    "source_file": "data/precinct-source-reviews/20261105/WY-2026-native-counts/precinct-counts.csv",
+    "source_bytes": 118060,
+    "source_sha256": "9f1875968252f1811013331dd1fe0f065c761532fc55ef636b02b8a935a9ec81",
+    "rows": 432,
+    "missing_ballots": 0,
+    "observed_ballot_sum_not_statewide_estimate": 191688,
+    "output_sha256": "cea7eba88d5ae521db73653ce33992dbe2d253a2854cd81d27655890e74be161"
+  }
+}

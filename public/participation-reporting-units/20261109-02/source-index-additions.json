@@ -1,0 +1,32 @@
+{
+  "AZ": {
+    "rows": 1763,
+    "sha256": "bc9f1e93785e4a83148b96afa6855701f511be995f7469b8e9e4dfcb7e6cb51f",
+    "data_url": "/participation-reporting-units/20261109-02/AZ.json.gz",
+    "source_url": "https://app.enhancedvoting.com/results/public/Arizona/110326GeneralElection",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-arizona-native-counts-20261105/complete-arizona-2026-native-count-review-01.zip",
+    "source_update_label": "See frozen native source package; no common source clock is inferred",
+    "scope": "All 1763 native reporting-unit rows; 1 missing ballot totals remain NULL, not zero. Native virtual/special units, registration fields and source conflicts are retained. Do not sum reporting-unit registrations or infer a statewide/all-mode total. All rates remain withheld.",
+    "geometry_note": "No approved 2026 precinct-reference join for these observations; no older boundaries or pooled-ballot allocations are substituted."
+  },
+  "AR": {
+    "rows": 2768,
+    "sha256": "b128dc3cef02ae063e840495611b3747dc9454692d2788a8cb94e3b160f4908a",
+    "data_url": "/participation-reporting-units/20261109-02/AR.json.gz",
+    "source_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-arkansas-native-counts-20261105/complete-arkansas-2026-native-count-review-02.zip",
+    "source_update_label": "See frozen native source package; no common source clock is inferred",
+    "scope": "All 2768 native reporting-unit rows; 82 missing ballot totals remain NULL, not zero. Native virtual/special units, registration fields and source conflicts are retained. Do not sum reporting-unit registrations or infer a statewide/all-mode total. All rates remain withheld.",
+    "geometry_note": "No approved 2026 precinct-reference join for these observations; no older boundaries or pooled-ballot allocations are substituted."
+  },
+  "WY": {
+    "rows": 432,
+    "sha256": "cea7eba88d5ae521db73653ce33992dbe2d253a2854cd81d27655890e74be161",
+    "data_url": "/participation-reporting-units/20261109-02/WY.json.gz",
+    "source_url": "https://sos.wyo.gov/Elections/Docs/2026/2026GeneralResults.aspx",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-wyoming-counts-20261105/complete-wyoming-2026-native-count-review-01.zip",
+    "source_update_label": "See frozen native source package; no common source clock is inferred",
+    "scope": "All 432 native reporting-unit rows; 0 missing ballot totals remain NULL, not zero. Native virtual/special units, registration fields and source conflicts are retained. Do not sum reporting-unit registrations or infer a statewide/all-mode total. All rates remain withheld.",
+    "geometry_note": "No approved 2026 precinct-reference join for these observations; no older boundaries or pooled-ballot allocations are substituted."
+  }
+}

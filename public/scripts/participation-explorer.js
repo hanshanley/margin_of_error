@@ -3055,7 +3055,7 @@ async function loadReportingUnitSources() {
     if (!response.ok) throw new Error(`Source reporting units: HTTP ${response.status}`);
     const index = await response.json();
     if (index.year !== 2026 || Object.entries(index.sources).some(([code, source]) =>
-      !["AK", "HI"].includes(code) || !Number.isSafeInteger(source.rows) || source.rows <= 0
+      !["AK", "HI", "AZ", "AR", "WY"].includes(code) || !Number.isSafeInteger(source.rows) || source.rows <= 0
       || !/^[0-9a-f]{64}$/.test(source.sha256)))
       throw new Error("Unqualified reporting-unit coverage index");
     state.reportingUnitSources = index.sources;
@@ -3077,7 +3077,7 @@ async function drawReportingUnitCounts(map, code, year, token) {
       if (rows.length !== source.rows || new Set(rows.map(row => row.key)).size !== source.rows
         || rows.some(row => row.year !== year || row.state_code !== code
           || !row.precinct || !row.reporting_unit_kind || row.reported_pct !== null
-          || !Number.isSafeInteger(row.ballots) || row.ballots < 0))
+          || (row.ballots !== null && (!Number.isSafeInteger(row.ballots) || row.ballots < 0))))
         throw new Error("Reporting-unit identities or native counts disagree with reviewed scope");
       return rows;
     })().catch(error => { state.reportingUnitData.delete(code); throw error; });
@@ -3109,8 +3109,12 @@ async function drawReportingUnitCounts(map, code, year, token) {
   const choose = () => {
     const row = rows.find(row => row.key === select.value);
     state.precinct = row.key;
-    detail.replaceChildren(html("h4", "", row.precinct), html("p", "selection-rate", fmt(row.ballots)),
-      html("p", "selection-basis", "Native reported ballots · no participation rate"),
+    detail.replaceChildren(html("h4", "", row.precinct),
+      html("p", "selection-rate", row.ballots === null ? "Not supplied" : fmt(row.ballots)),
+      html("p", "selection-basis", row.ballots === null
+        ? "Native ballot total is missing, not zero · no participation rate"
+        : "Native reported ballots · no participation rate"),
+      html("p", "selection-note", `Native registrations: ${fmt(row.registered)} · not a qualified rate denominator.`),
       html("p", "selection-note", row.basis),
       html("p", "selection-note", (row.quality_flags || []).join("; ")),
       html("p", "selection-note", `Source label: ${source.source_update_label}.`));

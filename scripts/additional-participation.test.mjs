@@ -11,6 +11,33 @@ import { loadNativeCountyParents, reviewCountyParents } from './native-county-pa
 const data = loadAdditionalParticipation({ nativeCountyParents: true });
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, skip_empty_lines: true });
 
+test('complete counts-only CSV inputs preserve every native row and missing total without enabling rates', () => {
+  const directory = 'public/participation-reporting-units/20261109-02';
+  const manifest = JSON.parse(readFileSync(`${directory}/manifest.json`));
+  const index = JSON.parse(readFileSync('public/participation-reporting-units.json'));
+  for (const [code, count, missing] of [['AZ', 1763, 1], ['AR', 2768, 82], ['WY', 432, 0]]) {
+    const raw = readFileSync(`${directory}/${code}.json.gz`);
+    const rows = JSON.parse(gunzipSync(raw));
+    const native = csv(manifest[code].source_file);
+    assert.equal(rows.length, count);
+    assert.equal(new Set(rows.map(row => row.key)).size, count);
+    assert.equal(createHash('sha256').update(raw).digest('hex'), manifest[code].output_sha256);
+    assert.equal(index.sources[code].sha256, manifest[code].output_sha256);
+    assert.equal(index.sources[code].rows, count);
+    assert.equal(index.sources[code].data_url, `/${directory.replace('public/', '')}/${code}.json.gz`);
+    assert.equal(rows.filter(row => row.ballots === null).length, missing);
+    for (const [i, row] of rows.entries()) {
+      assert.deepEqual(row.native_record, native[i]);
+      assert.equal(row.ballots, native[i].ballots === '' ? null : Number(native[i].ballots));
+      assert.equal(row.registered, native[i].registered_voters === '' ? null : Number(native[i].registered_voters));
+      assert.equal(row.reported_pct, null);
+      assert.equal(row.source_csv_row, i + 2);
+      assert.equal(row.year, 2026);
+      assert.equal(row.state_code, code);
+    }
+  }
+});
+
 test('exposes complete Alaska and Hawaii source-unit counts without enabling geometry or rates', () => {
   const index = JSON.parse(readFileSync('public/participation-reporting-units.json'));
   assert.equal(index.year, 2026);
