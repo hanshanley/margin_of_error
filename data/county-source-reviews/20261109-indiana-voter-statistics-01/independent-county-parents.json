@@ -1,0 +1,455 @@
+[
+  {
+    "state_code": "IN",
+    "county": "Cass",
+    "county_fips": "18017",
+    "election_date": "2026-11-03",
+    "whole_county_scope_reviewed": true,
+    "unique_voters_certified": false,
+    "analysis_rate_approved": false,
+    "measure_kind": "native_turnout_numerator",
+    "measure_literal": "Registered Voters",
+    "display_label": "Native turnout numerator (not cast ballots)",
+    "count": 9699,
+    "source_url": "https://www.in.gov/counties/cass/departments/clerk/UNOFFICIAL%20Cumulative%20Results-11-3-2026%2007-59-37%20PM-FINAL.pdf?language_id=1",
+    "source_clock_literal": "11/03/2026 7:59 PM",
+    "source_status_literal": "Unofficial Results; OFFICIAL 2026 GENERAL",
+    "scope_note": "38 of 39 precincts reporting. The report simultaneously prints Unofficial Results and OFFICIAL 2026 GENERAL. The numerator is accepted only in its native turnout-display role. No claim of ballots cast, unique voters, certification, or final completion. Timezone remains unknown.",
+    "native_record": {
+      "county": "Cass",
+      "election_identity": "CASS COUNTY 2026 General, 11/3/2026",
+      "measure_literal": "Registered Voters",
+      "native_count": 9699,
+      "scope": "county cumulative report",
+      "native_reporting_and_status_notes": [
+        "38 of 39 precincts reporting.",
+        "The report simultaneously prints Unofficial Results and OFFICIAL 2026 GENERAL.",
+        "The numerator is accepted only in its native turnout-display role.",
+        "No claim of ballots cast, unique voters, certification, or final completion.",
+        "Timezone remains unknown."
+      ],
+      "native_turnout_display": "9699 of 22832 = 42.48%",
+      "native_display_reference": 22832,
+      "printed_percentage": "42.48%"
+    },
+    "original_filename": "attempt-1-original.pdf",
+    "original_bytes": 291064,
+    "original_sha256": "ed11b24aa9b36e2cc5a8bf7e940d71feb293d497e12e5632915baede7d5c4f4b",
+    "original_path": "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18017.pdf"
+  },
+  {
+    "state_code": "IN",
+    "county": "Floyd",
+    "county_fips": "18043",
+    "election_date": "2026-11-03",
+    "whole_county_scope_reviewed": true,
+    "unique_voters_certified": false,
+    "analysis_rate_approved": false,
+    "measure_kind": "native_ballots_cast",
+    "measure_literal": "Total Ballots",
+    "display_label": "Total Ballots",
+    "count": 28336,
+    "source_url": "https://www.floydcountyclerk.org/images/2026/PDF/2026-General-Election-Results-WI-Unofficial.pdf",
+    "source_clock_literal": "11/4/2026 4:50:12 PM EST",
+    "source_status_literal": null,
+    "scope_note": "Whole-county unofficial summary acquired; all 60 precincts reported. ALL VOTE CENTERS - ALL WALK IN - ALL MAIL IN; 60 of 60 precincts",
+    "native_record": {
+      "county": "Floyd",
+      "election_identity": "2026 general election",
+      "measure_literal": "Total Ballots",
+      "native_count": 28336,
+      "scope": "ALL VOTE CENTERS - ALL WALK IN - ALL MAIL IN; 60 of 60 precincts",
+      "native_reporting_and_status_notes": [
+        "Whole-county unofficial summary acquired; all 60 precincts reported.",
+        "ALL VOTE CENTERS - ALL WALK IN - ALL MAIL IN; 60 of 60 precincts"
+      ]
+    },
+    "original_filename": "attempt-1-original.pdf",
+    "original_bytes": 93797,
+    "original_sha256": "2cb9852460ba3aeb4ab943013b1370a682829f62ec8c5574a314d04478b0444e",
+    "original_path": "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18043.pdf"
+  },
+  {
+    "state_code": "IN",
+    "county": "Fulton",
+    "county_fips": "18049",
+    "election_date": "2026-11-03",
+    "whole_county_scope_reviewed": true,
+    "unique_voters_certified": false,
+    "analysis_rate_approved": false,
+    "measure_kind": "native_turnout_numerator",
+    "measure_literal": "Registered Voters",
+    "display_label": "Native turnout numerator (not cast ballots)",
+    "count": 5350,
+    "source_url": "https://www.co.fulton.in.us/DocumentCenter/View/1862/2026-Unofficial-General-Election-Cumulative-Results-PDF",
+    "source_clock_literal": "11/03/2026 8:02 PM",
+    "source_status_literal": "Unofficial Results",
+    "scope_note": "The report prints Unofficial Results. The report simultaneously prints the positive turnout numerator and 0 of 23 precincts reporting. The numerator is accepted only in its native turnout-display role. No claim of ballots cast, unique voters, certification, or final completion. Timezone remains unknown.",
+    "native_record": {
+      "county": "Fulton",
+      "election_identity": "Fulton County GENERAL ELECTION, 11/3/2026",
+      "measure_literal": "Registered Voters",
+      "native_count": 5350,
+      "scope": "county cumulative report",
+      "native_reporting_and_status_notes": [
+        "The report prints Unofficial Results.",
+        "The report simultaneously prints the positive turnout numerator and 0 of 23 precincts reporting.",
+        "The numerator is accepted only in its native turnout-display role.",
+        "No claim of ballots cast, unique voters, certification, or final completion.",
+        "Timezone remains unknown."
+      ],
+      "native_turnout_display": "5350 of 13334 = 40.12%",
+      "native_display_reference": 13334,
+      "printed_percentage": "40.12%"
+    },
+    "original_filename": "attempt-1-original.pdf",
+    "original_bytes": 248313,
+    "original_sha256": "187362a90809cd6fbf29610fc10279dc8fc58d29e328ef986220004826dbf6ee",
+    "original_path": "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18049.pdf"
+  },
+  {
+    "state_code": "IN",
+    "county": "Monroe",
+    "county_fips": "18105",
+    "election_date": "2026-11-03",
+    "whole_county_scope_reviewed": true,
+    "unique_voters_certified": false,
+    "analysis_rate_approved": false,
+    "measure_kind": "native_ballots_cast",
+    "measure_literal": "Total Ballots Cast",
+    "display_label": "Total Ballots Cast",
+    "count": 42766,
+    "source_url": "https://services1.arcgis.com/nYfGJ9xFTKW6VPqW/arcgis/rest/services/Join_Features_to_MonroeCountyGeneralElection2026_Precincts_inner_view/FeatureServer/0/query?where=1%3D1&outFields=Precinct_ID%2CPrecinct%2CRegistered_Voters%2CBallots_Cast%2CTurnout_Percentage%2CPrecinct_Reporting&returnDistinctValues=true&returnGeometry=false&orderByFields=Precinct_ID&f=json",
+    "source_clock_literal": null,
+    "source_status_literal": "Partially Reporting",
+    "scope_note": "All 103 participation rows say Partially Reporting. No final/certified/completion inference is made. No source result clock was printed in the acquired count source. The dashboard contains copied instructional text referring to a primary election, while the app's general-election heading, selected source-item name, layer name, snippet, contests, and fields identify the 2026 general election. This configuration conflict is preserved. Registered-voter totals and turnout percentages are not selected as denominators or rates.",
+    "native_record": {
+      "county": "Monroe",
+      "election_identity": "Monroe County 2026 Midterm General Election reporting; selected source item and layer are named MonroeCountyGeneralElection2026",
+      "measure_literal": "Total Ballots Cast",
+      "native_count": 42766,
+      "scope": "entire dashboard-declared source layer, reduced by the publisher to one record per Precinct_ID without a geographic filter",
+      "native_reporting_and_status_notes": [
+        "All 103 participation rows say Partially Reporting.",
+        "No final/certified/completion inference is made.",
+        "No source result clock was printed in the acquired count source.",
+        "The dashboard contains copied instructional text referring to a primary election, while the app's general-election heading, selected source-item name, layer name, snippet, contests, and fields identify the 2026 general election. This configuration conflict is preserved.",
+        "Registered-voter totals and turnout percentages are not selected as denominators or rates."
+      ],
+      "publisher_indicator": "Total Ballots Cast",
+      "derivation": "Publisher-defined distinct Precinct_ID indicator, reproduced without geographic filtering",
+      "distinct_native_precincts": 103,
+      "source_clock": null,
+      "native_precinct_reporting": {
+        "Partially Reporting": 103
+      }
+    },
+    "original_filename": "attempt-2-original.json",
+    "original_bytes": 18568,
+    "original_sha256": "43c76af87d5b1d45489f2e89266730de031040cb8b9a6ed61c206b75fc89db35",
+    "original_path": "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18105.json"
+  },
+  {
+    "state_code": "IN",
+    "county": "Porter",
+    "county_fips": "18127",
+    "election_date": "2026-11-03",
+    "whole_county_scope_reviewed": true,
+    "unique_voters_certified": false,
+    "analysis_rate_approved": false,
+    "measure_kind": "native_ballots_cast",
+    "measure_literal": "ballotsCast",
+    "display_label": "ballotsCast",
+    "count": 59917,
+    "source_url": "https://app.enhancedvoting.com/results/public/api/elections/porter-county-in/GeneralNov032026",
+    "source_clock_literal": "2026-11-04T08:07:10.7660544Z",
+    "source_status_literal": "isOfficialResults=false",
+    "scope_note": "",
+    "native_record": {
+      "ballotItemCount": 1,
+      "dateText": [
+        {
+          "languageId": "en",
+          "text": "November 3, 2026"
+        }
+      ],
+      "id": "01000000-e138-d223-a89a-08df2ed94aa0",
+      "jurisdictionId": "a00fe01c-80ed-404a-b9bf-9845a21b7b1b",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "2026 General Election"
+        }
+      ],
+      "isOfficialResults": false,
+      "electionDate": "2026-11-03",
+      "isProduction": true,
+      "asOf": "2026-11-04T08:07:10.7660544Z",
+      "lastUpdated": "2026-11-04T08:07:07.4851668Z",
+      "publishDate": "2026-11-04T08:07:11.3098481Z",
+      "publishVersionId": "8f2a4568-1ded-417e-adfc-0e1ef3125420",
+      "publicReportCategories": [],
+      "groupReportingStatus": [
+        {
+          "groupName": [
+            {
+              "languageId": "en",
+              "text": "ELECTION DAY"
+            }
+          ],
+          "reportingStatusClientTextKey": "reporting-status-fully-reported",
+          "order": 1,
+          "value": null
+        },
+        {
+          "groupName": [
+            {
+              "languageId": "en",
+              "text": "ABSENTEE"
+            }
+          ],
+          "reportingStatusClientTextKey": "reporting-status-fully-reported",
+          "order": 2,
+          "value": null
+        },
+        {
+          "groupName": [
+            {
+              "languageId": "en",
+              "text": "PROVISIONAL"
+            }
+          ],
+          "reportingStatusClientTextKey": "reporting-status-not-reported",
+          "order": 3,
+          "value": null
+        }
+      ],
+      "precinctReportingStatus": [
+        {
+          "groupName": [
+            {
+              "languageId": null,
+              "text": "Not Reported"
+            }
+          ],
+          "reportingStatusClientTextKey": "reporting-status-not-reported",
+          "order": null,
+          "value": 39
+        }
+      ],
+      "contestGroups": [],
+      "countGroups": [
+        {
+          "groupId": "01000000-4d41-5b30-18d5-08df2ed94bb7",
+          "groupName": [
+            {
+              "languageId": "en",
+              "text": "ELECTION DAY"
+            }
+          ],
+          "isFromVirtualPrecinct": false
+        },
+        {
+          "groupId": "01000000-4d41-5b30-e6a9-08df2ed94bb9",
+          "groupName": [
+            {
+              "languageId": "en",
+              "text": "ABSENTEE"
+            }
+          ],
+          "isFromVirtualPrecinct": false
+        },
+        {
+          "groupId": "01000000-4d41-5b30-0c02-08df2ed94bbb",
+          "groupName": [
+            {
+              "languageId": "en",
+              "text": "PROVISIONAL"
+            }
+          ],
+          "isFromVirtualPrecinct": false
+        }
+      ],
+      "precinctsReporting": 0.0,
+      "map": {
+        "enabled": true,
+        "styleUrl": "mapbox://styles/enhancedvoting/cmhl1ngo600q701qw1o5zhjvc",
+        "featureIdField": "id",
+        "disclaimer": [],
+        "showMapLegend": true
+      },
+      "totalVoters": 0.0,
+      "ballotsCast": 59917.0,
+      "redactingPrecinctCountGroups": false,
+      "precinctResultsProtected": false,
+      "reportingStatusBy": 1,
+      "customPublicMessages": [],
+      "closeRaceThreshold": null,
+      "closeRaceThresholdDisclaimer": [],
+      "hasStateWideCloseRaces": false,
+      "nextUpdateAt": null,
+      "hidePrecincts": false,
+      "includePrecinctResults": true,
+      "includePrecinctStatuses": true,
+      "showOverUnderVotes": false,
+      "isPrimary": false,
+      "parties": [
+        {
+          "id": "01000000-4d41-5b30-266e-08df2ed94bbd",
+          "name": [
+            {
+              "languageId": "en",
+              "text": "REPUBLICAN"
+            }
+          ],
+          "abbreviation": "REP",
+          "standardName": "REPUBLICAN",
+          "color": "#960018",
+          "textColor": "#ffffff",
+          "showInPublicResultsFilters": true
+        },
+        {
+          "id": "01000000-4d41-5b30-5d5d-08df2ed94bbd",
+          "name": [
+            {
+              "languageId": "en",
+              "text": "DEMOCRAT"
+            }
+          ],
+          "abbreviation": "DEM",
+          "standardName": "DEMOCRAT",
+          "color": "#255C99",
+          "textColor": "#ffffff",
+          "showInPublicResultsFilters": true
+        },
+        {
+          "id": "01000000-4d41-5b30-5fa0-08df2ed94bbd",
+          "name": [
+            {
+              "languageId": "en",
+              "text": "LIBERTARIAN"
+            }
+          ],
+          "abbreviation": "LIB",
+          "standardName": "LIBERTARIAN",
+          "color": "#f4c900",
+          "textColor": "#000000",
+          "showInPublicResultsFilters": true
+        },
+        {
+          "id": "01000000-4d41-5b30-6047-08df2ed94bbd",
+          "name": [
+            {
+              "languageId": "en",
+              "text": "INDEPENDENT"
+            }
+          ],
+          "abbreviation": "IND",
+          "standardName": "INDEPENDENT",
+          "color": "#CB4D26",
+          "textColor": "#FFFFFF",
+          "showInPublicResultsFilters": true
+        },
+        {
+          "id": "01000000-4d41-5b30-6109-08df2ed94bbd",
+          "name": [
+            {
+              "languageId": "en",
+              "text": "NONPARTISAN"
+            }
+          ],
+          "abbreviation": "NON",
+          "standardName": "NONPARTISAN",
+          "color": "#ffd266",
+          "textColor": "#000000",
+          "showInPublicResultsFilters": true
+        },
+        {
+          "id": "01000000-4d41-5b30-6188-08df2ed94bbd",
+          "name": [
+            {
+              "languageId": "en",
+              "text": "LINCOLN PARTY"
+            }
+          ],
+          "abbreviation": "LIP",
+          "standardName": "LINCOLN PARTY",
+          "color": "#FFE74C",
+          "textColor": "#000000",
+          "showInPublicResultsFilters": true
+        }
+      ]
+    },
+    "original_filename": "attempt-1-original.json",
+    "original_bytes": 3500,
+    "original_sha256": "35ad325133e02bb01f205a87ae19502f467afbe30276f7c1641bbb67a8e151a2",
+    "original_path": "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18127.json"
+  },
+  {
+    "state_code": "IN",
+    "county": "Posey",
+    "county_fips": "18129",
+    "election_date": "2026-11-03",
+    "whole_county_scope_reviewed": true,
+    "unique_voters_certified": false,
+    "analysis_rate_approved": false,
+    "measure_kind": "native_ballots_cast",
+    "measure_literal": "Total Ballots",
+    "display_label": "Total Ballots",
+    "count": 7857,
+    "source_url": "https://www.poseycountyin.gov/wp-content/uploads/2026/11/2026-Posey-County-General-Election-Unofficial-Results-110326.pdf",
+    "source_clock_literal": "11/3/2026 7:39:56 PM CST",
+    "source_status_literal": "Unofficial Totals",
+    "scope_note": "Source status remains Unofficial Totals. The 10 of 10 Early Absentee status phrase is preserved verbatim. The selected count is the earlier county snapshot at 7:39:56 PM CST. A later state candidate-vote count of 8,041 is not reconciled to or substituted for the earlier Total Ballots parent. No certification, finality, unique-person, or rate claim is made.",
+    "native_record": {
+      "county": "Posey",
+      "election_identity": "POSEY COUNTY, INDIANA; NOVEMBER 3, 2026; GENERAL ELECTION",
+      "measure_literal": "Total Ballots",
+      "native_count": 7857,
+      "scope": "whole-county parent; 34 of 34 precincts reporting 100.00%",
+      "native_reporting_and_status_notes": [
+        "Source status remains Unofficial Totals.",
+        "The 10 of 10 Early Absentee status phrase is preserved verbatim.",
+        "The selected count is the earlier county snapshot at 7:39:56 PM CST.",
+        "A later state candidate-vote count of 8,041 is not reconciled to or substituted for the earlier Total Ballots parent.",
+        "No certification, finality, unique-person, or rate claim is made."
+      ]
+    },
+    "original_filename": "attempt-1-original.pdf",
+    "original_bytes": 208415,
+    "original_sha256": "897d9ba6189d731bd2b4fcc7e865984d7de255dc4d642382a138e92b3f23198b",
+    "original_path": "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18129.pdf"
+  },
+  {
+    "state_code": "IN",
+    "county": "Wayne",
+    "county_fips": "18177",
+    "election_date": "2026-11-03",
+    "whole_county_scope_reviewed": true,
+    "unique_voters_certified": false,
+    "analysis_rate_approved": false,
+    "measure_kind": "native_ballots_cast",
+    "measure_literal": "Ballots Cast",
+    "display_label": "Ballots Cast",
+    "count": 16514,
+    "source_url": "https://www.co.wayne.in.us/clerk/election/CanvassResults/reports/14.html",
+    "source_clock_literal": "11/06/2026 2:45 PM",
+    "source_status_literal": null,
+    "scope_note": "Whole-county unofficial canvass report acquired; all 14 polling places reported. 14 of 14 polling places = 100.00%",
+    "native_record": {
+      "county": "Wayne",
+      "election_identity": "2026 general election",
+      "measure_literal": "Ballots Cast",
+      "native_count": 16514,
+      "scope": "14 of 14 polling places = 100.00%",
+      "native_reporting_and_status_notes": [
+        "Whole-county unofficial canvass report acquired; all 14 polling places reported.",
+        "14 of 14 polling places = 100.00%"
+      ]
+    },
+    "original_filename": "attempt-1-original.html",
+    "original_bytes": 150228,
+    "original_sha256": "e33cc88f6faa08246ff9bdab915c8269e304891a0f02ad550f371d015322a915",
+    "original_path": "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18177.html"
+  }
+]

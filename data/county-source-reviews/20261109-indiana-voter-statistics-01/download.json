@@ -1,0 +1,9 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-indiana-voter-statistics-20261109-01/complete-analysis.zip",
+  "bytes": 28598360,
+  "sha256": "a8afc335f530edf0bf60e76eeed71a3f416de19df41629d0192689be2757a30a",
+  "members": 133,
+  "original_statistics_queries": 93,
+  "selected_counts": 75,
+  "held_counts": 17
+}

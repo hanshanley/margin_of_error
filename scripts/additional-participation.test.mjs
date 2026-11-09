@@ -233,7 +233,7 @@ test('connects all Idaho and North Dakota native county parents without substitu
   assert.ok(legacy.counties.filter(row => ['ID', 'ND'].includes(row.state_code))
     .every(row => row.ballots === null && row.denominator === null && row.reported_pct === null
       && row.maps_approved === false && row.native_record === null));
-  assert.deepEqual(legacy.precincts, data.precincts);
+  assert.deepEqual(legacy.precincts, data.precincts.filter(row => row.state_code !== 'IN'));
   const parents = loadNativeCountyParents();
   const published = JSON.parse(gunzipSync(readFileSync(
     'data/county-source-reviews/20261109-native-county-parents-01/queries.json.gz')));
@@ -270,6 +270,24 @@ test('connects all Idaho and North Dakota native county parents without substitu
     row.denominator === null && row.reported_pct === null
     && row.denominator_basis === 'electorate_not_qualified'
     && row.native_record.RegisteredVoters > 0));
+});
+
+test('adds Indiana county and Monroe reporting-unit counts only to the live opt-in frame', () => {
+  const legacy = loadAdditionalParticipation();
+  assert.equal(legacy.counties.filter(row => row.state_code === 'IN').length, 0);
+  assert.equal(legacy.precincts.filter(row => row.state_code === 'IN').length, 0);
+  const counties = data.counties.filter(row => row.state_code === 'IN');
+  const units = data.precincts.filter(row => row.state_code === 'IN');
+  assert.equal(counties.length, 92);
+  assert.equal(counties.filter(row => row.ballots !== null).length, 75);
+  assert.equal(units.length, 103);
+  assert.equal(units.filter(row => row.maps_approved).length, 83);
+  assert.equal(counties.find(row => row.county_id === 'additional:IN:18105').source_rows, 103);
+  assert.equal(counties.find(row => row.county_id === 'additional:IN:18013').ballots, null);
+  assert.equal(counties.find(row => row.county_id === 'additional:IN:18013').native_record.VotersVoting, 0);
+  assert.equal(units.find(row => row.unit_key === '51').ballots, 241);
+  assert.equal(units.find(row => row.unit_key === '51').maps_approved, false);
+  assert.ok([...counties, ...units].every(row => row.denominator === null && row.reported_pct === null));
 });
 
 test('native county-parent review rejects missing, mismatched and cross-election inputs', () => {

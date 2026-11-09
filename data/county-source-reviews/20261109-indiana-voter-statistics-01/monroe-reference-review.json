@@ -1,0 +1,175 @@
+{
+  "source_snapshot": "indiana-monroe-native-20261109-01",
+  "original_count_rows": 103,
+  "source_polygon_ids": 103,
+  "mapped_polygons": 83,
+  "invalid_source_geometry": {},
+  "overlap_pairs": [
+    {
+      "left": 21,
+      "right": 94,
+      "square_degrees": 0.0003691480345447925
+    },
+    {
+      "left": 21,
+      "right": 97,
+      "square_degrees": 0.0003691480345447925
+    },
+    {
+      "left": 21,
+      "right": 101,
+      "square_degrees": 0.0003691480345447925
+    },
+    {
+      "left": 21,
+      "right": 114,
+      "square_degrees": 4.723493031207536e-10
+    },
+    {
+      "left": 44,
+      "right": 107,
+      "square_degrees": 0.0005345840726168127
+    },
+    {
+      "left": 62,
+      "right": 105,
+      "square_degrees": 3.0072578830825714e-05
+    },
+    {
+      "left": 92,
+      "right": 104,
+      "square_degrees": 4.931339423531458e-05
+    },
+    {
+      "left": 92,
+      "right": 109,
+      "square_degrees": 4.930849286803917e-05
+    },
+    {
+      "left": 92,
+      "right": 114,
+      "square_degrees": 4.93084928476088e-05
+    },
+    {
+      "left": 93,
+      "right": 100,
+      "square_degrees": 0.00014408776463718312
+    },
+    {
+      "left": 93,
+      "right": 111,
+      "square_degrees": 0.00014408029647477902
+    },
+    {
+      "left": 94,
+      "right": 97,
+      "square_degrees": 0.0003691480345447925
+    },
+    {
+      "left": 94,
+      "right": 101,
+      "square_degrees": 0.0003691480345447925
+    },
+    {
+      "left": 94,
+      "right": 114,
+      "square_degrees": 4.723493031207536e-10
+    },
+    {
+      "left": 95,
+      "right": 102,
+      "square_degrees": 0.0003736894185590187
+    },
+    {
+      "left": 95,
+      "right": 112,
+      "square_degrees": 0.0003736894185590187
+    },
+    {
+      "left": 95,
+      "right": 113,
+      "square_degrees": 0.0003736894185590187
+    },
+    {
+      "left": 97,
+      "right": 101,
+      "square_degrees": 0.0003691480345447925
+    },
+    {
+      "left": 97,
+      "right": 114,
+      "square_degrees": 4.723493031207536e-10
+    },
+    {
+      "left": 100,
+      "right": 111,
+      "square_degrees": 0.00014408029647477902
+    },
+    {
+      "left": 101,
+      "right": 114,
+      "square_degrees": 4.723493031207536e-10
+    },
+    {
+      "left": 102,
+      "right": 112,
+      "square_degrees": 0.0003736894185590187
+    },
+    {
+      "left": 102,
+      "right": 113,
+      "square_degrees": 0.0003736894185590187
+    },
+    {
+      "left": 104,
+      "right": 109,
+      "square_degrees": 4.930850423950971e-05
+    },
+    {
+      "left": 104,
+      "right": 114,
+      "square_degrees": 4.930850421907934e-05
+    },
+    {
+      "left": 109,
+      "right": 114,
+      "square_degrees": 4.9359134242606424e-05
+    },
+    {
+      "left": 112,
+      "right": 113,
+      "square_degrees": 0.0003736894185590187
+    }
+  ],
+  "withheld_overlap_ids": [
+    21,
+    44,
+    62,
+    92,
+    93,
+    94,
+    95,
+    97,
+    100,
+    101,
+    102,
+    104,
+    105,
+    107,
+    109,
+    111,
+    112,
+    113,
+    114
+  ],
+  "withheld_carrier_ids": [
+    51
+  ],
+  "carrier_reasons": {
+    "51": "Federal reporting-unit carrier overlaps every other source unit; no distinct precinct assignment."
+  },
+  "geometry_repaired": false,
+  "counts_allocated_to_clips": false,
+  "publisher_count_indicator_reproduced": 42766,
+  "analysis_rates_approved": false
+}

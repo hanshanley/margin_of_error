@@ -1,0 +1,104 @@
+{
+  "version": "data/county-source-reviews/20261109-indiana-voter-statistics-01",
+  "year": 2026,
+  "state_code": "IN",
+  "files": {
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/original-statewide-turnout.json.gz": {
+      "bytes": 1933,
+      "sha256": "0137468ec27501662f3bb7104cc953cc40e7d059e18187806208a87fcce1ecd8"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/original-settings.json.gz": {
+      "bytes": 792,
+      "sha256": "938594da402ab46a31cf7cc083b8852498119cf340781123bc3620fd9d0af9da"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/native-county-identity-control.json.gz": {
+      "bytes": 2993,
+      "sha256": "2ec8fa3be36c8205c4f4b0b09f96fc61bcc67060d2300d092abfae0e89257304"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18017.pdf": {
+      "bytes": 291064,
+      "sha256": "ed11b24aa9b36e2cc5a8bf7e940d71feb293d497e12e5632915baede7d5c4f4b"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18043.pdf": {
+      "bytes": 93797,
+      "sha256": "2cb9852460ba3aeb4ab943013b1370a682829f62ec8c5574a314d04478b0444e"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18049.pdf": {
+      "bytes": 248313,
+      "sha256": "187362a90809cd6fbf29610fc10279dc8fc58d29e328ef986220004826dbf6ee"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18105.json": {
+      "bytes": 18568,
+      "sha256": "43c76af87d5b1d45489f2e89266730de031040cb8b9a6ed61c206b75fc89db35"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18127.json": {
+      "bytes": 3500,
+      "sha256": "35ad325133e02bb01f205a87ae19502f467afbe30276f7c1641bbb67a8e151a2"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18129.pdf": {
+      "bytes": 208415,
+      "sha256": "897d9ba6189d731bd2b4fcc7e865984d7de255dc4d642382a138e92b3f23198b"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/originals/18177.html": {
+      "bytes": 150228,
+      "sha256": "e33cc88f6faa08246ff9bdab915c8269e304891a0f02ad550f371d015322a915"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/independent-county-parents.json": {
+      "bytes": 18887,
+      "sha256": "1dc7e0204eb5d09ddd23ea6daca56f7c930ea640a1cb45f5e4a77e16dd50a60d"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/monroe-original-counts.json": {
+      "bytes": 18568,
+      "sha256": "43c76af87d5b1d45489f2e89266730de031040cb8b9a6ed61c206b75fc89db35"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/monroe-selected-polygons.json": {
+      "bytes": 1623842,
+      "sha256": "05063b53d4dbb2fa4ed95410e0517bbe2d928190aa7571b0fc42cfe0a8d7b5ce"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/monroe-reporting-units.json.gz": {
+      "bytes": 5332,
+      "sha256": "ceaefd2088ba26b88a2c786d228769005eba1db4f38cf5a8862fad1aa9f39333"
+    },
+    "data/county-source-reviews/20261109-indiana-voter-statistics-01/monroe-reference-review.json": {
+      "bytes": 3357,
+      "sha256": "88a46dd6955c8cf095c77c02592949f1a098ad2a18adbc3bd08f3048356725e2"
+    },
+    "data/county-results/20261105-house-02/geometry/IN.geojson.gz": {
+      "bytes": 863475,
+      "sha256": "ddcaae3590bc8040717b611fd4aaf7000b9a359d2530b99b5a7776ed926a579c"
+    },
+    "public/participation-precincts/20261109-indiana-monroe-01/IN.geojson.gz": {
+      "bytes": 380087,
+      "sha256": "86b4dda4aea4963580c2d4c2582ae6487f272bf70a36f6254268a8599b665281"
+    },
+    "public/participation-precincts/20261109-indiana-monroe-01/index.json": {
+      "bytes": 1065,
+      "sha256": "834d6c524d7e3123af84e8f0c0cb77d3d5187bc092b2727f3b19092a59028650"
+    }
+  },
+  "source_data_url": "https://enr.indianavoters.in.gov/site/data/statewideTurnout_B.json",
+  "original_stats_bytes": 13359,
+  "original_stats_sha256": "eb240d626034c20959e443dec0246b1e137aefcf2fe1054f5df4991444846d80",
+  "reference": {
+    "path": "data/county-results/20261105-house-02/geometry/IN.geojson.gz",
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/IN.geojson.gz",
+    "sha256": "ddcaae3590bc8040717b611fd4aaf7000b9a359d2530b99b5a7776ed926a579c",
+    "uncompressed_sha256": "fac02a3e2ac291829cd74801effc2be4cec37bab06fbb54165ea32aa97bf7301",
+    "boundary_year": 2026,
+    "counties": 92,
+    "review_id": "indiana-native-voter-statistics-20261109-01"
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-indiana-voter-statistics-20261109-01/complete-analysis.zip",
+  "state_full_election_participation_qualified": false,
+  "analysis_rates_approved": false,
+  "precincts_approved": false,
+  "monroe": {
+    "participation_file": "data/county-source-reviews/20261109-indiana-voter-statistics-01/monroe-reporting-units.json.gz",
+    "source_count_file": "data/county-source-reviews/20261109-indiana-voter-statistics-01/monroe-original-counts.json",
+    "selected_reference_file": "data/county-source-reviews/20261109-indiana-voter-statistics-01/monroe-selected-polygons.json",
+    "audit_file": "data/county-source-reviews/20261109-indiana-voter-statistics-01/monroe-reference-review.json",
+    "normalized_reference_file": "public/participation-precincts/20261109-indiana-monroe-01/IN.geojson.gz",
+    "original_source_rows": 103,
+    "mapped_polygons": 83
+  }
+}

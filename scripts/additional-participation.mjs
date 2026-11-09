@@ -5,6 +5,7 @@ import { parse } from 'csv-parse/sync';
 import { loadNativeCountyParents } from './native-county-parents.mjs';
 import { loadMichiganCountyParents } from './michigan-county-parents.mjs';
 import { loadMarylandCardCounts } from './maryland-county-cards.mjs';
+import { loadIndianaVoterStatistics } from './indiana-voter-statistics.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -315,6 +316,40 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
         'All 24 county equivalents join the checksum-verified 2026 Census county reference; Baltimore city stays separate.',
         'The explicit Saint Mary\'s / St. Mary\'s alias retains the unchanged native label.',
         'No demographic allocation, qualified denominator, turnout rate, precinct records or final-counting claim.'],
+    }));
+  }
+  const indiana = nativeCountyParents ? loadIndianaVoterStatistics() : { counties: [], precincts: [] };
+  for (const row of indiana.counties) {
+    const snapshot = { data_directory: 'data/county-source-reviews/20261109-indiana-voter-statistics-01',
+      base_url: '', complete_download_url: row.complete_download_url };
+    counties.push(observation(snapshot, '', 'IN', row.county, row.county_fips, row.native_record, {
+      ballots: row.source_count, denominator: null, denominator_basis: 'source_electorate_not_qualified',
+      reported_pct: null, maps_approved: true, county_fips: row.county_fips,
+      reference_geometry: row.reference_geometry, participation_measure_label: row.participation_measure_label,
+      source_url: row.source_url, source_update_label: row.source_update_label,
+      source_status_literal: row.source_status_literal, source_reporting_label: row.source_reporting_label,
+      county_parent_complete_download_url: row.complete_download_url,
+      cast_ballot_count_qualified: row.cast_ballot_count_qualified,
+      unique_voter_count_qualified: false, source_count_qualified: row.source_count_qualified,
+      selected_source_kind: row.selected_source_kind,
+      statewide_statistics_native_record: row.statewide_statistics_native_record,
+      source_candidate_votes_not_participation: row.source_candidate_votes_not_participation,
+      quality: row.quality,
+    }));
+  }
+  for (const row of indiana.precincts) {
+    const snapshot = { data_directory: 'data/county-source-reviews/20261109-indiana-voter-statistics-01',
+      base_url: '', complete_download_url: row.complete_download_url };
+    precincts.push(observation(snapshot, '', 'IN', row.county, row.county_fips, row.native_record, {
+      geography_level: 'reporting_unit', unit: row.unit, unit_key: row.unit_key,
+      unit_kind: 'source_reporting_unit', ballots: row.ballots, denominator: null,
+      denominator_basis: 'source_electorate_not_qualified', reported_pct: null,
+      maps_approved: row.match_status === 'matched', county_fips: row.county_fips,
+      match_status: row.match_status, geometry_withheld_reason: row.geometry_withheld_reason,
+      participation_measure_label: 'Native Ballots Cast', source_url: row.source_url,
+      source_update_label: row.source_update_label, source_reporting_label: row.source_reporting_label,
+      quality: [row.source_reporting_label, row.boundary_label, row.rate_withheld_reason,
+        ...(row.geometry_withheld_reason ? [row.geometry_withheld_reason] : [])],
     }));
   }
   const seen = new Set(), unitSeen = new Set();

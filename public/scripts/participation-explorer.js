@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -738,8 +738,11 @@ function stateParticipationRows() {
       }
       let observed = 0;
       const countsOnly = !counties.some(row => row.reported_pct != null);
+      const measures = [...new Set(counties.map(participationLabel).filter(Boolean))];
       const countLabel = code === "MD" && counties.every(row => row.cast_ballot_count_qualified === false)
-        ? "Cards Cast (not unique voters)" : "Ballots reported";
+        ? "Cards Cast (not unique voters)" : measures.length === 1 ? measures[0]
+          : measures.length ? "Source participation count" : "Ballots reported";
+      const availableCounts = counties.filter(row => row.ballots != null).length;
       const maximum = Math.max(0, ...counties.map(row => row.ballots ?? 0));
       for (const feature of features) {
         const key = countyName(feature.properties.name);
@@ -799,6 +802,8 @@ function stateParticipationRows() {
         + `${fmt(reference ? nativeByFips.size : contextRows.size)} reviewed county identity joins. `
         + (reference?.partial_county_fips
           ? `Only ${fmt(nativeByFips.size)} of ${fmt(reference.counties)} counties have native parents in this source; other counties are missing, not zero. ` : "")
+        + (availableCounts < counties.length
+          ? `${fmt(availableCounts)} available participation counts; ${fmt(counties.length - availableCounts)} source totals are withheld, not zero turnout. ` : "")
         + "Gray does not mean zero participation; select a county to inspect its actual counts and missingness. "
         + "Precinct mapping uses a separate, source-specific layer; use the sidebar where a qualified 2026 layer is available. "
         + contextError
@@ -1299,6 +1304,8 @@ function currentPrecinctDetail(p, metadata = {}) {
     html("p", "selection-note", currentPrecinctDescription(p)),
     html("p", "selection-note", `2026 unofficial counts, not final turnout. ${p.boundary_label
       || metadata.boundary_label || "Reviewed reference boundaries"}; no cross-election boundary match is implied.`));
+  if (p.source_reporting_label) panel.append(html("p", "selection-note", p.source_reporting_label));
+  if (p.source_update_label) panel.append(html("p", "selection-note", p.source_update_label));
   if (p.source_url) panel.append(sourceLink(p));
   panel.parentElement.prepend(panel);
 }
@@ -1321,13 +1328,27 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     const response = await fetch(new URL(file, state.currentPrecinctPath));
     if (!response.ok) throw new Error(`2026 precinct boundaries: HTTP ${response.status}`);
     if (!globalThis.DecompressionStream) throw new Error("This browser cannot read compressed precinct geography; complete downloads remain available");
-    state.currentPrecinctShapes.set(code,
-      await new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).json());
+    let body = response.body;
+    if (metadata.sha256) {
+      const raw = await response.arrayBuffer();
+      const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", raw))]
+        .map(value => value.toString(16).padStart(2, "0")).join("");
+      if (hash !== metadata.sha256 || raw.byteLength !== metadata.bytes)
+        throw new Error("2026 precinct source checksum disagrees");
+      body = new Response(raw).body;
+    }
+    const data = await new Response(body.pipeThrough(new DecompressionStream("gzip"))).json();
+    if (metadata.source_id === "indiana-monroe-native-20261109-01"
+      && (code !== "IN" || data.features.length !== metadata.expected_features
+        || new Set(data.features.map(feature => feature.properties.key)).size !== data.features.length
+        || data.features.some(feature => !feature.geometry || !qualifiedIndianaMonroePrecinct(feature.properties))))
+      throw new Error("Unqualified Indiana Monroe precinct count or reference");
+    state.currentPrecinctShapes.set(code, data);
   }
   if (token !== state.drillToken || state.map !== map) return;
   const features = state.currentPrecinctShapes.get(code).features;
   const name = selected.feature.properties.NAME;
-  const countsOnly = code === "MI";
+  const countsOnly = code === "MI" || metadata.counts_only === true;
   const maximum = Math.max(0, ...features.map(feature => feature.properties.ballots ?? 0));
   for (const feature of features) {
     const p = feature.properties, item = projectInside(feature, selected.point);

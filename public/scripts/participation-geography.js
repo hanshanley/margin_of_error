@@ -41,3 +41,16 @@ export function qualifiedVaPrecinctParticipation(p, year) {
     && Number.isSafeInteger(row.registered) && row.registered >= 0
     && row.reported_pct === null;
 }
+
+export function qualifiedIndianaMonroePrecinct(p) {
+  const row = p.native_record;
+  return p.year === 2026 && p.state_code === "IN" && p.county_fips === "18105"
+    && p.county_id === "additional:IN:18105" && p.match_status === "matched"
+    && p.source_snapshot === "indiana-monroe-native-20261109-01"
+    && Number.isSafeInteger(p.native_precinct_id) && p.native_precinct_id > 0
+    && p.key === `IN|18105|${p.native_precinct_id}` && p.unit_key === String(p.native_precinct_id)
+    && row?.Precinct_ID === p.native_precinct_id && row.Precinct === p.unit
+    && Number.isSafeInteger(p.ballots) && p.ballots >= 0 && p.ballots === row.Ballots_Cast
+    && row.Precinct_Reporting === "Partially Reporting"
+    && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null;
+}

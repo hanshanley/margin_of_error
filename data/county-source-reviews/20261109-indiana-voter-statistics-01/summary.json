@@ -1,0 +1,13 @@
+{
+  "original_queries": 93,
+  "county_queries": 92,
+  "selected_counts": 75,
+  "held_counts": 17,
+  "independent_county_parents": 7,
+  "original_source_state_voters_voting": 1055902,
+  "full_election_state_count_qualified": false,
+  "analysis_rates_approved": false,
+  "monroe_source_units": 103,
+  "monroe_mapped_units": 83,
+  "monroe_geometry_withheld_units": 20
+}
