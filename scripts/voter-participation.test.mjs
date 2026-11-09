@@ -11,7 +11,31 @@ import { previewSvg, publicationScript, sourceRevision } from './stage-voter-par
 import { participationDownload, participationHistoricalRoot, participationArchivedNationwideRoot } from '../public/scripts/participation-downloads.js';
 import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles, verifyPagesSize, verifyPagesByteCounts } from './prepare-participation-pages.mjs';
 import { appendPrecinctHistory } from './build-precinct-histories.mjs';
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation } from '../public/scripts/participation-geography.js';
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation } from '../public/scripts/participation-geography.js';
+
+test('Virginia exposes only reviewed native identities and counts while withholding every rate', () => {
+	const raw = readFileSync(new URL('../data/precinct-results/20261105-virginia-02/2026/VA.geojson.gz', import.meta.url));
+	const pointer = JSON.parse(readFileSync(new URL('../public/precinct-results.json', import.meta.url)));
+	const source = pointer.additional_snapshots.find(row => row.data_directory.endsWith('virginia-02'));
+	assert.equal(createHash('sha256').update(raw).digest('hex'), source.participation_count_sha256);
+	const data = JSON.parse(gunzipSync(raw));
+	for (const { properties } of data.features)
+		assert.equal(qualifiedVaPrecinctParticipation(properties, 2026), true);
+	const original = data.features[0].properties;
+	assert.equal(qualifiedVaPrecinctParticipation(original, 2024), false);
+	for (const [field, value] of [['ballots', null], ['ballots', -1], ['ballots', 1.5],
+		['registered', null], ['reported_pct', 0]]) {
+		const p = structuredClone(original);
+		p.participation[field] = value;
+		assert.equal(qualifiedVaPrecinctParticipation(p, 2026), false, field);
+	}
+	for (const [field, value] of [['key', 'unmatched'], ['precinct_uuid', ''],
+		['original_precinct_id', 'unmatched'], ['year', 2024],
+		['state_code', 'DC'], ['reporting_unit_kind', 'virtual']]) {
+		const p = { ...original, [field]: value };
+		assert.equal(qualifiedVaPrecinctParticipation(p, 2026), false, field);
+	}
+});
 
 test('DC participation accepts only the native reviewed precinct identity and exact provisional source fraction', () => {
 	const data = JSON.parse(gunzipSync(readFileSync(new URL(

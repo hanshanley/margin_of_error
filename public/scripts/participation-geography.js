@@ -25,3 +25,19 @@ export function qualifiedDcPrecinctParticipation(p, year) {
     && Number.isFinite(row.reported_pct)
     && Math.abs(row.reported_pct - 100 * row.ballots / row.registered) < 1e-10;
 }
+
+export function qualifiedVaPrecinctParticipation(p, year) {
+  const row = p.participation;
+  return year === 2026 && p.year === year && p.state_code === "VA"
+    && p.match_status === "matched" && p.reporting_unit_kind === "source_reporting_unit"
+    && /^\d{3}$/.test(p.county_code) && typeof p.precinct_uuid === "string"
+    && /^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(p.precinct_uuid)
+    && (p.original_precinct_id === p.precinct_code
+      || (/^\d{1,3}$/.test(p.original_precinct_id)
+        && String(p.original_precinct_id).padStart(4, "0") === p.precinct_code))
+    && p.key === `VA:${p.county_code}:${p.precinct_code}:${p.congressional_district}`
+    && row?.measure === "reported_ballots_and_registration"
+    && Number.isSafeInteger(row.ballots) && row.ballots >= 0
+    && Number.isSafeInteger(row.registered) && row.registered >= 0
+    && row.reported_pct === null;
+}

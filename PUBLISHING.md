@@ -128,6 +128,15 @@ or demographic turnout. Retain the 2019-named reference attribution and withheld
 overlapping strips: counts describe whole precincts, not clipped-area allocations.
 The existing complete D.C. original-source ZIP stays directly available.
 
+Virginia's 710 existing current-reference joins expose literal `ballotsCast`
+counts only. All 710 values independently match the native locality field;
+260 differ from the distinct `voterTurnout` field, which is not substituted.
+The browser verifies the compressed map checksum before decoding and checks
+native precinct identities and held rates. Native registrations are not rate
+denominators. Preserve all 1,819 exclusions, separate source clocks, original
+ZIP and the warning that current references are not certified election-day
+boundaries. Do not regenerate or replace this already-qualified source.
+
 `public/participation-reporting-units.json` separately enables Alaska's523,
 Hawaii's496, Arizona's1763, Arkansas's2768 and Wyoming's432 already-reviewed
 reporting-unit observations. The precinct view

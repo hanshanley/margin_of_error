@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -827,6 +827,8 @@ async function loadCurrentPrecincts() {
             state.precinctResults.coverage[year][code] = {
               ...coverage, data_url: new URL(coverage.file, snapshot.base_url).href,
               complete_download_url: snapshot.complete_download_url,
+              ...(snapshot.participation_count_sha256
+                ? { participation_count_sha256: snapshot.participation_count_sha256 } : {}),
             };
           }
         }
@@ -1016,34 +1018,46 @@ async function loadCurrentPrecincts() {
         const response = await fetch(coverage.data_url);
         if (!response.ok) throw new Error(`Precinct results: HTTP ${response.status}`);
         if (!globalThis.DecompressionStream) throw new Error("Compressed precinct data are unsupported by this browser; complete downloads remain available");
-        return new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).json();
+        let body = response.body;
+        if (coverage.participation_count_sha256) {
+          const raw = await response.arrayBuffer();
+          const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", raw))]
+            .map(value => value.toString(16).padStart(2, "0")).join("");
+          if (hash !== coverage.participation_count_sha256)
+            throw new Error("Precinct participation source checksum disagrees");
+          body = new Response(raw).body;
+        }
+        return new Response(body.pipeThrough(new DecompressionStream("gzip"))).json();
       })().catch(error => { state.precinctResultShapes.delete(key); throw error; });
       state.precinctResultShapes.set(key, promise);
     }
     return state.precinctResultShapes.get(key);
   }
   function matchedPrecinctParticipationCoverage(code, year = Number($("year").value)) {
-    return year === 2026 && ["ID", "ND", "MN", "DC"].includes(code)
+    const coverage = year === 2026 && ["ID", "ND", "MN", "DC", "VA"].includes(code)
       ? state.precinctResults?.coverage[year]?.[code] || null : null;
+    return code === "VA" && !coverage?.participation_count_sha256 ? null : coverage;
   }
   function matchedPrecinctParticipationMode() {
     return ufMode() || ["available", "official"].includes($("mode").value);
   }
-  function matchedParticipationDescription(row) {
-    if (row.measure === "reported_ballots")
+  function matchedParticipationDescription(row, countsOnly = row.measure === "reported_ballots") {
+    if (countsOnly)
       return `${fmt(row.ballots)} reported ballots · no precinct electorate denominator or participation rate`;
     return `${row.reported_pct == null ? "Rate withheld" : pct(row.reported_pct)} · `
       + `${fmt(row.ballots)} ${row.measure ? "reported ballots" : "reported voters"} / `
       + `${fmt(row.registered ?? row.denominator)} ${row.denominator_basis || "source-registered voters"}`;
   }
   function matchedPrecinctParticipationDetail(p) {
-    const row = p.participation, countsOnly = row.measure === "reported_ballots";
+    const row = p.participation, countsOnly = row.measure === "reported_ballots" || p.state_code === "VA";
     const panel = $("substate-detail");
     panel.replaceChildren(html("h4", "", `${p.county} · ${p.precinct}`),
       html("p", `selection-rate${!countsOnly && row.reported_pct == null ? " selection-unavailable" : ""}`,
         countsOnly ? fmt(row.ballots) : pct(row.reported_pct)),
-      html("p", "selection-note", matchedParticipationDescription(row)),
-      html("p", "selection-note", row.basis || row.quality),
+      html("p", "selection-note", matchedParticipationDescription(row, countsOnly)),
+      html("p", "selection-note", p.state_code === "VA"
+        ? "Literal native ballotsCast from the locality voterTurnout object. The distinct voterTurnout count is not substituted. Mode allocations and registration denominators remain unqualified; no final or all-mode turnout is inferred."
+        : row.basis || row.quality),
       html("p", "selection-note", row.quality_flags?.length
         ? `Rate review: ${row.quality_flags.map(flag => flag.replaceAll("_", " ")).join("; ")}.`
         : p.state_code === "DC" ? "Provisional election-night fraction; not final, population or demographic turnout."
@@ -1054,16 +1068,19 @@ async function loadCurrentPrecincts() {
     if (p.boundary_provenance) panel.append(html("p", "selection-note", p.boundary_provenance));
     if (p.state_code === "DC") panel.append(html("p", "selection-note",
       `${p.source_reporting_status} · source updated ${p.source_updated_at}.`));
+    if (p.state_code === "VA") panel.append(html("p", "selection-note",
+      `Native registrations: ${fmt(row.registered)} · not a qualified rate denominator. See complete locality originals for their separate source clocks.`));
     panel.parentElement.prepend(panel);
   }
   async function drawMatchedPrecinctParticipation(map, selected, code, year, token) {
     const coverage = matchedPrecinctParticipationCoverage(code, year);
     const data = await precinctResultData(code, year);
     if (token !== state.drillToken || state.map !== map) return;
-    const keys = new Set(), countsOnly = code === "ND";
+    const keys = new Set(), countsOnly = ["ND", "VA"].includes(code);
     for (const { properties: p, geometry } of data.features) {
       const row = p.participation;
       const scope = code === "DC" ? qualifiedDcPrecinctParticipation(p, year)
+        : code === "VA" ? qualifiedVaPrecinctParticipation(p, year)
         : countsOnly
         ? p.reporting_unit_kind === "precinct" && row?.measure === "reported_ballots"
           && row.denominator === null && row.reported_pct === null
@@ -1078,7 +1095,8 @@ async function loadCurrentPrecincts() {
           && row?.reporting_unit_kind === "source_reporting_unit"
           && row.measure === "reported_ballots_and_registration";
       if (!geometry || !row || p.match_status !== "matched" || p.state_code !== code || p.year !== year
-        || row?.key !== p.key || row.state_code !== code || row.year !== year || !scope || keys.has(p.key))
+        || (code !== "VA" && (row?.key !== p.key || row.state_code !== code || row.year !== year))
+        || !scope || keys.has(p.key))
         throw new Error(`Unqualified ${code} precinct participation payload`);
       keys.add(p.key);
     }
@@ -1089,7 +1107,7 @@ async function loadCurrentPrecincts() {
     for (const feature of data.features) {
       const p = feature.properties, row = p.participation, item = projectInside(feature, selected.point);
       const path = featurePath(item, row.reported_pct,
-        `${p.county} · ${p.precinct} · ${year}\n${matchedParticipationDescription(row)}`, () => {
+        `${p.county} · ${p.precinct} · ${year}\n${matchedParticipationDescription(row, countsOnly)}`, () => {
           state.precinctResultSelection = p.key;
           matchedPrecinctParticipationDetail(p);
           for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
@@ -1098,7 +1116,8 @@ async function loadCurrentPrecincts() {
           "data-color-level": row.reported_pct == null ? "none" : "precinct",
           "data-rate": row.reported_pct ?? "", "data-count": row.ballots,
           "data-registered": row.registered ?? row.denominator ?? "", "data-year": year, tabindex: "-1",
-          ...(countsOnly ? { fill: countFill(row.ballots, maximum), "data-count-measure": "reported_ballots" } : {}) });
+          ...(countsOnly ? { fill: countFill(row.ballots, maximum),
+            "data-count-measure": code === "VA" ? "native_ballotsCast" : "reported_ballots" } : {}) });
       path.classList.toggle("selected", p.key === state.precinctResultSelection);
       map.detail.append(path);
     }
@@ -1110,17 +1129,18 @@ async function loadCurrentPrecincts() {
       reported_pct: p.participation.reported_pct, notes: p.participation.basis || p.participation.quality,
     })), [["county", "County"], ["precinct", "Reporting unit"],
       ["ballots", code === "MN" ? "Reported voters" : "Ballots reported"],
-      ["registered", "Source registrations"],
+      ["registered", code === "VA" ? "Native registrations (not a rate denominator)" : "Source registrations"],
       ["reported_pct", code === "DC" ? "Provisional source fraction (%)" : "Participation rate"], ["notes", "Notes"]]);
     header("2026 midterms · unofficial precinct observations · partial coverage",
       `Precinct participation${countsOnly ? " counts" : ""} in ${selected.feature.properties.NAME}`,
-      countsOnly ? "Native reported-ballot counts. No precinct electorate denominators or rates are available."
+      code === "VA" ? "Literal native ballotsCast counts on reviewed current-reference joins, not all Virginia. Participation rates remain withheld; distinct voterTurnout values and missing ballot modes are not substituted."
+        : countsOnly ? "Native reported-ballot counts. No precinct electorate denominators or rates are available."
         : code === "DC" ? "Provisional election-night ballots / source-registered voters. Registration reference date is not independently verified; this is not final turnout."
         : code === "MN" ? "Native reported voters / registered at 7 a.m. plus election-day registrations. County detail remains available separately."
         : "Reported ballots / source total registered voters. Every colored shape uses its own approved reporting-unit counts.",
       "Only previously reviewed geometry joins are shown. Gray is a withheld or unavailable rate, not zero participation. Conflicting and unmatched units remain excluded; pooled absentee/early units are not allocated.");
-    if (code === "DC" && coverage.complete_download_url) {
-      const complete = html("a", "source-link", "Complete D.C. precinct counts and original sources (ZIP)");
+    if (["DC", "VA"].includes(code) && coverage.complete_download_url) {
+      const complete = html("a", "source-link", `Complete ${code === "DC" ? "D.C." : "Virginia"} precinct counts and original sources (ZIP)`);
       complete.href = coverage.complete_download_url;
       $("caption").append(" ", complete);
     }
@@ -1133,6 +1153,8 @@ async function loadCurrentPrecincts() {
     $("geography-note").textContent = `${selected.feature.properties.NAME} · ${fmt(data.features.length)} `
       + (code === "DC"
         ? "official-app reference joins for the 2026 election. The app selects its 2019-named reference, not newly surveyed or certified 2026 boundaries. Ambiguous overlapping strips remain withheld; counts describe whole precincts, not clipped-area allocations. "
+        : code === "VA"
+        ? "reviewed 2026 current-reference shapes, not certified election-day boundaries. Unmatched, invalid, overlapping, virtual, split-district and incomplete-mode units remain excluded. "
         : "verified 2026 reporting-unit shapes. ")
       + (countsOnly ? "All shapes carry native ballot counts but no precinct electorate denominator or rate. "
         : `${fmt(observed)} ${code === "DC" ? "provisional source fractions" : "source-defined participation rates"}. `)

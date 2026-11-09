@@ -118,13 +118,14 @@ with sync_playwright() as runtime:
                         "retained_2026": True, "no_silent_metric_switch": True})
 
         for name, count in (("Idaho", 448), ("North Dakota", 338), ("Minnesota", 4105),
-                            ("Michigan", 58), ("New Mexico", 2177), ("District of Columbia", 144)):
+                            ("Michigan", 58), ("New Mexico", 2177), ("District of Columbia", 144),
+                            ("Virginia", 710)):
             page.select_option("#precinct-state-select", name)
             shapes = page.locator('.geographic-detail [data-level="precinct"]')
             expect(shapes).to_have_count(count, timeout=90000)
             expect(page.locator("#year")).to_have_value("2026")
             assert shapes.evaluate_all("els=>els.every(e=>!e.hasAttribute('data-margin'))")
-            if name in ("North Dakota", "Michigan"):
+            if name in ("North Dakota", "Michigan", "Virginia"):
                 assert shapes.evaluate_all("els=>new Set(els.map(e=>e.getAttribute('fill'))).size") > 1
                 assert shapes.evaluate_all("els=>els.every(e=>e.dataset.rate==='')")
             results.append({"case": "supported_2026_precincts", "state": name, "shapes": count})
