@@ -51,6 +51,9 @@ with sync_playwright() as runtime:
         page.on("pageerror", lambda error: errors.append(str(error)))
         page.goto(base + "?view=states&year=2026&state=Texas&map-level=county",
                   wait_until="domcontentloaded")
+        script = page.request.get(args.base_url.rstrip("/") + "/scripts/participation-explorer.js")
+        assert script.ok
+        script_sha256 = hashlib.sha256(script.body()).hexdigest()
         ready(page)
         for name, count, native in (("California", 58, True), ("Florida", 67, True),
                                     ("Texas", 254, False), ("New York", 62, False)):
@@ -115,7 +118,7 @@ with sync_playwright() as runtime:
                         "retained_2026": True, "no_silent_metric_switch": True})
 
         for name, count in (("Idaho", 448), ("North Dakota", 338), ("Minnesota", 4105),
-                            ("Michigan", 58), ("New Mexico", 2177)):
+                            ("Michigan", 58), ("New Mexico", 2177), ("District of Columbia", 144)):
             page.select_option("#precinct-state-select", name)
             shapes = page.locator('.geographic-detail [data-level="precinct"]')
             expect(shapes).to_have_count(count, timeout=90000)
@@ -198,7 +201,7 @@ with sync_playwright() as runtime:
         browser.close()
 
 proof = {"status": "PASS_2026_geographic_drilldowns", "base_url": args.base_url,
-         "script_sha256": hashlib.sha256((ROOT / "public/scripts/participation-explorer.js").read_bytes()).hexdigest(),
+         "script_sha256": script_sha256,
          "cases": results}
 args.proof.write_text(json.dumps(proof, indent=2) + "\n")
 print(json.dumps(proof))

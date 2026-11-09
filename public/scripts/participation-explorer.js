@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -826,6 +826,7 @@ async function loadCurrentPrecincts() {
           for (const [code, coverage] of Object.entries(states)) {
             state.precinctResults.coverage[year][code] = {
               ...coverage, data_url: new URL(coverage.file, snapshot.base_url).href,
+              complete_download_url: snapshot.complete_download_url,
             };
           }
         }
@@ -1022,7 +1023,7 @@ async function loadCurrentPrecincts() {
     return state.precinctResultShapes.get(key);
   }
   function matchedPrecinctParticipationCoverage(code, year = Number($("year").value)) {
-    return year === 2026 && ["ID", "ND", "MN"].includes(code)
+    return year === 2026 && ["ID", "ND", "MN", "DC"].includes(code)
       ? state.precinctResults?.coverage[year]?.[code] || null : null;
   }
   function matchedPrecinctParticipationMode() {
@@ -1045,11 +1046,14 @@ async function loadCurrentPrecincts() {
       html("p", "selection-note", row.basis || row.quality),
       html("p", "selection-note", row.quality_flags?.length
         ? `Rate review: ${row.quality_flags.map(flag => flag.replaceAll("_", " ")).join("; ")}.`
+        : p.state_code === "DC" ? "Provisional election-night fraction; not final, population or demographic turnout."
         : countsOnly ? "Color shows reported ballot counts; no precinct denominator or participation rate is available."
           : "Source inputs passed the published rate checks."),
       html("p", "selection-note", "Only this approved reporting-unit join is shown. Unmatched and conflicting units remain excluded; pooled absentee/early units are never allocated. Candidate votes are not ballots cast."),
       sourceLink(row.source_url ? row : p));
     if (p.boundary_provenance) panel.append(html("p", "selection-note", p.boundary_provenance));
+    if (p.state_code === "DC") panel.append(html("p", "selection-note",
+      `${p.source_reporting_status} · source updated ${p.source_updated_at}.`));
     panel.parentElement.prepend(panel);
   }
   async function drawMatchedPrecinctParticipation(map, selected, code, year, token) {
@@ -1059,7 +1063,8 @@ async function loadCurrentPrecincts() {
     const keys = new Set(), countsOnly = code === "ND";
     for (const { properties: p, geometry } of data.features) {
       const row = p.participation;
-      const scope = countsOnly
+      const scope = code === "DC" ? qualifiedDcPrecinctParticipation(p, year)
+        : countsOnly
         ? p.reporting_unit_kind === "precinct" && row?.measure === "reported_ballots"
           && row.denominator === null && row.reported_pct === null
           && Number.isSafeInteger(row.ballots) && row.ballots >= 0
@@ -1105,19 +1110,32 @@ async function loadCurrentPrecincts() {
       reported_pct: p.participation.reported_pct, notes: p.participation.basis || p.participation.quality,
     })), [["county", "County"], ["precinct", "Reporting unit"],
       ["ballots", code === "MN" ? "Reported voters" : "Ballots reported"],
-      ["registered", "Source registrations"], ["reported_pct", "Participation rate"], ["notes", "Notes"]]);
+      ["registered", "Source registrations"],
+      ["reported_pct", code === "DC" ? "Provisional source fraction (%)" : "Participation rate"], ["notes", "Notes"]]);
     header("2026 midterms · unofficial precinct observations · partial coverage",
       `Precinct participation${countsOnly ? " counts" : ""} in ${selected.feature.properties.NAME}`,
       countsOnly ? "Native reported-ballot counts. No precinct electorate denominators or rates are available."
+        : code === "DC" ? "Provisional election-night ballots / source-registered voters. Registration reference date is not independently verified; this is not final turnout."
         : code === "MN" ? "Native reported voters / registered at 7 a.m. plus election-day registrations. County detail remains available separately."
         : "Reported ballots / source total registered voters. Every colored shape uses its own approved reporting-unit counts.",
       "Only previously reviewed geometry joins are shown. Gray is a withheld or unavailable rate, not zero participation. Conflicting and unmatched units remain excluded; pooled absentee/early units are not allocated.");
+    if (code === "DC" && coverage.complete_download_url) {
+      const complete = html("a", "source-link", "Complete D.C. precinct counts and original sources (ZIP)");
+      complete.href = coverage.complete_download_url;
+      $("caption").append(" ", complete);
+    }
     $("coverage-note").textContent = `${fmt(data.features.length)} approved reporting-unit joins; `
-      + `${fmt(observed)} have reviewed rates and ${fmt(data.features.length - observed)} retain withheld or unavailable rates. `
-      + "The complete source table has additional unmapped units. Candidate votes are not used as ballots.";
-    $("geography-note").textContent = `${selected.feature.properties.NAME} · ${fmt(data.features.length)} verified 2026 reporting-unit shapes. `
+      + `${fmt(observed)} have ${code === "DC" ? "provisional source fractions" : "reviewed rates"} and ${fmt(data.features.length - observed)} retain withheld or unavailable rates. `
+      + (code === "DC"
+        ? "All source precinct identities have a reference join; ambiguous overlapping strips remain withheld. "
+        : "The complete source table has additional unmapped units. ")
+      + "Candidate votes are not used as ballots.";
+    $("geography-note").textContent = `${selected.feature.properties.NAME} · ${fmt(data.features.length)} `
+      + (code === "DC"
+        ? "official-app reference joins for the 2026 election. The app selects its 2019-named reference, not newly surveyed or certified 2026 boundaries. Ambiguous overlapping strips remain withheld; counts describe whole precincts, not clipped-area allocations. "
+        : "verified 2026 reporting-unit shapes. ")
       + (countsOnly ? "All shapes carry native ballot counts but no precinct electorate denominator or rate. "
-        : `${fmt(observed)} source-defined participation rates. `)
+        : `${fmt(observed)} ${code === "DC" ? "provisional source fractions" : "source-defined participation rates"}. `)
       + "Select a shape for its exact counts and review notes. No county/state rate is painted onto a precinct.";
     if (countsOnly) countLegend(maximum, "Reported ballots · no rate");
     else ramp();

@@ -2,14 +2,32 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { runInNewContext } from 'node:vm';
 import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { gunzipSync } from 'node:zlib';
 import { previewSvg, publicationScript, sourceRevision } from './stage-voter-participation.mjs';
 import { participationDownload, participationHistoricalRoot, participationArchivedNationwideRoot } from '../public/scripts/participation-downloads.js';
 import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles, verifyPagesSize, verifyPagesByteCounts } from './prepare-participation-pages.mjs';
 import { appendPrecinctHistory } from './build-precinct-histories.mjs';
-import { countFill, precinctSelectionYears } from '../public/scripts/participation-geography.js';
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation } from '../public/scripts/participation-geography.js';
+
+test('DC participation accepts only the native reviewed precinct identity and exact provisional source fraction', () => {
+	const data = JSON.parse(gunzipSync(readFileSync(new URL(
+		'../data/precinct-results/20261105-dc-01/2026/DC.geojson.gz', import.meta.url))));
+	for (const { properties } of data.features)
+		assert.equal(qualifiedDcPrecinctParticipation(properties, 2026), true);
+	const original = data.features[0].properties;
+	assert.equal(qualifiedDcPrecinctParticipation(original, 2024), false);
+	for (const [field, value] of [['ballots', null], ['ballots', -1], ['ballots', 1.5],
+		['registered', 0], ['reported_pct', null], ['reported_pct', 100],
+		['key', 'unmatched'], ['year', 2024], ['state_code', 'VA']]) {
+		const p = structuredClone(original);
+		p.participation[field] = value;
+		assert.equal(qualifiedDcPrecinctParticipation(p, 2026), false, field);
+	}
+});
 
 test('2026 remains selectable when only historical precinct sources are loaded', () => {
 	assert.deepEqual(precinctSelectionYears([2024, 2020], '2026', [2024, 2022]),

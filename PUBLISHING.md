@@ -120,6 +120,14 @@ separate original reviews. The versioned complete download under
 originals, reference geometry and a dependency-free offline Node reproduction.
 Its packaging command refuses to overwrite an existing version.
 
+D.C.'s 144 precinct observations use the already-reviewed official 2026 app
+reference and distinct native ballots/registration, not Council-chair votes.
+The participation view checks each identity and exact source fraction before
+drawing. These are provisional election-night fractions, not final, population
+or demographic turnout. Retain the 2019-named reference attribution and withheld
+overlapping strips: counts describe whole precincts, not clipped-area allocations.
+The existing complete D.C. original-source ZIP stays directly available.
+
 `public/participation-reporting-units.json` separately enables Alaska's523,
 Hawaii's496, Arizona's1763, Arkansas's2768 and Wyoming's432 already-reviewed
 reporting-unit observations. The precinct view
