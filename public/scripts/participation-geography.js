@@ -73,3 +73,32 @@ export function selectCountySourceFrame(data, code, mode) {
     throw new Error("Unqualified WV county source mode; all-method counts are not substituted");
   return rows;
 }
+
+export function qualifiedHawaiiAdministrationReference(rows, reference, collection) {
+  const members = {
+    "HI-HONOLULU": ["15003"], "HI-HAWAII": ["15001"], "HI-KAUAI": ["15007"],
+    "HI-MAUI": ["15009", "15005"],
+  };
+  const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  if (reference?.geography_scope !== "native_election_administration"
+    || reference.identity_field !== "source_administration_id" || reference.boundary_year !== 2026
+    || reference.administration_count !== 4 || reference.Census_counties !== 5 || reference.counties !== 4
+    || !Array.isArray(rows) || rows.length !== 4
+    || new Set(rows.map(r => r.source_administration_id)).size !== 4
+    || !Array.isArray(collection?.features) || collection.features.length !== 4
+    || new Set(collection.features.map(f => f.properties.key)).size !== 4) return false;
+  const shapes = new Map(collection.features.map(f => [f.properties.key, f.properties]));
+  return rows.every(row => {
+    const identity = row.source_administration_id, p = shapes.get(identity);
+    return members[identity] && p && p.source_administration_id === identity && p.name === row.county
+      && p.state_code === "HI" && p.boundary_year === 2026
+      && same(p.component_county_fips, members[identity]) && same(row.component_county_fips, members[identity])
+      && row.year === 2026 && row.state_code === "HI" && row.county_fips === null
+      && row.geography_level === "election_administration" && row.county_id === `additional:HI:${identity}`
+      && row.native_record?.source_administration_id === identity
+      && row.ballots === row.native_record.native_values?.["TOTAL TURNOUT"]
+      && Number.isSafeInteger(row.ballots) && row.ballots >= 0
+      && row.denominator === null && row.reported_pct === null
+      && row.cast_ballot_count_qualified === false && row.unique_voter_count_qualified === false;
+  });
+}

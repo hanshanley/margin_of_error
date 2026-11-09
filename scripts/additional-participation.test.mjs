@@ -12,6 +12,24 @@ import { loadMichiganCountyParents, reviewMichiganCountyParents } from './michig
 const data = loadAdditionalParticipation({ nativeCountyParents: true });
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, skip_empty_lines: true });
 
+test('Hawaii live-only administrations do not fabricate separate Maui/Kalawao counts or modify frozen source units', () => {
+  const legacy = loadAdditionalParticipation();
+  const rows = data.counties.filter(row => row.state_code === 'HI');
+  assert.equal(legacy.counties.filter(row => row.state_code === 'HI').length, 0);
+  assert.equal(rows.length, 4);
+  assert.deepEqual(rows.flatMap(r => r.component_county_fips).sort(),
+    ['15001', '15003', '15005', '15007', '15009']);
+  for (const row of rows) {
+    assert.equal(row.county_fips, null);
+    assert.equal(row.ballots, row.native_record.native_values['TOTAL TURNOUT']);
+    assert.equal(row.geography_level, 'election_administration');
+    assert.equal(row.denominator, null);
+    assert.equal(row.reported_pct, null);
+  }
+  assert.deepEqual(data.precincts.filter(r => r.state_code === 'HI'), legacy.precincts.filter(r => r.state_code === 'HI'));
+  assert.deepEqual(data.nongeographic.filter(r => r.state_code === 'HI'), legacy.nongeographic.filter(r => r.state_code === 'HI'));
+});
+
 test('live Colorado counties use all64 native returned totals without changing the frozen source frame', () => {
   const rows = data.counties.filter(row => row.state_code === 'CO');
   assert.equal(rows.length, 64);

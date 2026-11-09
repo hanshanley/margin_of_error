@@ -1,0 +1,78 @@
+{
+  "year": 2026,
+  "state_code": "HI",
+  "files": {
+    "data/county-source-reviews/20261109-hawaii-administrations-01/originals/cch.pdf": {
+      "bytes": 23886,
+      "sha256": "b13143004d8e46972280275bdbb92d9f21dc96add169093a2c760acd633edaa3"
+    },
+    "data/county-source-reviews/20261109-hawaii-administrations-01/originals/coh.pdf": {
+      "bytes": 9445,
+      "sha256": "f8f9b0abb4a0eb0cdbf2228414203ad73b8aad95db695ece53bc2dbf9c13e878"
+    },
+    "data/county-source-reviews/20261109-hawaii-administrations-01/originals/cok.pdf": {
+      "bytes": 8592,
+      "sha256": "801bc3b74c20c46f4f653dcd6697f5ac9d343a16d029b7c784296a63e9cfd05c"
+    },
+    "data/county-source-reviews/20261109-hawaii-administrations-01/originals/com.pdf": {
+      "bytes": 15077,
+      "sha256": "7198e31b20ef87fcded36610ff17ea711fbd4ae3d44470db75b123f9d2688263"
+    },
+    "data/county-source-reviews/20261109-hawaii-administrations-01/originals/histatewide.pdf": {
+      "bytes": 40133,
+      "sha256": "fb481ceba6c8995b949c6a800bce396298568a693cd5b89124f5e95ea0cd3afe"
+    },
+    "data/county-source-reviews/20261109-hawaii-administrations-01/originals/media.txt": {
+      "bytes": 1883986,
+      "sha256": "9c2fc3e3f56ba5bf5d618f4b5f2a993671d33fd2bc7fbceda624d23e87c36ab7"
+    },
+    "data/county-source-reviews/20261109-hawaii-administrations-01/native-administration-grid.json": {
+      "bytes": 3932,
+      "sha256": "2435b93efa5a7b5da99c87f558a631e9185a126d9d8c4e8a65bd2b7a195f7c8b"
+    },
+    "data/county-source-reviews/20261109-hawaii-administrations-01/native-unit-participation.json.gz": {
+      "bytes": 19119,
+      "sha256": "96b670b42e2156d563bb6dde943817a222ad90e26bcb74727f1d360db68b6052"
+    },
+    "data/county-source-reviews/20261109-hawaii-administrations-01/source-audit.json": {
+      "bytes": 36419,
+      "sha256": "f8e1fd9d97af6367fd094c06dd8dfe49141e0ec091c0e659dcdf01ba4dad7d52"
+    },
+    "data/county-source-reviews/20261109-hawaii-administrations-01/scope-facts.json": {
+      "bytes": 842,
+      "sha256": "aceb7e997c16a896b6978285c5bd37480e4926bb7bd3854d00275824d7a7ed57"
+    },
+    "data/county-results/20261107T125502Z/geometry/HI.geojson.gz": {
+      "bytes": 64336,
+      "sha256": "7893f2321b420c0d908a4b0d75ad8abfb92c602da256a9fb5160eba6b6db5089"
+    },
+    "public/participation-county-administrations/20261109-hawaii-01/HI.geojson.gz": {
+      "bytes": 57585,
+      "sha256": "b5973c0a59c892d8619ed60b9c72cbc874a206b04fe4689c2428ca883c61b6d0"
+    }
+  },
+  "rates_approved": false,
+  "cast_ballot_count_qualified": false,
+  "unique_voter_count_qualified": false,
+  "precincts_approved": false,
+  "reference": {
+    "path": "public/participation-county-administrations/20261109-hawaii-01/HI.geojson.gz",
+    "url": "/participation-county-administrations/20261109-hawaii-01/HI.geojson.gz",
+    "boundary_year": 2026,
+    "counties": 4,
+    "administration_count": 4,
+    "Census_counties": 5,
+    "geography_scope": "native_election_administration",
+    "identity_field": "source_administration_id",
+    "sha256": "b5973c0a59c892d8619ed60b9c72cbc874a206b04fe4689c2428ca883c61b6d0",
+    "uncompressed_sha256": "682c53217f90dc5a55a0ab08da62952f3115ff2ac490c335e52e6ddd9e6a763a",
+    "review_id": "hawaii-election-administrations-20261109-01"
+  },
+  "original_reference": {
+    "path": "data/county-results/20261107T125502Z/geometry/HI.geojson.gz",
+    "sha256": "7893f2321b420c0d908a4b0d75ad8abfb92c602da256a9fb5160eba6b6db5089",
+    "uncompressed_sha256": "ea3ab120181a04786abd7737e1a7af23d14e1bacc6e9a3eb086b54a4a5b968e1",
+    "counties": 5
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-hawaii-administrations-20261109-01/complete-analysis.zip"
+}

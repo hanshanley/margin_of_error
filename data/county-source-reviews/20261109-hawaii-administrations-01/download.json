@@ -1,0 +1,9 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-hawaii-administrations-20261109-01/complete-analysis.zip",
+  "bytes": 413466,
+  "sha256": "accb723320f22522ae6cd84206f0a84af11cd98fffb1745e8fd5fe26140a19bf",
+  "members": 24,
+  "native_administrations": 4,
+  "Census_county_decisions": 5,
+  "analysis_rates_approved": false
+}

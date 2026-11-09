@@ -1,0 +1,111 @@
+[
+  {
+    "source_administration_id": "HI-HONOLULU",
+    "administration": "Honolulu election administration",
+    "component_county_fips": [
+      "15003"
+    ],
+    "source_header": [
+      "GENERAL ELECTION 2026 - State of Hawaii - City and County of Honolulu",
+      "November 3, 2026",
+      "SUMMARY REPORT ",
+      "REPORT 3 ",
+      "Page 1",
+      "Printed on: 11/04/2026 at 09:09:56 am",
+      "U.S. Representative, Dist I"
+    ],
+    "native_values": {
+      "TOTAL REGISTRATION": 550792,
+      "TOTAL TURNOUT": 228487,
+      "Mail TURNOUT": 218939,
+      "In-Person TURNOUT": 9548
+    },
+    "native_turnout_section": "TOTAL REGISTRATION\n550,792\nTOTAL TURNOUT\n228,487\n41.5%\nMail TURNOUT\n218,939\n39.7%\nIn-Person TURNOUT\n9,548\n1.7%",
+    "source_url": "https://elections.hawaii.gov/wp-content/results/2026%20General/cch.pdf",
+    "source_original": "originals/cch.pdf",
+    "source_clock_literal": "Printed on: 11/04/2026 at 09:09:56 am",
+    "source_timezone": null
+  },
+  {
+    "source_administration_id": "HI-HAWAII",
+    "administration": "Hawaii election administration",
+    "component_county_fips": [
+      "15001"
+    ],
+    "source_header": [
+      "GENERAL ELECTION 2026 - State of Hawaii - County of Hawaii",
+      "November 3, 2026",
+      "SUMMARY REPORT ",
+      "REPORT 3 ",
+      "Page 1",
+      "Printed on: 11/04/2026 at 05:05:21 am",
+      "U.S. Representative, Dist II"
+    ],
+    "native_values": {
+      "TOTAL REGISTRATION": 135544,
+      "TOTAL TURNOUT": 62453,
+      "Mail TURNOUT": 58936,
+      "In-Person TURNOUT": 3517
+    },
+    "native_turnout_section": "TOTAL REGISTRATION\n135,544\nTOTAL TURNOUT\n62,453\n46.1%\nMail TURNOUT\n58,936\n43.5%\nIn-Person TURNOUT\n3,517\n2.6%",
+    "source_url": "https://elections.hawaii.gov/wp-content/results/2026%20General/coh.pdf",
+    "source_original": "originals/coh.pdf",
+    "source_clock_literal": "Printed on: 11/04/2026 at 05:05:21 am",
+    "source_timezone": null
+  },
+  {
+    "source_administration_id": "HI-KAUAI",
+    "administration": "Kauai election administration",
+    "component_county_fips": [
+      "15007"
+    ],
+    "source_header": [
+      "GENERAL ELECTION 2026 - State of Hawaii - County of Kauai",
+      "November 3, 2026",
+      "SUMMARY REPORT ",
+      "REPORT 3 ",
+      "Page 1",
+      "Printed on: 11/04/2026 at 07:36:52 am",
+      "U.S. Representative, Dist II"
+    ],
+    "native_values": {
+      "TOTAL REGISTRATION": 49337,
+      "TOTAL TURNOUT": 24635,
+      "Mail TURNOUT": 23150,
+      "In-Person TURNOUT": 1485
+    },
+    "native_turnout_section": "TOTAL REGISTRATION\n49,337\nTOTAL TURNOUT\n24,635\n49.9%\nMail TURNOUT\n23,150\n46.9%\nIn-Person TURNOUT\n1,485\n3.0%",
+    "source_url": "https://elections.hawaii.gov/wp-content/results/2026%20General/cok.pdf",
+    "source_original": "originals/cok.pdf",
+    "source_clock_literal": "Printed on: 11/04/2026 at 07:36:52 am",
+    "source_timezone": null
+  },
+  {
+    "source_administration_id": "HI-MAUI",
+    "administration": "Maui election administration (includes Kalawao)",
+    "component_county_fips": [
+      "15009",
+      "15005"
+    ],
+    "source_header": [
+      "GENERAL ELECTION 2026 - State of Hawaii - County of Maui",
+      "November 3, 2026",
+      "SUMMARY REPORT ",
+      "REPORT 3 ",
+      "Page 1",
+      "Printed on: 11/04/2026 at 02:35:33 am",
+      "U.S. Representative, Dist II"
+    ],
+    "native_values": {
+      "TOTAL REGISTRATION": 117726,
+      "TOTAL TURNOUT": 50324,
+      "Mail TURNOUT": 47362,
+      "In-Person TURNOUT": 2962
+    },
+    "native_turnout_section": "TOTAL REGISTRATION\n117,726\nTOTAL TURNOUT\n50,324\n42.7%\nMail TURNOUT\n47,362\n40.2%\nIn-Person TURNOUT\n2,962\n2.5%",
+    "source_url": "https://elections.hawaii.gov/wp-content/results/2026%20General/com.pdf",
+    "source_original": "originals/com.pdf",
+    "source_clock_literal": "Printed on: 11/04/2026 at 02:35:33 am",
+    "source_timezone": null
+  }
+]

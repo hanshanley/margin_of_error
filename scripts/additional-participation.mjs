@@ -8,6 +8,7 @@ import { loadMarylandCardCounts } from './maryland-county-cards.mjs';
 import { loadIndianaVoterStatistics } from './indiana-voter-statistics.mjs';
 import { loadWestVirginiaCountyModes } from './west-virginia-county-modes.mjs';
 import { loadColoradoCountyReturns } from './colorado-returned-counties.mjs';
+import { loadHawaiiAdministrations } from './hawaii-administrations.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -370,6 +371,24 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
       quality: [row.source_reporting_label,
         'Separate exact county identity review against the complete 2026 Census reference; not precincts.',
         'Older provider mail-returned and early-in-person observations are not overwritten or relabelled.'],
+    }));
+  }
+  if (nativeCountyParents) {
+    for (const row of loadHawaiiAdministrations().administrations) counties.push(observation({
+      data_directory: 'data/county-source-reviews/20261109-hawaii-administrations-01',
+      base_url: '', complete_download_url: row.complete_download_url,
+    }, '', 'HI', row.county, row.source_administration_id, row.native_record, {
+      geography_level: 'election_administration', county_fips: null,
+      source_administration_id: row.source_administration_id, component_county_fips: row.component_county_fips,
+      ballots: row.source_count, denominator: null, denominator_basis: 'source_electorate_not_qualified',
+      reported_pct: null, maps_approved: true, reference_geometry: row.reference_geometry,
+      participation_measure_label: row.participation_measure_label, source_mode: 'native_TOTAL_TURNOUT',
+      source_count_qualified: true, cast_ballot_count_qualified: false, unique_voter_count_qualified: false,
+      source_url: row.source_url, source_update_label: row.source_update_label,
+      source_status_literal: row.source_status_literal, source_reporting_label: row.source_reporting_label,
+      quality: [row.source_reporting_label,
+        'Four election administrations use five full 2026 Census county components; Maui includes Kalawao.',
+        'Original statewide/unit/report discrepancies and separate clocks survive; no rates or count allocation.'],
     }));
   }
   const countyFrames = {};

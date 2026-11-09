@@ -1,0 +1,28 @@
+{
+  "scope_url": "https://elections.hawaii.gov/wp-content/uploads/2024-Elections-Audit.pdf",
+  "scope_page": 37,
+  "scope_fact": "For election reporting, Kalawao is included in Maui; native four election administrations are not five independent Census-county totals.",
+  "administration_count": 4,
+  "Census_counties": 5,
+  "membership": {
+    "HI-HONOLULU": [
+      "15003"
+    ],
+    "HI-HAWAII": [
+      "15001"
+    ],
+    "HI-KAUAI": [
+      "15007"
+    ],
+    "HI-MAUI": [
+      "15009",
+      "15005"
+    ]
+  },
+  "original_geometry_path": "data/county-results/20261107T125502Z/geometry/HI.geojson.gz",
+  "counts_allocated": false,
+  "geometry_repaired": false,
+  "grouping_operation": "unary_union of declared full components, not repaired or clipped polygons",
+  "certified_election_day_geography": false,
+  "rates_approved": false
+}

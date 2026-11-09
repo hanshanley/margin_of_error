@@ -1,2 +1,3 @@
 public/participation-context/** -text whitespace=cr-at-eol
 public/participation-methods/** -text whitespace=cr-at-eol
+data/county-source-reviews/20261109-hawaii-administrations-01/originals/media.txt -text whitespace=-trailing-space,cr-at-eol
