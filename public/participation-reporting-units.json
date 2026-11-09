@@ -1,0 +1,25 @@
+{
+  "year": 2026,
+  "sources": {
+    "AK": {
+      "rows": 523,
+      "sha256": "5eb889e4ebb1dbcf6687b19f6bb3d27a790b1d498b6c3ad854f7ae59d6a1d138",
+      "data_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/269406570805a8f9a030f4f01d1ff49f608cc9d5/data/precinct-source-reviews/20261105/AK/participation.json.gz",
+      "source_url": "https://www.elections.alaska.gov/enr/26GENR/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-alaska-20261105/complete-alaska-2026-source-review.zip",
+      "source_update_label": "11/04/2026 2:11 PM; native timezone not supplied",
+      "scope": "402 geographic reporting units, 120 separately pooled district absentee/early/question units and one federal-overseas unit. No pooled ballots are assigned to residential precincts. All rates remain withheld.",
+      "geometry_note": "No approved precinct geometry join. The election-portal shapes retain unresolved decoding/topology issues; the separate locator reference does not independently establish exact election vintage."
+    },
+    "HI": {
+      "rows": 496,
+      "sha256": "96b670b42e2156d563bb6dde943817a222ad90e26bcb74727f1d360db68b6052",
+      "data_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/269406570805a8f9a030f4f01d1ff49f608cc9d5/data/precinct-source-reviews/20261105/HI/participation.json.gz",
+      "source_url": "https://elections.hawaii.gov/election-results/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-hawaii-20261105/complete-hawaii-2026-source-review.zip",
+      "source_update_label": "Printed on: 11/04/2026 at 09:09:04 am; native timezone not supplied",
+      "scope": "247 geographic mail labels, two overseas mail labels and 247 separate VSC splits. Mode-specific registrations and zero VSC denominators are not combined. Native unit ballots total 365903 versus 365897 in the separate summary; the six-ballot discrepancy is retained. All rates remain withheld.",
+      "geometry_note": "No verified 2026 precinct-reference join. Advertised older boundaries are not substituted; VSC and overseas units are not assigned to residential precincts."
+    }
+  }
+}

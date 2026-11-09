@@ -120,6 +120,13 @@ separate original reviews. The versioned complete download under
 originals, reference geometry and a dependency-free offline Node reproduction.
 Its packaging command refuses to overwrite an existing version.
 
+`public/participation-reporting-units.json` separately enables Alaska's523 and
+Hawaii's496 already-reviewed reporting-unit observations. The precinct view
+checks the pinned compressed data hash, retains every native unit/key/count
+and exposes selection, search and complete originals without drawing geometry.
+Pooled/federal/overseas/VSC units, source zeros and the Hawaii source discrepancy
+remain distinct; no participation rates or boundary joins are enabled.
+
 The complete site exceeds GitHub Pages' 1 GB limit when bulk participation downloads
 are duplicated in its artifact. `scripts/prepare-participation-pages.mjs` verifies
 CSV/ZIP downloads and jurisdiction-detail JSON against the version-pinned

@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
 import { gunzipSync } from 'node:zlib';
 import { parse } from 'csv-parse/sync';
@@ -9,6 +10,36 @@ import { loadNativeCountyParents, reviewCountyParents } from './native-county-pa
 
 const data = loadAdditionalParticipation({ nativeCountyParents: true });
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, skip_empty_lines: true });
+
+test('exposes complete Alaska and Hawaii source-unit counts without enabling geometry or rates', () => {
+  const index = JSON.parse(readFileSync('public/participation-reporting-units.json'));
+  assert.equal(index.year, 2026);
+  for (const [code, count, ballots] of [['AK', 523, 215906], ['HI', 496, 365903]]) {
+    const source = index.sources[code];
+    const directory = `data/precinct-source-reviews/20261105/${code}`;
+    const raw = readFileSync(`${directory}/participation.json.gz`);
+    const rows = JSON.parse(gunzipSync(raw));
+    const audit = JSON.parse(readFileSync(`${directory}/audit.json`));
+    assert.equal(source.rows, count);
+    assert.equal(rows.length, count);
+    assert.equal(new Set(rows.map(row => row.key)).size, count);
+    assert.equal(createHash('sha256').update(raw).digest('hex'), source.sha256);
+    assert.equal(rows.reduce((sum, row) => sum + row.ballots, 0), ballots);
+    assert.ok(rows.every(row => row.year === 2026 && row.state_code === code && row.reported_pct === null));
+    assert.equal(source.complete_download_url, audit.complete_download_url);
+    assert.match(source.geometry_note, /No (approved|verified)/);
+    assert.match(source.data_url, /\/[0-9a-f]{40}\//);
+    if (code === 'AK') {
+      assert.equal(rows.filter(row => row.reporting_unit_kind === 'geographic_precinct').length, 402);
+      assert.equal(rows.filter(row => row.reporting_unit_kind === 'federal_overseas').length, 1);
+    } else {
+      const vsc = rows.filter(row => row.reporting_unit_kind === 'native_vsc_split');
+      assert.equal(vsc.length, 247);
+      assert.ok(vsc.every(row => row.registered === 0 && row.source_reporting === 0));
+      assert.ok(vsc.some(row => row.ballots > 0));
+    }
+  }
+});
 
 test('exposes whole native county and locality counts instead of candidate results', () => {
   const expected = { AL: [67, 1693621], AZ: [15, 2248900], AR: [75, 893026],

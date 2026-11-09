@@ -44,6 +44,7 @@ const state = {
   currentPrecincts: null, currentPrecinctPath: "", currentPrecinctShapes: new Map(), currentPrecinctError: "",
   currentMunicipalities: {},
   currentPrecinctSelection: "",
+  reportingUnitSources: {}, reportingUnitData: new Map(), reportingUnitError: "",
   context: null, contextPath: "", margins: [], contextError: "", subshapes: new Map(),
   results: null, resultsError: "",
   countyResults: null, countyResultsPath: "", countyResultsError: "",
@@ -1386,6 +1387,7 @@ function precinctParticipationCoverage(code, year) {
   if (year !== 2026) return "";
   if (matchedPrecinctParticipationCoverage(code, year)) return "matched_results";
   if (state.currentPrecincts?.states?.[code]) return "current_participation";
+  if (state.reportingUnitSources[code]) return "reporting_units";
   return "";
 }
 function precinctCoverageCodes() {
@@ -1408,7 +1410,8 @@ function precinctLayerOptions(code, year, requestedLayer) {
   const values = [["participation", precinctParticipationCoverage(code, year)
     ? code === "NC" && year !== 2026
       ? "Registered-voter participation · North Carolina"
-      : "Participation counts / rates · qualified sources"
+      : precinctParticipationCoverage(code, year) === "reporting_units"
+        ? "Reported participation counts · map held" : "Participation counts / rates · qualified sources"
     : "Participation · no loaded source"]];
   if (precinctResultCoverage(code, year) || requestedLayer === "results")
     values.push(["results", precinctResultCoverage(code, year)
@@ -3046,13 +3049,98 @@ function precinctSourcePanel(year, layer) {
       : "Only source-qualified precinct or reporting-unit participation is shown. Gray can carry a direct count with no qualified rate."));
   const detail = html("div", "substate-detail"); detail.id = "substate-detail"; panel.append(detail);
 }
+async function loadReportingUnitSources() {
+  try {
+    const response = await fetch("/participation-reporting-units.json");
+    if (!response.ok) throw new Error(`Source reporting units: HTTP ${response.status}`);
+    const index = await response.json();
+    if (index.year !== 2026 || Object.entries(index.sources).some(([code, source]) =>
+      !["AK", "HI"].includes(code) || !Number.isSafeInteger(source.rows) || source.rows <= 0
+      || !/^[0-9a-f]{64}$/.test(source.sha256)))
+      throw new Error("Unqualified reporting-unit coverage index");
+    state.reportingUnitSources = index.sources;
+  } catch (error) {
+    state.reportingUnitError = error.message;
+  }
+}
+async function drawReportingUnitCounts(map, code, year, token) {
+  const source = state.reportingUnitSources[code];
+  if (!state.reportingUnitData.has(code)) {
+    const promise = (async () => {
+      const response = await fetch(source.data_url);
+      if (!response.ok) throw new Error(`Reporting-unit counts: HTTP ${response.status}`);
+      const raw = await response.arrayBuffer();
+      const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", raw))]
+        .map(value => value.toString(16).padStart(2, "0")).join("");
+      if (hash !== source.sha256) throw new Error("Reporting-unit source checksum disagrees");
+      const rows = await countyJSON(new Response(raw));
+      if (rows.length !== source.rows || new Set(rows.map(row => row.key)).size !== source.rows
+        || rows.some(row => row.year !== year || row.state_code !== code
+          || !row.precinct || !row.reporting_unit_kind || row.reported_pct !== null
+          || !Number.isSafeInteger(row.ballots) || row.ballots < 0))
+        throw new Error("Reporting-unit identities or native counts disagree with reviewed scope");
+      return rows;
+    })().catch(error => { state.reportingUnitData.delete(code); throw error; });
+    state.reportingUnitData.set(code, promise);
+  }
+  const rows = await state.reportingUnitData.get(code);
+  if (state.map !== map || state.drillToken !== token) return;
+  setTable(rows, [["precinct", "Native reporting label"], ["reporting_unit_kind", "Source unit type"],
+    ["source_split_label", "Native split"], ["ballots", "Reported ballots"],
+    ["registered", "Native registrations (not a rate denominator)"], ["quality_flags", "Source qualifications"]]);
+  header(`${year} midterms · source reporting units · geometry withheld`,
+    `Reported participation counts in ${state.selectedState}`,
+    "Source-unit ballot counts are available below. No precinct map or participation rate is inferred.",
+    source.scope);
+  legend([["State outline only · reporting-unit counts in table", "#edf0f3"]]);
+  $("coverage-note").textContent = `${fmt(rows.length)} source reporting-unit observations. ${source.geometry_note}`;
+  $("geography-note").hidden = false;
+  $("geography-note").textContent = "No geographic overlays: the count table is available, but boundary joins remain withheld.";
+  const panel = $("substate-detail");
+  panel.replaceChildren(html("h4", "", "Choose a source reporting unit"),
+    html("p", "selection-note", source.geometry_note));
+  const label = html("label", "", "Reporting unit"), select = html("select");
+  select.id = "source-reporting-unit-select";
+  options(select, rows.map(row => [row.key,
+    `${row.precinct} · ${row.reporting_unit_kind.replaceAll("_", " ")}${row.source_split_label ? " · " + row.source_split_label : ""}`]),
+    state.precinct);
+  label.append(select);
+  const detail = html("div", "substate-detail"); detail.id = "source-reporting-unit-detail";
+  const choose = () => {
+    const row = rows.find(row => row.key === select.value);
+    state.precinct = row.key;
+    detail.replaceChildren(html("h4", "", row.precinct), html("p", "selection-rate", fmt(row.ballots)),
+      html("p", "selection-basis", "Native reported ballots · no participation rate"),
+      html("p", "selection-note", row.basis),
+      html("p", "selection-note", (row.quality_flags || []).join("; ")),
+      html("p", "selection-note", `Source label: ${source.source_update_label}.`));
+    syncURL();
+  };
+  select.addEventListener("change", choose);
+  panel.append(label, detail);
+  const table = html("button", "selection-link", `View all ${fmt(rows.length)} source observations`);
+  table.type = "button";
+  table.addEventListener("click", () => {
+    $("table-panel").open = true;
+    $("table-panel").scrollIntoView({ block: "start" });
+    $("search").focus();
+  });
+  panel.append(table);
+  const complete = html("a", "source-link", "Complete original sources and every reporting-unit query (ZIP)");
+  complete.href = source.complete_download_url;
+  const counts = html("a", "source-link", "All native reporting-unit observations (JSON · gzip)");
+  counts.href = source.data_url;
+  panel.append(complete, counts);
+  choose();
+}
 function precinctCoverageNavigation(panel, year) {
   const codes = precinctCoverageCodes().filter(code => precinctParticipationCoverage(code, year));
   const details = html("details");
   details.append(html("summary", "", `Loaded ${year} precinct participation sources (${codes.length})`));
   if (!codes.length) details.append(html("p", "selection-note", "No qualified precinct participation map is loaded for this year."));
   for (const code of codes) {
-    const button = html("button", "selection-link", stateName(code));
+    const button = html("button", "selection-link", stateName(code)
+      + (precinctParticipationCoverage(code, year) === "reporting_units" ? " · counts only" : ""));
     button.type = "button"; button.dataset.precinctCoverageState = code;
     button.addEventListener("click", () => {
       state.selectedState = stateName(code); state.county = ""; state.precinct = "";
@@ -3134,6 +3222,8 @@ async function sourcedPrecinctsView(generation) {
       const coverage = precinctParticipationCoverage(code, year);
       if (coverage === "matched_results")
         await drawMatchedPrecinctParticipation(state.map, selected, code, year, token);
+      else if (coverage === "reporting_units")
+        await drawReportingUnitCounts(state.map, code, year, token);
       else await drawCurrentPrecinctGeography(state.map, selected, code, token);
     }
   } catch (error) {
@@ -3334,7 +3424,8 @@ async function main() {
       : (tabs.indexOf(tab) + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
     tabs[index].focus(); showView(tabs[index].dataset.view);
   });
-  await Promise.all([loadContext(), loadMethods(), loadLocal(), loadCurrentPrecincts(), loadPrecinctResults()]);
+  await Promise.all([loadContext(), loadMethods(), loadLocal(), loadCurrentPrecincts(), loadPrecinctResults(),
+    loadReportingUnitSources()]);
   const [national, states, geometry, ncSummary, audits] = await Promise.all([
     get("national.json"), get("states.json"), get("states.geojson"), get("nc/summary.json"), get("geometry-audit.json"),
     loadCurrent(),
