@@ -677,16 +677,30 @@ function stateParticipationRows() {
       const nativeByFips = new Map();
       if (reference) {
         for (const row of observations) {
-          if (row.reference_geometry?.sha256 !== reference.sha256 || nativeByFips.has(row.county_fips))
+          if (row.reference_geometry?.sha256 !== reference.sha256 || nativeByFips.has(row.county_fips)) {
+            additionalLocal.delete(code);
             throw new Error("Mixed or duplicate native county reference identities");
+          }
           nativeByFips.set(row.county_fips, row);
         }
-        if (reference.boundary_year !== 2026 || observations.length !== reference.counties
+        const partial = reference.partial_county_fips;
+        if (partial !== undefined && (code !== "MI" || reference.counties !== 83
+          || !Array.isArray(partial) || partial.length !== 2 || new Set(partial).size !== 2
+          || nativeByFips.size !== 2 || partial.some(fips => !nativeByFips.has(fips)))) {
+          additionalLocal.delete(code);
+          throw new Error("Unqualified partial native county-parent scope");
+        }
+        const shapeIds = new Set(collection.features.map(feature => feature.properties.key));
+        if (reference.boundary_year !== 2026 || (!partial && observations.length !== reference.counties)
           || collection.features.length !== reference.counties
-          || new Set(collection.features.map(feature => feature.properties.key)).size !== reference.counties
+          || shapeIds.size !== reference.counties
+          || [...nativeByFips.keys()].some(fips => !shapeIds.has(fips))
           || collection.features.some(({ properties: p }) => p.state_code !== code || p.boundary_year !== 2026
-            || countyName(p.name) !== countyName(nativeByFips.get(p.key)?.county || "")))
+            || (nativeByFips.has(p.key)
+              ? countyName(p.name) !== countyName(nativeByFips.get(p.key).county) : !partial))) {
+          additionalLocal.delete(code);
           throw new Error("Native whole-county inventory disagrees with the verified 2026 reference");
+        }
       }
       let contextRows = new Map(), contextError = "";
       try {
@@ -724,6 +738,8 @@ function stateParticipationRows() {
       }
       let observed = 0;
       const countsOnly = !counties.some(row => row.reported_pct != null);
+      const countLabel = code === "MD" && counties.every(row => row.cast_ballot_count_qualified === false)
+        ? "Cards Cast (not unique voters)" : "Ballots reported";
       const maximum = Math.max(0, ...counties.map(row => row.ballots ?? 0));
       for (const feature of features) {
         const key = countyName(feature.properties.name);
@@ -740,13 +756,23 @@ function stateParticipationRows() {
             if (row && $("current-county-select")) {
               $("current-county-select").value = row.county_id;
               $("current-county-select").dispatchEvent(new Event("change"));
+            } else if (reference?.partial_county_fips) {
+              const select = $("current-county-select");
+              if (select) { select.value = ""; select.dispatchEvent(new Event("change")); }
+              const message = "No matching county ballot parent in this source. Only Bay and Isabella are observed; missing counts are not zero.";
+              $("current-county-detail")?.replaceChildren(html("h4", "", feature.properties.name),
+                html("p", "selection-note", message));
+              setTable([{ county: feature.properties.name, ballots: null, reported_pct: null, quality: [message] }],
+                [["county", "County"], ["ballots", "Ballots reported"],
+                  ["reported_pct", "Reported-ballot fraction"], ["quality", "Notes"]]);
+              syncURL();
             }
             for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
             path.classList.add("selected"); fit(item.bounds);
           }, { class: "map-feature substate-feature", "data-geography": feature.properties.key,
             "data-level": "county", "data-rate": rate ?? "", "data-count": row?.ballots ?? "",
             "data-source-county-id": row?.county_id ?? "", "data-reference-year": reference?.boundary_year ?? 2024,
-            "data-context-review": reference ? "native-county-parents-20261109-01"
+            "data-context-review": reference ? reference.review_id || "native-county-parents-20261109-01"
               : contextual ? state.countyContext.base_url.split("/").filter(Boolean).at(-1) : "",
             tabindex: "-1",
             ...(countsOnly ? { fill: countFill(row?.ballots, maximum), "data-count-measure": "source_participation_count" } : {}) });
@@ -754,21 +780,25 @@ function stateParticipationRows() {
       }
       map.localLayer = true;
       map.stateTable ||= { rows: state.table, columns: state.columns };
-      setTable(counties, [["county", "County"], ["ballots", "Ballots reported"],
+      setTable(counties, [["county", "County"], ["ballots", countLabel],
         ["denominator", "Source electorate"], ["reported_pct", "Reported-ballot fraction"],
         ["reported_units", "Precincts reporting"], ["total_units", "Total precincts"], ["quality", "Notes"]]);
       header("2026 midterms · unofficial administrative counts", `Local participation in ${state.selectedState}`,
-        countsOnly ? "Color shows source participation counts; no county turnout rates are qualified. Select a county for its original counts."
+        countsOnly ? (code === "MD"
+          ? "Color shows native Cards Cast, not unique voters or qualified cast ballots. No county turnout rates are qualified."
+          : "Color shows source participation counts; no county turnout rates are qualified. Select a county for its original counts.")
           : "Reported ballots / source-defined electorate. Select a county, then a precinct or reporting row in the sidebar.",
         (countsOnly ? "Not final turnout. Color shows counts, not a fraction; counties have different population sizes. "
           : "Not final turnout. County colors use their own reviewed reported fraction, not the UF state population denominator. Counts with missing or withheld rates remain gray. ")
         + (reference ? "Whole-county native parents use checksum-verified 2026 Census county references, not precincts. "
           : "Separately reviewed identity joins retain the original source records. Approximate 2024 Census counties are contextual shapes, not certified 2026 election or precinct boundaries."));
-      if (countsOnly) countLegend(maximum, "Source participation counts · no rate");
+      if (countsOnly) countLegend(maximum, code === "MD" ? "Native Cards Cast · not unique voters" : "Source participation counts · no rate");
       else ramp();
       $("geography-note").textContent = `${state.selectedState} · ${fmt(counties.length)} county observations · `
         + `${fmt(observed)} reviewed county rates on ${reference?.boundary_year ?? 2024} Census reference boundaries; `
         + `${fmt(reference ? nativeByFips.size : contextRows.size)} reviewed county identity joins. `
+        + (reference?.partial_county_fips
+          ? `Only ${fmt(nativeByFips.size)} of ${fmt(reference.counties)} counties have native parents in this source; other counties are missing, not zero. ` : "")
         + "Gray does not mean zero participation; select a county to inspect its actual counts and missingness. "
         + "Precinct mapping uses a separate, source-specific layer; use the sidebar where a qualified 2026 layer is available. "
         + contextError

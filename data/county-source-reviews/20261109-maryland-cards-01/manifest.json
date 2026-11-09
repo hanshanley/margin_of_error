@@ -1,0 +1,74 @@
+{
+  "version": "data/county-source-reviews/20261109-maryland-cards-01",
+  "native_queries": 25,
+  "mapped_county_card_queries": 24,
+  "analysis_rates_approved": false,
+  "cast_ballot_count_qualified": false,
+  "unique_voter_count_qualified": false,
+  "files": {
+    "README.txt": {
+      "bytes": 1256,
+      "sha256": "299826d7b844d868d973cc9a6b470162c941e5bb47234f919cc9f75a238c6bb3"
+    },
+    "data/county-results/20261105-house-02/geometry/MD.geojson.gz": {
+      "bytes": 566838,
+      "sha256": "d393ff433013bdcb4b496cc4228620d90a6156f7e8d056320bc9c3610bdad924"
+    },
+    "data/county-source-reviews/20261109-maryland-cards-01/accepted-card-references.csv": {
+      "bytes": 8238,
+      "sha256": "3e84f1381bef65b3ed661df1b567aec5b5eabde4f490cf04a8efb9591e97f02b"
+    },
+    "data/county-source-reviews/20261109-maryland-cards-01/county-crosswalk.json": {
+      "bytes": 4833,
+      "sha256": "5f5809ca45a271c61b4b13876ca23003bd32f2c14b6498e07ab36502f0105d8c"
+    },
+    "data/county-source-reviews/20261109-maryland-cards-01/general-election-night-turnout.pdf": {
+      "bytes": 45116,
+      "sha256": "f4ac1aa87b06fbde98ebf0114338ef4c1155d3bf34bb7c5a797ec6a5170f5029"
+    },
+    "data/county-source-reviews/20261109-maryland-cards-01/independent-card-grid.json": {
+      "bytes": 6388,
+      "sha256": "744e4fc7305358f3d95eb0e642f4a7ffa83670b896bb7cb8588d1a1937ee48e7"
+    },
+    "data/county-source-reviews/20261109-maryland-cards-01/inputs.json": {
+      "bytes": 2449,
+      "sha256": "32ea8b14a46bf1a3ce1fe776a5116c6432af2d2bd9248ea784159ab5f52a36a1"
+    },
+    "data/county-source-reviews/20261109-maryland-cards-01/source-scope.json": {
+      "bytes": 888,
+      "sha256": "e1ba4cb10a865e799403223aaf7a1fd372bae1ebe111229b73a19ed21ebc0c4d"
+    },
+    "queries.json": {
+      "bytes": 49467,
+      "sha256": "6961ed8eaabb30fd3d78977cd262b1c5548e0133129d8d0dba040906bbb8a854"
+    },
+    "reproduce.mjs": {
+      "bytes": 393,
+      "sha256": "079a3e071e96f40eac44bb93b70f7ea1b8c39e94ea88b89b4ffa9390fae8af7b"
+    },
+    "scripts/build-maryland-county-card-inputs.py": {
+      "bytes": 5998,
+      "sha256": "bdd168f536aa947b88916788f48f7f33b94e455ff6e8de5a8aa73718fb89c901"
+    },
+    "scripts/maryland-county-cards.mjs": {
+      "bytes": 6214,
+      "sha256": "5e7afd43f320fc2f0e8b56221dac8c46fd005b251305ff4739280ea281d03be3"
+    },
+    "scripts/maryland-county-cards.test.mjs": {
+      "bytes": 3467,
+      "sha256": "bdd2a8a0ec60ba5ac14742ea23bbacfd019a81ea184f970be1f68a1b72d9dcea"
+    },
+    "scripts/package-maryland-county-cards.py": {
+      "bytes": 5070,
+      "sha256": "a0b4434fdaf609a84600c8a80fb8c6effff62384e51dfb2a3e7d4bd59a6348ea"
+    },
+    "source-review/extract_maryland_election_frames.py": {
+      "bytes": 3400,
+      "sha256": "400ff5dedd20bc95d253ba289853bec11383d2014600b28fa3882ca6df515862"
+    },
+    "source-review/requirements.txt": {
+      "bytes": 35,
+      "sha256": "df7119c6d2efb89dd0aeb5a2eed7e612386995c74fe3d3cbc833afdee800247a"
+    }
+  }
+}

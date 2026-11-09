@@ -1,0 +1,60 @@
+{
+  "version": "data/county-source-reviews/20261109-michigan-native-parents-01",
+  "year": 2026,
+  "state_code": "MI",
+  "source_directory": "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01",
+  "bay_parent": "data/county-source-reviews/20261109-michigan-native-parents-01/bay-native-parent.json",
+  "isabella_parent": "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/dashboard-network/response-002.json.gz",
+  "units": "data/county-source-reviews/20261109-michigan-native-parents-01/native-unit-inputs.json.gz",
+  "files": {
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/review.py": {
+      "bytes": 29622,
+      "sha256": "e5e485195005f1175ddcf00d22ae7beeb67f1630d8cea0e034b6e45692654ebf"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/originals/official-bay-general-summary-pdf.gz": {
+      "bytes": 59951,
+      "sha256": "ec1ef58c99df50089df09cf7c6c79fe2df15d763f2314ddc6a5a8f1f463c6864"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/precinct-participation.csv": {
+      "bytes": 15130,
+      "sha256": "c171ee2a21e976ebb41826ecc95854201e74f8335f664d526d64e3f1e2dbf917"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/dashboard-network/response-002.json.gz": {
+      "bytes": 18405,
+      "sha256": "dc4a34de8b4f17b3ee574f3010609b72441afa990b6676af041b8d4743767f72"
+    },
+    "data/county-source-reviews/20261109-michigan-native-parents-01/bay-native-parent.json": {
+      "bytes": 796,
+      "sha256": "de722d0e516ad5a0b9e40c470f6028c953e3e515630ae51d0e91f827b7ec3fae"
+    },
+    "data/county-source-reviews/20261109-michigan-native-parents-01/native-unit-inputs.json.gz": {
+      "bytes": 2687,
+      "sha256": "b3c24cfcedca0ad923002fd0065663e7784940bcc596fe7fc52fb0c983b985b2"
+    },
+    "data/county-results/20261105-house-02/geometry/MI.geojson.gz": {
+      "bytes": 463584,
+      "sha256": "cbe4a45667430678549ea8c28e5b0a43652b914373ef41f9d75e6adb0fc2fa87"
+    },
+    "public/county-results.json": {
+      "bytes": 27222,
+      "sha256": "668aab4741171d534515b524ea5514125ff30afeaab5271f5bca18ba5f535566"
+    },
+    "data/county-results/20261109T061804Z/index.json": {
+      "bytes": 23242,
+      "sha256": "ffa47c0ae4ed393275431ca90794b317c128b88fe77bee0398e22972d8c18b84"
+    }
+  },
+  "reference": {
+    "path": "data/county-results/20261105-house-02/geometry/MI.geojson.gz",
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MI.geojson.gz",
+    "sha256": "cbe4a45667430678549ea8c28e5b0a43652b914373ef41f9d75e6adb0fc2fa87",
+    "uncompressed_sha256": "adc7255289c3758064edaa0992797983249b36500f7fa094347d69c154d63614",
+    "boundary_year": 2026,
+    "counties": 83,
+    "partial_county_fips": [
+      "26017",
+      "26073"
+    ],
+    "review_id": "native-michigan-county-parents-20261109-02"
+  }
+}

@@ -7,9 +7,68 @@ import { parse } from 'csv-parse/sync';
 import test from 'node:test';
 import { loadAdditionalParticipation, participationCount } from './additional-participation.mjs';
 import { loadNativeCountyParents, reviewCountyParents } from './native-county-parents.mjs';
+import { loadMichiganCountyParents, reviewMichiganCountyParents } from './michigan-county-parents.mjs';
 
 const data = loadAdditionalParticipation({ nativeCountyParents: true });
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, skip_empty_lines: true });
+
+test('connects explicit Michigan county parents only in the live frame without changing any native unit', () => {
+  const legacy = loadAdditionalParticipation();
+  const rows = data.counties.filter(row => row.state_code === 'MI');
+  assert.equal(rows.length, 2);
+  assert.ok(legacy.counties.filter(row => row.state_code === 'MI').every(row => row.ballots === null));
+  assert.deepEqual(data.precincts.filter(row => row.state_code === 'MI'),
+    legacy.precincts.filter(row => row.state_code === 'MI'));
+  assert.equal(data.precincts.filter(row => row.state_code === 'MI').length, 63);
+  for (const [county, fips, ballots, sourceRows] of [
+    ['Bay County', '26017', 50246, 35], ['Isabella County', '26073', 26288, 28]]) {
+    const row = rows.find(row => row.county === county);
+    assert.equal(row.county_fips, fips);
+    assert.equal(row.ballots, ballots);
+    assert.equal(row.source_rows, sourceRows);
+    assert.equal(row.denominator, null);
+    assert.equal(row.reported_pct, null);
+    assert.equal(row.maps_approved, true);
+    assert.equal(row.reference_geometry.counties, 83);
+    assert.equal(row.reference_geometry.boundary_year, 2026);
+    assert.deepEqual(row.reference_geometry.partial_county_fips, ['26017', '26073']);
+  }
+  const bay = rows.find(row => row.county === 'Bay County');
+  assert.equal(bay.reported_units, 43);
+  assert.equal(bay.native_record.native_registered_voters_columns[0], 87721);
+  assert.match(bay.source_update_label, /11\/04\/2026 12:26AM/);
+  const isabella = rows.find(row => row.county === 'Isabella County');
+  assert.equal(isabella.native_record.election.ballotsCast, 26288);
+  assert.equal(isabella.native_record.election.totalVoters, 44217);
+  assert.match(isabella.source_reporting_label, /26266 is not substituted/);
+  assert.equal(loadNativeCountyParents().length, 97);
+  assert.equal(loadMichiganCountyParents().length, 2);
+});
+
+test('Michigan county-parent qualification rejects changed totals, unit scopes and reference vintages', () => {
+  const inputs = JSON.parse(readFileSync('data/county-source-reviews/20261109-michigan-native-parents-01/inputs.json'));
+  const source = {
+    bay: JSON.parse(readFileSync(inputs.bay_parent)),
+    isabella: JSON.parse(gunzipSync(readFileSync(inputs.isabella_parent))),
+    units: JSON.parse(gunzipSync(readFileSync(inputs.units))),
+    geometry: JSON.parse(gunzipSync(readFileSync(inputs.reference.path))),
+    reference: inputs.reference, snapshot: {},
+  };
+  for (const mutate of [
+    value => { value.bay.native_ballots_cast_columns[0] += 1; },
+    value => { value.bay.native_ballots_cast_columns[0] = true; },
+    value => { value.isabella.election.ballotsCast = 26266; },
+    value => { value.units.pop(); },
+    value => { value.units.find(row => row.precinct === 'City of Clare, Precinct 1').ballots_cast_total = '0'; },
+    value => { value.reference.boundary_year = 2024; },
+    value => { value.reference.partial_county_fips.pop(); },
+    value => { value.geometry.features.pop(); },
+  ]) {
+    const changed = structuredClone(source);
+    mutate(changed);
+    assert.throws(() => reviewMichiganCountyParents(changed), /Michigan|Bay|Isabella/);
+  }
+});
 
 test('complete counts-only CSV inputs preserve every native row and missing total without enabling rates', () => {
   const directory = 'public/participation-reporting-units/20261109-02';
@@ -148,9 +207,10 @@ test('connects reviewed Florida, Missouri and Wyoming ballots without substituti
     && row.denominator_basis === 'electorate_not_supplied' && row.maps_approved === false));
 });
 
-test('retains individual source rows without inventing county totals or merging special units', () => {
+test('retains legacy county containers and individual source rows without merging special units', () => {
+  const legacy = loadAdditionalParticipation();
   for (const [code, countyCount, unitCount] of [['MN', 87, 4105], ['MI', 2, 63]]) {
-    const rows = data.counties.filter(row => row.state_code === code);
+    const rows = legacy.counties.filter(row => row.state_code === code);
     assert.equal(rows.length, countyCount);
     assert.ok(rows.every(row => row.ballots === null && row.denominator === null && row.reported_pct === null));
     assert.ok(rows.every(row => row.native_record === null && row.quality.length === 2));

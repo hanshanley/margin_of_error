@@ -1,0 +1,208 @@
+{
+  "election": "Election: 2026 Gubernatorial General",
+  "rows": [
+    {
+      "expected_source_units": 30,
+      "native_cards_cast": "21,179",
+      "native_county_label": "Allegany County",
+      "native_eligible_voters": "44,679",
+      "native_percentage": "47.40%",
+      "reported_source_units": 30
+    },
+    {
+      "expected_source_units": 196,
+      "native_cards_cast": "221,514",
+      "native_county_label": "Anne Arundel County",
+      "native_eligible_voters": "419,214",
+      "native_percentage": "52.84%",
+      "reported_source_units": 196
+    },
+    {
+      "expected_source_units": 295,
+      "native_cards_cast": "146,253",
+      "native_county_label": "Baltimore City",
+      "native_eligible_voters": "410,056",
+      "native_percentage": "35.67%",
+      "reported_source_units": 295
+    },
+    {
+      "expected_source_units": 258,
+      "native_cards_cast": "272,194",
+      "native_county_label": "Baltimore County",
+      "native_eligible_voters": "585,870",
+      "native_percentage": "46.46%",
+      "reported_source_units": 258
+    },
+    {
+      "expected_source_units": 17,
+      "native_cards_cast": "38,494",
+      "native_county_label": "Calvert County",
+      "native_eligible_voters": "70,346",
+      "native_percentage": "54.72%",
+      "reported_source_units": 17
+    },
+    {
+      "expected_source_units": 8,
+      "native_cards_cast": "11,666",
+      "native_county_label": "Caroline County",
+      "native_eligible_voters": "22,857",
+      "native_percentage": "51.04%",
+      "reported_source_units": 8
+    },
+    {
+      "expected_source_units": 49,
+      "native_cards_cast": "71,485",
+      "native_county_label": "Carroll County",
+      "native_eligible_voters": "130,502",
+      "native_percentage": "54.78%",
+      "reported_source_units": 49
+    },
+    {
+      "expected_source_units": 28,
+      "native_cards_cast": "31,929",
+      "native_county_label": "Cecil County",
+      "native_eligible_voters": "73,853",
+      "native_percentage": "43.23%",
+      "reported_source_units": 28
+    },
+    {
+      "expected_source_units": 34,
+      "native_cards_cast": "67,566",
+      "native_county_label": "Charles County",
+      "native_eligible_voters": "130,463",
+      "native_percentage": "51.79%",
+      "reported_source_units": 34
+    },
+    {
+      "expected_source_units": 44,
+      "native_cards_cast": "12,641",
+      "native_county_label": "Dorchester County",
+      "native_eligible_voters": "24,238",
+      "native_percentage": "52.15%",
+      "reported_source_units": 44
+    },
+    {
+      "expected_source_units": 66,
+      "native_cards_cast": "113,601",
+      "native_county_label": "Frederick County",
+      "native_eligible_voters": "207,859",
+      "native_percentage": "54.65%",
+      "reported_source_units": 66
+    },
+    {
+      "expected_source_units": 19,
+      "native_cards_cast": "10,823",
+      "native_county_label": "Garrett County",
+      "native_eligible_voters": "21,065",
+      "native_percentage": "51.38%",
+      "reported_source_units": 19
+    },
+    {
+      "expected_source_units": 63,
+      "native_cards_cast": "107,858",
+      "native_county_label": "Harford County",
+      "native_eligible_voters": "198,340",
+      "native_percentage": "54.38%",
+      "reported_source_units": 63
+    },
+    {
+      "expected_source_units": 67,
+      "native_cards_cast": "136,193",
+      "native_county_label": "Howard County",
+      "native_eligible_voters": "240,658",
+      "native_percentage": "56.59%",
+      "reported_source_units": 67
+    },
+    {
+      "expected_source_units": 10,
+      "native_cards_cast": "8,312",
+      "native_county_label": "Kent County",
+      "native_eligible_voters": "14,362",
+      "native_percentage": "57.87%",
+      "reported_source_units": 10
+    },
+    {
+      "expected_source_units": 257,
+      "native_cards_cast": "345,263",
+      "native_county_label": "Montgomery County",
+      "native_eligible_voters": "700,314",
+      "native_percentage": "49.30%",
+      "reported_source_units": 257
+    },
+    {
+      "expected_source_units": 327,
+      "native_cards_cast": "266,439",
+      "native_county_label": "Prince George's County",
+      "native_eligible_voters": "621,380",
+      "native_percentage": "42.88%",
+      "reported_source_units": 327
+    },
+    {
+      "expected_source_units": 11,
+      "native_cards_cast": "24,331",
+      "native_county_label": "Queen Anne's County",
+      "native_eligible_voters": "41,780",
+      "native_percentage": "58.24%",
+      "reported_source_units": 11
+    },
+    {
+      "expected_source_units": 27,
+      "native_cards_cast": "41,503",
+      "native_county_label": "Saint Mary's County",
+      "native_eligible_voters": "78,879",
+      "native_percentage": "52.62%",
+      "reported_source_units": 27
+    },
+    {
+      "expected_source_units": 23,
+      "native_cards_cast": "7,152",
+      "native_county_label": "Somerset County",
+      "native_eligible_voters": "14,662",
+      "native_percentage": "48.78%",
+      "reported_source_units": 23
+    },
+    {
+      "expected_source_units": 12,
+      "native_cards_cast": "18,230",
+      "native_county_label": "Talbot County",
+      "native_eligible_voters": "28,892",
+      "native_percentage": "63.10%",
+      "reported_source_units": 12
+    },
+    {
+      "expected_source_units": 47,
+      "native_cards_cast": "49,320",
+      "native_county_label": "Washington County",
+      "native_eligible_voters": "101,311",
+      "native_percentage": "48.68%",
+      "reported_source_units": 47
+    },
+    {
+      "expected_source_units": 69,
+      "native_cards_cast": "32,443",
+      "native_county_label": "Wicomico County",
+      "native_eligible_voters": "67,216",
+      "native_percentage": "48.27%",
+      "reported_source_units": 69
+    },
+    {
+      "expected_source_units": 22,
+      "native_cards_cast": "23,412",
+      "native_county_label": "Worcester County",
+      "native_eligible_voters": "44,526",
+      "native_percentage": "52.58%",
+      "reported_source_units": 22
+    },
+    {
+      "expected_source_units": null,
+      "native_cards_cast": "2,079,801",
+      "native_county_label": "Total",
+      "native_eligible_voters": "4,293,322",
+      "native_percentage": "48.44%",
+      "reported_source_units": null
+    }
+  ],
+  "run_date": "11/8/2026",
+  "run_time": "7:44 pm",
+  "title": "Unofficial MIB 1, Early Voting, Election Day, and MIB2 Turnout"
+}

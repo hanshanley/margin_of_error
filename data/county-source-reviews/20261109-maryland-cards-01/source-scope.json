@@ -1,0 +1,21 @@
+{
+  "active_and_inactive_kept_separate": true,
+  "card_report_native_run_date": "11/8/2026",
+  "card_report_native_run_time": "7:44 pm",
+  "card_report_timezone": null,
+  "card_report_unofficial": true,
+  "cards_not_certified_unique_voters": true,
+  "election_date": "2026-11-03",
+  "full_ballot_canvass_certified": false,
+  "group_or_county_model_allocation": false,
+  "register_as_of": "2026-10-18",
+  "registration_party_counts_not_participation_by_party": true,
+  "registry_frame_transport_validated": false,
+  "reporting_counters_not_precinct_records": true,
+  "same_agency_cross_product_match_not_independent_population_validation": true,
+  "same_day_registrations_not_added": true,
+  "state_code": "MD",
+  "stopped_monthly_registration_route_not_retried": true,
+  "stopped_monthly_registration_url": "https://elections.maryland.gov/pdf/vrar/2026/MSR-2026-10.pdf",
+  "year": 2026
+}

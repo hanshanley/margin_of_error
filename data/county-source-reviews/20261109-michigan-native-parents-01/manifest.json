@@ -1,0 +1,162 @@
+{
+  "version": "data/county-source-reviews/20261109-michigan-native-parents-01",
+  "queries": 2,
+  "selected_ballot_counts": 2,
+  "withheld_rates": 2,
+  "native_reporting_unit_rows": 63,
+  "reference_counties": 83,
+  "observed_county_fips": [
+    "26017",
+    "26073"
+  ],
+  "files": {
+    "data/county-results/20261105-house-02/geometry/MI.geojson.gz": {
+      "bytes": 463584,
+      "sha256": "cbe4a45667430678549ea8c28e5b0a43652b914373ef41f9d75e6adb0fc2fa87"
+    },
+    "data/county-results/20261109T061804Z/index.json": {
+      "bytes": 23242,
+      "sha256": "ffa47c0ae4ed393275431ca90794b317c128b88fe77bee0398e22972d8c18b84"
+    },
+    "data/county-source-reviews/20261109-michigan-native-parents-01/bay-native-parent.json": {
+      "bytes": 796,
+      "sha256": "de722d0e516ad5a0b9e40c470f6028c953e3e515630ae51d0e91f827b7ec3fae"
+    },
+    "data/county-source-reviews/20261109-michigan-native-parents-01/inputs.json": {
+      "bytes": 3022,
+      "sha256": "e2d63796cee550633e11557c9de961565a34efc1e36c60a718cf1c5a4d4f3574"
+    },
+    "data/county-source-reviews/20261109-michigan-native-parents-01/native-unit-inputs.json.gz": {
+      "bytes": 2687,
+      "sha256": "b3c24cfcedca0ad923002fd0065663e7784940bcc596fe7fc52fb0c983b985b2"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/audit.json": {
+      "bytes": 4052,
+      "sha256": "bb2edea0c9a2a1280d012218c7d1418171d409c40bf7d820819e9985739d7634"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/checksums.json": {
+      "bytes": 3330,
+      "sha256": "6dd725e7885628bd97a2e1248f2f012658251c78ba481e1c3c837442f2751805"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/isabella-precinct-results-by-group.csv": {
+      "bytes": 1924062,
+      "sha256": "ff1f84d77590950d56ed6c7c86f7986721fb5b09f9a39ba43acfc02cacda43b4"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/isabella-precinct-results.csv": {
+      "bytes": 561213,
+      "sha256": "daa9c754b0b1dab7e827ef9d8375e5d1e74f28c0e1967dfd1315c0176c5705cf"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/isabella-summary-results-by-group.csv": {
+      "bytes": 117964,
+      "sha256": "f635d8207a4a3b0444b1fd566f50f3ac40af57e502de57f69d793cd9cc4f6eea"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/isabella-summary-results.csv": {
+      "bytes": 32868,
+      "sha256": "cbb024618ee8a70b9e9459cd6fc335b14165b1847a585002b4e9ef6cec2d2d2f"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/original-isabella-results.xlsx.gz": {
+      "bytes": 627781,
+      "sha256": "52abdf1fadb286d3cc776285a88166603e9e136b5cb4323ab1591daeec2960b1"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/precinct-participation.csv": {
+      "bytes": 15130,
+      "sha256": "c171ee2a21e976ebb41826ecc95854201e74f8335f664d526d64e3f1e2dbf917"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/precinct-results.csv": {
+      "bytes": 22243,
+      "sha256": "d9d93a4dd78dd601ae8aabaca73c262a3fe559c669d6a0af9dd6d260100e95b0"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/review.py": {
+      "bytes": 29622,
+      "sha256": "e5e485195005f1175ddcf00d22ae7beeb67f1630d8cea0e034b6e45692654ebf"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/dashboard-followup-network/response-001.json.gz": {
+      "bytes": 20980,
+      "sha256": "9d2a98b565ffca611899f9f683bce66af605ec865dd9de530c79987ab1a221c1"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/dashboard-followup-network/responses.json": {
+      "bytes": 485,
+      "sha256": "f7f67a216e5ca2add971d4efbcf5750ffb5eef170cac9dbae299f2dedfbf0f79"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/dashboard-network/response-001.json.gz": {
+      "bytes": 22,
+      "sha256": "64406e753d82e11c6bd63d1d04bb6aa083eefa0a46949bbfce994d556b989f0f"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/dashboard-network/response-002.json.gz": {
+      "bytes": 18405,
+      "sha256": "dc4a34de8b4f17b3ee574f3010609b72441afa990b6676af041b8d4743767f72"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/dashboard-network/responses.json": {
+      "bytes": 870,
+      "sha256": "3b79a280c04ca0e7332676829368875c6a9ed0b60f462aad3138431f7b055b7c"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/originals/official-bay-general-precinct-pdf.gz": {
+      "bytes": 671589,
+      "sha256": "78002ad3e68ef4d11013729f7f44b4b82126a361b916b01c8bafcc16433c51ea"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/originals/official-bay-general-summary-pdf.gz": {
+      "bytes": 59951,
+      "sha256": "ec1ef58c99df50089df09cf7c6c79fe2df15d763f2314ddc6a5a8f1f463c6864"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/originals/official-isabella-all-results-xlsx.gz": {
+      "bytes": 627781,
+      "sha256": "52abdf1fadb286d3cc776285a88166603e9e136b5cb4323ab1591daeec2960b1"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/originals/official-isabella-summary-contest-pdf.gz": {
+      "bytes": 76681,
+      "sha256": "04e2aa1f52e4bfc446c4196826fa4f63097123c6556cc36e024b7a6ce8f52a33"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/originals/official-isabella-summary-party-pdf.gz": {
+      "bytes": 61016,
+      "sha256": "bd52eefc591d9f035d0880eda05f4c35949fc231293c8ead8e61fb5f5444fdc1"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/originals/official-isabella-summary-pdf.gz": {
+      "bytes": 64133,
+      "sha256": "873d6b56e547faf25811913c5153a10518491c41be8c28dd23eedebf1e7191db"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source/sources.json": {
+      "bytes": 8165,
+      "sha256": "8a16c2196c716ec611d1d01f3ecc7872295e19a00774367973a3b581589b1a00"
+    },
+    "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/unmatched-precincts.csv": {
+      "bytes": 863,
+      "sha256": "696f12e8387d9a285715ae446d5aa7dde4f2e6a903be789d1806803e079ea2c0"
+    },
+    "public/county-results.json": {
+      "bytes": 27222,
+      "sha256": "668aab4741171d534515b524ea5514125ff30afeaab5271f5bca18ba5f535566"
+    },
+    "public/participation-source-reviews.json": {
+      "bytes": 217252,
+      "sha256": "f1c018f0f38f77ac8b6b98724ae220edbb85f83070daf5eb4a012d1e965fe6e8"
+    },
+    "scripts/build-michigan-county-parent-inputs.py": {
+      "bytes": 6504,
+      "sha256": "a0c85799e71c56bfaaf0befd3d733ff7cf45ae4d18d3dfacb78c3042b572b1b3"
+    },
+    "scripts/michigan-county-parents.mjs": {
+      "bytes": 8765,
+      "sha256": "435dd5b9870e635b1721a3403b268c89204575fa0179996665047bf288bc7415"
+    },
+    "scripts/package-michigan-county-parents.py": {
+      "bytes": 5617,
+      "sha256": "62506bdf05b91946ce087143565dc24ad743c6d76be2ce5eb9f4b2874ba7974f"
+    },
+    "reproduce.mjs": {
+      "bytes": 166,
+      "sha256": "079484cc06b71aec43961effe7d483585708b056abfd2b562ca4de8ea76cfc64"
+    },
+    "queries.json": {
+      "bytes": 23079,
+      "sha256": "6e35f3f6b4c2923e212cbecc9012e6137f80735cdaea868d1993686981ed5b54"
+    },
+    "queries.csv": {
+      "bytes": 900,
+      "sha256": "c0d5de025ac1722956939fac3cb101a29ed15c9be5343ea40a65b0d1c86f25c7"
+    },
+    "README.txt": {
+      "bytes": 1315,
+      "sha256": "570c917328cd54ae51a43cae13be5fd4fc4ff314707a21e8b383d1fc8de10195"
+    }
+  }
+}

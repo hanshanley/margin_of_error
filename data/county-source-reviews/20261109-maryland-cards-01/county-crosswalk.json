@@ -1,0 +1,146 @@
+[
+  {
+    "native_county_label": "Allegany County",
+    "county_fips": "24001",
+    "reference_name": "Allegany County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Anne Arundel County",
+    "county_fips": "24003",
+    "reference_name": "Anne Arundel County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Baltimore City",
+    "county_fips": "24510",
+    "reference_name": "Baltimore city",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Baltimore County",
+    "county_fips": "24005",
+    "reference_name": "Baltimore County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Calvert County",
+    "county_fips": "24009",
+    "reference_name": "Calvert County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Caroline County",
+    "county_fips": "24011",
+    "reference_name": "Caroline County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Carroll County",
+    "county_fips": "24013",
+    "reference_name": "Carroll County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Cecil County",
+    "county_fips": "24015",
+    "reference_name": "Cecil County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Charles County",
+    "county_fips": "24017",
+    "reference_name": "Charles County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Dorchester County",
+    "county_fips": "24019",
+    "reference_name": "Dorchester County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Frederick County",
+    "county_fips": "24021",
+    "reference_name": "Frederick County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Garrett County",
+    "county_fips": "24023",
+    "reference_name": "Garrett County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Harford County",
+    "county_fips": "24025",
+    "reference_name": "Harford County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Howard County",
+    "county_fips": "24027",
+    "reference_name": "Howard County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Kent County",
+    "county_fips": "24029",
+    "reference_name": "Kent County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Montgomery County",
+    "county_fips": "24031",
+    "reference_name": "Montgomery County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Prince George's County",
+    "county_fips": "24033",
+    "reference_name": "Prince George's County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Queen Anne's County",
+    "county_fips": "24035",
+    "reference_name": "Queen Anne's County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Saint Mary's County",
+    "county_fips": "24037",
+    "reference_name": "St. Mary's County",
+    "identity_basis": "explicit Saint Mary's/St. Mary's alias"
+  },
+  {
+    "native_county_label": "Somerset County",
+    "county_fips": "24039",
+    "reference_name": "Somerset County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Talbot County",
+    "county_fips": "24041",
+    "reference_name": "Talbot County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Washington County",
+    "county_fips": "24043",
+    "reference_name": "Washington County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Wicomico County",
+    "county_fips": "24045",
+    "reference_name": "Wicomico County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  },
+  {
+    "native_county_label": "Worcester County",
+    "county_fips": "24047",
+    "reference_name": "Worcester County",
+    "identity_basis": "exact county name; case and County suffix normalized"
+  }
+]

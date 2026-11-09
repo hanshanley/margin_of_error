@@ -120,6 +120,31 @@ separate original reviews. The versioned complete download under
 originals, reference geometry and a dependency-free offline Node reproduction.
 Its packaging command refuses to overwrite an existing version.
 
+The live opt-in additionally reads Michigan's explicit Bay and Isabella county
+parents through `scripts/michigan-county-parents.mjs`. It preserves all 63
+reporting-unit rows, Bay's 43-versus-35 reporting counter and Isabella's 22-ballot
+election/House-scope difference; both rates and analysis denominators stay held.
+The partial join names exactly two observed FIPS within the full checksum-verified
+83-county 2026 reference. Other counties remain missing, not zero. Selecting one
+clears the previous county's counts rather than displaying stale detail.
+This explicit Michigan-only partial scope does not relax Idaho/North Dakota's
+complete-inventory checks or the default legacy reader. Version02's complete
+two-query archive retains all sufficient originals, full tables, reference
+geometry and offline code; version01's 97-query archive remains unchanged.
+
+The same live opt-in exposes Maryland's complete 24-county-equivalent **Cards
+Cast** report through `scripts/maryland-county-cards.mjs`. These are source card
+counts, not qualified cast ballots or unique voters; every analysis denominator
+and rate stays null. Native Eligible Voters, printed percentages, reporting
+counters and the November 8, 7:44 p.m. clock remain unchanged. Counters do not
+become precinct records. Baltimore city stays separate from Baltimore County;
+Saint Mary's / St. Mary's has one explicit reviewed alias. The full 2026 Census
+reference is checksum-verified, not certified election-precinct geography.
+`participation-county-cards/20261109-01/complete-analysis.zip` retains all 25 native
+county/state queries, the full original PDF, accepted independent grid, complete
+reference, code and exact network-free reproduction. Neither this integration
+nor county contest-count fallbacks establish nationwide voter participation.
+
 D.C.'s 144 precinct observations use the already-reviewed official 2026 app
 reference and distinct native ballots/registration, not Council-chair votes.
 The participation view checks each identity and exact source fraction before

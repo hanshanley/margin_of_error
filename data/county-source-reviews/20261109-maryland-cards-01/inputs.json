@@ -1,0 +1,49 @@
+{
+  "version": "data/county-source-reviews/20261109-maryland-cards-01",
+  "year": 2026,
+  "state_code": "MD",
+  "native_archive_sha256": "ea2c98e95e8e708042ae83292f2c07eacd680fa7065ae2be8f6f2ea109027521",
+  "source_url": "https://elections.maryland.gov/press_room/2026_stats/GG26/2026-general_election_night_unofficial_turnout.pdf",
+  "pdf_sha256": "f4ac1aa87b06fbde98ebf0114338ef4c1155d3bf34bb7c5a797ec6a5170f5029",
+  "files": {
+    "data/county-source-reviews/20261109-maryland-cards-01/general-election-night-turnout.pdf": {
+      "bytes": 45116,
+      "sha256": "f4ac1aa87b06fbde98ebf0114338ef4c1155d3bf34bb7c5a797ec6a5170f5029"
+    },
+    "data/county-source-reviews/20261109-maryland-cards-01/independent-card-grid.json": {
+      "bytes": 6388,
+      "sha256": "744e4fc7305358f3d95eb0e642f4a7ffa83670b896bb7cb8588d1a1937ee48e7"
+    },
+    "data/county-source-reviews/20261109-maryland-cards-01/source-scope.json": {
+      "bytes": 888,
+      "sha256": "e1ba4cb10a865e799403223aaf7a1fd372bae1ebe111229b73a19ed21ebc0c4d"
+    },
+    "data/county-source-reviews/20261109-maryland-cards-01/accepted-card-references.csv": {
+      "bytes": 8238,
+      "sha256": "3e84f1381bef65b3ed661df1b567aec5b5eabde4f490cf04a8efb9591e97f02b"
+    },
+    "data/county-source-reviews/20261109-maryland-cards-01/county-crosswalk.json": {
+      "bytes": 4833,
+      "sha256": "5f5809ca45a271c61b4b13876ca23003bd32f2c14b6498e07ab36502f0105d8c"
+    },
+    "data/county-results/20261105-house-02/geometry/MD.geojson.gz": {
+      "bytes": 566838,
+      "sha256": "d393ff433013bdcb4b496cc4228620d90a6156f7e8d056320bc9c3610bdad924"
+    }
+  },
+  "reference": {
+    "path": "data/county-results/20261105-house-02/geometry/MD.geojson.gz",
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MD.geojson.gz",
+    "sha256": "d393ff433013bdcb4b496cc4228620d90a6156f7e8d056320bc9c3610bdad924",
+    "uncompressed_sha256": "d54ba735214da8add882de9e60b628c1dc1d9da5687d5d0ec74e50c540adcb80",
+    "boundary_year": 2026,
+    "counties": 24,
+    "review_id": "maryland-native-card-counts-20261109-01"
+  },
+  "count_reference_join_approved": true,
+  "cast_ballot_count_qualified": false,
+  "unique_voter_count_qualified": false,
+  "rates_approved": false,
+  "precincts_approved": false,
+  "complete_download_url": "/participation-county-cards/20261109-01/complete-analysis.zip"
+}

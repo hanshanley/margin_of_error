@@ -3,6 +3,8 @@ import { basename, dirname, resolve } from 'node:path';
 import { gunzipSync } from 'node:zlib';
 import { parse } from 'csv-parse/sync';
 import { loadNativeCountyParents } from './native-county-parents.mjs';
+import { loadMichiganCountyParents } from './michigan-county-parents.mjs';
+import { loadMarylandCardCounts } from './maryland-county-cards.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -273,6 +275,47 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
           'Unofficial source snapshot, not final, CPS, demographic or precinct turnout.',
           ...parent.flags],
       });
+  }
+  for (const parent of nativeCountyParents ? loadMichiganCountyParents() : []) {
+    const index = counties.findIndex(row => row.county_id === `additional:MI:${parent.identity}`);
+    if (index < 0 || counties[index].ballots !== null)
+      throw new Error('Michigan native parent must replace exactly one empty county container');
+    counties[index] = observation(parent.snapshot, parent.sourceFile, 'MI',
+      parent.county, parent.identity, parent.native, {
+        ballots: parent.ballots, denominator: null, denominator_basis: parent.denominator_basis,
+        reported_pct: null, native_printed_pct: parent.native_printed_pct,
+        source_update_label: parent.source_update_label, source_status_literal: parent.source_status_literal,
+        reported_units: parent.reported_units, total_units: parent.total_units,
+        source_reporting_label: parent.source_reporting_label,
+        maps_approved: true, county_fips: parent.fips, reference_geometry: parent.reference,
+        participation_measure_label: 'Native whole-county ballots reported',
+        county_parent_complete_download_url: '/participation-county-parents/20261109-02/complete-analysis.zip',
+        quality: ['Explicit native county ballot parent, not candidate votes or a reporting-unit sum.',
+          'Only Bay and Isabella are observed; the other 81 Michigan counties remain missing, not zero.',
+          'Separately checksum-verified 2026 Census county references, not certified election-precinct boundaries.',
+          'Unofficial captured source clocks; no county, population or demographic rate is inferred.',
+          ...parent.flags],
+      });
+  }
+  for (const row of nativeCountyParents ? loadMarylandCardCounts() : []) {
+    const snapshot = { data_directory: 'data/county-source-reviews/20261109-maryland-cards-01',
+      base_url: '', complete_download_url: row.complete_download_url };
+    counties.push(observation(snapshot, '', 'MD', row.county, row.county_fips, row.native_record, {
+      ballots: row.cards_cast, denominator: null, denominator_basis: 'source_electorate_not_qualified',
+      reported_pct: null, maps_approved: true, county_fips: row.county_fips,
+      reference_geometry: row.reference_geometry,
+      participation_measure_label: row.participation_measure_label,
+      source_url: row.source_url, source_update_label: row.source_update_label,
+      source_status_literal: 'UNOFFICIAL Cards Cast; not certified unique voters or ballots',
+      source_reporting_label: row.source_reporting_label,
+      native_printed_pct: `${row.native_record.native_percentage} (native card-report field; analysis rate withheld)`,
+      county_parent_complete_download_url: row.complete_download_url,
+      cast_ballot_count_qualified: false, unique_voter_count_qualified: false,
+      quality: ['Native Cards Cast, not qualified cast ballots or unique voters.',
+        'All 24 county equivalents join the checksum-verified 2026 Census county reference; Baltimore city stays separate.',
+        'The explicit Saint Mary\'s / St. Mary\'s alias retains the unchanged native label.',
+        'No demographic allocation, qualified denominator, turnout rate, precinct records or final-counting claim.'],
+    }));
   }
   const seen = new Set(), unitSeen = new Set();
   for (const row of counties) {
