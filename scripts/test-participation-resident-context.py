@@ -243,6 +243,19 @@ class ResidentContextTests(unittest.TestCase):
                 package_county_context(store, query, references, runtime, output)
             self.assertEqual(output.read_bytes(), prior)
 
+    def test_precinct_packet_rejects_metadata_only_or_unverified_frames(self):
+        from participation_intake.precinct_package import package_precinct_context
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "summary.json").write_text('{"reference_registry":{"states":{}},"states":{}}')
+            proof = root / "proof.json"
+            proof.write_text('{"status":"awaiting_verification","records":0}')
+            with self.assertRaises(IntakeError) as error:
+                package_precinct_context(root, root, root, root / "absent.sqlite3",
+                    root / "absent.zip", proof, proof, root / "absent.py", root / "complete.zip")
+            self.assertEqual(error.exception.code, "context_verification")
+            self.assertFalse((root / "complete.zip").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

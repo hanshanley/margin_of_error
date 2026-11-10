@@ -5,7 +5,7 @@ on:
     paths:
       - scripts/participation_intake/**
       - scripts/participation-*.py
-      - scripts/package-participation-context.py
+      - scripts/package-participation-*.py
       - scripts/publish-participation-dataset.py
       - scripts/test-participation-*.py
       - scripts/requirements-participation-*.txt
@@ -15,7 +15,7 @@ on:
     paths:
       - scripts/participation_intake/**
       - scripts/participation-*.py
-      - scripts/package-participation-context.py
+      - scripts/package-participation-*.py
       - scripts/publish-participation-dataset.py
       - scripts/test-participation-*.py
       - scripts/requirements-participation-*.txt

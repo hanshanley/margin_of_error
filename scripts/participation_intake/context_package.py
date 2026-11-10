@@ -150,6 +150,18 @@ def package_county_context(source_store, native_query, county_reference, dataset
         members={**{name: file_pin(path) for name, path in paths.items()},
             **{name: pin(body) for name, body in bodies.items()}})
     bodies["manifest.json"] = encoded(manifest)
+    write_complete_archive(output, paths, bodies)
+    return dict(status="complete_county_context_packet_prepared_not_yet_reproduced_or_published",
+        **file_pin(output), members=len(manifest["members"]) + 1,
+        complete_original_bytes=sum(json.loads((store / (table + "-receipt.json")).read_bytes())["bytes"]
+            for table in TABLES),
+        dataset_version=description["version"], metadata_only=False)
+
+
+def write_complete_archive(output, paths, bodies):
+    output = Path(output)
+    if output.exists():
+        raise IntakeError("immutable_package", "Refuse to replace an existing complete package")
     output.parent.mkdir(parents=True, exist_ok=True)
     created = False
     try:
@@ -170,8 +182,3 @@ def package_county_context(source_store, native_query, county_reference, dataset
         if created:
             output.unlink(missing_ok=True)
         raise
-    return dict(status="complete_county_context_packet_prepared_not_yet_reproduced_or_published",
-        **file_pin(output), members=len(manifest["members"]) + 1,
-        complete_original_bytes=sum(json.loads((store / (table + "-receipt.json")).read_bytes())["bytes"]
-            for table in TABLES),
-        dataset_version=description["version"], metadata_only=False)
