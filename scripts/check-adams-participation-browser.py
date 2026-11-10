@@ -50,8 +50,8 @@ def verify_detail(page):
         {"Adams": "42,660", "Lebanon": "51,268", "Blair": "43,898", "Armstrong": "24,039", "Wayne": "21,707"}[county])
     if args.armstrong:
         expect(detail.locator(".selection-basis")).to_have_text("2026 Voters Cast · not final/certified")
-        overview = page.locator("#reviewed-county-overview button").filter(has_text="Armstrong:")
-        expect(overview).to_contain_text("24,039 Voters Cast")
+        expect(page.locator("#reviewed-county-overview button")).to_have_count(0)
+        expect(detail).to_contain_text("24,039")
     texts = ("36,885 native registered voters", "58.85%", "2026 General Election Unofficial Results",
              "county_report: 2026-11-05 15:08:51 (timezone not declared)",
              "18-ballot scope difference", "Candidate parties are not supplied",

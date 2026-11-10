@@ -542,19 +542,8 @@ function stateParticipationRows() {
               : code === "RI"
               ? "Rhode Island municipality counts use explicitly dated 2024 Census reference shapes; all rates remain withheld and no town counts are assigned to precincts."
               : "County map joins require the separate contextual identity review; municipalities and reporting-unit containers are not mapped as counties.")));
-          const previews = additional.every(row => row.review_id.startsWith("additional:"))
-            ? additional.slice(0, 4) : additional;
-          for (const row of previews) {
-            const button = html("button", "selection-link",
-              row.ballots === null ? `${row.county}: ${fmt(row.source_rows)} source reporting-unit observations; county total not supplied`
-                : towns || administrations || providerActivity || nativeCities ? `${row.county}: ${fmt(row.ballots)} ${participationLabel(row)} · no rate`
-                  : `${row.county}: ${fmt(row.ballots)} ${participationLabel(row) || "ballots"} / ${fmt(row.denominator)} ${electorateLabel(row)} (${pct(row.reported_pct)})`);
-            button.type = "button"; button.dataset.countyId = row.county_id;
-            button.addEventListener("click", () => { select.value = row.county_id; select.dispatchEvent(new Event("change")); });
-            overview.append(button);
-          }
-          if (previews.length < additional.length) overview.append(html("p", "selection-note",
-            `Choose any of the ${additional.length} counties / localities from the selector below.`));
+          overview.append(html("p", "selection-note",
+            "Click a place on the map to see its results, or use the compact selector below. All observations remain in the table and complete downloads."));
           container.insertBefore(overview, label);
         }
         const choose = () => {
