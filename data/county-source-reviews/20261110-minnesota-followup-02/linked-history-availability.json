@@ -1,0 +1,29 @@
+{
+  "assessment_date": "2026-11-07",
+  "current_2026_general_linked_history_aggregate": "UNKNOWN_NOT_NORMALLY_RELEASED_YET",
+  "individual_history_route": {
+    "action_taken": "none",
+    "availability": "restricted_order_only",
+    "frame": "Reports are point-in-time current-registration files; detailed history links only currently registered voters and may lag after a general election.",
+    "reason": "Official detailed history requires a paid request by a registered Minnesota voter for election, political, or law-enforcement purposes. No identifiable voter file was acquired and no request was submitted."
+  },
+  "interpretation_limits": [
+    "A positive history match is within the current-registration frame, not original-cohort retention.",
+    "Absent history is UNKNOWN and is not proof of nonvoting.",
+    "Recent registration is not first-ever registration.",
+    "No administrative party field is interpreted as candidate choice.",
+    "No repeat-participation or first-time-voter count is approved from this follow-up."
+  ],
+  "next_concrete_public_input": "A Secretary of State public aggregate that explicitly reports November 3, 2026 voting-history entry or repeat-participation after the statutory entry period.",
+  "normal_timing": {
+    "calculated_extended_general_deadline": "2027-01-12",
+    "calculated_initial_general_deadline": "2026-12-15",
+    "rule": "Counties complete Election Day registration and voting-history entry within 42 days, with a possible 28-day extension after notice."
+  },
+  "official_current_page_state": "The county-entry page still reports the August 11, 2026 State Primary and does not supply November 3 General Election linked-history completion or repeat-participation.",
+  "official_pages": [
+    "https://www.sos.mn.gov/election-administration-campaigns/data-maps/county-entry-of-voting-history/",
+    "https://www.sos.mn.gov/election-administration-campaigns/data-maps/registered-voter-list-requests/",
+    "https://www.sos.mn.gov/election-administration-campaigns/data-maps/historical-voter-turnout-statistics/"
+  ]
+}

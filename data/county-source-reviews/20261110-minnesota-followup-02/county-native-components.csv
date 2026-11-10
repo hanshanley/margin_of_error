@@ -1,0 +1,88 @@
+native_county_id,county_name,roster_signatures,regular_military_overseas_absentee,federal_only_absentee,president_only_absentee,native_component_sum,total_number_voted,total_minus_native_components,scope_caution
+01,Aitkin,3695,5322,2,0,9019,9019,0,literal native components; not normalized ballot modes
+02,Anoka,118613,64587,85,0,183285,183285,0,literal native components; not normalized ballot modes
+03,Becker,11950,4956,4,0,16910,16910,0,literal native components; not normalized ballot modes
+04,Beltrami,13382,6883,10,0,20275,20275,0,literal native components; not normalized ballot modes
+05,Benton,15626,3139,9,0,18774,18773,-1,literal native components; not normalized ballot modes
+06,Big Stone,864,1568,3,0,2435,2435,0,literal native components; not normalized ballot modes
+07,Blue Earth,17112,12813,17,0,29942,29942,0,literal native components; not normalized ballot modes
+08,Brown,7650,4176,12,0,11838,11838,0,literal native components; not normalized ballot modes
+09,Carlton,11848,5747,9,0,17604,17604,0,literal native components; not normalized ballot modes
+10,Carver,39935,21963,57,0,61955,61951,-4,literal native components; not normalized ballot modes
+11,Cass,9028,7671,4,0,16703,16703,0,literal native components; not normalized ballot modes
+12,Chippewa,2855,2249,7,0,5111,5111,0,literal native components; not normalized ballot modes
+13,Chisago,22078,7027,338,0,29443,29443,0,literal native components; not normalized ballot modes
+14,Clay,17244,9790,13,0,27047,27047,0,literal native components; not normalized ballot modes
+15,Clearwater,3433,592,0,0,4025,4025,0,literal native components; not normalized ballot modes
+16,Cook,501,2896,9,0,3406,3406,0,literal native components; not normalized ballot modes
+17,Cottonwood,4111,749,0,0,4860,4860,0,literal native components; not normalized ballot modes
+18,Crow Wing,25273,10528,23,0,35824,35824,0,literal native components; not normalized ballot modes
+19,Dakota,137267,94758,183,0,232208,232208,0,literal native components; not normalized ballot modes
+20,Dodge,8489,1931,4,0,10424,10424,0,literal native components; not normalized ballot modes
+21,Douglas,15686,5921,8,0,21615,21615,0,literal native components; not normalized ballot modes
+22,Faribault,5131,1347,0,0,6478,6478,0,literal native components; not normalized ballot modes
+23,Fillmore,7427,2875,3,0,10305,10305,0,literal native components; not normalized ballot modes
+24,Freeborn,10379,3108,4,0,13491,13491,0,literal native components; not normalized ballot modes
+25,Goodhue,19751,4842,9,0,24602,24602,0,literal native components; not normalized ballot modes
+26,Grant,415,2691,2,0,3108,3108,0,literal native components; not normalized ballot modes
+27,Hennepin,382192,286167,1254,0,669613,669613,0,literal native components; not normalized ballot modes
+28,Houston,7880,1465,10,0,9355,9355,0,literal native components; not normalized ballot modes
+29,Hubbard,8007,2709,8,0,10724,10724,0,literal native components; not normalized ballot modes
+30,Isanti,16236,4709,3,0,20948,20948,0,literal native components; not normalized ballot modes
+31,Itasca,11522,10530,8,0,22060,22060,0,literal native components; not normalized ballot modes
+32,Jackson,2620,2304,4,0,4928,4928,0,literal native components; not normalized ballot modes
+33,Kanabec,6307,1329,4,0,7640,7640,0,literal native components; not normalized ballot modes
+34,Kandiyohi,14643,4999,11,0,19653,19651,-2,literal native components; not normalized ballot modes
+35,Kittson,566,1515,4,0,2085,2085,0,literal native components; not normalized ballot modes
+36,Koochiching,1692,3777,25,0,5494,5494,0,literal native components; not normalized ballot modes
+37,Lac Qui Parle,1490,1936,0,0,3426,3426,0,literal native components; not normalized ballot modes
+38,Lake,4236,1768,4,0,6008,6008,0,literal native components; not normalized ballot modes
+39,Lake Of The Woods,263,1611,0,0,1874,1874,0,literal native components; not normalized ballot modes
+40,Le Sueur,9934,4535,5,0,14474,14473,-1,literal native components; not normalized ballot modes
+41,Lincoln,2138,419,0,0,2557,2557,0,literal native components; not normalized ballot modes
+42,Lyon,6467,4026,6,0,10499,10499,0,literal native components; not normalized ballot modes
+43,Mcleod,13357,4005,5,0,17367,17367,0,literal native components; not normalized ballot modes
+44,Mahnomen,610,1383,1,0,1994,1994,0,literal native components; not normalized ballot modes
+45,Marshall,806,3603,0,0,4409,4409,0,literal native components; not normalized ballot modes
+46,Martin,5950,2761,7,0,8718,8718,0,literal native components; not normalized ballot modes
+47,Meeker,8024,3460,4,0,11488,11484,-4,literal native components; not normalized ballot modes
+48,Mille Lacs,9786,2329,2,0,12117,12117,0,literal native components; not normalized ballot modes
+49,Morrison,11534,4875,0,0,16409,16409,0,literal native components; not normalized ballot modes
+50,Mower,10444,5438,13,0,15895,15895,0,literal native components; not normalized ballot modes
+51,Murray,2159,1861,0,0,4020,4020,0,literal native components; not normalized ballot modes
+52,Nicollet,10539,6165,0,0,16704,16703,-1,literal native components; not normalized ballot modes
+53,Nobles,3495,3190,8,0,6693,6693,0,literal native components; not normalized ballot modes
+54,Norman,817,1880,1,0,2698,2698,0,literal native components; not normalized ballot modes
+55,Olmsted,52571,26784,85,0,79440,79430,-10,literal native components; not normalized ballot modes
+56,Otter Tail,25452,5814,24,0,31290,31290,0,literal native components; not normalized ballot modes
+57,Pennington,3866,1634,3,0,5503,5503,0,literal native components; not normalized ballot modes
+58,Pine,10697,3454,2,0,14153,14153,0,literal native components; not normalized ballot modes
+59,Pipestone,1796,2339,0,0,4135,4135,0,literal native components; not normalized ballot modes
+60,Polk,7159,4869,12,0,12040,12040,0,literal native components; not normalized ballot modes
+61,Pope,3212,2908,1,0,6121,6121,0,literal native components; not normalized ballot modes
+62,Ramsey,169017,81658,546,0,251221,251221,0,literal native components; not normalized ballot modes
+63,Red Lake,584,1358,0,0,1942,1942,0,literal native components; not normalized ballot modes
+64,Redwood,5606,1164,7,0,6777,6777,0,literal native components; not normalized ballot modes
+65,Renville,5384,1079,5,0,6468,6468,0,literal native components; not normalized ballot modes
+66,Rice,21883,9447,44,0,31374,31371,-3,literal native components; not normalized ballot modes
+67,Rock,2177,2331,0,0,4508,4508,0,literal native components; not normalized ballot modes
+68,Roseau,3752,2929,7,0,6688,6688,0,literal native components; not normalized ballot modes
+69,St. Louis,77495,23187,102,0,100784,100784,0,literal native components; not normalized ballot modes
+70,Scott,50765,29515,31,0,80311,80311,0,literal native components; not normalized ballot modes
+71,Sherburne,37062,10359,18,0,47439,47439,0,literal native components; not normalized ballot modes
+72,Sibley,4307,3011,3,0,7321,7321,0,literal native components; not normalized ballot modes
+73,Stearns,50765,24330,56,0,75151,75147,-4,literal native components; not normalized ballot modes
+74,Steele,13882,4310,0,0,18192,18192,0,literal native components; not normalized ballot modes
+75,Stevens,1836,2679,0,0,4515,4515,0,literal native components; not normalized ballot modes
+76,Swift,2430,2141,3,0,4574,4574,0,literal native components; not normalized ballot modes
+77,Todd,9990,1303,1,0,11294,11294,0,literal native components; not normalized ballot modes
+78,Traverse,627,934,1,0,1562,1562,0,literal native components; not normalized ballot modes
+79,Wabasha,9028,2282,4,0,11314,11314,0,literal native components; not normalized ballot modes
+80,Wadena,5238,1285,0,0,6523,6523,0,literal native components; not normalized ballot modes
+81,Waseca,6855,1612,4,0,8471,8471,0,literal native components; not normalized ballot modes
+82,Washington,89806,60340,128,0,150274,150253,-21,literal native components; not normalized ballot modes
+83,Watonwan,1858,2235,1,0,4094,4094,0,literal native components; not normalized ballot modes
+84,Wilkin,1039,1556,0,0,2595,2595,0,literal native components; not normalized ballot modes
+85,Winona,18492,5391,10,0,23893,23893,0,literal native components; not normalized ballot modes
+86,Wright,37441,14600,0,0,52041,52041,0,literal native components; not normalized ballot modes
+87,Yellow Medicine,2513,2084,0,0,4597,4597,0,literal native components; not normalized ballot modes

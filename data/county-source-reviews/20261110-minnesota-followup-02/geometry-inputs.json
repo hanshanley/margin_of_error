@@ -1,0 +1,36 @@
+{
+  "files": {
+    "geometry-source/MN-PrctTbl.txt": {
+      "bytes": 190874,
+      "sha256": "8a396f732ebe92ff9b05a26facb2c20a2b4142480784d5443a854abce9ce991c"
+    },
+    "geometry-source/MN-boundaries-0.geojson": {
+      "bytes": 16032542,
+      "sha256": "e77d29be28e473f8e389a0e521840b70107e2f9f54f6e426a531603917bc4a38"
+    },
+    "geometry-source/MN-boundaries-2000.geojson": {
+      "bytes": 12192823,
+      "sha256": "ebe2151b489c04f994df0e442eb941ef4f1f5887e703b44b7f327dc9e3241f3f"
+    },
+    "geometry-source/MN-boundaries-4000.geojson": {
+      "bytes": 1237684,
+      "sha256": "e97807379d26622a70223ff1f9b9c2d91dc4590c1b776f456018c82a25163288"
+    },
+    "geometry-source/MN-boundary-count.json": {
+      "bytes": 14,
+      "sha256": "2eb44c2af75c13a2c798d0e7177fc88b2a9c1f0d16528b7640661f91569aa7b4"
+    },
+    "geometry-source/MN.geojson.gz": {
+      "bytes": 1524675,
+      "sha256": "405288dc85ee383cfd53f8009c272d78b0b1ddfa833941b31911aee7c9abadc9"
+    },
+    "geometry-source/previous-qualified-MN-coverage.json": {
+      "bytes": 751,
+      "sha256": "8f74c44c95b00e674e5e588b5ca7a3192f8a8d21673679fd4169934a9fbc62d3"
+    },
+    "geometry-source/reference-declaration.json": {
+      "bytes": 581,
+      "sha256": "11250a4cb54e3ce964d0b397370a39a4bf44b0e8cd81592ed6d008e39ad67294"
+    }
+  }
+}

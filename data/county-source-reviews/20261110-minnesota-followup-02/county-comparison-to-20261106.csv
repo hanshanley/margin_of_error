@@ -1,0 +1,88 @@
+native_county_id,county_name,prior_reported_statistics,prior_missing_statistics,prior_complete,prior_observed_total_number_voted,current_reported_statistics,current_missing_statistics,current_complete,current_total_number_voted,current_minus_prior_observed,disposition
+01,Aitkin,51,0,true,9019,51,0,true,9019,0,unchanged
+02,Anoka,0,128,false,0,128,0,true,183285,183285,newly_complete
+03,Becker,47,0,true,16910,47,0,true,16910,0,unchanged
+04,Beltrami,61,0,true,20273,61,0,true,20275,2,revised_complete_total
+05,Benton,27,0,true,18773,27,0,true,18773,0,unchanged
+06,Big Stone,24,0,true,2435,24,0,true,2435,0,unchanged
+07,Blue Earth,56,0,true,29937,56,0,true,29942,5,revised_complete_total
+08,Brown,32,0,true,11838,32,0,true,11838,0,unchanged
+09,Carlton,39,0,true,17604,39,0,true,17604,0,unchanged
+10,Carver,1,38,false,0,39,0,true,61951,61951,newly_complete
+11,Cass,71,0,true,16703,71,0,true,16703,0,unchanged
+12,Chippewa,25,0,true,5111,25,0,true,5111,0,unchanged
+13,Chisago,25,0,true,29443,25,0,true,29443,0,unchanged
+14,Clay,56,0,true,27047,56,0,true,27047,0,unchanged
+15,Clearwater,29,0,true,4025,29,0,true,4025,0,unchanged
+16,Cook,14,0,true,3406,14,0,true,3406,0,unchanged
+17,Cottonwood,28,0,true,4859,28,0,true,4860,1,revised_complete_total
+18,Crow Wing,62,0,true,35824,62,0,true,35824,0,unchanged
+19,Dakota,144,0,true,232208,144,0,true,232208,0,unchanged
+20,Dodge,22,0,true,10424,22,0,true,10424,0,unchanged
+21,Douglas,36,0,true,21615,36,0,true,21615,0,unchanged
+22,Faribault,33,0,true,6478,33,0,true,6478,0,unchanged
+23,Fillmore,0,37,false,0,36,1,false,10305,10305,still_partial_newer_subtotal
+24,Freeborn,43,0,true,13491,43,0,true,13491,0,unchanged
+25,Goodhue,40,0,true,24602,40,0,true,24602,0,unchanged
+26,Grant,23,0,true,3108,23,0,true,3108,0,unchanged
+27,Hennepin,395,0,true,669613,395,0,true,669613,0,unchanged
+28,Houston,27,0,true,9356,27,0,true,9355,-1,revised_complete_total
+29,Hubbard,0,37,false,0,27,10,false,10724,10724,still_partial_newer_subtotal
+30,Isanti,19,0,true,20948,19,0,true,20948,0,unchanged
+31,Itasca,75,0,true,22060,75,0,true,22060,0,unchanged
+32,Jackson,28,0,true,4928,28,0,true,4928,0,unchanged
+33,Kanabec,20,0,true,7640,20,0,true,7640,0,unchanged
+34,Kandiyohi,48,0,true,19651,48,0,true,19651,0,unchanged
+35,Kittson,21,18,false,1377,39,0,true,2085,708,newly_complete
+36,Koochiching,23,0,true,5494,23,0,true,5494,0,unchanged
+37,Lac Qui Parle,7,22,false,1874,29,0,true,3426,1552,newly_complete
+38,Lake,19,0,true,6008,19,0,true,6008,0,unchanged
+39,Lake Of The Woods,17,0,true,1874,17,0,true,1874,0,unchanged
+40,Le Sueur,26,0,true,14473,26,0,true,14473,0,unchanged
+41,Lincoln,20,0,true,2557,20,0,true,2557,0,unchanged
+42,Lyon,33,0,true,10499,33,0,true,10499,0,unchanged
+43,Mcleod,29,0,true,17367,29,0,true,17367,0,unchanged
+44,Mahnomen,19,0,true,1994,19,0,true,1994,0,unchanged
+45,Marshall,60,0,true,4409,60,0,true,4409,0,unchanged
+46,Martin,37,0,true,8718,37,0,true,8718,0,unchanged
+47,Meeker,30,0,true,11484,30,0,true,11484,0,unchanged
+48,Mille Lacs,25,0,true,12117,25,0,true,12117,0,unchanged
+49,Morrison,48,0,true,16409,48,0,true,16409,0,unchanged
+50,Mower,39,0,true,15895,39,0,true,15895,0,unchanged
+51,Murray,29,0,true,4020,29,0,true,4020,0,unchanged
+52,Nicollet,26,0,true,16703,26,0,true,16703,0,unchanged
+53,Nobles,40,0,true,6693,40,0,true,6693,0,unchanged
+54,Norman,33,0,true,2698,33,0,true,2698,0,unchanged
+55,Olmsted,111,0,true,79405,111,0,true,79430,25,revised_complete_total
+56,Otter Tail,90,1,false,31128,91,0,true,31290,162,newly_complete
+57,Pennington,31,0,true,5503,31,0,true,5503,0,unchanged
+58,Pine,47,0,true,14153,47,0,true,14153,0,unchanged
+59,Pipestone,22,0,true,4135,22,0,true,4135,0,unchanged
+60,Polk,82,0,true,12040,82,0,true,12040,0,unchanged
+61,Pope,31,0,true,6121,31,0,true,6121,0,unchanged
+62,Ramsey,162,0,true,251221,162,0,true,251221,0,unchanged
+63,Red Lake,21,0,true,1942,21,0,true,1942,0,unchanged
+64,Redwood,42,0,true,6777,42,0,true,6777,0,unchanged
+65,Renville,37,0,true,6468,37,0,true,6468,0,unchanged
+66,Rice,31,0,true,31371,31,0,true,31371,0,unchanged
+67,Rock,24,0,true,4508,24,0,true,4508,0,unchanged
+68,Roseau,44,0,true,6688,44,0,true,6688,0,unchanged
+69,St. Louis,166,1,false,100546,167,0,true,100784,238,newly_complete
+70,Scott,54,0,true,80311,54,0,true,80311,0,unchanged
+71,Sherburne,25,10,false,37497,35,0,true,47439,9942,newly_complete
+72,Sibley,25,0,true,7321,25,0,true,7321,0,unchanged
+73,Stearns,99,0,true,75147,99,0,true,75147,0,unchanged
+74,Steele,26,0,true,18192,26,0,true,18192,0,unchanged
+75,Stevens,24,0,true,4515,24,0,true,4515,0,unchanged
+76,Swift,30,0,true,4574,30,0,true,4574,0,unchanged
+77,Todd,40,0,true,11294,40,0,true,11294,0,unchanged
+78,Traverse,20,0,true,1562,20,0,true,1562,0,unchanged
+79,Wabasha,33,0,true,11374,33,0,true,11314,-60,revised_complete_total
+80,Wadena,4,20,false,526,24,0,true,6523,5997,newly_complete
+81,Waseca,23,0,true,8471,23,0,true,8471,0,unchanged
+82,Washington,1,83,false,201,84,0,true,150253,150052,newly_complete
+83,Watonwan,21,0,true,4094,21,0,true,4094,0,unchanged
+84,Wilkin,32,0,true,2595,32,0,true,2595,0,unchanged
+85,Winona,49,0,true,23893,49,0,true,23893,0,unchanged
+86,Wright,12,39,false,14444,36,15,false,52041,37597,still_partial_newer_subtotal
+87,Yellow Medicine,30,0,true,4597,30,0,true,4597,0,unchanged

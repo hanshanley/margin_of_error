@@ -1,0 +1,65 @@
+# Minnesota 2026 participation follow-up
+
+## Useful new official evidence
+
+The official `pctstats.txt` declared by the Minnesota Secretary of State media-files page
+now has **4,079/4,105 reported precinct statistics and 84/87 complete counties**. The retained
+November 6 observation had 3,671 reported precincts, 434 missing precincts, 75 complete counties,
+and 12 partial counties. This is a genuine gain of **408 precinct statistics** and **9 newly
+complete counties**.
+
+The 9 newly complete counties are listed in `newly-complete-counties.csv`. Exact revisions to
+previously complete counties are in `revised-previously-complete-counties.csv`; all 87 comparisons
+are in `county-comparison-to-20261106.csv`.
+
+The official statewide page separately displays 87 complete counties and 2,852,528
+**Estimated Voters**, but the byte-frozen native download still has 26 unreported rows in Fillmore,
+Hubbard, and Wright. Those estimates are preserved in `official-page-estimates-vs-native.csv` but
+are not relabeled as exact native `Total Number Voted`.
+
+## Native qualifications
+
+- Status: **Unofficial Results**.
+- Official page clock: **11/07/26 5:18 PM**; the page does not state a timezone.
+- Receipt time: `2026-11-07T23:42:25.636246+00:00` UTC.
+- Numerator: native **Total Number Voted**, not candidate votes.
+- Registration frame: registered at 7AM plus Election Day registrations.
+- Counting scope: 4,079 native rows where `has_reported_statistics=1`; 26 rows remain
+  explicitly unreported.
+- Provisionals: no separate provisional field appears in the native statistics layout.
+- Components: roster signatures plus three native absentee fields are preserved literally, not
+  relabeled as normalized voting modes.
+- County fractions remain withheld where native component conflicts or electorate excesses occur.
+
+## Linked-history disposition
+
+No public November 2026 aggregate repeat-participation release was found. The official county-entry
+page still covers the August 2026 primary. Individual detailed history is a restricted, paid,
+purpose-limited current-registration report; no order or identifiable voter-file acquisition was
+made. See `linked-history-availability.json`.
+
+## Publication approval
+
+**Approved with qualifiers:** 84 complete county `Total Number Voted` counts and partial subtotals
+for Fillmore, Hubbard, and Wright, clearly labeled unofficial. Literal component counts may be
+published only under their native labels. County registration fractions are approved only where
+the CSV marks them eligible.
+An exact all-87-county/native statewide total remains blocked by the 26 native unreported rows.
+Repeat-participation, first-time-voter, nonvoter, candidate-cohort, and normalized mode claims are
+not approved.
+
+## Primary official routes
+
+- `https://electionresults.sos.mn.gov/Select/MediaFiles/Index?ersElectionId=201`
+- `https://electionresults.sos.mn.gov/Results/CountyStatisticsStatewide/Index?ersElectionId=201`
+- `https://electionresults.sos.mn.gov/Select/VoterTurnOut/Index?ersElectionId=201`
+- `https://www.sos.mn.gov/election-administration-campaigns/data-maps/county-entry-of-voting-history/`
+- `https://www.sos.mn.gov/election-administration-campaigns/data-maps/registered-voter-list-requests/`
+
+## Reproduce and verify
+
+The live original was acquired exactly once. Verification is offline:
+
+```sh
+python3 build_minnesota_followup.py verify
+```

@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 
 from playwright.sync_api import expect, sync_playwright
+from local_reference_staging import stage_local_minnesota_reference
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,6 +48,7 @@ with sync_playwright() as runtime:
     browser = runtime.chromium.launch()
     try:
         context = browser.new_context(viewport={"width": 1440, "height": 1100})
+        stage_local_minnesota_reference(context, args.base_url)
         page = context.new_page()
         errors = []
         page.on("pageerror", lambda error: errors.append(str(error)))

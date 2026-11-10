@@ -1,0 +1,13 @@
+{
+  "attempts": 1,
+  "bytes": 205972,
+  "content_type": "text/plain",
+  "declared_by_reused_original": "reused-frozen-originals/media-index.html",
+  "declared_link_text": "Precinct Reporting Statistics",
+  "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/pctstats.txt",
+  "receipt_finished_at_utc": "2026-11-07T23:42:25.636246+00:00",
+  "request_started_at_utc": "2026-11-07T23:42:24.963087+00:00",
+  "sha256": "bbdee2f045b490b1dc359487eb0122613c0835fa1744e065e88f9c99028ca6d7",
+  "status": 200,
+  "url": "https://electionresultsfiles.sos.mn.gov/20261103/pctstats.txt"
+}

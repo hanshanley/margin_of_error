@@ -1,0 +1,9 @@
+{
+  "url": "https://electionresultsfiles.sos.mn.gov/20261103/PrctTbl.txt",
+  "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/PrctTbl.txt",
+  "status": 200,
+  "content_type": "text/plain",
+  "bytes": 190874,
+  "sha256": "8a396f732ebe92ff9b05a26facb2c20a2b4142480784d5443a854abce9ce991c",
+  "fetched_at_utc": "2026-11-06T12:01:26.533239+00:00"
+}

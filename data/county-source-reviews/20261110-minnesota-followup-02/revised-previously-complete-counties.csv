@@ -1,0 +1,7 @@
+native_county_id,county_name,prior_reported_statistics,prior_missing_statistics,prior_complete,prior_observed_total_number_voted,current_reported_statistics,current_missing_statistics,current_complete,current_total_number_voted,current_minus_prior_observed,disposition
+04,Beltrami,61,0,true,20273,61,0,true,20275,2,revised_complete_total
+07,Blue Earth,56,0,true,29937,56,0,true,29942,5,revised_complete_total
+17,Cottonwood,28,0,true,4859,28,0,true,4860,1,revised_complete_total
+28,Houston,27,0,true,9356,27,0,true,9355,-1,revised_complete_total
+55,Olmsted,111,0,true,79405,111,0,true,79430,25,revised_complete_total
+79,Wabasha,33,0,true,11374,33,0,true,11314,-60,revised_complete_total

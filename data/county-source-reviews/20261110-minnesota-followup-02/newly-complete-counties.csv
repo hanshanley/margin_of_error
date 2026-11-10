@@ -1,0 +1,10 @@
+native_county_id,county_name,prior_reported_statistics,prior_missing_statistics,prior_complete,prior_observed_total_number_voted,current_reported_statistics,current_missing_statistics,current_complete,current_total_number_voted,current_minus_prior_observed,disposition
+02,Anoka,0,128,false,0,128,0,true,183285,183285,newly_complete
+10,Carver,1,38,false,0,39,0,true,61951,61951,newly_complete
+35,Kittson,21,18,false,1377,39,0,true,2085,708,newly_complete
+37,Lac Qui Parle,7,22,false,1874,29,0,true,3426,1552,newly_complete
+56,Otter Tail,90,1,false,31128,91,0,true,31290,162,newly_complete
+69,St. Louis,166,1,false,100546,167,0,true,100784,238,newly_complete
+71,Sherburne,25,10,false,37497,35,0,true,47439,9942,newly_complete
+80,Wadena,4,20,false,526,24,0,true,6523,5997,newly_complete
+82,Washington,1,83,false,201,84,0,true,150253,150052,newly_complete

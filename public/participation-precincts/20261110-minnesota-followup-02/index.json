@@ -1,0 +1,25 @@
+{
+  "states": {
+    "MN": "https://raw.githubusercontent.com/hanshanley/margin_of_error/voter-minnesota-native-county-followup-20261110-02/data/county-source-reviews/20261110-minnesota-followup-02/MN.geojson.gz"
+  },
+  "state_metadata": {
+    "MN": {
+      "source_id": "minnesota-native-followup-20261110-02",
+      "expected_features": 4105,
+      "bytes": 9215026,
+      "sha256": "356ea40e755981d20a932d7b10f2fd7fdb30f16487bea47d0c981f2fd2fafc10",
+      "counts_only": true,
+      "rates_approved": false,
+      "reported_source_counts": 4079,
+      "unknown_source_counts": 26,
+      "source_reference_date": "2026-09-18",
+      "certified_legal_precinct_boundaries": false,
+      "boundary_label": "Full native September18,2026 reference; not certified legal precincts",
+      "native_overlaps_preserved": true,
+      "positive_native_overlap_pairs": 0,
+      "names_differ_beyond_case": 1723,
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-native-county-followup-20261110-02/complete-analysis.zip",
+      "notes": "All4105 references use original full native geometry, not16 invalid generalized legacy shapes or repaired boundaries. 4079 native count rows/26 unknowns; no precinct rate. Literal reference/statistics names remain separate; native countycode/pctcode and explicit VTD/fips fields control joins. Native overlaps remain unchanged."
+    }
+  }
+}

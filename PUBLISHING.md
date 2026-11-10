@@ -120,6 +120,32 @@ separate original reviews. The versioned complete download under
 originals, reference geometry and a dependency-free offline Node reproduction.
 Its packaging command refuses to overwrite an existing version.
 
+Minnesota's current opt-in uses the separately frozen November7 follow-up,
+not the older75-county export or the page's Estimated Voters figure. All87
+county decisions and4105 native unit rows remain:84 complete counts, three
+partial subtotals and26 unreported statistics. The explicit `available` frame
+must supersede retained older records without modifying their frozen hashes.
+Use the same snapshot in county and unit selectors and the precinct count map.
+The separately checked native September18,2026 reference preserves all4105
+full polygons and joins by native countycode/pctcode and separate VTD/FIPS
+fields, not guessed abbreviations. All full native shapes are valid with no
+positive overlap;16 invalid older generalizations are not reused or repaired.
+The1,723 differing source/reference names remain literal and separate.
+All4079 reported counts/26 unknowns retain null precinct analysis rates.
+Keep the separately qualified provider early/returned frames distinct.
+Native county IDs are not FIPS: join case-insensitive names with only the Census
+`County` suffix removed, preserving both names and the full checksum-verified2026
+county context. Source-registration fractions require complete native data and
+zero component conflicts/electorate excesses;71 pass. Retain all other source
+fields, zero/unknown distinctions, the results-page clock/timezone gap and the
+separate November2 registered-only snapshot. No exact statewide count, repair,
+normalized ballot modes, unique-person count or demographic allocation is inferred.
+Keep the full9.2MB reference external through the immutable version tag; the
+public index verifies its bytes/SHA before rendering. Local loopback tests may
+stage only that exact unpublished artifact explicitly; production never overrides
+its reference request. Remember States zoom as well as controls across tabs so
+returning from Precincts redraws the previously selected county layer.
+
 New Hampshire keeps four native city sources and all 37 ward rows distinct.
 The Precincts tab maps Manchester's 12, Concord's 10, Nashua's nine and Dover's six ward counts on
 current official municipal context, not newly certified 2026 legal precincts.

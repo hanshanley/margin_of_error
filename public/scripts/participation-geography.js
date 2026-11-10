@@ -162,6 +162,12 @@ export function hasCountySourceMode(code, mode) {
 }
 
 export function selectCountySourceFrame(data, code, mode) {
+  if (code === "MN" && ["available", "official"].includes(mode) && data.county_frames?.native_county_followup !== undefined) {
+    const rows = data.county_frames.native_county_followup;
+    if (!qualifiedMinnesotaCountyFrame(rows))
+      throw new Error("Unqualified Minnesota native county-statistics follow-up; old counts or estimates are not substituted");
+    return rows;
+  }
   if (["in_person_early", "mail_returned"].includes(mode)
     && data.counties.some(row => row.state_code === code && row.source_mode === "all_method_native_city_snapshot"))
     return [];
@@ -220,6 +226,86 @@ function qualifiedIllinoisCityHolds(holds, rows, mode) {
     && row.source_count === Object.values(row.native_categories).reduce((s, r) => s + r.votes, 0))
     && [...rows.map(row => row.ballots), ...holds.map(row => row.source_count)].reduce((s, r) => s + r, 0)
       === (mode === "in_person_early" ? 1162828 : 892086);
+}
+
+export function qualifiedMinnesotaCountyFrame(rows) {
+  if (!Array.isArray(rows) || rows.length !== 87
+    || new Set(rows.map(row => row.county_fips)).size !== 87
+    || new Set(rows.map(row => row.county_id)).size !== 87) return false;
+  if (!rows.every(row => {
+    const n = row.native_record, complete = n?.all_statistics_reported === "true";
+    const eligible = n?.registration_fraction_eligible === "true";
+    if (row.year !== 2026 || row.state_code !== "MN"
+      || row.source_snapshot !== "20261110-minnesota-followup-02"
+      || row.source_mode !== "all_method_native_statistics_snapshot"
+      || !/^27\d{3}$/.test(row.county_fips)
+      || !/^\d{2}$/.test(n?.native_county_id)
+      || row.county_id !== `additional:MN:followup:${n.native_county_id}`
+      || row.county !== n.county_name || row.source_count_qualified !== complete
+      || !["true", "false"].includes(n.all_statistics_reported)
+      || !["true", "false"].includes(n.registration_fraction_eligible)
+      || n.native_numerator_label !== "Total Number Voted" || n.native_status !== "Unofficial Results"
+      || n.native_update_clock !== "11/07/26 5:18 PM" || n.native_update_timezone !== ""
+      || row.cast_ballot_count_qualified !== false || row.unique_voter_count_qualified !== false
+      || row.participation_measure_literal !== "Total Number Voted"
+      || row.denominator_basis !== "native_7am_plus_election_day_registrations"
+      || row.reference_geometry?.boundary_year !== 2026 || row.reference_geometry.counties !== 87
+      || row.reference_geometry.certified_legal_boundaries !== false
+      || row.reference_geometry.geography_scope !== "native_county_statistics"
+      || row.reported_units !== Number(n.reported_statistics)
+      || row.total_units !== Number(n.reference_precincts)
+      || row.reported_units + Number(n.missing_statistics) !== row.total_units
+      || complete !== (Number(n.missing_statistics) === 0)
+      || row.native_partial_subtotal !== Number(n.reported_total_number_voted_subtotal)) return false;
+    if (!complete) return row.ballots === null && row.denominator === null && row.reported_pct === null
+      && !eligible && n.complete_total_number_voted === ""
+      && n.complete_derived_7am_plus_election_day_registration === "";
+    if (!Number.isSafeInteger(row.ballots) || row.ballots < 0
+      || row.ballots !== Number(n.complete_total_number_voted)
+      || !Number.isSafeInteger(row.denominator) || row.denominator < 0
+      || row.denominator !== Number(n.complete_registered_7am) + Number(n.complete_registered_election_day)
+      || row.denominator !== Number(n.complete_derived_7am_plus_election_day_registration)) return false;
+    return eligible
+      ? row.denominator > 0 && row.ballots <= row.denominator
+        && Number(n.precinct_component_conflicts) === 0 && Number(n.precinct_electorate_excesses) === 0
+        && Number.isFinite(row.reported_pct)
+        && Math.abs(row.reported_pct - 100 * row.ballots / row.denominator) < 1e-10
+      : row.reported_pct === null;
+  })) return false;
+  return rows.filter(row => row.ballots !== null).length === 84
+    && rows.filter(row => row.reported_pct !== null).length === 71
+    && rows.reduce((sum, row) => sum + row.reported_units, 0) === 4079
+    && rows.reduce((sum, row) => sum + row.total_units, 0) === 4105
+    && rows.reduce((sum, row) => sum + row.native_partial_subtotal, 0) === 2827091;
+}
+
+export function qualifiedMinnesotaPrecinctReference(p) {
+  const n = p?.native_record, r = p?.reference_geometry;
+  const reported = n?.has_reported_statistics === "1";
+  return p?.source_snapshot === "20261110-minnesota-followup-02"
+    && p.year === 2026 && p.state_code === "MN" && n?.state === "MN"
+    && p.source_election_date === "2026-11-03"
+    && /^\d{2}$/.test(p.native_county_id) && p.native_county_id === n.county_id
+    && p.native_precinct_id === n.precinct_id && p.unit_key === n.precinct_id
+    && p.unit === n.precinct_name && p.key === `MN|${n.county_id}|${n.precinct_id}`
+    && p.county_id === `additional:MN:followup:${n.county_id}`
+    && p.unit_kind === "geographic_precinct" && p.reporting_unit_kind === "geographic_precinct"
+    && p.match_status === "matched_current_native_reference"
+    && ["0", "1"].includes(n.has_reported_statistics)
+    && p.source_count_qualified === reported
+    && (reported ? Number.isSafeInteger(p.ballots) && p.ballots >= 0 && p.ballots === n.total_number_voted
+      : p.ballots === null)
+    && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null
+    && p.maps_approved === true && p.cast_ballot_count_qualified === false && p.unique_voter_count_qualified === false
+    && p.participation_measure_label === "Native Total Number Voted"
+    && r?.source_item_id === "6c2c813b33144d49ba993bd86b3a58ba"
+    && r.source_reference_date === "2026-09-18"
+    && r.native_precinct_code === n.precinct_id && Number(r.native_county_code) === Number(n.county_id)
+    && /^\d{3}$/.test(r.native_county_fips) && p.county_fips === "27" + r.native_county_fips
+    && r.native_vtdid === p.county_fips + n.precinct_id
+    && r.topology_valid_without_repairs === true && r.full_native_coordinates_preserved === true
+    && r.generalized_legacy_geometry_used === false && r.certified_legal_boundaries === false
+    && r.source_geometry_clipped === false && r.native_overlaps_preserved === true;
 }
 
 export function qualifiedIllinoisCountyContextFrame(rows, mode) {

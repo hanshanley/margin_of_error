@@ -1,0 +1,9 @@
+{
+  "url": "https://electionresults.sos.mn.gov/Results/MediaFileLayout/Index?erselectionId=201",
+  "final_url": "https://electionresults.sos.mn.gov/Results/MediaFileLayout/Index?erselectionId=201",
+  "status": 200,
+  "content_type": "text/plain",
+  "bytes": 6463,
+  "sha256": "d8f387d6f4aa48ebbc379d4f9d613adc1061500f92cffd976f9d64dfa406bee2",
+  "fetched_at_utc": "2026-11-06T12:01:26.043918+00:00"
+}

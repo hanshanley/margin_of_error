@@ -1,0 +1,9 @@
+{
+  "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MN.geojson.gz",
+  "sha256": "ef2672107b15e32332b185baa3e878ec64133dd0ee272b288ead7af51516c13a",
+  "uncompressed_sha256": "f67bc7cb3596b0286e5570cc188677fd736a835033c33cd2e6731fed6fa1502c",
+  "boundary_year": 2026,
+  "counties": 87,
+  "source_county_ids_are_not_fips": true,
+  "certified_election_boundaries": false
+}

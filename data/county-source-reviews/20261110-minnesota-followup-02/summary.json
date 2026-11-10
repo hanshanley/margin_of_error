@@ -1,0 +1,22 @@
+{
+  "native_counties": 87,
+  "native_precinct_rows": 4105,
+  "reported_statistics": 4079,
+  "missing_statistics": 26,
+  "complete_counties": 84,
+  "partial_counties": 3,
+  "newly_complete_counties": 9,
+  "reported_total_number_voted_subtotal": 2827091,
+  "exact_statewide_total_number_voted": null,
+  "separate_official_page_estimated_voters": 2852528,
+  "qualified_registration_fractions": 71,
+  "source_native_clock": "11/07/26 5:18 PM",
+  "source_native_timezone": null,
+  "source_status": "Unofficial Results",
+  "source_numerator_literal": "Total Number Voted",
+  "source_counts_repaired": false,
+  "candidate_votes_used_as_ballots": false,
+  "unique_people_qualified": false,
+  "precinct_geometry_approved": false,
+  "statewide_or_demographic_rate_approved": false
+}

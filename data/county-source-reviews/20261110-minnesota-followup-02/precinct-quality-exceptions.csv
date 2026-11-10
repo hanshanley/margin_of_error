@@ -1,0 +1,68 @@
+native_county_id,county_name,precinct_id,precinct_name,exception,residual
+05,Benton,0100,SAUK RAPIDS P-1,native_component_residual,-1
+10,Carver,0010,CAMDEN TWP,native_component_residual,-1
+10,Carver,0070,DAHLGREN TWP,native_component_residual,-1
+10,Carver,0115,VICTORIA P-1,native_component_residual,-1
+10,Carver,0117,VICTORIA P-3,native_component_residual,-1
+23,Fillmore,0005,AMHERST TWP.,voted_exceeds_7am_plus_election_day_registration,93
+25,Goodhue,0190,WANAMINGO,native_component_residual,-2
+25,Goodhue,0195,WANAMINGO TWP.,native_component_residual,2
+34,Kandiyohi,0175,WILLMAR W-1 P-1,native_component_residual,-1
+34,Kandiyohi,0195,WILLMAR W-2 P-2,native_component_residual,-1
+40,Le Sueur,0105,NEW PRAGUE,native_component_residual,-1
+47,Meeker,0105,LITCHFIELD W-1,native_component_residual,-1
+47,Meeker,0115,LITCHFIELD W-3,native_component_residual,-2
+47,Meeker,0120,LITCHFIELD W-4,native_component_residual,-1
+52,Nicollet,0020,CITY OF COURTLAND,native_component_residual,-1
+55,Olmsted,0080,ORONOCO,native_component_residual,-2
+55,Olmsted,0115,ROCHESTER W1 P4,native_component_residual,-1
+55,Olmsted,0135,ROCHESTER W1 P8,native_component_residual,-1
+55,Olmsted,0140,ROCHESTER W1 P9,native_component_residual,-1
+55,Olmsted,0150,ROCHESTER W1 P11,native_component_residual,-1
+55,Olmsted,0290,ROCHESTER W3 P12,native_component_residual,-1
+55,Olmsted,0480,ROCHESTER W6 P10,native_component_residual,-1
+55,Olmsted,0490,ROCHESTER W6 P12,native_component_residual,-1
+55,Olmsted,0495,ROCHESTER W6 P13,native_component_residual,-1
+66,Rice,0030,FARIBAULT P-2,native_component_residual,-1
+66,Rice,0065,MORRISTOWN,native_component_residual,-1
+66,Rice,0140,WEBSTER TWP.,native_component_residual,-1
+73,Stearns,0215,PAYNESVILLE TWP,native_component_residual,-1
+73,Stearns,0350,ST CLOUD W4 P5,native_component_residual,-1
+73,Stearns,0414,SARTELL P7,native_component_residual,-2
+75,Stevens,0095,RENDSVILLE TWP.,voted_exceeds_7am_plus_election_day_registration,61
+82,Washington,0005,AFTON W-1 P-1,native_component_residual,-1
+82,Washington,0040,COTTAGE GROVE P-01,native_component_residual,1
+82,Washington,0045,COTTAGE GROVE P-02,native_component_residual,2
+82,Washington,0060,COTTAGE GROVE P-05,native_component_residual,-1
+82,Washington,0075,COTTAGE GROVE P-08,native_component_residual,-2
+82,Washington,0095,DELLWOOD,native_component_residual,1
+82,Washington,0102,DENMARK TWP. P-02,native_component_residual,-1
+82,Washington,0115,FOREST LAKE P-03,native_component_residual,-1
+82,Washington,0125,FOREST LAKE P-05,native_component_residual,1
+82,Washington,0130,GRANT P-01,native_component_residual,-2
+82,Washington,0145,HUGO W-1 P-1,native_component_residual,-1
+82,Washington,0160,HUGO W-3 P-5,native_component_residual,-2
+82,Washington,0165,HUGO W-3 P-6,native_component_residual,-1
+82,Washington,0170,LAKE ELMO P-01,native_component_residual,4
+82,Washington,0175,LAKE ELMO P-02,native_component_residual,-4
+82,Washington,0190,LAKELAND SHORES,native_component_residual,-1
+82,Washington,0200,MAHTOMEDI P-01,native_component_residual,-1
+82,Washington,0205,MAHTOMEDI P-02,native_component_residual,-1
+82,Washington,0210,MARINE ON ST. CROIX,native_component_residual,1
+82,Washington,0220,NEWPORT,native_component_residual,-3
+82,Washington,0230,OAKDALE P-01,native_component_residual,-1
+82,Washington,0265,OAKDALE P-08,native_component_residual,-1
+82,Washington,0280,SCANDIA,native_component_residual,-1
+82,Washington,0300,ST. PAUL PARK P-03,native_component_residual,1
+82,Washington,0305,STILLWATER W-1 P-1,native_component_residual,-1
+82,Washington,0320,STILLWATER W-4 P-4,native_component_residual,1
+82,Washington,0325,STILLWATER TWP. P-01,native_component_residual,-1
+82,Washington,0395,WOODBURY P-05,native_component_residual,-2
+82,Washington,0410,WOODBURY P-08,native_component_residual,-1
+82,Washington,0430,WOODBURY P-12,native_component_residual,-1
+82,Washington,0435,WOODBURY P-13,native_component_residual,-2
+85,Winona,0058,LA CRESCENT,voted_exceeds_7am_plus_election_day_registration,35
+85,Winona,0065,MINNEISKA,voted_exceeds_7am_plus_election_day_registration,255
+85,Winona,0070,MINNESOTA CITY,voted_exceeds_7am_plus_election_day_registration,48
+85,Winona,0075,MOUNT VERNON TWP,voted_exceeds_7am_plus_election_day_registration,70
+85,Winona,0120,SARATOGA TWP,voted_exceeds_7am_plus_election_day_registration,122

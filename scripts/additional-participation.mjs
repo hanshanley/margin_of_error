@@ -16,6 +16,7 @@ import { loadIllinoisCountyContext } from './illinois-county-context.mjs';
 import { loadNewHampshireCityExtension } from './new-hampshire-city-extension.mjs';
 import { massachusettsVersion } from './massachusetts-native-counts.mjs';
 import { loadMassachusettsCityReference, massachusettsCityReferenceVersion } from './massachusetts-city-precinct-reference.mjs';
+import { loadMinnesotaFollowup } from './minnesota-county-followup.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -663,6 +664,17 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
         }));
       }
     }
+  }
+  if (nativeCountyParents) {
+    const minnesota = loadMinnesotaFollowup();
+    for (let index = counties.length - 1; index >= 0; index--)
+      if (counties[index].state_code === 'MN') counties.splice(index, 1);
+    for (let index = precincts.length - 1; index >= 0; index--)
+      if (precincts[index].state_code === 'MN') precincts.splice(index, 1);
+    counties.push(...minnesota.counties);
+    precincts.push(...minnesota.precincts);
+    countyFrames.MN ||= {};
+    countyFrames.MN.native_county_followup = minnesota.counties;
   }
   const seen = new Set(), unitSeen = new Set();
   for (const row of counties) {

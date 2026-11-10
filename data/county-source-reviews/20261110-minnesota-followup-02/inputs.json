@@ -1,0 +1,131 @@
+{
+  "version": "data/county-source-reviews/20261110-minnesota-followup-02",
+  "files": {
+    "MN-county-reference.geojson.gz": {
+      "bytes": 1190931,
+      "sha256": "ef2672107b15e32332b185baa3e878ec64133dd0ee272b288ead7af51516c13a"
+    },
+    "build_minnesota_followup.py": {
+      "bytes": 34072,
+      "sha256": "4d6bfb1fb35de5c02375b9a1af2227268888fcfa8fee6f8dba8c9039ea4b5698"
+    },
+    "county-comparison-to-20261106.csv": {
+      "bytes": 5230,
+      "sha256": "df15d18e634b11f2af8736daf39eb7759fe8c6d330528984ad39f1b379218331"
+    },
+    "county-native-components.csv": {
+      "bytes": 8415,
+      "sha256": "5ed87526d1e3efe8912ccf7f42f7b00b89b93a37638b78336d872db6fa513d29"
+    },
+    "county-participation-current.csv": {
+      "bytes": 26209,
+      "sha256": "b5086ccd65de1a0fe60df158d13934331205d6c88280853f5b340733fc9783ea"
+    },
+    "county-reference.json": {
+      "bytes": 478,
+      "sha256": "de288ea71d8ec7c53af645d7e74dd07bd8ba715c7d66f3cd461ad9694be840c4"
+    },
+    "current-official-web-observation.json": {
+      "bytes": 1136,
+      "sha256": "4dc4454ba4ddef31c9e8cf938fd6d8e9ca589b0667f61347850aa4b6726a6cb3"
+    },
+    "linked-history-availability.json": {
+      "bytes": 2080,
+      "sha256": "0a6c431e3fda4b937a7c0623a93b115747a80a2da77aff18f1897d374d9db22e"
+    },
+    "newly-complete-counties.csv": {
+      "bytes": 852,
+      "sha256": "c8bb09f9be16b1b8746bac735258a8d8ba8c835148c3845df2b6fbd6da153bd1"
+    },
+    "official-page-estimates-vs-native.csv": {
+      "bytes": 502,
+      "sha256": "b749fb7e4b46a483f34404a4567f5fe849246d7f33df2161d777e6240bdf33eb"
+    },
+    "originals/pctstats.txt": {
+      "bytes": 205972,
+      "sha256": "bbdee2f045b490b1dc359487eb0122613c0835fa1744e065e88f9c99028ca6d7"
+    },
+    "originals/pctstats.txt.receipt.json": {
+      "bytes": 585,
+      "sha256": "e6ce1da18be5c998c659e767e89e33711730e93ce5453bc76ed03faf6aecc7c0"
+    },
+    "originals/previous-pctstats.txt": {
+      "bytes": 202916,
+      "sha256": "edc651936b50958fb8a62a29031104076f06ff97c64dfc269d92fcfededac485"
+    },
+    "originals/previous-pctstats.txt.receipt.json": {
+      "bytes": 361,
+      "sha256": "849db96a41bc284e7d278e51284f420a8806d0316ebafbe03c46eaba6ef260b0"
+    },
+    "precinct-quality-exceptions.csv": {
+      "bytes": 4308,
+      "sha256": "162d9edbe0068f077c5a65b5719f49360d98f1c7cea7779acdb5c3e9194c278d"
+    },
+    "previous-county-participation-20261106.csv": {
+      "bytes": 10156,
+      "sha256": "0815bde66ec0127b48d7d6b299ca4c0a7ea55773782088269cb82d699e848426"
+    },
+    "prior-qualification.txt": {
+      "bytes": 3384,
+      "sha256": "2592fe7cbb2fecc29c331bcbcd325d6f9c4c98a1ebd9715e313d58ce59ac339c"
+    },
+    "reused-frozen-originals/counties.txt": {
+      "bytes": 1319,
+      "sha256": "1830c4b1993606049c397c7f318cf36db33219d660b1528ba4df074ab8e5a570"
+    },
+    "reused-frozen-originals/counties.txt.receipt.json": {
+      "bytes": 357,
+      "sha256": "36ed7628d1bb45d9f994ee841c350e6d7713be0da8ef3ea5538ffa9bd76a1e17"
+    },
+    "reused-frozen-originals/layout.txt": {
+      "bytes": 6463,
+      "sha256": "d8f387d6f4aa48ebbc379d4f9d613adc1061500f92cffd976f9d64dfa406bee2"
+    },
+    "reused-frozen-originals/layout.txt.receipt.json": {
+      "bytes": 401,
+      "sha256": "d9d8a47b0e130e7ec625615cdb7e0347c55c0da5277b2f82aee28ba6126a225a"
+    },
+    "reused-frozen-originals/precincts.txt": {
+      "bytes": 190874,
+      "sha256": "8a396f732ebe92ff9b05a26facb2c20a2b4142480784d5443a854abce9ce991c"
+    },
+    "reused-frozen-originals/precincts.txt.receipt.json": {
+      "bytes": 359,
+      "sha256": "8707bf4e48d8633fb5d9d0e734e92ff368fab7eba9eaf7a440efd12ae0ce583a"
+    },
+    "revised-previously-complete-counties.csv": {
+      "bytes": 686,
+      "sha256": "c389b219b66b24da83065785acf5c65560dc8a1bac7388b5dd13a3c40a2d8c95"
+    },
+    "state-summary.json": {
+      "bytes": 2906,
+      "sha256": "e7f731d993e4c1e7be609067c3e9503aea0e9689e78f42b78150f1521ad5f898"
+    },
+    "verification-results.json": {
+      "bytes": 1103,
+      "sha256": "be0983dd5c0535c5c39d1c4ecfd220718924dcd6a8d7db49f5365869ba0674cc"
+    }
+  },
+  "held_inputs_reused_without_acquisition": true,
+  "held_followup_original_manifest_sha256": "911174aed5377395a89e22be75ec3108d1fac1a52fc30ddf20de2b7ef51918dc",
+  "source_native_clock": "11/07/26 5:18 PM",
+  "source_native_timezone": null,
+  "source_election_date": "2026-11-03",
+  "original_source_receipt_headers_excluded": true,
+  "source_declaration": {
+    "media_url": "https://electionresults.sos.mn.gov/Select/MediaFiles/Index?ersElectionId=201",
+    "native_statistics_url": "https://electionresultsfiles.sos.mn.gov/20261103/pctstats.txt",
+    "link_text": "Precinct Reporting Statistics",
+    "selected_declaration_from_manifest_verified_held_HTML": true,
+    "raw_page_scripts_and_acquisition_headers_not_redistributed": true,
+    "previous_complete_source": "data/county-source-reviews/20261106-minnesota-facts-01/complete-minnesota-native-query.zip"
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-native-county-followup-20261110-02/complete-analysis.zip",
+  "statewide_exact_count": null,
+  "native_county_rows": 87,
+  "complete_counties": 84,
+  "partial_counties": 3,
+  "missing_native_statistics": 26,
+  "source_counts_repaired": false,
+  "candidate_votes_used_as_ballots": false
+}

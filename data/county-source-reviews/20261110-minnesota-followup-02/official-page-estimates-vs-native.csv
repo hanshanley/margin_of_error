@@ -1,0 +1,4 @@
+native_county_id,county_name,native_reported_statistics,native_missing_statistics,native_reported_total_number_voted_subtotal,official_page_estimated_voters,estimate_minus_native_subtotal,official_page_label,publication_status
+23,Fillmore,36,1,10305,10481,176,Estimated Voters,not approved as exact Total Number Voted
+29,Hubbard,27,10,10724,11883,1159,Estimated Voters,not approved as exact Total Number Voted
+86,Wright,36,15,52041,76143,24102,Estimated Voters,not approved as exact Total Number Voted

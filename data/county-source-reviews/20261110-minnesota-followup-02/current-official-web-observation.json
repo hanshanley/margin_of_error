@@ -1,0 +1,28 @@
+{
+  "native_download_conflict": {
+    "complete_counties": 84,
+    "interpretation": "The statewide page's 87 complete and Estimated Voters display is not treated as proof that all native Total Number Voted fields are complete.",
+    "missing_precinct_statistics": 26,
+    "partial_counties": [
+      "Fillmore",
+      "Hubbard",
+      "Wright"
+    ],
+    "reported_precinct_statistics": 4079
+  },
+  "observed_at_local": "2026-11-07T18:40:19.159-05:00",
+  "official_values": {
+    "counties_complete": 87,
+    "counties_reporting": 87,
+    "eligible_population": 4404656,
+    "estimated_turnout_percent": 64.76,
+    "estimated_voters": 2852528,
+    "last_updated": "11/07/26 5:18 PM",
+    "last_updated_timezone": null,
+    "precincts_reporting": 4105,
+    "precincts_total": 4105,
+    "voters_registered_at_7am": 3927715
+  },
+  "qualification": "Current primary-source browser observation. The downloadable pctstats original is the byte-frozen source of county totals; this page supplies the displayed status and clock.",
+  "source_url": "https://electionresults.sos.mn.gov/Results/CountyStatisticsStatewide/Index?ersElectionId=201"
+}
