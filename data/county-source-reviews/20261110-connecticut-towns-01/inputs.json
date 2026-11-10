@@ -1,0 +1,119 @@
+{
+  "year": 2026,
+  "state_code": "CT",
+  "native_election_id": "108",
+  "rates_approved": false,
+  "cast_ballot_count_qualified": false,
+  "unique_voter_count_qualified": false,
+  "precincts_approved": false,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-connecticut-native-towns-20261110-01/complete-analysis.zip",
+  "original_geometry_path": "data/participation-local/20261104T220000Z-identity-audit/geometry/2024/municipality-CT.geojson.gz",
+  "reference": {
+    "path": "public/participation-town-reports/20261110-connecticut-01/CT.geojson.gz",
+    "url": "/participation-town-reports/20261110-connecticut-01/CT.geojson.gz",
+    "sha256": "f8ff12fc121ae0d4cd9fd5a89eaf9b7af44ea1eca4fea8008bf7156282dd7eea",
+    "uncompressed_sha256": "6f98251c8646148a13cf79253ff7488d713b2795fdd5e4be798aeaab090625aa",
+    "boundary_year": 2024,
+    "localities": 169,
+    "geography_scope": "native_town_reporting_area",
+    "identity_field": "source_administration_id",
+    "review_id": "connecticut-native-towns-20261110-01",
+    "certified_election_day_geography": false
+  },
+  "safe_source_receipts": {
+    "Elections": {
+      "url": "https://ctemspublic.tgstg.net/ng-app/data/Elections.json",
+      "retrieved_at": "2026-11-05T05:00:19.978671+00:00",
+      "status_code": 200,
+      "bytes": 5949,
+      "sha256": "a783cae75af887813e68e5b071db2db424014ce932b31adba2ca58f8231eda70"
+    },
+    "Version": {
+      "url": "https://ctemspublic.tgstg.net/ng-app/data/election/108/Version.json",
+      "retrieved_at": "2026-11-05T05:00:26.832588+00:00",
+      "status_code": 200,
+      "bytes": 23,
+      "sha256": "8e83013b547289bd0eb0845dbf5ac0acbeffe3c54bcb2b62659a6eeda68c59fa"
+    },
+    "Version-after-reports": {
+      "url": "https://ctemspublic.tgstg.net/ng-app/data/election/108/Version.json",
+      "retrieved_at": "2026-11-05T05:04:35.379576+00:00",
+      "status_code": 200,
+      "bytes": 23,
+      "sha256": "ead1192cf3046b5220fbee669d3a60728b922eb3a272fa1140a62111895e9f97"
+    },
+    "election_Electiondata": {
+      "url": "https://ctemspublic.tgstg.net/ng-app/data/election/108/52337/election_Electiondata.json",
+      "retrieved_at": "2026-11-05T05:00:27.072475+00:00",
+      "status_code": 200,
+      "bytes": 136,
+      "sha256": "84fdc4cdb9a64b7b272eccaeaa5145f1b93818f36cf612ea98fb2eed1c80b06b"
+    },
+    "townStatus_Electiondata": {
+      "url": "https://ctemspublic.tgstg.net/ng-app/data/election/108/52337/townStatus_Electiondata.json",
+      "retrieved_at": "2026-11-05T05:00:27.348757+00:00",
+      "status_code": 200,
+      "bytes": 10586,
+      "sha256": "fd0f7d5b5da32b5ae23e548f31e30b4bc334a13096bf4ce668aadf49979e7ec7"
+    },
+    "voterTurnout_Electiondata": {
+      "url": "https://ctemspublic.tgstg.net/ng-app/data/election/108/52337/voterTurnout_Electiondata.json",
+      "retrieved_at": "2026-11-05T05:00:27.148311+00:00",
+      "status_code": 200,
+      "bytes": 25884,
+      "sha256": "4edd27b258832d7ab7013f404383f273fc292bbd9f91e131c4e5aa953ee42404"
+    },
+    "after-voterTurnout_Electiondata": {
+      "url": "https://ctemspublic.tgstg.net/ng-app/data/election/108/52338/voterTurnout_Electiondata.json",
+      "retrieved_at": "2026-11-05T05:04:42.390325+00:00",
+      "status_code": 200,
+      "bytes": 25884,
+      "sha256": "4edd27b258832d7ab7013f404383f273fc292bbd9f91e131c4e5aa953ee42404"
+    }
+  },
+  "turnout_receipt": {
+    "url": "https://ctemspublic.tgstg.net/ng-app/data/election/108/52337/voterTurnout_Electiondata.json",
+    "retrieved_at": "2026-11-05T05:00:27.148311+00:00",
+    "status_code": 200,
+    "bytes": 25884,
+    "sha256": "4edd27b258832d7ab7013f404383f273fc292bbd9f91e131c4e5aa953ee42404"
+  },
+  "files": {
+    "data/county-source-reviews/20261110-connecticut-towns-01/originals/Elections.json.gz": {
+      "bytes": 1093,
+      "sha256": "517e52784575d3e504f8b3bf0cf42715a14929d6be9caa1d3bef040e4ec3d337"
+    },
+    "data/county-source-reviews/20261110-connecticut-towns-01/originals/Version.json.gz": {
+      "bytes": 40,
+      "sha256": "738fb1d811ee321270b69cfd9fedfb470452d8c939de31c689e1969ed3cc7048"
+    },
+    "data/county-source-reviews/20261110-connecticut-towns-01/originals/Version-after-reports.json.gz": {
+      "bytes": 40,
+      "sha256": "916ea8ef84314d7cc04d4fbfbf9d2eb6bcce2672c11c741fc037e8968d8a9387"
+    },
+    "data/county-source-reviews/20261110-connecticut-towns-01/originals/election_Electiondata.json.gz": {
+      "bytes": 124,
+      "sha256": "616facbca26f531e73840b1cc4b8df3fc89717e3e819ba9b0c52c1a11fbe70b0"
+    },
+    "data/county-source-reviews/20261110-connecticut-towns-01/originals/townStatus_Electiondata.json.gz": {
+      "bytes": 713,
+      "sha256": "98d9c34cf6556bec75515d0e6b23426ed8a33518f3906c1806d7d98d8af2f582"
+    },
+    "data/county-source-reviews/20261110-connecticut-towns-01/originals/voterTurnout_Electiondata.json.gz": {
+      "bytes": 6075,
+      "sha256": "10db390ce057fce50f045d2ec05e66bd5971a140dbb3ade7eb7316a5b0473c38"
+    },
+    "data/county-source-reviews/20261110-connecticut-towns-01/originals/after-voterTurnout_Electiondata.json.gz": {
+      "bytes": 6075,
+      "sha256": "10db390ce057fce50f045d2ec05e66bd5971a140dbb3ade7eb7316a5b0473c38"
+    },
+    "data/county-source-reviews/20261110-connecticut-towns-01/originals/municipality-CT-2024.geojson.gz": {
+      "bytes": 47635,
+      "sha256": "37d0f455930adf9d3e72ef4f52e1501303644da408806184381957bfdee58a91"
+    },
+    "public/participation-town-reports/20261110-connecticut-01/CT.geojson.gz": {
+      "bytes": 50919,
+      "sha256": "f8ff12fc121ae0d4cd9fd5a89eaf9b7af44ea1eca4fea8008bf7156282dd7eea"
+    }
+  }
+}

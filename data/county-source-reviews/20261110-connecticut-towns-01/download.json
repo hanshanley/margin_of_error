@@ -1,0 +1,9 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-connecticut-native-towns-20261110-01/complete-analysis.zip",
+  "bytes": 175231,
+  "sha256": "2793746307ae6aac600f515b7350196546fc9d6289bc97e1bf0b0531217b6030",
+  "members": 23,
+  "native_town_observations": 169,
+  "all_native_source_queries": 170,
+  "analysis_rates_approved": false
+}

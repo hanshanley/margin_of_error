@@ -1,0 +1,12 @@
+{
+  "native_town_observations": 169,
+  "all_native_source_queries": 170,
+  "numeric_column_checks": 8,
+  "blank_town_reporting_counters": 13,
+  "contextual_boundary_year": 2024,
+  "election_year": 2026,
+  "county_totals_inferred": false,
+  "precinct_records_inferred": false,
+  "analysis_rates_approved": false,
+  "source_counts_sum": 1150127
+}

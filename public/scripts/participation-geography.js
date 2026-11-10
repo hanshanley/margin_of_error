@@ -108,6 +108,34 @@ export function qualifiedProviderCountyFrame(rows, code, mode) {
   });
 }
 
+export function qualifiedConnecticutTownReference(rows, reference, collection) {
+  if (reference?.geography_scope !== "native_town_reporting_area"
+    || reference.identity_field !== "source_administration_id"
+    || reference.boundary_year !== 2024 || reference.localities !== 169
+    || !Array.isArray(rows) || rows.length !== 169
+    || new Set(rows.map(r => r.source_administration_id)).size !== 169
+    || !Array.isArray(collection?.features) || collection.features.length !== 169
+    || new Set(collection.features.map(f => f.properties.key)).size !== 169) return false;
+  const shapes = new Map(collection.features.map(f => [f.properties.key, f.properties]));
+  return rows.every(row => {
+    const p = shapes.get(row.source_administration_id), native = row.native_record;
+    return p && typeof row.source_town_id === "string"
+      && row.source_administration_id === `CT-TOWN-${row.source_town_id.padStart(3, "0")}`
+      && /^(?:[1-9]|[1-9]\d|1[0-5]\d|16[0-9])$/.test(row.source_town_id)
+      && p.source_town_id === row.source_town_id && p.source_administration_id === row.source_administration_id
+      && p.name === row.county && native?.NM === row.county
+      && p.state_code === "CT" && p.boundary_year === 2024
+      && row.year === 2026 && row.state_code === "CT" && row.county_fips === null
+      && row.geography_level === "municipality" && row.source_election_id === "108"
+      && row.county_id === `additional:CT:${row.source_administration_id}`
+      && native.source_town_id === row.source_town_id && row.native_election_id_qualified === true
+      && /^\d+$/.test(native.VV) && row.ballots === Number(native.VV)
+      && Number.isSafeInteger(row.ballots) && row.ballots >= 0
+      && row.denominator === null && row.reported_pct === null
+      && row.cast_ballot_count_qualified === false && row.unique_voter_count_qualified === false;
+  });
+}
+
 export function qualifiedHawaiiAdministrationReference(rows, reference, collection) {
   const members = {
     "HI-HONOLULU": ["15003"], "HI-HAWAII": ["15001"], "HI-KAUAI": ["15007"],

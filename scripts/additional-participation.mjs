@@ -10,6 +10,7 @@ import { loadWestVirginiaCountyModes } from './west-virginia-county-modes.mjs';
 import { loadColoradoCountyReturns } from './colorado-returned-counties.mjs';
 import { loadHawaiiAdministrations } from './hawaii-administrations.mjs';
 import { loadProviderCountyFrames } from './provider-county-frames.mjs';
+import { loadConnecticutTowns } from './connecticut-town-counts.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -390,6 +391,26 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
       quality: [row.source_reporting_label,
         'Four election administrations use five full 2026 Census county components; Maui includes Kalawao.',
         'Original statewide/unit/report discrepancies and separate clocks survive; no rates or count allocation.'],
+    }));
+  }
+  if (nativeCountyParents) {
+    for (const row of loadConnecticutTowns().towns) counties.push(observation({
+      data_directory: 'data/county-source-reviews/20261110-connecticut-towns-01',
+      base_url: '', complete_download_url: row.complete_download_url,
+    }, '', 'CT', row.county, row.source_administration_id, row.native_record, {
+      geography_level: 'municipality', county_fips: null,
+      source_administration_id: row.source_administration_id, source_town_id: row.source_town_id,
+      source_election_id: row.source_election_id, native_election_id_qualified: true,
+      ballots: row.source_count, denominator: null, denominator_basis: 'source_electorate_not_qualified',
+      reported_pct: null, native_printed_pct: row.native_printed_pct,
+      maps_approved: true, reference_geometry: row.reference_geometry,
+      participation_measure_label: row.participation_measure_label, source_mode: 'native_town_VV',
+      source_count_qualified: true, cast_ballot_count_qualified: false, unique_voter_count_qualified: false,
+      source_url: row.source_url, source_update_label: row.source_update_label,
+      source_status_literal: row.source_status_literal, source_reporting_label: row.source_reporting_label,
+      quality: [row.source_reporting_label,
+        'Town observations, not county parents or precinct records. Native Total is separate, never added again.',
+        'Contextual municipality reference year is 2024, not certified 2026 election geography.'],
     }));
   }
   const countyFrames = /** @type {Record<string, Record<string, ReturnType<typeof observation>[]>>} */ ({});

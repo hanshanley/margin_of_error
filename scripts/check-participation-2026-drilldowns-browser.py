@@ -58,16 +58,20 @@ with sync_playwright() as runtime:
         ready(page)
         for name, count, kind in (("California", 58, "native"), ("Florida", 67, "native"),
                                   ("Texas", 254, "provider"), ("New York", 62, "provider"),
-                                  ("Connecticut", 9, "contest")):
+                                  ("Connecticut", 169, "town"), ("Alaska", 30, "contest")):
             state_click(page, name)
-            shapes = page.locator('.geographic-detail [data-level="county"]')
+            shapes = page.locator('.geographic-detail [data-level="county"], .geographic-detail [data-level="municipality"]')
             expect(shapes).to_have_count(count, timeout=60000)
-            if kind in ("native", "provider"):
+            if kind in ("native", "provider", "town"):
                 expect(page.locator('.geographic-detail [data-count]:not([data-count=""])')).to_have_count(count)
                 if kind == "provider":
                     expect(page.locator("#title")).to_have_text(f"Local participation in {name}")
                     expect(page.locator("#caption")).to_contain_text(re.compile("provider", re.I))
                     assert shapes.evaluate_all("els=>els.every(e=>e.dataset.rate==='')")
+                if kind == "town":
+                    expect(page.locator("#title")).to_have_text("Town participation in Connecticut")
+                    expect(page.locator("#caption")).to_contain_text("2024 contextual municipality")
+                    assert shapes.evaluate_all("els=>els.every(e=>e.dataset.rate===''&&e.dataset.referenceYear==='2024')")
             else:
                 expect(page.locator("#title")).to_have_text(f"County contest counts in {name}")
                 assert shapes.evaluate_all("els=>new Set(els.map(e=>e.getAttribute('fill'))).size") > 1
@@ -80,7 +84,8 @@ with sync_playwright() as runtime:
             expect(page.locator("#year")).to_have_value("2026")
             expect(page.locator("#selection-panel > h3")).to_have_text(name)
             results.append({"case": "actual_state_click", "state": name, "county_shapes": count,
-                            "native_participation": kind == "native", "provider_activity": kind == "provider",
+                            "native_participation": kind in ("native", "town"), "provider_activity": kind == "provider",
+                            "native_town_scope": kind == "town",
                             "no_invented_rates": True})
 
         county_audit = []
