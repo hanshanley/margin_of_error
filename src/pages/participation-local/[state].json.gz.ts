@@ -11,6 +11,7 @@ export function getStaticPaths() {
 			precincts: data.precincts.filter(row => row.state_code === state),
 			nongeographic: data.nongeographic.filter(row => row.state_code === state),
 			county_frames: data.county_frames?.[state],
+			county_frame_holds: data.county_frame_holds?.[state],
 		},
 	}));
 }

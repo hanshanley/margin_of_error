@@ -1,0 +1,11 @@
+{
+  "complete_source_queries": 216,
+  "complete_reference_queries": 204,
+  "complete_frame_queries": 2,
+  "contextual_regions_per_mode": 102,
+  "city_holds_per_mode": 6,
+  "whole_county_counts_qualified": false,
+  "authority_territories_qualified": false,
+  "native_election_id_qualified": false,
+  "rates_approved": false
+}

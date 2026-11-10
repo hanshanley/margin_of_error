@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -414,6 +414,8 @@ function stateParticipationRows() {
         counties: scoped ? [...baseCounties, ...selectedCounties] : combined,
         precincts: scoped ? [] : [...data.precincts, ...additional.precincts],
         nongeographic: scoped ? [] : additional.nongeographic || [], additional_error: additional.additional_error,
+        unmapped_source_regions: scoped
+          ? additional.county_frame_holds?.[selectedCounties[0]?.source_mode] || [] : [],
       };
     }
     const countyName = value => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
@@ -662,11 +664,13 @@ function stateParticipationRows() {
       if (code === "VT") return drawCurrentMunicipalityGeography(map, selected, code, token);
       const data = await currentLocal();
       if (token !== state.drillToken || state.map !== map) return;
+      $("source-region-holds")?.remove();
       const observations = data?.counties.filter(row => row.state_code === code) ?? [];
       const reference = observations.find(row => row.reference_geometry)?.reference_geometry;
       const administrations = code === "HI" && reference?.geography_scope === "native_election_administration";
       const towns = code === "CT" && reference?.geography_scope === "native_town_reporting_area";
       const localityActivity = code === "ME" && reference?.geography_scope === "provider_partial_locality_activity";
+      const countyNamedContext = code === "IL" && reference?.geography_scope === "county_context_not_source_authority_territory";
       const providerActivity = observations.length > 0
         && observations.every(row => row.source_provider === "civicAPI early activity");
       const file = reference?.url || state.context?.geometry.county?.[code];
@@ -714,7 +718,11 @@ function stateParticipationRows() {
           additionalLocal.delete(code);
           throw new Error("Unqualified Maine locality reference; unmatched source regions are not allocated");
         }
-        if (reference.identity_field && !towns && !localityActivity && (!administrations
+        if (countyNamedContext && !qualifiedIllinoisCountyContextReference(observations, reference, collection)) {
+          additionalLocal.delete(code);
+          throw new Error("Unqualified Illinois source-region county context; whole-county totals are not inferred");
+        }
+        if (reference.identity_field && !towns && !localityActivity && !countyNamedContext && (!administrations
           || !qualifiedHawaiiAdministrationReference(observations, reference, collection))) {
           additionalLocal.delete(code);
           throw new Error("Unqualified election-administration reference; separate Maui/Kalawao counts are not invented");
@@ -796,12 +804,14 @@ function stateParticipationRows() {
         const key = countyName(feature.properties.name);
         const contextual = contextRows.get(feature.properties.key);
         const row = contextual || nativeByFips.get(feature.properties.key)
-          || (!localityActivity && shapeCounts.get(key) === 1 ? byName.get(key) : null);
+          || (!localityActivity && !countyNamedContext && shapeCounts.get(key) === 1 ? byName.get(key) : null);
         const item = projectInside(feature, selected.point), rate = row?.reported_pct;
         if (rate != null) observed++;
         const path = featurePath(item, rate,
           `${feature.properties.name} · 2026\n${fmt(row?.ballots)} ${row ? participationLabel(row) || "ballots reported" : "ballots reported"} · ${pct(rate)}`
-          + (row ? "\nSource-defined electorate; not final turnout. Missing rates are not zero."
+          + (row ? (countyNamedContext
+            ? "\nCounty shape is context only; this source-region record is not a whole-county total."
+            : "\nSource-defined electorate; not final turnout. Missing rates are not zero.")
             + (contextual ? "\nSeparately reviewed Census county identity join; approximate 2024 contextual shape, not certified 2026 election geography." : "")
             : localityActivity ? "\nNo uniquely matched source activity count; missing is not zero."
               : "\nNo matched county counts"), () => {
@@ -834,14 +844,15 @@ function stateParticipationRows() {
       }
       map.localLayer = true;
       map.stateTable ||= { rows: state.table, columns: state.columns };
-      setTable(counties, [["county", localityActivity ? "Source locality" : towns ? "Town" : administrations ? "Election administration" : "County"], ["ballots", countLabel],
+      setTable(counties, [["county", countyNamedContext ? "County-named source region" : localityActivity ? "Source locality" : towns ? "Town" : administrations ? "Election administration" : "County"], ["ballots", countLabel],
         ["denominator", "Source electorate"], ["reported_pct", "Reported-ballot fraction"],
         ["reported_units", "Precincts reporting"], ["total_units", "Total precincts"], ["quality", "Notes"]]);
       header(providerActivity ? "2026 project · provider-reported source activity"
-        : "2026 midterms · unofficial administrative counts", localityActivity
+        : "2026 midterms · unofficial administrative counts", countyNamedContext
+          ? `Source-region activity in ${state.selectedState}` : localityActivity
           ? `Local source activity in ${state.selectedState}` : `${towns ? "Town" : "Local"} participation in ${state.selectedState}`,
         countsOnly ? (providerActivity
-          ? `${countLabel}. This is provider-reported source activity, not official full-election turnout, certified ballots or unique people.`
+          ? `${countLabel}. This is provider-reported source activity, not ${countyNamedContext ? "whole-county totals, " : ""}official full-election turnout, certified ballots or unique people.`
           : towns ? "Native town VV counts, not candidate choices or certified cast ballots/unique people. Source EV, modes and printed percentages remain separate; no analysis rate is qualified."
           : code === "WV"
           ? `${countLabel}. Counts are source-specific snapshots, not full-election turnout rates; early, returned and all-method frames stay separate.`
@@ -852,7 +863,8 @@ function stateParticipationRows() {
         (countsOnly ? `Not final turnout. Color shows counts, not a fraction; ${towns || localityActivity ? "localities" : "counties"} have different population sizes. `
           : "Not final turnout. County colors use their own reviewed reported fraction, not the UF state population denominator. Counts with missing or withheld rates remain gray. ")
         + (providerActivity ? "Native source dates are retained below and differ across frames; collector 2026 context is not an independently qualified native election identifier. Early and returned frames are never added. " : "")
-        + (localityActivity ? "480 source regions match the full 528-area 2024 contextual municipality reference. Per mode, 104 source regions and 48 reference areas remain held, not allocated or filled with zero. Historical counts are never transferred. Not county totals or certified 2026 precincts. "
+        + (countyNamedContext ? "102 literal county-named source regions use Census county shapes as context only, not qualified electoral-authority territories. Six city-named records remain separate and unallocated in each mode; they are never added into county records. These are not whole-county totals or precinct observations. "
+          : localityActivity ? "480 source regions match the full 528-area 2024 contextual municipality reference. Per mode, 104 source regions and 48 reference areas remain held, not allocated or filled with zero. Historical counts are never transferred. Not county totals or certified 2026 precincts. "
           : towns ? "169 native towns use the held full 2024 contextual municipality reference, not 2026 election or precinct boundaries. Native Total is separate, not an extra town. No nine-county totals or precinct observations are inferred. "
           : administrations ? "Four election administrations use grouped full 2026 Census county components; Maui includes Kalawao. No separate Maui/Kalawao count is supplied, allocated or duplicated. These are not certified precinct boundaries. "
           : providerActivity ? "Provider-region identities are separately matched to the full 2026 Census county reference; these are not native FIPS, official county parents or precincts. "
@@ -864,7 +876,20 @@ function stateParticipationRows() {
         : code === "WV" ? countLabel + " · no rate"
         : code === "MD" ? "Native Cards Cast · not unique voters" : "Source participation counts · no rate");
       else ramp();
-      $("geography-note").textContent = (localityActivity
+      if (countyNamedContext && data.unmapped_source_regions?.length === 6) {
+        const held = html("details", "source-provenance");
+        held.id = "source-region-holds";
+        held.append(html("summary", "", "Six separate city source records · not assigned to counties"));
+        const list = html("ul", "");
+        for (const row of data.unmapped_source_regions)
+          list.append(html("li", "", `${row.source_region}: ${fmt(row.source_count)} source activity counts`));
+        held.append(list, html("p", "selection-note",
+          "These literal source records are retained, not added into county-named records or assigned by elimination."));
+        $("substate-detail").append(held);
+      }
+      $("geography-note").textContent = (countyNamedContext
+        ? "Illinois · 102 county-named source records on county context · six city-named records per mode remain separate and unallocated. Not whole-county totals or qualified source-authority territories; all rates withheld. "
+        : localityActivity
         ? "Maine · 480 mapped local source counts · 528 full 2024 contextual areas · 104 source regions / 48 reference areas held per mode · no rates. Missing is not zero; no county or precinct allocation. "
         : towns
         ? "Connecticut · 169 native town observations · 2024 contextual municipality shapes · no analysis rates. Not nine county totals or certified 2026 precincts. "
@@ -2914,7 +2939,10 @@ function projectInside(feature, point) {
       const panel = $("substate-detail");
       if (panel) {
         const retry = html("button", "selection-link", "Retry geographic detail");
-        retry.type = "button"; retry.addEventListener("click", loadGeography);
+        retry.type = "button"; retry.addEventListener("click", () => {
+          if (state.view === "states") stateDetail();
+          loadGeography();
+        });
         panel.replaceChildren(html("p", "selection-note", $("geography-note").textContent), retry);
       }
     }

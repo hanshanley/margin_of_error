@@ -75,11 +75,14 @@ export function qualifiedAlaskaNativePrecinct(p) {
 }
 
 export function hasCountySourceMode(code, mode) {
-  return ["WV", "ME"].includes(code) && ["in_person_early", "mail_returned"].includes(mode)
+  return ["WV", "ME", "IL"].includes(code) && ["in_person_early", "mail_returned"].includes(mode)
     || Boolean(providerCountyScopes[code]?.modes.includes(mode));
 }
 
 export function selectCountySourceFrame(data, code, mode) {
+  if (code === "IL" && mode === "available"
+    && !data.counties.some(row => row.state_code === code && row.ballots != null))
+    return selectCountySourceFrame(data, code, "in_person_early");
   if (code === "ME" && mode === "available"
     && !data.counties.some(row => row.state_code === code && row.ballots != null))
     return selectCountySourceFrame(data, code, "in_person_early");
@@ -90,6 +93,12 @@ export function selectCountySourceFrame(data, code, mode) {
   }
   if (!hasCountySourceMode(code, mode)) return data.counties;
   const rows = data.county_frames?.[mode];
+  if (code === "IL") {
+    if (!qualifiedIllinoisCountyContextFrame(rows, mode)
+      || !qualifiedIllinoisCityHolds(data.county_frame_holds?.[mode], rows, mode))
+      throw new Error("Unqualified Illinois source-region context; city counts and county totals are not substituted");
+    return rows;
+  }
   if (code === "ME") {
     if (!qualifiedMaineLocalityFrame(rows, mode))
       throw new Error("Unqualified Maine locality activity frame; county totals are not substituted");
@@ -110,6 +119,66 @@ export function selectCountySourceFrame(data, code, mode) {
       || row.unique_voter_count_qualified !== false || row.cast_ballot_count_qualified !== false))
     throw new Error(`Unqualified ${code} county source mode; all-method counts are not substituted`);
   return rows;
+}
+
+function qualifiedIllinoisCityHolds(holds, rows, mode) {
+  const names = new Set(["City of Bloomington", "City of Chicago", "City of Danville",
+    "City of East St Louis", "City of Galesburg", "City of Rockford"]);
+  if (!Array.isArray(holds) || holds.length !== 6
+    || new Set(holds.map(row => row.source_region)).size !== 6) return false;
+  return holds.every(row => row.state_code === "IL" && row.mode === mode && names.has(row.source_region)
+    && row.contextual_county_fips === null && row.whole_county_count_qualified === false
+    && row.source_authority_territory_qualified === false && row.native_geography_id_qualified === false
+    && row.source_date === "2026-11-04" && row.denominator === null && row.reported_pct === null
+    && row.native_categories && Object.values(row.native_categories).length > 0
+    && Object.values(row.native_categories).every(r => Number.isSafeInteger(r.votes) && r.votes >= 0)
+    && row.source_count === Object.values(row.native_categories).reduce((s, r) => s + r.votes, 0))
+    && [...rows.map(row => row.ballots), ...holds.map(row => row.source_count)].reduce((s, r) => s + r, 0)
+      === (mode === "in_person_early" ? 1162828 : 892086);
+}
+
+export function qualifiedIllinoisCountyContextFrame(rows, mode) {
+  if (!["in_person_early", "mail_returned"].includes(mode) || !Array.isArray(rows) || rows.length !== 102
+    || new Set(rows.map(r => r.contextual_county_fips)).size !== 102) return false;
+  return rows.every(row => {
+    const native = row.native_record, categories = native?.categories;
+    return row.year === 2026 && row.state_code === "IL" && row.source_mode === mode
+      && row.source_provider === "civicAPI early activity"
+      && row.geography_level === "provider_county_named_region_context"
+      && /^17\d{3}$/.test(row.contextual_county_fips) && row.county_fips === row.contextual_county_fips
+      && row.county_id === `additional:IL:source-region:${row.contextual_county_fips}`
+      && row.count_scope === "literal_county_named_source_region_not_whole_county"
+      && row.native_geography_id_qualified === false && row.whole_county_count_qualified === false
+      && row.source_authority_territory_qualified === false && row.native_election_id_qualified === false
+      && row.cast_ballot_count_qualified === false && row.unique_voter_count_qualified === false
+      && native?.state === "IL" && native.source_region === row.county && !/^City of /i.test(row.county)
+      && native.category === (mode === "in_person_early" ? "inperson" : "returned")
+      && native.snapshot_date === "2026-11-04" && row.source_date === native.snapshot_date
+      && native.literal_count_field === "votes"
+      && categories && typeof categories === "object" && !Array.isArray(categories) && Object.keys(categories).length > 0
+      && Object.values(categories).every(r => Number.isSafeInteger(r.votes) && r.votes >= 0)
+      && Number.isSafeInteger(row.ballots) && row.ballots >= 0
+      && row.ballots === Object.values(categories).reduce((s, r) => s + r.votes, 0)
+      && row.denominator === null && row.reported_pct === null
+      && row.reference_geometry?.geography_scope === "county_context_not_source_authority_territory"
+      && row.reference_geometry.boundary_year === 2026 && row.reference_geometry.counties === 102
+      && row.reference_geometry.source_authority_territories_qualified === false
+      && row.reference_geometry.whole_county_counts_qualified === false;
+  });
+}
+
+export function qualifiedIllinoisCountyContextReference(rows, reference, collection) {
+  const mode = rows?.[0]?.source_mode;
+  if (!qualifiedIllinoisCountyContextFrame(rows, mode)
+    || reference.geography_scope !== "county_context_not_source_authority_territory"
+    || reference.source_authority_territories_qualified !== false
+    || reference.whole_county_counts_qualified !== false
+    || !Array.isArray(collection?.features) || collection.features.length !== 102) return false;
+  const identities = new Set(rows.map(r => r.contextual_county_fips));
+  const keys = collection.features.map(f => f.properties?.key);
+  return new Set(keys).size === 102 && keys.every(key => identities.has(key))
+    && collection.features.every(f => f.geometry && f.properties.state_code === "IL"
+      && f.properties.boundary_year === 2026);
 }
 
 export function qualifiedProviderCountyFrame(rows, code, mode) {

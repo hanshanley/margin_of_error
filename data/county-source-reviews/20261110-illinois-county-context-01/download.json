@@ -1,0 +1,15 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-illinois-county-context-20261110-01/complete-analysis.zip",
+  "bytes": 1102066,
+  "sha256": "3e55e0f9b30ca7f1c326553133e7968b5a580661aad3e8da87ef747737e76bd4",
+  "members": 19,
+  "complete_source_queries": 216,
+  "complete_reference_queries": 204,
+  "complete_frame_queries": 2,
+  "contextual_regions_per_mode": 102,
+  "city_holds_per_mode": 6,
+  "whole_county_counts_qualified": false,
+  "authority_territories_qualified": false,
+  "native_election_id_qualified": false,
+  "rates_approved": false
+}

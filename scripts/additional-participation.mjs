@@ -12,6 +12,7 @@ import { loadHawaiiAdministrations } from './hawaii-administrations.mjs';
 import { loadProviderCountyFrames } from './provider-county-frames.mjs';
 import { loadConnecticutTowns } from './connecticut-town-counts.mjs';
 import { loadMaineLocalityActivity } from './maine-locality-activity.mjs';
+import { loadIllinoisCountyContext } from './illinois-county-context.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -415,6 +416,7 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
     }));
   }
   const countyFrames = /** @type {Record<string, Record<string, ReturnType<typeof observation>[]>>} */ ({});
+  const countyFrameHolds = /** @type {Record<string, Record<string, unknown[]>>} */ ({});
   if (nativeCountyParents) {
     const westVirginia = loadWestVirginiaCountyModes();
     const imported = row => observation({
@@ -474,6 +476,31 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
       }))]));
   }
   if (nativeCountyParents) {
+    const illinois = loadIllinoisCountyContext();
+    countyFrameHolds.IL = illinois.held_city_regions;
+    countyFrames.IL = Object.fromEntries(Object.entries(illinois.county_context_frames)
+      .map(([mode, rows]) => [mode, rows.map(row => observation({
+        data_directory: 'data/county-source-reviews/20261110-illinois-county-context-01',
+        base_url: '', complete_download_url: illinois.complete_download_url,
+      }, '', 'IL', row.county, row.contextual_county_fips, row.native_record, {
+        ...row, reference_geometry: illinois.reference_geometry,
+        denominator_basis: 'provider_electorate_not_qualified', maps_approved: true,
+        source_count_qualified: true,
+        participation_measure_label: mode === 'in_person_early'
+          ? 'County-named source-region early activity' : 'County-named source-region returned activity',
+        source_update_label: `${row.source_date} native provider date; clock/timezone absent. `
+          + 'Collector 2026 context is not an independently qualified native election identifier.',
+        source_status_literal: 'Source-region activity, not whole-county totals or certified turnout',
+        source_reporting_label: 'Only this literal county-named source-region record is shown. '
+          + 'Six separate city-named records remain held, never assigned or added into counties. '
+          + 'The Census county shape is context, not a qualified source-authority territory. '
+          + 'Early and returned frames are never added.',
+        quality: ['Native votes-category activity, not whole-county counts, certified ballots, unique people or turnout.',
+          'County identities are contextual, not native FIPS or source-authority/precinct boundaries.',
+          'All 108 source records per mode, including six city holds, remain in the complete download.'],
+      }))]));
+  }
+  if (nativeCountyParents) {
     const provider = loadProviderCountyFrames();
     for (const [code, frames] of Object.entries(provider.county_frames)) {
       countyFrames[code] ||= {};
@@ -510,5 +537,6 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
     if (!row.unit_key || unitSeen.has(id)) throw new Error(`Duplicate participation reporting unit: ${id}`);
     unitSeen.add(id);
   }
-  return { counties, precincts, nongeographic, ...(nativeCountyParents ? { county_frames: countyFrames } : {}) };
+  return { counties, precincts, nongeographic, ...(nativeCountyParents
+    ? { county_frames: countyFrames, county_frame_holds: countyFrameHolds } : {}) };
 }

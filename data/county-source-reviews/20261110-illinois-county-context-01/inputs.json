@@ -1,0 +1,55 @@
+{
+  "version": "data/county-source-reviews/20261110-illinois-county-context-01",
+  "reference": {
+    "path": "data/county-source-reviews/20261110-illinois-county-context-01/original-county-context.geojson.gz",
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/IL.geojson.gz",
+    "boundary_year": 2026,
+    "counties": 102,
+    "sha256": "ddc8ec595021ed04413207a23410d297a8c538d4c5ebbbe135f37c5d8bde5039",
+    "uncompressed_sha256": "f64beba3d72e3aadf7a900d44a72a6d854eeb85eb2491e7dfc66edb55ebfefcc",
+    "review_id": "provider-contextual-county-identities-20261109-01"
+  },
+  "responses": {
+    "inperson": {
+      "path": "data/county-source-reviews/20261110-illinois-county-context-01/original-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/IL/inperson",
+        "retrieved_at": "2026-11-04T22:04:31.271665+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 6572,
+        "sha256": "92dfd49c05e478f66bd47ffd2a0318d3d9e5b593d3b833ac3e6e37e1c0fa2264",
+        "http_status": 200
+      }
+    },
+    "returned": {
+      "path": "data/county-source-reviews/20261110-illinois-county-context-01/original-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/IL/returned",
+        "retrieved_at": "2026-11-04T22:04:31.421989+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 6572,
+        "sha256": "4eec1194fc5b3c6931470c93294d23f0d0bb88de118295e72ec758f23ba726a7",
+        "http_status": 200
+      }
+    }
+  },
+  "files": {
+    "data/county-source-reviews/20261110-illinois-county-context-01/original-inperson.json": {
+      "bytes": 6572,
+      "sha256": "92dfd49c05e478f66bd47ffd2a0318d3d9e5b593d3b833ac3e6e37e1c0fa2264"
+    },
+    "data/county-source-reviews/20261110-illinois-county-context-01/original-returned.json": {
+      "bytes": 6572,
+      "sha256": "4eec1194fc5b3c6931470c93294d23f0d0bb88de118295e72ec758f23ba726a7"
+    },
+    "data/county-source-reviews/20261110-illinois-county-context-01/original-county-context.geojson.gz": {
+      "bytes": 1046857,
+      "sha256": "ddc8ec595021ed04413207a23410d297a8c538d4c5ebbbe135f37c5d8bde5039"
+    }
+  },
+  "native_election_id_qualified": false,
+  "whole_county_counts_qualified": false,
+  "authority_territories_qualified": false,
+  "rates_approved": false,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-illinois-county-context-20261110-01/complete-analysis.zip"
+}

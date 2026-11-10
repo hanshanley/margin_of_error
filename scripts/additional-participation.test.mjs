@@ -188,7 +188,7 @@ test('complete counts-only CSV inputs preserve every native row and missing tota
   }
 });
 
-test('exposes complete Alaska and Hawaii source-unit counts without enabling geometry or rates', () => {
+test('preserves complete Alaska and Hawaii source-unit counts and rates independently of partial map supplements', () => {
   const index = JSON.parse(readFileSync('public/participation-reporting-units.json'));
   assert.equal(index.year, 2026);
   for (const [code, count, ballots] of [['AK', 523, 215906], ['HI', 496, 365903]]) {
@@ -204,7 +204,10 @@ test('exposes complete Alaska and Hawaii source-unit counts without enabling geo
     assert.equal(rows.reduce((sum, row) => sum + row.ballots, 0), ballots);
     assert.ok(rows.every(row => row.year === 2026 && row.state_code === code && row.reported_pct === null));
     assert.equal(source.complete_download_url, audit.complete_download_url);
-    assert.match(source.geometry_note, /No (approved|verified)/);
+    if (code === 'AK') {
+      assert.match(source.geometry_note, /81 geographic units/);
+      assert.match(source.geometry_note, /321 native source shapes retain topology holds/);
+    } else assert.match(source.geometry_note, /No (approved|verified)/);
     assert.match(source.data_url, /\/[0-9a-f]{40}\//);
     if (code === 'AK') {
       assert.equal(rows.filter(row => row.reporting_unit_kind === 'geographic_precinct').length, 402);
