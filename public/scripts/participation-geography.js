@@ -55,6 +55,25 @@ export function qualifiedIndianaMonroePrecinct(p) {
     && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null;
 }
 
+export function qualifiedAlaskaNativePrecinct(p) {
+  const native = p.native_record, reference = p.reference_geometry;
+  return p.year === 2026 && p.state_code === "AK" && p.county_fips === null
+    && p.source_snapshot === "alaska-native-display-20261110-01"
+    && p.reporting_unit_kind === "geographic_precinct" && p.match_status === "matched"
+    && p.count_scope === "native_geographic_house_unit_excludes_pooled_modes"
+    && /^\d{2}-\d{3}$/.test(p.native_precinct_id) && /^\d+$/.test(p.source_sequence)
+    && p.key === `AK|source-unit-${p.source_sequence}`
+    && native?.number === p.native_precinct_id && p.unit === `${native.number} ${native.name}`
+    && native.contest === "U.S. Representative"
+    && Number.isSafeInteger(p.ballots) && p.ballots >= 0 && p.ballots === native.b
+    && Number.isSafeInteger(native.v) && native.v >= 0
+    && reference?.native_precinct_id === p.native_precinct_id
+    && reference.source_selected_election_app === 2026 && reference.certified_legal_boundaries === false
+    && reference.topology_valid_without_repairs === true && reference.single_path_per_polygon === true
+    && /^[a-f0-9]{64}$/.test(reference.exact_millidegree_coordinate_sha256)
+    && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null;
+}
+
 export function hasCountySourceMode(code, mode) {
   return ["WV", "ME"].includes(code) && ["in_person_early", "mail_returned"].includes(mode)
     || Boolean(providerCountyScopes[code]?.modes.includes(mode));

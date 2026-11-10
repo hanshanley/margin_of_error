@@ -1,0 +1,33 @@
+{
+  "source_url": "https://www.elections.alaska.gov/enr/26GENR/includes/map.js?h=e405652452f56fb0108420a28ed9354f",
+  "publisher_entry_url": "https://www.elections.alaska.gov/enr/26GENR/",
+  "retrieved_at_utc": "2026-11-10T02:07:12.693849+00:00",
+  "source_bytes": 25695,
+  "source_sha256": "e9c54e8e6b3666defb91b8b134cd5969224227a076f5b918797a91c4155b33b7",
+  "purpose": "Factual native display-format contract only; compiled app code is private and excluded from public packages",
+  "contract": {
+    "region_identifier_field": "number",
+    "region_polygons_field": "coords",
+    "one_polygon_per_coords_outer_group": true,
+    "one_closed_path_per_inner_string": true,
+    "coordinate_pair_order": "longitude latitude",
+    "coordinate_accumulator_reset_each_path": true,
+    "first_pair_from_zero_is_absolute_position": true,
+    "subsequent_pairs_are_deltas": true,
+    "native_rendering_constructor": "google.maps.Polygon",
+    "native_paths_input": "all decoded paths within one polygon group"
+  },
+  "source_geometry_repaired": false,
+  "counts_allocated": false,
+  "map_approvals": 0,
+  "topology_summary": {
+    "complete_shape_queries": 402,
+    "topology_valid_without_repairs": 81,
+    "topology_holds": 321,
+    "all_map_approvals": 0,
+    "native_implicit_closures": 0,
+    "antimeridian_source_jumps": 0
+  },
+  "total_native_polygon_groups": 478,
+  "total_additional_paths_within_groups": 27
+}

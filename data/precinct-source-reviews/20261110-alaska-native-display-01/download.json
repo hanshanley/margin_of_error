@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-alaska-native-display-20261110-01/complete-analysis.zip",
+  "bytes": 1385095,
+  "sha256": "81952502eabda1a238b3a3c56e58dae39cac2fab2ce14390161202ecc683a7d2",
+  "members": 32,
+  "complete_shape_queries": 402,
+  "complete_count_queries": 523,
+  "map_features": 81,
+  "geometry_holds": 321
+}

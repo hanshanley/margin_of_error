@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -1362,6 +1362,8 @@ async function loadCurrentPrecincts() {
     if (chosen) precinctResultDetail(chosen.properties);
   }
 function currentPrecinctDescription(p) {
+  if (p.source_snapshot === "alaska-native-display-20261110-01")
+    return `${fmt(p.ballots)} native geographic-unit ballots. ${p.rate_withheld_reason}`;
   const counts = `${fmt(p.ballots)} ballots / ${fmt(p.denominator)} `
     + (p.state_code === "MI" ? "native registrations (components undefined)" : "source-defined electorate");
   return p.match_status === "county_precinct_set_mismatch"
@@ -1416,6 +1418,16 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
         || new Set(data.features.map(feature => feature.properties.key)).size !== data.features.length
         || data.features.some(feature => !feature.geometry || !qualifiedIndianaMonroePrecinct(feature.properties))))
       throw new Error("Unqualified Indiana Monroe precinct count or reference");
+    if (metadata.source_id === "alaska-native-display-20261110-01"
+      && (code !== "AK" || metadata.expected_features !== 81 || metadata.native_source_rows !== 523
+        || metadata.native_geographic_rows !== 402 || metadata.geometry_holds !== 321
+        || metadata.counts_only !== true || metadata.rates_approved !== false
+        || data.features.length !== 81
+        || new Set(data.features.map(feature => feature.properties.key)).size !== 81
+        || new Set(data.features.map(feature => feature.properties.native_precinct_id)).size !== 81
+        || data.features.some(feature => feature.geometry?.type !== "MultiPolygon"
+          || !qualifiedAlaskaNativePrecinct(feature.properties))))
+      throw new Error("Unqualified Alaska native geographic-unit count or reference");
     state.currentPrecinctShapes.set(code, data);
   }
   if (token !== state.drillToken || state.map !== map) return;
@@ -1456,8 +1468,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
   map.precinctLayer = true;
   const index = state.currentPrecincts, observed = features.filter(feature => feature.properties.reported_pct != null).length;
   map.stateTable ||= { rows: state.table, columns: state.columns };
-  setTable(features.map(feature => feature.properties), [["county", "County"], ["unit", "Reporting unit"],
-    ["ballots", "Ballots reported"], ["denominator", "Source electorate"],
+  setTable(features.map(feature => feature.properties), [["county", metadata.area_column_label || "County"], ["unit", "Reporting unit"],
+    ["ballots", metadata.ballot_column_label || "Ballots reported"], ["denominator", "Source electorate"],
     ["reported_pct", "Participation rate"], ["rate_withheld_reason", "Rate review"]]);
   header("2026 midterms · unofficial precinct observations · partial coverage",
     map.full[0] / state.viewport[2] < 2.3 ? "Precinct participation · available coverage" : `Precinct participation in ${name}`,

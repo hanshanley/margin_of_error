@@ -1,0 +1,3231 @@
+{
+  "status": "INDEPENDENT_integer_delta_decoder_complete402_NOT_map_approval",
+  "original_compressed_sha256": "28ab836adb9bded0febe86cbd616c18543c75f04ae9479b49ca050bf357b8dd0",
+  "fixed_coordinate_scale": 1000,
+  "binary_float_accumulation_used": false,
+  "geometry_repaired": false,
+  "summary": {
+    "shape_queries": 402,
+    "rings": 505,
+    "vertices": 622133,
+    "unclosed_source_rings": 0
+  },
+  "queries": [
+    {
+      "native_precinct_id": "08-035",
+      "rings": 1,
+      "vertices": 530,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1041fc9e62b670626c6e3422e8cb3c59c7d30bc9282ab401263361f1b3e99e5b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "08-045",
+      "rings": 2,
+      "vertices": 598,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "006d33b9e9c7fa85b68e7d046f20b771ac1f8fa1977a1f635a4354c9e1236dd4",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "08-060",
+      "rings": 1,
+      "vertices": 351,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8ec07c28e0cd1fed28ca893bc9baec7f415b9b911e1b8dff65143c66b2e5f5bc",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "08-065",
+      "rings": 1,
+      "vertices": 2689,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "126a10baa19b1e30b381f647055008030240f68dc65c0bf0184cfcd874eaca62",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-865",
+      "rings": 1,
+      "vertices": 1785,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ae7c96fc599ad574596ed40855d516b2578031509d3a19a6815dc64dca80f756",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "08-080",
+      "rings": 1,
+      "vertices": 515,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ea39dfb1ad6c420e0c6f075ccef0066e557a7a90168b9f6d23a8947595c36164",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "08-085",
+      "rings": 2,
+      "vertices": 1983,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "3bf6e44e50581c38434194f13eb04d0130ffb6ab466c41be883e18ac950bd70e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "07-005",
+      "rings": 1,
+      "vertices": 463,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "39ebd6823675ab7011762b6457093e5f715f389f957d08cd4aaf019faea684a1",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "07-010",
+      "rings": 1,
+      "vertices": 440,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b6b6f0b066698a79307e3343b64757c6f22ad7f1747670cd0f685b977af5858f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "07-015",
+      "rings": 1,
+      "vertices": 213,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6d3e251b9bfb9fcc98e9b7719d3f91b41ce7f2e0b0a870c6fae39783ab8aee1a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "07-030",
+      "rings": 1,
+      "vertices": 205,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "23fa78173dbed084dcfde513bf55b455c1845f07ea57659a49d09c3b0e658bf7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "06-200",
+      "rings": 1,
+      "vertices": 915,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "21666f75632d08223b3b8f9887da37fd0b549bfd9a493e09d49d1d9d681ea637",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "06-210",
+      "rings": 1,
+      "vertices": 695,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ea9b3560901fa3b0d940fd4af67e7034d5a21cb762276f14b3178bb6b8666695",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "06-220",
+      "rings": 1,
+      "vertices": 1658,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8b3c959922b5308e4c743f653fb56d6fbfca619592215e65701a01aa96dbe272",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "08-050",
+      "rings": 1,
+      "vertices": 2364,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "429006a1bc9ed354ffa7fd8669e02b73a4fe78ccbb7c4763798e2e198da8707b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "06-230",
+      "rings": 1,
+      "vertices": 172,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "752a005b9719b84ff6181589f9c43f1259b70c68231666eb8df468d1c18c5a5a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "06-240",
+      "rings": 1,
+      "vertices": 221,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9c55d493f9d9bc300d6dc4d46d29dce9e229840fbb802a57d2627a92e1044100",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "06-250",
+      "rings": 1,
+      "vertices": 834,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f879ace93685fbc5ea9b5ec5246feb83c2f216cc5d447860e595a435725d45e0",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "06-260",
+      "rings": 1,
+      "vertices": 688,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "290f0dbeb2e0904b1603e380961914100d154c42b7183d2bb513b497b7b933a9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "06-270",
+      "rings": 1,
+      "vertices": 1359,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "5c5eec82e2b7bfb8778cf3ce7e5caf796610921f13fcbe3d3b12fca453af15c7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-815",
+      "rings": 2,
+      "vertices": 1366,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "10bc55a60f8015eadf2095c48274970b1ad7302a44ae4a442399e0ee2707b55f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-835",
+      "rings": 1,
+      "vertices": 57,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "dbaddc85b0531528e5f51aa1490e3590f88d03869a14932bf9079adccd0944c1",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-840",
+      "rings": 1,
+      "vertices": 393,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "14df8fa2a3622f38f9b3abc5840110bfffde94ecf82873c12c1b53719664897e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-845",
+      "rings": 2,
+      "vertices": 1129,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c821b73394498b4eead61635b575fd49b4f630d6c1d9260cb74593533b4e0e96",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "06-280",
+      "rings": 1,
+      "vertices": 2191,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f82cc5eafed154af328580fbdd00e5faddec3acf48cc80acc6f7ad44e99ad235",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-870",
+      "rings": 3,
+      "vertices": 4248,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0607923b6d72b39876c0edbfc3d8f8f74064af7522b034fca04a94b678a43489",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "04-110",
+      "rings": 1,
+      "vertices": 2373,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b965e1d13608568deab52c0bacae0eaf5ce811ae42465e1ad01cf484e596421a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "04-125",
+      "rings": 1,
+      "vertices": 851,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "599e6987ecf6d0839b386dbe235e48345bdaf0edfa84e2aa8fe9c4d9230884b3",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "04-135",
+      "rings": 1,
+      "vertices": 236,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c555695cad37582253bcd16c92c790fcb2a558bbd067e1e2c920cbb27b7106ba",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "03-330",
+      "rings": 2,
+      "vertices": 2317,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ce3c031d750adfebad52c9b2ba78412522bfe327169366a62548e637f07567d1",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "04-105",
+      "rings": 1,
+      "vertices": 141,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "73aaa91158ad18e558a22caaabf0808014efb4e019d91da24d8206d0c5bd4d71",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "03-315",
+      "rings": 1,
+      "vertices": 403,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "572bce2f774d44c662e507cc097faeca4eaf05431aba715db6cb0139f6c58287",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-700",
+      "rings": 2,
+      "vertices": 1885,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "382f864cb410666db5ada2b82f11eece39777a29ed63dc85f0058ae1cec797a6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-705",
+      "rings": 1,
+      "vertices": 90,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f8f84e3e946295b601394f865bc3376979f55431b06c7fa501933656c67148a0",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-720",
+      "rings": 1,
+      "vertices": 3115,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "16b4dd27d73169e2a0da74a990641d7148315a68c3ac3cb148e2336bb67460cf",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-730",
+      "rings": 2,
+      "vertices": 1405,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b85b8774f7c9dd12199f97f2223077d7b530dad94cdf66240ff21f441192cf3c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-735",
+      "rings": 1,
+      "vertices": 303,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "81c973df320788fba3f6b047ac3bbba4acbcd5959af22f87fb8adf50a32d7d8f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-740",
+      "rings": 2,
+      "vertices": 1990,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a2adeb46fb35fcce9e76e09b9d57c1ea60e97d37295f423ad8324ccc2baccfe6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-755",
+      "rings": 1,
+      "vertices": 3056,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "dba2726bd64523663f1c281e0c907ca9f6ed81c33e885583ab934dfedd717145",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-760",
+      "rings": 1,
+      "vertices": 28,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "734183977cb27be56056cab02ff08ec9ed48483b9a01929d1745884b7789784c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-765",
+      "rings": 2,
+      "vertices": 584,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "db19915a2ef54b6ea259c11e51d4ff20e17c34e19ec495de6370886b588055b7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-770",
+      "rings": 1,
+      "vertices": 323,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "439609513ad68b5395fe35e343f9f598e444e66531e99ee02e685b55d679cf8b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-775",
+      "rings": 2,
+      "vertices": 1028,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "dae572b65fd73aa3ffa94b5fb83ac8aae8f994386cf77431c46abb1b4bcfd9fd",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-780",
+      "rings": 1,
+      "vertices": 1029,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "166283f4b42c0bd058a62f0bad60cd1d732deb95190e3c0adb78acb5deb898ba",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-725",
+      "rings": 1,
+      "vertices": 716,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "770c4087ab1db231f604b0055e5cbe0878c5036479e95135d85526bf675e470b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "01-680",
+      "rings": 1,
+      "vertices": 131,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "66f894b93c658008e984c1fb2367384c63641e19b033248f6408a363a4ff5e5b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "08-040",
+      "rings": 1,
+      "vertices": 1381,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "32fdf5863c74774818e1bc90f67a88c055aa3715a8b37765b9fa689717ee78af",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "08-055",
+      "rings": 1,
+      "vertices": 1089,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "84e0fd35e2fec827ab75d12402a5dbad9bec740b1bb86703f6f90d33189a618d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "08-070",
+      "rings": 1,
+      "vertices": 580,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "288016d960e2d17515fa344aeabb1b81d4f0bea3eea146916902714b1d47fcf5",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "08-075",
+      "rings": 1,
+      "vertices": 907,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9390b4ee2633af421def791bb03c02f50a02eedd4426849ee64e614bbbf8c403",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "07-020",
+      "rings": 1,
+      "vertices": 207,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "acf1a3130d96e1c6a0bbb2d877eca274038e51882cb5f33fdaf49e288a33d820",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "07-025",
+      "rings": 1,
+      "vertices": 403,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d358d70d50666a062373ec3f025cd4b37f146a2f69efea4c7b81f677226c1c68",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-800",
+      "rings": 1,
+      "vertices": 423,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0df54f7a45a3265b126f89f968112860f81e490d2960be2cb221038ee4e479dc",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-860",
+      "rings": 1,
+      "vertices": 205,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7d0ca6cb57ed4e9679e3699c00800605566bc6ffbbe754a1587f6bc8140fdcac",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-810",
+      "rings": 1,
+      "vertices": 1022,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "74fbe74867ed7b21941401a8b90c96ffdcc42829b65f1dcd3d0673f008978fac",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-820",
+      "rings": 1,
+      "vertices": 174,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "eace206046df530dcb93cccccdf10fc5519a45c92a9fc4bb8559bfef3bb417b0",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-825",
+      "rings": 1,
+      "vertices": 109,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d6c83de5f26d1162f6857750de507b52d1996d838f3f5a98a07354947cd2be5f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "05-830",
+      "rings": 1,
+      "vertices": 293,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9fbb44ce5fe390b94e289c319ac96a89297c029ded7841f36363cbc99b23eb00",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-785",
+      "rings": 1,
+      "vertices": 585,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4044857647b98cca2586ff6dbc43197110751cbd8d8b1b51abc3a22c3eb5a0f5",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "04-100",
+      "rings": 1,
+      "vertices": 568,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "47989a51733955beba77b85e2ca4254aac37f040a405f3c129db53affa185a3a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "03-325",
+      "rings": 1,
+      "vertices": 3445,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7cf901be91256d333cca2bd70f23cad351d0aba9dbb7cc88d41375fd295290de",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "04-115",
+      "rings": 1,
+      "vertices": 117,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4b2eec83a4878e45bf3c4bb4b7171e7e0af113846c0f2bca64951e21f66bb95b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "04-120",
+      "rings": 1,
+      "vertices": 457,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0974f48c348c49f13d5c1d1646c8109c931364f2dd86731027d52f62fc858540",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "03-335",
+      "rings": 2,
+      "vertices": 1547,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "df421fb4bf8b678d975cd9040cceb2f26b8e88f3eb16daa6b3396f9bbbee2035",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "03-340",
+      "rings": 1,
+      "vertices": 60,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4defe3ae28848a7388d1d3c11d34e697311b21c98dec86db02b4a165597f96d6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "03-300",
+      "rings": 1,
+      "vertices": 281,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b3a708488952b632d4407a8ff392a3487df1a03e8c5cd4a89e8015c50e9975ba",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "03-305",
+      "rings": 1,
+      "vertices": 1467,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8df023333f6f2fac5e3a0293f9eff63a541fbb46c0b97de88c88a01c1af3dcdf",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "02-750",
+      "rings": 1,
+      "vertices": 895,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0a1a904a22f77fe5fbbd1d767f57806468f6a919d570f1cc65ee2deb1a50c086",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "01-600",
+      "rings": 1,
+      "vertices": 53,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "99413a5b2fec022888e53da334302b6a81fa67407bddbab0f834e1a7bfcc5f7d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "01-610",
+      "rings": 1,
+      "vertices": 51,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "bb7390f24ba1454070c12e439e792a6902221ed9f4b8fadf04b12f6ce5e7657e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "01-620",
+      "rings": 1,
+      "vertices": 67,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c24ab804665d0dbb05637f626e22b0dc223451dc72b03d5a114541687d3ff7c0",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "01-640",
+      "rings": 1,
+      "vertices": 668,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b272e26880ba74cc86517e07e45d6de1a2fb08e495c671de5c16e0c0ab135638",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "01-650",
+      "rings": 1,
+      "vertices": 2546,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a364bc42a706caacc7bbeabe65c8ac80561be18b569bc91a0c7431449cdc5157",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "01-660",
+      "rings": 1,
+      "vertices": 39,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "cb74551dedea9593f932c7eaeb3eddece1833da9eb3dd459484e350106230459",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "01-670",
+      "rings": 2,
+      "vertices": 2717,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "13c3abe269bc8b7a0a828a54149bcc5f27c9ed71f9cad35233f8bddd1f9562dc",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "03-345",
+      "rings": 1,
+      "vertices": 82,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6622c8c8150dbf74ae7b1d6130c918f2f14c80dce0797975c7bb296bc78fa407",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "01-690",
+      "rings": 1,
+      "vertices": 2215,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "96e52e74c807fd9c0235920fa876fd3e7cf4fbc9dadc5dc70f3f5590b159b235",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "01-675",
+      "rings": 1,
+      "vertices": 740,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0e6e79994d2441fea276c60569dcef43177253a6e1d360947633f47fe61e8550",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "03-310",
+      "rings": 1,
+      "vertices": 69,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8cbc923887545a21aa9f6001e1e081c9156a5d6b1a0cb5c72cf4ceecede13073",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "03-320",
+      "rings": 1,
+      "vertices": 198,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d7c63283ee63bdbc485ecefa20db451c8937917537d9921a3cbdeae9dbc33ef6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "04-130",
+      "rings": 1,
+      "vertices": 98,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6ee9d92fcd560709ebaa9243dbb7932ede5d71007c73635e01bc3716466a7e7d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "09-125",
+      "rings": 1,
+      "vertices": 336,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b8601c3ae34e30b7606da1252777faacc30b6e47ab897b3090d069571aabd9d8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "22-755",
+      "rings": 1,
+      "vertices": 53,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ac6a99db6fd5fddf34a0292664fd9ca2c8e626c5090ec65bd7100951cc3b65cc",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "14-380",
+      "rings": 1,
+      "vertices": 64,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "50d37e140c61c1e98a0551f4d55727e840c1ac516ba0067e04b6810849088d4e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "17-515",
+      "rings": 1,
+      "vertices": 49,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ff10e007f4a54a9487b39b389bd2c7b5df7a8ca4f1221244571cad51cc38be7d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "19-615",
+      "rings": 1,
+      "vertices": 48,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7aa6c34649a6100b5404d46f8bbb452e191f3225ab26e76905af7661c726dcd8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "16-450",
+      "rings": 1,
+      "vertices": 87,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "daaca25bbc39b79b063a650f50994fc274d334083c1208f805472d1819e6ca3c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "13-310",
+      "rings": 1,
+      "vertices": 81,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a30a4d13ec5bba4e223c61116b6d5a4641e83305ed27bec4999b0bf29784e5c8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "14-360",
+      "rings": 1,
+      "vertices": 42,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1dc30a559cedc08525243adfd80065c8ff40e7dd51bd2a57194ab593506eafe1",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "10-175",
+      "rings": 1,
+      "vertices": 49,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "41905913bddc3b05402f2907afca627ecc167a034e550438c2f15ee0b9f52d49",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "11-210",
+      "rings": 1,
+      "vertices": 149,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d973eab0a9a9d70cb70d059b2b74689cb1c97691841ce8a9d8d0642b063c01ac",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "21-705",
+      "rings": 1,
+      "vertices": 74,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d156db1ae4ac61aea5edefea94b5dfd1dcf0106f0a20ac431c1b6f9293d29513",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "09-115",
+      "rings": 1,
+      "vertices": 82,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "64e22f22d883fe620adeadeb9f2948eae581f8befe0567c67d68714e1a98ecec",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "22-765",
+      "rings": 1,
+      "vertices": 43,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9d33ad51633d9bfd1eff8e530b8809be33d44dc8ddcb2b13b87c5153e13a0968",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "22-760",
+      "rings": 1,
+      "vertices": 80,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a902650dcd1ffca876555ae60a26bf2e9ef2ca5680b8300382031a405ad45ea6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "22-750",
+      "rings": 1,
+      "vertices": 69,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c7e3b7ab018c0e04654c7cdb1f6af05386ae69fca9f49b37a38d9a20a6e742aa",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "20-670",
+      "rings": 1,
+      "vertices": 73,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "763b09d0f3a53251178d073ec5df56e86fea078e24d7558352dcac655a6ebcf3",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "20-660",
+      "rings": 1,
+      "vertices": 67,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9813db8958f67e4a5d97061347f121f536992da36805cc888c01589cfc37b649",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "20-650",
+      "rings": 1,
+      "vertices": 100,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a8a0ad64806e9ffe42246d38ae05ab1371b6e327b4314d429960c18d7c020793",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "20-655",
+      "rings": 1,
+      "vertices": 76,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7614dc207dbac7984d37e068842faef3f370e2a7bf009a871eeabec680b2f10b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "20-665",
+      "rings": 1,
+      "vertices": 53,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "270761dfff9351f83e84af798f450ef340a5ed0548cf817ec6d6fda71ec5d34d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "13-325",
+      "rings": 1,
+      "vertices": 56,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "45d90847fc0b51d981198002e81af8bb113a2621038743ed6dcedcc2ee6791e9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "14-350",
+      "rings": 1,
+      "vertices": 41,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0d4b85f68a6d27eceebf6f64cf09b3ee7c2253de348289b61fc88e4c25240f24",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "14-355",
+      "rings": 1,
+      "vertices": 57,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "99d3dbb036be7bc13a1f0eb7dfbc1502ea08130f4b04463839986c681150b375",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "14-370",
+      "rings": 1,
+      "vertices": 59,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e0cbefc989a0bedf22840758f27d5f1f1c51c4e33f1ef1fe27485d86b870e073",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "14-365",
+      "rings": 1,
+      "vertices": 58,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2993630b418d9159cdb8bdb26824b25a609305babcc77cb63948b4fffa61e160",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "17-520",
+      "rings": 1,
+      "vertices": 85,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "3a3c5c8d74e06290bdf6bc8ffc9d12378884d23f9c26ea5f43761b7bf664db3e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "14-375",
+      "rings": 1,
+      "vertices": 126,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d930558e74719945d6c7411cd40d9d4255e24dcba542fab4e58c9f5e128da3cc",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "19-620",
+      "rings": 1,
+      "vertices": 70,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7c657ce0adf9fac58f523b36f97de6229a277cf1b264c5271392fe6f18cc90ab",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "19-625",
+      "rings": 1,
+      "vertices": 63,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7cf402f885ac7d1e3a835e22b0aef5e57337abde9ed1e3d709305fa59d469e8b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "19-610",
+      "rings": 1,
+      "vertices": 87,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2ce332ad977daadabc1fc1a14485f7ea5ad46c0dce4f1b23a86c29fb1b13e4f3",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "19-605",
+      "rings": 1,
+      "vertices": 77,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "dddc89b29dd43fab5f369be70a8912ce82d37f6b1bec3ba211890278f6c35079",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "17-535",
+      "rings": 1,
+      "vertices": 109,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6895c1d8a281b074efcd3976d529a624b81f50178f1ce5aed7134f2a48d8c638",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "17-505",
+      "rings": 1,
+      "vertices": 65,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "87f5cc29d18927b3aef181a5afc88550adafbc164616ccde76128884a7208ce8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "17-525",
+      "rings": 1,
+      "vertices": 90,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ca147c6a11394b418c97a3d58fba427c75752cecbcae5d663805f3ec45ac39a1",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "17-510",
+      "rings": 1,
+      "vertices": 77,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2a6b1e988944843778b4c45522be325ca341b7d85247ec237158d0b8e283ce1a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "17-530",
+      "rings": 1,
+      "vertices": 58,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2ee8617967fd7fdb07f275b4aa881766db397b69baf2148e5fef136d10c00326",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "16-470",
+      "rings": 1,
+      "vertices": 223,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "960998f0bad24c82f3c0b58f55ca786e130085abc26da5b8d029fa689ca19c56",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "16-480",
+      "rings": 1,
+      "vertices": 51,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "aecbb2c5f4088672ee33dba53be2db209232c9fa03c84cc8bfd422c022d33cef",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "16-475",
+      "rings": 1,
+      "vertices": 95,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8884d4a914172ffaf79d3ed1c79db62fc1f401c11fd6fcc2d9baccd8e18e4a14",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "16-465",
+      "rings": 1,
+      "vertices": 103,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b5f33e7cba1edbadbf1f1ddbf67cba6cf0b74e893a669ea1e8b5161ee32ce91a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "16-460",
+      "rings": 1,
+      "vertices": 86,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "860d6b769a903a41fb345b189c7aaf3fde80d1be0f6297626c82e02a58a9f1f7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "16-455",
+      "rings": 1,
+      "vertices": 109,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "06b123329b925700410731644256a985953120de600bcc266445191dfe25814c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "15-405",
+      "rings": 1,
+      "vertices": 45,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c5873ce5c173954541fb74655d5f86ae784c2ebc3331cedb0a79ba3b31b3f648",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "15-420",
+      "rings": 1,
+      "vertices": 81,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9f29bcdac411b65692f619d85dde443ac731fb1aee4f9d0e1cebb8dad66a48d7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "15-425",
+      "rings": 1,
+      "vertices": 142,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7cd1534003a10b2d1ac729f8b0caad2621ce5bc33003f5e9769206f1461d5093",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "15-415",
+      "rings": 1,
+      "vertices": 74,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8c9afef359c4536956821cf523dca5e3221397126a7892f8d5363cb3e9b8a253",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "15-410",
+      "rings": 1,
+      "vertices": 83,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b758263d1165c8d70e9d457f8c964734ee263a8b55f37dbddc1191aa4baf675e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "13-305",
+      "rings": 1,
+      "vertices": 66,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "043c82c559d85637b1d4d14656b691f211ee4860e781682c21dc94d43a5fa32b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "13-320",
+      "rings": 1,
+      "vertices": 88,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b57e3250674feba7d941ab5fc396b5c63ec8ef231203da19975cb3dbb9dea0c8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "13-315",
+      "rings": 1,
+      "vertices": 90,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a7fdeede79af6c1a447da34ba6223b716889178da29c1ecc9a50624283e5e011",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "10-150",
+      "rings": 1,
+      "vertices": 87,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f470c24062b0e21a8edc0ba40f11dfb6c909411b0fc63712e29afb37025527ec",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "10-165",
+      "rings": 1,
+      "vertices": 90,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e0b89b72ab940003787c466b4a6dc0fe543978fe79a7ad7d8dee5a09a4d9e1ea",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "10-160",
+      "rings": 1,
+      "vertices": 98,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e6a5ddd4ec6a236b1c8429bc38a014bc0472b68d7976febf651701b085b1b558",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "10-155",
+      "rings": 1,
+      "vertices": 115,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d8de03070a99c964b9a071ce4b37a4a9d0c79c9f52358b44001878832f5d1408",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "10-170",
+      "rings": 1,
+      "vertices": 107,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "bb2e591bba64b1c22f93ed3d384ade192584445e811d8ebdf7387bb848de604d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "15-430",
+      "rings": 1,
+      "vertices": 138,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e344717b9dc81635ff13127751ab22203d0e92de70570ba7a20d6313ee1d63cb",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "12-270",
+      "rings": 1,
+      "vertices": 62,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4831725c50e1f8b7052e343ed24d3600310d196ce542b994d619eace44812ce2",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "12-275",
+      "rings": 1,
+      "vertices": 83,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "44d940844dd6d35a8ca5925eeac43736acc32a1badfc7d01f119d5d1277a093b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "12-265",
+      "rings": 1,
+      "vertices": 181,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "94e039321e2232f9db3a2333c61a51b57afd280fda82341f71a93212b8fe0961",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "12-250",
+      "rings": 1,
+      "vertices": 71,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ac81161c4c4b2f797e155830e79e6b109636853b29d6f9783201449b61848306",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "12-255",
+      "rings": 1,
+      "vertices": 70,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "822c9f2b1773ccc06faebe521d47fed0fc6c67a6432a159f7f8cbd46f880f382",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "12-260",
+      "rings": 1,
+      "vertices": 62,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c98aebbd6cccc95754ecde5299a93d48d9d28c11d331b1355f64f2054687772b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "11-225",
+      "rings": 1,
+      "vertices": 82,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9de172a7deb7bc99d1de84760530c77697bb31349fb04fc6e2fb84ec2043a7b8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "11-220",
+      "rings": 1,
+      "vertices": 58,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "13824816980e2b7bbf92e3cd5ea433a6372ad7b9fc5c41d3144da4dd3258d242",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "11-215",
+      "rings": 1,
+      "vertices": 55,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ec5c7186c841dd15b3a9972735597a6030c806660abe001ebd3e2b641ec6b138",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "11-230",
+      "rings": 1,
+      "vertices": 93,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "94a2f4149a613a382acfffe0078bfaf4bddd16f854ff8252c715ab9486547cc4",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "11-205",
+      "rings": 1,
+      "vertices": 38,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "03cb14520f7fac24d5022efde9fa77125c01cb446441d87288b32948dddb35a6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "21-710",
+      "rings": 1,
+      "vertices": 66,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f22d3f781bf6492e6f67b340068d8ecc3065156a815c92713699fbc7f9997fa4",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "21-715",
+      "rings": 1,
+      "vertices": 61,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "85bd87b37c9b636ea37e9bb23f72ee17c0e3dcb739610348fbc2c2a3cb7ef7ad",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "21-725",
+      "rings": 1,
+      "vertices": 51,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d9fb0745870005801d15ade67ae40d3693b965e36a2872ae484a0b55a2e9522f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "21-720",
+      "rings": 1,
+      "vertices": 47,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "95b296b9135df10d2954bdb1cded3e5bcb54cd95fd6ce6fcd67c219849c91209",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "09-140",
+      "rings": 1,
+      "vertices": 40,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "74c0ab45b0b78518d37d561e0df5695ff5ea1e2d701f3b3a7da4fe12d2fec336",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "09-120",
+      "rings": 1,
+      "vertices": 163,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7ca3a27bd225e7ee7841a5cf1fe4f20dfd3003a37a1a94c053d65b48bbf35f8a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "09-110",
+      "rings": 1,
+      "vertices": 486,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9643e1abd4f50b27a81c0c5f69a047964bbeaaf0648232dc4f2a74a421768a1d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "09-105",
+      "rings": 1,
+      "vertices": 457,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b507d024fdf1473f96e084746bf5cd25678c3372b495cd129da5dd194a116d36",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "11-235",
+      "rings": 1,
+      "vertices": 84,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6426764672b4c0bcdcd0ed0cb478c61f8f4d956a2e6d61a97c80084e58d070c0",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "09-135",
+      "rings": 1,
+      "vertices": 373,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f339db1869af0fa10b35727169618c838c22490af81d7caa759b084446408eb1",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "09-130",
+      "rings": 1,
+      "vertices": 208,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "36459aca4d286ae1df7309800146ff7b01ee87e5b0f085af236078c4d98711f1",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "09-145",
+      "rings": 1,
+      "vertices": 35,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f0a02c429fbef1b114a0e2c7891f4de72944a9d28f20059637140e348bc36cdf",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "31-446",
+      "rings": 2,
+      "vertices": 181,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "17515e998439dfc4ac68f0ef96048d719107207857ebc6b3ed95f6c276df9b7d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "31-480",
+      "rings": 1,
+      "vertices": 107,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1624ca4b553648814f8a5e9774469e440f29e8b360814f6c999ea6a6e6479ff9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "31-485",
+      "rings": 1,
+      "vertices": 163,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0d313a47cb427a07820fcf30819fcfb09cf772348cc095aeebb61bd6bcc1359c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "32-385",
+      "rings": 1,
+      "vertices": 459,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9883bca79161ba42b2c05584c8ff1f80f2717afcab043b9e850bd262baa7b5be",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "32-365",
+      "rings": 1,
+      "vertices": 73,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "20c3171737e15624007c6d3a46d50b40037ab97b1b665e4664ea32d3951971ea",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "32-375",
+      "rings": 1,
+      "vertices": 319,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8b7c672f374d7b0f41aed3b6c64dd1ca5240bfc5f5d36b30668ca572ac80a1cd",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "33-130",
+      "rings": 1,
+      "vertices": 361,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4b9de58f1cc51a71e5a511148c0335abfd8ed6803b6b4197bc4431244d8d56e8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "33-135",
+      "rings": 1,
+      "vertices": 951,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d3523be2fa047229cb28876aa423fba07db01a739dab996f4af3f2ad70829a60",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "33-165",
+      "rings": 1,
+      "vertices": 182,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "40db2634e3342b61a0f1f6cfc3e58eb902b1e26bb17e094a44051b4126f7ea37",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "33-183",
+      "rings": 1,
+      "vertices": 545,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "07604ee4cfbd9705c18f3c426e6c0ff61cd8c64a3d29af6728a70006df6ae1ba",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "35-584",
+      "rings": 1,
+      "vertices": 1046,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9b5fced9e1656a275c0b9dcb573166913d3ce46a30737008b61f4418a4b754ab",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "34-240",
+      "rings": 2,
+      "vertices": 422,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "da893b9b6556b42597a322cbac25e42de01970744c821b4b9af45ff84a66136f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-001",
+      "rings": 1,
+      "vertices": 3237,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0cd15bc5b7c1e5104f901b27ca2b5cadfa11cd049ca2260343052e4e121229be",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-002",
+      "rings": 1,
+      "vertices": 1359,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "022f972530ae5aa99d34415cdbec2ed0db6d5684fb954349b6d018d2e68e46cc",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "34-265",
+      "rings": 1,
+      "vertices": 1187,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "98b7720d8a32a9fc2ff68e229f89f870e5063dbc34477bc4b24af006d5861934",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "35-595",
+      "rings": 1,
+      "vertices": 755,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f26ed9e0500c70bb85acfa6d34d4331097494bb40748c59e235fc9e277ed4e3e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "35-582",
+      "rings": 1,
+      "vertices": 2270,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "20d115977360f0ca04c131e9d01e9ad5b7ed5e76768e4e1444151876da1a25e6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "35-586",
+      "rings": 1,
+      "vertices": 138,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "19ae182fd2bf6db41dead5a62780b2a66982fa47be8bd126ddbefe212c516235",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "35-587",
+      "rings": 1,
+      "vertices": 267,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "93b2344b549cc2492190d8f98e4c9ba47c47485f52fe8f34ff43a2683e57186c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "35-580",
+      "rings": 1,
+      "vertices": 519,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "57978fba8befbbe3fda5131bff1c5af9290c4854fa1f7ad42337e0dca71f8203",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "35-592",
+      "rings": 1,
+      "vertices": 134,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1b2c12c017f19b24d5c11be9493b68d81997bdc2e7781a62581c37497f647a24",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "35-596",
+      "rings": 1,
+      "vertices": 339,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "5a3bdaddb4a3c86f93f94eb34ec6543d3376682fb22f13a1117913f8fdf3bd9d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-018",
+      "rings": 1,
+      "vertices": 5487,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b781721468eb05b2947b785882be40d55a291cb588b80948fa335f92dbd1ea40",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-034",
+      "rings": 1,
+      "vertices": 1407,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "26f440abc5f0ea04e01af12e7a410cee6bdab45a25665a642ec59a412d2170e9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-046",
+      "rings": 2,
+      "vertices": 2503,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ff6cd06d5178da88eefc2caa7ad2ff8b730a5037a278d9946ccd9b977c2de0f8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-058",
+      "rings": 1,
+      "vertices": 6257,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "39eea49363418c62dddced573953cfce416a9719f8e1cb0ba16be2539cc69f6b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-070",
+      "rings": 1,
+      "vertices": 3108,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "229bac9cb89b59374f07b62cca37dd539301f6992523c62809f04923fc490c2a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-102",
+      "rings": 1,
+      "vertices": 5692,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9931e7605741c0339fc470ea06de32c54d9037657f1aaff66577c9ca2812db54",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-110",
+      "rings": 2,
+      "vertices": 7454,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "3d052f742eb112efa4a1e90ba77297e43b82dcd13aa66e55d16c75782f827f29",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-118",
+      "rings": 1,
+      "vertices": 2911,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "734c8b8e37be21720a96802fa78d81d6abc11a7ee982c5a87f57ceacb17c2626",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-122",
+      "rings": 1,
+      "vertices": 1226,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d86505bcd1a477d90104aa25919ad686f1a264cc565498e9f14ecec1539737a4",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-162",
+      "rings": 1,
+      "vertices": 13818,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6912873bde546e9e9db64b952431d675f740e4ffab73d2baac4a8400ca90bcdc",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-174",
+      "rings": 1,
+      "vertices": 9675,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4f1d33805339867fc50c9f10fd1ae12e4db52877a3abf22f2f07ad684989a8f2",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "34-235",
+      "rings": 1,
+      "vertices": 370,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0bcd08b8a6a15519966ba72d1859551b202b498a806a42b9c374df147306e542",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "34-260",
+      "rings": 4,
+      "vertices": 2869,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "61a8f757b4951db7cb350ce6465b1afb7c1905e6d98687ccf42af95b5f037b81",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "34-263",
+      "rings": 1,
+      "vertices": 766,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7b7ecfbf09ab3113d807c22de6e1b151d09aa79b797608fc874802f907c0dc55",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "34-280",
+      "rings": 2,
+      "vertices": 2905,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c6617d03c3ce713b7e6b08472377b652dda6ca3d2f5aa335e4cd4127d8d115dc",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-054",
+      "rings": 8,
+      "vertices": 4150,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "dff7fd847aaea0ffd8d80fcbc52e3bd9a324a46901c2061e6496250c1d5752cd",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-078",
+      "rings": 1,
+      "vertices": 2166,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4b2056c08583ae6c05f7528cad05cef0a8c673c4526ee8e4cd3adf3c744747c3",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "31-455",
+      "rings": 1,
+      "vertices": 135,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4777ea5902a4650202a8706f4fa8091b72f1029344148593aadf9159b5aa963d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "33-175",
+      "rings": 1,
+      "vertices": 280,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "abb9ec6e62103c68a1e29a8c38e6bdcd8f570e653a2757b7c4a7b3f6fa0c57ba",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-022",
+      "rings": 1,
+      "vertices": 5906,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1be463fec099537d22866cead81bbf02d0157bec332ebcc6e054ee44a7f7a8ba",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-038",
+      "rings": 1,
+      "vertices": 6204,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "451dd32dda9b7816724cba6231eab08cf644b50150bacd8043a1f0820b8ea17f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-042",
+      "rings": 2,
+      "vertices": 11756,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "bcd36cc57af7676675d55a7589bd5ee16bc62f1abd6e0c9b939c8112991aff6c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-062",
+      "rings": 1,
+      "vertices": 8794,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "92717b7335cbc1e2aa8e1920c6e93111eb3fcc92d25e2bf5bf94d24ede33e405",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-066",
+      "rings": 1,
+      "vertices": 4525,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "fe99cda95bda741f261d43b215b0fc77bbd33560f4069b005604a987a0a6ec31",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-126",
+      "rings": 1,
+      "vertices": 1556,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "3af2b7fce086996a29c3dc173417cf4fa131600312251ea4d1673373e31189fe",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-134",
+      "rings": 1,
+      "vertices": 3816,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d9e79f4db35e084f86ba074c346bce15a0fcc3debb6d8402ade8e3bca8dde482",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-166",
+      "rings": 1,
+      "vertices": 3253,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "5f5a91b8684c004d1e639e4733ad3b4fb08272ccd4395e7379def1ed54de3f20",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-170",
+      "rings": 1,
+      "vertices": 4035,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1999a1cfac95b5ca2146c975ae84b881c95d551d0794fdd2a0358eba7398b051",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-050",
+      "rings": 4,
+      "vertices": 175,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c4c1b4035af60aa53307b705fed86f981c7fe949fa5646eae2c87961bd6ce077",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-014",
+      "rings": 1,
+      "vertices": 100,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "407088b96f19d8df76576529750901f6346ab911ff79ef1074ea11988506e587",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-082",
+      "rings": 2,
+      "vertices": 7408,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8eddb1e53742428f5d4cad3c96083d533210085d6d81d737b01bd0acc80ac8a1",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-146",
+      "rings": 1,
+      "vertices": 2639,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4647f8c00d454b0236b6d644c7d88f17ac32e36532a760eea87a0734a0fea129",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-074",
+      "rings": 1,
+      "vertices": 8313,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "116c48d8ea908677c10b01b468cba7352e470f5f3a863e82df85d0218f3a4400",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-094",
+      "rings": 1,
+      "vertices": 14195,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ad32742481f912b37095639f5e09e03b44ae8b63fc3e15ca3a4f74b85c1eb8e4",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-098",
+      "rings": 1,
+      "vertices": 2629,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "193314aeb02d2a7d6c56f9acabcf429f06a560f34238528054f605907f388cc7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-138",
+      "rings": 1,
+      "vertices": 4223,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "08be72ff68245c52961cf8c04053edb8ad3a216bb499592c8473ad4652ffd8aa",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-142",
+      "rings": 1,
+      "vertices": 5095,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6eaa68fb59bd4df20375ba34e4c1ac974e0658333f4585c8fc88d25bee7293e9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-010",
+      "rings": 1,
+      "vertices": 9790,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d72451f851d8ed7a549437f8bac9ee15c99cc7698e4e41cc75eeee932a44e898",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-026",
+      "rings": 1,
+      "vertices": 8892,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "09a869e10ccb8bb4b54dfde1fe7d3141ca591d54c67b4a2e47d6a46afef9a3b8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-086",
+      "rings": 1,
+      "vertices": 1878,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "22a9668abb7fe5a28f6afb8b31e2d4e111b4958c9d3b0f68fe6928cca4f8f18e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-114",
+      "rings": 2,
+      "vertices": 7796,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9a4dd1bd013b572b685ee199b9b01c8edefaf4413e1217e14014ac33992d61af",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-130",
+      "rings": 1,
+      "vertices": 40,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b3b3903a16d7d15954c349f74c1d1f81bdf8c6eb8fbbd644b93eb914543f4122",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-106",
+      "rings": 1,
+      "vertices": 3637,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "954b0ca4b3789d73c1fa64ba99ebeb8b59ed06570bad519dcb61fd5db38dcd96",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "36-090",
+      "rings": 1,
+      "vertices": 74,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "679849343c5ced433dbc0f7bd0347f58f6bc7d5199e17927bafcfc5cdfd09716",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "32-355",
+      "rings": 2,
+      "vertices": 199,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d6b714e9580b3c11e0d33495ea1f32a8d0358b25f9926fc3c804c6adbb1669c8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "34-270",
+      "rings": 1,
+      "vertices": 265,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "55769af26f11b4a0a8a16186986b6589a2cb9367d3af16f3a1a5d70ac60fccdf",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "34-238",
+      "rings": 1,
+      "vertices": 373,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0f361a1a16a15e7e16188152f22f83e29d1d57df75ae527eece4ae5daa0e7d0f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "33-155",
+      "rings": 1,
+      "vertices": 84,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "5253a0cf070e36eaaa4366ae49b1f6242536cb672413f2b5f07e7ae6441430d0",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-704",
+      "rings": 24,
+      "vertices": 3321,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "647e46af66f6ad62e6ca670bc2ecf1e6a85d637055a4477bc60dd20fbda65004",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-706",
+      "rings": 2,
+      "vertices": 396,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "99fb9d43916ec01e9937518ce16bae596416696a6df7b0f138bd814425a1909e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-710",
+      "rings": 1,
+      "vertices": 1986,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9dc880a423fccd1fcb145a49b9bf03e9c5022efd78e4ebe3c356761e5aee7413",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-714",
+      "rings": 3,
+      "vertices": 3823,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a314c63c0f3d908424d486e9db545f8557f06d6806aa665b58d7fc127fc89a15",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-718",
+      "rings": 1,
+      "vertices": 1254,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "40804ede10033117b6801dc39ee34f39c5f9c97f64e89a319d03c2316ba2a2af",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-732",
+      "rings": 3,
+      "vertices": 1121,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "09f5572aa3faedd9f2021bc83936873d4e74f0199887b1e4d1fd150965693731",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-746",
+      "rings": 1,
+      "vertices": 3379,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f1007c20568feb2903489b64d400ac70e8a5782a3c86e041a37f2c99f91ab75c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-754",
+      "rings": 5,
+      "vertices": 5211,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9aeacae935357f94b2abbaa8f92fab1955650a4ea9b7b23d2ec2f928ec19d6ab",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-800",
+      "rings": 6,
+      "vertices": 819,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1b649baa2134145369f99a2c7a49e8c8d80a6ca4f5d071dcb77a62c4c317556c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-806",
+      "rings": 1,
+      "vertices": 2708,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0e71ac7e3a80fe314d501f9d193dfeca95d763d369d57b35112992c66b2ca1e0",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-812",
+      "rings": 1,
+      "vertices": 6689,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "243fec9b88aefd53373f9ea651af697da123781d8e0db6caac0b7b0559a5f1d8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-713",
+      "rings": 1,
+      "vertices": 2552,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "270d09cb93d9d913b9a14b915ea76c252edf6cfa0bd0c83a50713401881ec33c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-818",
+      "rings": 1,
+      "vertices": 4724,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "80b14c5f1ff1b965e889169a7f8662f556258a0609bdddf0f6b8fc45386f1821",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-822",
+      "rings": 1,
+      "vertices": 7852,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e3d4eadc632618fe6c84d79453f12dd2deaae82df2c9696c1299ec497eeaaefd",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-828",
+      "rings": 1,
+      "vertices": 171,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b46924d6d6a696f32353d484f3fb96b2b95e6a8d21bea89712b209b0d6c6b94e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-921",
+      "rings": 1,
+      "vertices": 3574,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "400e92288ba93171842bd2bd8a63d92d4b1d937d2ab361ffc6947590a6448022",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-840",
+      "rings": 1,
+      "vertices": 271,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f97aed2bac807edd7d57e1284f8a6ec94270c6a137e1a3809bd62dbe58e7fcf9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-931",
+      "rings": 1,
+      "vertices": 2052,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "aae46513f782fea413571a4a372ad076a797a5e16c0c6035a27c84fcd185ab77",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-922",
+      "rings": 3,
+      "vertices": 4403,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7356df5dfe0d2440d4cd5026ad34aaebffd9bb3d618dac321d1be78a575bd05e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-930",
+      "rings": 1,
+      "vertices": 133,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c8d91de9dd5bbf32c131dbf4b2db7aa16b5c272f2d2c8064e5c4bc5524c14243",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-940",
+      "rings": 3,
+      "vertices": 4508,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a4d9a294c9b39b39714489d5b74adb097ec8a99a4e474554e1d1733309d0a608",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-016",
+      "rings": 1,
+      "vertices": 2747,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "503f42f352e0160b2230f827e31034ccb6430539bd1872112665bab8de9bf2d9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-700",
+      "rings": 1,
+      "vertices": 271,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8646a424aa98a568d6c31b214997ccea2a9ac81f9cd27e4aa526cc5cd29044ab",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-702",
+      "rings": 1,
+      "vertices": 8752,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "97c7cf1ad17af160c8d56540e5e56ff21827bef12ac058083098093d3548dc7c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-708",
+      "rings": 3,
+      "vertices": 938,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f7cd66f93e219642bbfdbc7bfdcbdf764f09a17f65f8cc59a6bda5fee2a407af",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-712",
+      "rings": 4,
+      "vertices": 1337,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d126f756d3aafb79974cf204c4f73a78b9982db73b6b7dabdef0d6ced832ad7e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-716",
+      "rings": 1,
+      "vertices": 1460,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7ea5a008d1791fc1b709d991dd33d81201bbce2d5593ce58cb38ffc129c33813",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-720",
+      "rings": 2,
+      "vertices": 2777,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c6c0a0d76045ae12a6def7f8cbf6661c656dafb98a6a3cfe8a568144758537cd",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-722",
+      "rings": 1,
+      "vertices": 1287,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "30a9f4b010c17b631c4af840f1f86ae17696f30d805fd0e5cb54040a58b8e43b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-724",
+      "rings": 2,
+      "vertices": 4703,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "89346eddda9013585695c49b2e67f4ee95404a12cf7fab9c8e4b4a007445354a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-726",
+      "rings": 1,
+      "vertices": 891,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f46990c631da5a0f7f7808a130931f889f71365c2caefcc6786d380d89bd93ed",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-728",
+      "rings": 1,
+      "vertices": 4667,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6a4cff41644681d8b088dbeea3132feeb0357355f56e8f6296c506e0971de824",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-730",
+      "rings": 1,
+      "vertices": 3521,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2b9de2275fc423c2907d3b368ca0e4dea5596ce589872544e0239331921c6b2a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-734",
+      "rings": 1,
+      "vertices": 1163,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7444c928171979648697b5eb15620aebc24cabd52c4bcb386e1a82a27dd549c8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-736",
+      "rings": 4,
+      "vertices": 5488,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ed72225a12083485cad0f80dc054a9f697f733691009e412857cecf914994990",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-738",
+      "rings": 1,
+      "vertices": 1904,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a255e06c8548f187a3dac91fbb64154ff3b100a852a00ab1da317c86a8c3b535",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-740",
+      "rings": 1,
+      "vertices": 1448,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9206d73d4c4de94808558d2e87ab89d8860b2391f447b686ab4b81154901377c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-742",
+      "rings": 1,
+      "vertices": 1803,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "45d37e55072d0a3041b913552027a0875ff1a6b3f8bd803d7c31ae72926d1a9f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-744",
+      "rings": 2,
+      "vertices": 2410,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2b11b77353aebcc0b4b9053a9185a3b5029f3472340af4d2ff66e92823f47a45",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-748",
+      "rings": 1,
+      "vertices": 649,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "663fc761f4dcd518898ff45777e4f7facc650392dfda2a64173e9a1fa8124e4e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-750",
+      "rings": 1,
+      "vertices": 64,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c10d352aad701a2425eb0d4b25d4391ed1c9288d3e43a5d0f7dd77369e9730ba",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-752",
+      "rings": 2,
+      "vertices": 125,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "5d0ed0bcc0a7d5ad1a2a99f2d2787e23b513299a80a6e1ea73253b015d9ef6ff",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-802",
+      "rings": 1,
+      "vertices": 4273,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "96aa5a6bcae278a25e2a513e0cdea146850354ee808b6f0ca3ad4ae27f4914d2",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-707",
+      "rings": 3,
+      "vertices": 3836,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1dca9e9f1cf5ae3de0e349b04cae0aa86f5a7a35c51cf07c03ba3dcd5b00527a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-808",
+      "rings": 1,
+      "vertices": 261,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f8860c4346c2206ebbf3a64a0d73309a9203c0a5e0e1f138f854bcad23fb71c2",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-810",
+      "rings": 1,
+      "vertices": 292,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d91984bf4ab04b7f03c958352bee5ba524e1989f5936a8310f8f058a1391c301",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-709",
+      "rings": 1,
+      "vertices": 75,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0f0a5a01c92514e0591a6673216b72d7016033b7d1f9afc30b1be4722915865a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-719",
+      "rings": 1,
+      "vertices": 2290,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ed3a0300d48c68fb7681189beb5477f1d155ba5e187367998ca65e225de87c53",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-824",
+      "rings": 1,
+      "vertices": 780,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e496f5999c25359b28cbc4c2daf174c1e28f8e851960280ad1aef6d8d9cdf15f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-826",
+      "rings": 1,
+      "vertices": 1645,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ea30c29bd8f76ca4971e3eba60683c54850010a214b7a328af5cedaad0241825",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-830",
+      "rings": 1,
+      "vertices": 1485,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "3ef46356ca60611c177f00d99720461b12b3e1e4dfd1ceda4bc57d737e431508",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-731",
+      "rings": 1,
+      "vertices": 27,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6579d0e3a2400ac3bbd0313d2494899e79985aa2ca37b271037b8ff5c9783cc7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-836",
+      "rings": 3,
+      "vertices": 448,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a2bd65f54c3c978f10faf92cc26f9ea9b4d9b2a4822ae523e452067d17fc422a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-838",
+      "rings": 1,
+      "vertices": 1370,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e400723a7c38206a1910784f20e8c9188484eb735c6a9b6409f982eff6ad5c42",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-842",
+      "rings": 1,
+      "vertices": 2819,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1bea3ab9c1615cfe80867dc9c50f687bf90f7ed908f3565477d650ffddadbe73",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-844",
+      "rings": 1,
+      "vertices": 997,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "75596b1c72a06175b75204b4c25379f7bedf7ff848505a00d48665e9d9564197",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-846",
+      "rings": 1,
+      "vertices": 45,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8e3d8ac39ca66602da663483a00e0d537fb867020da82398699337342971e0d4",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-848",
+      "rings": 1,
+      "vertices": 3348,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "09af74ad922c57dff6390f2fcecaaa1baef78b0b1ccea9be4376a23c62460148",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-852",
+      "rings": 1,
+      "vertices": 42,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "10913adfb4e1afc0a4b0bf83f0646f0b25b639dda759c828c0bbfe75b17f2415",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-854",
+      "rings": 1,
+      "vertices": 2422,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "dc8b48bb2bdaba2e30a81cab0f15c0168d02e136e8404338a6932f522965fb75",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-856",
+      "rings": 1,
+      "vertices": 2175,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "0dc98cf7c6f792bdd693c6a9ad6b91ce8a3e2342cf6098ba58b248119e95ba0c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-858",
+      "rings": 1,
+      "vertices": 288,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "cd70b026569d265db1bfbf642fc0ad4575dc9948223fa9542ce2d803c04f3f49",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-758",
+      "rings": 1,
+      "vertices": 25,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "814aa5833589d1893bf0cf56d9cee75bd844df7b0c671db30ec17439c3c200b9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-900",
+      "rings": 1,
+      "vertices": 2742,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b8ff09c220687890ba4b08e32d824bb07dbde890e63de1c6414652d96551e2f2",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-902",
+      "rings": 1,
+      "vertices": 410,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "daa81478990efa71fc427301d3f5ba49c7ec082db34fa4321849ae7842fc44d6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "38-813",
+      "rings": 1,
+      "vertices": 3553,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7912c2d2315314d25364492cbd142320be8d99071e58d4487863b84484967a88",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-906",
+      "rings": 2,
+      "vertices": 65,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "3be1949898634f5653747e9a470d885f3a02ff8cb91e24214c6551403e6a6d74",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-908",
+      "rings": 1,
+      "vertices": 1303,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b9e530a4357f7e91fcc10d33e4f3ed16fdf66937ba4f31b1efd7d192a9240a5a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-910",
+      "rings": 1,
+      "vertices": 948,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "daa686b7e951a8bfec52018935889b1756a530f54c4ee763ba73eeb5aa5acc70",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-912",
+      "rings": 1,
+      "vertices": 194,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9cd2ff2a0296005bd1abc6b74b23271d504be58d08f2aec8831d90df5367a6d0",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-914",
+      "rings": 1,
+      "vertices": 4479,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ab03fc2df7ef3878bde1e05ca1b47a42d724bdd7f0c6959250e2f70e7d28d416",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-916",
+      "rings": 1,
+      "vertices": 325,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "fce8613dd48d2da87dae37d3af91f0f59eeda9a8bf6de9ab17ac4aa0a37bcf07",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-918",
+      "rings": 1,
+      "vertices": 2271,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2b921cde156c59a090c91d04828c2a3819bd765ac8cc57654b5b206ffe828bd9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-920",
+      "rings": 1,
+      "vertices": 3231,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "685f760c3699cc80d44efd37588921482cdb661a3dd02dac8572d09799b31cc8",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-924",
+      "rings": 1,
+      "vertices": 1464,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c36b3b119bdb0ab61b6261a5022c62ee826e96bf6b1275e3141be92b92376ba3",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-926",
+      "rings": 1,
+      "vertices": 3511,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "087143ee7c6c39941c15d18e134f32bb85cfb65ad90d25db910f755cd942f1c1",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-928",
+      "rings": 1,
+      "vertices": 1945,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "3e3190d0ca4a7f1f048ed61cc50964cba4c9cdc9fad3499f2ec43e4d29f2fdcf",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-932",
+      "rings": 1,
+      "vertices": 240,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "34d00f37978ad5735bb318f7dacf7aea20159321becba6f31a5df065f62373aa",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-934",
+      "rings": 1,
+      "vertices": 1754,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "58336657ca9cc7dcdec0c5a6328bb1e5ac853fcf7fec87ef5567cbb0fd33aa53",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-936",
+      "rings": 2,
+      "vertices": 2766,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e50ad83acb1ab1e270d7331539e537f0598987ff47ecec15614913de7878fcfb",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-938",
+      "rings": 1,
+      "vertices": 525,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6e2a9ca160b3acc33aa0e6288938487994f6ecbcb75d909335ea742103edfb36",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-944",
+      "rings": 1,
+      "vertices": 76,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a43747018731787e1274ce0b03af9d435d9ce98fe35e262d446750455a93619e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-946",
+      "rings": 2,
+      "vertices": 3094,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "14a8783b81090b2d07fd0a4d6f4f8df4db96af51250e8a80fc8f0996125f89f7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-948",
+      "rings": 1,
+      "vertices": 1634,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7a085d0ff82e19bcc2d83bbfccafcc05143f16babf2ef4b6cafc93df84206d8e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-950",
+      "rings": 1,
+      "vertices": 561,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c1f0794b0a95c54ab1dc7c1559c87298d57d6e767942e7a6768135cab44d66f9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-952",
+      "rings": 1,
+      "vertices": 6156,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "7bc6bdd5e0dfb145fb98f389a0e8689fa9302df13958d867a5c7e8543a5ba8ec",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-002",
+      "rings": 1,
+      "vertices": 8506,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1546da10ec31f0ea034f5a50c4d527e0626038ceecee09be4c8f59a7953aaabb",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-004",
+      "rings": 1,
+      "vertices": 7079,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b34e23010f27488dc2c6ac2e765bddba879eab8b03b0511c775a64d2aba966b6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-006",
+      "rings": 1,
+      "vertices": 5806,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "724bfc8c584d45bf30393e966cd6150e8fad81c1278b10fa20931efba3eb753f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-008",
+      "rings": 1,
+      "vertices": 445,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6a31a1024cf93197d85c46a680ccf1dfed4eb5170538b89fa15b0bb335100891",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-010",
+      "rings": 1,
+      "vertices": 1542,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1e508cebfef09a268d7632449fb7cc6c07d817e4b79b53533a737bb17103368c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-012",
+      "rings": 1,
+      "vertices": 4527,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b5ba03f656de9ed2e9aaa39805b78eb487ede0f3a9a6dfa1197991831648a5ce",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-014",
+      "rings": 1,
+      "vertices": 1845,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e31b88844e15647e2b57dce3cb0139e6f0832060ea73cb5fc89f704ee2aae38e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-018",
+      "rings": 2,
+      "vertices": 5878,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ffe44e50c064eab862de317c61a9dea89e20b2a3abc5ef094d915c7452055ba9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-020",
+      "rings": 2,
+      "vertices": 722,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "35f1ce1916b5b38ba38d9ab5193e931d8127ccbb38b6ba8df46cff4995a5a936",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-022",
+      "rings": 1,
+      "vertices": 3735,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "be5bbd61a18b7becd5cc0cd386282f5bb54dafe02477f1f7d1d93ec7c3de9102",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-024",
+      "rings": 1,
+      "vertices": 2954,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "022e81fb182b21c090a7557cb52294388b3338d415a345a85f5811b6f65bae9a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-026",
+      "rings": 1,
+      "vertices": 2354,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "40c77e55639455b03e14aab7fbb4b08e3458c34ef8574d0fbf591ce6d83a1cd7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-028",
+      "rings": 1,
+      "vertices": 3456,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "3ad13aa4c924d2d9006bc628ca0d7e1c978332a150b542849e4b1450479381d7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-030",
+      "rings": 1,
+      "vertices": 11799,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "3c6c1483126b99cb159b3534b05fb73782fe07cb8b8329bac6714c8cfc730f33",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-032",
+      "rings": 1,
+      "vertices": 3029,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d7fd02097546eac6bf671c775c324a65b7392d01e1887d47356bbb5141142bb7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-034",
+      "rings": 1,
+      "vertices": 7206,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2c2d6b6c175b8521191f3f16f11838dcb53bb5315c42e99d5b8f36c7acd834c3",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-036",
+      "rings": 2,
+      "vertices": 9585,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ac02f93eb82cd783342cb573d1575bf69f80622f423d11d8339e6839aba91378",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-038",
+      "rings": 2,
+      "vertices": 6425,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "9cb381832f772240a2cffd1575c92f5f2b84ec3fb34de6820bec477cb9dfb4e5",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "40-040",
+      "rings": 1,
+      "vertices": 5538,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "5a4ee644fcfd762a85988a21a657fd752e4736470528cdc493b07842acf9deea",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "37-756",
+      "rings": 1,
+      "vertices": 1424,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "638019ada05e86696215f0a1c361515a840114eb942b95eb89110f7f7ed1dd66",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "25-325",
+      "rings": 1,
+      "vertices": 84,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "862f01b8dd36d83f8b53d461cc21cb118944fce3bd5a2e2c6eaad2144a66566b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "25-305",
+      "rings": 1,
+      "vertices": 926,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "48609879d54fe83a135e1e820b932ed8fc5663c92ff2e28fb5b9fcfda9e95d39",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "29-515",
+      "rings": 1,
+      "vertices": 389,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f5e514b0bd9f67838e00dd93588c1f2388ad75dcf6074de17fe40de4793ba72f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "18-550",
+      "rings": 1,
+      "vertices": 102,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "575e1e49c4d71677079e0fac92c1a70e727821ae099010e8575df675026158c3",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-580",
+      "rings": 1,
+      "vertices": 422,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2436c6d8f8308619bc84d1b01caa824f5bb3b1403df6a5bce1b9784689561b7c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "29-520",
+      "rings": 1,
+      "vertices": 193,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8486de17e220a62a1c067fcc3461b4568dfa942d62849fe8147a5b100de685bc",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "18-556",
+      "rings": 1,
+      "vertices": 241,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b7a9da17a6785502edb2e8c01c88a12d3e20b58a5a09d9fbaee0b54d6c2d2f24",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "18-560",
+      "rings": 1,
+      "vertices": 66,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f137dd6063d771fa0a2eca7d8760a4b06227d67783e814405159c948e39d15b0",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "24-870",
+      "rings": 1,
+      "vertices": 190,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e9d24f1922ea92b68b184ffb5a56e3e71d07f047f623a5efd9acde7ba009584b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "24-855",
+      "rings": 1,
+      "vertices": 241,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "fbc09767b659db54e8920cc2486365bf62339f57cc07354e8340f6423b22d7e7",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "24-880",
+      "rings": 1,
+      "vertices": 770,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d6ddad22abe28c078536a1f409d3b78032b43dc0b700587aa79e4f7c0ee0eb55",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "24-875",
+      "rings": 1,
+      "vertices": 130,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "64b75b3fa9d090e620e05285b3d888fae1469593189488931289af4e7984a2b5",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "24-865",
+      "rings": 1,
+      "vertices": 693,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b5071dc3b5491ec33bdbe078923d9f1e02fd4f8c718b7523c37030e213c57fa3",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "24-860",
+      "rings": 1,
+      "vertices": 274,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "cada7161a4fd67394c69033cd6982d032d4f4cee5445061962021ae7497a8339",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "24-850",
+      "rings": 1,
+      "vertices": 168,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1d1e2d3603c3a1060c076d44117460e22d8d14828bd04ee46ffe255e6554e15d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "18-565",
+      "rings": 1,
+      "vertices": 122,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "55867c2babf426a45461474d5916f01355fb064183fc4037da6e9d2cd74c23bd",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "23-820",
+      "rings": 1,
+      "vertices": 828,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8f2d7e55e3d2f5d4d59733ebc870fa6cf8b47247c0c48d874e4cb0488c9a8d60",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "23-805",
+      "rings": 1,
+      "vertices": 708,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d1753437302f887513e087e8bc5a1363ad7f06db208eb0e568b82b101f062428",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "23-815",
+      "rings": 1,
+      "vertices": 72,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2759bbaa499677991e669c2dab93ac974f1d9e91159a5c449318f0af6f5ccab6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "23-830",
+      "rings": 1,
+      "vertices": 46,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8ee17026cfca268fddc0ef4cceb586f6bdcf6c40e1807d38d284f87a4974c1f3",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "23-810",
+      "rings": 1,
+      "vertices": 97,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "aea55e861594c4b97f95e259002595ebab5ac6cb26429719eb3ca7e85d35e666",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "23-825",
+      "rings": 1,
+      "vertices": 80,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "649bfdc03ab9009027de0c6c970494aa8a98ac0be910233b82c162c2d6b59d5c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-605",
+      "rings": 2,
+      "vertices": 2194,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "edc33ed627172cdc43307ea86ccbf7a7357c2184272cad208045f8a4292374d9",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-595",
+      "rings": 1,
+      "vertices": 2363,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a88e801424ff09740d1d72c845b680817757d598b110707142e8aecc462bbb6c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-600",
+      "rings": 1,
+      "vertices": 3804,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1a8cfc704796ae3b2eed80912d4e7a794a8be764d99db4f548ca17dd3fd396c4",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-590",
+      "rings": 1,
+      "vertices": 3003,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a462e0e97da6236b07f3d8fd0a586dd70412f835888f868eca557dac96d64ee6",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "25-335",
+      "rings": 1,
+      "vertices": 285,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "29c18467f75ef7dced232fb852f58dcef181956736c5ed3b80b407ef197d7e55",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "25-320",
+      "rings": 1,
+      "vertices": 225,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "ae7b72553e4cd2f1e53e0439a136f187a85daa704a3d320e025627731a7a66ee",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "28-470",
+      "rings": 1,
+      "vertices": 107,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "acf5c5f91171856ebca19f48d0f1ad194aecedf10ab0a7b5bef547df74a75759",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "28-450",
+      "rings": 1,
+      "vertices": 115,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "8dd32fa5ad1eecd9294e0ae3437d8faf687c22adfe2dd9847c2b07d8c6494a7f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "28-455",
+      "rings": 1,
+      "vertices": 174,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "34f560def622164ef69051dcacf275a606b694b7a2de2b87b055f5c0dba1fa75",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "27-415",
+      "rings": 1,
+      "vertices": 345,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e9fc3623980155b37bd7e022094ae9cffe442c150d4bcebb20631a7c7ac8195d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "28-465",
+      "rings": 1,
+      "vertices": 126,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "f20c0e43be1bff293a7e477b87266cb4583da5da2f151cb5a60c36b659de761a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "28-480",
+      "rings": 1,
+      "vertices": 113,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "5ccc8d3f53c302e50ba25edcf9ef499057b2bd344b310e28a7371ad3ccf21a88",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "27-420",
+      "rings": 1,
+      "vertices": 184,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6bf466793a90b02728f3cf5d38e731b1a7cd9f9daa997304389acd231a0d337a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "27-425",
+      "rings": 1,
+      "vertices": 276,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "3b3fdf041b17dd64c935beb3f4da52992c80da54587525561b1ff481a0f8ee61",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "27-405",
+      "rings": 1,
+      "vertices": 216,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "040850aaf2116e8b81114e5afb6342e1593ca8e55f3a153718f12deb1d5b2e6f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "28-475",
+      "rings": 1,
+      "vertices": 195,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "92083f4c8d809262ae776e0c255ed96eb9043a3909073901809e7118c43b7387",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "26-365",
+      "rings": 1,
+      "vertices": 322,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1a047bfe236f6ba0058c0391f515bd55cc8f7877e5af33d2dd7af4228f2c49ee",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-555",
+      "rings": 1,
+      "vertices": 1102,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "24b402ce18e6b0e1121151f934752aae299717ba8c2849892aba0da69d15576b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "26-360",
+      "rings": 1,
+      "vertices": 282,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "b806c39d92c69433f639bac66ba1ab000eb77f352c087a3f936b26ff2a45b791",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-585",
+      "rings": 1,
+      "vertices": 786,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "477d7e4e747f798becd875bc9d1363145570d8d4aba935d55f3e67fed4270d10",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "28-460",
+      "rings": 1,
+      "vertices": 175,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "906d367dca8aeee8b3e1763bd947f12d0c1cdad5105ad79870c04775e43efd8c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "25-310",
+      "rings": 1,
+      "vertices": 96,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d5e876059fa2f031ad80efdac31973d0cc6e0d59146190dd4b2ad490b664f418",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "26-375",
+      "rings": 1,
+      "vertices": 282,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "031735de39a74597f02cf7da5dc4c1eb3570631c059e670508fa2fc2b4b6beda",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "25-330",
+      "rings": 1,
+      "vertices": 180,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4406276f76e0fded2de16919c601a3175caffc6f86532bdbe3201ad965eb0e49",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "26-380",
+      "rings": 1,
+      "vertices": 178,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "1477ffb4474b16a6e220fe89d98d18112188cc1484cf4c39a41ce47296bc0600",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "26-350",
+      "rings": 1,
+      "vertices": 456,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "42ae4abb85fb83ba3bd56f5bdf155255a88ef7d888050b4dc1de61d9d9de099d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "26-355",
+      "rings": 1,
+      "vertices": 370,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4fa2331e2c81145b7b6c11460372cc3d2ac01b6c8cf71a21784c3b32db0e1b02",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "25-315",
+      "rings": 1,
+      "vertices": 507,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6df632270b8641d292021bb9785fb97e7cee933005a9c2e636899c855bddf4cb",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "27-410",
+      "rings": 1,
+      "vertices": 479,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6532d1ca9cc9925a9564616736b37214fa8d836c6451d2a38a2fecec00ebae97",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-550",
+      "rings": 1,
+      "vertices": 1458,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "c35dfa1188841368e4fe5aa76229834a01fd22d8c6289597d11da73a3043b88f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-565",
+      "rings": 2,
+      "vertices": 2995,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "5ed5185096de2c389e9bb61ddf3f1dfbf9e4eacff0d615ceaf500aa0e57ae3aa",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-575",
+      "rings": 1,
+      "vertices": 2992,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "049f0f8851c7b8148a27505f88148592af3ce43a5ab352218446637f6e18cd7b",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "29-505",
+      "rings": 1,
+      "vertices": 951,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "511e0aa8304033ff8dd503d40ee564e5d90c5774bc640a9f464bb3eb25db7a53",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "29-510",
+      "rings": 1,
+      "vertices": 540,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "614a060f3a6f000681c75dc28e22d0fcaac5466f4e0394e293e3605c37d11795",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "29-525",
+      "rings": 1,
+      "vertices": 4135,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "e7780b55ab14ddbd190c01eadba5ec22b9cbb23cfd6f79ed19353dfeb9fb1a7e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "29-530",
+      "rings": 1,
+      "vertices": 1575,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a14850ae2035c1d5ec6fbae877b1d008526fc45a748576a77069b63ecff6a46a",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "29-535",
+      "rings": 1,
+      "vertices": 310,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "d053eb062d317272444edd0bee594f18e4fa709a9c3021c450f8d190545ecb8c",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "29-545",
+      "rings": 1,
+      "vertices": 4476,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "5c5a221aca3dfef7463f7b206b404c6c6cd9a08185ed09890a509087c0e144c3",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "29-540",
+      "rings": 1,
+      "vertices": 135,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "a484cefc9b23dac011ada71f6449514efaa432611e653cf9730c2779acd1f51f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-570",
+      "rings": 1,
+      "vertices": 642,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "08079a1f3d59a578e2b2e547fffc074740603d2c6df770ce16631c3c66f2d90e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "26-370",
+      "rings": 1,
+      "vertices": 118,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "2a6ecf823d9db9c17f33b3423e684902bef97510f9e3f0ba2237422ad48a939e",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "30-560",
+      "rings": 1,
+      "vertices": 469,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "4b81308e9e21766cd872fa3afe65d9b21c451484a46a67b0c4a794824a6ac46f",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "39-942",
+      "rings": 2,
+      "vertices": 390,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "378fc15b18c2630e98dbc3b8b235aa4c7901d5832099ff73552cbfddc7a9e79d",
+      "map_approved": false
+    },
+    {
+      "native_precinct_id": "18-555",
+      "rings": 1,
+      "vertices": 351,
+      "unclosed_source_rings": 0,
+      "exact_millidegree_coordinate_sha256": "6fce562fa286b8321bc0a8b8b79ec3ce6cbc5f465b027fd693e6053e363f2204",
+      "map_approved": false
+    }
+  ]
+}

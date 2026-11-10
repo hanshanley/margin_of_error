@@ -9,7 +9,7 @@
       "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-alaska-20261105/complete-alaska-2026-source-review.zip",
       "source_update_label": "11/04/2026 2:11 PM; native timezone not supplied",
       "scope": "402 geographic reporting units, 120 separately pooled district absentee/early/question units and one federal-overseas unit. No pooled ballots are assigned to residential precincts. All rates remain withheld.",
-      "geometry_note": "No approved precinct geometry join. The election-portal shapes retain unresolved decoding/topology issues; the separate locator reference does not independently establish exact election vintage."
+      "geometry_note": "A separate partial map now joins 81 geographic units to the valid, unrepaired official 2026 app reference; 321 native source shapes retain topology holds. This is not certified legal geography or full-election precinct turnout. All 523 source count rows remain here, including unallocated pooled and overseas units; the separate locator geometry is not substituted."
     },
     "AZ": {
       "rows": 1763,

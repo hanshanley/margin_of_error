@@ -1,0 +1,16 @@
+{
+  "source_units": 523,
+  "geographic_units": 402,
+  "pooled_units": 120,
+  "federal_overseas_units": 1,
+  "map_features": 81,
+  "geometry_holds": 321,
+  "rates_approved": 0,
+  "source_ballots": 215906,
+  "mapped_geographic_ballots": 38672,
+  "source_geometry_repaired": false,
+  "counts_allocated": false,
+  "certified_legal_boundaries": false,
+  "native_source_updated": "11/04/2026 2:11 PM",
+  "timezone": null
+}

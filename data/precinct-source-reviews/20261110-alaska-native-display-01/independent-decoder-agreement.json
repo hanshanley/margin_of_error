@@ -1,0 +1,14 @@
+{
+  "status": "PASS_all402_native_delta_coordinates_independent_Decimal_and_integer_readers",
+  "all_shape_coordinate_checks": 402,
+  "summary": {
+    "shape_queries": 402,
+    "rings": 505,
+    "vertices": 622133,
+    "unclosed_source_rings": 0
+  },
+  "map_approvals": 0,
+  "topology_holds_remain": 321,
+  "source_geometry_repaired": false,
+  "original_sources_reacquired": false
+}
