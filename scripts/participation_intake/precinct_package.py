@@ -174,6 +174,7 @@ def package_precinct_context(results_root, site_root, blocks_root, database, cou
         paths["tests/" + path.name] = path
     for path in source.parent.glob("requirements-participation-*.txt"):
         paths[path.name] = path
+    paths["requirements.txt"] = source.parent / "requirements-participation-intake.txt"
     bodies = {
         "references/registry.json": encoded(registry),
         "README.txt": (
