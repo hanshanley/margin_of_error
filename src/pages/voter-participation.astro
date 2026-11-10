@@ -6,6 +6,7 @@ import ParticipationSwing from '../components/ParticipationSwing.astro';
 import ParticipationCountyScenarios from '../components/ParticipationCountyScenarios.astro';
 import ParticipationSurvey from '../components/ParticipationSurvey.astro';
 import ParticipationReturnDrivers from '../components/ParticipationReturnDrivers.astro';
+import ParticipationResidentContext from '../components/ParticipationResidentContext.astro';
 import ParticipationIndependentPoll from '../components/ParticipationIndependentPoll.astro';
 import ParticipationHouseIntentions from '../components/ParticipationHouseIntentions.astro';
 import ParticipationPanelIntentions from '../components/ParticipationPanelIntentions.astro';
@@ -267,6 +268,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				</aside>
 			</div>
 			<p id="caption" class="caption"></p>
+			<ParticipationResidentContext />
 			<details id="notice-panel" class="explorer-notes" hidden><summary>Data notes for this view</summary>
 				<p id="notice" role="status"></p></details>
 			<p class="participation-scope" id="coverage-note">Explore national and state turnout histories,

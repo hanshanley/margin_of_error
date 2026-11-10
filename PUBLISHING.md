@@ -87,6 +87,18 @@ The author-supplied editorial thumbnail is stored byte-for-byte at
 Use it for the Interactive analysis preview and the explorer's social image,
 not as an in-page chart. Keep it outside chart recoloring and the pinned research export.
 
+Resident context uses the independent `participation-data` catalog through
+`participation-dataset.js`, not new embedded source tables. Its immutable index
+and state shards are byte/hash checked before decoding. The default-closed
+disclosure stays below the map, never as another long sidebar list. Native
+2024 Census county context remains distinct from election-year boundaries;
+conditional local profiles require the exact loaded reference-file hash.
+Income-bin intervals are not averaged medians or confidence intervals, and
+resident counts never become voter characteristics or turnout denominators.
+Keep old values cleared during failures and selection/year changes. Local
+fixture proofs are not evidence of publication; separately verify the actual
+catalog promotion and production reader without a new site build.
+
 Keep the Methods tab a short overview of the estimation process, not a
 source inventory: weighted rates, matched denominators, historical checks
 and supported geography. Link directly to the research repository's

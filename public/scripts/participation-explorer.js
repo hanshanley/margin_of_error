@@ -1,5 +1,6 @@
 import { installParticipationDownloads, participationDownload } from "./participation-downloads.js";
 import { contextualCountyRows } from "./participation-county-context.js";
+import { installResidentContext } from "./participation-resident-context.js";
 import { rings, boundsFor, conicProjection, projectFeatures } from "./participation-map-projection.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
@@ -43,6 +44,7 @@ const state = {
   currentPath: "", currentLocal: null, currentCounty: "", currentUnit: "",
   countyContext: null, countyContextReview: null,
   currentPrecincts: null, currentPrecinctPath: "", currentPrecinctShapes: new Map(), currentPrecinctError: "",
+  currentPrecinctHashes: new Map(),
   currentMunicipalities: {},
   currentPrecinctSelection: "",
   reportingUnitSources: {}, reportingUnitData: new Map(), reportingUnitError: "",
@@ -59,6 +61,17 @@ const state = {
   local: null, localPath: "", localStates: new Map(), localGeometry: new Map(),
   localSelection: null, localError: "",
 };
+const residentContext = installResidentContext();
+function residentReference(row, code = row.state_code || stateCode()) {
+  residentContext.selectPrecinct({ ...row, state_code: code },
+    { sha256: state.currentPrecinctHashes.get(code) });
+}
+function residentSource(row, county) {
+  if (county) return residentContext.selectSource(row);
+  const feature = state.currentPrecinctShapes.get(row.state_code)?.features.find(({ properties: p }) =>
+    p.unit_key === row.unit_key || p.key === row.unit_key);
+  residentReference(feature?.properties || row, row.state_code);
+}
 const fmt = value => value == null ? "—" : value.toLocaleString("en-US");
 const pct = value => value == null ? "Not available" : value.toFixed(1) + "%";
 const typeFor = year => year % 4 === 0 ? "presidential" : "midterm";
@@ -436,6 +449,7 @@ function stateParticipationRows() {
     const electorateLabel = row => row.denominator_basis.replaceAll("_", " ");
     const participationLabel = row => row.participation_measure_label || row.participation_measure_literal;
     function currentCountDetail(host, row, county = false) {
+      residentSource(row, county);
       const approvedGeometry = row.maps_approved || ["MI", "NH", "MA"].includes(row.state_code)
         && state.currentPrecinctShapes.get(row.state_code)?.features.some(({ properties: p }) =>
           p.maps_approved && p.unit_key === row.unit_key && p.county_id === row.county_id);
@@ -873,6 +887,8 @@ function stateParticipationRows() {
             }
             for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
             path.classList.add("selected"); fit(item.bounds);
+            if (!municipalityContext && !administrations)
+              residentContext.selectCounty(feature.properties.key, code);
           }, { class: "map-feature substate-feature", "data-geography": feature.properties.key,
             "data-level": municipalityContext ? "municipality" : "county", "data-rate": rate ?? "", "data-count": row?.ballots ?? "",
             "data-source-county-id": row?.county_id ?? "", "data-reference-year": massachusettsCities ? "current" : reference?.boundary_year ?? 2024,
@@ -1101,6 +1117,7 @@ async function loadCurrentPrecincts() {
         + "full 2026 Census county shapes load as you zoom. The national overview uses display-simplified copies.";
   }
   function countyResultDetail(p, election, countsOnly = false) {
+    residentContext.selectCounty(p.key, p.state_code || stateCode());
     const panel = $("substate-detail");
     if (countsOnly) {
       panel.replaceChildren(html("h4", "", p.name),
@@ -1494,6 +1511,7 @@ function currentPrecinctDescription(p) {
       : `${pct(p.reported_pct)} · ${counts}`;
 }
 function currentPrecinctDetail(p, metadata = {}) {
+  residentReference(p);
   const panel = $("substate-detail");
   panel.replaceChildren(html("h4", "", `${p.county} · ${p.unit}`),
     html("p", "selection-rate", p.reported_pct == null ? fmt(p.ballots) : pct(p.reported_pct)),
@@ -1536,15 +1554,14 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     const response = await fetch(new URL(file, state.currentPrecinctPath));
     if (!response.ok) throw new Error(`2026 precinct boundaries: HTTP ${response.status}`);
     if (!globalThis.DecompressionStream) throw new Error("This browser cannot read compressed precinct geography; complete downloads remain available");
-    let body = response.body;
+    const raw = await response.arrayBuffer();
+    const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", raw))]
+      .map(value => value.toString(16).padStart(2, "0")).join("");
     if (metadata.sha256) {
-      const raw = await response.arrayBuffer();
-      const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", raw))]
-        .map(value => value.toString(16).padStart(2, "0")).join("");
       if (hash !== metadata.sha256 || raw.byteLength !== metadata.bytes)
         throw new Error("2026 precinct source checksum disagrees");
-      body = new Response(raw).body;
     }
+    const body = new Response(raw).body;
     const data = await new Response(body.pipeThrough(new DecompressionStream("gzip"))).json();
     if (minnesotaNative && (metadata.expected_features !== 4105
       || metadata.reported_source_counts !== (minnesotaCompleteNative ? 4105 : 4079)
@@ -1621,6 +1638,7 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
         || !qualifiedMassachusettsReportingReference(feature.properties))))
       throw new Error("Unqualified Massachusetts native reporting reference; no split-parent clipping, source repair or inferred rates");
     state.currentPrecinctShapes.set(code, data);
+    state.currentPrecinctHashes.set(code, hash);
   }
   if (token !== state.drillToken || state.map !== map) return;
   const features = state.currentPrecinctShapes.get(code).features;
@@ -1652,6 +1670,7 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
         }
         for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
         path.classList.add("selected"); fit(item.bounds);
+        residentReference(p, code);
       }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": nativeWards ? "ward"
         : massachusettsReporting && p.unit_kind === "municipal_subprecinct" ? "subprecinct" : "precinct",
         "data-match": p.match_status, "data-rate": p.reported_pct ?? "", "data-count": p.ballots ?? "",
@@ -2826,6 +2845,8 @@ function stateDetail() {
     if (matched) state.map.statePaths.get(stateCode())?.classList.remove("selected");
     outline.dataset.selectedState = state.selectedState;
   }
+  residentContext.setState(stateCode(), state.selectedState,
+    `${year}|${$("map-level").value}|${$("map-color").value}|${$("mode").value}`);
 }
 function statesView() {
   const year = Number($("year").value), basis = $("basis").value;
@@ -3849,6 +3870,7 @@ async function precinctsView(generation) {
 }
 async function render() {
   const generation = ++state.generation;
+  if (state.view !== "states") residentContext.hide();
   $("tooltip").hidden = true; note("");
   $("provisional-status").hidden = !isProvisional();
   try {

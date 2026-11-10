@@ -1,0 +1,23 @@
+<details id="resident-context" class="resident-context" hidden>
+  <summary>Resident context: income, race / ethnicity, age and education</summary>
+  <p class="caption">Separate Census resident estimates, not the demographics of voters.
+    The 2020–2024 source period stays fixed when the election year changes.</p>
+  <div data-resident-controls hidden>
+    <label>Census county / equivalent<select aria-label="Resident context county"></select></label>
+  </div>
+  <div data-resident-detail aria-live="polite"></div>
+</details>
+
+<style is:global>
+  .resident-context { margin-block: 1rem; min-width: 0; border-top: 1px solid var(--rule); padding-top: .75rem; }
+  .resident-context label { display: grid; gap: .35rem; max-width: 25rem; font-size: .75rem; }
+  .resident-context select { width: 100%; min-width: 0; }
+  .resident-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: .8rem 1.4rem; margin-block: 1rem; }
+  .resident-ages { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+  .resident-stat { min-width: 0; }
+  .resident-stat dt { font-size: .78rem; }
+  .resident-stat dd { margin: .2rem 0; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+  .resident-context .caption { max-width: 75ch; }
+  .resident-context td { font-variant-numeric: tabular-nums; }
+  .resident-context details { margin-bottom: 1rem; }
+</style>
