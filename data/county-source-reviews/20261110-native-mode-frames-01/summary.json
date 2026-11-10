@@ -1,0 +1,32 @@
+{
+  "jurisdictions": 51,
+  "complete_state_mode_decisions": 204,
+  "changed_unsupported_mode_decisions": 23,
+  "changed_states": [
+    "AZ",
+    "CT",
+    "DC",
+    "HI",
+    "MD",
+    "MI",
+    "MO",
+    "NH",
+    "ND",
+    "OR",
+    "PA",
+    "RI",
+    "SD",
+    "VT",
+    "WA",
+    "WY"
+  ],
+  "available_official_decisions_preserved": 102,
+  "qualified_mode_decisions_preserved": 67,
+  "residual_non_mode_specific_selections": 0,
+  "source_observations_or_counts_modified": false,
+  "new_normalized_mode_or_population_qualification": false,
+  "missing_separate_export_not_used_to_infer_source_absence": true,
+  "DC_existing_reviewed_county_observation_preserved": true,
+  "source_absence_not_zero": true,
+  "statewide_survey_or_return_allocation": false
+}

@@ -1,0 +1,17 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-native-mode-frames-20261110-01/complete-analysis.zip",
+  "bytes": 4001794,
+  "sha256": "5b3196e45da346cc4c7c886556757a36f06c0f4664a335fb6f8b85540dae5cea",
+  "members": 86,
+  "sufficient_inputs": 58,
+  "standalone_full_assets": 8,
+  "jurisdictions": 51,
+  "complete_state_mode_decisions": 204,
+  "changed_unsupported_mode_decisions": 23,
+  "preserved_decisions": 181,
+  "available_official_decisions_preserved": 102,
+  "qualified_mode_decisions_preserved": 67,
+  "residual_non_mode_specific_selections": 0,
+  "source_counts_modified": false,
+  "new_normalized_mode_or_population_qualification": false
+}

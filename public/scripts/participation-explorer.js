@@ -370,6 +370,12 @@ function stateParticipationRows() {
     const additionalLocal = new Map();
     async function currentLocal() {
       const code = stateCode();
+      const mode = $("mode").value;
+      if (["in_person_early", "mail_returned"].includes(mode) && !hasCountySourceMode(code, mode))
+        return { counties: [], precincts: [], nongeographic: [],
+          mode_review_complete_download: "https://github.com/hanshanley/margin_of_error/releases/download/voter-native-mode-frames-20261110-01/complete-analysis.zip",
+          source_mode_unavailable: `No qualified ${mode === "in_person_early" ? "in-person early" : "mail-returned"} local frame for ${state.selectedState}. `
+            + "Other source counts are retained under Available / official source, not reused for this mode. Missing mode counts are unknown, not zero." };
       const supplement = { counties: state.reviewedCounties, precincts: [] };
       if (state.current?.local_file && !state.currentLocal) state.currentLocal = fetch(state.currentPath + state.current.local_file)
         .then(response => {
@@ -494,9 +500,14 @@ function stateParticipationRows() {
           && counties.every(row => row.source_provider === "civicAPI early activity");
         if (!counties.length) {
           container.replaceChildren(html("h4", "", "2026 local reporting"),
-            html("p", "selection-note", data.additional_error
+            html("p", "selection-note", data.source_mode_unavailable || (data.additional_error
               ? `${data.additional_error}. Imported source tables and complete downloads remain in Methods & data; no missing observations are replaced with zero.`
-              : "No verified full-election county/precinct counts ingested for this state yet. Statewide early/mail observations above are separate, not final turnout."));
+              : "No verified full-election county/precinct counts ingested for this state yet. Statewide early/mail observations above are separate, not final turnout.")));
+          if (data.mode_review_complete_download) {
+            const link = html("a", "selection-link", "Complete source-frame analysis and queries");
+            link.href = data.mode_review_complete_download;
+            container.append(link);
+          }
           return;
         }
         const label = html("label", "selection-note", nativeCities ? "2026 native city source"

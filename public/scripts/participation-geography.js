@@ -168,8 +168,7 @@ export function selectCountySourceFrame(data, code, mode) {
       throw new Error("Unqualified Alabama native county statistics; candidate counts or rates are not substituted");
     return rows;
   }
-  if (code === "AL" && data.county_frames?.native_county_counts !== undefined
-    && ["in_person_early", "mail_returned"].includes(mode) && !hasCountySourceMode(code, mode))
+  if (["in_person_early", "mail_returned"].includes(mode) && !hasCountySourceMode(code, mode))
     return [];
   if (code === "MN" && ["available", "official"].includes(mode) && data.county_frames?.native_county_followup !== undefined) {
     const rows = data.county_frames.native_county_followup;

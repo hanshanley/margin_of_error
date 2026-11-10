@@ -109,6 +109,13 @@ integration to `main`; pushing `main` deploys the site automatically. Source
 updates remain pinned to reviewed snapshots rather than following live research changes.
 
 The live additional-participation reader explicitly enables `nativeCountyParents`.
+Local early/returned views require an explicitly qualified matching source frame.
+Never reuse all-method ballots, town VV, TOTAL TURNOUT, Cards Cast or another
+unqualified measure for an unsupported mode. Keep Available/official defaults,
+all native inputs and every legitimate provider/West Virginia mode unchanged.
+The sidebar must explain missing mode qualification, not imply no data was
+ingested or show an unrelated full-election count. Alaska/DC use a shared
+loader and separately mode-gated precinct paths, not separate county exports.
 Its default remains the frozen legacy source frame so old county-context exports
 reproduce unchanged. `scripts/native-county-parents.mjs` verifies Idaho's 44 and
 North Dakota's 53 native county parents, independent ballot totals and complete

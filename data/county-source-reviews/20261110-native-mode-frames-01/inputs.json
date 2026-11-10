@@ -1,0 +1,300 @@
+{
+  "version": "data/county-source-reviews/20261110-native-mode-frames-01",
+  "baseline_website_commit": "2a33e0ef0b4ec0c984feda099aebe92f67de8281",
+  "files": {
+    "prior-audit/all102-original-selection-decisions.json": {
+      "bytes": 50664,
+      "sha256": "e6c0b7db064d4fbcdabc3a000ae3d291d9059e5341a8af895b1c485735d5b3d8"
+    },
+    "source-code/participation-explorer.js": {
+      "bytes": 269772,
+      "sha256": "bdc62854db28028ccde3d75ab0583caeeab5a60279310cafe36bb57aaac56d6c"
+    },
+    "source-code/participation-geography.js": {
+      "bytes": 48817,
+      "sha256": "46f6db22f113a933e5688f25f84d61fa76e87d41736137fcc154162f334bda73"
+    },
+    "source-code/provider-county-scopes.js": {
+      "bytes": 3691,
+      "sha256": "32db206ded3bc8d6242d2a47c39ac5acb9dd52ea789291cb464af0bc77cfb99c"
+    },
+    "source-data/additional-coverage.json": {
+      "bytes": 8478,
+      "sha256": "9ca50467ab3db1fec074b9bc5440e1aa0a32f755bfb43793962dbcc199c628b1"
+    },
+    "source-data/all-reviewed-counties.json": {
+      "bytes": 2176207,
+      "sha256": "0eb0fc25c9bdae56987b7aaa10de3adabe8861fa7a5614b5924ef7272c211aa8"
+    },
+    "source-data/declared-shared-snapshot.json": {
+      "bytes": 208,
+      "sha256": "52fd045640d61b06b13c7c2649be2cab5aafc5e70d300a4c775c279b7c685792"
+    },
+    "source-data/local/AL.json.gz": {
+      "bytes": 23170,
+      "sha256": "790c4a762dc1abf58637de83c0961b625ed4d466f158c8cc86c8d894ac59eef7"
+    },
+    "source-data/local/AR.json.gz": {
+      "bytes": 14894,
+      "sha256": "83684327edaccd72bd9e70147bb78c2354932b8b603137873db7c8283faedd7b"
+    },
+    "source-data/local/AZ.json.gz": {
+      "bytes": 3660,
+      "sha256": "7ac6f7409c3e2bca0a26e2c95d925af52a1ae20fd9c4710b24f8221428aaf783"
+    },
+    "source-data/local/CA.json.gz": {
+      "bytes": 6931,
+      "sha256": "e0b86af6f8291718a5ea1e4de504b561c5c05a19afe7de90d3366aaaa4c2cdf5"
+    },
+    "source-data/local/CO.json.gz": {
+      "bytes": 18351,
+      "sha256": "a4810b0da93bfc5edd23a87f53abd96e2e49ce276d15256663587b6194485376"
+    },
+    "source-data/local/CT.json.gz": {
+      "bytes": 16937,
+      "sha256": "f60eb5119332c7d87eb1a5be2ce58442cb776ea6d6e0a43aedce04605949aef1"
+    },
+    "source-data/local/DE.json.gz": {
+      "bytes": 1549,
+      "sha256": "b8b116ceac1a24c027e9b777dd48b3939841c9947789ceed4131ef842303bfd8"
+    },
+    "source-data/local/FL.json.gz": {
+      "bytes": 10476,
+      "sha256": "2edb90c94237b2e8ef1e37708b194b16b4a82d7ed2d6b15d6ac5b8e0edbba4e1"
+    },
+    "source-data/local/GA.json.gz": {
+      "bytes": 15768,
+      "sha256": "8a7b7eee66a1c83626141312d8a82194ffa60c260f9c9261f2656a53584a7cb3"
+    },
+    "source-data/local/HI.json.gz": {
+      "bytes": 1979,
+      "sha256": "e7677d3d50356056ce4973606ce889667a639b35c1c7fa69121fa6ca0a31e9d3"
+    },
+    "source-data/local/IA.json.gz": {
+      "bytes": 12902,
+      "sha256": "2621cb2e8c33ef25c870bfea5b16f8662cd4e5af7cef0bd1ebe7b7269656ec5f"
+    },
+    "source-data/local/ID.json.gz": {
+      "bytes": 85738,
+      "sha256": "efe2bfce82528da8e8fa01323a3d1eba9c6e78c249fe753f6b65cb628d3d9f81"
+    },
+    "source-data/local/IL.json.gz": {
+      "bytes": 11452,
+      "sha256": "1da978e9a5b4241c0ca3fbfd4a5cbd56ef32700bf0a9105f51567605e42f878e"
+    },
+    "source-data/local/IN.json.gz": {
+      "bytes": 26731,
+      "sha256": "74dace208fc054e1c68f1d20e3e23f6b52adde7f8868ed152b47e7d944287b24"
+    },
+    "source-data/local/KS.json.gz": {
+      "bytes": 12462,
+      "sha256": "9bfdbcc6be67db43bacc578f8055f31f500e987eba2ac2be5c839f603d311117"
+    },
+    "source-data/local/KY.json.gz": {
+      "bytes": 14545,
+      "sha256": "23a30c2755f3d830e817b1ab81f58948b7a2bcf4c087bae9d477c5979b8f7df2"
+    },
+    "source-data/local/LA.json.gz": {
+      "bytes": 7608,
+      "sha256": "7af030d9c8ccf8a57cc58653d1ea2114dbf56295f811100bc576b32c512b0b2f"
+    },
+    "source-data/local/MA.json.gz": {
+      "bytes": 14531,
+      "sha256": "5f46f09b7005a0b5edbbe7b4869062e6269c5356a1c61dddb2cc4e2b02042210"
+    },
+    "source-data/local/MD.json.gz": {
+      "bytes": 5432,
+      "sha256": "63aa859e66119a6347902941249eafa23952bbf359d5ecb859b0d8fa89102b5a"
+    },
+    "source-data/local/ME.json.gz": {
+      "bytes": 49306,
+      "sha256": "f2d5254853fff5418711e90876cbef6c4eabfe89442667b0701521279865aec4"
+    },
+    "source-data/local/MI.json.gz": {
+      "bytes": 13485,
+      "sha256": "5a6c9ce644a6e53a3509d627cf58fd39f033c2ca464638c3a83c0d530cf1bac3"
+    },
+    "source-data/local/MN.json.gz": {
+      "bytes": 274894,
+      "sha256": "fe488957715e831316ba290634dbee53c6f6b531402105b005a24c74a9702e93"
+    },
+    "source-data/local/MO.json.gz": {
+      "bytes": 1423,
+      "sha256": "35008bdc10ada9a1fc5a7ffc4828db80984e5cf476bf0afacafa62755245210f"
+    },
+    "source-data/local/MS.json.gz": {
+      "bytes": 5223,
+      "sha256": "5d90f966c9d5aadafb71ffa444f5538ce12ac09f88c50b1eb9940a633300da09"
+    },
+    "source-data/local/MT.json.gz": {
+      "bytes": 4138,
+      "sha256": "c88a4fc7749b82d8464427fd2eced10bdaff9492eb68ebb56ab6433b06421c3d"
+    },
+    "source-data/local/NC.json.gz": {
+      "bytes": 13306,
+      "sha256": "5db30eed5c07fb51ea75051dd9e5bbd0c987413578787acf4a6ba5d15f6297f5"
+    },
+    "source-data/local/ND.json.gz": {
+      "bytes": 30264,
+      "sha256": "14ba49ba698b3fa4ebe3ee2e846f964f4f13e7b882f7a3cd66a89eee7df77783"
+    },
+    "source-data/local/NE.json.gz": {
+      "bytes": 11149,
+      "sha256": "41d88ccfba2fa78168ca01a68472cdf419a591a01cb4457f3c4cebeada59f3e2"
+    },
+    "source-data/local/NH.json.gz": {
+      "bytes": 7546,
+      "sha256": "c416f9fa65cde936c6bc984e23cc4f407be4af4c57b1b6db6b10a041588e3efe"
+    },
+    "source-data/local/NJ.json.gz": {
+      "bytes": 4072,
+      "sha256": "c78eca3c893d6fcd4da017fdc9e1244d7703392a3cfd8fd8ccfd26ae3a85db9a"
+    },
+    "source-data/local/NM.json.gz": {
+      "bytes": 5283,
+      "sha256": "a0d3f30add4363a0ffaa6e6d3066d650416cbc115b5dd1c8ff370be05b2d93c2"
+    },
+    "source-data/local/NV.json.gz": {
+      "bytes": 4163,
+      "sha256": "55f7e62c3ad02be0b2258cf7db9d68dbe41f9880b771ed289ede9a039b347a5b"
+    },
+    "source-data/local/NY.json.gz": {
+      "bytes": 4435,
+      "sha256": "9d07f3f07c64b34ec3c2ae791a6f0e7d48b2ea09467f1e1b93571cc578604473"
+    },
+    "source-data/local/OH.json.gz": {
+      "bytes": 9677,
+      "sha256": "8b0b360429f5c52fa79c86fa1258027735e478b0de9f7ebcdc6ca2a7d72e6dd5"
+    },
+    "source-data/local/OK.json.gz": {
+      "bytes": 5691,
+      "sha256": "5de02e2bc6f11076bc90d32d427a9596c6966abe6e449251b221c3edb68f04c1"
+    },
+    "source-data/local/OR.json.gz": {
+      "bytes": 8296,
+      "sha256": "8d2e22266c23be606b126a157eae4402a33d04aaffb42904fe8869358bcb2fb2"
+    },
+    "source-data/local/PA.json.gz": {
+      "bytes": 5669,
+      "sha256": "7a83c7a58767f8795c3a284c7691e017c356cfb7a83cf5e461e078da97fc935e"
+    },
+    "source-data/local/RI.json.gz": {
+      "bytes": 3133,
+      "sha256": "bc403b2030f5f6bb48fdc8f04b9172b67870b15046621fcd6415d05dec660fdd"
+    },
+    "source-data/local/SC.json.gz": {
+      "bytes": 5864,
+      "sha256": "49f172424a714ca9ddacce304b0addaed1927f08d46c71f56ec42debe4dcea20"
+    },
+    "source-data/local/SD.json.gz": {
+      "bytes": 5047,
+      "sha256": "8a19c11d952464dd1d57f11a2697cd6a038119104f1c90d3acf0b5b3314ecd28"
+    },
+    "source-data/local/TN.json.gz": {
+      "bytes": 5891,
+      "sha256": "9a0ab29b2f6cb7adae0d75c68e4caf6e346b690d3daac6f6aaf2e476707d173e"
+    },
+    "source-data/local/TX.json.gz": {
+      "bytes": 23975,
+      "sha256": "61b15dcde164789942832363d3b0a84ac8d26edc399dcf3499ce4ebc2c0e8cb1"
+    },
+    "source-data/local/UT.json.gz": {
+      "bytes": 4671,
+      "sha256": "aebfa63c677a9a5d1bf83f07d864095af04186e77d6e257aeaa5b0eb0dc8a2e8"
+    },
+    "source-data/local/VA.json.gz": {
+      "bytes": 25420,
+      "sha256": "5b1c2ada5bfb8cbdeaf335f29ce731476a41da34d529c27b1d826b26aa2f0ab2"
+    },
+    "source-data/local/VT.json.gz": {
+      "bytes": 16933,
+      "sha256": "3811e9c4d70f58554c8ab7146338df2833d4dca067fc2bdc455227261e02fa85"
+    },
+    "source-data/local/WA.json.gz": {
+      "bytes": 10412,
+      "sha256": "73114fd7e745ea9da3d0ba8d432899ed18e01df5ec3dbbcf79864682b152d80b"
+    },
+    "source-data/local/WI.json.gz": {
+      "bytes": 8233,
+      "sha256": "c3b3591ab54882db4934a35baaf7428e513352973e18c77c24b62b1247baa0d1"
+    },
+    "source-data/local/WV.json.gz": {
+      "bytes": 11870,
+      "sha256": "004b9de8fc8d63e27af3e6df7ca7147d586fb6a46cf528eb911b28887182a94d"
+    },
+    "source-data/local/WY.json.gz": {
+      "bytes": 4818,
+      "sha256": "fc1ddc5888a550427f4b792a27ad45cebc43279df32a11b9e6b718fa0b177597"
+    },
+    "source-data/shared-native-local.json": {
+      "bytes": 3444515,
+      "sha256": "0128bda2273d19a9ed9afd620a509d858374add4ec4ca84e80dfd0c69c1de04f"
+    },
+    "source-data/shared-native-snapshot.json": {
+      "bytes": 2595019,
+      "sha256": "3686633a86c1ca71890015bf98e690ed48540e519d3312a07251bca5a5c70578"
+    }
+  },
+  "state_local_files": {
+    "AL": "source-data/local/AL.json.gz",
+    "AR": "source-data/local/AR.json.gz",
+    "AZ": "source-data/local/AZ.json.gz",
+    "CA": "source-data/local/CA.json.gz",
+    "CO": "source-data/local/CO.json.gz",
+    "CT": "source-data/local/CT.json.gz",
+    "DE": "source-data/local/DE.json.gz",
+    "FL": "source-data/local/FL.json.gz",
+    "GA": "source-data/local/GA.json.gz",
+    "HI": "source-data/local/HI.json.gz",
+    "IA": "source-data/local/IA.json.gz",
+    "ID": "source-data/local/ID.json.gz",
+    "IL": "source-data/local/IL.json.gz",
+    "IN": "source-data/local/IN.json.gz",
+    "KS": "source-data/local/KS.json.gz",
+    "KY": "source-data/local/KY.json.gz",
+    "LA": "source-data/local/LA.json.gz",
+    "MA": "source-data/local/MA.json.gz",
+    "MD": "source-data/local/MD.json.gz",
+    "ME": "source-data/local/ME.json.gz",
+    "MI": "source-data/local/MI.json.gz",
+    "MN": "source-data/local/MN.json.gz",
+    "MO": "source-data/local/MO.json.gz",
+    "MS": "source-data/local/MS.json.gz",
+    "MT": "source-data/local/MT.json.gz",
+    "NC": "source-data/local/NC.json.gz",
+    "ND": "source-data/local/ND.json.gz",
+    "NE": "source-data/local/NE.json.gz",
+    "NH": "source-data/local/NH.json.gz",
+    "NJ": "source-data/local/NJ.json.gz",
+    "NM": "source-data/local/NM.json.gz",
+    "NV": "source-data/local/NV.json.gz",
+    "NY": "source-data/local/NY.json.gz",
+    "OH": "source-data/local/OH.json.gz",
+    "OK": "source-data/local/OK.json.gz",
+    "OR": "source-data/local/OR.json.gz",
+    "PA": "source-data/local/PA.json.gz",
+    "RI": "source-data/local/RI.json.gz",
+    "SC": "source-data/local/SC.json.gz",
+    "SD": "source-data/local/SD.json.gz",
+    "TN": "source-data/local/TN.json.gz",
+    "TX": "source-data/local/TX.json.gz",
+    "UT": "source-data/local/UT.json.gz",
+    "VA": "source-data/local/VA.json.gz",
+    "VT": "source-data/local/VT.json.gz",
+    "WA": "source-data/local/WA.json.gz",
+    "WI": "source-data/local/WI.json.gz",
+    "WV": "source-data/local/WV.json.gz",
+    "WY": "source-data/local/WY.json.gz"
+  },
+  "missing_separate_local_exports": [
+    "AK",
+    "DC"
+  ],
+  "shared_native_AK_DC_county_and_unit_rows": 0,
+  "native_precinct_modes_separately_guarded_in_original_explorer": true,
+  "whole_source_queries_and_counts_retained": true,
+  "legacy_frame_raw_inputs_not_reacquired": true,
+  "new_normalized_mode_or_population_qualification": false,
+  "previous_source_releases_preserved": true,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-native-mode-frames-20261110-01/complete-analysis.zip"
+}

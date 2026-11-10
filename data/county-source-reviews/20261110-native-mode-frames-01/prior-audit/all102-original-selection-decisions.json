@@ -1,0 +1,1936 @@
+{
+  "status": "PASS_complete102_decision_readonly_mode_selection_audit_NOT_new_source_qualification",
+  "source_commit": "2a33e0ef0b4ec0c984feda099aebe92f67de8281",
+  "local_export_inputs": {
+    "AL": {
+      "bytes": 23170,
+      "sha256": "790c4a762dc1abf58637de83c0961b625ed4d466f158c8cc86c8d894ac59eef7"
+    },
+    "AZ": {
+      "bytes": 3660,
+      "sha256": "7ac6f7409c3e2bca0a26e2c95d925af52a1ae20fd9c4710b24f8221428aaf783"
+    },
+    "AR": {
+      "bytes": 14894,
+      "sha256": "83684327edaccd72bd9e70147bb78c2354932b8b603137873db7c8283faedd7b"
+    },
+    "CA": {
+      "bytes": 6931,
+      "sha256": "e0b86af6f8291718a5ea1e4de504b561c5c05a19afe7de90d3366aaaa4c2cdf5"
+    },
+    "CO": {
+      "bytes": 18351,
+      "sha256": "a4810b0da93bfc5edd23a87f53abd96e2e49ce276d15256663587b6194485376"
+    },
+    "CT": {
+      "bytes": 16937,
+      "sha256": "f60eb5119332c7d87eb1a5be2ce58442cb776ea6d6e0a43aedce04605949aef1"
+    },
+    "DE": {
+      "bytes": 1549,
+      "sha256": "b8b116ceac1a24c027e9b777dd48b3939841c9947789ceed4131ef842303bfd8"
+    },
+    "FL": {
+      "bytes": 10476,
+      "sha256": "2edb90c94237b2e8ef1e37708b194b16b4a82d7ed2d6b15d6ac5b8e0edbba4e1"
+    },
+    "GA": {
+      "bytes": 15768,
+      "sha256": "8a7b7eee66a1c83626141312d8a82194ffa60c260f9c9261f2656a53584a7cb3"
+    },
+    "HI": {
+      "bytes": 1979,
+      "sha256": "e7677d3d50356056ce4973606ce889667a639b35c1c7fa69121fa6ca0a31e9d3"
+    },
+    "ID": {
+      "bytes": 85738,
+      "sha256": "efe2bfce82528da8e8fa01323a3d1eba9c6e78c249fe753f6b65cb628d3d9f81"
+    },
+    "IL": {
+      "bytes": 11452,
+      "sha256": "1da978e9a5b4241c0ca3fbfd4a5cbd56ef32700bf0a9105f51567605e42f878e"
+    },
+    "IN": {
+      "bytes": 26731,
+      "sha256": "74dace208fc054e1c68f1d20e3e23f6b52adde7f8868ed152b47e7d944287b24"
+    },
+    "IA": {
+      "bytes": 12902,
+      "sha256": "2621cb2e8c33ef25c870bfea5b16f8662cd4e5af7cef0bd1ebe7b7269656ec5f"
+    },
+    "KS": {
+      "bytes": 12462,
+      "sha256": "9bfdbcc6be67db43bacc578f8055f31f500e987eba2ac2be5c839f603d311117"
+    },
+    "KY": {
+      "bytes": 14545,
+      "sha256": "23a30c2755f3d830e817b1ab81f58948b7a2bcf4c087bae9d477c5979b8f7df2"
+    },
+    "LA": {
+      "bytes": 7608,
+      "sha256": "7af030d9c8ccf8a57cc58653d1ea2114dbf56295f811100bc576b32c512b0b2f"
+    },
+    "ME": {
+      "bytes": 49306,
+      "sha256": "f2d5254853fff5418711e90876cbef6c4eabfe89442667b0701521279865aec4"
+    },
+    "MD": {
+      "bytes": 5432,
+      "sha256": "63aa859e66119a6347902941249eafa23952bbf359d5ecb859b0d8fa89102b5a"
+    },
+    "MA": {
+      "bytes": 14531,
+      "sha256": "5f46f09b7005a0b5edbbe7b4869062e6269c5356a1c61dddb2cc4e2b02042210"
+    },
+    "MI": {
+      "bytes": 13485,
+      "sha256": "5a6c9ce644a6e53a3509d627cf58fd39f033c2ca464638c3a83c0d530cf1bac3"
+    },
+    "MN": {
+      "bytes": 274894,
+      "sha256": "fe488957715e831316ba290634dbee53c6f6b531402105b005a24c74a9702e93"
+    },
+    "MS": {
+      "bytes": 5223,
+      "sha256": "5d90f966c9d5aadafb71ffa444f5538ce12ac09f88c50b1eb9940a633300da09"
+    },
+    "MO": {
+      "bytes": 1423,
+      "sha256": "35008bdc10ada9a1fc5a7ffc4828db80984e5cf476bf0afacafa62755245210f"
+    },
+    "MT": {
+      "bytes": 4138,
+      "sha256": "c88a4fc7749b82d8464427fd2eced10bdaff9492eb68ebb56ab6433b06421c3d"
+    },
+    "NE": {
+      "bytes": 11149,
+      "sha256": "41d88ccfba2fa78168ca01a68472cdf419a591a01cb4457f3c4cebeada59f3e2"
+    },
+    "NV": {
+      "bytes": 4163,
+      "sha256": "55f7e62c3ad02be0b2258cf7db9d68dbe41f9880b771ed289ede9a039b347a5b"
+    },
+    "NH": {
+      "bytes": 7546,
+      "sha256": "c416f9fa65cde936c6bc984e23cc4f407be4af4c57b1b6db6b10a041588e3efe"
+    },
+    "NJ": {
+      "bytes": 4072,
+      "sha256": "c78eca3c893d6fcd4da017fdc9e1244d7703392a3cfd8fd8ccfd26ae3a85db9a"
+    },
+    "NM": {
+      "bytes": 5283,
+      "sha256": "a0d3f30add4363a0ffaa6e6d3066d650416cbc115b5dd1c8ff370be05b2d93c2"
+    },
+    "NY": {
+      "bytes": 4435,
+      "sha256": "9d07f3f07c64b34ec3c2ae791a6f0e7d48b2ea09467f1e1b93571cc578604473"
+    },
+    "NC": {
+      "bytes": 13306,
+      "sha256": "5db30eed5c07fb51ea75051dd9e5bbd0c987413578787acf4a6ba5d15f6297f5"
+    },
+    "ND": {
+      "bytes": 30264,
+      "sha256": "14ba49ba698b3fa4ebe3ee2e846f964f4f13e7b882f7a3cd66a89eee7df77783"
+    },
+    "OH": {
+      "bytes": 9677,
+      "sha256": "8b0b360429f5c52fa79c86fa1258027735e478b0de9f7ebcdc6ca2a7d72e6dd5"
+    },
+    "OK": {
+      "bytes": 5691,
+      "sha256": "5de02e2bc6f11076bc90d32d427a9596c6966abe6e449251b221c3edb68f04c1"
+    },
+    "OR": {
+      "bytes": 8296,
+      "sha256": "8d2e22266c23be606b126a157eae4402a33d04aaffb42904fe8869358bcb2fb2"
+    },
+    "PA": {
+      "bytes": 5669,
+      "sha256": "7a83c7a58767f8795c3a284c7691e017c356cfb7a83cf5e461e078da97fc935e"
+    },
+    "RI": {
+      "bytes": 3133,
+      "sha256": "bc403b2030f5f6bb48fdc8f04b9172b67870b15046621fcd6415d05dec660fdd"
+    },
+    "SC": {
+      "bytes": 5864,
+      "sha256": "49f172424a714ca9ddacce304b0addaed1927f08d46c71f56ec42debe4dcea20"
+    },
+    "SD": {
+      "bytes": 5047,
+      "sha256": "8a19c11d952464dd1d57f11a2697cd6a038119104f1c90d3acf0b5b3314ecd28"
+    },
+    "TN": {
+      "bytes": 5891,
+      "sha256": "9a0ab29b2f6cb7adae0d75c68e4caf6e346b690d3daac6f6aaf2e476707d173e"
+    },
+    "TX": {
+      "bytes": 23975,
+      "sha256": "61b15dcde164789942832363d3b0a84ac8d26edc399dcf3499ce4ebc2c0e8cb1"
+    },
+    "UT": {
+      "bytes": 4671,
+      "sha256": "aebfa63c677a9a5d1bf83f07d864095af04186e77d6e257aeaa5b0eb0dc8a2e8"
+    },
+    "VT": {
+      "bytes": 16933,
+      "sha256": "3811e9c4d70f58554c8ab7146338df2833d4dca067fc2bdc455227261e02fa85"
+    },
+    "VA": {
+      "bytes": 25420,
+      "sha256": "5b1c2ada5bfb8cbdeaf335f29ce731476a41da34d529c27b1d826b26aa2f0ab2"
+    },
+    "WA": {
+      "bytes": 10412,
+      "sha256": "73114fd7e745ea9da3d0ba8d432899ed18e01df5ec3dbbcf79864682b152d80b"
+    },
+    "WV": {
+      "bytes": 11870,
+      "sha256": "004b9de8fc8d63e27af3e6df7ca7147d586fb6a46cf528eb911b28887182a94d"
+    },
+    "WI": {
+      "bytes": 8233,
+      "sha256": "c3b3591ab54882db4934a35baaf7428e513352973e18c77c24b62b1247baa0d1"
+    },
+    "WY": {
+      "bytes": 4818,
+      "sha256": "fc1ddc5888a550427f4b792a27ad45cebc43279df32a11b9e6b718fa0b177597"
+    }
+  },
+  "complete_decisions": [
+    {
+      "code": "AL",
+      "mode": "in_person_early",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "AL",
+      "mode": "mail_returned",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "AK",
+      "mode": "in_person_early",
+      "disposition": "no_local_export_not_zero_or_source_absence_certification"
+    },
+    {
+      "code": "AK",
+      "mode": "mail_returned",
+      "disposition": "no_local_export_not_zero_or_source_absence_certification"
+    },
+    {
+      "code": "AZ",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 15,
+      "selected_nonnull_counts": 15,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 2248900
+    },
+    {
+      "code": "AZ",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 15,
+      "selected_nonnull_counts": 15,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1655577
+    },
+    {
+      "code": "AR",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 75,
+      "selected_nonnull_counts": 75,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 540941
+    },
+    {
+      "code": "AR",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 75,
+      "selected_nonnull_counts": 75,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 9397
+    },
+    {
+      "code": "CA",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 58,
+      "selected_nonnull_counts": 58,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 479207
+    },
+    {
+      "code": "CA",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 58,
+      "selected_nonnull_counts": 58,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 6836017
+    },
+    {
+      "code": "CO",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 64,
+      "selected_nonnull_counts": 64,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 138130
+    },
+    {
+      "code": "CO",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 64,
+      "selected_nonnull_counts": 64,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 2543484
+    },
+    {
+      "code": "CT",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 169,
+      "selected_nonnull_counts": 169,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        "native_town_VV"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1150127
+    },
+    {
+      "code": "CT",
+      "mode": "mail_returned",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 169,
+      "selected_nonnull_counts": 169,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        "native_town_VV"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1150127
+    },
+    {
+      "code": "DE",
+      "mode": "in_person_early",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "DE",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 3,
+      "selected_nonnull_counts": 3,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 148738
+    },
+    {
+      "code": "DC",
+      "mode": "in_person_early",
+      "disposition": "no_local_export_not_zero_or_source_absence_certification"
+    },
+    {
+      "code": "DC",
+      "mode": "mail_returned",
+      "disposition": "no_local_export_not_zero_or_source_absence_certification"
+    },
+    {
+      "code": "FL",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 67,
+      "selected_nonnull_counts": 67,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 3468097
+    },
+    {
+      "code": "FL",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 67,
+      "selected_nonnull_counts": 67,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 2077360
+    },
+    {
+      "code": "GA",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 159,
+      "selected_nonnull_counts": 159,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 2402283
+    },
+    {
+      "code": "GA",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 159,
+      "selected_nonnull_counts": 159,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 111365
+    },
+    {
+      "code": "HI",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 4,
+      "selected_nonnull_counts": 4,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        "native_TOTAL_TURNOUT"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 365899
+    },
+    {
+      "code": "HI",
+      "mode": "mail_returned",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 4,
+      "selected_nonnull_counts": 4,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        "native_TOTAL_TURNOUT"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 365899
+    },
+    {
+      "code": "ID",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 44,
+      "selected_nonnull_counts": 44,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 122372
+    },
+    {
+      "code": "ID",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 44,
+      "selected_nonnull_counts": 44,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 205647
+    },
+    {
+      "code": "IL",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 102,
+      "selected_nonnull_counts": 102,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 915498
+    },
+    {
+      "code": "IL",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 102,
+      "selected_nonnull_counts": 102,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 759410
+    },
+    {
+      "code": "IN",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 92,
+      "selected_nonnull_counts": 92,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "IN",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 92,
+      "selected_nonnull_counts": 92,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 884186
+    },
+    {
+      "code": "IA",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 99,
+      "selected_nonnull_counts": 99,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 344986
+    },
+    {
+      "code": "IA",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 99,
+      "selected_nonnull_counts": 99,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 153727
+    },
+    {
+      "code": "KS",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 105,
+      "selected_nonnull_counts": 105,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 419839
+    },
+    {
+      "code": "KS",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 105,
+      "selected_nonnull_counts": 105,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 85802
+    },
+    {
+      "code": "KY",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 120,
+      "selected_nonnull_counts": 120,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 390736
+    },
+    {
+      "code": "KY",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 120,
+      "selected_nonnull_counts": 120,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 47866
+    },
+    {
+      "code": "LA",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 64,
+      "selected_nonnull_counts": 64,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 448587
+    },
+    {
+      "code": "LA",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 64,
+      "selected_nonnull_counts": 64,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 87598
+    },
+    {
+      "code": "ME",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 480,
+      "selected_nonnull_counts": 480,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 160385
+    },
+    {
+      "code": "ME",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 480,
+      "selected_nonnull_counts": 480,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 139691
+    },
+    {
+      "code": "MD",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 24,
+      "selected_nonnull_counts": 24,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 2079801
+    },
+    {
+      "code": "MD",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 24,
+      "selected_nonnull_counts": 24,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 429972
+    },
+    {
+      "code": "MA",
+      "mode": "in_person_early",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "MA",
+      "mode": "mail_returned",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "MI",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 2,
+      "selected_nonnull_counts": 2,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 76534
+    },
+    {
+      "code": "MI",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 83,
+      "selected_nonnull_counts": 83,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1745903
+    },
+    {
+      "code": "MN",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 87,
+      "selected_nonnull_counts": 87,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 705127
+    },
+    {
+      "code": "MN",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 87,
+      "selected_nonnull_counts": 87,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 298998
+    },
+    {
+      "code": "MS",
+      "mode": "in_person_early",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "MS",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 82,
+      "selected_nonnull_counts": 82,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 116453
+    },
+    {
+      "code": "MO",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 1,
+      "selected_nonnull_counts": 1,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 35258
+    },
+    {
+      "code": "MO",
+      "mode": "mail_returned",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 1,
+      "selected_nonnull_counts": 1,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 35258
+    },
+    {
+      "code": "MT",
+      "mode": "in_person_early",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "MT",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 56,
+      "selected_nonnull_counts": 56,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 407301
+    },
+    {
+      "code": "NE",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 93,
+      "selected_nonnull_counts": 93,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 53759
+    },
+    {
+      "code": "NE",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 93,
+      "selected_nonnull_counts": 93,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 208057
+    },
+    {
+      "code": "NV",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 17,
+      "selected_nonnull_counts": 17,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 307806
+    },
+    {
+      "code": "NV",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 17,
+      "selected_nonnull_counts": 17,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 445205
+    },
+    {
+      "code": "NH",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 4,
+      "selected_nonnull_counts": 4,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 107586
+    },
+    {
+      "code": "NH",
+      "mode": "mail_returned",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 4,
+      "selected_nonnull_counts": 4,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 107586
+    },
+    {
+      "code": "NJ",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 21,
+      "selected_nonnull_counts": 21,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 642644
+    },
+    {
+      "code": "NJ",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 21,
+      "selected_nonnull_counts": 21,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 597405
+    },
+    {
+      "code": "NM",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 33,
+      "selected_nonnull_counts": 33,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 385170
+    },
+    {
+      "code": "NM",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 33,
+      "selected_nonnull_counts": 33,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 74727
+    },
+    {
+      "code": "NY",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 62,
+      "selected_nonnull_counts": 62,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1965043
+    },
+    {
+      "code": "NY",
+      "mode": "mail_returned",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "NC",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 100,
+      "selected_nonnull_counts": 100,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 2728716
+    },
+    {
+      "code": "NC",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 100,
+      "selected_nonnull_counts": 100,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 108142
+    },
+    {
+      "code": "ND",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 53,
+      "selected_nonnull_counts": 53,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 239057
+    },
+    {
+      "code": "ND",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 53,
+      "selected_nonnull_counts": 53,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 53478
+    },
+    {
+      "code": "OH",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 88,
+      "selected_nonnull_counts": 88,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1100988
+    },
+    {
+      "code": "OH",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 88,
+      "selected_nonnull_counts": 88,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 676916
+    },
+    {
+      "code": "OK",
+      "mode": "in_person_early",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "OK",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 77,
+      "selected_nonnull_counts": 77,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 45799
+    },
+    {
+      "code": "OR",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 36,
+      "selected_nonnull_counts": 36,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1760007
+    },
+    {
+      "code": "OR",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 36,
+      "selected_nonnull_counts": 36,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1808770
+    },
+    {
+      "code": "PA",
+      "mode": "in_person_early",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "PA",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 67,
+      "selected_nonnull_counts": 67,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1161577
+    },
+    {
+      "code": "RI",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 39,
+      "selected_nonnull_counts": 39,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 363326
+    },
+    {
+      "code": "RI",
+      "mode": "mail_returned",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 39,
+      "selected_nonnull_counts": 39,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 363326
+    },
+    {
+      "code": "SC",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 46,
+      "selected_nonnull_counts": 46,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 948592
+    },
+    {
+      "code": "SC",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 46,
+      "selected_nonnull_counts": 46,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 42528
+    },
+    {
+      "code": "SD",
+      "mode": "in_person_early",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "SD",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 66,
+      "selected_nonnull_counts": 66,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 81367
+    },
+    {
+      "code": "TN",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 95,
+      "selected_nonnull_counts": 95,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1280642
+    },
+    {
+      "code": "TN",
+      "mode": "mail_returned",
+      "disposition": "no_non_mode_specific_observation_selected",
+      "selected_rows": 0,
+      "selected_nonnull_counts": 0,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [],
+      "measure_labels": [],
+      "snapshot_ids": [],
+      "reported_count_sum_NOT_normalized_mode_or_people": 0
+    },
+    {
+      "code": "TX",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 254,
+      "selected_nonnull_counts": 254,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 6602045
+    },
+    {
+      "code": "TX",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 254,
+      "selected_nonnull_counts": 254,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 255521
+    },
+    {
+      "code": "UT",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 29,
+      "selected_nonnull_counts": 29,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 13689
+    },
+    {
+      "code": "UT",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 29,
+      "selected_nonnull_counts": 29,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 569934
+    },
+    {
+      "code": "VT",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 247,
+      "selected_nonnull_counts": 247,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 311009
+    },
+    {
+      "code": "VT",
+      "mode": "mail_returned",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 247,
+      "selected_nonnull_counts": 247,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 311009
+    },
+    {
+      "code": "VA",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 133,
+      "selected_nonnull_counts": 133,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 1313265
+    },
+    {
+      "code": "VA",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 133,
+      "selected_nonnull_counts": 133,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 344559
+    },
+    {
+      "code": "WA",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 39,
+      "selected_nonnull_counts": 39,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 2266746
+    },
+    {
+      "code": "WA",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 39,
+      "selected_nonnull_counts": 39,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 2874800
+    },
+    {
+      "code": "WV",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 55,
+      "selected_nonnull_counts": 55,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 162349
+    },
+    {
+      "code": "WV",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 55,
+      "selected_nonnull_counts": 55,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 7001
+    },
+    {
+      "code": "WI",
+      "mode": "in_person_early",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 72,
+      "selected_nonnull_counts": 72,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "in_person_early"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 465507
+    },
+    {
+      "code": "WI",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 72,
+      "selected_nonnull_counts": 72,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 811042
+    },
+    {
+      "code": "WY",
+      "mode": "in_person_early",
+      "disposition": "review_non_mode_specific_selection",
+      "selected_rows": 23,
+      "selected_nonnull_counts": 23,
+      "explicit_requested_frame": false,
+      "native_declared_modes": [
+        null
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 191688
+    },
+    {
+      "code": "WY",
+      "mode": "mail_returned",
+      "disposition": "explicit_requested_frame_selected",
+      "selected_rows": 23,
+      "selected_nonnull_counts": 23,
+      "explicit_requested_frame": true,
+      "native_declared_modes": [
+        "mail_returned"
+      ],
+      "measure_labels": [
+        null
+      ],
+      "snapshot_ids": [
+        null
+      ],
+      "reported_count_sum_NOT_normalized_mode_or_people": 73895
+    }
+  ],
+  "flagged_decisions": 19,
+  "flagged_states": [
+    "AZ",
+    "CT",
+    "HI",
+    "MD",
+    "MI",
+    "MO",
+    "NH",
+    "ND",
+    "OR",
+    "RI",
+    "VT",
+    "WA",
+    "WY"
+  ],
+  "unknown_exports_not_treated_as_zero": true,
+  "source_counts_or_frames_modified": false,
+  "normalized_modes_or_people_inferred": false,
+  "new_publication_or_live_fix_claim": false
+}
