@@ -1,5 +1,6 @@
 import { installParticipationDownloads, participationDownload } from "./participation-downloads.js";
 import { contextualCountyRows } from "./participation-county-context.js";
+import { rings, boundsFor, conicProjection, projectFeatures } from "./participation-map-projection.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
 import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, qualifiedManchesterWardReference, qualifiedConcordWardReference, qualifiedNashuaWardReference, qualifiedDoverWardReference, qualifiedMinnesotaPrecinctReference, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference, qualifiedNewHampshireCityReference, qualifiedMassachusettsCityReference, qualifiedMassachusettsReportingReference } from "./participation-geography.js";
@@ -2190,9 +2191,10 @@ function showView(view) {
   $("geography-note").hidden = true;
   $("precinct-source-summary").hidden = view !== "precincts";
   root.dataset.activeView = view;
+  const activeTab = view === "precincts" ? "states" : view;
   for (const button of document.querySelectorAll(".participation-nav button")) {
-    button.setAttribute("aria-selected", String(button.dataset.view === view));
-    button.tabIndex = button.dataset.view === view ? 0 : -1;
+    button.setAttribute("aria-selected", String(button.dataset.view === activeTab));
+    button.tabIndex = button.dataset.view === activeTab ? 0 : -1;
   }
   for (const panel of document.querySelectorAll("[data-section]"))
     panel.classList.toggle("is-visible", panel.dataset.section === view);
@@ -2204,7 +2206,7 @@ function showView(view) {
   methodsPanel.hidden = view !== "methods";
   $("swing-panel").hidden = view !== "effects";
   $("historical-explorer").setAttribute("role", "tabpanel");
-  $("historical-explorer").setAttribute("aria-labelledby", `tab-${view}`);
+  $("historical-explorer").setAttribute("aria-labelledby", `tab-${activeTab}`);
   $("historical-explorer").setAttribute("aria-hidden", String(!mapView));
   methodsPanel.setAttribute("aria-hidden", String(view !== "methods"));
   $("search").value = "";
@@ -2897,40 +2899,8 @@ function statesView() {
       ["source_update_label", "Source update"], ["status", "Status"], ["quality", "Notes"]]
     : [["state", "State"], ["year", "Year"], ["turnout_pct", "Turnout"], ["denominator", "Population"], ["warnings", "Notes"]]);
 }
-function rings(geometry) {
-  return geometry.type === "MultiPolygon" ? geometry.coordinates.flat() : geometry.coordinates;
-}
-function boundsFor(points) {
-  return points.reduce(([x0, y0, x1, y1], [x, y]) =>
-    [Math.min(x0, x), Math.min(y0, y), Math.max(x1, x), Math.max(y1, y)], [Infinity, Infinity, -Infinity, -Infinity]);
-}
 function combinedBounds(items) {
   return boundsFor(items.flatMap(item => [[item.bounds[0], item.bounds[1]], [item.bounds[2], item.bounds[3]]]));
-}
-function conicProjection(meridian, lower, upper) {
-  const radians = Math.PI / 180;
-  const n = (Math.sin(lower * radians) + Math.sin(upper * radians)) / 2;
-  const c = Math.cos(lower * radians) ** 2 + 2 * n * Math.sin(lower * radians);
-  return ([lon, lat]) => {
-    const theta = n * (((lon - meridian + 540) % 360) - 180) * radians;
-    const rho = Math.sqrt(c - 2 * n * Math.sin(lat * radians)) / n;
-    return [rho * Math.sin(theta), rho * Math.cos(theta)];
-  };
-}
-function projectFeatures(features, project, [left, top, width, height]) {
-  const projected = features.map(feature => ({ feature, rings: rings(feature.geometry).map(ring => ring.map(project)) }));
-  const [x0, y0, x1, y1] = boundsFor(projected.flatMap(item => item.rings.flat()));
-  const scale = Math.min(width / (x1 - x0), height / (y1 - y0));
-  const ox = left + (width - (x1 - x0) * scale) / 2, oy = top + (height - (y1 - y0) * scale) / 2;
-  return projected.map(item => {
-    const transformed = item.rings.map(ring => ring.map(([x, y]) => [ox + (x - x0) * scale, oy + (y - y0) * scale]));
-    const point = coordinate => {
-      const [x, y] = project(coordinate);
-      return [ox + (x - x0) * scale, oy + (y - y0) * scale];
-    };
-    return { feature: item.feature, point, bounds: boundsFor(transformed.flat()),
-      d: transformed.map(ring => ring.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(2)},${y.toFixed(2)}`).join("") + "Z").join("") };
-  });
 }
 function setViewport(view) {
   if (!state.map) return;

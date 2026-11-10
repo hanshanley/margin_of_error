@@ -22,7 +22,7 @@ with sync_playwright() as runtime:
             response = page.goto(args.base_url.rstrip("/") + "/voter-participation/",
                                  wait_until="domcontentloaded", timeout=90000)
             assert response.ok
-            for view in ["states", "national", "effects", "precincts", "methods"]:
+            for view in ["states", "national", "effects", "methods"]:
                 button = page.locator("#tab-" + view)
                 button.click()
                 expect(button).to_have_attribute("aria-selected", "true", timeout=90000)

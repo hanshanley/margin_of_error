@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { driverRows, driverScale, validateModels } from '../public/scripts/participation-return-drivers.js';
+import { driverRows, driverScale, validateModels, mapScale, effectFill } from '../public/scripts/participation-return-drivers.js';
 
 const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-01/viewer-data.json'));
 
@@ -48,4 +48,16 @@ test('unknowns and tampered reconciliation cannot become apparently valid zero e
   const duplicate = structuredClone(data);
   duplicate.rows.push(duplicate.rows[0]);
   assert.throws(() => validateModels(duplicate), /duplicate model identity/);
+});
+
+test('paired maps share one signed point scale and missing is not zero', () => {
+  for (const office of ['house', 'senate', 'governor']) {
+    const rows = driverRows(data, office), scale = mapScale(rows);
+    for (const row of rows)
+      for (const key of ['switching', 'modeled_nonparticipation'])
+        assert.ok(Math.abs(row.components_pp[key]) <= scale);
+    assert.notEqual(effectFill(null, scale), effectFill(0, scale));
+    assert.notEqual(effectFill(-scale, scale), effectFill(scale, scale));
+    assert.equal(effectFill(0, scale), '#f1eee6');
+  }
 });

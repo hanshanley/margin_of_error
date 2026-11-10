@@ -11,34 +11,46 @@ const pp = (value: number) => `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 	<header class="section-intro">
 		<p class="kicker">2026 · Modeled changes in the vote margin</p>
 		<h2 id="return-drivers-title">Switching sides or staying home?</h2>
-		<p>Compare the estimated margin contributions of <strong>switching sides</strong> and
-			<strong>modeled nonparticipation</strong> for House, Senate and governor.
-			The bars show percentage points toward either party, not numbers of people.</p>
+		<p>Two views of what moved the margin: <strong>switching sides</strong> and
+			<strong>modeled nonparticipation</strong>. Select an office, then a state in either map.</p>
 	</header>
-	<p class="caption">Baseline: recalled <strong>2024 President</strong> in the current NORC source frame.
-		This is not automatically a comparison with the previous election for the same office.
-		“Staying home” is shorthand for model-classified nonparticipation, not a confirmed missing ballot.</p>
+	<p class="caption">Reference: recalled <strong>2024 presidential choice</strong>.
+		“Staying home” is modeled nonparticipation, not a confirmed missing ballot.</p>
 	<div class="driver-controls">
-		<label>2026 office<select data-driver-office disabled><option value="house">House · state aggregates</option>
-			<option value="senate">Senate · state races</option><option value="governor">Governor · supplied county frames</option></select></label>
-		<label>Rank by<select data-driver-order disabled><option value="magnitude">Largest modeled effect</option>
-			<option value="switching">Largest switching effect</option><option value="nonparticipation">Largest nonparticipation effect</option>
-			<option value="name">State name</option></select></label>
-		<label>Find a state<input type="search" data-driver-search placeholder="State name or abbreviation" disabled /></label>
+		<label>2026 office<select data-driver-office disabled><option value="house">House · states</option>
+			<option value="senate">Senate</option><option value="governor">Governor · frames</option></select></label>
+		<label>State<select data-driver-state disabled><option value="">Loading state context…</option></select></label>
 	</div>
-	<p class="driver-legend"><span class="driver-switching">Switching</span>
-		<span class="driver-nonparticipation">Nonparticipation · modeled staying home</span>
-		<span>Positive → Democratic margin · negative → Republican margin</span></p>
 	<p data-driver-status class="caption" role="status">Saved 2026 model estimates. The full numerical table works without JavaScript.</p>
-	<p data-driver-axis class="driver-axis" aria-hidden="true"></p>
-	<div data-driver-rows class="driver-rows"></div>
+	<div class="driver-maps">
+		<section class="driver-map-card" aria-labelledby="driver-switch-map-title">
+			<h3 id="driver-switch-map-title">Switching sides</h3>
+			<p class="caption">Contribution from changing between major-party choices.</p>
+			<div class="driver-map" data-driver-map="switching"></div>
+		</section>
+		<section class="driver-map-card" aria-labelledby="driver-nonparticipation-map-title">
+			<h3 id="driver-nonparticipation-map-title">Staying home · modeled</h3>
+			<p class="caption">Contribution from model-classified nonparticipation.</p>
+			<div class="driver-map" data-driver-map="modeled_nonparticipation"></div>
+		</section>
+	</div>
+	<div class="driver-map-key" aria-label="Shared modeled margin contribution scale">
+		<div><div class="driver-map-ramp"></div><div class="driver-map-ticks">
+			<span data-driver-scale-min></span><span>0</span><span data-driver-scale-max></span>
+		</div><div class="driver-map-directions"><span>Republican direction</span><span>Democratic direction</span></div></div>
+		<span class="driver-no-model"><i></i>No eligible model</span>
+	</div>
+	<p class="caption driver-map-note">Colour shows <strong>percentage-point contributions to the margin</strong>,
+		not party vote shares or turnout rates. Other terms and an unallocated source/return gap remain separate.
+		No state estimate is spread onto counties or precincts.</p>
 	<div data-driver-detail class="driver-detail" hidden></div>
 	<details class="explorer-notes"><summary>How to read these estimates and their uncertainty</summary>
-	<p class="caption">Whiskers vary switching/nonparticipation contrast strength from 0.5× to 1.5×.
+	<p class="caption">The selected state's ranges vary switching/nonparticipation contrast strength from 0.5× to 1.5×.
 		They are <strong>partial assumption sensitivity, not confidence intervals</strong>.
 		The gap can be larger than either displayed effect; it is not assigned to people switching or staying home.
 		Model-classified nonparticipation is not administrative evidence of no ballot. D.C. has no NORC sample.</p>
 	<p class="caption">NORC participation information and candidate returns constrain the model.
+		The recalled presidential baseline is not automatically the previous election for the same office.
 		55 office-specific switching tables are used; other office terms require explicit transport assumptions.
 		Entry, other choices, unknowns, denominator changes and the unallocated return/frame gap are retained.
 		These are conditional estimates, not causal persuasion. No state survey model is assigned to counties or precincts.</p>
@@ -66,30 +78,34 @@ const pp = (value: number) => `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 </script>
 <style>
 	#participation-return-drivers { min-width: 0; margin-block: 1.5rem 2rem; }
-	.driver-controls { display: flex; flex-wrap: wrap; gap: .75rem; }
-	.driver-controls label { display: grid; flex: 1 1 11rem; min-width: 0; gap: .3rem; font: .73rem var(--sans); }
+	.driver-controls { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.3fr);
+		gap: .75rem; margin-block: 1.25rem .75rem; max-width: 45rem; }
+	.driver-controls label { display: grid; min-width: 0; gap: .3rem; font: .73rem var(--sans); }
 	.driver-controls :is(select,input) { width: 100%; min-width: 0; padding: .5rem; border: 1px solid var(--rule);
 		background: var(--paper); color: var(--ink); font: inherit; }
-	.driver-legend { display: flex; flex-wrap: wrap; gap: .8rem; font: .72rem/1.5 var(--sans); }
-	.driver-legend span:last-child { color: var(--muted); }
-	.driver-legend :global(.driver-switching), :global(.driver-values .driver-switching) { color: #3e7d84; }
-	.driver-legend :global(.driver-nonparticipation), :global(.driver-values .driver-nonparticipation) { color: #986539; }
-	.driver-axis { margin: .5rem 10rem .25rem; text-align: center; font: .7rem var(--sans); color: var(--muted); }
-	.driver-rows { max-height: 580px; overflow-y: auto; overflow-x: hidden; border-block: 1px solid var(--rule); }
-	.driver-rows :global(.driver-row) { display: grid; grid-template-columns: 9rem minmax(0,1fr) 9rem;
-		align-items: center; gap: .25rem .6rem; padding: .6rem 0; border-bottom: 1px solid var(--paper-deep); }
-	.driver-rows :global(.driver-place) { border: 0; padding: .3rem 0; text-align: left; background: none;
-		color: var(--ink); font: .77rem var(--sans); cursor: pointer; }
-	.driver-rows :global(.driver-place:hover) { text-decoration: underline; }
-	.driver-rows :global(.driver-plot) { display: block; width: 100%; min-width: 0; }
-	.driver-rows :global(.driver-values) { display: flex; justify-content: space-between; gap: .4rem;
-		margin: 0; font: .71rem var(--sans); font-variant-numeric: tabular-nums; }
-	.driver-rows :global(.driver-gap) { grid-column: 2 / -1; margin: 0; font: .64rem/1.4 var(--sans); color: var(--muted); }
+	.driver-maps { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2rem; margin-top: 1.5rem; }
+	.driver-map-card { min-width: 0; }
+	.driver-map-card h3 { margin: 0 0 .35rem; font: 400 1.3rem var(--serif); }
+	.driver-map-card > p { margin: 0 0 .5rem; }
+	.driver-map { min-height: 120px; }
+	.driver-map :global(svg) { display: block; width: 100%; height: auto; }
+	.driver-map :global(.driver-state) { stroke: var(--paper); stroke-width: .8; vector-effect: non-scaling-stroke; cursor: pointer; }
+	.driver-map :global(.driver-state:hover), .driver-map :global(.driver-state.selected) { stroke: #243f49; stroke-width: 1.8; }
+	.driver-map :global(.driver-inset-label) { fill: var(--muted); font: 15px var(--sans); }
+	.driver-map-key { display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+		gap: .5rem .75rem; font: .66rem/1.4 var(--sans); color: var(--muted); margin-block: .75rem; }
+	.driver-map-key > div { width: min(100%, 20rem); }
+	.driver-map-ramp { height: .5rem; background: linear-gradient(to right,#a47045,#f1eee6,#2c6c75); }
+	.driver-map-ticks { display: flex; justify-content: space-between; margin-top: .25rem; font-variant-numeric: tabular-nums; }
+	.driver-map-directions { display: flex; justify-content: space-between; margin-top: .25rem; }
+	.driver-no-model { display: inline-flex; align-items: center; gap: .35rem; margin-left: .5rem; }
+	.driver-no-model i { width: .65rem; height: .65rem; background: #d6d3cb; }
+	.driver-map-note { max-width: 85ch; margin-inline: auto; }
 	.driver-detail { margin-top: 1rem; padding-top: .5rem; border-top: 1px solid var(--rule); min-width: 0; }
-	@media(max-width:680px) {
-		.driver-axis { margin-inline: 5.5rem 0; }
-		.driver-rows :global(.driver-row) { grid-template-columns: 5.5rem minmax(0,1fr); }
-		.driver-rows :global(.driver-values) { grid-column: 2; justify-content: flex-start; gap: 1rem; }
-		.driver-rows :global(.driver-gap) { grid-column: 2; }
+	@media(max-width:760px) {
+		.driver-maps { grid-template-columns: minmax(0,1fr); gap: 1.25rem; }
+		.driver-map-key { justify-content: flex-start; }
+		.driver-map-key > div { width: 100%; }
+		.driver-no-model { flex-basis: 100%; margin-left: 0; }
 	}
 </style>

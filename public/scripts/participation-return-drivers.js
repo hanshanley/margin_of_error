@@ -1,3 +1,6 @@
+import { projectStateContext } from "./participation-map-projection.js";
+import { participationDownload } from "./participation-downloads.js";
+
 export const effectTerms = [
   ["switching", "Switching", "#3e7d84"],
   ["modeled_nonparticipation", "Modeled nonparticipation", "#b27a4d"],
@@ -64,28 +67,23 @@ const svgElement = (tag, attributes) => {
   return node;
 };
 
-function plot(row, bound) {
-  const svg = svgElement("svg", { viewBox: "0 0 320 46", role: "img", class: "driver-plot",
-    "aria-label": `Switching ${signedPP(row.components_pp.switching)}; modeled nonparticipation ${signedPP(row.components_pp.modeled_nonparticipation)}. Whiskers are assumption strength, not confidence intervals.` });
-  svg.append(svgElement("line", { x1: 160, x2: 160, y1: 1, y2: 44, stroke: "#aaa79f", "stroke-width": 1 }));
-  for (const [index, [key, label, colour]] of effectTerms.slice(0, 2).entries()) {
-    const x = value => 160 + 142 * value / bound;
-    const value = row.components_pp[key], range = row.ranges_pp[key], y = 11 + 22 * index;
-    svg.append(svgElement("line", { x1: x(range.minimum), x2: x(range.maximum), y1: y, y2: y,
-      stroke: colour, "stroke-width": 1.5 }));
-    for (const end of [range.minimum, range.maximum])
-      svg.append(svgElement("line", { x1: x(end), x2: x(end), y1: y - 5, y2: y + 5,
-        stroke: colour, "stroke-width": 1.5 }));
-    const bar = svgElement("rect", { x: Math.min(160, x(value)), y: y - 3.5,
-      width: Math.max(.7, Math.abs(x(value) - 160)), height: 7, fill: colour });
-    const title = svgElement("title", {});
-    title.textContent = `${label}: ${signedPP(value)}; strength scenarios ${signedPP(range.minimum)} to ${signedPP(range.maximum)}`;
-    bar.append(title); svg.append(bar);
-  }
-  return svg;
+export function mapScale(rows) {
+  const maximum = Math.max(0, ...rows.flatMap(row =>
+    [Math.abs(row.components_pp.switching), Math.abs(row.components_pp.modeled_nonparticipation)]));
+  return maximum === 0 ? 1 : Math.ceil(maximum / 5) * 5;
 }
 
-export function initializeReturnDrivers() {
+export function effectFill(value, bound) {
+  if (value == null) return "#d6d3cb";
+  if (!Number.isFinite(value) || !Number.isFinite(bound) || bound <= 0)
+    throw new Error("Invalid modeled map scale");
+  const neutral = [241, 238, 230], end = value < 0 ? [164, 112, 69] : [44, 108, 117];
+  const weight = Math.min(1, Math.abs(value) / bound);
+  return "#" + neutral.map((channel, i) => Math.round(channel + weight * (end[i] - channel))
+    .toString(16).padStart(2, "0")).join("");
+}
+
+export async function initializeReturnDrivers() {
   const root = document.querySelector("#participation-return-drivers");
   if (!root || root.dataset.initialized) return;
   root.dataset.initialized = "true";
@@ -94,23 +92,45 @@ export function initializeReturnDrivers() {
     const payload = JSON.parse(root.querySelector("[data-driver-data]").textContent);
     const data = validateModels(payload.data), names = payload.names;
     const office = root.querySelector("[data-driver-office]");
-    const search = root.querySelector("[data-driver-search]");
-    const order = root.querySelector("[data-driver-order]");
-    const host = root.querySelector("[data-driver-rows]");
+    const stateSelect = root.querySelector("[data-driver-state]");
     const detail = root.querySelector("[data-driver-detail]");
+    const response = await fetch(participationDownload("/voter-participation/data/states.geojson"));
+    if (!response.ok) throw new Error(`State context: HTTP ${response.status}`);
+    const collection = await response.json();
+    const items = projectStateContext(collection.features);
+    if (items.length !== 51 || new Set(items.map(item => item.feature.properties.STUSAB)).size !== 51)
+      throw new Error("State context inventory differs");
+    for (const item of items) names[item.feature.properties.STUSAB] ||= item.feature.properties.NAME;
+    const codes = items.map(item => item.feature.properties.STUSAB).sort((a, b) => names[a].localeCompare(names[b]));
+    let selectedCode = "";
+    stateSelect.replaceChildren(new Option("Select a state on either map…", ""),
+      ...codes.map(code => new Option(names[code], code)));
+    const paintSelection = () => {
+      for (const path of root.querySelectorAll(".driver-state"))
+        path.classList.toggle("selected", path.dataset.stateCode === selectedCode);
+    };
     const select = row => {
       detail.replaceChildren(element("h4", `${names[row.state_code]} · ${row.office === "house"
         ? "House state aggregate" : row.office === "governor" ? "Governor source frame" : "Senate race"}`),
       element("p", "Recalled 2024 President in the current study frame → 2026 selected office. Not automatically the last election for this office.", "caption"));
       const table = element("table"), body = element("tbody");
-      table.append(element("caption", "Full accounting · signed known-major-party margin points"));
+      table.append(element("caption", "Full accounting · percentage-point contributions to the margin"));
+      const head = element("thead"), headings = element("tr");
+      for (const label of ["Term", "Contribution", "Strength sensitivity"]) headings.append(element("th", label));
+      head.append(headings); table.append(head);
       for (const [key, label] of effectTerms) {
         const tr = element("tr"), th = element("th", label);
         th.scope = "row"; tr.append(th, element("td", signedPP(row.components_pp[key]), "numeric"));
+        if (key === "switching" || key === "modeled_nonparticipation") {
+          const range = row.ranges_pp[key];
+          tr.append(element("td", `${signedPP(range.minimum)} to ${signedPP(range.maximum)}`, "numeric"));
+        } else tr.append(element("td", "—"));
         body.append(tr);
       }
       table.append(body);
-      detail.append(table, element("p", `Within-source change: ${signedPP(row.source_frame_change_pp)}. `
+      const wrapper = element("div", null, "table-wrap"); wrapper.append(table);
+      detail.append(wrapper, element("p", "Ranges vary contrast strength from 0.5× to 1.5×; these are not confidence intervals.", "caption"),
+      element("p", `Within-source change: ${signedPP(row.source_frame_change_pp)}. `
         + `Current return margin: ${signedPP(row.current_return_margin_pp)}.`, "caption"),
       element("p", `${row.evidence.switching}. `
         + (row.evidence.cross_office_transport
@@ -123,40 +143,60 @@ export function initializeReturnDrivers() {
           + `Prior-office/source-frame gap: ${signedPP(row.previous_office_frame_gap_pp)}.`, "caption"));
       detail.hidden = false;
     };
+    const selectState = code => {
+      selectedCode = code; stateSelect.value = code;
+      const row = data.rows.find(value => value.state_code === code && value.office === office.value);
+      if (row) select(row);
+      else if (code) {
+        detail.replaceChildren(element("h3", names[code]),
+          element("p", code === "DC" ? "D.C. has no NORC sample. No contribution is estimated."
+            : `No supplied ${office.value} model for this state. Gray is missing coverage, not zero change.`));
+        detail.hidden = false;
+      } else detail.hidden = true;
+      paintSelection();
+    };
     const render = () => {
       const all = driverRows(data, office.value, "", "magnitude", names);
-      const rows = driverRows(data, office.value, search.value, order.value, names);
-      const bound = driverScale(all);
-      root.querySelector("[data-driver-axis]").textContent = `−${bound} pp · 0 · +${bound} pp`;
-      status.textContent = `${rows.length} of ${all.length} ${office.value === "house"
-        ? "state House aggregates" : office.value === "governor" ? "governor source frames" : "Senate races"} · conditional modeled effects, not observed individual behavior.`;
-      host.replaceChildren();
-      detail.hidden = true;
-      for (const row of rows) {
-        const line = element("div", null, "driver-row");
-        line.dataset.driverId = row.id;
-        const button = element("button", names[row.state_code], "driver-place");
-        button.type = "button"; button.addEventListener("click", () => select(row));
-        const values = element("p", null, "driver-values");
-        const switching = element("span", signedPP(row.components_pp.switching), "driver-switching");
-        const nonparticipation = element("span", signedPP(row.components_pp.modeled_nonparticipation), "driver-nonparticipation");
-        values.append(switching, nonparticipation);
-        line.append(button, plot(row, bound), values);
-        const gap = element("p", `Unallocated return/frame gap ${signedPP(row.components_pp.return_frame_gap)}`, "driver-gap");
-        line.append(gap); host.append(line);
+      const byCode = new Map(all.map(row => [row.state_code, row])), bound = mapScale(all);
+      if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
+      status.textContent = `${all.length} ${office.value === "house" ? "House state aggregates"
+        : office.value === "governor" ? "governor source frames" : "Senate races"}. Both maps use the same scale.`;
+      root.querySelector("[data-driver-scale-min]").textContent = `−${bound} pp`;
+      root.querySelector("[data-driver-scale-max]").textContent = `+${bound} pp`;
+      for (const [key, label] of effectTerms.slice(0, 2)) {
+        const host = root.querySelector(`[data-driver-map="${key}"]`);
+        const svg = svgElement("svg", { viewBox: "0 0 1000 640", role: "group",
+          "aria-label": `${label}: modeled margin contribution by state`, "data-scale": bound });
+        for (const item of items) {
+          const code = item.feature.properties.STUSAB, row = byCode.get(code), value = row?.components_pp[key] ?? null;
+          const text = `${names[code]} · ${label}: ${value === null ? "no model" : signedPP(value)}. Model contribution, not a vote share.`;
+          const path = svgElement("path", { d: item.d, fill: effectFill(value, bound),
+            class: "driver-state", "fill-rule": "evenodd", "data-state-code": code,
+            "data-model-value": value ?? "", ...(row ? { "data-model-id": row.id } : {}),
+            role: "button", tabindex: "-1",
+            "aria-label": text });
+          const title = svgElement("title", {}); title.textContent = text; path.append(title);
+          path.addEventListener("click", () => selectState(code));
+          svg.append(path);
+        }
+        for (const [x, text] of [[60, "Alaska"], [310, "Hawaii · insets not to scale"]]) {
+          const caption = svgElement("text", { x, y: 625, class: "driver-inset-label" });
+          caption.textContent = text; svg.append(caption);
+        }
+        host.replaceChildren(svg);
       }
-      if (!rows.length) host.append(element("p", "No matching state in this office's supplied source frame."));
+      selectState(selectedCode);
     };
-    for (const control of [office, search, order]) {
+    for (const control of [office, stateSelect]) {
       control.disabled = false;
-      control.addEventListener(control === search ? "input" : "change", render);
     }
+    office.addEventListener("change", render);
+    stateSelect.addEventListener("change", () => selectState(stateSelect.value));
     window.addEventListener("participation:effects-state", event => {
-      search.value = event.detail;
-      render();
+      selectState(codes.find(code => names[code] === event.detail || code === event.detail) || "");
     });
     render();
   } catch (error) {
-    status.textContent = `Model chart unavailable: ${error.message}. Saved numerical tables and complete downloads remain below.`;
+    status.textContent = `Model maps unavailable: ${error.message}. Saved numerical tables and complete downloads remain below.`;
   }
 }

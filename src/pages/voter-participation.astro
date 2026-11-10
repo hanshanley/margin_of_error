@@ -210,7 +210,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		</header>
 
 		<nav class="participation-nav" aria-label="Explore participation" role="tablist">
-			{[['states', 'States'], ['national', 'Demographics'], ['effects', '2026 swings'], ['precincts', 'Precincts'],
+			{[['states', 'States'], ['national', 'Demographics'], ['effects', '2026 swing maps'],
 				['methods', 'Methods']].map(([view, label]) =>
 				<button type="button" id={`tab-${view}`} role="tab" data-view={view}
 					aria-selected={view === 'states' ? 'true' : 'false'}
