@@ -1,0 +1,114 @@
+{
+  "id": "mn-2026-statistics",
+  "adapter": "csv",
+  "classification": "public_aggregate",
+  "primary_input": "statistics",
+  "inputs": {
+    "statistics": {
+      "url": "https://electionresultsfiles.sos.mn.gov/20261103/pctstats.txt",
+      "publication": "original"
+    },
+    "page": {
+      "url": "https://electionresults.sos.mn.gov/Results/CountyStatisticsStatewide/Index?ersElectionId=201",
+      "publication": "factual_html"
+    }
+  },
+  "election": {
+    "id": "US-2026-11-03-general",
+    "year": 2026,
+    "date": "2026-11-03",
+    "type": "general",
+    "qualification": "native"
+  },
+  "geography": {
+    "state_code": "MN",
+    "level": "precinct"
+  },
+  "measure": {
+    "id": "total-number-voted",
+    "literal": "Total Number Voted",
+    "kind": "voters_reported",
+    "mode": "all_methods",
+    "unit": "source_reported_participation"
+  },
+  "format": {
+    "delimiter": ";",
+    "encoding": "utf-8-sig",
+    "fieldnames": [
+      "state", "county_id", "precinct_id", "precinct_name", "has_reported_statistics",
+      "registered_7am", "registered_election_day", "roster_signatures",
+      "regular_military_overseas_absentee", "federal_only_absentee",
+      "president_only_absentee", "total_number_voted"
+    ]
+  },
+  "columns": {
+    "geography_id": ["county_id", "precinct_id"],
+    "geography_name": "precinct_name",
+    "count": "total_number_voted",
+    "reported": "has_reported_statistics",
+    "reported_value": "1",
+    "denominator": ["registered_7am", "registered_election_day"],
+    "components": [
+      "roster_signatures", "regular_military_overseas_absentee",
+      "federal_only_absentee", "president_only_absentee"
+    ]
+  },
+  "denominator": {
+    "literal": "7AM plus Election Day registrations",
+    "basis": "native_7am_plus_election_day_registrations"
+  },
+  "source_clock": {
+    "input": "page",
+    "html": true,
+    "pattern": "Last Updated:\\s*(\\d{2}/\\d{2}/\\d{2}\\s+\\d{1,2}:\\d{2}\\s+[AP]M)",
+    "group": 1,
+    "timezone": null
+  },
+  "reporting_status": "Unofficial Results",
+  "expected_rows": 4105,
+  "aggregate_parents": true,
+  "rate_levels": ["county"],
+  "references": "data/participation-intake/references/mn-2026.json",
+  "reference_registration": {
+    "assets": {
+      "mn-precincts": {
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/voter-minnesota-complete-native-statistics-20261110-03/data/county-source-reviews/20261110-minnesota-complete-native-03/MN.geojson.gz",
+        "sha256": "c35f4765c499526e73f158ea59cfac8f6d64acea89496f106a8c7697c970a0ac",
+        "key_path": "properties.key",
+        "expected_features": 4105,
+        "approval_evidence": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-complete-native-statistics-20261110-03/complete-analysis.zip",
+        "boundary_label": "Full native September 18, 2026 display reference; not certified legal precincts",
+        "level": "precinct"
+      },
+      "mn-counties": {
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MN.geojson.gz",
+        "sha256": "ef2672107b15e32332b185baa3e878ec64133dd0ee272b288ead7af51516c13a",
+        "key_path": "properties.key",
+        "expected_features": 87,
+        "approval_evidence": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-native-county-followup-20261110-02/complete-analysis.zip",
+        "boundary_label": "Full 2026 Census county reference; not precincts",
+        "level": "county"
+      }
+    },
+    "identities": {
+      "asset": "mn-precincts",
+      "source_key_paths": ["properties.native_county_id", "properties.native_precinct_id"],
+      "id_path": "properties.key",
+      "name_path": "properties.unit",
+      "parent_path": "properties.county_id"
+    },
+    "parents": {
+      "asset": "mn-counties",
+      "name_path": "properties.county",
+      "feature_key_path": "properties.county_fips",
+      "state_code": "MN",
+      "level": "county",
+      "parent_id": "MN"
+    }
+  },
+  "notes": [
+    "Literal source statistics, not independently unique people or certified cast ballots.",
+    "No precinct rate or normalized voting mode is inferred.",
+    "Separate Estimated Voters fields never fill native counts."
+  ]
+}

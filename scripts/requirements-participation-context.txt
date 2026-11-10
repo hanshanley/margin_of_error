@@ -1,0 +1,4 @@
+-r requirements-participation-intake.txt
+numpy==2.0.2
+shapely==2.0.7
+pyproj==3.6.1

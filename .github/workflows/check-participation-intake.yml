@@ -1,0 +1,46 @@
+name: Check canonical participation intake
+
+on:
+  push:
+    paths:
+      - scripts/participation_intake/**
+      - scripts/participation-*.py
+      - scripts/package-participation-context.py
+      - scripts/publish-participation-dataset.py
+      - scripts/test-participation-*.py
+      - scripts/requirements-participation-*.txt
+      - data/participation-intake/**
+      - .github/workflows/check-participation-intake.yml
+  pull_request:
+    paths:
+      - scripts/participation_intake/**
+      - scripts/participation-*.py
+      - scripts/package-participation-context.py
+      - scripts/publish-participation-dataset.py
+      - scripts/test-participation-*.py
+      - scripts/requirements-participation-*.txt
+      - data/participation-intake/**
+      - .github/workflows/check-participation-intake.yml
+
+permissions:
+  contents: read
+
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            scripts/requirements-participation-intake.txt
+            scripts/requirements-participation-context.txt
+      - run: python -m pip install -r scripts/requirements-participation-context.txt
+      - name: Test contract, direct adapters, incremental checks and complete offline downloads
+        run: |
+          python scripts/test-participation-intake.py
+          python scripts/test-participation-resident-context.py
+          python scripts/test-participation-crosswalk.py
+          python scripts/test-participation-publisher.py
