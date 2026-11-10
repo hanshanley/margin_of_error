@@ -130,6 +130,32 @@ export function qualifiedConcordWardReference(p) {
     && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null;
 }
 
+export function qualifiedNashuaWardReference(p) {
+  const native = p.native_record, reference = p.reference_geometry, ward = p.native_ward_number;
+  const objects = { 1: 8, 2: 9, 3: 7, 4: 6, 5: 4, 6: 3, 7: 5, 8: 1, 9: 2 };
+  return p.year === 2026 && p.state_code === "NH" && p.county === "Nashua" && p.county_fips === null
+    && p.county_id === "additional:NH:city:3350260"
+    && p.source_snapshot === "new-hampshire-native-ward-reference-20261110-03"
+    && p.reporting_unit_kind === "municipal_ward" && p.unit_kind === "municipal_ward"
+    && p.match_status === "matched_current_municipal_ward_reference"
+    && Number.isInteger(ward) && ward >= 1 && ward <= 9 && p.native_object_id === objects[ward]
+    && p.key === `NH|Nashua|Ward:${ward}` && p.unit === `Ward ${ward}` && p.unit_key === `Nashua:Ward:${ward}`
+    && p.source_election_date === "2026-11-03" && native?.ward === ward
+    && Number.isSafeInteger(p.ballots) && p.ballots >= 0 && p.ballots === native.total
+    && ["election_day", "absentee", "federal_only"].every(key => Number.isSafeInteger(native[key]) && native[key] >= 0)
+    && p.source_count_qualified === true && p.cast_ballot_count_qualified === false
+    && p.unique_voter_count_qualified === false && p.maps_approved === true
+    && reference?.native_ward_number === ward && reference.native_ward_label === `Ward ${ward}`
+    && reference.layer_name === "Ward Boundary (Adopted December 28, 2021)" && reference.rest_layer_id === 7
+    && reference.boundary_vintage === null && reference.adopted_date === "2021-12-28"
+    && reference.effective_date === "2021-12-28" && reference.proposed_geometry_used === false
+    && reference.native_projection_epsg === 3857
+    && reference.current_map_effective_literal === "OCTOBER 2026" && reference.current_map_revised_literal === "OCTOBER 2026"
+    && reference.certified_legal_boundaries === false && reference.topology_valid_without_repairs === true
+    && reference.single_path_per_polygon === true && reference.native_overlaps_preserved === true
+    && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null;
+}
+
 export function hasCountySourceMode(code, mode) {
   return ["WV", "ME", "IL"].includes(code) && ["in_person_early", "mail_returned"].includes(mode)
     || Boolean(providerCountyScopes[code]?.modes.includes(mode));

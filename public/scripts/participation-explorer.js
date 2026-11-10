@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, qualifiedManchesterWardReference, qualifiedConcordWardReference, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference, qualifiedNewHampshireCityReference } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, qualifiedManchesterWardReference, qualifiedConcordWardReference, qualifiedNashuaWardReference, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference, qualifiedNewHampshireCityReference } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -1420,7 +1420,8 @@ function currentPrecinctDescription(p) {
       + `= closing${fmt(native.closing)}. Printed${native.printed_turnout} remains a source diagnostic, not an analysis rate. `
       + p.rate_withheld_reason;
   }
-  if (p.source_snapshot === "manchester-native-ward-reference-20261110-01") {
+  if (p.source_snapshot === "manchester-native-ward-reference-20261110-01"
+    || p.source_snapshot === "new-hampshire-native-ward-reference-20261110-03") {
     const native = p.native_record, difference = native.election_day + native.absentee - native.total;
     return `${fmt(p.ballots)} literal native ward Total Ballots Cast. Election Day${fmt(native.election_day)} `
       + `+ absentee${fmt(native.absentee)}; component-minus-printed total${difference} is retained, not repaired. `
@@ -1451,7 +1452,8 @@ function currentPrecinctDetail(p, metadata = {}) {
 async function drawCurrentPrecinctGeography(map, selected, code, token) {
   const file = state.currentPrecincts?.states[code];
   const metadata = state.currentPrecincts?.state_metadata?.[code] || {};
-  const extendedNativeWards = code === "NH" && metadata.source_id === "new-hampshire-native-ward-reference-20261110-02";
+  const nashuaNativeWards = code === "NH" && metadata.source_id === "new-hampshire-native-ward-reference-20261110-03";
+  const extendedNativeWards = code === "NH" && (nashuaNativeWards || metadata.source_id === "new-hampshire-native-ward-reference-20261110-02");
   const nativeWards = code === "NH" && (extendedNativeWards || metadata.source_id === "manchester-native-ward-reference-20261110-01");
   if (!file || !(ufMode() || ["available", "official"].includes($("mode").value))) {
     if (map.full[0] / state.viewport[2] >= 2.3 && state.countyResults?.year === 2026
@@ -1504,18 +1506,20 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
       || data.features.some(feature => feature.geometry?.type !== "Polygon"
         || !qualifiedManchesterWardReference(feature.properties))))
       throw new Error("Unqualified Manchester native ward count or current municipal reference; no other ward allocation");
-    if (extendedNativeWards && (metadata.expected_features !== 22 || metadata.native_source_ward_rows !== 37
-      || metadata.held_table_only_ward_rows !== 15 || metadata.certified_legal_precinct_boundaries !== false
-      || metadata.counts_only !== true || metadata.rates_approved !== false || data.features.length !== 22
-      || new Set(data.features.map(feature => feature.properties.key)).size !== 22
-      || ["Manchester", "Concord"].some(city => {
+    if (extendedNativeWards && (metadata.expected_features !== (nashuaNativeWards ? 31 : 22) || metadata.native_source_ward_rows !== 37
+      || metadata.held_table_only_ward_rows !== (nashuaNativeWards ? 6 : 15) || metadata.certified_legal_precinct_boundaries !== false
+      || metadata.counts_only !== true || metadata.rates_approved !== false || data.features.length !== (nashuaNativeWards ? 31 : 22)
+      || new Set(data.features.map(feature => feature.properties.key)).size !== (nashuaNativeWards ? 31 : 22)
+      || (nashuaNativeWards ? ["Manchester", "Concord", "Nashua"] : ["Manchester", "Concord"]).some(city => {
         const features = data.features.filter(feature => feature.properties.county === city);
-        return features.length !== (city === "Manchester" ? 12 : 10)
-          || features.reduce((sum, feature) => sum + feature.properties.ballots, 0) !== (city === "Manchester" ? 38562 : 19234);
+        const scopes = { Manchester: [12, 38562], Concord: [10, 19234], Nashua: [9, 33849] };
+        return features.length !== scopes[city][0]
+          || features.reduce((sum, feature) => sum + feature.properties.ballots, 0) !== scopes[city][1];
       })
       || data.features.some(feature => feature.geometry?.type !== "Polygon"
-        || !(qualifiedManchesterWardReference(feature.properties) || qualifiedConcordWardReference(feature.properties)))))
-      throw new Error("Unqualified Manchester/Concord native ward count or current municipal reference; no other ward allocation");
+        || !(qualifiedManchesterWardReference(feature.properties) || qualifiedConcordWardReference(feature.properties)
+          || nashuaNativeWards && qualifiedNashuaWardReference(feature.properties)))))
+      throw new Error("Unqualified New Hampshire native ward count or adopted municipal reference; no other ward allocation");
     state.currentPrecinctShapes.set(code, data);
   }
   if (token !== state.drillToken || state.map !== map) return;
@@ -1569,7 +1573,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     ["reported_pct", "Participation rate"], ["rate_withheld_reason", "Rate review"]]);
   header(nativeWards ? "2026 midterms · native municipal ward reports · partial coverage"
     : "2026 midterms · unofficial precinct observations · partial coverage",
-    extendedNativeWards ? "Native ward counts in Manchester and Concord"
+    nashuaNativeWards ? "Native ward counts in three New Hampshire cities"
+      : extendedNativeWards ? "Native ward counts in Manchester and Concord"
       : nativeWards ? "Native ward counts in Manchester" : map.full[0] / state.viewport[2] < 2.3
       ? "Precinct participation · available coverage" : `Precinct participation in ${name}`,
     countsOnly ? `Color shows reported ballot counts, not turnout rates. All ${nativeWards ? "ward" : "precinct"} rates remain withheld.`
@@ -1579,7 +1584,10 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     const complete = html("a", "source-link", "Complete originals, matched/withheld rows and exact geometry (ZIP)");
     complete.href = metadata.complete_download_url; $("caption").append(" ", complete);
   }
-  $("coverage-note").textContent = extendedNativeWards
+  $("coverage-note").textContent = nashuaNativeWards
+    ? "Manchester12 / Concord10 / Nashua9 native ward counts. Other6 Dover ward rows remain in tables. "
+      + "Official municipal reference context, not newly certified2026 legal precincts; no source repairs or rates. " + metadata.notes
+    : extendedNativeWards
     ? "Manchester and Concord only:22 native ward counts. Other15 New Hampshire ward rows remain in tables. "
       + "Current municipal context, not newly certified2026 legal precincts; no source repairs or rates. " + metadata.notes
     : nativeWards
@@ -1594,7 +1602,13 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
   if (observed) ramp();
   else if (countsOnly) countLegend(maximum, "Reported ballots · no rate");
   else legend([["Direct counts available · rate withheld", fill(null)]]);
-  $("geography-note").textContent = extendedNativeWards
+  $("geography-note").textContent = nashuaNativeWards
+    ? "Manchester12 / Concord10 / Nashua9 official municipal ward-reference polygons, not newly certified2026 legal precincts. "
+      + "Manchester GIS2022/linesDecember21,2021; Concord city approvalNovember8,2021, not a vintage inferred from its2020 service name; "
+      + "Nashua adopted/effectiveDecember28,2021, with a separate current map printedOctober2026. "
+      + "Six Manchester and fourteen Concord native overlaps remain unrepaired; no Nashua native pair overlaps. "
+      + "All counts are nativeNovember3,2026 reports; no city/state counts or rates are allocated to wards."
+    : extendedNativeWards
     ? "Manchester12 / Concord10 current municipal ward-reference polygons, not newly certified2026 legal precincts. "
       + "Manchester GIS2022 / lines effective December21,2021; Concord city approval November8,2021 "
       + "(its PubWebGIS2020 service name is not a boundary vintage). Six Manchester and fourteen Concord native overlaps remain unrepaired. "

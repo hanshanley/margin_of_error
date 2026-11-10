@@ -1,0 +1,21 @@
+{
+  "city": "Nashua",
+  "current_clerk_source": "https://nashuanh.gov/205/Where-Do-I-Vote",
+  "native_clerk_date": "2021-12-28",
+  "private_clerk_html_sha256": "980e4e424a66cfe603ac6b20a860d2ccf7fea90559a12aa90ff2b7c765361c09",
+  "independent_city_declaring_page": "https://www.nashuanh.gov/155/GIS",
+  "city_linked_public_org": "WwJAqA4K2ienzdKW",
+  "adopted_public_app": "d52ed8ae4a3240b798d6645548309feb",
+  "adopted_public_webmap": "b3e0f610170a417996404eb0486d9e63",
+  "actual_declared_ward_layer": "https://services1.arcgis.com/WwJAqA4K2ienzdKW/arcgis/rest/services/Nashua_Wards_2022_WFL1/FeatureServer/7",
+  "native_webmap_ward_label": "Ward Boundary (Effective December 28, 2021)",
+  "adopted_source_date": "2021-12-28",
+  "effective_source_date": "2021-12-28",
+  "current_full_map_effective_literal": "OCTOBER 2026",
+  "current_full_map_revised_literal": "OCTOBER 2026",
+  "not_proposed_point6_block22_or_parcel8": true,
+  "old_query_backend_unavailable_not_an_access_denial": true,
+  "private_app_or_compiled_code_copied": false,
+  "private_keys_used": false,
+  "certified_legal2026_precinct_boundaries": false
+}

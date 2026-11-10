@@ -1,0 +1,19 @@
+{
+  "source": "https://services1.arcgis.com/WwJAqA4K2ienzdKW/arcgis/rest/services/Nashua_Wards_2022_WFL1/FeatureServer/7/query?where=1%3D1&outFields=OBJECTID%2CWard%2CWardtxt&returnGeometry=true&outSR=4326&f=geojson",
+  "actual_layer_id": 7,
+  "only_aggregate_identifiers_requested": [
+    "OBJECTID",
+    "Ward",
+    "Wardtxt"
+  ],
+  "no_credentials_used": true,
+  "no_personal_or_population_fields_requested": true,
+  "status": 200,
+  "bytes": 304900,
+  "sha256": "bd8d030ee1d3b272be5430e53a097ba60c7c78e15aef9d3be6a45d7dc5071e7b",
+  "count": null,
+  "object_ids": null,
+  "features": 9,
+  "spatial_reference": null,
+  "exceeded_transfer_limit": false
+}

@@ -1,0 +1,700 @@
+{
+  "status": "PASS_all9_adopted_Nashua_native_ward_counts_and_reference_NOT_yet_integrated",
+  "native_ward_count": 9,
+  "derived_raw_ward_total_sum": 33849,
+  "city_parent_separately_printed": false,
+  "native_federal_only92_separate_not_added": true,
+  "all_source_disagreements_retained": true,
+  "all_source_native_amendments_preserved": true,
+  "adopted_source_role_not_proposed_geometry": true,
+  "adopted_source_date": "2021-12-28",
+  "current_city_map_effective_revised_literal": "OCTOBER 2026",
+  "native_count_clock_and_reference_clocks_separate": true,
+  "geometry_source_geojson_bytes": 304900,
+  "geometry_source_geojson_sha256": "bd8d030ee1d3b272be5430e53a097ba60c7c78e15aef9d3be6a45d7dc5071e7b",
+  "geometry_source_projected_bytes": 239155,
+  "geometry_source_projected_sha256": "ff4c7a224728fae0c79c9f6533208addc3a5e8371d92959084ea857ec7f412bf",
+  "native_vertices_verified": 8256,
+  "maximum_independent_projection_error_degrees": 1.0247593068766006e-13,
+  "all_shapes_valid_without_repair": true,
+  "all_original_single_closed_rings": true,
+  "no_population_officeholder_address_point_or_parcel_features_requested": true,
+  "no_keys_or_private_app_code_used": true,
+  "analysis_rates_approved": false,
+  "certified2026_legal_precinct_claim": false,
+  "complete_queries": [
+    {
+      "city": "Nashua",
+      "native_ward": 1,
+      "native_object_id": 8,
+      "native_ward_text": "1",
+      "source_count": 4832,
+      "native_source_record": {
+        "ward": 1,
+        "native_page": 1,
+        "election_day": 4533,
+        "absentee": 299,
+        "total": 4832,
+        "federal_only": 17,
+        "native_revision_label": "AMENDED 11/4/2026"
+      },
+      "source_component_minus_printed_total": 0,
+      "source_federal_only_separate": 17,
+      "source_election_date": "2026-11-03",
+      "source_reference_adopted_date": "2021-12-28",
+      "source_current_city_map_effective_literal": "OCTOBER 2026",
+      "source_current_city_map_revised_literal": "OCTOBER 2026",
+      "actual_adopted_ward_layer": 7,
+      "proposed_or_point_block_parcel_layers_not_used": true,
+      "native_projection_epsg": 3857,
+      "native_vertices": 989,
+      "inverse_mercator_error_degrees": 9.664426065637204e-14,
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "native_federal_only_added": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "certified2026_legal_precinct_claim": false,
+      "disposition": "eligible_official_adopted_municipal_ward_reference_NOT_yet_integrated"
+    },
+    {
+      "city": "Nashua",
+      "native_ward": 2,
+      "native_object_id": 9,
+      "native_ward_text": "2",
+      "source_count": 4290,
+      "native_source_record": {
+        "ward": 2,
+        "native_page": 7,
+        "election_day": 4075,
+        "absentee": 215,
+        "total": 4290,
+        "federal_only": 14,
+        "native_revision_label": null
+      },
+      "source_component_minus_printed_total": 0,
+      "source_federal_only_separate": 14,
+      "source_election_date": "2026-11-03",
+      "source_reference_adopted_date": "2021-12-28",
+      "source_current_city_map_effective_literal": "OCTOBER 2026",
+      "source_current_city_map_revised_literal": "OCTOBER 2026",
+      "actual_adopted_ward_layer": 7,
+      "proposed_or_point_block_parcel_layers_not_used": true,
+      "native_projection_epsg": 3857,
+      "native_vertices": 2107,
+      "inverse_mercator_error_degrees": 9.664426065637204e-14,
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "native_federal_only_added": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "certified2026_legal_precinct_claim": false,
+      "disposition": "eligible_official_adopted_municipal_ward_reference_NOT_yet_integrated"
+    },
+    {
+      "city": "Nashua",
+      "native_ward": 3,
+      "native_object_id": 7,
+      "native_ward_text": "3",
+      "source_count": 3572,
+      "native_source_record": {
+        "ward": 3,
+        "native_page": 9,
+        "election_day": 3386,
+        "absentee": 187,
+        "total": 3572,
+        "federal_only": 14,
+        "native_revision_label": "AMENDED 11/4/2026"
+      },
+      "source_component_minus_printed_total": 1,
+      "source_federal_only_separate": 14,
+      "source_election_date": "2026-11-03",
+      "source_reference_adopted_date": "2021-12-28",
+      "source_current_city_map_effective_literal": "OCTOBER 2026",
+      "source_current_city_map_revised_literal": "OCTOBER 2026",
+      "actual_adopted_ward_layer": 7,
+      "proposed_or_point_block_parcel_layers_not_used": true,
+      "native_projection_epsg": 3857,
+      "native_vertices": 678,
+      "inverse_mercator_error_degrees": 9.664426065637204e-14,
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "native_federal_only_added": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "certified2026_legal_precinct_claim": false,
+      "disposition": "eligible_official_adopted_municipal_ward_reference_NOT_yet_integrated"
+    },
+    {
+      "city": "Nashua",
+      "native_ward": 4,
+      "native_object_id": 6,
+      "native_ward_text": "4",
+      "source_count": 2086,
+      "native_source_record": {
+        "ward": 4,
+        "native_page": 11,
+        "election_day": 2015,
+        "absentee": 69,
+        "total": 2086,
+        "federal_only": 2,
+        "native_revision_label": "AMENDED 11/4/2026"
+      },
+      "source_component_minus_printed_total": -2,
+      "source_federal_only_separate": 2,
+      "source_election_date": "2026-11-03",
+      "source_reference_adopted_date": "2021-12-28",
+      "source_current_city_map_effective_literal": "OCTOBER 2026",
+      "source_current_city_map_revised_literal": "OCTOBER 2026",
+      "actual_adopted_ward_layer": 7,
+      "proposed_or_point_block_parcel_layers_not_used": true,
+      "native_projection_epsg": 3857,
+      "native_vertices": 792,
+      "inverse_mercator_error_degrees": 9.664426065637204e-14,
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "native_federal_only_added": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "certified2026_legal_precinct_claim": false,
+      "disposition": "eligible_official_adopted_municipal_ward_reference_NOT_yet_integrated"
+    },
+    {
+      "city": "Nashua",
+      "native_ward": 5,
+      "native_object_id": 4,
+      "native_ward_text": "5",
+      "source_count": 4950,
+      "native_source_record": {
+        "ward": 5,
+        "native_page": 14,
+        "election_day": 4675,
+        "absentee": 275,
+        "total": 4950,
+        "federal_only": 15,
+        "native_revision_label": "AMENDED 11/4/2026"
+      },
+      "source_component_minus_printed_total": 0,
+      "source_federal_only_separate": 15,
+      "source_election_date": "2026-11-03",
+      "source_reference_adopted_date": "2021-12-28",
+      "source_current_city_map_effective_literal": "OCTOBER 2026",
+      "source_current_city_map_revised_literal": "OCTOBER 2026",
+      "actual_adopted_ward_layer": 7,
+      "proposed_or_point_block_parcel_layers_not_used": true,
+      "native_projection_epsg": 3857,
+      "native_vertices": 887,
+      "inverse_mercator_error_degrees": 1.0173423748423967e-13,
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "native_federal_only_added": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "certified2026_legal_precinct_claim": false,
+      "disposition": "eligible_official_adopted_municipal_ward_reference_NOT_yet_integrated"
+    },
+    {
+      "city": "Nashua",
+      "native_ward": 6,
+      "native_object_id": 3,
+      "native_ward_text": "6",
+      "source_count": 3128,
+      "native_source_record": {
+        "ward": 6,
+        "native_page": 19,
+        "election_day": 2982,
+        "absentee": 146,
+        "total": 3128,
+        "federal_only": 6,
+        "native_revision_label": "AMENDED 11/7/2026"
+      },
+      "source_component_minus_printed_total": 0,
+      "source_federal_only_separate": 6,
+      "source_election_date": "2026-11-03",
+      "source_reference_adopted_date": "2021-12-28",
+      "source_current_city_map_effective_literal": "OCTOBER 2026",
+      "source_current_city_map_revised_literal": "OCTOBER 2026",
+      "actual_adopted_ward_layer": 7,
+      "proposed_or_point_block_parcel_layers_not_used": true,
+      "native_projection_epsg": 3857,
+      "native_vertices": 557,
+      "inverse_mercator_error_degrees": 1.0247593068766006e-13,
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "native_federal_only_added": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "certified2026_legal_precinct_claim": false,
+      "disposition": "eligible_official_adopted_municipal_ward_reference_NOT_yet_integrated"
+    },
+    {
+      "city": "Nashua",
+      "native_ward": 7,
+      "native_object_id": 5,
+      "native_ward_text": "7",
+      "source_count": 3063,
+      "native_source_record": {
+        "ward": 7,
+        "native_page": 22,
+        "election_day": 2915,
+        "absentee": 148,
+        "total": 3063,
+        "federal_only": 10,
+        "native_revision_label": "AMENDED 11/4/2026"
+      },
+      "source_component_minus_printed_total": 0,
+      "source_federal_only_separate": 10,
+      "source_election_date": "2026-11-03",
+      "source_reference_adopted_date": "2021-12-28",
+      "source_current_city_map_effective_literal": "OCTOBER 2026",
+      "source_current_city_map_revised_literal": "OCTOBER 2026",
+      "actual_adopted_ward_layer": 7,
+      "proposed_or_point_block_parcel_layers_not_used": true,
+      "native_projection_epsg": 3857,
+      "native_vertices": 881,
+      "inverse_mercator_error_degrees": 1.0247593068766006e-13,
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "native_federal_only_added": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "certified2026_legal_precinct_claim": false,
+      "disposition": "eligible_official_adopted_municipal_ward_reference_NOT_yet_integrated"
+    },
+    {
+      "city": "Nashua",
+      "native_ward": 8,
+      "native_object_id": 1,
+      "native_ward_text": "8",
+      "source_count": 3575,
+      "native_source_record": {
+        "ward": 8,
+        "native_page": 24,
+        "election_day": 3349,
+        "absentee": 225,
+        "total": 3575,
+        "federal_only": 9,
+        "native_revision_label": "AMENDED 11/4/2026",
+        "cancelled_election_day_mark": "3264",
+        "cancelled_total_mark": "3489",
+        "native_note": "Corrected totals based off of Post-Election Certificates. Discrepancies identified and corrected in red.",
+        "red_source_amendment_selected_not_analyst_repair": true
+      },
+      "source_component_minus_printed_total": -1,
+      "source_federal_only_separate": 9,
+      "source_election_date": "2026-11-03",
+      "source_reference_adopted_date": "2021-12-28",
+      "source_current_city_map_effective_literal": "OCTOBER 2026",
+      "source_current_city_map_revised_literal": "OCTOBER 2026",
+      "actual_adopted_ward_layer": 7,
+      "proposed_or_point_block_parcel_layers_not_used": true,
+      "native_projection_epsg": 3857,
+      "native_vertices": 554,
+      "inverse_mercator_error_degrees": 8.903074960742904e-14,
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "native_federal_only_added": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "certified2026_legal_precinct_claim": false,
+      "disposition": "eligible_official_adopted_municipal_ward_reference_NOT_yet_integrated"
+    },
+    {
+      "city": "Nashua",
+      "native_ward": 9,
+      "native_object_id": 2,
+      "native_ward_text": "9",
+      "source_count": 4353,
+      "native_source_record": {
+        "ward": 9,
+        "native_page": 26,
+        "election_day": 4022,
+        "absentee": 331,
+        "total": 4353,
+        "federal_only": 5,
+        "native_revision_label": null
+      },
+      "source_component_minus_printed_total": 0,
+      "source_federal_only_separate": 5,
+      "source_election_date": "2026-11-03",
+      "source_reference_adopted_date": "2021-12-28",
+      "source_current_city_map_effective_literal": "OCTOBER 2026",
+      "source_current_city_map_revised_literal": "OCTOBER 2026",
+      "actual_adopted_ward_layer": 7,
+      "proposed_or_point_block_parcel_layers_not_used": true,
+      "native_projection_epsg": 3857,
+      "native_vertices": 811,
+      "inverse_mercator_error_degrees": 1.0173423748423967e-13,
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "native_federal_only_added": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "certified2026_legal_precinct_claim": false,
+      "disposition": "eligible_official_adopted_municipal_ward_reference_NOT_yet_integrated"
+    }
+  ],
+  "complete_pairwise_queries": [
+    {
+      "wards": [
+        1,
+        2
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        1,
+        3
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        1,
+        4
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        1,
+        5
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        1,
+        6
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        1,
+        7
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        1,
+        8
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        1,
+        9
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        2,
+        3
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        2,
+        4
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        2,
+        5
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        2,
+        6
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        2,
+        7
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        2,
+        8
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        2,
+        9
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        3,
+        4
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        3,
+        5
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        3,
+        6
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        3,
+        7
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        3,
+        8
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        3,
+        9
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        4,
+        5
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        4,
+        6
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        4,
+        7
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        4,
+        8
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        4,
+        9
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        5,
+        6
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        5,
+        7
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        5,
+        8
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        5,
+        9
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        6,
+        7
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        6,
+        8
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        6,
+        9
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        7,
+        8
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        7,
+        9
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    },
+    {
+      "wards": [
+        8,
+        9
+      ],
+      "native_projected_square_meters": 0.0,
+      "geographic_square_degrees": 0.0,
+      "overlap_over_smaller_native_ward_area": 0.0,
+      "native_overlaps_preserved_not_repaired": true
+    }
+  ],
+  "nonzero_native_overlap_queries": []
+}

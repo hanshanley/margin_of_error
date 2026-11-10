@@ -2,3 +2,4 @@ public/participation-context/** -text whitespace=cr-at-eol
 public/participation-methods/** -text whitespace=cr-at-eol
 data/county-source-reviews/20261109-hawaii-administrations-01/originals/media.txt -text whitespace=-trailing-space,cr-at-eol
 data/county-source-reviews/20261109-provider-county-frames-01/legacy-early-voting.csv -text whitespace=cr-at-eol
+data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-adopted2021-native-count.json -text whitespace=cr-at-eol

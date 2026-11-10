@@ -1,0 +1,23 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-new-hampshire-native-ward-reference-20261110-03/complete-analysis.zip",
+  "bytes": 97907540,
+  "sha256": "5802a9a7f17a67bd045b39447db30e44b359ab4ce2c8cc4ca782fe38524c3963",
+  "members": 184,
+  "original_pdfs": 17,
+  "original_pages": 219,
+  "original_pdf_bytes": 117853795,
+  "mapped_cities": {
+    "Manchester": 12,
+    "Concord": 10,
+    "Nashua": 9
+  },
+  "retained_city_source_fields": 242,
+  "retained_native_ward_rows": 37,
+  "complete_reference_decisions": 31,
+  "complete_nashua_pair_decisions": 36,
+  "table_only_ward_holds": 6,
+  "source_repairs": false,
+  "geometry_repairs": false,
+  "native_federal_only_added": false,
+  "analysis_rates_approved": false
+}
