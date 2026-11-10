@@ -1,0 +1,62 @@
+{
+  "source_file": "dover-20261103-native-turnout-original.pdf",
+  "source_sha256": "3098be4b24fdacef06c3280f8dbfde1f8c32b9116c1dc32d3d11f4b8bdf4adb9",
+  "native_pages": 1,
+  "native_page": 1,
+  "city": "Dover",
+  "native_title": "REGISTERED VOTERS/TURNOUT",
+  "native_election_label": "NOVEMBER 3, 2026 GENERAL ELECTION",
+  "election_date": "2026-11-03",
+  "native_file_basename": "2025.11.03_VoterTurnout.pdf",
+  "filename_does_not_override_native_election_date": true,
+  "native_header_turnout": "71.0%",
+  "native_ballot_labels": {
+    "polling_place": "Polling Place Ballots",
+    "absentee": "Absentee Ballots",
+    "total": "Total Ballots Cast",
+    "registered": "All Registered Voters",
+    "printed_turnout": "Turnout"
+  },
+  "native_ballot_rows": [
+    {"ward": 1, "polling_place": 2430, "absentee": 147, "total": 2577, "registered": 3778, "printed_turnout": "68.2%"},
+    {"ward": 2, "polling_place": 2344, "absentee": 189, "total": 2533, "registered": 3694, "printed_turnout": "68.6%"},
+    {"ward": 3, "polling_place": 2828, "absentee": 379, "total": 3207, "registered": 4305, "printed_turnout": "74.5%"},
+    {"ward": 4, "polling_place": 2608, "absentee": 264, "total": 2872, "registered": 3967, "printed_turnout": "72.4%"},
+    {"ward": 5, "polling_place": 2133, "absentee": 165, "total": 2298, "registered": 3282, "printed_turnout": "70.0%"},
+    {"ward": 6, "polling_place": 2289, "absentee": 165, "total": 2454, "registered": 3430, "printed_turnout": "71.5%"},
+    {"ward": "TOTAL", "polling_place": 14632, "absentee": 1309, "total": 15941, "registered": 22456, "printed_turnout": "71.0%"}
+  ],
+  "native_register_labels": {
+    "republican_checklist": "Checklist Registered Republicans",
+    "republican_new": "New Republican Registrations",
+    "democratic_checklist": "Checklist Registered Democratic",
+    "democratic_new": "New Democratic Registrations",
+    "undeclared_checklist": "Checklist Registered Undeclared",
+    "undeclared_new": "New Undeclared Registrations",
+    "checklist": "All Checklist Registered Voters",
+    "new": "Total New Voters Registrations",
+    "registered": "Checklist and Election Registered Voters"
+  },
+  "native_register_rows": [
+    {"ward": 1, "republican_checklist": 563, "republican_new": 28, "democratic_checklist": 1668, "democratic_new": 121, "undeclared_checklist": 1216, "undeclared_new": 182, "checklist": 3447, "new": 331, "registered": 3778},
+    {"ward": 2, "republican_checklist": 647, "republican_new": 32, "democratic_checklist": 1611, "democratic_new": 138, "undeclared_checklist": 1109, "undeclared_new": 157, "checklist": 3367, "new": 327, "registered": 3694},
+    {"ward": 3, "republican_checklist": 1131, "republican_new": 33, "democratic_checklist": 1563, "democratic_new": 67, "undeclared_checklist": 1381, "undeclared_new": 130, "checklist": 4075, "new": 230, "registered": 4305},
+    {"ward": 4, "republican_checklist": 855, "republican_new": 28, "democratic_checklist": 1542, "democratic_new": 57, "undeclared_checklist": 1378, "undeclared_new": 107, "checklist": 3775, "new": 192, "registered": 3967},
+    {"ward": 5, "republican_checklist": 731, "republican_new": 34, "democratic_checklist": 1167, "democratic_new": 65, "undeclared_checklist": 1180, "undeclared_new": 105, "checklist": 3078, "new": 204, "registered": 3282},
+    {"ward": 6, "republican_checklist": 902, "republican_new": 27, "democratic_checklist": 1106, "democratic_new": 60, "undeclared_checklist": 1222, "undeclared_new": 113, "checklist": 3230, "new": 200, "registered": 3430},
+    {"ward": "TOTAL", "republican_checklist": 4829, "republican_new": 182, "democratic_checklist": 8657, "democratic_new": 508, "undeclared_checklist": 7486, "undeclared_new": 794, "checklist": 20972, "new": 1484, "registered": 22456}
+  ],
+  "native_checklist_verified_date": "2026-10-26",
+  "native_new_voter_definition": "Those who registered at the polls on Election Day",
+  "native_printed_rate_basis": "Total ballots cast divided by total checklist and election day registered voters",
+  "registration_affiliation_is_not_ballot_choice": true,
+  "no_group_participation_numerators_observed": true,
+  "native_city_parent_printed": true,
+  "candidate_counts_used_as_ballots": false,
+  "source_update_clock": null,
+  "source_timezone": null,
+  "analysis_denominator": null,
+  "analysis_rate": null,
+  "analysis_rates_approved": false,
+  "not_yet_integrated_or_published": true
+}

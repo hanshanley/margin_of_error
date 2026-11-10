@@ -1,0 +1,36 @@
+{
+  "source_file": "nashua-20261103-original.pdf",
+  "source_sha256": "a0dce84c943607e6d3bea958e9efd46a8f43d7def4b322054a6767895bc8d7bb",
+  "native_pages": 29,
+  "city": "Nashua",
+  "native_election_label": "General Election November 3, 2026",
+  "election_date": "2026-11-03",
+  "native_measure_labels": {
+    "election_day": "Election Day Ballots Cast",
+    "absentee": "Absentee Ballots Cast",
+    "total": "Total Ballots Cast",
+    "federal_only": "Federal Office Only Ballots Cast"
+  },
+  "reading_method": "Direct visual review of all nine native first-page headers and SHA-bound 300dpi ballot-block crops, including source red amendments and cancelled marks; no candidate sum or arithmetic repair",
+  "wards": [
+    {"ward": 1, "native_page": 1, "election_day": 4533, "absentee": 299, "total": 4832, "federal_only": 17, "native_revision_label": "AMENDED 11/4/2026"},
+    {"ward": 2, "native_page": 7, "election_day": 4075, "absentee": 215, "total": 4290, "federal_only": 14, "native_revision_label": null},
+    {"ward": 3, "native_page": 9, "election_day": 3386, "absentee": 187, "total": 3572, "federal_only": 14, "native_revision_label": "AMENDED 11/4/2026"},
+    {"ward": 4, "native_page": 11, "election_day": 2015, "absentee": 69, "total": 2086, "federal_only": 2, "native_revision_label": "AMENDED 11/4/2026"},
+    {"ward": 5, "native_page": 14, "election_day": 4675, "absentee": 275, "total": 4950, "federal_only": 15, "native_revision_label": "AMENDED 11/4/2026"},
+    {"ward": 6, "native_page": 19, "election_day": 2982, "absentee": 146, "total": 3128, "federal_only": 6, "native_revision_label": "AMENDED 11/7/2026"},
+    {"ward": 7, "native_page": 22, "election_day": 2915, "absentee": 148, "total": 3063, "federal_only": 10, "native_revision_label": "AMENDED 11/4/2026"},
+    {"ward": 8, "native_page": 24, "election_day": 3349, "absentee": 225, "total": 3575, "federal_only": 9, "native_revision_label": "AMENDED 11/4/2026", "cancelled_election_day_mark": "3264", "cancelled_total_mark": "3489", "native_note": "Corrected totals based off of Post-Election Certificates. Discrepancies identified and corrected in red.", "red_source_amendment_selected_not_analyst_repair": true},
+    {"ward": 9, "native_page": 26, "election_day": 4022, "absentee": 331, "total": 4353, "federal_only": 5, "native_revision_label": null}
+  ],
+  "native_city_parent_printed": false,
+  "federal_only_added_to_total": false,
+  "federal_only_inclusion_in_total_independently_qualified": false,
+  "candidate_counts_used_as_ballots": false,
+  "analysis_denominator": null,
+  "analysis_rate": null,
+  "source_update_clock": null,
+  "source_timezone": null,
+  "source_counts_repaired": false,
+  "not_yet_integrated_or_published": true
+}

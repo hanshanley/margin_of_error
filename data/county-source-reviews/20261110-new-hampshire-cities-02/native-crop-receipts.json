@@ -1,0 +1,239 @@
+{
+  "original_pdf_sha256": "a0dce84c943607e6d3bea958e9efd46a8f43d7def4b322054a6767895bc8d7bb",
+  "records": [
+    {
+      "ward": 1,
+      "native_page": 1,
+      "clips": [
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward01-header.png",
+          "native_pdf_box": [
+            0.0,
+            0.0,
+            612.0,
+            170.0
+          ],
+          "render_scale": 1.5
+        },
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward01-ballot-block.png",
+          "native_pdf_box": [
+            0,
+            170,
+            612.0,
+            285
+          ],
+          "render_scale": 4.166666666666667
+        }
+      ]
+    },
+    {
+      "ward": 2,
+      "native_page": 7,
+      "clips": [
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward02-header.png",
+          "native_pdf_box": [
+            0.0,
+            0.0,
+            612.0,
+            170.0
+          ],
+          "render_scale": 1.5
+        },
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward02-ballot-block.png",
+          "native_pdf_box": [
+            0,
+            170,
+            612.0,
+            285
+          ],
+          "render_scale": 4.166666666666667
+        }
+      ]
+    },
+    {
+      "ward": 3,
+      "native_page": 9,
+      "clips": [
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward03-header.png",
+          "native_pdf_box": [
+            0.0,
+            0.0,
+            612.0,
+            170.0
+          ],
+          "render_scale": 1.5
+        },
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward03-ballot-block.png",
+          "native_pdf_box": [
+            0,
+            170,
+            612.0,
+            285
+          ],
+          "render_scale": 4.166666666666667
+        }
+      ]
+    },
+    {
+      "ward": 4,
+      "native_page": 11,
+      "clips": [
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward04-header.png",
+          "native_pdf_box": [
+            0.0,
+            0.0,
+            612.0,
+            170.0
+          ],
+          "render_scale": 1.5
+        },
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward04-ballot-block.png",
+          "native_pdf_box": [
+            0,
+            170,
+            612.0,
+            285
+          ],
+          "render_scale": 4.166666666666667
+        }
+      ]
+    },
+    {
+      "ward": 5,
+      "native_page": 14,
+      "clips": [
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward05-header.png",
+          "native_pdf_box": [
+            0.0,
+            0.0,
+            612.0,
+            170.0
+          ],
+          "render_scale": 1.5
+        },
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward05-ballot-block.png",
+          "native_pdf_box": [
+            0,
+            170,
+            612.0,
+            285
+          ],
+          "render_scale": 4.166666666666667
+        }
+      ]
+    },
+    {
+      "ward": 6,
+      "native_page": 19,
+      "clips": [
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward06-header.png",
+          "native_pdf_box": [
+            0.0,
+            0.0,
+            612.0,
+            170.0
+          ],
+          "render_scale": 1.5
+        },
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward06-ballot-block.png",
+          "native_pdf_box": [
+            0,
+            170,
+            612.0,
+            285
+          ],
+          "render_scale": 4.166666666666667
+        }
+      ]
+    },
+    {
+      "ward": 7,
+      "native_page": 22,
+      "clips": [
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward07-header.png",
+          "native_pdf_box": [
+            0.0,
+            0.0,
+            612.0,
+            170.0
+          ],
+          "render_scale": 1.5
+        },
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward07-ballot-block.png",
+          "native_pdf_box": [
+            0,
+            170,
+            612.0,
+            285
+          ],
+          "render_scale": 4.166666666666667
+        }
+      ]
+    },
+    {
+      "ward": 8,
+      "native_page": 24,
+      "clips": [
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward08-header.png",
+          "native_pdf_box": [
+            0.0,
+            0.0,
+            612.0,
+            170.0
+          ],
+          "render_scale": 1.5
+        },
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward08-ballot-block.png",
+          "native_pdf_box": [
+            0,
+            170,
+            612.0,
+            285
+          ],
+          "render_scale": 4.166666666666667
+        }
+      ]
+    },
+    {
+      "ward": 9,
+      "native_page": 26,
+      "clips": [
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward09-header.png",
+          "native_pdf_box": [
+            0.0,
+            0.0,
+            612.0,
+            170.0
+          ],
+          "render_scale": 1.5
+        },
+        {
+          "path": "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward09-ballot-block.png",
+          "native_pdf_box": [
+            0,
+            170,
+            612.0,
+            285
+          ],
+          "render_scale": 4.166666666666667
+        }
+      ]
+    }
+  ]
+}

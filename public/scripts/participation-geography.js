@@ -182,15 +182,18 @@ export function qualifiedIllinoisCountyContextReference(rows, reference, collect
 }
 
 export function qualifiedNewHampshireCityReference(rows, reference, collection) {
-  if (!Array.isArray(rows) || rows.length !== 2
+  const expected = new Map([["Concord", "3314200"], ["Manchester", "3345140"]]);
+  if (reference?.review_id === "new-hampshire-native-cities-20261110-02") {
+    expected.set("Nashua", "3350260"); expected.set("Dover", "3318820");
+  } else if (reference?.review_id !== "new-hampshire-native-cities-20261110-01") return false;
+  if (!Array.isArray(rows) || rows.length !== expected.size
     || reference.geography_scope !== "native_partial_city_reporting_context"
-    || reference.boundary_year !== 2024 || reference.localities !== 259 || reference.mapped_localities !== 2
+    || reference.boundary_year !== 2024 || reference.localities !== 259 || reference.mapped_localities !== expected.size
     || reference.certified_election_boundaries !== false
     || !Array.isArray(collection?.features) || collection.features.length !== 259) return false;
-  const expected = new Map([["Concord", "3314200"], ["Manchester", "3345140"]]);
   const identities = new Set(collection.features.map(f => f.properties?.key));
   if (identities.size !== 259 || rows.some(row => expected.get(row.county) !== row.reference_municipality_key)
-    || new Set(rows.map(row => row.county)).size !== 2
+    || new Set(rows.map(row => row.county)).size !== expected.size
     || collection.features.some(f => !f.geometry || f.properties.state_code !== "NH"
       || f.properties.boundary_year !== 2024)) return false;
   return rows.every(row => {
@@ -209,12 +212,27 @@ export function qualifiedNewHampshireCityReference(rows, reference, collection) 
         && source.total_cast_columns?.length === 12
         && source.total_cast_columns.every(r => Number.isSafeInteger(r.count) && r.count >= 0)
         && source.total_cast_columns.reduce((s, r) => s + r.count, 0) === row.ballots;
-    return row.source_count_basis === "derived_sum_complete12_printed_totals_not_repaired"
+    if (row.county === "Dover") {
+      const native = source?.native_ballot_rows, registers = source?.native_register_rows;
+      return row.source_count_basis === "native_printed_city_total_ballots_cast"
+        && row.native_city_parent_printed === true
+        && source?.native_election_label === "NOVEMBER 3, 2026 GENERAL ELECTION"
+        && source.native_ballot_labels?.total === "Total Ballots Cast"
+        && source.native_ballot_labels?.registered === "All Registered Voters"
+        && native?.length === 7 && registers?.length === 7
+        && native.every((r, i) => r.ward === (i < 6 ? i + 1 : "TOTAL")
+          && Number.isSafeInteger(r.total) && r.total >= 0
+          && registers[i].ward === r.ward && registers[i].registered === r.registered)
+        && native[6].total === row.ballots
+        && native.slice(0,6).reduce((s, r) => s + r.total, 0) === row.ballots;
+    }
+    const wardCount = row.county === "Nashua" ? 9 : 12;
+    return row.source_count_basis === `derived_sum_complete${wardCount}_printed_totals_not_repaired`
       && row.native_city_parent_printed === false
       && source?.native_election_label === "General Election November 3, 2026"
-      && source.federal_only_added_to_total === false && source.wards?.length === 12
-      && new Set(source.wards.map(r => r.ward)).size === 12
-      && source.wards.every(r => Number.isInteger(r.ward) && r.ward >= 1 && r.ward <= 12
+      && source.federal_only_added_to_total === false && source.wards?.length === wardCount
+      && new Set(source.wards.map(r => r.ward)).size === wardCount
+      && source.wards.every(r => Number.isInteger(r.ward) && r.ward >= 1 && r.ward <= wardCount
         && Number.isSafeInteger(r.total) && r.total >= 0)
       && source.wards.reduce((s, r) => s + r.total, 0) === row.ballots;
   });

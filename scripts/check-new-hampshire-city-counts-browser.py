@@ -21,6 +21,11 @@ m = readings["manchester"]
 c = readings["concord"]
 manchester = sum(r["total"] for r in m["wards"])
 concord = c["native_city_total_cast"]
+extension = ROOT / "data/county-source-reviews/20261110-new-hampshire-cities-02"
+n = json.loads((extension / "nashua-native-readings.json").read_bytes())
+d = json.loads((extension / "dover-native-readings.json").read_bytes())
+nashua = sum(row["total"] for row in n["wards"])
+dover = d["native_ballot_rows"][-1]["total"]
 cases = []
 
 
@@ -48,12 +53,12 @@ def verify(page):
     expect(shapes).to_have_count(259, timeout=90000)
     actual = shapes.evaluate_all("els=>els.map(e=>({key:e.dataset.geography,count:e.dataset.count,rate:e.dataset.rate,year:e.dataset.referenceYear,margin:e.getAttribute('data-margin')}))")
     assert {r["key"]: int(r["count"]) for r in actual if r["count"]} == {
-        "3345140": manchester, "3314200": concord}
-    assert sum(r["count"] == "" for r in actual) == 257
+        "3345140": manchester, "3314200": concord, "3350260": nashua, "3318820": dover}
+    assert sum(r["count"] == "" for r in actual) == 255
     assert all(r["rate"] == "" and r["year"] == "2024" and r["margin"] is None for r in actual)
     expect(page.locator("#title")).to_have_text("City source counts in New Hampshire")
-    expect(page.locator("#caption")).to_contain_text("257 areas remain unknown")
-    expect(page.locator("#caption")).to_contain_text("22 ward rows remain in tables")
+    expect(page.locator("#caption")).to_contain_text("255 areas remain unknown")
+    expect(page.locator("#caption")).to_contain_text("37 ward rows remain in tables")
     page.select_option("#current-county-select", "additional:NH:city:3345140")
     expect(page.locator("#current-county-detail")).to_contain_text(f"{manchester:,}")
     expect(page.locator("#current-county-detail")).to_contain_text("85-ballot discrepancy")
@@ -73,6 +78,25 @@ def verify(page):
     page.select_option("#current-unit-select", "Concord:Ward:1")
     expect(page.locator("#current-unit-detail")).to_contain_text("1,985")
     expect(page.locator("#current-unit-detail")).to_contain_text("school-district source cells")
+    page.select_option("#current-county-select", "additional:NH:city:3350260")
+    expect(page.locator("#current-county-detail")).to_contain_text("33,849")
+    expect(page.locator("#current-county-detail")).to_contain_text("+1/-2/-1")
+    expect(page.locator("#current-county-detail")).to_contain_text("cancelled3264/3489")
+    expect(page.locator("#current-county-detail")).to_contain_text("federal-only92 is never added")
+    assert page.locator('#current-unit-select option:not([value=""])').count() == 9
+    page.select_option("#current-unit-select", "Nashua:Ward:4")
+    expect(page.locator("#current-unit-detail")).to_contain_text("2,086")
+    page.select_option("#current-county-select", "additional:NH:city:3318820")
+    expect(page.locator("#current-county-detail")).to_contain_text("15,941")
+    expect(page.locator("#current-county-detail")).to_contain_text("20972")
+    expect(page.locator("#current-county-detail")).to_contain_text("22456")
+    expect(page.locator("#current-county-detail")).to_contain_text("71.0%")
+    expect(page.locator("#current-county-detail")).to_contain_text("not ballot choice or group turnout")
+    assert page.locator('#current-unit-select option:not([value=""])').count() == 6
+    page.select_option("#current-unit-select", "Dover:Ward:1")
+    expect(page.locator("#current-unit-detail")).to_contain_text("2,577")
+    expect(page.locator("#current-unit-detail")).to_contain_text("68.2%")
+    expect(page.locator("#current-unit-detail")).to_contain_text("Checklist3447")
 
 
 with sync_playwright() as runtime:
@@ -92,7 +116,7 @@ with sync_playwright() as runtime:
             api = page.request.get(base + "/participation-local/NH.json.gz")
             assert api.ok
             data = json.loads(gzip.decompress(api.body()))
-            assert len(data["counties"]) == 2 and len(data["precincts"]) == 22
+            assert len(data["counties"]) == 4 and len(data["precincts"]) == 37
             assert all(r["denominator"] is None and r["reported_pct"] is None
                        for r in [*data["counties"], *data["precincts"]])
             assert all(not r["maps_approved"] for r in data["precincts"])
@@ -100,6 +124,13 @@ with sync_playwright() as runtime:
             for native in m["wards"]:
                 row = by_ward[f'Manchester:Ward:{native["ward"]}']
                 assert row["native_record"] == native and row["ballots"] == native["total"]
+            for native in n["wards"]:
+                row = by_ward[f'Nashua:Ward:{native["ward"]}']
+                assert row["native_record"] == native and row["ballots"] == native["total"]
+            for native, register in zip(d["native_ballot_rows"][:-1], d["native_register_rows"][:-1]):
+                row = by_ward[f'Dover:Ward:{native["ward"]}']
+                assert row["native_record"] == {"ballots": native, "registrations": register}
+                assert row["ballots"] == native["total"] and row["native_printed_pct"] == native["printed_turnout"]
             unknown = page.locator('.geographic-detail [data-level="municipality"][data-count=""]').first
             unknown.focus()
             unknown.press("Enter")
@@ -126,10 +157,11 @@ with sync_playwright() as runtime:
             expect(page.locator("#title")).to_have_text("Precinct data unavailable in New Hampshire")
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             assert not errors, errors
-            cases.append(dict(mobile=mobile, native_city_counts=2, native_ward_rows=22,
-                full_context_areas=259, unknown_not_zero=257, source_conflicts_retained=True,
+            cases.append(dict(mobile=mobile, native_city_counts=4, native_ward_rows=37,
+                full_context_areas=259, unknown_not_zero=255, source_conflicts_retained=True,
                 federal_only_not_added=True, no_rates=True, no_old_shapes_as_2026_wards=True,
                 native_registers_and_percent_separate=True, unsupported_modes_not_substituted=True,
+                dover_native_date_not_filename=True, nashua_source_amendments_retained=True,
                 methods_roundtrip=True))
             context.close()
         context = browser.new_context()
@@ -155,7 +187,7 @@ with sync_playwright() as runtime:
         context.close()
     finally:
         browser.close()
-proof = dict(status="PASS_NH_two_native_city_sources_22ward_rows_on2024_context_NOT_county_or_precinct_totals",
+proof = dict(status="PASS_NH_four_native_city_sources_37ward_rows_on2024_context_NOT_county_or_precinct_totals",
     base_url=base, cases=cases, false_reference_rejected=True, actual_retry_restores_selectors=True,
     valid_source_overrides=False)
 args.proof.write_text(json.dumps(proof, indent=2) + "\n")

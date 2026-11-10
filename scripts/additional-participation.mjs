@@ -13,7 +13,7 @@ import { loadProviderCountyFrames } from './provider-county-frames.mjs';
 import { loadConnecticutTowns } from './connecticut-town-counts.mjs';
 import { loadMaineLocalityActivity } from './maine-locality-activity.mjs';
 import { loadIllinoisCountyContext } from './illinois-county-context.mjs';
-import { loadNewHampshireCities } from './new-hampshire-city-counts.mjs';
+import { loadNewHampshireCityExtension } from './new-hampshire-city-extension.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -417,10 +417,26 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
     }));
   }
   if (nativeCountyParents) {
-    const nh = loadNewHampshireCities();
-    const review = { data_directory: 'data/county-source-reviews/20261110-new-hampshire-cities-01',
+    const nh = loadNewHampshireCityExtension();
+    const review = { data_directory: 'data/county-source-reviews/20261110-new-hampshire-cities-02',
       base_url: '', complete_download_url: nh.complete_download_url };
     const cityIdentity = row => `city:${row.reference_key}`;
+    const reporting = {
+      Manchester: 'Derived sum of all 12 printed native ward Total Ballots Cast fields, not a separately printed city parent. '
+        + 'Ward7 prints 2712 while Election Day2694 + absentee103 =2797; the 85-ballot discrepancy is retained. '
+        + 'Federal Office Only fields sum76 separately and are never added. Source totals are not repaired.',
+      Concord: 'Native city Total Cast19234; 12 source columns include separate CSD/MVSD cells in Wards1/2. '
+        + 'Printed ward subtotals are not added again. Opening register25879 + Election Day registrations1461 '
+        + '= closing27340. Native Turn Out74.32% uses opening, not closing; all analysis rates remain withheld.',
+      Nashua: 'Derived sum of all 9 printed native ward Total Ballots Cast fields33849, not a separately printed city parent. '
+        + 'Election Day31952 + absentee1895 =33847; Ward3/4/8 source disagreements remain +1/-2/-1. '
+        + 'Native Ward8 red amendments3349/3575 supersede cancelled3264/3489; absentee225 is unchanged. '
+        + 'Separate federal-only92 is never added; no source counts are repaired.',
+      Dover: 'Native printed city Total Ballots Cast15941; polling-place14632 + absentee1309 reconcile. '
+        + 'Native checklist20972, verified October26, + Election Day registrations1484 = all registered22456. '
+        + 'Native turnout71.0% explicitly uses those source registrations. Native2026 header overrides the2025 filename. '
+        + 'Registration-affiliation stocks are not ballot choice or group turnout; all analysis rates remain withheld.',
+    };
     for (const row of nh.municipalities) counties.push(observation(review, '', 'NH', row.city,
       cityIdentity(row), row.native_record, {
         geography_level: 'municipality', county_fips: null,
@@ -432,20 +448,17 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
         native_election_id_qualified: true, source_election_date: '2026-11-03',
         cast_ballot_count_qualified: false, unique_voter_count_qualified: false,
         source_url: row.source_url, participation_measure_label: row.measure,
-        native_printed_pct: row.city === 'Concord' ? row.native_record.native_totals.printed_turnout : null,
+        native_printed_pct: row.city === 'Concord' ? row.native_record.native_totals.printed_turnout
+          : row.city === 'Dover' ? row.native_record.native_header_turnout : null,
         source_update_label: row.city === 'Manchester'
           ? 'Native election November 3, 2026; Wards4/5/10 explicitly revised November4. No common native clock/timezone.'
-          : 'Native election November 3, 2026; update clock/timezone not supplied.',
+          : row.city === 'Nashua'
+            ? 'Native election November 3, 2026; Wards1/3/4/5/7/8 amended November4; Ward6 amended November7. No common clock/timezone.'
+            : 'Native election November 3, 2026; update clock/timezone not supplied.',
         source_status_literal: row.city === 'Manchester' ? 'FORM I - Official Return of Votes' : null,
-        source_reporting_label: row.city === 'Manchester'
-          ? 'Derived sum of all 12 printed native ward Total Ballots Cast fields, not a separately printed city parent. '
-            + 'Ward7 prints 2712 while Election Day2694 + absentee103 =2797; the 85-ballot discrepancy is retained. '
-            + 'Federal Office Only fields sum76 separately and are never added. Source totals are not repaired.'
-          : 'Native city Total Cast19234; 12 source columns include separate CSD/MVSD cells in Wards1/2. '
-            + 'Printed ward subtotals are not added again. Opening register25879 + Election Day registrations1461 '
-            + '= closing27340. Native Turn Out74.32% uses opening, not closing; all analysis rates remain withheld.',
-        quality: ['Two native city source snapshots only; not statewide or county totals or demographic turnout.',
-          'Full held 2024 municipality context; 257 reference areas have no source observation and remain unknown.',
+        source_reporting_label: reporting[row.city],
+        quality: ['Four native city source snapshots only; not statewide or county totals or demographic turnout.',
+          'Full held 2024 municipality context; 255 reference areas have no source observation and remain unknown.',
           ...row.quality_flags],
       }));
     for (const row of nh.ward_rows) {
@@ -457,13 +470,19 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
         denominator_basis: 'native_register_definitions_not_analysis_denominator', reported_pct: null,
         maps_approved: false, county_id: parent, source_url: row.source_url,
         participation_measure_label: row.participation_measure_label,
-        native_printed_pct: row.city === 'Concord' ? row.native_record.printed_turnout : null,
+        native_printed_pct: row.city === 'Concord' ? row.native_record.printed_turnout
+          : row.city === 'Dover' ? row.native_record.ballots.printed_turnout : null,
         source_update_label: row.native_revision_label || 'Native clock/timezone not supplied',
-        source_reporting_label: row.city === 'Manchester'
+        source_reporting_label: ['Manchester', 'Nashua'].includes(row.city)
           ? 'Literal ward Total Ballots Cast; Election Day, absentee and federal-only cells remain separate. '
             + 'Federal-only inclusion is not inferred and no accounting disagreement is repaired.'
-          : 'Literal ward Total Cast; Wards1/2 retain separate school-district source cells and printed ward subtotals. '
-            + 'Source opening/closing registers and printed percentages are not analysis denominators/rates.',
+          : row.city === 'Dover'
+            ? `Native ward Total Ballots Cast; polling-place and absentee components remain separate. `
+              + `Checklist${row.native_record.registrations.checklist} + Election Day registrations`
+              + `${row.native_record.registrations.new} = all registered${row.native_record.registrations.registered}. `
+              + 'Native printed percentage uses that explicit source basis, not population or group turnout.'
+            : 'Literal ward Total Cast; Wards1/2 retain separate school-district source cells and printed ward subtotals. '
+              + 'Source opening/closing registers and printed percentages are not analysis denominators/rates.',
         quality: ['Native ward reporting row; no 2026 ward/precinct geometry join approved.',
           'No city/ward count allocated to county or other precinct geography.', ...row.quality_flags],
       });

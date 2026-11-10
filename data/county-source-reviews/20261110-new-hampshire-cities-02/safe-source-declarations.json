@@ -1,0 +1,30 @@
+{
+  "nashua": {
+    "index_url": "https://nashuanh.gov/202/Election-Results",
+    "native_heading": "2026",
+    "native_link_label": "November 3, 2026 State General Election Results (PDF)",
+    "actual_declared_url": "https://nashuanh.gov/DocumentCenter/View/37495",
+    "discovery_method": "Successfully read official index through web tool",
+    "source_retried": false
+  },
+  "dover": {
+    "declared_official_www_source_url": "https://www.dover.nh.gov/government/open-government/election-information/2026-general-election/",
+    "bare_host_TLS_error_retained_not_overridden": true,
+    "links": [
+      {
+        "label": "Voter Turnout - Nov. 3, 2026",
+        "url": "https://www.dover.nh.gov/Assets/government/open-government/election-information/2026-general-election/turnout/2025.11.03_VoterTurnout.pdf"
+      }
+    ]
+  },
+  "dover_index_receipt": {
+    "url": "https://www.dover.nh.gov/government/open-government/election-information/2026-general-election/",
+    "final_url": "https://www.dover.nh.gov/government/open-government/election-information/2026-general-election/",
+    "status": 200,
+    "content_type": "text/html",
+    "bytes": 179111,
+    "sha256": "45130936d26d54af02015f2df054d7f6009dd4cba58ca30f9830133d927ffdd6",
+    "normal_TLS_verification": true,
+    "retrieved_at_utc": "2026-11-10T04:10:41.156365+00:00"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "complete_source_field_queries": 242,
+  "complete_reference_queries": 259,
+  "source_city_observations": 4,
+  "native_ward_rows": 37,
+  "manchester_declared_wards": 12,
+  "manchester_printed_total_sum": 38562,
+  "manchester_native_component_disagreements": 1,
+  "manchester_component_minus_printed_sum": 85,
+  "federal_only_separate_sum": 76,
+  "federal_only_added": false,
+  "concord_native_total_cast": 19234,
+  "contextual_reference_year": 2024,
+  "unmapped_reference_areas": 255,
+  "analysis_rates_approved": false,
+  "source_counts_repaired": false,
+  "nashua_printed_total_sum": 33849,
+  "nashua_federal_only_separate_sum": 92,
+  "nashua_component_minus_printed_sum": -2,
+  "dover_native_total_ballots": 15941,
+  "dover_native_registered": 22456,
+  "dover_native_printed_turnout": "71.0%"
+}

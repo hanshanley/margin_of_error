@@ -1,0 +1,489 @@
+{
+  "version": "data/county-source-reviews/20261110-new-hampshire-cities-02",
+  "prior_inputs_path": "data/county-source-reviews/20261110-new-hampshire-cities-01/inputs.json",
+  "files": {
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward01-20261103-original.pdf": {
+      "bytes": 9310710,
+      "sha256": "2c64fdce75e8217bb79010e58297a6731cf59d4891631f9d553a21b4b9cc7a74"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward01-header.png": {
+      "bytes": 48068,
+      "sha256": "4a464e1831da3c5f23d91a2fe4be151d8b92e72da9507bc96ad3a2e5b295623b"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward01-ballot_block.png": {
+      "bytes": 62502,
+      "sha256": "3e93bfbd899f1432bc4d5829f40e281d9fc13c8c60d407777fadf882ee9d5342"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward02-20261103-original.pdf": {
+      "bytes": 8295920,
+      "sha256": "de3c820c9792510f34c94152c7e986a444d76294a4cab26134bd015c693f1c87"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward02-header.png": {
+      "bytes": 48331,
+      "sha256": "e63d5042a24885b9ca03c42c2357fa15dc1fef81f4bfb3b0dfadb02fb3abcadb"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward02-ballot_block.png": {
+      "bytes": 61752,
+      "sha256": "24bf8a83b50efb2290df742b1173b8a240181b9b9ea5293ee6a3c53e931eadc9"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward03-20261103-original.pdf": {
+      "bytes": 8674963,
+      "sha256": "4d9a6e4f493661fe6972e8500ed75a31813fcc29c9eb4518614a104a7b03a9a1"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward03-header.png": {
+      "bytes": 49689,
+      "sha256": "adf4b58319fb22ac8531d5ccdc171932d79483256e665b381e273622bd2f978a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward03-ballot_block.png": {
+      "bytes": 64031,
+      "sha256": "99f58e1bf38ee96a89b2528bfc34242fcb2d7764d8e648b0e9a79038ceb87c58"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward04-20261103-original.pdf": {
+      "bytes": 8395849,
+      "sha256": "7c30d20eb5fc142dc8de52978361f6aa5bb35606c49f2280565e33576a76b5a9"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward04-header.png": {
+      "bytes": 49064,
+      "sha256": "5d51450cd1c4eb6ef2046fba7190e1f6cc10f7ba129402d01dae5117e11b059d"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward04-ballot_block.png": {
+      "bytes": 75253,
+      "sha256": "3634b5fcc706796d4ceee585265ace74febb840fc7c53b0f38172505a08552d6"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward05-20261103-original.pdf": {
+      "bytes": 8262999,
+      "sha256": "043f7f247776fd69af9e2b92e86478ef9b12fea8463ee550f8e819ad166fee9c"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward05-header.png": {
+      "bytes": 47448,
+      "sha256": "e7883e022d9e3c7b8d549965128f842f56146fbe1f76ace39f5ab7298b6a71ac"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward05-ballot_block.png": {
+      "bytes": 67086,
+      "sha256": "2a1f43ede277b276182ad836ee577300cf8d96f38947a47acbe5400f005575e2"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward06-20261103-original.pdf": {
+      "bytes": 8981930,
+      "sha256": "d2d7d38e60830d0e0e7c3be78cf5fdc842d521149ca1431c10a0071218f8e45c"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward06-header.png": {
+      "bytes": 49409,
+      "sha256": "494d41cf7d39f4d2a8df8e9e30bff73f464c09b4e93d3c6b04947f558b02bdaf"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward06-ballot_block.png": {
+      "bytes": 68495,
+      "sha256": "e0249479ca77ff06d79b2340fc892002b78382b699c7cfc2a4ec5a60a9d3c7f2"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward07-20261103-original.pdf": {
+      "bytes": 8847825,
+      "sha256": "5771326310d7b7552cd606fb58ca9e9238996f11e9583bdb45743dbe546f4b9f"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward07-header.png": {
+      "bytes": 49435,
+      "sha256": "dfd0b8aa1dfae15e2d1896b37ab9c62a45893d73600b0a6b8f9ccddcde0daada"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward07-ballot_block.png": {
+      "bytes": 63601,
+      "sha256": "a1b43d9069d018485f849d28a490370726c918950d693f9e696d7b1f4762c1f5"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward08-20261103-original.pdf": {
+      "bytes": 9051249,
+      "sha256": "2b3c34983a1e3ba51d9b541ab7489f85f806c028fab94a35c63be4805a83c242"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward08-header.png": {
+      "bytes": 47370,
+      "sha256": "7680c6ee130d7920b3f61e32f4a718d8ccb0b92c9f2a113b845b8b1d57b9f3fe"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward08-ballot_block.png": {
+      "bytes": 58516,
+      "sha256": "bbbec475ab7abc3b6da8099acb1174453b26eb857b5af9eb8af19219b0ac9016"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward09-20261103-original.pdf": {
+      "bytes": 8837026,
+      "sha256": "67489e4a9f413969deffc4b3c53c52ba29a6ab4123ce41df9bf373e70564b816"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward09-header.png": {
+      "bytes": 46948,
+      "sha256": "567ebcf26a5de2cb461471c0c3af0cce401d4140268eb7a9d81005d81a06a383"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward09-ballot_block.png": {
+      "bytes": 63202,
+      "sha256": "0f8e85bbc955e334ac21739d441fa0f6eee4dca06dc501169022d4520decde1a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward10-20261103-original.pdf": {
+      "bytes": 8704602,
+      "sha256": "78502357fbb3e8f25d5c4f34f2a23a934a409dffa7b9147f02cc7ea0041be24f"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward10-header.png": {
+      "bytes": 46587,
+      "sha256": "dde50ea7870961e571b89ad6947bd5b2bf58d382614b34b536eb4a32e67e5694"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward10-ballot_block.png": {
+      "bytes": 75194,
+      "sha256": "a63316a6a5cc978221940229667059eb8e71d73793173c5219bd5110e4acdf5a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward11-20261103-original.pdf": {
+      "bytes": 8916309,
+      "sha256": "001b5d5eb9c7748830ea5f2f43b715172c870bf150b31fed4ac69677ed17d8b2"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward11-header.png": {
+      "bytes": 49064,
+      "sha256": "53585a1d965fc91c1e0d234c62438682822d9505d32a4e9b62fa20250e419488"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward11-ballot_block.png": {
+      "bytes": 59989,
+      "sha256": "53d695ef9379558c76285afeff838564d7de05aef2c11b70076d9cddf5a16ab6"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward12-20261103-original.pdf": {
+      "bytes": 8968837,
+      "sha256": "44932fc40f8575b7963c58ee0e74e82e3406fa02041f102f843eef151c014d1e"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward12-header.png": {
+      "bytes": 47349,
+      "sha256": "d93833531c66b872248d9279112c16156aa84e90a114d281f8c5333d94f0acee"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward12-ballot_block.png": {
+      "bytes": 62686,
+      "sha256": "9e54ee8ee6cf43fd77030b17a59da9f6423d67fc1ba9ab78cb31c596ffb53463"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/concord-20261103-original.pdf": {
+      "bytes": 175306,
+      "sha256": "13c9fdf21ba1f02e2278a8d59d6d76685cf863c3b134a0294bb4f39359f81aea"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward04-ballot-block-300dpi.png": {
+      "bytes": 393091,
+      "sha256": "c0d0a3076d0c4cfef0ccdb6e253bdf868906a1a484f8697afaa1ee6021515928"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward06-ballot-block-300dpi.png": {
+      "bytes": 363981,
+      "sha256": "c312a1c7925cacea0491760b792f085627f6ddf8e738b4710be5504c36eb8c5f"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward07-ballot-block-300dpi.png": {
+      "bytes": 336766,
+      "sha256": "95e13643e899999413b08dff251553840dd4677100c21a62af4cfafbf84b8a02"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/concord-native-page04-130dpi.png": {
+      "bytes": 98667,
+      "sha256": "7c1d8d77e75869680725f6970bdb4e69a426e013f3166850d2e07ef5bee8b59a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/original-crop-receipts.json": {
+      "bytes": 11789,
+      "sha256": "5d9944cd1fafac1b754739ce2ea61ce32b9e8e657e35c448deab3d2a54d4b49a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/native-readings.json": {
+      "bytes": 4695,
+      "sha256": "dc05dfd308a3cb6fce3a7f5214d389e963eebf0421733aac6dd7a1898e469b8a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/original-municipality-NH-2024.geojson.gz": {
+      "bytes": 55447,
+      "sha256": "b74e8b9c197371af4f093dbdc2916cb18aaa1bc2ff498e2f875642f2f7e5fdee"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/inputs.json": {
+      "bytes": 24379,
+      "sha256": "9a87468a98ebbfd92dba7f22600ccff4a59f185d4174cd95647cc3207caf6aec"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/originals/nashua-20261103-original.pdf": {
+      "bytes": 8349293,
+      "sha256": "a0dce84c943607e6d3bea958e9efd46a8f43d7def4b322054a6767895bc8d7bb"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/originals/dover-20261103-native-turnout-original.pdf": {
+      "bytes": 125447,
+      "sha256": "3098be4b24fdacef06c3280f8dbfde1f8c32b9116c1dc32d3d11f4b8bdf4adb9"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/nashua-native-readings.json": {
+      "bytes": 2726,
+      "sha256": "66a2fc243a81c823bf7add29ca294c1b2be15a43084fb6ca68506344a1781c4a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/dover-native-readings.json": {
+      "bytes": 4414,
+      "sha256": "c92ff72e4858340c97909e1356e8ec8c35e822fc5247807f0005affefe21026f"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward01-header.png": {
+      "bytes": 144479,
+      "sha256": "1a8fb7304181725e5b1aa718c50c77d652158af17450d69bd402c2368e87d796"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward01-ballot-block.png": {
+      "bytes": 251046,
+      "sha256": "14c386389dda234abb09173f249cc0a7a188f604665e18d9b863dfb354f75116"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward02-header.png": {
+      "bytes": 143999,
+      "sha256": "dfe08e20e2de412e8314ee1ac94d75a220ae0aad7a38a6a3facf32f8829e921b"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward02-ballot-block.png": {
+      "bytes": 223031,
+      "sha256": "31549a63696cc02d94b2bece9f9a9762b9e6bd31dbc4140185f3617cd05ab267"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward03-header.png": {
+      "bytes": 145746,
+      "sha256": "0ca4aa0dd5df94c6607b9a0e21305a5bb87acd4f87bb6d8d5f85ff7b9314f77b"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward03-ballot-block.png": {
+      "bytes": 253174,
+      "sha256": "b7e1932a17c921cec4dd5fef2d81fdad7929688a585ff6515c61a3131d10a381"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward04-header.png": {
+      "bytes": 142662,
+      "sha256": "6b5901813c1e9c7a77f883c1973e72814e44b988421ca532a5ab91dcc7a4e2f9"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward04-ballot-block.png": {
+      "bytes": 238463,
+      "sha256": "a438ae638ead0562f74ade7fa560e41c6b225ddcb623bd0f1f208249186fd31f"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward05-header.png": {
+      "bytes": 149637,
+      "sha256": "dd8e922acab17ceaa51d1daed3d9ce7eb9a776bbdb949d0bddd3989d5cfa5216"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward05-ballot-block.png": {
+      "bytes": 261392,
+      "sha256": "e5369d811fdf4f24335f4165c47c65a7955e1f462c669e1b22984e6fd201e9c5"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward06-header.png": {
+      "bytes": 143820,
+      "sha256": "78efc87e8d76a1ec779e6aa0e2f3fad628a8624a3106635a1a2402f78d7147fc"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward06-ballot-block.png": {
+      "bytes": 258539,
+      "sha256": "298b3ed533c7930dff6284c90784c256cc2eacb4e693902d860dd76c45d07635"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward07-header.png": {
+      "bytes": 143214,
+      "sha256": "ced6bcd9cb2785aa7891ac73a75d3904c175c12532cf5d722c38171526ace3b0"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward07-ballot-block.png": {
+      "bytes": 244399,
+      "sha256": "8ae276d6cff1ce861ed0c717234496e23de6be1f40079bcc76993972e13e7381"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward08-header.png": {
+      "bytes": 142273,
+      "sha256": "e06688fa281ea65b6decf59688397d1973076f45566d0cd9af5518655a7071f0"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward08-ballot-block.png": {
+      "bytes": 246128,
+      "sha256": "c6dfae6ac7e68a52d12c9f5ad577de843e3788f16ef59cc66cf0c4260f1236c1"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward09-header.png": {
+      "bytes": 143774,
+      "sha256": "4d8c3746b628adfee175dbc38579602c06604c3bbf555e9ce24165361cc287d8"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward09-ballot-block.png": {
+      "bytes": 226182,
+      "sha256": "b6faaf6bfd027f8f17569b30f0ff1971ebb170d1fe4ef77d8cb4c1975de943e4"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/dover-native-turnout-page01.png": {
+      "bytes": 189565,
+      "sha256": "7dab870f1beb283f3f6e8dd6c41206c5916fc7985623884c5b90ee52142aa168"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/native-crop-receipts.json": {
+      "bytes": 6133,
+      "sha256": "a28826b4bad9adc1bd155f13aa3b508344780254deb248b7ce97d4edcd62b2f1"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/safe-source-declarations.json": {
+      "bytes": 1342,
+      "sha256": "0d69715575fbc7544182a06e31a1f07f207bc6391d51df056b6f3713b136225e"
+    }
+  },
+  "originals": {
+    "manchester-ward01-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward01_ElectionPaperwork.pdf?ver=2026-11-06-154721-610",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward01_ElectionPaperwork.pdf?ver=2026-11-06-154721-610",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 9310710,
+      "sha256": "2c64fdce75e8217bb79010e58297a6731cf59d4891631f9d553a21b4b9cc7a74",
+      "retrieved_at_utc": "2026-11-10T03:18:09.628247+00:00",
+      "declared_ward": 1,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward02-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward02_ElectionPaperwork.pdf?ver=2026-11-06-154721-360",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward02_ElectionPaperwork.pdf?ver=2026-11-06-154721-360",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8295920,
+      "sha256": "de3c820c9792510f34c94152c7e986a444d76294a4cab26134bd015c693f1c87",
+      "retrieved_at_utc": "2026-11-10T03:25:41.760473+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 2",
+      "declared_ward": 2,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward03-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward03_ElectionPaperwork.pdf?ver=2026-11-06-162128-157",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward03_ElectionPaperwork.pdf?ver=2026-11-06-162128-157",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8674963,
+      "sha256": "4d9a6e4f493661fe6972e8500ed75a31813fcc29c9eb4518614a104a7b03a9a1",
+      "retrieved_at_utc": "2026-11-10T03:25:29.193692+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 3",
+      "declared_ward": 3,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward04-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward04_ElectionPaperwork.pdf?ver=2026-11-06-154721-360",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward04_ElectionPaperwork.pdf?ver=2026-11-06-154721-360",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8395849,
+      "sha256": "7c30d20eb5fc142dc8de52978361f6aa5bb35606c49f2280565e33576a76b5a9",
+      "retrieved_at_utc": "2026-11-10T03:25:41.837340+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 4",
+      "declared_ward": 4,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward05-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward05_ElectionPaperwork.pdf?ver=2026-11-06-154721-297",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward05_ElectionPaperwork.pdf?ver=2026-11-06-154721-297",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8262999,
+      "sha256": "043f7f247776fd69af9e2b92e86478ef9b12fea8463ee550f8e819ad166fee9c",
+      "retrieved_at_utc": "2026-11-10T03:25:50.660844+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 5",
+      "declared_ward": 5,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward06-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward06_ElectionPaperwork.pdf?ver=2026-11-06-154721-547",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward06_ElectionPaperwork.pdf?ver=2026-11-06-154721-547",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8981930,
+      "sha256": "d2d7d38e60830d0e0e7c3be78cf5fdc842d521149ca1431c10a0071218f8e45c",
+      "retrieved_at_utc": "2026-11-10T03:26:03.098249+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 6",
+      "declared_ward": 6,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward07-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward07_ElectionPaperwork.pdf?ver=2026-11-06-154721-703",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward07_ElectionPaperwork.pdf?ver=2026-11-06-154721-703",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8847825,
+      "sha256": "5771326310d7b7552cd606fb58ca9e9238996f11e9583bdb45743dbe546f4b9f",
+      "retrieved_at_utc": "2026-11-10T03:26:01.071031+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 7",
+      "declared_ward": 7,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward08-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward08_ElectionPaperwork.pdf?ver=2026-11-06-154721-547",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward08_ElectionPaperwork.pdf?ver=2026-11-06-154721-547",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 9051249,
+      "sha256": "2b3c34983a1e3ba51d9b541ab7489f85f806c028fab94a35c63be4805a83c242",
+      "retrieved_at_utc": "2026-11-10T03:26:21.064625+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 8",
+      "declared_ward": 8,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward09-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward09_ElectionPaperwork.pdf?ver=2026-11-06-154721-530",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward09_ElectionPaperwork.pdf?ver=2026-11-06-154721-530",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8837026,
+      "sha256": "67489e4a9f413969deffc4b3c53c52ba29a6ab4123ce41df9bf373e70564b816",
+      "retrieved_at_utc": "2026-11-10T03:26:24.031953+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 9",
+      "declared_ward": 9,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward10-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward10_ElectionPaperwork.pdf?ver=2026-11-06-154721-657",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward10_ElectionPaperwork.pdf?ver=2026-11-06-154721-657",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8704602,
+      "sha256": "78502357fbb3e8f25d5c4f34f2a23a934a409dffa7b9147f02cc7ea0041be24f",
+      "retrieved_at_utc": "2026-11-10T03:26:22.972884+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 10",
+      "declared_ward": 10,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward11-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward11_ElectionPaperwork.pdf?ver=2026-11-06-154721-500",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward11_ElectionPaperwork.pdf?ver=2026-11-06-154721-500",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8916309,
+      "sha256": "001b5d5eb9c7748830ea5f2f43b715172c870bf150b31fed4ac69677ed17d8b2",
+      "retrieved_at_utc": "2026-11-10T03:26:41.217543+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 11",
+      "declared_ward": 11,
+      "native_election_date": "2026-11-03"
+    },
+    "manchester-ward12-20261103-original.pdf": {
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward12_ElectionPaperwork.pdf?ver=2026-11-06-154721-687",
+      "final_url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/elections/2026-11-03_Ward12_ElectionPaperwork.pdf?ver=2026-11-06-154721-687",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8968837,
+      "sha256": "44932fc40f8575b7963c58ee0e74e82e3406fa02041f102f843eef151c014d1e",
+      "retrieved_at_utc": "2026-11-10T03:26:43.760145+00:00",
+      "declared_native_heading": "November 3, 2026 State General Election",
+      "declared_native_ward_label": "Ward 12",
+      "declared_ward": 12,
+      "native_election_date": "2026-11-03"
+    },
+    "concord-20261103-original.pdf": {
+      "url": "https://www.concordnh.gov/Archive.aspx?ADID=9722",
+      "final_url": "https://www.concordnh.gov/ArchiveCenter/ViewFile/Item/9722",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 175306,
+      "sha256": "13c9fdf21ba1f02e2278a8d59d6d76685cf863c3b134a0294bb4f39359f81aea",
+      "retrieved_at_utc": "2026-11-10T03:18:10.190176+00:00",
+      "native_election_date": "2026-11-03"
+    },
+    "nashua-20261103-original.pdf": {
+      "url": "https://nashuanh.gov/DocumentCenter/View/37495",
+      "final_url": "https://nashuanh.gov/DocumentCenter/View/37495/SGE26-Nashua-Amended---FULL?bidId=",
+      "status": 200,
+      "bytes": 8349293,
+      "sha256": "a0dce84c943607e6d3bea958e9efd46a8f43d7def4b322054a6767895bc8d7bb",
+      "retrieved_at_utc": "2026-11-10T04:01:26.901900+00:00"
+    },
+    "dover-20261103-native-turnout-original.pdf": {
+      "url": "https://www.dover.nh.gov/Assets/government/open-government/election-information/2026-general-election/turnout/2025.11.03_VoterTurnout.pdf",
+      "final_url": "https://www.dover.nh.gov/Assets/government/open-government/election-information/2026-general-election/turnout/2025.11.03_VoterTurnout.pdf",
+      "status": 200,
+      "bytes": 125447,
+      "sha256": "3098be4b24fdacef06c3280f8dbfde1f8c32b9116c1dc32d3d11f4b8bdf4adb9",
+      "retrieved_at_utc": "2026-11-10T04:10:41.345222+00:00"
+    }
+  },
+  "readings_paths": {
+    "nashua": "data/county-source-reviews/20261110-new-hampshire-cities-02/nashua-native-readings.json",
+    "dover": "data/county-source-reviews/20261110-new-hampshire-cities-02/dover-native-readings.json"
+  },
+  "reference": {
+    "path": "data/county-source-reviews/20261110-new-hampshire-cities-01/original-municipality-NH-2024.geojson.gz",
+    "url": "/participation-city-counts/20261110-new-hampshire-01/NH.geojson.gz",
+    "sha256": "b74e8b9c197371af4f093dbdc2916cb18aaa1bc2ff498e2f875642f2f7e5fdee",
+    "bytes": 55447,
+    "boundary_year": 2024,
+    "localities": 259,
+    "mapped_localities": 4,
+    "identity_field": "key",
+    "geography_scope": "native_partial_city_reporting_context",
+    "review_id": "new-hampshire-native-cities-20261110-02",
+    "certified_election_boundaries": false
+  },
+  "certified_election_boundaries": false,
+  "analysis_rates_approved": false,
+  "native_ballot_and_register_percentages_separate": true,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-new-hampshire-native-cities-20261110-02/complete-analysis.zip"
+}
