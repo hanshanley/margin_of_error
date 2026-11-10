@@ -1,0 +1,22 @@
+{
+  "reference_counties": 17,
+  "observed_counties": 4,
+  "unknown_counties": 13,
+  "newly_acquired_counties": 3,
+  "held_counties_reused": 1,
+  "native_counting_group_rows": 19,
+  "source_counts": {
+    "Clark": 745317,
+    "Churchill": 9685,
+    "White Pine": 3077,
+    "Washoe": 191830
+  },
+  "state_ballots": null,
+  "state_registration": null,
+  "approved_analysis_rates": 0,
+  "new_precinct_counts": 0,
+  "new_demographic_estimates": 0,
+  "county_counts_not_added_across_different_source_clocks": true,
+  "candidate_votes_used_as_ballots": false,
+  "source_counts_repaired": false
+}

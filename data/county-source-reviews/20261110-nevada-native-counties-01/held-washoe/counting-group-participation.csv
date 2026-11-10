@@ -1,0 +1,7 @@
+year,state_code,county,native_counting_group,ballots,native_registered_voters,denominator_scope,native_reported_percent
+2026,NV,Washoe,Early Vote,54762,329777,entire_county_not_mode_registration,16.61%
+2026,NV,Washoe,Election Day,35133,329777,entire_county_not_mode_registration,10.65%
+2026,NV,Washoe,Mail,101935,329777,entire_county_not_mode_registration,30.91%
+2026,NV,Washoe,Prov-Election Day,0,329777,entire_county_not_mode_registration,0.00%
+2026,NV,Washoe,Prov-Early Vote,0,329777,entire_county_not_mode_registration,0.00%
+2026,NV,Washoe,ICX,0,329777,entire_county_not_mode_registration,0.00%

@@ -1,0 +1,686 @@
+{
+  "all17_valid_without_repairs": true,
+  "all136_county_pairs": [
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32003",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32005",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32007",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32009",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32011",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32013",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32015",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32017",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32019",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32021",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32001",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32005",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32007",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32009",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32011",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32013",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32015",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32017",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32019",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32021",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32003",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32007",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32009",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32011",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32013",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32015",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32017",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32019",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32021",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32005",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32009",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32011",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32013",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32015",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32017",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32019",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32021",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32007",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32011",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32013",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32015",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32017",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32019",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32021",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32009",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32013",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32015",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32017",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32019",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32021",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32011",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32013",
+      "second_county_fips": "32015",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32013",
+      "second_county_fips": "32017",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32013",
+      "second_county_fips": "32019",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32013",
+      "second_county_fips": "32021",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32013",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32013",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32013",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32013",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32013",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32013",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32015",
+      "second_county_fips": "32017",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32015",
+      "second_county_fips": "32019",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32015",
+      "second_county_fips": "32021",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32015",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32015",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32015",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32015",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32015",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32015",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32017",
+      "second_county_fips": "32019",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32017",
+      "second_county_fips": "32021",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32017",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32017",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32017",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32017",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32017",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32017",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32019",
+      "second_county_fips": "32021",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32019",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32019",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32019",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32019",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32019",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32019",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32021",
+      "second_county_fips": "32023",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32021",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32021",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32021",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32021",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32021",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32023",
+      "second_county_fips": "32027",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32023",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32023",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32023",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32023",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32027",
+      "second_county_fips": "32029",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32027",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32027",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32027",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32029",
+      "second_county_fips": "32031",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32029",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32029",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32031",
+      "second_county_fips": "32033",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32031",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    },
+    {
+      "first_county_fips": "32033",
+      "second_county_fips": "32510",
+      "positive_overlap_area_degrees_squared": 0.0
+    }
+  ],
+  "areas_are_coordinate_degrees_squared_not_geodesic": true
+}

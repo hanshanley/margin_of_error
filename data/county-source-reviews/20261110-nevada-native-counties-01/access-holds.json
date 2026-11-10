@@ -1,0 +1,17 @@
+{
+  "reviewed_date": "2026-11-10",
+  "stopped_sources": [
+    {
+      "url": "https://silverstateelection.nv.gov/",
+      "reason": "Additional security check; automated traffic explicitly prohibited",
+      "HTTP_status_not_established": true
+    },
+    {
+      "url": "https://www.nvsos.gov/vivid/",
+      "reason": "Additional security check; automated traffic explicitly prohibited",
+      "HTTP_status_not_established": true
+    }
+  ],
+  "no_alternative_client_cache_mirror_key_or_challenge_bypass": true,
+  "new_sources_are_distinct_county_administration_reports": true
+}

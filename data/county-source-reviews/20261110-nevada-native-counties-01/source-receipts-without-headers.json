@@ -1,0 +1,32 @@
+{
+  "Clark": {
+    "url": "https://elections.clarkcountynv.gov/ElectionResults_NV/EnrEng/EnrMain",
+    "effective_url": "https://elections.clarkcountynv.gov/ElectionResults_NV/EnrEng/EnrMain",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "started_at_utc": "2026-11-10T13:41:06.425480+00:00",
+    "finished_at_utc": "2026-11-10T13:41:07.363632+00:00",
+    "bytes": 467019,
+    "sha256": "f6a808b69bdb417f83f9a36363a218e5f54550a4d7ffc1ca17518887813d2923"
+  },
+  "Churchill": {
+    "url": "https://www.churchillcountynv.gov/ArchiveCenter/ViewFile/Item/1426",
+    "effective_url": "https://www.churchillcountynv.gov/ArchiveCenter/ViewFile/Item/1426",
+    "status": 200,
+    "content_type": "application/pdf",
+    "started_at_utc": "2026-11-10T13:41:07.404210+00:00",
+    "finished_at_utc": "2026-11-10T13:41:07.763420+00:00",
+    "bytes": 245796,
+    "sha256": "b70cc64c3669a1d5f8f211e1a336ca8e66759a97d23114816c68bdc62e3f50e8"
+  },
+  "White Pine": {
+    "url": "https://whitepinecounty.net/DocumentCenter/View/14265/WhitePine-2026-GENERAL-Summary-02",
+    "effective_url": "https://whitepinecounty.net/DocumentCenter/View/14265/WhitePine-2026-GENERAL-Summary-02",
+    "status": 200,
+    "content_type": "application/pdf",
+    "started_at_utc": "2026-11-10T13:41:07.839060+00:00",
+    "finished_at_utc": "2026-11-10T13:41:08.222716+00:00",
+    "bytes": 214933,
+    "sha256": "4f02a379ea619d91ec445626c57074dd4c74f88db203b09ee88f8b8be3a98711"
+  }
+}

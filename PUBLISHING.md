@@ -110,6 +110,13 @@ updates remain pinned to reviewed snapshots rather than following live research 
 
 The live additional-participation reader explicitly enables `nativeCountyParents`.
 Local early/returned views require an explicitly qualified matching source frame.
+Nevada's native follow-up shows four distinct unofficial county snapshots,
+with thirteen unknown county counts on the unchanged seventeen-county context.
+Keep Washoe's earlier count and native clock separate from the three new reports.
+Do not sum those different clocks into a state result, replace an unknown with
+zero, or use contest Times Cast as a county denominator. All analysis rates
+remain withheld. Its existing provider early/returned frames are separate and
+unchanged; native counting groups are not newly approved precincts or modes.
 Never reuse all-method ballots, town VV, TOTAL TURNOUT, Cards Cast or another
 unqualified measure for an unsupported mode. Keep Available/official defaults,
 all native inputs and every legitimate provider/West Virginia mode unchanged.

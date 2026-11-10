@@ -1,0 +1,9 @@
+{
+  "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NV.geojson.gz",
+  "sha256": "d77d017973187fd7a42204c58301daf804594c39394b85a888633d304f46d511",
+  "uncompressed_sha256": "efb213979d3756f49df1f4807f5eb7817a0ade59452e5f096c2e3d9db82b50d1",
+  "boundary_year": 2026,
+  "counties": 17,
+  "certified_legal_boundaries": false,
+  "geography_scope": "native_county_statistics"
+}

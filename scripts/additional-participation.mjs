@@ -18,6 +18,7 @@ import { massachusettsVersion } from './massachusetts-native-counts.mjs';
 import { loadMassachusettsCityReference, massachusettsCityReferenceVersion } from './massachusetts-city-precinct-reference.mjs';
 import { loadMinnesotaFollowup } from './minnesota-county-followup.mjs';
 import { loadAlabamaCountyCounts } from './alabama-county-counts.mjs';
+import { loadNevadaNativeCounties } from './nevada-native-counties.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -684,6 +685,14 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
     counties.push(...alabama.counties);
     countyFrames.AL ||= {};
     countyFrames.AL.native_county_counts = alabama.counties;
+  }
+  if (nativeCountyParents) {
+    const nevada = loadNevadaNativeCounties();
+    for (let index = counties.length - 1; index >= 0; index--)
+      if (counties[index].state_code === 'NV') counties.splice(index, 1);
+    counties.push(...nevada.counties);
+    countyFrames.NV ||= {};
+    countyFrames.NV.native_county_followup = nevada.counties;
   }
   const seen = new Set(), unitSeen = new Set();
   for (const row of counties) {

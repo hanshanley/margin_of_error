@@ -13,10 +13,20 @@ SOURCE = ROOT / "data/county-source-reviews/20261110-native-mode-frames-01"
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4387")
 parser.add_argument("--proof", type=Path, required=True)
+parser.add_argument("--nevada-county-followup", action="store_true")
 args = parser.parse_args()
 assert not args.proof.exists()
 base = args.base_url.rstrip("/")
 query = json.loads(gzip.decompress((SOURCE / "queries.json.gz").read_bytes()))
+if args.nevada_county_followup:
+    native = json.loads(gzip.decompress((ROOT /
+        "data/county-source-reviews/20261110-nevada-native-counties-01/queries.json.gz").read_bytes()))
+    for row in query["complete204_state_mode_decisions"]:
+        if row["state_code"] == "NV" and row["mode"] in ("available", "official"):
+            row["after_selected_rows"] = 17
+            row["after_observations"] = [dict(county_id="additional:NV:Washoe" if item["county"] == "Washoe"
+                else "additional:NV:" + item["county_fips"], ballots=item["source_count"])
+                for item in native["county_decisions"]]
 codes = "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split()
 names = [
     "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
@@ -86,7 +96,9 @@ with sync_playwright() as runtime:
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             assert not errors, errors
             cases.append(dict(mobile=mobile, complete204_actual_control_decisions=decisions,
-                all102_available_official_decisions_preserved=True,
+                all102_available_official_decisions_preserved=not args.nevada_county_followup,
+                all100_unaffected_available_official_decisions_preserved=True,
+                Nevada_new_native_followup_qualified=args.nevada_county_followup,
                 all67_qualified_mode_decisions_preserved=True,
                 all23_unqualified_other_frame_selections_withheld=True,
                 genuine_source_counts_sampled_without_reallocation=True,
@@ -99,6 +111,7 @@ with sync_playwright() as runtime:
 proof = dict(status="PASS_all51_complete204_actual_mode_decisions_desktop_mobile_no_source_substitution",
     base_url=base, cases=cases, valid_source_requests_overridden=False,
     source_counts_changed=False, new_population_or_normalized_mode_claim=False,
+    Nevada_new_source_snapshot="20261110-nevada-native-counties-01" if args.nevada_county_followup else None,
     nationwide_project_complete=False)
 args.proof.write_text(json.dumps(proof, indent=2) + "\n")
 print(json.dumps(proof))

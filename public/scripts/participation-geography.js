@@ -162,6 +162,12 @@ export function hasCountySourceMode(code, mode) {
 }
 
 export function selectCountySourceFrame(data, code, mode) {
+  if (code === "NV" && ["available", "official"].includes(mode) && data.county_frames?.native_county_followup !== undefined) {
+    const rows = data.county_frames.native_county_followup;
+    if (!qualifiedNevadaCountyFrame(rows))
+      throw new Error("Unqualified Nevada native county snapshot; unknowns, candidate counts or rates are not substituted");
+    return rows;
+  }
   if (code === "AL" && ["available", "official"].includes(mode) && data.county_frames?.native_county_counts !== undefined) {
     const rows = data.county_frames.native_county_counts;
     if (!qualifiedAlabamaCountyFrame(rows))
@@ -234,6 +240,36 @@ function qualifiedIllinoisCityHolds(holds, rows, mode) {
     && row.source_count === Object.values(row.native_categories).reduce((s, r) => s + r.votes, 0))
     && [...rows.map(row => row.ballots), ...holds.map(row => row.source_count)].reduce((s, r) => s + r, 0)
       === (mode === "in_person_early" ? 1162828 : 892086);
+}
+
+export function qualifiedNevadaCountyFrame(rows) {
+  if (!Array.isArray(rows) || rows.length !== 17
+    || new Set(rows.map(row => row.county_fips)).size !== 17) return false;
+  const observed = { Clark: ["32003", 745317, 1528706], Churchill: ["32001", 9685, 17211],
+    "White Pine": ["32033", 3077, 5405], Washoe: ["32031", 191830, 329777] };
+  return rows.every(row => {
+    const native = row.native_record, expected = observed[row.county], reference = row.reference_geometry;
+    return row.year === 2026 && row.state_code === "NV" && row.geography_level === "county"
+      && row.source_snapshot === "20261110-nevada-native-counties-01"
+      && row.source_mode === "all_method_native_county_snapshot"
+      && /^32\d{3}$/.test(row.county_fips)
+      && row.county_id === (row.county === "Washoe" ? "additional:NV:Washoe" : `additional:NV:${row.county_fips}`)
+      && row.source_count_qualified === Boolean(expected)
+      && row.cast_ballot_count_qualified === false && row.unique_voter_count_qualified === false
+      && row.registration_frame_qualified === false && row.source_update_timezone === null
+      && row.reported_pct === null && row.maps_approved === true
+      && reference?.boundary_year === 2026 && reference.counties === 17
+      && reference.certified_election_boundaries === false
+      && reference.sha256 === "d77d017973187fd7a42204c58301daf804594c39394b85a888633d304f46d511"
+      && (expected
+        ? row.county_fips === expected[0] && row.ballots === expected[1] && row.denominator === expected[2]
+          && native?.county === row.county && native.source_count === row.ballots
+          && native.registered === row.denominator && native.native_printed_pct === row.native_printed_pct
+          && native.source_clock_literal === row.source_update_literal && native.source_timezone === null
+          && native.source_modes.reduce((sum, mode) => sum + mode.source_count, 0) === row.ballots
+        : row.ballots === null && row.denominator === null && native === null
+          && row.native_printed_pct === null && row.source_update_literal === null);
+  }) && rows.filter(row => row.ballots !== null).length === 4;
 }
 
 export function qualifiedAlabamaCountyFrame(rows) {

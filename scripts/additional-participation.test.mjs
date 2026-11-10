@@ -477,9 +477,9 @@ test('preserves all Oregon counted ballots and active registrations despite sepa
   assert.equal(data.precincts.filter(row => row.state_code === 'OR').length, 0);
 });
 
-test('connects Washoe native ballots without replacing them with House votes or counting groups', () => {
+test('preserves frozen Washoe ballots without replacing them with House votes or counting groups', () => {
   const native = csv('data/county-source-reviews/20261106-washoe-participation-01/county-participation.csv');
-  const rows = data.counties.filter(row => row.state_code === 'NV');
+  const rows = loadAdditionalParticipation().counties.filter(row => row.state_code === 'NV');
   assert.deepEqual(rows.map(row => row.native_record), native);
   assert.equal(rows[0].ballots, 191830);
   assert.equal(rows[0].denominator, 329777);
