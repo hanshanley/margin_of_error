@@ -11,12 +11,24 @@ export const effectTerms = [
   ["return_frame_gap", "Return / source-frame gap · unallocated", "#a49b92"],
 ];
 const offices = ["house", "senate", "governor"];
+export const mapTerms = [
+  ["reported_total", "Reported swing"],
+  ["switching", "Switching sides · modeled"],
+  ["modeled_nonparticipation", "Staying home · modeled"],
+  ["other_and_unallocated", "Other / unallocated"],
+];
+export function mapValue(row, key) {
+  if (!row) return null;
+  if (key === "reported_total") return row.reported_comparison?.reported_change_pp ?? null;
+  if (key === "other_and_unallocated") return row.reported_comparison?.other_and_unallocated_pp ?? null;
+  return row.components_pp[key] ?? null;
+}
 export const signedPP = value => `${value > 0 ? "+" : ""}${value.toFixed(2)} pp`;
 const magnitude = row => Math.max(Math.abs(row.components_pp.switching),
   Math.abs(row.components_pp.modeled_nonparticipation));
 
 export function validateModels(data) {
-  if (data?.version !== "20261110-01" || !Array.isArray(data.rows) || !data.rows.length)
+  if (data?.version !== "20261110-02" || !Array.isArray(data.rows) || !data.rows.length)
     throw new Error("Unrecognized model dataset");
   const ids = new Set();
   for (const row of data.rows) {
@@ -34,6 +46,31 @@ export function validateModels(data) {
         || Math.abs(effectTerms.reduce((sum, [key]) => sum + row.components_pp[key], 0)
           - row.source_frame_change_pp) > 1e-8)
       throw new Error("Model contributions do not reconcile");
+    const comparison = row.reported_comparison;
+    if (comparison?.status === "unavailable") {
+      if (!comparison.reason || ["reported_change_pp", "baseline_alignment_pp", "other_and_unallocated_pp"]
+        .some(key => comparison[key] !== null))
+        throw new Error("Unavailable comparison must remain unknown");
+    } else {
+      const margin = counts => {
+        if (!counts || !["D", "R"].every(key => Number.isSafeInteger(counts[key]) && counts[key] > 0))
+          throw new Error("Invalid reported comparison counts");
+        return 100 * (counts.D - counts.R) / (counts.D + counts.R);
+      };
+      if (comparison?.status !== "reported_source_comparison"
+          || !Number.isInteger(comparison.baseline_year) || comparison.baseline_office !== row.office)
+        throw new Error("Invalid reported comparison baseline");
+      const current = margin(comparison.current), previous = margin(comparison.previous);
+      if (![comparison.reported_change_pp, comparison.baseline_alignment_pp,
+        comparison.other_and_unallocated_pp].every(Number.isFinite)
+        || Math.abs(current - row.current_return_margin_pp) > 1e-8
+        || Math.abs(current - previous - comparison.reported_change_pp) > 1e-8
+        || Math.abs(row.source_frame_change_pp + comparison.baseline_alignment_pp
+          - comparison.reported_change_pp) > 1e-8
+        || Math.abs(row.components_pp.switching + row.components_pp.modeled_nonparticipation
+          + comparison.other_and_unallocated_pp - comparison.reported_change_pp) > 1e-8)
+        throw new Error("Reported swing does not reconcile");
+    }
   }
   return data;
 }
@@ -69,7 +106,7 @@ const svgElement = (tag, attributes) => {
 
 export function mapScale(rows) {
   const maximum = Math.max(0, ...rows.flatMap(row =>
-    [Math.abs(row.components_pp.switching), Math.abs(row.components_pp.modeled_nonparticipation)]));
+    mapTerms.map(([key]) => Math.abs(mapValue(row, key) ?? 0))));
   return maximum === 0 ? 1 : Math.ceil(maximum / 5) * 5;
 }
 
@@ -94,6 +131,7 @@ export async function initializeReturnDrivers() {
     const office = root.querySelector("[data-driver-office]");
     const stateSelect = root.querySelector("[data-driver-state]");
     const detail = root.querySelector("[data-driver-detail]");
+    const summary = root.querySelector("[data-driver-summary]");
     const response = await fetch(participationDownload("/voter-participation/data/states.geojson"));
     if (!response.ok) throw new Error(`State context: HTTP ${response.status}`);
     const collection = await response.json();
@@ -102,17 +140,37 @@ export async function initializeReturnDrivers() {
       throw new Error("State context inventory differs");
     for (const item of items) names[item.feature.properties.STUSAB] ||= item.feature.properties.NAME;
     const codes = items.map(item => item.feature.properties.STUSAB).sort((a, b) => names[a].localeCompare(names[b]));
-    let selectedCode = "";
-    stateSelect.replaceChildren(new Option("Select a state on either map…", ""),
+    let selectedCode = "TX";
+    stateSelect.replaceChildren(new Option("Select a state on any map…", ""),
       ...codes.map(code => new Option(names[code], code)));
     const paintSelection = () => {
       for (const path of root.querySelectorAll(".driver-state"))
         path.classList.toggle("selected", path.dataset.stateCode === selectedCode);
     };
     const select = row => {
-      detail.replaceChildren(element("h4", `${names[row.state_code]} · ${row.office === "house"
-        ? "House state aggregate" : row.office === "governor" ? "Governor source frame" : "Senate race"}`),
-      element("p", "Recalled 2024 President in the current study frame → 2026 selected office. Not automatically the last election for this office.", "caption"));
+      const comparison = row.reported_comparison;
+      const heading = `${names[row.state_code]} · ${row.office === "house"
+        ? "House state aggregate" : row.office === "governor" ? "Governor source frame" : "Senate race"}`;
+      summary.replaceChildren(element("h3", heading));
+      if (comparison.status === "reported_source_comparison") {
+        summary.append(element("p", `${comparison.baseline_year} ${row.office}`
+          + `${comparison.baseline_stage === "general_runoff" ? " · runoff" : ""} → held 2026 ${row.office} returns. `
+          + `${comparison.scope}.`, "caption"));
+        const equation = element("p", null, "driver-equation");
+        equation.append(element("strong", `${signedPP(comparison.reported_change_pp)} reported swing`),
+          document.createTextNode(` = ${signedPP(row.components_pp.switching)} switching`
+            + ` + (${signedPP(row.components_pp.modeled_nonparticipation)}) modeled nonparticipation`
+            + ` + (${signedPP(comparison.other_and_unallocated_pp)}) other / unallocated.`));
+        summary.append(equation, element("p",
+          "Other / unallocated includes entry, other/unknown choices, denominator changes and source/baseline mismatch. It is not extra switching or staying home.",
+          "caption"));
+      } else {
+        summary.append(element("p", `Reported swing unavailable: ${comparison.reason} `
+          + "The modeled components remain visible, but their sum is not a reported total.", "caption"));
+      }
+      summary.hidden = false;
+      detail.replaceChildren(element("h4", heading),
+        element("p", "Original model baseline: recalled 2024 President in the current study frame. The separate baseline alignment reconciles it to reported same-office returns.", "caption"));
       const table = element("table"), body = element("tbody");
       table.append(element("caption", "Full accounting · percentage-point contributions to the margin"));
       const head = element("thead"), headings = element("tr");
@@ -127,20 +185,32 @@ export async function initializeReturnDrivers() {
         } else tr.append(element("td", "—"));
         body.append(tr);
       }
+      if (comparison.status === "reported_source_comparison") {
+        for (const [label, value] of [
+          ["Prior-office / survey-baseline alignment · unallocated", comparison.baseline_alignment_pp],
+          ["Reported total swing · all eight terms", comparison.reported_change_pp],
+        ]) {
+          const tr = element("tr"), th = element("th", label);
+          th.scope = "row"; tr.append(th, element("td", signedPP(value), "numeric"), element("td", "—"));
+          body.append(tr);
+        }
+      }
       table.append(body);
       const wrapper = element("div", null, "table-wrap"); wrapper.append(table);
       detail.append(wrapper, element("p", "Ranges vary contrast strength from 0.5× to 1.5×; these are not confidence intervals.", "caption"),
-      element("p", `Within-source change: ${signedPP(row.source_frame_change_pp)}. `
-        + `Current return margin: ${signedPP(row.current_return_margin_pp)}.`, "caption"),
+      element("p", `Original survey-frame change (not the reported swing): ${signedPP(row.source_frame_change_pp)}. `
+        + `Current known-D/R return margin: ${signedPP(row.current_return_margin_pp)}.`, "caption"),
       element("p", `${row.evidence.switching}. `
         + (row.evidence.cross_office_transport
           ? "Participation and remaining House-model terms are explicitly transported across offices. " : "")
         + `Return scope: ${row.evidence.return_scope.replaceAll("_", " ")}.`, "caption"),
       element("p", `Whole-state source n ${row.support.raw_whole_state_n.toLocaleString("en-US")}; `
         + "weights are not people and support is not a precision guarantee. Eligibility, death and migration remain unknown.", "caption"));
-      if (row.observed_same_office_change_pp !== null)
-        detail.append(element("p", `Separate supplied previous-office comparison: ${signedPP(row.observed_same_office_change_pp)}. `
-          + `Prior-office/source-frame gap: ${signedPP(row.previous_office_frame_gap_pp)}.`, "caption"));
+      if (comparison.status === "reported_source_comparison")
+        detail.append(element("p", `${comparison.qualification} `
+          + `Current native source clock: ${comparison.current_native_clock || "not supplied"}. `
+          + `${comparison.current_percent_reporting == null ? "" : `Source reporting: ${comparison.current_percent_reporting}%. `}`
+          + `Reported count margins: ${signedPP(comparison.previous_margin_pp)} → ${signedPP(comparison.current_margin_pp)}.`, "caption"));
       detail.hidden = false;
     };
     const selectState = code => {
@@ -152,7 +222,9 @@ export async function initializeReturnDrivers() {
           element("p", code === "DC" ? "D.C. has no NORC sample. No contribution is estimated."
             : `No supplied ${office.value} model for this state. Gray is missing coverage, not zero change.`));
         detail.hidden = false;
-      } else detail.hidden = true;
+        summary.replaceChildren(...Array.from(detail.childNodes).map(node => node.cloneNode(true)));
+        summary.hidden = false;
+      } else { detail.hidden = true; summary.hidden = true; }
       paintSelection();
     };
     const render = () => {
@@ -160,16 +232,18 @@ export async function initializeReturnDrivers() {
       const byCode = new Map(all.map(row => [row.state_code, row])), bound = mapScale(all);
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
       status.textContent = `${all.length} ${office.value === "house" ? "House state aggregates"
-        : office.value === "governor" ? "governor source frames" : "Senate races"}. Both maps use the same scale.`;
+        : office.value === "governor" ? "governor source frames" : "Senate races"}. `
+        + `${all.filter(row => row.reported_comparison.status === "reported_source_comparison").length} qualified reported comparisons. All four maps use the same scale.`;
       root.querySelector("[data-driver-scale-min]").textContent = `−${bound} pp`;
       root.querySelector("[data-driver-scale-max]").textContent = `+${bound} pp`;
-      for (const [key, label] of effectTerms.slice(0, 2)) {
+      for (const [key, label] of mapTerms) {
         const host = root.querySelector(`[data-driver-map="${key}"]`);
         const svg = svgElement("svg", { viewBox: "0 0 1000 640", role: "group",
-          "aria-label": `${label}: modeled margin contribution by state`, "data-scale": bound });
+          "aria-label": `${label}: signed margin points by state`, "data-scale": bound });
         for (const item of items) {
-          const code = item.feature.properties.STUSAB, row = byCode.get(code), value = row?.components_pp[key] ?? null;
-          const text = `${names[code]} · ${label}: ${value === null ? "no model" : signedPP(value)}. Model contribution, not a vote share.`;
+          const code = item.feature.properties.STUSAB, row = byCode.get(code), value = mapValue(row, key);
+          const text = `${names[code]} · ${label}: ${value === null ? "no qualified comparison or model" : signedPP(value)}. `
+            + "Margin points, not a vote share or turnout rate.";
           const path = svgElement("path", { d: item.d, fill: effectFill(value, bound),
             class: "driver-state", "fill-rule": "evenodd", "data-state-code": code,
             "data-model-value": value ?? "", ...(row ? { "data-model-id": row.id } : {}),

@@ -13,7 +13,7 @@ parser.add_argument("--base-url", default="http://127.0.0.1:4397")
 parser.add_argument("--proof", type=Path, required=True)
 args = parser.parse_args()
 assert not args.proof.exists()
-data = json.loads((ROOT / "data/participation-return-attribution/20261110-01/viewer-data.json").read_bytes())
+data = json.loads((ROOT / "data/participation-return-attribution/20261110-02/viewer-data.json").read_bytes())
 cases = []
 with sync_playwright() as runtime:
     browser = runtime.chromium.launch()
@@ -34,10 +34,21 @@ with sync_playwright() as runtime:
             expect(office).to_be_enabled(timeout=90000)
             for name, count in [("house", 50), ("senate", 35), ("governor", 28)]:
                 office.select_option(name)
-                expect(root.locator(".driver-map svg")).to_have_count(2)
-                expect(root.locator(".driver-map path[data-model-id]")).to_have_count(count * 2)
-                expect(root.locator(".driver-map path")).to_have_count(102)
-                assert root.locator(".driver-map svg").nth(0).get_attribute("data-scale") == root.locator(".driver-map svg").nth(1).get_attribute("data-scale")
+                expect(root.locator(".driver-map svg")).to_have_count(4)
+                expect(root.locator(".driver-map path[data-model-id]")).to_have_count(count * 4)
+                expect(root.locator(".driver-map path")).to_have_count(204)
+                assert len(set(root.locator(".driver-map svg").evaluate_all(
+                    "nodes => nodes.map(node => node.dataset.scale)"))) == 1
+                root.locator("[data-driver-state]").select_option("TX")
+                texas = next(row for row in data["rows"] if row["office"] == name and row["state_code"] == "TX")
+                summary = root.locator("[data-driver-summary]")
+                expect(summary).to_contain_text(f'{texas["reported_comparison"]["reported_change_pp"]:+.2f} pp reported swing')
+                expect(summary).to_contain_text("other / unallocated")
+                assert summary.bounding_box()["y"] < root.locator(".driver-maps").bounding_box()["y"]
+                for field, value in [("reported_total", texas["reported_comparison"]["reported_change_pp"]),
+                                     ("other_and_unallocated", texas["reported_comparison"]["other_and_unallocated_pp"])]:
+                    path = root.locator(f'[data-driver-map="{field}"] path[data-state-code="TX"]')
+                    assert float(path.get_attribute("data-model-value")) == value
                 if name == "house":
                     root.evaluate("node => node.scrollIntoView({block:'start'})")
                     page.screenshot(path=str(args.proof.with_suffix(f".house-{width}.png")))
@@ -49,20 +60,26 @@ with sync_playwright() as runtime:
                     assert float(state_path.get_attribute("data-model-value")) == expected["components_pp"][field]
                     expect(state_path).to_have_class("driver-state selected")
                 detail = root.locator("[data-driver-detail]")
+                detail.locator("..").evaluate("node => node.open = true")
                 expect(detail).to_be_visible()
-                expect(detail.locator("tbody tr")).to_have_count(7)
-                expect(detail).to_contain_text("Recalled 2024 President")
+                expect(detail.locator("tbody tr")).to_have_count(
+                    9 if expected["reported_comparison"]["status"] == "reported_source_comparison" else 7)
+                expect(detail).to_contain_text("recalled 2024 President")
                 expect(detail).to_contain_text("unknown")
                 expect(detail).to_contain_text("Return / source-frame gap")
                 if name == "house":
                     root.locator('[data-driver-map="modeled_nonparticipation"] path[data-state-code="WY"]').click()
                     expect(root.locator("[data-driver-state]")).to_have_value("WY")
-                    expect(root.locator('.driver-map path[data-state-code="WY"].selected')).to_have_count(2)
+                    expect(root.locator('.driver-map path[data-state-code="WY"].selected')).to_have_count(4)
                     expect(detail).to_contain_text("Wyoming")
+                    root.locator("[data-driver-state]").select_option("AK")
+                    expect(summary).to_contain_text("Reported swing unavailable")
+                    expect(root.locator('[data-driver-map="reported_total"] path[data-state-code="AK"]')).to_have_attribute("data-model-value", "")
                 assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
                 cases.append(dict(width=width, office=name, models=count, exact_MN_point_values=True,
                     linked_state_maps=True, shared_signed_scale=True,
-                    complete_seven_term_accounting=True, no_horizontal_overflow=True))
+                    original_seven_terms_retained=True, reported_total_and_remainder_reconcile=True,
+                    summary_above_maps=True, no_horizontal_overflow=True))
             root.locator("[data-driver-state]").select_option("DC")
             expect(root.locator("[data-driver-detail]")).to_contain_text("no NORC sample")
             expect(root.locator('[data-driver-map="switching"] path[data-state-code="DC"]')).to_have_attribute("data-model-value", "")

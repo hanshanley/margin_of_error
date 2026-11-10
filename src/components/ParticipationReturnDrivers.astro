@@ -1,20 +1,23 @@
 ---
 import { readFileSync } from 'node:fs';
 const { names } = Astro.props as { names: Record<string, string> };
-type DriverRow = { id: string; state_code: string; office: string; components_pp: Record<string, number> };
-const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-01/viewer-data.json', 'utf8'));
-const receipt = JSON.parse(readFileSync('data/participation-return-attribution/20261110-01/download.json', 'utf8'));
+type DriverRow = { id: string; state_code: string; office: string; components_pp: Record<string, number>;
+	reported_comparison: { baseline_year?: number; reported_change_pp: number | null;
+		other_and_unallocated_pp: number | null; baseline_alignment_pp: number | null } };
+const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/viewer-data.json', 'utf8'));
+const receipt = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/download.json', 'utf8'));
 const payload = JSON.stringify({ data, names }).replaceAll('<', '\\u003c');
-const pp = (value: number) => `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
+const pp = (value: number | null) => value === null ? 'Unavailable' : `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 ---
 <section id="participation-return-drivers" class="participation-current" aria-labelledby="return-drivers-title">
 	<header class="section-intro">
-		<p class="kicker">2026 · Modeled changes in the vote margin</p>
-		<h2 id="return-drivers-title">Switching sides or staying home?</h2>
-		<p>Two views of what moved the margin: <strong>switching sides</strong> and
-			<strong>modeled nonparticipation</strong>. Select an office, then a state in either map.</p>
+		<p class="kicker">2026 · Reported swing and modeled contributions</p>
+		<h2 id="return-drivers-title">What moved the margin?</h2>
+		<p>Compare the <strong>reported swing</strong> with modeled switching, modeled nonparticipation,
+			and the remaining other or unallocated change. Select an office, then a state on any map.</p>
 	</header>
-	<p class="caption">Reference: recalled <strong>2024 presidential choice</strong>.
+	<p class="caption">Reported swing compares qualified earlier <strong>same-office returns</strong>;
+		the year and source frame are shown for each state. Margin = 100 × (D − R) / (D + R).
 		“Staying home” is modeled nonparticipation, not a confirmed missing ballot.</p>
 	<div class="driver-controls">
 		<label>2026 office<select data-driver-office disabled><option value="house">House · states</option>
@@ -22,7 +25,13 @@ const pp = (value: number) => `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 		<label>State<select data-driver-state disabled><option value="">Loading state context…</option></select></label>
 	</div>
 	<p data-driver-status class="caption" role="status">Saved 2026 model estimates. The full numerical table works without JavaScript.</p>
+	<div data-driver-summary class="driver-summary" hidden aria-live="polite"></div>
 	<div class="driver-maps">
+		<section class="driver-map-card" aria-labelledby="driver-total-map-title">
+			<h3 id="driver-total-map-title">Reported swing</h3>
+			<p class="caption">Total same-office change in the known-D/R margin.</p>
+			<div class="driver-map" data-driver-map="reported_total"></div>
+		</section>
 		<section class="driver-map-card" aria-labelledby="driver-switch-map-title">
 			<h3 id="driver-switch-map-title">Switching sides</h3>
 			<p class="caption">Contribution from changing between major-party choices.</p>
@@ -33,43 +42,57 @@ const pp = (value: number) => `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 			<p class="caption">Contribution from model-classified nonparticipation.</p>
 			<div class="driver-map" data-driver-map="modeled_nonparticipation"></div>
 		</section>
+		<section class="driver-map-card" aria-labelledby="driver-other-map-title">
+			<h3 id="driver-other-map-title">Other / unallocated</h3>
+			<p class="caption">Reported total minus the two modeled effects; not one mechanism.</p>
+			<div class="driver-map" data-driver-map="other_and_unallocated"></div>
+		</section>
 	</div>
-	<div class="driver-map-key" aria-label="Shared modeled margin contribution scale">
+	<div class="driver-map-key" aria-label="Shared signed margin-point scale">
 		<div><div class="driver-map-ramp"></div><div class="driver-map-ticks">
 			<span data-driver-scale-min></span><span>0</span><span data-driver-scale-max></span>
 		</div><div class="driver-map-directions"><span>Republican direction</span><span>Democratic direction</span></div></div>
-		<span class="driver-no-model"><i></i>No eligible model</span>
+		<span class="driver-no-model"><i></i>No qualified comparison / model</span>
 	</div>
-	<p class="caption driver-map-note">Colour shows <strong>percentage-point contributions to the margin</strong>,
-		not party vote shares or turnout rates. Other terms and an unallocated source/return gap remain separate.
+	<p class="caption driver-map-note">Colour shows <strong>signed percentage-point changes or contributions to the margin</strong>,
+		not party vote shares or turnout rates. Reported total = switching + modeled nonparticipation + other / unallocated.
 		No state estimate is spread onto counties or precincts.</p>
-	<div data-driver-detail class="driver-detail" hidden></div>
+	<details class="explorer-notes"><summary>Selected state: full accounting and source qualifications</summary>
+		<div data-driver-detail class="driver-detail" hidden></div>
+	</details>
 	<details class="explorer-notes"><summary>How to read these estimates and their uncertainty</summary>
 	<p class="caption">The selected state's ranges vary switching/nonparticipation contrast strength from 0.5× to 1.5×.
 		They are <strong>partial assumption sensitivity, not confidence intervals</strong>.
-		The gap can be larger than either displayed effect; it is not assigned to people switching or staying home.
+		The gap can be larger than either modeled effect; it is not assigned to people switching or staying home.
 		Model-classified nonparticipation is not administrative evidence of no ballot. D.C. has no NORC sample.</p>
 	<p class="caption">NORC participation information and candidate returns constrain the model.
-		The recalled presidential baseline is not automatically the previous election for the same office.
+		The original seven modeled terms compare recalled presidential choice in the current survey frame.
+		A separate unallocated baseline-alignment term bridges them to the reported same-office swing;
+		these original terms are not fitted to the earlier partisan result.
 		55 office-specific switching tables are used; other office terms require explicit transport assumptions.
 		Entry, other choices, unknowns, denominator changes and the unallocated return/frame gap are retained.
 		These are conditional estimates, not causal persuasion. No state survey model is assigned to counties or precincts.</p>
 	</details>
 	<details class="explorer-notes"><summary>Every saved estimate and full accounting</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 113 saved modeled effect estimates">
-			<table><caption>Recalled 2024 President → selected 2026 office; signed model-frame margin points.</caption>
+			<table><caption>Reported same-office swing and original model-frame terms; signed margin points. Unavailable is not zero.</caption>
 				<thead><tr><th scope="col">State / office</th><th scope="col">Switching</th><th scope="col">Nonparticipation</th>
 					<th scope="col">Entry</th><th scope="col">Other</th><th scope="col">Unknown</th>
-					<th scope="col">Denominator</th><th scope="col">Unallocated gap</th></tr></thead>
+					<th scope="col">Denominator</th><th scope="col">Current-frame gap</th>
+					<th scope="col">Prior-office year</th><th scope="col">Reported swing</th>
+					<th scope="col">Other / unallocated total</th><th scope="col">Baseline alignment</th></tr></thead>
 				<tbody>{data.rows.map((row: DriverRow) =>
 					<tr data-saved-driver={row.id}><th scope="row">{names[row.state_code]} · {row.office}</th>
 						{['switching', 'modeled_nonparticipation', 'no_prior_contest_vote_entry',
 							'other_choice', 'unresolved', 'denominator', 'return_frame_gap'].map(key =>
-							<td class="numeric">{pp(row.components_pp[key])}</td>)}</tr>)}</tbody>
+							<td class="numeric">{pp(row.components_pp[key])}</td>)}
+						<td>{row.reported_comparison.baseline_year ?? 'Unavailable'}</td>
+						{['reported_change_pp', 'other_and_unallocated_pp', 'baseline_alignment_pp'].map(key =>
+							<td class="numeric">{pp(row.reported_comparison[key as 'reported_change_pp'])}</td>)}</tr>)}</tbody>
 			</table>
 		</div>
 	</details>
-	<div class="download-links"><a href={receipt.url}>Complete inputs, all models/scenarios, code and checksums · ZIP</a></div>
+	<div class="download-links"><a href={receipt.url}>Complete historical returns, inputs, all models/scenarios, code and checksums · ZIP</a></div>
 	<script type="application/json" is:inline data-driver-data set:html={payload}></script>
 </section>
 <script>
@@ -102,6 +125,10 @@ const pp = (value: number) => `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 	.driver-no-model i { width: .65rem; height: .65rem; background: #d6d3cb; }
 	.driver-map-note { max-width: 85ch; margin-inline: auto; }
 	.driver-detail { margin-top: 1rem; padding-top: .5rem; border-top: 1px solid var(--rule); min-width: 0; }
+	.driver-summary { margin-block: 1rem; padding-block: .75rem; border-block: 1px solid var(--rule); }
+	.driver-summary :global(h3) { margin: 0 0 .4rem; font: 400 1.15rem var(--serif); }
+	.driver-summary :global(p) { margin: .4rem 0; }
+	.driver-summary :global(.driver-equation) { font: .85rem/1.65 var(--sans); font-variant-numeric: tabular-nums; }
 	@media(max-width:760px) {
 		.driver-maps { grid-template-columns: minmax(0,1fr); gap: 1.25rem; }
 		.driver-map-key { justify-content: flex-start; }
