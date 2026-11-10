@@ -5,7 +5,7 @@ import unittest
 
 from participation_intake.acs_context import TABLES, cell, county_record, parse_table
 from participation_intake.contract import IntakeError
-from participation_intake.resident import compile_counties, name_key
+from participation_intake.resident import add_precinct_context, compile_counties, name_key
 from participation_intake.small_area import block_group_rows, build_block_group_index
 from participation_intake.precinct_context import estimate_context
 
@@ -255,6 +255,35 @@ class ResidentContextTests(unittest.TestCase):
                     root / "absent.zip", proof, proof, root / "absent.py", root / "complete.zip")
             self.assertEqual(error.exception.code, "context_verification")
             self.assertFalse((root / "complete.zip").exists())
+
+    def test_runtime_extension_preserves_counties_zeros_missingness_and_held_reference(self):
+        import gzip, json
+        native = dict(contract="geographic.resident_context.v1", source_period="2020-2024",
+            income_dollar_year=2024, records=[county_record("01001", fixture())], limitations=[])
+        county_reference = dict(AL=dict(features=[dict(properties=dict(
+            key="01001", state_code="AL", boundary_year=2024))]))
+        files = compile_counties(native, [dict(USPS="AL", GEOID="01001", NAME="Autauga County")], county_reference)
+        original_counties = json.loads(gzip.decompress(files["states/AL.json.gz"]))["counties"]
+        profile = dict(geography=dict(reference_key="native-1", state_code="AL"),
+            resident_population=dict(estimate=0), modeled_income_median_band=None,
+            source_block_groups=["010010201001"], exact_weighted_source_cells={"large": "audit"},
+            resident_composition_is_not_voter_composition=True)
+        context = dict(state_code="AL", source_period="2020-2024", weight_year=2020,
+            limitations=[], source_reference=dict(sha256="a"*64), records=[profile])
+        reference = dict(features=[dict(properties=dict(key=key, state_code="AL", unit=key))
+            for key in ("native-1", "native-held")])
+        held = dict(held_references=[dict(key="native-held", reason="invalid_native_reference")])
+        extended = add_precinct_context(files, {"AL": context}, {"AL": reference}, {"AL": held})
+        actual = json.loads(gzip.decompress(extended["states/AL.json.gz"]))
+        self.assertEqual(actual["counties"], original_counties)
+        self.assertEqual(actual["precincts"][0]["resident_population"]["estimate"], 0)
+        self.assertIsNone(actual["precincts"][0]["modeled_income_median_band"])
+        self.assertNotIn("exact_weighted_source_cells", actual["precincts"][0])
+        self.assertEqual(actual["precinct_reference_holds"], held["held_references"])
+        self.assertEqual(json.loads(extended["index.json"])["states"]["AL"]["population_profiles"], 1)
+        context["records"].append(profile)
+        with self.assertRaises(IntakeError):
+            add_precinct_context(files, {"AL": context}, {"AL": reference}, {"AL": held})
 
 
 if __name__ == "__main__":

@@ -91,3 +91,51 @@ def build_county_files(native_path, identities_path, geometry_root):
         approved_geometry={f"geometry/county-{code}.geojson":
             pin((base / f"geometry/county-{code}.geojson").read_bytes()) for code in geometries},
         original_reacquisitions=0, geometry_repreparations=0, count_reductions_repeated=0)
+
+
+def add_precinct_context(files, contexts, references, crosswalks):
+    files = dict(files)
+    index = json.loads(files["index.json"])
+    if set(contexts) != set(references) or set(contexts) != set(crosswalks):
+        raise IntakeError("context_coverage", "Every modeled source needs its full reference and hold inventory")
+    for code, context in sorted(contexts.items()):
+        if code not in index["states"] or context["state_code"] != code or context["source_period"] != index["source_period"]:
+            raise IntakeError("context_geography", "Conditional context belongs to another state or source period")
+        declaration = index["states"][code]
+        data = json.loads(gzip.decompress(files[declaration["file"]]))
+        features = references[code]["features"]
+        properties = {feature["properties"]["key"]: feature["properties"] for feature in features}
+        keys = [row["geography"]["reference_key"] for row in context["records"]]
+        held = crosswalks[code]["held_references"]
+        held_keys = {row["key"] for row in held}
+        if len(properties) != len(features) or len(set(keys)) != len(keys) or set(keys) & held_keys or set(
+                keys) | held_keys != set(properties):
+            raise IntakeError("context_geography", "Full conditional reference decisions differ")
+        profiles = []
+        for row in context["records"]:
+            key = row["geography"]["reference_key"]
+            props = properties[key]
+            if row["geography"]["state_code"] != code or props["state_code"] != code or row.get(
+                    "resident_composition_is_not_voter_composition") is not True:
+                raise IntakeError("context_geography", "Unqualified conditional reference identity")
+            view = {name: value for name, value in row.items()
+                if name not in ("exact_weighted_source_cells", "source_block_groups")}
+            view.update(name=props.get("unit") or props.get("precinct") or key,
+                source_area=props.get("county"), state_code=code,
+                source_block_group_count=len(row["source_block_groups"]))
+            profiles.append(view)
+        data.update(precincts=profiles, precinct_source=context["source_reference"],
+            precinct_reference_holds=held, weight_year=context["weight_year"],
+            conditional_context_limitations=context["limitations"])
+        body = compressed(encoded(data))
+        files[declaration["file"]] = body
+        declaration.update(**pin(body), precincts=len(profiles), modeled_precincts=len(profiles),
+            held_reference_features=len(held), reference_features=len(features),
+            population_profiles=sum(row["resident_population"]["estimate"] is not None for row in profiles),
+            income_profiles=sum(row["modeled_income_median_band"] is not None for row in profiles))
+    index.update(precinct_context_status="conditional_local_reference_profiles",
+        modeled_precincts=sum(value["precincts"] for value in index["states"].values()),
+        precinct_reference_families=len(contexts),
+        resident_context_not_voter_data=True, income_medians_averaged=False)
+    files["index.json"] = encoded(index)
+    return files
