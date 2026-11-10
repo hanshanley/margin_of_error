@@ -1,0 +1,297 @@
+{
+  "contract": "resident.approved_reference_registry.v1",
+  "native_block_group_database": {
+    "bytes": 422817792,
+    "sha256": "52576b892242aa2a935c644a40386689dd4148d1e7c7e07e71e9585fbdc85070"
+  },
+  "states": {
+    "AK": {
+      "state_fips": "02",
+      "file": "public/participation-precincts/20261110-alaska-native-display-01/AK.geojson.gz",
+      "bytes": 38523,
+      "sha256": "8c5bf4c88d3d4ab72b3a655189b904f28f7c9a3a6c87047516a39aca9cbc8273",
+      "expected_features": 81,
+      "source_id": "alaska-native-display-20261110-01",
+      "boundary_label": "Official 2026 Alaska app reference, valid unrepaired subset; not certified legal boundaries",
+      "source_metadata": {
+        "source_id": "alaska-native-display-20261110-01",
+        "boundary_label": "Official 2026 Alaska app reference, valid unrepaired subset; not certified legal boundaries",
+        "notes": "81 of 402 native geographic units; 321 source-topology holds. All 523 count records remain downloadable, including 120 pooled district and one federal-overseas unit. Geographic House b ballots omit those pooled modes; no allocation, geometry repair, legal-boundary certification or turnout rate.",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-alaska-native-display-20261110-01/complete-analysis.zip",
+        "sha256": "8c5bf4c88d3d4ab72b3a655189b904f28f7c9a3a6c87047516a39aca9cbc8273",
+        "bytes": 38523,
+        "expected_features": 81,
+        "native_source_rows": 523,
+        "native_geographic_rows": 402,
+        "geometry_holds": 321,
+        "counts_only": true,
+        "rates_approved": false,
+        "area_column_label": "Source area",
+        "ballot_column_label": "Native geographic-unit ballots"
+      },
+      "certified_legal_precinct_boundaries": false,
+      "approval_evidence": {
+        "prior_published_reference": true,
+        "accepted_website_source": "3389e1f45d6e90422f9b666c6136e434c452d982",
+        "complete_prior_download": "https://github.com/hanshanley/margin_of_error/releases/download/voter-alaska-native-display-20261110-01/complete-analysis.zip",
+        "index_file": "public/participation-precincts/20261110-alaska-native-display-01/index.json",
+        "index_bytes": 1118,
+        "index_sha256": "193413401d2ee39fc66e17cbe36582308539915a7909360af5d068b531d4db08"
+      }
+    },
+    "IN": {
+      "state_fips": "18",
+      "file": "public/participation-precincts/20261109-indiana-monroe-01/IN.geojson.gz",
+      "bytes": 380087,
+      "sha256": "86b4dda4aea4963580c2d4c2582ae6487f272bf70a36f6254268a8599b665281",
+      "expected_features": 83,
+      "source_id": "indiana-monroe-native-20261109-01",
+      "boundary_label": "Official Monroe 2026 app's selected current precinct reference; not certified 2026 legal boundaries",
+      "source_metadata": {
+        "source_id": "indiana-monroe-native-20261109-01",
+        "boundary_label": "Official Monroe 2026 app's selected current precinct reference; not certified 2026 legal boundaries",
+        "notes": "Monroe County only: 83 mapped source units of 103 native count records. All source rows are Partially Reporting. The federal carrier and overlapping split references remain table-only; no geometry repairs or count allocations. No statewide Indiana precinct coverage, completion, certified geography, rates or demographic allocation.",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-indiana-voter-statistics-20261109-01/complete-analysis.zip",
+        "sha256": "86b4dda4aea4963580c2d4c2582ae6487f272bf70a36f6254268a8599b665281",
+        "bytes": 380087,
+        "expected_features": 83,
+        "native_source_rows": 103,
+        "county_fips": "18105",
+        "counts_only": true,
+        "rates_approved": false
+      },
+      "certified_legal_precinct_boundaries": false,
+      "approval_evidence": {
+        "prior_published_reference": true,
+        "accepted_website_source": "3389e1f45d6e90422f9b666c6136e434c452d982",
+        "complete_prior_download": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-indiana-voter-statistics-20261109-01/complete-analysis.zip",
+        "index_file": "public/participation-precincts/20261109-indiana-monroe-01/index.json",
+        "index_bytes": 1065,
+        "index_sha256": "834d6c524d7e3123af84e8f0c0cb77d3d5187bc092b2727f3b19092a59028650"
+      }
+    },
+    "MA": {
+      "state_fips": "25",
+      "file": "public/participation-precincts/20261110-massachusetts-city-precinct-reference-02/MA.geojson.gz",
+      "bytes": 286941,
+      "sha256": "72ebce014fed1fd3a25f81ce93dae73cee28b52c754271f30dd2621b538fe0dd",
+      "expected_features": 307,
+      "source_id": "20261110-massachusetts-city-precinct-reference-02",
+      "boundary_label": "Boston2022 and city-declared Somerville references (metadata2023); not certified2026 legal precincts",
+      "source_metadata": {
+        "source_id": "20261110-massachusetts-city-precinct-reference-02",
+        "expected_features": 307,
+        "native_source_reporting_rows": 307,
+        "mapped_cities": {
+          "Boston": 275,
+          "Somerville": 32
+        },
+        "held_table_only_reporting_rows": 0,
+        "held_split_parent_units": [],
+        "boundary_reference_year": null,
+        "city_reference_source_years": {
+          "Boston": 2022,
+          "Somerville": null
+        },
+        "city_reference_source_metadata_revisions": {
+          "Somerville": "2023-09-22"
+        },
+        "city_reference_dataset_id": "da4y-vuae",
+        "city_reference_native_wkt_sha256": "78723c57dc900ff30b1a01ba02ca9aeea20b7107f50a3f7ed86b50e45f2b5ad1",
+        "certified_legal_precinct_boundaries": false,
+        "counts_only": true,
+        "rates_approved": false,
+        "source_geometry_repaired": false,
+        "source_geometry_clipped": false,
+        "source_native_overlaps_preserved": true,
+        "native_overlap_pairs": 2,
+        "native_vertices_verified": 25396,
+        "source_city_counts": {
+          "Boston": 185569,
+          "Somerville": 64597
+        },
+        "mapped_count_checks_by_city": {
+          "Boston": 185569,
+          "Somerville": 64597
+        },
+        "bytes": 286941,
+        "sha256": "72ebce014fed1fd3a25f81ce93dae73cee28b52c754271f30dd2621b538fe0dd",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-massachusetts-city-precinct-reference-20261110-02/complete-analysis.zip",
+        "area_column_label": "City",
+        "ballot_column_label": "Native reporting-unit count",
+        "boundary_label": "Boston2022 and city-declared Somerville references (metadata2023); not certified2026 legal precincts",
+        "notes": "Boston275 / Somerville32 direct native reference joins. Four former split-parent holds now use actual city polygons, never clipped remainders. All307 raw reporting rows, earlier303-reference release and351 municipal decisions remain in complete downloads. Invalid Wayland municipal geometry remains held. No rates, county allocations, source repairs or unique-person claims."
+      },
+      "certified_legal_precinct_boundaries": false,
+      "approval_evidence": {
+        "prior_published_reference": true,
+        "accepted_website_source": "3389e1f45d6e90422f9b666c6136e434c452d982",
+        "complete_prior_download": "https://github.com/hanshanley/margin_of_error/releases/download/voter-massachusetts-city-precinct-reference-20261110-02/complete-analysis.zip",
+        "index_file": "public/participation-precincts/20261110-massachusetts-city-precinct-reference-02/index.json",
+        "index_bytes": 2339,
+        "index_sha256": "6cfcc32e41675b88b8944c45b140d0338c6aa0fdf3134d3a0c47e6c3ea99b559"
+      }
+    },
+    "NH": {
+      "state_fips": "33",
+      "file": "public/participation-precincts/20261110-new-hampshire-ward-reference-04/NH.geojson.gz",
+      "bytes": 245038,
+      "sha256": "87389220a20d2af082c70fa43cab4ce5864a14f8a4e3b4ac321049f7c1ca9ddd",
+      "expected_features": 37,
+      "source_id": "new-hampshire-native-ward-reference-20261110-04",
+      "boundary_label": "Official municipal ward display references in four New Hampshire cities, not certified 2026 legal precincts",
+      "source_metadata": {
+        "source_id": "new-hampshire-native-ward-reference-20261110-04",
+        "boundary_label": "Official municipal ward display references in four New Hampshire cities, not certified 2026 legal precincts",
+        "certified_legal_precinct_boundaries": false,
+        "expected_features": 37,
+        "mapped_cities": {
+          "Manchester": 12,
+          "Concord": 10,
+          "Nashua": 9,
+          "Dover": 6
+        },
+        "boundary_reference_years": {
+          "Manchester": 2022,
+          "Concord": null,
+          "Nashua": null,
+          "Dover": 2022
+        },
+        "current_clerk_dates": {
+          "Manchester": "2021-12-21",
+          "Concord": "2021-11-08",
+          "Nashua": "2021-12-28"
+        },
+        "native_source_ward_rows": 37,
+        "mapped_source_ward_rows": 37,
+        "held_table_only_ward_rows": 0,
+        "complete_native_source_fields": 242,
+        "source_city_observations": 4,
+        "counts_only": true,
+        "rates_approved": false,
+        "native_federal_only_added": false,
+        "source_geometry_repaired": false,
+        "source_native_overlaps_preserved": true,
+        "native_overlap_pairs": 20,
+        "native_vertices_verified": 18179,
+        "raw_count_checks_by_city": {
+          "Manchester": 38562,
+          "Concord": 19234,
+          "Nashua": 33849,
+          "Dover": 15941
+        },
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-new-hampshire-native-ward-reference-20261110-04/complete-analysis.zip",
+        "bytes": 245038,
+        "sha256": "87389220a20d2af082c70fa43cab4ce5864a14f8a4e3b4ac321049f7c1ca9ddd",
+        "area_column_label": "City",
+        "ballot_column_label": "Native ward source count",
+        "notes": "Manchester12, Concord10, Nashua9 and Dover6: all37 held native ward reports now have direct references. Counts, source disagreements, separate federal-only fields and all prior31 shapes remain unchanged. Dover uses the independently state-published2022 NHGRANIT ward product, literal district labels, native3437 and declared inverseESRI108190; not old layer5, FID-as-ward or nativeFIPS-as-county. All1987 new vertices/cyclic edges and15 native pairs are checked, with no native Dover overlaps. Six Manchester and fourteen Concord overlaps remain unrepaired. Four cities only, not statewide/county totals or certified2026 legal precincts; no allocation or analysis rates.",
+        "Dover_source_item_id": "3d1a8bdf3eaa49e09cf5d9da5b56bf9c",
+        "Dover_source_layer_id": 11,
+        "Dover_native_pair_decisions": 15,
+        "Dover_native_overlap_pairs": 0
+      },
+      "certified_legal_precinct_boundaries": false,
+      "approval_evidence": {
+        "prior_published_reference": true,
+        "accepted_website_source": "3389e1f45d6e90422f9b666c6136e434c452d982",
+        "complete_prior_download": "https://github.com/hanshanley/margin_of_error/releases/download/voter-new-hampshire-native-ward-reference-20261110-04/complete-analysis.zip",
+        "index_file": "public/participation-precincts/20261110-new-hampshire-ward-reference-04/index.json",
+        "index_bytes": 2323,
+        "index_sha256": "76fdcb1e9b99a67b6beb7ecf763a81468cea48110d07313c15052595a6148982"
+      }
+    },
+    "MI": {
+      "state_fips": "26",
+      "file": "data/participation-map-repairs/20261107-01/MI-2026-qualified-precinct-counts.geojson.gz",
+      "bytes": 234932,
+      "sha256": "cd0c4c23bc60a18c1d2cdb32baaaa5905503af42a1b5c2c6b4c5a1e8da13d148",
+      "expected_features": 58,
+      "source_id": "20261107-01-MI",
+      "boundary_label": "Official State of Michigan 2026 election-cycle precinct boundaries",
+      "source_metadata": {
+        "boundary_label": "Official State of Michigan 2026 election-cycle precinct boundaries",
+        "boundary_source": "https://services3.arcgis.com/dxRQUfTDNtfqZ301/arcgis/rest/services/VotingPrecinct/FeatureServer",
+        "boundary_item_id": "b7df95c78668407280a7dead8e26aad0",
+        "geometry_file": "MI-2026-qualified-precinct-counts.geojson.gz",
+        "geometry_bytes": 234932,
+        "geometry_sha256": "cd0c4c23bc60a18c1d2cdb32baaaa5905503af42a1b5c2c6b4c5a1e8da13d148",
+        "count_features": 58,
+        "rate_features": 0,
+        "qualified_counties": [
+          "Bay County",
+          "Isabella County"
+        ],
+        "withheld_rows": 5,
+        "notes": "Exact structured identities qualify all 35 Bay and 23 Isabella official precinct features for direct native counts. Rates remain withheld because native registration components are not defined. City of Clare's positive Isabella row cannot use the whole CountyFIPS 035 official polygon; four zero rows are official Gratiot/Midland precincts."
+      },
+      "certified_legal_precinct_boundaries": false,
+      "approval_evidence": {
+        "prior_published_reference": true,
+        "accepted_website_source": "3389e1f45d6e90422f9b666c6136e434c452d982",
+        "complete_prior_download": null,
+        "index_file": "data/participation-map-repairs/20261107-01/index.json",
+        "index_bytes": 2591,
+        "index_sha256": "0d7a7a7bd0a6901472ab91681a90a12b10f47cae402504ccae1b7babad955a49"
+      }
+    },
+    "NM": {
+      "state_fips": "35",
+      "file": "data/participation-precincts/20261104T230000Z/NM.geojson.gz",
+      "bytes": 1931550,
+      "sha256": "94570c5257643671177815bc53a5dfcdba0effde14ff4977207d811db1b62ced",
+      "expected_features": 2177,
+      "source_id": "20261104T230000Z-NM",
+      "boundary_label": "2026-07-17",
+      "source_metadata": {},
+      "certified_legal_precinct_boundaries": false,
+      "approval_evidence": {
+        "prior_published_reference": true,
+        "accepted_website_source": "3389e1f45d6e90422f9b666c6136e434c452d982",
+        "complete_prior_download": null,
+        "index_file": "data/participation-precincts/20261104T230000Z/index.json",
+        "index_bytes": 1414,
+        "index_sha256": "26a584a0bb8d955890c046bd9e3d808e01ffee3491f422d603684b1ad1e101c3"
+      }
+    },
+    "MN": {
+      "state_fips": "27",
+      "file": "data/county-source-reviews/20261110-minnesota-complete-native-03/MN.geojson.gz",
+      "bytes": 9223418,
+      "sha256": "c35f4765c499526e73f158ea59cfac8f6d64acea89496f106a8c7697c970a0ac",
+      "source_id": "minnesota-complete-native-statistics-20261110-03",
+      "expected_features": 4105,
+      "source_metadata": {
+        "source_id": "minnesota-complete-native-statistics-20261110-03",
+        "expected_features": 4105,
+        "bytes": 9223418,
+        "sha256": "c35f4765c499526e73f158ea59cfac8f6d64acea89496f106a8c7697c970a0ac",
+        "full_asset_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-complete-native-statistics-20261110-03/MN.geojson.gz",
+        "counts_only": true,
+        "rates_approved": false,
+        "reported_source_counts": 4105,
+        "unknown_source_counts": 0,
+        "source_reference_date": "2026-09-18",
+        "source_update_literal": "11/10/26 8:08 AM",
+        "source_update_timezone": null,
+        "certified_legal_precinct_boundaries": false,
+        "boundary_label": "Full unchanged native September18,2026 reference; not certified legal precincts",
+        "native_overlaps_preserved": true,
+        "positive_native_overlap_pairs": 0,
+        "names_differ_beyond_case": 1723,
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-complete-native-statistics-20261110-03/complete-analysis.zip",
+        "notes": "All4105 source statistics rows now explicitly report, including32 observed zeros. All coordinates match the previous full native reference exactly; previous13619 pair decisions are reused, not recomputed. Source conflicts and electorate excesses remain literal; no precinct rate, geometry repair or certification inference."
+      },
+      "certified_legal_precinct_boundaries": false,
+      "approval_evidence": {
+        "prior_published_reference": true,
+        "complete_prior_download": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-complete-native-statistics-20261110-03/complete-analysis.zip"
+      }
+    }
+  },
+  "original_acquisitions": 0,
+  "new_geometry_approvals": 0,
+  "allocation_rule": "unchanged_native_geographic_edges_all_boundary_ties_held",
+  "prior_results_preserved": true,
+  "reason_for_new_version": "Correct projected-chord boundary tie misclassification and retain every point decision; recompute derived weights only, without reacquiring sources or preparing geometry."
+}

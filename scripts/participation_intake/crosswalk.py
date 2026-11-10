@@ -6,16 +6,13 @@ from fractions import Fraction
 from .contract import IntakeError
 
 
-def population_weights(features, blocks, state_code, state_fips, chunk_size=20000):
+def population_weights(features, blocks, state_code, state_fips, chunk_size=20000,
+                       point_query_writer=None):
     import numpy as np
-    import pyproj
     import shapely
     from shapely.geometry import shape
-    from shapely.ops import transform
     from shapely.strtree import STRtree
 
-    projection = "EPSG:3338" if state_code == "AK" else "EPSG:26905" if state_code == "HI" else "EPSG:5070"
-    transformer = pyproj.Transformer.from_crs("EPSG:4326", projection, always_xy=True)
     identities, polygons, holds, seen = [], [], [], set()
     for feature in features:
         props = feature["properties"]
@@ -31,7 +28,7 @@ def population_weights(features, blocks, state_code, state_fips, chunk_size=2000
             holds.append(dict(key=key, reason="source_reference_not_approved"))
             continue
         identities.append(key)
-        polygons.append(transform(transformer.transform, geometry))
+        polygons.append(geometry)
     if not polygons:
         raise IntakeError("crosswalk_geometry", "No approved unrepaired reference footprints")
     tree = STRtree(polygons)
@@ -54,17 +51,23 @@ def population_weights(features, blocks, state_code, state_fips, chunk_size=2000
             denominators[key[:12]][1] += row["HU100"]
             totals[0] += row["POP100"]
             totals[1] += row["HU100"]
-        x, y = transformer.transform(
-            np.asarray([float(row["INTPTLON"]) for row in batch]),
-            np.asarray([float(row["INTPTLAT"]) for row in batch]))
+        x = np.asarray([float(row["INTPTLON"]) for row in batch])
+        y = np.asarray([float(row["INTPTLAT"]) for row in batch])
         pairs = tree.query(shapely.points(x, y), predicate="intersects")
         multiplicity = Counter(pairs[0].tolist())
+        candidates = defaultdict(list)
+        if point_query_writer is not None:
+            for point_index, polygon_index in zip(*pairs):
+                candidates[point_index].append(identities[polygon_index])
         for i, row in enumerate(batch):
             number = multiplicity[i]
             status = "unique_reference" if number == 1 else "ambiguous_reference" if number else "outside_loaded_reference"
             point_counts[status] += 1
             point_counts[status+"_population"] += row["POP100"]
             point_counts[status+"_housing"] += row["HU100"]
+            if point_query_writer is not None:
+                point_query_writer(dict(census_2020_block=row["GEOID"], status=status,
+                    reference_keys=sorted(candidates[i])))
         for point_index, polygon_index in zip(*pairs):
             if multiplicity[point_index] != 1:
                 continue
@@ -83,7 +86,8 @@ def population_weights(features, blocks, state_code, state_fips, chunk_size=2000
             population_fraction=str(Fraction(population, total_population)) if total_population else None,
             housing_proxy_fraction=str(Fraction(housing, total_housing)) if total_housing else None))
     return dict(contract="resident.population_proxy_crosswalk.v1", state_code=state_code,
-        weight_year=2020, projection=projection, links=links, reference_keys=identities, held_references=holds,
+        weight_year=2020, projection="EPSG:4326", native_coordinate_predicate=True,
+        links=links, reference_keys=identities, held_references=holds,
         reference_features=len(features), qualified_reference_features=len(identities),
         source_blocks=len(blocks), complete_population=totals[0], complete_housing_units=totals[1],
         point_decisions=dict(point_counts), source_geometry_repaired=False,
@@ -92,6 +96,7 @@ def population_weights(features, blocks, state_code, state_fips, chunk_size=2000
         ACS_2024_identity_and_variable_qualification_pending=True,
         limitations=[
             "2020 population internal points approximate population distribution within source footprints.",
+            "Point membership uses unchanged native geographic-coordinate edges, without projected-chord replacement.",
             "A block can straddle later precinct boundaries; point assignment is a modeling assumption.",
             "Overlapping reference candidates remain unallocated; native shapes are not repaired.",
             "Housing units are an occupied-household weighting proxy, not observed occupied households.",

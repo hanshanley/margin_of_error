@@ -37,6 +37,21 @@ class CrosswalkTests(unittest.TestCase):
         self.assertEqual(result["point_decisions"]["ambiguous_reference_population"], 100)
         self.assertFalse(result["ambiguous_points_allocated"])
 
+    def test_exact_native_shared_edge_stays_ambiguous_without_projected_chord_assignment(self):
+        source = [polygon("south", -77.1, -77.0), polygon("north", -77.1, -77.0)]
+        source[0]["geometry"]["coordinates"] = [[
+            [-77.1, 38.8], [-77.0, 38.8], [-77.0, 38.85], [-77.1, 38.85], [-77.1, 38.8]]]
+        source[1]["geometry"]["coordinates"] = [[
+            [-77.1, 38.85], [-77.0, 38.85], [-77.0, 38.9], [-77.1, 38.9], [-77.1, 38.85]]]
+        rows = [dict(GEOID="110010001001000", STATE="11", POP100=10, HU100=4,
+            INTPTLON="-77.05", INTPTLAT="38.85")]
+        decisions = []
+        result = population_weights(source, rows, "DC", "11", point_query_writer=decisions.append)
+        self.assertEqual(result["links"], [])
+        self.assertEqual(result["point_decisions"]["ambiguous_reference_population"], 10)
+        self.assertEqual(decisions, [dict(census_2020_block="110010001001000",
+            status="ambiguous_reference", reference_keys=["north", "south"])])
+
     def test_unknown_weights_are_not_observed_zeros_or_cross_state_inputs(self):
         source = [polygon("A", -77.1, -77.0)]
         rows = blocks()
