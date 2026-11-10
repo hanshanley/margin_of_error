@@ -10,14 +10,16 @@ from playwright.sync_api import expect, sync_playwright
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "20261110-massachusetts-native-local-counts-01"
+PRIOR_VERSION = "20261110-massachusetts-native-local-counts-01"
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4387")
 parser.add_argument("--proof", type=Path, required=True)
+parser.add_argument("--city-reference-extension", action="store_true")
 args = parser.parse_args()
+VERSION = "20261110-massachusetts-city-precinct-reference-02" if args.city_reference_extension else PRIOR_VERSION
 assert not args.proof.exists()
 base = args.base_url.rstrip("/")
-source = ROOT / "data/county-source-reviews" / VERSION
+source = ROOT / "data/county-source-reviews" / PRIOR_VERSION
 queries = json.loads((source / "native-count-review-01/complete-native-count-queries.json").read_bytes())
 expected_units = {
     f'Boston:Ward:{row["ward"]}:Precinct:{row["precinct"]}': row["times_cast_literal"]
@@ -27,8 +29,10 @@ expected_units.update({
     f'Somerville:Ward:{row["ward"]}:Precinct:{row["precinct"]}': row["ballots_cast_literal"]
     for row in queries["somerville_native_counts"] if row["native_level"] == "precinct"
 })
-held = {f"Somerville:Ward:{ward}:Precinct:{precinct}"
-        for ward, precinct in [(1, 4), (2, 1), (4, 2), (6, 3)]}
+held = set() if args.city_reference_extension else {
+    f"Somerville:Ward:{ward}:Precinct:{precinct}"
+    for ward, precinct in [(1, 4), (2, 1), (4, 2), (6, 3)]}
+mapped = 307-len(held)
 assert len(expected_units) == 307
 cases = []
 
@@ -79,7 +83,9 @@ def verify_cities(page):
     assert page.locator('#current-unit-select option:not([value=""])').count() == 32
     page.select_option("#current-unit-select", "Somerville:Ward:1:Precinct:4")
     expect(page.locator("#current-unit-detail")).to_contain_text("1,136")
-    expect(page.locator("#current-unit-detail")).to_contain_text("not clipped or inferred")
+    expect(page.locator("#current-unit-detail")).to_contain_text(
+        "All 32 reporting units join direct city reference polygons" if args.city_reference_extension
+        else "not clipped or inferred")
 
 
 with sync_playwright() as runtime:
@@ -128,15 +134,22 @@ with sync_playwright() as runtime:
             page.locator("#tab-precincts").click()
             expect(page.locator("#precinct-state-select")).to_have_value("Massachusetts")
             shapes = page.locator('.geographic-detail [data-level="precinct"], .geographic-detail [data-level="subprecinct"]')
-            expect(shapes).to_have_count(303, timeout=90000)
+            expect(shapes).to_have_count(mapped, timeout=90000)
             actual = shapes.evaluate_all("""els=>els.map(e=>({key:e.dataset.geography,count:e.dataset.count,
-              rate:e.dataset.rate,year:e.dataset.referenceYear,level:e.dataset.level}))""")
+              rate:e.dataset.rate,year:e.dataset.referenceYear,level:e.dataset.level,
+              city:e.dataset.sourceCity,revision:e.dataset.referenceRevision}))""")
             assert {row["key"].removeprefix("MA|"): int(row["count"]) for row in actual} == {
                 key: value for key, value in expected_units.items() if key not in held}
             assert sum(row["level"] == "subprecinct" for row in actual) == 4
-            assert all(row["rate"] == "" and row["year"] == "2022" for row in actual)
+            assert all(row["rate"] == "" and row["year"] == (
+                "current" if args.city_reference_extension and row["city"] == "Somerville" else "2022")
+                for row in actual)
+            if args.city_reference_extension:
+                assert all(row["revision"] == "2023-09-22" for row in actual if row["city"] == "Somerville")
             expect(page.locator("#title")).to_have_text("Native reporting-unit counts in Boston and Somerville")
-            expect(page.locator("#coverage-note")).to_contain_text("Four Somerville split-parent counts remain table-only")
+            expect(page.locator("#coverage-note")).to_contain_text(
+                "Four former split-parent holds now use actual city polygons" if args.city_reference_extension
+                else "Four Somerville split-parent counts remain table-only")
             first = page.locator('[data-source-city="Boston"][data-source-ward="1"][data-source-precinct="1"]')
             first.focus()
             first.press("Enter")
@@ -153,7 +166,7 @@ with sync_playwright() as runtime:
             retained = chart.get_attribute("viewBox")
             viewport = page.viewport_size
             page.set_viewport_size(dict(width=viewport["width"]-20, height=viewport["height"]))
-            expect(shapes).to_have_count(303, timeout=90000)
+            expect(shapes).to_have_count(mapped, timeout=90000)
             page.wait_for_timeout(350)
             expect(page.locator("#visualization svg.turnout-map")).to_have_attribute("viewBox", retained)
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
@@ -171,15 +184,32 @@ with sync_playwright() as runtime:
             expect(page.locator("#current-county-select")).to_have_value("additional:MA:city:MA:TOWN:274")
             expect(page.locator("#current-unit-select")).to_have_value("Somerville:Ward:1:Precinct:4A")
             page.select_option("#current-unit-select", "Somerville:Ward:1:Precinct:4")
-            expect(page.locator("#current-unit-detail")).to_contain_text("not clipped or inferred")
+            expect(page.locator("#current-unit-detail")).to_contain_text(
+                "All 32 reporting units join direct city reference polygons" if args.city_reference_extension
+                else "not clipped or inferred")
+            if args.city_reference_extension:
+                for ward, precinct in [(1, 4), (2, 1), (4, 2), (6, 3)]:
+                    page.locator("#tab-precincts").click()
+                    direct = page.locator(f'[data-source-city="Somerville"][data-source-ward="{ward}"]'
+                                          f'[data-source-precinct="{precinct}"]')
+                    expect(direct).to_have_count(1, timeout=90000)
+                    direct.focus()
+                    direct.press("Enter")
+                    unit = f"Somerville:Ward:{ward}:Precinct:{precinct}"
+                    expect(page.locator("#substate-detail")).to_contain_text(f"{expected_units[unit]:,}")
+                    page.locator("#tab-states").click()
+                    expect(page.locator("#current-unit-select")).to_have_value(unit)
+                    expect(page.locator("#current-unit-detail")).not_to_contain_text("Native parent geometry contains")
             assert not errors, errors
             cases.append(dict(mobile=mobile, native_city_sources=2, all_source_reporting_rows=307,
-                mapped_reporting_references=303, municipal_display_references=350,
-                invalid_Wayland_held=True, split_parent_holds=4, literal_zeros_preserved=True,
+                mapped_reporting_references=mapped, municipal_display_references=350,
+                invalid_Wayland_held=True, split_parent_holds=len(held), literal_zeros_preserved=True,
                 native_field_disagreements_retained=True, no_rates=True,
                 unsupported_modes_not_substituted=True, unknown_clears_previous_detail=True,
                 methods_roundtrip=True, both_city_selection_roundtrips=True,
-                native_subprecinct_labels_preserved=True, zoom_pan_resize_preserved=True))
+                native_subprecinct_labels_preserved=True, zoom_pan_resize_preserved=True,
+                former_four_holds_direct_clicks_verified=args.city_reference_extension,
+                explicit_city_reference_revision_verified=args.city_reference_extension))
             context.close()
 
         context = browser.new_context()
@@ -209,7 +239,9 @@ with sync_playwright() as runtime:
             context = browser.new_context()
             page = context.new_page()
             altered = json.loads(gzip.decompress(original))
-            altered["features"][0]["properties"]["reference_geometry"]["rest_layer_id"] = 1
+            target = next(feature for feature in altered["features"]
+                          if feature["properties"]["county"] == "Somerville") if args.city_reference_extension else altered["features"][0]
+            target["properties"]["reference_geometry"]["rest_layer_id"] = 1
             bad = gzip.compress(json.dumps(altered).encode(), mtime=0)
             def corrupt_geometry(route):
                 response = route.fetch()
@@ -239,12 +271,12 @@ with sync_playwright() as runtime:
                 page.reload(wait_until="domcontentloaded")
             else:
                 page.get_by_role("button", name="Retry precinct source").click()
-            expect(page.locator('.geographic-detail [data-level="precinct"], .geographic-detail [data-level="subprecinct"]')).to_have_count(303, timeout=90000)
+            expect(page.locator('.geographic-detail [data-level="precinct"], .geographic-detail [data-level="subprecinct"]')).to_have_count(mapped, timeout=90000)
             context.close()
     finally:
         browser.close()
 
-proof = dict(status="PASS_MA_two_city_sources307rows303native_references350valid_municipalities",
+proof = dict(status=f"PASS_MA_two_city_sources307rows{mapped}native_references350valid_municipalities",
     base_url=base, cases=cases, false_reference_rejected=True, actual_city_retry_restores_selectors=True,
     source_checksum_rejected_and_retry_restores_map=True,
     wrong_reference_role_rejected_after_valid_checksum=True, complete_native_inputs_retained=True,

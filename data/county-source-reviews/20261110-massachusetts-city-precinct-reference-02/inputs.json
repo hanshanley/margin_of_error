@@ -1,0 +1,111 @@
+{
+  "version": "20261110-massachusetts-city-precinct-reference-02",
+  "state_code": "MA",
+  "year": 2026,
+  "native_election_date": "2026-11-03",
+  "prior_source_version": "20261110-massachusetts-native-local-counts-01",
+  "prior_inputs_sha256": "087dc92fb2f7b8fc7f94adeebaa0b005aa8afc1adee68e33d6b3454e5c4e7666",
+  "prior_sufficient_inputs": 67,
+  "current_additional_sufficient_inputs": 17,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-massachusetts-city-precinct-reference-20261110-02/complete-analysis.zip",
+  "native_reporting_rows": 307,
+  "qualified_reporting_references": 307,
+  "split_parent_holds": 0,
+  "city_native_shapes": 32,
+  "city_native_vertices": 2697,
+  "city_native_pair_decisions": 496,
+  "native_identity_fields": [
+    "WARD",
+    "Precinct"
+  ],
+  "duplicate_native_ids_preserved": true,
+  "exact_native_wkt_required": true,
+  "native_projection_epsg": null,
+  "source_metadata_revision": "2023-09-22",
+  "source_census_basis": 2020,
+  "current_display_reference_year": null,
+  "certified_2026_election_boundaries": false,
+  "source_geometries_clipped": false,
+  "source_geometries_repaired": false,
+  "source_counts_repaired": false,
+  "candidate_votes_used_as_ballots": false,
+  "modes_added": false,
+  "analysis_rates_approved": false,
+  "individual_voter_or_private_address_data_requested": false,
+  "full_original_city_gis_zip_and_public_polling_place_columns_retained": true,
+  "queries": {
+    "native_reference": "native-only-review.json",
+    "geographic_reference": "geographic-review.json",
+    "display_reference": "verified32-city-display-reference.geojson"
+  },
+  "files": {
+    "all32-exact-wkt-geographic-receipt.json": {
+      "bytes": 447,
+      "sha256": "bca9424382029a3ca0fb6beba449d2ce77558042a980d93ad1e76ae231723267"
+    },
+    "all32-exact-wkt-geographic-request.json": {
+      "bytes": 110289,
+      "sha256": "8bc2cd0d1022b37a5d1b8cd2271bb5fc746adfc427dec2651203083269056fdb"
+    },
+    "all32-exact-wkt-geographic-response.json": {
+      "bytes": 110469,
+      "sha256": "98f99dffa4b9b0355fb9117560c24f9d179ab9b8cefbb959967e653e74c195db"
+    },
+    "city-declared-precinct-metadata.safe-receipt.json": {
+      "bytes": 671,
+      "sha256": "e701ce00608a83b43d89669f43ada17540e316a290edfdaf2cd95786b532a50c"
+    },
+    "city-declared-precinct-original.safe-receipt.json": {
+      "bytes": 878,
+      "sha256": "d20ada35ab5c412a4fbb908f06b8ed2f262d72f5d4c4b1197c63e68310ecefc8"
+    },
+    "city-declared-precinct-original.zip": {
+      "bytes": 43023,
+      "sha256": "1451f29c5b93dd9409c0e9756383bc3f2ee60369535e1181a9652fea196d354c"
+    },
+    "code/project-somerville-city-native-lead-01.py": {
+      "bytes": 8704,
+      "sha256": "0af9d64cc6da575bb458ddf1918147179b0458f0669c1e844b7fc70a7fa52adb"
+    },
+    "code/review-somerville-city-native-lead-01.py": {
+      "bytes": 5779,
+      "sha256": "41624eafa40c2c08972e526e5ffb89884354d3af0141b79751c381f827973c9c"
+    },
+    "exact-wkt-transformations-receipt.json": {
+      "bytes": 455,
+      "sha256": "50ba8b19cf29caa9c64e1ffc94f0c50c72ca636a36e5a570f92f36a3ec4be4d7"
+    },
+    "exact-wkt-transformations-request.json": {
+      "bytes": 1567,
+      "sha256": "8db0dd4408a7debbd92a2bb455fa63cd3c688912e4ef530cd09e51547987815e"
+    },
+    "exact-wkt-transformations-response.json": {
+      "bytes": 285,
+      "sha256": "b67c9b423741bc09930a1a14a107ba0109d0f41303d9ca5a7d484560e07f2d4c"
+    },
+    "geographic-review.json": {
+      "bytes": 13385,
+      "sha256": "e946c57d00ab8cbae153aaa7433941c6f9631096bac5d12113bc5fb9e3d84090"
+    },
+    "native-only-review.json": {
+      "bytes": 99778,
+      "sha256": "c026d73103b215821f44895013bd7ef9df57bdfc408eae677efd848fe55cc65d"
+    },
+    "public-city-precinct-declarations.json": {
+      "bytes": 1175,
+      "sha256": "73920097875f5584cf767941bc61ba7c31af802964d941abdcb48a288f28348b"
+    },
+    "public-geometry-server.json": {
+      "bytes": 132,
+      "sha256": "2efcf3087e786c87b1f3ab095e5bbf476efe9ca18dc1c7e7678cd8dd3b7d2599"
+    },
+    "public-geometry-server.safe-receipt.json": {
+      "bytes": 446,
+      "sha256": "9f8267b435653742e2f6f56d45a705830e2f630b6f23bf739627bf5310d29316"
+    },
+    "verified32-city-display-reference.geojson": {
+      "bytes": 263224,
+      "sha256": "5e8ef7a5d4befa2456566a45d8a461f21f6ba9b38d8a40f8f8f9de669b246afb"
+    }
+  }
+}

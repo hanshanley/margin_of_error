@@ -1,0 +1,10 @@
+{
+  "source": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/Utilities/Geometry/GeometryServer/findTransformations",
+  "method": "GET",
+  "status": 200,
+  "bytes": 285,
+  "sha256": "b67c9b423741bc09930a1a14a107ba0109d0f41303d9ca5a7d484560e07f2d4c",
+  "request_sha256": "8db0dd4408a7debbd92a2bb455fa63cd3c688912e4ef530cd09e51547987815e",
+  "retrieved_at": "2026-11-10T09:01:55.268227+00:00",
+  "public_original_coordinates_only": true
+}

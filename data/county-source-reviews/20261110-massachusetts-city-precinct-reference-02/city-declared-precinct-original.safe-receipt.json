@@ -1,0 +1,43 @@
+{
+  "url": "https://data.somervillema.gov/download/da4y-vuae/application/x-zip-compressed",
+  "retrieved_at": "2026-11-10T08:50:40.917641+00:00",
+  "independently_city_declared": true,
+  "prior_frozen_release_changed": false,
+  "http_status": 200,
+  "bytes": 43023,
+  "sha256": "1451f29c5b93dd9409c0e9756383bc3f2ee60369535e1181a9652fea196d354c",
+  "members": [
+    {
+      "name": "Precincts.cpg",
+      "bytes": 5
+    },
+    {
+      "name": "Precincts.dbf",
+      "bytes": 5666
+    },
+    {
+      "name": "Precincts.prj",
+      "bytes": 566
+    },
+    {
+      "name": "Precincts.sbn",
+      "bytes": 468
+    },
+    {
+      "name": "Precincts.sbx",
+      "bytes": 156
+    },
+    {
+      "name": "Precincts.shp",
+      "bytes": 45044
+    },
+    {
+      "name": "Precincts.shp.xml",
+      "bytes": 187508
+    },
+    {
+      "name": "Precincts.shx",
+      "bytes": 356
+    }
+  ]
+}

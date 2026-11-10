@@ -1,0 +1,10 @@
+{
+  "source": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/Utilities/Geometry/GeometryServer/project",
+  "method": "POST",
+  "status": 200,
+  "bytes": 110469,
+  "sha256": "98f99dffa4b9b0355fb9117560c24f9d179ab9b8cefbb959967e653e74c195db",
+  "request_sha256": "8bc2cd0d1022b37a5d1b8cd2271bb5fc746adfc427dec2651203083269056fdb",
+  "retrieved_at": "2026-11-10T09:01:55.505895+00:00",
+  "public_original_coordinates_only": true
+}

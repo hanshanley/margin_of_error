@@ -1,0 +1,471 @@
+{
+  "summary": {
+    "status": "PASS_32_native_city_references_independent_geographic_check_NOT_website_acceptance",
+    "source_shapes": 32,
+    "checked_vertices": 2697,
+    "maximum_error_degrees": 4.218634330754867e-10,
+    "strict_tolerance_degrees": 1e-09,
+    "exact_original_wkt_preserved": true,
+    "declared_datum_operation": {
+      "authority": "ESRI",
+      "code": 108190,
+      "direction": "inverse"
+    },
+    "default_null_offset_and_inexact_EPSG_alias_rejected": true,
+    "four_prior_holds_have_direct_native_city_shapes": true,
+    "original_labels_and_duplicate_native_ids_retained": true,
+    "no_clipping_allocation_source_repair_or_rates": true,
+    "published_release_changed": false,
+    "maps_approved": false
+  },
+  "all_decisions": [
+    {
+      "native_label": "1-1",
+      "checked_vertices": 292,
+      "maximum_error_degrees": 1.9895196601282805e-13,
+      "rejected_default_error_degrees": 8.677325851635942e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "1-2",
+      "checked_vertices": 52,
+      "maximum_error_degrees": 1.7053025658242404e-13,
+      "rejected_default_error_degrees": 8.67794271641742e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "1-3",
+      "checked_vertices": 107,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.680185814569086e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "1-4",
+      "checked_vertices": 87,
+      "maximum_error_degrees": 4.218634330754867e-10,
+      "rejected_default_error_degrees": 8.67886733146861e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 76,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "2-1A",
+      "checked_vertices": 180,
+      "maximum_error_degrees": 3.8480862940559746e-10,
+      "rejected_default_error_degrees": 8.676392027950897e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "2-2",
+      "checked_vertices": 87,
+      "maximum_error_degrees": 1.9895196601282805e-13,
+      "rejected_default_error_degrees": 8.67577822560861e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "2-3",
+      "checked_vertices": 74,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.676456495493312e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "2-4",
+      "checked_vertices": 113,
+      "maximum_error_degrees": 1.9895196601282805e-13,
+      "rejected_default_error_degrees": 8.67679848681746e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "3-1",
+      "checked_vertices": 79,
+      "maximum_error_degrees": 1.7053025658242404e-13,
+      "rejected_default_error_degrees": 8.676752138114807e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 20,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "3-2",
+      "checked_vertices": 74,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.677763887021683e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 2,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "3-3",
+      "checked_vertices": 54,
+      "maximum_error_degrees": 1.9895196601282805e-13,
+      "rejected_default_error_degrees": 8.677402355772301e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 6,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "3-4",
+      "checked_vertices": 56,
+      "maximum_error_degrees": 1.9895196601282805e-13,
+      "rejected_default_error_degrees": 8.677659522504655e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 17,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "4-1",
+      "checked_vertices": 90,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.68023452937905e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "4-2",
+      "checked_vertices": 61,
+      "maximum_error_degrees": 1.9895196601282805e-13,
+      "rejected_default_error_degrees": 8.678720526233974e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 58,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "4-3",
+      "checked_vertices": 56,
+      "maximum_error_degrees": 1.7053025658242404e-13,
+      "rejected_default_error_degrees": 8.67899688472562e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 14,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "4-4",
+      "checked_vertices": 47,
+      "maximum_error_degrees": 1.7053025658242404e-13,
+      "rejected_default_error_degrees": 8.679845358017246e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 15,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "5-1",
+      "checked_vertices": 81,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.679119133603308e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "5-2",
+      "checked_vertices": 58,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.678836607600715e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 25,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "5-3",
+      "checked_vertices": 71,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.679278863610307e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "5-4",
+      "checked_vertices": 81,
+      "maximum_error_degrees": 1.9895196601282805e-13,
+      "rejected_default_error_degrees": 8.677905448450929e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "6-1",
+      "checked_vertices": 61,
+      "maximum_error_degrees": 1.7053025658242404e-13,
+      "rejected_default_error_degrees": 8.678330267741785e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "6-2",
+      "checked_vertices": 45,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.679586713356002e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "6-3",
+      "checked_vertices": 43,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.680087248080781e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 7,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "6-4",
+      "checked_vertices": 79,
+      "maximum_error_degrees": 1.9895196601282805e-13,
+      "rejected_default_error_degrees": 8.679218019835844e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 63,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "7-1",
+      "checked_vertices": 46,
+      "maximum_error_degrees": 1.7053025658242404e-13,
+      "rejected_default_error_degrees": 8.67961662009975e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 3,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "7-2",
+      "checked_vertices": 87,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.680297831631378e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "7-3",
+      "checked_vertices": 192,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.68221533067981e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "7-4",
+      "checked_vertices": 62,
+      "maximum_error_degrees": 1.7053025658242404e-13,
+      "rejected_default_error_degrees": 8.680452424414398e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "2-1",
+      "checked_vertices": 109,
+      "maximum_error_degrees": 3.8480862940559746e-10,
+      "rejected_default_error_degrees": 8.676190674350437e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "4-2A",
+      "checked_vertices": 52,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.677888487795826e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 26,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "1-4A",
+      "checked_vertices": 59,
+      "maximum_error_degrees": 4.218634330754867e-10,
+      "rejected_default_error_degrees": 8.678208892831663e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 39,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "native_label": "6-3A",
+      "checked_vertices": 62,
+      "maximum_error_degrees": 1.8474111129762605e-13,
+      "rejected_default_error_degrees": 8.680304226516e-06,
+      "geographic_valid": true,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_alignments": [
+        {
+          "cyclic_start_offset": 0,
+          "direction": 1
+        }
+      ]
+    }
+  ]
+}

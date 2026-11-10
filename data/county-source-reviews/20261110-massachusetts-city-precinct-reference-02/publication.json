@@ -1,0 +1,16 @@
+{
+  "version": "20261110-massachusetts-city-precinct-reference-02",
+  "prior_version": "20261110-massachusetts-native-local-counts-01",
+  "source_reporting_rows": 307,
+  "reporting_references": 307,
+  "city_reference_shapes": 32,
+  "prior_municipality_reference_reused_unchanged": true,
+  "reused_city_index": "public/participation-city-counts/20261110-massachusetts-native-local-counts-01/index.json",
+  "reused_city_index_sha256": "e2969942836ba4eeb03e63bd67ae3b617c393a943f6194b33af319321e353d1c",
+  "reporting_bytes": 286941,
+  "reporting_sha256": "72ebce014fed1fd3a25f81ce93dae73cee28b52c754271f30dd2621b538fe0dd",
+  "earlier_source_registry_entries_preserved": 4,
+  "prior_full_release_preserved": true,
+  "full_analysis_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-massachusetts-city-precinct-reference-20261110-02/complete-analysis.zip",
+  "rates_approved": false
+}

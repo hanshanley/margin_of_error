@@ -1,0 +1,3708 @@
+{
+  "summary": {
+    "status": "PASS_native_only_candidate_32_city_shapes_NOT_geographic_or_website_acceptance",
+    "native_shapes": 32,
+    "native_count_identity_matches": 32,
+    "native_valid_shapes": 32,
+    "native_vertices": 2697,
+    "pair_decisions": 496,
+    "positive_native_overlap_pairs": 0,
+    "ballots_sum": 64597,
+    "existing_four_parent_holds_have_direct_native_city_labels": true,
+    "duplicate_native_ids_retained": true,
+    "native_projection": "original_NAD83_Massachusetts_Mainland_WKT_US_survey_feet",
+    "original_wkt": "PROJCRS[\"NAD83 / Massachusetts Mainland (ftUS)\",BASEGEOGCRS[\"NAD83\",DATUM[\"North American Datum 1983\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]],ID[\"EPSG\",6269]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"Degree\",0.0174532925199433]]],CONVERSION[\"unnamed\",METHOD[\"Lambert Conic Conformal (2SP)\",ID[\"EPSG\",9802]],PARAMETER[\"Latitude of false origin\",41,ANGLEUNIT[\"Degree\",0.0174532925199433],ID[\"EPSG\",8821]],PARAMETER[\"Longitude of false origin\",-71.5,ANGLEUNIT[\"Degree\",0.0174532925199433],ID[\"EPSG\",8822]],PARAMETER[\"Latitude of 1st standard parallel\",41.7166666666667,ANGLEUNIT[\"Degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Latitude of 2nd standard parallel\",42.6833333333333,ANGLEUNIT[\"Degree\",0.0174532925199433],ID[\"EPSG\",8824]],PARAMETER[\"Easting at false origin\",656166.666666667,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8826]],PARAMETER[\"Northing at false origin\",2460625,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8827]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"US survey foot\",0.304800609601219,ID[\"EPSG\",9003]]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"US survey foot\",0.304800609601219,ID[\"EPSG\",9003]]]]",
+    "rejected_exact_epsg2249_assignment": true,
+    "comparison_projection": "EPSG:26986_metres_unit_conversion_only",
+    "no_clipping_repair_allocation_or_rates": true,
+    "geographic_transform_verified": false,
+    "published_release_changed": false,
+    "maps_approved": false
+  },
+  "all_native_shape_decisions": [
+    {
+      "native_label": "1-1",
+      "native_id": 1,
+      "native_vertices": 292,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 10970296.319338972,
+      "native_ballots_literal": 1977,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "1-2",
+      "native_id": 2,
+      "native_vertices": 52,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 2639850.920624639,
+      "native_ballots_literal": 1576,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "1-3",
+      "native_id": 3,
+      "native_vertices": 107,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 10858645.364227865,
+      "native_ballots_literal": 1791,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "1-4",
+      "native_id": 4,
+      "native_vertices": 87,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3377082.96025815,
+      "native_ballots_literal": 1136,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "2-1A",
+      "native_id": 5,
+      "native_vertices": 180,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 5912706.764281994,
+      "native_ballots_literal": 1000,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "2-2",
+      "native_id": 6,
+      "native_vertices": 87,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 2696060.8964755833,
+      "native_ballots_literal": 2345,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "2-3",
+      "native_id": 7,
+      "native_vertices": 74,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3147137.902966169,
+      "native_ballots_literal": 2335,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "2-4",
+      "native_id": 8,
+      "native_vertices": 113,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 4160017.9974397575,
+      "native_ballots_literal": 2486,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "3-1",
+      "native_id": 9,
+      "native_vertices": 79,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3252716.1262530447,
+      "native_ballots_literal": 2665,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "3-2",
+      "native_id": 10,
+      "native_vertices": 74,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3958370.220710911,
+      "native_ballots_literal": 2531,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "3-3",
+      "native_id": 11,
+      "native_vertices": 54,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3373837.7393123996,
+      "native_ballots_literal": 2640,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "3-4",
+      "native_id": 12,
+      "native_vertices": 56,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3111573.729691266,
+      "native_ballots_literal": 2597,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "4-1",
+      "native_id": 13,
+      "native_vertices": 90,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 5117535.29746421,
+      "native_ballots_literal": 1809,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "4-2",
+      "native_id": 14,
+      "native_vertices": 61,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 2289177.2981444523,
+      "native_ballots_literal": 1443,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "4-3",
+      "native_id": 15,
+      "native_vertices": 56,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3354894.321103374,
+      "native_ballots_literal": 2441,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "4-4",
+      "native_id": 16,
+      "native_vertices": 47,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 2965892.13849527,
+      "native_ballots_literal": 1645,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "5-1",
+      "native_id": 17,
+      "native_vertices": 81,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3476778.3436844517,
+      "native_ballots_literal": 2645,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "5-2",
+      "native_id": 18,
+      "native_vertices": 58,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3646047.064274719,
+      "native_ballots_literal": 2699,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "5-3",
+      "native_id": 19,
+      "native_vertices": 71,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3491401.6546498584,
+      "native_ballots_literal": 2553,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "5-4",
+      "native_id": 20,
+      "native_vertices": 81,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3066565.212780723,
+      "native_ballots_literal": 2941,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "6-1",
+      "native_id": 21,
+      "native_vertices": 61,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3073038.1483198917,
+      "native_ballots_literal": 2951,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "6-2",
+      "native_id": 22,
+      "native_vertices": 45,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3788951.841071177,
+      "native_ballots_literal": 3172,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "6-3",
+      "native_id": 23,
+      "native_vertices": 43,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 2024522.3403515778,
+      "native_ballots_literal": 432,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "6-4",
+      "native_id": 24,
+      "native_vertices": 79,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 4157629.143032151,
+      "native_ballots_literal": 2771,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "7-1",
+      "native_id": 25,
+      "native_vertices": 46,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3477230.9640524304,
+      "native_ballots_literal": 2910,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "7-2",
+      "native_id": 26,
+      "native_vertices": 87,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 2705048.901009365,
+      "native_ballots_literal": 1960,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "7-3",
+      "native_id": 27,
+      "native_vertices": 192,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 5120598.160317792,
+      "native_ballots_literal": 1943,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "7-4",
+      "native_id": 28,
+      "native_vertices": 62,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 3291283.107456228,
+      "native_ballots_literal": 2146,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "2-1",
+      "native_id": 5,
+      "native_vertices": 109,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 2086755.8791074564,
+      "native_ballots_literal": 1461,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "4-2A",
+      "native_id": 14,
+      "native_vertices": 52,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 779102.3208403058,
+      "native_ballots_literal": 558,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "1-4A",
+      "native_id": 4,
+      "native_vertices": 59,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 1037286.7179023887,
+      "native_ballots_literal": 652,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    },
+    {
+      "native_label": "6-3A",
+      "native_id": 23,
+      "native_vertices": 62,
+      "native_parts": 1,
+      "native_valid": true,
+      "native_validity": "Valid Geometry",
+      "native_area_us_survey_feet_squared": 1332373.4097625397,
+      "native_ballots_literal": 386,
+      "source_count_identity_qualified": true,
+      "geographic_transform_verified": false,
+      "maps_approved": false,
+      "legal_2026_precinct_certification": false
+    }
+  ],
+  "all_native_pair_decisions": [
+    {
+      "left_label": "1-1",
+      "right_label": "1-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "1-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "1-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "2-1A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "2-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "2-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "2-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "3-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "3-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "3-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-1",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "1-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "1-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "2-1A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "2-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "2-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "2-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "3-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "3-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "3-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-2",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "1-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "2-1A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "2-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "2-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "2-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "3-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "3-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "3-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-3",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "2-1A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "2-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "2-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "2-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "3-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "3-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "3-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "2-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "2-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "2-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "3-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "3-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "3-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1A",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "2-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "2-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "3-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "3-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "3-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-2",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "2-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "3-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "3-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "3-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-3",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "3-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "3-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "3-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-4",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "3-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "3-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-1",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "3-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-2",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "3-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-3",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "4-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "3-4",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "4-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-1",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "4-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "4-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-3",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "5-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-4",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "5-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-1",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "5-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-2",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "5-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-3",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "6-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "5-4",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "6-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-1",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-2",
+      "right_label": "6-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-2",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-2",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-2",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-2",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-2",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-2",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-2",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-2",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-2",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-3",
+      "right_label": "6-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-3",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-3",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-3",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-3",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-3",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-3",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-3",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-3",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-4",
+      "right_label": "7-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-4",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-4",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-4",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-4",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-4",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-4",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "6-4",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-1",
+      "right_label": "7-2",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-1",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-1",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-1",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-1",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-1",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-1",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-2",
+      "right_label": "7-3",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-2",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-2",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-2",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-2",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-2",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-3",
+      "right_label": "7-4",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-3",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-3",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-3",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-3",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-4",
+      "right_label": "2-1",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-4",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-4",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "7-4",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1",
+      "right_label": "4-2A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "2-1",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2A",
+      "right_label": "1-4A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "4-2A",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "left_label": "1-4A",
+      "right_label": "6-3A",
+      "overlap_area_us_survey_feet_squared": 0.0,
+      "positive_overlap": false
+    }
+  ],
+  "all_parent_comparisons": [
+    {
+      "native_parent_label": "4-1",
+      "original_city_members": [
+        "4-1"
+      ],
+      "symmetric_difference_metres_squared": 69850.39660399088,
+      "source_parent_area_metres_squared": 407505.25443881296,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "4-2",
+      "original_city_members": [
+        "4-2",
+        "4-2A"
+      ],
+      "symmetric_difference_metres_squared": 0.07494061764533726,
+      "source_parent_area_metres_squared": 285053.6542389916,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "4-3",
+      "original_city_members": [
+        "4-3"
+      ],
+      "symmetric_difference_metres_squared": 0.07198219362504212,
+      "source_parent_area_metres_squared": 311681.14207491797,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "4-4",
+      "original_city_members": [
+        "4-4"
+      ],
+      "symmetric_difference_metres_squared": 0.06112482852029052,
+      "source_parent_area_metres_squared": 275541.48546004965,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "5-1",
+      "original_city_members": [
+        "5-1"
+      ],
+      "symmetric_difference_metres_squared": 47.503869149791306,
+      "source_parent_area_metres_squared": 322963.5274110483,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "5-2",
+      "original_city_members": [
+        "5-2"
+      ],
+      "symmetric_difference_metres_squared": 0.07475574930820383,
+      "source_parent_area_metres_squared": 338730.2089669954,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "5-3",
+      "original_city_members": [
+        "5-3"
+      ],
+      "symmetric_difference_metres_squared": 640.15708971025,
+      "source_parent_area_metres_squared": 324939.74831365095,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "5-4",
+      "original_city_members": [
+        "5-4"
+      ],
+      "symmetric_difference_metres_squared": 368.6703893121658,
+      "source_parent_area_metres_squared": 285165.30694340356,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "6-1",
+      "original_city_members": [
+        "6-1"
+      ],
+      "symmetric_difference_metres_squared": 163.62691043230913,
+      "source_parent_area_metres_squared": 285642.08893184306,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "6-2",
+      "original_city_members": [
+        "6-2"
+      ],
+      "symmetric_difference_metres_squared": 286.7249319811973,
+      "source_parent_area_metres_squared": 352293.2278139626,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "6-3",
+      "original_city_members": [
+        "6-3",
+        "6-3A"
+      ],
+      "symmetric_difference_metres_squared": 138.00016559411492,
+      "source_parent_area_metres_squared": 311731.14530899463,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "6-4",
+      "original_city_members": [
+        "6-4"
+      ],
+      "symmetric_difference_metres_squared": 33.13078096780738,
+      "source_parent_area_metres_squared": 386290.97949351126,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "7-1",
+      "original_city_members": [
+        "7-1"
+      ],
+      "symmetric_difference_metres_squared": 0.0690941428828806,
+      "source_parent_area_metres_squared": 323046.6341047535,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "7-2",
+      "original_city_members": [
+        "7-2"
+      ],
+      "symmetric_difference_metres_squared": 0.055963240677403894,
+      "source_parent_area_metres_squared": 251308.25459750133,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "7-3",
+      "original_city_members": [
+        "7-3"
+      ],
+      "symmetric_difference_metres_squared": 12330.716960995185,
+      "source_parent_area_metres_squared": 482746.2854631943,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "7-4",
+      "original_city_members": [
+        "7-4"
+      ],
+      "symmetric_difference_metres_squared": 156.90936422702012,
+      "source_parent_area_metres_squared": 305928.25105351536,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "1-1",
+      "original_city_members": [
+        "1-1"
+      ],
+      "symmetric_difference_metres_squared": 7544.333818255575,
+      "source_parent_area_metres_squared": 1013965.9094499833,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "1-2",
+      "original_city_members": [
+        "1-2"
+      ],
+      "symmetric_difference_metres_squared": 289.52543305043264,
+      "source_parent_area_metres_squared": 244961.68728030552,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "1-3",
+      "original_city_members": [
+        "1-3"
+      ],
+      "symmetric_difference_metres_squared": 163012.84317790598,
+      "source_parent_area_metres_squared": 845792.4409934772,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "1-4",
+      "original_city_members": [
+        "1-4",
+        "1-4A"
+      ],
+      "symmetric_difference_metres_squared": 0.06331432757340148,
+      "source_parent_area_metres_squared": 410109.99720126874,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "2-1",
+      "original_city_members": [
+        "2-1",
+        "2-1A"
+      ],
+      "symmetric_difference_metres_squared": 2923.5341748957503,
+      "source_parent_area_metres_squared": 740845.3119021236,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "2-2",
+      "original_city_members": [
+        "2-2"
+      ],
+      "symmetric_difference_metres_squared": 2444.374859712602,
+      "source_parent_area_metres_squared": 252917.60896580014,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "2-3",
+      "original_city_members": [
+        "2-3"
+      ],
+      "symmetric_difference_metres_squared": 355.15416955166785,
+      "source_parent_area_metres_squared": 292413.50109549344,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "2-4",
+      "original_city_members": [
+        "2-4"
+      ],
+      "symmetric_difference_metres_squared": 646.3671193320354,
+      "source_parent_area_metres_squared": 386079.06241373735,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "3-1",
+      "original_city_members": [
+        "3-1"
+      ],
+      "symmetric_difference_metres_squared": 0.0748863423079419,
+      "source_parent_area_metres_squared": 302188.4450318435,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "3-2",
+      "original_city_members": [
+        "3-2"
+      ],
+      "symmetric_difference_metres_squared": 0.09233743412157201,
+      "source_parent_area_metres_squared": 367746.0935521835,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "3-3",
+      "original_city_members": [
+        "3-3"
+      ],
+      "symmetric_difference_metres_squared": 0.08224000497164498,
+      "source_parent_area_metres_squared": 313441.02173332823,
+      "comparison_only_no_derived_polygon_published": true
+    },
+    {
+      "native_parent_label": "3-4",
+      "original_city_members": [
+        "3-4"
+      ],
+      "symmetric_difference_metres_squared": 0.06325727113989925,
+      "source_parent_area_metres_squared": 289075.8302678493,
+      "comparison_only_no_derived_polygon_published": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Precincts",
+  "description": "ESRI polygon feature class representing City of Somerville, Massachusetts voter precincts based on the 2020 Census. Last updated September 22, 2023.",
+  "identifier": "https://data.somervillema.gov/api/views/da4y-vuae",
+  "modified": "2025-02-04",
+  "landingPage": "https://data.somervillema.gov/d/da4y-vuae",
+  "distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "downloadURL": "https://data.somervillema.gov/download/da4y-vuae/application/x-zip-compressed",
+      "mediaType": "application/x-zip-compressed"
+    }
+  ],
+  "metadata_original_sha256": "c9708d051196f6755f804a7250defe5a6633e5837346bcec5dccf4c82aca7de0",
+  "catalog_original_sha256": "ae33f89414afc47fa96ca2d5e7aa61012ad8ff0853cf1dc052576e6465393ef2",
+  "selected_metadata": {
+    "name": "Precincts",
+    "description": "ESRI polygon feature class representing City of Somerville, Massachusetts voter precincts based on the 2020 Census. Last updated September 22, 2023.",
+    "publicationDate": 1491995862,
+    "viewLastModified": 1738696467,
+    "provenance": "official"
+  },
+  "unrelated_catalog_entries_owner_accounts_and_contacts_excluded": true
+}

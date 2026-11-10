@@ -1,0 +1,53 @@
+{
+  "year": 2026,
+  "boundary_date": "Boston2022 and city-declared Somerville references (metadata2023); not certified2026 legal precincts",
+  "states": {
+    "MA": "MA.geojson.gz"
+  },
+  "state_metadata": {
+    "MA": {
+      "source_id": "20261110-massachusetts-city-precinct-reference-02",
+      "expected_features": 307,
+      "native_source_reporting_rows": 307,
+      "mapped_cities": {
+        "Boston": 275,
+        "Somerville": 32
+      },
+      "held_table_only_reporting_rows": 0,
+      "held_split_parent_units": [],
+      "boundary_reference_year": null,
+      "city_reference_source_years": {
+        "Boston": 2022,
+        "Somerville": null
+      },
+      "city_reference_source_metadata_revisions": {
+        "Somerville": "2023-09-22"
+      },
+      "city_reference_dataset_id": "da4y-vuae",
+      "city_reference_native_wkt_sha256": "78723c57dc900ff30b1a01ba02ca9aeea20b7107f50a3f7ed86b50e45f2b5ad1",
+      "certified_legal_precinct_boundaries": false,
+      "counts_only": true,
+      "rates_approved": false,
+      "source_geometry_repaired": false,
+      "source_geometry_clipped": false,
+      "source_native_overlaps_preserved": true,
+      "native_overlap_pairs": 2,
+      "native_vertices_verified": 25396,
+      "source_city_counts": {
+        "Boston": 185569,
+        "Somerville": 64597
+      },
+      "mapped_count_checks_by_city": {
+        "Boston": 185569,
+        "Somerville": 64597
+      },
+      "bytes": 286941,
+      "sha256": "72ebce014fed1fd3a25f81ce93dae73cee28b52c754271f30dd2621b538fe0dd",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-massachusetts-city-precinct-reference-20261110-02/complete-analysis.zip",
+      "area_column_label": "City",
+      "ballot_column_label": "Native reporting-unit count",
+      "boundary_label": "Boston2022 and city-declared Somerville references (metadata2023); not certified2026 legal precincts",
+      "notes": "Boston275 / Somerville32 direct native reference joins. Four former split-parent holds now use actual city polygons, never clipped remainders. All307 raw reporting rows, earlier303-reference release and351 municipal decisions remain in complete downloads. Invalid Wayland municipal geometry remains held. No rates, county allocations, source repairs or unique-person claims."
+    }
+  }
+}

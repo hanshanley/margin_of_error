@@ -143,8 +143,13 @@ Massachusetts adds Boston/Somerville source counts, not statewide/county totals
 or unique-person turnout. Boston's 185,569 native Times Cast is separate from
 summary Voters Cast 556,369 / registered 0 / N/A. Somerville's printed 64,597
 ballots and 56,008 registrations remain literal; its page/PDF status labels
-disagree. All 307 reporting rows are retained; 303 have unchanged native
-references, while four split-parent count joins stay table-only without clipping.
+disagree. All 307 reporting rows now join direct references: Boston275 and
+32 original city-declared Somerville polygons, without clipping remainders.
+The earlier303-reference release stays intact. Somerville's2023 metadata
+revision/2020 Census basis is not a certified2026 boundary vintage. Preserve
+the exact native US-survey-feet WKT, not rounded EPSG2249, and the declared
+inverseESRI108190 operation. Duplicate native IDs require literal Ward/Precinct
+identities; they must not erase the separately reported A units.
 The municipal frame retains all 351 source decisions and displays 350 valid
 originals; invalid Wayland is held, not repaired. Per-product datum operations
 and full numerical queries reproduce offline. Keep all analysis rates null,

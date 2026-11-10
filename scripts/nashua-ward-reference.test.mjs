@@ -19,7 +19,7 @@ test('preserves all22 earlier features and maps nine adopted Nashua counts witho
   assert.equal(index.state_metadata.NH.held_table_only_ward_rows,6);
   assert.equal(index.state_metadata.NH.boundary_reference_years.Nashua,null);
   const registry = JSON.parse(readFileSync('public/participation-precincts.json','utf8'));
-  assert.equal(registry.additional_sources.filter(r => !r.base_url.includes('20261110-massachusetts-native-local-counts-01')).length,4);
+  assert.equal(registry.additional_sources.filter(r => !r.base_url.includes('20261110-massachusetts-')).length,4);
   assert.equal(registry.additional_sources.filter(r => r.base_url === '/'+root.slice(7)).length,1);
 });
 

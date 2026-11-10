@@ -1,0 +1,10 @@
+{
+  "source": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/Utilities/Geometry/GeometryServer?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 132,
+  "sha256": "2efcf3087e786c87b1f3ab095e5bbf476efe9ca18dc1c7e7678cd8dd3b7d2599",
+  "declared_operation_metadata": {
+    "serviceDescription": "The Geometry service is used by application developers to perform geometric calculations and web editing   "
+  }
+}

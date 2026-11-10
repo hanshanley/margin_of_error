@@ -1,0 +1,1 @@
+{"transformations":[{"geoTransforms":[{"wkid":108190,"latestWkid":108190,"transformForward":false,"name":"WGS_1984_(ITRF00)_To_NAD_1983"}]},{"wkid":1515,"latestWkid":1515,"name":"NAD_1983_To_WGS_1984_5"},{"wkid":1725,"latestWkid":1725,"name":"NAD_1983_To_WGS_1984_CT_MA_NH_RI_VT_29"}]}

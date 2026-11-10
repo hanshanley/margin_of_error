@@ -20,7 +20,7 @@ test('MA city and reporting rows are live-only and never become county totals or
   const units = live.precincts.filter(row => row.state_code === 'MA');
   assert.deepEqual(cities.map(row => [row.county, row.ballots]), [['Boston', 185569], ['Somerville', 64597]]);
   assert.equal(units.length, 307);
-  assert.equal(units.filter(row => row.geometry_withheld_reason).length, 4);
+  assert.equal(units.filter(row => row.geometry_withheld_reason).length, 0);
   assert.ok(cities.every(row => 'county_fips' in row && row.county_fips === null && row.denominator === null
     && row.reported_pct === null && row.cast_ballot_count_qualified === false));
   assert.ok(units.every(row => row.denominator === null && row.reported_pct === null && row.maps_approved === false));

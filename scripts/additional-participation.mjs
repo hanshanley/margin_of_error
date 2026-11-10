@@ -14,7 +14,8 @@ import { loadConnecticutTowns } from './connecticut-town-counts.mjs';
 import { loadMaineLocalityActivity } from './maine-locality-activity.mjs';
 import { loadIllinoisCountyContext } from './illinois-county-context.mjs';
 import { loadNewHampshireCityExtension } from './new-hampshire-city-extension.mjs';
-import { loadMassachusettsNativeCounts, massachusettsVersion } from './massachusetts-native-counts.mjs';
+import { massachusettsVersion } from './massachusetts-native-counts.mjs';
+import { loadMassachusettsCityReference, massachusettsCityReferenceVersion } from './massachusetts-city-precinct-reference.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -491,9 +492,9 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
     }
   }
   if (nativeCountyParents) {
-    const ma = loadMassachusettsNativeCounts();
+    const ma = loadMassachusettsCityReference();
     const reference = json(`public/participation-city-counts/${massachusettsVersion}/index.json`).reference_geometry;
-    const review = { data_directory: `data/county-source-reviews/${massachusettsVersion}`,
+    const review = { data_directory: `data/county-source-reviews/${massachusettsCityReferenceVersion}`,
       base_url: '', complete_download_url: ma.complete_download_url };
     const reporting = {
       Boston: 'Native declaring-page Ballots Cast 185,569 matches six complete statewide Times Cast frames across 275 precincts. '
@@ -501,7 +502,7 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
         + 'Later question contexts have different native counts; they are not homogenized. No candidate votes are summed.',
       Somerville: 'Native BALLOTS CAST - TOTAL 64,597 and REGISTERED VOTERS - TOTAL 56,008 reconcile to all 32 printed precinct/subprecinct rows. '
         + 'Ballot counts above source registers remain literal, not unique-person counts or turnout rates. '
-        + 'The page heading Official and PDF UnOfficial remain distinct. Four split-parent count joins stay table-only; no remainder boundary is invented.',
+        + 'The page heading Official and PDF UnOfficial remain distinct. All 32 reporting units join direct city reference polygons; no remainder boundary is invented.',
     };
     for (const row of ma.cities) counties.push(observation(review, '', 'MA', row.city,
       `city:${row.reference_key}`, row.native_record, {
@@ -511,6 +512,8 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
         reported_pct: null, maps_approved: true, source_count_qualified: true,
         source_count_basis: 'literal_native_city_count_with_full_source_context',
         source_city_name: row.city, native_city_parent_printed: true,
+        native_reporting_reference_snapshot: massachusettsCityReferenceVersion,
+        held_reporting_reference_rows: ma.summary.split_parent_holds,
         native_election_id_qualified: true, source_election_date: '2026-11-03',
         cast_ballot_count_qualified: false, unique_voter_count_qualified: false,
         source_mode: 'all_method_native_city_snapshot',

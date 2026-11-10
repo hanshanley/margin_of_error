@@ -366,14 +366,18 @@ export function qualifiedMassachusettsCityReference(rows, reference, collection)
 
 export function qualifiedMassachusettsReportingReference(p) {
   const reference = p?.reference_geometry;
-  if (p?.source_snapshot !== "20261110-massachusetts-native-local-counts-01"
+  const cityReference = p?.source_snapshot === "20261110-massachusetts-city-precinct-reference-02"
+    && p.county === "Somerville";
+  if (!["20261110-massachusetts-native-local-counts-01",
+    "20261110-massachusetts-city-precinct-reference-02"].includes(p?.source_snapshot)
     || p.year !== 2026 || p.state_code !== "MA" || p.source_election_date !== "2026-11-03"
     || !["Boston", "Somerville"].includes(p.county) || p.county_fips !== null
     || p.source_count_qualified !== true || p.cast_ballot_count_qualified !== false
     || p.unique_voter_count_qualified !== false || p.maps_approved !== true
     || !Number.isSafeInteger(p.ballots) || p.ballots < 0
     || p.denominator !== null || p.reported_pct !== null || p.geometry_withheld_reason !== null
-    || reference?.rest_layer_id !== 0 || reference.boundary_vintage !== 2022
+    || reference?.rest_layer_id !== (cityReference ? null : 0)
+    || reference.boundary_vintage !== (cityReference ? null : 2022)
     || reference.certified_legal_boundaries !== false || reference.topology_valid_without_repairs !== true
     || reference.single_path_per_polygon !== true || reference.native_overlaps_preserved !== true
     || reference.source_geometry_clipped !== false) return false;
@@ -394,8 +398,21 @@ export function qualifiedMassachusettsReportingReference(p) {
     || p.native_record.ballots_cast_literal !== p.ballots
     || p.native_record.source_document_literal_status !== "UnOfficial"
     || p.native_record.declaring_page_heading_literal_status !== "Official"
-    || p.participation_measure_label !== "Native BALLOTS CAST - TOTAL"
-    || reference.native_projection_epsg !== 26986) return false;
+    || p.participation_measure_label !== "Native BALLOTS CAST - TOTAL") return false;
+  if (cityReference)
+    return reference.source_item_id === null && reference.source_dataset_id === "da4y-vuae"
+      && reference.native_reference_source === "somerville-city-precincts"
+      && reference.native_projection_epsg === null
+      && reference.native_projection_wkt_sha256 === "78723c57dc900ff30b1a01ba02ca9aeea20b7107f50a3f7ed86b50e45f2b5ad1"
+      && reference.source_metadata_revision === "2023-09-22" && reference.source_census_basis === 2020
+      && reference.cyclic_vertex_adjacency_verified === true && reference.duplicate_native_ids_preserved === true
+      && p.native_source_label === `${ward}-${precinct}`
+      && (precinct?.endsWith("A")
+        ? ["1:4A", "2:1A", "4:2A", "6:3A"].includes(`${ward}:${precinct}`)
+          && p.unit_kind === "municipal_subprecinct" && p.reporting_unit_kind === "municipal_subprecinct"
+        : /^[1-4]$/.test(precinct)
+          && p.unit_kind === "municipal_precinct" && p.reporting_unit_kind === "municipal_precinct");
+  if (reference.native_projection_epsg !== 26986) return false;
   if (precinct?.endsWith("A"))
     return ["1:4A", "2:1A", "4:2A", "6:3A"].includes(`${ward}:${precinct}`)
       && p.unit_kind === "municipal_subprecinct" && p.reporting_unit_kind === "municipal_subprecinct"

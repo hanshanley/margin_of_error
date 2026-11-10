@@ -1,0 +1,22 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-massachusetts-city-precinct-reference-20261110-02/complete-analysis.zip",
+  "bytes": 22398610,
+  "sha256": "d6ad3a80240b74fe1aba63e871f9224859073cd5a3318fc92e1d6437c1ea9677",
+  "members": 146,
+  "sufficient_inputs": 84,
+  "prior_sufficient_inputs": 67,
+  "additional_sufficient_inputs": 17,
+  "full_PDFs": 4,
+  "full_pages": 648,
+  "native_reporting_rows": 307,
+  "mapped_reporting_references": 307,
+  "split_parent_holds": 0,
+  "native_city_reference_shapes": 32,
+  "native_city_reference_vertices": 2697,
+  "complete_pair_decisions": 99980,
+  "standalone_full_assets": 16,
+  "old_source_counts_and_native_zeros_retained": true,
+  "original_geometry_clipped": false,
+  "source_counts_repaired": false,
+  "analysis_rates_approved": false
+}
