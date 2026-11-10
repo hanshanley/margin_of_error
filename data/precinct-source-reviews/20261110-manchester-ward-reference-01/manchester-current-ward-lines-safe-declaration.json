@@ -1,0 +1,115 @@
+{
+  "source_receipt": {
+    "url": "https://www.manchesternh.gov/Departments/City-Clerk/Voter-Registration-and-Elections/Ward-Lines",
+    "final_url": "https://www.manchesternh.gov/Departments/City-Clerk/Voter-Registration-and-Elections/Ward-Lines",
+    "status": 200,
+    "bytes": 199843,
+    "sha256": "290203231044642e890374e9842c0a6c2130b3421f7573eaff11ec4c492fde77",
+    "retrieved_at_utc": "2026-11-10T04:51:34.038297+00:00"
+  },
+  "native_current_effective_date": "2021-12-21",
+  "native_current_lines_statement_paraphrase": "Current city ward lines have been effective since December21,2021 and reflect the latest municipal ordinance boundary revisions.",
+  "actual_declared_map_and_boundary_links": [
+    {
+      "text": "All Wards - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/CitywideWardMap.pdf"
+    },
+    {
+      "text": "Ward 1 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward1Description.pdf"
+    },
+    {
+      "text": "Ward 1 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward1Map.pdf"
+    },
+    {
+      "text": "Ward 2 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward2Description.pdf"
+    },
+    {
+      "text": "Ward 2 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward2Map.pdf"
+    },
+    {
+      "text": "Ward 3 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward3Description.pdf"
+    },
+    {
+      "text": "Ward 3 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward3Map.pdf"
+    },
+    {
+      "text": "Ward 4 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward4Description.pdf"
+    },
+    {
+      "text": "Ward 4 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward4Map.pdf"
+    },
+    {
+      "text": "Ward 5 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward5Description.pdf"
+    },
+    {
+      "text": "Ward 5 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward5Map.pdf"
+    },
+    {
+      "text": "Ward 6 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward6Description.pdf"
+    },
+    {
+      "text": "Ward 6 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward6Map.pdf"
+    },
+    {
+      "text": "Ward 7 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward7Description.pdf"
+    },
+    {
+      "text": "Ward 7 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward7Map.pdf"
+    },
+    {
+      "text": "Ward 8 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward8Description.pdf"
+    },
+    {
+      "text": "Ward 8 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward8Map.pdf"
+    },
+    {
+      "text": "Ward 9 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward9Description.pdf"
+    },
+    {
+      "text": "Ward 9 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward9Map.pdf"
+    },
+    {
+      "text": "Ward 10 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward10Description.pdf"
+    },
+    {
+      "text": "Ward 10 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward10Map.pdf"
+    },
+    {
+      "text": "Ward 11 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward11Description.pdf"
+    },
+    {
+      "text": "Ward 11 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward11Map.pdf"
+    },
+    {
+      "text": "Ward 12 - Boundary Lines",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward12Description.pdf"
+    },
+    {
+      "text": "Ward 12 - Map",
+      "url": "https://www.manchesternh.gov/Portals/2/Departments/city_clerk/wards/Ward12Map.pdf"
+    }
+  ],
+  "compiled_HTML_private_not_redistributed": true
+}

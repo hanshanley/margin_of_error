@@ -178,11 +178,15 @@ with sync_playwright() as runtime:
             context.close()
 
         context = browser.new_context(viewport={"width": 1200, "height": 900})
-        context.route("**/2026/ND.geojson.gz", lambda route: route.abort())
         page = context.new_page()
-        page.goto(base + "?view=precincts&year=2026&state=North+Dakota&layer=participation",
+        page.goto(base + "?view=precincts&year=2026&state=Texas&layer=participation",
                   wait_until="domcontentloaded")
         ready(page)
+        coverage = page.locator('[data-precinct-coverage-state="ND"]')
+        expect(coverage).to_have_count(1, timeout=60000)
+        context.route("**/2026/ND.geojson.gz", lambda route: route.abort())
+        page.locator("#substate-detail details > summary").click()
+        coverage.click()
         retry = page.get_by_role("button", name="Retry precinct source")
         expect(retry).to_be_visible(timeout=60000)
         expect(page.locator("#selection-panel > h3")).to_have_text("North Dakota")

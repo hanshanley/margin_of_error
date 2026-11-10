@@ -120,6 +120,16 @@ separate original reviews. The versioned complete download under
 originals, reference geometry and a dependency-free offline Node reproduction.
 Its packaging command refuses to overwrite an existing version.
 
+New Hampshire keeps four native city sources and all 37 ward rows distinct.
+The Precincts tab additionally maps Manchester's 12 literal ward totals on
+current official municipal ward context (2022 GIS; lines effective December 21,
+2021), not newly certified 2026 legal precincts. The default state view retains
+the four-city municipality context, with other areas unknown. Preserve native
+boundary overlaps, Ward 7's 85-ballot source conflict and separate federal-only
+counts; no source repair, allocation or turnout rate is enabled. The complete
+ward release includes every prior city original, full ward-reference inputs,
+all mapped/held decisions and exact offline reproduction.
+
 The live opt-in additionally reads Michigan's explicit Bay and Isabella county
 parents through `scripts/michigan-county-parents.mjs`. It preserves all 63
 reporting-unit rows, Bay's 43-versus-35 reporting counter and Isabella's 22-ballot

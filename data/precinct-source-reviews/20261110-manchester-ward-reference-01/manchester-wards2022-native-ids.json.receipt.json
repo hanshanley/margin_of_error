@@ -1,0 +1,13 @@
+{
+  "url": "https://ags.manchesternh.gov/agsgis7/rest/services/MapGeoWMS/CityArea/MapServer/3/query?where=1%3D1&returnIdsOnly=true&f=json",
+  "final_url": "https://ags.manchesternh.gov/agsgis7/rest/services/MapGeoWMS/CityArea/MapServer/3/query?where=1%3D1&returnIdsOnly=true&f=json",
+  "status": 200,
+  "bytes": 82,
+  "sha256": "e44f61c937663aeac1dba1eccbe5fe11a51949b5acb72fe6399a2f3df699f796",
+  "native_query": {
+    "where": "1=1",
+    "returnIdsOnly": "true",
+    "f": "json"
+  },
+  "retrieved_at_utc": "2026-11-10T04:44:33.383425+00:00"
+}

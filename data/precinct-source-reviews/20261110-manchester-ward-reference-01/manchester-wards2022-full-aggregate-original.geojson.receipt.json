@@ -1,0 +1,15 @@
+{
+  "url": "https://ags.manchesternh.gov/agsgis7/rest/services/MapGeoWMS/CityArea/MapServer/3/query?where=1%3D1&outFields=OBJECTID%2CWard_ID%2CWardNumber%2CWardName&returnGeometry=true&outSR=4326&f=geojson",
+  "final_url": "https://ags.manchesternh.gov/agsgis7/rest/services/MapGeoWMS/CityArea/MapServer/3/query?where=1%3D1&outFields=OBJECTID%2CWard_ID%2CWardNumber%2CWardName&returnGeometry=true&outSR=4326&f=geojson",
+  "status": 200,
+  "bytes": 164046,
+  "sha256": "698e22ac8006a8cd7e6ca52eaeb67b74568fa8b8e712bbb0d1b9a4e36e53ae7d",
+  "native_query": {
+    "where": "1=1",
+    "outFields": "OBJECTID,Ward_ID,WardNumber,WardName",
+    "returnGeometry": "true",
+    "outSR": "4326",
+    "f": "geojson"
+  },
+  "retrieved_at_utc": "2026-11-10T04:44:34.484307+00:00"
+}

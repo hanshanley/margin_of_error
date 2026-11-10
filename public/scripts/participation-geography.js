@@ -74,6 +74,29 @@ export function qualifiedAlaskaNativePrecinct(p) {
     && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null;
 }
 
+export function qualifiedManchesterWardReference(p) {
+  const native = p.native_record, reference = p.reference_geometry, ward = p.native_ward_number;
+  return p.year === 2026 && p.state_code === "NH" && p.county === "Manchester" && p.county_fips === null
+    && p.county_id === "additional:NH:city:3345140"
+    && p.source_snapshot === "manchester-native-ward-reference-20261110-01"
+    && p.reporting_unit_kind === "municipal_ward" && p.unit_kind === "municipal_ward"
+    && p.match_status === "matched_current_municipal_ward_reference"
+    && Number.isInteger(ward) && ward >= 1 && ward <= 12
+    && p.native_object_id === ward + 24 && p.key === `NH|Manchester|Ward:${ward}`
+    && p.unit === `Ward ${ward}` && p.unit_key === `Manchester:Ward:${ward}`
+    && p.source_election_date === "2026-11-03" && native?.ward === ward
+    && Number.isSafeInteger(p.ballots) && p.ballots >= 0 && p.ballots === native.total
+    && ["election_day", "absentee", "federal_only"].every(key => Number.isSafeInteger(native[key]) && native[key] >= 0)
+    && p.source_count_qualified === true && p.cast_ballot_count_qualified === false
+    && p.unique_voter_count_qualified === false && p.maps_approved === true
+    && reference?.native_ward_number === ward && reference.native_ward_label === `Ward ${ward}`
+    && reference.layer_name === "SDEweb.GISADMIN.Wards_2022" && reference.rest_layer_id === 3
+    && reference.boundary_vintage === 2022 && reference.current_clerk_effective_date === "2021-12-21"
+    && reference.certified_legal_boundaries === false && reference.topology_valid_without_repairs === true
+    && reference.single_path_per_polygon === true && reference.native_overlaps_preserved === true
+    && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null;
+}
+
 export function hasCountySourceMode(code, mode) {
   return ["WV", "ME", "IL"].includes(code) && ["in_person_early", "mail_returned"].includes(mode)
     || Boolean(providerCountyScopes[code]?.modes.includes(mode));

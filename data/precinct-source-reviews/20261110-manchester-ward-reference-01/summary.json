@@ -1,0 +1,15 @@
+{
+  "source_city_observations": 4,
+  "retained_native_ward_rows": 37,
+  "complete_native_source_fields": 242,
+  "mapped_city": "Manchester",
+  "mapped_wards": 12,
+  "mapped_raw_ward_total_sum": 38562,
+  "native_vertices_verified": 3789,
+  "native_overlap_pairs": 6,
+  "source_geometry_repaired": false,
+  "source_counts_repaired": false,
+  "native_federal_only_added": false,
+  "rates_approved": false,
+  "certified_legal_precinct_boundaries": false
+}

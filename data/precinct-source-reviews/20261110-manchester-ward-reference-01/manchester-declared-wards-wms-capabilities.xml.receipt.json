@@ -1,0 +1,9 @@
+{
+  "url": "https://ags.manchesternh.gov/agsgis7/services/MapGeoWMS/CityArea/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+  "final_url": "https://ags.manchesternh.gov/agsgis7/services/MapGeoWMS/CityArea/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+  "status": 200,
+  "content_type": "text/xml",
+  "bytes": 10944,
+  "sha256": "14e0edad5a662e60f4eb9d6861809375a162c98951447fdba2d36992457608b0",
+  "retrieved_at_utc": "2026-11-10T04:39:13.126172+00:00"
+}

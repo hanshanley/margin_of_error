@@ -1,0 +1,248 @@
+{
+  "status": "native_geometry_inventory_and_topology_only_NOT_election_applicability_or_map_approval",
+  "source_bytes": 164046,
+  "source_sha256": "698e22ac8006a8cd7e6ca52eaeb67b74568fa8b8e712bbb0d1b9a4e36e53ae7d",
+  "native_count": 12,
+  "native_ids_complete": true,
+  "wards": [
+    {
+      "object_id": 25,
+      "ward_number": 1,
+      "native_ward_id": "Ward 1",
+      "native_ward_name": "Ward 1",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.48098456128828,
+        43.005984781782445,
+        -71.43635575370746,
+        43.04400878846924
+      ]
+    },
+    {
+      "object_id": 26,
+      "ward_number": 2,
+      "native_ward_id": "Ward 2",
+      "native_ward_name": "Ward 2",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.46000276053039,
+        42.99552577951829,
+        -71.39227773961599,
+        43.018395785246256
+      ]
+    },
+    {
+      "object_id": 27,
+      "ward_number": 3,
+      "native_ward_id": "Ward 3",
+      "native_ward_name": "Ward 3",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.4741843610483,
+        42.9730727764196,
+        -71.45739475981658,
+        43.009492782445605
+      ]
+    },
+    {
+      "object_id": 28,
+      "ward_number": 4,
+      "native_ward_id": "Ward 4",
+      "native_ward_name": "Ward 4",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.45790276031714,
+        42.987204779417965,
+        -71.41393074480833,
+        43.0016187825235
+      ]
+    },
+    {
+      "object_id": 29,
+      "ward_number": 5,
+      "native_ward_id": "Ward 5",
+      "native_ward_name": "Ward 5",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.45742175818734,
+        42.98026635141562,
+        -71.41984374699392,
+        42.989405779631454
+      ]
+    },
+    {
+      "object_id": 30,
+      "ward_number": 6,
+      "native_ward_id": "Ward 6",
+      "native_ward_name": "Ward 6",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.42556274779506,
+        42.93830073382581,
+        -71.37541647170082,
+        43.009019784641076
+      ]
+    },
+    {
+      "object_id": 31,
+      "ward_number": 7,
+      "native_ward_id": "Ward 7",
+      "native_ward_name": "Ward 7",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.46195876104298,
+        42.96972977503505,
+        -71.42140574685952,
+        42.983263778665176
+      ]
+    },
+    {
+      "object_id": 32,
+      "ward_number": 8,
+      "native_ward_id": "Ward 8",
+      "native_ward_name": "Ward 8",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.46064975764625,
+        42.89029433473893,
+        -71.38402338594499,
+        42.973968777083435
+      ]
+    },
+    {
+      "object_id": 33,
+      "ward_number": 9,
+      "native_ward_id": "Ward 9",
+      "native_ward_name": "Ward 9",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.4758557647987,
+        42.94733677103794,
+        -71.4362137513846,
+        42.97738477689183
+      ]
+    },
+    {
+      "object_id": 34,
+      "ward_number": 10,
+      "native_ward_id": "Ward 10",
+      "native_ward_name": "Ward 10",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.50052584232785,
+        42.96443265930056,
+        -71.4684657628728,
+        42.99905026172386
+      ]
+    },
+    {
+      "object_id": 35,
+      "ward_number": 11,
+      "native_ward_id": "Ward 11",
+      "native_ward_name": "Ward 11",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.50125962102089,
+        42.982854046337145,
+        -71.46933540277867,
+        43.00571678147081
+      ]
+    },
+    {
+      "object_id": 36,
+      "ward_number": 12,
+      "native_ward_id": "Ward 12",
+      "native_ward_name": "Ward 12",
+      "geometry_type": "Polygon",
+      "valid_unrepaired": true,
+      "validity": "Valid Geometry",
+      "empty": false,
+      "bounds": [
+        -71.5127677808725,
+        42.99660377877784,
+        -71.46958377200393,
+        43.051787789248415
+      ]
+    }
+  ],
+  "pairwise_interior_overlap_nonzero": [
+    {
+      "wards": [
+        1,
+        3
+      ],
+      "native_intersection_area": 6.923800360679755e-11
+    },
+    {
+      "wards": [
+        1,
+        12
+      ],
+      "native_intersection_area": 7.668531698137202e-10
+    },
+    {
+      "wards": [
+        3,
+        11
+      ],
+      "native_intersection_area": 1.6930285063085126e-11
+    },
+    {
+      "wards": [
+        3,
+        12
+      ],
+      "native_intersection_area": 8.089259172827137e-10
+    },
+    {
+      "wards": [
+        5,
+        7
+      ],
+      "native_intersection_area": 2.1573741776903475e-10
+    },
+    {
+      "wards": [
+        10,
+        11
+      ],
+      "native_intersection_area": 9.836393192188936e-10
+    }
+  ],
+  "geometry_repaired": false,
+  "population_or_personal_fields_requested": false,
+  "election_2026_geometry_applicability_independently_qualified": false
+}

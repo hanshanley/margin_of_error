@@ -1,0 +1,18 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-manchester-native-ward-reference-20261110-01/complete-analysis.zip",
+  "bytes": 94979235,
+  "sha256": "d2c4f2c666eeb2e696c7997d3d0d7910deaf553baa0512e2bed7cdbb670e9194",
+  "members": 122,
+  "original_pdfs": 16,
+  "original_pages": 218,
+  "original_pdf_bytes": 115942591,
+  "native_ward_count_joins": 12,
+  "retained_city_source_fields": 242,
+  "retained_ward_rows": 37,
+  "complete_reference_queries": 12,
+  "native_overlap_queries": 6,
+  "source_repairs": false,
+  "source_geometry_repaired": false,
+  "native_federal_only_added": false,
+  "analysis_rates_approved": false
+}

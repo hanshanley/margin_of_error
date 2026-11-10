@@ -1,0 +1,143 @@
+{
+  "status": "all_native_vertices_verified_NO_geometry_repair_or_election_map_approval",
+  "vertices_checked": 3789,
+  "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+  "wards": [
+    {
+      "ward": 1,
+      "source_vertices": 240,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 16001622.806864616,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 2,
+      "source_vertices": 295,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 11641772.506051838,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 3,
+      "source_vertices": 220,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 6739669.797410561,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 4,
+      "source_vertices": 281,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 6683687.755664119,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 5,
+      "source_vertices": 244,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 4295247.22243259,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 6,
+      "source_vertices": 473,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 34057127.67514136,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 7,
+      "source_vertices": 288,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 5339621.439684734,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 8,
+      "source_vertices": 567,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 33551206.36285675,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 9,
+      "source_vertices": 285,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 11931684.64265656,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 10,
+      "source_vertices": 247,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 8566458.905173069,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 11,
+      "source_vertices": 350,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 6279073.515682515,
+      "source_coordinates_changed": false
+    },
+    {
+      "ward": 12,
+      "source_vertices": 299,
+      "maximum_inverse_mercator_error_degrees": 1.4210854715202004e-14,
+      "native_projected_area_m2": 24382801.976173207,
+      "source_coordinates_changed": false
+    }
+  ],
+  "native_overlaps": [
+    {
+      "wards": [
+        1,
+        3
+      ],
+      "native_projected_square_meters": 1.1718439026951408,
+      "overlap_over_smaller_native_ward_area": 1.7387259879488063e-07
+    },
+    {
+      "wards": [
+        1,
+        12
+      ],
+      "native_projected_square_meters": 12.915972757363122,
+      "overlap_over_smaller_native_ward_area": 8.071664301337133e-07
+    },
+    {
+      "wards": [
+        3,
+        11
+      ],
+      "native_projected_square_meters": 0.2868360655423885,
+      "overlap_over_smaller_native_ward_area": 4.568127205804985e-08
+    },
+    {
+      "wards": [
+        3,
+        12
+      ],
+      "native_projected_square_meters": 13.634208392806489,
+      "overlap_over_smaller_native_ward_area": 2.022978692226861e-06
+    },
+    {
+      "wards": [
+        5,
+        7
+      ],
+      "native_projected_square_meters": 3.6546280795204473,
+      "overlap_over_smaller_native_ward_area": 8.508539532797063e-07
+    },
+    {
+      "wards": [
+        10,
+        11
+      ],
+      "native_projected_square_meters": 16.660556372810355,
+      "overlap_over_smaller_native_ward_area": 2.6533462828869918e-06
+    }
+  ],
+  "source_projected_units": "EPSG3857 projected square metres, not geodesic ground areas",
+  "source_rings_and_coordinates_unchanged": true
+}

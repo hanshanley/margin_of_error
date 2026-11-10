@@ -2,6 +2,7 @@
 
 import argparse
 import gzip
+import hashlib
 import json
 from pathlib import Path
 
@@ -58,7 +59,7 @@ def verify(page):
     assert all(r["rate"] == "" and r["year"] == "2024" and r["margin"] is None for r in actual)
     expect(page.locator("#title")).to_have_text("City source counts in New Hampshire")
     expect(page.locator("#caption")).to_contain_text("255 areas remain unknown")
-    expect(page.locator("#caption")).to_contain_text("37 ward rows remain in tables")
+    expect(page.locator("#caption")).to_contain_text("All37 ward rows remain available in tables")
     page.select_option("#current-county-select", "additional:NH:city:3345140")
     expect(page.locator("#current-county-detail")).to_contain_text(f"{manchester:,}")
     expect(page.locator("#current-county-detail")).to_contain_text("85-ballot discrepancy")
@@ -154,15 +155,54 @@ with sync_playwright() as runtime:
             page.locator("#tab-precincts").click()
             expect(page.locator("#precinct-state-select")).to_have_value("New Hampshire")
             expect(page.locator('.geographic-detail [data-level="precinct"]')).to_have_count(0)
-            expect(page.locator("#title")).to_have_text("Precinct data unavailable in New Hampshire")
+            ward_shapes = page.locator('.geographic-detail [data-level="ward"]')
+            expect(ward_shapes).to_have_count(12, timeout=90000)
+            expect(page.locator("#title")).to_have_text("Native ward counts in Manchester")
+            ward_values = ward_shapes.evaluate_all("els=>els.map(e=>({ward:e.dataset.sourceWard,count:e.dataset.count,rate:e.dataset.rate,year:e.dataset.referenceYear}))")
+            assert {int(row["ward"]):int(row["count"]) for row in ward_values} == {
+                row["ward"]:row["total"] for row in m["wards"]}
+            assert all(row["rate"] == "" and row["year"] == "2022" for row in ward_values)
+            expect(page.locator("#geography-note")).to_contain_text("Six small native boundary overlaps")
+            ward7 = page.locator('[data-level="ward"][data-source-ward="7"]')
+            ward7.focus()
+            ward7.press("Enter")
+            expect(page.locator("#substate-detail")).to_contain_text("2,712")
+            expect(page.locator("#substate-detail")).to_contain_text("component-minus-printed total85")
+            expect(ward7).to_have_class("map-feature substate-feature selected")
+            chart = page.locator("#visualization svg.turnout-map")
+            zoom = float(chart.get_attribute("data-zoom"))
+            page.locator("#map-zoom-in").click()
+            page.wait_for_function("previous => +document.querySelector('.turnout-map').dataset.zoom === previous * 2",
+                                   arg=zoom)
+            chart.focus()
+            before_pan = chart.get_attribute("viewBox")
+            chart.press("ArrowRight")
+            assert chart.get_attribute("viewBox") != before_pan
+            box = chart.bounding_box()
+            page.mouse.move(box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
+            page.mouse.wheel(0, -180)
+            page.wait_for_function("previous => +document.querySelector('.turnout-map').dataset.zoom > previous",
+                                   arg=zoom * 2)
+            retained = chart.get_attribute("viewBox")
+            viewport = page.viewport_size
+            page.set_viewport_size(dict(width=viewport["width"] - 20, height=viewport["height"]))
+            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(12)
+            page.wait_for_timeout(350)
+            expect(page.locator("#visualization svg.turnout-map")).to_have_attribute("viewBox", retained)
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+            page.locator("#tab-states").click()
+            expect(page.locator("#current-county-select")).to_have_value("additional:NH:city:3345140")
+            expect(page.locator("#current-unit-select")).to_have_value("Manchester:Ward:7")
+            expect(page.locator("#current-unit-detail")).to_contain_text("current Manchester municipal ward context")
             assert not errors, errors
             cases.append(dict(mobile=mobile, native_city_counts=4, native_ward_rows=37,
                 full_context_areas=259, unknown_not_zero=255, source_conflicts_retained=True,
                 federal_only_not_added=True, no_rates=True, no_old_shapes_as_2026_wards=True,
                 native_registers_and_percent_separate=True, unsupported_modes_not_substituted=True,
                 dover_native_date_not_filename=True, nashua_source_amendments_retained=True,
-                methods_roundtrip=True))
+                native_manchester_ward_counts=12, ward_reference_year=2022,
+                no_certified2026_legal_precinct_claim=True, native_ward_source_conflict_preserved=True,
+                methods_roundtrip=True, ward_zoom_pan_and_resize_preserved=True))
             context.close()
         context = browser.new_context()
         page = context.new_page()
@@ -185,10 +225,49 @@ with sync_playwright() as runtime:
         page.get_by_role("button", name="Retry geographic detail").click()
         verify(page)
         context.close()
+        ward_path = "/participation-precincts/20261110-manchester-ward-reference-01/"
+        original = (ROOT / ("public" + ward_path) / "NH.geojson.gz").read_bytes()
+        for invalid_scope in (False, True):
+            context = browser.new_context()
+            page = context.new_page()
+            bad = json.loads(gzip.decompress(original))
+            bad["features"][0]["properties"]["reference_geometry"]["rest_layer_id"] = 0
+            altered = gzip.compress(json.dumps(bad).encode(), mtime=0)
+            def corrupt_geometry(route):
+                response = route.fetch()
+                headers = dict(response.headers)
+                headers.pop("content-length", None)
+                headers.pop("content-encoding", None)
+                route.fulfill(status=200, headers=headers, body=altered)
+            def matching_checksum(route):
+                response = route.fetch()
+                data = response.json()
+                data["state_metadata"]["NH"].update(bytes=len(altered),
+                    sha256=hashlib.sha256(altered).hexdigest())
+                route.fulfill(response=response, json=data)
+            page.route("**" + ward_path + "NH.geojson.gz", corrupt_geometry)
+            if invalid_scope:
+                page.route("**" + ward_path + "index.json", matching_checksum)
+            page.goto(base + "/voter-participation/", wait_until="domcontentloaded")
+            expect(page.locator('.map-feature[data-state="New Hampshire"]')).to_have_count(1, timeout=90000)
+            choose(page)
+            page.locator("#tab-precincts").click()
+            expect(page.locator("#coverage-note")).to_contain_text(
+                "Unqualified Manchester native ward" if invalid_scope else "checksum disagrees", timeout=90000)
+            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(0)
+            page.unroute("**" + ward_path + "NH.geojson.gz", corrupt_geometry)
+            if invalid_scope:
+                page.unroute("**" + ward_path + "index.json", matching_checksum)
+                page.reload(wait_until="domcontentloaded")
+            else:
+                page.get_by_role("button", name="Retry precinct source").click()
+            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(12, timeout=90000)
+            context.close()
     finally:
         browser.close()
 proof = dict(status="PASS_NH_four_native_city_sources_37ward_rows_on2024_context_NOT_county_or_precinct_totals",
     base_url=base, cases=cases, false_reference_rejected=True, actual_retry_restores_selectors=True,
+    ward_checksum_rejected_and_retry_restores_map=True, wrong_rest_layer_rejected_after_valid_checksum=True,
     valid_source_overrides=False)
 args.proof.write_text(json.dumps(proof, indent=2) + "\n")
 print(json.dumps(proof))

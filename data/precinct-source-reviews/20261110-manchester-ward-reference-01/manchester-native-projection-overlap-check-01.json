@@ -1,0 +1,67 @@
+{
+  "status": "native_projection_topology_ONLY_no_election_map_approval",
+  "all12_single_ring_no_hole_role_inference": true,
+  "valid_unrepaired": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true,
+    "9": true,
+    "10": true,
+    "11": true,
+    "12": true
+  },
+  "native_spatial_reference": {
+    "wkid": 102100,
+    "latestWkid": 3857
+  },
+  "nonzero_pairwise_overlaps": [
+    {
+      "wards": [
+        1,
+        3
+      ],
+      "native_projected_square_meters": 1.1718439026951408
+    },
+    {
+      "wards": [
+        1,
+        12
+      ],
+      "native_projected_square_meters": 12.915972757363122
+    },
+    {
+      "wards": [
+        3,
+        11
+      ],
+      "native_projected_square_meters": 0.2868360655423885
+    },
+    {
+      "wards": [
+        3,
+        12
+      ],
+      "native_projected_square_meters": 13.634208392806489
+    },
+    {
+      "wards": [
+        5,
+        7
+      ],
+      "native_projected_square_meters": 3.6546280795204473
+    },
+    {
+      "wards": [
+        10,
+        11
+      ],
+      "native_projected_square_meters": 16.660556372810355
+    }
+  ],
+  "geometry_repaired": false
+}
