@@ -1,0 +1,39 @@
+{
+  "source": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/Subprecincts2022/FeatureServer?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 5254,
+  "sha256": "b1755f9dd50cf5b969f4877455352b00bd96a390deb40c061a7ad3130b0f45dc",
+  "metadata": {
+    "description": "<DIV STYLE=\"text-align:Left;font-size:12pt\"><P><SPAN>Subprecincts represent areas within individual precincts that have been assigned to a State and/or Congressional voting district that is different than those assigned to other areas within that same precinct.</SPAN></P></DIV>",
+    "serviceDescription": "Subprecincts represent areas within individual precincts that have been assigned to a State and/or Congressional voting district that is different than those assigned to other areas within that same precinct.",
+    "spatialReference": {
+      "falseM": -100000,
+      "xyTolerance": 0.001,
+      "mUnits": 10000,
+      "zUnits": 10000,
+      "latestWkid": 26986,
+      "zTolerance": 0.001,
+      "wkid": 26986,
+      "xyUnits": 10000,
+      "mTolerance": 0.001,
+      "falseX": -36530900,
+      "falseY": -28803200,
+      "falseZ": -100000
+    },
+    "layers": [
+      {
+        "subLayerIds": null,
+        "maxScale": 0,
+        "name": "Subprecincts (2022)",
+        "defaultVisibility": true,
+        "id": 0,
+        "minScale": 0,
+        "type": "Feature Layer",
+        "parentLayerId": -1,
+        "geometryType": "esriGeometryPolygon"
+      }
+    ],
+    "capabilities": "Query"
+  }
+}

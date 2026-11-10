@@ -1,0 +1,9 @@
+{
+  "source": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/WardsPrecincts2022/FeatureServer/0/query?where=UPPER%28TOWN%29%3D%27SOMERVILLE%27&outFields=OBJECTID%2CTOWN%2CWARD%2CPRECINCT%2CWP_DISTRICT&returnGeometry=true&f=json&outSR=26986",
+  "retrieved_at_utc": "2026-11-10T07:36:00.577747+00:00",
+  "only_selected_aggregate_identity_fields_requested": true,
+  "status": 200,
+  "final_url": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/WardsPrecincts2022/FeatureServer/0/query?where=UPPER%28TOWN%29%3D%27SOMERVILLE%27&outFields=OBJECTID%2CTOWN%2CWARD%2CPRECINCT%2CWP_DISTRICT&returnGeometry=true&f=json&outSR=26986",
+  "bytes": 97116,
+  "sha256": "c7b53d9b31dd910f9d9b6a873377759720510289b56be6ddadb5b543fd9c5bf5"
+}

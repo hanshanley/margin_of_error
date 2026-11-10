@@ -1,0 +1,191 @@
+{
+  "source": "https://services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/Boston_Precinct_Boundaries/FeatureServer/0?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 11532,
+  "sha256": "51d7b1bc10cb16f2a4662cb6120179076229144c9af39961550a8e0b02802a16",
+  "metadata": {
+    "id": 0,
+    "name": "Boston Precinct Boundaries",
+    "type": "Feature Layer",
+    "geometryType": "esriGeometryPolygon",
+    "objectIdField": "FID",
+    "maxRecordCount": 2000,
+    "extent": {
+      "xmin": -7924973.4351,
+      "ymin": 5195182.081299998,
+      "xmax": -7875720.6676,
+      "ymax": 5221212.033300002,
+      "spatialReference": {
+        "wkid": 102100,
+        "latestWkid": 3857
+      }
+    },
+    "fields": [
+      {
+        "name": "FID",
+        "type": "esriFieldTypeOID",
+        "actualType": "int",
+        "alias": "FID",
+        "sqlType": "sqlTypeInteger",
+        "nullable": false,
+        "editable": false,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "DISTRICT",
+        "type": "esriFieldTypeString",
+        "actualType": "nvarchar",
+        "alias": "DISTRICT",
+        "sqlType": "sqlTypeNVarchar",
+        "length": 12,
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "WDPCT",
+        "type": "esriFieldTypeString",
+        "actualType": "nvarchar",
+        "alias": "WDPCT",
+        "sqlType": "sqlTypeNVarchar",
+        "length": 254,
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Ward1",
+        "type": "esriFieldTypeString",
+        "actualType": "nvarchar",
+        "alias": "Ward",
+        "sqlType": "sqlTypeNVarchar",
+        "length": 254,
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Precinct1",
+        "type": "esriFieldTypeString",
+        "actualType": "nvarchar",
+        "alias": "Precinct",
+        "sqlType": "sqlTypeNVarchar",
+        "length": 254,
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "State_WDPC",
+        "type": "esriFieldTypeString",
+        "actualType": "nvarchar",
+        "alias": "State_WDPC",
+        "sqlType": "sqlTypeNVarchar",
+        "length": 254,
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Gov_Coun_2",
+        "type": "esriFieldTypeString",
+        "actualType": "nvarchar",
+        "alias": "Gov Council District",
+        "sqlType": "sqlTypeNVarchar",
+        "length": 254,
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Rep_2022",
+        "type": "esriFieldTypeString",
+        "actualType": "nvarchar",
+        "alias": "State Rep District",
+        "sqlType": "sqlTypeNVarchar",
+        "length": 254,
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Senate_202",
+        "type": "esriFieldTypeString",
+        "actualType": "nvarchar",
+        "alias": "State Senate District",
+        "sqlType": "sqlTypeNVarchar",
+        "length": 254,
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Congress_2",
+        "type": "esriFieldTypeDouble",
+        "actualType": "float",
+        "alias": "Congressional District",
+        "sqlType": "sqlTypeFloat",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Shape_Leng",
+        "type": "esriFieldTypeDouble",
+        "actualType": "float",
+        "alias": "Shape_Leng",
+        "sqlType": "sqlTypeFloat",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Shape_Area",
+        "type": "esriFieldTypeDouble",
+        "actualType": "float",
+        "alias": "Shape_Area",
+        "sqlType": "sqlTypeFloat",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Shape__Area",
+        "type": "esriFieldTypeDouble",
+        "actualType": "float",
+        "alias": "Shape__Area",
+        "sqlType": "sqlTypeFloat",
+        "nullable": true,
+        "editable": false,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Shape__Length",
+        "type": "esriFieldTypeDouble",
+        "actualType": "float",
+        "alias": "Shape__Length",
+        "sqlType": "sqlTypeFloat",
+        "nullable": true,
+        "editable": false,
+        "domain": null,
+        "defaultValue": null
+      }
+    ],
+    "description": "",
+    "supportedQueryFormats": "JSON, geoJSON, PBF"
+  }
+}

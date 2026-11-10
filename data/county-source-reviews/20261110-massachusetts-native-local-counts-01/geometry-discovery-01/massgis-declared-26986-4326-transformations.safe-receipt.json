@@ -1,0 +1,52 @@
+{
+  "source": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/Utilities/Geometry/GeometryServer/findTransformations?f=json&inSR=26986&outSR=4326&numOfResults=5",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 539,
+  "sha256": "c670c59e54a3f249acc456a9b4d574e65da9c5e99bd72628519487d8225c76f0",
+  "declared_operation_metadata": {
+    "transformations": [
+      {
+        "geoTransforms": [
+          {
+            "wkid": 108190,
+            "latestWkid": 108190,
+            "transformForward": false,
+            "name": "WGS_1984_(ITRF00)_To_NAD_1983"
+          }
+        ]
+      },
+      {
+        "wkid": 1515,
+        "latestWkid": 1515,
+        "name": "NAD_1983_To_WGS_1984_5"
+      },
+      {
+        "wkid": 1188,
+        "latestWkid": 1188,
+        "name": "NAD_1983_To_WGS_1984_1"
+      },
+      {
+        "wkid": 1308,
+        "latestWkid": 1308,
+        "name": "NAD_1983_To_WGS_1984_4"
+      },
+      {
+        "geoTransforms": [
+          {
+            "wkid": 1950,
+            "latestWkid": 1950,
+            "transformForward": true,
+            "name": "NAD_1983_To_NAD_1983_CSRS_4"
+          },
+          {
+            "wkid": 1946,
+            "latestWkid": 1946,
+            "transformForward": true,
+            "name": "NAD_1983_CSRS_To_WGS_1984_2"
+          }
+        ]
+      }
+    ]
+  }
+}

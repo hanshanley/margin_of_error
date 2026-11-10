@@ -16,7 +16,7 @@ test('all twelve source ward totals use explicit current municipal context, not 
   assert.equal(index.state_metadata.NH.current_clerk_effective_date,'2021-12-21');
   assert.equal(index.state_metadata.NH.held_table_only_ward_rows,25);
   const registry = JSON.parse(readFileSync('public/participation-precincts.json','utf8'));
-  assert.equal(registry.additional_sources.length,4);
+  assert.equal(registry.additional_sources.filter(r => !r.base_url.includes('20261110-massachusetts-native-local-counts-01')).length,4);
   assert.ok(registry.additional_sources.some(row => row.base_url === '/participation-precincts/20261110-alaska-native-display-01/'));
   assert.ok(registry.additional_sources.some(row => row.base_url === '/participation-precincts/20261109-indiana-monroe-01/'));
 });

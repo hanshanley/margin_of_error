@@ -1,0 +1,296 @@
+{
+  "version": "20261110-massachusetts-native-local-counts-01",
+  "state_code": "MA",
+  "year": 2026,
+  "native_election_date": "2026-11-03",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-massachusetts-native-local-counts-20261110-01/complete-analysis.zip",
+  "source_city_observations": 2,
+  "native_reporting_rows": 307,
+  "qualified_reporting_references": 303,
+  "split_parent_holds": 4,
+  "native_municipal_references": 351,
+  "valid_municipal_display_references": 350,
+  "invalid_municipal_reference": "WAYLAND",
+  "counts_repaired": false,
+  "candidate_votes_used_as_ballots": false,
+  "modes_added": false,
+  "parent_geometries_clipped": false,
+  "analysis_rates_approved": false,
+  "certified_2026_election_boundaries": false,
+  "private_personal_population_or_address_features_requested": false,
+  "queries": {
+    "counts": "native-count-review-01/complete-native-count-queries.json",
+    "reporting_reference": "native-geometry-review-01/complete-native-reference-queries.json",
+    "reference_extension": "native-reference-extension-review-01/complete-reference-extension-queries.json.gz"
+  },
+  "files": {
+    "boston-declaring-page.private.html": {
+      "bytes": 21449,
+      "sha256": "937c947465bf21ca5f7f7cfd4c1819885073b7cc738636958fe4de72eec871fe"
+    },
+    "code/review-massachusetts-native-counts-01.py": {
+      "bytes": 9613,
+      "sha256": "230274efa2f654bba0e9b69fbca241d9fd4ccc397c4701461ca35721facddaa0"
+    },
+    "code/review-massachusetts-native-geometry-01.py": {
+      "bytes": 6978,
+      "sha256": "804b09a71ac544b71263445044609d62158f602f5ddb14264767df87fb085416"
+    },
+    "code/review-massachusetts-reference-extension-01.py": {
+      "bytes": 10153,
+      "sha256": "84f7acd138029881582e4096f4d8802453ca2698319227e9b687abaff6ef3cfd"
+    },
+    "code/verify-massachusetts-native-counts-01.py": {
+      "bytes": 6055,
+      "sha256": "6ee9d27e23781e06d095ca1e16ae5bc780c9c2711f93f630772648faf11d4749"
+    },
+    "declared-results-01/boston-2026-Unofficial-Statement-Of-Votes-Cast.pdf": {
+      "bytes": 2761513,
+      "sha256": "df0501d565dafedd17448bc0e4380a320548efc8c25e3150860cb5d265fad4b9"
+    },
+    "declared-results-01/boston-2026-Unofficial-Statement-Of-Votes-Cast.pdf.receipt.json": {
+      "bytes": 1960,
+      "sha256": "91e901f3cf89f6f0aeb68540c807641d3fa8d9893270af18cfaae7589e3bd8c3"
+    },
+    "declared-results-01/boston-20261103-Election-Night-Reporting-FAQs.pdf": {
+      "bytes": 62623,
+      "sha256": "d6172d5950d36e0c50c947f2e5c761e960470aeaf1828fdfe35ec76fb6881957"
+    },
+    "declared-results-01/boston-20261103-Election-Night-Reporting-FAQs.pdf.receipt.json": {
+      "bytes": 3110,
+      "sha256": "0a0a2d44f9f5c45e47d524341ef76056f0a52c11a2e8696c27893d068fa7aa72"
+    },
+    "declared-results-01/boston-UNOFFICIAL-CENTRAL-TABULATION-RESULTS-11.03.26.pdf": {
+      "bytes": 4097653,
+      "sha256": "26f08dab2914800e4f5555c924353b3a4bd164615964cab017d0695d9d11846e"
+    },
+    "declared-results-01/boston-UNOFFICIAL-CENTRAL-TABULATION-RESULTS-11.03.26.pdf.receipt.json": {
+      "bytes": 2303,
+      "sha256": "80ab1a5140aea47ad1e05e8ee67a9b1f18ab3d2156af85feaca49225c84ac206"
+    },
+    "declared-results-01/somerville-election-results-preliminary-20261103.pdf": {
+      "bytes": 253825,
+      "sha256": "bedb2b2bf9d2d0a5b293f6eb0335f9f6c7d7004551536a1df938d9361a44bae8"
+    },
+    "declared-results-01/somerville-election-results-preliminary-20261103.pdf.receipt.json": {
+      "bytes": 4399,
+      "sha256": "2f2f331098f9d370b03a1bdee3222edc2e17184f6fe553ab20de346ce71a32e5"
+    },
+    "geometry-discovery-01/boston-declared-precinct-item.safe-receipt.json": {
+      "bytes": 1244,
+      "sha256": "5d96d589a8f31ad28f0bd73132792f7c43b656c73cbe4a8d6ec9928e5e97f086"
+    },
+    "geometry-discovery-01/boston-precinct-layer0.safe-receipt.json": {
+      "bytes": 5084,
+      "sha256": "af96df6af52b3536a3a0f5c789286a788a2625972251812de1f500755697f65f"
+    },
+    "geometry-discovery-01/boston-precinct-service-parent.safe-receipt.json": {
+      "bytes": 855,
+      "sha256": "66dbdb643feda39f8e306c720ce0574689f401b35f5b096c60c925169324c438"
+    },
+    "geometry-discovery-01/massachusetts-municipality-layer0.safe-receipt.json": {
+      "bytes": 6420,
+      "sha256": "e15ecffb34ad4f362df83f8aaf25aaa08146d3875723b40da89637f31e38d13a"
+    },
+    "geometry-discovery-01/massachusetts-municipality-service-parent.safe-receipt.json": {
+      "bytes": 818,
+      "sha256": "b167a92ca23929684d9a61665c24262ae8797139ff8a0cf12f207cad31f66096"
+    },
+    "geometry-discovery-01/massgis-declared-26986-4326-transformations.private.json": {
+      "bytes": 539,
+      "sha256": "c670c59e54a3f249acc456a9b4d574e65da9c5e99bd72628519487d8225c76f0"
+    },
+    "geometry-discovery-01/massgis-declared-26986-4326-transformations.safe-receipt.json": {
+      "bytes": 1347,
+      "sha256": "329f05adee49165757cd2459a3ca4ae1f6d70fc8a8b5712e695ac177c2e07b40"
+    },
+    "geometry-discovery-01/massgis-declared-subprecinct-feature-item.safe-receipt.json": {
+      "bytes": 581,
+      "sha256": "3240f24ff8b8162774395fc08d986af322f1c1ca0d38884aab3b856008673f1e"
+    },
+    "geometry-discovery-01/massgis-independent-declared-datum-operations.json": {
+      "bytes": 13649,
+      "sha256": "c437aec541dd969de0836ed9f08666353d34b6d3490dc59951e3bd7362d0eb95"
+    },
+    "geometry-discovery-01/massgis-subprecinct-layer0.safe-receipt.json": {
+      "bytes": 7915,
+      "sha256": "46a8c366ebc49f55d0ab197688efca49363f6f25777dbb3ea0a4bb78c5d88052"
+    },
+    "geometry-discovery-01/massgis-subprecinct-service-parent.safe-receipt.json": {
+      "bytes": 1512,
+      "sha256": "560ad452b58ad1d3c3d3210934e7a7706cf9715d569598148bb05a75c275a14f"
+    },
+    "geometry-discovery-01/somerville-parent-precinct-layer0.safe-receipt.json": {
+      "bytes": 4597,
+      "sha256": "87428d95eac03be92d129ba692de878380602207e6ec74cb8e6352eabf3e61d5"
+    },
+    "geometry-discovery-01/somerville-parent-precinct-service-parent.safe-receipt.json": {
+      "bytes": 976,
+      "sha256": "97c5cb34653da67191e0cd8da502ed0793660854aee188d7b6f657af05044c78"
+    },
+    "native-count-review-01/boston-all-native-times-cast.csv": {
+      "bytes": 601705,
+      "sha256": "79b060f3343f1de5fc50374ef9f33e3178a2b19a2feddc69d4d7f4c6fd35e430"
+    },
+    "native-count-review-01/boston-summary-native.csv": {
+      "bytes": 20171,
+      "sha256": "880af33242f1bb975d1b93a44468bf671abe87db4a5a7becb9d8fd32ca340ccd"
+    },
+    "native-count-review-01/complete-native-count-queries.json": {
+      "bytes": 2628132,
+      "sha256": "2d1702a8cc2f0948417c4c61036507167cd0472c99dc5684b03f3870f37f6852"
+    },
+    "native-count-review-01/independent-native-verification.json": {
+      "bytes": 10316,
+      "sha256": "d31944608dc4b001197e903d137fbafefad1056d655504b413a8ab597c72fe51"
+    },
+    "native-count-review-01/somerville-native-counts.csv": {
+      "bytes": 3235,
+      "sha256": "12452a9ee125be3b96fb51e3bdeb12def59a27eed81033c8d1f07561730cef0f"
+    },
+    "native-geometry-review-01/complete-native-reference-queries.json": {
+      "bytes": 11582473,
+      "sha256": "0c54105b52ec34fd709742bb131fde73d8995b8410d538963c3ec3e636e4bd74"
+    },
+    "native-reference-extension-review-01/complete-reference-extension-queries.json.gz": {
+      "bytes": 229496,
+      "sha256": "b867490a5502f0304e618be893e5f4eac563de288e564c08e9effe448b5d306d"
+    },
+    "native-reference-extension-review-01/summary.json": {
+      "bytes": 830,
+      "sha256": "6e811ceb38b3d86f3b1c8b2988f362239d15476fa4356e980260fc5fdf138e39"
+    },
+    "safe-city-source-declarations.json": {
+      "bytes": 1324,
+      "sha256": "2f46dd1c8c4f95a7ca76b1c86e3a0e978a55a28568a7a68fd8cd8daaa5ed633d"
+    },
+    "selected-native-geometry-01/boston-full-geographic-original.geojson": {
+      "bytes": 874852,
+      "sha256": "1db54793610541aacf36855b61a9621e78bb3c286b052e0130bda389067ec298"
+    },
+    "selected-native-geometry-01/boston-full-geographic-original.geojson.receipt.json": {
+      "bytes": 691,
+      "sha256": "236ca3f3a5ac120a9dd64ef60678e4dd6b79a3c2fd5f378da01cdd835945ad31"
+    },
+    "selected-native-geometry-01/boston-full-native-projected-original.json": {
+      "bytes": 680600,
+      "sha256": "fb6e8865f73820504c0ea8634676a484265fb1e1d4c90a5fe21f34a5a8e21a59"
+    },
+    "selected-native-geometry-01/boston-full-native-projected-original.json.receipt.json": {
+      "bytes": 685,
+      "sha256": "72e9dc70ef1fa8b05d47d5853d7dc05fedc99bd6199ed431b9a3565e212b2f51"
+    },
+    "selected-native-geometry-01/boston-native-count.json": {
+      "bytes": 13,
+      "sha256": "ae772305d5f38fde0ad484d0beec8743b653ab6c9049143d612fb5a61baba79b"
+    },
+    "selected-native-geometry-01/boston-native-count.json.receipt.json": {
+      "bytes": 577,
+      "sha256": "50dd78aa5e61c3987c525d139c1a97520325fc4a3993ce74a642b2c0cc925cee"
+    },
+    "selected-native-geometry-01/boston-native-ids.json": {
+      "bytes": 1033,
+      "sha256": "c525a4da89540e808b5af6ae448bf1b96fbf179e092d80fcd31f7149a8445905"
+    },
+    "selected-native-geometry-01/boston-native-ids.json.receipt.json": {
+      "bytes": 575,
+      "sha256": "3162a71445b3b054dcb37ae25f026e48ec0fd3e1aff440b2cdf77e35afe15ca7"
+    },
+    "selected-native-geometry-01/somerville-subprecincts-full-geographic-original.geojson": {
+      "bytes": 13303,
+      "sha256": "4107efdf8581917fc70060e477024918faf1b970ae6fc635df90b17ded4cfc73"
+    },
+    "selected-native-geometry-01/somerville-subprecincts-full-geographic-original.geojson.receipt.json": {
+      "bytes": 758,
+      "sha256": "de6480055945d21e269d50f7feabe29e61c63ae96096810d3f8c5813a254e2ff"
+    },
+    "selected-native-geometry-01/somerville-subprecincts-full-native-projected-original.json": {
+      "bytes": 13246,
+      "sha256": "4ea1dc1fe9ac720f15f26184d2193e431628c9810b6b46d58194cdd97e0a0f6e"
+    },
+    "selected-native-geometry-01/somerville-subprecincts-full-native-projected-original.json.receipt.json": {
+      "bytes": 754,
+      "sha256": "088738867d73d4122dad48e35237316bfc8064850bfe6a46e4ad57aafcabd98b"
+    },
+    "selected-native-geometry-01/somerville-subprecincts-native-count.json": {
+      "bytes": 11,
+      "sha256": "a5fb8eb97856970b61d9f466deb64f7659e835ee8ec5497003b78438fe888cad"
+    },
+    "selected-native-geometry-01/somerville-subprecincts-native-count.json.receipt.json": {
+      "bytes": 623,
+      "sha256": "9204a114124bdc1422e37a7519abb5b4c3c04b5cee95bda1cf6b5e4e4b1c1d42"
+    },
+    "selected-native-geometry-01/somerville-subprecincts-native-ids.json": {
+      "bytes": 62,
+      "sha256": "d263eca898c7235a11ee4f4d5bb837b70cf86393317bb01193addc43c96ce7c6"
+    },
+    "selected-native-geometry-01/somerville-subprecincts-native-ids.json.receipt.json": {
+      "bytes": 619,
+      "sha256": "89b157942c0556bd3fe8daf87aa68820e3fef7305591311df4acfb69588e7390"
+    },
+    "selected-native-geometry-02/massachusetts-municipalities-full-geographic-original.geojson": {
+      "bytes": 14881055,
+      "sha256": "dd79817fa581801c5617e51f213119c277edd9ad9a9a71a7675881f74687a97c"
+    },
+    "selected-native-geometry-02/massachusetts-municipalities-full-geographic-original.geojson.receipt.json": {
+      "bytes": 743,
+      "sha256": "6317e221925e8cf5cf83ec31ecbbf36882b659ae65e86fb0808f9442ec160e10"
+    },
+    "selected-native-geometry-02/massachusetts-municipalities-full-native-projected-original.json": {
+      "bytes": 13785737,
+      "sha256": "b176e4e5eee678316199f0dcc57c665fd6f5e42028b3486ff145021af944efe6"
+    },
+    "selected-native-geometry-02/massachusetts-municipalities-full-native-projected-original.json.receipt.json": {
+      "bytes": 739,
+      "sha256": "6aa16814a4193ca10a14a8901f1b2ffd3304393cf8ab107d229fcf9d1488aa78"
+    },
+    "selected-native-geometry-02/massachusetts-municipalities-native-count.json": {
+      "bytes": 13,
+      "sha256": "da9c336cad5ea0dfb7c62738aaa42bc74564941c9d18cd8d00837e1b630abea4"
+    },
+    "selected-native-geometry-02/massachusetts-municipalities-native-count.json.receipt.json": {
+      "bytes": 597,
+      "sha256": "9a1d46db05b1818555800c8a35b3bd87b51f5f5d8c7d9f1b8d72da6440475e71"
+    },
+    "selected-native-geometry-02/massachusetts-municipalities-native-ids.json": {
+      "bytes": 1342,
+      "sha256": "5224525cbfafa599a7170ca287ab0fffc044350a2a894c73ca7030c4d2445db9"
+    },
+    "selected-native-geometry-02/massachusetts-municipalities-native-ids.json.receipt.json": {
+      "bytes": 595,
+      "sha256": "1e7af8a7647f96b346b9959ea268e18df67540f61f8566c46117855d5f6630fd"
+    },
+    "selected-native-geometry-02/somerville-parent-precincts-full-geographic-original.geojson": {
+      "bytes": 100296,
+      "sha256": "43dba48aed14d2d99fe49b915e6f17d64c554208fb34fa2ca659d580257c5274"
+    },
+    "selected-native-geometry-02/somerville-parent-precincts-full-geographic-original.geojson.receipt.json": {
+      "bytes": 773,
+      "sha256": "ddd500d99ff25de3f82839c60bc8d5265b18b3608fbbc91aa97a15d8f7b746e9"
+    },
+    "selected-native-geometry-02/somerville-parent-precincts-full-native-projected-original.json": {
+      "bytes": 97116,
+      "sha256": "c7b53d9b31dd910f9d9b6a873377759720510289b56be6ddadb5b543fd9c5bf5"
+    },
+    "selected-native-geometry-02/somerville-parent-precincts-full-native-projected-original.json.receipt.json": {
+      "bytes": 768,
+      "sha256": "28e9c984a79c09b2e9bd66aa85a1079bd6103b713ea255c80bc9109361a05322"
+    },
+    "selected-native-geometry-02/somerville-parent-precincts-native-count.json": {
+      "bytes": 12,
+      "sha256": "48270895c6bf4f32f711afaaa3b45131564a9c92240e6ed2400fa43e2c414d7c"
+    },
+    "selected-native-geometry-02/somerville-parent-precincts-native-count.json.receipt.json": {
+      "bytes": 627,
+      "sha256": "0a22ae662dd779934affec116a8006357b7277b0512cd6f0b0a30a15db0da7ce"
+    },
+    "selected-native-geometry-02/somerville-parent-precincts-native-ids.json": {
+      "bytes": 158,
+      "sha256": "79ed5e9614e2e856332436355376db3ec2aa9848dabadae2b0ecbe9e21b4373b"
+    },
+    "selected-native-geometry-02/somerville-parent-precincts-native-ids.json.receipt.json": {
+      "bytes": 624,
+      "sha256": "138c8a4578cb89dd82d62fd113c9d187cff7afb8a3ea87b8ba93ea40c3b2da31"
+    }
+  }
+}

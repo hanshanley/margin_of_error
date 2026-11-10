@@ -1,0 +1,27 @@
+{
+  "year": 2026,
+  "state_code": "MA",
+  "source_id": "20261110-massachusetts-native-local-counts-01",
+  "reference_geometry": {
+    "review_id": "20261110-massachusetts-native-local-counts-01",
+    "geography_scope": "native_partial_city_reporting_context",
+    "identity_field": "TOWN_ID",
+    "boundary_year": null,
+    "localities": 350,
+    "native_source_localities": 351,
+    "mapped_localities": 2,
+    "geometry_holds": [
+      {
+        "native_town_id": 315,
+        "name": "WAYLAND",
+        "reason": "Invalid original native and geographic ring; not repaired"
+      }
+    ],
+    "certified_election_boundaries": false,
+    "source_geometries_repaired": false,
+    "url": "/participation-city-counts/20261110-massachusetts-native-local-counts-01/MA.geojson.gz",
+    "bytes": 5343535,
+    "sha256": "9b631685f4ed9500c0681679f855c83ed302479b6b692796beb4ef61901e02ee"
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-massachusetts-native-local-counts-20261110-01/complete-analysis.zip"
+}

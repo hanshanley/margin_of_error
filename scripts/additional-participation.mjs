@@ -14,6 +14,7 @@ import { loadConnecticutTowns } from './connecticut-town-counts.mjs';
 import { loadMaineLocalityActivity } from './maine-locality-activity.mjs';
 import { loadIllinoisCountyContext } from './illinois-county-context.mjs';
 import { loadNewHampshireCityExtension } from './new-hampshire-city-extension.mjs';
+import { loadMassachusettsNativeCounts, massachusettsVersion } from './massachusetts-native-counts.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -487,6 +488,66 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
           'No city/ward count allocated to county or other precinct geography.', ...row.quality_flags],
       });
       precincts.push(unit);
+    }
+  }
+  if (nativeCountyParents) {
+    const ma = loadMassachusettsNativeCounts();
+    const reference = json(`public/participation-city-counts/${massachusettsVersion}/index.json`).reference_geometry;
+    const review = { data_directory: `data/county-source-reviews/${massachusettsVersion}`,
+      base_url: '', complete_download_url: ma.complete_download_url };
+    const reporting = {
+      Boston: 'Native declaring-page Ballots Cast 185,569 matches six complete statewide Times Cast frames across 275 precincts. '
+        + 'The separate PDF summary prints Voters Cast 556,369 / registered 0 / N/A and is retained, not substituted or divided. '
+        + 'Later question contexts have different native counts; they are not homogenized. No candidate votes are summed.',
+      Somerville: 'Native BALLOTS CAST - TOTAL 64,597 and REGISTERED VOTERS - TOTAL 56,008 reconcile to all 32 printed precinct/subprecinct rows. '
+        + 'Ballot counts above source registers remain literal, not unique-person counts or turnout rates. '
+        + 'The page heading Official and PDF UnOfficial remain distinct. Four split-parent count joins stay table-only; no remainder boundary is invented.',
+    };
+    for (const row of ma.cities) counties.push(observation(review, '', 'MA', row.city,
+      `city:${row.reference_key}`, row.native_record, {
+        geography_level: 'municipality', county_fips: null,
+        reference_municipality_key: row.reference_key, reference_geometry: reference,
+        ballots: row.count, denominator: null, denominator_basis: 'native_register_not_analysis_denominator',
+        reported_pct: null, maps_approved: true, source_count_qualified: true,
+        source_count_basis: 'literal_native_city_count_with_full_source_context',
+        source_city_name: row.city, native_city_parent_printed: true,
+        native_election_id_qualified: true, source_election_date: '2026-11-03',
+        cast_ballot_count_qualified: false, unique_voter_count_qualified: false,
+        source_mode: 'all_method_native_city_snapshot',
+        source_url: row.source_url, participation_measure_label: row.measure,
+        native_printed_pct: null, source_status_literal: row.source_status_literal,
+        source_update_label: row.city === 'Boston'
+          ? 'Native election November 3, 2026; page November 4, 03:46 AM and PDF 11:39:02 AM; timezone not supplied.'
+          : 'Native election November 3, 2026; update clock/timezone not supplied.',
+        source_reporting_label: reporting[row.city],
+        quality: ['Two native city source snapshots only; not statewide/county totals or demographic turnout.',
+          '350 valid unchanged native municipal references; 349 of 351 source areas have no count. Invalid Wayland geometry stays held.',
+          ...row.quality_flags],
+      }));
+    for (const row of ma.reporting_rows) {
+      const city = ma.cities.find(city => city.city === row.city);
+      const referenceRow = ma.reporting_references.find(ref =>
+        ref.city === row.city && ref.ward === row.ward && ref.precinct === row.precinct);
+      const level = row.precinct.endsWith('A') ? 'subprecinct' : 'precinct';
+      precincts.push(observation(review, '', 'MA', row.city, `city:${city.reference_key}`, row.native_record, {
+        county_id: `additional:MA:city:${city.reference_key}`,
+        unit: `Ward ${row.ward}, ${level === 'subprecinct' ? 'Subprecinct' : 'Precinct'} ${row.precinct}`,
+        unit_key: row.source_unit_id, unit_kind: `municipal_${level}`,
+        geography_level: 'source_reporting_unit', ballots: row.source_count,
+        denominator: null, denominator_basis: 'native_register_not_analysis_denominator',
+        reported_pct: null, maps_approved: false, source_mode: 'all_method_native_city_snapshot',
+        source_url: row.source_url, participation_measure_label: row.participation_measure_label,
+        source_election_date: '2026-11-03', native_election_id_qualified: true,
+        source_status_literal: city.source_status_literal,
+        source_update_label: row.city === 'Boston'
+          ? 'Native PDF November 4, 2026, 11:39:02 AM; timezone not supplied.'
+          : 'Native election November 3, 2026; update clock/timezone not supplied.',
+        source_reporting_label: reporting[row.city],
+        geometry_withheld_reason: referenceRow.qualified ? null
+          : 'Native parent geometry contains a separately reported subprecinct; the remainder is not clipped or inferred.',
+        quality: ['Literal native reporting-unit count; a separate checked reference layer controls map display.',
+          ...row.quality_flags, ...(referenceRow.qualified ? [] : ['split_parent_reference_held_no_clipping'])],
+      }));
     }
   }
   const countyFrames = /** @type {Record<string, Record<string, ReturnType<typeof observation>[]>>} */ ({});

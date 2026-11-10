@@ -1,0 +1,244 @@
+{
+  "source": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Municipalities_Hosted/FeatureServer/0?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 12645,
+  "sha256": "e9d97238e995c840fd04e3b840d3cdec88b956a19ef026e80f932737cb9fa10d",
+  "metadata": {
+    "id": 0,
+    "name": "Municipalities (Multi-part with Generalized Coast)",
+    "serviceItemId": "54538f2f92d04c34957e6c2d460d0e5a",
+    "spatialReference": {
+      "wkid": 26986,
+      "latestWkid": 26986
+    },
+    "geometryType": "esriGeometryPolygon",
+    "objectIdField": "OBJECTID",
+    "maxRecordCount": 1000,
+    "extent": {
+      "xmin": 33863.73250000179,
+      "ymin": 777606.3568397021,
+      "xmax": 330810.1740665071,
+      "ymax": 959743.0445999987,
+      "spatialReference": {
+        "wkid": 26986,
+        "latestWkid": 26986
+      }
+    },
+    "fields": [
+      {
+        "name": "OBJECTID",
+        "type": "esriFieldTypeOID",
+        "alias": "Object ID",
+        "sqlType": "sqlTypeOther",
+        "nullable": false,
+        "editable": false,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "TOWN",
+        "type": "esriFieldTypeString",
+        "alias": "City/Town",
+        "sqlType": "sqlTypeOther",
+        "length": 21,
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "TOWN_ID",
+        "type": "esriFieldTypeInteger",
+        "alias": "City/Town ID",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "TYPE",
+        "type": "esriFieldTypeString",
+        "alias": "Type of Government",
+        "sqlType": "sqlTypeOther",
+        "length": 2,
+        "nullable": true,
+        "editable": true,
+        "domain": {
+          "type": "codedValue",
+          "name": "Town_Govt_Type",
+          "mergePolicy": "esriMPTDefaultValue",
+          "splitPolicy": "esriSPTDefaultValue",
+          "description": "Town Govt Type",
+          "codedValues": [
+            {
+              "name": "City",
+              "code": "C"
+            },
+            {
+              "name": "Town",
+              "code": "T"
+            },
+            {
+              "name": "Town with city gov't.",
+              "code": "TC"
+            }
+          ]
+        },
+        "defaultValue": null
+      },
+      {
+        "name": "COUNTY",
+        "type": "esriFieldTypeString",
+        "alias": "County",
+        "sqlType": "sqlTypeOther",
+        "length": 15,
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "FIPS_STCO",
+        "type": "esriFieldTypeInteger",
+        "alias": "State-County ID",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "FOURCOLOR",
+        "type": "esriFieldTypeInteger",
+        "alias": "Four-color code",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "POP1960",
+        "type": "esriFieldTypeInteger",
+        "alias": "1960 Population",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "POP1970",
+        "type": "esriFieldTypeInteger",
+        "alias": "1970 Population",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "POP1980",
+        "type": "esriFieldTypeInteger",
+        "alias": "1980 Population",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "POP1990",
+        "type": "esriFieldTypeInteger",
+        "alias": "1990 Population",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "POP2000",
+        "type": "esriFieldTypeInteger",
+        "alias": "2000 Population",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "POP2010",
+        "type": "esriFieldTypeInteger",
+        "alias": "2010 Population",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "POP2020",
+        "type": "esriFieldTypeInteger",
+        "alias": "2020 Population",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "POPCH10_20",
+        "type": "esriFieldTypeInteger",
+        "alias": "2010-20 Population Change",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "AREA_ACRES",
+        "type": "esriFieldTypeDouble",
+        "alias": "Area in Acres",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "AREA_SQMI",
+        "type": "esriFieldTypeDouble",
+        "alias": "Area in Sq. Miles",
+        "sqlType": "sqlTypeOther",
+        "nullable": true,
+        "editable": true,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Shape__Area",
+        "type": "esriFieldTypeDouble",
+        "alias": "Shape__Area",
+        "sqlType": "sqlTypeDouble",
+        "nullable": true,
+        "editable": false,
+        "domain": null,
+        "defaultValue": null
+      },
+      {
+        "name": "Shape__Length",
+        "type": "esriFieldTypeDouble",
+        "alias": "Shape__Length",
+        "sqlType": "sqlTypeDouble",
+        "nullable": true,
+        "editable": false,
+        "domain": null,
+        "defaultValue": null
+      }
+    ]
+  }
+}

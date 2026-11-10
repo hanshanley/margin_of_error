@@ -1,0 +1,9 @@
+{
+  "source": "https://services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/Boston_Precinct_Boundaries/FeatureServer/0/query?f=json&where=1%3D1&returnIdsOnly=true",
+  "retrieved_at_utc": "2026-11-10T07:31:45.120483+00:00",
+  "only_selected_aggregate_identity_fields_requested": true,
+  "status": 200,
+  "final_url": "https://services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/Boston_Precinct_Boundaries/FeatureServer/0/query?f=json&where=1%3D1&returnIdsOnly=true",
+  "bytes": 1033,
+  "sha256": "c525a4da89540e808b5af6ae448bf1b96fbf179e092d80fcd31f7149a8445905"
+}

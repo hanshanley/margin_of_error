@@ -1,0 +1,49 @@
+{
+  "year": 2026,
+  "boundary_date": "Official native municipal precinct/subprecinct display references, not certified 2026 legal precincts",
+  "states": {
+    "MA": "MA.geojson.gz"
+  },
+  "state_metadata": {
+    "MA": {
+      "source_id": "20261110-massachusetts-native-local-counts-01",
+      "expected_features": 303,
+      "native_source_reporting_rows": 307,
+      "mapped_cities": {
+        "Boston": 275,
+        "Somerville": 28
+      },
+      "held_table_only_reporting_rows": 4,
+      "held_split_parent_units": [
+        "Somerville:Ward:1:Precinct:4",
+        "Somerville:Ward:2:Precinct:1",
+        "Somerville:Ward:4:Precinct:2",
+        "Somerville:Ward:6:Precinct:3"
+      ],
+      "boundary_reference_year": 2022,
+      "certified_legal_precinct_boundaries": false,
+      "counts_only": true,
+      "rates_approved": false,
+      "source_geometry_repaired": false,
+      "source_geometry_clipped": false,
+      "source_native_overlaps_preserved": true,
+      "native_overlap_pairs": 2,
+      "native_vertices_verified": 24968,
+      "source_city_counts": {
+        "Boston": 185569,
+        "Somerville": 64597
+      },
+      "mapped_count_checks_by_city": {
+        "Boston": 185569,
+        "Somerville": 60125
+      },
+      "bytes": 281194,
+      "sha256": "c240fe151cf4c2563874c4980ba977c1ea8818b63d828311c65ca2979986d820",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-massachusetts-native-local-counts-20261110-01/complete-analysis.zip",
+      "area_column_label": "City",
+      "ballot_column_label": "Native reporting-unit count",
+      "boundary_label": "Official native municipal precinct/subprecinct display references, not certified 2026 legal precincts",
+      "notes": "Boston275 / Somerville28 native reference joins. Four Somerville split-parent counts remain table-only; parent polygons are not clipped to invent remainders. All307 raw reporting rows and all351 municipal reference decisions remain in the full download. No rates, source repairs, county allocations or unique-person claims."
+    }
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "status": "PASS_independent_native_field_checks_NOT_geography_or_unique_person_approval",
+  "checks": 18585,
+  "source_query_sha256": "2d1702a8cc2f0948417c4c61036507167cd0472c99dc5684b03f3870f37f6852",
+  "boston_summary_rows": 275,
+  "boston_native_times_cast_rows": 5775,
+  "somerville_native_count_rows": 40,
+  "native_pdf_web_comparisons": [
+    {
+      "native_context": "SENATOR IN CONGRESS (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "GOVERNOR & LIEUTENANT GOVERNOR (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "ATTORNEY GENERAL (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "SECRETARY OF STATE (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "TREASURER (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "AUDITOR (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN CONGRESS SEVENTH DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 121263,
+      "native_web_ballots_cast": 121263,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN CONGRESS EIGHTH DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 64306,
+      "native_web_ballots_cast": 64306,
+      "difference": 0
+    },
+    {
+      "native_context": "COUNCILLOR THIRD DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 21580,
+      "native_web_ballots_cast": 21580,
+      "difference": 0
+    },
+    {
+      "native_context": "COUNCILLOR FOURTH DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 129897,
+      "native_web_ballots_cast": 129897,
+      "difference": 0
+    },
+    {
+      "native_context": "COUNCILLOR SIXTH DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 34092,
+      "native_web_ballots_cast": 34092,
+      "difference": 0
+    },
+    {
+      "native_context": "SENATOR IN GENERAL COURT FIRST SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 53181,
+      "native_web_ballots_cast": 53181,
+      "difference": 0
+    },
+    {
+      "native_context": "SENATOR IN GENERAL COURT SECOND SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 44729,
+      "native_web_ballots_cast": 44729,
+      "difference": 0
+    },
+    {
+      "native_context": "SENATOR IN GENERAL COURT THIRD SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 27019,
+      "native_web_ballots_cast": 27019,
+      "difference": 0
+    },
+    {
+      "native_context": "SENATOR IN GENERAL COURT MIDDLESEX & SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 7073,
+      "native_web_ballots_cast": 7073,
+      "difference": 0
+    },
+    {
+      "native_context": "SENATOR IN GENERAL COURT NORFOLK & SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 31987,
+      "native_web_ballots_cast": 31987,
+      "difference": 0
+    },
+    {
+      "native_context": "SENATOR IN GENERAL COURT SUFFOLK & MIDDLESEX DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 21580,
+      "native_web_ballots_cast": 21580,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT FIRST SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 9985,
+      "native_web_ballots_cast": 9985,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT SECOND SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 8622,
+      "native_web_ballots_cast": 8622,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT THIRD SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 11947,
+      "native_web_ballots_cast": 11947,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT FOURTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 14105,
+      "native_web_ballots_cast": 14105,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT FIFTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 8866,
+      "native_web_ballots_cast": 8866,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT SIXTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 10677,
+      "native_web_ballots_cast": 10677,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT SEVENTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 7161,
+      "native_web_ballots_cast": 7161,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT EIGHTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 11287,
+      "native_web_ballots_cast": 11287,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT NINTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 12043,
+      "native_web_ballots_cast": 12043,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT TENTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 18068,
+      "native_web_ballots_cast": 18068,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT TWELFTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 10909,
+      "native_web_ballots_cast": 10909,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT THIRTEENTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 12744,
+      "native_web_ballots_cast": 12744,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT FOURTEENTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 15251,
+      "native_web_ballots_cast": 15251,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT FIFTEENTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 15286,
+      "native_web_ballots_cast": 15286,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT SEVENTEENTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 10597,
+      "native_web_ballots_cast": 10597,
+      "difference": 0
+    },
+    {
+      "native_context": "REPRESENTATIVE IN GENERAL COURT EIGHTEENTH SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 8021,
+      "native_web_ballots_cast": 8021,
+      "difference": 0
+    },
+    {
+      "native_context": "DISTRICT ATTORNEY SUFFOLK DISTRICT (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "REGISTER OF PROBATE SUFFOLK COUNTY (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "QUESTION 1 (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "QUESTION 2 (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "QUESTION 3 (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "QUESTION 4 (Vote for 1)",
+      "native_pdf_times_cast_sum": 185569,
+      "native_web_ballots_cast": 185569,
+      "difference": 0
+    },
+    {
+      "native_context": "QUESTION 5 (Vote for 1)",
+      "native_pdf_times_cast_sum": 185348,
+      "native_web_ballots_cast": 185348,
+      "difference": 0
+    },
+    {
+      "native_context": "QUESTION 6 (Vote for 1)",
+      "native_pdf_times_cast_sum": 185348,
+      "native_web_ballots_cast": 185348,
+      "difference": 0
+    },
+    {
+      "native_context": "QUESTION 7 (Vote for 1)",
+      "native_pdf_times_cast_sum": 185348,
+      "native_web_ballots_cast": 185348,
+      "difference": 0
+    },
+    {
+      "native_context": "QUESTION 8 (Vote for 1)",
+      "native_pdf_times_cast_sum": 185348,
+      "native_web_ballots_cast": 185348,
+      "difference": 0
+    },
+    {
+      "native_context": "QUESTION 9 (Vote for 1)",
+      "native_pdf_times_cast_sum": 185452,
+      "native_web_ballots_cast": 185452,
+      "difference": 0
+    }
+  ],
+  "times_cast_contexts_with_native_row_differences": [
+    {
+      "native_context": "QUESTION 5 (Vote for 1)",
+      "precinct_rows": 275,
+      "derived_times_cast_sum": 185348,
+      "all_rows_match_senate_native_field": false,
+      "native_field_not_candidate_sum": true
+    },
+    {
+      "native_context": "QUESTION 6 (Vote for 1)",
+      "precinct_rows": 275,
+      "derived_times_cast_sum": 185348,
+      "all_rows_match_senate_native_field": false,
+      "native_field_not_candidate_sum": true
+    },
+    {
+      "native_context": "QUESTION 7 (Vote for 1)",
+      "precinct_rows": 275,
+      "derived_times_cast_sum": 185348,
+      "all_rows_match_senate_native_field": false,
+      "native_field_not_candidate_sum": true
+    },
+    {
+      "native_context": "QUESTION 8 (Vote for 1)",
+      "precinct_rows": 275,
+      "derived_times_cast_sum": 185348,
+      "all_rows_match_senate_native_field": false,
+      "native_field_not_candidate_sum": true
+    },
+    {
+      "native_context": "QUESTION 9 (Vote for 1)",
+      "precinct_rows": 275,
+      "derived_times_cast_sum": 185452,
+      "all_rows_match_senate_native_field": false,
+      "native_field_not_candidate_sum": true
+    }
+  ],
+  "zero_registers_not_analysis_denominators": true,
+  "summary_fields_not_repaired": true,
+  "split_precinct_labels_preserved": true,
+  "source_geography_approved": false
+}

@@ -1,0 +1,147 @@
+{
+  "source": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/Subprecincts2022/FeatureServer/0?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 12696,
+  "sha256": "55a139413e5fed823ae7da7c1bf7daf10b98eaf49d25a0d9b7b1875b11f5837e",
+  "metadata": {
+    "id": 0,
+    "name": "Subprecincts (2022)",
+    "type": "Feature Layer",
+    "geometryType": "esriGeometryPolygon",
+    "objectIdField": "OBJECTID",
+    "maxRecordCount": 2000,
+    "extent": {
+      "ymin": 819561.720800012,
+      "xmin": 97415.2942999974,
+      "ymax": 950077.576100014,
+      "xmax": 305907.409800008,
+      "spatialReference": {
+        "falseM": -100000,
+        "xyTolerance": 0.001,
+        "mUnits": 10000,
+        "zUnits": 10000,
+        "latestWkid": 26986,
+        "zTolerance": 0.001,
+        "wkid": 26986,
+        "xyUnits": 10000,
+        "mTolerance": 0.001,
+        "falseX": -36530900,
+        "falseY": -28803200,
+        "falseZ": -100000
+      }
+    },
+    "fields": [
+      {
+        "modelName": "OBJECTID",
+        "nullable": false,
+        "editable": false,
+        "defaultValue": null,
+        "domain": null,
+        "name": "OBJECTID",
+        "alias": "OBJECTID",
+        "type": "esriFieldTypeOID"
+      },
+      {
+        "modelName": "PARENT_PCT",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "PARENT_PCT",
+        "length": 100,
+        "alias": "Parent Precinct",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "SUBPRECINCT",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "SUBPRECINCT",
+        "length": 15,
+        "alias": "Subprecinct",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "CNGRS_DIST",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "CNGRS_DIST",
+        "length": 50,
+        "alias": "Congressional District",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "HOUSE_DIST",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "HOUSE_DIST",
+        "length": 50,
+        "alias": "House District",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "SENAT_DIST",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "SENAT_DIST",
+        "length": 50,
+        "alias": "Senate District",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "TOWN",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "TOWN",
+        "length": 30,
+        "alias": "Town",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "TOWN_ID",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "TOWN_ID",
+        "alias": "Town ID",
+        "type": "esriFieldTypeSmallInteger"
+      },
+      {
+        "modelName": "SHAPE.AREA",
+        "nullable": true,
+        "editable": false,
+        "defaultValue": null,
+        "domain": null,
+        "name": "Shape__Area",
+        "alias": "SHAPE.AREA",
+        "type": "esriFieldTypeDouble",
+        "required": true
+      },
+      {
+        "modelName": "SHAPE.LEN",
+        "nullable": true,
+        "editable": false,
+        "defaultValue": null,
+        "domain": null,
+        "name": "Shape__Length",
+        "alias": "SHAPE.LEN",
+        "type": "esriFieldTypeDouble",
+        "required": true
+      }
+    ],
+    "description": "<DIV STYLE=\"text-align:Left;\"><DIV><DIV><P><SPAN>After every national decennial census, voting districts are redelineated to accommodate changes in both population counts and the location of those populations to achieve equitable representation in government. This process is commonly referred to as \u201credistricting\u201d when it affects districts at the federal level (Congressional districts) and the state level (State House and State Senate legislative districts, and the Governor\u2019s Council districts), and as \u201creprecincting\u201d when it affects districts at the local level (municipal wards and precincts). An additional distinction is that the districts at the federal and state levels are voted on and approved by the state legislature and Governor whereas wards and precincts are approved by the Local Election Districts Review Commission (LEDRC) in accordance with state law.</SPAN></P><P><SPAN>Redistricting and reprecincting make use of the updated Census geography and population counts produced for that purpose in the U.S. Census Redistricting File (Public Law 94-171) Dataset. However, operational challenges encountered during the COVID-19 pandemic delayed the release of the 2020 U.S. Census redistricting file by several months. In previous decennial efforts, cities and towns have used that data to update their local voting district boundaries as a precursor to those updated wards and precincts being used in the redistricting efforts at the state and federal levels. But in October 2021 legislation was passed that allowed State and Congressional voting districts to be updated before the local reprecincting updates were complete. State and Congressional voting districts were updated and legally approved in November of 2021, influenced by ward and precinct boundaries established after the 2010 Census, not the 2020 Census.</SPAN></P><UL><LI><P><SPAN>Congressional Districts, Chapter 93 of the Acts of 2021: https://malegislature.gov/Laws/SessionLaws/Acts/2021/Chapter93</SPAN></P></LI><LI><P><SPAN>Representative Districts, Chapter 83 of the Acts of 2021: https://malegislature.gov/Laws/SessionLaws/Acts/2021/Chapter83</SPAN></P></LI><LI><P><SPAN>Senatorial Districts, Chapter 82 of the Acts of 2021: https://malegislature.gov/Laws/SessionLaws/Acts/2021/Chapter82</SPAN></P></LI><LI><P><SPAN>Governor\u2019s Council, Chapter 92 of the Acts of 2021: https://malegislature.gov/Laws/SessionLaws/Acts/2021/Chapter92</SPAN></P></LI></UL><P><SPAN>When the local wards and precincts were fully updated and approved by the revised December 15, 2021 deadline set by the October 2021 legislation, many of the redelineated precincts had partial areas assigned to different updated State and/or Congressional districts than other areas within the same precinct. Functionally, this means voters in each of these precincts have the same voting options and representatives in local government elections but are split up in State and/or Congressional elections. To ensure ballots with the correct voting options are generated for each voter in these precincts, subprecincts have been defined, named, and developed as a geographic data set by the Secretary of the Commonwealth\u2019s Elections Division.</SPAN></P><P><SPAN>Subprecincts represent areas within individual precincts that have been assigned to a State and/or Congressional voting district that is different than those assigned to other areas within that same precinct. The determination of which portion of the precinct is classified as a subprecinct area is established through geographic identification of the 2020 Census blocks and tracts assigned to State and/or Congressional districts in the legislation. Subprecinct boundaries are coincident with the \u201cparent\u201d precinct boundary except where the split in State and/or Congressional representation occurs; in those locations the subprecinct boundary is coincident with the State and/or Congressional voting district boundary.</SPAN></P><P><SPAN>The layer is named SUPRECINCTS2022_POLY.</SPAN></P></DIV></DIV></DIV>",
+    "supportedQueryFormats": "JSON, geoJSON, PBF"
+  }
+}

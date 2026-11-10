@@ -1,0 +1,19 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-massachusetts-native-local-counts-20261110-01/complete-analysis.zip",
+  "bytes": 21432354,
+  "sha256": "ab8248dffc6667b6f5e1f28f4b2d7937d6b2c3fcc528f51be328b5f56790e896",
+  "members": 100,
+  "sufficient_inputs": 67,
+  "full_PDFs": 4,
+  "full_pages": 648,
+  "full_original_PDF_bytes": 7175614,
+  "native_reporting_rows": 307,
+  "mapped_reporting_references": 303,
+  "municipal_reference_decisions": 351,
+  "invalid_municipal_geometry_holds": 1,
+  "split_parent_holds": 4,
+  "complete_pair_decisions": 99484,
+  "source_counts_repaired": false,
+  "geometry_clipped": false,
+  "analysis_rates_approved": false
+}

@@ -1,0 +1,28 @@
+{
+  "source": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Municipalities_Hosted/FeatureServer?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 5053,
+  "sha256": "955352e8c6da50ee3e9a91556d0e2aab130304a69c8decd39bc983d5f1f2b61c",
+  "metadata": {
+    "serviceItemId": "54538f2f92d04c34957e6c2d460d0e5a",
+    "spatialReference": {
+      "wkid": 26986,
+      "latestWkid": 26986
+    },
+    "layers": [
+      {
+        "id": 0,
+        "name": "Municipalities (Multi-part with Generalized Coast)",
+        "parentLayerId": -1,
+        "defaultVisibility": true,
+        "subLayerIds": null,
+        "minScale": 0,
+        "maxScale": 0,
+        "type": "Feature Layer",
+        "geometryType": "esriGeometryPolygon"
+      }
+    ],
+    "maxRecordCount": 1000
+  }
+}

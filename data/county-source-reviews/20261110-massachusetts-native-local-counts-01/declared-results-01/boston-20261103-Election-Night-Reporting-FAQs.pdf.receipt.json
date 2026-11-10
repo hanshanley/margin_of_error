@@ -1,0 +1,15 @@
+{
+  "source": "https://www.boston.gov/sites/default/files/file/2026/11/20261103-Election-Night-Reporting-FAQs.pdf",
+  "city": "boston",
+  "declaration_source": "https://www.boston.gov/departments/elections/unofficial-election-results",
+  "retrieved_at_utc": "2026-11-10T07:17:29.322012+00:00",
+  "complete_original_requested": true,
+  "guessed_download": false,
+  "analysis_rates_approved": false,
+  "status": 200,
+  "final_url": "https://www.boston.gov/sites/default/files/file/2026/11/20261103-Election-Night-Reporting-FAQs.pdf",
+  "bytes": 62623,
+  "sha256": "d6172d5950d36e0c50c947f2e5c761e960470aeaf1828fdfe35ec76fb6881957",
+  "pages": 2,
+  "first_page_native_text": "When will election results be available at the precinct polling location? \nPer regulation, after all ballots cast at a polling location have been processed, poll workers \nwill print a tally slip from the voting machine for each precinct and post it at the polling \nlocation for public observation. This typically happens by 8:30 p.m. \nPlease note that the precinct tally slip posted at the polling location will not include: \n\u25cf\u200b Early and absentee ballots processed at the Central Tabulation Facility \n\u25cf\u200b Ballots that need to be hand-counted \n\u25cf\u200b Specific write-in votes \nWhy are some outlets able to report election results much sooner? \nCampaign volunteers and members of the media are welcome to visit polling locations to \nwait for unofficial results to be posted in person. As a result, some news outlets and \ncampaigns may report results earlier than the Election Department. This is because certain \ncampaigns have the resources to assign volunteers to all 275 precincts, allowing them to \nview and report the printed results that are publicly posted at each location. \nWhen will the results from Central Tabulation be available? \nProcessing and tabulation of ballots began in advance, during the week before Election Day, \nand will continue through Election Day. All early and absentee ballots processed by 5 p.m. \non the Friday before Election Day will be tabulated at City Hall. \nTo obtain results from the tabulators used at the Central Tabulation Facility, each of the 275 \nprecincts must be closed out individually. Under the law, the process of closing precincts \ncannot begin until after 8:00 p.m. on Election Day. \nThe results from each precinct processed at the Central Tabulation will be posted in a \npublicly accessible area within the Election Department as soon as all precincts have been \nclosed out. These results will also be posted online on the Unofficial Results page under the \nheader \u201cCentral Tabulation.\u201d \nWe expect that this will occur by approximately 9:30 p.m. \nOnline Posting of Unofficial Results \nWhen will Election Night results be uploaded to the city's website? \nUnofficial Election Night results will be uploaded to our website as soon as they are \navailable. We expect to begin posting precinct results by 10 p.m. Results will continue to be \nuploaded by precinct throughout the night, until all precincts have reported. \n"
+}

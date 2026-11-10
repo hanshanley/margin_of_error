@@ -3,3 +3,6 @@ public/participation-methods/** -text whitespace=cr-at-eol
 data/county-source-reviews/20261109-hawaii-administrations-01/originals/media.txt -text whitespace=-trailing-space,cr-at-eol
 data/county-source-reviews/20261109-provider-county-frames-01/legacy-early-voting.csv -text whitespace=cr-at-eol
 data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-adopted2021-native-count.json -text whitespace=cr-at-eol
+data/county-source-reviews/20261110-massachusetts-native-local-counts-01/native-count-review-01/boston-all-native-times-cast.csv -text whitespace=cr-at-eol
+data/county-source-reviews/20261110-massachusetts-native-local-counts-01/native-count-review-01/boston-summary-native.csv -text whitespace=cr-at-eol
+data/county-source-reviews/20261110-massachusetts-native-local-counts-01/native-count-review-01/somerville-native-counts.csv -text whitespace=cr-at-eol

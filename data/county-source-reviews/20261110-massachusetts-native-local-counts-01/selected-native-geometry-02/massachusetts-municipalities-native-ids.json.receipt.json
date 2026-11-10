@@ -1,0 +1,9 @@
+{
+  "source": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Municipalities_Hosted/FeatureServer/0/query?f=json&where=1%3D1&returnIdsOnly=true",
+  "retrieved_at_utc": "2026-11-10T07:36:03.248380+00:00",
+  "only_selected_aggregate_identity_fields_requested": true,
+  "status": 200,
+  "final_url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Municipalities_Hosted/FeatureServer/0/query?f=json&where=1%3D1&returnIdsOnly=true",
+  "bytes": 1342,
+  "sha256": "5224525cbfafa599a7170ca287ab0fffc044350a2a894c73ca7030c4d2445db9"
+}

@@ -139,6 +139,17 @@ counts; no source repair, allocation or turnout rate is enabled. The complete
 ward release includes every prior city original, full ward-reference inputs,
 all mapped/held decisions and exact offline reproduction.
 
+Massachusetts adds Boston/Somerville source counts, not statewide/county totals
+or unique-person turnout. Boston's 185,569 native Times Cast is separate from
+summary Voters Cast 556,369 / registered 0 / N/A. Somerville's printed 64,597
+ballots and 56,008 registrations remain literal; its page/PDF status labels
+disagree. All 307 reporting rows are retained; 303 have unchanged native
+references, while four split-parent count joins stay table-only without clipping.
+The municipal frame retains all 351 source decisions and displays 350 valid
+originals; invalid Wayland is held, not repaired. Per-product datum operations
+and full numerical queries reproduce offline. Keep all analysis rates null,
+source modes separate, existing routes intact and Methods short.
+
 The live opt-in additionally reads Michigan's explicit Bay and Isabella county
 parents through `scripts/michigan-county-parents.mjs`. It preserves all 63
 reporting-unit rows, Bay's 43-versus-35 reporting counter and Isabella's 22-ballot

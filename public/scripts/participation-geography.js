@@ -162,6 +162,9 @@ export function hasCountySourceMode(code, mode) {
 }
 
 export function selectCountySourceFrame(data, code, mode) {
+  if (["in_person_early", "mail_returned"].includes(mode)
+    && data.counties.some(row => row.state_code === code && row.source_mode === "all_method_native_city_snapshot"))
+    return [];
   if (code === "IL" && mode === "available"
     && !data.counties.some(row => row.state_code === code && row.ballots != null))
     return selectCountySourceFrame(data, code, "in_person_early");
@@ -318,6 +321,90 @@ export function qualifiedNewHampshireCityReference(rows, reference, collection) 
         && Number.isSafeInteger(r.total) && r.total >= 0)
       && source.wards.reduce((s, r) => s + r.total, 0) === row.ballots;
   });
+}
+
+export function qualifiedMassachusettsCityReference(rows, reference, collection) {
+  const expected = new Map([["Boston", ["MA:TOWN:035", 185569]], ["Somerville", ["MA:TOWN:274", 64597]]]);
+  if (!Array.isArray(rows) || rows.length !== 2
+    || reference?.review_id !== "20261110-massachusetts-native-local-counts-01"
+    || reference.geography_scope !== "native_partial_city_reporting_context"
+    || reference.boundary_year !== null || reference.localities !== 350
+    || reference.native_source_localities !== 351 || reference.mapped_localities !== 2
+    || reference.certified_election_boundaries !== false || reference.source_geometries_repaired !== false
+    || reference.geometry_holds?.length !== 1 || reference.geometry_holds[0].native_town_id !== 315
+    || collection?.features?.length !== 350) return false;
+  const identities = new Set(collection.features.map(feature => feature.properties?.key));
+  if (identities.size !== 350 || new Set(rows.map(row => row.county)).size !== 2
+    || collection.features.some(feature => !["Polygon", "MultiPolygon"].includes(feature.geometry?.type)
+      || feature.properties.state_code !== "MA" || feature.properties.level !== "municipality"
+      || feature.properties.boundary_year !== null || feature.properties.native_town_id === 315
+      || feature.properties.topology_valid_without_repairs !== true
+      || feature.properties.certified_legal_boundaries !== false)) return false;
+  return rows.every(row => {
+    const profile = expected.get(row.county), source = row.native_record;
+    if (!profile || row.reference_municipality_key !== profile[0] || !identities.has(profile[0])
+      || row.ballots !== profile[1] || row.year !== 2026 || row.state_code !== "MA"
+      || row.geography_level !== "municipality" || row.county_fips !== null
+      || row.county_id !== `additional:MA:city:${profile[0]}` || row.source_city_name !== row.county
+      || row.source_mode !== "all_method_native_city_snapshot"
+      || row.native_election_id_qualified !== true || row.source_election_date !== "2026-11-03"
+      || row.cast_ballot_count_qualified !== false || row.unique_voter_count_qualified !== false
+      || row.denominator !== null || row.reported_pct !== null
+      || source?.native_city_ballots_cast !== row.ballots) return false;
+    if (row.county === "Boston")
+      return source.native_summary_voters_cast === 556369 && source.native_summary_registered === 0
+        && source.native_summary_pct === "N/A" && source.native_context_checks?.length === 44
+        && source.native_context_checks.slice(0, 6).every(check => check.precinct_rows === 275
+          && check.derived_times_cast_sum === 185569 && check.all_rows_match_senate_native_field === true);
+    return source.native_registered_voters === 56008 && source.original_page_status === "Official"
+      && source.original_document_status === "UnOfficial" && source.all_source_reporting_rows?.length === 40
+      && source.all_source_reporting_rows.filter(unit => unit.native_level === "precinct").length === 32
+      && source.all_source_reporting_rows.filter(unit => unit.native_level === "precinct")
+        .reduce((sum, unit) => sum + unit.ballots_cast_literal, 0) === 64597;
+  });
+}
+
+export function qualifiedMassachusettsReportingReference(p) {
+  const reference = p?.reference_geometry;
+  if (p?.source_snapshot !== "20261110-massachusetts-native-local-counts-01"
+    || p.year !== 2026 || p.state_code !== "MA" || p.source_election_date !== "2026-11-03"
+    || !["Boston", "Somerville"].includes(p.county) || p.county_fips !== null
+    || p.source_count_qualified !== true || p.cast_ballot_count_qualified !== false
+    || p.unique_voter_count_qualified !== false || p.maps_approved !== true
+    || !Number.isSafeInteger(p.ballots) || p.ballots < 0
+    || p.denominator !== null || p.reported_pct !== null || p.geometry_withheld_reason !== null
+    || reference?.rest_layer_id !== 0 || reference.boundary_vintage !== 2022
+    || reference.certified_legal_boundaries !== false || reference.topology_valid_without_repairs !== true
+    || reference.single_path_per_polygon !== true || reference.native_overlaps_preserved !== true
+    || reference.source_geometry_clipped !== false) return false;
+  const ward = String(p.native_ward_number), precinct = p.native_precinct_label;
+  const unitKey = `${p.county}:Ward:${ward}:Precinct:${precinct}`;
+  if (p.unit_key !== unitKey || p.key !== `MA|${unitKey}`
+    || p.county_id !== `additional:MA:city:MA:TOWN:${p.county === "Boston" ? "035" : "274"}`
+    || p.native_record?.ward !== ward || p.native_record?.precinct !== precinct
+    || !Number.isInteger(p.native_object_id)) return false;
+  if (p.county === "Boston")
+    return /^[1-9]\d*$/.test(precinct) && p.native_ward_number >= 1 && p.native_ward_number <= 22
+      && p.unit_kind === "municipal_precinct" && p.reporting_unit_kind === "municipal_precinct"
+      && reference.source_item_id === "a8ae7fca286d4441901a97d116d6c9fa"
+      && reference.native_reference_source === "boston" && reference.native_projection_epsg === 3857
+      && p.native_record.times_cast_literal === p.ballots && p.native_record.registered_voters_literal === 0
+      && p.participation_measure_label === "Native Times Cast";
+  if (p.native_ward_number < 1 || p.native_ward_number > 7
+    || p.native_record.ballots_cast_literal !== p.ballots
+    || p.native_record.source_document_literal_status !== "UnOfficial"
+    || p.native_record.declaring_page_heading_literal_status !== "Official"
+    || p.participation_measure_label !== "Native BALLOTS CAST - TOTAL"
+    || reference.native_projection_epsg !== 26986) return false;
+  if (precinct?.endsWith("A"))
+    return ["1:4A", "2:1A", "4:2A", "6:3A"].includes(`${ward}:${precinct}`)
+      && p.unit_kind === "municipal_subprecinct" && p.reporting_unit_kind === "municipal_subprecinct"
+      && reference.source_item_id === "c96fa785cc694bcdbc07032be7d9365a"
+      && reference.native_reference_source === "somerville-subprecincts";
+  return /^[1-4]$/.test(precinct) && !["1:4", "2:1", "4:2", "6:3"].includes(`${ward}:${precinct}`)
+    && p.unit_kind === "municipal_precinct" && p.reporting_unit_kind === "municipal_precinct"
+    && reference.source_item_id === "6d4ae7efad4f4c77907db7cbfb012e64"
+    && reference.native_reference_source === "somerville-parent-precincts";
 }
 
 export function qualifiedProviderCountyFrame(rows, code, mode) {

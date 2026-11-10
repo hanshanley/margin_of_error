@@ -1,0 +1,31 @@
+{
+  "boston": {
+    "source": "https://www.boston.gov/departments/elections/unofficial-election-results",
+    "original_bytes": 392174,
+    "original_sha256": "e3efd62caa9f53faf1c10fea88ba58c78930748eb1711b896e3d8c72218e0a64",
+    "selected_public_declaration_sha256": "937c947465bf21ca5f7f7cfd4c1819885073b7cc738636958fe4de72eec871fe",
+    "all44_native_aggregate_tables_retained": true,
+    "unrelated_navigation_contacts_scripts_and_keys_excluded": true
+  },
+  "somerville": {
+    "source": "https://www.somervillema.gov/votesomerville",
+    "original_bytes": 85455,
+    "original_sha256": "8e2e38c17bcd5c119ebd811004021cae26a73c3156e9712479fa4bd588507908",
+    "native_result_heading": "November 3, 2026 State Official Results",
+    "native_download_label": "Download the UnOfficial Election Totals",
+    "declared_result_links": [
+      {
+        "label": "Jump to November 3, 2026 State Official Results",
+        "url": "https://www.somervillema.gov/votesomerville#results"
+      },
+      {
+        "label": "Jump to Past Results",
+        "url": "https://www.somervillema.gov/votesomerville#past-results"
+      },
+      {
+        "label": "Download the UnOfficial Election Totals",
+        "url": "https://s3.amazonaws.com/somervillema-live/s3fs-public/election-results-preliminary-20261103.pdf"
+      }
+    ]
+  }
+}

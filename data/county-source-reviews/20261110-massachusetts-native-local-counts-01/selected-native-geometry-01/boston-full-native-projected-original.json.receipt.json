@@ -1,0 +1,9 @@
+{
+  "source": "https://services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/Boston_Precinct_Boundaries/FeatureServer/0/query?where=1%3D1&outFields=FID%2CWDPCT%2CWard1%2CPrecinct1&returnGeometry=true&f=json&outSR=3857",
+  "retrieved_at_utc": "2026-11-10T07:31:45.766533+00:00",
+  "only_selected_aggregate_identity_fields_requested": true,
+  "status": 200,
+  "final_url": "https://services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/Boston_Precinct_Boundaries/FeatureServer/0/query?where=1%3D1&outFields=FID%2CWDPCT%2CWard1%2CPrecinct1&returnGeometry=true&f=json&outSR=3857",
+  "bytes": 680600,
+  "sha256": "fb6e8865f73820504c0ea8634676a484265fb1e1d4c90a5fe21f34a5a8e21a59"
+}

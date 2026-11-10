@@ -1,0 +1,9 @@
+{
+  "source": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/Subprecincts2022/FeatureServer/0/query?where=UPPER%28TOWN%29%3D%27SOMERVILLE%27&outFields=OBJECTID%2CTOWN%2CPARENT_PCT%2CSUBPRECINCT&returnGeometry=true&f=geojson&outSR=4326",
+  "retrieved_at_utc": "2026-11-10T07:31:50.964619+00:00",
+  "only_selected_aggregate_identity_fields_requested": true,
+  "status": 200,
+  "final_url": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/Subprecincts2022/FeatureServer/0/query?where=UPPER%28TOWN%29%3D%27SOMERVILLE%27&outFields=OBJECTID%2CTOWN%2CPARENT_PCT%2CSUBPRECINCT&returnGeometry=true&f=geojson&outSR=4326",
+  "bytes": 13303,
+  "sha256": "4107efdf8581917fc70060e477024918faf1b970ae6fc635df90b17ded4cfc73"
+}

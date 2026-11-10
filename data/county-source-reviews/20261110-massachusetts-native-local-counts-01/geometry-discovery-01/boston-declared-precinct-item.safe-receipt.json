@@ -1,0 +1,16 @@
+{
+  "source": "https://boston.maps.arcgis.com/sharing/rest/content/items/a8ae7fca286d4441901a97d116d6c9fa?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 4114,
+  "sha256": "026c9a3e703ab6424b1410f9ba749bf599d6092669c56c4798100497e7f51116",
+  "metadata": {
+    "id": "a8ae7fca286d4441901a97d116d6c9fa",
+    "title": "Boston Precinct Boundaries",
+    "type": "Feature Service",
+    "url": "https://services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/Boston_Precinct_Boundaries/FeatureServer",
+    "access": "public",
+    "description": "<span style='font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size:16px;'>The precincts displayed on this map were developed based on the 2020 U.S Census blocks and revised by the City of Boston Election Commission to conform to the voting precinct guidelines. These precincts were adopted in 2022 by the Board of Election Commission and by the MA State Legislature. Sources: U.S. Census, voter Registration database, and Massachusetts Secretary of the Commonwealth. This map is intended for planning and visualization purposes only.</span>",
+    "spatialReference": "102100"
+  }
+}

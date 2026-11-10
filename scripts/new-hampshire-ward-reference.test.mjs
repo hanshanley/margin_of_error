@@ -19,7 +19,7 @@ test('preserves every Manchester feature and adds ten literal Concord counts wit
   assert.equal(index.state_metadata.NH.held_table_only_ward_rows,15);
   assert.equal(index.state_metadata.NH.boundary_reference_years.Concord,null);
   const registry = JSON.parse(readFileSync('public/participation-precincts.json','utf8'));
-  assert.equal(registry.additional_sources.length,4);
+  assert.equal(registry.additional_sources.filter(r => !r.base_url.includes('20261110-massachusetts-native-local-counts-01')).length,4);
   assert.equal(registry.additional_sources.filter(r =>
     /^\/participation-precincts\/20261110-new-hampshire-ward-reference-0[23]\/$/.test(r.base_url)).length,1);
 });

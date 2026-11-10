@@ -1,0 +1,27 @@
+{
+  "status": "PASS_full_native_reference_extension_review_NOT_website_acceptance",
+  "native_parent_precincts": 28,
+  "qualified_parent_count_joins": 24,
+  "split_parent_holds": 4,
+  "native_municipalities": 351,
+  "qualified_municipal_geometry": 350,
+  "municipality_geometry_holds": [
+    {
+      "OBJECTID": 221,
+      "TOWN": "WAYLAND",
+      "TOWN_ID": 315,
+      "COUNTY": "MIDDLESEX",
+      "FIPS_STCO": 25017
+    }
+  ],
+  "source_city_observations": 2,
+  "source_precinct_count_rows": 307,
+  "total_qualified_reporting_references": 303,
+  "checked_native_vertices": 405270,
+  "pair_decisions": 61803,
+  "held_invalid_pair_decisions": 350,
+  "positive_native_overlap_pairs": 0,
+  "maximum_projection_error_degrees": 9.40822530992591e-10,
+  "no_clipping_allocation_source_repair_or_rates": true,
+  "maps_approved": false
+}

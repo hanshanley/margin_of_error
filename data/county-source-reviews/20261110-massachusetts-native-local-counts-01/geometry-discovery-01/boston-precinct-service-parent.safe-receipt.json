@@ -1,0 +1,30 @@
+{
+  "source": "https://services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/Boston_Precinct_Boundaries/FeatureServer?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 3243,
+  "sha256": "34240163e13db68002f3d649f593dae5d33f13f443ed1b6e783e4325676914dd",
+  "metadata": {
+    "description": "",
+    "serviceDescription": "",
+    "serviceItemId": "a8ae7fca286d4441901a97d116d6c9fa",
+    "spatialReference": {
+      "wkid": 102100,
+      "latestWkid": 3857
+    },
+    "layers": [
+      {
+        "id": 0,
+        "name": "Boston Precinct Boundaries",
+        "parentLayerId": -1,
+        "defaultVisibility": true,
+        "subLayerIds": null,
+        "minScale": 1155582,
+        "maxScale": 2256,
+        "type": "Feature Layer",
+        "geometryType": "esriGeometryPolygon"
+      }
+    ],
+    "capabilities": "Query,Extract"
+  }
+}

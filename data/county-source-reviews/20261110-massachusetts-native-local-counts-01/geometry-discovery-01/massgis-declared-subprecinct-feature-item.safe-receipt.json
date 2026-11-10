@@ -1,0 +1,15 @@
+{
+  "source": "https://massgis.maps.arcgis.com/sharing/rest/content/items/c96fa785cc694bcdbc07032be7d9365a?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 4081,
+  "sha256": "7f6478eed07349e70f4b23d36f797bbddbc3a02e9b21c1345ebe496249643584",
+  "item": {
+    "id": "c96fa785cc694bcdbc07032be7d9365a",
+    "title": "Subprecincts 2022 (Feature Service)",
+    "type": "Feature Service",
+    "url": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/Subprecincts2022/FeatureServer",
+    "access": "public",
+    "orgId": "hGdibHYSPO59RG1h"
+  }
+}

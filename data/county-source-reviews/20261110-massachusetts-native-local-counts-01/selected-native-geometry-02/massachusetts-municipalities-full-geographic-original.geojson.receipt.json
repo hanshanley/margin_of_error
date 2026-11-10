@@ -1,0 +1,9 @@
+{
+  "source": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Municipalities_Hosted/FeatureServer/0/query?where=1%3D1&outFields=OBJECTID%2CTOWN%2CTOWN_ID%2CCOUNTY%2CFIPS_STCO&returnGeometry=true&f=geojson&outSR=4326",
+  "retrieved_at_utc": "2026-11-10T07:36:03.448583+00:00",
+  "only_selected_aggregate_identity_fields_requested": true,
+  "status": 200,
+  "final_url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Municipalities_Hosted/FeatureServer/0/query?where=1%3D1&outFields=OBJECTID%2CTOWN%2CTOWN_ID%2CCOUNTY%2CFIPS_STCO&returnGeometry=true&f=geojson&outSR=4326",
+  "bytes": 14881055,
+  "sha256": "dd79817fa581801c5617e51f213119c277edd9ad9a9a71a7675881f74687a97c"
+}

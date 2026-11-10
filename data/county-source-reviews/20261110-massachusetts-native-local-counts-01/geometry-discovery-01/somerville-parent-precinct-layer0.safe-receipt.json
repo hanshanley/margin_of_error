@@ -1,0 +1,178 @@
+{
+  "source": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/WardsPrecincts2022/FeatureServer/0?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 8877,
+  "sha256": "6d90a416097f8d69dd18f30d11dbeb3f70fc4107b74c6fa2a54ec6d591a49dd9",
+  "metadata": {
+    "id": 0,
+    "name": "Wards and Precincts 2022",
+    "serviceItemId": "",
+    "spatialReference": {
+      "falseM": -100000,
+      "xyTolerance": 0.001,
+      "mUnits": 10000,
+      "zUnits": 1,
+      "latestWkid": 26986,
+      "zTolerance": 2,
+      "wkid": 26986,
+      "xyUnits": 122610652.81195112,
+      "mTolerance": 0.001,
+      "falseX": -36530900,
+      "falseY": -28803200,
+      "falseZ": 0
+    },
+    "geometryType": "esriGeometryPolygon",
+    "objectIdField": "OBJECTID",
+    "maxRecordCount": 2000,
+    "extent": {
+      "ymin": 777634.4492000011,
+      "xmin": 33863.749499999,
+      "ymax": 959743.016399998,
+      "xmax": 330838.819700003,
+      "spatialReference": {
+        "falseM": -100000,
+        "xyTolerance": 0.001,
+        "mUnits": 10000,
+        "zUnits": 1,
+        "latestWkid": 26986,
+        "zTolerance": 2,
+        "wkid": 26986,
+        "xyUnits": 122610652.81195112,
+        "mTolerance": 0.001,
+        "falseX": -36530900,
+        "falseY": -28803200,
+        "falseZ": 0
+      }
+    },
+    "fields": [
+      {
+        "modelName": "OBJECTID",
+        "nullable": false,
+        "editable": false,
+        "defaultValue": null,
+        "domain": null,
+        "name": "OBJECTID",
+        "alias": "OBJECTID",
+        "type": "esriFieldTypeOID"
+      },
+      {
+        "modelName": "WARD",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "WARD",
+        "length": 5,
+        "alias": "Ward",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "PRECINCT",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "PRECINCT",
+        "length": 5,
+        "alias": "Precinct",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "WP_DISTRICT",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "WP_DISTRICT",
+        "length": 12,
+        "alias": "Ward and Precinct District",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "WP_NAME",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "WP_NAME",
+        "length": 100,
+        "alias": "Ward and Precinct name",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "TOWN",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "TOWN",
+        "length": 30,
+        "alias": "Town",
+        "type": "esriFieldTypeString"
+      },
+      {
+        "modelName": "TOWN_ID",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "TOWN_ID",
+        "alias": "Town ID",
+        "type": "esriFieldTypeSmallInteger"
+      },
+      {
+        "modelName": "POP_2020",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "POP_2020",
+        "alias": "Population 2020",
+        "type": "esriFieldTypeInteger"
+      },
+      {
+        "modelName": "AREA_MILES",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "AREA_MILES",
+        "alias": "Area in sq. miles",
+        "type": "esriFieldTypeDouble"
+      },
+      {
+        "modelName": "PERIMETER_MILES",
+        "nullable": true,
+        "editable": true,
+        "defaultValue": null,
+        "domain": null,
+        "name": "PERIMETER_MILES",
+        "alias": "Perimeter in miles",
+        "type": "esriFieldTypeDouble"
+      },
+      {
+        "modelName": "SHAPE.AREA",
+        "nullable": true,
+        "editable": false,
+        "defaultValue": null,
+        "domain": null,
+        "name": "Shape__Area",
+        "alias": "SHAPE.AREA",
+        "type": "esriFieldTypeDouble",
+        "required": true
+      },
+      {
+        "modelName": "SHAPE.LEN",
+        "nullable": true,
+        "editable": false,
+        "defaultValue": null,
+        "domain": null,
+        "name": "Shape__Length",
+        "alias": "SHAPE.LEN",
+        "type": "esriFieldTypeDouble",
+        "required": true
+      }
+    ]
+  }
+}

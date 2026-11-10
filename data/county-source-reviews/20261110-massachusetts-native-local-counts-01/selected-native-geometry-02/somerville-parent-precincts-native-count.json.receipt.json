@@ -1,0 +1,9 @@
+{
+  "source": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/WardsPrecincts2022/FeatureServer/0/query?f=json&where=UPPER%28TOWN%29%3D%27SOMERVILLE%27&returnCountOnly=true",
+  "retrieved_at_utc": "2026-11-10T07:35:56.919439+00:00",
+  "only_selected_aggregate_identity_fields_requested": true,
+  "status": 200,
+  "final_url": "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/WardsPrecincts2022/FeatureServer/0/query?f=json&where=UPPER%28TOWN%29%3D%27SOMERVILLE%27&returnCountOnly=true",
+  "bytes": 12,
+  "sha256": "48270895c6bf4f32f711afaaa3b45131564a9c92240e6ed2400fa43e2c414d7c"
+}

@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, qualifiedManchesterWardReference, qualifiedConcordWardReference, qualifiedNashuaWardReference, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference, qualifiedNewHampshireCityReference } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, qualifiedManchesterWardReference, qualifiedConcordWardReference, qualifiedNashuaWardReference, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference, qualifiedNewHampshireCityReference, qualifiedMassachusettsCityReference, qualifiedMassachusettsReportingReference } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -424,7 +424,7 @@ function stateParticipationRows() {
     const electorateLabel = row => row.denominator_basis.replaceAll("_", " ");
     const participationLabel = row => row.participation_measure_label || row.participation_measure_literal;
     function currentCountDetail(host, row, county = false) {
-      const approvedGeometry = row.maps_approved || ["MI", "NH"].includes(row.state_code)
+      const approvedGeometry = row.maps_approved || ["MI", "NH", "MA"].includes(row.state_code)
         && state.currentPrecinctShapes.get(row.state_code)?.features.some(({ properties: p }) =>
           p.maps_approved && p.unit_key === row.unit_key && p.county_id === row.county_id);
       host.replaceChildren(html("h4", "", county ? row.county : row.unit),
@@ -436,8 +436,10 @@ function stateParticipationRows() {
             : row.native_record?.all_statistics_reported === "false"
               ? "County total not supplied · incomplete native statistics" : "County total not supplied · select a source reporting unit"
           : row.review_id ? `2026 ${participationLabel(row) || "ballots reported"} · not final/certified` : "2026 ballots reported · unofficial"),
-        html("p", "selection-note", `${fmt(row.denominator)} ${electorateLabel(row)}; `
-          + `${pct(row.reported_pct)} ${participationLabel(row) || "reported-ballot"} fraction. Not final turnout or a CPS estimate.`),
+        html("p", "selection-note", row.source_mode === "all_method_native_city_snapshot"
+          ? "Native source counts only. Registered fields remain separate; no unique-person count or analysis turnout rate is qualified."
+          : `${fmt(row.denominator)} ${electorateLabel(row)}; `
+            + `${pct(row.reported_pct)} ${participationLabel(row) || "reported-ballot"} fraction. Not final turnout or a CPS estimate.`),
         html("p", "selection-note", `Source update: ${row.source_update_label || "not supplied"}. `
           + row.quality.join(" ")), sourceLink(row));
       if (row.review_id) {
@@ -448,6 +450,7 @@ function stateParticipationRows() {
           + "Printed and calculated values are separate; neither establishes finished counting."),
           html("p", "selection-note", row.source_reporting_label));
         const complete = html("a", "source-link", row.geography_level === "municipality"
+          || row.source_mode === "all_method_native_city_snapshot"
           ? "Complete locality tables and source package" : "Complete county tables and source package");
         complete.href = row.complete_download_url; host.append(complete);
         if (!county) host.append(html("p", "selection-note",
@@ -455,7 +458,7 @@ function stateParticipationRows() {
           + (approvedGeometry ? row.state_code === "NH"
             ? `A separate review qualifies current ${row.county} municipal ward context, not newly certified2026 legal precincts; the original source counts and withheld rate remain unchanged.`
             : "A separate subsequent review qualifies this direct-count precinct identity; the original source review and withheld rate remain unchanged."
-            : "This source row is not approved as precinct geography.")));
+            : row.geometry_withheld_reason || "This source row is not approved as precinct geography.")));
       } else if (county) host.append(html("p", "selection-note",
         `${fmt(row.reported_units)} / ${fmt(row.total_units)} source precincts reporting. `
         + `${fmt(row.source_rows)} source rows available below; special units and vote centers are identified separately.`));
@@ -475,9 +478,11 @@ function stateParticipationRows() {
           && counties.every(row => row.geography_level === "municipality");
         const localityActivity = code === "ME" && counties.length === 480
           && counties.every(row => row.geography_level === "source_locality_activity");
-        const nativeCities = code === "NH" && [2, 4].includes(counties.length)
+        const massachusettsCities = code === "MA" && counties.length === 2
           && counties.every(row => row.geography_level === "municipality");
-        const nativeWardRows = data.precincts.filter(row => row.state_code === "NH").length;
+        const nativeCities = massachusettsCities || code === "NH" && [2, 4].includes(counties.length)
+          && counties.every(row => row.geography_level === "municipality");
+        const nativeWardRows = data.precincts.filter(row => row.state_code === code).length;
         const providerActivity = counties.length > 0
           && counties.every(row => row.source_provider === "civicAPI early activity");
         if (!counties.length) {
@@ -510,7 +515,8 @@ function stateParticipationRows() {
               : "Native counts and source reporting units, not UF population-based turnout. ")
             + "Missing county totals and withheld rates are not zero. "
             + "Source coverage does not establish finished counting. "
-            + (nativeCities ? `${counties.map(row => row.county).join(", ")} only, with${nativeWardRows} native ward rows. Full2024 municipality context retains${259-counties.length} other areas unknown. Source component disagreements and literal amendments remain; federal-only counts are never added. Native source registers and printed percentages are separate. No county totals, ward geometry or analysis rates are inferred.`
+            + (massachusettsCities ? `Boston and Somerville only, with ${nativeWardRows} native reporting rows. Separate printed count fields, zero registers and Official/UnOfficial labels remain literal. Four split-parent count joins and invalid Wayland geometry stay held without clipping or repair. No county totals, unique-person counts or analysis rates are inferred.`
+              : nativeCities ? `${counties.map(row => row.county).join(", ")} only, with${nativeWardRows} native ward rows. Full2024 municipality context retains${259-counties.length} other areas unknown. Source component disagreements and literal amendments remain; federal-only counts are never added. Native source registers and printed percentages are separate. No county totals, ward geometry or analysis rates are inferred.`
               : localityActivity ? "480 of 584 source regions match the full 528-area 2024 contextual reference. Each mode retains 104 source regions and 48 reference areas held; full queries are downloadable. Not county totals or certified 2026 precincts."
               : towns ? "Connecticut's 169 town VV counts use held 2024 contextual municipality shapes, not nine county totals or certified 2026 precincts. Native Total is not added again; rates stay withheld."
               : administrations ? "Maui includes Kalawao. Reporting areas group complete 2026 Census components; no separate Maui/Kalawao counts or rates are allocated."
@@ -522,7 +528,7 @@ function stateParticipationRows() {
           for (const row of previews) {
             const button = html("button", "selection-link",
               row.ballots === null ? `${row.county}: ${fmt(row.source_rows)} source reporting-unit observations; county total not supplied`
-                : towns || administrations || providerActivity ? `${row.county}: ${fmt(row.ballots)} ${participationLabel(row)} · no rate`
+                : towns || administrations || providerActivity || nativeCities ? `${row.county}: ${fmt(row.ballots)} ${participationLabel(row)} · no rate`
                   : `${row.county}: ${fmt(row.ballots)} ${participationLabel(row) || "ballots"} / ${fmt(row.denominator)} ${electorateLabel(row)} (${pct(row.reported_pct)})`);
             button.type = "button"; button.dataset.countyId = row.county_id;
             button.addEventListener("click", () => { select.value = row.county_id; select.dispatchEvent(new Event("change")); });
@@ -541,8 +547,8 @@ function stateParticipationRows() {
           currentCountDetail(detail, county, true);
           const rows = data.precincts.filter(row => row.state_code === code && row.county_id === county.county_id);
           setTable(rows.length ? rows : [county], rows.length
-            ? [["county", "County"], ["unit", "Source precinct / reporting location"], ["unit_kind", "Unit type"],
-              ["ballots", "Ballots reported"], ["denominator", "Source electorate"],
+            ? [["county", nativeCities ? "City" : "County"], ["unit", "Source precinct / reporting location"], ["unit_kind", "Unit type"],
+              ["ballots", massachusettsCities ? "Native source count" : "Ballots reported"], ["denominator", "Source electorate"],
               ["reported_pct", "Reported-ballot fraction"], ["quality", "Notes"]]
             : [["county", administrations ? "Election administration" : "County"], ["ballots", participationLabel(county) || "Ballots reported"], ["denominator", "Source electorate"],
               ["reported_pct", participationLabel(county) ? `${participationLabel(county)} fraction` : "Reported-ballot fraction"],
@@ -678,7 +684,8 @@ function stateParticipationRows() {
       const towns = code === "CT" && reference?.geography_scope === "native_town_reporting_area";
       const localityActivity = code === "ME" && reference?.geography_scope === "provider_partial_locality_activity";
       const countyNamedContext = code === "IL" && reference?.geography_scope === "county_context_not_source_authority_territory";
-      const nativeCities = code === "NH" && reference?.geography_scope === "native_partial_city_reporting_context";
+      const massachusettsCities = code === "MA" && reference?.geography_scope === "native_partial_city_reporting_context";
+      const nativeCities = massachusettsCities || code === "NH" && reference?.geography_scope === "native_partial_city_reporting_context";
       const municipalityContext = towns || localityActivity || nativeCities;
       const partialMunicipalityContext = localityActivity || nativeCities;
       const providerActivity = observations.length > 0
@@ -732,9 +739,13 @@ function stateParticipationRows() {
           additionalLocal.delete(code);
           throw new Error("Unqualified Illinois source-region county context; whole-county totals are not inferred");
         }
-        if (nativeCities && !qualifiedNewHampshireCityReference(observations, reference, collection)) {
+        if (code === "NH" && nativeCities && !qualifiedNewHampshireCityReference(observations, reference, collection)) {
           additionalLocal.delete(code);
           throw new Error("Unqualified New Hampshire native city count or contextual reference; no county or ward allocation");
+        }
+        if (massachusettsCities && !qualifiedMassachusettsCityReference(observations, reference, collection)) {
+          additionalLocal.delete(code);
+          throw new Error("Unqualified Massachusetts native city count or reference; no summary substitution or county allocation");
         }
         if (reference.identity_field && !municipalityContext && !countyNamedContext && (!administrations
           || !qualifiedHawaiiAdministrationReference(observations, reference, collection))) {
@@ -758,7 +769,7 @@ function stateParticipationRows() {
           throw new Error("Unqualified partial native county-parent scope");
         }
         const shapeIds = new Set(collection.features.map(feature => feature.properties.key));
-        const boundaryYear = municipalityContext ? 2024 : 2026;
+        const boundaryYear = massachusettsCities ? null : municipalityContext ? 2024 : 2026;
         const identities = municipalityContext ? reference.localities : reference.counties;
         if (reference.boundary_year !== boundaryYear || (!partial && !partialMunicipalityContext && observations.length !== identities)
           || collection.features.length !== identities
@@ -851,7 +862,7 @@ function stateParticipationRows() {
             path.classList.add("selected"); fit(item.bounds);
           }, { class: "map-feature substate-feature", "data-geography": feature.properties.key,
             "data-level": municipalityContext ? "municipality" : "county", "data-rate": rate ?? "", "data-count": row?.ballots ?? "",
-            "data-source-county-id": row?.county_id ?? "", "data-reference-year": reference?.boundary_year ?? 2024,
+            "data-source-county-id": row?.county_id ?? "", "data-reference-year": massachusettsCities ? "current" : reference?.boundary_year ?? 2024,
             "data-context-review": reference ? reference.review_id || "native-county-parents-20261109-01"
               : contextual ? state.countyContext.base_url.split("/").filter(Boolean).at(-1) : "",
             tabindex: "-1",
@@ -871,6 +882,7 @@ function stateParticipationRows() {
           ? `Local source activity in ${state.selectedState}` : `${towns ? "Town" : "Local"} participation in ${state.selectedState}`,
         countsOnly ? (providerActivity
           ? `${countLabel}. This is provider-reported source activity, not ${countyNamedContext ? "whole-county totals, " : ""}official full-election turnout, certified ballots or unique people.`
+          : massachusettsCities ? "Native Boston and Somerville source counts, not statewide/county totals, unique people or analysis rates. Their distinct printed count fields and source disagreements remain separate."
           : nativeCities ? "Native Manchester/Concord source counts only, not statewide/county totals or analysis rates. Manchester is the sum of12 printed ward totals with one accounting discrepancy retained; Concord uses its printed Total Cast."
           : towns ? "Native town VV counts, not candidate choices or certified cast ballots/unique people. Source EV, modes and printed percentages remain separate; no analysis rate is qualified."
           : code === "WV"
@@ -882,7 +894,8 @@ function stateParticipationRows() {
         (countsOnly ? `Not final turnout. Color shows counts, not a fraction; ${municipalityContext ? "localities" : "counties"} have different population sizes. `
           : "Not final turnout. County colors use their own reviewed reported fraction, not the UF state population denominator. Counts with missing or withheld rates remain gray. ")
         + (providerActivity ? "Native source dates are retained below and differ across frames; collector 2026 context is not an independently qualified native election identifier. Early and returned frames are never added. " : "")
-        + (nativeCities ? `${observations.length} native source cities use full259-area 2024 municipality context;${259-observations.length} areas remain unknown, not zero. All${data.precincts.filter(row => row.state_code === "NH").length} ward rows remain available in tables. `
+        + (massachusettsCities ? "Two native city sources use 350 valid unchanged municipal display references from 351 originals. Other 349 source areas have no count; invalid Wayland geometry is held. All 307 native reporting rows remain available; 303 have separate checked references and four split-parent rows stay table-only. No certified 2026 legal boundary claim or source repair. "
+          : nativeCities ? `${observations.length} native source cities use full259-area 2024 municipality context;${259-observations.length} areas remain unknown, not zero. All${data.precincts.filter(row => row.state_code === "NH").length} ward rows remain available in tables. `
           + (state.currentPrecincts?.state_metadata?.NH?.source_id === "manchester-native-ward-reference-20261110-01"
             ? "Twelve Manchester rows also use current municipal ward context;25 others remain table-only. "
             : "No native ward-reference join is loaded. ")
@@ -911,7 +924,9 @@ function stateParticipationRows() {
           "These literal source records are retained, not added into county-named records or assigned by elimination."));
         $("substate-detail").append(held);
       }
-      $("geography-note").textContent = (nativeCities
+      $("geography-note").textContent = (massachusettsCities
+        ? "Massachusetts · 2 native city sources · 307 reporting rows · 350 valid municipal references of 351 originals. Four split-parent count joins and invalid Wayland geometry stay held. No county allocation, source repair, unique-person claim or analysis rate. "
+        : nativeCities
         ? `New Hampshire · ${observations.length} native city source counts ·${data.precincts.filter(row => row.state_code === "NH").length} native ward rows ·259 full2024 contextual municipalities ·${259-observations.length} unknown source areas. No county/precinct allocation, federal-only addition, source repair or analysis rate. `
         : countyNamedContext
         ? "Illinois · 102 county-named source records on county context · six city-named records per mode remain separate and unallocated. Not whole-county totals or qualified source-authority territories; all rates withheld. "
@@ -1413,6 +1428,11 @@ async function loadCurrentPrecincts() {
     if (chosen) precinctResultDetail(chosen.properties);
   }
 function currentPrecinctDescription(p) {
+  if (p.source_snapshot === "20261110-massachusetts-native-local-counts-01")
+    return `${fmt(p.ballots)} ${p.participation_measure_label}. `
+      + (p.county === "Boston" ? "The separate summary Voters Cast and zero registers are not substituted or repaired. "
+        : "Printed source registers and conflicting Official/UnOfficial labels remain separate. ")
+      + p.rate_withheld_reason;
   if (p.source_snapshot === "new-hampshire-native-ward-reference-20261110-02") {
     const native = p.native_record;
     return `${fmt(p.ballots)} literal native Total Cast. Native school-district cells and printed ward subtotals remain unchanged. `
@@ -1455,6 +1475,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
   const nashuaNativeWards = code === "NH" && metadata.source_id === "new-hampshire-native-ward-reference-20261110-03";
   const extendedNativeWards = code === "NH" && (nashuaNativeWards || metadata.source_id === "new-hampshire-native-ward-reference-20261110-02");
   const nativeWards = code === "NH" && (extendedNativeWards || metadata.source_id === "manchester-native-ward-reference-20261110-01");
+  const massachusettsReporting = code === "MA" && metadata.source_id === "20261110-massachusetts-native-local-counts-01";
+  const nativeReporting = nativeWards || massachusettsReporting;
   if (!file || !(ufMode() || ["available", "official"].includes($("mode").value))) {
     if (map.full[0] / state.viewport[2] >= 2.3 && state.countyResults?.year === 2026
       && state.countyResults.coverage[code] && matchedPrecinctParticipationMode())
@@ -1520,6 +1542,21 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
         || !(qualifiedManchesterWardReference(feature.properties) || qualifiedConcordWardReference(feature.properties)
           || nashuaNativeWards && qualifiedNashuaWardReference(feature.properties)))))
       throw new Error("Unqualified New Hampshire native ward count or adopted municipal reference; no other ward allocation");
+    if (code === "MA" && (!massachusettsReporting || metadata.expected_features !== 303
+      || metadata.native_source_reporting_rows !== 307 || metadata.held_table_only_reporting_rows !== 4
+      || metadata.certified_legal_precinct_boundaries !== false || metadata.counts_only !== true
+      || metadata.rates_approved !== false || metadata.source_geometry_repaired !== false
+      || metadata.source_geometry_clipped !== false || data.features.length !== 303
+      || new Set(data.features.map(feature => feature.properties.key)).size !== 303
+      || ["Boston", "Somerville"].some(city => {
+        const features = data.features.filter(feature => feature.properties.county === city);
+        const scopes = { Boston: [275, 185569], Somerville: [28, 60125] };
+        return features.length !== scopes[city][0]
+          || features.reduce((sum, feature) => sum + feature.properties.ballots, 0) !== scopes[city][1];
+      })
+      || data.features.some(feature => feature.geometry?.type !== "Polygon"
+        || !qualifiedMassachusettsReportingReference(feature.properties))))
+      throw new Error("Unqualified Massachusetts native reporting reference; no split-parent clipping, source repair or inferred rates");
     state.currentPrecinctShapes.set(code, data);
   }
   if (token !== state.drillToken || state.map !== map) return;
@@ -1530,7 +1567,7 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
   const wardBounds = [];
   for (const feature of features) {
     const p = feature.properties, item = projectInside(feature, selected.point);
-    if (nativeWards) wardBounds.push([item.bounds[0], item.bounds[1]], [item.bounds[2], item.bounds[3]]);
+    if (nativeReporting) wardBounds.push([item.bounds[0], item.bounds[1]], [item.bounds[2], item.bounds[3]]);
     const description = currentPrecinctDescription(p);
     const path = featurePath(item, p.reported_pct,
       `${p.county} · ${p.unit} · 2026\n${description}\nUnofficial counts · ${p.boundary_label || metadata.boundary_label}`, () => {
@@ -1552,17 +1589,21 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
         }
         for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
         path.classList.add("selected"); fit(item.bounds);
-      }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": nativeWards ? "ward" : "precinct",
+      }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": nativeWards ? "ward"
+        : massachusettsReporting && p.unit_kind === "municipal_subprecinct" ? "subprecinct" : "precinct",
         "data-match": p.match_status, "data-rate": p.reported_pct ?? "", "data-count": p.ballots,
         ...(nativeWards ? { "data-reference-year": p.reference_geometry.boundary_vintage ?? "current",
           "data-source-city": p.county, "data-source-ward": p.native_ward_number } : {}),
+        ...(massachusettsReporting ? { "data-reference-year": p.reference_geometry.boundary_vintage,
+          "data-source-city": p.county, "data-source-ward": p.native_ward_number,
+          "data-source-precinct": p.native_precinct_label } : {}),
         "data-registered": p.denominator ?? "", tabindex: "-1",
         ...(countsOnly ? { fill: countFill(p.ballots, maximum), "data-count-measure": "reported_ballots" } : {}) });
     path.classList.toggle("selected", p.key === state.currentPrecinctSelection);
     map.detail.append(path);
   }
   map.precinctLayer = true;
-  if (nativeWards && !map.nativeWardReferenceFit) {
+  if (nativeReporting && !map.nativeWardReferenceFit) {
     map.nativeWardReferenceFit = true;
     fit(boundsFor(wardBounds));
   }
@@ -1572,19 +1613,22 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     ["ballots", metadata.ballot_column_label || "Ballots reported"], ["denominator", "Source electorate"],
     ["reported_pct", "Participation rate"], ["rate_withheld_reason", "Rate review"]]);
   header(nativeWards ? "2026 midterms · native municipal ward reports · partial coverage"
+    : massachusettsReporting ? "2026 midterms · native local reporting units · partial coverage"
     : "2026 midterms · unofficial precinct observations · partial coverage",
-    nashuaNativeWards ? "Native ward counts in three New Hampshire cities"
+    massachusettsReporting ? "Native reporting-unit counts in Boston and Somerville"
+      : nashuaNativeWards ? "Native ward counts in three New Hampshire cities"
       : extendedNativeWards ? "Native ward counts in Manchester and Concord"
       : nativeWards ? "Native ward counts in Manchester" : map.full[0] / state.viewport[2] < 2.3
       ? "Precinct participation · available coverage" : `Precinct participation in ${name}`,
-    countsOnly ? `Color shows reported ballot counts, not turnout rates. All ${nativeWards ? "ward" : "precinct"} rates remain withheld.`
+    countsOnly ? (massachusettsReporting ? "Color shows literal native source counts, not qualified unique people or turnout rates. All rates remain withheld."
+      : `Color shows reported ballot counts, not turnout rates. All ${nativeWards ? "ward" : "precinct"} rates remain withheld.`)
       : "Reported ballots / source-defined electorate where qualified. Gray shapes can still carry direct counts.",
     `${metadata.boundary_label || "Reviewed 2026 reference boundaries"}. Rates remain withheld where inputs or electorate definitions are unqualified. State-level colors underneath are separate, never assigned to precincts.`);
   if (metadata.complete_download_url) {
     const complete = html("a", "source-link", "Complete originals, matched/withheld rows and exact geometry (ZIP)");
     complete.href = metadata.complete_download_url; $("caption").append(" ", complete);
   }
-  $("coverage-note").textContent = nashuaNativeWards
+  $("coverage-note").textContent = massachusettsReporting ? metadata.notes : nashuaNativeWards
     ? "Manchester12 / Concord10 / Nashua9 native ward counts. Other6 Dover ward rows remain in tables. "
       + "Official municipal reference context, not newly certified2026 legal precincts; no source repairs or rates. " + metadata.notes
     : extendedNativeWards
@@ -1600,9 +1644,11 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
       + "This is partial coverage, not a nationwide precinct map."
     : `${fmt(features.length)} approved count-bearing shapes; ${fmt(observed)} rates. ${metadata.notes || "Partial coverage only."}`;
   if (observed) ramp();
-  else if (countsOnly) countLegend(maximum, "Reported ballots · no rate");
+  else if (countsOnly) countLegend(maximum, massachusettsReporting ? "Native source counts · no rate" : "Reported ballots · no rate");
   else legend([["Direct counts available · rate withheld", fill(null)]]);
-  $("geography-note").textContent = nashuaNativeWards
+  $("geography-note").textContent = massachusettsReporting
+    ? "Boston 275 / Somerville 28 unchanged native precinct/subprecinct references; all 307 source rows retained. Four split-parent count joins remain table-only, not clipped. Two original Boston overlaps remain unrepaired. Reference context is not certified 2026 legal geography; no state/county values, source repairs or rates are allocated."
+    : nashuaNativeWards
     ? "Manchester12 / Concord10 / Nashua9 official municipal ward-reference polygons, not newly certified2026 legal precincts. "
       + "Manchester GIS2022/linesDecember21,2021; Concord city approvalNovember8,2021, not a vintage inferred from its2020 service name; "
       + "Nashua adopted/effectiveDecember28,2021, with a separate current map printedOctober2026. "
@@ -2602,8 +2648,9 @@ function stateDetail() {
       && state.additionalCoverage.some(row => row.state_code === "CT" && row.localities === 169);
     const localityActivity = stateCode() === "ME"
       && state.additionalCoverage.some(row => row.state_code === "ME" && row.source_mode_counties === 480);
-    const nativeCityCoverage = stateCode() === "NH"
-      ? state.additionalCoverage.find(row => row.state_code === "NH" && [2, 4].includes(row.localities)) : null;
+    const nativeCityCoverage = ["NH", "MA"].includes(stateCode())
+      ? state.additionalCoverage.find(row => row.state_code === stateCode()
+        && (stateCode() === "MA" ? row.localities === 2 : [2, 4].includes(row.localities))) : null;
     const nativeCities = !!nativeCityCoverage;
     const countyAudit = administrations ? { counties: 4 }
       : towns ? { counties: 169 }
