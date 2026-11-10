@@ -1,0 +1,64 @@
+{
+  "state_code": "ME",
+  "collector_election_year": 2026,
+  "native_election_id_qualified": false,
+  "rates_approved": false,
+  "original_geometry_path": "data/participation-local/20261104T220000Z-identity-audit/geometry/2024/municipality-ME.geojson.gz",
+  "original_historical_path": "data/participation-local/20261104T220000Z-identity-audit/states/ME.json.gz",
+  "historical_identity_path": "data/county-source-reviews/20261110-maine-locality-activity-01/originals/held-ME-all-history-identity-export.json.gz",
+  "reference": {
+    "path": "public/participation-locality-activity/20261110-maine-01/ME.geojson.gz",
+    "url": "/participation-locality-activity/20261110-maine-01/ME.geojson.gz",
+    "sha256": "cf02fa319f1e54c65a679dd25b79813988e10dd0a800c3511b68d3fc448259bc",
+    "uncompressed_sha256": "38751b1df738a178a32a71f77f361828bfdbcb5a431be7f546201032c19c407a",
+    "boundary_year": 2024,
+    "localities": 528,
+    "geography_scope": "provider_partial_locality_activity",
+    "identity_field": "reference_municipality_key",
+    "review_id": "maine-locality-activity-20261110-01",
+    "certified_election_day_geography": false
+  },
+  "responses": {
+    "inperson": {
+      "path": "data/county-source-reviews/20261110-maine-locality-activity-01/originals/ME-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/ME/inperson",
+        "retrieved_at": "2026-11-04T22:04:32.410934+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 113673,
+        "sha256": "2ac2be7d3fbfd00f67722118b7bfff6f57e9f28c0e0efd7b4a311bc4192395e2",
+        "http_status": 200
+      }
+    },
+    "returned": {
+      "path": "data/county-source-reviews/20261110-maine-locality-activity-01/originals/ME-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/ME/returned",
+        "retrieved_at": "2026-11-04T22:04:32.653793+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 113621,
+        "sha256": "53e93c8e8b9f71645a9e889cc28928b054dc61f64dbe5ac452cad9f55900b1a4",
+        "http_status": 200
+      }
+    }
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-maine-locality-activity-20261110-01/complete-analysis.zip",
+  "files": {
+    "data/county-source-reviews/20261110-maine-locality-activity-01/originals/ME-inperson.json": {
+      "bytes": 113673,
+      "sha256": "2ac2be7d3fbfd00f67722118b7bfff6f57e9f28c0e0efd7b4a311bc4192395e2"
+    },
+    "data/county-source-reviews/20261110-maine-locality-activity-01/originals/ME-returned.json": {
+      "bytes": 113621,
+      "sha256": "53e93c8e8b9f71645a9e889cc28928b054dc61f64dbe5ac452cad9f55900b1a4"
+    },
+    "public/participation-locality-activity/20261110-maine-01/ME.geojson.gz": {
+      "bytes": 191891,
+      "sha256": "cf02fa319f1e54c65a679dd25b79813988e10dd0a800c3511b68d3fc448259bc"
+    },
+    "data/county-source-reviews/20261110-maine-locality-activity-01/originals/held-ME-all-history-identity-export.json.gz": {
+      "bytes": 288627,
+      "sha256": "235676f6e12c13ee1ace636611a9098e7b7ef6a19b7ee63fffa541dc0585056e"
+    }
+  }
+}

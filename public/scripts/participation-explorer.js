@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -469,6 +469,8 @@ function stateParticipationRows() {
           && counties.every(row => row.geography_level === "election_administration");
         const towns = code === "CT" && counties.length === 169
           && counties.every(row => row.geography_level === "municipality");
+        const localityActivity = code === "ME" && counties.length === 480
+          && counties.every(row => row.geography_level === "source_locality_activity");
         const providerActivity = counties.length > 0
           && counties.every(row => row.source_provider === "civicAPI early activity");
         if (!counties.length) {
@@ -478,7 +480,8 @@ function stateParticipationRows() {
               : "No verified full-election county/precinct counts ingested for this state yet. Statewide early/mail observations above are separate, not final turnout."));
           return;
         }
-        const label = html("label", "selection-note", administrations ? "2026 election administration" : "2026 county / native locality");
+        const label = html("label", "selection-note", localityActivity ? "2026 source local reporting area"
+          : administrations ? "2026 election administration" : "2026 county / native locality");
         const select = html("select"); select.id = "current-county-select"; label.htmlFor = select.id;
         options(select, [["", administrations ? "Choose an election administration…" : "Choose a county / locality…"], ...counties.map(row => [row.county_id,
           row.county + (row.geography_level === "municipality" ? " · municipality" : "")])],
@@ -494,12 +497,13 @@ function stateParticipationRows() {
         if (additional.length) {
           const overview = html("div", "substate-detail"); overview.id = "reviewed-county-overview";
           overview.append(html("p", "selection-note",
-            `${additional.length} reviewed ${towns ? "native towns" : administrations ? "election administrations" : code === "DC" ? "county-equivalent observation" : "county / locality observations"}. `
+            `${additional.length} reviewed ${localityActivity ? "source local-area observations" : towns ? "native towns" : administrations ? "election administrations" : code === "DC" ? "county-equivalent observation" : "county / locality observations"}. `
             + (providerActivity ? "Provider-reported early activity, not official all-method ballots, unique people or UF turnout. "
               : "Native counts and source reporting units, not UF population-based turnout. ")
             + "Missing county totals and withheld rates are not zero. "
             + "Source coverage does not establish finished counting. "
-            + (towns ? "Connecticut's 169 town VV counts use held 2024 contextual municipality shapes, not nine county totals or certified 2026 precincts. Native Total is not added again; rates stay withheld."
+            + (localityActivity ? "480 of 584 source regions match the full 528-area 2024 contextual reference. Each mode retains 104 source regions and 48 reference areas held; full queries are downloadable. Not county totals or certified 2026 precincts."
+              : towns ? "Connecticut's 169 town VV counts use held 2024 contextual municipality shapes, not nine county totals or certified 2026 precincts. Native Total is not added again; rates stay withheld."
               : administrations ? "Maui includes Kalawao. Reporting areas group complete 2026 Census components; no separate Maui/Kalawao counts or rates are allocated."
               : code === "RI"
               ? "Rhode Island municipality counts use explicitly dated 2024 Census reference shapes; all rates remain withheld and no town counts are assigned to precincts."
@@ -662,6 +666,7 @@ function stateParticipationRows() {
       const reference = observations.find(row => row.reference_geometry)?.reference_geometry;
       const administrations = code === "HI" && reference?.geography_scope === "native_election_administration";
       const towns = code === "CT" && reference?.geography_scope === "native_town_reporting_area";
+      const localityActivity = code === "ME" && reference?.geography_scope === "provider_partial_locality_activity";
       const providerActivity = observations.length > 0
         && observations.every(row => row.source_provider === "civicAPI early activity");
       const file = reference?.url || state.context?.geometry.county?.[code];
@@ -705,13 +710,18 @@ function stateParticipationRows() {
           additionalLocal.delete(code);
           throw new Error("Unqualified Connecticut town reference; county or precinct totals are not invented");
         }
-        if (reference.identity_field && !towns && (!administrations
+        if (localityActivity && !qualifiedMaineLocalityReference(observations, reference, collection)) {
+          additionalLocal.delete(code);
+          throw new Error("Unqualified Maine locality reference; unmatched source regions are not allocated");
+        }
+        if (reference.identity_field && !towns && !localityActivity && (!administrations
           || !qualifiedHawaiiAdministrationReference(observations, reference, collection))) {
           additionalLocal.delete(code);
           throw new Error("Unqualified election-administration reference; separate Maui/Kalawao counts are not invented");
         }
         for (const row of observations) {
-          const identity = administrations || towns ? row.source_administration_id : row.county_fips;
+          const identity = localityActivity ? row.reference_municipality_key
+            : administrations || towns ? row.source_administration_id : row.county_fips;
           if (row.reference_geometry?.sha256 !== reference.sha256 || nativeByFips.has(identity)) {
             additionalLocal.delete(code);
             throw new Error("Mixed or duplicate native county reference identities");
@@ -726,14 +736,16 @@ function stateParticipationRows() {
           throw new Error("Unqualified partial native county-parent scope");
         }
         const shapeIds = new Set(collection.features.map(feature => feature.properties.key));
-        const boundaryYear = towns ? 2024 : 2026, identities = towns ? reference.localities : reference.counties;
-        if (reference.boundary_year !== boundaryYear || (!partial && observations.length !== identities)
+        const boundaryYear = towns || localityActivity ? 2024 : 2026;
+        const identities = towns || localityActivity ? reference.localities : reference.counties;
+        if (reference.boundary_year !== boundaryYear || (!partial && !localityActivity && observations.length !== identities)
           || collection.features.length !== identities
           || shapeIds.size !== identities
           || [...nativeByFips.keys()].some(fips => !shapeIds.has(fips))
           || collection.features.some(({ properties: p }) => p.state_code !== code || p.boundary_year !== boundaryYear
             || (nativeByFips.has(p.key)
-              ? countyName(p.name) !== countyName(nativeByFips.get(p.key).county) : !partial))) {
+              ? !localityActivity && countyName(p.name) !== countyName(nativeByFips.get(p.key).county)
+              : !partial && !localityActivity))) {
           additionalLocal.delete(code);
           throw new Error("Native whole-county inventory disagrees with the verified 2026 reference");
         }
@@ -784,32 +796,35 @@ function stateParticipationRows() {
         const key = countyName(feature.properties.name);
         const contextual = contextRows.get(feature.properties.key);
         const row = contextual || nativeByFips.get(feature.properties.key)
-          || (shapeCounts.get(key) === 1 ? byName.get(key) : null);
+          || (!localityActivity && shapeCounts.get(key) === 1 ? byName.get(key) : null);
         const item = projectInside(feature, selected.point), rate = row?.reported_pct;
         if (rate != null) observed++;
         const path = featurePath(item, rate,
           `${feature.properties.name} · 2026\n${fmt(row?.ballots)} ${row ? participationLabel(row) || "ballots reported" : "ballots reported"} · ${pct(rate)}`
           + (row ? "\nSource-defined electorate; not final turnout. Missing rates are not zero."
             + (contextual ? "\nSeparately reviewed Census county identity join; approximate 2024 contextual shape, not certified 2026 election geography." : "")
-            : "\nNo matched county counts"), () => {
+            : localityActivity ? "\nNo uniquely matched source activity count; missing is not zero."
+              : "\nNo matched county counts"), () => {
             if (row && $("current-county-select")) {
               $("current-county-select").value = row.county_id;
               $("current-county-select").dispatchEvent(new Event("change"));
-            } else if (reference?.partial_county_fips) {
+            } else if (reference?.partial_county_fips || localityActivity) {
               const select = $("current-county-select");
               if (select) { select.value = ""; select.dispatchEvent(new Event("change")); }
-              const message = "No matching county ballot parent in this source. Only Bay and Isabella are observed; missing counts are not zero.";
+              const message = localityActivity
+                ? "No uniquely matched source activity count for this reference area. Ambiguous and unmatched regions are held, not allocated or filled with zero."
+                : "No matching county ballot parent in this source. Only Bay and Isabella are observed; missing counts are not zero.";
               $("current-county-detail")?.replaceChildren(html("h4", "", feature.properties.name),
                 html("p", "selection-note", message));
               setTable([{ county: feature.properties.name, ballots: null, reported_pct: null, quality: [message] }],
-                [["county", "County"], ["ballots", "Ballots reported"],
+                [["county", localityActivity ? "Reference locality" : "County"], ["ballots", localityActivity ? "Source activity count" : "Ballots reported"],
                   ["reported_pct", "Reported-ballot fraction"], ["quality", "Notes"]]);
               syncURL();
             }
             for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
             path.classList.add("selected"); fit(item.bounds);
           }, { class: "map-feature substate-feature", "data-geography": feature.properties.key,
-            "data-level": towns ? "municipality" : "county", "data-rate": rate ?? "", "data-count": row?.ballots ?? "",
+            "data-level": towns || localityActivity ? "municipality" : "county", "data-rate": rate ?? "", "data-count": row?.ballots ?? "",
             "data-source-county-id": row?.county_id ?? "", "data-reference-year": reference?.boundary_year ?? 2024,
             "data-context-review": reference ? reference.review_id || "native-county-parents-20261109-01"
               : contextual ? state.countyContext.base_url.split("/").filter(Boolean).at(-1) : "",
@@ -819,11 +834,12 @@ function stateParticipationRows() {
       }
       map.localLayer = true;
       map.stateTable ||= { rows: state.table, columns: state.columns };
-      setTable(counties, [["county", towns ? "Town" : administrations ? "Election administration" : "County"], ["ballots", countLabel],
+      setTable(counties, [["county", localityActivity ? "Source locality" : towns ? "Town" : administrations ? "Election administration" : "County"], ["ballots", countLabel],
         ["denominator", "Source electorate"], ["reported_pct", "Reported-ballot fraction"],
         ["reported_units", "Precincts reporting"], ["total_units", "Total precincts"], ["quality", "Notes"]]);
       header(providerActivity ? "2026 project · provider-reported source activity"
-        : "2026 midterms · unofficial administrative counts", `${towns ? "Town" : "Local"} participation in ${state.selectedState}`,
+        : "2026 midterms · unofficial administrative counts", localityActivity
+          ? `Local source activity in ${state.selectedState}` : `${towns ? "Town" : "Local"} participation in ${state.selectedState}`,
         countsOnly ? (providerActivity
           ? `${countLabel}. This is provider-reported source activity, not official full-election turnout, certified ballots or unique people.`
           : towns ? "Native town VV counts, not candidate choices or certified cast ballots/unique people. Source EV, modes and printed percentages remain separate; no analysis rate is qualified."
@@ -833,10 +849,11 @@ function stateParticipationRows() {
           ? "Color shows native Cards Cast, not unique voters or qualified cast ballots. No county turnout rates are qualified."
           : "Color shows source participation counts; no county turnout rates are qualified. Select a county for its original counts.")
           : "Reported ballots / source-defined electorate. Select a county, then a precinct or reporting row in the sidebar.",
-        (countsOnly ? `Not final turnout. Color shows counts, not a fraction; ${towns ? "towns" : "counties"} have different population sizes. `
+        (countsOnly ? `Not final turnout. Color shows counts, not a fraction; ${towns || localityActivity ? "localities" : "counties"} have different population sizes. `
           : "Not final turnout. County colors use their own reviewed reported fraction, not the UF state population denominator. Counts with missing or withheld rates remain gray. ")
         + (providerActivity ? "Native source dates are retained below and differ across frames; collector 2026 context is not an independently qualified native election identifier. Early and returned frames are never added. " : "")
-        + (towns ? "169 native towns use the held full 2024 contextual municipality reference, not 2026 election or precinct boundaries. Native Total is separate, not an extra town. No nine-county totals or precinct observations are inferred. "
+        + (localityActivity ? "480 source regions match the full 528-area 2024 contextual municipality reference. Per mode, 104 source regions and 48 reference areas remain held, not allocated or filled with zero. Historical counts are never transferred. Not county totals or certified 2026 precincts. "
+          : towns ? "169 native towns use the held full 2024 contextual municipality reference, not 2026 election or precinct boundaries. Native Total is separate, not an extra town. No nine-county totals or precinct observations are inferred. "
           : administrations ? "Four election administrations use grouped full 2026 Census county components; Maui includes Kalawao. No separate Maui/Kalawao count is supplied, allocated or duplicated. These are not certified precinct boundaries. "
           : providerActivity ? "Provider-region identities are separately matched to the full 2026 Census county reference; these are not native FIPS, official county parents or precincts. "
             : reference ? "Whole-county native parents use checksum-verified 2026 Census county references, not precincts. "
@@ -847,7 +864,9 @@ function stateParticipationRows() {
         : code === "WV" ? countLabel + " · no rate"
         : code === "MD" ? "Native Cards Cast · not unique voters" : "Source participation counts · no rate");
       else ramp();
-      $("geography-note").textContent = (towns
+      $("geography-note").textContent = (localityActivity
+        ? "Maine · 480 mapped local source counts · 528 full 2024 contextual areas · 104 source regions / 48 reference areas held per mode · no rates. Missing is not zero; no county or precinct allocation. "
+        : towns
         ? "Connecticut · 169 native town observations · 2024 contextual municipality shapes · no analysis rates. Not nine county totals or certified 2026 precincts. "
         : administrations
         ? `${state.selectedState} · 4 election administrations · 5 Census county components · no analysis rates. Maui includes Kalawao; no separate totals are invented. `
@@ -2440,8 +2459,11 @@ function stateDetail() {
       && state.additionalCoverage.some(row => row.state_code === "HI" && row.localities === 4);
     const towns = stateCode() === "CT"
       && state.additionalCoverage.some(row => row.state_code === "CT" && row.localities === 169);
+    const localityActivity = stateCode() === "ME"
+      && state.additionalCoverage.some(row => row.state_code === "ME" && row.source_mode_counties === 480);
     const countyAudit = administrations ? { counties: 4 }
       : towns ? { counties: 169 }
+        : localityActivity ? { counties: 480, provider_activity: true }
       : state.current?.local_audit?.find(row => row.state_code === stateCode() && row.counties > 0)
         || state.countyContext?.coverage[stateCode()]
         || (() => {
@@ -2450,7 +2472,8 @@ function stateDetail() {
         })();
     if (countyAudit) {
       const button = html("button", "selection-link", administrations
-        ? "Show 4 election administrations" : towns ? "Show 169 native town counts" : countyAudit.provider_activity
+        ? "Show 4 election administrations" : towns ? "Show 169 native town counts"
+          : localityActivity ? "Show 480 locality source-activity counts" : countyAudit.provider_activity
           ? `Show ${fmt(countyAudit.counties)} county source-activity counts`
           : `Show ${fmt(countyAudit.counties)} counties' participation`);
       button.id = "show-current-counties"; button.type = "button";
@@ -2465,7 +2488,8 @@ function stateDetail() {
       panel.append(button);
       if ($("map-level").value === "precinct" && !state.currentPrecincts?.states[stateCode()] && !precinctCoverage)
         panel.append(html("p", "selection-note",
-          towns ? "Verified 2026 precinct geography is unavailable. Native counts for 169 towns are available on explicitly dated 2024 contextual municipality shapes, not allocated to counties or precincts."
+          localityActivity ? "Verified 2026 precinct geography is unavailable. Partial local source activity is available on 2024 contextual shapes; county/precinct totals and missing regions are not allocated."
+            : towns ? "Verified 2026 precinct geography is unavailable. Native counts for 169 towns are available on explicitly dated 2024 contextual municipality shapes, not allocated to counties or precincts."
             : administrations ? "Verified 2026 precinct geography is unavailable. Four native election-administration counts are available instead, with no rates or separate Maui/Kalawao allocation."
             : "Verified 2026 precinct geography is unavailable for this state. County counts and their own participation denominators are available instead; no state or county rate is assigned to a precinct."));
     }

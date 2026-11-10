@@ -56,11 +56,14 @@ export function qualifiedIndianaMonroePrecinct(p) {
 }
 
 export function hasCountySourceMode(code, mode) {
-  return code === "WV" && ["in_person_early", "mail_returned"].includes(mode)
+  return ["WV", "ME"].includes(code) && ["in_person_early", "mail_returned"].includes(mode)
     || Boolean(providerCountyScopes[code]?.modes.includes(mode));
 }
 
 export function selectCountySourceFrame(data, code, mode) {
+  if (code === "ME" && mode === "available"
+    && !data.counties.some(row => row.state_code === code && row.ballots != null))
+    return selectCountySourceFrame(data, code, "in_person_early");
   if (mode === "available" && providerCountyScopes[code]
     && !data.counties.some(row => row.state_code === code && row.ballots != null)) {
     const preferred = ["in_person_early", "mail_returned"].find(m => providerCountyScopes[code].modes.includes(m));
@@ -68,6 +71,11 @@ export function selectCountySourceFrame(data, code, mode) {
   }
   if (!hasCountySourceMode(code, mode)) return data.counties;
   const rows = data.county_frames?.[mode];
+  if (code === "ME") {
+    if (!qualifiedMaineLocalityFrame(rows, mode))
+      throw new Error("Unqualified Maine locality activity frame; county totals are not substituted");
+    return rows;
+  }
   if (Array.isArray(rows) && rows.length && rows.every(row => row.source_provider === "civicAPI early activity")) {
     if (!qualifiedProviderCountyFrame(rows, code, mode))
       throw new Error("Unqualified provider county activity frame; full-election counts are not substituted");
@@ -106,6 +114,43 @@ export function qualifiedProviderCountyFrame(rows, code, mode) {
       && row.denominator === null && row.reported_pct === null
       && row.cast_ballot_count_qualified === false && row.unique_voter_count_qualified === false;
   });
+}
+
+export function qualifiedMaineLocalityFrame(rows, mode) {
+  if (!["in_person_early", "mail_returned"].includes(mode) || !Array.isArray(rows) || rows.length !== 480
+    || new Set(rows.map(r => r.reference_municipality_key)).size !== 480) return false;
+  return rows.every(row => {
+    const native = row.native_record, categories = native?.categories;
+    return row.year === 2026 && row.state_code === "ME" && row.source_mode === mode
+      && row.source_provider === "civicAPI early activity" && row.county_fips === null
+      && row.geography_level === "source_locality_activity" && /^23\d{5}$/.test(row.reference_municipality_key)
+      && row.county_id === `additional:ME:locality:${row.reference_municipality_key}`
+      && row.reference_geometry?.boundary_year === 2024 && row.reference_geometry.localities === 528
+      && row.reference_geometry.geography_scope === "provider_partial_locality_activity"
+      && native?.state === "ME" && native.source_region === row.county
+      && native.category === (mode === "in_person_early" ? "inperson" : "returned")
+      && native.literal_count_field === "votes" && /^2026-\d{2}-\d{2}$/.test(native.snapshot_date)
+      && row.source_date === native.snapshot_date && row.native_election_id_qualified === false
+      && categories && typeof categories === "object" && !Array.isArray(categories) && Object.keys(categories).length > 0
+      && Object.values(categories).every(r => Number.isSafeInteger(r.votes) && r.votes >= 0)
+      && Number.isSafeInteger(row.ballots) && row.ballots >= 0
+      && row.ballots === Object.values(categories).reduce((sum, r) => sum + r.votes, 0)
+      && row.denominator === null && row.reported_pct === null
+      && row.cast_ballot_count_qualified === false && row.unique_voter_count_qualified === false;
+  });
+}
+
+export function qualifiedMaineLocalityReference(rows, reference, collection) {
+  if (!qualifiedMaineLocalityFrame(rows, rows?.[0]?.source_mode)
+    || reference?.boundary_year !== 2024 || reference.localities !== 528
+    || reference.identity_field !== "reference_municipality_key"
+    || reference.geography_scope !== "provider_partial_locality_activity"
+    || !Array.isArray(collection?.features) || collection.features.length !== 528
+    || new Set(collection.features.map(f => f.properties.key)).size !== 528
+    || collection.features.some(f => f.properties.state_code !== "ME"
+      || f.properties.boundary_year !== 2024 || f.properties.level !== "municipality")) return false;
+  const keys = new Set(collection.features.map(f => f.properties.key));
+  return rows.every(row => keys.has(row.reference_municipality_key));
 }
 
 export function qualifiedConnecticutTownReference(rows, reference, collection) {

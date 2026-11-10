@@ -1,0 +1,13 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-maine-locality-activity-20261110-01/complete-analysis.zip",
+  "bytes": 665845,
+  "sha256": "f597ea56a5a4f10184629a1d829710b993efe8cd6cbcc8c21bbb3eef3214d890",
+  "members": 19,
+  "complete_source_queries": 1168,
+  "complete_reference_queries": 1056,
+  "complete_frame_queries": 2,
+  "mapped_per_mode": 480,
+  "held_native_per_mode": 104,
+  "held_reference_per_mode": 48,
+  "analysis_rates_approved": false
+}

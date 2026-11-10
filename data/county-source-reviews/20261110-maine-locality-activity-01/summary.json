@@ -1,0 +1,22 @@
+{
+  "complete_source_region_queries": 1168,
+  "complete_reference_queries": 1056,
+  "mapped_per_mode": {
+    "in_person_early": 480,
+    "mail_returned": 480
+  },
+  "held_native_per_mode": {
+    "in_person_early": 104,
+    "mail_returned": 104
+  },
+  "held_reference_per_mode": {
+    "in_person_early": 48,
+    "mail_returned": 48
+  },
+  "contextual_boundary_year": 2024,
+  "native_election_id_qualified": false,
+  "analysis_rates_approved": false,
+  "county_totals_inferred": false,
+  "precinct_records_inferred": false,
+  "modes_added": false
+}

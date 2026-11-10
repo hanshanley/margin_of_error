@@ -11,6 +11,7 @@ import { loadColoradoCountyReturns } from './colorado-returned-counties.mjs';
 import { loadHawaiiAdministrations } from './hawaii-administrations.mjs';
 import { loadProviderCountyFrames } from './provider-county-frames.mjs';
 import { loadConnecticutTowns } from './connecticut-town-counts.mjs';
+import { loadMaineLocalityActivity } from './maine-locality-activity.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -437,6 +438,40 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
     counties.push(...westVirginia.counties.map(imported));
     countyFrames.WV = Object.fromEntries(Object.entries(westVirginia.county_frames)
       .map(([mode, rows]) => [mode, rows.map(imported)]));
+  }
+  if (nativeCountyParents) {
+    const maine = loadMaineLocalityActivity();
+    countyFrames.ME = Object.fromEntries(Object.entries(maine.locality_frames).map(([mode, rows]) =>
+      [mode, rows.map(row => observation({
+        data_directory: 'data/county-source-reviews/20261110-maine-locality-activity-01',
+        base_url: '', complete_download_url: row.complete_download_url,
+      }, '', 'ME', row.source_region, `locality:${row.reference_key}`, {
+        state: 'ME', category: mode === 'in_person_early' ? 'inperson' : 'returned',
+        source_region: row.source_region, categories: row.native_categories,
+        snapshot_date: row.source_date, election_name: row.native_election_name, literal_count_field: 'votes',
+      }, {
+        geography_level: 'source_locality_activity', county_fips: null,
+        reference_municipality_key: row.reference_key, reference_geometry: maine.reference_geometry,
+        ballots: row.source_count, denominator: null, denominator_basis: 'provider_electorate_not_qualified',
+        reported_pct: null, maps_approved: true, source_mode: mode,
+        source_provider: 'civicAPI early activity', source_date: row.source_date,
+        native_election_id_qualified: false, cast_ballot_count_qualified: false,
+        unique_voter_count_qualified: false, source_count_qualified: true,
+        participation_measure_label: mode === 'in_person_early'
+          ? 'Provider local in-person early activity (native votes counts)'
+          : 'Provider local returned activity (native votes counts)',
+        source_url: row.source_url,
+        source_update_label: `${row.source_date} native provider date; clock/timezone absent. `
+          + 'Collector 2026 context is not an independently qualified native election identifier.',
+        source_status_literal: 'Provider-reported local activity, not certified government turnout',
+        source_reporting_label: '480 of 584 source regions have one-to-one contextual identities in the full 528-area '
+          + '2024 reference. 104 source regions and 48 reference areas remain held per mode. '
+          + 'No historical voting count is transferred; no county/precinct totals or rates are allocated. '
+          + 'Source party buckets are not candidate choices; early and returned frames are never added.',
+        quality: ['Provider source activity, not certified cast ballots, unique people or full-election turnout.',
+          '2024 contextual municipality geometry, not certified 2026 election or precinct boundaries.',
+          'All source regions and reference decisions, including held matches, remain in the complete download.'],
+      }))]));
   }
   if (nativeCountyParents) {
     const provider = loadProviderCountyFrames();

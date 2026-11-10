@@ -681,7 +681,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 						{' · '}<a href={group.countyParentDownload}>
 							Complete county-parent queries and sufficient inputs (ZIP)</a>
 					</>}</p>
-				{group.sourceModes.map(mode => <p>{mode.label}: {mode.counties} county observations.
+				{group.sourceModes.map(mode => <p>{mode.label}: {mode.counties} local-area observations.
 					{' '}<a href={mode.completeDownload}>Complete source-mode query and inputs</a>.
 					{' '}Frames are not added or treated as full-election turnout.</p>)}
 				{group.nongeographic.map(row => <p>{row.county}: {row.ballots === null ? 'Not supplied' : formatNumber(row.ballots)}

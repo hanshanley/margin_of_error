@@ -8,6 +8,7 @@ import test from 'node:test';
 import { loadAdditionalParticipation, participationCount } from './additional-participation.mjs';
 import { loadNativeCountyParents, reviewCountyParents } from './native-county-parents.mjs';
 import { loadMichiganCountyParents, reviewMichiganCountyParents } from './michigan-county-parents.mjs';
+import { qualifiedMaineLocalityReference, selectCountySourceFrame } from '../public/scripts/participation-geography.js';
 
 const data = loadAdditionalParticipation({ nativeCountyParents: true });
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, skip_empty_lines: true });
@@ -49,6 +50,38 @@ test('provider county modes are live-only and cannot replace stronger native Wes
     assert.equal(rows[0].source_provider, undefined);
     assert.equal(rows[0].ballots, rows[0].native_record['TOTAL VOTERS']);
   }
+});
+
+test('Maine partial locality frames preserve all holds and cannot become official county or precinct counts', () => {
+  const legacy = loadAdditionalParticipation();
+  assert.equal(legacy.counties.filter(r => r.state_code === 'ME').length, 0);
+  assert.equal(legacy.county_frames, undefined);
+  assert.equal(data.counties.filter(r => r.state_code === 'ME').length, 0);
+  assert.equal(data.precincts.filter(r => r.state_code === 'ME').length, 0);
+  for (const [mode, rows] of Object.entries(data.county_frames.ME)) {
+    assert.equal(rows.length, 480);
+    const reference = rows[0].reference_geometry;
+    const collection = JSON.parse(gunzipSync(readFileSync(reference.path)));
+    assert.equal(qualifiedMaineLocalityReference(rows, reference, collection), true);
+    for (const row of rows) {
+      assert.equal(row.county_fips, null);
+      assert.equal(row.geography_level, 'source_locality_activity');
+      assert.equal(row.source_mode, mode);
+      assert.equal(row.ballots, Object.values(row.native_record.categories).reduce((sum, r) => sum + r.votes, 0));
+      assert.equal(row.denominator, null);
+      assert.equal(row.reported_pct, null);
+      assert.equal(row.native_election_id_qualified, false);
+    }
+    const invalid = structuredClone(rows);
+    invalid[0].reference_geometry.boundary_year = 2026;
+    assert.equal(qualifiedMaineLocalityReference(invalid, reference, collection), false);
+    assert.throws(() => selectCountySourceFrame({ counties: [], county_frames: { [mode]: rows.slice(1) } }, 'ME', mode));
+  }
+  const source = { counties: [], county_frames: data.county_frames.ME };
+  assert.equal(selectCountySourceFrame(source, 'ME', 'available'), source.county_frames.in_person_early);
+  assert.equal(selectCountySourceFrame(source, 'ME', 'official'), source.counties);
+  const nativeZero = [{ state_code: 'ME', ballots: 0 }];
+  assert.equal(selectCountySourceFrame({ ...source, counties: nativeZero }, 'ME', 'available'), nativeZero);
 });
 
 test('live Colorado counties use all64 native returned totals without changing the frozen source frame', () => {
