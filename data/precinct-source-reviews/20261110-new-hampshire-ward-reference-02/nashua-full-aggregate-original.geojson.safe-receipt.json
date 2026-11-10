@@ -1,0 +1,15 @@
+{
+  "source": "https://newgis.nashuanh.gov/arcgisapp3/rest/services/HTML_Viewer/NashuaNH_OperationalLayers_2022/MapServer/106/query?where=1%3D1&outFields=OBJECTID%2CWARD_NAME%2CWARDS22FIN%2CWARDS22F_1&returnGeometry=true&outSR=4326&f=geojson",
+  "actual_layer_id": 106,
+  "only_aggregate_identifiers_requested": [
+    "OBJECTID",
+    "WARD_NAME",
+    "WARDS22FIN",
+    "WARDS22F_1"
+  ],
+  "credentials_used": false,
+  "geometry_repairs_requested": false,
+  "status": "technical_failure",
+  "error_type": "JSONDecodeError",
+  "error": "Expecting value: line 3 column 1 (char 4)"
+}

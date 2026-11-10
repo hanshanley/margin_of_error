@@ -1,0 +1,17 @@
+{
+  "nashua": {
+    "native_ward_rows": 9,
+    "disposition": "held_no_qualified_reference",
+    "reason": "Declared ArcGIS query backend unavailable; metadata is not geometry. Complete current map PDF is a separate reference, not a feature join.",
+    "native_map_effective_literal": "OCTOBER 2026",
+    "native_map_revised_literal": "OCTOBER 2026",
+    "source_geometry_year_not_inferred_from_2022_service_name": true
+  },
+  "dover": {
+    "native_ward_rows": 6,
+    "disposition": "held_no_qualified_reference",
+    "reason": "Held city-linked MapGeo uses an opaque named map; parcel-ward lookup is not ward geometry. Independently city-linked public portal ward search has zero items.",
+    "no_private_keys_or_compiled_app_code_used": true,
+    "no_parcel_geometry_allocated": true
+  }
+}

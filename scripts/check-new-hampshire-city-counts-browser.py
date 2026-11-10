@@ -156,14 +156,15 @@ with sync_playwright() as runtime:
             expect(page.locator("#precinct-state-select")).to_have_value("New Hampshire")
             expect(page.locator('.geographic-detail [data-level="precinct"]')).to_have_count(0)
             ward_shapes = page.locator('.geographic-detail [data-level="ward"]')
-            expect(ward_shapes).to_have_count(12, timeout=90000)
-            expect(page.locator("#title")).to_have_text("Native ward counts in Manchester")
-            ward_values = ward_shapes.evaluate_all("els=>els.map(e=>({ward:e.dataset.sourceWard,count:e.dataset.count,rate:e.dataset.rate,year:e.dataset.referenceYear}))")
-            assert {int(row["ward"]):int(row["count"]) for row in ward_values} == {
+            expect(ward_shapes).to_have_count(22, timeout=90000)
+            expect(page.locator("#title")).to_have_text("Native ward counts in Manchester and Concord")
+            ward_values = ward_shapes.evaluate_all("els=>els.map(e=>({city:e.dataset.sourceCity,ward:e.dataset.sourceWard,count:e.dataset.count,rate:e.dataset.rate,year:e.dataset.referenceYear}))")
+            assert {int(row["ward"]):int(row["count"]) for row in ward_values if row["city"] == "Manchester"} == {
                 row["ward"]:row["total"] for row in m["wards"]}
-            assert all(row["rate"] == "" and row["year"] == "2022" for row in ward_values)
-            expect(page.locator("#geography-note")).to_contain_text("Six small native boundary overlaps")
-            ward7 = page.locator('[data-level="ward"][data-source-ward="7"]')
+            assert sum(int(row["count"]) for row in ward_values if row["city"] == "Concord") == 19234
+            assert all(row["rate"] == "" and row["year"] == ("2022" if row["city"] == "Manchester" else "current") for row in ward_values)
+            expect(page.locator("#geography-note")).to_contain_text("fourteen Concord native overlaps")
+            ward7 = page.locator('[data-level="ward"][data-source-city="Manchester"][data-source-ward="7"]')
             ward7.focus()
             ward7.press("Enter")
             expect(page.locator("#substate-detail")).to_contain_text("2,712")
@@ -186,7 +187,7 @@ with sync_playwright() as runtime:
             retained = chart.get_attribute("viewBox")
             viewport = page.viewport_size
             page.set_viewport_size(dict(width=viewport["width"] - 20, height=viewport["height"]))
-            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(12)
+            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(22)
             page.wait_for_timeout(350)
             expect(page.locator("#visualization svg.turnout-map")).to_have_attribute("viewBox", retained)
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
@@ -194,13 +195,25 @@ with sync_playwright() as runtime:
             expect(page.locator("#current-county-select")).to_have_value("additional:NH:city:3345140")
             expect(page.locator("#current-unit-select")).to_have_value("Manchester:Ward:7")
             expect(page.locator("#current-unit-detail")).to_contain_text("current Manchester municipal ward context")
+            page.locator("#tab-precincts").click()
+            concord1 = page.locator('[data-level="ward"][data-source-city="Concord"][data-source-ward="1"]')
+            expect(concord1).to_have_count(1, timeout=90000)
+            concord1.focus()
+            concord1.press("Enter")
+            expect(page.locator("#substate-detail")).to_contain_text("1,985")
+            expect(page.locator("#substate-detail")).to_contain_text("not an analysis rate")
+            page.locator("#tab-states").click()
+            expect(page.locator("#current-county-select")).to_have_value("additional:NH:city:3314200")
+            expect(page.locator("#current-unit-select")).to_have_value("Concord:Ward:1")
+            expect(page.locator("#current-unit-detail")).to_contain_text("current Concord municipal ward context")
             assert not errors, errors
             cases.append(dict(mobile=mobile, native_city_counts=4, native_ward_rows=37,
                 full_context_areas=259, unknown_not_zero=255, source_conflicts_retained=True,
                 federal_only_not_added=True, no_rates=True, no_old_shapes_as_2026_wards=True,
                 native_registers_and_percent_separate=True, unsupported_modes_not_substituted=True,
                 dover_native_date_not_filename=True, nashua_source_amendments_retained=True,
-                native_manchester_ward_counts=12, ward_reference_year=2022,
+                native_manchester_ward_counts=12, native_concord_ward_counts=10,
+                concord_vintage_not_inferred_from_2020_service_name=True, ward_reference_year=2022,
                 no_certified2026_legal_precinct_claim=True, native_ward_source_conflict_preserved=True,
                 methods_roundtrip=True, ward_zoom_pan_and_resize_preserved=True))
             context.close()
@@ -225,7 +238,7 @@ with sync_playwright() as runtime:
         page.get_by_role("button", name="Retry geographic detail").click()
         verify(page)
         context.close()
-        ward_path = "/participation-precincts/20261110-manchester-ward-reference-01/"
+        ward_path = "/participation-precincts/20261110-new-hampshire-ward-reference-02/"
         original = (ROOT / ("public" + ward_path) / "NH.geojson.gz").read_bytes()
         for invalid_scope in (False, True):
             context = browser.new_context()
@@ -253,7 +266,7 @@ with sync_playwright() as runtime:
             choose(page)
             page.locator("#tab-precincts").click()
             expect(page.locator("#coverage-note")).to_contain_text(
-                "Unqualified Manchester native ward" if invalid_scope else "checksum disagrees", timeout=90000)
+                "Unqualified Manchester/Concord native ward" if invalid_scope else "checksum disagrees", timeout=90000)
             expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(0)
             page.unroute("**" + ward_path + "NH.geojson.gz", corrupt_geometry)
             if invalid_scope:
@@ -261,7 +274,7 @@ with sync_playwright() as runtime:
                 page.reload(wait_until="domcontentloaded")
             else:
                 page.get_by_role("button", name="Retry precinct source").click()
-            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(12, timeout=90000)
+            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(22, timeout=90000)
             context.close()
     finally:
         browser.close()

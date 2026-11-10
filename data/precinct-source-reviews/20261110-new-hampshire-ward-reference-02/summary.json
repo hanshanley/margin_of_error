@@ -1,0 +1,22 @@
+{
+  "source_city_observations": 4,
+  "retained_native_ward_rows": 37,
+  "complete_native_source_fields": 242,
+  "mapped_cities": {
+    "Manchester": 12,
+    "Concord": 10
+  },
+  "mapped_wards": 22,
+  "held_table_only_ward_rows": 15,
+  "raw_count_checks_by_city": {
+    "Manchester": 38562,
+    "Concord": 19234
+  },
+  "native_vertices_verified": 7936,
+  "native_overlap_pairs": 20,
+  "source_geometry_repaired": false,
+  "source_counts_repaired": false,
+  "native_federal_only_added": false,
+  "rates_approved": false,
+  "certified_legal_precinct_boundaries": false
+}

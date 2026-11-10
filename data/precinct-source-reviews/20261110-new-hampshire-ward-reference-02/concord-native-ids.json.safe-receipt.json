@@ -1,0 +1,30 @@
+{
+  "source": "https://gis.concordnh.gov/arc1061/rest/services/Public/PubWebGIS2020/MapServer/53/query?where=1%3D1&returnIdsOnly=true&f=json",
+  "actual_layer_id": 53,
+  "only_aggregate_identifiers_requested": [
+    "OBJECTID",
+    "Ward"
+  ],
+  "credentials_used": false,
+  "geometry_repairs_requested": false,
+  "status": 200,
+  "bytes": 69,
+  "sha256": "a7e2ad054081cee671727b37bf17f6ce75e6094621821f374c95477eeb70e619",
+  "final_url": "https://gis.concordnh.gov/arc1061/rest/services/Public/PubWebGIS2020/MapServer/53/query?where=1%3D1&returnIdsOnly=true&f=json",
+  "native_count": null,
+  "object_ids": [
+    3,
+    9,
+    8,
+    12,
+    5,
+    7,
+    4,
+    11,
+    6,
+    10
+  ],
+  "features": 0,
+  "exceeded_transfer_limit": false,
+  "spatial_reference": null
+}

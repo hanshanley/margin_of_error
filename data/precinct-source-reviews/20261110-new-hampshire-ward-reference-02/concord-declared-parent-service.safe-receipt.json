@@ -1,0 +1,26 @@
+{
+  "source": "https://gis.concordnh.gov/arc1061/rest/services/Public/PubWebGIS2020/MapServer?f=json",
+  "declared_by": "https://gis.concordnh.gov/arcgis/publicwebgis/javascript/globalsetting.js",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 11429,
+  "sha256": "8c6385fc9a79bbc2b712137b64beb757de3b0407784acd43b048fc7fca609222",
+  "final_url": "https://gis.concordnh.gov/arc1061/rest/services/Public/PubWebGIS2020/MapServer?f=json",
+  "map_name": "Concord",
+  "spatial_reference": {
+    "wkid": 102710,
+    "latestWkid": 3437
+  },
+  "units": "esriFeet",
+  "ward_layers": [
+    {
+      "id": 53,
+      "name": "Voting Wards",
+      "parentLayerId": -1,
+      "defaultVisibility": false,
+      "subLayerIds": null,
+      "minScale": 0,
+      "maxScale": 0
+    }
+  ]
+}

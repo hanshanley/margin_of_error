@@ -1,0 +1,17 @@
+{
+  "declared_parent": "https://www.dover.nh.gov/services/online-services/geographic-information-system/",
+  "source": "https://dovernh.maps.arcgis.com/sharing/rest/portals/self?f=json",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 16125,
+  "sha256": "23c238d95da23f949854f121ab4a2d6d61e00ffe72488cd49b84521c2b769968",
+  "organization_id": "TU3PYSEKN2lZWCyH",
+  "name": "City of Dover, New Hampshire",
+  "url_key": "dovernh",
+  "ward_item_search": {
+    "source": "https://dovernh.maps.arcgis.com/sharing/rest/search?q=orgid%3ATU3PYSEKN2lZWCyH+AND+%28title%3Award+OR+tags%3Award+OR+title%3Avoting%29&num=20&f=json",
+    "total": 0,
+    "items": [],
+    "error": null
+  }
+}

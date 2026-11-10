@@ -97,6 +97,39 @@ export function qualifiedManchesterWardReference(p) {
     && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null;
 }
 
+export function qualifiedConcordWardReference(p) {
+  const native = p.native_record, reference = p.reference_geometry, ward = p.native_ward_number;
+  const columns = native?.total_cast_columns;
+  const objects = { 1: 11, 2: 7, 3: 6, 4: 9, 5: 10, 6: 5, 7: 8, 8: 3, 9: 4, 10: 12 };
+  return p.year === 2026 && p.state_code === "NH" && p.county === "Concord" && p.county_fips === null
+    && p.county_id === "additional:NH:city:3314200"
+    && p.source_snapshot === "new-hampshire-native-ward-reference-20261110-02"
+    && p.reporting_unit_kind === "municipal_ward" && p.unit_kind === "municipal_ward"
+    && p.match_status === "matched_current_municipal_ward_reference"
+    && Number.isInteger(ward) && ward >= 1 && ward <= 10 && p.native_object_id === objects[ward]
+    && p.key === `NH|Concord|Ward:${ward}` && p.unit === `Ward ${ward}` && p.unit_key === `Concord:Ward:${ward}`
+    && p.source_election_date === "2026-11-03"
+    && Array.isArray(columns) && columns.length === (ward <= 2 ? 2 : 1)
+    && columns.every(row => row.ward === ward && Number.isSafeInteger(row.count) && row.count >= 0)
+    && (ward <= 2 ? new Set(columns.map(row => row.school_district)).size === 2
+      && columns.every(row => ["Concord School District (CSD)", "Merrimack Valley School District (MVSD)"].includes(row.school_district))
+      : columns[0].school_district === null)
+    && Number.isSafeInteger(p.ballots) && p.ballots === columns.reduce((sum, row) => sum + row.count, 0)
+    && native.printed_ward_subtotal === (ward <= 2 ? p.ballots : null)
+    && ["opening", "election_day_registrations", "closing"].every(key => Number.isSafeInteger(native[key]) && native[key] >= 0)
+    && native.opening + native.election_day_registrations === native.closing
+    && p.source_count_qualified === true && p.cast_ballot_count_qualified === false
+    && p.unique_voter_count_qualified === false && p.maps_approved === true
+    && reference?.native_ward_number === ward && reference.native_ward_label === `Ward ${ward}`
+    && reference.layer_name === "Voting Wards" && reference.rest_layer_id === 53
+    && reference.boundary_vintage === null && reference.current_clerk_approval_date === "2021-11-08"
+    && reference.native_projection_epsg === 3437 && reference.native_datum_operation?.wkid === 108190
+    && reference.native_datum_operation.forward === false
+    && reference.certified_legal_boundaries === false && reference.topology_valid_without_repairs === true
+    && reference.single_path_per_polygon === true && reference.native_overlaps_preserved === true
+    && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null;
+}
+
 export function hasCountySourceMode(code, mode) {
   return ["WV", "ME", "IL"].includes(code) && ["in_person_early", "mail_returned"].includes(mode)
     || Boolean(providerCountyScopes[code]?.modes.includes(mode));

@@ -1,0 +1,920 @@
+{
+  "status": "PASS_all10_native_Concord_ward_reference_counts_coordinates_NOT_yet_live",
+  "mapped_source_city": "Concord",
+  "native_count": 10,
+  "direct_ward_count_sum": 19234,
+  "source_ward_count_sum_matches_printed_city_parent": true,
+  "native_vertices_checked": 4147,
+  "maximum_independent_projection_error_degrees": 2.737892284211871e-10,
+  "original_geographic_bytes": 170300,
+  "original_geographic_sha256": "92a2be4a3aba7a455176e3d0864abd570c2f75d75195b286db3ed1d4bddfee51",
+  "original_projected_bytes": 112305,
+  "original_projected_sha256": "ac85680a86e87aa242c15d40e035333d2f87ce854592662da7f7b312ac5560b1",
+  "native_object_ids_NOT_ward_ids": true,
+  "source_school_district_cells_and_printed_subtotals_preserved": true,
+  "source_registered_stocks_and_printed_percentages_NOT_analysis_denominators_or_rates": true,
+  "complete_queries": [
+    {
+      "city": "Concord",
+      "native_ward": 1,
+      "native_object_id": 11,
+      "source_count": 1985,
+      "native_vertices": 319,
+      "independent_projection_error_degrees": 2.659522453848192e-10,
+      "rejected_default_null_datum_error_degrees": 8.86928998416101e-06,
+      "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+      "native_source_record": {
+        "total_cast_columns": [
+          {
+            "ward": 1,
+            "school_district": "Concord School District (CSD)",
+            "count": 369
+          },
+          {
+            "ward": 1,
+            "school_district": "Merrimack Valley School District (MVSD)",
+            "count": 1616
+          }
+        ],
+        "printed_ward_subtotal": 1985,
+        "opening": 2703,
+        "election_day_registrations": 156,
+        "closing": 2859,
+        "printed_turnout": "73.44%"
+      },
+      "reference_source": "City-declared current Voting Wards REST53",
+      "source_count_election_date": "2026-11-03",
+      "current_city_viewer_approval_date": "2021-11-08",
+      "native_projection_epsg": 3437,
+      "native_area_units": "US survey feet squared",
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "certified2026_legal_precinct_claim": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "disposition": "eligible_current_official_municipal_ward_reference_not_yet_integrated"
+    },
+    {
+      "city": "Concord",
+      "native_ward": 2,
+      "native_object_id": 7,
+      "source_count": 1764,
+      "native_vertices": 500,
+      "independent_projection_error_degrees": 2.576425287001274e-10,
+      "rejected_default_null_datum_error_degrees": 8.864975333081848e-06,
+      "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+      "native_source_record": {
+        "total_cast_columns": [
+          {
+            "ward": 2,
+            "school_district": "Concord School District (CSD)",
+            "count": 1136
+          },
+          {
+            "ward": 2,
+            "school_district": "Merrimack Valley School District (MVSD)",
+            "count": 628
+          }
+        ],
+        "printed_ward_subtotal": 1764,
+        "opening": 2424,
+        "election_day_registrations": 157,
+        "closing": 2581,
+        "printed_turnout": "72.77%"
+      },
+      "reference_source": "City-declared current Voting Wards REST53",
+      "source_count_election_date": "2026-11-03",
+      "current_city_viewer_approval_date": "2021-11-08",
+      "native_projection_epsg": 3437,
+      "native_area_units": "US survey feet squared",
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "certified2026_legal_precinct_claim": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "disposition": "eligible_current_official_municipal_ward_reference_not_yet_integrated"
+    },
+    {
+      "city": "Concord",
+      "native_ward": 3,
+      "native_object_id": 6,
+      "source_count": 1059,
+      "native_vertices": 296,
+      "independent_projection_error_degrees": 2.5947784867325633e-10,
+      "rejected_default_null_datum_error_degrees": 8.865341092873842e-06,
+      "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+      "native_source_record": {
+        "total_cast_columns": [
+          {
+            "ward": 3,
+            "school_district": null,
+            "count": 1059
+          }
+        ],
+        "printed_ward_subtotal": null,
+        "opening": 1430,
+        "election_day_registrations": 79,
+        "closing": 1509,
+        "printed_turnout": "74.06%"
+      },
+      "reference_source": "City-declared current Voting Wards REST53",
+      "source_count_election_date": "2026-11-03",
+      "current_city_viewer_approval_date": "2021-11-08",
+      "native_projection_epsg": 3437,
+      "native_area_units": "US survey feet squared",
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "certified2026_legal_precinct_claim": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "disposition": "eligible_current_official_municipal_ward_reference_not_yet_integrated"
+    },
+    {
+      "city": "Concord",
+      "native_ward": 4,
+      "native_object_id": 9,
+      "source_count": 1918,
+      "native_vertices": 186,
+      "independent_projection_error_degrees": 2.473548802289201e-10,
+      "rejected_default_null_datum_error_degrees": 8.857437479848251e-06,
+      "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+      "native_source_record": {
+        "total_cast_columns": [
+          {
+            "ward": 4,
+            "school_district": null,
+            "count": 1918
+          }
+        ],
+        "printed_ward_subtotal": null,
+        "opening": 2621,
+        "election_day_registrations": 236,
+        "closing": 2857,
+        "printed_turnout": "73.18%"
+      },
+      "reference_source": "City-declared current Voting Wards REST53",
+      "source_count_election_date": "2026-11-03",
+      "current_city_viewer_approval_date": "2021-11-08",
+      "native_projection_epsg": 3437,
+      "native_area_units": "US survey feet squared",
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "certified2026_legal_precinct_claim": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "disposition": "eligible_current_official_municipal_ward_reference_not_yet_integrated"
+    },
+    {
+      "city": "Concord",
+      "native_ward": 5,
+      "native_object_id": 10,
+      "source_count": 2385,
+      "native_vertices": 572,
+      "independent_projection_error_degrees": 2.5361807012758923e-10,
+      "rejected_default_null_datum_error_degrees": 8.862261543715904e-06,
+      "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+      "native_source_record": {
+        "total_cast_columns": [
+          {
+            "ward": 5,
+            "school_district": null,
+            "count": 2385
+          }
+        ],
+        "printed_ward_subtotal": null,
+        "opening": 3129,
+        "election_day_registrations": 125,
+        "closing": 3254,
+        "printed_turnout": "76.22%"
+      },
+      "reference_source": "City-declared current Voting Wards REST53",
+      "source_count_election_date": "2026-11-03",
+      "current_city_viewer_approval_date": "2021-11-08",
+      "native_projection_epsg": 3437,
+      "native_area_units": "US survey feet squared",
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "certified2026_legal_precinct_claim": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "disposition": "eligible_current_official_municipal_ward_reference_not_yet_integrated"
+    },
+    {
+      "city": "Concord",
+      "native_ward": 6,
+      "native_object_id": 5,
+      "source_count": 1644,
+      "native_vertices": 318,
+      "independent_projection_error_degrees": 2.407987437619104e-10,
+      "rejected_default_null_datum_error_degrees": 8.853563956245472e-06,
+      "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+      "native_source_record": {
+        "total_cast_columns": [
+          {
+            "ward": 6,
+            "school_district": null,
+            "count": 1644
+          }
+        ],
+        "printed_ward_subtotal": null,
+        "opening": 2369,
+        "election_day_registrations": 194,
+        "closing": 2563,
+        "printed_turnout": "69.40%"
+      },
+      "reference_source": "City-declared current Voting Wards REST53",
+      "source_count_election_date": "2026-11-03",
+      "current_city_viewer_approval_date": "2021-11-08",
+      "native_projection_epsg": 3437,
+      "native_area_units": "US survey feet squared",
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "certified2026_legal_precinct_claim": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "disposition": "eligible_current_official_municipal_ward_reference_not_yet_integrated"
+    },
+    {
+      "city": "Concord",
+      "native_ward": 7,
+      "native_object_id": 8,
+      "source_count": 2395,
+      "native_vertices": 172,
+      "independent_projection_error_degrees": 2.3637711640059735e-10,
+      "rejected_default_null_datum_error_degrees": 8.851090102988793e-06,
+      "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+      "native_source_record": {
+        "total_cast_columns": [
+          {
+            "ward": 7,
+            "school_district": null,
+            "count": 2395
+          }
+        ],
+        "printed_ward_subtotal": null,
+        "opening": 3090,
+        "election_day_registrations": 111,
+        "closing": 3201,
+        "printed_turnout": "77.51%"
+      },
+      "reference_source": "City-declared current Voting Wards REST53",
+      "source_count_election_date": "2026-11-03",
+      "current_city_viewer_approval_date": "2021-11-08",
+      "native_projection_epsg": 3437,
+      "native_area_units": "US survey feet squared",
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "certified2026_legal_precinct_claim": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "disposition": "eligible_current_official_municipal_ward_reference_not_yet_integrated"
+    },
+    {
+      "city": "Concord",
+      "native_ward": 8,
+      "native_object_id": 3,
+      "source_count": 1898,
+      "native_vertices": 1265,
+      "independent_projection_error_degrees": 2.5995925745860096e-10,
+      "rejected_default_null_datum_error_degrees": 8.861987999853326e-06,
+      "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+      "native_source_record": {
+        "total_cast_columns": [
+          {
+            "ward": 8,
+            "school_district": null,
+            "count": 1898
+          }
+        ],
+        "printed_ward_subtotal": null,
+        "opening": 2509,
+        "election_day_registrations": 158,
+        "closing": 2667,
+        "printed_turnout": "75.65%"
+      },
+      "reference_source": "City-declared current Voting Wards REST53",
+      "source_count_election_date": "2026-11-03",
+      "current_city_viewer_approval_date": "2021-11-08",
+      "native_projection_epsg": 3437,
+      "native_area_units": "US survey feet squared",
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "certified2026_legal_precinct_claim": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "disposition": "eligible_current_official_municipal_ward_reference_not_yet_integrated"
+    },
+    {
+      "city": "Concord",
+      "native_ward": 9,
+      "native_object_id": 4,
+      "source_count": 1626,
+      "native_vertices": 232,
+      "independent_projection_error_degrees": 2.53765941586544e-10,
+      "rejected_default_null_datum_error_degrees": 8.858797909229036e-06,
+      "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+      "native_source_record": {
+        "total_cast_columns": [
+          {
+            "ward": 9,
+            "school_district": null,
+            "count": 1626
+          }
+        ],
+        "printed_ward_subtotal": null,
+        "opening": 2320,
+        "election_day_registrations": 137,
+        "closing": 2457,
+        "printed_turnout": "70.09%"
+      },
+      "reference_source": "City-declared current Voting Wards REST53",
+      "source_count_election_date": "2026-11-03",
+      "current_city_viewer_approval_date": "2021-11-08",
+      "native_projection_epsg": 3437,
+      "native_area_units": "US survey feet squared",
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "certified2026_legal_precinct_claim": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "disposition": "eligible_current_official_municipal_ward_reference_not_yet_integrated"
+    },
+    {
+      "city": "Concord",
+      "native_ward": 10,
+      "native_object_id": 12,
+      "source_count": 2560,
+      "native_vertices": 287,
+      "independent_projection_error_degrees": 2.737892284211871e-10,
+      "rejected_default_null_datum_error_degrees": 8.872697483875109e-06,
+      "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+      "native_source_record": {
+        "total_cast_columns": [
+          {
+            "ward": 10,
+            "school_district": null,
+            "count": 2560
+          }
+        ],
+        "printed_ward_subtotal": null,
+        "opening": 3284,
+        "election_day_registrations": 108,
+        "closing": 3392,
+        "printed_turnout": "77.95%"
+      },
+      "reference_source": "City-declared current Voting Wards REST53",
+      "source_count_election_date": "2026-11-03",
+      "current_city_viewer_approval_date": "2021-11-08",
+      "native_projection_epsg": 3437,
+      "native_area_units": "US survey feet squared",
+      "source_geometry_repaired": false,
+      "source_count_repaired": false,
+      "certified2026_legal_precinct_claim": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "disposition": "eligible_current_official_municipal_ward_reference_not_yet_integrated"
+    }
+  ],
+  "complete_pairwise_queries": [
+    {
+      "wards": [
+        1,
+        2
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        1,
+        3
+      ],
+      "native_projected_US_survey_feet_squared": 525.7701252608676,
+      "geographic_square_degrees": 5.415760817068425e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        1,
+        4
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        1,
+        5
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        1,
+        6
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        1,
+        7
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        1,
+        8
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        1,
+        9
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        1,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        2,
+        3
+      ],
+      "native_projected_US_survey_feet_squared": 226.25735280698706,
+      "geographic_square_degrees": 2.3302650976358485e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        2,
+        4
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        2,
+        5
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        2,
+        6
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        2,
+        7
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        2,
+        8
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        2,
+        9
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        2,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        3,
+        4
+      ],
+      "native_projected_US_survey_feet_squared": 247.5205078125,
+      "geographic_square_degrees": 2.550241209734208e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        3,
+        5
+      ],
+      "native_projected_US_survey_feet_squared": 119.80461031026626,
+      "geographic_square_degrees": 1.2288185752761072e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        3,
+        6
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        3,
+        7
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        3,
+        8
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        3,
+        9
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        3,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 5303.339461540246,
+      "geographic_square_degrees": 5.471071135235709e-08,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        4,
+        5
+      ],
+      "native_projected_US_survey_feet_squared": 30.88357425271215,
+      "geographic_square_degrees": 3.1773752100480245e-10,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        4,
+        6
+      ],
+      "native_projected_US_survey_feet_squared": 24.33544921875,
+      "geographic_square_degrees": 2.5043451512702685e-10,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        4,
+        7
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        4,
+        8
+      ],
+      "native_projected_US_survey_feet_squared": 313.6371431741354,
+      "geographic_square_degrees": 3.228077499534945e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        4,
+        9
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        4,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 1850.5244069125565,
+      "geographic_square_degrees": 1.9049142097528402e-08,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        5,
+        6
+      ],
+      "native_projected_US_survey_feet_squared": 2001.1442515361732,
+      "geographic_square_degrees": 2.0590002841713006e-08,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        5,
+        7
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        5,
+        8
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        5,
+        9
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        5,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        6,
+        7
+      ],
+      "native_projected_US_survey_feet_squared": 499.9583620493221,
+      "geographic_square_degrees": 5.142047370862556e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        6,
+        8
+      ],
+      "native_projected_US_survey_feet_squared": 3700.2382676525526,
+      "geographic_square_degrees": 3.807989190998765e-08,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        6,
+        9
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        6,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        7,
+        8
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        7,
+        9
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        7,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        8,
+        9
+      ],
+      "native_projected_US_survey_feet_squared": 465.7067015432674,
+      "geographic_square_degrees": 4.784770651001185e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        8,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 0.0,
+      "geographic_square_degrees": 0.0,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        9,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 3591.4635488135746,
+      "geographic_square_degrees": 3.720150278188631e-08,
+      "no_source_repairs_or_clipping": true
+    }
+  ],
+  "native_and_geographic_overlap_decisions": [
+    {
+      "wards": [
+        1,
+        3
+      ],
+      "native_projected_US_survey_feet_squared": 525.7701252608676,
+      "geographic_square_degrees": 5.415760817068425e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        2,
+        3
+      ],
+      "native_projected_US_survey_feet_squared": 226.25735280698706,
+      "geographic_square_degrees": 2.3302650976358485e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        3,
+        4
+      ],
+      "native_projected_US_survey_feet_squared": 247.5205078125,
+      "geographic_square_degrees": 2.550241209734208e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        3,
+        5
+      ],
+      "native_projected_US_survey_feet_squared": 119.80461031026626,
+      "geographic_square_degrees": 1.2288185752761072e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        3,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 5303.339461540246,
+      "geographic_square_degrees": 5.471071135235709e-08,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        4,
+        5
+      ],
+      "native_projected_US_survey_feet_squared": 30.88357425271215,
+      "geographic_square_degrees": 3.1773752100480245e-10,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        4,
+        6
+      ],
+      "native_projected_US_survey_feet_squared": 24.33544921875,
+      "geographic_square_degrees": 2.5043451512702685e-10,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        4,
+        8
+      ],
+      "native_projected_US_survey_feet_squared": 313.6371431741354,
+      "geographic_square_degrees": 3.228077499534945e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        4,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 1850.5244069125565,
+      "geographic_square_degrees": 1.9049142097528402e-08,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        5,
+        6
+      ],
+      "native_projected_US_survey_feet_squared": 2001.1442515361732,
+      "geographic_square_degrees": 2.0590002841713006e-08,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        6,
+        7
+      ],
+      "native_projected_US_survey_feet_squared": 499.9583620493221,
+      "geographic_square_degrees": 5.142047370862556e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        6,
+        8
+      ],
+      "native_projected_US_survey_feet_squared": 3700.2382676525526,
+      "geographic_square_degrees": 3.807989190998765e-08,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        8,
+        9
+      ],
+      "native_projected_US_survey_feet_squared": 465.7067015432674,
+      "geographic_square_degrees": 4.784770651001185e-09,
+      "no_source_repairs_or_clipping": true
+    },
+    {
+      "wards": [
+        9,
+        10
+      ],
+      "native_projected_US_survey_feet_squared": 3591.4635488135746,
+      "geographic_square_degrees": 3.720150278188631e-08,
+      "no_source_repairs_or_clipping": true
+    }
+  ],
+  "all_shapes_valid_without_repair": true,
+  "all_closed_single_rings": true,
+  "certified2026_legal_precinct_claim": false,
+  "pyproj_version": "3.6.1",
+  "projection_network_disabled": true,
+  "actual_datum_operation": "inverse_ESRI108190_not_library_default_null_offset",
+  "maximum_rejected_default_null_datum_error_degrees": 8.872697483875109e-06
+}

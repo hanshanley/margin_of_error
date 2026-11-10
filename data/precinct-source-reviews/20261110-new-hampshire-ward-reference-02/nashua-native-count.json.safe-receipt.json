@@ -1,0 +1,21 @@
+{
+  "source": "https://newgis.nashuanh.gov/arcgisapp3/rest/services/HTML_Viewer/NashuaNH_OperationalLayers_2022/MapServer/106/query?where=1%3D1&returnCountOnly=true&f=json",
+  "actual_layer_id": 106,
+  "only_aggregate_identifiers_requested": [
+    "OBJECTID",
+    "WARD_NAME",
+    "WARDS22FIN",
+    "WARDS22F_1"
+  ],
+  "credentials_used": false,
+  "geometry_repairs_requested": false,
+  "status": 200,
+  "bytes": 113,
+  "sha256": "02b589f0ae0797fc19bd0004fa8cf5be0e921cfea91d4422d15a834a270d279d",
+  "final_url": "https://newgis.nashuanh.gov/arcgisapp3/rest/services/HTML_Viewer/NashuaNH_OperationalLayers_2022/MapServer/106/query?where=1%3D1&returnCountOnly=true&f=json",
+  "native_count": null,
+  "object_ids": null,
+  "features": 0,
+  "exceeded_transfer_limit": false,
+  "spatial_reference": null
+}

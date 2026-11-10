@@ -1,0 +1,238 @@
+{
+  "authority": "ESRI",
+  "code": 108190,
+  "direction": "inverse",
+  "definition": {
+    "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+    "type": "Transformation",
+    "name": "WGS_1984_(ITRF00)_To_NAD_1983",
+    "source_crs": {
+      "type": "GeographicCRS",
+      "name": "WGS 84",
+      "datum_ensemble": {
+        "name": "World Geodetic System 1984 ensemble",
+        "members": [
+          {
+            "name": "World Geodetic System 1984 (Transit)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1166
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G730)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1152
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G873)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1153
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G1150)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1154
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G1674)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1155
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G1762)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1156
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G2139)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1309
+            }
+          }
+        ],
+        "ellipsoid": {
+          "name": "WGS 84",
+          "semi_major_axis": 6378137,
+          "inverse_flattening": 298.257223563
+        },
+        "accuracy": "2.0",
+        "id": {
+          "authority": "EPSG",
+          "code": 6326
+        }
+      },
+      "coordinate_system": {
+        "subtype": "ellipsoidal",
+        "axis": [
+          {
+            "name": "Geodetic latitude",
+            "abbreviation": "Lat",
+            "direction": "north",
+            "unit": "degree"
+          },
+          {
+            "name": "Geodetic longitude",
+            "abbreviation": "Lon",
+            "direction": "east",
+            "unit": "degree"
+          }
+        ]
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 4326
+      }
+    },
+    "target_crs": {
+      "type": "GeographicCRS",
+      "name": "NAD83",
+      "datum": {
+        "type": "GeodeticReferenceFrame",
+        "name": "North American Datum 1983",
+        "ellipsoid": {
+          "name": "GRS 1980",
+          "semi_major_axis": 6378137,
+          "inverse_flattening": 298.257222101
+        }
+      },
+      "coordinate_system": {
+        "subtype": "ellipsoidal",
+        "axis": [
+          {
+            "name": "Geodetic latitude",
+            "abbreviation": "Lat",
+            "direction": "north",
+            "unit": "degree"
+          },
+          {
+            "name": "Geodetic longitude",
+            "abbreviation": "Lon",
+            "direction": "east",
+            "unit": "degree"
+          }
+        ]
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 4269
+      }
+    },
+    "method": {
+      "name": "Coordinate Frame rotation (geog2D domain)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9607
+      }
+    },
+    "parameters": [
+      {
+        "name": "X-axis translation",
+        "value": 0.9956,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8605
+        }
+      },
+      {
+        "name": "Y-axis translation",
+        "value": -1.9013,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8606
+        }
+      },
+      {
+        "name": "Z-axis translation",
+        "value": -0.5215,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8607
+        }
+      },
+      {
+        "name": "X-axis rotation",
+        "value": 0.025915,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8608
+        }
+      },
+      {
+        "name": "Y-axis rotation",
+        "value": 0.009426,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8609
+        }
+      },
+      {
+        "name": "Z-axis rotation",
+        "value": 0.011599,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8610
+        }
+      },
+      {
+        "name": "Scale difference",
+        "value": 0.00062,
+        "unit": {
+          "type": "ScaleUnit",
+          "name": "parts per million",
+          "conversion_factor": 1e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8611
+        }
+      }
+    ],
+    "accuracy": "0.1",
+    "scope": "Not known.",
+    "area": "Puerto Rico - onshore and offshore. United States (USA) onshore and offshore - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands - onshore and offshore.",
+    "bbox": {
+      "south_latitude": 14.92,
+      "west_longitude": 167.65,
+      "north_latitude": 74.71,
+      "east_longitude": -63.88
+    },
+    "id": {
+      "authority": "ESRI",
+      "code": 108190
+    }
+  },
+  "pipeline": "+proj=pipeline +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=deg +xy_out=rad +step +proj=push +v_3 +step +proj=cart +ellps=WGS84 +step +proj=helmert +x=0.9956 +y=-1.9013 +z=-0.5215 +rx=0.025915 +ry=0.009426 +rz=0.011599 +s=0.00062 +convention=coordinate_frame +step +inv +proj=cart +ellps=GRS80 +step +proj=pop +v_3 +step +proj=unitconvert +xy_in=rad +xy_out=deg +step +proj=axisswap +order=2,1",
+  "pyproj": "3.6.1",
+  "projection_network_disabled": true,
+  "native_first_transformation_source": "concord-native-datum-transformations-original.json"
+}

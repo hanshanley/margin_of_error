@@ -121,9 +121,14 @@ originals, reference geometry and a dependency-free offline Node reproduction.
 Its packaging command refuses to overwrite an existing version.
 
 New Hampshire keeps four native city sources and all 37 ward rows distinct.
-The Precincts tab additionally maps Manchester's 12 literal ward totals on
-current official municipal ward context (2022 GIS; lines effective December 21,
-2021), not newly certified 2026 legal precincts. The default state view retains
+The Precincts tab maps Manchester's 12 and Concord's 10 literal ward counts on
+current official municipal context, not newly certified 2026 legal precincts.
+Manchester uses 2022 GIS / lines effective December 21, 2021. Concord's city
+approval is November 8, 2021; its `PubWebGIS2020` service name is not a boundary
+vintage. Independent coordinate checks use the server-declared inverse
+Esri108190 datum operation, not a null-offset approximation. Retain all six
+Manchester and fourteen Concord native overlap pairs without repairs.
+The other 15 ward rows stay table-only. The default state view retains
 the four-city municipality context, with other areas unknown. Preserve native
 boundary overlaps, Ward 7's 85-ballot source conflict and separate federal-only
 counts; no source repair, allocation or turnout rate is enabled. The complete

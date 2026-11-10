@@ -1,0 +1,28 @@
+{
+  "source": "https://newgis.nashuanh.gov/arcgisapp3/rest/services/HTML_Viewer/NashuaNH_OperationalLayers_2022/MapServer?f=json",
+  "declared_by": "https://nashuagis.nashuanh.gov/appConfig.js",
+  "no_features_requested": true,
+  "status": 200,
+  "bytes": 6302,
+  "sha256": "bc6d59b32dd8bbc32150dc86b5267663d4e7e249c9e3f15a0436b9473dc3cc4d",
+  "final_url": "https://newgis.nashuanh.gov/arcgisapp3/rest/services/HTML_Viewer/NashuaNH_OperationalLayers_2022/MapServer?f=json",
+  "map_name": "Layers",
+  "spatial_reference": {
+    "wkid": 102100,
+    "latestWkid": 3857
+  },
+  "units": "esriMeters",
+  "ward_layers": [
+    {
+      "id": 106,
+      "name": "Wards",
+      "parentLayerId": -1,
+      "defaultVisibility": false,
+      "subLayerIds": null,
+      "minScale": 0,
+      "maxScale": 0,
+      "type": "Feature Layer",
+      "geometryType": "esriGeometryPolygon"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "source": "https://newgis.nashuanh.gov/arcgisapp3/rest/services/HTML_Viewer/NashuaNH_OperationalLayers_2022/MapServer/106?f=json",
+  "no_features_requested": true,
+  "actual_parent_layer_id": 106,
+  "status": 200,
+  "bytes": 6299,
+  "sha256": "ca3f67952aad33278b2ddfb7279f6c1202e94fdd70df47824ed7fc159348e8fd",
+  "name": "Wards",
+  "description": "",
+  "geometry_type": "esriGeometryPolygon",
+  "object_id_field": null,
+  "extent": {
+    "xmin": -7966213.690236446,
+    "ymin": 5266401.473484217,
+    "xmax": -7951751.990875114,
+    "ymax": 5282471.659417494,
+    "spatialReference": {
+      "wkid": 102100,
+      "latestWkid": 3857
+    }
+  },
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "alias": "OBJECTID",
+      "type": "esriFieldTypeOID"
+    },
+    {
+      "name": "AREA_",
+      "alias": "AREA_",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "name": "PERIMETER",
+      "alias": "PERIMETER",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "name": "WARDS22FIN",
+      "alias": "WARDS22FIN",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "name": "WARDS22F_1",
+      "alias": "WARDS22F_1",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "name": "WARD_NAME",
+      "alias": "WARD_NAME",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "GlobalID",
+      "alias": "GlobalID",
+      "type": "esriFieldTypeGlobalID"
+    },
+    {
+      "name": "ALDERMAN",
+      "alias": "ALDERMAN",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "Shape",
+      "alias": "Shape",
+      "type": "esriFieldTypeGeometry"
+    },
+    {
+      "name": "Address",
+      "alias": "Address",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "VotingLocation",
+      "alias": "VotingLocation",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "Shape.STArea()",
+      "alias": "Shape.STArea()",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "name": "Shape.STLength()",
+      "alias": "Shape.STLength()",
+      "type": "esriFieldTypeDouble"
+    }
+  ],
+  "query_formats": "JSON, geoJSON"
+}

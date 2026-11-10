@@ -1,0 +1,12 @@
+{
+  "city": "Concord",
+  "source_url": "https://www.concordnh.gov/897/Interactive-GIS-Viewer",
+  "original_private_html_sha256": "ce54e0e618c73c7fd5422738cfb0b294974b26903936b00a5f964dcdedb61bef",
+  "current_city_viewer_approval_date": "2021-11-08",
+  "declared_voting_wards": 10,
+  "actual_declared_viewer": "https://gis.concordnh.gov/arcgis/publicwebgis/",
+  "source_geometry_year_not_inferred_from_service_name": true,
+  "complete_public_original_geometry_supplied": true,
+  "certified_legal2026_precinct_boundaries": false,
+  "private_publisher_configuration_or_compiled_app_code_copied": false
+}

@@ -1,0 +1,80 @@
+{
+  "source": "https://gis.concordnh.gov/arc1061/rest/services/Public/PubWebGIS2020/MapServer/53?f=json",
+  "no_features_requested": true,
+  "actual_parent_layer_id": 53,
+  "status": 200,
+  "bytes": 5608,
+  "sha256": "f5282c43df6f5df3bba2ef2eb7949d0ff50f3c93ed00b0e58cbc8a8d0375bee9",
+  "name": "Voting Wards",
+  "description": "",
+  "geometry_type": "esriGeometryPolygon",
+  "object_id_field": null,
+  "extent": {
+    "xmin": 983895.09375,
+    "ymin": 237576.375,
+    "xmax": 1040125.28125,
+    "ymax": 295047.8125,
+    "spatialReference": {
+      "wkid": 102710,
+      "latestWkid": 3437
+    }
+  },
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "alias": "OBJECTID",
+      "type": "esriFieldTypeOID"
+    },
+    {
+      "name": "SHAPE",
+      "alias": "Shape",
+      "type": "esriFieldTypeGeometry"
+    },
+    {
+      "name": "Ward",
+      "alias": "Voting Ward",
+      "type": "esriFieldTypeSmallInteger"
+    },
+    {
+      "name": "District",
+      "alias": "House District",
+      "type": "esriFieldTypeSmallInteger"
+    },
+    {
+      "name": "Population",
+      "alias": "Population",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "PopNum",
+      "alias": "PopNum",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "name": "TargetRange",
+      "alias": "TargetRange",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "name": "RangePercent",
+      "alias": "RangePercent",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "name": "GlobalID",
+      "alias": "GlobalID",
+      "type": "esriFieldTypeGlobalID"
+    },
+    {
+      "name": "SHAPE.STArea()",
+      "alias": "SHAPE.STArea()",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "name": "SHAPE.STLength()",
+      "alias": "SHAPE.STLength()",
+      "type": "esriFieldTypeDouble"
+    }
+  ],
+  "query_formats": "JSON, AMF, geoJSON"
+}
