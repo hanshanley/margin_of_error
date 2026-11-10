@@ -1,0 +1,817 @@
+{
+  "official-statewide-results": {
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblScopeName": "Statewide Results",
+      "lblTotalBallotsCast": "1,693,621",
+      "lblTotalRegisteredVoters": "3,852,947",
+      "lblVoterTurnout": "43.96%",
+      "lblCountiesReported": "67",
+      "lblLastUpdated": "11/04/2026 11:16:06 AM"
+    }
+  },
+  "official-county-07": {
+    "native_county_code": "07",
+    "native_county_name": "Bibb",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Bibb County",
+      "lblTotalBallotsCast": "6,189",
+      "lblTotalRegisteredVoters": "14,993",
+      "lblVoterTurnout": "41.28%",
+      "lblLastUpdated": "11/03/2026 09:53:52 PM"
+    }
+  },
+  "official-county-04": {
+    "native_county_code": "04",
+    "native_county_name": "Autauga",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Autauga County",
+      "lblTotalBallotsCast": "20,312",
+      "lblTotalRegisteredVoters": "46,937",
+      "lblVoterTurnout": "43.28%",
+      "lblLastUpdated": "11/03/2026 08:48:49 PM"
+    }
+  },
+  "official-county-06": {
+    "native_county_code": "06",
+    "native_county_name": "Barbour",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Barbour County",
+      "lblTotalBallotsCast": "7,507",
+      "lblTotalRegisteredVoters": "17,017",
+      "lblVoterTurnout": "44.11%",
+      "lblLastUpdated": "11/03/2026 08:35:29 PM"
+    }
+  },
+  "official-county-05": {
+    "native_county_code": "05",
+    "native_county_name": "Baldwin",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Baldwin County",
+      "lblTotalBallotsCast": "86,040",
+      "lblTotalRegisteredVoters": "214,658",
+      "lblVoterTurnout": "40.08%",
+      "lblLastUpdated": "11/03/2026 10:45:14 PM"
+    }
+  },
+  "official-county-08": {
+    "native_county_code": "08",
+    "native_county_name": "Blount",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Blount County",
+      "lblTotalBallotsCast": "17,940",
+      "lblTotalRegisteredVoters": "43,681",
+      "lblVoterTurnout": "41.07%",
+      "lblLastUpdated": "11/03/2026 10:26:54 PM"
+    }
+  },
+  "official-county-11": {
+    "native_county_code": "11",
+    "native_county_name": "Calhoun",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Calhoun County",
+      "lblTotalBallotsCast": "32,684",
+      "lblTotalRegisteredVoters": "83,787",
+      "lblVoterTurnout": "39.01%",
+      "lblLastUpdated": "11/03/2026 10:49:25 PM"
+    }
+  },
+  "official-county-10": {
+    "native_county_code": "10",
+    "native_county_name": "Butler",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Butler County",
+      "lblTotalBallotsCast": "6,788",
+      "lblTotalRegisteredVoters": "14,293",
+      "lblVoterTurnout": "47.49%",
+      "lblLastUpdated": "11/03/2026 09:38:29 PM"
+    }
+  },
+  "official-county-12": {
+    "native_county_code": "12",
+    "native_county_name": "Chambers",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Chambers County",
+      "lblTotalBallotsCast": "10,411",
+      "lblTotalRegisteredVoters": "25,515",
+      "lblVoterTurnout": "40.80%",
+      "lblLastUpdated": "11/03/2026 09:50:42 PM"
+    }
+  },
+  "official-county-13": {
+    "native_county_code": "13",
+    "native_county_name": "Cherokee",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Cherokee County",
+      "lblTotalBallotsCast": "8,619",
+      "lblTotalRegisteredVoters": "21,384",
+      "lblVoterTurnout": "40.31%",
+      "lblLastUpdated": "11/04/2026 11:16:06 AM"
+    }
+  },
+  "official-county-09": {
+    "native_county_code": "09",
+    "native_county_name": "Bullock",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Bullock County",
+      "lblTotalBallotsCast": "3,692",
+      "lblTotalRegisteredVoters": "6,848",
+      "lblVoterTurnout": "53.91%",
+      "lblLastUpdated": "11/03/2026 08:47:34 PM"
+    }
+  },
+  "official-county-14": {
+    "native_county_code": "14",
+    "native_county_name": "Chilton",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Chilton County",
+      "lblTotalBallotsCast": "13,079",
+      "lblTotalRegisteredVoters": "32,087",
+      "lblVoterTurnout": "40.76%",
+      "lblLastUpdated": "11/03/2026 08:46:21 PM"
+    }
+  },
+  "official-county-15": {
+    "native_county_code": "15",
+    "native_county_name": "Choctaw",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Choctaw County",
+      "lblTotalBallotsCast": "5,450",
+      "lblTotalRegisteredVoters": "10,359",
+      "lblVoterTurnout": "52.61%",
+      "lblLastUpdated": "11/03/2026 09:41:57 PM"
+    }
+  },
+  "official-county-17": {
+    "native_county_code": "17",
+    "native_county_name": "Clay",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Clay County",
+      "lblTotalBallotsCast": "4,559",
+      "lblTotalRegisteredVoters": "10,584",
+      "lblVoterTurnout": "43.07%",
+      "lblLastUpdated": "11/03/2026 09:34:04 PM"
+    }
+  },
+  "official-county-18": {
+    "native_county_code": "18",
+    "native_county_name": "Cleburne",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Cleburne County",
+      "lblTotalBallotsCast": "4,494",
+      "lblTotalRegisteredVoters": "12,444",
+      "lblVoterTurnout": "36.11%",
+      "lblLastUpdated": "11/03/2026 08:50:03 PM"
+    }
+  },
+  "official-county-19": {
+    "native_county_code": "19",
+    "native_county_name": "Coffee",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Coffee County",
+      "lblTotalBallotsCast": "16,448",
+      "lblTotalRegisteredVoters": "39,858",
+      "lblVoterTurnout": "41.27%",
+      "lblLastUpdated": "11/03/2026 09:39:37 PM"
+    }
+  },
+  "official-county-21": {
+    "native_county_code": "21",
+    "native_county_name": "Conecuh",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Conecuh County",
+      "lblTotalBallotsCast": "4,937",
+      "lblTotalRegisteredVoters": "9,707",
+      "lblVoterTurnout": "50.86%",
+      "lblLastUpdated": "11/03/2026 09:43:06 PM"
+    }
+  },
+  "official-county-16": {
+    "native_county_code": "16",
+    "native_county_name": "Clarke",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Clarke County",
+      "lblTotalBallotsCast": "9,583",
+      "lblTotalRegisteredVoters": "18,595",
+      "lblVoterTurnout": "51.54%",
+      "lblLastUpdated": "11/03/2026 09:44:15 PM"
+    }
+  },
+  "official-county-24": {
+    "native_county_code": "24",
+    "native_county_name": "Crenshaw",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Crenshaw County",
+      "lblTotalBallotsCast": "4,776",
+      "lblTotalRegisteredVoters": "10,943",
+      "lblVoterTurnout": "43.64%",
+      "lblLastUpdated": "11/03/2026 09:35:10 PM"
+    }
+  },
+  "official-county-20": {
+    "native_county_code": "20",
+    "native_county_name": "Colbert",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Colbert County",
+      "lblTotalBallotsCast": "18,596",
+      "lblTotalRegisteredVoters": "45,661",
+      "lblVoterTurnout": "40.73%",
+      "lblLastUpdated": "11/03/2026 09:40:46 PM"
+    }
+  },
+  "official-county-23": {
+    "native_county_code": "23",
+    "native_county_name": "Covington",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Covington County",
+      "lblTotalBallotsCast": "11,232",
+      "lblTotalRegisteredVoters": "29,182",
+      "lblVoterTurnout": "38.49%",
+      "lblLastUpdated": "11/03/2026 09:02:59 PM"
+    }
+  },
+  "official-county-22": {
+    "native_county_code": "22",
+    "native_county_name": "Coosa",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Coosa County",
+      "lblTotalBallotsCast": "3,849",
+      "lblTotalRegisteredVoters": "8,216",
+      "lblVoterTurnout": "46.85%",
+      "lblLastUpdated": "11/03/2026 09:04:13 PM"
+    }
+  },
+  "official-county-25": {
+    "native_county_code": "25",
+    "native_county_name": "Cullman",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Cullman County",
+      "lblTotalBallotsCast": "27,356",
+      "lblTotalRegisteredVoters": "67,486",
+      "lblVoterTurnout": "40.54%",
+      "lblLastUpdated": "11/03/2026 08:47:35 PM"
+    }
+  },
+  "official-county-26": {
+    "native_county_code": "26",
+    "native_county_name": "Dale",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Dale County",
+      "lblTotalBallotsCast": "13,995",
+      "lblTotalRegisteredVoters": "36,787",
+      "lblVoterTurnout": "38.04%",
+      "lblLastUpdated": "11/03/2026 09:53:52 PM"
+    }
+  },
+  "official-county-27": {
+    "native_county_code": "27",
+    "native_county_name": "Dallas",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Dallas County",
+      "lblTotalBallotsCast": "13,698",
+      "lblTotalRegisteredVoters": "28,386",
+      "lblVoterTurnout": "48.26%",
+      "lblLastUpdated": "11/03/2026 09:40:47 PM"
+    }
+  },
+  "official-county-28": {
+    "native_county_code": "28",
+    "native_county_name": "DeKalb",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "DeKalb County",
+      "lblTotalBallotsCast": "19,254",
+      "lblTotalRegisteredVoters": "48,411",
+      "lblVoterTurnout": "39.77%",
+      "lblLastUpdated": "11/03/2026 09:45:24 PM"
+    }
+  },
+  "official-county-29": {
+    "native_county_code": "29",
+    "native_county_name": "Elmore",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Elmore County",
+      "lblTotalBallotsCast": "31,007",
+      "lblTotalRegisteredVoters": "64,845",
+      "lblVoterTurnout": "47.82%",
+      "lblLastUpdated": "11/03/2026 09:53:51 PM"
+    }
+  },
+  "official-county-31": {
+    "native_county_code": "31",
+    "native_county_name": "Etowah",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Etowah County",
+      "lblTotalBallotsCast": "31,328",
+      "lblTotalRegisteredVoters": "77,229",
+      "lblVoterTurnout": "40.57%",
+      "lblLastUpdated": "11/03/2026 09:58:01 PM"
+    }
+  },
+  "official-county-32": {
+    "native_county_code": "32",
+    "native_county_name": "Fayette",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Fayette County",
+      "lblTotalBallotsCast": "5,999",
+      "lblTotalRegisteredVoters": "12,823",
+      "lblVoterTurnout": "46.78%",
+      "lblLastUpdated": "11/03/2026 08:42:54 PM"
+    }
+  },
+  "official-county-33": {
+    "native_county_code": "33",
+    "native_county_name": "Franklin",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Franklin County",
+      "lblTotalBallotsCast": "8,077",
+      "lblTotalRegisteredVoters": "19,764",
+      "lblVoterTurnout": "40.87%",
+      "lblLastUpdated": "11/03/2026 09:53:51 PM"
+    }
+  },
+  "official-county-30": {
+    "native_county_code": "30",
+    "native_county_name": "Escambia",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Escambia County",
+      "lblTotalBallotsCast": "9,779",
+      "lblTotalRegisteredVoters": "28,371",
+      "lblVoterTurnout": "34.47%",
+      "lblLastUpdated": "11/03/2026 09:37:22 PM"
+    }
+  },
+  "official-county-35": {
+    "native_county_code": "35",
+    "native_county_name": "Greene",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Greene County",
+      "lblTotalBallotsCast": "3,614",
+      "lblTotalRegisteredVoters": "6,342",
+      "lblVoterTurnout": "56.99%",
+      "lblLastUpdated": "11/03/2026 10:39:04 PM"
+    }
+  },
+  "official-county-36": {
+    "native_county_code": "36",
+    "native_county_name": "Hale",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Hale County",
+      "lblTotalBallotsCast": "6,149",
+      "lblTotalRegisteredVoters": "11,957",
+      "lblVoterTurnout": "51.43%",
+      "lblLastUpdated": "11/03/2026 08:52:31 PM"
+    }
+  },
+  "official-county-34": {
+    "native_county_code": "34",
+    "native_county_name": "Geneva",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Geneva County",
+      "lblTotalBallotsCast": "9,069",
+      "lblTotalRegisteredVoters": "20,674",
+      "lblVoterTurnout": "43.87%",
+      "lblLastUpdated": "11/03/2026 08:29:46 PM"
+    }
+  },
+  "official-county-37": {
+    "native_county_code": "37",
+    "native_county_name": "Henry",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Henry County",
+      "lblTotalBallotsCast": "6,837",
+      "lblTotalRegisteredVoters": "14,734",
+      "lblVoterTurnout": "46.40%",
+      "lblLastUpdated": "11/03/2026 09:38:29 PM"
+    }
+  },
+  "official-county-01": {
+    "native_county_code": "01",
+    "native_county_name": "Jefferson",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Jefferson County",
+      "lblTotalBallotsCast": "248,526",
+      "lblTotalRegisteredVoters": "497,469",
+      "lblVoterTurnout": "49.96%",
+      "lblLastUpdated": "11/04/2026 12:07:22 AM"
+    }
+  },
+  "official-county-40": {
+    "native_county_code": "40",
+    "native_county_name": "Lamar",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Lamar County",
+      "lblTotalBallotsCast": "4,548",
+      "lblTotalRegisteredVoters": "11,001",
+      "lblVoterTurnout": "41.34%",
+      "lblLastUpdated": "11/03/2026 09:43:05 PM"
+    }
+  },
+  "official-county-38": {
+    "native_county_code": "38",
+    "native_county_name": "Houston",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Houston County",
+      "lblTotalBallotsCast": "32,228",
+      "lblTotalRegisteredVoters": "81,104",
+      "lblVoterTurnout": "39.74%",
+      "lblLastUpdated": "11/03/2026 09:34:05 PM"
+    }
+  },
+  "official-county-41": {
+    "native_county_code": "41",
+    "native_county_name": "Lauderdale",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Lauderdale County",
+      "lblTotalBallotsCast": "30,000",
+      "lblTotalRegisteredVoters": "71,424",
+      "lblVoterTurnout": "42.00%",
+      "lblLastUpdated": "11/03/2026 09:44:16 PM"
+    }
+  },
+  "official-county-39": {
+    "native_county_code": "39",
+    "native_county_name": "Jackson",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Jackson County",
+      "lblTotalBallotsCast": "14,510",
+      "lblTotalRegisteredVoters": "40,836",
+      "lblVoterTurnout": "35.53%",
+      "lblLastUpdated": "11/03/2026 09:39:37 PM"
+    }
+  },
+  "official-county-42": {
+    "native_county_code": "42",
+    "native_county_name": "Lawrence",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Lawrence County",
+      "lblTotalBallotsCast": "10,233",
+      "lblTotalRegisteredVoters": "25,966",
+      "lblVoterTurnout": "39.41%",
+      "lblLastUpdated": "11/03/2026 09:38:29 PM"
+    }
+  },
+  "official-county-43": {
+    "native_county_code": "43",
+    "native_county_name": "Lee",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Lee County",
+      "lblTotalBallotsCast": "54,695",
+      "lblTotalRegisteredVoters": "134,548",
+      "lblVoterTurnout": "40.65%",
+      "lblLastUpdated": "11/03/2026 11:50:11 PM"
+    }
+  },
+  "official-county-44": {
+    "native_county_code": "44",
+    "native_county_name": "Limestone",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Limestone County",
+      "lblTotalBallotsCast": "40,122",
+      "lblTotalRegisteredVoters": "88,342",
+      "lblVoterTurnout": "45.42%",
+      "lblLastUpdated": "11/03/2026 08:48:48 PM"
+    }
+  },
+  "official-county-46": {
+    "native_county_code": "46",
+    "native_county_name": "Macon",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Macon County",
+      "lblTotalBallotsCast": "6,614",
+      "lblTotalRegisteredVoters": "15,232",
+      "lblVoterTurnout": "43.42%",
+      "lblLastUpdated": "11/03/2026 09:40:47 PM"
+    }
+  },
+  "official-county-45": {
+    "native_county_code": "45",
+    "native_county_name": "Lowndes",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Lowndes County",
+      "lblTotalBallotsCast": "4,869",
+      "lblTotalRegisteredVoters": "9,381",
+      "lblVoterTurnout": "51.90%",
+      "lblLastUpdated": "11/03/2026 09:45:24 PM"
+    }
+  },
+  "official-county-48": {
+    "native_county_code": "48",
+    "native_county_name": "Marengo",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Marengo County",
+      "lblTotalBallotsCast": "7,959",
+      "lblTotalRegisteredVoters": "15,014",
+      "lblVoterTurnout": "53.01%",
+      "lblLastUpdated": "11/03/2026 09:00:42 PM"
+    }
+  },
+  "official-county-47": {
+    "native_county_code": "47",
+    "native_county_name": "Madison",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Madison County",
+      "lblTotalBallotsCast": "160,875",
+      "lblTotalRegisteredVoters": "337,278",
+      "lblVoterTurnout": "47.70%",
+      "lblLastUpdated": "11/03/2026 10:22:33 PM"
+    }
+  },
+  "official-county-49": {
+    "native_county_code": "49",
+    "native_county_name": "Marion",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Marion County",
+      "lblTotalBallotsCast": "8,238",
+      "lblTotalRegisteredVoters": "22,293",
+      "lblVoterTurnout": "36.95%",
+      "lblLastUpdated": "11/03/2026 08:39:12 PM"
+    }
+  },
+  "official-county-50": {
+    "native_county_code": "50",
+    "native_county_name": "Marshall",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Marshall County",
+      "lblTotalBallotsCast": "27,086",
+      "lblTotalRegisteredVoters": "68,895",
+      "lblVoterTurnout": "39.31%",
+      "lblLastUpdated": "11/03/2026 09:45:24 PM"
+    }
+  },
+  "official-county-02": {
+    "native_county_code": "02",
+    "native_county_name": "Mobile",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Mobile County",
+      "lblTotalBallotsCast": "127,782",
+      "lblTotalRegisteredVoters": "310,649",
+      "lblVoterTurnout": "41.13%",
+      "lblLastUpdated": "11/03/2026 11:29:00 PM"
+    }
+  },
+  "official-county-03": {
+    "native_county_code": "03",
+    "native_county_name": "Montgomery",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Montgomery County",
+      "lblTotalBallotsCast": "80,303",
+      "lblTotalRegisteredVoters": "159,743",
+      "lblVoterTurnout": "50.27%",
+      "lblLastUpdated": "11/03/2026 10:15:13 PM"
+    }
+  },
+  "official-county-51": {
+    "native_county_code": "51",
+    "native_county_name": "Monroe",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Monroe County",
+      "lblTotalBallotsCast": "7,525",
+      "lblTotalRegisteredVoters": "15,824",
+      "lblVoterTurnout": "47.55%",
+      "lblLastUpdated": "11/03/2026 09:43:06 PM"
+    }
+  },
+  "official-county-52": {
+    "native_county_code": "52",
+    "native_county_name": "Morgan",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Morgan County",
+      "lblTotalBallotsCast": "37,149",
+      "lblTotalRegisteredVoters": "88,453",
+      "lblVoterTurnout": "42.00%",
+      "lblLastUpdated": "11/03/2026 10:23:43 PM"
+    }
+  },
+  "official-county-53": {
+    "native_county_code": "53",
+    "native_county_name": "Perry",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Perry County",
+      "lblTotalBallotsCast": "4,129",
+      "lblTotalRegisteredVoters": "7,377",
+      "lblVoterTurnout": "55.97%",
+      "lblLastUpdated": "11/03/2026 09:40:46 PM"
+    }
+  },
+  "official-county-55": {
+    "native_county_code": "55",
+    "native_county_name": "Pike",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Pike County",
+      "lblTotalBallotsCast": "10,270",
+      "lblTotalRegisteredVoters": "23,515",
+      "lblVoterTurnout": "43.67%",
+      "lblLastUpdated": "11/03/2026 09:41:56 PM"
+    }
+  },
+  "official-county-54": {
+    "native_county_code": "54",
+    "native_county_name": "Pickens",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Pickens County",
+      "lblTotalBallotsCast": "6,991",
+      "lblTotalRegisteredVoters": "13,763",
+      "lblVoterTurnout": "50.80%",
+      "lblLastUpdated": "11/03/2026 09:38:29 PM"
+    }
+  },
+  "official-county-56": {
+    "native_county_code": "56",
+    "native_county_name": "Randolph",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Randolph County",
+      "lblTotalBallotsCast": "7,258",
+      "lblTotalRegisteredVoters": "19,441",
+      "lblVoterTurnout": "37.33%",
+      "lblLastUpdated": "11/03/2026 08:27:18 PM"
+    }
+  },
+  "official-county-57": {
+    "native_county_code": "57",
+    "native_county_name": "Russell",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Russell County",
+      "lblTotalBallotsCast": "14,949",
+      "lblTotalRegisteredVoters": "44,785",
+      "lblVoterTurnout": "33.38%",
+      "lblLastUpdated": "11/03/2026 09:35:10 PM"
+    }
+  },
+  "official-county-60": {
+    "native_county_code": "60",
+    "native_county_name": "Sumter",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Sumter County",
+      "lblTotalBallotsCast": "4,465",
+      "lblTotalRegisteredVoters": "8,971",
+      "lblVoterTurnout": "49.77%",
+      "lblLastUpdated": "11/03/2026 09:39:37 PM"
+    }
+  },
+  "official-county-59": {
+    "native_county_code": "59",
+    "native_county_name": "St. Clair",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "St. Clair County",
+      "lblTotalBallotsCast": "31,421",
+      "lblTotalRegisteredVoters": "74,645",
+      "lblVoterTurnout": "42.09%",
+      "lblLastUpdated": "11/03/2026 10:13:02 PM"
+    }
+  },
+  "official-county-58": {
+    "native_county_code": "58",
+    "native_county_name": "Shelby",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Shelby County",
+      "lblTotalBallotsCast": "86,914",
+      "lblTotalRegisteredVoters": "183,293",
+      "lblVoterTurnout": "47.42%",
+      "lblLastUpdated": "11/03/2026 10:22:33 PM"
+    }
+  },
+  "official-county-61": {
+    "native_county_code": "61",
+    "native_county_name": "Talladega",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Talladega County",
+      "lblTotalBallotsCast": "24,481",
+      "lblTotalRegisteredVoters": "61,004",
+      "lblVoterTurnout": "40.13%",
+      "lblLastUpdated": "11/03/2026 08:26:05 PM"
+    }
+  },
+  "official-county-62": {
+    "native_county_code": "62",
+    "native_county_name": "Tallapoosa",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Tallapoosa County",
+      "lblTotalBallotsCast": "14,747",
+      "lblTotalRegisteredVoters": "32,092",
+      "lblVoterTurnout": "45.95%",
+      "lblLastUpdated": "11/03/2026 09:41:56 PM"
+    }
+  },
+  "official-county-63": {
+    "native_county_code": "63",
+    "native_county_name": "Tuscaloosa",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Tuscaloosa County",
+      "lblTotalBallotsCast": "63,950",
+      "lblTotalRegisteredVoters": "147,394",
+      "lblVoterTurnout": "43.39%",
+      "lblLastUpdated": "11/03/2026 10:19:23 PM"
+    }
+  },
+  "official-county-65": {
+    "native_county_code": "65",
+    "native_county_name": "Washington",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Washington County",
+      "lblTotalBallotsCast": "6,355",
+      "lblTotalRegisteredVoters": "13,515",
+      "lblVoterTurnout": "47.02%",
+      "lblLastUpdated": "11/03/2026 09:44:15 PM"
+    }
+  },
+  "official-county-67": {
+    "native_county_code": "67",
+    "native_county_name": "Winston",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Winston County",
+      "lblTotalBallotsCast": "6,996",
+      "lblTotalRegisteredVoters": "17,687",
+      "lblVoterTurnout": "39.55%",
+      "lblLastUpdated": "11/03/2026 09:39:38 PM"
+    }
+  },
+  "official-county-66": {
+    "native_county_code": "66",
+    "native_county_name": "Wilcox",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Wilcox County",
+      "lblTotalBallotsCast": "5,135",
+      "lblTotalRegisteredVoters": "8,264",
+      "lblVoterTurnout": "62.14%",
+      "lblLastUpdated": "11/03/2026 09:36:16 PM"
+    }
+  },
+  "official-county-64": {
+    "native_county_code": "64",
+    "native_county_name": "Walker",
+    "literal_source_fields": {
+      "lblElectionName": "2026 GENERAL ELECTION",
+      "lblCountyName": "Walker County",
+      "lblTotalBallotsCast": "18,951",
+      "lblTotalRegisteredVoters": "49,191",
+      "lblVoterTurnout": "38.53%",
+      "lblLastUpdated": "11/03/2026 09:53:51 PM"
+    }
+  }
+}

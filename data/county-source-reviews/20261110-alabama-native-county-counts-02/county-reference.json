@@ -1,0 +1,8 @@
+{
+  "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/AL.geojson.gz",
+  "sha256": "4ef6f03ec7f8f65ecae37a418d25e5c803775458048806a9e28110a1e9ecc6b0",
+  "uncompressed_sha256": "3b17b781577064cd4fe6eff7aadc6e41b54d34d42c2ee2a5e971414c81a58f21",
+  "boundary_year": 2026,
+  "counties": 67,
+  "certified_election_boundaries": false
+}

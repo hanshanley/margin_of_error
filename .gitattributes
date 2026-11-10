@@ -10,3 +10,4 @@ data/county-source-reviews/20261110-minnesota-followup-02/originals/*.txt -text 
 data/county-source-reviews/20261110-minnesota-followup-02/reused-frozen-originals/*.txt -text whitespace=cr-at-eol
 data/county-source-reviews/20261110-minnesota-followup-02/geometry-source/MN-PrctTbl.txt -text whitespace=cr-at-eol
 data/county-source-reviews/20261110-minnesota-followup-02/reused-frozen-originals/layout.txt -text whitespace=-trailing-space,cr-at-eol
+data/county-source-reviews/20261110-alabama-native-county-counts-02/legacy/*.csv -text whitespace=cr-at-eol

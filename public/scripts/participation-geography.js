@@ -162,6 +162,15 @@ export function hasCountySourceMode(code, mode) {
 }
 
 export function selectCountySourceFrame(data, code, mode) {
+  if (code === "AL" && ["available", "official"].includes(mode) && data.county_frames?.native_county_counts !== undefined) {
+    const rows = data.county_frames.native_county_counts;
+    if (!qualifiedAlabamaCountyFrame(rows))
+      throw new Error("Unqualified Alabama native county statistics; candidate counts or rates are not substituted");
+    return rows;
+  }
+  if (code === "AL" && data.county_frames?.native_county_counts !== undefined
+    && ["in_person_early", "mail_returned"].includes(mode) && !hasCountySourceMode(code, mode))
+    return [];
   if (code === "MN" && ["available", "official"].includes(mode) && data.county_frames?.native_county_followup !== undefined) {
     const rows = data.county_frames.native_county_followup;
     if (!qualifiedMinnesotaCountyFrame(rows))
@@ -226,6 +235,42 @@ function qualifiedIllinoisCityHolds(holds, rows, mode) {
     && row.source_count === Object.values(row.native_categories).reduce((s, r) => s + r.votes, 0))
     && [...rows.map(row => row.ballots), ...holds.map(row => row.source_count)].reduce((s, r) => s + r, 0)
       === (mode === "in_person_early" ? 1162828 : 892086);
+}
+
+export function qualifiedAlabamaCountyFrame(rows) {
+  if (!Array.isArray(rows) || rows.length !== 67
+    || new Set(rows.map(row => row.county_fips)).size !== 67
+    || new Set(rows.map(row => row.native_record?.county_code)).size !== 67) return false;
+  return rows.every(row => {
+    const native = row.native_record, statistics = native?.workbook_statistics;
+    const facts = native?.source_factual_fields, reference = row.reference_geometry;
+    return row.year === 2026 && row.state_code === "AL" && row.geography_level === "county"
+      && row.source_snapshot === "20261110-alabama-native-county-counts-02"
+      && row.source_mode === "all_method_native_county_statistics"
+      && row.participation_measure_literal === "Ballots Cast"
+      && row.source_count_qualified === true && row.cast_ballot_count_qualified === false
+      && row.unique_voter_count_qualified === false && row.registration_frame_qualified === false
+      && row.reported_pct === null && row.maps_approved === true
+      && /^01\d{3}$/.test(row.county_fips) && /^\d{2}$/.test(native?.county_code)
+      && row.county_id === `additional:AL:${native.county_code}` && row.county === native.county
+      && statistics?.["County Code"] === native.county_code && statistics["Election Code"] === "1001305"
+      && statistics["Election Title"] === "2026 GENERAL ELECTION"
+      && Number.isSafeInteger(row.ballots) && row.ballots >= 0
+      && row.ballots === Number(statistics["Ballots Cast"]) && row.ballots === Number(native.ballots)
+      && row.ballots === Number(facts?.lblTotalBallotsCast?.replaceAll(",", ""))
+      && Number.isSafeInteger(row.denominator) && row.denominator >= 0
+      && row.denominator === Number(native.registered_voters)
+      && row.denominator === Number(facts?.lblTotalRegisteredVoters?.replaceAll(",", ""))
+      && row.reported_units === Number(statistics["Precincts Reported"])
+      && row.total_units === Number(statistics["Total Precincts"]) && row.reported_units === row.total_units
+      && row.native_printed_pct === facts?.lblVoterTurnout
+      && row.source_update_literal === facts?.lblLastUpdated && row.source_update_timezone === null
+      && reference?.geography_scope === "native_county_statistics"
+      && reference.boundary_year === 2026 && reference.counties === 67
+      && reference.certified_election_boundaries === false
+      && /^[a-f0-9]{64}$/.test(reference.sha256);
+  }) && rows.reduce((sum, row) => sum + row.ballots, 0) === 1693621
+    && rows.reduce((sum, row) => sum + row.denominator, 0) === 3852947;
 }
 
 export function qualifiedMinnesotaCountyFrame(rows) {

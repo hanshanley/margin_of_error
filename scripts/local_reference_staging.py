@@ -4,6 +4,8 @@ import hashlib
 import json
 from pathlib import Path
 from urllib.parse import urlparse
+from urllib.error import HTTPError
+from urllib.request import Request, urlopen
 
 
 def stage_local_minnesota_reference(context, base_url, root=None):
@@ -14,6 +16,14 @@ def stage_local_minnesota_reference(context, base_url, root=None):
     if not index.exists():
         return False
     data = json.loads(index.read_bytes())
+    try:
+        with urlopen(Request(data["states"]["MN"], method="HEAD"), timeout=30) as response:
+            if response.status == 200:
+                return False
+            raise ValueError("Unexpected native reference publication status")
+    except HTTPError as error:
+        if error.code != 404:
+            raise
     path = root / "data/county-source-reviews/20261110-minnesota-followup-02/MN.geojson.gz"
     body = path.read_bytes()
     pin = data["state_metadata"]["MN"]

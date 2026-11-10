@@ -1,0 +1,30 @@
+{
+  "status": "PASS_held67_native_AL_county_identity_and_unrepaired_reference_preflight_NOT_live",
+  "inherited_source_pins": 76,
+  "source_reacquired": false,
+  "reference": {
+    "file": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/AL.geojson.gz",
+    "counties": 67,
+    "colored_counties": 67,
+    "sha256": "4ef6f03ec7f8f65ecae37a418d25e5c803775458048806a9e28110a1e9ecc6b0",
+    "uncompressed_sha256": "3b17b781577064cd4fe6eff7aadc6e41b54d34d42c2ee2a5e971414c81a58f21"
+  },
+  "source_ballots": 1693621,
+  "separate_native_registered": 3852947,
+  "direct_named_county_joins": 67,
+  "native_county_codes_not_FIPS": true,
+  "all67_source_reported_units_equal_source_totals": true,
+  "source_certification_inferred": false,
+  "analysis_rates_approved": false,
+  "precinct_coverage_approved": false,
+  "full_unrepaired_valid_county_shapes": 67,
+  "complete_pair_decisions": 2211,
+  "positive_overlap_pairs": 0,
+  "geometry_area_units": "coordinate_degrees_squared_NOT_geodesic",
+  "query": {
+    "bytes": 274185,
+    "sha256": "2b78adad9927d14abd43a18f4a107924f8368016f108eb79e9adabe126aac738"
+  },
+  "new_website_view_claimed_live": false,
+  "complete_scientific_publication_pending": true
+}

@@ -120,6 +120,18 @@ separate original reviews. The versioned complete download under
 originals, reference geometry and a dependency-free offline Node reproduction.
 Its packaging command refuses to overwrite an existing version.
 
+Alabama's live opt-in joins all67 already-held native county Ballots Cast by
+literal county names to the full checksum-verified2026 Census county reference.
+Native county codes are election ordinals:01 Jefferson is FIPS01073, not01001.
+Keep old county IDs, native registrations, printed percentages and clocks;
+all analysis rates remain null and source timezone unknown. Reporting is not
+certification, independently deduplicated people or new precinct coverage.
+The default legacy reader and existing early/returned frames must remain unchanged;
+without a provider frame, never reuse the new all-method counts under those modes.
+The new complete analysis must include the full native workbook, selected
+county/state factual fields, all sufficient inputs, queries, code and tests;
+exclude acquisition headers and publisher application code.
+
 Minnesota's current opt-in uses the separately frozen November7 follow-up,
 not the older75-county export or the page's Estimated Voters figure. All87
 county decisions and4105 native unit rows remain:84 complete counts, three

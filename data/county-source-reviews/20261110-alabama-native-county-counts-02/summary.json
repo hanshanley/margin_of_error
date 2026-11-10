@@ -1,0 +1,16 @@
+{
+  "counties": 67,
+  "native_ballots": 1693621,
+  "native_registered": 3852947,
+  "approved_analysis_rates": 0,
+  "approved_precinct_maps": 0,
+  "valid_unrepaired_county_shapes": 67,
+  "complete_pair_decisions": 2211,
+  "positive_overlap_pairs": 0,
+  "source_measure_literal": "Ballots Cast",
+  "native_county_codes_are_not_FIPS": true,
+  "certification_inferred": false,
+  "unique_voter_count_qualified": false,
+  "source_counts_repaired": false,
+  "candidate_votes_used_as_ballots": false
+}

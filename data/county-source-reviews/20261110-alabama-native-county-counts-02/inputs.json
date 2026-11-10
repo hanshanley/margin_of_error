@@ -1,0 +1,68 @@
+{
+  "version": "data/county-source-reviews/20261110-alabama-native-county-counts-02",
+  "files": {
+    "AL-full-county-reference.geojson.gz": {
+      "bytes": 957563,
+      "sha256": "4ef6f03ec7f8f65ecae37a418d25e5c803775458048806a9e28110a1e9ecc6b0"
+    },
+    "code/held-native-reader.py": {
+      "bytes": 21163,
+      "sha256": "b94a8be234cf4f82a1b27632e65cc454edfe5bfb4aa3a11477db3506c60d6e2e"
+    },
+    "county-reference.json": {
+      "bytes": 436,
+      "sha256": "dd8c5539638f644a62059de5911da69e43d8685ec67e76f6c95e5b24b5191b83"
+    },
+    "legacy/all67-native-county-participation.csv": {
+      "bytes": 5897,
+      "sha256": "1f973bfd6ccb7e1c70a7ed2862391d7034078b1d4adc1a10bd4723c2a3bca512"
+    },
+    "legacy/full-held-source-checksums.json": {
+      "bytes": 10565,
+      "sha256": "a7f63311d528b7be4501f6a8a639d8cfda1c1a782ee71c0d4095dd6acc4b058f"
+    },
+    "legacy/prior-counts-review.json": {
+      "bytes": 964,
+      "sha256": "d98828226017524212449486373cab0650f47f5b6c6785ee284993eb59dc37da"
+    },
+    "originals/all67-county-and-state-literal-fields.json": {
+      "bytes": 26790,
+      "sha256": "33baf32e3630e082088c523b71b3d86366de7eac02ac63aa68e339bc9bb9904e"
+    },
+    "originals/full-native-export.gz": {
+      "bytes": 209770,
+      "sha256": "1e4fd80e023d1971144dfbc9cb71741ab07a25c5b8fb3c36d2114665d0c5e7e5"
+    },
+    "prior-join-review/proof.json": {
+      "bytes": 1298,
+      "sha256": "0d591406196fe22291cb62030bb42cf45535e4d2fc8bf3c6d959ccdf82fb9dfe"
+    },
+    "prior-join-review/queries.json": {
+      "bytes": 274185,
+      "sha256": "2b78adad9927d14abd43a18f4a107924f8368016f108eb79e9adabe126aac738"
+    },
+    "source-receipts-without-headers.json": {
+      "bytes": 29709,
+      "sha256": "dfadbb791db7c8c2bba46b1d64bfbd0565631c1b4c93e8a7c91a31ef06ee189d"
+    }
+  },
+  "original_county_codes_are_ordinals_not_FIPS": true,
+  "complete_native_workbook_included": true,
+  "all67_county_and_state_factual_fields_included": true,
+  "native_HTML_factual_projection_not_publisher_application": true,
+  "native_HTML_originals_retained_in_prior_complete_release": true,
+  "acquisition_headers_and_compiled_publisher_app_code_excluded": true,
+  "inherited_source_pins_verified": 76,
+  "original_source_receipts": 70,
+  "source_reacquired": false,
+  "source_counts_repaired": false,
+  "native_measure_literal": "Ballots Cast",
+  "native_county_count": 67,
+  "native_county_ballot_sum": 1693621,
+  "source_certification_inferred": false,
+  "native_update_timezone": null,
+  "analysis_rates_approved": false,
+  "precinct_coverage_approved": false,
+  "candidate_votes_used_as_ballots": false,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-alabama-native-county-counts-20261110-02/complete-analysis.zip"
+}

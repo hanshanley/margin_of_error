@@ -17,6 +17,7 @@ import { loadNewHampshireCityExtension } from './new-hampshire-city-extension.mj
 import { massachusettsVersion } from './massachusetts-native-counts.mjs';
 import { loadMassachusettsCityReference, massachusettsCityReferenceVersion } from './massachusetts-city-precinct-reference.mjs';
 import { loadMinnesotaFollowup } from './minnesota-county-followup.mjs';
+import { loadAlabamaCountyCounts } from './alabama-county-counts.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -675,6 +676,14 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
     precincts.push(...minnesota.precincts);
     countyFrames.MN ||= {};
     countyFrames.MN.native_county_followup = minnesota.counties;
+  }
+  if (nativeCountyParents) {
+    const alabama = loadAlabamaCountyCounts();
+    for (let index = counties.length - 1; index >= 0; index--)
+      if (counties[index].state_code === 'AL') counties.splice(index, 1);
+    counties.push(...alabama.counties);
+    countyFrames.AL ||= {};
+    countyFrames.AL.native_county_counts = alabama.counties;
   }
   const seen = new Set(), unitSeen = new Set();
   for (const row of counties) {

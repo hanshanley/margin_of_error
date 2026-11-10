@@ -228,7 +228,7 @@ test('exposes whole native county and locality counts instead of candidate resul
     const rows = data.counties.filter(row => row.state_code === code);
     assert.equal(rows.length, count);
     assert.equal(rows.reduce((sum, row) => sum + row.ballots, 0), ballots);
-    assert.ok(rows.every(row => row.maps_approved === false));
+    assert.ok(rows.every(row => row.maps_approved === (code === 'AL')));
   }
   for (const code of ['AL', 'AZ']) {
     const native = csv(`data/precinct-source-reviews/20261105/${code}-2026-native-counts/county-participation.csv`);
@@ -236,7 +236,9 @@ test('exposes whole native county and locality counts instead of candidate resul
       const source = native.find(source => source.county === row.county);
       assert.equal(row.ballots, Number(source.ballots));
       assert.equal(row.denominator, Number(source.registered_voters));
-      assert.deepEqual(row.native_record, source);
+      assert.deepEqual(code === 'AL'
+        ? Object.fromEntries(Object.keys(source).map(key => [key, row.native_record[key]]))
+        : row.native_record, source);
       assert.equal(row.reported_pct, null);
     }
   }

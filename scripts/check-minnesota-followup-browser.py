@@ -23,6 +23,7 @@ data = json.loads(gzip.decompress((SOURCE / "queries.json.gz").read_bytes()))
 new = list(csv.DictReader((SOURCE / "newly-complete-counties.csv").open()))
 by_name = {row["county"]: row for row in data["complete_county_decisions"]}
 cases = []
+reference_staged = False
 
 
 def click_shape(path):
@@ -79,7 +80,7 @@ with sync_playwright() as runtime:
         for mobile in [False, True]:
             context = browser.new_context(viewport={"width": 390, "height": 844} if mobile
                                           else {"width": 1440, "height": 1100})
-            stage_local_minnesota_reference(context, base)
+            reference_staged = stage_local_minnesota_reference(context, base) or reference_staged
             page = context.new_page()
             errors = []
             page.on("pageerror", lambda error: errors.append(str(error)))
@@ -147,7 +148,7 @@ with sync_playwright() as runtime:
                 invalid16_legacy_generalizations_not_reused=True))
             context.close()
         context = browser.new_context()
-        stage_local_minnesota_reference(context, base)
+        reference_staged = stage_local_minnesota_reference(context, base) or reference_staged
         page = context.new_page()
         def malformed(route):
             response = route.fetch()
@@ -172,7 +173,7 @@ with sync_playwright() as runtime:
 proof = dict(status="PASS_MN84_complete3partial_4105same_snapshot_units_native_identity_modes_and_recovery",
     base_url=base, cases=cases, estimated_state_count_substitution_rejected=True,
     actual_retry_restores_native_counties=True, old75county_exports_preserved=True,
-    unpublished_reference_locally_staged=base.startswith(("http://127.0.0.1", "http://localhost")),
+    unpublished_reference_locally_staged=reference_staged,
     certified2026_legal_precinct_claim=False, exact_statewide_count_claim=False,
     nationwide_project_complete=False)
 args.proof.write_text(json.dumps(proof, indent=2) + "\n")

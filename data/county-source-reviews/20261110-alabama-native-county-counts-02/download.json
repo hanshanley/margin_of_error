@@ -1,0 +1,17 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-alabama-native-county-counts-20261110-02/complete-analysis.zip",
+  "bytes": 2475620,
+  "sha256": "5482637fead6414c677dad794d32219e4e9461ce29e67be516bc0b56da10eac4",
+  "members": 43,
+  "sufficient_inputs": 11,
+  "standalone_full_assets": 9,
+  "complete_county_decisions": 67,
+  "native_ballots": 1693621,
+  "native_registered": 3852947,
+  "complete_pair_decisions": 2211,
+  "positive_overlap_pairs": 0,
+  "analysis_rates_approved": false,
+  "new_precinct_coverage_approved": false,
+  "source_counts_repaired": false,
+  "candidate_votes_used_as_ballots": false
+}

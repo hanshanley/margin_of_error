@@ -1,0 +1,562 @@
+{
+  "official-statewide-results": {
+    "url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 111462,
+    "sha256": "61cdee9474773c0eb147dea4b224da658d630c4c42d73a0617a6191e8e92c59c"
+  },
+  "official-declared-native-export": {
+    "url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
+    "status": 200,
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "bytes": 263261,
+    "sha256": "cdbde2527f3f232c82565e900b34d544bc81b3d553e4d8aac9c454057c4f3d60"
+  },
+  "official-declared-county-selector": {
+    "url": "https://www2.alabamavotes.gov/electionNight/chooseCounty.aspx?ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/chooseCounty.aspx?ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 56550,
+    "sha256": "477758075abb50e4ca26c9c1a7fd8a90ac32ea60a7204a374e8577d8e7a1c5f1"
+  },
+  "official-county-07": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=07&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=07&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110686,
+    "sha256": "1f70139654aa95f420739978beab9bf2bdc29284cfd17fd9760efe19ac5ea5c2"
+  },
+  "official-county-04": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=04&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=04&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110750,
+    "sha256": "674adbed5c1f467d49c6776af5a9da716dba4bfa933338412f27705b73bb66ed"
+  },
+  "official-county-06": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=06&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=06&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110700,
+    "sha256": "73e2bfab24d312df5ac87d68b6f017f6aaf317282bed5b7328027e13031d0ad9"
+  },
+  "official-county-05": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=05&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=05&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110799,
+    "sha256": "02e1d3e74507a3be7f050db3948f7ddcfa65482f92fd6804875196ab688cde75"
+  },
+  "official-county-08": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=08&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=08&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110770,
+    "sha256": "3df62aa117298a5ec256dcf9c2c3f8002dc4fd04c8ec3a098a1481a491b22c06"
+  },
+  "official-county-11": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=11&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=11&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110791,
+    "sha256": "2dae116ec54134621e1eafd4b2f5680e025d47e5efecc8aa49f51eb0b4e8a3e8"
+  },
+  "official-county-10": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=10&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=10&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110700,
+    "sha256": "1e3038260782bf0eee431da3b408e7508cd2d5c5c461dc97b4178524ab8ec9ff"
+  },
+  "official-county-12": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=12&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=12&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110723,
+    "sha256": "2f1a9f38f603d2d612c0382969397aef357d559fc1fc7766f71768a8da870630"
+  },
+  "official-county-13": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=13&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=13&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110695,
+    "sha256": "32ed9ca76199b88b56d5ef21e69c674a6841f7bbd93c05dd3c094eb8929530bc"
+  },
+  "official-county-09": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=09&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=09&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110637,
+    "sha256": "4a9bd0e57fe4113f6bee6f6ec24842cd622770c2c9c4fb7dd79b6e9e6c9e5a56"
+  },
+  "official-county-14": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=14&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=14&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110749,
+    "sha256": "a32cd1fc7516c771a1dfb88b01bb1460d0e5e047f20dcd8ebcfad1ca7eaa35f1"
+  },
+  "official-county-15": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=15&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=15&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110694,
+    "sha256": "8fce1a7038453ffd2b61bfd110c7883ba5c000cc5c812ad5894e8d77c1ff8143"
+  },
+  "official-county-17": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=17&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=17&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110645,
+    "sha256": "14a5125d293516fbf88eaba3fa07f6e5a219eb0b260161492848e6adcccee4c1"
+  },
+  "official-county-18": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=18&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=18&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110651,
+    "sha256": "82a9a2a6c7e0208603fbcbff0eb4e48268b3823b554bb3429673e05af5d57392"
+  },
+  "official-county-19": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=19&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=19&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110750,
+    "sha256": "080918398df81b5a9c49e864ca5ebf23ebe82b8a7b0702217a2ce778a3ee727f"
+  },
+  "official-county-21": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=21&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=21&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110700,
+    "sha256": "e4b07c18deb499feb965394995f385815c6eba38d24bb256185ded8d29a05e00"
+  },
+  "official-county-16": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=16&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=16&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110708,
+    "sha256": "60a43bad01b4fbfb9493e399f62b4e81e4d3afb4a45b0149a33745fc4e1aa918"
+  },
+  "official-county-24": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=24&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=24&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110695,
+    "sha256": "204c7393a37dd397fcc93fef748422c0b0584b9b7cbdc6c29b1bf1aecdc1f0e4"
+  },
+  "official-county-20": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=20&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=20&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110772,
+    "sha256": "fc1ba0d3d5ea599521b6956acf781d6f7c8fa19a87d6f32332382bfdfaa9787e"
+  },
+  "official-county-23": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=23&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=23&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110708,
+    "sha256": "9e5c033e73f5a379b68289a28bc6362db3177c95e605a72ec99607cee304167a"
+  },
+  "official-county-22": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=22&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=22&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110674,
+    "sha256": "f123e17a798144e169ec2120df895aae4014a5380903eabda3f41b51d8f7fb8c"
+  },
+  "official-county-25": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=25&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=25&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110758,
+    "sha256": "9dca13d53d220e7e7ea97e816718fcbb0a9c8046d3fca6d987832c8bf57bd838"
+  },
+  "official-county-26": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=26&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=26&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110730,
+    "sha256": "43173026187a9faaa37befedb348863e2e9b243681082cc310f2df178105d4cc"
+  },
+  "official-county-27": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=27&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=27&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110714,
+    "sha256": "5be8ac53c587928f3fe3386fd22dcbc41559ab0f1997d28abec92aa905db2af7"
+  },
+  "official-county-28": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=28&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=28&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110751,
+    "sha256": "d42f5fdd00e420d88013fa18c26c083ac2e8563e58187f3d59274f861403a8bf"
+  },
+  "official-county-29": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=29&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=29&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110751,
+    "sha256": "de658a2013ffb3b67718cd1f8cd5726b21e530a36210ecbee3e3e57d93c03077"
+  },
+  "official-county-31": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=31&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=31&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110772,
+    "sha256": "d235a3eec81f3a263b34d9413b0496a9b5d5167ecff8877fe37d86eef48c1378"
+  },
+  "official-county-32": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=32&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=32&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110688,
+    "sha256": "055fc9aca1d06f66e61cce15dbdb6c21a517738d434853373e9f2b93e6f262dc"
+  },
+  "official-county-33": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=33&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=33&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110695,
+    "sha256": "10eba8994ad53d10d6041aeffdd55a14034f5af02cc57568d6f84eb10c031aec"
+  },
+  "official-county-30": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=30&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=30&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110708,
+    "sha256": "301c9597d2ea91669b5c59161402025f8d192535fe7ce90f02f35a67ac2809dd"
+  },
+  "official-county-35": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=35&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=35&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110646,
+    "sha256": "990685ebfecdb62e81499fe1da9b523a179887b1d82a203725273ec59c065970"
+  },
+  "official-county-36": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=36&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=36&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110673,
+    "sha256": "d777e98a120a2c9b9eed066fc94ccf9d1f06b93fda41136aa52f9542f23e5bdc"
+  },
+  "official-county-34": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=34&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=34&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110681,
+    "sha256": "f12e4e82381e867ec07177be8f76fc8a738c53688a399d7f017dded51d0c3dd4"
+  },
+  "official-county-37": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=37&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=37&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110674,
+    "sha256": "37b5b92fb96c98a847e8218f9f2967c017973f863f6430575840fe49a8eb834a"
+  },
+  "official-county-01": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=01&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=01&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 112428,
+    "sha256": "08a878a6370c85a8e92aa4db14d8b8e279ae2efb415ce336ad361aa5d340d952"
+  },
+  "official-county-40": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=40&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=40&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110637,
+    "sha256": "66b5406a221badf3930d7bf32c17445f2426d385092041c8d02d62308fd0ba66"
+  },
+  "official-county-38": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=38&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=38&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110791,
+    "sha256": "34d1fc4740176ee4965a651103841e17128c04ed80fe37d235b7a4f9483eacbe"
+  },
+  "official-county-41": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=41&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=41&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110786,
+    "sha256": "e2b9556d14a7525758904c39cb75b953b01650c83570c56188cfb190321f5559"
+  },
+  "official-county-39": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=39&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=39&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110750,
+    "sha256": "9af19e727ea5e23650fd6f9857bff7ca87b2ad5b7347bcc4bf812f6fa94ce1cd"
+  },
+  "official-county-42": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=42&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=42&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110708,
+    "sha256": "0e911ae2ba4e8eaba79d9bc557e47919ba6d5cc2472e2178d049cd44128b83b5"
+  },
+  "official-county-43": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=43&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=43&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110778,
+    "sha256": "1386b68987c2f96640d262abd24f7d9bc79bbaca7d08b847d988f10330c040e4"
+  },
+  "official-county-44": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=44&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=44&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110805,
+    "sha256": "02900a684e2cef1deefbe161b5e27d294291bf0b8c9c069b24c0ebdcc8980b65"
+  },
+  "official-county-46": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=46&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=46&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110681,
+    "sha256": "d6f65f0e0f08376dd84b0c1603533e9a3e7c6f94a71c94ad122ea8be9387fffb"
+  },
+  "official-county-45": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=45&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=45&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110695,
+    "sha256": "1ff2e3dafd03f53b1a0a4d271e30083081fd70d4f901163c38ef75e371417999"
+  },
+  "official-county-48": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=48&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=48&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110694,
+    "sha256": "aa6716dc331ff02109118cddb6060082f0b011c02e826551569c4d878e794b99"
+  },
+  "official-county-47": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=47&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=47&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110833,
+    "sha256": "06b6e099cebdcce05ee34fdd0e5dfb14eb056e329bb44e97faa0a6d7b28a5c96"
+  },
+  "official-county-49": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=49&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=49&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110700,
+    "sha256": "201a24c1088a98f907ed32b9bdbf6aec534e3ab80035a1f59a8dac230b22c782"
+  },
+  "official-county-50": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=50&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=50&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110764,
+    "sha256": "afbdc96bd8684ec48a9e6cc1a4eb24bf987f8d635b0836dbf92fe67ed5eeba2c"
+  },
+  "official-county-02": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=02&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=02&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110813,
+    "sha256": "999e0c556ec93a13c6af3d73d75f200c94777e52838775265954cab4888c1ec4"
+  },
+  "official-county-03": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=03&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=03&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110800,
+    "sha256": "f7377b4176a6baa885ac08956ee675840c0e7289620f650ae428d8f91cb8852e"
+  },
+  "official-county-51": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=51&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=51&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110701,
+    "sha256": "09b6adfe03f992a3cec3f84bc58489c4160ae9a06e54eb15defb71cbdc89bf53"
+  },
+  "official-county-52": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=52&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=52&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110770,
+    "sha256": "59d2fe18bd322c6cce70d25ecb41b3396e848b8d8e495929cb5e85fad5241c92"
+  },
+  "official-county-53": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=53&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=53&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110637,
+    "sha256": "b0b033b9b65e5a3be02fb6f0c6d95c5072b95daaba09aec73123117f8c28313b"
+  },
+  "official-county-55": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=55&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=55&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110707,
+    "sha256": "b8aadb19baaad4cfc0c98a52a905f1fc33fda689cc9d4ce4f7a66486c5e92fe7"
+  },
+  "official-county-54": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=54&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=54&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110688,
+    "sha256": "8738b04da4dc257922ed3b88c40db78945bfe63152cb4741af39b6e5d861f1be"
+  },
+  "official-county-56": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=56&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=56&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110695,
+    "sha256": "1f0a5fe137f4c3071d73e52beec0373552e89fcda6e82b3148c48987f9257c05"
+  },
+  "official-county-57": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=57&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=57&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110743,
+    "sha256": "cda8765503b7ebe8abb0502e21e6f5da9f81da82a38ec5c06015100a2d6182e4"
+  },
+  "official-county-60": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=60&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=60&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110686,
+    "sha256": "e7f7a54ad38e905a91238a94b403a5e858dd802ad8a2771e48a6d42b6e722251"
+  },
+  "official-county-59": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=59&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=59&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110784,
+    "sha256": "cc6b7459316be801fae2a3019cf8700da151a64388159cbb4fe8e2d9d3083fd2"
+  },
+  "official-county-58": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=58&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=58&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110786,
+    "sha256": "dc35f52b16b67f0b2640b489887210b3250c2c5471404e5c23528fdd5f8728db"
+  },
+  "official-county-61": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=61&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=61&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110770,
+    "sha256": "59ba2a3da96547d77723ae00e28d6e6ec6859233f8582c125f34393ec60cf2d8"
+  },
+  "official-county-62": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=62&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=62&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110744,
+    "sha256": "3a4c4e1d6b52240133e5f6cdfa75c169957bd117858aa6a017154c17fb823f44"
+  },
+  "official-county-63": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=63&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=63&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110826,
+    "sha256": "9cafe23152f70c56d7cf7436e47d1ea48f77519e625016cf912f4b78303b12d2"
+  },
+  "official-county-65": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=65&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=65&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110702,
+    "sha256": "e36c7610e6189631ec66d0a2a1aecda35d2aa6e93c27ef62260b1b84d6e567a9"
+  },
+  "official-county-67": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=67&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=67&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110658,
+    "sha256": "ac616c64771798b494cf16617a3f28545fc1de2d549bdf07969750dba2dbc95a"
+  },
+  "official-county-66": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=66&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=66&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110729,
+    "sha256": "4223d449a0b1198641fd8c312b3f7c3493bbf442e3bf4233716dde7127829e8e"
+  },
+  "official-county-64": {
+    "url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=64&ecode=1001305",
+    "effective_url": "https://www2.alabamavotes.gov/electionNight/countyResultsByContest.aspx?cid=64&ecode=1001305",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 110757,
+    "sha256": "4389e45acaccb131fb47b01e3b5d380341be07f360b2384f93b9dce48342f790"
+  }
+}
