@@ -1,0 +1,10 @@
+{
+  "url": "https://electionresultsfiles.sos.mn.gov/20261103/pctstats.txt",
+  "effective_url": "https://electionresultsfiles.sos.mn.gov/20261103/pctstats.txt",
+  "status": 200,
+  "content_type": "text/plain",
+  "started_at_utc": "2026-11-10T14:12:54.924147+00:00",
+  "finished_at_utc": "2026-11-10T14:12:55.444414+00:00",
+  "bytes": 206137,
+  "sha256": "54085ea0fa1f183ad7e12c19d259a9c8d8e90bad6d682c7b7f8b0be7ef62e7e2"
+}

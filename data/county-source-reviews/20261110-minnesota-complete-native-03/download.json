@@ -1,0 +1,18 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-complete-native-statistics-20261110-03/complete-analysis.zip",
+  "bytes": 71548414,
+  "sha256": "9f24c78007e3aeee838f9daa16d1105333fa829f27ab4585ad361a369027ac38",
+  "members": 57,
+  "sufficient_inputs": 8,
+  "entire_prior_original_archive_members": 80,
+  "standalone_full_assets": 13,
+  "complete_counties": 87,
+  "reported_source_rows": 4105,
+  "unknown_source_rows": 0,
+  "newly_reported_rows": 26,
+  "reported_zero_rows": 32,
+  "source_registration_fractions": 73,
+  "precinct_analysis_rates": 0,
+  "reference_coordinates_changed": false,
+  "prior_pair_decisions_reused": 13619
+}

@@ -92,7 +92,7 @@ const reviewedStates = loadReviewedStatewideParticipation(participationReviews);
 const reviewedMeasure = (row: typeof reviewedCounties[number]) =>
 	'participation_measure_label' in row ? row.participation_measure_label
 		: 'participation_measure_literal' in row ? row.participation_measure_literal : undefined;
-const additionalParticipation = loadAdditionalParticipation({ nativeCountyParents: true });
+const additionalParticipation = loadAdditionalParticipation({ nativeCountyParents: true, minnesotaCompleteNative: true });
 const countyParentDownload = (row: typeof additionalParticipation.counties[number] | undefined) =>
 	row && 'county_parent_complete_download_url' in row ? String(row.county_parent_complete_download_url) : undefined;
 const countyModeLabel = (row: typeof additionalParticipation.counties[number] | undefined) =>

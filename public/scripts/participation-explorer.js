@@ -415,13 +415,14 @@ function stateParticipationRows() {
         throw error;
       }
       const scoped = hasCountySourceMode(code, $("mode").value) || selectedCounties !== combined;
-      const minnesotaFollowup = code === "MN" && ["available", "official"].includes($("mode").value)
-        && selectedCounties.some(row => row.source_snapshot === "20261110-minnesota-followup-02");
+      const minnesotaSnapshot = code === "MN" && ["available", "official"].includes($("mode").value)
+        ? selectedCounties.find(row => ["20261110-minnesota-followup-02", "20261110-minnesota-complete-native-03"]
+          .includes(row.source_snapshot))?.source_snapshot : null;
       const baseCounties = scoped ? combined.filter(row => row.state_code !== code) : combined;
       return { ...data,
         counties: scoped ? [...baseCounties, ...selectedCounties] : combined,
-        precincts: minnesotaFollowup
-          ? additional.precincts.filter(row => row.source_snapshot === "20261110-minnesota-followup-02")
+        precincts: minnesotaSnapshot
+          ? additional.precincts.filter(row => row.source_snapshot === minnesotaSnapshot)
           : scoped ? [] : [...data.precincts, ...additional.precincts],
         nongeographic: scoped ? [] : additional.nongeographic || [], additional_error: additional.additional_error,
         unmapped_source_regions: scoped
@@ -1229,7 +1230,8 @@ async function loadCurrentPrecincts() {
     return state.precinctResultShapes.get(key);
   }
   function matchedPrecinctParticipationCoverage(code, year = Number($("year").value)) {
-    if (code === "MN" && state.currentPrecincts?.state_metadata?.MN?.source_id === "minnesota-native-followup-20261110-02")
+    if (code === "MN" && ["minnesota-native-followup-20261110-02", "minnesota-complete-native-statistics-20261110-03"]
+      .includes(state.currentPrecincts?.state_metadata?.MN?.source_id))
       return null;
     const coverage = year === 2026 && ["ID", "ND", "MN", "DC", "VA"].includes(code)
       ? state.precinctResults?.coverage[year]?.[code] || null : null;
@@ -1451,7 +1453,7 @@ async function loadCurrentPrecincts() {
     if (chosen) precinctResultDetail(chosen.properties);
   }
 function currentPrecinctDescription(p) {
-  if (p.source_snapshot === "20261110-minnesota-followup-02") {
+  if (["20261110-minnesota-followup-02", "20261110-minnesota-complete-native-03"].includes(p.source_snapshot)) {
     const n = p.native_record;
     return (p.source_count_qualified ? `${fmt(p.ballots)} literal native Total Number Voted. `
       : "Native has_reported_statistics=0; participation remains unknown, not observed zero. ")
@@ -1509,7 +1511,9 @@ function currentPrecinctDetail(p, metadata = {}) {
 async function drawCurrentPrecinctGeography(map, selected, code, token) {
   const file = state.currentPrecincts?.states[code];
   const metadata = state.currentPrecincts?.state_metadata?.[code] || {};
-  const minnesotaNative = code === "MN" && metadata.source_id === "minnesota-native-followup-20261110-02";
+  const minnesotaCompleteNative = code === "MN" && metadata.source_id === "minnesota-complete-native-statistics-20261110-03";
+  const minnesotaNative = code === "MN" && ["minnesota-native-followup-20261110-02",
+    "minnesota-complete-native-statistics-20261110-03"].includes(metadata.source_id);
   const doverNativeWards = code === "NH" && metadata.source_id === "new-hampshire-native-ward-reference-20261110-04";
   const nashuaNativeWards = code === "NH" && (doverNativeWards || metadata.source_id === "new-hampshire-native-ward-reference-20261110-03");
   const extendedNativeWards = code === "NH" && (nashuaNativeWards || metadata.source_id === "new-hampshire-native-ward-reference-20261110-02");
@@ -1545,12 +1549,15 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
       body = new Response(raw).body;
     }
     const data = await new Response(body.pipeThrough(new DecompressionStream("gzip"))).json();
-    if (minnesotaNative && (metadata.expected_features !== 4105 || metadata.reported_source_counts !== 4079
-      || metadata.unknown_source_counts !== 26 || metadata.counts_only !== true || metadata.rates_approved !== false
+    if (minnesotaNative && (metadata.expected_features !== 4105
+      || metadata.reported_source_counts !== (minnesotaCompleteNative ? 4105 : 4079)
+      || metadata.unknown_source_counts !== (minnesotaCompleteNative ? 0 : 26)
+      || metadata.counts_only !== true || metadata.rates_approved !== false
       || metadata.certified_legal_precinct_boundaries !== false || data.features.length !== 4105
       || new Set(data.features.map(feature => feature.properties.key)).size !== 4105
-      || data.features.filter(feature => feature.properties.ballots === null).length !== 26
-      || data.features.reduce((sum, feature) => sum + (feature.properties.ballots ?? 0), 0) !== 2827091
+      || data.features.filter(feature => feature.properties.ballots === null).length !== (minnesotaCompleteNative ? 0 : 26)
+      || data.features.reduce((sum, feature) => sum + (feature.properties.ballots ?? 0), 0)
+        !== (minnesotaCompleteNative ? 2852618 : 2827091)
       || data.features.some(feature => !["Polygon", "MultiPolygon"].includes(feature.geometry?.type)
         || !qualifiedMinnesotaPrecinctReference(feature.properties))))
       throw new Error("Unqualified Minnesota current native precinct count or full reference; no legacy generalization or rate substitution");
@@ -1682,7 +1689,9 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
       : extendedNativeWards ? "Native ward counts in Manchester and Concord"
       : nativeWards ? "Native ward counts in Manchester" : map.full[0] / state.viewport[2] < 2.3
       ? "Precinct participation · available coverage" : `Precinct participation in ${name}`,
-    countsOnly ? (minnesotaNative ? "4079 native Total Number Voted reports;26 unknowns, not observed zero. No new precinct fraction or unique-person count is qualified."
+    countsOnly ? (minnesotaNative ? minnesotaCompleteNative
+      ? "4105 native Total Number Voted reports; all rows reported, including32 observed zeros. No precinct fraction or unique-person count is qualified."
+      : "4079 native Total Number Voted reports;26 unknowns, not observed zero. No new precinct fraction or unique-person count is qualified."
       : massachusettsReporting ? "Color shows literal native source counts, not qualified unique people or turnout rates. All rates remain withheld."
       : `Color shows reported ballot counts, not turnout rates. All ${nativeWards ? "ward" : "precinct"} rates remain withheld.`)
       : "Reported ballots / source-defined electorate where qualified. Gray shapes can still carry direct counts.",

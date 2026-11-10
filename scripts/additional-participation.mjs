@@ -19,6 +19,7 @@ import { loadMassachusettsCityReference, massachusettsCityReferenceVersion } fro
 import { loadMinnesotaFollowup } from './minnesota-county-followup.mjs';
 import { loadAlabamaCountyCounts } from './alabama-county-counts.mjs';
 import { loadNevadaNativeCounties } from './nevada-native-counties.mjs';
+import { loadMinnesotaCompleteNative } from './minnesota-complete-native.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -55,7 +56,7 @@ function observation(review, file, code, name, identity, native, values = {}) {
   };
 }
 
-export function loadAdditionalParticipation({ nativeCountyParents = false } = {}) {
+export function loadAdditionalParticipation({ nativeCountyParents = false, minnesotaCompleteNative = false } = {}) {
   const counties = [], precincts = [], nongeographic = [];
   const pointer = json('public/precinct-results.json');
   const reviews = pointer.source_reviews.map(path => {
@@ -668,7 +669,7 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
     }
   }
   if (nativeCountyParents) {
-    const minnesota = loadMinnesotaFollowup();
+    const minnesota = minnesotaCompleteNative ? loadMinnesotaCompleteNative() : loadMinnesotaFollowup();
     for (let index = counties.length - 1; index >= 0; index--)
       if (counties[index].state_code === 'MN') counties.splice(index, 1);
     for (let index = precincts.length - 1; index >= 0; index--)

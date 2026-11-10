@@ -14,10 +14,19 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4387")
 parser.add_argument("--proof", type=Path, required=True)
 parser.add_argument("--nevada-county-followup", action="store_true")
+parser.add_argument("--minnesota-complete-update", action="store_true")
 args = parser.parse_args()
 assert not args.proof.exists()
 base = args.base_url.rstrip("/")
 query = json.loads(gzip.decompress((SOURCE / "queries.json.gz").read_bytes()))
+if args.minnesota_complete_update:
+    native_mn = json.loads(gzip.decompress((ROOT /
+        "data/county-source-reviews/20261110-minnesota-complete-native-03/queries.json.gz").read_bytes()))
+    for row in query["complete204_state_mode_decisions"]:
+        if row["state_code"] == "MN" and row["mode"] in ("available", "official"):
+            row["after_selected_rows"] = 87
+            row["after_observations"] = [dict(county_id="additional:MN:followup:" + item["native_county_id"],
+                ballots=item["complete_total_number_voted"]) for item in native_mn["complete_county_decisions"]]
 if args.nevada_county_followup:
     native = json.loads(gzip.decompress((ROOT /
         "data/county-source-reviews/20261110-nevada-native-counties-01/queries.json.gz").read_bytes()))
@@ -96,9 +105,11 @@ with sync_playwright() as runtime:
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             assert not errors, errors
             cases.append(dict(mobile=mobile, complete204_actual_control_decisions=decisions,
-                all102_available_official_decisions_preserved=not args.nevada_county_followup,
-                all100_unaffected_available_official_decisions_preserved=True,
+                all102_available_official_decisions_preserved=not (args.nevada_county_followup or args.minnesota_complete_update),
+                all100_unaffected_available_official_decisions_preserved=not args.minnesota_complete_update,
+                all98_unaffected_available_official_decisions_preserved=True,
                 Nevada_new_native_followup_qualified=args.nevada_county_followup,
+                Minnesota_complete_native_update_qualified=args.minnesota_complete_update,
                 all67_qualified_mode_decisions_preserved=True,
                 all23_unqualified_other_frame_selections_withheld=True,
                 genuine_source_counts_sampled_without_reallocation=True,
@@ -110,7 +121,8 @@ with sync_playwright() as runtime:
         browser.close()
 proof = dict(status="PASS_all51_complete204_actual_mode_decisions_desktop_mobile_no_source_substitution",
     base_url=base, cases=cases, valid_source_requests_overridden=False,
-    source_counts_changed=False, new_population_or_normalized_mode_claim=False,
+    source_counts_changed=args.minnesota_complete_update, source_counts_repaired=False,
+    new_population_or_normalized_mode_claim=False,
     Nevada_new_source_snapshot="20261110-nevada-native-counties-01" if args.nevada_county_followup else None,
     nationwide_project_complete=False)
 args.proof.write_text(json.dumps(proof, indent=2) + "\n")

@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4387")
 parser.add_argument("--proof", type=Path, required=True)
+parser.add_argument("--minnesota-complete-update", action="store_true")
 args = parser.parse_args()
 if args.proof.exists():
     raise ValueError("Refuse to replace an existing proof")
@@ -48,7 +49,8 @@ with sync_playwright() as runtime:
     browser = runtime.chromium.launch()
     try:
         context = browser.new_context(viewport={"width": 1440, "height": 1100})
-        stage_local_minnesota_reference(context, args.base_url)
+        stage_local_minnesota_reference(context, args.base_url, version="20261110-minnesota-complete-native-03"
+            if args.minnesota_complete_update else "20261110-minnesota-followup-02")
         page = context.new_page()
         errors = []
         page.on("pageerror", lambda error: errors.append(str(error)))

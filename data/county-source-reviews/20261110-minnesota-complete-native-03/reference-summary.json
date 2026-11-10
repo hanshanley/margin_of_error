@@ -1,0 +1,11 @@
+{
+  "file": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-complete-native-statistics-20261110-03/MN.geojson.gz",
+  "bytes": 9223418,
+  "sha256": "c35f4765c499526e73f158ea59cfac8f6d64acea89496f106a8c7697c970a0ac",
+  "uncompressed_sha256": "4909dcd2e30e7f1ce71c062b91cf8f3d625a08077421f07e9ef2d8f8fc316102",
+  "expected_features": 4105,
+  "source_reference_date": "2026-09-18",
+  "source_snapshot": "20261110-minnesota-complete-native-03",
+  "certified_legal_boundaries": false,
+  "full_native_coordinates_preserved": true
+}

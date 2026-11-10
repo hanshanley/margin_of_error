@@ -19,7 +19,7 @@ test('all4105 full native references join current IDs;4079 counts and26 unknowns
   assert.equal(review.all4105_reference_decisions.length, 4105);
   assert.ok(data.features.every(feature => feature.properties.reported_pct === null));
   const registry = JSON.parse(readFileSync('public/participation-precincts.json'));
-  assert.equal(registry.additional_sources.filter(row =>
+  assert.equal([...registry.additional_sources, ...(registry.previous_sources || [])].filter(row =>
     row.base_url === '/participation-precincts/20261110-minnesota-followup-02/').length, 1);
   assert.ok(registry.additional_sources.some(row =>
     row.base_url === '/participation-precincts/20261110-new-hampshire-ward-reference-04/'));

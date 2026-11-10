@@ -312,11 +312,14 @@ export function qualifiedMinnesotaCountyFrame(rows) {
   if (!Array.isArray(rows) || rows.length !== 87
     || new Set(rows.map(row => row.county_fips)).size !== 87
     || new Set(rows.map(row => row.county_id)).size !== 87) return false;
+  const completeUpdate = rows[0]?.source_snapshot === "20261110-minnesota-complete-native-03";
+  const snapshot = completeUpdate ? "20261110-minnesota-complete-native-03" : "20261110-minnesota-followup-02";
+  const clock = completeUpdate ? "11/10/26 8:08 AM" : "11/07/26 5:18 PM";
   if (!rows.every(row => {
     const n = row.native_record, complete = n?.all_statistics_reported === "true";
     const eligible = n?.registration_fraction_eligible === "true";
     if (row.year !== 2026 || row.state_code !== "MN"
-      || row.source_snapshot !== "20261110-minnesota-followup-02"
+      || row.source_snapshot !== snapshot
       || row.source_mode !== "all_method_native_statistics_snapshot"
       || !/^27\d{3}$/.test(row.county_fips)
       || !/^\d{2}$/.test(n?.native_county_id)
@@ -325,7 +328,7 @@ export function qualifiedMinnesotaCountyFrame(rows) {
       || !["true", "false"].includes(n.all_statistics_reported)
       || !["true", "false"].includes(n.registration_fraction_eligible)
       || n.native_numerator_label !== "Total Number Voted" || n.native_status !== "Unofficial Results"
-      || n.native_update_clock !== "11/07/26 5:18 PM" || n.native_update_timezone !== ""
+      || n.native_update_clock !== clock || n.native_update_timezone !== ""
       || row.cast_ballot_count_qualified !== false || row.unique_voter_count_qualified !== false
       || row.participation_measure_literal !== "Total Number Voted"
       || row.denominator_basis !== "native_7am_plus_election_day_registrations"
@@ -352,17 +355,18 @@ export function qualifiedMinnesotaCountyFrame(rows) {
         && Math.abs(row.reported_pct - 100 * row.ballots / row.denominator) < 1e-10
       : row.reported_pct === null;
   })) return false;
-  return rows.filter(row => row.ballots !== null).length === 84
-    && rows.filter(row => row.reported_pct !== null).length === 71
-    && rows.reduce((sum, row) => sum + row.reported_units, 0) === 4079
+  return rows.filter(row => row.ballots !== null).length === (completeUpdate ? 87 : 84)
+    && rows.filter(row => row.reported_pct !== null).length === (completeUpdate ? 73 : 71)
+    && rows.reduce((sum, row) => sum + row.reported_units, 0) === (completeUpdate ? 4105 : 4079)
     && rows.reduce((sum, row) => sum + row.total_units, 0) === 4105
-    && rows.reduce((sum, row) => sum + row.native_partial_subtotal, 0) === 2827091;
+    && rows.reduce((sum, row) => sum + row.native_partial_subtotal, 0) === (completeUpdate ? 2852618 : 2827091);
 }
 
 export function qualifiedMinnesotaPrecinctReference(p) {
   const n = p?.native_record, r = p?.reference_geometry;
   const reported = n?.has_reported_statistics === "1";
-  return p?.source_snapshot === "20261110-minnesota-followup-02"
+  return ["20261110-minnesota-followup-02", "20261110-minnesota-complete-native-03"].includes(p?.source_snapshot)
+    && (p.source_snapshot !== "20261110-minnesota-complete-native-03" || reported)
     && p.year === 2026 && p.state_code === "MN" && n?.state === "MN"
     && p.source_election_date === "2026-11-03"
     && /^\d{2}$/.test(p.native_county_id) && p.native_county_id === n.county_id

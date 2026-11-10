@@ -1,0 +1,10 @@
+{
+  "url": "https://electionresults.sos.mn.gov/Results/CountyStatisticsStatewide/Index?ersElectionId=201",
+  "effective_url": "https://electionresults.sos.mn.gov/Results/CountyStatisticsStatewide/Index?ersElectionId=201",
+  "status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "started_at_utc": "2026-11-10T14:12:54.715045+00:00",
+  "finished_at_utc": "2026-11-10T14:12:54.904352+00:00",
+  "bytes": 185920,
+  "sha256": "796841a97aa9f61e6189996e5a3d98615db5740ae020606773f79c41815d9b64"
+}

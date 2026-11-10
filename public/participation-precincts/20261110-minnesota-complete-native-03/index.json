@@ -1,0 +1,28 @@
+{
+  "states": {
+    "MN": "https://raw.githubusercontent.com/hanshanley/margin_of_error/voter-minnesota-complete-native-statistics-20261110-03/data/county-source-reviews/20261110-minnesota-complete-native-03/MN.geojson.gz"
+  },
+  "state_metadata": {
+    "MN": {
+      "source_id": "minnesota-complete-native-statistics-20261110-03",
+      "expected_features": 4105,
+      "bytes": 9223418,
+      "sha256": "c35f4765c499526e73f158ea59cfac8f6d64acea89496f106a8c7697c970a0ac",
+      "full_asset_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-complete-native-statistics-20261110-03/MN.geojson.gz",
+      "counts_only": true,
+      "rates_approved": false,
+      "reported_source_counts": 4105,
+      "unknown_source_counts": 0,
+      "source_reference_date": "2026-09-18",
+      "source_update_literal": "11/10/26 8:08 AM",
+      "source_update_timezone": null,
+      "certified_legal_precinct_boundaries": false,
+      "boundary_label": "Full unchanged native September18,2026 reference; not certified legal precincts",
+      "native_overlaps_preserved": true,
+      "positive_native_overlap_pairs": 0,
+      "names_differ_beyond_case": 1723,
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-complete-native-statistics-20261110-03/complete-analysis.zip",
+      "notes": "All4105 source statistics rows now explicitly report, including32 observed zeros. All coordinates match the previous full native reference exactly; previous13619 pair decisions are reused, not recomputed. Source conflicts and electorate excesses remain literal; no precinct rate, geometry repair or certification inference."
+    }
+  }
+}

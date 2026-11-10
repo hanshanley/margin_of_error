@@ -1,0 +1,47 @@
+{
+  "version": "data/county-source-reviews/20261110-minnesota-complete-native-03",
+  "files": {
+    "baseline-complete-native-analysis.zip": {
+      "bytes": 50849478,
+      "sha256": "7e66d26c48c0ca45555101ac1e04cf5306119b7a97482c03345edc365457a07b"
+    },
+    "official-page-factual-fields.json": {
+      "bytes": 28070,
+      "sha256": "4954142db2db2f048535b19ced176b02a35c6d58843dd0e9aa91626d4a0b0178"
+    },
+    "official-page-receipt-without-headers.json": {
+      "bytes": 498,
+      "sha256": "9af6473db54374d5158f3a400af819ff044f8e86355232a1b7ff4ebdf9f96101"
+    },
+    "originals/pctstats.txt": {
+      "bytes": 206137,
+      "sha256": "54085ea0fa1f183ad7e12c19d259a9c8d8e90bad6d682c7b7f8b0be7ef62e7e2"
+    },
+    "originals/pctstats.txt.receipt.json": {
+      "bytes": 422,
+      "sha256": "6da58fa074e88d2903ce2d907dfd3337ab7b6a2b0318c736a47142e596914538"
+    },
+    "preflight/all4105-complete-comparisons.json.gz": {
+      "bytes": 158897,
+      "sha256": "2fb26733f3f1aa5e5cd19811b976e8659e0ae56c9a0d81a48f5f3d53a8e07e85"
+    },
+    "preflight/qualified-complete-native-queries.json.gz": {
+      "bytes": 281731,
+      "sha256": "e9c91ff92fea168789f001adfff1e811a5ef650c989f75293c5e4ac5cc1183d3"
+    },
+    "preflight/qualified-source-summary.json": {
+      "bytes": 946,
+      "sha256": "a69f2f417bc99febb6b35847f92c3659cd889fbd80150d9630adeb1228dde4b6"
+    }
+  },
+  "original_previous_complete_package_included": true,
+  "all_native_originals_and_prior_reference_reviews_retained": true,
+  "all_new_4105_literal_comparisons_and_qualified_queries_included": true,
+  "source_native_clock": "11/10/26 8:08 AM",
+  "source_native_timezone": null,
+  "new_acquisitions": 0,
+  "new_geometry_acquisitions": 0,
+  "raw_page_HTML_application_and_acquisition_headers_excluded": true,
+  "full_numerical_page_projection_included": true,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-minnesota-complete-native-statistics-20261110-03/complete-analysis.zip"
+}

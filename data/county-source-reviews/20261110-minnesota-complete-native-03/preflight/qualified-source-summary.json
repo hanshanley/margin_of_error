@@ -1,0 +1,28 @@
+{
+  "status": "PASS_new_complete_native_source_qualification_NOT_website_acceptance",
+  "source_clock_literal": "11/10/26 8:08 AM",
+  "source_timezone": null,
+  "complete_counties": 87,
+  "reported_statistics": 4105,
+  "missing_statistics": 0,
+  "newly_complete_counties": [
+    "Fillmore",
+    "Hubbard",
+    "Wright"
+  ],
+  "newly_reported_precincts": 26,
+  "native_derived_complete_total_number_voted": 2852618,
+  "native_7am_register_sum": 3927697,
+  "native_election_day_registrations_sum": 147357,
+  "qualified_source_registration_fractions": 73,
+  "component_conflict_rows": 60,
+  "precinct_electorate_excesses": 6,
+  "explicit_reported_zero_rows": 32,
+  "precinct_source_names_changed": 0,
+  "precinct_analysis_rates": 0,
+  "source_counts_repaired": false,
+  "state_Estimated_Voters_not_substituted": true,
+  "new_geometry_acquisitions": 0,
+  "previous_reference_and_topology_reductions_not_repeated": true,
+  "website_unchanged": true
+}

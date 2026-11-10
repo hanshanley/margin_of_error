@@ -125,6 +125,16 @@ ingested or show an unrelated full-election count. Alaska/DC use a shared
 loader and separately mode-gated precinct paths, not separate county exports.
 Its default remains the frozen legacy source frame so old county-context exports
 reproduce unchanged. `scripts/native-county-parents.mjs` verifies Idaho's 44 and
+The separately explicit `minnesotaCompleteNative` live opt-in advances only
+Minnesota to the November10 native snapshot: all87 counties/all4105 rows,
+including26 newly reported rows and32 observed zeros. Preserve all60 component
+conflicts/six electorate excesses, qualify only73 source-registration fractions,
+and keep every precinct analysis rate null. The full coordinate arrays and
+prior13619 pair decisions are reused exactly; new properties are not geometry
+repairs or certified legal precincts. Retain the prior Minnesota reader,
+references and downloads. Publish the entire new scientific packet and large
+native reference externally before activation; do not copy it into the
+already-near-limit Pages payload or infer counts from Estimated Voters. `scripts/native-county-parents.mjs` verifies Idaho's 44 and
 North Dakota's 53 native county parents, independent ballot totals and complete
 2026 Census county identities. Twin Falls' conflicting registration frame and
 all North Dakota rates remain withheld. The browser verifies the compressed
