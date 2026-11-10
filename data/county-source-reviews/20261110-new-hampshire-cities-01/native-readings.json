@@ -1,0 +1,80 @@
+{
+  "election_date": "2026-11-03",
+  "analysis_rates_approved": false,
+  "candidate_counts_used_as_ballots": false,
+  "manchester": {
+    "native_election_label": "General Election November 3, 2026",
+    "native_measure_labels": {
+      "election_day": "Election Day Ballots Cast",
+      "absentee": "Absentee Ballots Cast",
+      "total": "Total Ballots Cast",
+      "federal_only": "Federal Office Only Ballots Cast"
+    },
+    "native_page": 1,
+    "reading_method": "Direct visual transcription of exact original header/ballot crops; ambiguous Ward4/6/7 fields separately checked at300dpi. Arithmetic never used to repair source digits.",
+    "federal_only_added_to_total": false,
+    "federal_only_inclusion_in_total_independently_qualified": false,
+    "source_clock": null,
+    "source_timezone": null,
+    "wards": [
+      {"ward": 1, "election_day": 4193, "absentee": 366, "total": 4559, "federal_only": 15, "native_revision_label": null},
+      {"ward": 2, "election_day": 3702, "absentee": 278, "total": 3980, "federal_only": 11, "native_revision_label": null},
+      {"ward": 3, "election_day": 2446, "absentee": 188, "total": 2634, "federal_only": 10, "native_revision_label": null},
+      {"ward": 4, "election_day": 2404, "absentee": 174, "total": 2578, "federal_only": 2, "native_revision_label": "Revised - Nov.4,2026 - TH", "federal_only_native_cancelled_mark": "8 struck through; 2 written beside it", "source_revision_not_analysis_repair": true},
+      {"ward": 5, "election_day": 1879, "absentee": 87, "total": 1966, "federal_only": 6, "native_revision_label": "Revised - Nov.4,2026 - TH"},
+      {"ward": 6, "election_day": 3823, "absentee": 232, "total": 4055, "federal_only": 1, "native_revision_label": null},
+      {"ward": 7, "election_day": 2694, "absentee": 103, "total": 2712, "federal_only": 2, "native_revision_label": null, "native_component_disagreement_retained": true},
+      {"ward": 8, "election_day": 3795, "absentee": 232, "total": 4027, "federal_only": 9, "native_revision_label": null},
+      {"ward": 9, "election_day": 2964, "absentee": 137, "total": 3101, "federal_only": 3, "native_revision_label": null},
+      {"ward": 10, "election_day": 2962, "absentee": 122, "total": 3084, "federal_only": 6, "native_revision_label": "Revised - Nov.4,2026 - TH"},
+      {"ward": 11, "election_day": 2363, "absentee": 86, "total": 2449, "federal_only": 5, "native_revision_label": null},
+      {"ward": 12, "election_day": 3047, "absentee": 370, "total": 3417, "federal_only": 6, "native_revision_label": null}
+    ]
+  },
+  "concord": {
+    "native_election_label": "November 3, 2026 State General Election Results",
+    "native_page": 4,
+    "literal_measure": "Total Cast",
+    "native_city_total_cast": 19234,
+    "total_cast_columns": [
+      {"ward": 1, "school_district": "Concord School District (CSD)", "count": 369},
+      {"ward": 1, "school_district": "Merrimack Valley School District (MVSD)", "count": 1616},
+      {"ward": 2, "school_district": "Concord School District (CSD)", "count": 1136},
+      {"ward": 2, "school_district": "Merrimack Valley School District (MVSD)", "count": 628},
+      {"ward": 3, "school_district": null, "count": 1059},
+      {"ward": 4, "school_district": null, "count": 1918},
+      {"ward": 5, "school_district": null, "count": 2385},
+      {"ward": 6, "school_district": null, "count": 1644},
+      {"ward": 7, "school_district": null, "count": 2395},
+      {"ward": 8, "school_district": null, "count": 1898},
+      {"ward": 9, "school_district": null, "count": 1626},
+      {"ward": 10, "school_district": null, "count": 2560}
+    ],
+    "separate_printed_ward_subtotals": [
+      {"ward": 1, "count": 1985},
+      {"ward": 2, "count": 1764}
+    ],
+    "register_ward_order": [1,2,3,4,5,6,7,8,9,10],
+    "native_register_labels": {
+      "opening": "Registered Voters at Opening of Polls",
+      "election_day_registrations": "Election Day Registrations",
+      "closing": "Registered Voters at Closing of Polls",
+      "printed_turnout": "Turn Out"
+    },
+    "opening": [2703,2424,1430,2621,3129,2369,3090,2509,2320,3284],
+    "election_day_registrations": [156,157,79,236,125,194,111,158,137,108],
+    "closing": [2859,2581,1509,2857,3254,2563,3201,2667,2457,3392],
+    "printed_turnout": ["73.44%","72.77%","74.06%","73.18%","76.22%","69.40%","77.51%","75.65%","70.09%","77.95%"],
+    "native_totals": {
+      "opening": 25879,
+      "election_day_registrations": 1461,
+      "closing": 27340,
+      "printed_turnout": "74.32%"
+    },
+    "source_clock": null,
+    "source_timezone": null,
+    "source_printed_percentages_not_replaced": true,
+    "analysis_denominator": null,
+    "analysis_rate": null
+  }
+}

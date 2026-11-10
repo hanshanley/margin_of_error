@@ -181,6 +181,45 @@ export function qualifiedIllinoisCountyContextReference(rows, reference, collect
       && f.properties.boundary_year === 2026);
 }
 
+export function qualifiedNewHampshireCityReference(rows, reference, collection) {
+  if (!Array.isArray(rows) || rows.length !== 2
+    || reference.geography_scope !== "native_partial_city_reporting_context"
+    || reference.boundary_year !== 2024 || reference.localities !== 259 || reference.mapped_localities !== 2
+    || reference.certified_election_boundaries !== false
+    || !Array.isArray(collection?.features) || collection.features.length !== 259) return false;
+  const expected = new Map([["Concord", "3314200"], ["Manchester", "3345140"]]);
+  const identities = new Set(collection.features.map(f => f.properties?.key));
+  if (identities.size !== 259 || rows.some(row => expected.get(row.county) !== row.reference_municipality_key)
+    || new Set(rows.map(row => row.county)).size !== 2
+    || collection.features.some(f => !f.geometry || f.properties.state_code !== "NH"
+      || f.properties.boundary_year !== 2024)) return false;
+  return rows.every(row => {
+    const source = row.native_record;
+    if (row.year !== 2026 || row.state_code !== "NH" || row.geography_level !== "municipality"
+      || row.county_fips !== null || row.county_id !== `additional:NH:city:${row.reference_municipality_key}`
+      || !identities.has(row.reference_municipality_key) || row.source_city_name !== row.county
+      || row.native_election_id_qualified !== true || row.source_election_date !== "2026-11-03"
+      || row.cast_ballot_count_qualified !== false || row.unique_voter_count_qualified !== false
+      || !Number.isSafeInteger(row.ballots) || row.ballots < 0
+      || row.denominator !== null || row.reported_pct !== null) return false;
+    if (row.county === "Concord")
+      return row.source_count_basis === "native_printed_city_total_cast" && row.native_city_parent_printed === true
+        && source?.native_election_label === "November 3, 2026 State General Election Results"
+        && source.literal_measure === "Total Cast" && source.native_city_total_cast === row.ballots
+        && source.total_cast_columns?.length === 12
+        && source.total_cast_columns.every(r => Number.isSafeInteger(r.count) && r.count >= 0)
+        && source.total_cast_columns.reduce((s, r) => s + r.count, 0) === row.ballots;
+    return row.source_count_basis === "derived_sum_complete12_printed_totals_not_repaired"
+      && row.native_city_parent_printed === false
+      && source?.native_election_label === "General Election November 3, 2026"
+      && source.federal_only_added_to_total === false && source.wards?.length === 12
+      && new Set(source.wards.map(r => r.ward)).size === 12
+      && source.wards.every(r => Number.isInteger(r.ward) && r.ward >= 1 && r.ward <= 12
+        && Number.isSafeInteger(r.total) && r.total >= 0)
+      && source.wards.reduce((s, r) => s + r.total, 0) === row.ballots;
+  });
+}
+
 export function qualifiedProviderCountyFrame(rows, code, mode) {
   const scope = providerCountyScopes[code];
   if (!scope?.modes.includes(mode) || !Array.isArray(rows) || rows.length !== scope.counties

@@ -1,0 +1,453 @@
+{
+  "complete_native_ward_originals": 12,
+  "native_bytes": 105248219,
+  "native_pages": 183,
+  "composite_sha256": "c28e01b52a7c5014c3b0d0639130865c76070b40d275ef6bbeb7c432f53df037",
+  "records": [
+    {
+      "ward": 1,
+      "source_sha256": "2c64fdce75e8217bb79010e58297a6731cf59d4891631f9d553a21b4b9cc7a74",
+      "source_bytes": 9310710,
+      "native_pages": 16,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward01-header.private.png",
+          "sha256": "4a464e1831da3c5f23d91a2fe4be151d8b92e72da9507bc96ad3a2e5b295623b"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward01-ballot_block.private.png",
+          "sha256": "3e93bfbd899f1432bc4d5829f40e281d9fc13c8c60d407777fadf882ee9d5342"
+        }
+      }
+    },
+    {
+      "ward": 2,
+      "source_sha256": "de3c820c9792510f34c94152c7e986a444d76294a4cab26134bd015c693f1c87",
+      "source_bytes": 8295920,
+      "native_pages": 14,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward02-header.private.png",
+          "sha256": "e63d5042a24885b9ca03c42c2357fa15dc1fef81f4bfb3b0dfadb02fb3abcadb"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward02-ballot_block.private.png",
+          "sha256": "24bf8a83b50efb2290df742b1173b8a240181b9b9ea5293ee6a3c53e931eadc9"
+        }
+      }
+    },
+    {
+      "ward": 3,
+      "source_sha256": "4d9a6e4f493661fe6972e8500ed75a31813fcc29c9eb4518614a104a7b03a9a1",
+      "source_bytes": 8674963,
+      "native_pages": 15,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward03-header.private.png",
+          "sha256": "adf4b58319fb22ac8531d5ccdc171932d79483256e665b381e273622bd2f978a"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward03-ballot_block.private.png",
+          "sha256": "99f58e1bf38ee96a89b2528bfc34242fcb2d7764d8e648b0e9a79038ceb87c58"
+        }
+      }
+    },
+    {
+      "ward": 4,
+      "source_sha256": "7c30d20eb5fc142dc8de52978361f6aa5bb35606c49f2280565e33576a76b5a9",
+      "source_bytes": 8395849,
+      "native_pages": 15,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward04-header.private.png",
+          "sha256": "5d51450cd1c4eb6ef2046fba7190e1f6cc10f7ba129402d01dae5117e11b059d"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward04-ballot_block.private.png",
+          "sha256": "3634b5fcc706796d4ceee585265ace74febb840fc7c53b0f38172505a08552d6"
+        }
+      }
+    },
+    {
+      "ward": 5,
+      "source_sha256": "043f7f247776fd69af9e2b92e86478ef9b12fea8463ee550f8e819ad166fee9c",
+      "source_bytes": 8262999,
+      "native_pages": 14,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward05-header.private.png",
+          "sha256": "e7883e022d9e3c7b8d549965128f842f56146fbe1f76ace39f5ab7298b6a71ac"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward05-ballot_block.private.png",
+          "sha256": "2a1f43ede277b276182ad836ee577300cf8d96f38947a47acbe5400f005575e2"
+        }
+      }
+    },
+    {
+      "ward": 6,
+      "source_sha256": "d2d7d38e60830d0e0e7c3be78cf5fdc842d521149ca1431c10a0071218f8e45c",
+      "source_bytes": 8981930,
+      "native_pages": 16,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward06-header.private.png",
+          "sha256": "494d41cf7d39f4d2a8df8e9e30bff73f464c09b4e93d3c6b04947f558b02bdaf"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward06-ballot_block.private.png",
+          "sha256": "e0249479ca77ff06d79b2340fc892002b78382b699c7cfc2a4ec5a60a9d3c7f2"
+        }
+      }
+    },
+    {
+      "ward": 7,
+      "source_sha256": "5771326310d7b7552cd606fb58ca9e9238996f11e9583bdb45743dbe546f4b9f",
+      "source_bytes": 8847825,
+      "native_pages": 16,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward07-header.private.png",
+          "sha256": "dfd0b8aa1dfae15e2d1896b37ab9c62a45893d73600b0a6b8f9ccddcde0daada"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward07-ballot_block.private.png",
+          "sha256": "a1b43d9069d018485f849d28a490370726c918950d693f9e696d7b1f4762c1f5"
+        }
+      }
+    },
+    {
+      "ward": 8,
+      "source_sha256": "2b3c34983a1e3ba51d9b541ab7489f85f806c028fab94a35c63be4805a83c242",
+      "source_bytes": 9051249,
+      "native_pages": 16,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward08-header.private.png",
+          "sha256": "7680c6ee130d7920b3f61e32f4a718d8ccb0b92c9f2a113b845b8b1d57b9f3fe"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward08-ballot_block.private.png",
+          "sha256": "bbbec475ab7abc3b6da8099acb1174453b26eb857b5af9eb8af19219b0ac9016"
+        }
+      }
+    },
+    {
+      "ward": 9,
+      "source_sha256": "67489e4a9f413969deffc4b3c53c52ba29a6ab4123ce41df9bf373e70564b816",
+      "source_bytes": 8837026,
+      "native_pages": 16,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward09-header.private.png",
+          "sha256": "567ebcf26a5de2cb461471c0c3af0cce401d4140268eb7a9d81005d81a06a383"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward09-ballot_block.private.png",
+          "sha256": "0f8e85bbc955e334ac21739d441fa0f6eee4dca06dc501169022d4520decde1a"
+        }
+      }
+    },
+    {
+      "ward": 10,
+      "source_sha256": "78502357fbb3e8f25d5c4f34f2a23a934a409dffa7b9147f02cc7ea0041be24f",
+      "source_bytes": 8704602,
+      "native_pages": 15,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward10-header.private.png",
+          "sha256": "dde50ea7870961e571b89ad6947bd5b2bf58d382614b34b536eb4a32e67e5694"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward10-ballot_block.private.png",
+          "sha256": "a63316a6a5cc978221940229667059eb8e71d73793173c5219bd5110e4acdf5a"
+        }
+      }
+    },
+    {
+      "ward": 11,
+      "source_sha256": "001b5d5eb9c7748830ea5f2f43b715172c870bf150b31fed4ac69677ed17d8b2",
+      "source_bytes": 8916309,
+      "native_pages": 15,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward11-header.private.png",
+          "sha256": "53585a1d965fc91c1e0d234c62438682822d9505d32a4e9b62fa20250e419488"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward11-ballot_block.private.png",
+          "sha256": "53d695ef9379558c76285afeff838564d7de05aef2c11b70076d9cddf5a16ab6"
+        }
+      }
+    },
+    {
+      "ward": 12,
+      "source_sha256": "44932fc40f8575b7963c58ee0e74e82e3406fa02041f102f843eef151c014d1e",
+      "source_bytes": 8968837,
+      "native_pages": 15,
+      "native_page": 1,
+      "native_page_rect": [
+        0.0,
+        0.0,
+        612.0,
+        1008.0
+      ],
+      "clips": {
+        "header": {
+          "native_pdf_box": [
+            15,
+            15,
+            295,
+            115
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward12-header.private.png",
+          "sha256": "d93833531c66b872248d9279112c16156aa84e90a114d281f8c5333d94f0acee"
+        },
+        "ballot_block": {
+          "native_pdf_box": [
+            15,
+            170,
+            598,
+            265
+          ],
+          "render_scale": 1.5,
+          "path": "manchester-ward12-ballot_block.private.png",
+          "sha256": "9e54ee8ee6cf43fd77030b17a59da9f6423d67fc1ba9ab78cb31c596ffb53463"
+        }
+      }
+    }
+  ],
+  "counts_not_yet_transcribed": true
+}

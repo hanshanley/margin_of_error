@@ -327,7 +327,7 @@ test('connects all Idaho and North Dakota native county parents without substitu
   assert.ok(legacy.counties.filter(row => ['ID', 'ND'].includes(row.state_code))
     .every(row => row.ballots === null && row.denominator === null && row.reported_pct === null
       && row.maps_approved === false && row.native_record === null));
-  assert.deepEqual(legacy.precincts, data.precincts.filter(row => row.state_code !== 'IN'));
+  assert.deepEqual(legacy.precincts, data.precincts.filter(row => !['IN', 'NH'].includes(row.state_code)));
   const parents = loadNativeCountyParents();
   const published = JSON.parse(gunzipSync(readFileSync(
     'data/county-source-reviews/20261109-native-county-parents-01/queries.json.gz')));

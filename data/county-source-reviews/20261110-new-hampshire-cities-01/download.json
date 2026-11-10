@@ -1,0 +1,17 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-new-hampshire-native-cities-20261110-01/complete-analysis.zip",
+  "bytes": 81359216,
+  "sha256": "f6eb7f91aa6a9072c1dc279ac0205a175fc33c862597874d03ac8844d310b7b6",
+  "members": 62,
+  "original_pdfs": 13,
+  "original_pages": 187,
+  "original_bytes": 105423525,
+  "complete_source_field_queries": 107,
+  "complete_reference_queries": 259,
+  "native_ward_rows": 22,
+  "source_city_observations": 2,
+  "unmapped_reference_areas": 257,
+  "source_counts_repaired": false,
+  "federal_only_added": false,
+  "analysis_rates_approved": false
+}
