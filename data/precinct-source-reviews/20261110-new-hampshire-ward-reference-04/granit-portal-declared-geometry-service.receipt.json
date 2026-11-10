@@ -1,0 +1,15 @@
+{
+  "source": "https://utility.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer?f=json",
+  "source_declared_by": "granit-declared-public-portal.private.json",
+  "retrieved_at": "2026-11-10T10:09:57.285215+00:00",
+  "query_parameters": {
+    "f": "json"
+  },
+  "no_private_keys_or_tokens_used": true,
+  "http_status": 200,
+  "bytes": 132,
+  "sha256": "2efcf3087e786c87b1f3ab095e5bbf476efe9ca18dc1c7e7678cd8dd3b7d2599",
+  "native_response": {
+    "serviceDescription": "The Geometry service is used by application developers to perform geometric calculations and web editing   "
+  }
+}

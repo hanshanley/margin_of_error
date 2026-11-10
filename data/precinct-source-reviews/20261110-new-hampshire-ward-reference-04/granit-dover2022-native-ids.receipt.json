@@ -1,0 +1,15 @@
+{
+  "source": "https://nhgeodata.unh.edu/hosting/rest/services/Hosted/APB_ElectoralDistricts/FeatureServer/11/query?f=json&where=UPPER%28name%29%3D%27DOVER%27&returnIdsOnly=true",
+  "source_layer_id": 11,
+  "query_parameters": {
+    "f": "json",
+    "where": "UPPER(name)='DOVER'",
+    "returnIdsOnly": "true"
+  },
+  "status": 200,
+  "bytes": 95,
+  "sha256": "f4c9a6e3cfa89adee87de03c1ade762a27f880bf63da0cd1ecb87951ac7304a8",
+  "retrieved_at": "2026-11-10T10:06:46.826769+00:00",
+  "only_official_Dover2022_source_units_requested": true,
+  "no_population_address_or_party_fields_requested": true
+}

@@ -266,6 +266,37 @@ export function qualifiedIllinoisCountyContextReference(rows, reference, collect
       && f.properties.boundary_year === 2026);
 }
 
+export function qualifiedDoverWardReference(p) {
+  const reference = p?.reference_geometry, native = p?.native_record;
+  const ward = p?.native_ward_number;
+  return p?.source_snapshot === "new-hampshire-native-ward-reference-20261110-04"
+    && p.year === 2026 && p.state_code === "NH" && p.county === "Dover"
+    && p.source_election_date === "2026-11-03"
+    && Number.isInteger(ward) && ward >= 1 && ward <= 6 && p.native_object_id === 279 + ward
+    && p.native_district === `Dover Ward ${ward}` && p.key === `NH|Dover|Ward:${ward}`
+    && p.unit_key === `Dover:Ward:${ward}` && p.county_id === "additional:NH:city:3318820"
+    && p.county_fips === null && p.unit_kind === "municipal_ward"
+    && p.reporting_unit_kind === "municipal_ward"
+    && Number.isSafeInteger(p.ballots) && p.ballots >= 0
+    && p.denominator === null && p.reported_pct === null && p.geometry_withheld_reason === null
+    && p.maps_approved === true && p.source_count_qualified === true
+    && p.cast_ballot_count_qualified === false && p.unique_voter_count_qualified === false
+    && native?.ballots?.ward === ward && native.registrations?.ward === ward
+    && native.ballots.total === p.ballots && native.ballots.registered === native.registrations.registered
+    && p.participation_measure_label === "Native Total Ballots Cast"
+    && reference?.source_owner === "NHGRANIT"
+    && reference.source_item_id === "3d1a8bdf3eaa49e09cf5d9da5b56bf9c"
+    && reference.layer_name === "NHPolitDists_VW_2022" && reference.rest_layer_id === 11
+    && reference.boundary_vintage === 2022 && reference.native_projection_epsg === 3437
+    && reference.native_datum_operation?.authority === "ESRI"
+    && reference.native_datum_operation.code === 108190 && reference.native_datum_operation.direction === "inverse"
+    && reference.native_ward_number === ward && reference.native_ward_label === `Dover Ward ${ward}`
+    && reference.native_fips === 17010 && reference.native_fips_is_not_a_county_id === true
+    && reference.certified_legal_boundaries === false && reference.topology_valid_without_repairs === true
+    && reference.single_path_per_polygon === true && reference.cyclic_vertex_adjacency_verified === true
+    && reference.source_geometry_clipped === false && reference.native_overlaps_preserved === true;
+}
+
 export function qualifiedNewHampshireCityReference(rows, reference, collection) {
   const expected = new Map([["Concord", "3314200"], ["Manchester", "3345140"]]);
   if (reference?.review_id === "new-hampshire-native-cities-20261110-02") {

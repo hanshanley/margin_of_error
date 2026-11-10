@@ -21,7 +21,7 @@ test('preserves every Manchester feature and adds ten literal Concord counts wit
   const registry = JSON.parse(readFileSync('public/participation-precincts.json','utf8'));
   assert.equal(registry.additional_sources.filter(r => !r.base_url.includes('20261110-massachusetts-')).length,4);
   assert.equal(registry.additional_sources.filter(r =>
-    /^\/participation-precincts\/20261110-new-hampshire-ward-reference-0[23]\/$/.test(r.base_url)).length,1);
+    /^\/participation-precincts\/20261110-new-hampshire-ward-reference-0[234]\/$/.test(r.base_url)).length,1);
 });
 
 test('rejects native-ID mistakes, school-split changes, false vintage/datum claims and source printed percentages used as rates', () => {

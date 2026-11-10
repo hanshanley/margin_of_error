@@ -13,7 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4387")
 parser.add_argument("--proof", type=Path, required=True)
+parser.add_argument("--dover-reference-extension", action="store_true")
 args = parser.parse_args()
+ward_count = 37 if args.dover_reference_extension else 31
 assert not args.proof.exists()
 base = args.base_url.rstrip("/")
 version = ROOT / "data/county-source-reviews/20261110-new-hampshire-cities-01"
@@ -156,15 +158,22 @@ with sync_playwright() as runtime:
             expect(page.locator("#precinct-state-select")).to_have_value("New Hampshire")
             expect(page.locator('.geographic-detail [data-level="precinct"]')).to_have_count(0)
             ward_shapes = page.locator('.geographic-detail [data-level="ward"]')
-            expect(ward_shapes).to_have_count(31, timeout=90000)
-            expect(page.locator("#title")).to_have_text("Native ward counts in three New Hampshire cities")
+            expect(ward_shapes).to_have_count(ward_count, timeout=90000)
+            expect(page.locator("#title")).to_have_text(
+                "Native ward counts in four New Hampshire cities" if args.dover_reference_extension
+                else "Native ward counts in three New Hampshire cities")
             ward_values = ward_shapes.evaluate_all("els=>els.map(e=>({city:e.dataset.sourceCity,ward:e.dataset.sourceWard,count:e.dataset.count,rate:e.dataset.rate,year:e.dataset.referenceYear}))")
             assert {int(row["ward"]):int(row["count"]) for row in ward_values if row["city"] == "Manchester"} == {
                 row["ward"]:row["total"] for row in m["wards"]}
             assert sum(int(row["count"]) for row in ward_values if row["city"] == "Concord") == 19234
             assert {int(row["ward"]):int(row["count"]) for row in ward_values if row["city"] == "Nashua"} == {
                 row["ward"]:row["total"] for row in n["wards"]}
-            assert all(row["rate"] == "" and row["year"] == ("2022" if row["city"] == "Manchester" else "current") for row in ward_values)
+            if args.dover_reference_extension:
+                assert {int(row["ward"]): int(row["count"]) for row in ward_values if row["city"] == "Dover"} == {
+                    row["ward"]: row["total"] for row in d["native_ballot_rows"][:-1]}
+            assert all(row["rate"] == "" and row["year"] == (
+                "2022" if row["city"] == "Manchester" or args.dover_reference_extension and row["city"] == "Dover"
+                else "current") for row in ward_values)
             expect(page.locator("#geography-note")).to_contain_text("fourteen Concord native overlaps")
             ward7 = page.locator('[data-level="ward"][data-source-city="Manchester"][data-source-ward="7"]')
             ward7.focus()
@@ -189,7 +198,7 @@ with sync_playwright() as runtime:
             retained = chart.get_attribute("viewBox")
             viewport = page.viewport_size
             page.set_viewport_size(dict(width=viewport["width"] - 20, height=viewport["height"]))
-            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(31)
+            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(ward_count)
             page.wait_for_timeout(350)
             expect(page.locator("#visualization svg.turnout-map")).to_have_attribute("viewBox", retained)
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
@@ -219,6 +228,19 @@ with sync_playwright() as runtime:
             expect(page.locator("#current-county-select")).to_have_value("additional:NH:city:3350260")
             expect(page.locator("#current-unit-select")).to_have_value("Nashua:Ward:8")
             expect(page.locator("#current-unit-detail")).to_contain_text("current Nashua municipal ward context")
+            if args.dover_reference_extension:
+                for native in d["native_ballot_rows"][:-1]:
+                    page.locator("#tab-precincts").click()
+                    direct = page.locator(f'[data-level="ward"][data-source-city="Dover"][data-source-ward="{native["ward"]}"]')
+                    expect(direct).to_have_count(1, timeout=90000)
+                    direct.focus()
+                    direct.press("Enter")
+                    expect(page.locator("#substate-detail")).to_contain_text(f'{native["total"]:,}')
+                    expect(page.locator("#substate-detail")).to_contain_text("not an analysis rate")
+                    page.locator("#tab-states").click()
+                    expect(page.locator("#current-county-select")).to_have_value("additional:NH:city:3318820")
+                    expect(page.locator("#current-unit-select")).to_have_value(f'Dover:Ward:{native["ward"]}')
+                    expect(page.locator("#current-unit-detail")).to_contain_text("current Dover municipal ward context")
             assert not errors, errors
             cases.append(dict(mobile=mobile, native_city_counts=4, native_ward_rows=37,
                 full_context_areas=259, unknown_not_zero=255, source_conflicts_retained=True,
@@ -226,6 +248,9 @@ with sync_playwright() as runtime:
                 native_registers_and_percent_separate=True, unsupported_modes_not_substituted=True,
                 dover_native_date_not_filename=True, nashua_source_amendments_retained=True,
                 native_manchester_ward_counts=12, native_concord_ward_counts=10, native_nashua_ward_counts=9,
+                native_dover_ward_counts=6 if args.dover_reference_extension else 0,
+                mapped_native_ward_references=ward_count,
+                all_six_Dover_click_roundtrips=args.dover_reference_extension,
                 nashua_adopted_not_proposed_or_point_parcel_geometry=True,
                 concord_vintage_not_inferred_from_2020_service_name=True, ward_reference_year=2022,
                 no_certified2026_legal_precinct_claim=True, native_ward_source_conflict_preserved=True,
@@ -252,7 +277,9 @@ with sync_playwright() as runtime:
         page.get_by_role("button", name="Retry geographic detail").click()
         verify(page)
         context.close()
-        ward_path = "/participation-precincts/20261110-new-hampshire-ward-reference-03/"
+        ward_path = ("/participation-precincts/20261110-new-hampshire-ward-reference-04/"
+                     if args.dover_reference_extension else
+                     "/participation-precincts/20261110-new-hampshire-ward-reference-03/")
         original = (ROOT / ("public" + ward_path) / "NH.geojson.gz").read_bytes()
         for invalid_scope in (False, True):
             context = browser.new_context()
@@ -261,8 +288,9 @@ with sync_playwright() as runtime:
             bad["features"][0]["properties"]["reference_geometry"]["rest_layer_id"] = 0
             if invalid_scope:
                 bad = json.loads(gzip.decompress(original))
-                next(f for f in bad["features"] if f["properties"]["county"] == "Nashua")[
-                    "properties"]["reference_geometry"]["rest_layer_id"] = 6
+                next(f for f in bad["features"] if f["properties"]["county"] == (
+                    "Dover" if args.dover_reference_extension else "Nashua"))[
+                    "properties"]["reference_geometry"]["rest_layer_id"] = 5 if args.dover_reference_extension else 6
             altered = gzip.compress(json.dumps(bad).encode(), mtime=0)
             def corrupt_geometry(route):
                 response = route.fetch()
@@ -292,7 +320,7 @@ with sync_playwright() as runtime:
                 page.reload(wait_until="domcontentloaded")
             else:
                 page.get_by_role("button", name="Retry precinct source").click()
-            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(31, timeout=90000)
+            expect(page.locator('.geographic-detail [data-level="ward"]')).to_have_count(ward_count, timeout=90000)
             context.close()
     finally:
         browser.close()

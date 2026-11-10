@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, qualifiedManchesterWardReference, qualifiedConcordWardReference, qualifiedNashuaWardReference, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference, qualifiedNewHampshireCityReference, qualifiedMassachusettsCityReference, qualifiedMassachusettsReportingReference } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, qualifiedManchesterWardReference, qualifiedConcordWardReference, qualifiedNashuaWardReference, qualifiedDoverWardReference, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference, qualifiedNewHampshireCityReference, qualifiedMassachusettsCityReference, qualifiedMassachusettsReportingReference } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -889,7 +889,7 @@ function stateParticipationRows() {
         countsOnly ? (providerActivity
           ? `${countLabel}. This is provider-reported source activity, not ${countyNamedContext ? "whole-county totals, " : ""}official full-election turnout, certified ballots or unique people.`
           : massachusettsCities ? "Native Boston and Somerville source counts, not statewide/county totals, unique people or analysis rates. Their distinct printed count fields and source disagreements remain separate."
-          : nativeCities ? "Native Manchester/Concord source counts only, not statewide/county totals or analysis rates. Manchester is the sum of12 printed ward totals with one accounting discrepancy retained; Concord uses its printed Total Cast."
+          : nativeCities ? "Native source city counts only, not statewide/county totals or analysis rates. Printed parents and derived ward-total sums stay distinct; source disagreements and federal-only fields are retained."
           : towns ? "Native town VV counts, not candidate choices or certified cast ballots/unique people. Source EV, modes and printed percentages remain separate; no analysis rate is qualified."
           : code === "WV"
           ? `${countLabel}. Counts are source-specific snapshots, not full-election turnout rates; early, returned and all-method frames stay separate.`
@@ -902,9 +902,9 @@ function stateParticipationRows() {
         + (providerActivity ? "Native source dates are retained below and differ across frames; collector 2026 context is not an independently qualified native election identifier. Early and returned frames are never added. " : "")
         + (massachusettsCities ? `Two native city sources use 350 valid unchanged municipal display references from 351 originals. Other 349 source areas have no count; invalid Wayland geometry is held. All 307 native reporting rows remain available; ${massachusettsCityReferences ? "all 307 have separate checked references, including 32 direct city polygons in Somerville." : "303 have separate checked references and four split-parent rows stay table-only."} No certified 2026 legal boundary claim or source repair. `
           : nativeCities ? `${observations.length} native source cities use full259-area 2024 municipality context;${259-observations.length} areas remain unknown, not zero. All${data.precincts.filter(row => row.state_code === "NH").length} ward rows remain available in tables. `
-          + (state.currentPrecincts?.state_metadata?.NH?.source_id === "manchester-native-ward-reference-20261110-01"
-            ? "Twelve Manchester rows also use current municipal ward context;25 others remain table-only. "
-            : "No native ward-reference join is loaded. ")
+          + (state.currentPrecincts?.state_metadata?.NH?.expected_features
+            ? `${state.currentPrecincts.state_metadata.NH.expected_features} rows use separate checked ward references; ${state.currentPrecincts.state_metadata.NH.held_table_only_ward_rows} remain table-only. `
+            : "Native ward mapping uses a separate source-specific layer on the Precincts tab. ")
           + "No newly certified2026 legal precinct boundaries are claimed. Source amendments, school-district splits, register stocks, native printed percentages and federal-only cells remain separate. "
           : countyNamedContext ? "102 literal county-named source regions use Census county shapes as context only, not qualified electoral-authority territories. Six city-named records remain separate and unallocated in each mode; they are never added into county records. These are not whole-county totals or precinct observations. "
           : localityActivity ? "480 source regions match the full 528-area 2024 contextual municipality reference. Per mode, 104 source regions and 48 reference areas remain held, not allocated or filled with zero. Historical counts are never transferred. Not county totals or certified 2026 precincts. "
@@ -1434,11 +1434,18 @@ async function loadCurrentPrecincts() {
     if (chosen) precinctResultDetail(chosen.properties);
   }
 function currentPrecinctDescription(p) {
-  if (p.source_snapshot === "20261110-massachusetts-native-local-counts-01")
+  if (["20261110-massachusetts-native-local-counts-01",
+    "20261110-massachusetts-city-precinct-reference-02"].includes(p.source_snapshot))
     return `${fmt(p.ballots)} ${p.participation_measure_label}. `
       + (p.county === "Boston" ? "The separate summary Voters Cast and zero registers are not substituted or repaired. "
         : "Printed source registers and conflicting Official/UnOfficial labels remain separate. ")
       + p.rate_withheld_reason;
+  if (p.source_snapshot === "new-hampshire-native-ward-reference-20261110-04") {
+    const native = p.native_record.ballots;
+    return `${fmt(p.ballots)} literal native ward Total Ballots Cast. Polling place${fmt(native.polling_place)} `
+      + `+ absentee${fmt(native.absentee)}; source registers and printed${native.printed_turnout} remain separate, not an analysis rate. `
+      + p.rate_withheld_reason;
+  }
   if (p.source_snapshot === "new-hampshire-native-ward-reference-20261110-02") {
     const native = p.native_record;
     return `${fmt(p.ballots)} literal native Total Cast. Native school-district cells and printed ward subtotals remain unchanged. `
@@ -1478,7 +1485,8 @@ function currentPrecinctDetail(p, metadata = {}) {
 async function drawCurrentPrecinctGeography(map, selected, code, token) {
   const file = state.currentPrecincts?.states[code];
   const metadata = state.currentPrecincts?.state_metadata?.[code] || {};
-  const nashuaNativeWards = code === "NH" && metadata.source_id === "new-hampshire-native-ward-reference-20261110-03";
+  const doverNativeWards = code === "NH" && metadata.source_id === "new-hampshire-native-ward-reference-20261110-04";
+  const nashuaNativeWards = code === "NH" && (doverNativeWards || metadata.source_id === "new-hampshire-native-ward-reference-20261110-03");
   const extendedNativeWards = code === "NH" && (nashuaNativeWards || metadata.source_id === "new-hampshire-native-ward-reference-20261110-02");
   const nativeWards = code === "NH" && (extendedNativeWards || metadata.source_id === "manchester-native-ward-reference-20261110-01");
   const massachusettsCityReferences = code === "MA"
@@ -1537,19 +1545,20 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
       || data.features.some(feature => feature.geometry?.type !== "Polygon"
         || !qualifiedManchesterWardReference(feature.properties))))
       throw new Error("Unqualified Manchester native ward count or current municipal reference; no other ward allocation");
-    if (extendedNativeWards && (metadata.expected_features !== (nashuaNativeWards ? 31 : 22) || metadata.native_source_ward_rows !== 37
-      || metadata.held_table_only_ward_rows !== (nashuaNativeWards ? 6 : 15) || metadata.certified_legal_precinct_boundaries !== false
-      || metadata.counts_only !== true || metadata.rates_approved !== false || data.features.length !== (nashuaNativeWards ? 31 : 22)
-      || new Set(data.features.map(feature => feature.properties.key)).size !== (nashuaNativeWards ? 31 : 22)
-      || (nashuaNativeWards ? ["Manchester", "Concord", "Nashua"] : ["Manchester", "Concord"]).some(city => {
+    if (extendedNativeWards && (metadata.expected_features !== (doverNativeWards ? 37 : nashuaNativeWards ? 31 : 22) || metadata.native_source_ward_rows !== 37
+      || metadata.held_table_only_ward_rows !== (doverNativeWards ? 0 : nashuaNativeWards ? 6 : 15) || metadata.certified_legal_precinct_boundaries !== false
+      || metadata.counts_only !== true || metadata.rates_approved !== false || data.features.length !== (doverNativeWards ? 37 : nashuaNativeWards ? 31 : 22)
+      || new Set(data.features.map(feature => feature.properties.key)).size !== (doverNativeWards ? 37 : nashuaNativeWards ? 31 : 22)
+      || (doverNativeWards ? ["Manchester", "Concord", "Nashua", "Dover"] : nashuaNativeWards ? ["Manchester", "Concord", "Nashua"] : ["Manchester", "Concord"]).some(city => {
         const features = data.features.filter(feature => feature.properties.county === city);
-        const scopes = { Manchester: [12, 38562], Concord: [10, 19234], Nashua: [9, 33849] };
+        const scopes = { Manchester: [12, 38562], Concord: [10, 19234], Nashua: [9, 33849], Dover: [6, 15941] };
         return features.length !== scopes[city][0]
           || features.reduce((sum, feature) => sum + feature.properties.ballots, 0) !== scopes[city][1];
       })
       || data.features.some(feature => feature.geometry?.type !== "Polygon"
         || !(qualifiedManchesterWardReference(feature.properties) || qualifiedConcordWardReference(feature.properties)
-          || nashuaNativeWards && qualifiedNashuaWardReference(feature.properties)))))
+          || nashuaNativeWards && qualifiedNashuaWardReference(feature.properties)
+          || doverNativeWards && qualifiedDoverWardReference(feature.properties)))))
       throw new Error("Unqualified New Hampshire native ward count or adopted municipal reference; no other ward allocation");
     if (code === "MA" && (!massachusettsReporting
       || metadata.expected_features !== (massachusettsCityReferences ? 307 : 303)
@@ -1633,6 +1642,7 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     : massachusettsReporting ? "2026 midterms · native local reporting units · partial coverage"
     : "2026 midterms · unofficial precinct observations · partial coverage",
     massachusettsReporting ? "Native reporting-unit counts in Boston and Somerville"
+      : doverNativeWards ? "Native ward counts in four New Hampshire cities"
       : nashuaNativeWards ? "Native ward counts in three New Hampshire cities"
       : extendedNativeWards ? "Native ward counts in Manchester and Concord"
       : nativeWards ? "Native ward counts in Manchester" : map.full[0] / state.viewport[2] < 2.3
@@ -1645,7 +1655,9 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     const complete = html("a", "source-link", "Complete originals, matched/withheld rows and exact geometry (ZIP)");
     complete.href = metadata.complete_download_url; $("caption").append(" ", complete);
   }
-  $("coverage-note").textContent = massachusettsReporting ? metadata.notes : nashuaNativeWards
+  $("coverage-note").textContent = massachusettsReporting ? metadata.notes : doverNativeWards
+    ? "Manchester12 / Concord10 / Nashua9 / Dover6: all37 native ward rows have direct references. Four cities only; no source repairs or analysis rates. " + metadata.notes
+    : nashuaNativeWards
     ? "Manchester12 / Concord10 / Nashua9 native ward counts. Other6 Dover ward rows remain in tables. "
       + "Official municipal reference context, not newly certified2026 legal precincts; no source repairs or rates. " + metadata.notes
     : extendedNativeWards
@@ -1668,6 +1680,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
       ? "Boston 275 / Somerville 32 direct native precinct/subprecinct references; all 307 source rows map without clipping. Somerville's city metadata was updated September 22, 2023 using the 2020 Census; this is not a certified 2026 boundary vintage. "
       : "Boston 275 / Somerville 28 unchanged native precinct/subprecinct references; all 307 source rows retained. Four split-parent count joins remain table-only, not clipped. ")
       + "Two original Boston overlaps remain unrepaired. Reference context is not certified 2026 legal geography; no state/county values, source repairs or rates are allocated."
+    : doverNativeWards
+    ? "Manchester12 / Concord10 / Nashua9 / Dover6 official ward references, not certified2026 legal precincts. Dover uses the state-published2022 NHGRANIT product, native3437 and declared inverseESRI108190; not old layer5, FID-as-ward or county allocation. Six Manchester and fourteen Concord native overlaps remain unrepaired; no native Nashua/Dover pair overlaps. Source clocks and native count definitions remain separate; no inferred rates."
     : nashuaNativeWards
     ? "Manchester12 / Concord10 / Nashua9 official municipal ward-reference polygons, not newly certified2026 legal precincts. "
       + "Manchester GIS2022/linesDecember21,2021; Concord city approvalNovember8,2021, not a vintage inferred from its2020 service name; "

@@ -121,7 +121,7 @@ originals, reference geometry and a dependency-free offline Node reproduction.
 Its packaging command refuses to overwrite an existing version.
 
 New Hampshire keeps four native city sources and all 37 ward rows distinct.
-The Precincts tab maps Manchester's 12, Concord's 10 and Nashua's nine ward counts on
+The Precincts tab maps Manchester's 12, Concord's 10, Nashua's nine and Dover's six ward counts on
 current official municipal context, not newly certified 2026 legal precincts.
 Manchester uses 2022 GIS / lines effective December 21, 2021. Concord's city
 approval is November 8, 2021; its `PubWebGIS2020` service name is not a boundary
@@ -132,12 +132,20 @@ Nashua uses the independently city-published adopted/effective December28,2021
 Ward polygon layer7, not proposed boundaries, polling points, blocks or parcels.
 Its current complete map separately prints October2026. Preserve all source
 amendments, Ward3/4/8 component disagreements +1/-2/-1 and separate federal-only92.
-The other six Dover ward rows stay table-only. The default state view retains
+The six Dover rows use the separately qualified state reference below. The default state view retains
 the four-city municipality context, with other areas unknown. Preserve native
 boundary overlaps, Ward 7's 85-ballot source conflict and separate federal-only
 counts; no source repair, allocation or turnout rate is enabled. The complete
 ward release includes every prior city original, full ward-reference inputs,
 all mapped/held decisions and exact offline reproduction.
+
+The Dover extension retains all31 earlier ward features and adds six direct
+state-published2022 NHGRANIT references, not private named-map or parcel geometry.
+Use literal district labels, not FID-as-ward or nativeFIPS17010-as-county.
+Native3437/inverseESRI108190, all1987 vertices/cyclic edges and15 native pairs
+remain checked at strict1e-9degree tolerance. All37 native ward count rows now have references; source registers, printed
+fractions, disagreements and separate
+federal-only counts remain unchanged. No source repair, allocation or new rate.
 
 Massachusetts adds Boston/Somerville source counts, not statewide/county totals
 or unique-person turnout. Boston's 185,569 native Times Cast is separate from

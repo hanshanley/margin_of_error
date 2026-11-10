@@ -1,0 +1,62 @@
+{
+  "source": "https://utility.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/findTransformations?f=json&inSR=3437&outSR=4326&numOfResults=3&extentOfInterest=%7B%22xmin%22%3A+1172223.0000610836%2C+%22xmax%22%3A+1210292.0000384226%2C+%22ymin%22%3A+226214.79682792723%2C+%22ymax%22%3A+276016.812709257%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+3437%7D%7D",
+  "source_declared_by": "granit-declared-public-portal.private.json",
+  "retrieved_at": "2026-11-10T10:09:57.369181+00:00",
+  "query_parameters": {
+    "f": "json",
+    "inSR": 3437,
+    "outSR": 4326,
+    "numOfResults": 3,
+    "extentOfInterest": "{\"xmin\": 1172223.0000610836, \"xmax\": 1210292.0000384226, \"ymin\": 226214.79682792723, \"ymax\": 276016.812709257, \"spatialReference\": {\"wkid\": 3437}}"
+  },
+  "no_private_keys_or_tokens_used": true,
+  "http_status": 200,
+  "bytes": 555,
+  "sha256": "f8598152b21d1f40279d44ddafc1799d9d403dddad42a652b600c8a5da01159a",
+  "native_response": {
+    "transformations": [
+      {
+        "geoTransforms": [
+          {
+            "wkid": 108190,
+            "latestWkid": 108190,
+            "transformForward": false,
+            "name": "WGS_1984_(ITRF00)_To_NAD_1983"
+          }
+        ]
+      },
+      {
+        "geoTransforms": [
+          {
+            "wkid": 8556,
+            "latestWkid": 8556,
+            "transformForward": true,
+            "name": "NAD_1983_To_NAD_1983_HARN_47"
+          },
+          {
+            "wkid": 1900,
+            "latestWkid": 1900,
+            "transformForward": true,
+            "name": "NAD_1983_HARN_To_WGS_1984_2"
+          }
+        ]
+      },
+      {
+        "geoTransforms": [
+          {
+            "wkid": 8556,
+            "latestWkid": 8556,
+            "transformForward": true,
+            "name": "NAD_1983_To_NAD_1983_HARN_47"
+          },
+          {
+            "wkid": 1901,
+            "latestWkid": 1901,
+            "transformForward": true,
+            "name": "NAD_1983_HARN_To_WGS_1984_3"
+          }
+        ]
+      }
+    ]
+  }
+}

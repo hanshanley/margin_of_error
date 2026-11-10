@@ -1,0 +1,665 @@
+{
+  "version": "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04",
+  "files": {
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward01-20261103-original.pdf": {
+      "bytes": 9310710,
+      "sha256": "2c64fdce75e8217bb79010e58297a6731cf59d4891631f9d553a21b4b9cc7a74"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward01-header.png": {
+      "bytes": 48068,
+      "sha256": "4a464e1831da3c5f23d91a2fe4be151d8b92e72da9507bc96ad3a2e5b295623b"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward01-ballot_block.png": {
+      "bytes": 62502,
+      "sha256": "3e93bfbd899f1432bc4d5829f40e281d9fc13c8c60d407777fadf882ee9d5342"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward02-20261103-original.pdf": {
+      "bytes": 8295920,
+      "sha256": "de3c820c9792510f34c94152c7e986a444d76294a4cab26134bd015c693f1c87"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward02-header.png": {
+      "bytes": 48331,
+      "sha256": "e63d5042a24885b9ca03c42c2357fa15dc1fef81f4bfb3b0dfadb02fb3abcadb"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward02-ballot_block.png": {
+      "bytes": 61752,
+      "sha256": "24bf8a83b50efb2290df742b1173b8a240181b9b9ea5293ee6a3c53e931eadc9"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward03-20261103-original.pdf": {
+      "bytes": 8674963,
+      "sha256": "4d9a6e4f493661fe6972e8500ed75a31813fcc29c9eb4518614a104a7b03a9a1"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward03-header.png": {
+      "bytes": 49689,
+      "sha256": "adf4b58319fb22ac8531d5ccdc171932d79483256e665b381e273622bd2f978a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward03-ballot_block.png": {
+      "bytes": 64031,
+      "sha256": "99f58e1bf38ee96a89b2528bfc34242fcb2d7764d8e648b0e9a79038ceb87c58"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward04-20261103-original.pdf": {
+      "bytes": 8395849,
+      "sha256": "7c30d20eb5fc142dc8de52978361f6aa5bb35606c49f2280565e33576a76b5a9"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward04-header.png": {
+      "bytes": 49064,
+      "sha256": "5d51450cd1c4eb6ef2046fba7190e1f6cc10f7ba129402d01dae5117e11b059d"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward04-ballot_block.png": {
+      "bytes": 75253,
+      "sha256": "3634b5fcc706796d4ceee585265ace74febb840fc7c53b0f38172505a08552d6"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward05-20261103-original.pdf": {
+      "bytes": 8262999,
+      "sha256": "043f7f247776fd69af9e2b92e86478ef9b12fea8463ee550f8e819ad166fee9c"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward05-header.png": {
+      "bytes": 47448,
+      "sha256": "e7883e022d9e3c7b8d549965128f842f56146fbe1f76ace39f5ab7298b6a71ac"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward05-ballot_block.png": {
+      "bytes": 67086,
+      "sha256": "2a1f43ede277b276182ad836ee577300cf8d96f38947a47acbe5400f005575e2"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward06-20261103-original.pdf": {
+      "bytes": 8981930,
+      "sha256": "d2d7d38e60830d0e0e7c3be78cf5fdc842d521149ca1431c10a0071218f8e45c"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward06-header.png": {
+      "bytes": 49409,
+      "sha256": "494d41cf7d39f4d2a8df8e9e30bff73f464c09b4e93d3c6b04947f558b02bdaf"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward06-ballot_block.png": {
+      "bytes": 68495,
+      "sha256": "e0249479ca77ff06d79b2340fc892002b78382b699c7cfc2a4ec5a60a9d3c7f2"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward07-20261103-original.pdf": {
+      "bytes": 8847825,
+      "sha256": "5771326310d7b7552cd606fb58ca9e9238996f11e9583bdb45743dbe546f4b9f"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward07-header.png": {
+      "bytes": 49435,
+      "sha256": "dfd0b8aa1dfae15e2d1896b37ab9c62a45893d73600b0a6b8f9ccddcde0daada"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward07-ballot_block.png": {
+      "bytes": 63601,
+      "sha256": "a1b43d9069d018485f849d28a490370726c918950d693f9e696d7b1f4762c1f5"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward08-20261103-original.pdf": {
+      "bytes": 9051249,
+      "sha256": "2b3c34983a1e3ba51d9b541ab7489f85f806c028fab94a35c63be4805a83c242"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward08-header.png": {
+      "bytes": 47370,
+      "sha256": "7680c6ee130d7920b3f61e32f4a718d8ccb0b92c9f2a113b845b8b1d57b9f3fe"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward08-ballot_block.png": {
+      "bytes": 58516,
+      "sha256": "bbbec475ab7abc3b6da8099acb1174453b26eb857b5af9eb8af19219b0ac9016"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward09-20261103-original.pdf": {
+      "bytes": 8837026,
+      "sha256": "67489e4a9f413969deffc4b3c53c52ba29a6ab4123ce41df9bf373e70564b816"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward09-header.png": {
+      "bytes": 46948,
+      "sha256": "567ebcf26a5de2cb461471c0c3af0cce401d4140268eb7a9d81005d81a06a383"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward09-ballot_block.png": {
+      "bytes": 63202,
+      "sha256": "0f8e85bbc955e334ac21739d441fa0f6eee4dca06dc501169022d4520decde1a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward10-20261103-original.pdf": {
+      "bytes": 8704602,
+      "sha256": "78502357fbb3e8f25d5c4f34f2a23a934a409dffa7b9147f02cc7ea0041be24f"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward10-header.png": {
+      "bytes": 46587,
+      "sha256": "dde50ea7870961e571b89ad6947bd5b2bf58d382614b34b536eb4a32e67e5694"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward10-ballot_block.png": {
+      "bytes": 75194,
+      "sha256": "a63316a6a5cc978221940229667059eb8e71d73793173c5219bd5110e4acdf5a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward11-20261103-original.pdf": {
+      "bytes": 8916309,
+      "sha256": "001b5d5eb9c7748830ea5f2f43b715172c870bf150b31fed4ac69677ed17d8b2"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward11-header.png": {
+      "bytes": 49064,
+      "sha256": "53585a1d965fc91c1e0d234c62438682822d9505d32a4e9b62fa20250e419488"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward11-ballot_block.png": {
+      "bytes": 59989,
+      "sha256": "53d695ef9379558c76285afeff838564d7de05aef2c11b70076d9cddf5a16ab6"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/manchester-ward12-20261103-original.pdf": {
+      "bytes": 8968837,
+      "sha256": "44932fc40f8575b7963c58ee0e74e82e3406fa02041f102f843eef151c014d1e"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward12-header.png": {
+      "bytes": 47349,
+      "sha256": "d93833531c66b872248d9279112c16156aa84e90a114d281f8c5333d94f0acee"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward12-ballot_block.png": {
+      "bytes": 62686,
+      "sha256": "9e54ee8ee6cf43fd77030b17a59da9f6423d67fc1ba9ab78cb31c596ffb53463"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/originals/concord-20261103-original.pdf": {
+      "bytes": 175306,
+      "sha256": "13c9fdf21ba1f02e2278a8d59d6d76685cf863c3b134a0294bb4f39359f81aea"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward04-ballot-block-300dpi.png": {
+      "bytes": 393091,
+      "sha256": "c0d0a3076d0c4cfef0ccdb6e253bdf868906a1a484f8697afaa1ee6021515928"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward06-ballot-block-300dpi.png": {
+      "bytes": 363981,
+      "sha256": "c312a1c7925cacea0491760b792f085627f6ddf8e738b4710be5504c36eb8c5f"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/manchester-ward07-ballot-block-300dpi.png": {
+      "bytes": 336766,
+      "sha256": "95e13643e899999413b08dff251553840dd4677100c21a62af4cfafbf84b8a02"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/concord-native-page04-130dpi.png": {
+      "bytes": 98667,
+      "sha256": "7c1d8d77e75869680725f6970bdb4e69a426e013f3166850d2e07ef5bee8b59a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/visual-evidence/original-crop-receipts.json": {
+      "bytes": 11789,
+      "sha256": "5d9944cd1fafac1b754739ce2ea61ce32b9e8e657e35c448deab3d2a54d4b49a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/native-readings.json": {
+      "bytes": 4695,
+      "sha256": "dc05dfd308a3cb6fce3a7f5214d389e963eebf0421733aac6dd7a1898e469b8a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/original-municipality-NH-2024.geojson.gz": {
+      "bytes": 55447,
+      "sha256": "b74e8b9c197371af4f093dbdc2916cb18aaa1bc2ff498e2f875642f2f7e5fdee"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-01/inputs.json": {
+      "bytes": 24379,
+      "sha256": "9a87468a98ebbfd92dba7f22600ccff4a59f185d4174cd95647cc3207caf6aec"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/originals/nashua-20261103-original.pdf": {
+      "bytes": 8349293,
+      "sha256": "a0dce84c943607e6d3bea958e9efd46a8f43d7def4b322054a6767895bc8d7bb"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/originals/dover-20261103-native-turnout-original.pdf": {
+      "bytes": 125447,
+      "sha256": "3098be4b24fdacef06c3280f8dbfde1f8c32b9116c1dc32d3d11f4b8bdf4adb9"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/nashua-native-readings.json": {
+      "bytes": 2726,
+      "sha256": "66a2fc243a81c823bf7add29ca294c1b2be15a43084fb6ca68506344a1781c4a"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/dover-native-readings.json": {
+      "bytes": 4414,
+      "sha256": "c92ff72e4858340c97909e1356e8ec8c35e822fc5247807f0005affefe21026f"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward01-header.png": {
+      "bytes": 144479,
+      "sha256": "1a8fb7304181725e5b1aa718c50c77d652158af17450d69bd402c2368e87d796"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward01-ballot-block.png": {
+      "bytes": 251046,
+      "sha256": "14c386389dda234abb09173f249cc0a7a188f604665e18d9b863dfb354f75116"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward02-header.png": {
+      "bytes": 143999,
+      "sha256": "dfe08e20e2de412e8314ee1ac94d75a220ae0aad7a38a6a3facf32f8829e921b"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward02-ballot-block.png": {
+      "bytes": 223031,
+      "sha256": "31549a63696cc02d94b2bece9f9a9762b9e6bd31dbc4140185f3617cd05ab267"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward03-header.png": {
+      "bytes": 145746,
+      "sha256": "0ca4aa0dd5df94c6607b9a0e21305a5bb87acd4f87bb6d8d5f85ff7b9314f77b"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward03-ballot-block.png": {
+      "bytes": 253174,
+      "sha256": "b7e1932a17c921cec4dd5fef2d81fdad7929688a585ff6515c61a3131d10a381"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward04-header.png": {
+      "bytes": 142662,
+      "sha256": "6b5901813c1e9c7a77f883c1973e72814e44b988421ca532a5ab91dcc7a4e2f9"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward04-ballot-block.png": {
+      "bytes": 238463,
+      "sha256": "a438ae638ead0562f74ade7fa560e41c6b225ddcb623bd0f1f208249186fd31f"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward05-header.png": {
+      "bytes": 149637,
+      "sha256": "dd8e922acab17ceaa51d1daed3d9ce7eb9a776bbdb949d0bddd3989d5cfa5216"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward05-ballot-block.png": {
+      "bytes": 261392,
+      "sha256": "e5369d811fdf4f24335f4165c47c65a7955e1f462c669e1b22984e6fd201e9c5"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward06-header.png": {
+      "bytes": 143820,
+      "sha256": "78efc87e8d76a1ec779e6aa0e2f3fad628a8624a3106635a1a2402f78d7147fc"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward06-ballot-block.png": {
+      "bytes": 258539,
+      "sha256": "298b3ed533c7930dff6284c90784c256cc2eacb4e693902d860dd76c45d07635"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward07-header.png": {
+      "bytes": 143214,
+      "sha256": "ced6bcd9cb2785aa7891ac73a75d3904c175c12532cf5d722c38171526ace3b0"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward07-ballot-block.png": {
+      "bytes": 244399,
+      "sha256": "8ae276d6cff1ce861ed0c717234496e23de6be1f40079bcc76993972e13e7381"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward08-header.png": {
+      "bytes": 142273,
+      "sha256": "e06688fa281ea65b6decf59688397d1973076f45566d0cd9af5518655a7071f0"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward08-ballot-block.png": {
+      "bytes": 246128,
+      "sha256": "c6dfae6ac7e68a52d12c9f5ad577de843e3788f16ef59cc66cf0c4260f1236c1"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward09-header.png": {
+      "bytes": 143774,
+      "sha256": "4d8c3746b628adfee175dbc38579602c06604c3bbf555e9ce24165361cc287d8"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/nashua-ward09-ballot-block.png": {
+      "bytes": 226182,
+      "sha256": "b6faaf6bfd027f8f17569b30f0ff1971ebb170d1fe4ef77d8cb4c1975de943e4"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/visual-evidence/dover-native-turnout-page01.png": {
+      "bytes": 189565,
+      "sha256": "7dab870f1beb283f3f6e8dd6c41206c5916fc7985623884c5b90ee52142aa168"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/native-crop-receipts.json": {
+      "bytes": 6133,
+      "sha256": "a28826b4bad9adc1bd155f13aa3b508344780254deb248b7ce97d4edcd62b2f1"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/safe-source-declarations.json": {
+      "bytes": 1342,
+      "sha256": "0d69715575fbc7544182a06e31a1f07f207bc6391d51df056b6f3713b136225e"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/inputs.json": {
+      "bytes": 28064,
+      "sha256": "38647af1c10caee3deadc35044365f960361d263df0c396f10c3bb2f2a9cf980"
+    },
+    "data/county-source-reviews/20261110-new-hampshire-cities-02/queries.json.gz": {
+      "bytes": 13978,
+      "sha256": "a1f50d666ccaef23923fe8907ac93fb88ecb5a89d501d8f05d54139601582d15"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-wards2022-full-aggregate-original.geojson": {
+      "bytes": 164046,
+      "sha256": "698e22ac8006a8cd7e6ca52eaeb67b74568fa8b8e712bbb0d1b9a4e36e53ae7d"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-wards2022-full-aggregate-original.geojson.receipt.json": {
+      "bytes": 767,
+      "sha256": "88ba4b5d2ddef1f3df53c0bc647407ded0d7e574a78bff3ec12043e11cb66035"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-wards2022-native-projection-original.json": {
+      "bytes": 156323,
+      "sha256": "9649e86bbd346a5cf902074937ddab890942812e0112923b5bd965f9fd9b502d"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-wards2022-native-projection-original.json.receipt.json": {
+      "bytes": 715,
+      "sha256": "b49ff665851e260e12ddc5ee4af9575f0e3697250dd4a95c0ace0de037693cb1"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-wards2022-native-count.json": {
+      "bytes": 12,
+      "sha256": "8a5c7f0a249309a0a490436246d7e4c75abc97488ad2da0c6e85a517ac13cdd2"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-wards2022-native-count.json.receipt.json": {
+      "bytes": 551,
+      "sha256": "e49a3a842b243f054f3a6755275a65f579dddcc7d3ae4c8bf185a557ce046993"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-wards2022-native-ids.json": {
+      "bytes": 82,
+      "sha256": "e44f61c937663aeac1dba1eccbe5fe11a51949b5acb72fe6399a2f3df699f796"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-wards2022-native-ids.json.receipt.json": {
+      "bytes": 545,
+      "sha256": "d1bce6ac7ac9c98aaf607c9306e0efda8155104d3c905a2b4b5c38e17cec3e07"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-official-actual-ward-layer.json": {
+      "bytes": 14353,
+      "sha256": "cdb2af4e151653e96b37162b14d8784bccbe7c3db701469a1c8cadee2ceaad07"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-official-actual-ward-layer.json.receipt.json": {
+      "bytes": 386,
+      "sha256": "36d10c374e7072259ba50c56fc3d65145e4dbaca6ea532db3b1e601690966131"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-official-mapserver-layers.json": {
+      "bytes": 6501,
+      "sha256": "118dd8a4c2dfac4135c3419f453ec39f628658430b130e87c4535751a8e30b61"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-official-mapserver-layers.json.receipt.json": {
+      "bytes": 381,
+      "sha256": "c27e50a3244d802a104f6a7a58416616971d6e0833fb44e5465b2b24c6eefc2c"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-declared-wards-wms-capabilities.xml": {
+      "bytes": 10944,
+      "sha256": "14e0edad5a662e60f4eb9d6861809375a162c98951447fdba2d36992457608b0"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-declared-wards-wms-capabilities.xml.receipt.json": {
+      "bytes": 478,
+      "sha256": "1c03e9bb68f4721b041498fb5ce25150f04dbb54ccd6a0904c34640fb23f26f2"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-declared-citywide-ward-map-original.pdf": {
+      "bytes": 2044326,
+      "sha256": "1efaf2797e5dfc27cca033cbf099c81ba5457ec584cc209ffafeb771a3f0e10e"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-declared-citywide-ward-map-original.pdf.receipt.json": {
+      "bytes": 384,
+      "sha256": "ffe0f64f7bee7e9857910308375c67b79d9e37f189c21a478e0930c44237d438"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-current-ward-lines-safe-declaration.json": {
+      "bytes": 4491,
+      "sha256": "50ee949794bdabc9680234ae9f1586b029ced7f313718af9c455ff16d0854e0a"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-native-projection-overlap-check-01.json": {
+      "bytes": 1204,
+      "sha256": "1de9f9c25b127f1658bbc361baf8c663d310253357f3795b47dc97b0921de013"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-all-native-vertices-reference-check-01.json": {
+      "bytes": 4242,
+      "sha256": "bd30f7e01c87b124009b553543aeebe9237f0f0f979d6113d7834b7021b5f7d5"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-all12-native-ward-count-join-review-01.json": {
+      "bytes": 6376,
+      "sha256": "3b25f439f9015dd6774a2dcc36d91b2a889b4fe00ab3e137c7fe58066bb5f928"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/manchester-wards2022-independent-geography-review-01.json": {
+      "bytes": 5871,
+      "sha256": "c7d1b7a4fb868fd43ad62ae63c4138e1e3a9f5146700ce4ab49b60e24aeadb3d"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/inputs.json": {
+      "bytes": 22410,
+      "sha256": "e09dac321cdf489f76536ed6b6aa8b00f090e92218b120c0fe841a58ccad2cc2"
+    },
+    "data/precinct-source-reviews/20261110-manchester-ward-reference-01/queries.json.gz": {
+      "bytes": 53962,
+      "sha256": "e20f881702f05320b12dd10920687732824009dfe1aae16e5fc5d09ec800557c"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-declared-parent-service-original.json": {
+      "bytes": 11429,
+      "sha256": "8c6385fc9a79bbc2b712137b64beb757de3b0407784acd43b048fc7fca609222"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-declared-parent-service.safe-receipt.json": {
+      "bytes": 782,
+      "sha256": "7f77010f7e8a767833f2c4e0a8501fbb8f73c2ec24f7d302ff5ed550de9e78e7"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-actual-ward-layer-original.json": {
+      "bytes": 5608,
+      "sha256": "f5282c43df6f5df3bba2ef2eb7949d0ff50f3c93ed00b0e58cbc8a8d0375bee9"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-actual-ward-layer.safe-receipt.json": {
+      "bytes": 1838,
+      "sha256": "f54678a789f14036aa941c0e4d97d4b9330c615ac9f157b9fab4def44f886fb7"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-native-datum-transformations-original.json": {
+      "bytes": 1464,
+      "sha256": "cf95942eea13bd837da13a8277ad26d193e7f32d2b593d79020e5aa1954b49e4"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-esri108190-independent-projection-operation.json": {
+      "bytes": 6727,
+      "sha256": "2c651956eedb70392f0d2f837b08346c02b359d4e85077c080b76d6eca254d8b"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-all10-native-ward-reference-review-01.json": {
+      "bytes": 27232,
+      "sha256": "f3e581cc0dbb046fd2f3e3c2aa351a84fce2a80304dcc1fdad164b7ca05606c0"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-declared-parent-service-original.json": {
+      "bytes": 6302,
+      "sha256": "bc6d59b32dd8bbc32150dc86b5267663d4e7e249c9e3f15a0436b9473dc3cc4d"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-declared-parent-service.safe-receipt.json": {
+      "bytes": 878,
+      "sha256": "1fdf6b0a2d2ced8eb06b00608e598e729da213a0308b8ea8f7bc490d4d9d8161"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-actual-ward-layer-original.json": {
+      "bytes": 6299,
+      "sha256": "ca3f67952aad33278b2ddfb7279f6c1202e94fdd70df47824ed7fc159348e8fd"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-actual-ward-layer.safe-receipt.json": {
+      "bytes": 2070,
+      "sha256": "16ace1bff46da57aebb941475aa4caf6b935b581f1d293c32f24ffe55d9a4417"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-current-declared-citywide-ward-map-original.pdf": {
+      "bytes": 1911204,
+      "sha256": "0f4f5c208e859790ea4f51d6c92e09e6393d74672db6a08cf742d6320fc5088c"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-current-declared-citywide-ward-map.safe-receipt.json": {
+      "bytes": 388,
+      "sha256": "69db521be6e68b47720204687595a16fa319c779097d703d708dbf50635fd16f"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/dover-public-ward-portal.safe-receipt.json": {
+      "bytes": 689,
+      "sha256": "99aa8d21a0d42a25148040cda375e3b3ac3ca88825c03aa2a1cea5a9057538e3"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-native-count.json": {
+      "bytes": 12,
+      "sha256": "4c9caa2c9fbb5e5f0099ac08ff7a74fd9c6711d307d1e88705cb791b157d3404"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-native-count.json.safe-receipt.json": {
+      "bytes": 699,
+      "sha256": "59e4fd2b4d9f6dea1acd806c4ef25e9a8073c39e6a6afd5ac15f19df3d3acd95"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-native-ids.json": {
+      "bytes": 69,
+      "sha256": "a7e2ad054081cee671727b37bf17f6ce75e6094621821f374c95477eeb70e619"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-native-ids.json.safe-receipt.json": {
+      "bytes": 770,
+      "sha256": "120e7a101752694f8204fba834710065d86ec93aef1f61e518ac90a7afbfb7bc"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-full-aggregate-original.geojson": {
+      "bytes": 170300,
+      "sha256": "92a2be4a3aba7a455176e3d0864abd570c2f75d75195b286db3ed1d4bddfee51"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-full-aggregate-original.geojson.safe-receipt.json": {
+      "bytes": 784,
+      "sha256": "ee38d15d4e76c62dc52af73c06405e914ac3e551154711a4f7bb0de96cb191dc"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-native-projection-original.json": {
+      "bytes": 112305,
+      "sha256": "ac85680a86e87aa242c15d40e035333d2f87ce854592662da7f7b312ac5560b1"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-native-projection-original.json.safe-receipt.json": {
+      "bytes": 800,
+      "sha256": "19734bbcd32038cd463ee5d7c6371e6cd81f81cf272d5b97ef385fa3768b44b4"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-native-count.json": {
+      "bytes": 113,
+      "sha256": "02b589f0ae0797fc19bd0004fa8cf5be0e921cfea91d4422d15a834a270d279d"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-native-count.json.safe-receipt.json": {
+      "bytes": 802,
+      "sha256": "2a532f7f59139a74aab5ced9e74dfebdee3d15316482a236409b8f1cb363e8c7"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-native-ids.json": {
+      "bytes": 113,
+      "sha256": "02b589f0ae0797fc19bd0004fa8cf5be0e921cfea91d4422d15a834a270d279d"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-native-ids.json.safe-receipt.json": {
+      "bytes": 798,
+      "sha256": "ba2df4d99803c0f85065eda979338f26cf8c6d1d4fb877017de44a42f9b7d3c9"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/nashua-full-aggregate-original.geojson.safe-receipt.json": {
+      "bytes": 580,
+      "sha256": "e1ec9563cc8f0233bbff05c70049c5cbabb27cffa8a73596a842a04d534d83c4"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/concord-current-ward-safe-declaration.json": {
+      "bytes": 601,
+      "sha256": "db7b680a8ffa0688084153045a3df20e09fac35cebe6429bbc3978d4acb4f387"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/remaining15-native-ward-geometry-holds.json": {
+      "bytes": 793,
+      "sha256": "7db131396dad0d4d2b433bfc600af371884244101b88475d64c87ab9b75d6f0e"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/inputs.json": {
+      "bytes": 29358,
+      "sha256": "2f3fea0cdf15a2b10af372d98e8af9382edfb6a973631dad313e9cbc7b6a8803"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-02/queries.json.gz": {
+      "bytes": 114376,
+      "sha256": "68485a76254a3e8b456b3056f508250effe3691e182203e02c95032930696a77"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/adopted-ward-service-parent-original.json": {
+      "bytes": 3813,
+      "sha256": "5d0a809fc055bd48f0387c16b7f0b979540b35f3f0d8a4eef2f15b1bb1e9b9bd"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/adopted-ward-service-parent-original.json.safe-receipt.json": {
+      "bytes": 243,
+      "sha256": "e80982010c4088c053ad7dbca01b286127c30471e07f326edbaf2f161f346cef"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/adopted-ward-layer7-original.json": {
+      "bytes": 14498,
+      "sha256": "d8253194931e0ae9c0aafb492a34694e738dab4b92756f0b934dcf5bcf3f79d6"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/adopted-ward-layer7.safe-receipt.json": {
+      "bytes": 246,
+      "sha256": "e856560f00d48f4880bb341dc5cd62d7e1ea8f5cf43daf9a69038ebfeee43085"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-all9-adopted-native-ward-reference-review-01.json": {
+      "bytes": 22107,
+      "sha256": "4d20ea82b3780db0b1b0ae227d0b12db57e1442ab576e3427dce60396985969f"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-adopted2021-native-count.json": {
+      "bytes": 19,
+      "sha256": "aa4e5dd86dde532a9e70c8ff95f4b5ddf248c28592b968d75184b30a1be9ae9a"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-adopted2021-native-count.json.safe-receipt.json": {
+      "bytes": 600,
+      "sha256": "1c785666b7f1d3b30a3fba2422778aa29af380a63e1a4213e33cf27198254db6"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-adopted2021-native-ids.json": {
+      "bytes": 64,
+      "sha256": "45f44dc7c1a42ee5429f1476376873f53e7a06e07bcf657df66423584b3eb7e1"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-adopted2021-native-ids.json.safe-receipt.json": {
+      "bytes": 664,
+      "sha256": "3412f7cd752782d12bf5c2f90a53ee256992695ab7e7c90fc61bd2faab9c55d7"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-adopted2021-full-aggregate-original.geojson": {
+      "bytes": 304900,
+      "sha256": "bd8d030ee1d3b272be5430e53a097ba60c7c78e15aef9d3be6a45d7dc5071e7b"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-adopted2021-full-aggregate-original.geojson.safe-receipt.json": {
+      "bytes": 656,
+      "sha256": "d88154a844364ede646f91100e9c992569013fa245b534540a18a874be25ebb3"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-adopted2021-native-projection-original.json": {
+      "bytes": 239155,
+      "sha256": "ff4c7a224728fae0c79c9f6533208addc3a5e8371d92959084ea857ec7f412bf"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-adopted2021-native-projection-original.json.safe-receipt.json": {
+      "bytes": 686,
+      "sha256": "6e778ae9d57ac749adc2b7dd2e4d052aef908ded41d713f84b0ae5bae32021b0"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/nashua-independent-adopted-ward-safe-declaration.json": {
+      "bytes": 1123,
+      "sha256": "a162eba24a157403f692326107ca9fe610e2e76de0959a989c4af2b2e2e9fa22"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/inputs.json": {
+      "bytes": 33149,
+      "sha256": "f4d4cb636f76fe2a4a8002dd058f0412075a467c38ea6b3a3e25af6d0acc09c1"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/queries.json.gz": {
+      "bytes": 227871,
+      "sha256": "3fc3a30475f76b475dff742134e26249575745329656fb9de5dc7dd629a30c06"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-dover2022-full-native-projected-original.json": {
+      "bytes": 79931,
+      "sha256": "5d89f79469a420b7efc8fae8fc54e4b05208c60a8e0b6c0c986fb4bfad0d857d"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-dover2022-full-native-projected-original.json.receipt.json": {
+      "bytes": 858,
+      "sha256": "b3fe4e2aec73a4d3d3b7729af49369e1be15afe268fbd91d6aed9020be0d1fc3"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-dover2022-full-geographic-original.geojson": {
+      "bytes": 78746,
+      "sha256": "2b898bcbc97455569c22bf998d22ac82f0d97292e4356ad153698b26b8d9af33"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-dover2022-full-geographic-original.geojson.receipt.json": {
+      "bytes": 894,
+      "sha256": "ed3ba78af023d1649776706c4ce43a4a6f2b5b648bfecf2b41c3583501a908a6"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-dover2022-native-count.json": {
+      "bytes": 11,
+      "sha256": "1fb6f6be8607ab15c04198cba240a52c2ae4524e5d0d79068813f1972f29054c"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-dover2022-native-count.receipt.json": {
+      "bytes": 603,
+      "sha256": "9af757b6adca65d5a8b0d519e44798c3927aa49e5d8b3e69b25b29381e53bd06"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-dover2022-native-ids.json": {
+      "bytes": 95,
+      "sha256": "f4c9a6e3cfa89adee87de03c1ade762a27f880bf63da0cd1ecb87951ac7304a8"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-dover2022-native-ids.receipt.json": {
+      "bytes": 599,
+      "sha256": "6e00589e1fb0e54f3b881cde1314410efa87c657b2651e24c1e6520d21e832cd"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-declared-3437-4326-transformations.json": {
+      "bytes": 555,
+      "sha256": "f8598152b21d1f40279d44ddafc1799d9d403dddad42a652b600c8a5da01159a"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-declared-3437-4326-transformations.receipt.json": {
+      "bytes": 2031,
+      "sha256": "3189d9db7da1385e582ecaffc5834263c41f6de7ecd370c62de84421b7647c60"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-portal-declared-geometry-service.json": {
+      "bytes": 132,
+      "sha256": "2efcf3087e786c87b1f3ab095e5bbf476efe9ca18dc1c7e7678cd8dd3b7d2599"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-portal-declared-geometry-service.receipt.json": {
+      "bytes": 596,
+      "sha256": "046861f52d5bfa2d84c796e4dd2922118055bc31175fcb9d10bd5569c645d4ad"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/held-native-four-city-count-queries.json": {
+      "bytes": 241828,
+      "sha256": "b753650fad95e9f26b7a4fa801920639d7d0216ca1f453a227aac6a47b32f381"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/complete-native-ward-reference-review.json": {
+      "bytes": 21148,
+      "sha256": "73dd69c7cfb18e0fd841952657249f83ec16dc8264c425002da614ff7ece81f4"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-2022-declared-item.json": {
+      "bytes": 1870,
+      "sha256": "d68bbd13ed6f19bd6bd57a3bd3dd0437d123bfc8d8aacfe7fb448c2f8b81f398"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/granit-2022-voting-ward-layer11.json": {
+      "bytes": 6996,
+      "sha256": "a6da53271380d3ca2be0a83fd649871709d47523ce4c906c9d1d6c47661f4ba5"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/dover-granit-safe-source-declaration.json": {
+      "bytes": 1517,
+      "sha256": "cfd49d245d692a627af2e5ebeef0954406adba58216eea95e8f9db252496740d"
+    },
+    "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-04/code/review-dover-granit-native-wards-01.py": {
+      "bytes": 8091,
+      "sha256": "3313a5070d5636b63728ba4daf633811fcdfde529e6d2e2cdef94787b0d6a2de"
+    }
+  },
+  "previous_ward_query_path": "data/precinct-source-reviews/20261110-new-hampshire-ward-reference-03/queries.json.gz",
+  "source_count_election_date": "2026-11-03",
+  "retained_city_source_fields": 242,
+  "retained_native_ward_rows": 37,
+  "mapped_cities": {
+    "Manchester": 12,
+    "Concord": 10,
+    "Nashua": 9,
+    "Dover": 6
+  },
+  "held_table_only_ward_rows": 0,
+  "source_reference_vintage": 2022,
+  "source_counts_repaired": false,
+  "source_geometry_repaired": false,
+  "source_geometry_clipped": false,
+  "native_federal_only_added": false,
+  "analysis_denominator": null,
+  "analysis_rate": null,
+  "certified_legal_precinct_boundaries": false,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-new-hampshire-native-ward-reference-20261110-04/complete-analysis.zip"
+}

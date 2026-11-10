@@ -1,0 +1,635 @@
+{
+  "summary": {
+    "status": "PASS_six_direct_native_Dover_references_NOT_website_acceptance",
+    "source_layer_id": 11,
+    "source_reference_vintage": 2022,
+    "native_ward_count_rows": 6,
+    "native_references": 6,
+    "qualified_native_count_joins": 6,
+    "checked_native_vertices": 1987,
+    "pair_decisions": 15,
+    "positive_native_overlap_pairs": 0,
+    "native_ward_count_sum": 15941,
+    "native_printed_city_parent": 15941,
+    "maximum_projection_error_degrees": 2.859223968698643e-10,
+    "strict_projection_tolerance_degrees": 1e-09,
+    "declared_datum_operation": {
+      "authority": "ESRI",
+      "code": 108190,
+      "direction": "inverse"
+    },
+    "default_null_offset_rejected": true,
+    "all_cyclic_vertex_adjacency_preserved": true,
+    "no_private_city_keys_parcel_or_population_allocation_used": true,
+    "source_geometry_repaired_or_clipped": false,
+    "analysis_rates_approved": false,
+    "maps_approved": false,
+    "whole_project_complete": false
+  },
+  "all_native_reference_decisions": [
+    {
+      "city": "Dover",
+      "native_ward": 1,
+      "native_properties": {
+        "fid": 280,
+        "district": "Dover Ward 1",
+        "name": "Dover",
+        "county": "Strafford",
+        "fips": 17010
+      },
+      "source_unit_id": "Dover:Ward:1",
+      "native_count": 2577,
+      "count_source_url": "https://www.dover.nh.gov/Assets/government/open-government/election-information/2026-general-election/turnout/2025.11.03_VoterTurnout.pdf",
+      "native_projection_epsg": 3437,
+      "declared_datum_operation": {
+        "authority": "ESRI",
+        "code": 108190,
+        "direction": "inverse"
+      },
+      "native_vertices": 206,
+      "native_valid": true,
+      "geographic_valid": true,
+      "native_validity": "Valid Geometry",
+      "geographic_validity": "Valid Geometry",
+      "maximum_projection_error_degrees": 2.6989255275111645e-10,
+      "rejected_default_projection_error_degrees": 8.841145245241933e-06,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_start": 0,
+      "server_ring_direction": -1,
+      "native_projected_area": 35233009.02879082,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_count_join_qualified": true,
+      "source_layer_id": 11,
+      "source_item_id": "3d1a8bdf3eaa49e09cf5d9da5b56bf9c",
+      "source_reference_vintage": 2022,
+      "native_fips_is_not_a_county_id": true,
+      "geometry_repaired_or_clipped": false,
+      "legal_2026_boundary_certification": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "maps_approved": false
+    },
+    {
+      "city": "Dover",
+      "native_ward": 2,
+      "native_properties": {
+        "fid": 281,
+        "district": "Dover Ward 2",
+        "name": "Dover",
+        "county": "Strafford",
+        "fips": 17010
+      },
+      "source_unit_id": "Dover:Ward:2",
+      "native_count": 2533,
+      "count_source_url": "https://www.dover.nh.gov/Assets/government/open-government/election-information/2026-general-election/turnout/2025.11.03_VoterTurnout.pdf",
+      "native_projection_epsg": 3437,
+      "declared_datum_operation": {
+        "authority": "ESRI",
+        "code": 108190,
+        "direction": "inverse"
+      },
+      "native_vertices": 417,
+      "native_valid": true,
+      "geographic_valid": true,
+      "native_validity": "Valid Geometry",
+      "geographic_validity": "Valid Geometry",
+      "maximum_projection_error_degrees": 2.859223968698643e-10,
+      "rejected_default_projection_error_degrees": 8.839528639725813e-06,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_start": 0,
+      "server_ring_direction": -1,
+      "native_projected_area": 81370125.86027439,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_count_join_qualified": true,
+      "source_layer_id": 11,
+      "source_item_id": "3d1a8bdf3eaa49e09cf5d9da5b56bf9c",
+      "source_reference_vintage": 2022,
+      "native_fips_is_not_a_county_id": true,
+      "geometry_repaired_or_clipped": false,
+      "legal_2026_boundary_certification": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "maps_approved": false
+    },
+    {
+      "city": "Dover",
+      "native_ward": 3,
+      "native_properties": {
+        "fid": 282,
+        "district": "Dover Ward 3",
+        "name": "Dover",
+        "county": "Strafford",
+        "fips": 17010
+      },
+      "source_unit_id": "Dover:Ward:3",
+      "native_count": 3207,
+      "count_source_url": "https://www.dover.nh.gov/Assets/government/open-government/election-information/2026-general-election/turnout/2025.11.03_VoterTurnout.pdf",
+      "native_projection_epsg": 3437,
+      "declared_datum_operation": {
+        "authority": "ESRI",
+        "code": 108190,
+        "direction": "inverse"
+      },
+      "native_vertices": 477,
+      "native_valid": true,
+      "geographic_valid": true,
+      "native_validity": "Valid Geometry",
+      "geographic_validity": "Valid Geometry",
+      "maximum_projection_error_degrees": 2.852544866982498e-10,
+      "rejected_default_projection_error_degrees": 8.836978224735503e-06,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_start": 0,
+      "server_ring_direction": -1,
+      "native_projected_area": 175323201.40709224,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_count_join_qualified": true,
+      "source_layer_id": 11,
+      "source_item_id": "3d1a8bdf3eaa49e09cf5d9da5b56bf9c",
+      "source_reference_vintage": 2022,
+      "native_fips_is_not_a_county_id": true,
+      "geometry_repaired_or_clipped": false,
+      "legal_2026_boundary_certification": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "maps_approved": false
+    },
+    {
+      "city": "Dover",
+      "native_ward": 4,
+      "native_properties": {
+        "fid": 283,
+        "district": "Dover Ward 4",
+        "name": "Dover",
+        "county": "Strafford",
+        "fips": 17010
+      },
+      "source_unit_id": "Dover:Ward:4",
+      "native_count": 2872,
+      "count_source_url": "https://www.dover.nh.gov/Assets/government/open-government/election-information/2026-general-election/turnout/2025.11.03_VoterTurnout.pdf",
+      "native_projection_epsg": 3437,
+      "declared_datum_operation": {
+        "authority": "ESRI",
+        "code": 108190,
+        "direction": "inverse"
+      },
+      "native_vertices": 225,
+      "native_valid": true,
+      "geographic_valid": true,
+      "native_validity": "Valid Geometry",
+      "geographic_validity": "Valid Geometry",
+      "maximum_projection_error_degrees": 2.785469632726745e-10,
+      "rejected_default_projection_error_degrees": 8.833874460378865e-06,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_start": 0,
+      "server_ring_direction": -1,
+      "native_projected_area": 140848039.36360604,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_count_join_qualified": true,
+      "source_layer_id": 11,
+      "source_item_id": "3d1a8bdf3eaa49e09cf5d9da5b56bf9c",
+      "source_reference_vintage": 2022,
+      "native_fips_is_not_a_county_id": true,
+      "geometry_repaired_or_clipped": false,
+      "legal_2026_boundary_certification": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "maps_approved": false
+    },
+    {
+      "city": "Dover",
+      "native_ward": 5,
+      "native_properties": {
+        "fid": 284,
+        "district": "Dover Ward 5",
+        "name": "Dover",
+        "county": "Strafford",
+        "fips": 17010
+      },
+      "source_unit_id": "Dover:Ward:5",
+      "native_count": 2298,
+      "count_source_url": "https://www.dover.nh.gov/Assets/government/open-government/election-information/2026-general-election/turnout/2025.11.03_VoterTurnout.pdf",
+      "native_projection_epsg": 3437,
+      "declared_datum_operation": {
+        "authority": "ESRI",
+        "code": 108190,
+        "direction": "inverse"
+      },
+      "native_vertices": 390,
+      "native_valid": true,
+      "geographic_valid": true,
+      "native_validity": "Valid Geometry",
+      "geographic_validity": "Valid Geometry",
+      "maximum_projection_error_degrees": 2.6690827326092403e-10,
+      "rejected_default_projection_error_degrees": 8.837999210697944e-06,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_start": 0,
+      "server_ring_direction": -1,
+      "native_projected_area": 152137561.9893823,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_count_join_qualified": true,
+      "source_layer_id": 11,
+      "source_item_id": "3d1a8bdf3eaa49e09cf5d9da5b56bf9c",
+      "source_reference_vintage": 2022,
+      "native_fips_is_not_a_county_id": true,
+      "geometry_repaired_or_clipped": false,
+      "legal_2026_boundary_certification": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "maps_approved": false
+    },
+    {
+      "city": "Dover",
+      "native_ward": 6,
+      "native_properties": {
+        "fid": 285,
+        "district": "Dover Ward 6",
+        "name": "Dover",
+        "county": "Strafford",
+        "fips": 17010
+      },
+      "source_unit_id": "Dover:Ward:6",
+      "native_count": 2454,
+      "count_source_url": "https://www.dover.nh.gov/Assets/government/open-government/election-information/2026-general-election/turnout/2025.11.03_VoterTurnout.pdf",
+      "native_projection_epsg": 3437,
+      "declared_datum_operation": {
+        "authority": "ESRI",
+        "code": 108190,
+        "direction": "inverse"
+      },
+      "native_vertices": 272,
+      "native_valid": true,
+      "geographic_valid": true,
+      "native_validity": "Valid Geometry",
+      "geographic_validity": "Valid Geometry",
+      "maximum_projection_error_degrees": 2.652029706950998e-10,
+      "rejected_default_projection_error_degrees": 8.84591339911367e-06,
+      "cyclic_vertex_adjacency_preserved": true,
+      "server_ring_start": 0,
+      "server_ring_direction": -1,
+      "native_projected_area": 224958550.23838055,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_count_join_qualified": true,
+      "source_layer_id": 11,
+      "source_item_id": "3d1a8bdf3eaa49e09cf5d9da5b56bf9c",
+      "source_reference_vintage": 2022,
+      "native_fips_is_not_a_county_id": true,
+      "geometry_repaired_or_clipped": false,
+      "legal_2026_boundary_certification": false,
+      "analysis_denominator": null,
+      "analysis_rate": null,
+      "maps_approved": false
+    }
+  ],
+  "all_native_pair_decisions": [
+    {
+      "left_native_ward": 1,
+      "right_native_ward": 2,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 1,
+      "right_native_ward": 3,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 1,
+      "right_native_ward": 4,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 1,
+      "right_native_ward": 5,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 1,
+      "right_native_ward": 6,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 2,
+      "right_native_ward": 3,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 2,
+      "right_native_ward": 4,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 2,
+      "right_native_ward": 5,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 2,
+      "right_native_ward": 6,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 3,
+      "right_native_ward": 4,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 3,
+      "right_native_ward": 5,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 3,
+      "right_native_ward": 6,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 4,
+      "right_native_ward": 5,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 4,
+      "right_native_ward": 6,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    },
+    {
+      "left_native_ward": 5,
+      "right_native_ward": 6,
+      "native_overlap_area": 0.0,
+      "positive_native_overlap": false,
+      "native_projected_area_units": "US_survey_feet_squared_NOT_geodesic",
+      "source_geometry_repaired": false
+    }
+  ],
+  "independent_datum_definition": {
+    "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+    "type": "Transformation",
+    "name": "WGS_1984_(ITRF00)_To_NAD_1983",
+    "source_crs": {
+      "type": "GeographicCRS",
+      "name": "WGS 84",
+      "datum_ensemble": {
+        "name": "World Geodetic System 1984 ensemble",
+        "members": [
+          {
+            "name": "World Geodetic System 1984 (Transit)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1166
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G730)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1152
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G873)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1153
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G1150)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1154
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G1674)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1155
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G1762)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1156
+            }
+          },
+          {
+            "name": "World Geodetic System 1984 (G2139)",
+            "id": {
+              "authority": "EPSG",
+              "code": 1309
+            }
+          }
+        ],
+        "ellipsoid": {
+          "name": "WGS 84",
+          "semi_major_axis": 6378137,
+          "inverse_flattening": 298.257223563
+        },
+        "accuracy": "2.0",
+        "id": {
+          "authority": "EPSG",
+          "code": 6326
+        }
+      },
+      "coordinate_system": {
+        "subtype": "ellipsoidal",
+        "axis": [
+          {
+            "name": "Geodetic latitude",
+            "abbreviation": "Lat",
+            "direction": "north",
+            "unit": "degree"
+          },
+          {
+            "name": "Geodetic longitude",
+            "abbreviation": "Lon",
+            "direction": "east",
+            "unit": "degree"
+          }
+        ]
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 4326
+      }
+    },
+    "target_crs": {
+      "type": "GeographicCRS",
+      "name": "NAD83",
+      "datum": {
+        "type": "GeodeticReferenceFrame",
+        "name": "North American Datum 1983",
+        "ellipsoid": {
+          "name": "GRS 1980",
+          "semi_major_axis": 6378137,
+          "inverse_flattening": 298.257222101
+        }
+      },
+      "coordinate_system": {
+        "subtype": "ellipsoidal",
+        "axis": [
+          {
+            "name": "Geodetic latitude",
+            "abbreviation": "Lat",
+            "direction": "north",
+            "unit": "degree"
+          },
+          {
+            "name": "Geodetic longitude",
+            "abbreviation": "Lon",
+            "direction": "east",
+            "unit": "degree"
+          }
+        ]
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 4269
+      }
+    },
+    "method": {
+      "name": "Coordinate Frame rotation (geog2D domain)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9607
+      }
+    },
+    "parameters": [
+      {
+        "name": "X-axis translation",
+        "value": 0.9956,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8605
+        }
+      },
+      {
+        "name": "Y-axis translation",
+        "value": -1.9013,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8606
+        }
+      },
+      {
+        "name": "Z-axis translation",
+        "value": -0.5215,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8607
+        }
+      },
+      {
+        "name": "X-axis rotation",
+        "value": 0.025915,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8608
+        }
+      },
+      {
+        "name": "Y-axis rotation",
+        "value": 0.009426,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8609
+        }
+      },
+      {
+        "name": "Z-axis rotation",
+        "value": 0.011599,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8610
+        }
+      },
+      {
+        "name": "Scale difference",
+        "value": 0.00062,
+        "unit": {
+          "type": "ScaleUnit",
+          "name": "parts per million",
+          "conversion_factor": 1e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8611
+        }
+      }
+    ],
+    "accuracy": "0.1",
+    "scope": "Not known.",
+    "area": "Puerto Rico - onshore and offshore. United States (USA) onshore and offshore - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands - onshore and offshore.",
+    "bbox": {
+      "south_latitude": 14.92,
+      "west_longitude": 167.65,
+      "north_latitude": 74.71,
+      "east_longitude": -63.88
+    },
+    "id": {
+      "authority": "ESRI",
+      "code": 108190
+    }
+  },
+  "independent_datum_pipeline": "+proj=pipeline +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=deg +xy_out=rad +step +proj=push +v_3 +step +proj=cart +ellps=WGS84 +step +proj=helmert +x=0.9956 +y=-1.9013 +z=-0.5215 +rx=0.025915 +ry=0.009426 +rz=0.011599 +s=0.00062 +convention=coordinate_frame +step +inv +proj=cart +ellps=GRS80 +step +proj=pop +v_3 +step +proj=unitconvert +xy_in=rad +xy_out=deg +step +proj=axisswap +order=2,1"
+}

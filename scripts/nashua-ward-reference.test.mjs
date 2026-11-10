@@ -20,7 +20,8 @@ test('preserves all22 earlier features and maps nine adopted Nashua counts witho
   assert.equal(index.state_metadata.NH.boundary_reference_years.Nashua,null);
   const registry = JSON.parse(readFileSync('public/participation-precincts.json','utf8'));
   assert.equal(registry.additional_sources.filter(r => !r.base_url.includes('20261110-massachusetts-')).length,4);
-  assert.equal(registry.additional_sources.filter(r => r.base_url === '/'+root.slice(7)).length,1);
+  assert.equal(registry.additional_sources.filter(r =>
+    /^\/participation-precincts\/20261110-new-hampshire-ward-reference-0[34]\/$/.test(r.base_url)).length,1);
 });
 
 test('rejects object IDs as wards, proposed/point/parcel roles, repaired source conflicts and inferred rates', () => {

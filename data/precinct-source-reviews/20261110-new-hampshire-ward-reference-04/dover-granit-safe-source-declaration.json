@@ -1,0 +1,30 @@
+{
+  "city": "Dover",
+  "source_owner": "NHGRANIT",
+  "source_item_id": "3d1a8bdf3eaa49e09cf5d9da5b56bf9c",
+  "source_title": "New Hampshire Political Districts (Voting Wards) - 2022",
+  "source_description": "The shapefile contains the basic building blocks for voting districts in New Hampshire. For cities, where there are voting wards, the ward boundaries are shown and polygons are identified by ward. For towns and cities where there are no wards, the entire municipality is shown and named.",
+  "source_url": "https://nhgeodata.unh.edu/hosting/rest/services/Hosted/APB_ElectoralDistricts/FeatureServer/11",
+  "source_reference_vintage": 2022,
+  "actual_ward_layer_id": 11,
+  "native_projection_epsg": 3437,
+  "native_identity_field": "district",
+  "literal_expected_districts": [
+    "Dover Ward 1",
+    "Dover Ward 2",
+    "Dover Ward 3",
+    "Dover Ward 4",
+    "Dover Ward 5",
+    "Dover Ward 6"
+  ],
+  "native_fips": 17010,
+  "native_fips_is_not_a_county_id": true,
+  "public_portal_source": "https://nhgeodata.unh.edu/portal/sharing/rest/portals/self?f=json",
+  "public_portal_original_sha256": "cf0f992d8f795feaeaa19151a4fb5c349058e9de6aa41e4d6f70bee6058a19f0",
+  "declared_geometry_service": "https://utility.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer",
+  "unrelated_portal_contacts_accounts_and_app_config_excluded": true,
+  "certified_legal2026_precinct_boundaries": false,
+  "private_city_keys_used": false,
+  "source_geometry_repaired": false,
+  "source_geometry_clipped": false
+}
