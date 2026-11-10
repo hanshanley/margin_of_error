@@ -12,6 +12,8 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4398")
 parser.add_argument("--dataset-root", type=Path, required=True)
 parser.add_argument("--proof", type=Path, required=True)
+parser.add_argument("--actual-catalog", action="store_true")
+parser.add_argument("--county-only", action="store_true")
 args = parser.parse_args()
 assert not args.proof.exists()
 index_body = (args.dataset_root / "index.json").read_bytes()
@@ -48,9 +50,10 @@ with sync_playwright() as runtime:
             page = browser.new_page(viewport=dict(width=width, height=1000))
             errors = []
             page.on("pageerror", lambda error: errors.append(str(error)))
-            page.route(catalog_url, lambda route: route.fulfill(json=catalog,
-                headers={"Access-Control-Allow-Origin": "*"}))
-            page.route(fixture_base + "**", fixture)
+            if not args.actual_catalog:
+                page.route(catalog_url, lambda route: route.fulfill(json=catalog,
+                    headers={"Access-Control-Allow-Origin": "*"}))
+                page.route(fixture_base + "**", fixture)
             page.goto(args.base_url.rstrip("/") + "/voter-participation/?year=2026",
                       wait_until="domcontentloaded", timeout=90000)
             expect(page.locator("#state-select option")).to_have_count(51, timeout=90000)
@@ -87,6 +90,8 @@ with sync_playwright() as runtime:
             for name, code in (("Minnesota", "MN"), ("New Hampshire", "NH"),
                                ("New Mexico", "NM"), ("Michigan", "MI"),
                                ("Massachusetts", "MA"), ("Alaska", "AK"), ("Indiana", "IN")):
+                if args.county_only:
+                    continue
                 if width == 390 and code not in ("MN", "NH"):
                     continue
                 page.locator("#state-select").select_option(label=name)
@@ -115,16 +120,19 @@ with sync_playwright() as runtime:
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             page.locator("#resident-context").scroll_into_view_if_needed()
             page.screenshot(path=str(args.proof.with_suffix(f".{width}.png")))
-            page.locator("#year").select_option("2024")
-            expect(detail).not_to_have_attribute("data-reference-key", key, timeout=90000)
-            assert detail.get_attribute("data-reference-key") is None
-            cases.append(dict(width=width, prior_year_cannot_retain_current_reference=True))
+            if not args.county_only:
+                page.locator("#year").select_option("2024")
+                expect(detail).not_to_have_attribute("data-reference-key", key, timeout=90000)
+                assert detail.get_attribute("data-reference-key") is None
+                cases.append(dict(width=width, prior_year_cannot_retain_current_reference=True))
             assert not errors, errors
             page.close()
     finally:
         browser.close()
-proof = dict(status="PASS_local_resident_reader_with_explicit_unpublished_dataset_fixture",
-    dataset_version=version, cases=cases, production=False, fixture_is_publication_proof=False,
+proof = dict(status="PASS_actual_public_catalog_integrated_resident_reader" if args.actual_catalog
+    else "PASS_local_resident_reader_with_explicit_unpublished_dataset_fixture",
+    dataset_version=version, cases=cases, production=args.actual_catalog and args.base_url.startswith("https://www.themarginoferror.com"),
+    fixture_is_publication_proof=False, test_fixture_used=not args.actual_catalog,
     no_resident_values_used_as_voter_composition=True, native_participation_values_unchanged=True)
 args.proof.write_text(json.dumps(proof, indent=2) + "\n")
 print(json.dumps(proof))

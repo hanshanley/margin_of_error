@@ -17,6 +17,12 @@ export const mapTerms = [
   ["modeled_nonparticipation", "Staying home · modeled"],
   ["other_and_unallocated", "Other / unallocated"],
 ];
+const mapDescriptions = {
+  reported_total: "Total same-office change in the known-D/R margin.",
+  switching: "Modeled contribution from changing between major-party choices.",
+  modeled_nonparticipation: "Contribution from model-classified nonparticipation, not confirmed missing ballots.",
+  other_and_unallocated: "Reported total minus switching and modeled nonparticipation; not one mechanism.",
+};
 export function mapValue(row, key) {
   if (!row) return null;
   if (key === "reported_total") return row.reported_comparison?.reported_change_pp ?? null;
@@ -129,6 +135,7 @@ export async function initializeReturnDrivers() {
     const payload = JSON.parse(root.querySelector("[data-driver-data]").textContent);
     const data = validateModels(payload.data), names = payload.names;
     const office = root.querySelector("[data-driver-office]");
+    const view = root.querySelector("[data-driver-view]");
     const stateSelect = root.querySelector("[data-driver-state]");
     const detail = root.querySelector("[data-driver-detail]");
     const summary = root.querySelector("[data-driver-summary]");
@@ -141,7 +148,7 @@ export async function initializeReturnDrivers() {
     for (const item of items) names[item.feature.properties.STUSAB] ||= item.feature.properties.NAME;
     const codes = items.map(item => item.feature.properties.STUSAB).sort((a, b) => names[a].localeCompare(names[b]));
     let selectedCode = "TX";
-    stateSelect.replaceChildren(new Option("Select a state on any map…", ""),
+    stateSelect.replaceChildren(new Option("Select a state on the map…", ""),
       ...codes.map(code => new Option(names[code], code)));
     const paintSelection = () => {
       for (const path of root.querySelectorAll(".driver-state"))
@@ -233,11 +240,15 @@ export async function initializeReturnDrivers() {
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
       status.textContent = `${all.length} ${office.value === "house" ? "House state aggregates"
         : office.value === "governor" ? "governor source frames" : "Senate races"}. `
-        + `${all.filter(row => row.reported_comparison.status === "reported_source_comparison").length} qualified reported comparisons. All four maps use the same scale.`;
+        + `${all.filter(row => row.reported_comparison.status === "reported_source_comparison").length} qualified reported comparisons. Views share one signed scale.`;
       root.querySelector("[data-driver-scale-min]").textContent = `−${bound} pp`;
       root.querySelector("[data-driver-scale-max]").textContent = `+${bound} pp`;
-      for (const [key, label] of mapTerms) {
-        const host = root.querySelector(`[data-driver-map="${key}"]`);
+      {
+        const [key, label] = mapTerms.find(([value]) => value === view.value);
+        const host = root.querySelector("[data-driver-map]");
+        host.dataset.driverMap = key;
+        root.querySelector("[data-driver-map-title]").textContent = label;
+        root.querySelector("[data-driver-map-caption]").textContent = mapDescriptions[key];
         const svg = svgElement("svg", { viewBox: "0 0 1000 640", role: "group",
           "aria-label": `${label}: signed margin points by state`, "data-scale": bound });
         for (const item of items) {
@@ -261,16 +272,17 @@ export async function initializeReturnDrivers() {
       }
       selectState(selectedCode);
     };
-    for (const control of [office, stateSelect]) {
+    for (const control of [office, view, stateSelect]) {
       control.disabled = false;
     }
     office.addEventListener("change", render);
+    view.addEventListener("change", render);
     stateSelect.addEventListener("change", () => selectState(stateSelect.value));
     window.addEventListener("participation:effects-state", event => {
       selectState(codes.find(code => names[code] === event.detail || code === event.detail) || "");
     });
     render();
   } catch (error) {
-    status.textContent = `Model maps unavailable: ${error.message}. Saved numerical tables and complete downloads remain below.`;
+    status.textContent = `Model map unavailable: ${error.message}. Saved numerical tables and complete downloads remain below.`;
   }
 }

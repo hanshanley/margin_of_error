@@ -14,7 +14,8 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 		<p class="kicker">2026 · Reported swing and modeled contributions</p>
 		<h2 id="return-drivers-title">What moved the margin?</h2>
 		<p>Compare the <strong>reported swing</strong> with modeled switching, modeled nonparticipation,
-			and the remaining other or unallocated change. Select an office, then a state on any map.</p>
+			and the remaining other or unallocated change. Choose a view on the same map;
+			your office and selected state stay in place.</p>
 	</header>
 	<p class="caption">Reported swing compares qualified earlier <strong>same-office returns</strong>;
 		the year and source frame are shown for each state. Margin = 100 × (D − R) / (D + R).
@@ -22,30 +23,21 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 	<div class="driver-controls">
 		<label>2026 office<select data-driver-office disabled><option value="house">House · states</option>
 			<option value="senate">Senate</option><option value="governor">Governor · frames</option></select></label>
-		<label>State<select data-driver-state disabled><option value="">Loading state context…</option></select></label>
+		<label>Map view<select data-driver-view disabled>
+			<option value="reported_total">Reported swing</option>
+			<option value="switching">Switching sides · modeled</option>
+			<option value="modeled_nonparticipation">Staying home · modeled</option>
+			<option value="other_and_unallocated">Other / unallocated</option>
+		</select></label>
+		<label class="driver-state-control">State<select data-driver-state disabled><option value="">Loading state context…</option></select></label>
 	</div>
 	<p data-driver-status class="caption" role="status">Saved 2026 model estimates. The full numerical table works without JavaScript.</p>
 	<div data-driver-summary class="driver-summary" hidden aria-live="polite"></div>
 	<div class="driver-maps">
-		<section class="driver-map-card" aria-labelledby="driver-total-map-title">
-			<h3 id="driver-total-map-title">Reported swing</h3>
-			<p class="caption">Total same-office change in the known-D/R margin.</p>
+		<section class="driver-map-card" aria-labelledby="driver-map-title">
+			<h3 id="driver-map-title" data-driver-map-title>Reported swing</h3>
+			<p class="caption" data-driver-map-caption>Total same-office change in the known-D/R margin.</p>
 			<div class="driver-map" data-driver-map="reported_total"></div>
-		</section>
-		<section class="driver-map-card" aria-labelledby="driver-switch-map-title">
-			<h3 id="driver-switch-map-title">Switching sides</h3>
-			<p class="caption">Contribution from changing between major-party choices.</p>
-			<div class="driver-map" data-driver-map="switching"></div>
-		</section>
-		<section class="driver-map-card" aria-labelledby="driver-nonparticipation-map-title">
-			<h3 id="driver-nonparticipation-map-title">Staying home · modeled</h3>
-			<p class="caption">Contribution from model-classified nonparticipation.</p>
-			<div class="driver-map" data-driver-map="modeled_nonparticipation"></div>
-		</section>
-		<section class="driver-map-card" aria-labelledby="driver-other-map-title">
-			<h3 id="driver-other-map-title">Other / unallocated</h3>
-			<p class="caption">Reported total minus the two modeled effects; not one mechanism.</p>
-			<div class="driver-map" data-driver-map="other_and_unallocated"></div>
 		</section>
 	</div>
 	<div class="driver-map-key" aria-label="Shared signed margin-point scale">
@@ -101,17 +93,17 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 </script>
 <style>
 	#participation-return-drivers { min-width: 0; margin-block: 1.5rem 2rem; }
-	.driver-controls { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.3fr);
-		gap: .75rem; margin-block: 1.25rem .75rem; max-width: 45rem; }
+	.driver-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr));
+		gap: .75rem; margin-block: 1.25rem .75rem; max-width: 55rem; }
 	.driver-controls label { display: grid; min-width: 0; gap: .3rem; font: .73rem var(--sans); }
 	.driver-controls :is(select,input) { width: 100%; min-width: 0; padding: .5rem; border: 1px solid var(--rule);
 		background: var(--paper); color: var(--ink); font: inherit; }
-	.driver-maps { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2rem; margin-top: 1.5rem; }
+	.driver-maps { display: grid; grid-template-columns: minmax(0,1fr); margin-top: 1.5rem; }
 	.driver-map-card { min-width: 0; }
 	.driver-map-card h3 { margin: 0 0 .35rem; font: 400 1.3rem var(--serif); }
 	.driver-map-card > p { margin: 0 0 .5rem; }
 	.driver-map { min-height: 120px; }
-	.driver-map :global(svg) { display: block; width: 100%; height: auto; }
+	.driver-map :global(svg) { display: block; width: 100%; max-width: 62.5rem; height: auto; margin-inline: auto; }
 	.driver-map :global(.driver-state) { stroke: var(--paper); stroke-width: .8; vector-effect: non-scaling-stroke; cursor: pointer; }
 	.driver-map :global(.driver-state:hover), .driver-map :global(.driver-state.selected) { stroke: #243f49; stroke-width: 1.8; }
 	.driver-map :global(.driver-inset-label) { fill: var(--muted); font: 15px var(--sans); }
@@ -130,7 +122,8 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 	.driver-summary :global(p) { margin: .4rem 0; }
 	.driver-summary :global(.driver-equation) { font: .85rem/1.65 var(--sans); font-variant-numeric: tabular-nums; }
 	@media(max-width:760px) {
-		.driver-maps { grid-template-columns: minmax(0,1fr); gap: 1.25rem; }
+		.driver-controls { grid-template-columns: repeat(2,minmax(0,1fr)); }
+		.driver-state-control { grid-column: 1 / -1; }
 		.driver-map-key { justify-content: flex-start; }
 		.driver-map-key > div { width: 100%; }
 		.driver-no-model { flex-basis: 100%; margin-left: 0; }

@@ -59,7 +59,7 @@ with sync_playwright() as runtime:
             page.locator("#tab-effects").click()
             expect(page.locator("#swing-panel")).to_be_visible()
             expect(page.locator("#historical-explorer")).to_be_hidden()
-            expect(page.locator("#participation-return-drivers .driver-map path[data-model-id]")).to_have_count(200, timeout=90000)
+            expect(page.locator("#participation-return-drivers .driver-map path[data-model-id]")).to_have_count(50, timeout=90000)
             assert page.locator("#participation-research").get_attribute("open") is None
             page.goto(args.base_url.rstrip("/") + "/voter-participation/?view=precincts&year=2026&state=Minnesota",
                 wait_until="domcontentloaded", timeout=90000)

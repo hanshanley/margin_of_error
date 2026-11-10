@@ -50,7 +50,7 @@ test('unknowns and tampered reconciliation cannot become apparently valid zero e
   assert.throws(() => validateModels(duplicate), /duplicate model identity/);
 });
 
-test('all four maps share one signed point scale and missing is not zero', () => {
+test('all four selectable views share one signed point scale and missing is not zero', () => {
   for (const office of ['house', 'senate', 'governor']) {
     const rows = driverRows(data, office), scale = mapScale(rows);
     for (const row of rows)

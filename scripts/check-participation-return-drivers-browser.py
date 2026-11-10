@@ -1,4 +1,4 @@
-"""Verify linked modeled-effect maps, exact values, missingness and responsive layout."""
+"""Verify one map with selectable views, preserved selections and exact accounting."""
 
 import argparse
 import json
@@ -31,30 +31,50 @@ with sync_playwright() as runtime:
             root = page.locator("#participation-return-drivers")
             root.scroll_into_view_if_needed()
             office = root.locator("[data-driver-office]")
+            view = root.locator("[data-driver-view]")
             expect(office).to_be_enabled(timeout=90000)
             for name, count in [("house", 50), ("senate", 35), ("governor", 28)]:
                 office.select_option(name)
-                expect(root.locator(".driver-map svg")).to_have_count(4)
-                expect(root.locator(".driver-map path[data-model-id]")).to_have_count(count * 4)
-                expect(root.locator(".driver-map path")).to_have_count(204)
-                assert len(set(root.locator(".driver-map svg").evaluate_all(
-                    "nodes => nodes.map(node => node.dataset.scale)"))) == 1
                 root.locator("[data-driver-state]").select_option("TX")
                 texas = next(row for row in data["rows"] if row["office"] == name and row["state_code"] == "TX")
                 summary = root.locator("[data-driver-summary]")
                 expect(summary).to_contain_text(f'{texas["reported_comparison"]["reported_change_pp"]:+.2f} pp reported swing')
                 expect(summary).to_contain_text("other / unallocated")
                 assert summary.bounding_box()["y"] < root.locator(".driver-maps").bounding_box()["y"]
-                for field, value in [("reported_total", texas["reported_comparison"]["reported_change_pp"]),
-                                     ("other_and_unallocated", texas["reported_comparison"]["other_and_unallocated_pp"])]:
+                bound = None
+                fields = {
+                    "reported_total": texas["reported_comparison"]["reported_change_pp"],
+                    "switching": texas["components_pp"]["switching"],
+                    "modeled_nonparticipation": texas["components_pp"]["modeled_nonparticipation"],
+                    "other_and_unallocated": texas["reported_comparison"]["other_and_unallocated_pp"],
+                }
+                for field, value in fields.items():
+                    view.select_option(field)
+                    expect(root.locator(".driver-map svg")).to_have_count(1)
+                    expect(root.locator(".driver-map path[data-model-id]")).to_have_count(count)
+                    expect(root.locator(".driver-map path")).to_have_count(51)
+                    expect(office).to_have_value(name)
+                    expect(root.locator("[data-driver-state]")).to_have_value("TX")
                     path = root.locator(f'[data-driver-map="{field}"] path[data-state-code="TX"]')
                     assert float(path.get_attribute("data-model-value")) == value
-                if name == "house":
-                    root.evaluate("node => node.scrollIntoView({block:'start'})")
-                    page.screenshot(path=str(args.proof.with_suffix(f".house-{width}.png")))
+                    expect(path).to_have_class("driver-state selected")
+                    actual_bound = root.locator(".driver-map svg").get_attribute("data-scale")
+                    if bound is None:
+                        bound = actual_bound
+                    assert bound == actual_bound
+                    if name == "house" and field == "reported_total":
+                        root.evaluate("node => node.scrollIntoView({block:'start'})")
+                        page.screenshot(path=str(args.proof.with_suffix(f".house-{width}.png")))
+                    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+                    cases.append(dict(width=width, office=name, view=field, models=count,
+                        one_map=True, paths=51, exact_TX_point_value=True,
+                        state_and_office_preserved_on_view_change=True, shared_signed_scale=True,
+                        original_seven_terms_retained=True, reported_total_and_remainder_reconcile=True,
+                        summary_above_map=True, no_horizontal_overflow=True))
                 root.locator("[data-driver-state]").select_option("MN")
                 expected = next(row for row in data["rows"] if row["office"] == name and row["state_code"] == "MN")
                 for field in ("switching", "modeled_nonparticipation"):
+                    view.select_option(field)
                     state_path = root.locator(f'[data-driver-map="{field}"] path[data-state-code="MN"]')
                     expect(state_path).to_have_attribute("data-model-id", expected["id"])
                     assert float(state_path.get_attribute("data-model-value")) == expected["components_pp"][field]
@@ -70,16 +90,16 @@ with sync_playwright() as runtime:
                 if name == "house":
                     root.locator('[data-driver-map="modeled_nonparticipation"] path[data-state-code="WY"]').click()
                     expect(root.locator("[data-driver-state]")).to_have_value("WY")
-                    expect(root.locator('.driver-map path[data-state-code="WY"].selected')).to_have_count(4)
+                    expect(root.locator('.driver-map path[data-state-code="WY"].selected')).to_have_count(1)
                     expect(detail).to_contain_text("Wyoming")
+                    view.select_option("reported_total")
+                    expect(root.locator("[data-driver-state]")).to_have_value("WY")
                     root.locator("[data-driver-state]").select_option("AK")
                     expect(summary).to_contain_text("Reported swing unavailable")
                     expect(root.locator('[data-driver-map="reported_total"] path[data-state-code="AK"]')).to_have_attribute("data-model-value", "")
                 assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
-                cases.append(dict(width=width, office=name, models=count, exact_MN_point_values=True,
-                    linked_state_maps=True, shared_signed_scale=True,
-                    original_seven_terms_retained=True, reported_total_and_remainder_reconcile=True,
-                    summary_above_maps=True, no_horizontal_overflow=True))
+                expect(office).to_have_value(name)
+            view.select_option("switching")
             root.locator("[data-driver-state]").select_option("DC")
             expect(root.locator("[data-driver-detail]")).to_contain_text("no NORC sample")
             expect(root.locator('[data-driver-map="switching"] path[data-state-code="DC"]')).to_have_attribute("data-model-value", "")
@@ -90,7 +110,7 @@ with sync_playwright() as runtime:
             page.close()
     finally:
         browser.close()
-proof = dict(status="PASS_all113_linked_modeled_effect_maps_and_mobile_details",
+proof = dict(status="PASS_all113_single_map_all24_office_view_viewport_combinations",
     base_url=args.base_url, cases=cases, source_frame_not_population_or_causal_certification=True)
 args.proof.write_text(json.dumps(proof, indent=2) + "\n")
 print(json.dumps(proof))
