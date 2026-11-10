@@ -151,6 +151,10 @@ export function initializeReturnDrivers() {
       control.disabled = false;
       control.addEventListener(control === search ? "input" : "change", render);
     }
+    window.addEventListener("participation:effects-state", event => {
+      search.value = event.detail;
+      render();
+    });
     render();
   } catch (error) {
     status.textContent = `Model chart unavailable: ${error.message}. Saved numerical tables and complete downloads remain below.`;

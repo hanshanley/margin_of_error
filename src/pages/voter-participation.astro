@@ -5,6 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ParticipationSwing from '../components/ParticipationSwing.astro';
 import ParticipationCountyScenarios from '../components/ParticipationCountyScenarios.astro';
 import ParticipationSurvey from '../components/ParticipationSurvey.astro';
+import ParticipationReturnDrivers from '../components/ParticipationReturnDrivers.astro';
 import ParticipationIndependentPoll from '../components/ParticipationIndependentPoll.astro';
 import ParticipationHouseIntentions from '../components/ParticipationHouseIntentions.astro';
 import ParticipationPanelIntentions from '../components/ParticipationPanelIntentions.astro';
@@ -209,11 +210,11 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		</header>
 
 		<nav class="participation-nav" aria-label="Explore participation" role="tablist">
-			{[['states', 'States'], ['national', 'Demographics'], ['precincts', 'Precincts'],
+			{[['states', 'States'], ['national', 'Demographics'], ['effects', '2026 swings'], ['precincts', 'Precincts'],
 				['methods', 'Methods']].map(([view, label]) =>
 				<button type="button" id={`tab-${view}`} role="tab" data-view={view}
 					aria-selected={view === 'states' ? 'true' : 'false'}
-					aria-controls={view === 'methods' ? 'methods-panel' : 'historical-explorer'}
+					aria-controls={view === 'methods' ? 'methods-panel' : view === 'effects' ? 'swing-panel' : 'historical-explorer'}
 					tabindex={view === 'states' ? 0 : -1}>{label}</button>)}
 		</nav>
 
@@ -248,6 +249,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<h2 id="title">Participation across the United States</h2>
 				<span id="provisional-status" class="provisional-badge" hidden>Provisional</span></div><div id="key"></div></div>
 			<p id="measure" class="measure"></p>
+			<p id="precinct-source-summary" class="precinct-source-summary" role="status" hidden></p>
 			<div class="explorer-layout">
 				<div class="explorer-canvas">
 					<div id="map-tools" class="map-tools" hidden aria-label="Map controls">
@@ -344,32 +346,42 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			</div>
 		</details></noscript>
 
+		<section id="swing-panel" class="participation-secondary" data-section="effects"
+			role="tabpanel" aria-labelledby="tab-effects">
+			<ParticipationReturnDrivers names={Object.fromEntries(ufRows.map(row => [row.STATE_ABV, row.STATE]))} />
+		</section>
+
 		<details id="participation-research" class="participation-reference">
-			<summary>Research studies &amp; experimental models</summary>
-			<p>Historical source studies, local case studies and assumption-dependent estimates.
-				Local findings do not establish nationwide coverage, and modeled switching is not
-				observed individual persuasion. Each study retains its own scope, limitations and complete data.</p>
-			<ParticipationColumbiaWisconsinHistory />
+			<summary>Source studies &amp; supporting analyses</summary>
+			<p>The main results are in States, Demographics and 2026 swings above.
+				These supporting studies explain particular sources, historical comparisons and local cases.</p>
+			<details class="explorer-notes"><summary>Historical participation and demographic comparisons</summary>
 			<ParticipationCPSUnifiedHistory />
 			<ParticipationCPSEarlyHistory />
 			<ParticipationCPSOlderHistory />
 			<ParticipationCPSStateHistory />
-			<ParticipationHamiltonIndianaHistory />
 			<ParticipationCESClassification />
 			<ParticipationRegistrationEntry />
+			</details>
+			<details class="explorer-notes"><summary>Local participation case studies</summary>
+			<ParticipationColumbiaWisconsinHistory />
+			<ParticipationHamiltonIndianaHistory />
 			<ParticipationCountyScenarios version="20261107-02" />
 			<ParticipationSwing />
 			<ParticipationCountyScenarios />
+			<ParticipationClarkHistory />
+			<ParticipationNorthDakotaLongHistory />
+			<ParticipationNorthDakotaHistory />
+			</details>
+			<details class="explorer-notes"><summary>Additional survey tables and model assumptions</summary>
 			<ParticipationStateAgeScenarios />
 			<ParticipationAgeScenarios />
 			<ParticipationCandidateConditionals />
 			<ParticipationIndependentPoll />
 			<ParticipationPanelIntentions />
 			<ParticipationHouseIntentions />
-			<ParticipationClarkHistory />
-			<ParticipationNorthDakotaLongHistory />
-			<ParticipationNorthDakotaHistory />
 			<ParticipationSurvey />
+			</details>
 		</details>
 
 		<section id="methods-panel" class="participation-secondary" data-section="methods" role="tabpanel"

@@ -3,7 +3,7 @@
 .participation-heading h1 { margin: .25rem 0 .6rem; font-size: clamp(2.3rem, 4vw, 3.1rem); line-height: 1.05; letter-spacing: -.04em; }
 .participation-heading .kicker { font-size: .68rem; }
 .participation-deck { color: var(--muted); font-size: 1.05rem; margin: 0 0 .75rem; }
-.participation-nav { display: none; gap: 1.8rem; border-bottom: 1px solid var(--rule); margin-bottom: 1rem; }
+.participation-nav { display: none; flex-wrap: wrap; gap: .15rem 1.5rem; border-bottom: 1px solid var(--rule); margin-bottom: 1rem; }
 .js .participation-nav { display: flex; }
 .participation-nav button { border: 0; border-bottom: 2px solid transparent; padding: .8rem 0; background: none; color: var(--muted); font: .85rem var(--sans); white-space: nowrap; cursor: pointer; }
 .participation-nav button[aria-selected="true"] { border-color: var(--signal); color: var(--ink); }
@@ -19,6 +19,7 @@
 .methods-archive.is-visible { display: block; }
 html:not(.js) .methods-archive:has(:target) { display: block; }
 .participation-page[data-active-view="methods"] #participation-research { display: none; }
+.participation-page[data-active-view="effects"] #participation-research { display: none; }
 .participation-page :is(button, select, input, summary, [tabindex]):focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
 .explorer-toolbar { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
 .participation-explorer .controls { display: flex; flex-wrap: wrap; gap: .75rem; }
@@ -32,6 +33,7 @@ html:not(.js) .methods-archive:has(:target) { display: block; }
 .participation-explorer .eyebrow, .selection-panel .eyebrow { font-size: .65rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin: 0 0 .45rem; }
 .participation-explorer h2 { font: 400 clamp(1.4rem, 2.4vw, 1.85rem)/1.2 var(--serif); margin: 0; }
 .participation-explorer .measure { color: var(--muted); font-size: .76rem; margin: .6rem 0 1rem; line-height: 1.5; }
+.precinct-source-summary { padding-block: .7rem; border-block: 1px solid var(--rule); font: .78rem/1.6 var(--sans); }
 .explorer-layout { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 1.8rem; align-items: start; }
 .explorer-canvas { position: relative; min-width: 0; }
 .participation-explorer #visualization { min-height: 340px; }

@@ -25,9 +25,8 @@ with sync_playwright() as runtime:
             response = page.goto(args.base_url.rstrip("/") + "/voter-participation/?year=2026",
                 wait_until="domcontentloaded", timeout=90000)
             assert response.ok
-            research = page.locator("#participation-research")
-            if research.get_attribute("open") is None:
-                research.locator(":scope > summary").click()
+            page.locator("#tab-effects").click()
+            expect(page.locator("#historical-explorer")).to_be_hidden()
             root = page.locator("#participation-return-drivers")
             root.scroll_into_view_if_needed()
             office = root.locator("[data-driver-office]")
