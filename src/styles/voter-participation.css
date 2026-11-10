@@ -1,4 +1,4 @@
-.participation-page { --sans: "Avenir Next", Arial, sans-serif; width: min(1320px, calc(100% - 5rem)); margin: 0 auto; padding: 1.25rem 0 3rem; }
+.participation-page { --sans: "Avenir Next", Arial, sans-serif; width: var(--page); margin: 0 auto; padding: 1.25rem 0 3rem; }
 .participation-page [hidden] { display: none !important; }
 .participation-heading h1 { margin: .25rem 0 .6rem; font-size: clamp(2.3rem, 4vw, 3.1rem); line-height: 1.05; letter-spacing: -.04em; }
 .participation-heading .kicker { font-size: .68rem; }
@@ -203,14 +203,13 @@ html:not(.js) .methods-archive:has(:target) { display: block; }
 .national-current-coverage small { display: block; margin-top: .3rem; color: var(--muted); font-size: .65rem; }
 .participation-model td { white-space: nowrap; }
 @media (max-width: 1000px) {
-	.participation-page { width: calc(100% - 3rem); }
 	.explorer-layout { grid-template-columns: minmax(0, 1fr) 250px; gap: 1rem; }
 	.selection-panel { padding-left: 1rem; }
 	.explorer-toolbar { flex-wrap: wrap; }
 	.explorer-options { margin-top: .25rem; }
 }
 @media (max-width: 700px) {
-	.participation-page { width: calc(100% - 2rem); padding-top: 1.25rem; }
+	.participation-page { padding-top: 1.25rem; }
 	.participation-deck { font-size: 1rem; margin-bottom: 1.25rem; }
 	.participation-nav { gap: 1.25rem; overflow-x: auto; }
 	.participation-nav button { font-size: .78rem; }
