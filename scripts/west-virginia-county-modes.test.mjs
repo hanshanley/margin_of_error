@@ -100,7 +100,7 @@ test('selects only the requested browser county mode and rejects missing or rela
   assert.equal(selectCountySourceFrame(data, 'WV', 'official'), data.counties);
   assert.equal(selectCountySourceFrame(data, 'WV', 'in_person_early'), data.county_frames.in_person_early);
   assert.equal(selectCountySourceFrame(data, 'WV', 'mail_returned'), data.county_frames.mail_returned);
-  assert.equal(hasCountySourceMode('IN', 'in_person_early'), false);
+  assert.equal(hasCountySourceMode('AK', 'in_person_early'), false);
   assert.equal(hasCountySourceMode('WV', 'absentee_requested'), false);
   for (const mutate of [
     value => { delete value.county_frames; },

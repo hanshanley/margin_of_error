@@ -1,0 +1,10 @@
+{
+  "complete_state_mode_queries": 102,
+  "approved_county_frames": 63,
+  "approved_states": 39,
+  "approved_county_observations": 4731,
+  "all_source_region_queries": 6371,
+  "analysis_rates_approved": false,
+  "native_election_context_qualified": false,
+  "modes_added": false
+}

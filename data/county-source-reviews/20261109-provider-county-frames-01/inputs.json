@@ -1,0 +1,1847 @@
+{
+  "version": "data/county-source-reviews/20261109-provider-county-frames-01",
+  "responses": {
+    "AK-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/AK-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/AK/inperson",
+        "retrieved_at": "2026-11-04T22:04:30.278839+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 194,
+        "sha256": "ef959f89f627ec16eb37c5b797b8a980bf3e48e9b55cf13d2d12d63250271568",
+        "http_status": 200
+      }
+    },
+    "AK-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/AK-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/AK/returned",
+        "retrieved_at": "2026-11-04T22:04:30.445219+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 188,
+        "sha256": "8b637876b9610d8167336005329d4358d02f9a066572ac74ffa94cff90fb0c13",
+        "http_status": 200
+      }
+    },
+    "AR-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/AR-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/AR/inperson",
+        "retrieved_at": "2026-11-04T22:04:30.217469+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 10941,
+        "sha256": "51e9960a71d87ad8798ddcb4b9dc60ab90cf3110849b10b48871d930aecbb678",
+        "http_status": 200
+      }
+    },
+    "AR-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/AR-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/AR/returned",
+        "retrieved_at": "2026-11-04T22:04:30.425661+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 10592,
+        "sha256": "b863be9fe3a44a66b6249ea5124b2f181dcbad2c30c39e6a7257c5e9bc5fec13",
+        "http_status": 200
+      }
+    },
+    "AZ-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/AZ-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/AZ/returned",
+        "retrieved_at": "2026-11-04T22:04:30.196193+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 2458,
+        "sha256": "b8e5e83edd4bac2bc8decf30f8aef9f85e048c91359b998dab40099de1f62676",
+        "http_status": 200
+      }
+    },
+    "CA-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/CA-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/CA/inperson",
+        "retrieved_at": "2026-11-04T22:04:30.087827+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 3586,
+        "sha256": "9163efc4830b5388ba4a657e164b41d9efe1d2c9fd3ef82815ed2d4c3027037c",
+        "http_status": 200
+      }
+    },
+    "CA-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/CA-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/CA/returned",
+        "retrieved_at": "2026-11-04T22:04:30.228261+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 3702,
+        "sha256": "3387364145c569d029d557d7ec39361593a38ce9808e9c27cbe7ab675642ec5f",
+        "http_status": 200
+      }
+    },
+    "CO-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/CO-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/CO/inperson",
+        "retrieved_at": "2026-11-04T22:04:30.530152+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 9263,
+        "sha256": "74b97b5cc1a24534fac33688fc20426b91af9b7325a811e49d4c186b6e4ff224",
+        "http_status": 200
+      }
+    },
+    "CO-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/CO-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/CO/returned",
+        "retrieved_at": "2026-11-04T22:04:30.973489+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 9531,
+        "sha256": "73d19a4dca92bd296802466bc22195ff1dfefc2286778c87346b44ea56c4c5b6",
+        "http_status": 200
+      }
+    },
+    "CT-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/CT-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/CT/returned",
+        "retrieved_at": "2026-11-04T22:04:30.603479+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 23981,
+        "sha256": "97d26cdfc92415e02811aee219609485ea26e835738915eb9795045299c62f58",
+        "http_status": 200
+      }
+    },
+    "DE-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/DE-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/DE/returned",
+        "retrieved_at": "2026-11-04T22:04:30.586133+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 717,
+        "sha256": "c14a882f810b1c55311cae33375ff24c453702e70a0af84c857dbb6b66aaa1b7",
+        "http_status": 200
+      }
+    },
+    "FL-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/FL-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/FL/inperson",
+        "retrieved_at": "2026-11-04T22:04:30.743937+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 13779,
+        "sha256": "989034d1e5dc5cc79a0c0fd2732796dccb76823408ff28ec6ea1c809e2f17692",
+        "http_status": 200
+      }
+    },
+    "FL-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/FL-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/FL/returned",
+        "retrieved_at": "2026-11-04T22:04:30.945517+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 13680,
+        "sha256": "2f4d40e1e106fab1d6619beda985e9c2438fe4f6f6548600f86edc9aa71990bb",
+        "http_status": 200
+      }
+    },
+    "GA-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/GA-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/GA/inperson",
+        "retrieved_at": "2026-11-04T22:04:30.903835+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 9534,
+        "sha256": "1428f9f4c2ab61a1df3af7e2f1b2d37e1e60c3d6756a2adc4d676e039547025a",
+        "http_status": 200
+      }
+    },
+    "GA-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/GA-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/GA/returned",
+        "retrieved_at": "2026-11-04T22:04:31.814421+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 9323,
+        "sha256": "09bf361a6f404b0593655d108bd5b5501ad09a96b22363a8d3aabdc76e897a65",
+        "http_status": 200
+      }
+    },
+    "HI-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/HI-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/HI/inperson",
+        "retrieved_at": "2026-11-04T22:04:31.175620+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 426,
+        "sha256": "366e9e0819f36957dfd1686d279293ec52821c8d9a3009ae7c0dc54fde3921a0",
+        "http_status": 200
+      }
+    },
+    "HI-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/HI-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/HI/returned",
+        "retrieved_at": "2026-11-04T22:04:31.318372+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 426,
+        "sha256": "fd063e8d932ed3fcd43c53a09a8f317a92075b0d5588c1d0934dab0841c6b7f2",
+        "http_status": 200
+      }
+    },
+    "IA-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/IA-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/IA/inperson",
+        "retrieved_at": "2026-11-04T22:04:31.684157+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 14381,
+        "sha256": "6535da7a109bf58ad31357db1b236df3e5d26a94207c992befdc9f2f441d5f87",
+        "http_status": 200
+      }
+    },
+    "IA-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/IA-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/IA/returned",
+        "retrieved_at": "2026-11-04T22:04:32.056344+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 14275,
+        "sha256": "d38e5efba40ac4e13338c10800a83ba05f9bc3f4f6f4c121a4e76685f6ef8cb4",
+        "http_status": 200
+      }
+    },
+    "ID-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/ID-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/ID/inperson",
+        "retrieved_at": "2026-11-04T22:04:31.178162+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 2733,
+        "sha256": "de799f57ecfaf6656f4c42e7089256b58e2c8fbd28de4ec5f5ee1ba924d03972",
+        "http_status": 200
+      }
+    },
+    "ID-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/ID-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/ID/returned",
+        "retrieved_at": "2026-11-04T22:04:31.351205+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 6463,
+        "sha256": "0ba2555c2ef687526e96f6ce0ca03ed34af7679ad40265bf101dbbe3b19ed024",
+        "http_status": 200
+      }
+    },
+    "IL-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/IL-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/IL/inperson",
+        "retrieved_at": "2026-11-04T22:04:31.271665+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 6572,
+        "sha256": "92dfd49c05e478f66bd47ffd2a0318d3d9e5b593d3b833ac3e6e37e1c0fa2264",
+        "http_status": 200
+      }
+    },
+    "IL-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/IL-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/IL/returned",
+        "retrieved_at": "2026-11-04T22:04:31.421989+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 6572,
+        "sha256": "4eec1194fc5b3c6931470c93294d23f0d0bb88de118295e72ec758f23ba726a7",
+        "http_status": 200
+      }
+    },
+    "IN-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/IN-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/IN/inperson",
+        "retrieved_at": "2026-11-04T22:04:31.586718+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5304,
+        "sha256": "77270559104e45a0c364e326ea8398146b44d36ecf535285087aeea9b62af872",
+        "http_status": 200
+      }
+    },
+    "IN-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/IN-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/IN/returned",
+        "retrieved_at": "2026-11-04T22:04:31.725405+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5598,
+        "sha256": "7f9048ba2dab8f9f86cbdc33d2ebaa72b86d574e88fdd0d949c585ef446cf5a8",
+        "http_status": 200
+      }
+    },
+    "KS-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/KS-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/KS/inperson",
+        "retrieved_at": "2026-11-04T22:04:31.720271+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 15055,
+        "sha256": "0381d6e4c29782683c275b96329570f84f96e8d748aa1ab8b8d9f05547827200",
+        "http_status": 200
+      }
+    },
+    "KS-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/KS-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/KS/returned",
+        "retrieved_at": "2026-11-04T22:04:32.169773+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 14849,
+        "sha256": "307e7a9113286e41a936d1a350ed74d0fa36f8e26e827f5f10b1fcb0ef730e36",
+        "http_status": 200
+      }
+    },
+    "KY-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/KY-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/KY/inperson",
+        "retrieved_at": "2026-11-04T22:04:31.792890+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 18006,
+        "sha256": "64f69cf7fc6d65756efbfc230a7560fee757d5eabeff6211b9dca6df90e099b6",
+        "http_status": 200
+      }
+    },
+    "KY-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/KY-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/KY/returned",
+        "retrieved_at": "2026-11-04T22:04:31.938797+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 17675,
+        "sha256": "136c0d0dd6b764d946b460c50ce9675f8de2961276da583283342af64b27057d",
+        "http_status": 200
+      }
+    },
+    "LA-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/LA-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/LA/inperson",
+        "retrieved_at": "2026-11-04T22:04:32.088292+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 4117,
+        "sha256": "419eec02cdf8d29d15628404b2a2a340a4bc197661553ee2bc2936fec49934ca",
+        "http_status": 200
+      }
+    },
+    "LA-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/LA-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/LA/returned",
+        "retrieved_at": "2026-11-04T22:04:32.238875+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 4058,
+        "sha256": "fccc6fe6e8b692a2680d4dfe5dfe422bbede6a6573a7c9996bd9728bd9b5d37a",
+        "http_status": 200
+      }
+    },
+    "MD-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/MD-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/MD/returned",
+        "retrieved_at": "2026-11-04T22:04:32.485221+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 3794,
+        "sha256": "c9a08b012a6dc6de5a4886a4148e68a91df65b2d3acfbfa0f011243da68ba8e9",
+        "http_status": 200
+      }
+    },
+    "ME-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/ME-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/ME/inperson",
+        "retrieved_at": "2026-11-04T22:04:32.410934+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 113673,
+        "sha256": "2ac2be7d3fbfd00f67722118b7bfff6f57e9f28c0e0efd7b4a311bc4192395e2",
+        "http_status": 200
+      }
+    },
+    "ME-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/ME-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/ME/returned",
+        "retrieved_at": "2026-11-04T22:04:32.653793+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 113621,
+        "sha256": "53e93c8e8b9f71645a9e889cc28928b054dc61f64dbe5ac452cad9f55900b1a4",
+        "http_status": 200
+      }
+    },
+    "MI-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/MI-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/MI/returned",
+        "retrieved_at": "2026-11-04T22:04:32.879948+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5128,
+        "sha256": "5897f44d6f504836918935371a214110de3ef5dba8121aad3849a7fe332a11a6",
+        "http_status": 200
+      }
+    },
+    "MN-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/MN-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/MN/inperson",
+        "retrieved_at": "2026-11-04T22:04:32.801047+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5311,
+        "sha256": "4e0c9a280d7d356ba9a41d8080db7bb92b04a1276a2316573c9a4aaa5f6dc508",
+        "http_status": 200
+      }
+    },
+    "MN-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/MN-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/MN/returned",
+        "retrieved_at": "2026-11-04T22:04:32.989541+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5319,
+        "sha256": "3306c49301036b2f63e01683c43b30075538c6d30b167afe5fbbe06e632c351f",
+        "http_status": 200
+      }
+    },
+    "MO-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/MO-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/MO/inperson",
+        "retrieved_at": "2026-11-04T22:04:32.924690+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 264,
+        "sha256": "e2ebb1f6250368ed3aab9dda3c1a2727bb66054da2fee341f426063aee8bcf38",
+        "http_status": 200
+      }
+    },
+    "MO-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/MO-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/MO/returned",
+        "retrieved_at": "2026-11-04T22:04:33.202406+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 256,
+        "sha256": "5af530f8d7d8f1f940d7b414688fb160377d9bd1407fb584688637d5cffee83e",
+        "http_status": 200
+      }
+    },
+    "MS-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/MS-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/MS/returned",
+        "retrieved_at": "2026-11-04T22:04:32.855353+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 4980,
+        "sha256": "f1fbf61d48476014c03c9845a41e123144dfd2a4593b3bec33affb0100ce8309",
+        "http_status": 200
+      }
+    },
+    "MT-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/MT-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/MT/returned",
+        "retrieved_at": "2026-11-04T22:04:33.009502+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 3542,
+        "sha256": "a6ab6f8d24a952a1573a1853ac70469e1c38b18d926124e1f29ca184cd7f1c79",
+        "http_status": 200
+      }
+    },
+    "NC-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NC-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NC/inperson",
+        "retrieved_at": "2026-11-04T22:04:33.899010+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 20276,
+        "sha256": "5fb6a8abb2ac082358e265cd853b25b130aab03a24f00cf9b4ff25459edffc3f",
+        "http_status": 200
+      }
+    },
+    "NC-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NC-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NC/returned",
+        "retrieved_at": "2026-11-04T22:04:35.316720+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 19712,
+        "sha256": "3a2260ca8ebcada579a6424fda614cf82ca8968b5d14ca3f6a09f0851eedc034",
+        "http_status": 200
+      }
+    },
+    "ND-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/ND-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/ND/inperson",
+        "retrieved_at": "2026-11-04T22:04:33.887723+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 198,
+        "sha256": "3401b9bc9e9915ea2114a4ecb51a8d2df033d1f58487f2b092507db752d496aa",
+        "http_status": 200
+      }
+    },
+    "ND-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/ND-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/ND/returned",
+        "retrieved_at": "2026-11-04T22:04:34.022430+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 3280,
+        "sha256": "67f11c56a128d46cdda5e26d752552df69d7371dcb4be90baf3672fd335dcddc",
+        "http_status": 200
+      }
+    },
+    "NE-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NE-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NE/inperson",
+        "retrieved_at": "2026-11-04T22:04:33.419866+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 13140,
+        "sha256": "808c8b04d105cf9aa3f036ab24b3d1a9f9227fb212250f3e5b6bb46476cb3c57",
+        "http_status": 200
+      }
+    },
+    "NE-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NE-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NE/returned",
+        "retrieved_at": "2026-11-04T22:04:33.582879+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 13278,
+        "sha256": "13df3ecba6f127fa11316de63c8be3b2c677a5d30c953e662ec3050a3bb544f1",
+        "http_status": 200
+      }
+    },
+    "NJ-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NJ-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NJ/inperson",
+        "retrieved_at": "2026-11-04T22:04:33.410047+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 3355,
+        "sha256": "4eb7352362f9e6c77604ffee91d780293a02fc2bbdbe219c8381ca849deb91c7",
+        "http_status": 200
+      }
+    },
+    "NJ-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NJ-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NJ/returned",
+        "retrieved_at": "2026-11-04T22:04:33.554561+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 3345,
+        "sha256": "a93b209244d82fce8dca6b8757171e192d78d0c59105bdf670705323b64f1246",
+        "http_status": 200
+      }
+    },
+    "NM-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NM-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NM/inperson",
+        "retrieved_at": "2026-11-04T22:04:33.559980+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5011,
+        "sha256": "316b8a9d1ce5076136bd811447c8832fe7d21c10c9fef0a465e44ab1afc08412",
+        "http_status": 200
+      }
+    },
+    "NM-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NM-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NM/returned",
+        "retrieved_at": "2026-11-04T22:04:33.723267+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 4936,
+        "sha256": "765f9858acfe6b9cf245e64ee4729ae9fdaebe1e55af9e0b2994fd0646f4b6a4",
+        "http_status": 200
+      }
+    },
+    "NV-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NV-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NV/inperson",
+        "retrieved_at": "2026-11-04T22:04:33.288627+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 2701,
+        "sha256": "2301d8a0c7ad5c2d2df07ed4741dac09eba02953516a4711228f9fdd52fc5072",
+        "http_status": 200
+      }
+    },
+    "NV-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NV-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NV/returned",
+        "retrieved_at": "2026-11-04T22:04:33.418886+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 2713,
+        "sha256": "bca7fd478e60b3c87a85f83bc6abafc159bc2b63f5801ac7c413651f149a155f",
+        "http_status": 200
+      }
+    },
+    "NY-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/NY-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/NY/inperson",
+        "retrieved_at": "2026-11-04T22:04:33.594186+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 3906,
+        "sha256": "3f8fef0484299583d9994a4edc104bbd99c4843989ba0a587ff885bfc0c720e5",
+        "http_status": 200
+      }
+    },
+    "OH-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/OH-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/OH/inperson",
+        "retrieved_at": "2026-11-04T22:04:33.933227+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5382,
+        "sha256": "c2d2bfb00ceeca8ca658ca85faa3b9aa11b7bc2aa9e2641a0898f2ff7a59f1a2",
+        "http_status": 200
+      }
+    },
+    "OH-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/OH-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/OH/returned",
+        "retrieved_at": "2026-11-04T22:04:34.090124+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5356,
+        "sha256": "1e66b768f2a9158890997e1fb4f26985d6f27e505ac0716970f573129cc84a5b",
+        "http_status": 200
+      }
+    },
+    "OK-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/OK-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/OK/returned",
+        "retrieved_at": "2026-11-04T22:04:34.297377+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 15110,
+        "sha256": "d690ce145a3efb38155081015d8137aa2a96dfa383e372efc7fed13392f18f45",
+        "http_status": 200
+      }
+    },
+    "OR-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/OR-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/OR/returned",
+        "retrieved_at": "2026-11-04T22:04:34.423994+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5511,
+        "sha256": "ba80c55096ddb729f35f1a936251269e2e1a275e1a553e8b445c4888e2da1c7c",
+        "http_status": 200
+      }
+    },
+    "PA-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/PA-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/PA/returned",
+        "retrieved_at": "2026-11-04T22:04:34.433203+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 13638,
+        "sha256": "5b7490ad61a0ff921d9b059afa6bfbd9447c94e30cc7a9167d7aca48118da546",
+        "http_status": 200
+      }
+    },
+    "RI-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/RI-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/RI/inperson",
+        "retrieved_at": "2026-11-04T22:04:34.603528+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5995,
+        "sha256": "7df2254ad88f1b8bd649a492feee2ef2c5a512233d289dd77c63080c7f710774",
+        "http_status": 200
+      }
+    },
+    "RI-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/RI-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/RI/returned",
+        "retrieved_at": "2026-11-04T22:04:34.967402+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5891,
+        "sha256": "0a05c56925348e2416e8ccdcf426f2f4c92510383c75838a830a92462044adce",
+        "http_status": 200
+      }
+    },
+    "SC-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/SC-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/SC/inperson",
+        "retrieved_at": "2026-11-04T22:04:34.733582+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 2979,
+        "sha256": "edbb97f58ab20d8dbf694cb95bc63cc270268b38deacf4c4ba9deaf4a294fc37",
+        "http_status": 200
+      }
+    },
+    "SC-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/SC-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/SC/returned",
+        "retrieved_at": "2026-11-04T22:04:34.862499+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 2912,
+        "sha256": "cc282fa625922eb4a45c79eb177746ea9fdbbea361f04d0fc9fe2fab678e856a",
+        "http_status": 200
+      }
+    },
+    "SD-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/SD-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/SD/returned",
+        "retrieved_at": "2026-11-04T22:04:35.047106+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 9535,
+        "sha256": "bec74c1dff7d9a2cfc40b85853475e6124b86db73ce7f9f51aaa63eb41efd30c",
+        "http_status": 200
+      }
+    },
+    "TN-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/TN-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/TN/inperson",
+        "retrieved_at": "2026-11-04T22:04:35.417348+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 5801,
+        "sha256": "236fa215cfa838255a17243b7fe5bc68c7de0faf48761265e681a7678a2ab9db",
+        "http_status": 200
+      }
+    },
+    "TX-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/TX-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/TX/inperson",
+        "retrieved_at": "2026-11-04T22:04:35.510464+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 15113,
+        "sha256": "59b30989e9dc9befe1d1da23788ba7bde6e8a9a1ef46b0d508e476f81a5ebc53",
+        "http_status": 200
+      }
+    },
+    "TX-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/TX-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/TX/returned",
+        "retrieved_at": "2026-11-04T22:04:35.993823+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 14761,
+        "sha256": "f147c27bd29a986b4b7dbb3b81107da24756fba5bbce98646f604a89b0188d10",
+        "http_status": 200
+      }
+    },
+    "UT-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/UT-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/UT/inperson",
+        "retrieved_at": "2026-11-04T22:04:35.939096+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 4279,
+        "sha256": "c76b20488bf8b844dc0f10ffd5482c9de4d8db5213fb745faceb107bb048b0cc",
+        "http_status": 200
+      }
+    },
+    "UT-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/UT-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/UT/returned",
+        "retrieved_at": "2026-11-04T22:04:36.092589+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 4418,
+        "sha256": "c44dee292217fd931f6242b2eb78627febb19a1c86c1e7df32b929963f04c4c2",
+        "http_status": 200
+      }
+    },
+    "VA-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/VA-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/VA/inperson",
+        "retrieved_at": "2026-11-04T22:04:36.280412+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 8466,
+        "sha256": "c3dbe111f5dac1e52be8bb35c4f446d8319d889e224f5dfc5bfd9e07e78fd0e6",
+        "http_status": 200
+      }
+    },
+    "VA-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/VA-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/VA/returned",
+        "retrieved_at": "2026-11-04T22:04:36.404746+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 8357,
+        "sha256": "6c2edfe4afd824aa50af091ead8f39b388a6541c1c3b6af8e398e6c82dfe07fe",
+        "http_status": 200
+      }
+    },
+    "VT-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/VT-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/VT/inperson",
+        "retrieved_at": "2026-11-04T22:04:35.827605+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 191,
+        "sha256": "b7a2a5c9e654a19c5339178dc549251fa04ee04c8531c79ebf1e4fc05a1f4d9f",
+        "http_status": 200
+      }
+    },
+    "VT-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/VT-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/VT/returned",
+        "retrieved_at": "2026-11-04T22:04:36.196839+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 190,
+        "sha256": "14733ed0e10732c2c545194b5a148174cb829b025ff8958462b876c643b3a32c",
+        "http_status": 200
+      }
+    },
+    "WA-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/WA-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/WA/returned",
+        "retrieved_at": "2026-11-04T22:04:36.377523+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 2536,
+        "sha256": "db1c82469ef71e124732358a40faef3f4383755a2109b197511484512811cb49",
+        "http_status": 200
+      }
+    },
+    "WI-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/WI-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/WI/inperson",
+        "retrieved_at": "2026-11-04T22:04:36.739024+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 4427,
+        "sha256": "94eeb0332ba168568a6a22536fef85291fedc5bf2348cbcb54f031787034a07f",
+        "http_status": 200
+      }
+    },
+    "WI-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/WI-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/WI/returned",
+        "retrieved_at": "2026-11-04T22:04:36.989268+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 4441,
+        "sha256": "24174fbbf4d3d587a7c864f9ccf69b2311e019a83f9227f635c9af6c35d48d76",
+        "http_status": 200
+      }
+    },
+    "WV-inperson": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/WV-inperson.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/WV/inperson",
+        "retrieved_at": "2026-11-04T22:04:36.389971+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 8090,
+        "sha256": "f1a23447f70842775af8779d7c0c55fc52fc0e0e1d2780f2e4752367a1a64986",
+        "http_status": 200
+      }
+    },
+    "WV-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/WV-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/WV/returned",
+        "retrieved_at": "2026-11-04T22:04:36.655697+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 7845,
+        "sha256": "6856e83d43af68f591136b88b49e7de156720b4cabec9cc8a281c2292ac75fb4",
+        "http_status": 200
+      }
+    },
+    "WY-returned": {
+      "path": "data/county-source-reviews/20261109-provider-county-frames-01/originals/WY-returned.json",
+      "receipt": {
+        "url": "https://civicapi.org/api/v2/early-vote/WY/returned",
+        "retrieved_at": "2026-11-04T22:04:36.658257+00:00",
+        "source_snapshot_id": "20261104T220425Z",
+        "bytes": 3538,
+        "sha256": "d4dd7b5f25db54655130f2c462d1cb8b15fc0f654c27a8a6b491d82a1efd1321",
+        "http_status": 200
+      }
+    }
+  },
+  "references": {
+    "AK": {
+      "path": "data/county-results/20261107T125502Z/geometry/AK.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f852e50e8f7cabbb6146e0d0d8dd2343734c573b/data/county-results/20261107T125502Z/geometry/AK.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 30,
+      "sha256": "1ac6b1724c9f46750340521d472d4c359bb86bef4affa12249da8ec78dec2a07",
+      "uncompressed_sha256": "a7abf167e2780703445d1b950c5f620e7ea18ac586c1227107e87d66e86d20b3",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "AL": {
+      "path": "data/county-results/20261105-house-02/geometry/AL.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/AL.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 67,
+      "sha256": "4ef6f03ec7f8f65ecae37a418d25e5c803775458048806a9e28110a1e9ecc6b0",
+      "uncompressed_sha256": "3b17b781577064cd4fe6eff7aadc6e41b54d34d42c2ee2a5e971414c81a58f21",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "AR": {
+      "path": "data/county-results/20261105-house-02/geometry/AR.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/AR.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 75,
+      "sha256": "9ed51d2d19200444c49a9e2fde9edd5ab9797ea81842c470b27fcfa65e65cb55",
+      "uncompressed_sha256": "3a2afac478b87d3ef197f44e664a9b3995a743904d1566e13d95e7d0684655ff",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "AZ": {
+      "path": "data/county-results/20261105-house-02/geometry/AZ.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/AZ.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 15,
+      "sha256": "4dfb2870e0934e6f60c0f11cc0bd0d91f178a4b91b9a47fabfd9e689d3a42bed",
+      "uncompressed_sha256": "0ae029c7cbc509d9de99b8dffcf5a99264b09c95151eefaffa8585985c180472",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "CA": {
+      "path": "data/county-results/20261105-house-02/geometry/CA.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/CA.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 58,
+      "sha256": "1ad1c97f14e5ce3cfcdc977bd3d5142f364f26552c691b68dd170d927e82cfca",
+      "uncompressed_sha256": "2cb0168f0668a218682ade5aee62a2e14f643440f0f2bbb5d126bd33127641b9",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "CO": {
+      "path": "data/county-results/20261105-house-02/geometry/CO.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/CO.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 64,
+      "sha256": "69c2b7e8caa4bfe29deb77e6565286376791b9e345fb6c5bfdb2db6077838475",
+      "uncompressed_sha256": "8e8c840bc99f2dc41592e000ce822184b2a7c15ea8cfc79f474b691f19d0d688",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "CT": {
+      "path": "data/county-results/20261105-house-02/geometry/CT.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/CT.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 9,
+      "sha256": "91db697ba37f5d0ffce3f547672068e27354e2693fa2e757142ecdac9457abdb",
+      "uncompressed_sha256": "801896e4ad67704cd688426e7e167da7685e8a5fa93db478935216301ea83b3e",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "DE": {
+      "path": "data/county-results/20261105-house-02/geometry/DE.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/DE.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 3,
+      "sha256": "1166cbe39d9ff0dda0cb3122ba784913cb2a1648d7c0ead49d26c13ca1980aed",
+      "uncompressed_sha256": "25ed55c8fcdc0eddcc4483793743e76e14aa14c6cc0529b8a625775ba402b65f",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "FL": {
+      "path": "data/county-results/20261105-house-02/geometry/FL.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/FL.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 67,
+      "sha256": "6e9c973fe0ae14c9f7e93dff072bfde3e3259b9a9c43f1cf647d0f3723830dea",
+      "uncompressed_sha256": "14a3d1882365ec4398225e0a5b9ce65e3c67942e1bf1fa8104cdd850b5d5bbf3",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "GA": {
+      "path": "data/county-results/20261105-house-02/geometry/GA.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/GA.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 159,
+      "sha256": "219c1cd18773865615eebeb9eeccc92e3095dcab0b1af4b4150226d4af105249",
+      "uncompressed_sha256": "21d028eb4b69105f4e7927857f073f69f57bdb3aadf9aaf16de7833252d082b9",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "HI": {
+      "path": "data/county-results/20261107T125502Z/geometry/HI.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f852e50e8f7cabbb6146e0d0d8dd2343734c573b/data/county-results/20261107T125502Z/geometry/HI.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 5,
+      "sha256": "7893f2321b420c0d908a4b0d75ad8abfb92c602da256a9fb5160eba6b6db5089",
+      "uncompressed_sha256": "ea3ab120181a04786abd7737e1a7af23d14e1bacc6e9a3eb086b54a4a5b968e1",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "IA": {
+      "path": "data/county-results/20261105-house-02/geometry/IA.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/IA.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 99,
+      "sha256": "0589f3b0dafa88ff8936a0b2e1613cb57de5eda405313ac88667b47517a0032a",
+      "uncompressed_sha256": "881ea4969d508468a0c5d5e570c0a1d7ed8ee867d06557ab3596f29d3977c44d",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "ID": {
+      "path": "data/county-results/20261105-house-02/geometry/ID.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/ID.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 44,
+      "sha256": "73b19435d5cc579acb37d6ac03b080e0121270c960f6792f1eb631db71f18574",
+      "uncompressed_sha256": "3656026443ed4ec77bb83fa64d87728733b640071a57b75e3c71f64fd2518690",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "IL": {
+      "path": "data/county-results/20261105-house-02/geometry/IL.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/IL.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 102,
+      "sha256": "ddc8ec595021ed04413207a23410d297a8c538d4c5ebbbe135f37c5d8bde5039",
+      "uncompressed_sha256": "f64beba3d72e3aadf7a900d44a72a6d854eeb85eb2491e7dfc66edb55ebfefcc",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "IN": {
+      "path": "data/county-results/20261105-house-02/geometry/IN.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/IN.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 92,
+      "sha256": "ddcaae3590bc8040717b611fd4aaf7000b9a359d2530b99b5a7776ed926a579c",
+      "uncompressed_sha256": "fac02a3e2ac291829cd74801effc2be4cec37bab06fbb54165ea32aa97bf7301",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "KS": {
+      "path": "data/county-results/20261105-house-02/geometry/KS.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/KS.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 105,
+      "sha256": "cdaa1428516a3a75a94a022e0a57009e42a28e17348cda5861a144bb23182082",
+      "uncompressed_sha256": "5c7b88cebce775ec240a9b001553870419d02ffc64397e60d26c3d353fe79d65",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "KY": {
+      "path": "data/county-results/20261105-house-02/geometry/KY.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/KY.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 120,
+      "sha256": "7b53087b5e6fd66d226553f233cc3569cb693622a11f109d5897cc993e331fa6",
+      "uncompressed_sha256": "22bfa71bed1c5dfa86483c6cf00db33a03d8005dc8a24d74e9683eac77f9dffe",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "LA": {
+      "path": "data/county-results/20261105-house-02/geometry/LA.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/LA.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 64,
+      "sha256": "7eeec4d3ebb2ca1fd2897e5f914e925a3b1fb88748bc25c51bd7977bfd930eac",
+      "uncompressed_sha256": "bd3036cab0f54812cd61110942b6604791185a837eafb86e72e974fef52d49a4",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "MA": {
+      "path": "data/county-results/20261105-house-02/geometry/MA.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MA.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 14,
+      "sha256": "3cfb10d32d0af6a84c7abc6ff62538ab62607bd6e243be5f283b0e45aee68f40",
+      "uncompressed_sha256": "e6885afb1e8374e9dbcfc8bd15b29aac0d684732e265e0fab93efef270aa69ae",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "MD": {
+      "path": "data/county-results/20261105-house-02/geometry/MD.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MD.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 24,
+      "sha256": "d393ff433013bdcb4b496cc4228620d90a6156f7e8d056320bc9c3610bdad924",
+      "uncompressed_sha256": "d54ba735214da8add882de9e60b628c1dc1d9da5687d5d0ec74e50c540adcb80",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "MI": {
+      "path": "data/county-results/20261105-house-02/geometry/MI.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MI.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 83,
+      "sha256": "cbe4a45667430678549ea8c28e5b0a43652b914373ef41f9d75e6adb0fc2fa87",
+      "uncompressed_sha256": "adc7255289c3758064edaa0992797983249b36500f7fa094347d69c154d63614",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "MN": {
+      "path": "data/county-results/20261105-house-02/geometry/MN.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MN.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 87,
+      "sha256": "ef2672107b15e32332b185baa3e878ec64133dd0ee272b288ead7af51516c13a",
+      "uncompressed_sha256": "f67bc7cb3596b0286e5570cc188677fd736a835033c33cd2e6731fed6fa1502c",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "MO": {
+      "path": "data/county-results/20261105-house-02/geometry/MO.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MO.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 115,
+      "sha256": "adf0fe9ec17e9643a3c370b63a85a90661c6d68b0f0e6f5f932a6b59fb42d6d7",
+      "uncompressed_sha256": "541c8883b464d3c360c8c03dadc174ac5980bc8ceb9d5eec7e38efddcacfeb37",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "MS": {
+      "path": "data/county-results/20261105-house-02/geometry/MS.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MS.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 82,
+      "sha256": "f92866ca5d6384cc3db5caaa52a66a442753296f8cf8de06ec62a355b32066ea",
+      "uncompressed_sha256": "88003644239657f6fdea3e64decd8c19b5f6141e5afe85f2f1f07e54cedd19b1",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "MT": {
+      "path": "data/county-results/20261105-house-02/geometry/MT.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/MT.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 56,
+      "sha256": "2e429197f0b18238cb850019d7ebd19e87adc773438352ea1b317e9487a82ecc",
+      "uncompressed_sha256": "bad5c764bfea21d314e777ba72394e069845fb905f7ea4ba1c54051f28d8cfd4",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "NC": {
+      "path": "data/county-results/20261105-house-02/geometry/NC.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NC.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 100,
+      "sha256": "c8e748cd82e869d9da4507ebc2f6996dd8eec8099ca96603bbfda76eb609b1a9",
+      "uncompressed_sha256": "3e95978cee8daa0eaaca52d3dd25a5a48ca36f6496ca647bef7abf179518a231",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "ND": {
+      "path": "data/county-results/20261105-house-02/geometry/ND.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/ND.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 53,
+      "sha256": "2725f586b52b9f7949086f03b0acb2ea0959dfd01a14bb56268d2025b1ec1951",
+      "uncompressed_sha256": "306f3d2f56d63aed7ad4fc1c4ed0834ef3a80ae9d2bf66266e72e6d655e500a4",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "NE": {
+      "path": "data/county-results/20261105-house-02/geometry/NE.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NE.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 93,
+      "sha256": "d9f70281006d90a95fb77c21314de01a906b48c25875ce9d3db6f74f34e2ca7d",
+      "uncompressed_sha256": "521a033d2acd72ecea6833629a9ee3da066d6c05eb05f46c080ef512ec3a0de4",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "NH": {
+      "path": "data/county-results/20261105-house-02/geometry/NH.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NH.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 10,
+      "sha256": "689b0b057e5625f5a30da528b4417b405e81c4ba7ae39ac6d5d449dad8626efd",
+      "uncompressed_sha256": "1ed6e807a52ee0e5644d1b37f1b018f7efd1dc14e1f57c294f9ae2d8a897a2a6",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "NJ": {
+      "path": "data/county-results/20261105-house-02/geometry/NJ.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NJ.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 21,
+      "sha256": "1aa41dc4965b02375bdeb52a4f10285d0e680ba21ab793ef663ff18961b6c19d",
+      "uncompressed_sha256": "b706dd6ca705862207af21772e94dccb6ebb35ff82773c5d6f07d1e912ae3c66",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "NM": {
+      "path": "data/county-results/20261105-house-02/geometry/NM.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NM.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 33,
+      "sha256": "97abeb2b992f05db92aae2385558e2584cd685493525f3e45bc7ecdfd2d2dfe6",
+      "uncompressed_sha256": "d51bf8bb1481d69b02ed3ec1983c3d698df82e1ceb7a12b61384553bc67b1281",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "NV": {
+      "path": "data/county-results/20261105-house-02/geometry/NV.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NV.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 17,
+      "sha256": "d77d017973187fd7a42204c58301daf804594c39394b85a888633d304f46d511",
+      "uncompressed_sha256": "efb213979d3756f49df1f4807f5eb7817a0ade59452e5f096c2e3d9db82b50d1",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "NY": {
+      "path": "data/county-results/20261105-house-02/geometry/NY.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/NY.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 62,
+      "sha256": "d47b51ec1da084ee36aaefafc21bebe506a4e5e245a529139968223884d5595a",
+      "uncompressed_sha256": "7573cb6e11b7981f2e0ab95f8c18967bb65b540c4b66ecc007a7d987a14bc57d",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "OH": {
+      "path": "data/county-results/20261105-house-02/geometry/OH.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/OH.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 88,
+      "sha256": "a9cb5f455b746d94a0ccf9c18c36d804ef0e728d9f63e119da69b40ce5e764e8",
+      "uncompressed_sha256": "8f0913c3ddc1de2f117f09238ff546d5763c6e22117cb6b817f0b0d796f7ce85",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "OK": {
+      "path": "data/county-results/20261105-house-02/geometry/OK.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/OK.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 77,
+      "sha256": "c0707afad36682624a155b051f66cb2ec5a864c03d6dc82d763abd579e98edb9",
+      "uncompressed_sha256": "0f2e0f29c7d5fb6acf93c963050e5d44f79ea34ca58debcc539da593106e665d",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "OR": {
+      "path": "data/county-results/20261105-house-02/geometry/OR.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/OR.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 36,
+      "sha256": "c4b28b42e815e0870ee309ba21edc690479b7efce1fb68f5930dbbd05fcfcdf2",
+      "uncompressed_sha256": "4fe9eb0c8e5b709853261728b2988708b5835aeb21026de3e7d3fd828e4a8b76",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "PA": {
+      "path": "data/county-results/20261105-provider-overlap-01/geometry/PA.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/geometry/PA.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 67,
+      "sha256": "76496baea4bf48228d8c9891aafdf76090f1267764ea38f4305889e36d9249e6",
+      "uncompressed_sha256": "24bf8849626e1aed74c909eedcc2fc48e6a46067b1a781444483f30948f07c07",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "RI": {
+      "path": "data/county-results/20261105-house-02/geometry/RI.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/RI.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 5,
+      "sha256": "81c95c061de31db0e589f8bf3028d36b911d63b078d70d3f3f1928c7a47f4dab",
+      "uncompressed_sha256": "d427f9cc34ea81c916dbde56c9184243b46126a4ede3b4faaad5ea744d7534f6",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "SC": {
+      "path": "data/county-results/20261105-house-02/geometry/SC.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/SC.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 46,
+      "sha256": "48fec02fa5c997e7ef0d0a64c050d3773c4404410998c0b605b12a0ce1e6bc71",
+      "uncompressed_sha256": "e3a5b7b9691d6463ad7a5e2cc2dc2285eb4613a174281dea0ebe6fab3ab22832",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "SD": {
+      "path": "data/county-results/20261105-house-02/geometry/SD.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/SD.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 66,
+      "sha256": "09b8eacb1af342542991c29531990e23344d00863ec81fadf73fa7e3bed74376",
+      "uncompressed_sha256": "a4a1d23651876bd9d51de5c8c45c32909c9e6122d380129c9864ab738bd3a714",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "TN": {
+      "path": "data/county-results/20261105-house-02/geometry/TN.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/TN.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 95,
+      "sha256": "458587d28a6301475c907be4e2a0385e05b5acaad2cf622baafcae0578e8b67d",
+      "uncompressed_sha256": "516016fc7bca79420b657fc25876a3f4902f938abe0808a35fdb510df3d46eaf",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "TX": {
+      "path": "data/county-results/20261105-house-02/geometry/TX.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/TX.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 254,
+      "sha256": "6dec632a2eeb7ec21f9da35873e154636aa42be3681d6890e1ba23023061cad5",
+      "uncompressed_sha256": "c068d086f11fcf9e91fed06581d521c0b3def8226cd4de182d27bd6d9425b25e",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "UT": {
+      "path": "data/county-results/20261105-house-02/geometry/UT.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/UT.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 29,
+      "sha256": "4e93c0aca53e7a701361351263b66d15ade19a44d97db01e63e444091974eb48",
+      "uncompressed_sha256": "85a46fa4c557e0e05159fdc84a3b214a491f477ed3f6e1d53b2aadbbb93353b3",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "VA": {
+      "path": "data/county-results/20261105-house-02/geometry/VA.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/VA.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 133,
+      "sha256": "502e9646e382b0e4ce74846648f0f4614eb19922516dd44ccdc4f95d1140ecf5",
+      "uncompressed_sha256": "63d5801bb0572155f606f4f86f12cf54321acf134c460d0f90e6816bd692b708",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "VT": {
+      "path": "data/county-results/20261105-house-02/geometry/VT.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/VT.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 14,
+      "sha256": "b487d60a9b921b9e5db11359ca659c35fd7e5dfdff6c2ecc54b5bd7a3794a863",
+      "uncompressed_sha256": "f120b29af6175504601d6755731a95c786e58a2aa61e11958ca090a66f65ad25",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "WA": {
+      "path": "data/county-results/20261105-house-02/geometry/WA.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/WA.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 39,
+      "sha256": "9f86f0ff1a12b3fd6a0033aa93902cac7311fefec3f90049a074e806f109abad",
+      "uncompressed_sha256": "6af5c0d7903b396a7756fd3e25a1e45b3cfe7b518e0f113fe20266ac349668a7",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "WI": {
+      "path": "data/county-results/20261105-house-02/geometry/WI.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/WI.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 72,
+      "sha256": "4f53e9b43faa1cf6dd9e1f9b893993fe6f4aa42a78cfbb1afbeb39d3f6db5f74",
+      "uncompressed_sha256": "f5deb118d9aaf82b5b0d6915b924e6a4a617035935026189f72e1bb100037bc6",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "WV": {
+      "path": "data/county-results/20261105-house-02/geometry/WV.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/WV.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 55,
+      "sha256": "9114e1c6309189a97408bed9571c9f3e2403629129c373dc2cebe032954796a7",
+      "uncompressed_sha256": "06dd104328c9fb9b90835f94c6c680d46bbb68a8c6b8d7c842cae7848f3fcd17",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    },
+    "WY": {
+      "path": "data/county-results/20261105-house-02/geometry/WY.geojson.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/geometry/WY.geojson.gz",
+      "boundary_year": 2026,
+      "counties": 23,
+      "sha256": "384538df298546097d10fd3f7b6bc959aa7f054e8de7e635e029e13057aff6d3",
+      "uncompressed_sha256": "883c2d83af37cf3de88e10608a365a7ad60c0194f429d02ce0e8b16620496733",
+      "review_id": "provider-contextual-county-identities-20261109-01"
+    }
+  },
+  "files": {
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/AK-inperson.json": {
+      "bytes": 194,
+      "sha256": "ef959f89f627ec16eb37c5b797b8a980bf3e48e9b55cf13d2d12d63250271568"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/AK-returned.json": {
+      "bytes": 188,
+      "sha256": "8b637876b9610d8167336005329d4358d02f9a066572ac74ffa94cff90fb0c13"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/AR-inperson.json": {
+      "bytes": 10941,
+      "sha256": "51e9960a71d87ad8798ddcb4b9dc60ab90cf3110849b10b48871d930aecbb678"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/AR-returned.json": {
+      "bytes": 10592,
+      "sha256": "b863be9fe3a44a66b6249ea5124b2f181dcbad2c30c39e6a7257c5e9bc5fec13"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/AZ-returned.json": {
+      "bytes": 2458,
+      "sha256": "b8e5e83edd4bac2bc8decf30f8aef9f85e048c91359b998dab40099de1f62676"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/CA-inperson.json": {
+      "bytes": 3586,
+      "sha256": "9163efc4830b5388ba4a657e164b41d9efe1d2c9fd3ef82815ed2d4c3027037c"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/CA-returned.json": {
+      "bytes": 3702,
+      "sha256": "3387364145c569d029d557d7ec39361593a38ce9808e9c27cbe7ab675642ec5f"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/CO-inperson.json": {
+      "bytes": 9263,
+      "sha256": "74b97b5cc1a24534fac33688fc20426b91af9b7325a811e49d4c186b6e4ff224"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/CO-returned.json": {
+      "bytes": 9531,
+      "sha256": "73d19a4dca92bd296802466bc22195ff1dfefc2286778c87346b44ea56c4c5b6"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/CT-returned.json": {
+      "bytes": 23981,
+      "sha256": "97d26cdfc92415e02811aee219609485ea26e835738915eb9795045299c62f58"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/DE-returned.json": {
+      "bytes": 717,
+      "sha256": "c14a882f810b1c55311cae33375ff24c453702e70a0af84c857dbb6b66aaa1b7"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/FL-inperson.json": {
+      "bytes": 13779,
+      "sha256": "989034d1e5dc5cc79a0c0fd2732796dccb76823408ff28ec6ea1c809e2f17692"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/FL-returned.json": {
+      "bytes": 13680,
+      "sha256": "2f4d40e1e106fab1d6619beda985e9c2438fe4f6f6548600f86edc9aa71990bb"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/GA-inperson.json": {
+      "bytes": 9534,
+      "sha256": "1428f9f4c2ab61a1df3af7e2f1b2d37e1e60c3d6756a2adc4d676e039547025a"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/GA-returned.json": {
+      "bytes": 9323,
+      "sha256": "09bf361a6f404b0593655d108bd5b5501ad09a96b22363a8d3aabdc76e897a65"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/HI-inperson.json": {
+      "bytes": 426,
+      "sha256": "366e9e0819f36957dfd1686d279293ec52821c8d9a3009ae7c0dc54fde3921a0"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/HI-returned.json": {
+      "bytes": 426,
+      "sha256": "fd063e8d932ed3fcd43c53a09a8f317a92075b0d5588c1d0934dab0841c6b7f2"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/IA-inperson.json": {
+      "bytes": 14381,
+      "sha256": "6535da7a109bf58ad31357db1b236df3e5d26a94207c992befdc9f2f441d5f87"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/IA-returned.json": {
+      "bytes": 14275,
+      "sha256": "d38e5efba40ac4e13338c10800a83ba05f9bc3f4f6f4c121a4e76685f6ef8cb4"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/ID-inperson.json": {
+      "bytes": 2733,
+      "sha256": "de799f57ecfaf6656f4c42e7089256b58e2c8fbd28de4ec5f5ee1ba924d03972"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/ID-returned.json": {
+      "bytes": 6463,
+      "sha256": "0ba2555c2ef687526e96f6ce0ca03ed34af7679ad40265bf101dbbe3b19ed024"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/IL-inperson.json": {
+      "bytes": 6572,
+      "sha256": "92dfd49c05e478f66bd47ffd2a0318d3d9e5b593d3b833ac3e6e37e1c0fa2264"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/IL-returned.json": {
+      "bytes": 6572,
+      "sha256": "4eec1194fc5b3c6931470c93294d23f0d0bb88de118295e72ec758f23ba726a7"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/IN-inperson.json": {
+      "bytes": 5304,
+      "sha256": "77270559104e45a0c364e326ea8398146b44d36ecf535285087aeea9b62af872"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/IN-returned.json": {
+      "bytes": 5598,
+      "sha256": "7f9048ba2dab8f9f86cbdc33d2ebaa72b86d574e88fdd0d949c585ef446cf5a8"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/KS-inperson.json": {
+      "bytes": 15055,
+      "sha256": "0381d6e4c29782683c275b96329570f84f96e8d748aa1ab8b8d9f05547827200"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/KS-returned.json": {
+      "bytes": 14849,
+      "sha256": "307e7a9113286e41a936d1a350ed74d0fa36f8e26e827f5f10b1fcb0ef730e36"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/KY-inperson.json": {
+      "bytes": 18006,
+      "sha256": "64f69cf7fc6d65756efbfc230a7560fee757d5eabeff6211b9dca6df90e099b6"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/KY-returned.json": {
+      "bytes": 17675,
+      "sha256": "136c0d0dd6b764d946b460c50ce9675f8de2961276da583283342af64b27057d"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/LA-inperson.json": {
+      "bytes": 4117,
+      "sha256": "419eec02cdf8d29d15628404b2a2a340a4bc197661553ee2bc2936fec49934ca"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/LA-returned.json": {
+      "bytes": 4058,
+      "sha256": "fccc6fe6e8b692a2680d4dfe5dfe422bbede6a6573a7c9996bd9728bd9b5d37a"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/MD-returned.json": {
+      "bytes": 3794,
+      "sha256": "c9a08b012a6dc6de5a4886a4148e68a91df65b2d3acfbfa0f011243da68ba8e9"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/ME-inperson.json": {
+      "bytes": 113673,
+      "sha256": "2ac2be7d3fbfd00f67722118b7bfff6f57e9f28c0e0efd7b4a311bc4192395e2"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/ME-returned.json": {
+      "bytes": 113621,
+      "sha256": "53e93c8e8b9f71645a9e889cc28928b054dc61f64dbe5ac452cad9f55900b1a4"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/MI-returned.json": {
+      "bytes": 5128,
+      "sha256": "5897f44d6f504836918935371a214110de3ef5dba8121aad3849a7fe332a11a6"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/MN-inperson.json": {
+      "bytes": 5311,
+      "sha256": "4e0c9a280d7d356ba9a41d8080db7bb92b04a1276a2316573c9a4aaa5f6dc508"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/MN-returned.json": {
+      "bytes": 5319,
+      "sha256": "3306c49301036b2f63e01683c43b30075538c6d30b167afe5fbbe06e632c351f"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/MO-inperson.json": {
+      "bytes": 264,
+      "sha256": "e2ebb1f6250368ed3aab9dda3c1a2727bb66054da2fee341f426063aee8bcf38"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/MO-returned.json": {
+      "bytes": 256,
+      "sha256": "5af530f8d7d8f1f940d7b414688fb160377d9bd1407fb584688637d5cffee83e"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/MS-returned.json": {
+      "bytes": 4980,
+      "sha256": "f1fbf61d48476014c03c9845a41e123144dfd2a4593b3bec33affb0100ce8309"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/MT-returned.json": {
+      "bytes": 3542,
+      "sha256": "a6ab6f8d24a952a1573a1853ac70469e1c38b18d926124e1f29ca184cd7f1c79"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NC-inperson.json": {
+      "bytes": 20276,
+      "sha256": "5fb6a8abb2ac082358e265cd853b25b130aab03a24f00cf9b4ff25459edffc3f"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NC-returned.json": {
+      "bytes": 19712,
+      "sha256": "3a2260ca8ebcada579a6424fda614cf82ca8968b5d14ca3f6a09f0851eedc034"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/ND-inperson.json": {
+      "bytes": 198,
+      "sha256": "3401b9bc9e9915ea2114a4ecb51a8d2df033d1f58487f2b092507db752d496aa"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/ND-returned.json": {
+      "bytes": 3280,
+      "sha256": "67f11c56a128d46cdda5e26d752552df69d7371dcb4be90baf3672fd335dcddc"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NE-inperson.json": {
+      "bytes": 13140,
+      "sha256": "808c8b04d105cf9aa3f036ab24b3d1a9f9227fb212250f3e5b6bb46476cb3c57"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NE-returned.json": {
+      "bytes": 13278,
+      "sha256": "13df3ecba6f127fa11316de63c8be3b2c677a5d30c953e662ec3050a3bb544f1"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NJ-inperson.json": {
+      "bytes": 3355,
+      "sha256": "4eb7352362f9e6c77604ffee91d780293a02fc2bbdbe219c8381ca849deb91c7"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NJ-returned.json": {
+      "bytes": 3345,
+      "sha256": "a93b209244d82fce8dca6b8757171e192d78d0c59105bdf670705323b64f1246"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NM-inperson.json": {
+      "bytes": 5011,
+      "sha256": "316b8a9d1ce5076136bd811447c8832fe7d21c10c9fef0a465e44ab1afc08412"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NM-returned.json": {
+      "bytes": 4936,
+      "sha256": "765f9858acfe6b9cf245e64ee4729ae9fdaebe1e55af9e0b2994fd0646f4b6a4"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NV-inperson.json": {
+      "bytes": 2701,
+      "sha256": "2301d8a0c7ad5c2d2df07ed4741dac09eba02953516a4711228f9fdd52fc5072"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NV-returned.json": {
+      "bytes": 2713,
+      "sha256": "bca7fd478e60b3c87a85f83bc6abafc159bc2b63f5801ac7c413651f149a155f"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/NY-inperson.json": {
+      "bytes": 3906,
+      "sha256": "3f8fef0484299583d9994a4edc104bbd99c4843989ba0a587ff885bfc0c720e5"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/OH-inperson.json": {
+      "bytes": 5382,
+      "sha256": "c2d2bfb00ceeca8ca658ca85faa3b9aa11b7bc2aa9e2641a0898f2ff7a59f1a2"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/OH-returned.json": {
+      "bytes": 5356,
+      "sha256": "1e66b768f2a9158890997e1fb4f26985d6f27e505ac0716970f573129cc84a5b"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/OK-returned.json": {
+      "bytes": 15110,
+      "sha256": "d690ce145a3efb38155081015d8137aa2a96dfa383e372efc7fed13392f18f45"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/OR-returned.json": {
+      "bytes": 5511,
+      "sha256": "ba80c55096ddb729f35f1a936251269e2e1a275e1a553e8b445c4888e2da1c7c"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/PA-returned.json": {
+      "bytes": 13638,
+      "sha256": "5b7490ad61a0ff921d9b059afa6bfbd9447c94e30cc7a9167d7aca48118da546"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/RI-inperson.json": {
+      "bytes": 5995,
+      "sha256": "7df2254ad88f1b8bd649a492feee2ef2c5a512233d289dd77c63080c7f710774"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/RI-returned.json": {
+      "bytes": 5891,
+      "sha256": "0a05c56925348e2416e8ccdcf426f2f4c92510383c75838a830a92462044adce"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/SC-inperson.json": {
+      "bytes": 2979,
+      "sha256": "edbb97f58ab20d8dbf694cb95bc63cc270268b38deacf4c4ba9deaf4a294fc37"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/SC-returned.json": {
+      "bytes": 2912,
+      "sha256": "cc282fa625922eb4a45c79eb177746ea9fdbbea361f04d0fc9fe2fab678e856a"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/SD-returned.json": {
+      "bytes": 9535,
+      "sha256": "bec74c1dff7d9a2cfc40b85853475e6124b86db73ce7f9f51aaa63eb41efd30c"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/TN-inperson.json": {
+      "bytes": 5801,
+      "sha256": "236fa215cfa838255a17243b7fe5bc68c7de0faf48761265e681a7678a2ab9db"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/TX-inperson.json": {
+      "bytes": 15113,
+      "sha256": "59b30989e9dc9befe1d1da23788ba7bde6e8a9a1ef46b0d508e476f81a5ebc53"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/TX-returned.json": {
+      "bytes": 14761,
+      "sha256": "f147c27bd29a986b4b7dbb3b81107da24756fba5bbce98646f604a89b0188d10"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/UT-inperson.json": {
+      "bytes": 4279,
+      "sha256": "c76b20488bf8b844dc0f10ffd5482c9de4d8db5213fb745faceb107bb048b0cc"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/UT-returned.json": {
+      "bytes": 4418,
+      "sha256": "c44dee292217fd931f6242b2eb78627febb19a1c86c1e7df32b929963f04c4c2"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/VA-inperson.json": {
+      "bytes": 8466,
+      "sha256": "c3dbe111f5dac1e52be8bb35c4f446d8319d889e224f5dfc5bfd9e07e78fd0e6"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/VA-returned.json": {
+      "bytes": 8357,
+      "sha256": "6c2edfe4afd824aa50af091ead8f39b388a6541c1c3b6af8e398e6c82dfe07fe"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/VT-inperson.json": {
+      "bytes": 191,
+      "sha256": "b7a2a5c9e654a19c5339178dc549251fa04ee04c8531c79ebf1e4fc05a1f4d9f"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/VT-returned.json": {
+      "bytes": 190,
+      "sha256": "14733ed0e10732c2c545194b5a148174cb829b025ff8958462b876c643b3a32c"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/WA-returned.json": {
+      "bytes": 2536,
+      "sha256": "db1c82469ef71e124732358a40faef3f4383755a2109b197511484512811cb49"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/WI-inperson.json": {
+      "bytes": 4427,
+      "sha256": "94eeb0332ba168568a6a22536fef85291fedc5bf2348cbcb54f031787034a07f"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/WI-returned.json": {
+      "bytes": 4441,
+      "sha256": "24174fbbf4d3d587a7c864f9ccf69b2311e019a83f9227f635c9af6c35d48d76"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/WV-inperson.json": {
+      "bytes": 8090,
+      "sha256": "f1a23447f70842775af8779d7c0c55fc52fc0e0e1d2780f2e4752367a1a64986"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/WV-returned.json": {
+      "bytes": 7845,
+      "sha256": "6856e83d43af68f591136b88b49e7de156720b4cabec9cc8a281c2292ac75fb4"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/originals/WY-returned.json": {
+      "bytes": 3538,
+      "sha256": "d4dd7b5f25db54655130f2c462d1cb8b15fc0f654c27a8a6b491d82a1efd1321"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/source-context.json": {
+      "bytes": 5098,
+      "sha256": "fc68a9cd8848829edd273223657d48669ba0c7db9b5696bd60dada6c59254d05"
+    },
+    "data/county-source-reviews/20261109-provider-county-frames-01/legacy-early-voting.csv": {
+      "bytes": 1156534,
+      "sha256": "628e7bbf3676374e29be8a388de487d9a5c4be77269bc9b9011df74d669f671b"
+    },
+    "data/county-results/20261107T125502Z/geometry/AK.geojson.gz": {
+      "bytes": 535897,
+      "sha256": "1ac6b1724c9f46750340521d472d4c359bb86bef4affa12249da8ec78dec2a07"
+    },
+    "data/county-results/20261105-house-02/geometry/AL.geojson.gz": {
+      "bytes": 957563,
+      "sha256": "4ef6f03ec7f8f65ecae37a418d25e5c803775458048806a9e28110a1e9ecc6b0"
+    },
+    "data/county-results/20261105-house-02/geometry/AR.geojson.gz": {
+      "bytes": 1816885,
+      "sha256": "9ed51d2d19200444c49a9e2fde9edd5ab9797ea81842c470b27fcfa65e65cb55"
+    },
+    "data/county-results/20261105-house-02/geometry/AZ.geojson.gz": {
+      "bytes": 610376,
+      "sha256": "4dfb2870e0934e6f60c0f11cc0bd0d91f178a4b91b9a47fabfd9e689d3a42bed"
+    },
+    "data/county-results/20261105-house-02/geometry/CA.geojson.gz": {
+      "bytes": 1744498,
+      "sha256": "1ad1c97f14e5ce3cfcdc977bd3d5142f364f26552c691b68dd170d927e82cfca"
+    },
+    "data/county-results/20261105-house-02/geometry/CO.geojson.gz": {
+      "bytes": 907484,
+      "sha256": "69c2b7e8caa4bfe29deb77e6565286376791b9e345fb6c5bfdb2db6077838475"
+    },
+    "data/county-results/20261105-house-02/geometry/CT.geojson.gz": {
+      "bytes": 134272,
+      "sha256": "91db697ba37f5d0ffce3f547672068e27354e2693fa2e757142ecdac9457abdb"
+    },
+    "data/county-results/20261105-house-02/geometry/DE.geojson.gz": {
+      "bytes": 62441,
+      "sha256": "1166cbe39d9ff0dda0cb3122ba784913cb2a1648d7c0ead49d26c13ca1980aed"
+    },
+    "data/county-results/20261105-house-02/geometry/FL.geojson.gz": {
+      "bytes": 1315336,
+      "sha256": "6e9c973fe0ae14c9f7e93dff072bfde3e3259b9a9c43f1cf647d0f3723830dea"
+    },
+    "data/county-results/20261105-house-02/geometry/GA.geojson.gz": {
+      "bytes": 2855620,
+      "sha256": "219c1cd18773865615eebeb9eeccc92e3095dcab0b1af4b4150226d4af105249"
+    },
+    "data/county-results/20261107T125502Z/geometry/HI.geojson.gz": {
+      "bytes": 64336,
+      "sha256": "7893f2321b420c0d908a4b0d75ad8abfb92c602da256a9fb5160eba6b6db5089"
+    },
+    "data/county-results/20261105-house-02/geometry/IA.geojson.gz": {
+      "bytes": 745357,
+      "sha256": "0589f3b0dafa88ff8936a0b2e1613cb57de5eda405313ac88667b47517a0032a"
+    },
+    "data/county-results/20261105-house-02/geometry/ID.geojson.gz": {
+      "bytes": 1212218,
+      "sha256": "73b19435d5cc579acb37d6ac03b080e0121270c960f6792f1eb631db71f18574"
+    },
+    "data/county-results/20261105-house-02/geometry/IL.geojson.gz": {
+      "bytes": 1046857,
+      "sha256": "ddc8ec595021ed04413207a23410d297a8c538d4c5ebbbe135f37c5d8bde5039"
+    },
+    "data/county-results/20261105-house-02/geometry/IN.geojson.gz": {
+      "bytes": 863475,
+      "sha256": "ddcaae3590bc8040717b611fd4aaf7000b9a359d2530b99b5a7776ed926a579c"
+    },
+    "data/county-results/20261105-house-02/geometry/KS.geojson.gz": {
+      "bytes": 831504,
+      "sha256": "cdaa1428516a3a75a94a022e0a57009e42a28e17348cda5861a144bb23182082"
+    },
+    "data/county-results/20261105-house-02/geometry/KY.geojson.gz": {
+      "bytes": 1813356,
+      "sha256": "7b53087b5e6fd66d226553f233cc3569cb693622a11f109d5897cc993e331fa6"
+    },
+    "data/county-results/20261105-house-02/geometry/LA.geojson.gz": {
+      "bytes": 1288586,
+      "sha256": "7eeec4d3ebb2ca1fd2897e5f914e925a3b1fb88748bc25c51bd7977bfd930eac"
+    },
+    "data/county-results/20261105-house-02/geometry/MA.geojson.gz": {
+      "bytes": 242307,
+      "sha256": "3cfb10d32d0af6a84c7abc6ff62538ab62607bd6e243be5f283b0e45aee68f40"
+    },
+    "data/county-results/20261105-house-02/geometry/MD.geojson.gz": {
+      "bytes": 566838,
+      "sha256": "d393ff433013bdcb4b496cc4228620d90a6156f7e8d056320bc9c3610bdad924"
+    },
+    "data/county-results/20261105-house-02/geometry/MI.geojson.gz": {
+      "bytes": 463584,
+      "sha256": "cbe4a45667430678549ea8c28e5b0a43652b914373ef41f9d75e6adb0fc2fa87"
+    },
+    "data/county-results/20261105-house-02/geometry/MN.geojson.gz": {
+      "bytes": 1190931,
+      "sha256": "ef2672107b15e32332b185baa3e878ec64133dd0ee272b288ead7af51516c13a"
+    },
+    "data/county-results/20261105-house-02/geometry/MO.geojson.gz": {
+      "bytes": 1311381,
+      "sha256": "adf0fe9ec17e9643a3c370b63a85a90661c6d68b0f0e6f5f932a6b59fb42d6d7"
+    },
+    "data/county-results/20261105-house-02/geometry/MS.geojson.gz": {
+      "bytes": 1163119,
+      "sha256": "f92866ca5d6384cc3db5caaa52a66a442753296f8cf8de06ec62a355b32066ea"
+    },
+    "data/county-results/20261105-house-02/geometry/MT.geojson.gz": {
+      "bytes": 1435712,
+      "sha256": "2e429197f0b18238cb850019d7ebd19e87adc773438352ea1b317e9487a82ecc"
+    },
+    "data/county-results/20261105-house-02/geometry/NC.geojson.gz": {
+      "bytes": 2819217,
+      "sha256": "c8e748cd82e869d9da4507ebc2f6996dd8eec8099ca96603bbfda76eb609b1a9"
+    },
+    "data/county-results/20261105-house-02/geometry/ND.geojson.gz": {
+      "bytes": 731852,
+      "sha256": "2725f586b52b9f7949086f03b0acb2ea0959dfd01a14bb56268d2025b1ec1951"
+    },
+    "data/county-results/20261105-house-02/geometry/NE.geojson.gz": {
+      "bytes": 730650,
+      "sha256": "d9f70281006d90a95fb77c21314de01a906b48c25875ce9d3db6f74f34e2ca7d"
+    },
+    "data/county-results/20261105-house-02/geometry/NH.geojson.gz": {
+      "bytes": 223600,
+      "sha256": "689b0b057e5625f5a30da528b4417b405e81c4ba7ae39ac6d5d449dad8626efd"
+    },
+    "data/county-results/20261105-house-02/geometry/NJ.geojson.gz": {
+      "bytes": 843580,
+      "sha256": "1aa41dc4965b02375bdeb52a4f10285d0e680ba21ab793ef663ff18961b6c19d"
+    },
+    "data/county-results/20261105-house-02/geometry/NM.geojson.gz": {
+      "bytes": 379021,
+      "sha256": "97abeb2b992f05db92aae2385558e2584cd685493525f3e45bc7ecdfd2d2dfe6"
+    },
+    "data/county-results/20261105-house-02/geometry/NV.geojson.gz": {
+      "bytes": 257169,
+      "sha256": "d77d017973187fd7a42204c58301daf804594c39394b85a888633d304f46d511"
+    },
+    "data/county-results/20261105-house-02/geometry/NY.geojson.gz": {
+      "bytes": 747887,
+      "sha256": "d47b51ec1da084ee36aaefafc21bebe506a4e5e245a529139968223884d5595a"
+    },
+    "data/county-results/20261105-house-02/geometry/OH.geojson.gz": {
+      "bytes": 769693,
+      "sha256": "a9cb5f455b746d94a0ccf9c18c36d804ef0e728d9f63e119da69b40ce5e764e8"
+    },
+    "data/county-results/20261105-house-02/geometry/OK.geojson.gz": {
+      "bytes": 972752,
+      "sha256": "c0707afad36682624a155b051f66cb2ec5a864c03d6dc82d763abd579e98edb9"
+    },
+    "data/county-results/20261105-house-02/geometry/OR.geojson.gz": {
+      "bytes": 1051316,
+      "sha256": "c4b28b42e815e0870ee309ba21edc690479b7efce1fb68f5930dbbd05fcfcdf2"
+    },
+    "data/county-results/20261105-provider-overlap-01/geometry/PA.geojson.gz": {
+      "bytes": 1178834,
+      "sha256": "76496baea4bf48228d8c9891aafdf76090f1267764ea38f4305889e36d9249e6"
+    },
+    "data/county-results/20261105-house-02/geometry/RI.geojson.gz": {
+      "bytes": 45262,
+      "sha256": "81c95c061de31db0e589f8bf3028d36b911d63b078d70d3f3f1928c7a47f4dab"
+    },
+    "data/county-results/20261105-house-02/geometry/SC.geojson.gz": {
+      "bytes": 1328516,
+      "sha256": "48fec02fa5c997e7ef0d0a64c050d3773c4404410998c0b605b12a0ce1e6bc71"
+    },
+    "data/county-results/20261105-house-02/geometry/SD.geojson.gz": {
+      "bytes": 1101667,
+      "sha256": "09b8eacb1af342542991c29531990e23344d00863ec81fadf73fa7e3bed74376"
+    },
+    "data/county-results/20261105-house-02/geometry/TN.geojson.gz": {
+      "bytes": 1698324,
+      "sha256": "458587d28a6301475c907be4e2a0385e05b5acaad2cf622baafcae0578e8b67d"
+    },
+    "data/county-results/20261105-house-02/geometry/TX.geojson.gz": {
+      "bytes": 3922482,
+      "sha256": "6dec632a2eeb7ec21f9da35873e154636aa42be3681d6890e1ba23023061cad5"
+    },
+    "data/county-results/20261105-house-02/geometry/UT.geojson.gz": {
+      "bytes": 1047201,
+      "sha256": "4e93c0aca53e7a701361351263b66d15ade19a44d97db01e63e444091974eb48"
+    },
+    "data/county-results/20261105-house-02/geometry/VA.geojson.gz": {
+      "bytes": 3273623,
+      "sha256": "502e9646e382b0e4ce74846648f0f4614eb19922516dd44ccdc4f95d1140ecf5"
+    },
+    "data/county-results/20261105-house-02/geometry/VT.geojson.gz": {
+      "bytes": 162684,
+      "sha256": "b487d60a9b921b9e5db11359ca659c35fd7e5dfdff6c2ecc54b5bd7a3794a863"
+    },
+    "data/county-results/20261105-house-02/geometry/WA.geojson.gz": {
+      "bytes": 850996,
+      "sha256": "9f86f0ff1a12b3fd6a0033aa93902cac7311fefec3f90049a074e806f109abad"
+    },
+    "data/county-results/20261105-house-02/geometry/WI.geojson.gz": {
+      "bytes": 664030,
+      "sha256": "4f53e9b43faa1cf6dd9e1f9b893993fe6f4aa42a78cfbb1afbeb39d3f6db5f74"
+    },
+    "data/county-results/20261105-house-02/geometry/WV.geojson.gz": {
+      "bytes": 988736,
+      "sha256": "9114e1c6309189a97408bed9571c9f3e2403629129c373dc2cebe032954796a7"
+    },
+    "data/county-results/20261105-house-02/geometry/WY.geojson.gz": {
+      "bytes": 381434,
+      "sha256": "384538df298546097d10fd3f7b6bc959aa7f054e8de7e635e029e13057aff6d3"
+    },
+    "public/scripts/provider-county-scopes.js": {
+      "bytes": 3691,
+      "sha256": "32db206ded3bc8d6242d2a47c39ac5acb9dd52ea789291cb464af0bc77cfb99c"
+    }
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-provider-county-frames-20261109-01/complete-analysis.zip",
+  "all_state_mode_queries": 102,
+  "native_election_context_qualified": false,
+  "rates_approved": false
+}

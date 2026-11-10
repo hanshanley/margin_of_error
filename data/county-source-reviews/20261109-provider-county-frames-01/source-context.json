@@ -1,0 +1,234 @@
+{
+  "dataset_directory_id": "20261104T220424Z",
+  "source_snapshot_id": "20261104T220425Z",
+  "collector_election_date": "2026-11-03",
+  "collector_retrieved_at": "2026-11-04T22:04:25.049960+00:00",
+  "native_election_id_qualified": false,
+  "rates_approved": false,
+  "source_provider": "civicAPI early activity",
+  "states": [
+    {
+      "state_code": "AL",
+      "state": "Alabama"
+    },
+    {
+      "state_code": "AK",
+      "state": "Alaska"
+    },
+    {
+      "state_code": "AZ",
+      "state": "Arizona"
+    },
+    {
+      "state_code": "AR",
+      "state": "Arkansas"
+    },
+    {
+      "state_code": "CA",
+      "state": "California"
+    },
+    {
+      "state_code": "CO",
+      "state": "Colorado"
+    },
+    {
+      "state_code": "CT",
+      "state": "Connecticut"
+    },
+    {
+      "state_code": "DE",
+      "state": "Delaware"
+    },
+    {
+      "state_code": "DC",
+      "state": "District of Columbia"
+    },
+    {
+      "state_code": "FL",
+      "state": "Florida"
+    },
+    {
+      "state_code": "GA",
+      "state": "Georgia"
+    },
+    {
+      "state_code": "HI",
+      "state": "Hawaii"
+    },
+    {
+      "state_code": "ID",
+      "state": "Idaho"
+    },
+    {
+      "state_code": "IL",
+      "state": "Illinois"
+    },
+    {
+      "state_code": "IN",
+      "state": "Indiana"
+    },
+    {
+      "state_code": "IA",
+      "state": "Iowa"
+    },
+    {
+      "state_code": "KS",
+      "state": "Kansas"
+    },
+    {
+      "state_code": "KY",
+      "state": "Kentucky"
+    },
+    {
+      "state_code": "LA",
+      "state": "Louisiana"
+    },
+    {
+      "state_code": "ME",
+      "state": "Maine"
+    },
+    {
+      "state_code": "MD",
+      "state": "Maryland"
+    },
+    {
+      "state_code": "MA",
+      "state": "Massachusetts"
+    },
+    {
+      "state_code": "MI",
+      "state": "Michigan"
+    },
+    {
+      "state_code": "MN",
+      "state": "Minnesota"
+    },
+    {
+      "state_code": "MS",
+      "state": "Mississippi"
+    },
+    {
+      "state_code": "MO",
+      "state": "Missouri"
+    },
+    {
+      "state_code": "MT",
+      "state": "Montana"
+    },
+    {
+      "state_code": "NE",
+      "state": "Nebraska"
+    },
+    {
+      "state_code": "NV",
+      "state": "Nevada"
+    },
+    {
+      "state_code": "NH",
+      "state": "New Hampshire"
+    },
+    {
+      "state_code": "NJ",
+      "state": "New Jersey"
+    },
+    {
+      "state_code": "NM",
+      "state": "New Mexico"
+    },
+    {
+      "state_code": "NY",
+      "state": "New York"
+    },
+    {
+      "state_code": "NC",
+      "state": "North Carolina"
+    },
+    {
+      "state_code": "ND",
+      "state": "North Dakota"
+    },
+    {
+      "state_code": "OH",
+      "state": "Ohio"
+    },
+    {
+      "state_code": "OK",
+      "state": "Oklahoma"
+    },
+    {
+      "state_code": "OR",
+      "state": "Oregon"
+    },
+    {
+      "state_code": "PA",
+      "state": "Pennsylvania"
+    },
+    {
+      "state_code": "RI",
+      "state": "Rhode Island"
+    },
+    {
+      "state_code": "SC",
+      "state": "South Carolina"
+    },
+    {
+      "state_code": "SD",
+      "state": "South Dakota"
+    },
+    {
+      "state_code": "TN",
+      "state": "Tennessee"
+    },
+    {
+      "state_code": "TX",
+      "state": "Texas"
+    },
+    {
+      "state_code": "UT",
+      "state": "Utah"
+    },
+    {
+      "state_code": "VT",
+      "state": "Vermont"
+    },
+    {
+      "state_code": "VA",
+      "state": "Virginia"
+    },
+    {
+      "state_code": "WA",
+      "state": "Washington"
+    },
+    {
+      "state_code": "WV",
+      "state": "West Virginia"
+    },
+    {
+      "state_code": "WI",
+      "state": "Wisconsin"
+    },
+    {
+      "state_code": "WY",
+      "state": "Wyoming"
+    }
+  ],
+  "limitations": [
+    "This is a saved snapshot, not a live feed. Retrieval time is not the source's data date.",
+    "All 50 states and DC are assessed against the public provider; missing there does not mean unavailable everywhere.",
+    "Early-voting and returned-mail counts exclude other voting and are not full-election turnout.",
+    "Never add official ballots to early-voting counts, or demographic dimensions to one another.",
+    "Party registration is summed out; no candidate votes or preferences are normalized.",
+    "Demographic counts have no matched population denominator; no demographic turnout rates are estimated.",
+    "Group bins and source dates differ by state; no pooled national demographic percentage is constructed.",
+    "A zero or undated demographic response is not evidence that no members of that group voted.",
+    "Official registered, active-registered, and estimated-eligible voter percentages are different measures.",
+    "Source-region names are not assumed to be precincts or certified election-year boundaries.",
+    "No 2026 education or national precinct turnout is inferred. Historical series remain separate."
+  ],
+  "provider": {
+    "name": "civicAPI",
+    "url": "https://www.civicapi.org/early-vote",
+    "terms": "https://www.civicapi.org/api-documentation",
+    "role": "Public aggregate early-voting provider; not a certified government turnout series."
+  }
+}

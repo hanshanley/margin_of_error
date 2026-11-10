@@ -93,16 +93,23 @@ const reviewedMeasure = (row: typeof reviewedCounties[number]) =>
 	'participation_measure_label' in row ? row.participation_measure_label
 		: 'participation_measure_literal' in row ? row.participation_measure_literal : undefined;
 const additionalParticipation = loadAdditionalParticipation({ nativeCountyParents: true });
-const countyParentDownload = (row: typeof additionalParticipation.counties[number]) =>
-	'county_parent_complete_download_url' in row ? String(row.county_parent_complete_download_url) : undefined;
+const countyParentDownload = (row: typeof additionalParticipation.counties[number] | undefined) =>
+	row && 'county_parent_complete_download_url' in row ? String(row.county_parent_complete_download_url) : undefined;
+const countyModeLabel = (row: typeof additionalParticipation.counties[number] | undefined) =>
+	row && 'participation_measure_label' in row ? String(row.participation_measure_label) : 'Source county activity';
 const countyContextReview = loadCountyContextReview([
 	...loadAdditionalParticipation().counties, ...reviewedCounties,
 ]);
-const additionalParticipationStates = [...new Set(additionalParticipation.counties.map(row => row.state_code))]
+const additionalParticipationStates = [...new Set([...additionalParticipation.counties.map(row => row.state_code),
+	...Object.keys(additionalParticipation.county_frames || {})])]
 	.map(code => ({
 		code, name: ufRows.find(row => row.STATE_ABV === code)?.STATE ?? code,
 		counties: additionalParticipation.counties.filter(row => row.state_code === code),
-		countyParentDownload: countyParentDownload(additionalParticipation.counties.find(row => row.state_code === code)!),
+		countyParentDownload: countyParentDownload(additionalParticipation.counties.find(row => row.state_code === code)),
+		sourceModes: Object.entries(additionalParticipation.county_frames?.[code] || {}).map(([mode, rows]) => ({
+			mode, counties: rows.length, label: countyModeLabel(rows[0]),
+			completeDownload: rows[0]?.complete_download_url,
+		})),
 		units: additionalParticipation.precincts.filter(row => row.state_code === code).length,
 		nongeographic: additionalParticipation.nongeographic.filter(row => row.state_code === code),
 	}));
@@ -649,10 +656,13 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		<section class="participation-current" aria-labelledby="additional-participation-title"
 			data-additional-participation={JSON.stringify(additionalParticipationStates.map(row => ({
 				state_code: row.code, localities: row.counties.length, reporting_units: row.units,
+				source_modes: row.sourceModes.map(mode => mode.mode),
+				source_mode_counties: Math.max(0, ...row.sourceModes.map(mode => mode.counties)),
 			})))}>
-			<h2 id="additional-participation-title">More native participation observations · 2026</h2>
+			<h2 id="additional-participation-title">More source participation observations · 2026</h2>
 			<p>Actual participation observations from {additionalParticipationStates.length} additional state sources,
-				not candidate-vote totals or UF estimates. Counties, independent cities and municipalities retain
+				not candidate-vote totals or UF estimates. Native observations and separately labeled provider
+				early activity keep their own dates, definitions and source context. Counties, independent cities and municipalities retain
 				their native scope. Reporting-unit tables do not establish county totals:
 				those rows are available separately, not summed. Missing denominators and withheld rates are not zero.
 				Only separately checked county identities are mapped. Idaho and North Dakota use explicit
@@ -662,17 +672,21 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				statewide table's count and registrations; the current county map selects the statewide
 				source once, never adds the two observations, and does not infer a newer source date.</p>
 			{additionalParticipationStates.map(group => <details>
-				<summary>{group.name}: {group.counties.length} counties / localities
+				<summary>{group.name}: {group.counties.length} county / locality snapshots
+					{group.sourceModes.length ? ` · ${group.sourceModes.length} separate county source-mode frames` : ''}
 					{group.units ? ` · ${formatNumber(group.units)} source reporting-unit observations` : ''}</summary>
 				<p><a href={`/participation-local/${group.code}.json.gz`}>All imported participation observations (JSON · gzip)</a>
-					{' · '}<a href={group.counties[0].complete_download_url}>Complete original source package</a>
+					{' · '}<a href={group.counties[0]?.complete_download_url ?? group.sourceModes[0]?.completeDownload}>Complete original source package</a>
 					{group.countyParentDownload && <>
 						{' · '}<a href={group.countyParentDownload}>
 							Complete county-parent queries and sufficient inputs (ZIP)</a>
 					</>}</p>
+				{group.sourceModes.map(mode => <p>{mode.label}: {mode.counties} county observations.
+					{' '}<a href={mode.completeDownload}>Complete source-mode query and inputs</a>.
+					{' '}Frames are not added or treated as full-election turnout.</p>)}
 				{group.nongeographic.map(row => <p>{row.county}: {row.ballots === null ? 'Not supplied' : formatNumber(row.ballots)}
 					{' '}ballots in a separate nongeographic reporting unit, not assigned to a county or municipality.</p>)}
-				<div class="table-wrap" tabindex="0" role="region" aria-label={`${group.name} native participation`}>
+				{group.counties.length > 0 && <div class="table-wrap" tabindex="0" role="region" aria-label={`${group.name} native participation`}>
 					<table>
 						<caption>Native locality observations; reporting-unit counts remain separately available in the complete JSON.</caption>
 						<thead><tr><th scope="col">Locality</th><th scope="col">Scope</th>
@@ -686,7 +700,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 							<td>{row.source_rows || 'No unit table connected here'}</td>
 						</tr>)}</tbody>
 					</table>
-				</div>
+				</div>}
 			</details>)}
 		</section>
 		<section id="county-context-review" class="participation-current" aria-labelledby="county-context-title"

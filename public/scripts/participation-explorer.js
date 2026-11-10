@@ -398,21 +398,22 @@ function stateParticipationRows() {
           return { counties: [], precincts: [], additional_error: error.message };
         }));
       const additional = await additionalLocal.get(code);
-      const scoped = hasCountySourceMode(code, $("mode").value);
+      const combined = [...data.counties, ...additional.counties.filter(row =>
+        !data.counties.some(other => other.state_code === row.state_code
+          && countyName(other.county) === countyName(row.county)))];
       let selectedCounties;
       try {
-        selectedCounties = selectCountySourceFrame(additional, code, $("mode").value);
+        selectedCounties = selectCountySourceFrame({ ...additional, counties: combined }, code, $("mode").value);
       } catch (error) {
         additionalLocal.delete(code);
         throw error;
       }
-      const baseCounties = scoped ? data.counties.filter(row => row.state_code !== code) : data.counties;
+      const scoped = hasCountySourceMode(code, $("mode").value) || selectedCounties !== combined;
+      const baseCounties = scoped ? combined.filter(row => row.state_code !== code) : combined;
       return { ...data,
-        counties: [...baseCounties, ...selectedCounties.filter(row =>
-          !baseCounties.some(other => other.state_code === row.state_code
-            && countyName(other.county) === countyName(row.county)))],
+        counties: scoped ? [...baseCounties, ...selectedCounties] : combined,
         precincts: scoped ? [] : [...data.precincts, ...additional.precincts],
-        nongeographic: additional.nongeographic || [], additional_error: additional.additional_error,
+        nongeographic: scoped ? [] : additional.nongeographic || [], additional_error: additional.additional_error,
       };
     }
     const countyName = value => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
@@ -466,6 +467,8 @@ function stateParticipationRows() {
         const counties = data?.counties.filter(row => row.state_code === code) ?? [];
         const administrations = code === "HI" && counties.length === 4
           && counties.every(row => row.geography_level === "election_administration");
+        const providerActivity = counties.length > 0
+          && counties.every(row => row.source_provider === "civicAPI early activity");
         if (!counties.length) {
           container.replaceChildren(html("h4", "", "2026 local reporting"),
             html("p", "selection-note", data.additional_error
@@ -490,7 +493,9 @@ function stateParticipationRows() {
           const overview = html("div", "substate-detail"); overview.id = "reviewed-county-overview";
           overview.append(html("p", "selection-note",
             `${additional.length} reviewed ${administrations ? "election administrations" : code === "DC" ? "county-equivalent observation" : "county / locality observations"}. `
-            + "Native counts and source reporting units, not UF population-based turnout. Missing county totals and withheld rates are not zero. "
+            + (providerActivity ? "Provider-reported early activity, not official all-method ballots, unique people or UF turnout. "
+              : "Native counts and source reporting units, not UF population-based turnout. ")
+            + "Missing county totals and withheld rates are not zero. "
             + "Source coverage does not establish finished counting. "
             + (administrations ? "Maui includes Kalawao. Reporting areas group complete 2026 Census components; no separate Maui/Kalawao counts or rates are allocated."
               : code === "RI"
@@ -501,7 +506,7 @@ function stateParticipationRows() {
           for (const row of previews) {
             const button = html("button", "selection-link",
               row.ballots === null ? `${row.county}: ${fmt(row.source_rows)} source reporting-unit observations; county total not supplied`
-                : administrations ? `${row.county}: ${fmt(row.ballots)} ${participationLabel(row)} · no rate`
+                : administrations || providerActivity ? `${row.county}: ${fmt(row.ballots)} ${participationLabel(row)} · no rate`
                   : `${row.county}: ${fmt(row.ballots)} ${participationLabel(row) || "ballots"} / ${fmt(row.denominator)} ${electorateLabel(row)} (${pct(row.reported_pct)})`);
             button.type = "button"; button.dataset.countyId = row.county_id;
             button.addEventListener("click", () => { select.value = row.county_id; select.dispatchEvent(new Event("change")); });
@@ -653,6 +658,8 @@ function stateParticipationRows() {
       const observations = data?.counties.filter(row => row.state_code === code) ?? [];
       const reference = observations.find(row => row.reference_geometry)?.reference_geometry;
       const administrations = code === "HI" && reference?.geography_scope === "native_election_administration";
+      const providerActivity = observations.length > 0
+        && observations.every(row => row.source_provider === "civicAPI early activity");
       const file = reference?.url || state.context?.geometry.county?.[code];
       if (!observations.length && state.countyResults?.year === 2026 && state.countyResults.coverage[code])
         return drawCountyCountFallback(map, selected, code, 2026, token,
@@ -759,7 +766,7 @@ function stateParticipationRows() {
       let observed = 0;
       const countsOnly = !counties.some(row => row.reported_pct != null);
       const measures = [...new Set(counties.map(participationLabel).filter(Boolean))];
-      const countLabel = code === "MD" && counties.every(row => row.cast_ballot_count_qualified === false)
+      const countLabel = !providerActivity && code === "MD" && counties.every(row => row.cast_ballot_count_qualified === false)
         ? "Cards Cast (not unique voters)" : measures.length === 1 ? measures[0]
           : measures.length ? "Source participation count" : "Ballots reported";
       const availableCounts = counties.filter(row => row.ballots != null).length;
@@ -806,8 +813,11 @@ function stateParticipationRows() {
       setTable(counties, [["county", administrations ? "Election administration" : "County"], ["ballots", countLabel],
         ["denominator", "Source electorate"], ["reported_pct", "Reported-ballot fraction"],
         ["reported_units", "Precincts reporting"], ["total_units", "Total precincts"], ["quality", "Notes"]]);
-      header("2026 midterms · unofficial administrative counts", `Local participation in ${state.selectedState}`,
-        countsOnly ? (code === "WV"
+      header(providerActivity ? "2026 project · provider-reported source activity"
+        : "2026 midterms · unofficial administrative counts", `Local participation in ${state.selectedState}`,
+        countsOnly ? (providerActivity
+          ? `${countLabel}. This is provider-reported source activity, not official full-election turnout, certified ballots or unique people.`
+          : code === "WV"
           ? `${countLabel}. Counts are source-specific snapshots, not full-election turnout rates; early, returned and all-method frames stay separate.`
           : code === "MD"
           ? "Color shows native Cards Cast, not unique voters or qualified cast ballots. No county turnout rates are qualified."
@@ -815,12 +825,15 @@ function stateParticipationRows() {
           : "Reported ballots / source-defined electorate. Select a county, then a precinct or reporting row in the sidebar.",
         (countsOnly ? "Not final turnout. Color shows counts, not a fraction; counties have different population sizes. "
           : "Not final turnout. County colors use their own reviewed reported fraction, not the UF state population denominator. Counts with missing or withheld rates remain gray. ")
+        + (providerActivity ? "Native source dates are retained below and differ across frames; collector 2026 context is not an independently qualified native election identifier. Early and returned frames are never added. " : "")
         + (administrations ? "Four election administrations use grouped full 2026 Census county components; Maui includes Kalawao. No separate Maui/Kalawao count is supplied, allocated or duplicated. These are not certified precinct boundaries. "
-          : reference ? "Whole-county native parents use checksum-verified 2026 Census county references, not precincts. "
+          : providerActivity ? "Provider-region identities are separately matched to the full 2026 Census county reference; these are not native FIPS, official county parents or precincts. "
+            : reference ? "Whole-county native parents use checksum-verified 2026 Census county references, not precincts. "
           : "Separately reviewed identity joins retain the original source records. Approximate 2024 Census counties are contextual shapes, not certified 2026 election or precinct boundaries.")
         + (code === "WV" ? "Early in-person and returned tables are through October 31, released November 2; native clocks/timezones are absent. "
           + "Full-election county reports are separate November 3 snapshots, not a common statewide cutoff." : ""));
-      if (countsOnly) countLegend(maximum, code === "WV" ? countLabel + " · no rate"
+      if (countsOnly) countLegend(maximum, providerActivity ? countLabel + " · no rate"
+        : code === "WV" ? countLabel + " · no rate"
         : code === "MD" ? "Native Cards Cast · not unique voters" : "Source participation counts · no rate");
       else ramp();
       $("geography-note").textContent = (administrations
@@ -2414,14 +2427,21 @@ function stateDetail() {
       && state.additionalCoverage.some(row => row.state_code === "HI" && row.localities === 4);
     const countyAudit = administrations ? { counties: 4 }
       : state.current?.local_audit?.find(row => row.state_code === stateCode() && row.counties > 0)
-        || state.countyContext?.coverage[stateCode()];
+        || state.countyContext?.coverage[stateCode()]
+        || (() => {
+          const activity = state.additionalCoverage.find(row => row.state_code === stateCode())?.source_mode_counties;
+          return activity ? { counties: activity, provider_activity: true } : null;
+        })();
     if (countyAudit) {
       const button = html("button", "selection-link", administrations
-        ? "Show 4 election administrations" : `Show ${fmt(countyAudit.counties)} counties' participation`);
+        ? "Show 4 election administrations" : countyAudit.provider_activity
+          ? `Show ${fmt(countyAudit.counties)} county source-activity counts`
+          : `Show ${fmt(countyAudit.counties)} counties' participation`);
       button.id = "show-current-counties"; button.type = "button";
       button.addEventListener("click", () => {
         $("map-level").value = "county"; $("map-color").value = "turnout";
-        if (!ufMode() && !hasCountySourceMode(stateCode(), $("mode").value)) $("mode").value = "official";
+        if (!ufMode() && !hasCountySourceMode(stateCode(), $("mode").value))
+          $("mode").value = countyAudit.provider_activity ? "available" : "official";
         render();
         const item = state.map?.stateItems?.get(stateCode());
         if (item) fit(item.bounds);

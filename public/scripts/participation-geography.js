@@ -56,13 +56,24 @@ export function qualifiedIndianaMonroePrecinct(p) {
 }
 
 export function hasCountySourceMode(code, mode) {
-  return code === "WV" && ["in_person_early", "mail_returned"].includes(mode);
+  return code === "WV" && ["in_person_early", "mail_returned"].includes(mode)
+    || Boolean(providerCountyScopes[code]?.modes.includes(mode));
 }
 
 export function selectCountySourceFrame(data, code, mode) {
+  if (mode === "available" && providerCountyScopes[code]
+    && !data.counties.some(row => row.state_code === code && row.ballots != null)) {
+    const preferred = ["in_person_early", "mail_returned"].find(m => providerCountyScopes[code].modes.includes(m));
+    return selectCountySourceFrame(data, code, preferred);
+  }
   if (!hasCountySourceMode(code, mode)) return data.counties;
   const rows = data.county_frames?.[mode];
-  if (!Array.isArray(rows) || rows.length !== 55
+  if (Array.isArray(rows) && rows.length && rows.every(row => row.source_provider === "civicAPI early activity")) {
+    if (!qualifiedProviderCountyFrame(rows, code, mode))
+      throw new Error("Unqualified provider county activity frame; full-election counts are not substituted");
+    return rows;
+  }
+  if (code !== "WV" || !Array.isArray(rows) || rows.length !== 55
     || new Set(rows.map(row => row.county_fips)).size !== 55
     || rows.some(row => row.year !== 2026 || row.state_code !== code || row.source_mode !== mode
       || !/^54\d{3}$/.test(row.county_fips) || row.county_id !== `additional:WV:${row.county_fips}`
@@ -70,8 +81,31 @@ export function selectCountySourceFrame(data, code, mode) {
       || row.ballots !== row.native_record?.["TOTAL VOTERS"]
       || row.denominator !== null || row.reported_pct !== null
       || row.unique_voter_count_qualified !== false || row.cast_ballot_count_qualified !== false))
-    throw new Error("Unqualified WV county source mode; all-method counts are not substituted");
+    throw new Error(`Unqualified ${code} county source mode; all-method counts are not substituted`);
   return rows;
+}
+
+export function qualifiedProviderCountyFrame(rows, code, mode) {
+  const scope = providerCountyScopes[code];
+  if (!scope?.modes.includes(mode) || !Array.isArray(rows) || rows.length !== scope.counties
+    || new Set(rows.map(r => r.county_fips)).size !== scope.counties) return false;
+  return rows.every(row => {
+    const source = row.native_record, categories = source?.categories;
+    return row.year === 2026 && row.state_code === code && row.source_mode === mode
+      && row.source_provider === "civicAPI early activity"
+      && /^\d{5}$/.test(row.county_fips) && row.county_id === `additional:${code}:${row.county_fips}`
+      && source?.state === code && source.category === (mode === "in_person_early" ? "inperson" : "returned")
+      && source.literal_count_field === "votes" && /^2026-\d{2}-\d{2}$/.test(source.snapshot_date)
+      && row.source_date === source.snapshot_date && row.native_election_id_qualified === false
+      && categories && typeof categories === "object" && !Array.isArray(categories)
+      && Object.keys(categories).length > 0
+      && Object.values(categories).every(r => Number.isSafeInteger(r.votes) && r.votes >= 0)
+      && Number.isSafeInteger(row.ballots) && row.ballots >= 0
+      && row.ballots === Object.values(categories).reduce((sum, r) => sum + r.votes, 0)
+      && row.reference_geometry?.counties === scope.counties && row.reference_geometry.boundary_year === 2026
+      && row.denominator === null && row.reported_pct === null
+      && row.cast_ballot_count_qualified === false && row.unique_voter_count_qualified === false;
+  });
 }
 
 export function qualifiedHawaiiAdministrationReference(rows, reference, collection) {
@@ -102,3 +136,4 @@ export function qualifiedHawaiiAdministrationReference(rows, reference, collecti
       && row.cast_ballot_count_qualified === false && row.unique_voter_count_qualified === false;
   });
 }
+import { providerCountyScopes } from "./provider-county-scopes.js";

@@ -9,6 +9,7 @@ import { loadIndianaVoterStatistics } from './indiana-voter-statistics.mjs';
 import { loadWestVirginiaCountyModes } from './west-virginia-county-modes.mjs';
 import { loadColoradoCountyReturns } from './colorado-returned-counties.mjs';
 import { loadHawaiiAdministrations } from './hawaii-administrations.mjs';
+import { loadProviderCountyFrames } from './provider-county-frames.mjs';
 
 const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const compressed = path => JSON.parse(gunzipSync(readFileSync(path)).toString('utf8'));
@@ -391,7 +392,7 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
         'Original statewide/unit/report discrepancies and separate clocks survive; no rates or count allocation.'],
     }));
   }
-  const countyFrames = {};
+  const countyFrames = /** @type {Record<string, Record<string, ReturnType<typeof observation>[]>>} */ ({});
   if (nativeCountyParents) {
     const westVirginia = loadWestVirginiaCountyModes();
     const imported = row => observation({
@@ -415,6 +416,32 @@ export function loadAdditionalParticipation({ nativeCountyParents = false } = {}
     counties.push(...westVirginia.counties.map(imported));
     countyFrames.WV = Object.fromEntries(Object.entries(westVirginia.county_frames)
       .map(([mode, rows]) => [mode, rows.map(imported)]));
+  }
+  if (nativeCountyParents) {
+    const provider = loadProviderCountyFrames();
+    for (const [code, frames] of Object.entries(provider.county_frames)) {
+      countyFrames[code] ||= {};
+      for (const [mode, rows] of Object.entries(frames)) {
+        if (countyFrames[code][mode]) continue;
+        countyFrames[code][mode] = rows.map(row => observation({
+          data_directory: 'data/county-source-reviews/20261109-provider-county-frames-01',
+          base_url: '', complete_download_url: row.complete_download_url,
+        }, '', code, row.county, row.county_fips, row.native_record, {
+          ballots: row.source_count, denominator: null, denominator_basis: 'provider_electorate_not_qualified',
+          reported_pct: null, maps_approved: true, county_fips: row.county_fips,
+          reference_geometry: row.reference_geometry, native_record: row.native_record,
+          participation_measure_label: row.participation_measure_label, source_mode: mode,
+          source_provider: row.source_provider, source_date: row.source_date,
+          native_election_id_qualified: false, source_count_qualified: true,
+          cast_ballot_count_qualified: false, unique_voter_count_qualified: false,
+          source_url: row.source_url, source_update_label: row.source_update_label,
+          source_status_literal: row.source_status_literal, source_reporting_label: row.source_reporting_label,
+          quality: [row.source_reporting_label,
+            'Provider source activity, not an official all-method or independently certified 2026 turnout observation.',
+            'Collector 2026 context and native snapshot date are retained separately; no native election ID is inferred.'],
+        }));
+      }
+    }
   }
   const seen = new Set(), unitSeen = new Set();
   for (const row of counties) {

@@ -30,6 +30,27 @@ test('Hawaii live-only administrations do not fabricate separate Maui/Kalawao co
   assert.deepEqual(data.nongeographic.filter(r => r.state_code === 'HI'), legacy.nongeographic.filter(r => r.state_code === 'HI'));
 });
 
+test('provider county modes are live-only and cannot replace stronger native West Virginia modes', () => {
+  const legacy = loadAdditionalParticipation();
+  assert.equal(legacy.county_frames, undefined);
+  assert.equal(data.county_frames.TX.in_person_early.length, 254);
+  assert.equal(data.county_frames.TX.mail_returned.length, 254);
+  assert.equal(data.county_frames.DE.mail_returned.length, 3);
+  const anderson = data.county_frames.TX.in_person_early.find(r => r.county_fips === '48001');
+  assert.equal(anderson.ballots, 9384);
+  assert.equal(anderson.source_provider, 'civicAPI early activity');
+  assert.equal(anderson.native_record.categories.Unspecified.votes, 9384);
+  assert.equal(anderson.source_date, '2026-10-30');
+  assert.equal(anderson.denominator, null);
+  assert.equal(anderson.reported_pct, null);
+  assert.equal(anderson.native_election_id_qualified, false);
+  for (const rows of Object.values(data.county_frames.WV)) {
+    assert.equal(rows.length, 55);
+    assert.equal(rows[0].source_provider, undefined);
+    assert.equal(rows[0].ballots, rows[0].native_record['TOTAL VOTERS']);
+  }
+});
+
 test('live Colorado counties use all64 native returned totals without changing the frozen source frame', () => {
   const rows = data.counties.filter(row => row.state_code === 'CO');
   assert.equal(rows.length, 64);

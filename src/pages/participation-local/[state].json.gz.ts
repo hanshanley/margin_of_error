@@ -4,13 +4,13 @@ import { loadAdditionalParticipation } from '../../../scripts/additional-partici
 
 export function getStaticPaths() {
 	const data = loadAdditionalParticipation({ nativeCountyParents: true });
-	return [...new Set(data.counties.map(row => row.state_code))].map(state => ({
+	return [...new Set([...data.counties.map(row => row.state_code), ...Object.keys(data.county_frames || {})])].map(state => ({
 		params: { state },
 		props: {
 			counties: data.counties.filter(row => row.state_code === state),
 			precincts: data.precincts.filter(row => row.state_code === state),
 			nongeographic: data.nongeographic.filter(row => row.state_code === state),
-			county_frames: state === 'WV' ? data.county_frames?.WV : undefined,
+			county_frames: data.county_frames?.[state],
 		},
 	}));
 }

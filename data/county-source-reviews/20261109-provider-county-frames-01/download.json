@@ -1,0 +1,11 @@
+{
+  "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-provider-county-frames-20261109-01/complete-analysis.zip",
+  "bytes": 52460406,
+  "sha256": "0ef503144a4992f89cc541206f920dc02d038ab4a3eca4dfee06169d2b60b18a",
+  "members": 144,
+  "complete_state_mode_queries": 102,
+  "all_source_region_queries": 6371,
+  "approved_county_frames": 63,
+  "approved_states": 39,
+  "analysis_rates_approved": false
+}
