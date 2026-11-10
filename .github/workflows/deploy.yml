@@ -16,16 +16,22 @@ permissions:
 concurrency:
   group: pages
   cancel-in-progress: false
+  queue: max
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      uk_manifest_sha256: ${{ steps.uk_publication.outputs.manifest_sha256 }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
 
       - name: Reject copied source credentials
         run: python3 scripts/check-public-source-secrets.py
+
+      - name: Test UK publication verification
+        run: python3 scripts/test-uk-publication.py
 
       - name: Checkout congressional dashboard
         uses: actions/checkout@v7
@@ -58,6 +64,13 @@ jobs:
           python uk-decline-source/scripts/build_site.py
           mkdir -p public/uk_decline
           cp -R uk-decline-source/_site/. public/uk_decline/
+
+      - name: Record UK publication fingerprint
+        id: uk_publication
+        run: |
+          python scripts/uk-publication.py prepare public/uk_decline \
+            --run-id "$GITHUB_RUN_ID" \
+            --commit "$(git -C uk-decline-source rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Checkout U.S.–China analysis
         uses: actions/checkout@v7
@@ -115,8 +128,16 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     needs: build
     steps:
+      - name: Checkout publication verifier
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: scripts/uk-publication.py
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+
       - name: Deploy site
         id: deployment
         continue-on-error: true
@@ -124,9 +145,31 @@ jobs:
         with:
           timeout: 600000
 
+      - name: Verify live UK publication
+        if: steps.deployment.outcome == 'success'
+        id: verify_publication
+        continue-on-error: true
+        env:
+          EXPECTED: ${{ needs.build.outputs.uk_manifest_sha256 }}
+        run: |
+          python3 scripts/uk-publication.py verify \
+            --base https://www.themarginoferror.com/uk_decline/ --expected "$EXPECTED"
+
+      - name: Wait before deployment-only retry
+        if: steps.deployment.outcome == 'failure' || steps.verify_publication.outcome == 'failure'
+        run: sleep 60
+
       - name: Retry deployment with the same verified artifact
-        if: steps.deployment.outcome == 'failure'
+        if: steps.deployment.outcome == 'failure' || steps.verify_publication.outcome == 'failure'
         id: deployment_retry
         uses: actions/deploy-pages@v5
         with:
           timeout: 600000
+
+      - name: Verify retried UK publication
+        if: steps.deployment_retry.outcome == 'success'
+        env:
+          EXPECTED: ${{ needs.build.outputs.uk_manifest_sha256 }}
+        run: |
+          python3 scripts/uk-publication.py verify \
+            --base https://www.themarginoferror.com/uk_decline/ --expected "$EXPECTED"
