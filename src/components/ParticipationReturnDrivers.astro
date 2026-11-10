@@ -1,0 +1,90 @@
+---
+import { readFileSync } from 'node:fs';
+const { names } = Astro.props as { names: Record<string, string> };
+type DriverRow = { id: string; state_code: string; office: string; components_pp: Record<string, number> };
+const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-01/viewer-data.json', 'utf8'));
+const receipt = JSON.parse(readFileSync('data/participation-return-attribution/20261110-01/download.json', 'utf8'));
+const payload = JSON.stringify({ data, names }).replaceAll('<', '\\u003c');
+const pp = (value: number) => `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
+---
+<section id="participation-return-drivers" class="participation-current" aria-labelledby="return-drivers-title">
+	<header class="section-intro">
+		<p class="kicker">2026 · Conditional NORC + returns estimates</p>
+		<h3 id="return-drivers-title">Switching or nonparticipation: which modeled effect is larger?</h3>
+		<p>Compare 50 House state aggregates, 35 Senate races and 28 governor source frames.
+			Teal shows switching; ochre shows modeled nonparticipation. These are <strong>percentage-point
+			contributions, not percentages of people or causal persuasion</strong>.</p>
+	</header>
+	<p class="caption">Baseline: recalled <strong>2024 President</strong> in the current NORC source frame.
+		Office-specific switching tables are used in 55 cases; remaining terms require stated transport assumptions.
+		Other choices, entry, unknowns, denominator changes and the unallocated return/frame gap remain separate.
+		No state survey estimate is allocated to districts, counties or precincts.</p>
+	<div class="driver-controls">
+		<label>2026 office<select data-driver-office disabled><option value="house">House · state aggregates</option>
+			<option value="senate">Senate · state races</option><option value="governor">Governor · supplied county frames</option></select></label>
+		<label>Rank by<select data-driver-order disabled><option value="magnitude">Largest modeled effect</option>
+			<option value="switching">Largest switching effect</option><option value="nonparticipation">Largest nonparticipation effect</option>
+			<option value="name">State name</option></select></label>
+		<label>Find a state<input type="search" data-driver-search placeholder="State name or abbreviation" disabled /></label>
+	</div>
+	<p class="driver-legend"><span class="driver-switching">Switching</span>
+		<span class="driver-nonparticipation">Modeled nonparticipation</span>
+		<span>Positive → Democratic margin · negative → Republican margin</span></p>
+	<p data-driver-status class="caption" role="status">Saved 2026 model estimates. The full numerical table works without JavaScript.</p>
+	<p data-driver-axis class="driver-axis" aria-hidden="true"></p>
+	<div data-driver-rows class="driver-rows"></div>
+	<div data-driver-detail class="driver-detail" hidden></div>
+	<p class="caption">Whiskers vary switching/nonparticipation contrast strength from 0.5× to 1.5×.
+		They are <strong>partial assumption sensitivity, not confidence intervals</strong>.
+		The gap can be larger than either displayed effect; it is not assigned to people switching or staying home.
+		Model-classified nonparticipation is not administrative evidence of no ballot. D.C. has no NORC sample.</p>
+	<details class="explorer-notes"><summary>Every saved estimate and full accounting</summary>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="All 113 saved modeled effect estimates">
+			<table><caption>Recalled 2024 President → selected 2026 office; signed model-frame margin points.</caption>
+				<thead><tr><th scope="col">State / office</th><th scope="col">Switching</th><th scope="col">Nonparticipation</th>
+					<th scope="col">Entry</th><th scope="col">Other</th><th scope="col">Unknown</th>
+					<th scope="col">Denominator</th><th scope="col">Unallocated gap</th></tr></thead>
+				<tbody>{data.rows.map((row: DriverRow) =>
+					<tr data-saved-driver={row.id}><th scope="row">{names[row.state_code]} · {row.office}</th>
+						{['switching', 'modeled_nonparticipation', 'no_prior_contest_vote_entry',
+							'other_choice', 'unresolved', 'denominator', 'return_frame_gap'].map(key =>
+							<td class="numeric">{pp(row.components_pp[key])}</td>)}</tr>)}</tbody>
+			</table>
+		</div>
+	</details>
+	<div class="download-links"><a href={receipt.url}>Complete inputs, all models/scenarios, code and checksums · ZIP</a></div>
+	<script type="application/json" is:inline data-driver-data set:html={payload}></script>
+</section>
+<script>
+	import { initializeReturnDrivers } from '../../public/scripts/participation-return-drivers.js';
+	initializeReturnDrivers();
+</script>
+<style>
+	#participation-return-drivers { min-width: 0; margin-block: 1.5rem 2rem; }
+	.driver-controls { display: flex; flex-wrap: wrap; gap: .75rem; }
+	.driver-controls label { display: grid; flex: 1 1 11rem; min-width: 0; gap: .3rem; font: .73rem var(--sans); }
+	.driver-controls :is(select,input) { width: 100%; min-width: 0; padding: .5rem; border: 1px solid var(--rule);
+		background: var(--paper); color: var(--ink); font: inherit; }
+	.driver-legend { display: flex; flex-wrap: wrap; gap: .8rem; font: .72rem/1.5 var(--sans); }
+	.driver-legend span:last-child { color: var(--muted); }
+	.driver-legend :global(.driver-switching), :global(.driver-values .driver-switching) { color: #3e7d84; }
+	.driver-legend :global(.driver-nonparticipation), :global(.driver-values .driver-nonparticipation) { color: #986539; }
+	.driver-axis { margin: .5rem 10rem .25rem; text-align: center; font: .7rem var(--sans); color: var(--muted); }
+	.driver-rows { max-height: 580px; overflow-y: auto; overflow-x: hidden; border-block: 1px solid var(--rule); }
+	.driver-rows :global(.driver-row) { display: grid; grid-template-columns: 9rem minmax(0,1fr) 9rem;
+		align-items: center; gap: .25rem .6rem; padding: .6rem 0; border-bottom: 1px solid var(--paper-deep); }
+	.driver-rows :global(.driver-place) { border: 0; padding: .3rem 0; text-align: left; background: none;
+		color: var(--ink); font: .77rem var(--sans); cursor: pointer; }
+	.driver-rows :global(.driver-place:hover) { text-decoration: underline; }
+	.driver-rows :global(.driver-plot) { display: block; width: 100%; min-width: 0; }
+	.driver-rows :global(.driver-values) { display: flex; justify-content: space-between; gap: .4rem;
+		margin: 0; font: .71rem var(--sans); font-variant-numeric: tabular-nums; }
+	.driver-rows :global(.driver-gap) { grid-column: 2 / -1; margin: 0; font: .64rem/1.4 var(--sans); color: var(--muted); }
+	.driver-detail { margin-top: 1rem; padding-top: .5rem; border-top: 1px solid var(--rule); min-width: 0; }
+	@media(max-width:680px) {
+		.driver-axis { margin-inline: 5.5rem 0; }
+		.driver-rows :global(.driver-row) { grid-template-columns: 5.5rem minmax(0,1fr); }
+		.driver-rows :global(.driver-values) { grid-column: 2; justify-content: flex-start; gap: 1rem; }
+		.driver-rows :global(.driver-gap) { grid-column: 2; }
+	}
+</style>
