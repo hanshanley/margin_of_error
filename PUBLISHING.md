@@ -144,6 +144,17 @@ not zero; historical observations are explicitly outside this 2026 catalog.
 Verify both real public catalog loading and desktop/phone behavior before
 claiming a publication is live.
 
+Conditional party-choice scenarios use the separate `transition-scenarios-2026`
+catalog entry and `participation-transition-scenarios.js`. Freeze the exact
+released viewer with `scripts/build-participation-transition-dataset.py`; keep
+the full viewer outside the Pages payload. The existing map switches between
+signed swing contributions and separately labelled sequential source-share
+views. Demographic holds and D.C. remain unavailable; Other/unresolved outcomes
+complete the gross partition. Half/double persistence is assumption sensitivity,
+not a confidence interval. Preserve both unallocated return/baseline residuals,
+cross-office transport qualifications and all original 113 models and download
+routes. Data publication alone is not activation or production UI acceptance.
+
 Keep the Methods tab a short overview of the estimation process, not a
 source inventory: weighted rates, matched denominators, historical checks
 and supported geography. Link directly to the research repository's

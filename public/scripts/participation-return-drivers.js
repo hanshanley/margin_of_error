@@ -1,5 +1,7 @@
 import { projectStateContext } from "./participation-map-projection.js";
 import { participationDownload } from "./participation-downloads.js";
+import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
+  scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
 
 export const effectTerms = [
   ["switching", "Switching", "#3e7d84"],
@@ -137,6 +139,7 @@ export async function initializeReturnDrivers() {
     const office = root.querySelector("[data-driver-office]");
     const view = root.querySelector("[data-driver-view]");
     const stateSelect = root.querySelector("[data-driver-state]");
+    const group = root.querySelector("[data-driver-group]");
     const detail = root.querySelector("[data-driver-detail]");
     const summary = root.querySelector("[data-driver-summary]");
     const response = await fetch(participationDownload("/voter-participation/data/states.geojson"));
@@ -148,11 +151,77 @@ export async function initializeReturnDrivers() {
     for (const item of items) names[item.feature.properties.STUSAB] ||= item.feature.properties.NAME;
     const codes = items.map(item => item.feature.properties.STUSAB).sort((a, b) => names[a].localeCompare(names[b]));
     let selectedCode = "TX";
+    let scenarios, generation = 0;
+    const legacyMapNote = root.querySelector(".driver-map-note").cloneNode(true);
     stateSelect.replaceChildren(new Option("Select a state on the map…", ""),
       ...codes.map(code => new Option(names[code], code)));
     const paintSelection = () => {
       for (const path of root.querySelectorAll(".driver-state"))
         path.classList.toggle("selected", path.dataset.stateCode === selectedCode);
+    };
+    const selectScenario = (row, code) => {
+      const estimate = row && scenarioEstimate(scenarios, code, view.value, group.value);
+      const category = group.selectedOptions[0]?.textContent || "Overall source frame";
+      const label = scenarioViews.find(([key]) => key === view.value)[1];
+      summary.replaceChildren(element("h3", `${names[code]} · ${category}`));
+      detail.replaceChildren(element("h4", `${names[code]} · conditional party-choice scenario`));
+      if (!estimate) {
+        const reason = code === "DC" ? "D.C. has no Civic sample."
+          : !row ? `No supplied ${office.value} model frame for this state.`
+            : "This demographic source group is unavailable or withheld. It is not inferred from other categories.";
+        summary.append(element("p", `${reason} Gray is unavailable, not zero.`, "caption"));
+        detail.append(element("p", reason, "caption"));
+      } else {
+        const percent = value => `${(100 * value).toFixed(1)}%`;
+        summary.append(element("p", `${label}: ${percent(estimate.value)}. `
+          + `Half/double-persistence scenarios: ${percent(estimate.minimum)} to ${percent(estimate.maximum)}.`,
+        "driver-equation"), element("p",
+          "Share within recalled 2024 major-party choices in the source frame, not all voters or a contribution to the electoral swing. Synthetic histories are not identified people.",
+          "caption"));
+        const body = element("tbody"), table = element("table");
+        table.append(element("caption", "Five exhaustive gross outcomes · share of recalled major-party source weight"));
+        for (const [name, field] of [
+          ["Keep party choice", "retaining"], ["Switch party choice", "switching"],
+          ["Modeled nonparticipation", "nonparticipation"], ["Other choice", "other_choice"],
+          ["Unresolved current choice", "unresolved"],
+        ]) {
+          const tr = element("tr"), th = element("th", name); th.scope = "row";
+          tr.append(th, element("td", percent(estimate.point[
+            `synthetic_${field}_share_of_recalled_major_party`]), "numeric"));
+          body.append(tr);
+        }
+        table.append(body);
+        const wrapper = element("div", null, "table-wrap"); wrapper.append(table);
+        detail.append(wrapper, element("p",
+          `Separate current-major-party denominator: ${percent(estimate.point.synthetic_no_prior_contest_vote_entry_share_of_current_major_party)} `
+          + "have no recalled prior-contest vote. This does not identify first-ever voting, new eligibility or no prior ballot.",
+          "caption"));
+        if (group.value) detail.append(element("p",
+          "Only this group's disclosed modeled-nonvoter fraction conditions the state coupling. Demographic prior-party associations are assumed, not learned; groups and dimensions are not additive populations.",
+          "caption"));
+        const check = scenarios.unfitted_return_checks.find(value => value.id === row.id);
+        if (check?.reported_same_office_change_pp != null) {
+          const model = Object.values(check.synthetic_components_pp).reduce((a, b) => a + b, 0);
+          detail.append(element("p", `Whole-state reconciliation, not a subgroup swing: `
+            + `${signedPP(check.reported_same_office_change_pp)} reported same-office swing = `
+            + `${signedPP(model)} synthetic signed mechanisms / denominator + `
+            + `(${signedPP(check.unallocated_return_minus_model_pp)}) current-frame residual + `
+            + `(${signedPP(check.prior_baseline_alignment_pp)}) prior-baseline alignment. `
+            + "Both residuals remain unallocated.", "caption"));
+        } else detail.append(element("p", "No qualified previous same-office return comparison; no baseline is filled with zero.", "caption"));
+        detail.append(element("p", office.value === "house"
+          ? "Recalled 2024 presidential party choice versus the current House source model."
+          : `House-source coupling transported to the ${office.value} frame; not an office-specific individual-history estimate.`, "caption"),
+        element("p", "Current-voter gross-switching state-held-out MAE: 1.39 pp (fixed factor-16: 1.40 pp). "
+          + "This is not material evidence of better population prediction. Some governor misses exceed four points. "
+          + "There are no House poll targets; survey independence and population transport are unvalidated.", "caption"),
+        element("p", "Half/double strength is assumption sensitivity, not a confidence interval. "
+          + "Monte Carlo error is separate from unknown source/design uncertainty. Historical CPS marginals supply no joint-transition truth. "
+          + "Modeled nonparticipation is not administrative staying home. No state model is allocated to counties or precincts.", "caption"));
+      }
+      const download = element("a", "Complete simulation inputs, every query/seed/scenario and code · ZIP");
+      download.href = scenarioDownload; detail.append(download);
+      summary.hidden = false; detail.hidden = false;
     };
     const select = row => {
       const comparison = row.reported_comparison;
@@ -223,7 +292,9 @@ export async function initializeReturnDrivers() {
     const selectState = code => {
       selectedCode = code; stateSelect.value = code;
       const row = data.rows.find(value => value.state_code === code && value.office === office.value);
-      if (row) select(row);
+      if (isScenarioView(view.value) && scenarios && code) selectScenario(row, code);
+      else if (isScenarioView(view.value)) { detail.hidden = true; summary.hidden = true; }
+      else if (row) select(row);
       else if (code) {
         detail.replaceChildren(element("h3", names[code]),
           element("p", code === "DC" ? "D.C. has no NORC sample. No contribution is estimated."
@@ -234,30 +305,76 @@ export async function initializeReturnDrivers() {
       } else { detail.hidden = true; summary.hidden = true; }
       paintSelection();
     };
-    const render = () => {
+    const render = async () => {
+      const current = ++generation, scenario = isScenarioView(view.value);
+      root.querySelector("[data-driver-group-control]").hidden = !scenario;
+      root.querySelector(".driver-controls").dataset.scenarios = String(scenario);
+      if (scenario && !scenarios) {
+        status.textContent = "Loading verified conditional scenarios; previous values are cleared.";
+        root.querySelector("[data-driver-map]").replaceChildren();
+        summary.hidden = true; detail.hidden = true;
+        try {
+          const loaded = await loadScenarios();
+          if (current !== generation) return;
+          scenarios = loaded;
+          group.replaceChildren(new Option("Overall source frame", ""),
+            ...scenarioGroups(scenarios).map(row => new Option(row.label, row.key)));
+          group.disabled = false;
+        } catch (error) {
+          if (current !== generation) return;
+          status.textContent = `Scenario map unavailable: ${error.message}. Other map views and complete downloads remain available.`;
+          const retry = element("button", "Retry scenario data");
+          retry.type = "button"; retry.addEventListener("click", render);
+          root.querySelector("[data-driver-map]").replaceChildren(retry);
+          return;
+        }
+      }
       const all = driverRows(data, office.value, "", "magnitude", names);
-      const byCode = new Map(all.map(row => [row.state_code, row])), bound = mapScale(all);
+      const byCode = new Map(all.map(row => [row.state_code, row]));
+      const bound = scenario ? scenarioScale(Object.keys(scenarios.state_scenarios).map(code =>
+        scenarioEstimate(scenarios, code, view.value, group.value)?.value ?? null)) : mapScale(all);
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
-      status.textContent = `${all.length} ${office.value === "house" ? "House state aggregates"
+      status.textContent = scenario
+        ? `${all.filter(row => scenarioEstimate(scenarios, row.state_code, view.value, group.value)).length} supported source scenarios in ${office.value} frames. `
+          + "Gross source-weight shares, not swing contributions or measured staying home."
+        : `${all.length} ${office.value === "house" ? "House state aggregates"
         : office.value === "governor" ? "governor source frames" : "Senate races"}. `
         + `${all.filter(row => row.reported_comparison.status === "reported_source_comparison").length} qualified reported comparisons. Views share one signed scale.`;
-      root.querySelector("[data-driver-scale-min]").textContent = `−${bound} pp`;
-      root.querySelector("[data-driver-scale-max]").textContent = `+${bound} pp`;
+      root.querySelector("[data-driver-scale-min]").textContent = scenario ? "0%" : `−${bound} pp`;
+      root.querySelector("[data-driver-scale-max]").textContent = scenario ? `${Math.round(bound * 100)}%` : `+${bound} pp`;
+      root.querySelector(".driver-map-ticks").children[1].textContent = scenario ? `${Math.round(bound * 50)}%` : "0";
+      root.querySelector(".driver-map-ramp").style.background = scenario
+        ? "linear-gradient(to right,#f1eee6,#2c6c75)" : "";
+      root.querySelector(".driver-map-key").setAttribute("aria-label", scenario
+        ? "Sequential synthetic source-weight share scale" : "Shared signed margin-point scale");
+      const directions = root.querySelector(".driver-map-directions").children;
+      directions[0].textContent = scenario ? "Lower share" : "Republican direction";
+      directions[1].textContent = scenario ? "Higher share" : "Democratic direction";
+      const note = root.querySelector(".driver-map-note");
+      if (scenario) note.textContent = "Synthetic shares within recalled major-party source choices, not all voters, "
+        + "electoral swing contributions or confirmed missing ballots. The five gross outcomes include Other and unresolved choices. "
+        + "State models are not allocated to counties or precincts.";
+      else note.replaceChildren(...Array.from(legacyMapNote.childNodes).map(node => node.cloneNode(true)));
       {
-        const [key, label] = mapTerms.find(([value]) => value === view.value);
+        const [key, label] = [...mapTerms, ...scenarioViews].find(([value]) => value === view.value);
         const host = root.querySelector("[data-driver-map]");
         host.dataset.driverMap = key;
         root.querySelector("[data-driver-map-title]").textContent = label;
-        root.querySelector("[data-driver-map-caption]").textContent = mapDescriptions[key];
+        root.querySelector("[data-driver-map-caption]").textContent = scenario
+          ? `${group.selectedOptions[0].textContent}. Share of recalled major-party source weight; assumption-dependent, not identified histories.`
+          : mapDescriptions[key];
         const svg = svgElement("svg", { viewBox: "0 0 1000 640", role: "group",
-          "aria-label": `${label}: signed margin points by state`, "data-scale": bound });
+          "aria-label": `${label}: ${scenario ? "synthetic source-weight shares" : "signed margin points"} by state`, "data-scale": bound });
         for (const item of items) {
-          const code = item.feature.properties.STUSAB, row = byCode.get(code), value = mapValue(row, key);
-          const text = `${names[code]} · ${label}: ${value === null ? "no qualified comparison or model" : signedPP(value)}. `
-            + "Margin points, not a vote share or turnout rate.";
-          const path = svgElement("path", { d: item.d, fill: effectFill(value, bound),
+          const code = item.feature.properties.STUSAB, row = byCode.get(code);
+          const value = scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key);
+          const normalized = value ?? null;
+          const text = `${names[code]} · ${label}: ${normalized === null ? "no qualified comparison, group or model"
+            : scenario ? `${(normalized * 100).toFixed(1)}%` : signedPP(normalized)}. `
+            + (scenario ? "Synthetic source-weight share, not measured staying home." : "Margin points, not a vote share or turnout rate.");
+          const path = svgElement("path", { d: item.d, fill: effectFill(normalized, bound),
             class: "driver-state", "fill-rule": "evenodd", "data-state-code": code,
-            "data-model-value": value ?? "", ...(row ? { "data-model-id": row.id } : {}),
+            "data-model-value": normalized ?? "", ...(row ? { "data-model-id": row.id } : {}),
             role: "button", tabindex: "-1",
             "aria-label": text });
           const title = svgElement("title", {}); title.textContent = text; path.append(title);
@@ -278,6 +395,7 @@ export async function initializeReturnDrivers() {
     office.addEventListener("change", render);
     view.addEventListener("change", render);
     stateSelect.addEventListener("change", () => selectState(stateSelect.value));
+    group.addEventListener("change", render);
     window.addEventListener("participation:effects-state", event => {
       selectState(codes.find(code => names[code] === event.detail || code === event.detail) || "");
     });

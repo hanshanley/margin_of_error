@@ -28,6 +28,14 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 			<option value="switching">Switching sides · modeled</option>
 			<option value="modeled_nonparticipation">Staying home · modeled</option>
 			<option value="other_and_unallocated">Other / unallocated</option>
+			<optgroup label="Party-choice scenarios · not swing contributions">
+				<option value="scenario_retaining">Keep party choice · scenario</option>
+				<option value="scenario_switching">Switch party choice · scenario</option>
+				<option value="scenario_nonparticipation">Nonparticipation · scenario</option>
+			</optgroup>
+		</select></label>
+		<label data-driver-group-control hidden>Source group<select data-driver-group disabled>
+			<option value="">Overall source frame</option>
 		</select></label>
 		<label class="driver-state-control">State<select data-driver-state disabled><option value="">Loading state context…</option></select></label>
 	</div>
@@ -64,6 +72,11 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 		55 office-specific switching tables are used; other office terms require explicit transport assumptions.
 		Entry, other choices, unknowns, denominator changes and the unallocated return/frame gap are retained.
 		These are conditional estimates, not causal persuasion. No state survey model is assigned to counties or precincts.</p>
+	<p class="caption">The separate party-choice scenarios simulate gross shares within recalled major-party
+		choices, not contributions to the electoral swing. Their half/double persistence envelopes are
+		assumption sensitivity, not confidence intervals. Gross-switching state-held-out error is 1.39 pp;
+		House-model transport to Senate/governor and demographic party associations remain unvalidated.
+		Historical voting marginals do not identify individual staying-home or switching histories.</p>
 	</details>
 	<details class="explorer-notes"><summary>Every saved estimate and full accounting</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 113 saved modeled effect estimates">
@@ -85,6 +98,7 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 		</div>
 	</details>
 	<div class="download-links"><a href={receipt.url}>Complete historical returns, inputs, all models/scenarios, code and checksums · ZIP</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-transition-simulation-20261111-01/complete-analysis.zip">Complete conditional transition simulations, every input/query/seed, code and checksums · ZIP</a></div>
 	<script type="application/json" is:inline data-driver-data set:html={payload}></script>
 </section>
 <script>
@@ -96,6 +110,8 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 	.driver-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr));
 		gap: .75rem; margin-block: 1.25rem .75rem; max-width: 55rem; }
 	.driver-controls label { display: grid; min-width: 0; gap: .3rem; font: .73rem var(--sans); }
+	.driver-controls label[hidden] { display: none; }
+	.driver-controls[data-scenarios="true"] { grid-template-columns: repeat(4,minmax(0,1fr)); max-width: 65rem; }
 	.driver-controls :is(select,input) { width: 100%; min-width: 0; padding: .5rem; border: 1px solid var(--rule);
 		background: var(--paper); color: var(--ink); font: inherit; }
 	.driver-maps { display: grid; grid-template-columns: minmax(0,1fr); margin-top: 1.5rem; }
@@ -123,7 +139,9 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 	.driver-summary :global(.driver-equation) { font: .85rem/1.65 var(--sans); font-variant-numeric: tabular-nums; }
 	@media(max-width:760px) {
 		.driver-controls { grid-template-columns: repeat(2,minmax(0,1fr)); }
+		.driver-controls[data-scenarios="true"] { grid-template-columns: repeat(2,minmax(0,1fr)); }
 		.driver-state-control { grid-column: 1 / -1; }
+		.driver-controls[data-scenarios="true"] .driver-state-control { grid-column: auto; }
 		.driver-map-key { justify-content: flex-start; }
 		.driver-map-key > div { width: 100%; }
 		.driver-no-model { flex-basis: 100%; margin-left: 0; }
