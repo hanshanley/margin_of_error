@@ -61,6 +61,28 @@ class CrosswalkTests(unittest.TestCase):
         with self.assertRaises(IntakeError):
             population_weights(source, blocks(), "DC", "27")
 
+    def test_partial_display_holds_preserve_full_inventory_and_block_denominators(self):
+        source = [polygon("A", -77.1, -77.05), polygon("B", -77.05, -77.0)]
+        before, decisions = copy.deepcopy(source), []
+        result = population_weights(source, blocks(), "DC", "11",
+            point_query_writer=decisions.append,
+            reference_holds={"A": "display_footprint_excludes_part_of_native_unit"})
+        self.assertEqual(source, before)
+        self.assertEqual(result["reference_features"], 2)
+        self.assertEqual(result["reference_keys"], ["B"])
+        self.assertEqual(result["held_references"], [
+            dict(key="A", reason="display_footprint_excludes_part_of_native_unit")])
+        self.assertEqual(result["links"][0]["population_fraction"], "1/4")
+        self.assertEqual(result["complete_population"], 100)
+        self.assertEqual(result["point_decisions"]["outside_loaded_reference_population"], 75)
+        self.assertEqual(len(decisions), 3)
+
+    def test_declared_holds_cannot_silently_disappear_or_name_foreign_references(self):
+        source = [polygon("A", -77.1, -77.0)]
+        for holds in ({"other": "missing"}, {"A": ""}, ["A"]):
+            with self.assertRaises(IntakeError):
+                population_weights(source, blocks(), "DC", "11", reference_holds=holds)
+
 
 if __name__ == "__main__":
     unittest.main()

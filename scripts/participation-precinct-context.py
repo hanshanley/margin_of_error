@@ -43,7 +43,7 @@ for code, declaration in sorted(registry["states"].items()):
         def write_point(row):
             stream.write(encoded(row))
         crosswalk = population_weights(features, blocks["records"], code, declaration["state_fips"],
-            point_query_writer=write_point)
+            point_query_writer=write_point, reference_holds=declaration.get("reference_holds"))
     crosswalk["complete_point_query"] = dict(file=points_path.name, **file_pin(points_path))
     crosswalk["source_reference"] = {key: value for key, value in declaration.items() if key != "file"}
     crosswalk["source_block_query"] = file_pin(

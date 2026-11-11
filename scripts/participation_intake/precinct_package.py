@@ -76,7 +76,8 @@ def reproduce_precinct_package(root):
             def write_point(row):
                 stream.write(encoded(row))
             crosswalk = population_weights(json.loads(gzip.decompress(raw_reference))["features"],
-                records, code, declaration["state_fips"], point_query_writer=write_point)
+                records, code, declaration["state_fips"], point_query_writer=write_point,
+                reference_holds=declaration.get("reference_holds"))
         crosswalk["complete_point_query"] = dict(file=code + "-complete-point-decisions.jsonl.gz", **file_pin(points))
         crosswalk["source_reference"] = {key: value for key, value in declaration.items() if key != "file"}
         crosswalk["source_block_query"] = file_pin(state_root / "complete-query.json")
@@ -142,6 +143,12 @@ def package_precinct_context(results_root, site_root, blocks_root, database, cou
         index_file = declaration["approval_evidence"].get("index_file")
         if index_file:
             paths["references/" + code + "-source-index.json"] = site / index_file
+        scope_audit = declaration["approval_evidence"].get("source_scope_audit")
+        if scope_audit:
+            audit = site / scope_audit["file"]
+            if file_pin(audit) != {key: scope_audit[key] for key in ("bytes", "sha256")}:
+                raise IntakeError("context_reference", "Original reference scope audit changed")
+            paths["references/" + code + "-source-scope-audit.json"] = audit
         for suffix in ("population-weights.json.gz", "complete-point-decisions.jsonl.gz",
                        "modeled-resident-context.json.gz", "summary.json"):
             paths["queries/" + code + "-" + suffix] = results / (code + "-" + suffix)

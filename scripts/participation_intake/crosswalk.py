@@ -7,12 +7,17 @@ from .contract import IntakeError
 
 
 def population_weights(features, blocks, state_code, state_fips, chunk_size=20000,
-                       point_query_writer=None):
+                       point_query_writer=None, reference_holds=None):
     import numpy as np
     import shapely
     from shapely.geometry import shape
     from shapely.strtree import STRtree
 
+    declared_holds = {} if reference_holds is None else reference_holds
+    if not isinstance(declared_holds, dict) or any(
+            not isinstance(key, str) or not key or not isinstance(reason, str) or not reason
+            for key, reason in declared_holds.items()):
+        raise IntakeError("crosswalk_scope", "Reference holds require explicit identities and reasons")
     identities, polygons, holds, seen = [], [], [], set()
     for feature in features:
         props = feature["properties"]
@@ -20,6 +25,9 @@ def population_weights(features, blocks, state_code, state_fips, chunk_size=2000
         if not isinstance(key, str) or not key or key in seen or props.get("state_code") != state_code:
             raise IntakeError("crosswalk_identity", "Reference identities are absent, duplicated or in another state")
         seen.add(key)
+        if key in declared_holds:
+            holds.append(dict(key=key, reason=declared_holds[key]))
+            continue
         geometry = shape(feature["geometry"])
         if not geometry.is_valid or geometry.is_empty or geometry.geom_type not in ("Polygon", "MultiPolygon"):
             holds.append(dict(key=key, reason="invalid_or_nonpolygon_native_reference_not_repaired"))
@@ -29,6 +37,8 @@ def population_weights(features, blocks, state_code, state_fips, chunk_size=2000
             continue
         identities.append(key)
         polygons.append(geometry)
+    if set(declared_holds) - seen:
+        raise IntakeError("crosswalk_scope", "A declared hold is outside the complete reference inventory")
     if not polygons:
         raise IntakeError("crosswalk_geometry", "No approved unrepaired reference footprints")
     tree = STRtree(polygons)
