@@ -793,7 +793,7 @@ function stateParticipationRows() {
           : towns ? "169 native towns use the held full 2024 contextual municipality reference, not 2026 election or precinct boundaries. Native Total is separate, not an extra town. No nine-county totals or precinct observations are inferred. "
           : administrations ? "Four election administrations use grouped full 2026 Census county components; Maui includes Kalawao. No separate Maui/Kalawao count is supplied, allocated or duplicated. These are not certified precinct boundaries. "
           : providerActivity ? "Provider-region identities are separately matched to the full 2026 Census county reference; these are not native FIPS, official county parents or precincts. "
-            : reference ? "Whole-county native parents use checksum-verified 2026 Census county references, not precincts. "
+            : reference ? `Whole-county native parents use checksum-verified ${reference.boundary_year ?? "dated"} Census county references, not precincts. `
           : "Separately reviewed identity joins retain the original source records. Approximate 2024 Census counties are contextual shapes, not certified 2026 election or precinct boundaries.")
         + (code === "WV" ? "Early in-person and returned tables are through October 31, released November 2; native clocks/timezones are absent. "
           + "Full-election county reports are separate November 3 snapshots, not a common statewide cutoff." : ""));
