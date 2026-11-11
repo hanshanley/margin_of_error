@@ -1,0 +1,93 @@
+{
+  "contract": "participation.utah_summary_transcription.v1",
+  "election_literal": "General Election",
+  "election_date_literal": "November 3, 2026",
+  "election_id": "UT-General11032026",
+  "declared_timezone": null,
+  "reports": [
+    {
+      "county": "Piute",
+      "file": "piute-summary.pdf",
+      "native_county_literal": "Piute County, Utah",
+      "native_status_literal": "2026 General Election Official Results",
+      "native_update_literal": "11/10/2026 09:16AM",
+      "statistics": {
+        "Election Day Precincts Reporting": "6 of 6",
+        "Precincts Complete": "6 of 6",
+        "Precincts Partially Reported": "0 of 6",
+        "Absentee/ Early Precincts Reporting": "6 of 6",
+        "Registered Voters - Total": "1,112",
+        "Ballots Cast - Total": "737",
+        "Ballots Cast - Blank": "0",
+        "Voter Turnout - Total": "66.28%"
+      },
+      "crosscheck": {"label": "Standardized canvass total ballots counted", "file": "piute-statistics.xlsx"},
+      "verification": "Independent raw OOXML/openpyxl workbook audit; cached first-page visual review and offline Vision both read the selected ballot count. Vision's 6 of 5 / 56.28% errors are not adopted; original image visibly reads 6 of 6 / 66.28%."
+    },
+    {
+      "county": "Kane",
+      "file": "kane-summary.pdf",
+      "native_county_literal": "Kane County, Utah",
+      "native_status_literal": "OFFICIAL RESULTS",
+      "native_update_literal": "11/10/2026 08:33AM",
+      "statistics": {
+        "Election Day Precincts Reporting": "12 of 12",
+        "Precincts Complete": "0 of 12",
+        "Precincts Partially Reported": "12 of 12",
+        "Absentee/ Early Precincts Reporting": "12 of 12",
+        "Registered Voters - Total": "5,112",
+        "Ballots Cast - Total": "3,395",
+        "Ballots Cast - Blank": "0",
+        "Voter Turnout - Total": "66.41%"
+      },
+      "crosscheck": {"label": "Standardized canvass total ballots counted", "file": "kane-statistics.xlsx"},
+      "verification": "Independent raw OOXML/openpyxl workbook audit; cached first-page visual review and offline Vision read 3,395. The G25 workbook filename and explicit November 3, 2026 worksheet header remain separate literals."
+    },
+    {
+      "county": "Millard",
+      "file": "millard-summary.pdf",
+      "native_county_literal": "Millard County, Utah",
+      "native_status_literal": "OFFICIAL RESULTS",
+      "native_update_literal": "11/10/2026 08:04AM",
+      "statistics": {
+        "Election Day Precincts Reporting": "18 of 18",
+        "Precincts Complete": "18 of 18",
+        "Precincts Partially Reported": "0 of 18",
+        "Absentee/ Early Precincts Reporting": "18 of 18",
+        "Registered Voters - Total": "7,264",
+        "Ballots Cast - Total": "4,149",
+        "Ballots Cast - Blank": "1",
+        "Voter Turnout - Total": "57.12%"
+      },
+      "crosscheck": {"label": "Standardized canvass total ballots counted", "file": "millard-statistics.xlsx"},
+      "verification": "The preserved MuPDF and pdfplumber first-page reads agree with the independent raw OOXML/openpyxl workbook audit."
+    },
+    {
+      "county": "Cache",
+      "file": "cache-summary.pdf",
+      "native_county_literal": "Cache County, Utah",
+      "native_status_literal": "OFFICIAL RESULTS",
+      "native_update_literal": "11/10/2026 12:30PM",
+      "statistics": {
+        "Election Day Precincts Reporting": "126 of 126",
+        "Precincts Complete": "0 of 126",
+        "Precincts Partially Reported": "126 of 126",
+        "Absentee/ Early Precincts Reporting": "126 of 126",
+        "Registered Voters - Total": "70,653",
+        "Ballots Cast - Total": "42,549",
+        "Ballots Cast - Blank": "10",
+        "Voter Turnout - Total": "60.22%"
+      },
+      "crosscheck": {
+        "label": "U.S. House District 2 contest total including overvotes and undervotes",
+        "source_page": 1,
+        "count_literal": "42,549",
+        "total_votes_cast_literal": "42,003",
+        "overvotes_literal": "127",
+        "undervotes_literal": "419",
+        "not_the_selected_participation_count_source": true
+      },
+      "verification": "Preserved MuPDF/pdfplumber first-page reads and visual review agree on the explicit Ballots Cast - Total. Contest total is corroboration only, never candidate-vote substitution. The separate workbook HTTP403 route remains stopped."
+    }
+  ]
+}

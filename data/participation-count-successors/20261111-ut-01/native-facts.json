@@ -1,0 +1,3600 @@
+{
+  "blocked_route": {
+    "bypassed": false,
+    "bytes": 1484,
+    "retried": false,
+    "sha256": "67af256cdb5bfff19aaf9385f76ffba5db1630164f2e73294c866e5585525088",
+    "status": 403,
+    "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26%20(1)%20(1)%20(2)_8b65143b-24a5-4d64-bead-b1312fe450e2.xlsx"
+  },
+  "complete_public_aggregate_facts": true,
+  "contract": "participation.native_table_counts.v1",
+  "native_presentation_or_session_headers_redistributed": false,
+  "reports": [
+    {
+      "columns": [
+        "reported_native_total_ballots"
+      ],
+      "corroboration": {
+        "file": "piute-statistics.xlsx",
+        "label": "Standardized canvass total ballots counted"
+      },
+      "election": {
+        "date": "2026-11-03",
+        "id": "UT-General11032026",
+        "qualification": "native",
+        "type": "general",
+        "year": 2026
+      },
+      "fractions_qualified": false,
+      "full_summary_statistics": {
+        "Absentee/ Early Precincts Reporting": "6 of 6",
+        "Ballots Cast - Blank": "0",
+        "Ballots Cast - Total": "737",
+        "Election Day Precincts Reporting": "6 of 6",
+        "Precincts Complete": "6 of 6",
+        "Precincts Partially Reported": "0 of 6",
+        "Registered Voters - Total": "1,112",
+        "Voter Turnout - Total": "66.28%"
+      },
+      "full_workbook_facts": {
+        "cells": {
+          "A1": {
+            "formula": null,
+            "literal": "Sorting Number - For Internal Use",
+            "type": "s",
+            "value": "Sorting Number - For Internal Use"
+          },
+          "A10": {
+            "formula": null,
+            "literal": "120",
+            "type": "n",
+            "value": 120
+          },
+          "A11": {
+            "formula": null,
+            "literal": "150",
+            "type": "n",
+            "value": 150
+          },
+          "A12": {
+            "formula": null,
+            "literal": "160",
+            "type": "n",
+            "value": 160
+          },
+          "A13": {
+            "formula": null,
+            "literal": "165",
+            "type": "n",
+            "value": 165
+          },
+          "A14": {
+            "formula": null,
+            "literal": "170",
+            "type": "n",
+            "value": 170
+          },
+          "A15": {
+            "formula": null,
+            "literal": "175",
+            "type": "n",
+            "value": 175
+          },
+          "A16": {
+            "formula": null,
+            "literal": "140",
+            "type": "n",
+            "value": 140
+          },
+          "A17": {
+            "formula": null,
+            "literal": "180",
+            "type": "n",
+            "value": 180
+          },
+          "A20": {
+            "formula": null,
+            "literal": "193",
+            "type": "n",
+            "value": 193
+          },
+          "A21": {
+            "formula": null,
+            "literal": "190",
+            "type": "n",
+            "value": 190
+          },
+          "A22": {
+            "formula": null,
+            "literal": "195",
+            "type": "n",
+            "value": 195
+          },
+          "A23": {
+            "formula": null,
+            "literal": "197",
+            "type": "n",
+            "value": 197
+          },
+          "A27": {
+            "formula": null,
+            "literal": "250",
+            "type": "n",
+            "value": 250
+          },
+          "A28": {
+            "formula": null,
+            "literal": "270",
+            "type": "n",
+            "value": 270
+          },
+          "A29": {
+            "formula": null,
+            "literal": "200",
+            "type": "n",
+            "value": 200
+          },
+          "A30": {
+            "formula": null,
+            "literal": "210",
+            "type": "n",
+            "value": 210
+          },
+          "A31": {
+            "formula": null,
+            "literal": "212",
+            "type": "n",
+            "value": 212
+          },
+          "A32": {
+            "formula": null,
+            "literal": "214",
+            "type": "n",
+            "value": 214
+          },
+          "A33": {
+            "formula": null,
+            "literal": "216",
+            "type": "n",
+            "value": 216
+          },
+          "A34": {
+            "formula": null,
+            "literal": "218",
+            "type": "n",
+            "value": 218
+          },
+          "A35": {
+            "formula": null,
+            "literal": "290",
+            "type": "n",
+            "value": 290
+          },
+          "A36": {
+            "formula": null,
+            "literal": "110",
+            "type": "n",
+            "value": 110
+          },
+          "A39": {
+            "formula": null,
+            "literal": "350",
+            "type": "n",
+            "value": 350
+          },
+          "A40": {
+            "formula": null,
+            "literal": "340",
+            "type": "n",
+            "value": 340
+          },
+          "A41": {
+            "formula": null,
+            "literal": "300",
+            "type": "n",
+            "value": 300
+          },
+          "A42": {
+            "formula": null,
+            "literal": "310",
+            "type": "n",
+            "value": 310
+          },
+          "A43": {
+            "formula": null,
+            "literal": "320",
+            "type": "n",
+            "value": 320
+          },
+          "A44": {
+            "formula": null,
+            "literal": "345",
+            "type": "n",
+            "value": 345
+          },
+          "A45": {
+            "formula": null,
+            "literal": "350",
+            "type": "n",
+            "value": 350
+          },
+          "A46": {
+            "formula": null,
+            "literal": "420",
+            "type": "n",
+            "value": 420
+          },
+          "A47": {
+            "formula": null,
+            "literal": "400",
+            "type": "n",
+            "value": 400
+          },
+          "A48": {
+            "formula": null,
+            "literal": "410",
+            "type": "n",
+            "value": 410
+          },
+          "A49": {
+            "formula": null,
+            "literal": "430",
+            "type": "n",
+            "value": 430
+          },
+          "A6": {
+            "formula": null,
+            "literal": "130",
+            "type": "n",
+            "value": 130
+          },
+          "A7": {
+            "formula": null,
+            "literal": "100",
+            "type": "n",
+            "value": 100
+          },
+          "B1": {
+            "formula": null,
+            "literal": "Permanent Field Identifier",
+            "type": "s",
+            "value": "Permanent Field Identifier"
+          },
+          "B11": {
+            "formula": null,
+            "literal": "1C",
+            "type": "s",
+            "value": "1C"
+          },
+          "B12": {
+            "formula": null,
+            "literal": "1D",
+            "type": "s",
+            "value": "1D"
+          },
+          "B13": {
+            "formula": null,
+            "literal": "1D",
+            "type": "s",
+            "value": "1D"
+          },
+          "B14": {
+            "formula": null,
+            "literal": "1E",
+            "type": "s",
+            "value": "1E"
+          },
+          "B15": {
+            "formula": null,
+            "literal": "1E",
+            "type": "s",
+            "value": "1E"
+          },
+          "B16": {
+            "formula": null,
+            "literal": "1F",
+            "type": "s",
+            "value": "1F"
+          },
+          "B21": {
+            "formula": null,
+            "literal": "1H",
+            "type": "s",
+            "value": "1H"
+          },
+          "B22": {
+            "formula": null,
+            "literal": "1I",
+            "type": "s",
+            "value": "1I"
+          },
+          "B27": {
+            "formula": null,
+            "literal": "4A",
+            "type": "s",
+            "value": "4A"
+          },
+          "B28": {
+            "formula": null,
+            "literal": "4B",
+            "type": "s",
+            "value": "4B"
+          },
+          "B29": {
+            "formula": null,
+            "literal": "4C",
+            "type": "s",
+            "value": "4C"
+          },
+          "B30": {
+            "formula": null,
+            "literal": "4D",
+            "type": "s",
+            "value": "4D"
+          },
+          "B31": {
+            "formula": null,
+            "literal": "4E",
+            "type": "s",
+            "value": "4E"
+          },
+          "B32": {
+            "formula": null,
+            "literal": "4E",
+            "type": "s",
+            "value": "4E"
+          },
+          "B33": {
+            "formula": null,
+            "literal": "4G",
+            "type": "s",
+            "value": "4G"
+          },
+          "B34": {
+            "formula": null,
+            "literal": "4H",
+            "type": "s",
+            "value": "4H"
+          },
+          "B35": {
+            "formula": null,
+            "literal": "4I",
+            "type": "s",
+            "value": "4I"
+          },
+          "B36": {
+            "formula": null,
+            "literal": "4J",
+            "type": "s",
+            "value": "4J"
+          },
+          "B39": {
+            "formula": null,
+            "literal": "2D",
+            "type": "s",
+            "value": "2D"
+          },
+          "B40": {
+            "formula": null,
+            "literal": "2E",
+            "type": "s",
+            "value": "2E"
+          },
+          "B41": {
+            "formula": null,
+            "literal": "This field was originally numbered 2A and may have referred to the number of total challenged ballots, both cured and not, which were signature non-matches",
+            "type": "s",
+            "value": "This field was originally numbered 2A and may have referred to the number of total challenged ballots, both cured and not, which were signature non-matches"
+          },
+          "B42": {
+            "formula": null,
+            "literal": "This field was originally numbered 2B and may have referred to the number of total challenged ballots, both cured and not, which were unsigned",
+            "type": "s",
+            "value": "This field was originally numbered 2B and may have referred to the number of total challenged ballots, both cured and not, which were unsigned"
+          },
+          "B43": {
+            "formula": null,
+            "literal": "This field was originally numbered 2C and may have referred to the number of total challenged ballots, both cured and not, challenged for other reasons",
+            "type": "s",
+            "value": "This field was originally numbered 2C and may have referred to the number of total challenged ballots, both cured and not, challenged for other reasons"
+          },
+          "B44": {
+            "formula": null,
+            "literal": "2F",
+            "type": "s",
+            "value": "2F"
+          },
+          "B45": {
+            "formula": null,
+            "literal": "2G",
+            "type": "s",
+            "value": "2G"
+          },
+          "B46": {
+            "formula": null,
+            "literal": "3C",
+            "type": "s",
+            "value": "3C"
+          },
+          "B47": {
+            "formula": null,
+            "literal": "3A",
+            "type": "s",
+            "value": "3A"
+          },
+          "B48": {
+            "formula": null,
+            "literal": "3B",
+            "type": "s",
+            "value": "3B"
+          },
+          "B49": {
+            "formula": null,
+            "literal": "3D",
+            "type": "s",
+            "value": "3D"
+          },
+          "B6": {
+            "formula": null,
+            "literal": "1A",
+            "type": "s",
+            "value": "1A"
+          },
+          "B7": {
+            "formula": null,
+            "literal": "1B",
+            "type": "s",
+            "value": "1B"
+          },
+          "C1": {
+            "formula": null,
+            "literal": "Reported Value",
+            "type": "s",
+            "value": "Reported Value"
+          },
+          "C10": {
+            "formula": "SUM(C11:C17)",
+            "literal": "737",
+            "type": "n",
+            "value": 737
+          },
+          "C11": {
+            "formula": null,
+            "literal": "683",
+            "type": "n",
+            "value": 683
+          },
+          "C12": {
+            "formula": null,
+            "literal": "11",
+            "type": "n",
+            "value": 11
+          },
+          "C13": {
+            "formula": null,
+            "literal": "43",
+            "type": "n",
+            "value": 43
+          },
+          "C14": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C15": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C16": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C17": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C19": {
+            "formula": null,
+            "literal": "Section 3: Vote History Reconciliation",
+            "type": "s",
+            "value": "Section 3: Vote History Reconciliation"
+          },
+          "C2": {
+            "formula": null,
+            "literal": "Standardized Canvass Statistics Report",
+            "type": "s",
+            "value": "Standardized Canvass Statistics Report"
+          },
+          "C20": {
+            "formula": null,
+            "literal": "737",
+            "type": "n",
+            "value": 737
+          },
+          "C21": {
+            "formula": "IF(C20-C10=0, \"Yes\", \"No\")",
+            "literal": "Yes",
+            "type": "str",
+            "value": "Yes"
+          },
+          "C22": {
+            "formula": "IF(C20-C10=0, \"NA\", C20-C10)",
+            "literal": "NA",
+            "type": "str",
+            "value": "NA"
+          },
+          "C26": {
+            "formula": null,
+            "literal": "Section 4: Provisional Ballot Statistics",
+            "type": "s",
+            "value": "Section 4: Provisional Ballot Statistics"
+          },
+          "C27": {
+            "formula": "SUM(C28:C29)",
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C28": {
+            "formula": "C16",
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C29": {
+            "formula": "SUM(C30:C34)",
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C3": {
+            "formula": null,
+            "literal": "Piute County  - November 3, 2026",
+            "type": "s",
+            "value": "Piute County  - November 3, 2026"
+          },
+          "C30": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C31": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C32": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C33": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C34": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C35": {
+            "formula": "C28/C27",
+            "literal": "#DIV/0!",
+            "type": "e",
+            "value": "#DIV/0!"
+          },
+          "C36": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C38": {
+            "formula": null,
+            "literal": "Section 5: By Mail Ballot Statistics",
+            "type": "s",
+            "value": "Section 5: By Mail Ballot Statistics"
+          },
+          "C39": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C40": {
+            "formula": "SUM(C41:C43)",
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C41": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C42": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C43": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C44": {
+            "formula": "C40/C39",
+            "literal": "#DIV/0!",
+            "type": "e",
+            "value": "#DIV/0!"
+          },
+          "C45": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C46": {
+            "formula": "SUM(C47:C48)",
+            "literal": "9",
+            "type": "n",
+            "value": 9
+          },
+          "C47": {
+            "formula": null,
+            "literal": "9",
+            "type": "n",
+            "value": 9
+          },
+          "C48": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C49": {
+            "formula": null,
+            "literal": "1.2999999999999999E-2",
+            "type": "n",
+            "value": 0.013
+          },
+          "C5": {
+            "formula": null,
+            "literal": "Section 1: Active Voters and Turnout",
+            "type": "s",
+            "value": "Section 1: Active Voters and Turnout"
+          },
+          "C6": {
+            "formula": "C10/C7",
+            "literal": "0.66276978417266186",
+            "type": "n",
+            "value": 0.6627697841726619
+          },
+          "C7": {
+            "formula": null,
+            "literal": "1112",
+            "type": "n",
+            "value": 1112
+          },
+          "C9": {
+            "formula": null,
+            "literal": "Section 2: Counted Ballot Statistics",
+            "type": "s",
+            "value": "Section 2: Counted Ballot Statistics"
+          },
+          "D1": {
+            "formula": null,
+            "literal": "Statistic Name",
+            "type": "s",
+            "value": "Statistic Name"
+          },
+          "D10": {
+            "formula": null,
+            "literal": "Total ballots counted",
+            "type": "s",
+            "value": "Total ballots counted"
+          },
+          "D11": {
+            "formula": null,
+            "literal": "Mail ballots counted",
+            "type": "s",
+            "value": "Mail ballots counted"
+          },
+          "D12": {
+            "formula": null,
+            "literal": "In-person early voting period ballots counted",
+            "type": "s",
+            "value": "In-person early voting period ballots counted"
+          },
+          "D13": {
+            "formula": null,
+            "literal": "In-person election day ballots counted",
+            "type": "s",
+            "value": "In-person election day ballots counted"
+          },
+          "D14": {
+            "formula": null,
+            "literal": "Disability ballots counted returned electronically",
+            "type": "s",
+            "value": "Disability ballots counted returned electronically"
+          },
+          "D15": {
+            "formula": null,
+            "literal": "UOCAVA ballots counted returned electronically",
+            "type": "s",
+            "value": "UOCAVA ballots counted returned electronically"
+          },
+          "D16": {
+            "formula": null,
+            "literal": "Provisional ballots counted",
+            "type": "s",
+            "value": "Provisional ballots counted"
+          },
+          "D17": {
+            "formula": null,
+            "literal": "Emergency ballots counted",
+            "type": "s",
+            "value": "Emergency ballots counted"
+          },
+          "D18": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D19": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D2": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D20": {
+            "formula": null,
+            "literal": "Vote histories given",
+            "type": "s",
+            "value": "Vote histories given"
+          },
+          "D21": {
+            "formula": null,
+            "literal": "Does total ballots counted match the number of voters given vote history in VISTA?",
+            "type": "s",
+            "value": "Does total ballots counted match the number of voters given vote history in VISTA?"
+          },
+          "D22": {
+            "formula": null,
+            "literal": "If no, what is the difference? (surplus vote histories)",
+            "type": "s",
+            "value": "If no, what is the difference? (surplus vote histories)"
+          },
+          "D23": {
+            "formula": null,
+            "literal": "If no, provide an explanation below.",
+            "type": "s",
+            "value": "If no, provide an explanation below."
+          },
+          "D24": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D26": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D27": {
+            "formula": null,
+            "literal": "Provisional ballots issued",
+            "type": "s",
+            "value": "Provisional ballots issued"
+          },
+          "D28": {
+            "formula": null,
+            "literal": "Provisional ballots counted",
+            "type": "s",
+            "value": "Provisional ballots counted"
+          },
+          "D29": {
+            "formula": null,
+            "literal": "Total provisional ballots not counted",
+            "type": "s",
+            "value": "Total provisional ballots not counted"
+          },
+          "D3": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D30": {
+            "formula": null,
+            "literal": "Already voted",
+            "type": "s",
+            "value": "Already voted"
+          },
+          "D31": {
+            "formula": null,
+            "literal": "Insufficient ID",
+            "type": "s",
+            "value": "Insufficient ID"
+          },
+          "D32": {
+            "formula": null,
+            "literal": "Residency",
+            "type": "s",
+            "value": "Residency"
+          },
+          "D33": {
+            "formula": null,
+            "literal": "Incomplete form",
+            "type": "s",
+            "value": "Incomplete form"
+          },
+          "D34": {
+            "formula": null,
+            "literal": "Other",
+            "type": "s",
+            "value": "Other"
+          },
+          "D35": {
+            "formula": null,
+            "literal": "Percentage of provisionals that were counted",
+            "type": "s",
+            "value": "Percentage of provisionals that were counted"
+          },
+          "D36": {
+            "formula": null,
+            "literal": "Number of provisional ballots that were same-day registration",
+            "type": "s",
+            "value": "Number of provisional ballots that were same-day registration"
+          },
+          "D38": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D39": {
+            "formula": null,
+            "literal": "Total challenged curable ballots (number of voters sent a cure notice)",
+            "type": "s",
+            "value": "Total challenged curable ballots (number of voters sent a cure notice)"
+          },
+          "D40": {
+            "formula": null,
+            "literal": "Total rejected non-provisional ballots that were curable but not cured",
+            "type": "s",
+            "value": "Total rejected non-provisional ballots that were curable but not cured"
+          },
+          "D41": {
+            "formula": null,
+            "literal": "Envelopes with a signature that does not match the voter's signature",
+            "type": "s",
+            "value": "Envelopes with a signature that does not match the voter's signature"
+          },
+          "D42": {
+            "formula": null,
+            "literal": "Unsigned envelopes",
+            "type": "s",
+            "value": "Unsigned envelopes"
+          },
+          "D43": {
+            "formula": null,
+            "literal": "Ballots challenged for other curable reasons",
+            "type": "s",
+            "value": "Ballots challenged for other curable reasons"
+          },
+          "D44": {
+            "formula": null,
+            "literal": "Percentage of curable ballots not cured",
+            "type": "s",
+            "value": "Percentage of curable ballots not cured"
+          },
+          "D45": {
+            "formula": null,
+            "literal": "Number of ballots where the voter submitted a disability affidavit",
+            "type": "s",
+            "value": "Number of ballots where the voter submitted a disability affidavit"
+          },
+          "D46": {
+            "formula": null,
+            "literal": "Total rejected non-provisional ballots that could not legally be cured",
+            "type": "s",
+            "value": "Total rejected non-provisional ballots that could not legally be cured"
+          },
+          "D47": {
+            "formula": null,
+            "literal": "Returned after the received-by deadline",
+            "type": "s",
+            "value": "Returned after the received-by deadline"
+          },
+          "D48": {
+            "formula": null,
+            "literal": "Rejected for other non-curable reasons",
+            "type": "s",
+            "value": "Rejected for other non-curable reasons"
+          },
+          "D49": {
+            "formula": null,
+            "literal": "Percentage of ballots returned as undeliverable",
+            "type": "s",
+            "value": "Percentage of ballots returned as undeliverable"
+          },
+          "D5": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D6": {
+            "formula": null,
+            "literal": "Voter turnout",
+            "type": "s",
+            "value": "Voter turnout"
+          },
+          "D7": {
+            "formula": null,
+            "literal": "Active voters (use only the number given to counties the Friday before the election)",
+            "type": "s",
+            "value": "Active voters (use only the number given to counties the Friday before the election)"
+          },
+          "D9": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          }
+        },
+        "county_election_header": "Piute County  - November 3, 2026",
+        "dimensions": {
+          "columns": 4,
+          "rows": 50
+        },
+        "excluded_rows": {
+          "first": 51,
+          "last": 53,
+          "reason": "Unused certification identity/presentation, not aggregate analysis inputs"
+        },
+        "selected_count": 737,
+        "selected_count_cell": "C10",
+        "sheet": "With Hidden Sorting",
+        "source": {
+          "anchor_text": "Download Excel: Piute County Standardized Statistics, Piute County, Nov 10, 2026, 4:38 PM",
+          "bytes": 15521,
+          "captured_at_utc": "2026-11-11T07:26:00.411990+00:00",
+          "category": "Canvass - Standardized Statistics (.xlsx)",
+          "content_type": "application/octet-stream",
+          "county": "Piute County",
+          "election_date": "2026-11-03",
+          "election_name": [
+            {
+              "languageId": "en",
+              "text": "2026 General Election"
+            }
+          ],
+          "filename": "piute-statistics.xlsx",
+          "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26_1c300938-742d-4b53-9d7b-5f77fe51d565.xlsx",
+          "native_filename": "Standard Canvass Statistics Report G26_1c300938-742d-4b53-9d7b-5f77fe51d565.xlsx",
+          "report_name": "Piute County Standardized Statistics",
+          "sha256": "61388ff9f8a15babd5d280b174af1d45aa93350b77006103290313953c06497f",
+          "state_results_official": false,
+          "status": 200,
+          "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26_1c300938-742d-4b53-9d7b-5f77fe51d565.xlsx",
+          "versions": [
+            {
+              "blobName": "Standard Canvass Statistics Report G26_1c300938-742d-4b53-9d7b-5f77fe51d565.xlsx",
+              "reportName": "Piute County Standardized Statistics",
+              "status": "Original",
+              "uploadDate": "2026-11-10T16:38:17.3897858",
+              "versionOrder": 1
+            }
+          ]
+        }
+      },
+      "geography": {
+        "level": "county",
+        "name": "Piute County",
+        "state_code": "UT"
+      },
+      "independent_scope_review": "Independent raw OOXML/openpyxl workbook audit; cached first-page visual review and offline Vision both read the selected ballot count. Vision's 6 of 5 / 56.28% errors are not adopted; original image visibly reads 6 of 6 / 66.28%.",
+      "key": "UT-piute",
+      "native_geography_literal": "Piute County, Utah",
+      "native_status_literal": "2026 General Election Official Results",
+      "rows": [
+        {
+          "count_literals": [
+            "737"
+          ],
+          "label": "Statistics: Ballots Cast - Total",
+          "source_page": 1
+        },
+        {
+          "count_literals": [
+            "737"
+          ],
+          "label": "Standardized canvass total ballots counted",
+          "source_file": "piute-statistics.xlsx"
+        }
+      ],
+      "source": {
+        "anchor_text": "Download PDF: Piute County Official Summary Results, Piute County, Nov 10, 2026, 4:37 PM",
+        "bytes": 40185,
+        "captured_at_utc": "2026-11-11T07:26:00.352922+00:00",
+        "category": "Official Summary Results",
+        "content_type": "application/octet-stream",
+        "county": "Piute County",
+        "election_date": "2026-11-03",
+        "election_name": [
+          {
+            "languageId": "en",
+            "text": "2026 General Election"
+          }
+        ],
+        "filename": "piute-summary.pdf",
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Election%20Summary%20report_658680f6-2bab-4a91-b85f-801e48b25281.pdf",
+        "native_filename": "2026 General Election Summary report_658680f6-2bab-4a91-b85f-801e48b25281.pdf",
+        "report_name": "Piute County Official Summary Results",
+        "sha256": "1593ee8a56ccc1ee64e82466952784c936a7805fa873692e50d22032a0fc4447",
+        "state_results_official": false,
+        "status": 200,
+        "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Election%20Summary%20report_658680f6-2bab-4a91-b85f-801e48b25281.pdf",
+        "versions": [
+          {
+            "blobName": "2026 General Election Summary report_658680f6-2bab-4a91-b85f-801e48b25281.pdf",
+            "reportName": "Piute County Official Summary Results",
+            "status": "Original",
+            "uploadDate": "2026-11-10T16:37:36.2169793",
+            "versionOrder": 1
+          }
+        ]
+      },
+      "source_clock": {
+        "literal": "11/10/2026 09:16AM",
+        "timezone": null
+      },
+      "statewide_or_counting_completion_qualified": false,
+      "unique_people_qualified": false
+    },
+    {
+      "columns": [
+        "reported_native_total_ballots"
+      ],
+      "corroboration": {
+        "file": "kane-statistics.xlsx",
+        "label": "Standardized canvass total ballots counted"
+      },
+      "election": {
+        "date": "2026-11-03",
+        "id": "UT-General11032026",
+        "qualification": "native",
+        "type": "general",
+        "year": 2026
+      },
+      "fractions_qualified": false,
+      "full_summary_statistics": {
+        "Absentee/ Early Precincts Reporting": "12 of 12",
+        "Ballots Cast - Blank": "0",
+        "Ballots Cast - Total": "3,395",
+        "Election Day Precincts Reporting": "12 of 12",
+        "Precincts Complete": "0 of 12",
+        "Precincts Partially Reported": "12 of 12",
+        "Registered Voters - Total": "5,112",
+        "Voter Turnout - Total": "66.41%"
+      },
+      "full_workbook_facts": {
+        "cells": {
+          "A1": {
+            "formula": null,
+            "literal": "Sorting Number - For Internal Use",
+            "type": "s",
+            "value": "Sorting Number - For Internal Use"
+          },
+          "A11": {
+            "formula": null,
+            "literal": "120",
+            "type": "n",
+            "value": 120
+          },
+          "A12": {
+            "formula": null,
+            "literal": "150",
+            "type": "n",
+            "value": 150
+          },
+          "A13": {
+            "formula": null,
+            "literal": "160",
+            "type": "n",
+            "value": 160
+          },
+          "A14": {
+            "formula": null,
+            "literal": "165",
+            "type": "n",
+            "value": 165
+          },
+          "A15": {
+            "formula": null,
+            "literal": "170",
+            "type": "n",
+            "value": 170
+          },
+          "A16": {
+            "formula": null,
+            "literal": "175",
+            "type": "n",
+            "value": 175
+          },
+          "A17": {
+            "formula": null,
+            "literal": "140",
+            "type": "n",
+            "value": 140
+          },
+          "A18": {
+            "formula": null,
+            "literal": "180",
+            "type": "n",
+            "value": 180
+          },
+          "A21": {
+            "formula": null,
+            "literal": "193",
+            "type": "n",
+            "value": 193
+          },
+          "A22": {
+            "formula": null,
+            "literal": "190",
+            "type": "n",
+            "value": 190
+          },
+          "A23": {
+            "formula": null,
+            "literal": "195",
+            "type": "n",
+            "value": 195
+          },
+          "A24": {
+            "formula": null,
+            "literal": "197",
+            "type": "n",
+            "value": 197
+          },
+          "A28": {
+            "formula": null,
+            "literal": "250",
+            "type": "n",
+            "value": 250
+          },
+          "A29": {
+            "formula": null,
+            "literal": "270",
+            "type": "n",
+            "value": 270
+          },
+          "A30": {
+            "formula": null,
+            "literal": "200",
+            "type": "n",
+            "value": 200
+          },
+          "A31": {
+            "formula": null,
+            "literal": "210",
+            "type": "n",
+            "value": 210
+          },
+          "A32": {
+            "formula": null,
+            "literal": "212",
+            "type": "n",
+            "value": 212
+          },
+          "A33": {
+            "formula": null,
+            "literal": "214",
+            "type": "n",
+            "value": 214
+          },
+          "A34": {
+            "formula": null,
+            "literal": "216",
+            "type": "n",
+            "value": 216
+          },
+          "A35": {
+            "formula": null,
+            "literal": "218",
+            "type": "n",
+            "value": 218
+          },
+          "A36": {
+            "formula": null,
+            "literal": "290",
+            "type": "n",
+            "value": 290
+          },
+          "A37": {
+            "formula": null,
+            "literal": "110",
+            "type": "n",
+            "value": 110
+          },
+          "A40": {
+            "formula": null,
+            "literal": "350",
+            "type": "n",
+            "value": 350
+          },
+          "A41": {
+            "formula": null,
+            "literal": "340",
+            "type": "n",
+            "value": 340
+          },
+          "A42": {
+            "formula": null,
+            "literal": "300",
+            "type": "n",
+            "value": 300
+          },
+          "A43": {
+            "formula": null,
+            "literal": "310",
+            "type": "n",
+            "value": 310
+          },
+          "A44": {
+            "formula": null,
+            "literal": "320",
+            "type": "n",
+            "value": 320
+          },
+          "A45": {
+            "formula": null,
+            "literal": "345",
+            "type": "n",
+            "value": 345
+          },
+          "A46": {
+            "formula": null,
+            "literal": "350",
+            "type": "n",
+            "value": 350
+          },
+          "A47": {
+            "formula": null,
+            "literal": "420",
+            "type": "n",
+            "value": 420
+          },
+          "A48": {
+            "formula": null,
+            "literal": "400",
+            "type": "n",
+            "value": 400
+          },
+          "A49": {
+            "formula": null,
+            "literal": "410",
+            "type": "n",
+            "value": 410
+          },
+          "A50": {
+            "formula": null,
+            "literal": "430",
+            "type": "n",
+            "value": 430
+          },
+          "A6": {
+            "formula": null,
+            "literal": "130",
+            "type": "n",
+            "value": 130
+          },
+          "A7": {
+            "formula": null,
+            "literal": "135",
+            "type": "n",
+            "value": 135
+          },
+          "A8": {
+            "formula": null,
+            "literal": "100",
+            "type": "n",
+            "value": 100
+          },
+          "B1": {
+            "formula": null,
+            "literal": "Permanent Field Identifier",
+            "type": "s",
+            "value": "Permanent Field Identifier"
+          },
+          "B12": {
+            "formula": null,
+            "literal": "1C",
+            "type": "s",
+            "value": "1C"
+          },
+          "B13": {
+            "formula": null,
+            "literal": "1D",
+            "type": "s",
+            "value": "1D"
+          },
+          "B14": {
+            "formula": null,
+            "literal": "1D",
+            "type": "s",
+            "value": "1D"
+          },
+          "B15": {
+            "formula": null,
+            "literal": "1E",
+            "type": "s",
+            "value": "1E"
+          },
+          "B16": {
+            "formula": null,
+            "literal": "1E",
+            "type": "s",
+            "value": "1E"
+          },
+          "B17": {
+            "formula": null,
+            "literal": "1F",
+            "type": "s",
+            "value": "1F"
+          },
+          "B22": {
+            "formula": null,
+            "literal": "1H",
+            "type": "s",
+            "value": "1H"
+          },
+          "B23": {
+            "formula": null,
+            "literal": "1I",
+            "type": "s",
+            "value": "1I"
+          },
+          "B28": {
+            "formula": null,
+            "literal": "4A",
+            "type": "s",
+            "value": "4A"
+          },
+          "B29": {
+            "formula": null,
+            "literal": "4B",
+            "type": "s",
+            "value": "4B"
+          },
+          "B30": {
+            "formula": null,
+            "literal": "4C",
+            "type": "s",
+            "value": "4C"
+          },
+          "B31": {
+            "formula": null,
+            "literal": "4D",
+            "type": "s",
+            "value": "4D"
+          },
+          "B32": {
+            "formula": null,
+            "literal": "4E",
+            "type": "s",
+            "value": "4E"
+          },
+          "B33": {
+            "formula": null,
+            "literal": "4E",
+            "type": "s",
+            "value": "4E"
+          },
+          "B34": {
+            "formula": null,
+            "literal": "4G",
+            "type": "s",
+            "value": "4G"
+          },
+          "B35": {
+            "formula": null,
+            "literal": "4H",
+            "type": "s",
+            "value": "4H"
+          },
+          "B36": {
+            "formula": null,
+            "literal": "4I",
+            "type": "s",
+            "value": "4I"
+          },
+          "B37": {
+            "formula": null,
+            "literal": "4J",
+            "type": "s",
+            "value": "4J"
+          },
+          "B40": {
+            "formula": null,
+            "literal": "2D",
+            "type": "s",
+            "value": "2D"
+          },
+          "B41": {
+            "formula": null,
+            "literal": "2E",
+            "type": "s",
+            "value": "2E"
+          },
+          "B42": {
+            "formula": null,
+            "literal": "This field was originally numbered 2A and may have referred to the number of total challenged ballots, both cured and not, which were signature non-matches",
+            "type": "s",
+            "value": "This field was originally numbered 2A and may have referred to the number of total challenged ballots, both cured and not, which were signature non-matches"
+          },
+          "B43": {
+            "formula": null,
+            "literal": "This field was originally numbered 2B and may have referred to the number of total challenged ballots, both cured and not, which were unsigned",
+            "type": "s",
+            "value": "This field was originally numbered 2B and may have referred to the number of total challenged ballots, both cured and not, which were unsigned"
+          },
+          "B44": {
+            "formula": null,
+            "literal": "This field was originally numbered 2C and may have referred to the number of total challenged ballots, both cured and not, challenged for other reasons",
+            "type": "s",
+            "value": "This field was originally numbered 2C and may have referred to the number of total challenged ballots, both cured and not, challenged for other reasons"
+          },
+          "B45": {
+            "formula": null,
+            "literal": "2F",
+            "type": "s",
+            "value": "2F"
+          },
+          "B46": {
+            "formula": null,
+            "literal": "2G",
+            "type": "s",
+            "value": "2G"
+          },
+          "B47": {
+            "formula": null,
+            "literal": "3C",
+            "type": "s",
+            "value": "3C"
+          },
+          "B48": {
+            "formula": null,
+            "literal": "3A",
+            "type": "s",
+            "value": "3A"
+          },
+          "B49": {
+            "formula": null,
+            "literal": "3B",
+            "type": "s",
+            "value": "3B"
+          },
+          "B50": {
+            "formula": null,
+            "literal": "3D",
+            "type": "s",
+            "value": "3D"
+          },
+          "B6": {
+            "formula": null,
+            "literal": "1A",
+            "type": "s",
+            "value": "1A"
+          },
+          "B7": {
+            "formula": null,
+            "literal": "5A",
+            "type": "s",
+            "value": "5A"
+          },
+          "B8": {
+            "formula": null,
+            "literal": "1B",
+            "type": "s",
+            "value": "1B"
+          },
+          "C1": {
+            "formula": null,
+            "literal": "Reported Value",
+            "type": "s",
+            "value": "Reported Value"
+          },
+          "C10": {
+            "formula": null,
+            "literal": "Section 2: Counted Ballot Statistics",
+            "type": "s",
+            "value": "Section 2: Counted Ballot Statistics"
+          },
+          "C11": {
+            "formula": "SUM(C12:C18)",
+            "literal": "3395",
+            "type": "n",
+            "value": 3395
+          },
+          "C12": {
+            "formula": null,
+            "literal": "2968",
+            "type": "n",
+            "value": 2968
+          },
+          "C13": {
+            "formula": null,
+            "literal": "90",
+            "type": "n",
+            "value": 90
+          },
+          "C14": {
+            "formula": null,
+            "literal": "303",
+            "type": "n",
+            "value": 303
+          },
+          "C15": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C16": {
+            "formula": null,
+            "literal": "8",
+            "type": "n",
+            "value": 8
+          },
+          "C17": {
+            "formula": null,
+            "literal": "26",
+            "type": "n",
+            "value": 26
+          },
+          "C18": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "C2": {
+            "formula": null,
+            "literal": "Standardized Canvass Statistics Report",
+            "type": "s",
+            "value": "Standardized Canvass Statistics Report"
+          },
+          "C20": {
+            "formula": null,
+            "literal": "Section 3: Vote History Reconciliation",
+            "type": "s",
+            "value": "Section 3: Vote History Reconciliation"
+          },
+          "C21": {
+            "formula": null,
+            "literal": "3395",
+            "type": "n",
+            "value": 3395
+          },
+          "C22": {
+            "formula": "IF(C21-C11=0, \"Yes\", \"No\")",
+            "literal": "Yes",
+            "type": "str",
+            "value": "Yes"
+          },
+          "C23": {
+            "formula": "IF(C21-C11=0, \"NA\", C21-C11)",
+            "literal": "NA",
+            "type": "str",
+            "value": "NA"
+          },
+          "C27": {
+            "formula": null,
+            "literal": "Section 4: Provisional Ballot Statistics",
+            "type": "s",
+            "value": "Section 4: Provisional Ballot Statistics"
+          },
+          "C28": {
+            "formula": "SUM(C29:C30)",
+            "literal": "26",
+            "type": "n",
+            "value": 26
+          },
+          "C29": {
+            "formula": "C17",
+            "literal": "26",
+            "type": "n",
+            "value": 26
+          },
+          "C3": {
+            "formula": null,
+            "literal": "**Kane County** - **November 3, 2026**",
+            "type": "s",
+            "value": "**Kane County** - **November 3, 2026**"
+          },
+          "C30": {
+            "formula": "SUM(C31:C35)",
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C31": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "C32": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "C33": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "C34": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "C35": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C36": {
+            "formula": "C29/C28",
+            "literal": "1",
+            "type": "n",
+            "value": 1
+          },
+          "C37": {
+            "formula": null,
+            "literal": "26",
+            "type": "n",
+            "value": 26
+          },
+          "C39": {
+            "formula": null,
+            "literal": "Section 5: By Mail Ballot Statistics",
+            "type": "s",
+            "value": "Section 5: By Mail Ballot Statistics"
+          },
+          "C40": {
+            "formula": null,
+            "literal": "64",
+            "type": "n",
+            "value": 64
+          },
+          "C41": {
+            "formula": "SUM(C42:C44)",
+            "literal": "30",
+            "type": "n",
+            "value": 30
+          },
+          "C42": {
+            "formula": null,
+            "literal": "1",
+            "type": "n",
+            "value": 1
+          },
+          "C43": {
+            "formula": null,
+            "literal": "16",
+            "type": "n",
+            "value": 16
+          },
+          "C44": {
+            "formula": null,
+            "literal": "13",
+            "type": "n",
+            "value": 13
+          },
+          "C45": {
+            "formula": "C41/C40",
+            "literal": "0.46875",
+            "type": "n",
+            "value": 0.46875
+          },
+          "C46": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C47": {
+            "formula": "SUM(C48:C49)",
+            "literal": "13",
+            "type": "n",
+            "value": 13
+          },
+          "C48": {
+            "formula": null,
+            "literal": "13",
+            "type": "n",
+            "value": 13
+          },
+          "C49": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "C5": {
+            "formula": null,
+            "literal": "Section 1: Active Voters and Turnout",
+            "type": "s",
+            "value": "Section 1: Active Voters and Turnout"
+          },
+          "C50": {
+            "formula": null,
+            "literal": "0.02",
+            "type": "n",
+            "value": 0.02
+          },
+          "C6": {
+            "formula": "C11/C8",
+            "literal": "0.66412363067292646",
+            "type": "n",
+            "value": 0.6641236306729265
+          },
+          "C7": {
+            "formula": "C11/(C8+C37)",
+            "literal": "0.6607629427792916",
+            "type": "n",
+            "value": 0.6607629427792916
+          },
+          "C8": {
+            "formula": null,
+            "literal": "5112",
+            "type": "n",
+            "value": 5112
+          },
+          "D1": {
+            "formula": null,
+            "literal": "Statistic Name",
+            "type": "s",
+            "value": "Statistic Name"
+          },
+          "D10": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D11": {
+            "formula": null,
+            "literal": "Total ballots counted",
+            "type": "s",
+            "value": "Total ballots counted"
+          },
+          "D12": {
+            "formula": null,
+            "literal": "Mail ballots counted",
+            "type": "s",
+            "value": "Mail ballots counted"
+          },
+          "D13": {
+            "formula": null,
+            "literal": "In-person early voting period ballots counted",
+            "type": "s",
+            "value": "In-person early voting period ballots counted"
+          },
+          "D14": {
+            "formula": null,
+            "literal": "In-person election day ballots counted",
+            "type": "s",
+            "value": "In-person election day ballots counted"
+          },
+          "D15": {
+            "formula": null,
+            "literal": "Disability ballots counted returned electronically",
+            "type": "s",
+            "value": "Disability ballots counted returned electronically"
+          },
+          "D16": {
+            "formula": null,
+            "literal": "UOCAVA ballots counted returned electronically",
+            "type": "s",
+            "value": "UOCAVA ballots counted returned electronically"
+          },
+          "D17": {
+            "formula": null,
+            "literal": "Provisional ballots counted",
+            "type": "s",
+            "value": "Provisional ballots counted"
+          },
+          "D18": {
+            "formula": null,
+            "literal": "Emergency ballots counted",
+            "type": "s",
+            "value": "Emergency ballots counted"
+          },
+          "D19": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D2": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D20": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D21": {
+            "formula": null,
+            "literal": "Vote histories given",
+            "type": "s",
+            "value": "Vote histories given"
+          },
+          "D22": {
+            "formula": null,
+            "literal": "Does total ballots counted match the number of voters given vote history in VISTA?",
+            "type": "s",
+            "value": "Does total ballots counted match the number of voters given vote history in VISTA?"
+          },
+          "D23": {
+            "formula": null,
+            "literal": "If no, what is the difference? (surplus vote histories)",
+            "type": "s",
+            "value": "If no, what is the difference? (surplus vote histories)"
+          },
+          "D24": {
+            "formula": null,
+            "literal": "If no, provide an explanation below.",
+            "type": "s",
+            "value": "If no, provide an explanation below."
+          },
+          "D25": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D27": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D28": {
+            "formula": null,
+            "literal": "Provisional ballots issued",
+            "type": "s",
+            "value": "Provisional ballots issued"
+          },
+          "D29": {
+            "formula": null,
+            "literal": "Provisional ballots counted",
+            "type": "s",
+            "value": "Provisional ballots counted"
+          },
+          "D3": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D30": {
+            "formula": null,
+            "literal": "Total provisional ballots not counted",
+            "type": "s",
+            "value": "Total provisional ballots not counted"
+          },
+          "D31": {
+            "formula": null,
+            "literal": "Already voted",
+            "type": "s",
+            "value": "Already voted"
+          },
+          "D32": {
+            "formula": null,
+            "literal": "Insufficient ID",
+            "type": "s",
+            "value": "Insufficient ID"
+          },
+          "D33": {
+            "formula": null,
+            "literal": "Residency",
+            "type": "s",
+            "value": "Residency"
+          },
+          "D34": {
+            "formula": null,
+            "literal": "Incomplete form",
+            "type": "s",
+            "value": "Incomplete form"
+          },
+          "D35": {
+            "formula": null,
+            "literal": "Other",
+            "type": "s",
+            "value": "Other"
+          },
+          "D36": {
+            "formula": null,
+            "literal": "Percentage of provisionals that were counted",
+            "type": "s",
+            "value": "Percentage of provisionals that were counted"
+          },
+          "D37": {
+            "formula": null,
+            "literal": "Number of provisional ballots that were same-day registration",
+            "type": "s",
+            "value": "Number of provisional ballots that were same-day registration"
+          },
+          "D39": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D40": {
+            "formula": null,
+            "literal": "Total challenged curable ballots (number of voters sent a cure notice)",
+            "type": "s",
+            "value": "Total challenged curable ballots (number of voters sent a cure notice)"
+          },
+          "D41": {
+            "formula": null,
+            "literal": "Total rejected ballots that were curable but not cured",
+            "type": "s",
+            "value": "Total rejected ballots that were curable but not cured"
+          },
+          "D42": {
+            "formula": null,
+            "literal": "Envelopes with a signature that does not match the voter's signature",
+            "type": "s",
+            "value": "Envelopes with a signature that does not match the voter's signature"
+          },
+          "D43": {
+            "formula": null,
+            "literal": "Unsigned envelopes",
+            "type": "s",
+            "value": "Unsigned envelopes"
+          },
+          "D44": {
+            "formula": null,
+            "literal": "Ballots challenged for other curable reasons",
+            "type": "s",
+            "value": "Ballots challenged for other curable reasons"
+          },
+          "D45": {
+            "formula": null,
+            "literal": "Percentage of curable ballots not cured",
+            "type": "s",
+            "value": "Percentage of curable ballots not cured"
+          },
+          "D46": {
+            "formula": null,
+            "literal": "Number of ballots where the voter submitted a disability affidavit",
+            "type": "s",
+            "value": "Number of ballots where the voter submitted a disability affidavit"
+          },
+          "D47": {
+            "formula": null,
+            "literal": "Total  rejected non-provisional ballots that could not legally be cured",
+            "type": "s",
+            "value": "Total  rejected non-provisional ballots that could not legally be cured"
+          },
+          "D48": {
+            "formula": null,
+            "literal": "Returned after the received-by deadline",
+            "type": "s",
+            "value": "Returned after the received-by deadline"
+          },
+          "D49": {
+            "formula": null,
+            "literal": "Rejected for other non-curable reasons",
+            "type": "s",
+            "value": "Rejected for other non-curable reasons"
+          },
+          "D5": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D50": {
+            "formula": null,
+            "literal": "Percentage of ballots returned as undeliverable",
+            "type": "s",
+            "value": "Percentage of ballots returned as undeliverable"
+          },
+          "D6": {
+            "formula": null,
+            "literal": "Voter turnout",
+            "type": "s",
+            "value": "Voter turnout"
+          },
+          "D7": {
+            "formula": null,
+            "literal": "Proportion of active voters and same-day registrants who cast counted ballots",
+            "type": "s",
+            "value": "Proportion of active voters and same-day registrants who cast counted ballots"
+          },
+          "D8": {
+            "formula": null,
+            "literal": "Active voters (use only the number given to counties the Friday before the election)",
+            "type": "s",
+            "value": "Active voters (use only the number given to counties the Friday before the election)"
+          }
+        },
+        "county_election_header": "**Kane County** - **November 3, 2026**",
+        "dimensions": {
+          "columns": 4,
+          "rows": 51
+        },
+        "excluded_rows": {
+          "first": 52,
+          "last": 54,
+          "reason": "Unused certification identity/presentation, not aggregate analysis inputs"
+        },
+        "selected_count": 3395,
+        "selected_count_cell": "C11",
+        "sheet": "With Hidden Sorting",
+        "source": {
+          "anchor_text": "Download Excel: Kane County Standardized Statistics, Kane County, Nov 10, 2026, 5:47 PM",
+          "bytes": 15719,
+          "captured_at_utc": "2026-11-11T07:26:00.447349+00:00",
+          "category": "Canvass - Standardized Statistics (.xlsx)",
+          "content_type": "application/octet-stream",
+          "county": "Kane County",
+          "election_date": "2026-11-03",
+          "election_name": [
+            {
+              "languageId": "en",
+              "text": "2026 General Election"
+            }
+          ],
+          "filename": "kane-statistics.xlsx",
+          "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G25_fd5dd30f-18b9-425b-b4ae-06b02e4b1132.xlsx",
+          "native_filename": "Standard Canvass Statistics Report G25_fd5dd30f-18b9-425b-b4ae-06b02e4b1132.xlsx",
+          "report_name": "Kane County Standardized Statistics",
+          "sha256": "2362793d202c1e1856c0b05e0b6f41c70b67dd40254a9a8a6ff33848d55dda94",
+          "state_results_official": false,
+          "status": 200,
+          "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G25_fd5dd30f-18b9-425b-b4ae-06b02e4b1132.xlsx",
+          "versions": [
+            {
+              "blobName": "Standard Canvass Statistics Report G25_fd5dd30f-18b9-425b-b4ae-06b02e4b1132.xlsx",
+              "reportName": "Kane County Standardized Statistics",
+              "status": "Original",
+              "uploadDate": "2026-11-10T17:47:51.8862266",
+              "versionOrder": 1
+            }
+          ]
+        }
+      },
+      "geography": {
+        "level": "county",
+        "name": "Kane County",
+        "state_code": "UT"
+      },
+      "independent_scope_review": "Independent raw OOXML/openpyxl workbook audit; cached first-page visual review and offline Vision read 3,395. The G25 workbook filename and explicit November 3, 2026 worksheet header remain separate literals.",
+      "key": "UT-kane",
+      "native_geography_literal": "Kane County, Utah",
+      "native_status_literal": "OFFICIAL RESULTS",
+      "rows": [
+        {
+          "count_literals": [
+            "3,395"
+          ],
+          "label": "Statistics: Ballots Cast - Total",
+          "source_page": 1
+        },
+        {
+          "count_literals": [
+            "3395"
+          ],
+          "label": "Standardized canvass total ballots counted",
+          "source_file": "kane-statistics.xlsx"
+        }
+      ],
+      "source": {
+        "anchor_text": "Download PDF: Kane County Official Summary Results, Kane County, Nov 10, 2026, 5:47 PM",
+        "bytes": 144430,
+        "captured_at_utc": "2026-11-11T07:26:00.347228+00:00",
+        "category": "Official Summary Results",
+        "content_type": "application/octet-stream",
+        "county": "Kane County",
+        "election_date": "2026-11-03",
+        "election_name": [
+          {
+            "languageId": "en",
+            "text": "2026 General Election"
+          }
+        ],
+        "filename": "kane-summary.pdf",
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Official%20Nov%203%20General%20Election%20Summary%20Results_f3ffbdcf-a736-466c-b668-5103809e9051.pdf",
+        "native_filename": "Official Nov 3 General Election Summary Results_f3ffbdcf-a736-466c-b668-5103809e9051.pdf",
+        "report_name": "Kane County Official Summary Results",
+        "sha256": "abaeaccdb534bb89e28e66ec9a9876b383a63b91838d3288140581a49ed3bd4e",
+        "state_results_official": false,
+        "status": 200,
+        "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Official%20Nov%203%20General%20Election%20Summary%20Results_f3ffbdcf-a736-466c-b668-5103809e9051.pdf",
+        "versions": [
+          {
+            "blobName": "Official Nov 3 General Election Summary Results_f3ffbdcf-a736-466c-b668-5103809e9051.pdf",
+            "reportName": "Kane County Official Summary Results",
+            "status": "Original",
+            "uploadDate": "2026-11-10T17:47:23.1962187",
+            "versionOrder": 1
+          }
+        ]
+      },
+      "source_clock": {
+        "literal": "11/10/2026 08:33AM",
+        "timezone": null
+      },
+      "statewide_or_counting_completion_qualified": false,
+      "unique_people_qualified": false
+    },
+    {
+      "columns": [
+        "reported_native_total_ballots"
+      ],
+      "corroboration": {
+        "file": "millard-statistics.xlsx",
+        "label": "Standardized canvass total ballots counted"
+      },
+      "election": {
+        "date": "2026-11-03",
+        "id": "UT-General11032026",
+        "qualification": "native",
+        "type": "general",
+        "year": 2026
+      },
+      "fractions_qualified": false,
+      "full_summary_statistics": {
+        "Absentee/ Early Precincts Reporting": "18 of 18",
+        "Ballots Cast - Blank": "1",
+        "Ballots Cast - Total": "4,149",
+        "Election Day Precincts Reporting": "18 of 18",
+        "Precincts Complete": "18 of 18",
+        "Precincts Partially Reported": "0 of 18",
+        "Registered Voters - Total": "7,264",
+        "Voter Turnout - Total": "57.12%"
+      },
+      "full_workbook_facts": {
+        "cells": {
+          "A1": {
+            "formula": null,
+            "literal": "Sorting Number - For Internal Use",
+            "type": "s",
+            "value": "Sorting Number - For Internal Use"
+          },
+          "A10": {
+            "formula": null,
+            "literal": "120",
+            "type": "n",
+            "value": 120
+          },
+          "A11": {
+            "formula": null,
+            "literal": "150",
+            "type": "n",
+            "value": 150
+          },
+          "A12": {
+            "formula": null,
+            "literal": "160",
+            "type": "n",
+            "value": 160
+          },
+          "A13": {
+            "formula": null,
+            "literal": "165",
+            "type": "n",
+            "value": 165
+          },
+          "A14": {
+            "formula": null,
+            "literal": "170",
+            "type": "n",
+            "value": 170
+          },
+          "A15": {
+            "formula": null,
+            "literal": "175",
+            "type": "n",
+            "value": 175
+          },
+          "A16": {
+            "formula": null,
+            "literal": "140",
+            "type": "n",
+            "value": 140
+          },
+          "A17": {
+            "formula": null,
+            "literal": "180",
+            "type": "n",
+            "value": 180
+          },
+          "A20": {
+            "formula": null,
+            "literal": "193",
+            "type": "n",
+            "value": 193
+          },
+          "A21": {
+            "formula": null,
+            "literal": "190",
+            "type": "n",
+            "value": 190
+          },
+          "A22": {
+            "formula": null,
+            "literal": "195",
+            "type": "n",
+            "value": 195
+          },
+          "A23": {
+            "formula": null,
+            "literal": "197",
+            "type": "n",
+            "value": 197
+          },
+          "A27": {
+            "formula": null,
+            "literal": "250",
+            "type": "n",
+            "value": 250
+          },
+          "A28": {
+            "formula": null,
+            "literal": "270",
+            "type": "n",
+            "value": 270
+          },
+          "A29": {
+            "formula": null,
+            "literal": "200",
+            "type": "n",
+            "value": 200
+          },
+          "A30": {
+            "formula": null,
+            "literal": "210",
+            "type": "n",
+            "value": 210
+          },
+          "A31": {
+            "formula": null,
+            "literal": "212",
+            "type": "n",
+            "value": 212
+          },
+          "A32": {
+            "formula": null,
+            "literal": "214",
+            "type": "n",
+            "value": 214
+          },
+          "A33": {
+            "formula": null,
+            "literal": "216",
+            "type": "n",
+            "value": 216
+          },
+          "A34": {
+            "formula": null,
+            "literal": "218",
+            "type": "n",
+            "value": 218
+          },
+          "A35": {
+            "formula": null,
+            "literal": "290",
+            "type": "n",
+            "value": 290
+          },
+          "A36": {
+            "formula": null,
+            "literal": "110",
+            "type": "n",
+            "value": 110
+          },
+          "A39": {
+            "formula": null,
+            "literal": "350",
+            "type": "n",
+            "value": 350
+          },
+          "A40": {
+            "formula": null,
+            "literal": "340",
+            "type": "n",
+            "value": 340
+          },
+          "A41": {
+            "formula": null,
+            "literal": "300",
+            "type": "n",
+            "value": 300
+          },
+          "A42": {
+            "formula": null,
+            "literal": "310",
+            "type": "n",
+            "value": 310
+          },
+          "A43": {
+            "formula": null,
+            "literal": "320",
+            "type": "n",
+            "value": 320
+          },
+          "A44": {
+            "formula": null,
+            "literal": "345",
+            "type": "n",
+            "value": 345
+          },
+          "A45": {
+            "formula": null,
+            "literal": "350",
+            "type": "n",
+            "value": 350
+          },
+          "A46": {
+            "formula": null,
+            "literal": "420",
+            "type": "n",
+            "value": 420
+          },
+          "A47": {
+            "formula": null,
+            "literal": "400",
+            "type": "n",
+            "value": 400
+          },
+          "A48": {
+            "formula": null,
+            "literal": "410",
+            "type": "n",
+            "value": 410
+          },
+          "A49": {
+            "formula": null,
+            "literal": "430",
+            "type": "n",
+            "value": 430
+          },
+          "A6": {
+            "formula": null,
+            "literal": "130",
+            "type": "n",
+            "value": 130
+          },
+          "A7": {
+            "formula": null,
+            "literal": "100",
+            "type": "n",
+            "value": 100
+          },
+          "B1": {
+            "formula": null,
+            "literal": "Permanent Field Identifier",
+            "type": "s",
+            "value": "Permanent Field Identifier"
+          },
+          "B11": {
+            "formula": null,
+            "literal": "1C",
+            "type": "s",
+            "value": "1C"
+          },
+          "B12": {
+            "formula": null,
+            "literal": "1D",
+            "type": "s",
+            "value": "1D"
+          },
+          "B13": {
+            "formula": null,
+            "literal": "1D",
+            "type": "s",
+            "value": "1D"
+          },
+          "B14": {
+            "formula": null,
+            "literal": "1E",
+            "type": "s",
+            "value": "1E"
+          },
+          "B15": {
+            "formula": null,
+            "literal": "1E",
+            "type": "s",
+            "value": "1E"
+          },
+          "B16": {
+            "formula": null,
+            "literal": "1F",
+            "type": "s",
+            "value": "1F"
+          },
+          "B21": {
+            "formula": null,
+            "literal": "1H",
+            "type": "s",
+            "value": "1H"
+          },
+          "B22": {
+            "formula": null,
+            "literal": "1I",
+            "type": "s",
+            "value": "1I"
+          },
+          "B27": {
+            "formula": null,
+            "literal": "4A",
+            "type": "s",
+            "value": "4A"
+          },
+          "B28": {
+            "formula": null,
+            "literal": "4B",
+            "type": "s",
+            "value": "4B"
+          },
+          "B29": {
+            "formula": null,
+            "literal": "4C",
+            "type": "s",
+            "value": "4C"
+          },
+          "B30": {
+            "formula": null,
+            "literal": "4D",
+            "type": "s",
+            "value": "4D"
+          },
+          "B31": {
+            "formula": null,
+            "literal": "4E",
+            "type": "s",
+            "value": "4E"
+          },
+          "B32": {
+            "formula": null,
+            "literal": "4E",
+            "type": "s",
+            "value": "4E"
+          },
+          "B33": {
+            "formula": null,
+            "literal": "4G",
+            "type": "s",
+            "value": "4G"
+          },
+          "B34": {
+            "formula": null,
+            "literal": "4H",
+            "type": "s",
+            "value": "4H"
+          },
+          "B35": {
+            "formula": null,
+            "literal": "4I",
+            "type": "s",
+            "value": "4I"
+          },
+          "B36": {
+            "formula": null,
+            "literal": "4J",
+            "type": "s",
+            "value": "4J"
+          },
+          "B39": {
+            "formula": null,
+            "literal": "2D",
+            "type": "s",
+            "value": "2D"
+          },
+          "B40": {
+            "formula": null,
+            "literal": "2E",
+            "type": "s",
+            "value": "2E"
+          },
+          "B41": {
+            "formula": null,
+            "literal": "This field was originally numbered 2A and may have referred to the number of total challenged ballots, both cured and not, which were signature non-matches",
+            "type": "s",
+            "value": "This field was originally numbered 2A and may have referred to the number of total challenged ballots, both cured and not, which were signature non-matches"
+          },
+          "B42": {
+            "formula": null,
+            "literal": "This field was originally numbered 2B and may have referred to the number of total challenged ballots, both cured and not, which were unsigned",
+            "type": "s",
+            "value": "This field was originally numbered 2B and may have referred to the number of total challenged ballots, both cured and not, which were unsigned"
+          },
+          "B43": {
+            "formula": null,
+            "literal": "This field was originally numbered 2C and may have referred to the number of total challenged ballots, both cured and not, challenged for other reasons",
+            "type": "s",
+            "value": "This field was originally numbered 2C and may have referred to the number of total challenged ballots, both cured and not, challenged for other reasons"
+          },
+          "B44": {
+            "formula": null,
+            "literal": "2F",
+            "type": "s",
+            "value": "2F"
+          },
+          "B45": {
+            "formula": null,
+            "literal": "2G",
+            "type": "s",
+            "value": "2G"
+          },
+          "B46": {
+            "formula": null,
+            "literal": "3C",
+            "type": "s",
+            "value": "3C"
+          },
+          "B47": {
+            "formula": null,
+            "literal": "3A",
+            "type": "s",
+            "value": "3A"
+          },
+          "B48": {
+            "formula": null,
+            "literal": "3B",
+            "type": "s",
+            "value": "3B"
+          },
+          "B49": {
+            "formula": null,
+            "literal": "3D",
+            "type": "s",
+            "value": "3D"
+          },
+          "B6": {
+            "formula": null,
+            "literal": "1A",
+            "type": "s",
+            "value": "1A"
+          },
+          "B7": {
+            "formula": null,
+            "literal": "1B",
+            "type": "s",
+            "value": "1B"
+          },
+          "C1": {
+            "formula": null,
+            "literal": "Reported Value",
+            "type": "s",
+            "value": "Reported Value"
+          },
+          "C10": {
+            "formula": "SUM(C11:C17)",
+            "literal": "4149",
+            "type": "n",
+            "value": 4149
+          },
+          "C11": {
+            "formula": null,
+            "literal": "3962",
+            "type": "n",
+            "value": 3962
+          },
+          "C12": {
+            "formula": null,
+            "literal": "23",
+            "type": "n",
+            "value": 23
+          },
+          "C13": {
+            "formula": null,
+            "literal": "142",
+            "type": "n",
+            "value": 142
+          },
+          "C14": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C15": {
+            "formula": null,
+            "literal": "4",
+            "type": "n",
+            "value": 4
+          },
+          "C16": {
+            "formula": null,
+            "literal": "18",
+            "type": "n",
+            "value": 18
+          },
+          "C17": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C19": {
+            "formula": null,
+            "literal": "Section 3: Vote History Reconciliation",
+            "type": "s",
+            "value": "Section 3: Vote History Reconciliation"
+          },
+          "C2": {
+            "formula": null,
+            "literal": "Standardized Canvass Statistics Report",
+            "type": "s",
+            "value": "Standardized Canvass Statistics Report"
+          },
+          "C20": {
+            "formula": null,
+            "literal": "4149",
+            "type": "n",
+            "value": 4149
+          },
+          "C21": {
+            "formula": "IF(C20-C10=0, \"Yes\", \"No\")",
+            "literal": "Yes",
+            "type": "str",
+            "value": "Yes"
+          },
+          "C22": {
+            "formula": "IF(C20-C10=0, \"NA\", C20-C10)",
+            "literal": "NA",
+            "type": "str",
+            "value": "NA"
+          },
+          "C26": {
+            "formula": null,
+            "literal": "Section 4: Provisional Ballot Statistics",
+            "type": "s",
+            "value": "Section 4: Provisional Ballot Statistics"
+          },
+          "C27": {
+            "formula": "SUM(C28:C29)",
+            "literal": "20",
+            "type": "n",
+            "value": 20
+          },
+          "C28": {
+            "formula": "C16",
+            "literal": "18",
+            "type": "n",
+            "value": 18
+          },
+          "C29": {
+            "formula": "SUM(C30:C34)",
+            "literal": "2",
+            "type": "n",
+            "value": 2
+          },
+          "C3": {
+            "formula": null,
+            "literal": "Millard - November 3, 2026",
+            "type": "s",
+            "value": "Millard - November 3, 2026"
+          },
+          "C30": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "C31": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "C32": {
+            "formula": null,
+            "literal": "2",
+            "type": "n",
+            "value": 2
+          },
+          "C33": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "C34": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "C35": {
+            "formula": "C28/C27",
+            "literal": "0.9",
+            "type": "n",
+            "value": 0.9
+          },
+          "C36": {
+            "formula": null,
+            "literal": "15",
+            "type": "n",
+            "value": 15
+          },
+          "C38": {
+            "formula": null,
+            "literal": "Section 5: By Mail Ballot Statistics",
+            "type": "s",
+            "value": "Section 5: By Mail Ballot Statistics"
+          },
+          "C39": {
+            "formula": null,
+            "literal": "85",
+            "type": "n",
+            "value": 85
+          },
+          "C40": {
+            "formula": "SUM(C41:C43)",
+            "literal": "52",
+            "type": "n",
+            "value": 52
+          },
+          "C41": {
+            "formula": null,
+            "literal": "19",
+            "type": "n",
+            "value": 19
+          },
+          "C42": {
+            "formula": null,
+            "literal": "8",
+            "type": "n",
+            "value": 8
+          },
+          "C43": {
+            "formula": null,
+            "literal": "25",
+            "type": "n",
+            "value": 25
+          },
+          "C44": {
+            "formula": "C40/C39",
+            "literal": "0.61176470588235299",
+            "type": "n",
+            "value": 0.611764705882353
+          },
+          "C45": {
+            "formula": null,
+            "literal": "0",
+            "type": "n",
+            "value": 0
+          },
+          "C46": {
+            "formula": "SUM(C47:C48)",
+            "literal": "15",
+            "type": "n",
+            "value": 15
+          },
+          "C47": {
+            "formula": null,
+            "literal": "9",
+            "type": "n",
+            "value": 9
+          },
+          "C48": {
+            "formula": null,
+            "literal": "6",
+            "type": "n",
+            "value": 6
+          },
+          "C49": {
+            "formula": null,
+            "literal": "0.03",
+            "type": "n",
+            "value": 0.03
+          },
+          "C5": {
+            "formula": null,
+            "literal": "Section 1: Active Voters and Turnout",
+            "type": "s",
+            "value": "Section 1: Active Voters and Turnout"
+          },
+          "C6": {
+            "formula": "C10/C7",
+            "literal": "0.57117290748898675",
+            "type": "n",
+            "value": 0.5711729074889867
+          },
+          "C7": {
+            "formula": null,
+            "literal": "7264",
+            "type": "n",
+            "value": 7264
+          },
+          "C9": {
+            "formula": null,
+            "literal": "Section 2: Counted Ballot Statistics",
+            "type": "s",
+            "value": "Section 2: Counted Ballot Statistics"
+          },
+          "D1": {
+            "formula": null,
+            "literal": "Statistic Name",
+            "type": "s",
+            "value": "Statistic Name"
+          },
+          "D10": {
+            "formula": null,
+            "literal": "Total ballots counted",
+            "type": "s",
+            "value": "Total ballots counted"
+          },
+          "D11": {
+            "formula": null,
+            "literal": "Mail ballots counted",
+            "type": "s",
+            "value": "Mail ballots counted"
+          },
+          "D12": {
+            "formula": null,
+            "literal": "In-person early voting period ballots counted",
+            "type": "s",
+            "value": "In-person early voting period ballots counted"
+          },
+          "D13": {
+            "formula": null,
+            "literal": "In-person election day ballots counted",
+            "type": "s",
+            "value": "In-person election day ballots counted"
+          },
+          "D14": {
+            "formula": null,
+            "literal": "Disability ballots counted returned electronically",
+            "type": "s",
+            "value": "Disability ballots counted returned electronically"
+          },
+          "D15": {
+            "formula": null,
+            "literal": "UOCAVA ballots counted returned electronically",
+            "type": "s",
+            "value": "UOCAVA ballots counted returned electronically"
+          },
+          "D16": {
+            "formula": null,
+            "literal": "Provisional ballots counted",
+            "type": "s",
+            "value": "Provisional ballots counted"
+          },
+          "D17": {
+            "formula": null,
+            "literal": "Emergency ballots counted",
+            "type": "s",
+            "value": "Emergency ballots counted"
+          },
+          "D18": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D19": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D2": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D20": {
+            "formula": null,
+            "literal": "Vote histories given",
+            "type": "s",
+            "value": "Vote histories given"
+          },
+          "D21": {
+            "formula": null,
+            "literal": "Does total ballots counted match the number of voters given vote history in VISTA?",
+            "type": "s",
+            "value": "Does total ballots counted match the number of voters given vote history in VISTA?"
+          },
+          "D22": {
+            "formula": null,
+            "literal": "If no, what is the difference? (surplus vote histories)",
+            "type": "s",
+            "value": "If no, what is the difference? (surplus vote histories)"
+          },
+          "D23": {
+            "formula": null,
+            "literal": "If no, provide an explanation below.",
+            "type": "s",
+            "value": "If no, provide an explanation below."
+          },
+          "D24": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D26": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D27": {
+            "formula": null,
+            "literal": "Provisional ballots issued",
+            "type": "s",
+            "value": "Provisional ballots issued"
+          },
+          "D28": {
+            "formula": null,
+            "literal": "Provisional ballots counted",
+            "type": "s",
+            "value": "Provisional ballots counted"
+          },
+          "D29": {
+            "formula": null,
+            "literal": "Total provisional ballots not counted",
+            "type": "s",
+            "value": "Total provisional ballots not counted"
+          },
+          "D3": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D30": {
+            "formula": null,
+            "literal": "Already voted",
+            "type": "s",
+            "value": "Already voted"
+          },
+          "D31": {
+            "formula": null,
+            "literal": "Insufficient ID",
+            "type": "s",
+            "value": "Insufficient ID"
+          },
+          "D32": {
+            "formula": null,
+            "literal": "Residency",
+            "type": "s",
+            "value": "Residency"
+          },
+          "D33": {
+            "formula": null,
+            "literal": "Incomplete form",
+            "type": "s",
+            "value": "Incomplete form"
+          },
+          "D34": {
+            "formula": null,
+            "literal": "Other",
+            "type": "s",
+            "value": "Other"
+          },
+          "D35": {
+            "formula": null,
+            "literal": "Percentage of provisionals that were counted",
+            "type": "s",
+            "value": "Percentage of provisionals that were counted"
+          },
+          "D36": {
+            "formula": null,
+            "literal": "Number of provisional ballots that were same-day registration",
+            "type": "s",
+            "value": "Number of provisional ballots that were same-day registration"
+          },
+          "D38": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D39": {
+            "formula": null,
+            "literal": "Total challenged curable ballots (number of voters sent a cure notice)",
+            "type": "s",
+            "value": "Total challenged curable ballots (number of voters sent a cure notice)"
+          },
+          "D40": {
+            "formula": null,
+            "literal": "Total rejected non-provisional ballots that were curable but not cured",
+            "type": "s",
+            "value": "Total rejected non-provisional ballots that were curable but not cured"
+          },
+          "D41": {
+            "formula": null,
+            "literal": "Envelopes with a signature that does not match the voter's signature",
+            "type": "s",
+            "value": "Envelopes with a signature that does not match the voter's signature"
+          },
+          "D42": {
+            "formula": null,
+            "literal": "Unsigned envelopes",
+            "type": "s",
+            "value": "Unsigned envelopes"
+          },
+          "D43": {
+            "formula": null,
+            "literal": "Ballots challenged for other curable reasons",
+            "type": "s",
+            "value": "Ballots challenged for other curable reasons"
+          },
+          "D44": {
+            "formula": null,
+            "literal": "Percentage of curable ballots not cured",
+            "type": "s",
+            "value": "Percentage of curable ballots not cured"
+          },
+          "D45": {
+            "formula": null,
+            "literal": "Number of ballots where the voter submitted a disability affidavit",
+            "type": "s",
+            "value": "Number of ballots where the voter submitted a disability affidavit"
+          },
+          "D46": {
+            "formula": null,
+            "literal": "Total rejected non-provisional ballots that could not legally be cured",
+            "type": "s",
+            "value": "Total rejected non-provisional ballots that could not legally be cured"
+          },
+          "D47": {
+            "formula": null,
+            "literal": "Returned after the received-by deadline",
+            "type": "s",
+            "value": "Returned after the received-by deadline"
+          },
+          "D48": {
+            "formula": null,
+            "literal": "Rejected for other non-curable reasons",
+            "type": "s",
+            "value": "Rejected for other non-curable reasons"
+          },
+          "D49": {
+            "formula": null,
+            "literal": "Percentage of ballots returned as undeliverable",
+            "type": "s",
+            "value": "Percentage of ballots returned as undeliverable"
+          },
+          "D5": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          },
+          "D6": {
+            "formula": null,
+            "literal": "Voter turnout",
+            "type": "s",
+            "value": "Voter turnout"
+          },
+          "D7": {
+            "formula": null,
+            "literal": "Active voters (use only the number given to counties the Friday before the election)",
+            "type": "s",
+            "value": "Active voters (use only the number given to counties the Friday before the election)"
+          },
+          "D9": {
+            "formula": null,
+            "literal": "",
+            "type": "n",
+            "value": null
+          }
+        },
+        "county_election_header": "Millard - November 3, 2026",
+        "dimensions": {
+          "columns": 4,
+          "rows": 50
+        },
+        "excluded_rows": {
+          "first": 51,
+          "last": 53,
+          "reason": "Unused certification identity/presentation, not aggregate analysis inputs"
+        },
+        "selected_count": 4149,
+        "selected_count_cell": "C10",
+        "sheet": "With Hidden Sorting",
+        "source": {
+          "anchor_text": "Download Excel: Millard County Standardized Statistics, Millard County, Nov 10, 2026, 9:21 PM",
+          "bytes": 15776,
+          "captured_at_utc": "2026-11-11T07:26:00.454626+00:00",
+          "category": "Canvass - Standardized Statistics (.xlsx)",
+          "content_type": "application/octet-stream",
+          "county": "Millard County",
+          "election_date": "2026-11-03",
+          "election_name": [
+            {
+              "languageId": "en",
+              "text": "2026 General Election"
+            }
+          ],
+          "filename": "millard-statistics.xlsx",
+          "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26%20(Millard%20County)_facb9b05-391b-4d42-89a2-9560c8acac44.xlsx",
+          "native_filename": "Standard Canvass Statistics Report G26 (Millard County)_facb9b05-391b-4d42-89a2-9560c8acac44.xlsx",
+          "report_name": "Millard County Standardized Statistics",
+          "sha256": "d6a8d7e69308cee43148ae6fafe593a7d3aaee5b31fa862fc93523a119be581a",
+          "state_results_official": false,
+          "status": 200,
+          "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26%20(Millard%20County)_facb9b05-391b-4d42-89a2-9560c8acac44.xlsx",
+          "versions": [
+            {
+              "blobName": "Standard Canvass Statistics Report G26 (Millard County)_facb9b05-391b-4d42-89a2-9560c8acac44.xlsx",
+              "reportName": "Millard County Standardized Statistics",
+              "status": "Original",
+              "uploadDate": "2026-11-10T21:21:19.1317701",
+              "versionOrder": 1
+            }
+          ]
+        }
+      },
+      "geography": {
+        "level": "county",
+        "name": "Millard County",
+        "state_code": "UT"
+      },
+      "independent_scope_review": "The preserved MuPDF and pdfplumber first-page reads agree with the independent raw OOXML/openpyxl workbook audit.",
+      "key": "UT-millard",
+      "native_geography_literal": "Millard County, Utah",
+      "native_status_literal": "OFFICIAL RESULTS",
+      "rows": [
+        {
+          "count_literals": [
+            "4,149"
+          ],
+          "label": "Statistics: Ballots Cast - Total",
+          "source_page": 1
+        },
+        {
+          "count_literals": [
+            "4149"
+          ],
+          "label": "Standardized canvass total ballots counted",
+          "source_file": "millard-statistics.xlsx"
+        }
+      ],
+      "source": {
+        "anchor_text": "Download PDF: Millard County Official Summary Results, Millard County, Nov 10, 2026, 9:16 PM",
+        "bytes": 17156,
+        "captured_at_utc": "2026-11-11T07:26:00.321814+00:00",
+        "category": "Official Summary Results",
+        "content_type": "application/octet-stream",
+        "county": "Millard County",
+        "election_date": "2026-11-03",
+        "election_name": [
+          {
+            "languageId": "en",
+            "text": "2026 General Election"
+          }
+        ],
+        "filename": "millard-summary.pdf",
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Summary%20Results%2011-10-26_a24a5aae-13e3-4834-8828-28b178430c3d.pdf",
+        "native_filename": "Summary Results 11-10-26_a24a5aae-13e3-4834-8828-28b178430c3d.pdf",
+        "report_name": "Millard County Official Summary Results",
+        "sha256": "3ab749c722174178a7e3ac918332798f133458a6c442c4e8023fb78c6861a026",
+        "state_results_official": false,
+        "status": 200,
+        "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Summary%20Results%2011-10-26_a24a5aae-13e3-4834-8828-28b178430c3d.pdf",
+        "versions": [
+          {
+            "blobName": "Summary Results 11-10-26_a24a5aae-13e3-4834-8828-28b178430c3d.pdf",
+            "reportName": "Millard County Official Summary Results",
+            "status": "Original",
+            "uploadDate": "2026-11-10T21:16:48.8114414",
+            "versionOrder": 1
+          }
+        ]
+      },
+      "source_clock": {
+        "literal": "11/10/2026 08:04AM",
+        "timezone": null
+      },
+      "statewide_or_counting_completion_qualified": false,
+      "unique_people_qualified": false
+    },
+    {
+      "columns": [
+        "reported_native_total_ballots"
+      ],
+      "corroboration": {
+        "count_literal": "42,549",
+        "label": "U.S. House District 2 contest total including overvotes and undervotes",
+        "not_the_selected_participation_count_source": true,
+        "overvotes_literal": "127",
+        "source_page": 1,
+        "total_votes_cast_literal": "42,003",
+        "undervotes_literal": "419"
+      },
+      "election": {
+        "date": "2026-11-03",
+        "id": "UT-General11032026",
+        "qualification": "native",
+        "type": "general",
+        "year": 2026
+      },
+      "fractions_qualified": false,
+      "full_summary_statistics": {
+        "Absentee/ Early Precincts Reporting": "126 of 126",
+        "Ballots Cast - Blank": "10",
+        "Ballots Cast - Total": "42,549",
+        "Election Day Precincts Reporting": "126 of 126",
+        "Precincts Complete": "0 of 126",
+        "Precincts Partially Reported": "126 of 126",
+        "Registered Voters - Total": "70,653",
+        "Voter Turnout - Total": "60.22%"
+      },
+      "full_workbook_facts": null,
+      "geography": {
+        "level": "county",
+        "name": "Cache County",
+        "state_code": "UT"
+      },
+      "independent_scope_review": "Preserved MuPDF/pdfplumber first-page reads and visual review agree on the explicit Ballots Cast - Total. Contest total is corroboration only, never candidate-vote substitution. The separate workbook HTTP403 route remains stopped.",
+      "key": "UT-cache",
+      "native_geography_literal": "Cache County, Utah",
+      "native_status_literal": "OFFICIAL RESULTS",
+      "rows": [
+        {
+          "count_literals": [
+            "42,549"
+          ],
+          "label": "Statistics: Ballots Cast - Total",
+          "source_page": 1
+        },
+        {
+          "count_literals": [
+            "42,549"
+          ],
+          "label": "U.S. House District 2 contest total including overvotes and undervotes",
+          "source_file": "cache-summary.pdf"
+        }
+      ],
+      "source": {
+        "anchor_text": "Download PDF: Cache County Official Summary Results, Cache County, Nov 10, 2026, 10:57 PM",
+        "bytes": 21203,
+        "captured_at_utc": "2026-11-11T07:26:00.316995+00:00",
+        "category": "Official Summary Results",
+        "content_type": "application/octet-stream",
+        "county": "Cache County",
+        "election_date": "2026-11-03",
+        "election_name": [
+          {
+            "languageId": "en",
+            "text": "2026 General Election"
+          }
+        ],
+        "filename": "cache-summary.pdf",
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Summary%20Results_Cache_c8e8c7b4-81e3-45fb-9eba-c8240d7695f2.pdf",
+        "native_filename": "2026 General Summary Results_Cache_c8e8c7b4-81e3-45fb-9eba-c8240d7695f2.pdf",
+        "report_name": "Cache County Official Summary Results",
+        "sha256": "c266bfe51c945936aa6a758e9bc3a996ffe6efe149897a9044d3cbe3780fd397",
+        "state_results_official": false,
+        "status": 200,
+        "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Summary%20Results_Cache_c8e8c7b4-81e3-45fb-9eba-c8240d7695f2.pdf",
+        "versions": [
+          {
+            "blobName": "2026 General Summary Results_Cache_c8e8c7b4-81e3-45fb-9eba-c8240d7695f2.pdf",
+            "reportName": "Cache County Official Summary Results",
+            "status": "Original",
+            "uploadDate": "2026-11-10T22:57:42.3781468",
+            "versionOrder": 1
+          }
+        ]
+      },
+      "source_clock": {
+        "literal": "11/10/2026 12:30PM",
+        "timezone": null
+      },
+      "statewide_or_counting_completion_qualified": false,
+      "unique_people_qualified": false
+    }
+  ],
+  "source_receipts": [
+    {
+      "anchor_text": "Download PDF: Piute County Official Summary Results, Piute County, Nov 10, 2026, 4:37 PM",
+      "bytes": 40185,
+      "captured_at_utc": "2026-11-11T07:26:00.352922+00:00",
+      "category": "Official Summary Results",
+      "content_type": "application/octet-stream",
+      "county": "Piute County",
+      "election_date": "2026-11-03",
+      "election_name": [
+        {
+          "languageId": "en",
+          "text": "2026 General Election"
+        }
+      ],
+      "filename": "piute-summary.pdf",
+      "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Election%20Summary%20report_658680f6-2bab-4a91-b85f-801e48b25281.pdf",
+      "native_filename": "2026 General Election Summary report_658680f6-2bab-4a91-b85f-801e48b25281.pdf",
+      "report_name": "Piute County Official Summary Results",
+      "sha256": "1593ee8a56ccc1ee64e82466952784c936a7805fa873692e50d22032a0fc4447",
+      "state_results_official": false,
+      "status": 200,
+      "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Election%20Summary%20report_658680f6-2bab-4a91-b85f-801e48b25281.pdf",
+      "versions": [
+        {
+          "blobName": "2026 General Election Summary report_658680f6-2bab-4a91-b85f-801e48b25281.pdf",
+          "reportName": "Piute County Official Summary Results",
+          "status": "Original",
+          "uploadDate": "2026-11-10T16:37:36.2169793",
+          "versionOrder": 1
+        }
+      ]
+    },
+    {
+      "anchor_text": "Download PDF: Kane County Official Summary Results, Kane County, Nov 10, 2026, 5:47 PM",
+      "bytes": 144430,
+      "captured_at_utc": "2026-11-11T07:26:00.347228+00:00",
+      "category": "Official Summary Results",
+      "content_type": "application/octet-stream",
+      "county": "Kane County",
+      "election_date": "2026-11-03",
+      "election_name": [
+        {
+          "languageId": "en",
+          "text": "2026 General Election"
+        }
+      ],
+      "filename": "kane-summary.pdf",
+      "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Official%20Nov%203%20General%20Election%20Summary%20Results_f3ffbdcf-a736-466c-b668-5103809e9051.pdf",
+      "native_filename": "Official Nov 3 General Election Summary Results_f3ffbdcf-a736-466c-b668-5103809e9051.pdf",
+      "report_name": "Kane County Official Summary Results",
+      "sha256": "abaeaccdb534bb89e28e66ec9a9876b383a63b91838d3288140581a49ed3bd4e",
+      "state_results_official": false,
+      "status": 200,
+      "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Official%20Nov%203%20General%20Election%20Summary%20Results_f3ffbdcf-a736-466c-b668-5103809e9051.pdf",
+      "versions": [
+        {
+          "blobName": "Official Nov 3 General Election Summary Results_f3ffbdcf-a736-466c-b668-5103809e9051.pdf",
+          "reportName": "Kane County Official Summary Results",
+          "status": "Original",
+          "uploadDate": "2026-11-10T17:47:23.1962187",
+          "versionOrder": 1
+        }
+      ]
+    },
+    {
+      "anchor_text": "Download PDF: Millard County Official Summary Results, Millard County, Nov 10, 2026, 9:16 PM",
+      "bytes": 17156,
+      "captured_at_utc": "2026-11-11T07:26:00.321814+00:00",
+      "category": "Official Summary Results",
+      "content_type": "application/octet-stream",
+      "county": "Millard County",
+      "election_date": "2026-11-03",
+      "election_name": [
+        {
+          "languageId": "en",
+          "text": "2026 General Election"
+        }
+      ],
+      "filename": "millard-summary.pdf",
+      "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Summary%20Results%2011-10-26_a24a5aae-13e3-4834-8828-28b178430c3d.pdf",
+      "native_filename": "Summary Results 11-10-26_a24a5aae-13e3-4834-8828-28b178430c3d.pdf",
+      "report_name": "Millard County Official Summary Results",
+      "sha256": "3ab749c722174178a7e3ac918332798f133458a6c442c4e8023fb78c6861a026",
+      "state_results_official": false,
+      "status": 200,
+      "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Summary%20Results%2011-10-26_a24a5aae-13e3-4834-8828-28b178430c3d.pdf",
+      "versions": [
+        {
+          "blobName": "Summary Results 11-10-26_a24a5aae-13e3-4834-8828-28b178430c3d.pdf",
+          "reportName": "Millard County Official Summary Results",
+          "status": "Original",
+          "uploadDate": "2026-11-10T21:16:48.8114414",
+          "versionOrder": 1
+        }
+      ]
+    },
+    {
+      "anchor_text": "Download PDF: Cache County Official Summary Results, Cache County, Nov 10, 2026, 10:57 PM",
+      "bytes": 21203,
+      "captured_at_utc": "2026-11-11T07:26:00.316995+00:00",
+      "category": "Official Summary Results",
+      "content_type": "application/octet-stream",
+      "county": "Cache County",
+      "election_date": "2026-11-03",
+      "election_name": [
+        {
+          "languageId": "en",
+          "text": "2026 General Election"
+        }
+      ],
+      "filename": "cache-summary.pdf",
+      "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Summary%20Results_Cache_c8e8c7b4-81e3-45fb-9eba-c8240d7695f2.pdf",
+      "native_filename": "2026 General Summary Results_Cache_c8e8c7b4-81e3-45fb-9eba-c8240d7695f2.pdf",
+      "report_name": "Cache County Official Summary Results",
+      "sha256": "c266bfe51c945936aa6a758e9bc3a996ffe6efe149897a9044d3cbe3780fd397",
+      "state_results_official": false,
+      "status": 200,
+      "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Summary%20Results_Cache_c8e8c7b4-81e3-45fb-9eba-c8240d7695f2.pdf",
+      "versions": [
+        {
+          "blobName": "2026 General Summary Results_Cache_c8e8c7b4-81e3-45fb-9eba-c8240d7695f2.pdf",
+          "reportName": "Cache County Official Summary Results",
+          "status": "Original",
+          "uploadDate": "2026-11-10T22:57:42.3781468",
+          "versionOrder": 1
+        }
+      ]
+    },
+    {
+      "anchor_text": "Download Excel: Piute County Standardized Statistics, Piute County, Nov 10, 2026, 4:38 PM",
+      "bytes": 15521,
+      "captured_at_utc": "2026-11-11T07:26:00.411990+00:00",
+      "category": "Canvass - Standardized Statistics (.xlsx)",
+      "content_type": "application/octet-stream",
+      "county": "Piute County",
+      "election_date": "2026-11-03",
+      "election_name": [
+        {
+          "languageId": "en",
+          "text": "2026 General Election"
+        }
+      ],
+      "filename": "piute-statistics.xlsx",
+      "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26_1c300938-742d-4b53-9d7b-5f77fe51d565.xlsx",
+      "native_filename": "Standard Canvass Statistics Report G26_1c300938-742d-4b53-9d7b-5f77fe51d565.xlsx",
+      "report_name": "Piute County Standardized Statistics",
+      "sha256": "61388ff9f8a15babd5d280b174af1d45aa93350b77006103290313953c06497f",
+      "state_results_official": false,
+      "status": 200,
+      "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26_1c300938-742d-4b53-9d7b-5f77fe51d565.xlsx",
+      "versions": [
+        {
+          "blobName": "Standard Canvass Statistics Report G26_1c300938-742d-4b53-9d7b-5f77fe51d565.xlsx",
+          "reportName": "Piute County Standardized Statistics",
+          "status": "Original",
+          "uploadDate": "2026-11-10T16:38:17.3897858",
+          "versionOrder": 1
+        }
+      ]
+    },
+    {
+      "anchor_text": "Download Excel: Kane County Standardized Statistics, Kane County, Nov 10, 2026, 5:47 PM",
+      "bytes": 15719,
+      "captured_at_utc": "2026-11-11T07:26:00.447349+00:00",
+      "category": "Canvass - Standardized Statistics (.xlsx)",
+      "content_type": "application/octet-stream",
+      "county": "Kane County",
+      "election_date": "2026-11-03",
+      "election_name": [
+        {
+          "languageId": "en",
+          "text": "2026 General Election"
+        }
+      ],
+      "filename": "kane-statistics.xlsx",
+      "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G25_fd5dd30f-18b9-425b-b4ae-06b02e4b1132.xlsx",
+      "native_filename": "Standard Canvass Statistics Report G25_fd5dd30f-18b9-425b-b4ae-06b02e4b1132.xlsx",
+      "report_name": "Kane County Standardized Statistics",
+      "sha256": "2362793d202c1e1856c0b05e0b6f41c70b67dd40254a9a8a6ff33848d55dda94",
+      "state_results_official": false,
+      "status": 200,
+      "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G25_fd5dd30f-18b9-425b-b4ae-06b02e4b1132.xlsx",
+      "versions": [
+        {
+          "blobName": "Standard Canvass Statistics Report G25_fd5dd30f-18b9-425b-b4ae-06b02e4b1132.xlsx",
+          "reportName": "Kane County Standardized Statistics",
+          "status": "Original",
+          "uploadDate": "2026-11-10T17:47:51.8862266",
+          "versionOrder": 1
+        }
+      ]
+    },
+    {
+      "anchor_text": "Download Excel: Millard County Standardized Statistics, Millard County, Nov 10, 2026, 9:21 PM",
+      "bytes": 15776,
+      "captured_at_utc": "2026-11-11T07:26:00.454626+00:00",
+      "category": "Canvass - Standardized Statistics (.xlsx)",
+      "content_type": "application/octet-stream",
+      "county": "Millard County",
+      "election_date": "2026-11-03",
+      "election_name": [
+        {
+          "languageId": "en",
+          "text": "2026 General Election"
+        }
+      ],
+      "filename": "millard-statistics.xlsx",
+      "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26%20(Millard%20County)_facb9b05-391b-4d42-89a2-9560c8acac44.xlsx",
+      "native_filename": "Standard Canvass Statistics Report G26 (Millard County)_facb9b05-391b-4d42-89a2-9560c8acac44.xlsx",
+      "report_name": "Millard County Standardized Statistics",
+      "sha256": "d6a8d7e69308cee43148ae6fafe593a7d3aaee5b31fa862fc93523a119be581a",
+      "state_results_official": false,
+      "status": 200,
+      "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26%20(Millard%20County)_facb9b05-391b-4d42-89a2-9560c8acac44.xlsx",
+      "versions": [
+        {
+          "blobName": "Standard Canvass Statistics Report G26 (Millard County)_facb9b05-391b-4d42-89a2-9560c8acac44.xlsx",
+          "reportName": "Millard County Standardized Statistics",
+          "status": "Original",
+          "uploadDate": "2026-11-10T21:21:19.1317701",
+          "versionOrder": 1
+        }
+      ]
+    },
+    {
+      "anchor_text": "Download Excel: 2026 General Standard Statistics Report_Cache, Cache County, Nov 10, 2026, 11:46 PM",
+      "bytes": 1484,
+      "captured_at_utc": "2026-11-11T07:26:00.405629+00:00",
+      "category": "Canvass - Standardized Statistics (.xlsx)",
+      "content_type": "text/html",
+      "county": "Cache County",
+      "election_date": "2026-11-03",
+      "election_name": [
+        {
+          "languageId": "en",
+          "text": "2026 General Election"
+        }
+      ],
+      "filename": "cache-statistics.xlsx",
+      "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26%20(1)%20(1)%20(2)_8b65143b-24a5-4d64-bead-b1312fe450e2.xlsx",
+      "native_filename": "Standard Canvass Statistics Report G26 (1) (1) (2)_8b65143b-24a5-4d64-bead-b1312fe450e2.xlsx",
+      "report_name": "2026 General Standard Statistics Report_Cache",
+      "sha256": "67af256cdb5bfff19aaf9385f76ffba5db1630164f2e73294c866e5585525088",
+      "state_results_official": false,
+      "status": 403,
+      "url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Standard%20Canvass%20Statistics%20Report%20G26%20(1)%20(1)%20(2)_8b65143b-24a5-4d64-bead-b1312fe450e2.xlsx",
+      "versions": [
+        {
+          "blobName": "Standard Canvass Statistics Report G26 (1) (1) (2)_8b65143b-24a5-4d64-bead-b1312fe450e2.xlsx",
+          "reportName": "2026 General Standard Statistics Report_Cache",
+          "status": "Original",
+          "uploadDate": "2026-11-10T23:46:31.7701289",
+          "versionOrder": 1
+        }
+      ]
+    }
+  ]
+}

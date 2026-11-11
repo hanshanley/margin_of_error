@@ -1,0 +1,18 @@
+{
+  "all_four_county_totals_independently_corroborated": true,
+  "blocked_route_retried": false,
+  "counts": {
+    "Cache County": 42549,
+    "Kane County": 3395,
+    "Millard County": 4149,
+    "Piute County": 737
+  },
+  "facts_pin": {
+    "bytes": 113578,
+    "sha256": "0ec03461f46ccec4d344057a611941b50d94d291181ce79600816ba1d71b2912"
+  },
+  "independent_workbook_cells": 487,
+  "source_zeros_blanks_errors_and_clocks_preserved": true,
+  "status": "passed_independent_cached_utah_native_facts",
+  "successful_originals_reacquired": 0
+}
