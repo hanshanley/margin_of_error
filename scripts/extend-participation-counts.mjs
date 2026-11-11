@@ -49,6 +49,9 @@ export function registeredTableCounts(facts, recipe, input) {
       }];
     });
     const value = components[0].reduce((a, b) => a + b, 0);
+    const nativeTotal = source.participation_measure_kind === "source_defined_participation_count";
+    if (nativeTotal && indices.length !== 1)
+      throw new Error("A native total cannot be a newly summed component measure");
     const identity = `${source.geography.state_code}|${source.geography.view_id}|`;
     const record = {
       contract: "participation.observation.v1",
@@ -58,7 +61,9 @@ export function registeredTableCounts(facts, recipe, input) {
         state_code: source.geography.state_code, level: source.geography.level, parent_id: null,
         join: { status: "unreviewed", reference_id: null, feature_key: null,
           evidence: "Existing county contextual identity only; no new boundary or map approval." } },
-      measure: source.measure, count: { value, status: "reported", literal: value }, denominator: null,
+      measure: source.measure, count: { value, status: "reported",
+        literal: nativeTotal ? report.rows.find(row => row.label === source.selected_labels[0])
+          .count_literals[indices[0]] : value }, denominator: null,
       source_clock: { ...report.source_clock, qualification: "native_report_table_literal_timezone_undeclared" },
       reporting_status: { literal: report.native_status_literal, reported_units: null, total_units: null, complete: null },
       source: { id: source.id, url: recipe.facts_url, input_sha256: input.sha256,
@@ -70,7 +75,7 @@ export function registeredTableCounts(facts, recipe, input) {
     const native = {
       source_url: report.source.url, native_original_sha256: report.source.sha256,
       selected_native_aggregate_literal: source.selected_labels.join(" and "),
-      reported_participation_subtotal: String(value),
+      [nativeTotal ? "native_reported_total" : "reported_participation_subtotal"]: String(value),
       source_counting_complete: null,
     };
     for (const [field, column] of Object.entries(source.native_view_fields || {})) {
@@ -86,7 +91,7 @@ export function registeredTableCounts(facts, recipe, input) {
       reported_pct: null, native_printed_pct: null, native_record: native,
       source_url: recipe.facts_url, complete_download_url: recipe.complete_download_url,
       review_id: recipe.id, reported_units: null, total_units: null, source_rows: report.rows.length,
-      participation_measure_kind: "derived_reported_mode_subtotal",
+      participation_measure_kind: nativeTotal ? "source_defined_participation_count" : "derived_reported_mode_subtotal",
       participation_measure_label: source.measure.literal,
       source_status_literal: report.native_status_literal,
       source_update_label: report.source_clock.literal, source_update_timezone: null,
@@ -95,7 +100,7 @@ export function registeredTableCounts(facts, recipe, input) {
       quality: source.notes,
     };
     validateCountObservation(record, source.geography.state_code);
-    return { record, modes: source.bindings, partition: "counties" };
+    return { record, modes: source.bindings, partition: "counties", supersedes: source.supersedes };
   });
 }
 
@@ -118,7 +123,7 @@ export function declarationFor(shard, previous, body) {
 export function extendCountDataset(baseFiles, additions, extension) {
   const files = { ...baseFiles }, index = JSON.parse(files["index.json"]);
   const changed = new Map();
-  for (const { record, modes, partition } of additions) {
+  for (const { record, modes, partition, supersedes } of additions) {
     const code = record.geography.state_code, declaration = index.states[code];
     if (!declaration || !partitions.includes(partition) || !modes.length
         || new Set(modes).size !== modes.length || modes.some(mode => !countModes.includes(mode)))
@@ -129,13 +134,27 @@ export function extendCountDataset(baseFiles, additions, extension) {
     if (shard.records.some(row => row.id === record.id
         || row.geography.id === record.geography.id && row.measure.id === record.measure.id))
       throw new Error("An extension cannot overwrite an accepted observation");
+    const predecessor = supersedes && shard.records.find(row => row.id === supersedes.id);
+    if (supersedes && (!predecessor || digest(encoded(predecessor)) !== supersedes.sha256
+        || predecessor.count.value !== null || !["unknown", "withheld"].includes(predecessor.count.status)
+        || predecessor.geography.id !== record.geography.id || predecessor.election.year !== record.election.year
+        || predecessor.election.type !== record.election.type
+        || predecessor.election.date && record.election.date && predecessor.election.date !== record.election.date
+        || modes.some(mode => ["in_person_early", "mail_returned"].includes(mode))))
+      throw new Error("Only an explicitly pinned missing observation may be superseded");
     for (const mode of modes) {
       const frame = shard.views[mode];
       if (!frame.qualified || ["in_person_early", "mail_returned"].includes(mode) && record.measure.mode !== mode)
         throw new Error("An extension cannot approve or substitute a source mode");
-      if (frame[partition].some(id => shard.records.find(row => row.id === id).geography.id === record.geography.id))
+      const simultaneous = frame[partition].filter(id =>
+        shard.records.find(row => row.id === id).geography.id === record.geography.id);
+      if (predecessor) {
+        if (simultaneous.length !== 1 || simultaneous[0] !== predecessor.id)
+          throw new Error("The selected source hold differs from the pinned predecessor");
+        frame[partition][frame[partition].indexOf(predecessor.id)] = record.id;
+      } else if (simultaneous.length)
         throw new Error("Ambiguous simultaneous source selection");
-      frame[partition].push(record.id);
+      else frame[partition].push(record.id);
     }
     shard.records.push(record);
   }

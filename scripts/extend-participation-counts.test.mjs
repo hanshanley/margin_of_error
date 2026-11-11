@@ -51,6 +51,20 @@ test('conflicting selected totals and duplicate apparent corroboration are rejec
   assert.throws(() => registeredTableCounts(facts, duplicate, input), /identity/);
 });
 
+test('native total classification retains the source literal and cannot disguise a component sum', () => {
+  const native = structuredClone(recipe);
+  native.sources[0].participation_measure_kind = 'source_defined_participation_count';
+  assert.throws(() => registeredTableCounts(facts, native, input), /native total/);
+  native.sources[0].count_columns = [native.sources[0].count_columns[0]];
+  const record = registeredTableCounts(facts, native, input)[0].record;
+  const report = facts.reports.find(row => row.key === native.sources[0].report_key);
+  const selected = report.rows.find(row => row.label === native.sources[0].selected_labels[0]);
+  assert.equal(record.count.literal, selected.count_literals[report.columns.indexOf(native.sources[0].count_columns[0])]);
+  assert.equal(record.view.participation_measure_kind, 'source_defined_participation_count');
+  assert.equal(record.view.native_record.native_reported_total, String(record.count.value));
+  assert.equal(record.view.native_record.reported_participation_subtotal, undefined);
+});
+
 test('an extension preserves all prior records and every unaffected runtime byte', () => {
   const prior = JSON.parse(gunzipSync(files['states/NJ.json.gz']));
   assert.deepEqual(shard.records.slice(0, prior.records.length), prior.records);
@@ -68,4 +82,44 @@ test('accepted observations and source-mode qualifications cannot be overwritten
   const wrongMode = structuredClone(additions);
   wrongMode[0].modes = ['mail_returned'];
   assert.throws(() => extendCountDataset(files, wrongMode, { id: 'wrong' }), /substitute/);
+});
+
+function heldFrame(value = null) {
+  const holding = structuredClone(additions[0]);
+  holding.record.id = digest(encoded(['held', value])).slice(0, 32);
+  holding.record.measure.id = 'earlier-missing-observation';
+  holding.record.count = { value, literal: value, status: value === null ? 'withheld' : 'reported' };
+  holding.record.view.ballots = value;
+  const base = extendCountDataset(files, [holding], { id: 'holding-fixture' });
+  return { holding, base };
+}
+
+test('a pinned missing source can be superseded without losing any accepted source record', () => {
+  const { holding, base } = heldFrame();
+  const replacement = { ...additions[0],
+    supersedes: { id: holding.record.id, sha256: digest(encoded(holding.record)) } };
+  const result = extendCountDataset(base.files, [replacement], { id: 'qualified-successor' });
+  const before = JSON.parse(gunzipSync(base.files['states/NJ.json.gz']));
+  const after = JSON.parse(gunzipSync(result.files['states/NJ.json.gz']));
+  assert.deepEqual(after.records.slice(0, before.records.length), before.records);
+  for (const mode of ['available', 'official', 'uf_vep', 'uf_vap']) {
+    assert.equal(after.views[mode].counties.length, before.views[mode].counties.length);
+    assert.ok(after.views[mode].counties.includes(replacement.record.id));
+    assert.ok(!after.views[mode].counties.includes(holding.record.id));
+  }
+  for (const mode of ['in_person_early', 'mail_returned'])
+    assert.deepEqual(after.views[mode], before.views[mode]);
+});
+
+test('a changed predecessor, reported zero, and cross-mode source substitution cannot be superseded', () => {
+  const { holding, base } = heldFrame();
+  const replacement = { ...additions[0],
+    supersedes: { id: holding.record.id, sha256: '0'.repeat(64) } };
+  assert.throws(() => extendCountDataset(base.files, [replacement], {}), /pinned missing/);
+  const zero = heldFrame(0);
+  replacement.supersedes = { id: zero.holding.record.id, sha256: digest(encoded(zero.holding.record)) };
+  assert.throws(() => extendCountDataset(zero.base.files, [replacement], {}), /pinned missing/);
+  replacement.supersedes = { id: holding.record.id, sha256: digest(encoded(holding.record)) };
+  replacement.modes = ['in_person_early'];
+  assert.throws(() => extendCountDataset(base.files, [replacement], {}), /pinned missing/);
 });

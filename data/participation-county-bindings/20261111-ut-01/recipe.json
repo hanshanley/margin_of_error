@@ -1,0 +1,30 @@
+{
+  "allow_held_source_rows": true,
+  "boundary_year": 2024,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-utah-count-successors-20261111-01/complete-analysis.zip",
+  "contract": "participation.county_binding_extension.v1",
+  "expected_counties": 29,
+  "expected_held": 6,
+  "expected_new": 4,
+  "expected_retained": 19,
+  "geometry_canonical_sha256": "23d1f398d3ce4fd1a4fda57ad8bcbd421b91300f2671ea09f342e85202dbfe53",
+  "geometry_sha256": "d2271f1ead3ef5193c2300bd22672ece3bbfcad4e7db70b0fd7cb7b99ae376c6",
+  "id": "utah-partial-county-successors-20261111-01",
+  "modes": [
+    "available",
+    "official",
+    "uf_vep",
+    "uf_vap"
+  ],
+  "native_facts_sha256": "0ec03461f46ccec4d344057a611941b50d94d291181ce79600816ba1d71b2912",
+  "native_state_literal": "Utah",
+  "new_source_ids": [
+    "native-utah-total-20261110-piute",
+    "native-utah-total-20261110-kane",
+    "native-utah-total-20261110-millard",
+    "native-utah-total-20261110-cache"
+  ],
+  "previous_review_sha256": "e9ece9b8918dd3fec4ab4b5cbdfa30bfde181219bd1f6303c2c70077eb8b072e",
+  "reference_repository_path": "data/participation-county-bindings/20261111-ut-01/reference.json",
+  "state_code": "UT"
+}

@@ -1,0 +1,199 @@
+{
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-utah-count-successors-20261111-01/complete-analysis.zip",
+  "contract": "participation.count_extension.v1",
+  "facts_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/68c22a9e14b1ba0d61ed5a953d58e2cf8c641c1f/data/participation-count-successors/20261111-ut-01/native-facts.json",
+  "id": "utah-native-total-successors-20261111-01",
+  "input_sha256": "0ec03461f46ccec4d344057a611941b50d94d291181ce79600816ba1d71b2912",
+  "sources": [
+    {
+      "bindings": [
+        "available",
+        "official",
+        "uf_vep",
+        "uf_vap"
+      ],
+      "count_columns": [
+        "reported_native_total_ballots"
+      ],
+      "election": {
+        "date": "2026-11-03",
+        "id": "UT-General11032026",
+        "qualification": "native",
+        "type": "general",
+        "year": 2026
+      },
+      "geography": {
+        "level": "county",
+        "name": "Piute County",
+        "state_code": "UT",
+        "view_id": "reviewed:UT:Piute County"
+      },
+      "id": "native-utah-total-20261110-piute",
+      "measure": {
+        "id": "native-20261110-total-ballots",
+        "kind": "ballots_cast",
+        "literal": "Native Ballots Cast - Total",
+        "mode": "all_methods",
+        "unit": "source_reported_count"
+      },
+      "notes": [
+        "Native Ballots Cast - Total independently corroborated; not candidate selections, processing counts or unique people.",
+        "Native registered total 1,112 and printed turnout 66.28% are retained in full facts, not promoted to an analysis denominator or turnout rate.",
+        "Native precinct completeness: 6 of 6; partially reported: 0 of 6. The local OFFICIAL label does not certify state counting completion. Timezone not supplied."
+      ],
+      "participation_measure_kind": "source_defined_participation_count",
+      "report_key": "UT-piute",
+      "selected_labels": [
+        "Statistics: Ballots Cast - Total",
+        "Standardized canvass total ballots counted"
+      ],
+      "supersedes": {
+        "id": "aebb944532633a2daa2982463ef270dd",
+        "sha256": "3a2874a05282bf40df92808c3e3007ae8972b93e738f5941691ec92116499a98"
+      }
+    },
+    {
+      "bindings": [
+        "available",
+        "official",
+        "uf_vep",
+        "uf_vap"
+      ],
+      "count_columns": [
+        "reported_native_total_ballots"
+      ],
+      "election": {
+        "date": "2026-11-03",
+        "id": "UT-General11032026",
+        "qualification": "native",
+        "type": "general",
+        "year": 2026
+      },
+      "geography": {
+        "level": "county",
+        "name": "Kane County",
+        "state_code": "UT",
+        "view_id": "reviewed:UT:Kane County"
+      },
+      "id": "native-utah-total-20261110-kane",
+      "measure": {
+        "id": "native-20261110-total-ballots",
+        "kind": "ballots_cast",
+        "literal": "Native Ballots Cast - Total",
+        "mode": "all_methods",
+        "unit": "source_reported_count"
+      },
+      "notes": [
+        "Native Ballots Cast - Total independently corroborated; not candidate selections, processing counts or unique people.",
+        "Native registered total 5,112 and printed turnout 66.41% are retained in full facts, not promoted to an analysis denominator or turnout rate.",
+        "Native precinct completeness: 0 of 12; partially reported: 12 of 12. The local OFFICIAL label does not certify state counting completion. Timezone not supplied.",
+        "The G25 workbook filename and explicit November 3, 2026 worksheet header remain literal."
+      ],
+      "participation_measure_kind": "source_defined_participation_count",
+      "report_key": "UT-kane",
+      "selected_labels": [
+        "Statistics: Ballots Cast - Total",
+        "Standardized canvass total ballots counted"
+      ],
+      "supersedes": {
+        "id": "70c0535c227c9dc269264872b194b609",
+        "sha256": "19a54d132d42c41860248905a0f6b901a716db02af449c3722c2d23ad7f79ad7"
+      }
+    },
+    {
+      "bindings": [
+        "available",
+        "official",
+        "uf_vep",
+        "uf_vap"
+      ],
+      "count_columns": [
+        "reported_native_total_ballots"
+      ],
+      "election": {
+        "date": "2026-11-03",
+        "id": "UT-General11032026",
+        "qualification": "native",
+        "type": "general",
+        "year": 2026
+      },
+      "geography": {
+        "level": "county",
+        "name": "Millard County",
+        "state_code": "UT",
+        "view_id": "reviewed:UT:Millard County"
+      },
+      "id": "native-utah-total-20261110-millard",
+      "measure": {
+        "id": "native-20261110-total-ballots",
+        "kind": "ballots_cast",
+        "literal": "Native Ballots Cast - Total",
+        "mode": "all_methods",
+        "unit": "source_reported_count"
+      },
+      "notes": [
+        "Native Ballots Cast - Total independently corroborated; not candidate selections, processing counts or unique people.",
+        "Native registered total 7,264 and printed turnout 57.12% are retained in full facts, not promoted to an analysis denominator or turnout rate.",
+        "Native precinct completeness: 18 of 18; partially reported: 0 of 18. The local OFFICIAL label does not certify state counting completion. Timezone not supplied."
+      ],
+      "participation_measure_kind": "source_defined_participation_count",
+      "report_key": "UT-millard",
+      "selected_labels": [
+        "Statistics: Ballots Cast - Total",
+        "Standardized canvass total ballots counted"
+      ],
+      "supersedes": {
+        "id": "929f26c538a837796c602c55d6a8981a",
+        "sha256": "d4f726798adc5ee056be7982bbc764b6e6fdd6082b2ab601f2912fce57b94f1e"
+      }
+    },
+    {
+      "bindings": [
+        "available",
+        "official",
+        "uf_vep",
+        "uf_vap"
+      ],
+      "count_columns": [
+        "reported_native_total_ballots"
+      ],
+      "election": {
+        "date": "2026-11-03",
+        "id": "UT-General11032026",
+        "qualification": "native",
+        "type": "general",
+        "year": 2026
+      },
+      "geography": {
+        "level": "county",
+        "name": "Cache County",
+        "state_code": "UT",
+        "view_id": "reviewed:UT:Cache County"
+      },
+      "id": "native-utah-total-20261110-cache",
+      "measure": {
+        "id": "native-20261110-total-ballots",
+        "kind": "ballots_cast",
+        "literal": "Native Ballots Cast - Total",
+        "mode": "all_methods",
+        "unit": "source_reported_count"
+      },
+      "notes": [
+        "Native Ballots Cast - Total independently corroborated; not candidate selections, processing counts or unique people.",
+        "Native registered total 70,653 and printed turnout 60.22% are retained in full facts, not promoted to an analysis denominator or turnout rate.",
+        "Native precinct completeness: 0 of 126; partially reported: 126 of 126. The local OFFICIAL label does not certify state counting completion. Timezone not supplied.",
+        "The separate denied workbook remains unavailable; this explicit summary ballot statistic is the source."
+      ],
+      "participation_measure_kind": "source_defined_participation_count",
+      "report_key": "UT-cache",
+      "selected_labels": [
+        "Statistics: Ballots Cast - Total",
+        "U.S. House District 2 contest total including overvotes and undervotes"
+      ],
+      "supersedes": {
+        "id": "b067f5c730ae119c035b3836ad005775",
+        "sha256": "a422ce919c516952515beb9b4ae4417d6f02b138fa045e88bb369b8a0f89d8ea"
+      }
+    }
+  ]
+}

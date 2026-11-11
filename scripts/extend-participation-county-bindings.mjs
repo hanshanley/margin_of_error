@@ -151,6 +151,139 @@ export function readDataset(root) {
   }));
 }
 
+export function qualifyPartialCountyBindings(countFiles, nativeFiles, inputs, recipe, sourceCommit) {
+  assert.equal(recipe.contract, "participation.county_binding_extension.v1");
+  assert.equal(recipe.allow_held_source_rows, true);
+  assert.match(sourceCommit, /^[a-f0-9]{40}$/);
+  for (const [file, expected] of [["reference.json", recipe.geometry_sha256],
+    ["previous-review.json", recipe.previous_review_sha256], ["native-facts.json", recipe.native_facts_sha256]])
+    assert.equal(digest(inputs[file]), expected, "Pinned full qualification input differs");
+  assert.ok(recipe.modes.length && new Set(recipe.modes).size === recipe.modes.length);
+  assert.ok(recipe.modes.every(mode => ["available", "official", "uf_vep", "uf_vap"].includes(mode)));
+  assert.equal(new Set(recipe.new_source_ids).size, recipe.expected_new);
+  const geometry = JSON.parse(inputs["reference.json"]), review = JSON.parse(inputs["previous-review.json"]);
+  const facts = JSON.parse(inputs["native-facts.json"]), code = recipe.state_code;
+  assert.equal(digest(Buffer.from(canonicalJson(geometry))), recipe.geometry_canonical_sha256);
+  assert.equal(review.geometry[code].canonical_sha256, recipe.geometry_canonical_sha256);
+  assert.equal(review.geometry[code].sha256, recipe.geometry_sha256);
+  assert.equal(review.geometry[code].boundary_year, recipe.boundary_year);
+  assert.equal(geometry.features.length, recipe.expected_counties);
+  const features = new Map(), keys = new Set();
+  for (const feature of geometry.features) {
+    const p = feature.properties, normalized = nameKey(p.name);
+    assert.equal(p.state_code, code); assert.equal(p.boundary_year, recipe.boundary_year);
+    assert.ok(["Polygon", "MultiPolygon"].includes(feature.geometry.type));
+    assert.ok(!features.has(normalized) && !keys.has(p.key), "Ambiguous county reference identity");
+    features.set(normalized, feature); keys.add(p.key);
+  }
+  const counts = { ...countFiles }, native = { ...nativeFiles };
+  const index = JSON.parse(counts["index.json"]), nativeIndex = JSON.parse(native["index.json"]);
+  const declaration = index.states[code], shard = JSON.parse(gunzipSync(counts[declaration.file]));
+  const byId = new Map(shard.records.map(row => [row.id, row])), frame = shard.views[recipe.modes[0]];
+  assert.equal(frame.counties.length, recipe.expected_counties);
+  for (const mode of recipe.modes) {
+    assert.equal(shard.views[mode].qualified, true);
+    assert.deepEqual(shard.views[mode].counties, frame.counties);
+    assert.ok(!nativeIndex.county_bindings[code]?.[mode], "Cannot overwrite an accepted mode binding");
+  }
+  const reference = {
+    url: `https://raw.githubusercontent.com/hanshanley/margin_of_error/${sourceCommit}/${recipe.reference_repository_path}`,
+    sha256: recipe.geometry_sha256, uncompressed_sha256: recipe.geometry_sha256,
+    boundary_year: recipe.boundary_year, counties: recipe.expected_counties,
+    geography_scope: "qualified_whole_county_context", review_id: recipe.id,
+    complete_download_url: recipe.complete_download_url,
+  };
+  const queries = [], seen = new Set(), newSources = new Set();
+  for (const id of frame.counties) {
+    const row = byId.get(id), view = row.view;
+    assert.equal(row.geography.level, "county");
+    assert.equal(view.geography_level, "county");
+    assert.equal(view.state_code, code); assert.equal(view.year, 2026);
+    const feature = features.get(nameKey(view.county));
+    assert.ok(feature && !seen.has(feature.properties.key), "Missing or duplicate county identity");
+    seen.add(feature.properties.key);
+    const beforeHash = digest(Buffer.from(canonicalJson(view)));
+    const prior = review.observations.filter(item => item.state_code === code && item.county_id === view.county_id);
+    let disposition;
+    if (prior.length) {
+      assert.equal(prior.length, 1);
+      assert.equal(prior[0].source_record_sha256, beforeHash, "Old exact-record-hash oracle differs");
+      assert.equal(prior[0].contextual_geoid, feature.properties.key);
+      assert.equal(prior[0].contextual_map_approved, true);
+      assert.equal(row.count.status, "reported");
+      disposition = "retained_accepted_contextual_identity";
+    } else if (recipe.new_source_ids.includes(row.source.id)) {
+      const reports = facts.reports.filter(report => report.geography.state_code === code
+        && nameKey(report.geography.name) === nameKey(view.county));
+      assert.equal(reports.length, 1);
+      const report = reports[0];
+      assert.equal(report.geography.level, "county");
+      assert.equal(report.native_geography_literal, `${view.county}, ${recipe.native_state_literal}`);
+      assert.equal(report.election.id, row.election.id);
+      assert.equal(row.election.qualification, "native");
+      assert.deepEqual(row.source.fields, report);
+      assert.equal(row.source.input_sha256, recipe.native_facts_sha256);
+      assert.equal(row.count.status, "reported"); assert.ok(Number.isSafeInteger(row.count.value));
+      assert.equal(row.denominator, null); assert.equal(view.reported_pct, null);
+      assert.ok(!newSources.has(row.source.id));
+      newSources.add(row.source.id);
+      disposition = "qualified_new_source_to_existing_contextual_county";
+    } else {
+      assert.equal(row.count.value, null, "An unreviewed count cannot acquire a map approval");
+      assert.ok(["unknown", "withheld"].includes(row.count.status));
+      assert.equal(view.reported_pct, null);
+      assert.notEqual(view.maps_approved, true);
+      disposition = "held_source_count_not_qualified";
+    }
+    queries.push({ id: row.id, county_id: view.county_id, county: view.county,
+      source_record_sha256: beforeHash, feature_key: feature.properties.key, disposition,
+      geometry_sha256: reference.sha256, boundary_year: recipe.boundary_year,
+      count: row.count.value, rate: view.reported_pct, source_id: row.source.id });
+    if (!disposition.startsWith("held_")) {
+      row.geography.join = { status: "approved", reference_id: reference.sha256,
+        feature_key: feature.properties.key,
+        evidence: "Qualified source identity on unchanged held contextual county geometry, not certified election boundaries." };
+      view.maps_approved = true;
+      view.reference_geometry = reference;
+    }
+  }
+  assert.equal(newSources.size, recipe.expected_new);
+  assert.equal(queries.filter(row => row.disposition.startsWith("retained")).length, recipe.expected_retained);
+  assert.equal(queries.filter(row => row.disposition.startsWith("held_")).length, recipe.expected_held);
+  assert.equal(seen.size, geometry.features.length);
+  const binding = {
+    sha256: reference.sha256, features: geometry.features.length,
+    feature_keys: geometry.features.map(feature => feature.properties.key),
+    feature_scopes: Object.fromEntries(geometry.features.map(({ properties: p }) => [p.key,
+      { state_code: p.state_code, name: p.name, boundary_year: p.boundary_year }])),
+    embedded_reference_required: false,
+    rows: queries.map(query => ({ feature_key: query.feature_key, county_id: query.county_id,
+      qualifier: countyQualifier(byId.get(query.id).view) })),
+    approval: { id: recipe.id, geometry_unchanged: true, source_counts_unchanged: true,
+      retained_contextual_identities: recipe.expected_retained, newly_qualified_identities: recipe.expected_new,
+      held_source_counts: recipe.expected_held, certified_election_boundaries: false, precinct_allocation: false },
+  };
+  for (const mode of recipe.modes) {
+    assert.equal(bindCountyReference(countFrame(shard, mode).counties, geometry, reference, binding).size,
+      recipe.expected_counties);
+    (nativeIndex.county_bindings[code] ||= {})[mode] = binding;
+  }
+  const extension = { id: recipe.id, state_code: code, retained: recipe.expected_retained,
+    newly_qualified: recipe.expected_new, held: recipe.expected_held,
+    unchanged_geometry_sha256: reference.sha256, counts_or_rates_changed: false, new_geometry: false };
+  nativeIndex.extensions = [...(nativeIndex.extensions || []), extension];
+  nativeIndex.county_frame_checks += recipe.modes.length;
+  index.extensions = [...(index.extensions || []), extension];
+  const body = gzipSync(encoded(shard), { level: 9 });
+  counts[declaration.file] = body;
+  index.states[code] = declarationFor(shard, declaration, body);
+  validateCountShard(shard, code, index.states[code]);
+  counts["index.json"] = encoded(index); native["index.json"] = encoded(nativeIndex);
+  return { counts: dataset("participation-counts-2026", "participation.count_snapshot.v1", counts),
+    native: dataset("participation-native-bindings-2026", "participation.native_bindings.v1", native),
+    queries, reference };
+}
+
 if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) {
   const args = Object.fromEntries(process.argv.slice(2).reduce((rows, value, i, all) =>
     i % 2 ? rows : [...rows, [value.replace(/^--/, ""), all[i + 1]]], []));
@@ -158,7 +291,8 @@ if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.m
   const recipe = JSON.parse(readFileSync(resolve(args.inputs, "recipe.json")));
   const inputs = Object.fromEntries(["reference.json", "previous-review.json", "native-facts.json"]
     .map(name => [name, readFileSync(resolve(args.inputs, name))]));
-  const result = qualifyCountyBindings(readDataset(args.counts), readDataset(args.native), inputs, recipe, args.commit);
+  const qualify = recipe.allow_held_source_rows ? qualifyPartialCountyBindings : qualifyCountyBindings;
+  const result = qualify(readDataset(args.counts), readDataset(args.native), inputs, recipe, args.commit);
   for (const [family, value] of [["counts", result.counts], ["native", result.native]]) {
     for (const [name, body] of Object.entries(value.files)) {
       const path = resolve(args.output, family, name); mkdirSync(dirname(path), { recursive: true }); writeFileSync(path, body);
@@ -168,5 +302,7 @@ if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.m
   writeFileSync(resolve(args.output, "county-binding-queries.json"), encoded(result.queries));
   writeFileSync(resolve(args.output, "reference.json"), encoded(result.reference));
   console.log(JSON.stringify({ counts: result.counts.descriptor.version, native: result.native.descriptor.version,
-    qualified_counties: result.queries.length, new_identities: recipe.expected_new, geometry_changed: false }));
+    qualified_counties: result.queries.filter(row => !row.disposition.startsWith("held_")).length,
+    held_counties: result.queries.filter(row => row.disposition.startsWith("held_")).length,
+    new_identities: recipe.expected_new, geometry_changed: false }));
 }
