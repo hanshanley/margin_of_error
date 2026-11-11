@@ -3,6 +3,7 @@
 import argparse
 import gzip
 import json
+import re
 from pathlib import Path
 
 from playwright.sync_api import expect, sync_playwright
@@ -61,15 +62,19 @@ with sync_playwright() as playwright:
         assert len(result["cases"]) == 306
         assert result["reporting"] == 7 and result["early"] == 6450
         cases.extend(result["cases"])
-        state_names = page.locator("#state-select option").evaluate_all(
-            "options => Object.fromEntries(options.map(option=>[option.value,option.value]))")
-        for state_name in state_names:
+        state_names = {feature["properties"]["NAME"]: feature["properties"]["STUSAB"] for feature in
+            json.loads((ROOT / "public/voter-participation/data/states.geojson").read_bytes())["features"]
+            if feature["properties"]["STUSAB"] in expected}
+        assert len(state_names) == 51
+        for state_name, code in state_names.items():
             page.locator("#state-select").select_option(state_name)
             page.wait_for_function("""() => {
               const note=document.querySelector('#current-local-navigation');
               return note && !note.textContent.includes('Loading 2026 local counts');
             }""", timeout=90000)
             assert not page.locator("#current-local-navigation").inner_text().startswith("Dataset:")
+            choices = len(expected[code]["available"]["counties"])
+            expect(page.locator("#current-county-select option")).to_have_count(choices + 1 if choices else 0)
             assert page.locator("#reviewed-county-overview button").count() == 0
         for width in (1440, 390):
             page.set_viewport_size(dict(width=width, height=1000))
@@ -88,7 +93,8 @@ with sync_playwright() as playwright:
             cases.append(dict(width=width, state="Minnesota", county_count=9019,
                 native_county_choices=87, compact_sidebar=True, no_overflow=True))
         assert not errors, errors
-        assert not [url for url in requests if "/participation-local/" in url], "Active legacy county export request"
+        assert not [url for url in requests if re.search(r"/participation-local/[A-Z]{2}\.json\.gz(?:\?|$)", url)], \
+            "Active legacy 2026 county export request"
         assert not [url for url in requests if "/public/participation-current/" in url], "Active legacy state snapshot request"
         proof = dict(status="PASS_actual_public_catalog_all_306_bindings_state_UI_and_phone",
             base_url=args.base_url, production=args.base_url.startswith("https://www.themarginoferror.com"),
