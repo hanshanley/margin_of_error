@@ -3575,8 +3575,10 @@ async function precinctsView(generation) {
 }
 async function render() {
   const generation = ++state.generation;
-  sourceCoverage.setScope({ year: Number($("year").value), mode: $("mode").value || "available",
-    level: $("map-level").value, names: Object.fromEntries((state.geometry?.features || [])
+  sourceCoverage.setScope({ year: Number($("year").value),
+    mode: state.view === "precincts" ? "official" : $("mode").value || "available",
+    level: state.view === "precincts" ? "precinct" : $("map-level").value,
+    names: Object.fromEntries((state.geometry?.features || [])
       .map(feature => [feature.properties.STUSAB, feature.properties.NAME])) });
   if (state.view !== "states") residentContext.hide();
   $("tooltip").hidden = true; note("");

@@ -110,6 +110,8 @@ with sync_playwright() as playwright:
                 wait_until="domcontentloaded", timeout=90000)
             paths = page.locator('#visualization path:is([data-level="precinct"],[data-level="ward"],[data-level="subprecinct"])')
             expect(paths).to_have_count(len(expected["properties"]))
+            expect(page.locator("#participation-coverage")).to_have_attribute("data-level", "precinct")
+            expect(page.locator("#participation-coverage")).to_have_attribute("data-mode", "official")
             actual = paths.evaluate_all("(nodes)=>Object.fromEntries(nodes.map(n=>[n.dataset.geography,n.dataset.count]))")
             for p in expected["properties"]:
                 value = p.get("participation", p)["ballots"]
@@ -135,6 +137,7 @@ with sync_playwright() as playwright:
             assert coverage.get_attribute("open") is None
             row = coverage.locator('tr[data-state-code="MN"]')
             expect(row.locator("td").nth(1)).to_have_text("87")
+            expect(page.locator("#show-current-counties")).to_contain_text("87")
             page.locator("#map-level").select_option("precinct")
             page.wait_for_function("""() => document.querySelector('#participation-coverage').dataset.level==='precinct'
               && document.querySelector('#participation-coverage tr[data-state-code="AZ"]')?.dataset.status==='Loaded (table only)'""")
