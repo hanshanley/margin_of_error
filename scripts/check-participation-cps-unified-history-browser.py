@@ -44,12 +44,13 @@ def check(base, proof, live_data=False, downloads=True):
                     page = context.new_page()
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
                     page.locator("#participation-research > summary").click()
+                    page.locator("#participation-research > details").first.locator(":scope > summary").click()
                     panel = page.locator("#participation-cps-unified-history")
                     expect(panel).to_be_visible()
                     assert panel.get_attribute("data-display-url") == SOURCE
                     assert panel.get_attribute("data-display-sha256") == hashlib.sha256(source).hexdigest()
                     for text in ("all 50 states and D.C.", "not fixed-person cohorts",
-                                 "across 2004–2024", "Missing is not zero.", "native 90%"):
+                                 "across 2002–2024", "Missing is not zero.", "native 90%"):
                         expect(panel).to_contain_text(text)
                     for name, count, label in (("adults", 1, "all adults 18+"),
                                                ("citizens", 10, "Adult citizens 18+")):
@@ -61,8 +62,12 @@ def check(base, proof, live_data=False, downloads=True):
                     if interactive:
                         expect(controls).to_be_visible(timeout=30000)
                         assert panel.locator("#cps-unified-state option").all_text_contents() == reference["states"]
-                        assert panel.locator("#cps-unified-group option").all_text_contents() == [
+                        actual_groups = panel.locator("#cps-unified-group option").all_text_contents()
+                        assert actual_groups[:len(reference["groups"])] == [
                             "Overall" if v == "Total" else v for v in reference["groups"]]
+                        assert len(actual_groups) == len(reference["groups"]) + 5
+                        assert all(label.endswith("(2002 native category)")
+                            for label in actual_groups[len(reference["groups"]):])
                         result = panel.evaluate("""(section, data) => {
                             const state = section.querySelector('#cps-unified-state');
                             const group = section.querySelector('#cps-unified-group');
@@ -157,6 +162,7 @@ def check(base, proof, live_data=False, downloads=True):
                                 assert actual == f"{value[0]:.1f}% +/- {value[1]:.1f} pp"
                             else:
                                 assert actual == "Not supplied for this geography/year/bin"
+                    page.locator("#participation-research > details").nth(1).locator(":scope > summary").click()
                     for old in ("#participation-cps-early-history", "#participation-cps-older-history",
                                 "#participation-cps-state-history", "#participation-columbia-wisconsin-history",
                                 "#participation-ces-classification"):

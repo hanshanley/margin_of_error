@@ -1,6 +1,7 @@
 ---
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
+import { pointFor2002, pointOnlyGroups, pointSourceSHA256, validatePointSource } from '../../public/scripts/participation-cps-2002.js';
 
 type Value = number[];
 type Display = { years: number[]; states: string[]; groups: string[]; values: Value[][][] };
@@ -11,6 +12,11 @@ const archive = JSON.parse(readFileSync(`${root}/archive.json`, 'utf8'));
 const release = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-unified-history-20261107-01';
 const displayUrl = `https://raw.githubusercontent.com/hanshanley/margin_of_error/28cd230b42e9e550356acb78d4947118529b35ab/${root}/display.json`;
 const displayHash = createHash('sha256').update(raw).digest('hex');
+const pointRaw = readFileSync('data/participation-cps-2002/20261111-01/points.json');
+if (createHash('sha256').update(pointRaw).digest('hex') !== pointSourceSHA256) throw new Error('2002 source checksum differs');
+const points = validatePointSource(JSON.parse(pointRaw.toString('utf8')));
+const groups = [...data.groups, ...pointOnlyGroups];
+const pointRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-2002-reported-points-20261111-01';
 const statuses: Record<number, string> = {
 	'-1': 'Not published (B or (B))', '-2': 'Withheld: small population base',
 	'-3': 'Zero or rounds to zero', '-4': 'Not supplied for this geography/year/bin',
@@ -27,7 +33,7 @@ const text = (value: Value) => value.length === 2
 		<p class="kicker">Participation over time · Census published estimates</p>
 		<h2 id="cps-unified-title">Follow one state and group across elections</h2>
 		<p>Explore reported voting in <strong>all 50 states and D.C.</strong> across{' '}
-			<strong>2004–2024</strong>, including midterms. The national benchmark includes D.C.
+			<strong>2002–2024</strong>, including midterms. The national benchmark includes D.C.
 			These are repeated cross-sections, <strong>not fixed-person cohorts</strong>,
 			candidate preference or 2026 outcomes.</p>
 	</header>
@@ -39,7 +45,7 @@ const text = (value: Value) => value.length === 2
 		</label>
 		<label for="cps-unified-group">Demographic view
 			<select id="cps-unified-group">
-				{data.groups.map((group, index) => <option value={index}>{group === 'Total' ? 'Overall' : group}</option>)}
+				{groups.map((group, index) => <option value={index} data-history-group={group}>{group === 'Total' ? 'Overall' : group}</option>)}
 			</select>
 		</label>
 		<label for="cps-unified-election">Citizen-series elections
@@ -53,6 +59,20 @@ const text = (value: Value) => value.length === 2
 	<p id="cps-unified-selection" class="caption" aria-live="polite">
 		United States (including D.C.) · Overall. The national table and complete downloads
 		work without JavaScript; the three original all-state tables follow below.</p>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Separate 2002 midterm source points" data-cps-2002-table>
+		<table>
+			<caption>2002 midterm source points: populations kept separate; no qualified workbook margin.</caption>
+			<thead><tr><th scope="col">Population</th><th scope="col">Reported voting</th></tr></thead>
+			<tbody>{[['vap', 'All adults 18+'], ['cvap', 'Adult citizens 18+ (overall only)']].map(([frame, label]) => {
+				const point = pointFor2002(points, data.states[0], 'Total', frame === 'cvap');
+				return <tr data-cps-2002-frame={frame} data-rate={point.rate ?? ''} data-source-key={point.sourceKey}>
+					<th scope="row">{label}</th><td>{point.text}</td></tr>;
+			})}</tbody>
+		</table>
+		<p class="caption">These are reported source points, not administrative turnout. Old racial labels remain
+			separate from race-alone categories. Held rows stay unavailable. The 2002 all-adult points are
+			not connected to the citizen chart; its original 2006–2024 rates and margins are unchanged.</p>
+	</div>
 	<figure data-cps-unified-chart hidden>
 		<svg role="img" aria-label="Reported voting among adult citizens over time" width="720" height="300"></svg>
 		<figcaption class="caption">
@@ -110,6 +130,8 @@ const text = (value: Value) => value.length === 2
 	<div class="download-links">
 		<a href={`${release}/complete-analysis.zip`} data-cps-unified-download="complete" download>Complete 2004–2024 query + all original inputs + code (ZIP)</a>
 		<a href={`${release}/observations.csv`} data-cps-unified-download="observations" download>Every state/group/year query cell + provenance (CSV)</a>
+		<a href={`${pointRelease}/complete-analysis.zip`} data-cps-2002-download="complete" download>Complete 2002 source points + original inputs + code (ZIP)</a>
+		<a href={`${pointRelease}/complete-point-decisions.csv`} data-cps-2002-download="points" download>All 832 source rows, including withheld points (CSV)</a>
 	</div>
 	<p class="caption">Complete ZIP: {archive.bytes.toLocaleString('en-US')} bytes.
 		SHA-256: <code class="checksum">{archive.sha256}</code>.
@@ -117,6 +139,7 @@ const text = (value: Value) => value.length === 2
 </section>
 
 <script>
+	import { load2002Points, pointFor2002 } from '../../public/scripts/participation-cps-2002.js';
 	const section = document.getElementById('participation-cps-unified-history');
 	const state = document.querySelector<HTMLSelectElement>('#cps-unified-state');
 	const group = document.querySelector<HTMLSelectElement>('#cps-unified-group');
@@ -125,6 +148,38 @@ const text = (value: Value) => value.length === 2
 	const chart = section?.querySelector<HTMLElement>('[data-cps-unified-chart]');
 	const svg = chart?.querySelector('svg');
 	if (section && state && group && election && note && chart && svg) {
+		const pointTable = section.querySelector<HTMLElement>('[data-cps-2002-table]');
+		let pointData: Awaited<ReturnType<typeof load2002Points>> | null = null;
+		let pointFailed = false;
+		const updatePoints = () => {
+			if (pointTable) pointTable.hidden = election.value === 'presidential';
+			const geography = state.options[state.selectedIndex].text;
+			const selectedGroup = group.options[group.selectedIndex].dataset.historyGroup || '';
+			section.querySelectorAll<HTMLTableRowElement>('[data-cps-2002-frame]').forEach(row => {
+				const cell = row.querySelector('td');
+				if (!cell) return;
+				if (!pointData) {
+					row.dataset.rate = ''; row.dataset.sourceKey = '';
+					cell.textContent = pointFailed ? '2002 source unavailable; use the complete download.' : 'Loading the 2002 source…';
+					return;
+				}
+				const point = pointFor2002(pointData, geography, selectedGroup, row.getAttribute('data-cps-2002-frame') === 'cvap');
+				row.dataset.rate = point.rate === null ? '' : String(point.rate);
+				row.dataset.sourceKey = point.sourceKey;
+				cell.textContent = point.text;
+			});
+		};
+		for (const select of [state, group, election]) select.addEventListener('change', updatePoints);
+		let pointStarted = false;
+		const startPoints = () => {
+			if (pointStarted) return;
+			pointStarted = true;
+			load2002Points().then(data => { pointData = data; updatePoints(); })
+				.catch(() => { pointFailed = true; updatePoints(); });
+		};
+		const archive = section.closest('details');
+		if (!archive || archive.open) startPoints();
+		else archive.addEventListener('toggle', () => { if (archive.open) startPoints(); });
 		const statuses: Record<number, string> = {
 			'-1': 'Not published (B or (B))', '-2': 'Withheld: small population base',
 			'-3': 'Zero or rounds to zero', '-4': 'Not supplied for this geography/year/bin',
@@ -155,8 +210,8 @@ const text = (value: Value) => value.length === 2
 				svg.setAttribute('width', String(width));
 				svg.setAttribute('height', String(height));
 				svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-				svg.setAttribute('aria-label', `${data.states[Number(state.value)]}, ${data.groups[Number(group.value)]}: adult-citizen reported voting; native 90% margins.`);
-				const values = data.values[Number(state.value)][Number(group.value)];
+				svg.setAttribute('aria-label', `${data.states[Number(state.value)]}, ${group.options[group.selectedIndex].text}: adult-citizen reported voting; native 90% margins.`);
+				const values = data.values[Number(state.value)][Number(group.value)] || data.years.map(() => [-4]);
 				const available = values.filter((value, i) => i > 0 && permitted(data.years[i]) && value.length === 2);
 				const low = Math.min(0, ...available.map(value => value[0] - value[1]));
 				const high = Math.max(100, ...available.map(value => value[0] + value[1]));
@@ -199,7 +254,7 @@ const text = (value: Value) => value.length === 2
 					fill: 'currentColor', 'font-size': 12 }, 'No published rates for this selection.');
 			};
 			const update = () => {
-				const values = data.values[Number(state.value)][Number(group.value)];
+				const values = data.values[Number(state.value)][Number(group.value)] || data.years.map(() => [-4]);
 				section.querySelectorAll<HTMLTableRowElement>('[data-cps-unified-year]').forEach(row => {
 					const year = Number(row.dataset.cpsUnifiedYear), value = values[data.years.indexOf(year)];
 					row.hidden = year !== 2004 && !permitted(year);
@@ -207,7 +262,7 @@ const text = (value: Value) => value.length === 2
 					if (cell) cell.textContent = value.length === 2
 						? `${value[0].toFixed(1)}% +/- ${value[1].toFixed(1)} pp` : statuses[value[0]];
 				});
-				note.textContent = `${data.states[Number(state.value)]} · ${data.groups[Number(group.value)]} · ${election.options[election.selectedIndex].text}. 2004: all adults; 2006–2024: adult citizens.`;
+				note.textContent = `${data.states[Number(state.value)]} · ${group.options[group.selectedIndex].text} · ${election.options[election.selectedIndex].text}. 2002 points have separate adult/citizen frames and no qualified workbook margin. 2004: all adults; 2006–2024: adult citizens.`;
 				draw();
 			};
 			for (const select of [state, group, election]) select.addEventListener('change', update);
