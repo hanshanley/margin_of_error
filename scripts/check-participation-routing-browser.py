@@ -37,6 +37,10 @@ with sync_playwright() as playwright:
         for year in reversed(sorted(tables)):
             if year == 2024:
                 expect(page.locator(".map-feature.selected")).to_have_attribute("data-key", "WAKE|01-01")
+                download_count = page.locator("#downloads a[download]").count()
+                assert download_count >= 900
+                reviewed_rows = page.locator("table[data-reviewed-county-participation] tbody tr").all_text_contents()
+                assert reviewed_rows
                 response = initial_response
             else:
                 with page.expect_response(tables[year]["url"], timeout=60000) as captured:
@@ -76,8 +80,10 @@ with sync_playwright() as playwright:
         page.goto(base + "/voter-participation/?view=precincts&year=2004&county=WAKE")
         expect(page.locator("#notice")).to_contain_text("The saved data could not be loaded:")
         expect(page.locator("#notice")).to_contain_text("No values have been inferred.")
-        expect(page.locator("table[data-reviewed-county-participation] tbody tr")).to_have_count(13)
-        assert page.locator("#downloads a[download]").count() == 309
+        reviewed_table = page.locator("table[data-reviewed-county-participation] tbody tr")
+        expect(reviewed_table).to_have_count(len(reviewed_rows))
+        assert reviewed_table.all_text_contents() == reviewed_rows
+        assert page.locator("#downloads a[download]").count() == download_count
         proof["checks"].append({"mobile": mobile, "failed_historical_read_is_explicit": True,
                                 "reviewed_counties_and_all_downloads_preserved": True})
         context.close()

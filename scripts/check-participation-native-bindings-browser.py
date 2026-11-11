@@ -13,10 +13,12 @@ ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4399")
 parser.add_argument("--proof", type=Path, required=True)
+parser.add_argument("--runtime-root", type=Path,
+    default=ROOT / "data/participation-native-bindings/20261111-05/runtime")
 args = parser.parse_args()
 assert not args.proof.exists()
 base = args.base_url.rstrip("/")
-runtime = ROOT / "data/participation-native-bindings/20261111-05/runtime"
+runtime = args.runtime_root
 descriptor = json.loads((runtime / "dataset.json").read_bytes())
 index = json.loads((runtime / "index.json").read_bytes())
 layers = {}
@@ -80,7 +82,10 @@ with sync_playwright() as playwright:
                   const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',body))]
                     .map(v=>v.toString(16).padStart(2,'0')).join('');
                   if(hash!==binding.sha256)throw new Error('County reference hash differs');
-                  return new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).json();
+                  const bytes=new Uint8Array(body);
+                  return bytes[0]===31&&bytes[1]===139
+                    ?new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).json()
+                    :JSON.parse(new TextDecoder().decode(body));
                 });
                 references.set(binding.sha256,data);
               }
@@ -102,7 +107,9 @@ with sync_playwright() as playwright:
           return {version:entry.version,base_url:entry.base_url,cases};
         }""", dict(layers=layers, tables=tables))
         assert result["version"] == descriptor["version"]
-        assert len(result["cases"]) == 11 + 5 + 134 + 8
+        assert len(result["cases"]) == len(index["layers"]) + len(index["reporting_tables"]) \
+            + sum(len(modes) for modes in index["county_bindings"].values()) \
+            + sum(len(modes) for modes in index["municipal_bindings"].values())
         cases.extend(result["cases"])
         for identity, expected in layers.items():
             code = identity.split("/")[1]

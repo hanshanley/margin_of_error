@@ -82,7 +82,8 @@ with sync_playwright() as playwright:
                                      "?view=states&year=2024&map-color=turnout&map-level=auto&state=North+Carolina",
                                      wait_until="domcontentloaded")
                 assert response.ok
-                expect(page.locator("svg.turnout-map")).to_be_visible(timeout=90000)
+                svg = page.locator("svg.turnout-map")
+                expect(svg).to_be_visible(timeout=90000)
                 page.locator('.map-feature[data-state="North Carolina"]').click()
                 page.wait_for_function(
                     "document.querySelectorAll('.geographic-detail .map-feature').length > 0",
@@ -97,8 +98,26 @@ with sync_playwright() as playwright:
                     "options=>options.map(option=>option.value)")
                 assert len(names) == len(set(names)) == 51
                 for name in names if mode == "desktop" else ["Alaska", "Hawaii", "Rhode Island"]:
-                    page.select_option("#state-select", name)
-                    checks.append(check_outline(page, name))
+                    page.locator("#map-reset").click()
+                    expect(svg.locator(".geographic-detail .map-feature")).to_have_count(0,
+                        timeout=60000)
+                    target = page.locator(f'.map-feature[data-state="{name}"]')
+                    target.scroll_into_view_if_needed()
+                    point = target.evaluate("""path => {
+                      const box=path.getBBox();
+                      for(let y=1;y<20;y++)for(let x=1;x<20;x++){
+                        const p=new DOMPoint(box.x+box.width*x/20,box.y+box.height*y/20);
+                        if(!path.isPointInFill(p))continue;
+                        const q=p.matrixTransform(path.getScreenCTM());
+                        if(document.elementFromPoint(q.x,q.y)===path)return {x:q.x,y:q.y};
+                      }
+                      throw new Error('No hittable state interior: '+path.dataset.state);
+                    }""")
+                    page.mouse.click(point["x"], point["y"])
+                    expect(page.locator("#state-select")).to_have_value(name)
+                    result = check_outline(page, name)
+                    result["real_interior_pointer_selection"] = True
+                    checks.append(result)
                 for name in ("Texas", "Rhode Island"):
                     page.select_option("#state-select", name)
                     selected = page.locator(".map-feature.selected[data-state]")

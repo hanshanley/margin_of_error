@@ -13,9 +13,11 @@ ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4399")
 parser.add_argument("--proof", type=Path, required=True)
+parser.add_argument("--runtime-root", type=Path,
+    default=ROOT / "data/participation-counts/20261110-02/runtime")
 args = parser.parse_args()
 assert not args.proof.exists()
-runtime_root = ROOT / "data/participation-counts/20261110-02/runtime"
+runtime_root = args.runtime_root
 descriptor = json.loads((runtime_root / "dataset.json").read_bytes())
 index = json.loads((runtime_root / "index.json").read_bytes())
 expected = {}

@@ -51,33 +51,15 @@ def check_round_trip(page, mode, screenshots):
     demographics = snapshot(page, ["year", "basis", "dimension", "group"])
     expect(page.locator("#visualization")).not_to_contain_text("Data unavailable")
 
-    select_tab(page, "precincts")
-    expect(page.locator("#precinct-state-select")).to_have_value("Texas")
-    expect(page.locator("#year")).to_have_value("2024")
-    expect(page.locator("#precinct-layer")).to_have_value("participation")
-    expect(page.locator("#title")).to_have_text("Precinct data unavailable in Texas")
-    page.select_option("#precinct-layer", "results")
-    expect(page.locator("#precinct-layer")).to_have_value("results")
-    expect(page.locator("#title")).to_have_text("Precinct election results in Texas", timeout=90000)
-    page.wait_for_function(
-        "document.querySelectorAll('.geographic-detail [data-color-level=\"precinct\"]').length > 9000",
-        timeout=90000)
-    assert page.locator('.geographic-detail [data-color-level="precinct"]').count() > 9000
-    texas_results = snapshot(page, ["precinct-state-select", "year", "precinct-layer"])
-
-    page.select_option("#precinct-state-select", "North Carolina")
-    page.select_option("#year", "2022")
-    page.select_option("#precinct-layer", "participation")
-    expect(page.locator("#precinct-layer")).to_have_value("participation")
-    page.select_option("#dimension", "race")
-    precinct_group = choose_group(page)
-    expect(page.locator("svg.turnout-map")).to_be_visible(timeout=90000)
-    county_values = values(page, "#precinct-county")
-    county = "WAKE" if "WAKE" in county_values else next(value for value in county_values if value)
-    page.select_option("#precinct-county", county)
-    expect(page.locator("svg.turnout-map")).to_be_visible(timeout=90000)
-    precincts = snapshot(page, ["precinct-state-select", "year", "precinct-layer",
-                                "dimension", "group", "precinct-county"])
+    expect(page.locator("#tab-precincts")).to_have_count(0)
+    select_tab(page, "effects")
+    driver = page.locator("#participation-return-drivers")
+    expect(driver.locator("[data-driver-office]")).to_be_enabled(timeout=90000)
+    driver.locator("[data-driver-office]").select_option("senate")
+    driver.locator("[data-driver-view]").select_option("modeled_nonparticipation")
+    driver.locator("[data-driver-state]").select_option("TX")
+    effects = {"office": "senate", "view": "modeled_nonparticipation", "state": "TX"}
+    expect(driver.locator(".driver-map svg")).to_have_count(1)
 
     select_tab(page, "methods")
     expect(page.locator("#historical-explorer")).to_be_hidden()
@@ -104,9 +86,9 @@ def check_round_trip(page, mode, screenshots):
         assert snapshot(page, states.keys()) == states
         select_tab(page, "national")
         assert snapshot(page, demographics.keys()) == demographics
-        select_tab(page, "precincts")
-        expect(page.locator("svg.turnout-map")).to_be_visible(timeout=90000)
-        assert snapshot(page, precincts.keys()) == precincts
+        select_tab(page, "effects")
+        for field, value in effects.items():
+            expect(driver.locator(f"[data-driver-{field}]")).to_have_value(value)
         select_tab(page, "methods")
         expect(page.locator("#methods-panel")).to_be_visible()
         expect(page.locator("#methods-archive")).to_be_hidden()
@@ -124,24 +106,46 @@ def check_round_trip(page, mode, screenshots):
     select_tab(page, "national")
     assert snapshot(page, current.keys()) == current
 
-    select_tab(page, "precincts")
-    page.select_option("#precinct-state-select", "Minnesota")
-    page.select_option("#year", "2026")
-    page.select_option("#precinct-layer", "participation")
-    expect(page.locator("#title")).to_have_text("Precinct participation in Minnesota", timeout=90000)
+    select_tab(page, "states")
+    page.select_option("#map-color", "turnout")
+    page.select_option("#map-level", "precinct")
+    page.select_option("#state-select", "Minnesota")
     page.wait_for_function(
         "document.querySelectorAll('.geographic-detail [data-level=\"precinct\"][data-count]').length > 4000",
         timeout=90000)
     native_shapes = page.locator('.geographic-detail [data-level="precinct"][data-count]')
     assert native_shapes.count() > 4000
-    expect(page.locator("#coverage-note")).to_contain_text("approved reporting-unit joins")
-    current_precincts = snapshot(page, ["precinct-state-select", "year", "precinct-layer"])
-    select_tab(page, "states")
-    assert snapshot(page, states.keys()) == states
-    select_tab(page, "precincts")
-    assert snapshot(page, current_precincts.keys()) == current_precincts
+    current_precincts = snapshot(page, ["state-select", "year", "mode", "map-color", "map-level"])
+    for view in ("methods", "national", "effects"):
+        select_tab(page, view)
+        select_tab(page, "states")
+        assert snapshot(page, current_precincts.keys()) == current_precincts
+        expect(page.locator('.geographic-detail [data-level="precinct"][data-count]')).to_have_count(4105,
+            timeout=90000)
 
-    page.locator("#tab-precincts").focus()
+    svg = page.locator("svg.turnout-map")
+    viewport = lambda: [float(value) for value in svg.get_attribute("viewBox").split()]
+    page.locator("#map-reset").click()
+    expect(svg).to_have_attribute("data-zoom", "1")
+    full = viewport()
+    page.locator("#map-zoom-in").click()
+    assert viewport()[2] < full[2]
+    before = viewport()
+    svg.press("ArrowRight")
+    assert viewport()[0] > before[0]
+    svg.scroll_into_view_if_needed()
+    box = svg.bounding_box()
+    before = viewport()
+    page.mouse.move(box["x"] + box["width"] * .5, box["y"] + box["height"] * .5)
+    page.mouse.down()
+    page.mouse.move(box["x"] + box["width"] * .6, box["y"] + box["height"] * .55, steps=8)
+    page.mouse.up()
+    assert viewport()[:2] != before[:2]
+    svg.press("Home")
+    assert viewport() == full
+    expect(page.locator("#state-select")).to_have_value("Minnesota")
+
+    page.locator("#tab-effects").focus()
     page.keyboard.press("ArrowRight")
     expect(page.locator("#tab-methods")).to_be_focused()
     expect(page.locator("#tab-methods")).to_have_attribute("aria-selected", "true")
@@ -153,10 +157,11 @@ def check_round_trip(page, mode, screenshots):
         page.screenshot(path=str(screenshots / f"tab-roundtrip-{mode}.png"), full_page=False)
     return {
         "mode": mode, "states": states, "historical_demographics": demographics,
-        "texas_2024_results": texas_results, "north_carolina_participation": precincts,
+        "swing_map": effects,
         "minnesota_2026_participation": current_precincts, "current_demographics": current,
-        "historical_group": demographic_group, "precinct_group": precinct_group,
+        "historical_group": demographic_group,
         "current_group": current_group, "repeated_round_trips": 2,
+        "integrated_precinct_round_trips": 3, "zoom_pan_keyboard_reset": True,
         "keyboard_tabs": True, "methods_default_disclosures_closed": True,
         "research_default_closed": True, "no_horizontal_overflow": True,
     }

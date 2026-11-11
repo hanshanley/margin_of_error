@@ -212,7 +212,8 @@ html:not(.js) .methods-archive:has(:target) { display: block; }
 	.explorer-layout { grid-template-columns: minmax(0, 1fr) 250px; gap: 1rem; }
 	.selection-panel { padding-left: 1rem; }
 	.explorer-toolbar { flex-wrap: wrap; }
-	.explorer-options { margin-top: .25rem; }
+	.explorer-options { min-width: 0; width: 100%; margin-top: .25rem; }
+	.explorer-options .controls { position: static; min-width: 0; box-shadow: none; margin-top: .75rem; }
 }
 @media (max-width: 700px) {
 	.participation-page { padding-top: 1.25rem; }
@@ -223,7 +224,7 @@ html:not(.js) .methods-archive:has(:target) { display: block; }
 	.participation-explorer .controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; width: 100%; }
 	.participation-explorer .controls label { min-width: 0; }
 	.participation-explorer #precinct-search { width: 100%; }
-	.explorer-options .controls { position: static; box-shadow: none; margin-top: .75rem; }
+	.explorer-options .controls { grid-template-columns: minmax(0, 1fr); }
 	.explorer-heading { display: block; }
 	.explorer-heading #key { margin-top: .8rem; }
 	.explorer-layout { grid-template-columns: 1fr; }
