@@ -99,6 +99,22 @@ Keep old values cleared during failures and selection/year changes. Local
 fixture proofs are not evidence of publication; separately verify the actual
 catalog promotion and production reader without a new site build.
 
+The 2026 current snapshot and county/local count tables now use the same catalog
+through `participation-counts.js`. Frozen accepted-export inputs and canonical
+queries are in `data/participation-counts/20261110-02/`; the build reads those
+snapshots rather than invoking the state-specific importer chain. Legacy
+`participation-local/*.json.gz` exports retain their exact held bytes.
+Six explicit view bindings preserve the four count modes and the two separate
+UF-context selections. Unknown and withheld counts remain distinct nulls; source
+appearances and overlapping partitions are never additive people.
+The full migration ZIP contains every sufficient accepted aggregate input,
+every canonical query, original-contract checks and exact offline reproduction.
+It is a migration of previously reviewed data, not a new native-source or
+geographic qualification. Source-specific precinct counts still embedded in
+reference geometries and their geographic qualification readers remain a
+separate unfinished migration. Do not claim all count/geography readers have
+been converted or let an unavailable catalog silently fall back to stale counts.
+
 Keep the Methods tab a short overview of the estimation process, not a
 source inventory: weighted rates, matched denominators, historical checks
 and supported geography. Link directly to the research repository's

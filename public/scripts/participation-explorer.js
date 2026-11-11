@@ -1,10 +1,11 @@
 import { installParticipationDownloads, participationDownload } from "./participation-downloads.js";
 import { contextualCountyRows } from "./participation-county-context.js";
 import { installResidentContext } from "./participation-resident-context.js";
+import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, clearCountState } from "./participation-counts.js";
 import { rings, boundsFor, conicProjection, projectFeatures } from "./participation-map-projection.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, qualifiedManchesterWardReference, qualifiedConcordWardReference, qualifiedNashuaWardReference, qualifiedDoverWardReference, qualifiedMinnesotaPrecinctReference, hasCountySourceMode, selectCountySourceFrame, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference, qualifiedNewHampshireCityReference, qualifiedMassachusettsCityReference, qualifiedMassachusettsReportingReference } from "./participation-geography.js";
+import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, qualifiedManchesterWardReference, qualifiedConcordWardReference, qualifiedNashuaWardReference, qualifiedDoverWardReference, qualifiedMinnesotaPrecinctReference, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference, qualifiedNewHampshireCityReference, qualifiedMassachusettsCityReference, qualifiedMassachusettsReportingReference } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -92,6 +93,8 @@ const ufMode = () => isProvisional() && state.view === "states"
 const ufBasis = () => $("mode").value === "uf_vap" ? "vap" : "vep";
 const participationRate = row => row?.uf_source && row.turnout_pct != null
   ? row.turnout_pct.toFixed(2) + "%" : pct(row?.turnout_pct);
+const hasCountySourceMode = (code, mode) => ["in_person_early", "mail_returned"].includes(mode)
+  && (state.countIndex?.states[code]?.views[mode]?.counties ?? 0) > 0;
 const titleCase = text => text.toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase());
 const keyFor = row => `${row.county}|${row.precinct}`;
 const methodLabels = { election_day: "Election Day · in person", early_in_person: "Early · in person",
@@ -307,20 +310,10 @@ async function drawLocalGeography(map, selected, code, year, token) {
 }
 async function loadCurrent() {
   try {
-    const audit = $("nationwide-participation");
-    if (state.contextPath || audit?.dataset.snapshotDirectory) {
-      const path = audit?.dataset.snapshotDirectory
-        ? audit.dataset.dataRoot + audit.dataset.snapshotDirectory + "snapshot.json"
-        : state.contextPath + "nationwide/snapshot.json";
-      const response = await fetch(path);
-      if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
-      state.current = await response.json();
-      state.currentPath = path.replace(/snapshot\.json$/, "");
-      return;
-    }
-    const pointer = await get("nationwide/latest.json");
-    state.currentPath = `/voter-participation/data/nationwide/${pointer.snapshot_id}/`;
-    state.current = await get(`nationwide/${pointer.snapshot_id}/snapshot.json`);
+    const data = await loadCurrentCountSnapshot();
+    state.current = data.snapshot;
+    state.currentPath = data.original_base;
+    state.reviewedStates = data.reviewed_states;
   } catch (error) {
     state.currentError = `Saved 2026 observations could not be loaded: ${error.message}.`;
   }
@@ -381,67 +374,10 @@ function stateParticipationRows() {
     observation_type: `UF ${basis.toUpperCase()} turnout · ${row.source_status}`,
   }));
 }
-    const additionalLocal = new Map();
     async function currentLocal() {
       const code = stateCode();
       const mode = $("mode").value;
-      if (["in_person_early", "mail_returned"].includes(mode) && !hasCountySourceMode(code, mode))
-        return { counties: [], precincts: [], nongeographic: [],
-          mode_review_complete_download: "https://github.com/hanshanley/margin_of_error/releases/download/voter-native-mode-frames-20261110-01/complete-analysis.zip",
-          source_mode_unavailable: `No qualified ${mode === "in_person_early" ? "in-person early" : "mail-returned"} local frame for ${state.selectedState}. `
-            + "Other source counts are retained under Available / official source, not reused for this mode. Missing mode counts are unknown, not zero." };
-      const supplement = { counties: state.reviewedCounties, precincts: [] };
-      if (state.current?.local_file && !state.currentLocal) state.currentLocal = fetch(state.currentPath + state.current.local_file)
-        .then(response => {
-          if (!response.ok) throw new Error(`Local 2026 counts: HTTP ${response.status}`);
-          return response.json();
-        }).then(data => ({
-          ...data, counties: [...data.counties, ...state.reviewedCounties.filter(row =>
-            !data.counties.some(other => other.state_code === row.state_code
-              && (other.county_id === row.county_id || countyName(other.county) === countyName(row.county))))],
-        })).catch(error => {
-          state.currentLocal = null;
-          if (state.reviewedCounties.some(row => row.state_code === code)
-            || state.additionalCoverage.some(row => row.state_code === code)) return supplement;
-          throw error;
-        });
-      const data = state.current?.local_file ? await Promise.resolve(state.currentLocal) : supplement;
-      if (!state.additionalCoverage.some(row => row.state_code === code)) return data;
-      if (!additionalLocal.has(code)) additionalLocal.set(code, fetch(`/participation-local/${code}.json.gz`)
-        .then(response => {
-          if (!response.ok) throw new Error(`Additional ${code} participation: HTTP ${response.status}`);
-          if (!globalThis.DecompressionStream)
-            throw new Error("Compressed participation is unsupported by this browser");
-          return new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).json();
-        }).catch(error => {
-          additionalLocal.delete(code);
-          return { counties: [], precincts: [], additional_error: error.message };
-        }));
-      const additional = await additionalLocal.get(code);
-      const combined = [...data.counties, ...additional.counties.filter(row =>
-        !data.counties.some(other => other.state_code === row.state_code
-          && countyName(other.county) === countyName(row.county)))];
-      let selectedCounties;
-      try {
-        selectedCounties = selectCountySourceFrame({ ...additional, counties: combined }, code, $("mode").value);
-      } catch (error) {
-        additionalLocal.delete(code);
-        throw error;
-      }
-      const scoped = hasCountySourceMode(code, $("mode").value) || selectedCounties !== combined;
-      const minnesotaSnapshot = code === "MN" && ["available", "official"].includes($("mode").value)
-        ? selectedCounties.find(row => ["20261110-minnesota-followup-02", "20261110-minnesota-complete-native-03"]
-          .includes(row.source_snapshot))?.source_snapshot : null;
-      const baseCounties = scoped ? combined.filter(row => row.state_code !== code) : combined;
-      return { ...data,
-        counties: scoped ? [...baseCounties, ...selectedCounties] : combined,
-        precincts: minnesotaSnapshot
-          ? additional.precincts.filter(row => row.source_snapshot === minnesotaSnapshot)
-          : scoped ? [] : [...data.precincts, ...additional.precincts],
-        nongeographic: scoped ? [] : additional.nongeographic || [], additional_error: additional.additional_error,
-        unmapped_source_regions: scoped
-          ? additional.county_frame_holds?.[selectedCounties[0]?.source_mode] || [] : [],
-      };
+      return countFrame(await loadCountState(code), mode);
     }
     const countyName = value => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
       .toUpperCase().replace(/\s*\(VOTE CENTER\)/g, "").replace(/\b(COUNTY|PARISH)\b/g, "")
@@ -754,35 +690,35 @@ function stateParticipationRows() {
       const nativeByFips = new Map();
       if (reference) {
         if (towns && !qualifiedConnecticutTownReference(observations, reference, collection)) {
-          additionalLocal.delete(code);
+          clearCountState(code);
           throw new Error("Unqualified Connecticut town reference; county or precinct totals are not invented");
         }
         if (localityActivity && !qualifiedMaineLocalityReference(observations, reference, collection)) {
-          additionalLocal.delete(code);
+          clearCountState(code);
           throw new Error("Unqualified Maine locality reference; unmatched source regions are not allocated");
         }
         if (countyNamedContext && !qualifiedIllinoisCountyContextReference(observations, reference, collection)) {
-          additionalLocal.delete(code);
+          clearCountState(code);
           throw new Error("Unqualified Illinois source-region county context; whole-county totals are not inferred");
         }
         if (code === "NH" && nativeCities && !qualifiedNewHampshireCityReference(observations, reference, collection)) {
-          additionalLocal.delete(code);
+          clearCountState(code);
           throw new Error("Unqualified New Hampshire native city count or contextual reference; no county or ward allocation");
         }
         if (massachusettsCities && !qualifiedMassachusettsCityReference(observations, reference, collection)) {
-          additionalLocal.delete(code);
+          clearCountState(code);
           throw new Error("Unqualified Massachusetts native city count or reference; no summary substitution or county allocation");
         }
         if (reference.identity_field && !municipalityContext && !countyNamedContext && (!administrations
           || !qualifiedHawaiiAdministrationReference(observations, reference, collection))) {
-          additionalLocal.delete(code);
+          clearCountState(code);
           throw new Error("Unqualified election-administration reference; separate Maui/Kalawao counts are not invented");
         }
         for (const row of observations) {
           const identity = partialMunicipalityContext ? row.reference_municipality_key
             : administrations || towns ? row.source_administration_id : row.county_fips;
           if (row.reference_geometry?.sha256 !== reference.sha256 || nativeByFips.has(identity)) {
-            additionalLocal.delete(code);
+            clearCountState(code);
             throw new Error("Mixed or duplicate native county reference identities");
           }
           nativeByFips.set(identity, row);
@@ -791,7 +727,7 @@ function stateParticipationRows() {
         if (partial !== undefined && (code !== "MI" || reference.counties !== 83
           || !Array.isArray(partial) || partial.length !== 2 || new Set(partial).size !== 2
           || nativeByFips.size !== 2 || partial.some(fips => !nativeByFips.has(fips)))) {
-          additionalLocal.delete(code);
+          clearCountState(code);
           throw new Error("Unqualified partial native county-parent scope");
         }
         const shapeIds = new Set(collection.features.map(feature => feature.properties.key));
@@ -805,7 +741,7 @@ function stateParticipationRows() {
             || (nativeByFips.has(p.key)
               ? !localityActivity && countyName(p.name) !== countyName(nativeByFips.get(p.key).county)
               : !partial && !partialMunicipalityContext))) {
-          additionalLocal.delete(code);
+          clearCountState(code);
           throw new Error("Native whole-county inventory disagrees with the verified 2026 reference");
         }
       }
@@ -3984,7 +3920,7 @@ async function main() {
     tabs[index].focus(); showView(tabs[index].dataset.view);
   });
   await Promise.all([loadContext(), loadMethods(), loadLocal(), loadCurrentPrecincts(), loadPrecinctResults(),
-    loadReportingUnitSources()]);
+    loadReportingUnitSources(), loadCountIndex().then(({ index }) => { state.countIndex = index; }).catch(() => {})]);
   const [national, states, geometry, ncSummary, audits] = await Promise.all([
     get("national.json"), get("states.json"), get("states.geojson"), get("nc/summary.json"), get("geometry-audit.json"),
     loadCurrent(),

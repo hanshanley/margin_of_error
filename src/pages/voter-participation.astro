@@ -25,9 +25,7 @@ import ParticipationAgeScenarios from '../components/ParticipationAgeScenarios.a
 import ParticipationStateAgeScenarios from '../components/ParticipationStateAgeScenarios.astro';
 import ParticipationCandidateConditionals from '../components/ParticipationCandidateConditionals.astro';
 import { participationCurrentRoot } from '../../public/scripts/participation-downloads.js';
-import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation } from '../../scripts/reviewed-county-participation.mjs';
-import { loadAdditionalParticipation } from '../../scripts/additional-participation.mjs';
-import { loadCountyContextReview } from '../../scripts/build-county-participation-context.mjs';
+import { loadCountPublication } from '../../scripts/participation-count-publication.mjs';
 import '../styles/voter-participation.css';
 
 const dataRoot = resolve('public/voter-participation');
@@ -89,19 +87,18 @@ const participationReviews = existsSync(participationReviewsPath)
 		...review, cities: review.city_file
 			? JSON.parse(readFileSync(resolve(review.data_directory, review.city_file), 'utf8')) as CityParticipation[] : [],
 	})) : [];
-const reviewedCounties = loadReviewedCountyParticipation(participationReviews);
-const reviewedStates = loadReviewedStatewideParticipation(participationReviews);
+const countPublication = loadCountPublication();
+const reviewedCounties = countPublication.reviewedCounties;
+const reviewedStates = countPublication.reviewedStates;
 const reviewedMeasure = (row: typeof reviewedCounties[number]) =>
 	'participation_measure_label' in row ? row.participation_measure_label
 		: 'participation_measure_literal' in row ? row.participation_measure_literal : undefined;
-const additionalParticipation = loadAdditionalParticipation({ nativeCountyParents: true, minnesotaCompleteNative: true });
+const additionalParticipation = countPublication.additional;
 const countyParentDownload = (row: typeof additionalParticipation.counties[number] | undefined) =>
 	row && 'county_parent_complete_download_url' in row ? String(row.county_parent_complete_download_url) : undefined;
 const countyModeLabel = (row: typeof additionalParticipation.counties[number] | undefined) =>
 	row && 'participation_measure_label' in row ? String(row.participation_measure_label) : 'Source county activity';
-const countyContextReview = loadCountyContextReview([
-	...loadAdditionalParticipation().counties, ...reviewedCounties,
-]);
+const countyContextReview = countPublication.countyContext;
 const additionalParticipationStates = [...new Set([...additionalParticipation.counties.map(row => row.state_code),
 	...Object.keys(additionalParticipation.county_frames || {})])]
 	.map(code => ({
@@ -131,7 +128,7 @@ const currentRace = current.demographics.filter((row: { county: string; request_
 	.sort((a: { ballots: number }, b: { ballots: number }) => b.ballots - a.ballots);
 const currentMaximum = Math.max(1, ...currentRace.map((row: { ballots: number }) => row.ballots));
 const currentSource = (name: string) => current.sources.find((row: { file: string }) => row.file === name);
-const formatNumber = (value: number) => value.toLocaleString('en-US');
+const formatNumber = (value: number | null) => value === null ? 'Not supplied' : value.toLocaleString('en-US');
 type EvidenceObservation = { id: string; jurisdiction: string; scope: string; measure: string;
 	numerator: number; denominator: number | null; denominator_label: string;
 	source_time_label: string; source_url: string; status: string; coverage_note: string;
@@ -674,6 +671,9 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				source_mode_counties: Math.max(0, ...row.sourceModes.map(mode => mode.counties)),
 			})))}>
 			<h2 id="additional-participation-title">More source participation observations · 2026</h2>
+			<p><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-count-migration-20261110-01/complete-analysis.zip">Complete canonical count queries, accepted inputs and offline reproduction (ZIP)</a>.
+				The common catalog retains the existing source frames and rate decisions;
+				it does not qualify new counts, boundaries or individual voting histories.</p>
 			<p>Actual participation observations from {additionalParticipationStates.length} additional state sources,
 				not candidate-vote totals or UF estimates. Native observations and separately labeled provider
 				early activity keep their own dates, definitions and source context. Counties, independent cities and municipalities retain

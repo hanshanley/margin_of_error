@@ -1,21 +1,13 @@
 import type { APIRoute } from 'astro';
-import { gzipSync } from 'node:zlib';
-import { loadAdditionalParticipation } from '../../../scripts/additional-participation.mjs';
+import { loadCountPublication, legacyCountExport } from '../../../scripts/participation-count-publication.mjs';
 
 export function getStaticPaths() {
-	const data = loadAdditionalParticipation({ nativeCountyParents: true, minnesotaCompleteNative: true });
-	return [...new Set([...data.counties.map(row => row.state_code), ...Object.keys(data.county_frames || {})])].map(state => ({
+	return loadCountPublication().metadata.additional_states.map((state: string) => ({
 		params: { state },
-		props: {
-			counties: data.counties.filter(row => row.state_code === state),
-			precincts: data.precincts.filter(row => row.state_code === state),
-			nongeographic: data.nongeographic.filter(row => row.state_code === state),
-			county_frames: data.county_frames?.[state],
-			county_frame_holds: data.county_frame_holds?.[state],
-		},
+		props: { state },
 	}));
 }
 
-export const GET: APIRoute = ({ props }) => new Response(new Uint8Array(gzipSync(JSON.stringify(props))), {
+export const GET: APIRoute = ({ props }) => new Response(new Uint8Array(legacyCountExport(props.state)), {
 	headers: { 'Content-Type': 'application/gzip' },
 });
