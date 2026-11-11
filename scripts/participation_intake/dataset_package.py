@@ -24,7 +24,17 @@ def reproduce_resident_dataset(root, full=False):
     manifest = checked_members(root)
     science = extract_complete(root / "originals/complete-precinct-analysis.zip", root / "science-extracted")
     checked_members(science)
-    if full:
+    prior_pin = manifest.get("prior_resident_dataset_pin")
+    if prior_pin:
+        prior_archive = root / "originals/complete-prior-resident-dataset.zip"
+        if file_pin(prior_archive) != prior_pin:
+            raise IntakeError("package_integrity", "The complete accepted prior resident bundle changed")
+        prior = extract_complete(prior_archive, root / "prior-resident-extracted")
+        checked_members(prior)
+        if full:
+            reproduce_precinct_package(science)
+        county = prior
+    elif full:
         reproduce_precinct_package(science)
         county = science / "prior-county-extracted"
     else:
@@ -52,6 +62,8 @@ def reproduce_resident_dataset(root, full=False):
             after = json.loads(gzip.decompress(body))["counties"]
             if before != after:
                 raise IntakeError("package_reproduction", "An existing native county profile changed")
+            if name.split("/")[1].split(".")[0] not in contexts and body != files[name]:
+                raise IntakeError("package_reproduction", "An accepted earlier local profile family changed")
     version = digest(encoded(dict(files={name: pin(body) for name, body in sorted(compiled.items())},
         contract=description["record_contract"])))
     if version != description["version"]:
@@ -62,10 +74,12 @@ def reproduce_resident_dataset(root, full=False):
         jurisdictions=len(index["states"]), runtime_files_exact=len(compiled),
         version=version, complete_members_verified=len(manifest["members"]),
         scientific_inputs_reused=not full, full_science_recomputed=full,
+        accepted_prior_local_science_recomputed=False if prior_pin else full,
         acquisitions=0, source_geometry_repaired=False)
 
 
-def package_resident_dataset(runtime_root, science_root, native_intake_archive, native_proof, output):
+def package_resident_dataset(runtime_root, science_root, native_intake_archive, native_proof, output,
+                             base_dataset_archive=None, base_dataset_description=None):
     runtime, science, output = Path(runtime_root), Path(science_root), Path(output)
     if output.exists():
         raise IntakeError("immutable_package", "Refuse to replace an existing resident dataset packet")
@@ -77,20 +91,36 @@ def package_resident_dataset(runtime_root, science_root, native_intake_archive, 
         proof = json.loads((science / f"offline-reproduction-{attempt:02d}.json").read_bytes())
         if not proof.get("status", "").startswith("PASS") or proof["archive_sha256"] != science_summary["sha256"]:
             raise IntakeError("package_verification", "Both exact scientific reproductions are required")
-    native_proof = json.loads(Path(native_proof).read_bytes())
-    if not native_proof.get("status", "").startswith("PASS") or file_pin(native_intake_archive) != {
-            key: native_proof["complete_download"][key] for key in ("bytes", "sha256")}:
-        raise IntakeError("package_verification", "Complete verified direct-intake demonstration is required")
-    native_proof.pop("directory", None)
+    if bool(base_dataset_archive) != bool(base_dataset_description):
+        raise IntakeError("package_verification", "A prior bundle requires its complete verified dataset description")
+    if not base_dataset_archive and not (native_intake_archive and native_proof):
+        raise IntakeError("package_verification", "Preserve the complete native intake demonstration")
+    if bool(native_intake_archive) != bool(native_proof):
+        raise IntakeError("package_verification", "A native intake archive requires its verification")
     description = json.loads((runtime / "dataset.json").read_bytes())
     paths = {
         "originals/complete-precinct-analysis.zip": science_archive,
-        "originals/complete-native-intake-pilot.zip": Path(native_intake_archive),
         "runtime/dataset.json": runtime / "dataset.json",
         "checks/scientific-reproduction-01.json": science / "offline-reproduction-01.json",
         "checks/scientific-reproduction-02.json": science / "offline-reproduction-02.json",
         "checks/independent-native-points.json": science / "independent-verification.json",
     }
+    if base_dataset_archive:
+        prior = json.loads(Path(base_dataset_description).read_bytes())
+        complete = prior.get("complete_download", {})
+        if prior.get("id") != description["id"] or not complete.get("immutable") or not complete.get(
+                "verified_anonymously") or file_pin(base_dataset_archive) != {
+                key: complete.get(key) for key in ("bytes", "sha256")}:
+            raise IntakeError("package_verification", "Complete accepted prior science is not verified")
+        paths["originals/complete-prior-resident-dataset.zip"] = Path(base_dataset_archive)
+        paths["checks/accepted-prior-dataset.json"] = Path(base_dataset_description)
+    if native_intake_archive:
+        native_proof = json.loads(Path(native_proof).read_bytes())
+        if not native_proof.get("status", "").startswith("PASS") or file_pin(native_intake_archive) != {
+                key: native_proof["complete_download"][key] for key in ("bytes", "sha256")}:
+            raise IntakeError("package_verification", "Complete verified direct-intake demonstration is required")
+        native_proof.pop("directory", None)
+        paths["originals/complete-native-intake-pilot.zip"] = Path(native_intake_archive)
     for name, expected in description["files"].items():
         path = runtime / name
         if file_pin(path) != expected:
@@ -105,7 +135,6 @@ def package_resident_dataset(runtime_root, science_root, native_intake_archive, 
         paths[path.name] = path
     paths["requirements.txt"] = source.parent / "requirements-participation-intake.txt"
     bodies = {
-        "checks/native-intake-verification.json": encoded(native_proof),
         "README.txt": (
             "COMPLETE RESIDENT DATASET AND INTAKE DEMONSTRATION\n\n"
             "Contains the entire accepted precinct scientific ZIP, including the\n"
@@ -136,11 +165,26 @@ def package_resident_dataset(runtime_root, science_root, native_intake_archive, 
             "print(json.dumps(reproduce_resident_dataset(root,args.full),sort_keys=True))\n"
         ).encode(),
     }
+    if native_intake_archive:
+        bodies["checks/native-intake-verification.json"] = encoded(native_proof)
+    if base_dataset_archive:
+        bodies["README.txt"] += (
+            "\nINCREMENTAL EXTENSION\n"
+            "The complete previously accepted resident bundle, including all\n"
+            "earlier local science and the native intake demonstration, is also\n"
+            "preserved in originals/complete-prior-resident-dataset.zip.\n"
+            "Runtime reproduction starts from its exact accepted shards, not a\n"
+            "county-only base. Every old county and unaffected local shard stays\n"
+            "byte-identical. --full recomputes only the NEW scientific families;\n"
+            "the prior bundle retains its own full raw-input reproduction.\n"
+        ).encode()
     manifest = dict(contract="geographic.resident_dataset_package.v1",
         dataset_version=description["version"], resident_context_not_voter_data=True,
         scientific_packet_pin=file_pin(science_archive),
         members={**{name: file_pin(path) for name, path in paths.items()},
             **{name: pin(body) for name, body in bodies.items()}})
+    if base_dataset_archive:
+        manifest["prior_resident_dataset_pin"] = file_pin(base_dataset_archive)
     bodies["manifest.json"] = encoded(manifest)
     write_complete_archive(output, paths, bodies)
     return dict(status="complete_resident_dataset_packet_prepared_not_yet_reproduced_or_published",

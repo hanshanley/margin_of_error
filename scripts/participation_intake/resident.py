@@ -135,7 +135,8 @@ def add_precinct_context(files, contexts, references, crosswalks):
             income_profiles=sum(row["modeled_income_median_band"] is not None for row in profiles))
     index.update(precinct_context_status="conditional_local_reference_profiles",
         modeled_precincts=sum(value["precincts"] for value in index["states"].values()),
-        precinct_reference_families=len(contexts),
+        precinct_reference_families=sum(value.get("reference_features", 0) > 0
+            for value in index["states"].values()),
         resident_context_not_voter_data=True, income_medians_averaged=False)
     files["index.json"] = encoded(index)
     return files

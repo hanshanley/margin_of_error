@@ -285,6 +285,32 @@ class ResidentContextTests(unittest.TestCase):
         with self.assertRaises(IntakeError):
             add_precinct_context(files, {"AL": context}, {"AL": reference}, {"AL": held})
 
+    def test_incremental_new_family_preserves_previous_profiles_and_complete_family_inventory(self):
+        import json
+        native = dict(contract="geographic.resident_context.v1", source_period="2020-2024",
+            income_dollar_year=2024, records=[county_record(key, fixture()) for key in ("01001", "02013")],
+            limitations=[])
+        codes = {"AL": "01001", "AK": "02013"}
+        labels = [dict(USPS=code, GEOID=key, NAME=code + " example county") for code, key in codes.items()]
+        geometries = {code: dict(features=[dict(properties=dict(
+            key=key, state_code=code, boundary_year=2024))]) for code, key in codes.items()}
+        files = compile_counties(native, labels, geometries)
+        for code in codes:
+            before = dict(files)
+            profile = dict(geography=dict(reference_key=code + "-unit", state_code=code),
+                resident_population=dict(estimate=25), modeled_income_median_band=None,
+                source_block_groups=[], resident_composition_is_not_voter_composition=True)
+            context = dict(state_code=code, source_period="2020-2024", weight_year=2020,
+                limitations=[], source_reference=dict(sha256=("a" if code == "AL" else "b")*64), records=[profile])
+            reference = dict(features=[dict(properties=dict(key=code + "-unit", state_code=code))])
+            files = add_precinct_context(files, {code: context}, {code: reference},
+                {code: dict(held_references=[])})
+            if code == "AK":
+                self.assertEqual(files["states/AL.json.gz"], before["states/AL.json.gz"])
+        index = json.loads(files["index.json"])
+        self.assertEqual(index["precinct_reference_families"], 2)
+        self.assertEqual(index["modeled_precincts"], 2)
+
 
 if __name__ == "__main__":
     unittest.main()
