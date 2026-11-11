@@ -62,23 +62,23 @@ test('all four selectable views share one signed point scale and missing is not 
   }
 });
 
-test('Texas reported swing reconciles instead of being mislabeled as its switching component', () => {
+test('reported swing is preserved while old unfitted contrasts are not exposed as contributions', () => {
   const row = data.rows.find(row => row.id === 'TX-house');
   assert.ok(Math.abs(mapValue(row, 'reported_total') - 25.16363563924734) < 1e-10);
-  assert.ok(Math.abs(mapValue(row, 'other_and_unallocated') - 22.41207106277195) < 1e-10);
-  assert.ok(Math.abs(mapValue(row, 'reported_total') - mapValue(row, 'switching')
-    - mapValue(row, 'modeled_nonparticipation') - mapValue(row, 'other_and_unallocated')) < 1e-10);
+  assert.equal(mapValue(row, 'other_and_unallocated'), null);
+  assert.equal(mapValue(row, 'switching'), null);
+  assert.equal(mapValue(row, 'modeled_nonparticipation'), null);
   assert.equal(row.reported_comparison.baseline_year, 2024);
   const changed = structuredClone(data);
   changed.rows.find(row => row.id === 'TX-house').reported_comparison.reported_change_pp += 1;
   assert.throws(() => validateModels(changed), /Reported swing does not reconcile/);
 });
 
-test('unqualified return comparisons stay missing without hiding available modeled components', () => {
+test('unqualified return comparisons and unfitted contributions stay missing', () => {
   const row = data.rows.find(row => row.id === 'AK-house');
   assert.equal(mapValue(row, 'reported_total'), null);
   assert.equal(mapValue(row, 'other_and_unallocated'), null);
-  assert.equal(mapValue(row, 'switching'), row.components_pp.switching);
+  assert.equal(mapValue(row, 'switching'), null);
   assert.equal(mapValue(undefined, 'reported_total'), null);
   const changed = structuredClone(data);
   changed.rows.find(row => row.id === 'AK-house').reported_comparison.reported_change_pp = 0;

@@ -1,5 +1,6 @@
 import { projectStateContext } from "./participation-map-projection.js";
 import { participationDownload } from "./participation-downloads.js";
+import { calibratedTerms, validateCalibratedSwing, calibratedMapValue, roundedContributions } from "./participation-calibrated-swing.js";
 import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
   scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
 
@@ -15,21 +16,22 @@ export const effectTerms = [
 const offices = ["house", "senate", "governor"];
 export const mapTerms = [
   ["reported_total", "Reported swing"],
-  ["switching", "Switching sides · modeled"],
-  ["modeled_nonparticipation", "Staying home · modeled"],
-  ["other_and_unallocated", "Other / unallocated"],
+  ["switching", "Party-choice switching · fitted scenario"],
+  ["modeled_nonparticipation", "No current-contest vote · fitted scenario"],
+  ["entry", "Entry / return · fitted scenario"],
+  ["other_choice", "Other-party choice · fitted scenario"],
 ];
 const mapDescriptions = {
   reported_total: "Total same-office change in the known-D/R margin.",
-  switching: "Modeled contribution from changing between major-party choices.",
-  modeled_nonparticipation: "Contribution from model-classified nonparticipation, not confirmed missing ballots.",
-  other_and_unallocated: "Reported total minus switching and modeled nonparticipation; not one mechanism.",
+  switching: "Contribution of D↔R cells in the return-constrained scenario; not identified individual switchers.",
+  modeled_nonparticipation: "Contribution of modeled exits from counted candidate choices, not administratively confirmed staying home.",
+  entry: "Contribution of modeled entry or return to counted candidate choices, not identified first-time voters.",
+  other_choice: "Contribution of transitions involving the modeled Other-party category; not a balancing residual.",
 };
-export function mapValue(row, key) {
+export function mapValue(row, key, calibrated) {
   if (!row) return null;
   if (key === "reported_total") return row.reported_comparison?.reported_change_pp ?? null;
-  if (key === "other_and_unallocated") return row.reported_comparison?.other_and_unallocated_pp ?? null;
-  return row.components_pp[key] ?? null;
+  return calibratedMapValue(calibrated, key);
 }
 export const signedPP = value => `${value > 0 ? "+" : ""}${value.toFixed(2)} pp`;
 const magnitude = row => Math.max(Math.abs(row.components_pp.switching),
@@ -112,9 +114,9 @@ const svgElement = (tag, attributes) => {
   return node;
 };
 
-export function mapScale(rows) {
+export function mapScale(rows, calibration = new Map()) {
   const maximum = Math.max(0, ...rows.flatMap(row =>
-    mapTerms.map(([key]) => Math.abs(mapValue(row, key) ?? 0))));
+    mapTerms.map(([key]) => Math.abs(mapValue(row, key, calibration.get(row.id)) ?? 0))));
   return maximum === 0 ? 1 : Math.ceil(maximum / 5) * 5;
 }
 
@@ -136,6 +138,7 @@ export async function initializeReturnDrivers() {
   try {
     const payload = JSON.parse(root.querySelector("[data-driver-data]").textContent);
     const data = validateModels(payload.data), names = payload.names;
+    const calibration = validateCalibratedSwing(payload.calibration, data);
     const office = root.querySelector("[data-driver-office]");
     const view = root.querySelector("[data-driver-view]");
     const stateSelect = root.querySelector("[data-driver-state]");
@@ -225,6 +228,7 @@ export async function initializeReturnDrivers() {
     };
     const select = row => {
       const comparison = row.reported_comparison;
+      const fitted = calibration.get(row.id);
       const heading = `${names[row.state_code]} · ${row.office === "house"
         ? "House state aggregate" : row.office === "governor" ? "Governor source frame" : "Senate race"}`;
       summary.replaceChildren(element("h3", heading));
@@ -232,56 +236,56 @@ export async function initializeReturnDrivers() {
         summary.append(element("p", `${comparison.baseline_year} ${row.office}`
           + `${comparison.baseline_stage === "general_runoff" ? " · runoff" : ""} → held 2026 ${row.office} returns. `
           + `${comparison.scope}.`, "caption"));
+        const rounded = roundedContributions(fitted.point);
         const equation = element("p", null, "driver-equation");
         equation.append(element("strong", `${signedPP(comparison.reported_change_pp)} reported swing`),
-          document.createTextNode(` = ${signedPP(row.components_pp.switching)} switching`
-            + ` + (${signedPP(row.components_pp.modeled_nonparticipation)}) modeled nonparticipation`
-            + ` + (${signedPP(comparison.other_and_unallocated_pp)}) other / unallocated.`));
-        summary.append(equation, element("p",
-          "Other / unallocated includes entry, other/unknown choices, denominator changes and source/baseline mismatch. It is not extra switching or staying home.",
-          "caption"));
+          document.createTextNode(" = " + calibratedTerms.map(([key, label], index) =>
+            `${index ? rounded[key] < 0 ? " − " : " + " : rounded[key] < 0 ? "−" : ""}`
+            + `${Math.abs(rounded[key]).toFixed(2)} pp ${label.toLowerCase()}`).join("") + "."));
+        summary.append(element("p",
+          "Fitted scenario; not independently measured switching or confirmed staying home.",
+          "caption"), equation);
+        if (fitted.observed_other_vote_endpoints.some(value => !value))
+          summary.append(element("p", "Other-party totals are not supplied in this source frame; the split between Other and no counted contest vote is prior-assumed, not observed.", "caption"));
       } else {
         summary.append(element("p", `Reported swing unavailable: ${comparison.reason} `
-          + "The modeled components remain visible, but their sum is not a reported total.", "caption"));
+          + "No return-constrained contributions are filled with zero or borrowed from another frame.", "caption"));
       }
       summary.hidden = false;
       detail.replaceChildren(element("h4", heading),
-        element("p", "Original model baseline: recalled 2024 President in the current study frame. The separate baseline alignment reconciles it to reported same-office returns.", "caption"));
+        element("p", "The model uses a common synthetic candidate-vote accounting frame, not a measured eligible population. The original survey-derived associations are a prior only; they are not the earlier same-office return.", "caption"));
+      if (!fitted.point) { detail.append(element("p", fitted.reason, "caption")); detail.hidden = false; return; }
       const table = element("table"), body = element("tbody");
-      table.append(element("caption", "Full accounting · percentage-point contributions to the margin"));
+      table.append(element("caption", "Return-constrained scenario · exact Shapley contributions to the normalized D−R margin"));
       const head = element("thead"), headings = element("tr");
-      for (const label of ["Term", "Contribution", "Strength sensitivity"]) headings.append(element("th", label));
+      for (const label of ["Term", "Contribution", "Assumption sensitivity"]) headings.append(element("th", label));
       head.append(headings); table.append(head);
-      for (const [key, label] of effectTerms) {
-        const tr = element("tr"), th = element("th", label);
-        th.scope = "row"; tr.append(th, element("td", signedPP(row.components_pp[key]), "numeric"));
-        if (key === "switching" || key === "modeled_nonparticipation") {
-          const range = row.ranges_pp[key];
-          tr.append(element("td", `${signedPP(range.minimum)} to ${signedPP(range.maximum)}`, "numeric"));
-        } else tr.append(element("td", "—"));
+      for (const [key, label] of calibratedTerms) {
+        const tr = element("tr"), th = element("th", label), range = fitted.ranges_pp[key];
+        th.scope = "row";
+        tr.append(th, element("td", signedPP(fitted.point.components_pp[key]), "numeric"),
+          element("td", `${signedPP(range.minimum)} to ${signedPP(range.maximum)}`, "numeric"));
         body.append(tr);
       }
-      if (comparison.status === "reported_source_comparison") {
-        for (const [label, value] of [
-          ["Prior-office / survey-baseline alignment · unallocated", comparison.baseline_alignment_pp],
-          ["Reported total swing · all eight terms", comparison.reported_change_pp],
-        ]) {
-          const tr = element("tr"), th = element("th", label);
-          th.scope = "row"; tr.append(th, element("td", signedPP(value), "numeric"), element("td", "—"));
-          body.append(tr);
-        }
+      {
+        const tr = element("tr"), th = element("th", "Reported total · all four transition mechanisms");
+        th.scope = "row"; tr.append(th, element("td", signedPP(comparison.reported_change_pp), "numeric"), element("td", "—")); body.append(tr);
       }
       table.append(body);
       const wrapper = element("div", null, "table-wrap"); wrapper.append(table);
-      detail.append(wrapper, element("p", "Ranges vary contrast strength from 0.5× to 1.5×; these are not confidence intervals.", "caption"),
-      element("p", `Original survey-frame change (not the reported swing): ${signedPP(row.source_frame_change_pp)}. `
-        + `Current known-D/R return margin: ${signedPP(row.current_return_margin_pp)}.`, "caption"),
-      element("p", `${row.evidence.switching}. `
-        + (row.evidence.cross_office_transport
-          ? "Participation and remaining House-model terms are explicitly transported across offices. " : "")
+      detail.append(wrapper, element("p", "Ranges span nine prior-persistence and common-frame-size assumptions, not confidence or identification intervals. The four mechanisms are computed from a nonnegative transition table, with denominator changes included symmetrically; no return/frame residual is added.", "caption"),
+      element("p", `Why the earlier display failed: its survey-recall baseline differed from the same-office return by ${signedPP(comparison.baseline_alignment_pp)}. That difference is not a behavioral contribution. Earlier unfitted estimates remain in the archived table/download, not these scenario maps.`, "caption"),
+      element("p", "No counted vote for this office does not establish no ballot, new eligibility, death, migration or first-ever voting. Original synthetic nonvote/unresolved categories are pooled only in the prior; source observations are not recoded. A fitted decomposition is not independent validation.", "caption"),
+      element("p", `${fitted.source_prior_transport}. `
         + `Return scope: ${row.evidence.return_scope.replaceAll("_", " ")}.`, "caption"),
       element("p", `Whole-state source n ${row.support.raw_whole_state_n.toLocaleString("en-US")}; `
         + "weights are not people and support is not a precision guarantee. Eligibility, death and migration remain unknown.", "caption"));
+      const gross = fitted.point.gross_shares_of_modeled_previous_major_party;
+      detail.append(element("p", `Gross modeled outcomes within the previous major-party frame: `
+        + `${(100*gross.retaining).toFixed(1)}% keep party choice; `
+        + `${(100*gross.switching).toFixed(1)}% switch party choice; `
+        + `${(100*gross.nonparticipation).toFixed(1)}% have no counted target-contest vote; `
+        + `${(100*gross.other_choice).toFixed(1)}% choose Other. These scenario shares are not swing contributions or measured people.`, "caption"));
       if (comparison.status === "reported_source_comparison")
         detail.append(element("p", `${comparison.qualification} `
           + `Current native source clock: ${comparison.current_native_clock || "not supplied"}. `
@@ -332,14 +336,14 @@ export async function initializeReturnDrivers() {
       const all = driverRows(data, office.value, "", "magnitude", names);
       const byCode = new Map(all.map(row => [row.state_code, row]));
       const bound = scenario ? scenarioScale(Object.keys(scenarios.state_scenarios).map(code =>
-        scenarioEstimate(scenarios, code, view.value, group.value)?.value ?? null)) : mapScale(all);
+        scenarioEstimate(scenarios, code, view.value, group.value)?.value ?? null)) : mapScale(all, calibration);
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
       status.textContent = scenario
         ? `${all.filter(row => scenarioEstimate(scenarios, row.state_code, view.value, group.value)).length} supported source scenarios in ${office.value} frames. `
           + "Gross source-weight shares, not swing contributions or measured staying home."
-        : `${all.length} ${office.value === "house" ? "House state aggregates"
-        : office.value === "governor" ? "governor source frames" : "Senate races"}. `
-        + `${all.filter(row => row.reported_comparison.status === "reported_source_comparison").length} qualified reported comparisons. Views share one signed scale.`;
+        : `${all.filter(row => calibration.get(row.id)?.point).length}/${all.length} `
+        + `${office.value === "house" ? "House states" : office.value === "governor" ? "governor source frames" : "Senate races"} `
+        + "have comparable endpoints. Gray is unavailable; views share one signed scale.";
       root.querySelector("[data-driver-scale-min]").textContent = scenario ? "0%" : `−${bound} pp`;
       root.querySelector("[data-driver-scale-max]").textContent = scenario ? `${Math.round(bound * 100)}%` : `+${bound} pp`;
       root.querySelector(".driver-map-ticks").children[1].textContent = scenario ? `${Math.round(bound * 50)}%` : "0";
@@ -367,7 +371,7 @@ export async function initializeReturnDrivers() {
           "aria-label": `${label}: ${scenario ? "synthetic source-weight shares" : "signed margin points"} by state`, "data-scale": bound });
         for (const item of items) {
           const code = item.feature.properties.STUSAB, row = byCode.get(code);
-          const value = scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key);
+          const value = scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key, calibration.get(row?.id));
           const normalized = value ?? null;
           const text = `${names[code]} · ${label}: ${normalized === null ? "no qualified comparison, group or model"
             : scenario ? `${(normalized * 100).toFixed(1)}%` : signedPP(normalized)}. `

@@ -37,7 +37,7 @@
     "test:civic-estimates": "python3 scripts/test-package-civic-estimates.py && npm run test:return-drivers && npm run test:resident-context",
     "test:resident-context": "node --test scripts/participation-resident-context.test.mjs && npm run test:count-contract",
     "test:count-contract": "node --test scripts/participation-counts.test.mjs scripts/participation-native-bindings.test.mjs scripts/participation-coverage.test.mjs",
-    "test:return-drivers": "node --test scripts/participation-return-drivers.test.mjs scripts/participation-transition-scenarios.test.mjs",
+    "test:return-drivers": "node --test scripts/participation-return-drivers.test.mjs scripts/participation-transition-scenarios.test.mjs scripts/participation-calibrated-swing.test.mjs",
     "test:ap-history": "node --test scripts/participation-ap-history.test.mjs",
     "test:state-demographics": "node --test scripts/participation-state-demographics.test.mjs",
     "test:civic-state-demographics": "node --test scripts/participation-civic-state-demographics.test.mjs"
