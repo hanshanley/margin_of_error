@@ -1,0 +1,113 @@
+{
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-new-jersey-county-gap-20261111-01/complete-analysis.zip",
+  "contract": "participation.count_extension.v1",
+  "facts_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-new-jersey-county-gap-20261111-01/native-facts.json",
+  "id": "new-jersey-counted-mode-gap-20261111-01",
+  "input_sha256": "8e3378c4ebdd0f5d2831a35550fd8d971d3f7ce6a20fb6d8279c5a1e90012fa0",
+  "sources": [
+    {
+      "bindings": [
+        "available",
+        "official",
+        "uf_vep",
+        "uf_vap"
+      ],
+      "count_columns": [
+        "early_votes_cast",
+        "election_day_votes_cast",
+        "mail_ballots_tallied"
+      ],
+      "election": {
+        "date": "2026-11-03",
+        "id": "us-2026-11-03-general-nj-native-parent",
+        "qualification": "native",
+        "type": "general",
+        "year": 2026
+      },
+      "geography": {
+        "level": "county",
+        "name": "Essex",
+        "state_code": "NJ",
+        "view_id": "reviewed:NJ:Essex"
+      },
+      "id": "native-nj-periodic-20261110-essex",
+      "measure": {
+        "id": "derived-counted-mode-subtotal",
+        "kind": "participation_reported",
+        "literal": "Derived EV + ED + mail-tallied subtotal; provisional excluded",
+        "mode": "source_defined",
+        "unit": "source_reported_count"
+      },
+      "native_view_fields": {
+        "early_voting_votes_cast": "early_votes_cast",
+        "election_day_votes_cast": "election_day_votes_cast",
+        "mail_ballots_tallied": "mail_ballots_tallied",
+        "provisional_ballots_counted": "provisional_eligible_counted",
+        "provisional_eligible_received": "provisional_eligible_received"
+      },
+      "notes": [
+        "Derived early Votes Cast + Election Day Votes Cast + Vote-by-Mail Ballots Tallied; provisional excluded, not a native all-mode ballot count or unique-voter estimate.",
+        "Two explicit exhaustive native aggregate rows agree in the selected counted modes; the blank county row remains blank in the full native query.",
+        "Issued, received, pending processing and eligible/countable provisional measures are retained separately, never added or used as registration denominators.",
+        "Unofficial dated snapshot; no certification, counting-completion, registration denominator, percentage, demographic allocation or new geography approval."
+      ],
+      "report_key": "essex",
+      "selected_labels": [
+        "Congressional TOTALS",
+        "Municipality TOTALS"
+      ]
+    },
+    {
+      "bindings": [
+        "available",
+        "official",
+        "uf_vep",
+        "uf_vap"
+      ],
+      "count_columns": [
+        "early_votes_cast",
+        "election_day_votes_cast",
+        "mail_ballots_tallied"
+      ],
+      "election": {
+        "date": "2026-11-03",
+        "id": "us-2026-11-03-general-nj-native-parent",
+        "qualification": "native",
+        "type": "general",
+        "year": 2026
+      },
+      "geography": {
+        "level": "county",
+        "name": "Hudson",
+        "state_code": "NJ",
+        "view_id": "reviewed:NJ:Hudson"
+      },
+      "id": "native-nj-periodic-20261110-hudson",
+      "measure": {
+        "id": "derived-counted-mode-subtotal",
+        "kind": "participation_reported",
+        "literal": "Derived EV + ED + mail-tallied subtotal; provisional excluded",
+        "mode": "source_defined",
+        "unit": "source_reported_count"
+      },
+      "native_view_fields": {
+        "early_voting_votes_cast": "early_votes_cast",
+        "election_day_votes_cast": "election_day_votes_cast",
+        "mail_ballots_tallied": "mail_ballots_tallied",
+        "provisional_ballots_counted": "provisional_eligible_counted",
+        "provisional_eligible_received": "provisional_eligible_received"
+      },
+      "notes": [
+        "Derived early Votes Cast + Election Day Votes Cast + Vote-by-Mail Ballots Tallied; provisional excluded, not a native all-mode ballot count or unique-voter estimate.",
+        "Two explicit exhaustive native aggregate rows agree in the selected counted modes; the blank county row remains blank in the full native query.",
+        "Issued, received, pending processing and eligible/countable provisional measures are retained separately, never added or used as registration denominators.",
+        "Unofficial dated snapshot; no certification, counting-completion, registration denominator, percentage, demographic allocation or new geography approval."
+      ],
+      "report_key": "hudson",
+      "selected_labels": [
+        "Congressional TOTALS",
+        "Municipality TOTALS"
+      ]
+    }
+  ]
+}

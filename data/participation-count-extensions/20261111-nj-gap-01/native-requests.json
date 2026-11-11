@@ -1,0 +1,31 @@
+{
+  "native_parent_context": {
+    "url": "https://www.nj.gov/state/elections/election-results-information.shtml",
+    "sha256": "d70bda872e729e16ecfc9e14c13da6f4af8407ed04488882bdedb2783cd96da8",
+    "native_section": "2026 General Election",
+    "latest_link_label_date": "11/10",
+    "timezone": null
+  },
+  "reports": [
+    {
+      "key": "essex",
+      "file": "essex-20261110.pdf",
+      "geography": {"state_code": "NJ", "level": "county", "name": "Essex", "view_id": "reviewed:NJ:Essex"},
+      "election": {"id": "us-2026-11-03-general-nj-native-parent", "year": 2026, "date": "2026-11-03", "type": "general", "qualification": "native"},
+      "columns": ["early_machines_deployed", "early_machines_not_included", "early_votes_cast", "election_day_machines_deployed", "election_day_machines_not_included", "election_day_votes_cast", "mail_ballots_issued", "mail_received_into_svrs", "mail_ballots_tallied", "mail_ballots_to_be_processed", "provisional_eligible_received", "provisional_eligible_counted"],
+      "header_groups": ["11/10/26 3:10 PM", "Early Voting", "", "", "Election Day", "", "", "Vote-by-Mail", "", "", "", "Provisional", ""],
+      "header_columns": ["", "Machines Deployed", "Machines Not Included", "Votes Cast", "Machines Deployed", "Machines Not Included", "Votes Cast", "Ballots Issued", "Received into SVRS", "Ballots Tallied", "Ballots to be Processed", "Eligible Received", "Eligible Counted"],
+      "expected_rows": 28
+    },
+    {
+      "key": "hudson",
+      "file": "hudson-20261110.pdf",
+      "geography": {"state_code": "NJ", "level": "county", "name": "Hudson", "view_id": "reviewed:NJ:Hudson"},
+      "election": {"id": "us-2026-11-03-general-nj-native-parent", "year": 2026, "date": "2026-11-03", "type": "general", "qualification": "native"},
+      "columns": ["early_machines_deployed", "early_machines_not_included", "early_votes_cast", "election_day_machines_deployed", "election_day_machines_not_included", "election_day_votes_cast", "mail_ballots_issued", "mail_received_into_svrs", "mail_ballots_tallied", "mail_ballots_to_be_processed", "provisional_eligible_received", "provisional_eligible_counted"],
+      "header_groups": ["11/10/26 12:21 PM", "Early Voting", "", "", "Election Day", "", "", "Vote-by-Mail", "", "", "", "Provisional", ""],
+      "header_columns": ["", "Machines Deployed", "Machines Not Included", "Votes Cast", "Machines Deployed", "Machines Not Included", "Votes Cast", "Ballots Issued", "Received into SVRS", "Ballots Tallied", "Ballots to be Processed", "Eligible Received", "Eligible Counted"],
+      "expected_rows": 18
+    }
+  ]
+}
