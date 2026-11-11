@@ -92,8 +92,8 @@ with sync_playwright() as p:
                             else if(label==='Hispanic (any race)'){role='sex_race';nativeLabel='.Hispanic (of any race)'}
                             else if(['18 to 24','25 to 44','45 to 64','65 to 74','75+'].includes(label)){
                               role='age';nativeLabel='.'+label;
-                            }else if(label.endsWith(' (2002 native category)')){
-                              role='sex_race';nativeLabel='.'+label.slice(0,-' (2002 native category)'.length);
+                            }else if(/ \\((?:1998\\/2002|2002) native category\\)$/.test(label)){
+                              role='sex_race';nativeLabel='.'+label.replace(/ \\((?:1998\\/2002|2002) native category\\)$/,'');
                             }
                             for(const frame of ['vap','cvap']){
                               let expected=null;
@@ -118,7 +118,7 @@ with sync_playwright() as p:
                           return {verified_point_cells:cells,selected_source_points:selected,geographies:state.options.length,
                             groups:group.options.length,no_invented_margins:true,no_chart_splice:true};
                         }""", SCIENCE)
-                        assert result["verified_point_cells"] == 2912 and result["geographies"] == 52
+                        assert result["verified_point_cells"] == 3016 and result["geographies"] == 52
                         page.wait_for_timeout(100)
                         panel.screenshot(path=str(args.proof.with_suffix(f".{mode}.png")))
                 assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")

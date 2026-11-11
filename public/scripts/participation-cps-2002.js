@@ -1,8 +1,8 @@
 export const pointSourceURL = "https://raw.githubusercontent.com/hanshanley/voter-participation/043ece3c29e501f4f691cb87fc497da7e90d159d/data/participation-cps-2002/20261111-01/observations.json";
 export const pointSourceSHA256 = "9d9fe04a02ca1aec9563699d4145e6657777cb01d3af0dbfec69ecf85df0de2d";
 export const pointOnlyGroups = [
-  "White (2002 native category)", "Non-Hispanic White (2002 native category)",
-  "Black (2002 native category)", "Non-Hispanic Black (2002 native category)",
+  "White (1998/2002 native category)", "Non-Hispanic White (1998/2002 native category)",
+  "Black (1998/2002 native category)", "Non-Hispanic Black (1998/2002 native category)",
   "Asian and Pacific Islander (2002 native category)",
 ];
 const labels = new Map([
@@ -10,7 +10,11 @@ const labels = new Map([
   ["Female", ["sex_race", ".Female"]],
   ["Hispanic (any race)", ["sex_race", ".Hispanic (of any race)"]],
   ...["18 to 24", "25 to 44", "45 to 64", "65 to 74", "75+"].map(group => [group, ["age", "." + group]]),
-  ...pointOnlyGroups.map(group => [group, ["sex_race", "." + group.replace(" (2002 native category)", "")]]),
+  ...pointOnlyGroups.map(group => [group, ["sex_race", "." + group.replace(/ \((?:1998\/2002|2002) native category\)$/, "")]]),
+  ...pointOnlyGroups.slice(0, 4).map(group => [
+    group.replace("1998/2002", "2002"),
+    ["sex_race", "." + group.replace(" (1998/2002 native category)", "")],
+  ]),
 ]);
 
 export function validatePointSource(data) {

@@ -50,7 +50,7 @@ def check(base, proof, live_data=False, downloads=True):
                     assert panel.get_attribute("data-display-url") == SOURCE
                     assert panel.get_attribute("data-display-sha256") == hashlib.sha256(source).hexdigest()
                     for text in ("all 50 states and D.C.", "not fixed-person cohorts",
-                                 "across 2002–2024", "Missing is not zero.", "native 90%"):
+                                 "across 1998–2024", "Missing is not zero.", "native 90%"):
                         expect(panel).to_contain_text(text)
                     for name, count, label in (("adults", 1, "all adults 18+"),
                                                ("citizens", 10, "Adult citizens 18+")):
@@ -65,9 +65,11 @@ def check(base, proof, live_data=False, downloads=True):
                         actual_groups = panel.locator("#cps-unified-group option").all_text_contents()
                         assert actual_groups[:len(reference["groups"])] == [
                             "Overall" if v == "Total" else v for v in reference["groups"]]
-                        assert len(actual_groups) == len(reference["groups"]) + 5
-                        assert all(label.endswith("(2002 native category)")
-                            for label in actual_groups[len(reference["groups"]):])
+                        assert len(actual_groups) == len(reference["groups"]) + 6
+                        assert all(label.endswith("(1998/2002 native category)")
+                            for label in actual_groups[len(reference["groups"]):len(reference["groups"]) + 4])
+                        assert actual_groups[-2].endswith("(2002 native category)")
+                        assert actual_groups[-1].endswith("(1998 native category)")
                         result = panel.evaluate("""(section, data) => {
                             const state = section.querySelector('#cps-unified-state');
                             const group = section.querySelector('#cps-unified-group');
