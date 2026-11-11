@@ -1,0 +1,20 @@
+name: Startup diagnostic - maximum queue
+
+on:
+  push:
+    branches: [diagnostic/actions-startup-20261111]
+
+permissions: {}
+
+concurrency:
+  group: startup-max-${{ github.ref }}
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Confirm runner startup
+        run: printf 'Hosted runner startup reached\n'

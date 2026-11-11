@@ -1,0 +1,19 @@
+name: Startup diagnostic - standard queue
+
+on:
+  push:
+    branches: [diagnostic/actions-startup-20261111]
+
+permissions: {}
+
+concurrency:
+  group: startup-baseline-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Confirm runner startup
+        run: printf 'Hosted runner startup reached\n'
