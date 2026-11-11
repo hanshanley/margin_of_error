@@ -34,6 +34,9 @@ with sync_playwright() as playwright:
         requests, errors = [], []
         page.on("request", lambda request: requests.append(request.url))
         page.on("pageerror", lambda error: errors.append(str(error)))
+        page.on("requestfailed", lambda request: print(json.dumps(
+            dict(failed_request=request.url, reason=request.failure)), flush=True)
+            if "raw.githubusercontent.com/hanshanley/margin_of_error/" in request.url else None)
         response = page.goto(args.base_url.rstrip("/") +
             "/voter-participation/?year=2026&state=Florida&mode=available&map-level=county",
             wait_until="domcontentloaded", timeout=90000)
@@ -44,7 +47,15 @@ with sync_playwright() as playwright:
           const {entry,index} = await module.loadCountIndex();
           const cases=[];
           for(const [code,modes] of Object.entries(expected)){
-            const data=await module.loadCountState(code);
+            let data;
+            for(let attempt=0;attempt<3;attempt++){
+              try { data=await module.loadCountState(code); break; }
+              catch(error){
+                if(error.name!=='TypeError'||error.message!=='Failed to fetch'||attempt===2)
+                  throw new Error(`${code}: ${error.message}`);
+                await new Promise(resolve=>setTimeout(resolve,1000*(attempt+1)));
+              }
+            }
             for(const [mode,partitions] of Object.entries(modes)){
               const actual=module.countFrame(data,mode);
               for(const [key,rows] of Object.entries(partitions)){
