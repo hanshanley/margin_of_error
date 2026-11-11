@@ -1,0 +1,44 @@
+name: Verify live aggregate-flow interpretation
+on:
+  push:
+    branches: [diagnostic/flow-identification-live-20261111]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    container:
+      image: mcr.microsoft.com/playwright/python:v1.64.1-noble
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: 156bfa8bddf0aabd810ffcea1ede3fbbe7ccf1e3
+          persist-credentials: false
+      - name: Restore missing browser library only if unavailable
+        run: python3 -c "import playwright" || python3 -m pip install playwright==1.64.1
+      - name: Await exact unqueried production reader bytes
+        shell: python
+        run: |
+          import hashlib, pathlib, time, urllib.request
+          paths = ["scripts/participation-calibrated-swing.js", "scripts/participation-return-drivers.js"]
+          for attempt in range(90):
+              equal = True
+              for path in paths:
+                  with urllib.request.urlopen("https://www.themarginoferror.com/" + path, timeout=60) as response:
+                      body = response.read()
+                  equal = equal and hashlib.sha256(body).digest() == hashlib.sha256((pathlib.Path("public") / path).read_bytes()).digest()
+              if equal:
+                  break
+              time.sleep(20)
+          else:
+              raise RuntimeError("Expected production revision did not arrive")
+      - name: Check every state, office, view and no-JS bound
+        run: |
+          mkdir -p live-proof
+          python3 -Werror scripts/check-participation-return-drivers-browser.py --base-url https://www.themarginoferror.com --proof live-proof/browser.json
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: flow-identification-live-proof
+          path: live-proof/
