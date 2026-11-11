@@ -136,8 +136,8 @@ def main():
     for name in ("inputs/native-facts.json", "inputs/extension.json", "results/county-query.json",
                  "results/county-query.csv", "manifest.json", "README.txt"):
         (args.output / Path(name).name).write_bytes(members[name])
-    summary = dict(status="complete_scientific_packet_created", members=len(members),
-        archive=pin((args.output / "complete-analysis.zip").read_bytes()), **proof)
+    summary = dict(proof, status="complete_scientific_packet_created", verification_status=proof["status"],
+        members=len(members), archive=pin((args.output / "complete-analysis.zip").read_bytes()))
     (args.output / "package-receipt.json").write_bytes(encoded(summary))
     print(json.dumps(summary, sort_keys=True))
 
