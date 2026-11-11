@@ -110,10 +110,30 @@ appearances and overlapping partitions are never additive people.
 The full migration ZIP contains every sufficient accepted aggregate input,
 every canonical query, original-contract checks and exact offline reproduction.
 It is a migration of previously reviewed data, not a new native-source or
-geographic qualification. Source-specific precinct counts still embedded in
-reference geometries and their geographic qualification readers remain a
-separate unfinished migration. Do not claim all count/geography readers have
-been converted or let an unavailable catalog silently fall back to stale counts.
+geographic qualification. Never let an unavailable catalog silently fall back
+to stale counts.
+
+Current native precinct, matched participation, municipal and reporting-unit
+readers use `participation-native-bindings.js` and the independent
+`participation-native-bindings-2026` catalog entry. Frozen inputs and bindings
+live in `data/participation-native-bindings/20261111-05/`. Canonical observations
+overlay the exact approved reference bytes; old embedded counts are ignored.
+The compiler preserves the accepted source-specific qualification decisions,
+including partial scopes, mode holds, unknowns and withheld rates. It does not
+reacquire, repair or certify boundaries. Count-only updates can reuse reference
+hashes without rebuilding the website or reference coordinates. Historical,
+candidate-result and survey readers remain separate. The complete download
+contains all 14,470 queries, sufficient original inputs, unchanged references,
+the original qualification oracle, original contract and offline reproduction.
+
+The default-closed administrative coverage disclosure follows the actual
+selected year, mode and county/local or precinct/reference scope across all
+51 jurisdictions. Loaded source rows, count-bearing rows, reference units,
+qualified fractions and holds are distinct. Table-only counts do not imply
+approved precinct geometry. Awaiting/rejected metrics remain unavailable,
+not zero; historical observations are explicitly outside this 2026 catalog.
+Verify both real public catalog loading and desktop/phone behavior before
+claiming a publication is live.
 
 Keep the Methods tab a short overview of the estimation process, not a
 source inventory: weighted rates, matched denominators, historical checks

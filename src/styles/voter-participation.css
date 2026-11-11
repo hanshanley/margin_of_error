@@ -1,5 +1,9 @@
 .participation-page { --sans: "Avenir Next", Arial, sans-serif; width: var(--page); margin: 0 auto; padding: 1.25rem 0 3rem; }
 .participation-page [hidden] { display: none !important; }
+.source-coverage { margin-top: 1rem; padding-block: .8rem; border-top: 1px solid var(--rule); font: .75rem/1.6 var(--sans); }
+.source-coverage summary { cursor: pointer; }
+.source-coverage p { color: var(--muted); max-width: 90ch; }
+.source-coverage .table-wrap { max-height: 28rem; overflow: auto; }
 .participation-heading h1 { margin: .25rem 0 .6rem; font-size: clamp(2.3rem, 4vw, 3.1rem); line-height: 1.05; letter-spacing: -.04em; }
 .participation-heading .kicker { font-size: .68rem; }
 .participation-deck { color: var(--muted); font-size: 1.05rem; margin: 0 0 .75rem; }

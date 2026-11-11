@@ -266,6 +266,20 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			</div>
 			<p id="caption" class="caption"></p>
 			<ParticipationResidentContext />
+			<details id="participation-coverage" class="source-coverage">
+				<summary>Administrative count coverage and source holds</summary>
+				<p data-coverage-caption>Coverage follows the selected election, source mode and geography. Source reporting rows and mapped references are not people or national coverage percentages.</p>
+				<div class="table-wrap" tabindex="0" role="region" aria-label="Participation source coverage by jurisdiction">
+					<table><thead><tr><th>State</th><th>Status</th><th>Loaded source rows</th><th>Count-bearing rows</th>
+						<th>Reference units</th><th>Qualified fractions</th><th>Unknown</th><th>Withheld</th><th>Held regions</th></tr></thead>
+						<tbody></tbody></table>
+				</div>
+				<p>Loaded means a source-defined frame is available, not complete statewide reporting.
+					Unknown counts, unmatched references and withheld fractions are not zero participation.
+					In reference views, Unknown includes unmatched reference units, not an inferred number of unreported source precincts.
+					<a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-count-migration-20261110-01/complete-analysis.zip">Complete county/state count queries</a>
+					and <a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-native-bindings-20261111-02/complete-analysis.zip">complete reference/reporting-unit queries and inputs</a>.</p>
+			</details>
 			<details id="notice-panel" class="explorer-notes" hidden><summary>Data notes for this view</summary>
 				<p id="notice" role="status"></p></details>
 			<p class="participation-scope" id="coverage-note">Explore national and state turnout histories,

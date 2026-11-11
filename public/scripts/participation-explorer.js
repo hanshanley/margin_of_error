@@ -2,10 +2,12 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { installResidentContext } from "./participation-resident-context.js";
 import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, clearCountState } from "./participation-counts.js";
+import { loadNativeIndex, loadBoundNative, loadCountyBinding, loadMunicipalReference, loadReportingRows, bindCountyReference } from "./participation-native-bindings.js";
+import { installCoverage } from "./participation-coverage.js";
 import { rings, boundsFor, conicProjection, projectFeatures } from "./participation-map-projection.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
-import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation, qualifiedIndianaMonroePrecinct, qualifiedAlaskaNativePrecinct, qualifiedManchesterWardReference, qualifiedConcordWardReference, qualifiedNashuaWardReference, qualifiedDoverWardReference, qualifiedMinnesotaPrecinctReference, qualifiedHawaiiAdministrationReference, qualifiedConnecticutTownReference, qualifiedMaineLocalityReference, qualifiedIllinoisCountyContextReference, qualifiedNewHampshireCityReference, qualifiedMassachusettsCityReference, qualifiedMassachusettsReportingReference } from "./participation-geography.js";
+import { countFill, precinctSelectionYears } from "./participation-geography.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -63,6 +65,7 @@ const state = {
   localSelection: null, localError: "",
 };
 const residentContext = installResidentContext();
+const sourceCoverage = installCoverage();
 function residentReference(row, code = row.state_code || stateCode()) {
   residentContext.selectPrecinct({ ...row, state_code: code },
     { sha256: state.currentPrecinctHashes.get(code) });
@@ -551,47 +554,15 @@ function stateParticipationRows() {
       const observations = data?.counties.filter(row => row.state_code === code
         && row.geography_level === "municipality") ?? [];
       const metadata = state.currentMunicipalities[code], vermont = code === "VT";
-      const file = vermont ? metadata?.url : state.local?.geometry?.["2024"]?.municipality?.[code];
       if (token !== state.drillToken || state.map !== map) return;
-      if (!file) {
-        $("geography-note").textContent = `${state.selectedState} reference municipality boundaries could not be loaded. Native locality counts remain available in the sidebar.`;
-        return;
-      }
-      if (!state.localGeometry.has(file)) {
-        if (vermont) {
-          const response = await fetch(file);
-          if (!response.ok) throw new Error(`Frozen municipal geometry: HTTP ${response.status}`);
-          const compressed = await response.arrayBuffer();
-          const digest = [...new Uint8Array(await crypto.subtle.digest("SHA-256", compressed))]
-            .map(byte => byte.toString(16).padStart(2, "0")).join("");
-          if (digest !== metadata.geometry_sha256) throw new Error("Frozen municipal geometry checksum differs");
-          state.localGeometry.set(file,
-            await new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream("gzip"))).json());
-        } else state.localGeometry.set(file, await localGet(file));
-      }
+      const bound = await loadMunicipalReference(code, $("mode").value);
       if (token !== state.drillToken || state.map !== map) return;
-      const collection = state.localGeometry.get(file), byName = new Map();
-      for (const row of observations) {
-        const key = countyName(row.county);
-        if (byName.has(key)) throw new Error(`Duplicate ${code} municipality identity`);
-        byName.set(key, row);
-      }
-      const shapeNames = collection.features.map(feature => countyName(feature.properties.name));
-      const count = vermont ? metadata.features : 39;
-      if (observations.length !== count || collection.features.length !== count
-        || new Set(shapeNames).size !== count || shapeNames.some(name => !byName.has(name))
-        || (vermont ? observations.filter(row => row.reported_pct !== null).length !== metadata.rates
-          : observations.some(row => row.reported_pct !== null)))
-        throw new Error(`${code} municipality reference-identity gate failed`);
-      if (vermont && collection.features.some(({ properties: p }) => {
-        const row = byName.get(countyName(p.name));
-        return p.ballots !== row.ballots || p.registered_voters !== row.denominator
-          || p.registered_turnout_pct !== row.reported_pct;
-      })) throw new Error("Frozen Vermont observations differ from the qualified municipality join");
+      const collection = bound.data, byFeature = bindCountyReference(observations,
+        collection, bound.reference, bound.binding), count = collection.features.length;
       const reference = vermont ? metadata.boundary_label : "2024 Census reference boundaries";
       const maximum = Math.max(0, ...observations.map(row => row.ballots ?? 0));
       for (const feature of collection.features) {
-        const row = byName.get(countyName(feature.properties.name));
+        const row = byFeature.get(feature.properties.key);
         const item = projectInside(feature, selected.point);
         const path = featurePath(item, row.reported_pct,
           `${feature.properties.name} · 2026 observations on ${reference}\n`
@@ -687,62 +658,14 @@ function stateParticipationRows() {
       if (token !== state.drillToken || state.map !== map) return;
       const collection = await state.subshapes.get(cacheKey);
       if (token !== state.drillToken || state.map !== map) return;
-      const nativeByFips = new Map();
+      let nativeByFips = new Map();
       if (reference) {
-        if (towns && !qualifiedConnecticutTownReference(observations, reference, collection)) {
+        try {
+          nativeByFips = bindCountyReference(observations, collection, reference,
+            await loadCountyBinding(code, $("mode").value));
+        } catch (error) {
           clearCountState(code);
-          throw new Error("Unqualified Connecticut town reference; county or precinct totals are not invented");
-        }
-        if (localityActivity && !qualifiedMaineLocalityReference(observations, reference, collection)) {
-          clearCountState(code);
-          throw new Error("Unqualified Maine locality reference; unmatched source regions are not allocated");
-        }
-        if (countyNamedContext && !qualifiedIllinoisCountyContextReference(observations, reference, collection)) {
-          clearCountState(code);
-          throw new Error("Unqualified Illinois source-region county context; whole-county totals are not inferred");
-        }
-        if (code === "NH" && nativeCities && !qualifiedNewHampshireCityReference(observations, reference, collection)) {
-          clearCountState(code);
-          throw new Error("Unqualified New Hampshire native city count or contextual reference; no county or ward allocation");
-        }
-        if (massachusettsCities && !qualifiedMassachusettsCityReference(observations, reference, collection)) {
-          clearCountState(code);
-          throw new Error("Unqualified Massachusetts native city count or reference; no summary substitution or county allocation");
-        }
-        if (reference.identity_field && !municipalityContext && !countyNamedContext && (!administrations
-          || !qualifiedHawaiiAdministrationReference(observations, reference, collection))) {
-          clearCountState(code);
-          throw new Error("Unqualified election-administration reference; separate Maui/Kalawao counts are not invented");
-        }
-        for (const row of observations) {
-          const identity = partialMunicipalityContext ? row.reference_municipality_key
-            : administrations || towns ? row.source_administration_id : row.county_fips;
-          if (row.reference_geometry?.sha256 !== reference.sha256 || nativeByFips.has(identity)) {
-            clearCountState(code);
-            throw new Error("Mixed or duplicate native county reference identities");
-          }
-          nativeByFips.set(identity, row);
-        }
-        const partial = reference.partial_county_fips;
-        if (partial !== undefined && (code !== "MI" || reference.counties !== 83
-          || !Array.isArray(partial) || partial.length !== 2 || new Set(partial).size !== 2
-          || nativeByFips.size !== 2 || partial.some(fips => !nativeByFips.has(fips)))) {
-          clearCountState(code);
-          throw new Error("Unqualified partial native county-parent scope");
-        }
-        const shapeIds = new Set(collection.features.map(feature => feature.properties.key));
-        const boundaryYear = massachusettsCities ? null : municipalityContext ? 2024 : 2026;
-        const identities = municipalityContext ? reference.localities : reference.counties;
-        if (reference.boundary_year !== boundaryYear || (!partial && !partialMunicipalityContext && observations.length !== identities)
-          || collection.features.length !== identities
-          || shapeIds.size !== identities
-          || [...nativeByFips.keys()].some(fips => !shapeIds.has(fips))
-          || collection.features.some(({ properties: p }) => p.state_code !== code || p.boundary_year !== boundaryYear
-            || (nativeByFips.has(p.key)
-              ? !localityActivity && countyName(p.name) !== countyName(nativeByFips.get(p.key).county)
-              : !partial && !partialMunicipalityContext))) {
-          clearCountState(code);
-          throw new Error("Native whole-county inventory disagrees with the verified 2026 reference");
+          throw error;
         }
       }
       let contextRows = new Map(), contextError = "";
@@ -915,37 +838,11 @@ function stateParticipationRows() {
     }
 async function loadCurrentPrecincts() {
   try {
-    const pointer = await fetch("/participation-precincts.json");
-    if (!pointer.ok) throw new Error(`Precinct pointer: HTTP ${pointer.status}`);
-    const config = await pointer.json();
-    state.currentPrecinctPath = config.base_url;
-    for (const [sourceIndex, source] of [{ base_url: config.base_url }, ...(config.additional_sources || [])].entries()) {
-      try {
-        const base = new URL(source.base_url, location.href);
-        const response = await fetch(new URL("index.json", base));
-        if (!response.ok) throw new Error(`Precinct coverage: HTTP ${response.status}`);
-        const data = await response.json();
-        if (!sourceIndex) state.currentPrecincts = { ...data, states: {}, state_metadata: {} };
-        for (const [code, file] of Object.entries(data.states || {})) {
-          if (state.currentPrecincts.states[code]) throw new Error(`Duplicate 2026 precinct source: ${code}`);
-          state.currentPrecincts.states[code] = new URL(file, base).href;
-          state.currentPrecincts.state_metadata[code] = {
-            boundary_label: data.boundary_date || "July 2026 reference boundaries",
-            ...data.state_metadata?.[code],
-            ...(data.complete_download_file
-              ? { complete_download_url: new URL(data.complete_download_file, base).href } : {}),
-          };
-        }
-        for (const [code, metadata] of Object.entries(data.municipalities || {})) {
-          if (state.currentMunicipalities[code]) throw new Error(`Duplicate municipal source: ${code}`);
-          state.currentMunicipalities[code] = { ...metadata, url: new URL(metadata.file, base).href,
-            complete_download_url: new URL(metadata.complete_download_file, base).href };
-        }
-      } catch (error) {
-        if (!sourceIndex) throw error;
-        state.currentPrecinctError = `Additional precinct source unavailable: ${error.message}.`;
-      }
-    }
+    const { index } = await loadNativeIndex();
+    state.currentPrecincts = index.config;
+    state.currentPrecinctPath = location.origin + "/";
+    state.currentMunicipalities = index.config.municipalities;
+    state.nativeMatchedCoverage = index.matched;
   } catch (error) {
     state.currentPrecinctError = `2026 precinct geography could not be loaded: ${error.message}.`;
   }
@@ -1180,12 +1077,8 @@ async function loadCurrentPrecincts() {
     return state.precinctResultShapes.get(key);
   }
   function matchedPrecinctParticipationCoverage(code, year = Number($("year").value)) {
-    if (code === "MN" && ["minnesota-native-followup-20261110-02", "minnesota-complete-native-statistics-20261110-03"]
-      .includes(state.currentPrecincts?.state_metadata?.MN?.source_id))
-      return null;
-    const coverage = year === 2026 && ["ID", "ND", "MN", "DC", "VA"].includes(code)
-      ? state.precinctResults?.coverage[year]?.[code] || null : null;
-    return code === "VA" && !coverage?.participation_count_sha256 ? null : coverage;
+    return year === 2026 && !state.currentPrecincts?.states[code]
+      ? state.nativeMatchedCoverage?.[code] || null : null;
   }
   function matchedPrecinctParticipationMode() {
     return ufMode() || ["available", "official"].includes($("mode").value);
@@ -1223,32 +1116,9 @@ async function loadCurrentPrecincts() {
   }
   async function drawMatchedPrecinctParticipation(map, selected, code, year, token) {
     const coverage = matchedPrecinctParticipationCoverage(code, year);
-    const data = await precinctResultData(code, year);
+    const { data } = await loadBoundNative("matched/" + code);
     if (token !== state.drillToken || state.map !== map) return;
-    const keys = new Set(), countsOnly = ["ND", "VA"].includes(code);
-    for (const { properties: p, geometry } of data.features) {
-      const row = p.participation;
-      const scope = code === "DC" ? qualifiedDcPrecinctParticipation(p, year)
-        : code === "VA" ? qualifiedVaPrecinctParticipation(p, year)
-        : countsOnly
-        ? p.reporting_unit_kind === "precinct" && row?.measure === "reported_ballots"
-          && row.denominator === null && row.reported_pct === null
-          && Number.isSafeInteger(row.ballots) && row.ballots >= 0
-        : code === "MN"
-        ? p.reporting_unit_kind === "precinct" && row && row.measure == null
-          && ["county", "precinct", "county_code", "precinct_code"].every(key => row[key] === p[key])
-          && typeof row.reported === "boolean" && Number.isSafeInteger(row.ballots) && row.ballots >= 0
-          && Number.isSafeInteger(row.denominator)
-          && row.denominator === row.registered_at_open + row.election_day_registrations
-        : p.reporting_unit_kind === "source_reporting_unit"
-          && row?.reporting_unit_kind === "source_reporting_unit"
-          && row.measure === "reported_ballots_and_registration";
-      if (!geometry || !row || p.match_status !== "matched" || p.state_code !== code || p.year !== year
-        || (code !== "VA" && (row?.key !== p.key || row.state_code !== code || row.year !== year))
-        || !scope || keys.has(p.key))
-        throw new Error(`Unqualified ${code} precinct participation payload`);
-      keys.add(p.key);
-    }
+    const countsOnly = data.features.every(feature => feature.properties.participation.reported_pct === null);
     if (data.features.length !== coverage.features)
       throw new Error(`Verified ${code} participation payload count disagrees with the approved geometry inventory`);
     const observed = data.features.filter(feature => feature.properties.participation.reported_pct != null).length;
@@ -1487,94 +1357,9 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     return;
   }
   if (!state.currentPrecinctShapes.has(code)) {
-    const response = await fetch(new URL(file, state.currentPrecinctPath));
-    if (!response.ok) throw new Error(`2026 precinct boundaries: HTTP ${response.status}`);
-    if (!globalThis.DecompressionStream) throw new Error("This browser cannot read compressed precinct geography; complete downloads remain available");
-    const raw = await response.arrayBuffer();
-    const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", raw))]
-      .map(value => value.toString(16).padStart(2, "0")).join("");
-    if (metadata.sha256) {
-      if (hash !== metadata.sha256 || raw.byteLength !== metadata.bytes)
-        throw new Error("2026 precinct source checksum disagrees");
-    }
-    const body = new Response(raw).body;
-    const data = await new Response(body.pipeThrough(new DecompressionStream("gzip"))).json();
-    if (minnesotaNative && (metadata.expected_features !== 4105
-      || metadata.reported_source_counts !== (minnesotaCompleteNative ? 4105 : 4079)
-      || metadata.unknown_source_counts !== (minnesotaCompleteNative ? 0 : 26)
-      || metadata.counts_only !== true || metadata.rates_approved !== false
-      || metadata.certified_legal_precinct_boundaries !== false || data.features.length !== 4105
-      || new Set(data.features.map(feature => feature.properties.key)).size !== 4105
-      || data.features.filter(feature => feature.properties.ballots === null).length !== (minnesotaCompleteNative ? 0 : 26)
-      || data.features.reduce((sum, feature) => sum + (feature.properties.ballots ?? 0), 0)
-        !== (minnesotaCompleteNative ? 2852618 : 2827091)
-      || data.features.some(feature => !["Polygon", "MultiPolygon"].includes(feature.geometry?.type)
-        || !qualifiedMinnesotaPrecinctReference(feature.properties))))
-      throw new Error("Unqualified Minnesota current native precinct count or full reference; no legacy generalization or rate substitution");
-    if (metadata.source_id === "indiana-monroe-native-20261109-01"
-      && (code !== "IN" || data.features.length !== metadata.expected_features
-        || new Set(data.features.map(feature => feature.properties.key)).size !== data.features.length
-        || data.features.some(feature => !feature.geometry || !qualifiedIndianaMonroePrecinct(feature.properties))))
-      throw new Error("Unqualified Indiana Monroe precinct count or reference");
-    if (metadata.source_id === "alaska-native-display-20261110-01"
-      && (code !== "AK" || metadata.expected_features !== 81 || metadata.native_source_rows !== 523
-        || metadata.native_geographic_rows !== 402 || metadata.geometry_holds !== 321
-        || metadata.counts_only !== true || metadata.rates_approved !== false
-        || data.features.length !== 81
-        || new Set(data.features.map(feature => feature.properties.key)).size !== 81
-        || new Set(data.features.map(feature => feature.properties.native_precinct_id)).size !== 81
-        || data.features.some(feature => feature.geometry?.type !== "MultiPolygon"
-          || !qualifiedAlaskaNativePrecinct(feature.properties))))
-      throw new Error("Unqualified Alaska native geographic-unit count or reference");
-    if (code === "NH" && !extendedNativeWards && (!nativeWards || metadata.expected_features !== 12
-      || metadata.boundary_reference_year !== 2022 || metadata.current_clerk_effective_date !== "2021-12-21"
-      || metadata.certified_legal_precinct_boundaries !== false || metadata.native_source_ward_rows !== 37
-      || metadata.held_table_only_ward_rows !== 25 || metadata.counts_only !== true
-      || metadata.rates_approved !== false || data.features.length !== 12
-      || new Set(data.features.map(feature => feature.properties.native_ward_number)).size !== 12
-      || data.features.reduce((sum, feature) => sum + feature.properties.ballots, 0) !== 38562
-      || data.features.some(feature => feature.geometry?.type !== "Polygon"
-        || !qualifiedManchesterWardReference(feature.properties))))
-      throw new Error("Unqualified Manchester native ward count or current municipal reference; no other ward allocation");
-    if (extendedNativeWards && (metadata.expected_features !== (doverNativeWards ? 37 : nashuaNativeWards ? 31 : 22) || metadata.native_source_ward_rows !== 37
-      || metadata.held_table_only_ward_rows !== (doverNativeWards ? 0 : nashuaNativeWards ? 6 : 15) || metadata.certified_legal_precinct_boundaries !== false
-      || metadata.counts_only !== true || metadata.rates_approved !== false || data.features.length !== (doverNativeWards ? 37 : nashuaNativeWards ? 31 : 22)
-      || new Set(data.features.map(feature => feature.properties.key)).size !== (doverNativeWards ? 37 : nashuaNativeWards ? 31 : 22)
-      || (doverNativeWards ? ["Manchester", "Concord", "Nashua", "Dover"] : nashuaNativeWards ? ["Manchester", "Concord", "Nashua"] : ["Manchester", "Concord"]).some(city => {
-        const features = data.features.filter(feature => feature.properties.county === city);
-        const scopes = { Manchester: [12, 38562], Concord: [10, 19234], Nashua: [9, 33849], Dover: [6, 15941] };
-        return features.length !== scopes[city][0]
-          || features.reduce((sum, feature) => sum + feature.properties.ballots, 0) !== scopes[city][1];
-      })
-      || data.features.some(feature => feature.geometry?.type !== "Polygon"
-        || !(qualifiedManchesterWardReference(feature.properties) || qualifiedConcordWardReference(feature.properties)
-          || nashuaNativeWards && qualifiedNashuaWardReference(feature.properties)
-          || doverNativeWards && qualifiedDoverWardReference(feature.properties)))))
-      throw new Error("Unqualified New Hampshire native ward count or adopted municipal reference; no other ward allocation");
-    if (code === "MA" && (!massachusettsReporting
-      || metadata.expected_features !== (massachusettsCityReferences ? 307 : 303)
-      || metadata.native_source_reporting_rows !== 307
-      || metadata.held_table_only_reporting_rows !== (massachusettsCityReferences ? 0 : 4)
-      || massachusettsCityReferences && (metadata.boundary_reference_year !== null
-        || metadata.city_reference_dataset_id !== "da4y-vuae"
-        || metadata.city_reference_source_metadata_revisions?.Somerville !== "2023-09-22"
-        || metadata.city_reference_native_wkt_sha256 !== "78723c57dc900ff30b1a01ba02ca9aeea20b7107f50a3f7ed86b50e45f2b5ad1")
-      || metadata.certified_legal_precinct_boundaries !== false || metadata.counts_only !== true
-      || metadata.rates_approved !== false || metadata.source_geometry_repaired !== false
-      || metadata.source_geometry_clipped !== false
-      || data.features.length !== (massachusettsCityReferences ? 307 : 303)
-      || new Set(data.features.map(feature => feature.properties.key)).size !== (massachusettsCityReferences ? 307 : 303)
-      || ["Boston", "Somerville"].some(city => {
-        const features = data.features.filter(feature => feature.properties.county === city);
-        const scopes = { Boston: [275, 185569], Somerville: massachusettsCityReferences ? [32, 64597] : [28, 60125] };
-        return features.length !== scopes[city][0]
-          || features.reduce((sum, feature) => sum + feature.properties.ballots, 0) !== scopes[city][1];
-      })
-      || data.features.some(feature => feature.geometry?.type !== "Polygon"
-        || !qualifiedMassachusettsReportingReference(feature.properties))))
-      throw new Error("Unqualified Massachusetts native reporting reference; no split-parent clipping, source repair or inferred rates");
-    state.currentPrecinctShapes.set(code, data);
-    state.currentPrecinctHashes.set(code, hash);
+    const bound = await loadBoundNative("precinct/" + code);
+    state.currentPrecinctShapes.set(code, bound.data);
+    state.currentPrecinctHashes.set(code, bound.verified_geometry_sha256);
   }
   if (token !== state.drillToken || state.map !== map) return;
   const features = state.currentPrecinctShapes.get(code).features;
@@ -2697,7 +2482,7 @@ function stateDetail() {
       ? state.additionalCoverage.find(row => row.state_code === stateCode()
         && (stateCode() === "MA" ? row.localities === 2 : [2, 4].includes(row.localities))) : null;
     const nativeCities = !!nativeCityCoverage;
-    const countyAudit = administrations ? { counties: 4 }
+    const legacyAudit = administrations ? { counties: 4 }
       : towns ? { counties: 169 }
         : localityActivity ? { counties: 480, provider_activity: true }
           : nativeCities ? { counties: nativeCityCoverage.localities }
@@ -2707,6 +2492,8 @@ function stateDetail() {
           const activity = state.additionalCoverage.find(row => row.state_code === stateCode())?.source_mode_counties;
           return activity ? { counties: activity, provider_activity: true } : null;
         })();
+    const actualCounties = state.countIndex?.states[stateCode()]?.views[$("mode").value]?.counties;
+    const countyAudit = actualCounties ? { ...legacyAudit, counties: actualCounties } : null;
     if (countyAudit) {
       const button = html("button", "selection-link", administrations
         ? "Show 4 election administrations" : nativeCities ? `Show ${nativeCityCoverage.localities} native city source counts` : towns ? "Show 169 native town counts"
@@ -3480,14 +3267,8 @@ function precinctSourcePanel(year, layer) {
 }
 async function loadReportingUnitSources() {
   try {
-    const response = await fetch("/participation-reporting-units.json");
-    if (!response.ok) throw new Error(`Source reporting units: HTTP ${response.status}`);
-    const index = await response.json();
-    if (index.year !== 2026 || Object.entries(index.sources).some(([code, source]) =>
-      !["AK", "HI", "AZ", "AR", "WY"].includes(code) || !Number.isSafeInteger(source.rows) || source.rows <= 0
-      || !/^[0-9a-f]{64}$/.test(source.sha256)))
-      throw new Error("Unqualified reporting-unit coverage index");
-    state.reportingUnitSources = index.sources;
+    const { index } = await loadNativeIndex();
+    state.reportingUnitSources = index.reporting_sources;
   } catch (error) {
     state.reportingUnitError = error.message;
   }
@@ -3496,19 +3277,7 @@ async function drawReportingUnitCounts(map, code, year, token) {
   const source = state.reportingUnitSources[code];
   if (!state.reportingUnitData.has(code)) {
     const promise = (async () => {
-      const response = await fetch(source.data_url);
-      if (!response.ok) throw new Error(`Reporting-unit counts: HTTP ${response.status}`);
-      const raw = await response.arrayBuffer();
-      const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", raw))]
-        .map(value => value.toString(16).padStart(2, "0")).join("");
-      if (hash !== source.sha256) throw new Error("Reporting-unit source checksum disagrees");
-      const rows = await countyJSON(new Response(raw));
-      if (rows.length !== source.rows || new Set(rows.map(row => row.key)).size !== source.rows
-        || rows.some(row => row.year !== year || row.state_code !== code
-          || !row.precinct || !row.reporting_unit_kind || row.reported_pct !== null
-          || (row.ballots !== null && (!Number.isSafeInteger(row.ballots) || row.ballots < 0))))
-        throw new Error("Reporting-unit identities or native counts disagree with reviewed scope");
-      return rows;
+      return loadReportingRows(code);
     })().catch(error => { state.reportingUnitData.delete(code); throw error; });
     state.reportingUnitData.set(code, promise);
   }
@@ -3806,6 +3575,9 @@ async function precinctsView(generation) {
 }
 async function render() {
   const generation = ++state.generation;
+  sourceCoverage.setScope({ year: Number($("year").value), mode: $("mode").value || "available",
+    level: $("map-level").value, names: Object.fromEntries((state.geometry?.features || [])
+      .map(feature => [feature.properties.STUSAB, feature.properties.NAME])) });
   if (state.view !== "states") residentContext.hide();
   $("tooltip").hidden = true; note("");
   $("provisional-status").hidden = !isProvisional();
