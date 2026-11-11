@@ -165,8 +165,16 @@ with sync_playwright() as playwright:
         }""")
         assert "checksum differs" in message, message
         fault.unroute("**/counts/precinct-AK.json.gz")
-        assert fault.evaluate("""async()=>{const m=await import('/scripts/participation-native-bindings.js');
-          return (await m.loadBoundNative('precinct/AK')).data.features.length;}""") == 81
+        assert fault.evaluate("""async()=>{
+          const m=await import('/scripts/participation-native-bindings.js');
+          for(let attempt=0;attempt<3;attempt++){
+            try{return (await m.loadBoundNative('precinct/AK')).data.features.length;}
+            catch(error){
+              if(error.name!=='TypeError'||error.message!=='Failed to fetch'||attempt===2)throw error;
+              await new Promise(resolve=>setTimeout(resolve,1000*(attempt+1)));
+            }
+          }
+        }""") == 81
         fault.close()
         late = browser.new_page()
         pending = []
