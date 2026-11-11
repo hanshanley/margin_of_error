@@ -1091,6 +1091,7 @@ async function loadCurrentPrecincts() {
       + `${fmt(row.registered ?? row.denominator)} ${row.denominator_basis || "source-registered voters"}`;
   }
   function matchedPrecinctParticipationDetail(p) {
+    residentReference(p);
     const row = p.participation, countsOnly = row.measure === "reported_ballots" || p.state_code === "VA";
     const panel = $("substate-detail");
     panel.replaceChildren(html("h4", "", `${p.county} · ${p.precinct}`),
@@ -1116,8 +1117,9 @@ async function loadCurrentPrecincts() {
   }
   async function drawMatchedPrecinctParticipation(map, selected, code, year, token) {
     const coverage = matchedPrecinctParticipationCoverage(code, year);
-    const { data } = await loadBoundNative("matched/" + code);
+    const { data, verified_geometry_sha256 } = await loadBoundNative("matched/" + code);
     if (token !== state.drillToken || state.map !== map) return;
+    state.currentPrecinctHashes.set(code, verified_geometry_sha256);
     const countsOnly = data.features.every(feature => feature.properties.participation.reported_pct === null);
     if (data.features.length !== coverage.features)
       throw new Error(`Verified ${code} participation payload count disagrees with the approved geometry inventory`);

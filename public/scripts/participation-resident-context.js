@@ -5,6 +5,12 @@ const nameKey = value => String(value || "").toUpperCase()
 const fmt = value => value == null ? "Not available" : value > 0 && value < 1 ? "<1"
   : value.toLocaleString("en-US", { maximumFractionDigits: 0 });
 const pct = value => value == null ? "Not available" : value > 0 && value < 0.1 ? "<0.1%" : value.toFixed(1) + "%";
+const referenceHoldLabels = {
+  display_excludes_part_of_whole_source_unit: "The displayed shape excludes part of the reporting unit.",
+  previous_source_topology_repair_not_newly_approved_for_resident_context: "Prior reference processing is not qualified for this resident estimate.",
+  invalid_or_nonpolygon_native_reference_not_repaired: "The native reference is invalid or nonpolygonal and has not been repaired.",
+  source_reference_not_approved: "This reference is not approved for resident estimation.",
+};
 const element = (tag, text = "", className = "") => {
   const node = document.createElement(tag); node.textContent = text; node.className = className; return node;
 };
@@ -51,6 +57,12 @@ export function validateResidentShard(data, code, declared) {
         || !data.precinct_source?.sha256)
       throw new Error("Unqualified conditional resident reference");
     keys.add(key);
+  }
+  const held = new Set();
+  for (const row of data.precinct_reference_holds || []) {
+    if (!row.key || held.has(row.key) || keys.has(row.key) || typeof row.reason !== "string" || !row.reason)
+      throw new Error("Held resident reference cannot be duplicated or promoted to an estimate");
+    held.add(row.key);
   }
   return data;
 }
@@ -180,9 +192,15 @@ export function installResidentContext(host = document.getElementById("resident-
         row = precinctForReference(data, selection.key, selection.referenceHash);
       select.value = row?.geography.census_geoid || "";
       if (row) render(row, data, entry);
-      else detail.replaceChildren(element("p", selection
-        ? "No qualified resident profile for this selected reference. County values are not assigned to a precinct or municipality; choose a Census county separately for county context."
-        : `Choose a county in ${activeName || code}, or select a place on the map. All ${data.counties.length} native Census counties / equivalents are available independently of participation coverage.`, "caption"));
+      else {
+        const hold = selection?.kind === "precinct" && selection.referenceHash === data.precinct_source?.sha256
+          ? data.precinct_reference_holds?.find(row => row.key === selection.key) : null;
+        const reason = hold ? hold.reason.split(";").map(code => referenceHoldLabels[code]
+          || "The reference has a documented source-scope hold.").join(" ") + " " : "";
+        detail.replaceChildren(element("p", selection
+          ? `No qualified resident profile for this selected reference. ${reason}County values are not assigned to a precinct or municipality; choose a Census county separately for county context.`
+          : `Choose a county in ${activeName || code}, or select a place on the map. All ${data.counties.length} native Census counties / equivalents are available independently of participation coverage.`, "caption"));
+      }
     } catch (error) { if (token === generation) failure(error); }
   }
   select.addEventListener("change", () => update(activeCode, activeName,

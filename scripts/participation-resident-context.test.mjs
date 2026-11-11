@@ -63,6 +63,17 @@ test("resident contract rejects foreign states, duplicate keys, repairs and part
   assert.throws(() => validateResidentShard(shard(), "MN", { counties: 1, precincts: 2 }), /coverage differs/);
 });
 
+test("documented reference holds cannot be promoted or hidden by duplicate decisions", () => {
+  const data = shard(), declaration = { counties: 1, precincts: 1 };
+  data.precinct_reference_holds = [{ key: "MN|held", reason: "display_excludes_part_of_whole_source_unit" }];
+  validateResidentShard(data, "MN", declaration);
+  data.precinct_reference_holds[0].key = data.precincts[0].geography.reference_key;
+  assert.throws(() => validateResidentShard(data, "MN", declaration), /Held resident reference/);
+  data.precinct_reference_holds = [{ key: "MN|held", reason: "source_scope" },
+    { key: "MN|held", reason: "source_scope" }];
+  assert.throws(() => validateResidentShard(data, "MN", declaration), /Held resident reference/);
+});
+
 test("county zero income is not missing, and conditional income is a band rather than an averaged median", () => {
   const row = county();
   assert.equal(incomeLabel(row), "$0");

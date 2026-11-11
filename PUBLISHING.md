@@ -99,6 +99,15 @@ Keep old values cleared during failures and selection/year changes. Local
 fixture proofs are not evidence of publication; separately verify the actual
 catalog promotion and production reader without a new site build.
 
+Matched-result participation maps also pass their verified reference hash when
+selecting resident context. Never use a clipped display footprint as the
+demographics of the whole reporting unit. Pinned source-scope audits keep clipped
+and previously repaired references explicitly held; the disclosure explains the
+reason instead of retaining the last profile or assigning county values. New
+families extend the accepted dataset incrementally: preserve every old county
+and unaffected local shard, retain both entire scientific predecessor packets,
+and verify the new full/runtime reproduction modes before publication.
+
 The 2026 current snapshot and county/local count tables now use the same catalog
 through `participation-counts.js`. Frozen accepted-export inputs and canonical
 queries are in `data/participation-counts/20261110-02/`; the build reads those

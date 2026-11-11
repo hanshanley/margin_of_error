@@ -14,6 +14,7 @@ parser.add_argument("--dataset-root", type=Path, required=True)
 parser.add_argument("--proof", type=Path, required=True)
 parser.add_argument("--actual-catalog", action="store_true")
 parser.add_argument("--county-only", action="store_true")
+parser.add_argument("--matched-references", action="store_true")
 args = parser.parse_args()
 assert not args.proof.exists()
 index_body = (args.dataset_root / "index.json").read_bytes()
@@ -87,12 +88,17 @@ with sync_playwright() as runtime:
                     expect(detail).to_contain_text("Not available")
                 cases.append(dict(width=width, county=key, direct_context=True,
                                   unknown_income_preserved=key == "35011"))
-            for name, code in (("Minnesota", "MN"), ("New Hampshire", "NH"),
+            local_sources = [("Minnesota", "MN"), ("New Hampshire", "NH"),
                                ("New Mexico", "NM"), ("Michigan", "MI"),
-                               ("Massachusetts", "MA"), ("Alaska", "AK"), ("Indiana", "IN")):
+                               ("Massachusetts", "MA"), ("Alaska", "AK"), ("Indiana", "IN")]
+            if args.matched_references:
+                local_sources.extend([("Idaho", "ID"), ("Virginia", "VA"),
+                    ("North Dakota", "ND"), ("District of Columbia", "DC")])
+            for name, code in local_sources:
                 if args.county_only:
                     continue
-                if width == 390 and code not in ("MN", "NH"):
+                if width == 390 and code not in (("MN", "NH", "ID", "VA", "ND", "DC")
+                        if args.matched_references else ("MN", "NH")):
                     continue
                 page.locator("#state-select").select_option(label=name)
                 expect(select).to_be_enabled(timeout=90000)
@@ -116,6 +122,21 @@ with sync_playwright() as runtime:
                 cases.append(dict(width=width, state=code, exact_reference_key=key,
                     conditional_profile=True, verified_actual_geometry_hash=True,
                     county_not_substituted=True))
+                if args.matched_references and code in ("ND", "DC"):
+                    excluded = source["precinct_reference_holds"][0]
+                    held_path = page.locator(f'#visualization [data-geography="{excluded["key"]}"]')
+                    expect(held_path).to_be_attached(timeout=90000)
+                    held_path.dispatch_event("click")
+                    expect(detail).to_contain_text("No qualified resident profile", timeout=90000)
+                    if "display_excludes_part_of_whole_source_unit" in excluded["reason"]:
+                        expect(detail).to_contain_text("displayed shape excludes part")
+                    assert detail.get_attribute("data-reference-key") is None
+                    assert detail.get_attribute("data-census-geoid") is None
+                    cases.append(dict(width=width, state=code, held_reference=excluded["key"],
+                        source_scope_hold_retained=True, whole_unit_not_clipped_area=True,
+                        no_stale_profile_or_county_substitution=True))
+                    path.dispatch_event("click")
+                    expect(detail).to_have_attribute("data-reference-key", key, timeout=90000)
             detail.locator("details").first.evaluate("node => node.open = true")
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             page.locator("#resident-context").scroll_into_view_if_needed()
