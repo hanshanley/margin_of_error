@@ -99,7 +99,7 @@ export function registeredTableCounts(facts, recipe, input) {
   });
 }
 
-function declarationFor(shard, previous, body) {
+export function declarationFor(shard, previous, body) {
   const records = new Map(shard.records.map(row => [row.id, row]));
   return { ...previous, ...pin(body), records: shard.records.length,
     views: Object.fromEntries(Object.entries(shard.views).map(([mode, frame]) => [mode, {

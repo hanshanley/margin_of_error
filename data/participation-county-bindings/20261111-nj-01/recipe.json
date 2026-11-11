@@ -1,0 +1,17 @@
+{
+  "contract": "participation.county_binding_extension.v1",
+  "id": "qualified-county-context-20261111-nj-01",
+  "state_code": "NJ",
+  "modes": ["available", "official", "uf_vep", "uf_vap"],
+  "boundary_year": 2024,
+  "expected_counties": 21,
+  "expected_retained": 19,
+  "expected_new": 2,
+  "geometry_sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+  "geometry_canonical_sha256": "66e5b1c6885aeb953a90616c1d8aeb56115130774795a634f81e89bba7fc819b",
+  "previous_review_sha256": "e9ece9b8918dd3fec4ab4b5cbdfa30bfde181219bd1f6303c2c70077eb8b072e",
+  "native_facts_sha256": "8e3378c4ebdd0f5d2831a35550fd8d971d3f7ce6a20fb6d8279c5a1e90012fa0",
+  "reference_repository_path": "data/participation-county-bindings/20261111-nj-01/reference.json",
+  "new_source_ids": ["native-nj-periodic-20261110-essex", "native-nj-periodic-20261110-hudson"],
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-new-jersey-county-bindings-20261111-01/complete-analysis.zip"
+}

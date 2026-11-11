@@ -56,8 +56,8 @@ def query_results(runtime):
     return {"results/county-query.json": encoded(query), "results/county-query.csv": buffer.getvalue().encode()}
 
 
-def source_files(root):
-    names = {
+def source_files(root, names=None):
+    names = set(names) if names is not None else {
         "scripts/extend-participation-counts.mjs", "scripts/extend-participation-counts.test.mjs",
         "scripts/participation-counts.test.mjs", "scripts/freeze-participation-table-inputs.py",
         "scripts/verify-participation-count-extension.py", "scripts/package-participation-count-extension.py",
