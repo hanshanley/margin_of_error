@@ -1,6 +1,6 @@
 ---
 import { readFileSync } from 'node:fs';
-import { roundedContributions } from '../../public/scripts/participation-calibrated-swing.js';
+import { roundedContributions, switchingConstraintBounds } from '../../public/scripts/participation-calibrated-swing.js';
 const { names } = Astro.props as { names: Record<string, string> };
 type DriverRow = { id: string; state_code: string; office: string; components_pp: Record<string, number>;
 	reported_comparison: { baseline_year?: number; reported_change_pp: number | null;
@@ -79,6 +79,11 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 		target contest does not identify no ballot, new eligibility, death, migration or first-ever voting.
 		Unreported Other-party totals remain unknown in the source and are explicitly prior-assumed
 		in the scenario, never filled as observed zeros. No state model is allocated to counties or precincts.</p>
+	<p class="caption">Aggregate totals leave many possible transition tables. In all 89 comparable
+		central frames, <strong>zero D↔R switching is compatible with the same totals</strong>.
+		The selected-state details report its sharp gross-switching feasibility range, not a margin
+		contribution or confidence interval. A separate complete constraint-only analysis includes every
+		witness table; it does not refit the transition model or convert missing Other into nonvote.</p>
 	<p class="caption">The separate party-choice scenarios simulate gross shares within recalled major-party
 		choices, not contributions to the electoral swing. Their half/double persistence envelopes are
 		assumption sensitivity, not confidence intervals. Gross-switching state-held-out error is 1.39 pp;
@@ -87,16 +92,21 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 	</details>
 	<details class="explorer-notes"><summary>Every saved return-constrained scenario</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 113 return-constrained decisions">
-			<table><caption>Central fitted scenario; not independently observed voter histories. Unavailable is not zero.</caption>
+			<table><caption>Central fitted scenario; not independently observed voter histories. The final column is a compatible gross-switching percentage of previous D/R votes, not margin points or a confidence interval. Unavailable is not zero.</caption>
 				<thead><tr><th scope="col">State / office</th><th scope="col">Reported swing</th>
 					<th scope="col">Switching</th><th scope="col">No contest vote</th>
-					<th scope="col">Entry / return</th><th scope="col">Other-party choice</th></tr></thead>
+					<th scope="col">Entry / return</th><th scope="col">Other-party choice</th>
+					<th scope="col">Compatible gross switching</th></tr></thead>
 				<tbody>{calibration.rows.map((row: CalibratedRow) => {
 					const rounded = row.point ? roundedContributions(row.point) : null;
+					const compatible = switchingConstraintBounds(row);
 					return <tr data-saved-calibrated={row.id}><th scope="row">{names[row.state_code]} · {row.office}</th>
 						<td class="numeric">{pp(row.point?.reported_change_pp ?? null)}</td>
 						{['switching', 'nonparticipation', 'entry', 'other_choice'].map(key =>
-							<td class="numeric">{pp(rounded?.[key] ?? null)}</td>)}</tr>;
+							<td class="numeric">{pp(rounded?.[key] ?? null)}</td>)}
+						<td class="numeric" data-saved-switching-bounds={row.id}>{compatible
+							? `${compatible.minimumPercent.toFixed(1)}% to ${compatible.maximumPercent.toFixed(1)}%`
+							: 'Unavailable'}</td></tr>;
 				})}</tbody>
 			</table>
 		</div>
@@ -122,6 +132,7 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 	</details>
 	<div class="download-links"><a href={receipt.url}>Complete historical returns, inputs, all models/scenarios, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-return-constrained-20261111-01/complete-analysis.zip">Complete return-constrained model, all 801 scenarios and transition cells, inputs, code and checksums · ZIP</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-flow-identification-20261111-01/complete-analysis.zip">Complete compatible-flow bounds, all 3,824 extremal tables, original inputs, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-transition-simulation-20261111-01/complete-analysis.zip">Complete conditional transition simulations, every input/query/seed, code and checksums · ZIP</a></div>
 	<script type="application/json" is:inline data-driver-data set:html={payload}></script>
 </section>

@@ -77,6 +77,22 @@ export function calibratedMapValue(row, key) {
   return row.point.components_pp[key === "modeled_nonparticipation" ? "nonparticipation" : key] ?? null;
 }
 
+export function switchingConstraintBounds(row) {
+  if (!row?.point) return null;
+  const frame = row.point.assumed_common_frame_units;
+  const before = row.reported_comparison?.previous, after = row.reported_comparison?.current;
+  if (!finite(frame) || ![before, after].every(counts =>
+    counts && ["D", "R"].every(key => Number.isSafeInteger(counts[key]) && counts[key] > 0)
+      && counts.D + counts.R <= frame))
+    throw new Error("Gross switching bounds require valid native endpoints and an assumed frame");
+  const denominator = before.D + before.R;
+  return {
+    minimumPercent: 100 * (Math.max(0, before.D + after.R - frame)
+      + Math.max(0, before.R + after.D - frame)) / denominator,
+    maximumPercent: 100 * (Math.min(before.D, after.R) + Math.min(before.R, after.D)) / denominator,
+  };
+}
+
 export function roundedContributions(point) {
   const total = Math.round(Number(point.reported_change_pp.toFixed(2)) * 100);
   const values = calibratedTerms.map(([key]) => ({ key, scaled: point.components_pp[key] * 100 }));

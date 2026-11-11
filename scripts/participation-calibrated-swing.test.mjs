@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { validateCalibratedSwing, roundedContributions, calibratedTerms } from '../public/scripts/participation-calibrated-swing.js';
+import { validateCalibratedSwing, roundedContributions, calibratedTerms, switchingConstraintBounds } from '../public/scripts/participation-calibrated-swing.js';
 import { mapValue, mapScale, driverRows, mapTerms } from '../public/scripts/participation-return-drivers.js';
 
 const original = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/viewer-data.json'));
 const data = JSON.parse(readFileSync('data/participation-return-attribution/20261111-03/return-constrained-viewer.json'));
 const rows = validateCalibratedSwing(data, original);
+const bounds = JSON.parse(readFileSync('data/participation-return-attribution/20261111-04/gross-flow-bounds-viewer.json'));
 
 test('every state/office decision uses both actual endpoints or remains explicitly unavailable', () => {
   assert.equal(rows.size, 113);
@@ -66,4 +67,24 @@ test('sum-preserving display rounding handles negative halves without altering r
   assert.ok(Math.abs(Object.values(rounded).reduce((a,b)=>a+b,0)+.13)<1e-12);
   assert.deepEqual(point,before);
   assert.ok(calibratedTerms.every(([key])=>Math.abs(rounded[key]-point.components_pp[key])<=.01+1e-12));
+});
+
+test('all displayed switching feasibility ranges match independently certified exact transport bounds', () => {
+  for (const exact of bounds.rows) {
+    const actual = switchingConstraintBounds(rows.get(exact.id));
+    if (exact.bounds === null) assert.equal(actual, null);
+    else {
+      assert.ok(Math.abs(actual.minimumPercent - Number(exact.bounds.switching.lower_percent)) < 1e-8);
+      assert.ok(Math.abs(actual.maximumPercent - Number(exact.bounds.switching.upper_percent)) < 1e-8);
+      assert.equal(actual.minimumPercent, 0);
+    }
+  }
+});
+
+test('gross bounds can require switching, reject invalid frames, and never need assumed Other counts', () => {
+  const sample = { point: { assumed_common_frame_units: 10 },
+    reported_comparison: { previous: { D: 8, R: 1 }, current: { D: 1, R: 8 } } };
+  assert.deepEqual(switchingConstraintBounds(sample), { minimumPercent: 100*6/9, maximumPercent: 100 });
+  sample.point.assumed_common_frame_units = 8;
+  assert.throws(() => switchingConstraintBounds(sample), /valid native endpoints/);
 });

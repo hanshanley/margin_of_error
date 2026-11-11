@@ -1,6 +1,6 @@
 import { projectStateContext } from "./participation-map-projection.js";
 import { participationDownload } from "./participation-downloads.js";
-import { calibratedTerms, validateCalibratedSwing, calibratedMapValue, roundedContributions } from "./participation-calibrated-swing.js";
+import { calibratedTerms, validateCalibratedSwing, calibratedMapValue, roundedContributions, switchingConstraintBounds } from "./participation-calibrated-swing.js";
 import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
   scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
 
@@ -243,7 +243,9 @@ export async function initializeReturnDrivers() {
             `${index ? rounded[key] < 0 ? " − " : " + " : rounded[key] < 0 ? "−" : ""}`
             + `${Math.abs(rounded[key]).toFixed(2)} pp ${label.toLowerCase()}`).join("") + "."));
         summary.append(element("p",
-          "Fitted scenario; not independently measured switching or confirmed staying home.",
+          "Fitted scenario; not independently measured switching or confirmed staying home. "
+          + (switchingConstraintBounds(fitted).minimumPercent === 0
+            ? "The same totals also permit zero switching." : "The split depends on the transition assumptions."),
           "caption"), equation);
         if (fitted.observed_other_vote_endpoints.some(value => !value))
           summary.append(element("p", "Other-party totals are not supplied in this source frame; the split between Other and no counted contest vote is prior-assumed, not observed.", "caption"));
@@ -286,6 +288,19 @@ export async function initializeReturnDrivers() {
         + `${(100*gross.switching).toFixed(1)}% switch party choice; `
         + `${(100*gross.nonparticipation).toFixed(1)}% have no counted target-contest vote; `
         + `${(100*gross.other_choice).toFixed(1)}% choose Other. These scenario shares are not swing contributions or measured people.`, "caption"));
+      const compatible = switchingConstraintBounds(fitted);
+      const identification = element("p",
+        `Under the same assumed accounting frame, the recorded totals permit `
+        + `${compatible.minimumPercent.toFixed(1)}% to ${compatible.maximumPercent.toFixed(1)}% `
+        + "gross D↔R switching within previous D/R votes. "
+        + (compatible.minimumPercent === 0 ? "They do not require any switching; " : "")
+        + "the fitted amount depends on the transition prior. This is a feasibility range, "
+        + "not a confidence interval or a contribution to the electoral margin.", "caption");
+      identification.dataset.driverIdentification = row.id;
+      detail.append(identification);
+      const completeBounds = element("a", "Complete compatible-flow bounds, every witness table, inputs and code · ZIP");
+      completeBounds.href = "https://github.com/hanshanley/margin_of_error/releases/download/participation-flow-identification-20261111-01/complete-analysis.zip";
+      detail.append(completeBounds);
       if (comparison.status === "reported_source_comparison")
         detail.append(element("p", `${comparison.qualification} `
           + `Current native source clock: ${comparison.current_native_clock || "not supplied"}. `

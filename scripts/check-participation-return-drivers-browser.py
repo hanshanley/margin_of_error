@@ -16,6 +16,8 @@ assert not args.proof.exists()
 data = json.loads((ROOT / "data/participation-return-attribution/20261110-02/viewer-data.json").read_bytes())
 calibrated = json.loads((ROOT / "data/participation-return-attribution/20261111-03/return-constrained-viewer.json").read_bytes())
 fitted = {row["id"]: row for row in calibrated["rows"]}
+compatible = {row["id"]: row for row in json.loads(
+    (ROOT / "data/participation-return-attribution/20261111-04/gross-flow-bounds-viewer.json").read_bytes())["rows"]}
 cases = []
 with sync_playwright() as runtime:
     browser = runtime.chromium.launch()
@@ -37,6 +39,12 @@ with sync_playwright() as runtime:
             expect(office).to_be_enabled(timeout=90000)
             assert root.locator("[data-saved-calibrated]").count() == 113
             assert root.locator("[data-saved-driver]").count() == 113
+            assert root.locator("[data-saved-switching-bounds]").count() == 113
+            for identity, value in compatible.items():
+                expected = "Unavailable" if value["bounds"] is None else (
+                    f'{float(value["bounds"]["switching"]["lower_percent"]):.1f}% to '
+                    f'{float(value["bounds"]["switching"]["upper_percent"]):.1f}%')
+                expect(root.locator(f'[data-saved-switching-bounds="{identity}"]')).to_have_text(expected)
             for name in ("house", "senate", "governor"):
                 office.select_option(name)
                 state.select_option("TX")
@@ -77,8 +85,15 @@ with sync_playwright() as runtime:
                     if fitted[row["id"]]["point"]:
                         expect(summary).to_contain_text(f'{row["reported_comparison"]["reported_change_pp"]:+.2f} pp reported swing')
                         expect(summary).to_contain_text("Fitted scenario")
+                        expect(summary).to_contain_text("The same totals also permit zero switching.")
+                        limits = compatible[row["id"]]["bounds"]["switching"]
+                        identification = root.locator(f'[data-driver-identification="{row["id"]}"]')
+                        expect(identification).to_contain_text(
+                            f'{float(limits["lower_percent"]):.1f}% to {float(limits["upper_percent"]):.1f}%')
+                        expect(identification).to_contain_text("not a confidence interval")
                     else:
                         expect(summary).to_contain_text("Reported swing unavailable")
+                        expect(root.locator("[data-driver-identification]")).to_have_count(0)
                     expect(summary).not_to_contain_text("other / unallocated")
                 state.select_option("TX")
                 root.locator('.driver-map path[data-state-code="MN"]').click()
@@ -90,6 +105,9 @@ with sync_playwright() as runtime:
                     details.locator("summary").click()
                 expect(root.locator("[data-driver-detail]")).to_contain_text("nine")
                 expect(root.locator("[data-driver-detail]")).to_contain_text("keep party choice")
+                if name == "house":
+                    root.locator("[data-driver-detail]").screenshot(
+                        path=str(args.proof.with_suffix(f".house-detail-{width}.png")))
                 details.locator("summary").click()
                 cases.append(dict(width=width, office=name, exact_state_view_values=checked,
                     all_office_state_summaries=len(rows), actual_pointer_selection=True,
@@ -102,9 +120,20 @@ with sync_playwright() as runtime:
             expect(page.locator("#tab-precincts")).to_have_count(0)
             assert not errors, errors
             page.close()
+        plain = browser.new_page(java_script_enabled=False)
+        assert plain.goto(args.base_url.rstrip("/") + "/voter-participation/").ok
+        assert plain.locator("[data-saved-switching-bounds]").count() == 113
+        for identity, value in compatible.items():
+            expected = "Unavailable" if value["bounds"] is None else (
+                f'{float(value["bounds"]["switching"]["lower_percent"]):.1f}% to '
+                f'{float(value["bounds"]["switching"]["upper_percent"]):.1f}%')
+            expect(plain.locator(f'[data-saved-switching-bounds="{identity}"]')).to_have_text(expected)
+        plain.close()
     finally:
         browser.close()
 proof = dict(status="passed_all_state_office_return_constrained_maps", base_url=args.base_url,
-    cases=cases, valid_data_overrides=False, fit_not_independent_behavioral_validation=True)
+    cases=cases, valid_data_overrides=False, fit_not_independent_behavioral_validation=True,
+    exact_gross_switching_bounds_and_holds=113, no_js_bounds_and_holds_verified=True,
+    all_89_central_frames_allow_zero_switching=True, no_new_fitted_models=True)
 args.proof.write_text(json.dumps(proof, indent=2, sort_keys=True) + "\n")
 print(json.dumps(proof))
