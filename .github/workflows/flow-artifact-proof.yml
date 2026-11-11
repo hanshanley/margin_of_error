@@ -1,0 +1,32 @@
+name: Verify exact flow-bound Pages artifact
+on:
+  push:
+    branches: [diagnostic/flow-artifact-20261111]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Await successful existing Pages run
+        run: python3 .github/flow-wait-pages.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - uses: actions/download-artifact@v5
+        with:
+          name: github-pages
+          path: pages-artifact
+          run-id: 43117213469
+          github-token: ${{ github.token }}
+      - name: Verify native tar limits, source assets and exact production
+        run: python3 .github/flow-verify-artifact.py
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: flow-artifact-production-proof
+          path: artifact-proof/
