@@ -1,0 +1,105 @@
+{
+  "family_labels": {
+    "accepted_ridge_multinomial": "Multinomial ridge \u00b7 accepted baseline",
+    "extra_randomized_trees": "Extra-randomized trees",
+    "histogram_gradient_boosting": "Histogram gradient boosting"
+  },
+  "source_validation": [
+    {
+      "current_returns_used_for_fit_or_selection": false,
+      "family": "accepted_ridge_multinomial",
+      "label": "Multinomial ridge \u00b7 accepted baseline",
+      "role": "house24_bridge",
+      "source_weighted_log_loss": 0.2244446505394057,
+      "source_weighted_multiclass_brier": 0.09899594794884828
+    },
+    {
+      "current_returns_used_for_fit_or_selection": false,
+      "family": "accepted_ridge_multinomial",
+      "label": "Multinomial ridge \u00b7 accepted baseline",
+      "role": "house26_response",
+      "source_weighted_log_loss": 0.47895890965318244,
+      "source_weighted_multiclass_brier": 0.22950076386360704
+    },
+    {
+      "current_returns_used_for_fit_or_selection": false,
+      "family": "accepted_ridge_multinomial",
+      "label": "Multinomial ridge \u00b7 accepted baseline",
+      "role": "historical_transfer",
+      "source_weighted_log_loss": 0.7417359306955971,
+      "source_weighted_multiclass_brier": 0.3596046786547033
+    },
+    {
+      "current_returns_used_for_fit_or_selection": false,
+      "family": "histogram_gradient_boosting",
+      "label": "Histogram gradient boosting",
+      "role": "house24_bridge",
+      "source_weighted_log_loss": 0.22240608138202914,
+      "source_weighted_multiclass_brier": 0.09901986341673957
+    },
+    {
+      "current_returns_used_for_fit_or_selection": false,
+      "family": "histogram_gradient_boosting",
+      "label": "Histogram gradient boosting",
+      "role": "house26_response",
+      "source_weighted_log_loss": 0.4758928583373844,
+      "source_weighted_multiclass_brier": 0.2270186852110797
+    },
+    {
+      "current_returns_used_for_fit_or_selection": false,
+      "family": "histogram_gradient_boosting",
+      "label": "Histogram gradient boosting",
+      "role": "historical_transfer",
+      "source_weighted_log_loss": 0.7481931201767114,
+      "source_weighted_multiclass_brier": 0.3606129562308658
+    },
+    {
+      "current_returns_used_for_fit_or_selection": false,
+      "family": "extra_randomized_trees",
+      "label": "Extra-randomized trees",
+      "role": "house24_bridge",
+      "source_weighted_log_loss": 0.22737526767403685,
+      "source_weighted_multiclass_brier": 0.09975940266549016
+    },
+    {
+      "current_returns_used_for_fit_or_selection": false,
+      "family": "extra_randomized_trees",
+      "label": "Extra-randomized trees",
+      "role": "house26_response",
+      "source_weighted_log_loss": 0.5867766938982473,
+      "source_weighted_multiclass_brier": 0.23852383182348438
+    },
+    {
+      "current_returns_used_for_fit_or_selection": false,
+      "family": "extra_randomized_trees",
+      "label": "Extra-randomized trees",
+      "role": "historical_transfer",
+      "source_weighted_log_loss": 0.8043241191154062,
+      "source_weighted_multiclass_brier": 0.35962708359203877
+    }
+  ],
+  "summary": {
+    "Democratic_two_party_share_MAE_pp": {
+      "accepted_ridge_multinomial": 3.0634991351555776,
+      "extra_randomized_trees": 3.0317870230928565,
+      "histogram_gradient_boosting": 2.871557714231276
+    },
+    "baseline_fits_or_simulations_repeated": false,
+    "families": [
+      "accepted_ridge_multinomial",
+      "histogram_gradient_boosting",
+      "extra_randomized_trees"
+    ],
+    "family_dispersion_decisions": 300,
+    "margin_MAE_pp": {
+      "accepted_ridge_multinomial": 6.126998270311155,
+      "extra_randomized_trees": 6.063574046185713,
+      "histogram_gradient_boosting": 5.743115428462552
+    },
+    "preferred_family": "accepted_ridge_multinomial",
+    "qualified_comparisons_per_family": 48,
+    "raw_respondents_exported": false,
+    "state_decisions": 150,
+    "states_per_family": 50
+  }
+}

@@ -22,6 +22,16 @@ export const demographicLabels = {
 const finite = value => typeof value === "number" && Number.isFinite(value);
 const close = (a, b) => finite(a) && finite(b) && Math.abs(a-b) < 1e-7;
 let cached, cachedPin;
+export const norcFamilies = [
+  ["accepted_ridge_multinomial", "Multinomial ridge · accepted baseline"],
+  ["histogram_gradient_boosting", "Histogram gradient boosting"],
+  ["extra_randomized_trees", "Extra-randomized trees"],
+];
+export const norcContributionScale = units => {
+  if (units === "margin") return 1;
+  if (units === "democratic_two_party_share") return .5;
+  throw new Error("Unknown House change denominator");
+};
 
 export function validateNorcHouse(data) {
   if (data?.contract !== "participation.norc_house_demographic_model.v1"
@@ -94,10 +104,51 @@ export function validateNorcHouse(data) {
   return data;
 }
 
+export function validateNorcFamilies(data) {
+  if (data?.contract !== "participation.house_model_families.v1"
+      || data.no_independent_behavioral_identification !== true
+      || data.family_spread_is_not_confidence_interval !== true
+      || Object.keys(data.families || {}).length !== 3 || data.source_validation?.length !== 9)
+    throw new Error("Unqualified model-family comparison");
+  const baseline = data.families.accepted_ridge_multinomial;
+  for (const [family] of norcFamilies) {
+    const model = validateNorcHouse(data.families[family]);
+    for (const row of model.rows) {
+      const original = baseline.rows.find(value=>value.state_code===row.state_code);
+      if (JSON.stringify(row.reported_comparison) !== JSON.stringify(original.reported_comparison)
+          || JSON.stringify(row.groups.map(g=>[g.dimension,g.group,g.label,g.available])) !==
+            JSON.stringify(original.groups.map(g=>[g.dimension,g.group,g.label,g.available])))
+        throw new Error("Family comparison substituted endpoints or disclosure masks");
+    }
+  }
+  const metrics = new Map();
+  for (const row of data.source_validation) {
+    const key=row.family+"|"+row.role;
+    if (metrics.has(key) || !norcFamilies.some(([family])=>family===row.family)
+        || !["house24_bridge","house26_response","historical_transfer"].includes(row.role)
+        || !finite(row.source_weighted_log_loss) || row.source_weighted_log_loss<0
+        || !finite(row.source_weighted_multiclass_brier) || row.source_weighted_multiclass_brier<0
+        || row.current_returns_used_for_fit_or_selection!==false)
+      throw new Error("Invalid source-only family validation");
+    metrics.set(key,row);
+  }
+  const reference=metrics.get("accepted_ridge_multinomial|historical_transfer");
+  const current=metrics.get("accepted_ridge_multinomial|house26_response");
+  const eligible=norcFamilies.map(([family])=>family).filter(family=>{
+    const historical=metrics.get(family+"|historical_transfer"),response=metrics.get(family+"|house26_response");
+    return historical.source_weighted_log_loss<=reference.source_weighted_log_loss
+      && historical.source_weighted_multiclass_brier<=reference.source_weighted_multiclass_brier
+      && response.source_weighted_multiclass_brier<=current.source_weighted_multiclass_brier;
+  }).sort((a,b)=>metrics.get(a+"|historical_transfer").source_weighted_log_loss
+      -metrics.get(b+"|historical_transfer").source_weighted_log_loss);
+  if (data.preferred_family!==eligible[0]) throw new Error("Model chosen using undeclared criteria");
+  return data;
+}
+
 export async function loadNorcHouse(receipt) {
   if (!receipt || !/^[a-f0-9]{64}$/.test(receipt.sha256)
       || !Number.isSafeInteger(receipt.bytes) || receipt.bytes<=0 || receipt.bytes>10_000_000
-      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01)\/viewer-data\.json$/.test(receipt.url))
+      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01|house-model-families\/20261112-01)\/viewer-data\.json$/.test(receipt.url))
     throw new Error("Unpinned NORC model input");
   const pin = `${receipt.url}|${receipt.sha256}|${receipt.bytes}`;
   if (!cached || cachedPin !== pin) {
@@ -111,7 +162,8 @@ export async function loadNorcHouse(receipt) {
         const digest = Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes)),
           v=>v.toString(16).padStart(2,"0")).join("");
         if (bytes.byteLength !== receipt.bytes || digest !== receipt.sha256) throw new Error("NORC model checksum mismatch");
-        return validateNorcHouse(JSON.parse(new TextDecoder().decode(bytes)));
+        const data=JSON.parse(new TextDecoder().decode(bytes));
+        return data.contract==="participation.house_model_families.v1"?validateNorcFamilies(data):validateNorcHouse(data);
       } finally { clearTimeout(timer); }
     })().catch(error=>{if(cachedPin===pin) cached=undefined;throw error;});
   }
@@ -135,20 +187,22 @@ export function norcEstimate(row, group="") {
   return selected?.available ? selected : null;
 }
 
-export function norcMapValue(row, key, group="") {
+export function norcMapValue(row, key, group="", units="margin") {
   if (!row) return null;
-  if (key === "reported_total") return row.source_comparison_available ? row.reported_comparison.reported_change_pp : null;
+  const factor=norcContributionScale(units);
+  if (key === "reported_total") return row.source_comparison_available ? row.reported_comparison.reported_change_pp*factor : null;
   const value = norcEstimate(row,group);
   if (!value) return null;
-  if (key === "modeled_nonparticipation") return value.net_participation_pp;
+  if (key === "modeled_nonparticipation") return value.net_participation_pp*factor;
   if (key === "retaining") return value.gross_outcomes?.retaining == null ? null : value.gross_outcomes.retaining*100;
-  return value.contributions_pp[key] ?? null;
+  return value.contributions_pp[key] == null ? null : value.contributions_pp[key]*factor;
 }
 
-export function roundedNorcContributions(value) {
-  const raw = norcTerms.map(([key])=>({key,scaled:value.contributions_pp[key]*100}));
+export function roundedNorcContributions(value,units="margin") {
+  const factor=norcContributionScale(units);
+  const raw = norcTerms.map(([key])=>({key,scaled:value.contributions_pp[key]*factor*100}));
   const output = Object.fromEntries(raw.map(({key,scaled})=>[key,Math.floor(scaled)]));
-  const total = value.total_contribution_pp ?? value.total_change_pp;
+  const total = (value.total_contribution_pp ?? value.total_change_pp)*factor;
   const target = Math.round(Number(total.toFixed(2))*100);
   const count = target-Object.values(output).reduce((s,v)=>s+v,0);
   if (count < 0 || count > raw.length) throw new Error("Invalid NORC contribution rounding");
@@ -163,9 +217,13 @@ const element = (tag,text,className="") => {
 const pp=value=>`${value>0?"+":""}${value.toFixed(2)} pp`;
 const margin=value=>`${value<0?"R":"D"}+${Math.abs(value).toFixed(2)}`;
 
-export function renderNorcSelection(row, group, name, summary, detail) {
+export function renderNorcSelection(row, group, name, summary, detail,options={}) {
+  const units=options.units || "margin",factor=norcContributionScale(units);
+  const signed=value=>pp(value*factor),share=units==="democratic_two_party_share";
+  const unitLabel=share?"Democratic two-party share change":"margin change";
+  const endpoint=value=>share?`${(50+value/2).toFixed(2)}% Democratic two-party share`:margin(value);
   const estimate=norcEstimate(row,group), selected=group ? row?.groups.find(g=>g.dimension+"|"+g.group===group) : null;
-  summary.replaceChildren(element("h3",`${name} · House margin change`));
+  summary.replaceChildren(element("h3",`${name} · House ${unitLabel}`));
   delete summary.dataset.norcState;delete summary.dataset.norcGroup;
   detail.replaceChildren();
   if (!row) {
@@ -174,16 +232,20 @@ export function renderNorcSelection(row, group, name, summary, detail) {
   }
   const point=row.point;
   summary.append(element("p",row.source_comparison_available
-    ? `2024 ${margin(row.reported_comparison.previous_margin_pp)} → held 2026 ${margin(row.reported_comparison.current_margin_pp)}. ${pp(point.total_change_pp)} change in the Democratic–Republican margin.`
+    ? `2024 ${endpoint(row.reported_comparison.previous_margin_pp)} → held 2026 ${endpoint(row.reported_comparison.current_margin_pp)}. ${signed(point.total_change_pp)} ${share?"change in Democratic two-party share":"change in the Democratic–Republican margin"}.`
     : `Observed House comparison unavailable: ${row.reported_comparison.reason} The NORC source scenario is shown separately, not as a recorded result.`,
   "driver-endpoints"));
+  if (row.source_comparison_available) summary.append(element("p",
+    `Democratic two-party share: ${(50+point.previous_margin_pp/2).toFixed(2)}% → ${(50+point.current_margin_pp/2).toFixed(2)}%, `
+    +`${pp(point.total_change_pp/2)} change. D−R margin change: ${pp(point.total_change_pp)}. `
+    +"Two-party shares exclude Other; neither is population turnout.","caption"));
   if (typeof row.reported_comparison.current_native_control_scope_qualification === "string")
     summary.append(element("p",row.reported_comparison.current_native_control_scope_qualification,"caption"));
   if (!estimate) {
     summary.append(element("p",`${selected?.label || "This source group"} is withheld or unsupported in this state. No other group or state is substituted.`,"caption"));
     summary.hidden=false; detail.hidden=true; return;
   }
-  const rounded=roundedNorcContributions(estimate);
+  const rounded=roundedNorcContributions(estimate,units);
   const table=element("table"), body=element("tbody");
   table.append(element("caption",group
     ? `${selected.label}: contribution to the statewide modeled shift, not this group's vote share`
@@ -193,7 +255,7 @@ export function renderNorcSelection(row, group, name, summary, detail) {
     ["Net participation",Number((rounded.entry+rounded.exit).toFixed(2)),"net_participation"],
     ["Other-party choice",rounded.other_choice,"other_choice"],
     ["Unresolved responses",rounded.unresolved,"unresolved"],
-    [group?"Group contribution":"Modeled margin change",estimate.total_contribution_pp,"total"],
+    [group?"Group contribution":`Modeled ${unitLabel}`,estimate.total_contribution_pp*factor,"total"],
   ]) {
     const tr=element("tr"), th=element("th",label);th.scope="row";
     const td=element("td",pp(value),"numeric");td.dataset.norcMechanism=key;
@@ -203,10 +265,11 @@ export function renderNorcSelection(row, group, name, summary, detail) {
   const wrap=element("div",null,"table-wrap");wrap.append(table);
   summary.append(wrap,element("p",
     `Net participation includes ${pp(rounded.exit)} from modeled nonparticipation and ${pp(rounded.entry)} from entry/return. `
-    +"Positive contributions move the margin toward Democrats; negative contributions move it toward Republicans. "
+    +"Positive contributions move the result toward Democrats; negative contributions move it toward Republicans. "
     +"Retention, switching and nonparticipation are learned from NORC responses; reported results constrain the reconstruction, not its validation.",
     "caption"));
   summary.dataset.norcState=row.state_code;summary.dataset.norcGroup=group;
+  summary.dataset.norcUnits=units;summary.dataset.norcFamily=options.family || "accepted_ridge_multinomial";
   const dimension=selected?.dimension || "AGE6";
   const groupTable=element("table"), groupBody=element("tbody"), head=element("thead"), headings=element("tr");
   groupTable.append(element("caption",`${demographicLabels[dimension]} breakdown · rows add to the state; different demographic dimensions overlap`));
@@ -217,7 +280,7 @@ export function renderNorcSelection(row, group, name, summary, detail) {
     tr.dataset.norcGroupRow=g.dimension+"|"+g.group;
     const values=g.available ? [g.contributions_pp.switching,g.net_participation_pp,
       g.contributions_pp.other_choice+g.contributions_pp.unresolved,g.total_contribution_pp] : [null,null,null,null];
-    tr.append(th,...values.map(v=>element("td",v===null?"Unavailable":pp(v),"numeric")));groupBody.append(tr);
+    tr.append(th,...values.map(v=>element("td",v===null?"Unavailable":signed(v),"numeric")));groupBody.append(tr);
   }
   groupTable.append(groupBody);
   const grouped=element("div",null,"table-wrap");grouped.append(groupTable);
@@ -235,15 +298,39 @@ export function renderNorcSelection(row, group, name, summary, detail) {
   flows.append(flowBody);
   const flowWrap=element("div",null,"table-wrap");flowWrap.append(flows);detail.append(flowWrap);
   const ranges=estimate.sensitivity_ranges_pp;
-  if (ranges) detail.append(element("p",`Assumption range: switching ${pp(ranges.switching.minimum)} to ${pp(ranges.switching.maximum)}; `
-    +`net participation ${pp(ranges.net_participation.minimum)} to ${pp(ranges.net_participation.maximum)}. `
+  if (ranges) detail.append(element("p",`Assumption range: switching ${signed(ranges.switching.minimum)} to ${signed(ranges.switching.maximum)}; `
+    +`net participation ${signed(ranges.net_participation.minimum)} to ${signed(ranges.net_participation.maximum)}. `
     +"These vary accounting-frame size and latent House-choice affinity; they are not confidence intervals.","caption"));
   if (row.before_current_party_conditioning) {
     const check=row.before_current_party_conditioning;
-    detail.append(element("p",`Before conditioning on current party totals, the NORC model projects ${margin(check.current_margin_pp)}; `
-      +`the observed result is ${margin(row.reported_comparison.current_margin_pp)}. `
-      +`The ${pp(check.prediction_error_observed_minus_predicted_pp)} prediction gap is model error, not another behavioral mechanism.`,
+    detail.append(element("p",`Before conditioning on current party totals, the NORC model projects ${endpoint(check.current_margin_pp)}; `
+      +`the observed result is ${endpoint(row.reported_comparison.current_margin_pp)}. `
+      +`The ${signed(check.prediction_error_observed_minus_predicted_pp)} prediction gap is model error, not another behavioral mechanism.`,
     "caption"));
+  }
+  if (options.comparison) {
+    const table=element("table"),head=element("thead"),labels=element("tr"),body=element("tbody");
+    table.dataset.norcFamilyComparison=row.state_code;
+    table.append(element("caption",`Three model families · ${group?"same selected group; ":""}${unitLabel} contributions`));
+    for (const label of ["Model","Switching","Net participation","State prediction error","Kept party"])
+      labels.append(element("th",label));
+    head.append(labels);table.append(head);
+    for (const [family,label] of norcFamilies) {
+      const state=options.comparison.families[family].rows.find(r=>r.state_code===row.state_code);
+      const value=norcEstimate(state,group),tr=element("tr"),th=element("th",label);th.scope="row";
+      const error=state.before_current_party_conditioning?.prediction_error_observed_minus_predicted_pp;
+      tr.dataset.norcFamilyRow=family;
+      tr.append(th,element("td",value?signed(value.contributions_pp.switching):"Unavailable","numeric"),
+        element("td",value?signed(value.net_participation_pp):"Unavailable","numeric"),
+        element("td",error==null?"Unavailable":signed(error),"numeric"),
+        element("td",value?.gross_outcomes?`${(100*value.gross_outcomes.retaining).toFixed(1)}%`:"Unavailable","numeric"));
+      body.append(tr);
+    }
+    table.append(body);
+    const wrap=element("div",null,"table-wrap");wrap.append(table);detail.append(wrap,
+      element("p","All three use the same source records, held endpoints, frame/affinity settings and simulation seeds. "
+        +"Family spread is model sensitivity, not a confidence interval. Matching observed totals is imposed and does not identify behavior. "
+        +"Retained-voter percentages and state prediction errors use their own stated denominators.","caption"));
   }
   detail.append(element("p",
     "The 2024 House baseline is bridged from AP/NORC's actual President/House association and recalled 2022 House choice. "

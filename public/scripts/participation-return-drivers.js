@@ -3,7 +3,7 @@ import { participationDownload } from "./participation-downloads.js";
 import { calibratedTerms, validateCalibratedSwing, calibratedMapValue, roundedContributions, switchingConstraintBounds } from "./participation-calibrated-swing.js";
 import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
   scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
-import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection } from "./participation-norc-house.js";
+import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection, norcFamilies } from "./participation-norc-house.js";
 
 export const effectTerms = [
   ["switching", "Switching", "#3e7d84"],
@@ -144,6 +144,8 @@ export async function initializeReturnDrivers() {
     const view = root.querySelector("[data-driver-view]");
     const stateSelect = root.querySelector("[data-driver-state]");
     const group = root.querySelector("[data-driver-group]");
+    const familySelect = root.querySelector("[data-driver-family]");
+    const unitsSelect = root.querySelector("[data-driver-units]");
     const detail = root.querySelector("[data-driver-detail]");
     const summary = root.querySelector("[data-driver-summary]");
     const response = await fetch(participationDownload("/voter-participation/data/states.geojson"));
@@ -155,7 +157,8 @@ export async function initializeReturnDrivers() {
     for (const item of items) names[item.feature.properties.STUSAB] ||= item.feature.properties.NAME;
     const codes = items.map(item => item.feature.properties.STUSAB).sort((a, b) => names[a].localeCompare(names[b]));
     let selectedCode = "TX";
-    let scenarios, norc, hitObserver, groupKind="", generation = 0;
+    let scenarios, norc, norcComparison, norcFamily, hitObserver, groupKind="", generation = 0;
+    const norcUnits=()=>unitsSelect?.value || "margin";
     const legacyMapNote = root.querySelector(".driver-map-note").cloneNode(true);
     stateSelect.replaceChildren(new Option("Select a state on the map…", ""),
       ...codes.map(code => new Option(names[code], code)));
@@ -332,7 +335,8 @@ export async function initializeReturnDrivers() {
       else if (isScenarioView(view.value)) { detail.hidden = true; summary.hidden = true; }
       else if (office.value==="house" && payload.norc_source) {
         if (norc && code) renderNorcSelection(norc.rows.find(r=>r.state_code===code),
-          view.value==="reported_total"?"":group.value,names[code],summary,detail);
+          view.value==="reported_total"?"":group.value,names[code],summary,detail,
+          {units:norcUnits(),family:norcFamily,comparison:norcComparison});
         else { summary.replaceChildren();detail.replaceChildren();summary.hidden=true;detail.hidden=true; }
       }
       else if (row) select(row);
@@ -349,6 +353,14 @@ export async function initializeReturnDrivers() {
     const render = async () => {
       const current = ++generation, scenario = isScenarioView(view.value);
       const norcMode=office.value==="house" && !scenario && Boolean(payload.norc_source);
+      if (familySelect) {
+        familySelect.closest("label").hidden=!norcMode || Boolean(norc && !norcComparison);
+        familySelect.disabled=!norcComparison;
+      }
+      if (unitsSelect) {
+        unitsSelect.closest("label").hidden=!norcMode;
+        unitsSelect.disabled=!norc || view.value==="retaining";
+      }
       root.querySelector("[data-driver-group-control]").hidden = !scenario && !norcMode;
       root.querySelector(".driver-controls").dataset.scenarios = String(scenario || norcMode);
       if (norcMode && !norc) {
@@ -357,7 +369,16 @@ export async function initializeReturnDrivers() {
         try {
           const loaded=await loadNorcHouse(payload.norc_source);
           if (current!==generation) return;
-          norc=loaded;
+          if (loaded.contract==="participation.house_model_families.v1") {
+            norcComparison=loaded;
+            norcFamily=loaded.preferred_family;
+            if (familySelect) {
+              familySelect.replaceChildren(...norcFamilies.map(([key,label])=>new Option(label,key)));
+              familySelect.value=norcFamily;familySelect.disabled=false;
+            }
+            norc=loaded.families[norcFamily];
+          } else norc=loaded;
+          if (unitsSelect) unitsSelect.disabled=view.value==="retaining";
         } catch (error) {
           if (current!==generation) return;
           status.textContent=`NORC House model unavailable: ${error.message}. No older fitted model is substituted.`;
@@ -388,15 +409,19 @@ export async function initializeReturnDrivers() {
       const byCode = new Map(all.map(row => [row.state_code, row]));
       const norcByCode=norcMode?new Map(norc.rows.map(r=>[r.state_code,r])):null;
       const retention=norcMode && view.value==="retaining";
+      const comparedModels=norcComparison?Object.values(norcComparison.families):[norc];
       const bound = retention ? 100 : norcMode ? Math.max(5,Math.ceil(Math.max(0,
-        ...norc.rows.flatMap(row=>norcViews.filter(([key])=>key!=="retaining")
-          .map(([key])=>Math.abs(norcMapValue(row,key,group.value)??0))))/5)*5)
+        ...comparedModels.flatMap(model=>model.rows.flatMap(row=>norcViews.filter(([key])=>key!=="retaining")
+          .map(([key])=>Math.abs(norcMapValue(row,key,group.value,norcUnits())??0)))))/5)*5)
         : scenario ? scenarioScale(Object.keys(scenarios.state_scenarios).map(code =>
         scenarioEstimate(scenarios, code, view.value, group.value)?.value ?? null)) : mapScale(all, calibration);
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
       status.textContent = norcMode ? `${norc.summary.return_anchored} House reconstructions use recorded endpoints; `
         +`${50-norc.summary.return_anchored} are NORC source scenarios with unavailable observed comparisons. `
-        +"Gray means unsupported, not zero. Demographic values contribute to the statewide shift."
+        +"Gray means unsupported, not zero. Demographic values contribute to the statewide shift. "
+        +(norcComparison?`${norcComparison.family_labels[norcFamily]}. `:"")
+        +(retention?"Retained-choice percentages keep their own denominator; change units do not apply."
+          :norcUnits()==="democratic_two_party_share"?"Change units: Democratic two-party share points.":"Change units: D−R margin points.")
         : scenario
         ? `${all.filter(row => scenarioEstimate(scenarios, row.state_code, view.value, group.value)).length} supported source scenarios in ${office.value} frames. `
           + "Gross source-weight shares, not swing contributions or measured staying home."
@@ -410,7 +435,8 @@ export async function initializeReturnDrivers() {
         ? "linear-gradient(to right,#f1eee6,#2c6c75)" : "";
       root.querySelector(".driver-map-key").setAttribute("aria-label", retention
         ? "Sequential modeled party-retention percentage scale" : scenario
-          ? "Sequential synthetic source-weight share scale" : "Shared signed margin-point scale");
+          ? "Sequential synthetic source-weight share scale" : norcMode && norcUnits()==="democratic_two_party_share"
+            ? "Shared signed Democratic two-party-share-change scale" : "Shared signed margin-point scale");
       const directions = root.querySelector(".driver-map-directions").children;
       directions[0].textContent = scenario || retention ? "Lower share" : "Republican direction";
       directions[1].textContent = scenario || retention ? "Higher share" : "Democratic direction";
@@ -418,7 +444,9 @@ export async function initializeReturnDrivers() {
       if (norcMode) note.textContent=retention
         ? "Modeled share of previous major-party choices assigned the same party. Retention is not a contribution to the change in margin."
         : "NORC-informed, return-constrained model estimates, not observed voter histories. Net participation combines modeled exits and entry/return. "
-          +"Each demographic dimension separately partitions its state; dimensions overlap and are not additive causes. No state model is spread onto precincts.";
+          +"Each demographic dimension separately partitions its state; dimensions overlap and are not additive causes. "
+          +(norcUnits()==="democratic_two_party_share"?"Democratic two-party share changes are half D−R margin changes; Other is outside that denominator. ":"")
+          +"Model-family differences are not confidence intervals. No state model is spread onto precincts.";
       else if (scenario) note.textContent = "Synthetic shares within recalled major-party source choices, not all voters, "
         + "electoral swing contributions or confirmed missing ballots. The five gross outcomes include Other and unresolved choices. "
         + "State models are not allocated to counties or precincts.";
@@ -429,23 +457,26 @@ export async function initializeReturnDrivers() {
         host.dataset.driverMap = key;
         root.querySelector("[data-driver-map-title]").textContent = label;
         root.querySelector("[data-driver-map-caption]").textContent = norcMode
-          ? key==="reported_total" ? "Observed same-office House margin change; no demographic vote shares are inferred."
-            : `${group.selectedOptions[0].textContent}. ${retention?"Share retaining party":"Contribution to statewide margin change"}. `
+          ? key==="reported_total" ? `Observed same-office House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change; no demographic vote shares are inferred.`
+            : `${group.selectedOptions[0].textContent}. ${retention?"Share retaining party":norcUnits()==="democratic_two_party_share"?"Contribution to statewide Democratic two-party-share change":"Contribution to statewide margin change"}. `
               +(key==="modeled_nonparticipation"?"Entry/return and modeled absence are included together.":"")
           : scenario
           ? `${group.selectedOptions[0].textContent}. Share of recalled major-party source weight; assumption-dependent, not identified histories.`
           : mapDescriptions[key];
         const svg = svgElement("svg", { viewBox: "0 0 1000 640", role: "group",
-          "aria-label": `${label}: ${retention ? "modeled percentages" : scenario ? "synthetic source-weight shares" : "signed margin points"} by state`, "data-scale": bound });
+          "aria-label": `${label}: ${retention ? "modeled percentages" : scenario ? "synthetic source-weight shares" : "signed percentage-point changes"} by state`, "data-scale": bound });
         for (const item of items) {
           const code = item.feature.properties.STUSAB, row = byCode.get(code);
-          const value = norcMode ? norcMapValue(norcByCode.get(code),key,group.value)
+          const value = norcMode ? norcMapValue(norcByCode.get(code),key,group.value,norcUnits())
             : scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key, calibration.get(row?.id));
           const normalized = value ?? null;
           const text = `${names[code]} · ${label}: ${normalized === null ? "no qualified comparison, group or model"
             : retention ? `${normalized.toFixed(1)}%` : scenario ? `${(normalized * 100).toFixed(1)}%` : signedPP(normalized)}. `
             + (retention ? "Modeled party-retention share, not a margin contribution."
-              : scenario ? "Synthetic source-weight share, not measured staying home." : "Margin points, not a vote share or turnout rate.");
+              : scenario ? "Synthetic source-weight share, not measured staying home."
+                : norcMode && norcUnits()==="democratic_two_party_share"
+                  ? "Change in Democratic two-party-share points, not population turnout."
+                  : "Margin points, not a vote share or turnout rate.");
           const path = svgElement("path", { d: item.d, fill: effectFill(normalized, bound),
             class: "driver-state", "fill-rule": "evenodd", "data-state-code": code,
             "data-model-value": normalized ?? "", ...(row ? { "data-model-id": row.id } : {}),
@@ -498,6 +529,11 @@ export async function initializeReturnDrivers() {
     view.addEventListener("change", render);
     stateSelect.addEventListener("change", () => selectState(stateSelect.value));
     group.addEventListener("change", render);
+    familySelect?.addEventListener("change",()=>{
+      if (!norcComparison?.families[familySelect.value]) return;
+      norcFamily=familySelect.value;norc=norcComparison.families[norcFamily];render();
+    });
+    unitsSelect?.addEventListener("change",render);
     window.addEventListener("participation:effects-state", event => {
       selectState(codes.find(code => names[code] === event.detail || code === event.detail) || "");
     });

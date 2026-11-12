@@ -8,7 +8,8 @@ type DriverRow = { id: string; state_code: string; office: string; components_pp
 		other_and_unallocated_pp: number | null; baseline_alignment_pp: number | null } };
 const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/viewer-data.json', 'utf8'));
 const calibration = JSON.parse(readFileSync('data/participation-return-attribution/20261111-03/return-constrained-viewer.json', 'utf8'));
-const norcSource = JSON.parse(readFileSync('data/participation-return-attribution/20261112-02/norc-receipt.json', 'utf8'));
+const norcSource = JSON.parse(readFileSync('data/participation-return-attribution/20261112-03/norc-receipt.json', 'utf8'));
+const families = JSON.parse(readFileSync('data/participation-return-attribution/20261112-03/family-summary.json', 'utf8'));
 const norcPoints = JSON.parse(readFileSync('data/participation-return-attribution/20261112-02/norc-point-summary.json', 'utf8'));
 type CalibratedRow = { id: string; state_code: string; office: string;
 	point: { reported_change_pp: number; components_pp: Record<string, number> } | null };
@@ -19,7 +20,7 @@ const validation = norcPoints.validation;
 const tests = [
 	['2024 House baseline bridge', validation.house_2024_bridge_without_demographics, validation.house_2024_bridge],
 	['2026 House response holdout', validation.current_2026_response_without_demographics, validation.current_2026_response],
-	['Untouched 2022 → 2024 transfer', validation.historical_transfer.without_demographics, validation.historical_transfer.with_demographics],
+	['2022 → 2024 transfer · now used in family selection', validation.historical_transfer.without_demographics, validation.historical_transfer.with_demographics],
 ];
 ---
 <section id="participation-return-drivers" class="participation-current" aria-labelledby="return-drivers-title">
@@ -52,6 +53,13 @@ const tests = [
 			<option value="">Overall source frame</option>
 		</select></label>
 		<label class="driver-state-control">State<select data-driver-state disabled><option value="">Loading state context…</option></select></label>
+		<label>House model<select data-driver-family disabled>
+			<option value="accepted_ridge_multinomial">Multinomial ridge · accepted baseline</option>
+		</select></label>
+		<label>Change units<select data-driver-units disabled>
+			<option value="margin">D−R margin points</option>
+			<option value="democratic_two_party_share">Democratic two-party-share points</option>
+		</select></label>
 	</div>
 	<p data-driver-status class="caption" role="status">Loading NORC House estimates; every saved state summary and complete download remains below.</p>
 	<div class="driver-maps">
@@ -82,8 +90,33 @@ const tests = [
 		It learns prior-choice and demographic associations jointly, rather than assigning each group the same party transitions.
 		CHEP recalls 2024 President, not House: the AP2024 President/House association and recalled 2022 House choice supply an explicit baseline bridge.</p>
 	<p class="caption">Source training does not use 2026 partisan return totals. Held-out NORC response tests,
-		an untouched 2022-to-2024 source-transfer test and the before-conditioning state prediction remain separate from endpoint reconstruction.
+		a 2022-to-2024 source-transfer test and the before-conditioning state prediction remain separate from endpoint reconstruction.
 		A match after conditioning on results is not independent validation.</p>
+	<p class="caption">Compare three fixed model families on the same respondents, holdouts, endpoints,
+		demographic disclosure masks, assumption grid and simulation seeds.
+		The preregistered source-only selection rule retains <strong>multinomial ridge</strong>.
+		Boosting slightly improves current-response prediction, but historical transfer worsens.
+		The lower return error does not override that rule. The historical test is now selection validation,
+		not an independent post-selection test. Model-family spread is not a confidence interval.</p>
+	<div class="table-wrap">
+		<table data-norc-family-validation><caption>All three model families · before conditioning on current party totals</caption>
+			<thead><tr><th>Family</th><th>Current-response log loss</th><th>Historical log loss</th>
+				<th>Historical Brier</th><th>State margin MAE (pp)</th><th>Democratic two-party-share MAE (pp)</th></tr></thead>
+			<tbody>{families.summary.families.map((family: string) => {
+				const current = families.source_validation.find((r: any) => r.family === family && r.role === 'house26_response');
+				const historical = families.source_validation.find((r: any) => r.family === family && r.role === 'historical_transfer');
+				return <tr data-norc-validation-family={family}><th scope="row">{families.family_labels[family]}</th>
+					{[current.source_weighted_log_loss, historical.source_weighted_log_loss,
+						historical.source_weighted_multiclass_brier, families.summary.margin_MAE_pp[family],
+						families.summary.Democratic_two_party_share_MAE_pp[family]]
+						.map(value => <td class="numeric">{value.toFixed(4)}</td>)}</tr>;
+			})}</tbody>
+		</table>
+	</div>
+	<p class="caption">A move from R+4 to D+12 is +16 margin points but +8 Democratic
+		<strong>two-party-share</strong> points. The change-unit control scales signed contributions,
+		assumption ranges and prediction errors consistently. Gross retention/switching percentages
+		keep their own denominator and are never halved. Map scales are shared across families.</p>
 	<p class="caption">The 2024 baseline now uses the official House Clerk candidate totals across all 435 districts,
 		including explicit same-nominee party lines but excluding blank, overvote and ranked-choice accounting.
 		This corrects 21 earlier baselines and adds 12 state comparisons without refitting NORC.
@@ -111,7 +144,7 @@ const tests = [
 		analysis permits zero D↔R switching in all 89 earlier central frames.
 		NORC-informed estimates add learned associations and assumptions, not identified causes.</p>
 	<div class="table-wrap">
-		<table data-norc-validation><caption>Prediction checks before return conditioning · lower scores are better</caption>
+		<table data-norc-validation><caption>Accepted ridge: demographic versus simpler source fits · lower scores are better</caption>
 			<thead><tr><th>Test</th><th>Log loss: prior/state only</th><th>With demographics</th>
 				<th>Brier: prior/state only</th><th>With demographics</th></tr></thead>
 			<tbody>{tests.map(([label, baseline, model]) => <tr><th scope="row">{label}</th>
@@ -186,6 +219,8 @@ const tests = [
 	</details>
 	<div class="download-links"><a href={receipt.url}>Complete historical returns, inputs, all models/scenarios, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href={norcSource.complete_download_url}>Complete NORC demographic House model: permitted fitted inputs, every state/group/seed/assumption query, code and tests · ZIP</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-model-families-20261112-01/complete-source-validation.csv">All nine source-validation comparisons · CSV</a> · <a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-model-families-20261112-01/complete-state-family-comparisons.csv">All 150 state/family decisions in both change units · CSV</a> · <a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-model-families-20261112-01/complete-family-dispersion.csv">All 300 mechanism/family-spread decisions · CSV</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-pa-house-native-controls-20261112-01/complete-analysis.zip">Previous accepted 48-comparison model and every query · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-norc-house-demographic-20261111-01/complete-analysis.zip">Archived original NORC model and complete queries · ZIP</a> · <a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-clerk-norc-endpoints-20261112-01/complete-analysis.zip">Previous 47-comparison snapshot · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-return-constrained-20261111-01/complete-analysis.zip">Complete return-constrained model, all 801 scenarios and transition cells, inputs, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-flow-identification-20261111-01/complete-analysis.zip">Complete compatible-flow bounds, all 3,824 extremal tables, original inputs, code and checksums · ZIP</a></div>

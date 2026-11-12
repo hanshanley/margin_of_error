@@ -11,7 +11,7 @@ parser.add_argument("--proof",type=Path,required=True)
 args=parser.parse_args()
 assert not args.proof.exists()
 oracle=json.loads((ROOT/"data/participation-return-attribution/20261112-02/norc-test-oracle.json").read_bytes())
-receipt=json.loads((ROOT/"data/participation-return-attribution/20261112-02/norc-receipt.json").read_bytes())
+receipt=json.loads((ROOT/"data/participation-return-attribution/20261112-03/norc-receipt.json").read_bytes())
 rows={r["state_code"]:r for r in oracle["rows"]}
 url=args.base_url.rstrip("/")+"/voter-participation/?year=2026"
 fields=("reported_total","switching","modeled_nonparticipation","entry","exit","other_choice","unresolved","retaining")
