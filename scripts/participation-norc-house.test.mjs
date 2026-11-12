@@ -5,10 +5,10 @@ import { createHash } from "node:crypto";
 import { validateNorcHouse, norcGroups, norcEstimate, norcMapValue,
   roundedNorcContributions, norcTerms } from "../public/scripts/participation-norc-house.js";
 
-const bytes = readFileSync("data/participation-return-attribution/20261112-01/norc-test-oracle.json");
+const bytes = readFileSync("data/participation-return-attribution/20261112-02/norc-test-oracle.json");
 const source = JSON.parse(bytes);
 const fresh = () => structuredClone(source);
-const receipt = JSON.parse(readFileSync("data/participation-return-attribution/20261112-01/norc-receipt.json"));
+const receipt = JSON.parse(readFileSync("data/participation-return-attribution/20261112-02/norc-receipt.json"));
 
 test("all House mechanisms and separate demographic partitions reconcile to each state", () => {
   validateNorcHouse(source);

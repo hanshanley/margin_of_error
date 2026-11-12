@@ -10,8 +10,8 @@ parser.add_argument("--base-url",default="http://127.0.0.1:4397")
 parser.add_argument("--proof",type=Path,required=True)
 args=parser.parse_args()
 assert not args.proof.exists()
-oracle=json.loads((ROOT/"data/participation-return-attribution/20261112-01/norc-test-oracle.json").read_bytes())
-receipt=json.loads((ROOT/"data/participation-return-attribution/20261112-01/norc-receipt.json").read_bytes())
+oracle=json.loads((ROOT/"data/participation-return-attribution/20261112-02/norc-test-oracle.json").read_bytes())
+receipt=json.loads((ROOT/"data/participation-return-attribution/20261112-02/norc-receipt.json").read_bytes())
 rows={r["state_code"]:r for r in oracle["rows"]}
 url=args.base_url.rstrip("/")+"/voter-participation/?year=2026"
 fields=("reported_total","switching","modeled_nonparticipation","entry","exit","other_choice","unresolved","retaining")
@@ -103,6 +103,7 @@ with sync_playwright() as runtime:
                     expect(summary).to_contain_text("withheld or unsupported")
             assert dimensions=={"AGE6","RACETH5","EDUC","SEX","INCOME","RUCC"}
             group.select_option("")
+            scope_captures=0
             for code,row in rows.items():
                 state.select_option(code)
                 expect(summary).to_have_attribute("data-norc-state",code)
@@ -111,6 +112,12 @@ with sync_playwright() as runtime:
                     expect(summary).to_contain_text(f'{row["point"]["total_change_pp"]:+.2f} pp')
                 else:
                     expect(summary).to_contain_text("Observed House comparison unavailable")
+                qualification=row["reported_comparison"].get("current_native_control_scope_qualification")
+                if qualification:
+                    expect(summary).to_contain_text(qualification)
+                    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+                    summary.screenshot(path=str(args.proof.with_suffix(f".{code}-scope-{width}.png")))
+                    scope_captures+=1
                 path=root.locator(f'.driver-state[data-state-code="{code}"]')
                 assert path.evaluate("n=>n===n.parentNode.querySelector('path:last-of-type') && getComputedStyle(n).strokeWidth==='2.2px'")
             pointer=0
@@ -166,6 +173,9 @@ with sync_playwright() as runtime:
                 demographic_options=len(options),actual_pointer_selections=pointer,
                 selected_border_painted_last=True,complete_svg_screenshot=True,
                 prediction_error_separate=True,no_horizontal_overflow=True))
+            assert scope_captures==sum(bool(r["reported_comparison"].get(
+                "current_native_control_scope_qualification")) for r in rows.values())
+            cases[-1]["native_scope_qualification_cases"]=scope_captures
             page.close()
         plain=browser.new_page(java_script_enabled=False)
         assert plain.goto(url).ok

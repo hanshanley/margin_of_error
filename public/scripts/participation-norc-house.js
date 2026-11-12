@@ -97,7 +97,7 @@ export function validateNorcHouse(data) {
 export async function loadNorcHouse(receipt) {
   if (!receipt || !/^[a-f0-9]{64}$/.test(receipt.sha256)
       || !Number.isSafeInteger(receipt.bytes) || receipt.bytes<=0 || receipt.bytes>10_000_000
-      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01)\/viewer-data\.json$/.test(receipt.url))
+      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01)\/viewer-data\.json$/.test(receipt.url))
     throw new Error("Unpinned NORC model input");
   const pin = `${receipt.url}|${receipt.sha256}|${receipt.bytes}`;
   if (!cached || cachedPin !== pin) {
@@ -177,6 +177,8 @@ export function renderNorcSelection(row, group, name, summary, detail) {
     ? `2024 ${margin(row.reported_comparison.previous_margin_pp)} → held 2026 ${margin(row.reported_comparison.current_margin_pp)}. ${pp(point.total_change_pp)} change in the Democratic–Republican margin.`
     : `Observed House comparison unavailable: ${row.reported_comparison.reason} The NORC source scenario is shown separately, not as a recorded result.`,
   "driver-endpoints"));
+  if (typeof row.reported_comparison.current_native_control_scope_qualification === "string")
+    summary.append(element("p",row.reported_comparison.current_native_control_scope_qualification,"caption"));
   if (!estimate) {
     summary.append(element("p",`${selected?.label || "This source group"} is withheld or unsupported in this state. No other group or state is substituted.`,"caption"));
     summary.hidden=false; detail.hidden=true; return;
