@@ -389,6 +389,7 @@ function stateParticipationRows() {
     const participationLabel = row => row.participation_measure_label || row.participation_measure_literal;
     function currentCountDetail(host, row, county = false) {
       residentSource(row, county);
+      const missingCountScope = county ? "County total" : "Reporting-unit count";
       const approvedGeometry = row.maps_approved || ["MI", "NH", "MA"].includes(row.state_code)
         && state.currentPrecinctShapes.get(row.state_code)?.features.some(({ properties: p }) =>
           p.maps_approved && p.unit_key === row.unit_key && p.county_id === row.county_id);
@@ -397,9 +398,9 @@ function stateParticipationRows() {
         html("p", "selection-basis", row.ballots === null ? row.native_record?.source_scope_review?.startsWith("withheld_")
           ? "Counted-ballot total withheld · native counting scope unresolved"
           : row.native_record?.source_scope_review === "missing_declared_report"
-            ? "County total not supplied · no declared county report"
+            ? `${missingCountScope} not supplied · no declared source report`
             : row.native_record?.all_statistics_reported === "false"
-              ? "County total not supplied · incomplete native statistics" : "County total not supplied · select a source reporting unit"
+              ? `${missingCountScope} not supplied · incomplete native statistics` : `${missingCountScope} not supplied · source value remains unknown`
           : row.review_id ? `2026 ${participationLabel(row) || "ballots reported"} · not final/certified` : "2026 ballots reported · unofficial"),
         html("p", "selection-note", row.source_mode === "all_method_native_city_snapshot"
           ? "Native source counts only. Registered fields remain separate; no unique-person count or analysis turnout rate is qualified."
