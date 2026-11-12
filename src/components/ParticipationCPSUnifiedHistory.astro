@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { pointFor2002, pointOnlyGroups, pointSourceSHA256, validatePointSource } from '../../public/scripts/participation-cps-2002.js';
 import { pointFor1998, pointOnly1998Groups, pointSourceSHA256 as point1998SHA256, validate1998Points } from '../../public/scripts/participation-cps-1998.js';
+import { pointFor1996, pointSourceSHA256 as point1996SHA256, validate1996Points } from '../../public/scripts/participation-cps-1996.js';
 
 type Value = number[];
 type Display = { years: number[]; states: string[]; groups: string[]; values: Value[][][] };
@@ -19,9 +20,16 @@ const points = validatePointSource(JSON.parse(pointRaw.toString('utf8')));
 const point1998Raw = readFileSync('data/participation-cps-1998/20261111-01/points.json');
 if (createHash('sha256').update(point1998Raw).digest('hex') !== point1998SHA256) throw new Error('1998 source checksum differs');
 const points1998 = validate1998Points(JSON.parse(point1998Raw.toString('utf8')));
+const point1996Raw = readFileSync('data/participation-cps-1996/20261112-01/points.json');
+if (createHash('sha256').update(point1996Raw).digest('hex') !== point1996SHA256) throw new Error('1996 source checksum differs');
+const points1996 = validate1996Points(JSON.parse(point1996Raw.toString('utf8')));
 const groups = [...data.groups, ...pointOnlyGroups, ...pointOnly1998Groups];
+const groupLabel = (group: string) => group === 'Total' ? 'Overall'
+	: ['White (1998/2002 native category)', 'Black (1998/2002 native category)'].includes(group)
+		? group.replace('1998/2002', '1996/1998/2002') : group;
 const pointRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-2002-reported-points-20261111-01';
 const point1998Release = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-1998-state-points-20261111-01';
+const point1996Release = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-1996-state-points-20261112-01';
 const statuses: Record<number, string> = {
 	'-1': 'Not published (B or (B))', '-2': 'Withheld: small population base',
 	'-3': 'Zero or rounds to zero', '-4': 'Not supplied for this geography/year/bin',
@@ -38,7 +46,7 @@ const text = (value: Value) => value.length === 2
 		<p class="kicker">Participation over time · Census published estimates</p>
 		<h2 id="cps-unified-title">Follow one state and group across elections</h2>
 		<p>Explore reported voting in <strong>all 50 states and D.C.</strong> across{' '}
-			<strong>1998–2024</strong>, including midterms. The national benchmark includes D.C.
+			<strong>1996–2024</strong>, including midterms. The national benchmark includes D.C.
 			These are repeated cross-sections, <strong>not fixed-person cohorts</strong>,
 			candidate preference or 2026 outcomes.</p>
 	</header>
@@ -50,10 +58,10 @@ const text = (value: Value) => value.length === 2
 		</label>
 		<label for="cps-unified-group">Demographic view
 			<select id="cps-unified-group">
-				{groups.map((group, index) => <option value={index} data-history-group={group}>{group === 'Total' ? 'Overall' : group}</option>)}
+				{groups.map((group, index) => <option value={index} data-history-group={group}>{groupLabel(group)}</option>)}
 			</select>
 		</label>
-		<label for="cps-unified-election">Citizen-series elections
+		<label for="cps-unified-election">Election type
 			<select id="cps-unified-election">
 				<option value="all">Presidential and midterm</option>
 				<option value="presidential">Presidential only</option>
@@ -64,6 +72,23 @@ const text = (value: Value) => value.length === 2
 	<p id="cps-unified-selection" class="caption" aria-live="polite">
 		United States (including D.C.) · Overall. The national table and complete downloads
 		work without JavaScript; the three original all-state tables follow below.</p>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Separate 1996 source populations" data-cps-1996-table>
+		<table>
+			<caption>1996 presidential source points: adult and citizen populations kept separate.</caption>
+			<thead><tr><th scope="col">Population</th><th scope="col">Reported voting</th></tr></thead>
+			<tbody>{[['vap', 'All adults 18+'], ['cvap', 'Citizen adults 18+']].map(([frame, label]) => {
+				const point = pointFor1996(points1996, data.states[0], 'Total', frame === 'cvap');
+				return <tr data-cps-1996-frame={frame} data-rate={point.rate ?? ''} data-source-key={point.sourceKey}
+					data-voting-nonresponse={point.votingNonresponse ?? ''}>
+					<th scope="row">1996 · {label}</th><td>{point.text}</td></tr>;
+			})}</tbody>
+		</table>
+		<p class="caption">The 1996 citizen table supplies a national overall row and state male/female rows,
+			not state citizen totals or citizen race/age groups. Blank cells are not reconstructed.
+			Voting nonresponse is not reported nonvoting. Counts are rounded thousands, not sample sizes;
+			no uncertainty interval is supplied. Native White/Black include Hispanic origin and are not
+			modern race-alone groups. These points do not connect to the later citizen chart.</p>
+	</div>
 	<div class="table-wrap" tabindex="0" role="region" aria-label="Separate early midterm source points" data-cps-2002-table>
 		<table>
 			<caption>1998 and 2002 midterm source points: populations and source precision kept separate.</caption>
@@ -148,6 +173,8 @@ const text = (value: Value) => value.length === 2
 		<a href={`${pointRelease}/complete-point-decisions.csv`} data-cps-2002-download="points" download>All 832 source rows, including withheld points (CSV)</a>
 		<a href={`${point1998Release}/complete-analysis.zip`} data-cps-1998-download="complete" download>Complete 1998 points + comparisons + all original inputs + code (ZIP)</a>
 		<a href={`${point1998Release}/complete-metric-decisions.csv`} data-cps-1998-download="points" download>All 1,404 native metric decisions, including withheld points (CSV)</a>
+		<a href={`${point1996Release}/complete-analysis.zip`} data-cps-1996-download="complete" download>Complete 1996 points + response scenarios + all original inputs + code (ZIP)</a>
+		<a href={`${point1996Release}/complete-metric-decisions.csv`} data-cps-1996-download="points" download>All 4,576 native metric decisions, including unavailable cells (CSV)</a>
 	</div>
 	<p class="caption">Complete ZIP: {archive.bytes.toLocaleString('en-US')} bytes.
 		SHA-256: <code class="checksum">{archive.sha256}</code>.
@@ -157,6 +184,7 @@ const text = (value: Value) => value.length === 2
 <script>
 	import { load2002Points, pointFor2002 } from '../../public/scripts/participation-cps-2002.js';
 	import { load1998Points, pointFor1998 } from '../../public/scripts/participation-cps-1998.js';
+	import { load1996Points, pointFor1996 } from '../../public/scripts/participation-cps-1996.js';
 	const section = document.getElementById('participation-cps-unified-history');
 	const state = document.querySelector<HTMLSelectElement>('#cps-unified-state');
 	const group = document.querySelector<HTMLSelectElement>('#cps-unified-group');
@@ -170,6 +198,8 @@ const text = (value: Value) => value.length === 2
 		let pointFailed = false;
 		let point1998Data: Awaited<ReturnType<typeof load1998Points>> | null = null;
 		let point1998Failed = false;
+		let point1996Data: Awaited<ReturnType<typeof load1996Points>> | null = null;
+		let point1996Failed = false;
 		const updatePoints = () => {
 			if (pointTable) pointTable.hidden = election.value === 'presidential';
 			const geography = state.options[state.selectedIndex].text;
@@ -204,9 +234,29 @@ const text = (value: Value) => value.length === 2
 			row.dataset.sourceSe = point.standardError === null ? '' : String(point.standardError);
 			cell.textContent = point.text;
 		};
+		const update1996Points = () => {
+			const table = section.querySelector<HTMLElement>('[data-cps-1996-table]');
+			if (table) table.hidden = election.value === 'midterm';
+			section.querySelectorAll<HTMLTableRowElement>('[data-cps-1996-frame]').forEach(row => {
+				const cell = row.querySelector('td');
+				if (!cell) return;
+				if (!point1996Data) {
+					row.dataset.rate = ''; row.dataset.sourceKey = ''; row.dataset.votingNonresponse = '';
+					cell.textContent = point1996Failed ? '1996 source unavailable; use the complete download.' : 'Loading the 1996 source…';
+					return;
+				}
+				const point = pointFor1996(point1996Data, state.options[state.selectedIndex].text,
+					group.options[group.selectedIndex].dataset.historyGroup || '', row.getAttribute('data-cps-1996-frame') === 'cvap');
+				row.dataset.rate = point.rate === null ? '' : String(point.rate);
+				row.dataset.sourceKey = point.sourceKey;
+				row.dataset.votingNonresponse = point.votingNonresponse === null ? '' : String(point.votingNonresponse);
+				cell.textContent = point.text;
+			});
+		};
 		for (const select of [state, group, election]) {
 			select.addEventListener('change', updatePoints);
 			select.addEventListener('change', update1998Points);
+			select.addEventListener('change', update1996Points);
 		}
 		let pointStarted = false;
 		const startPoints = () => {
@@ -216,6 +266,8 @@ const text = (value: Value) => value.length === 2
 				.catch(() => { pointFailed = true; updatePoints(); });
 			load1998Points().then(data => { point1998Data = data; update1998Points(); })
 				.catch(() => { point1998Failed = true; update1998Points(); });
+			load1996Points().then(data => { point1996Data = data; update1996Points(); })
+				.catch(() => { point1996Failed = true; update1996Points(); });
 		};
 		const archive = section.closest('details');
 		if (!archive || archive.open) startPoints();
