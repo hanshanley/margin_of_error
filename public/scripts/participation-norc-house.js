@@ -6,7 +6,7 @@ export const norcTerms = [
   ["unresolved", "Unresolved responses"],
 ];
 export const norcViews = [
-  ["reported_total", "Observed House swing"],
+  ["reported_total", "Qualified reported House change"],
   ["switching", "Switching · NORC estimate"],
   ["modeled_nonparticipation", "Net participation · NORC estimate"],
   ["entry", "New / returning · NORC estimate"],
@@ -58,11 +58,31 @@ export function validateNorcHouse(data) {
       || !Array.isArray(data.rows) || data.rows.length !== 50)
     throw new Error("Unqualified NORC House model");
   const identities = new Set();
+  const policy=data.comparison_policy;
+  if (policy && (policy.contract!=="participation.house_comparability.v1"
+      || policy.all_districts_audited!==435 || policy.all_states_audited!==50
+      || policy.unchanged_major_party_coverage_required!==true
+      || policy.raw_aggregate_is_not_preference_swing!==true
+      || policy.native_source_counts_changed!==false))
+    throw new Error("Unqualified House contest-comparability policy");
   for (const row of data.rows) {
     if (!("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split(" ").includes(row.state_code))
         || identities.has(row.state_code) || row.office !== "house" || row.id !== row.state_code+"-house")
       throw new Error("Invalid NORC state identity");
     identities.add(row.state_code);
+    if (policy) {
+      const review=row.contest_comparability;
+      if (review?.state_code!==row.state_code || review.raw_aggregate_is_not_voter_preference_swing!==true
+          || review.common_source_id_is_not_statewide_estimate!==true
+          || review.common_source_id_boundary_stability_qualified!==false
+          || (row.source_comparison_available && (!review.like_for_like_statewide_source_comparison
+            || review.coverage_changed_districts.length || review.missing_count_districts.length
+            || review.multiple_same_party_nominee_districts.length)))
+        throw new Error("Incompatible House contests cannot constrain behavior");
+      if (row.source_comparison_available && ["previous","current"].some(phase=>
+        ["D","R","O"].some(party=>review[phase+"_counts"][party]!==row.reported_comparison[phase][party])))
+        throw new Error("Comparability audit changed native endpoint counts");
+    }
     if (!finite(row.point?.total_change_pp) || !close(row.point.current_margin_pp-row.point.previous_margin_pp,
       row.point.total_change_pp) || !close(norcTerms.reduce((s,[key])=>s+row.point.contributions_pp[key],0),
       row.point.total_change_pp) || !close(row.point.net_participation_pp,
@@ -213,9 +233,11 @@ export function validateNorcAssociation(data, original) {
 export async function loadNorcHouse(receipt) {
   if (!receipt || !/^[a-f0-9]{64}$/.test(receipt.sha256)
       || !Number.isSafeInteger(receipt.bytes) || receipt.bytes<=0 || receipt.bytes>10_000_000
-      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01|house-model-families\/20261112-01)\/viewer-data|house-fixed-copula\/20261112-01\/viewer-(?:attenuated|full))\.json$/.test(receipt.url))
+      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01|house-model-families\/20261112-01)\/viewer-data|house-fixed-copula\/20261112-01\/viewer-(?:attenuated|full)|house-comparability\/20261112-01\/viewer-(?:original|attenuated|full))\.json$/.test(receipt.url))
     throw new Error("Unpinned NORC model input");
-  const pin = `${receipt.url}|${receipt.sha256}|${receipt.bytes}`;
+  const requireComparability=receipt.contest_comparability_required===true
+    || receipt.url.includes("/data/house-comparability/");
+  const pin = `${receipt.url}|${receipt.sha256}|${receipt.bytes}|${requireComparability}`;
   if (!cached.has(pin)) {
     const promise = (async()=>{
       const controller = new AbortController(), timer = setTimeout(()=>controller.abort(),20_000);
@@ -228,6 +250,10 @@ export async function loadNorcHouse(receipt) {
         if (bytes.byteLength !== receipt.bytes || digest !== receipt.sha256) throw new Error("NORC model checksum mismatch");
         const data=JSON.parse(new TextDecoder().decode(bytes));
         const result=data.contract==="participation.house_model_families.v1"?validateNorcFamilies(data):validateNorcHouse(data);
+        if (requireComparability && (
+            result.comparison_policy?.contract!=="participation.house_comparability.v1"
+            || Object.values(result.families || {model:result}).some(model=>!model.comparison_policy)))
+          throw new Error("Required House comparability audit is missing; no legacy comparison substituted");
         const profile=receipt.url.match(/viewer-(attenuated|full)\.json$/)?.[1];
         if ((profile || result.association_profile) && result.association_profile?.profile!==profile)
           throw new Error("Association receipt and source profile differ");
@@ -257,7 +283,7 @@ export function norcEstimate(row, group="") {
 }
 
 export function norcMapValue(row, key, group="", units="margin") {
-  if (!row) return null;
+  if (!row || !row.source_comparison_available) return null;
   const factor=norcContributionScale(units);
   if (key === "reported_total") return row.source_comparison_available ? row.reported_comparison.reported_change_pp*factor : null;
   const value = norcEstimate(row,group);
@@ -295,16 +321,32 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   summary.replaceChildren(element("h3",`${name} · House ${unitLabel}`));
   delete summary.dataset.norcState;delete summary.dataset.norcGroup;
   delete summary.dataset.norcAssociation;
+  delete summary.dataset.norcHold;
   detail.replaceChildren();
   if (!row) {
     summary.append(element("p","D.C. has no NORC CHEP sample; no House transition estimate is invented.","caption"));
     summary.hidden=false; detail.hidden=true; return;
   }
   const point=row.point;
+  summary.dataset.norcFamily=options.family || "accepted_ridge_multinomial";
+  summary.dataset.norcUnits=units;
+  summary.dataset.norcAssociation=options.association?.profile || "original";
   summary.append(element("p",row.source_comparison_available
     ? `2024 ${endpoint(row.reported_comparison.previous_margin_pp)} → held 2026 ${endpoint(row.reported_comparison.current_margin_pp)}. ${signed(point.total_change_pp)} ${share?"change in Democratic two-party share":"change in the Democratic–Republican margin"}.`
-    : `Observed House comparison unavailable: ${row.reported_comparison.reason} The NORC source scenario is shown separately, not as a recorded result.`,
+    : `House comparison unavailable: ${row.reported_comparison.reason} No switching, absence or entry estimate is presented as an explanation of incompatible returns.`,
   "driver-endpoints"));
+  if (!row.source_comparison_available) {
+    const review=row.contest_comparability;
+    if (review) summary.append(element("p",
+      `Named Republican candidates: ${review.previous_named_R_districts}/${review.districts} districts in 2024; `
+      +`${review.current_named_R_districts}/${review.districts} in the held 2026 snapshot. `
+      +"Different ballot choices can change aggregate party margins without a corresponding voter-preference swing. "
+      +"Matching district IDs alone does not certify unchanged geography; a common-district subtotal is not a statewide estimate.",
+    "caption"));
+    summary.append(element("p","Native counts and source-only NORC scenarios remain in the complete download, explicitly separated from qualified election reconstructions.","caption"));
+    summary.dataset.norcState=row.state_code;summary.dataset.norcHold="true";
+    summary.hidden=false;detail.hidden=true;return;
+  }
   const association=options.association?.profile || "original";
   const associationLabel=norcAssociations.find(([key])=>key===association)?.[1] || "Original association";
   summary.dataset.norcAssociation=association;

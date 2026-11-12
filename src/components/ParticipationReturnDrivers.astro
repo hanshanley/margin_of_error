@@ -8,14 +8,17 @@ type DriverRow = { id: string; state_code: string; office: string; components_pp
 		other_and_unallocated_pp: number | null; baseline_alignment_pp: number | null } };
 const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/viewer-data.json', 'utf8'));
 const calibration = JSON.parse(readFileSync('data/participation-return-attribution/20261111-03/return-constrained-viewer.json', 'utf8'));
-const norcSource = JSON.parse(readFileSync('data/participation-return-attribution/20261112-03/norc-receipt.json', 'utf8'));
-const families = JSON.parse(readFileSync('data/participation-return-attribution/20261112-03/family-summary.json', 'utf8'));
-const association = JSON.parse(readFileSync('data/participation-return-attribution/20261112-04/copula-receipt.json', 'utf8'));
-const norcPoints = JSON.parse(readFileSync('data/participation-return-attribution/20261112-02/norc-point-summary.json', 'utf8'));
+const norcSource = JSON.parse(readFileSync('data/participation-return-attribution/20261112-06/norc-receipt.json', 'utf8'));
+const families = JSON.parse(readFileSync('data/participation-return-attribution/20261112-06/family-summary.json', 'utf8'));
+const association = JSON.parse(readFileSync('data/participation-return-attribution/20261112-06/copula-receipt.json', 'utf8'));
+const norcPoints = JSON.parse(readFileSync('data/participation-return-attribution/20261112-06/norc-point-summary.json', 'utf8'));
 type CalibratedRow = { id: string; state_code: string; office: string;
 	point: { reported_change_pp: number; components_pp: Record<string, number> } | null };
 const receipt = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/download.json', 'utf8'));
-const payload = JSON.stringify({ data, calibration, names, norc_source: norcSource,
+const houseHolds = Object.fromEntries(norcPoints.rows.filter((row: any) => !row.source_comparison_available)
+	.map((row: any) => [row.state_code, row.reported_comparison.reason]));
+const heldHouse = (row: { office: string; state_code: string }) => row.office === 'house' && Boolean(houseHolds[row.state_code]);
+const payload = JSON.stringify({ data, calibration, names, norc_source: norcSource, house_comparison_holds: houseHolds,
 	norc_association_sources: association }).replaceAll('<', '\\u003c');
 const pp = (value: number | null) => value === null ? 'Unavailable' : `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 const validation = norcPoints.validation;
@@ -32,15 +35,16 @@ const tests = [
 		<p>Model retained voters, switching, entry/return and nonparticipation using NORC responses.
 			Choose a state and demographic group to see how its estimated flows contribute to the House shift.</p>
 	</header>
-	<p class="caption">Reported swing compares earlier <strong>same-office returns</strong>.
+	<p class="caption">Reported change compares held <strong>same-office candidate counts</strong>, not measured voter preference.
 		Known-D/R margin = 100 × (D − R) / (D + R). Gray is unavailable.
-		NORC source models are trained separately from the reported results; the reconstruction then uses those results as constraints.
+		Changed major-party candidate coverage, missing native counts and unqualified election stages cannot constrain a behavioral explanation.
+		NORC source models are trained separately from the reported results; qualified comparisons constrain the reconstruction.
 		Estimates, model checks and assumptions appear below the map.</p>
 	<div class="driver-controls">
 		<label>2026 office<select data-driver-office disabled><option value="house">House · states</option>
 			<option value="senate">Senate</option><option value="governor">Governor · frames</option></select></label>
 		<label>Map view<select data-driver-view disabled>
-			<option value="reported_total">Reported swing</option>
+			<option value="reported_total">Qualified reported House change</option>
 			<option value="switching">Switching · fitted</option>
 			<option value="modeled_nonparticipation">No contest vote · fitted</option>
 			<option value="entry">Entry / return · fitted</option>
@@ -72,8 +76,8 @@ const tests = [
 	<p data-driver-association-note class="caption" hidden></p>
 	<div class="driver-maps">
 		<section class="driver-map-card" aria-labelledby="driver-map-title">
-			<h3 id="driver-map-title" data-driver-map-title>Reported swing</h3>
-			<p class="caption" data-driver-map-caption>Total same-office change in the known-D/R margin.</p>
+			<h3 id="driver-map-title" data-driver-map-title>Qualified reported House change</h3>
+			<p class="caption" data-driver-map-caption>Held source margin changes passing candidate-coverage checks; not population turnout or a measured preference swing.</p>
 			<div class="driver-map" data-driver-map="reported_total"></div>
 		</section>
 	</div>
@@ -123,14 +127,15 @@ const tests = [
 					.map(value => <td class="numeric">{Number(value).toFixed(4)}</td>)}</tr>)}</tbody>
 		</table>
 	</div>
-	<p class="caption">Historical calibration improved the retained-panel test, but neither transported
-		stress improved the 48-state before-conditioning margin error for any of the three families.
-		These are sensitivity views, not forecast improvements or replacements for the default model.</p>
+	<p class="caption">Historical calibration improved the retained-panel test.
+		Current before-conditioning errors now use {norcPoints.summary.return_anchored} compatible state comparisons, not the superseded 48-state set.
+		A change in the comparison set is not a model improvement. Association profiles remain sensitivity views, not independently validated forecasts or replacements for the default.</p>
 	<p class="caption">Calibration excludes each outer test fold, including from every inner marginal fit.
 		Unknown and nonvote response categories remain separate. Earlier source-weight frames and fold stresses
 		are diagnostics, not design confidence intervals. These paired-response scores have different targets
 		from the marginal-source tests below and must not be ranked against them.
-		<a href={association.complete_science_url}>Complete dependence calibration, every association-profile query, simulations, inputs and code · ZIP</a></p>
+		<a href={association.complete_science_url}>Corrected association-profile queries, simulations, permitted inputs and code · ZIP</a> ·
+		<a href={association.historical_science_url}>Archived complete historical dependence calibration · ZIP</a></p>
 	<div class="table-wrap">
 		<table data-norc-family-validation><caption>Original association · three model families · before conditioning on current party totals</caption>
 			<thead><tr><th>Family</th><th>Current-response log loss</th><th>Historical log loss</th>
@@ -153,12 +158,14 @@ const tests = [
 		The family table retains original-association prediction errors; the selected-state details show the active profile's error.</p>
 	<p class="caption">The 2024 baseline now uses the official House Clerk candidate totals across all 435 districts,
 		including explicit same-nominee party lines but excluding blank, overvote and ranked-choice accounting.
-		This corrects 21 earlier baselines and adds 12 state comparisons without refitting NORC.
 		The 2026 counts remain the November 7 source snapshot, not newly updated or certified final totals.
 		Pennsylvania now uses all 17 native district totals: its unmatched county-validation rows were not missing native votes.
 		Provider district totals omit known county-source write-ins; those are kept separate, not added to Other.
-		Alaska is held for nonpartisan classification and Maine for unresolved ranked-choice round compatibility.
-		Unreported counts are never filled with zero.</p>
+		Every district is now audited for named major-party coverage, missing native counts and multiple same-party nominees.
+		There are {norcPoints.summary.return_anchored} conditional comparisons; incompatible or unresolved cases remain unavailable in every current view.
+		In Massachusetts, Republican candidates appear in 2 of 9 districts in 2024 but 5 of 9 in the held 2026 snapshot.
+		The old aggregate change therefore was not a like-for-like statewide preference swing. A common-district subtotal is not a statewide correction, and matching IDs do not certify unchanged geography.
+		Maine's unresolved ranked-choice-round hold remains independent. Unreported counts are never filled with zero.</p>
 	<p class="caption">Three accounting-frame sizes and half/double latent-choice affinity give
 		<strong>assumption sensitivity, not confidence intervals</strong>.
 		Denominator effects are assigned inside each transition mechanism using exact symmetric accounting.
@@ -195,34 +202,35 @@ const tests = [
 	</details>
 	<details class="explorer-notes"><summary>Every saved NORC House-state estimate</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 50 NORC House state models">
-			<table><caption>Return-informed estimates, not identified histories. Unavailable observed comparisons remain separate from NORC source scenarios.</caption>
-				<thead><tr><th scope="col">State</th><th scope="col">Observed shift</th>
+			<table><caption>Conditional estimates for compatible held comparisons, not identified histories. Incompatible source-only scenarios are available in the complete download, not substituted here.</caption>
+				<thead><tr><th scope="col">State</th><th scope="col">Qualified reported change</th>
 					<th scope="col">Model shift</th><th scope="col">Switching</th>
-					<th scope="col">Net participation</th><th scope="col">Other / unresolved</th></tr></thead>
+					<th scope="col">Net participation</th><th scope="col">Other / unresolved</th><th scope="col">Qualification</th></tr></thead>
 				<tbody>{norcPoints.rows.map((row: any) => {
 					const rounded = roundedNorcContributions(row.point);
 					return <tr data-saved-norc={row.state_code}><th scope="row">{names[row.state_code]}</th>
 						<td class="numeric">{pp(row.source_comparison_available ? row.reported_comparison.reported_change_pp : null)}</td>
-						<td class="numeric">{pp(row.point.total_change_pp)}</td>
-						<td class="numeric">{pp(rounded.switching)}</td>
-						<td class="numeric">{pp(rounded.entry + rounded.exit)}</td>
-						<td class="numeric">{pp(rounded.other_choice + rounded.unresolved)}</td></tr>;
+						<td class="numeric">{pp(row.source_comparison_available ? row.point.total_change_pp : null)}</td>
+						<td class="numeric">{pp(row.source_comparison_available ? rounded.switching : null)}</td>
+						<td class="numeric">{pp(row.source_comparison_available ? rounded.entry + rounded.exit : null)}</td>
+						<td class="numeric">{pp(row.source_comparison_available ? rounded.other_choice + rounded.unresolved : null)}</td>
+						<td>{row.source_comparison_available ? 'Held snapshot; candidate-coverage checks passed' : row.reported_comparison.reason}</td></tr>;
 				})}</tbody>
 			</table>
 		</div>
 	</details>
 	<details class="explorer-notes"><summary>Archived earlier return-constrained scenarios</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 113 return-constrained decisions">
-			<table><caption>Central fitted scenario; not independently observed voter histories. The final column is a compatible gross-switching percentage of previous D/R votes, not margin points or a confidence interval. Unavailable is not zero.</caption>
+			<table><caption>Superseded central scenarios, not current voter-history estimates. Newly held House comparisons are suppressed here; original files remain archived. The final column is a compatible gross-switching percentage of previous D/R votes, not margin points or a confidence interval. Unavailable is not zero.</caption>
 				<thead><tr><th scope="col">State / office</th><th scope="col">Reported swing</th>
 					<th scope="col">Switching</th><th scope="col">No contest vote</th>
 					<th scope="col">Entry / return</th><th scope="col">Other-party choice</th>
 					<th scope="col">Compatible gross switching</th></tr></thead>
 				<tbody>{calibration.rows.map((row: CalibratedRow) => {
-					const rounded = row.point ? roundedContributions(row.point) : null;
-					const compatible = switchingConstraintBounds(row);
+					const rounded = row.point && !heldHouse(row) ? roundedContributions(row.point) : null;
+					const compatible = heldHouse(row) ? null : switchingConstraintBounds(row);
 					return <tr data-saved-calibrated={row.id}><th scope="row">{names[row.state_code]} · {row.office}</th>
-						<td class="numeric">{pp(row.point?.reported_change_pp ?? null)}</td>
+						<td class="numeric">{pp(heldHouse(row) ? null : row.point?.reported_change_pp ?? null)}</td>
 						{['switching', 'nonparticipation', 'entry', 'other_choice'].map(key =>
 							<td class="numeric">{pp(rounded?.[key] ?? null)}</td>)}
 						<td class="numeric" data-saved-switching-bounds={row.id}>{compatible
@@ -247,18 +255,19 @@ const tests = [
 							<td class="numeric">{pp(row.components_pp[key])}</td>)}
 						<td>{row.reported_comparison.baseline_year ?? 'Unavailable'}</td>
 						{['reported_change_pp', 'other_and_unallocated_pp', 'baseline_alignment_pp'].map(key =>
-							<td class="numeric">{pp(row.reported_comparison[key as 'reported_change_pp'])}</td>)}</tr>)}</tbody>
+							<td class="numeric">{pp(heldHouse(row) ? null : row.reported_comparison[key as 'reported_change_pp'])}</td>)}</tr>)}</tbody>
 			</table>
 		</div>
 	</details>
-	<div class="download-links"><a href={receipt.url}>Complete historical returns, inputs, all models/scenarios, code and checksums · ZIP</a></div>
+	<div class="download-links"><a href={receipt.url}>Archived historical returns, inputs and superseded scenarios, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href={norcSource.complete_download_url}>Complete NORC demographic House model: permitted fitted inputs, every state/group/seed/assumption query, code and tests · ZIP</a></div>
-	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-model-families-20261112-01/complete-source-validation.csv">All nine source-validation comparisons · CSV</a> · <a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-model-families-20261112-01/complete-state-family-comparisons.csv">All 150 state/family decisions in both change units · CSV</a> · <a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-model-families-20261112-01/complete-family-dispersion.csv">All 300 mechanism/family-spread decisions · CSV</a></div>
-	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-pa-house-native-controls-20261112-01/complete-analysis.zip">Previous accepted 48-comparison model and every query · ZIP</a></div>
-	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-norc-house-demographic-20261111-01/complete-analysis.zip">Archived original NORC model and complete queries · ZIP</a> · <a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-clerk-norc-endpoints-20261112-01/complete-analysis.zip">Previous 47-comparison snapshot · ZIP</a></div>
-	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-return-constrained-20261111-01/complete-analysis.zip">Complete return-constrained model, all 801 scenarios and transition cells, inputs, code and checksums · ZIP</a></div>
-	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-flow-identification-20261111-01/complete-analysis.zip">Complete compatible-flow bounds, all 3,824 extremal tables, original inputs, code and checksums · ZIP</a></div>
-	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-transition-simulation-20261111-01/complete-analysis.zip">Complete conditional transition simulations, every input/query/seed, code and checksums · ZIP</a></div>
+	<div class="download-links"><a href={norcSource.complete_download_url.replace('complete-analysis.zip', 'complete-profile-family-state-comparisons.csv')}>All 450 corrected profile/family/state decisions in both change units · CSV</a> · <a href={norcSource.complete_download_url}>All 900 profile/family/mechanism-spread decisions and source scores · complete ZIP</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-model-families-20261112-01/complete-source-validation.csv">Unchanged frozen source-only validation comparisons · CSV</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-pa-house-native-controls-20261112-01/complete-analysis.zip">Superseded 48-comparison archive and every query · ZIP</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-norc-house-demographic-20261111-01/complete-analysis.zip">Superseded original NORC archive and complete queries · ZIP</a> · <a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-clerk-norc-endpoints-20261112-01/complete-analysis.zip">Superseded 47-comparison archive · ZIP</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-return-constrained-20261111-01/complete-analysis.zip">Archived return-constrained model, all 801 scenarios and transition cells, inputs, code and checksums · ZIP</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-flow-identification-20261111-01/complete-analysis.zip">Archived compatible-flow bounds, all 3,824 extremal tables, original inputs, code and checksums · ZIP</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-transition-simulation-20261111-01/complete-analysis.zip">Archived conditional transition simulations, every input/query/seed, code and checksums · ZIP</a></div>
 	<script type="application/json" is:inline data-driver-data set:html={payload}></script>
 </section>
 <script>

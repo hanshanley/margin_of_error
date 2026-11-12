@@ -11,6 +11,47 @@ const source = JSON.parse(bytes);
 const fresh = () => structuredClone(source);
 const receipt = JSON.parse(readFileSync("data/participation-return-attribution/20261112-02/norc-receipt.json"));
 
+const withComparability=()=>{
+  const model=fresh();
+  model.comparison_policy={contract:"participation.house_comparability.v1",all_districts_audited:435,
+    all_states_audited:50,unchanged_major_party_coverage_required:true,
+    raw_aggregate_is_not_preference_swing:true,native_source_counts_changed:false};
+  for(const row of model.rows) row.contest_comparability={state_code:row.state_code,
+    raw_aggregate_is_not_voter_preference_swing:true,common_source_id_is_not_statewide_estimate:true,
+    common_source_id_boundary_stability_qualified:false,like_for_like_statewide_source_comparison:true,
+    coverage_changed_districts:[],missing_count_districts:[],multiple_same_party_nominee_districts:[],
+    previous_counts:structuredClone(row.reported_comparison.previous),
+    current_counts:structuredClone(row.reported_comparison.current)};
+  return model;
+};
+
+test("changed candidate coverage and native-count substitutions cannot condition behavioral models",()=>{
+  validateNorcHouse(withComparability());
+  for(const mutate of [
+    row=>{row.contest_comparability.like_for_like_statewide_source_comparison=false;},
+    row=>{row.contest_comparability.coverage_changed_districts=["MA-03"];},
+    row=>{row.contest_comparability.missing_count_districts=["MA-03"];},
+    row=>{row.contest_comparability.multiple_same_party_nominee_districts=["MA-03"];},
+    row=>{row.contest_comparability.current_counts.D+=1;},
+  ]){
+    const model=withComparability(),ma=model.rows.find(row=>row.state_code==="MA");mutate(ma);
+    assert.throws(()=>validateNorcHouse(model));
+  }
+});
+
+test("current comparability receipts reject a correctly hashed legacy model",async()=>{
+  const {loadNorcHouse}=await import("../public/scripts/participation-norc-house.js?comparability-loader");
+  const body=Buffer.from(JSON.stringify(comparison()));
+  const receipt={url:"https://raw.githubusercontent.com/hanshanley/voter-participation/"+"d".repeat(40)
+    +"/data/house-comparability/20261112-01/viewer-original.json",
+    bytes:body.length,sha256:createHash("sha256").update(body).digest("hex"),contest_comparability_required:true};
+  const original=globalThis.fetch;
+  try{
+    globalThis.fetch=async()=>new Response(body);
+    await assert.rejects(loadNorcHouse(receipt),/comparability audit is missing/);
+  }finally{globalThis.fetch=original;}
+});
+
 test("all House mechanisms and separate demographic partitions reconcile to each state", () => {
   validateNorcHouse(source);
   for (const row of source.rows) {
@@ -24,8 +65,10 @@ test("all House mechanisms and separate demographic partitions reconcile to each
         assert.ok(Math.abs(Object.values(values).reduce((a,b)=>a+b,0)-Number(group.total_contribution_pp.toFixed(2)))<1e-8);
       }
     }
-    assert.equal(norcMapValue(row,"modeled_nonparticipation"),row.point.contributions_pp.entry+row.point.contributions_pp.exit);
-    for (const [key] of norcTerms) assert.equal(norcMapValue(row,key),row.point.contributions_pp[key]);
+    assert.equal(norcMapValue(row,"modeled_nonparticipation"),row.source_comparison_available
+      ?row.point.contributions_pp.entry+row.point.contributions_pp.exit:null);
+    for (const [key] of norcTerms) assert.equal(norcMapValue(row,key),row.source_comparison_available
+      ?row.point.contributions_pp[key]:null);
   }
 });
 
@@ -74,6 +117,18 @@ test("shared profile bounds cover all families, halve signed units and exclude r
     assert.equal(norcSharedBound(data,group,"democratic_two_party_share",120),60);
   }
   assert.throws(()=>norcSharedBound(data,"","margin",0),/omits/);
+});
+
+test("reported totals remain in demographic scales even when that state's group is withheld",()=>{
+  const data=comparison();
+  const row=data.families.accepted_ridge_multinomial.rows.find(row=>row.source_comparison_available);
+  for(const model of Object.values(data.families)){
+    const state=model.rows.find(value=>value.state_code===row.state_code);
+    state.reported_comparison.reported_change_pp=200;
+    state.groups.find(group=>group.dimension==="AGE6" && group.group==="65_plus").available=false;
+  }
+  assert.throws(()=>norcSharedBound(data,"AGE6|65_plus","margin",100),/omits/);
+  assert.equal(norcSharedBound(data,"AGE6|65_plus","margin",200),200);
 });
 
 test("flipping pinned profiles reuses each checksum cache; failed and mismatched profiles never substitute",async()=>{
@@ -156,7 +211,11 @@ test("held groups and missing observed comparisons never become zero or another 
   assert.equal(norcMapValue(null,"switching"),null);
   let held=0, missing=0;
   for (const row of source.rows) {
-    if (!row.source_comparison_available) {assert.equal(norcMapValue(row,"reported_total"),null);missing++;}
+    if (!row.source_comparison_available) {
+      for (const view of ["reported_total","retaining","modeled_nonparticipation",...norcTerms.map(([key])=>key)])
+        assert.equal(norcMapValue(row,view),null);
+      missing++;
+    }
     for (const group of row.groups.filter(g=>!g.available)) {
       const id=group.dimension+"|"+group.group;
       assert.equal(norcEstimate(row,id),null);assert.equal(norcMapValue(row,"switching",id),null);held++;

@@ -335,7 +335,13 @@ export async function initializeReturnDrivers() {
     const selectState = code => {
       selectedCode = code; stateSelect.value = code;
       const row = data.rows.find(value => value.state_code === code && value.office === office.value);
-      if (isScenarioView(view.value) && scenarios && code) selectScenario(row, code);
+      const hold=office.value==="house" && payload.house_comparison_holds?.[code];
+      if (hold && isScenarioView(view.value)) {
+        summary.replaceChildren(element("h3",`${names[code]} · House comparison unavailable`),
+          element("p",hold+" No archived scenario is substituted as a current election explanation.","caption"));
+        detail.replaceChildren();summary.hidden=false;detail.hidden=true;
+      }
+      else if (isScenarioView(view.value) && scenarios && code) selectScenario(row, code);
       else if (isScenarioView(view.value)) { detail.hidden = true; summary.hidden = true; }
       else if (office.value==="house" && payload.norc_source) {
         if (norc && code) renderNorcSelection(norc.rows.find(r=>r.state_code===code),
@@ -438,9 +444,17 @@ export async function initializeReturnDrivers() {
       const norcByCode=norcMode?new Map(norc.rows.map(r=>[r.state_code,r])):null;
       const retention=norcMode && view.value==="retaining";
       const sharedMaximum=payload.norc_association_sources?.shared_max_abs_margin?.[group.value] ?? null;
-      const bound = retention ? 100 : norcMode ? norcSharedBound(norcComparison || norc,group.value,norcUnits(),sharedMaximum)
-        : scenario ? scenarioScale(Object.keys(scenarios.state_scenarios).map(code =>
-        scenarioEstimate(scenarios, code, view.value, group.value)?.value ?? null)) : mapScale(all, calibration);
+      let bound;
+      try {
+        bound = retention ? 100 : norcMode ? norcSharedBound(norcComparison || norc,group.value,norcUnits(),sharedMaximum)
+          : scenario ? scenarioScale(Object.keys(scenarios.state_scenarios).map(code =>
+          scenarioEstimate(scenarios, code, view.value, group.value)?.value ?? null)) : mapScale(all, calibration);
+      } catch (error) {
+        root.querySelector("[data-driver-map]").replaceChildren();
+        summary.replaceChildren();detail.replaceChildren();summary.hidden=true;detail.hidden=true;
+        status.textContent=`Model view unavailable: ${error.message}. Previous values were cleared.`;
+        return;
+      }
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
       status.textContent = norcMode ? `${norc.summary.return_anchored} House reconstructions use recorded endpoints; `
         +`${50-norc.summary.return_anchored} are NORC source scenarios with unavailable observed comparisons. `
@@ -485,7 +499,7 @@ export async function initializeReturnDrivers() {
         host.dataset.driverMap = key;
         root.querySelector("[data-driver-map-title]").textContent = label;
         root.querySelector("[data-driver-map-caption]").textContent = norcMode
-          ? key==="reported_total" ? `Observed same-office House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change; no demographic vote shares are inferred.`
+          ? key==="reported_total" ? `Held reported House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change passing candidate-coverage checks; not a measured voter-preference swing. Gray means an incompatible or unavailable comparison.`
             : `${group.selectedOptions[0].textContent}. ${retention?"Share retaining party":norcUnits()==="democratic_two_party_share"?"Contribution to statewide Democratic two-party-share change":"Contribution to statewide margin change"}. `
               +(key==="modeled_nonparticipation"?"Entry/return and modeled absence are included together.":"")
           : scenario
@@ -495,7 +509,8 @@ export async function initializeReturnDrivers() {
           "aria-label": `${label}: ${retention ? "modeled percentages" : scenario ? "synthetic source-weight shares" : "signed percentage-point changes"} by state`, "data-scale": bound });
         for (const item of items) {
           const code = item.feature.properties.STUSAB, row = byCode.get(code);
-          const value = norcMode ? norcMapValue(norcByCode.get(code),key,group.value,norcUnits())
+          const value = office.value==="house" && payload.house_comparison_holds?.[code] ? null
+            : norcMode ? norcMapValue(norcByCode.get(code),key,group.value,norcUnits())
             : scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key, calibration.get(row?.id));
           const normalized = value ?? null;
           const text = `${names[code]} · ${label}: ${normalized === null ? "no qualified comparison, group or model"
@@ -506,7 +521,7 @@ export async function initializeReturnDrivers() {
                   ? "Change in Democratic two-party-share points, not population turnout."
                   : "Margin points, not a vote share or turnout rate.");
           const path = svgElement("path", { d: item.d, fill: effectFill(normalized, bound),
-            class: "driver-state", "fill-rule": "evenodd", "data-state-code": code,
+            class: "driver-state", "fill-rule": "evenodd", "pointer-events": "visibleFill", "data-state-code": code,
             "data-model-value": normalized ?? "", ...(row ? { "data-model-id": row.id } : {}),
             role: "button", tabindex: "-1",
             "aria-label": text });
