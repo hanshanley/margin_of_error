@@ -1,0 +1,83 @@
+{
+  "contract": "participation.house_copula_receipt.v1",
+  "profiles": {
+    "attenuated": {
+      "bytes": 5859938,
+      "sha256": "65a8acff1a8d42121ad5ce977c90ef4a7586ad9eabb2a48f60bdffb8e7843fde",
+      "source_commit": "3c99ff2712e266f16860551ab65957c647956753",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/3c99ff2712e266f16860551ab65957c647956753/data/house-fixed-copula/20261112-01/viewer-attenuated.json"
+    },
+    "full": {
+      "bytes": 5862665,
+      "sha256": "0a1733fa5ecc9897e54de89ddef0395eb89102eae0e022be1527288e4a432d89",
+      "source_commit": "3c99ff2712e266f16860551ab65957c647956753",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/3c99ff2712e266f16860551ab65957c647956753/data/house-fixed-copula/20261112-01/viewer-full.json"
+    }
+  },
+  "shared_max_abs_margin": {
+    "": 44.434896544730904,
+    "AGE6|30_49": 39.842791601560776,
+    "EDUC|high_school_or_less": 39.842791601560776,
+    "EDUC|some_college": 39.842791601560776,
+    "RACETH5|white": 41.404185166417946,
+    "INCOME|under_25000": 39.842791601560776,
+    "INCOME|25000_49999": 39.842791601560776,
+    "SEX|female": 39.842791601560776,
+    "RUCC|suburban_county": 39.842791601560776,
+    "RUCC|rural_county": 39.842791601560776,
+    "AGE6|50_64": 39.842791601560776,
+    "AGE6|65_plus": 39.842791601560776,
+    "RACETH5|black": 39.842791601560776,
+    "INCOME|50000_74999": 39.842791601560776,
+    "INCOME|100000_plus": 39.842791601560776,
+    "RUCC|urban_county": 39.842791601560776,
+    "EDUC|college_postgraduate": 39.842791601560776,
+    "RACETH5|hispanic": 39.842791601560776,
+    "RACETH5|other_unknown": 39.842791601560776,
+    "RACETH5|asian_pacific": 39.842791601560776,
+    "INCOME|75000_99999": 39.842791601560776,
+    "AGE6|18_29": 39.842791601560776,
+    "SEX|male": 39.842791601560776
+  },
+  "source_validation": [
+    {
+      "label": "2020 vote history",
+      "baseline_logloss": 1.313660393502,
+      "calibrated_logloss": 1.263987390597,
+      "baseline_Brier": 0.483039297689,
+      "calibrated_Brier": 0.477227852054
+    },
+    {
+      "label": "2020 history + age / education / state",
+      "baseline_logloss": 1.348022708134,
+      "calibrated_logloss": 1.300594187367,
+      "baseline_Brier": 0.492568170945,
+      "calibrated_Brier": 0.485929497226
+    }
+  ],
+  "complete_science_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-house-fixed-copula-20261112-01/complete-analysis.zip",
+  "complete_science": {
+    "bytes": 63651646,
+    "sha256": "08273545ef2886a3994ea2f4a7c7083f7a780e78c3335c88b1d3665cc6b0db72"
+  },
+  "state_margin_MAE_pp": {
+    "original": {
+      "accepted_ridge_multinomial": 6.126998270311155,
+      "extra_randomized_trees": 6.063574046185713,
+      "histogram_gradient_boosting": 5.743115428462552
+    },
+    "attenuated": {
+      "accepted_ridge_multinomial": 6.276247569358767,
+      "extra_randomized_trees": 6.529695300329572,
+      "histogram_gradient_boosting": 6.243356235954873
+    },
+    "full": {
+      "accepted_ridge_multinomial": 6.178783527439953,
+      "extra_randomized_trees": 6.989285475994522,
+      "histogram_gradient_boosting": 6.524791025562503
+    }
+  },
+  "source_history_theta_median": 8,
+  "historical_transport_validated": false,
+  "default_accepted_model_changed": false
+}

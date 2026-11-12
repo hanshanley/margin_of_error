@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { validateNorcHouse, norcGroups, norcEstimate, norcMapValue,
   roundedNorcContributions, norcTerms, validateNorcFamilies, norcFamilies,
-  norcContributionScale } from "../public/scripts/participation-norc-house.js";
+  norcContributionScale, norcSharedBound, validateNorcAssociation } from "../public/scripts/participation-norc-house.js";
 
 const bytes = readFileSync("data/participation-return-attribution/20261112-02/norc-test-oracle.json");
 const source = JSON.parse(bytes);
@@ -35,6 +35,76 @@ const comparison=()=>({contract:"participation.house_model_families.v1",
   preferred_family:scores.summary.preferred_family,family_labels:scores.family_labels,
   source_validation:structuredClone(scores.source_validation),
   families:Object.fromEntries(norcFamilies.map(([family])=>[family,fresh()]))});
+
+const association=(profile="full")=>{
+  const data=comparison(),theta=profile==="full"?8:Math.sqrt(8);
+  data.association_profile={profile,requested_theta:theta,source_primary_history_theta_median:8,
+    historical_parameter_not_validated_for2026:true,applied_postaggregation_not_per_case:true,
+    demographic_partition_year_margins_preserved:true,source_only_feasibility_backoff:true,
+    default_accepted_model_changed:false};
+  for(const model of Object.values(data.families)) model.historical_association_stress={
+    profile,default_accepted_model_changed:false,unvalidated_source_cycle_predictor_and_aggregation_transport:true,
+    current_return_targets_used_to_select_association:false,fitted_source_state_and_group_year_marginals_preserved:true,
+    state_parameters:Object.fromEntries(model.rows.map(row=>[row.state_code,{
+      requested_theta:theta,effective_theta:Math.sqrt(theta),feasibility_exponent:.5,maximum_constraint_error:1e-12}]))};
+  return data;
+};
+
+test("association stresses preserve qualifications, applied strength and accepted comparison",()=>{
+  assert.equal(validateNorcAssociation(association(),comparison()).association_profile.profile,"full");
+  for(const mutate of [
+    d=>{d.association_profile.historical_parameter_not_validated_for2026=false;},
+    d=>{d.association_profile.applied_postaggregation_not_per_case=false;},
+    d=>{d.association_profile.demographic_partition_year_margins_preserved=false;},
+    d=>{d.association_profile.default_accepted_model_changed=true;},
+    d=>{d.association_profile.source_primary_history_theta_median=4;},
+    d=>{d.families.accepted_ridge_multinomial.historical_association_stress.current_return_targets_used_to_select_association=true;},
+    d=>{d.families.accepted_ridge_multinomial.historical_association_stress.state_parameters.TX.effective_theta=8;},
+    d=>{d.families.accepted_ridge_multinomial.historical_association_stress.state_parameters.TX.maximum_constraint_error=-1;},
+    d=>{for(const m of Object.values(d.families)) m.rows[0].reported_comparison.qualification="different scope";},
+  ]){
+    const data=association();mutate(data);assert.throws(()=>validateNorcAssociation(data,comparison()));
+  }
+});
+
+test("shared profile bounds cover all families, halve signed units and exclude retention",()=>{
+  const data=comparison();
+  for(const group of ["",...norcGroups(source).map(g=>g.value)]){
+    assert.equal(norcSharedBound(data,group,"margin",120),120);
+    assert.equal(norcSharedBound(data,group,"democratic_two_party_share",120),60);
+  }
+  assert.throws(()=>norcSharedBound(data,"","margin",0),/omits/);
+});
+
+test("flipping pinned profiles reuses each checksum cache; failed and mismatched profiles never substitute",async()=>{
+  const {loadNorcHouse}=await import("../public/scripts/participation-norc-house.js?association-loader-test");
+  const records=new Map();
+  for(const key of ["original","attenuated","full"]){
+    const bytes=Buffer.from(JSON.stringify(key==="original"?comparison():association(key)));
+    const url="https://raw.githubusercontent.com/hanshanley/voter-participation/"+"b".repeat(40)
+      +`/data/${key==="original"?"house-model-families/20261112-01/viewer-data":"house-fixed-copula/20261112-01/viewer-"+key}.json`;
+    records.set(key,{bytes,receipt:{url,bytes:bytes.length,sha256:createHash("sha256").update(bytes).digest("hex")}});
+  }
+  const original=globalThis.fetch,counts=new Map();
+  try{
+    globalThis.fetch=async url=>{
+      counts.set(url,(counts.get(url)||0)+1);
+      const {bytes}=Array.from(records.values()).find(v=>v.receipt.url===url);
+      return new Response(url===records.get("full").receipt.url && counts.get(url)===1
+        ? Buffer.concat([bytes,Buffer.from(" ")]) : bytes);
+    };
+    const base=records.get("original").receipt;
+    await Promise.all([loadNorcHouse(base),loadNorcHouse(base)]);
+    for(const key of ["attenuated","original","attenuated"]) await loadNorcHouse(records.get(key).receipt);
+    await assert.rejects(loadNorcHouse(records.get("full").receipt),/checksum/);
+    await loadNorcHouse(records.get("full").receipt);
+    assert.deepEqual([...counts.values()],[1,1,2]);
+    const {bytes,receipt}=records.get("full");
+    const wrong={...receipt,url:receipt.url.replace("b".repeat(40),"c".repeat(40)).replace("viewer-full","viewer-attenuated")};
+    globalThis.fetch=async()=>new Response(bytes);
+    await assert.rejects(loadNorcHouse(wrong),/profile differ/);
+  }finally{globalThis.fetch=original;}
+});
 
 test("family selection uses source validation, not lower current-return MAE",()=>{
   assert.equal(validateNorcFamilies(comparison()).preferred_family,"accepted_ridge_multinomial");

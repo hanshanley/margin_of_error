@@ -21,7 +21,12 @@ export const demographicLabels = {
 };
 const finite = value => typeof value === "number" && Number.isFinite(value);
 const close = (a, b) => finite(a) && finite(b) && Math.abs(a-b) < 1e-7;
-let cached, cachedPin;
+const cached = new Map();
+export const norcAssociations = [
+  ["original", "Original association"],
+  ["attenuated", "Historical association · attenuated stress"],
+  ["full", "Historical association · stronger stress"],
+];
 export const norcFamilies = [
   ["accepted_ridge_multinomial", "Multinomial ridge · accepted baseline"],
   ["histogram_gradient_boosting", "Histogram gradient boosting"],
@@ -32,6 +37,16 @@ export const norcContributionScale = units => {
   if (units === "democratic_two_party_share") return .5;
   throw new Error("Unknown House change denominator");
 };
+
+export function norcSharedBound(comparison, group="", units="margin", sharedMaximum=null) {
+  const factor=norcContributionScale(units);
+  const models=comparison?.families?Object.values(comparison.families):[comparison];
+  const local=Math.max(0,...models.flatMap(model=>(model?.rows || []).flatMap(row=>
+    norcViews.filter(([key])=>key!=="retaining").map(([key])=>Math.abs(norcMapValue(row,key,group,"margin")??0)))));
+  if (sharedMaximum!==null && (!finite(sharedMaximum) || sharedMaximum<local-1e-7))
+    throw new Error("Association comparison scale omits a displayed estimate");
+  return Math.max(5,Math.ceil((sharedMaximum??local)*factor/5)*5);
+}
 
 export function validateNorcHouse(data) {
   if (data?.contract !== "participation.norc_house_demographic_model.v1"
@@ -121,6 +136,39 @@ export function validateNorcFamilies(data) {
         throw new Error("Family comparison substituted endpoints or disclosure masks");
     }
   }
+  if (data.association_profile) {
+    const profile=data.association_profile;
+    if (!["attenuated","full"].includes(profile.profile)
+        || profile.historical_parameter_not_validated_for2026!==true
+        || profile.applied_postaggregation_not_per_case!==true
+        || profile.demographic_partition_year_margins_preserved!==true
+        || profile.source_only_feasibility_backoff!==true || profile.default_accepted_model_changed!==false
+        || !finite(profile.requested_theta) || profile.requested_theta<=1
+        || !finite(profile.source_primary_history_theta_median) || profile.source_primary_history_theta_median<=1
+        || !close(profile.requested_theta,Math.pow(profile.source_primary_history_theta_median,
+          profile.profile==="attenuated"?.5:1)))
+      throw new Error("Unqualified historical association stress");
+    for (const [family] of norcFamilies) {
+      const stress=data.families[family].historical_association_stress;
+      if (stress?.profile!==profile.profile || stress.default_accepted_model_changed!==false
+          || stress.unvalidated_source_cycle_predictor_and_aggregation_transport!==true
+          || stress.current_return_targets_used_to_select_association!==false
+          || stress.fitted_source_state_and_group_year_marginals_preserved!==true
+          || Object.keys(stress.state_parameters || {}).length!==50)
+        throw new Error("Association stress changed its source or validation status");
+      for (const row of data.families[family].rows) {
+        const parameter=stress.state_parameters[row.state_code];
+        if (!finite(parameter?.requested_theta) || !close(parameter.requested_theta,profile.requested_theta)
+            || !finite(parameter.effective_theta) || parameter.effective_theta<1
+            || parameter.effective_theta>profile.requested_theta+1e-7
+            || ![0,.125,.25,.5,1].includes(parameter.feasibility_exponent)
+            || !close(parameter.effective_theta,Math.pow(parameter.requested_theta,parameter.feasibility_exponent))
+            || !finite(parameter.maximum_constraint_error) || parameter.maximum_constraint_error<0
+            || parameter.maximum_constraint_error>1e-9)
+          throw new Error("Invalid source-only association feasibility decision");
+      }
+    }
+  }
   const metrics = new Map();
   for (const row of data.source_validation) {
     const key=row.family+"|"+row.role;
@@ -145,15 +193,31 @@ export function validateNorcFamilies(data) {
   return data;
 }
 
+export function validateNorcAssociation(data, original) {
+  validateNorcFamilies(data);
+  validateNorcFamilies(original);
+  if (!data.association_profile || original.association_profile
+      || data.preferred_family!==original.preferred_family
+      || JSON.stringify(data.source_validation)!==JSON.stringify(original.source_validation))
+    throw new Error("Association profile substituted the accepted source comparison");
+  for (const [family] of norcFamilies) for (const row of data.families[family].rows) {
+    const baseline=original.families[family].rows.find(value=>value.state_code===row.state_code);
+    if (JSON.stringify(row.reported_comparison)!==JSON.stringify(baseline.reported_comparison)
+        || JSON.stringify(row.groups.map(g=>[g.dimension,g.group,g.label,g.available]))!==
+          JSON.stringify(baseline.groups.map(g=>[g.dimension,g.group,g.label,g.available])))
+      throw new Error("Association profile substituted endpoints or disclosure masks");
+  }
+  return data;
+}
+
 export async function loadNorcHouse(receipt) {
   if (!receipt || !/^[a-f0-9]{64}$/.test(receipt.sha256)
       || !Number.isSafeInteger(receipt.bytes) || receipt.bytes<=0 || receipt.bytes>10_000_000
-      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01|house-model-families\/20261112-01)\/viewer-data\.json$/.test(receipt.url))
+      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01|house-model-families\/20261112-01)\/viewer-data|house-fixed-copula\/20261112-01\/viewer-(?:attenuated|full))\.json$/.test(receipt.url))
     throw new Error("Unpinned NORC model input");
   const pin = `${receipt.url}|${receipt.sha256}|${receipt.bytes}`;
-  if (!cached || cachedPin !== pin) {
-    cachedPin = pin;
-    cached = (async()=>{
+  if (!cached.has(pin)) {
+    const promise = (async()=>{
       const controller = new AbortController(), timer = setTimeout(()=>controller.abort(),20_000);
       try {
         const response = await fetch(receipt.url,{signal:controller.signal});
@@ -163,11 +227,16 @@ export async function loadNorcHouse(receipt) {
           v=>v.toString(16).padStart(2,"0")).join("");
         if (bytes.byteLength !== receipt.bytes || digest !== receipt.sha256) throw new Error("NORC model checksum mismatch");
         const data=JSON.parse(new TextDecoder().decode(bytes));
-        return data.contract==="participation.house_model_families.v1"?validateNorcFamilies(data):validateNorcHouse(data);
+        const result=data.contract==="participation.house_model_families.v1"?validateNorcFamilies(data):validateNorcHouse(data);
+        const profile=receipt.url.match(/viewer-(attenuated|full)\.json$/)?.[1];
+        if ((profile || result.association_profile) && result.association_profile?.profile!==profile)
+          throw new Error("Association receipt and source profile differ");
+        return result;
       } finally { clearTimeout(timer); }
-    })().catch(error=>{if(cachedPin===pin) cached=undefined;throw error;});
+    })().catch(error=>{if(cached.get(pin)===promise) cached.delete(pin);throw error;});
+    cached.set(pin,promise);
   }
-  return cached;
+  return cached.get(pin);
 }
 
 export function norcGroups(data) {
@@ -225,6 +294,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   const estimate=norcEstimate(row,group), selected=group ? row?.groups.find(g=>g.dimension+"|"+g.group===group) : null;
   summary.replaceChildren(element("h3",`${name} · House ${unitLabel}`));
   delete summary.dataset.norcState;delete summary.dataset.norcGroup;
+  delete summary.dataset.norcAssociation;
   detail.replaceChildren();
   if (!row) {
     summary.append(element("p","D.C. has no NORC CHEP sample; no House transition estimate is invented.","caption"));
@@ -235,6 +305,13 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
     ? `2024 ${endpoint(row.reported_comparison.previous_margin_pp)} → held 2026 ${endpoint(row.reported_comparison.current_margin_pp)}. ${signed(point.total_change_pp)} ${share?"change in Democratic two-party share":"change in the Democratic–Republican margin"}.`
     : `Observed House comparison unavailable: ${row.reported_comparison.reason} The NORC source scenario is shown separately, not as a recorded result.`,
   "driver-endpoints"));
+  const association=options.association?.profile || "original";
+  const associationLabel=norcAssociations.find(([key])=>key===association)?.[1] || "Original association";
+  summary.dataset.norcAssociation=association;
+  summary.append(element("p",association==="original"
+    ? "Original conditional-association construction. Historical dependence stresses are alternatives, not validated 2026 histories."
+    : `${associationLabel}. This is an unvalidated state-level transport of historical D/R persistence, not a new turnout measurement.`,
+  "caption"));
   if (row.source_comparison_available) summary.append(element("p",
     `Democratic two-party share: ${(50+point.previous_margin_pp/2).toFixed(2)}% → ${(50+point.current_margin_pp/2).toFixed(2)}%, `
     +`${pp(point.total_change_pp/2)} change. D−R margin change: ${pp(point.total_change_pp)}. `
@@ -266,7 +343,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   summary.append(wrap,element("p",
     `Net participation includes ${pp(rounded.exit)} from modeled nonparticipation and ${pp(rounded.entry)} from entry/return. `
     +"Positive contributions move the result toward Democrats; negative contributions move it toward Republicans. "
-    +"Retention, switching and nonparticipation are learned from NORC responses; reported results constrain the reconstruction, not its validation.",
+    +"NORC responses inform the marginal models; temporal dependence and the accounting frame remain assumptions. Reported results constrain the reconstruction, not its validation.",
     "caption"));
   summary.dataset.norcState=row.state_code;summary.dataset.norcGroup=group;
   summary.dataset.norcUnits=units;summary.dataset.norcFamily=options.family || "accepted_ridge_multinomial";
@@ -285,6 +362,33 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   groupTable.append(groupBody);
   const grouped=element("div",null,"table-wrap");grouped.append(groupTable);
   detail.append(grouped);
+  if (options.associationState) {
+    const value=options.associationState;
+    detail.append(element("p",`Requested D–D/R–R kernel multiplier ${value.requested_theta.toFixed(3)}; applied ${value.effective_theta.toFixed(3)} `
+      +`after source-only demographic feasibility checks. Unconditional fitted state and group year-specific margins are preserved. `
+      +`This multiplies the source D/R cross-product odds by ${(value.effective_theta**2).toFixed(3)}, not the retained-choice percentage. `
+      +"The parameter is not validated for the different 2026 predictors, electorate or election direction.","caption"));
+  }
+  if (options.originalComparison && association!=="original") {
+    const original=options.originalComparison.families[options.family]?.rows.find(value=>value.state_code===row.state_code);
+    const before=norcEstimate(original,group);
+    if (before) {
+      const comparison=element("table"),head=element("thead"),labels=element("tr"),body=element("tbody");
+      comparison.dataset.norcAssociationComparison=row.state_code;
+      comparison.append(element("caption",`Original versus selected association · ${group?"same selected group; ":""}conditional estimates`));
+      for (const label of ["Association","Switching","Net participation","Kept party"]) labels.append(element("th",label));
+      head.append(labels);comparison.append(head);
+      for (const [label,value] of [["Original association",before],[associationLabel,estimate]]) {
+        const tr=element("tr"),th=element("th",label);th.scope="row";
+        tr.append(th,element("td",signed(value.contributions_pp.switching),"numeric"),
+          element("td",signed(value.net_participation_pp),"numeric"),
+          element("td",value.gross_outcomes?`${(100*value.gross_outcomes.retaining).toFixed(1)}%`:"Unavailable","numeric"));
+        body.append(tr);
+      }
+      comparison.append(body);
+      const wrap=element("div",null,"table-wrap");wrap.append(comparison);detail.append(wrap);
+    }
+  }
   const flow=estimate.joint, flows=element("table"), flowBody=element("tbody"), flowHead=element("thead"), flowLabels=element("tr");
   flows.append(element("caption","Model-assigned outcomes within previous D/R choices · percentages, not margin points"));
   for (const label of ["Previous choice","Kept party","Switched party","Absent","Other / unresolved"]) flowLabels.append(element("th",label));

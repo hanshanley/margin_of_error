@@ -10,11 +10,13 @@ const data = JSON.parse(readFileSync('data/participation-return-attribution/2026
 const calibration = JSON.parse(readFileSync('data/participation-return-attribution/20261111-03/return-constrained-viewer.json', 'utf8'));
 const norcSource = JSON.parse(readFileSync('data/participation-return-attribution/20261112-03/norc-receipt.json', 'utf8'));
 const families = JSON.parse(readFileSync('data/participation-return-attribution/20261112-03/family-summary.json', 'utf8'));
+const association = JSON.parse(readFileSync('data/participation-return-attribution/20261112-04/copula-receipt.json', 'utf8'));
 const norcPoints = JSON.parse(readFileSync('data/participation-return-attribution/20261112-02/norc-point-summary.json', 'utf8'));
 type CalibratedRow = { id: string; state_code: string; office: string;
 	point: { reported_change_pp: number; components_pp: Record<string, number> } | null };
 const receipt = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/download.json', 'utf8'));
-const payload = JSON.stringify({ data, calibration, names, norc_source: norcSource }).replaceAll('<', '\\u003c');
+const payload = JSON.stringify({ data, calibration, names, norc_source: norcSource,
+	norc_association_sources: association }).replaceAll('<', '\\u003c');
 const pp = (value: number | null) => value === null ? 'Unavailable' : `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 const validation = norcPoints.validation;
 const tests = [
@@ -56,12 +58,18 @@ const tests = [
 		<label>House model<select data-driver-family disabled>
 			<option value="accepted_ridge_multinomial">Multinomial ridge · accepted baseline</option>
 		</select></label>
+		<label>Temporal association<select data-driver-association disabled>
+			<option value="original">Original association</option>
+			<option value="attenuated">Historical association · attenuated stress</option>
+			<option value="full">Historical association · stronger stress</option>
+		</select></label>
 		<label>Change units<select data-driver-units disabled>
 			<option value="margin">D−R margin points</option>
 			<option value="democratic_two_party_share">Democratic two-party-share points</option>
 		</select></label>
 	</div>
 	<p data-driver-status class="caption" role="status">Loading NORC House estimates; every saved state summary and complete download remains below.</p>
+	<p data-driver-association-note class="caption" hidden></p>
 	<div class="driver-maps">
 		<section class="driver-map-card" aria-labelledby="driver-map-title">
 			<h3 id="driver-map-title" data-driver-map-title>Reported swing</h3>
@@ -98,8 +106,33 @@ const tests = [
 		Boosting slightly improves current-response prediction, but historical transfer worsens.
 		The lower return error does not override that rule. The historical test is now selection validation,
 		not an independent post-selection test. Model-family spread is not a confidence interval.</p>
+	<p class="caption">The temporal-association control changes dependence, not the fitted source margins.
+		Two optional <strong>historical association stresses</strong> use nested CES 2022-to-2024 calibration,
+		attenuated or stronger, then preserve state and demographic-group year-specific source margins.
+		This postaggregation transport is not validated for the different 2026 predictors or election direction.
+		Source-only feasibility checks can reduce its strength; selected-state details report the applied multiplier.
+		The multiplier weights D–D and R–R cells before fixed-margin projection; it is not a retention percentage.
+		The original association remains the default. Neither historical alternative measures staying home or first-ever voting.</p>
 	<div class="table-wrap">
-		<table data-norc-family-validation><caption>All three model families · before conditioning on current party totals</caption>
+		<table data-norc-copula-validation><caption>Historical retained-panel House-pair test · fixed predicted year margins, not 2026 population validation</caption>
+			<thead><tr><th>2020 predictors</th><th>Original log loss</th><th>Nested dependence log loss</th>
+				<th>Original Brier</th><th>Nested dependence Brier</th></tr></thead>
+			<tbody>{association.source_validation.map((row: any) => <tr>
+				<th scope="row">{row.label}</th>
+				{[row.baseline_logloss, row.calibrated_logloss, row.baseline_Brier, row.calibrated_Brier]
+					.map(value => <td class="numeric">{Number(value).toFixed(4)}</td>)}</tr>)}</tbody>
+		</table>
+	</div>
+	<p class="caption">Historical calibration improved the retained-panel test, but neither transported
+		stress improved the 48-state before-conditioning margin error for any of the three families.
+		These are sensitivity views, not forecast improvements or replacements for the default model.</p>
+	<p class="caption">Calibration excludes each outer test fold, including from every inner marginal fit.
+		Unknown and nonvote response categories remain separate. Earlier source-weight frames and fold stresses
+		are diagnostics, not design confidence intervals. These paired-response scores have different targets
+		from the marginal-source tests below and must not be ranked against them.
+		<a href={association.complete_science_url}>Complete dependence calibration, every association-profile query, simulations, inputs and code · ZIP</a></p>
+	<div class="table-wrap">
+		<table data-norc-family-validation><caption>Original association · three model families · before conditioning on current party totals</caption>
 			<thead><tr><th>Family</th><th>Current-response log loss</th><th>Historical log loss</th>
 				<th>Historical Brier</th><th>State margin MAE (pp)</th><th>Democratic two-party-share MAE (pp)</th></tr></thead>
 			<tbody>{families.summary.families.map((family: string) => {
@@ -116,7 +149,8 @@ const tests = [
 	<p class="caption">A move from R+4 to D+12 is +16 margin points but +8 Democratic
 		<strong>two-party-share</strong> points. The change-unit control scales signed contributions,
 		assumption ranges and prediction errors consistently. Gross retention/switching percentages
-		keep their own denominator and are never halved. Map scales are shared across families.</p>
+		keep their own denominator and are never halved. Map scales are shared across families and association profiles.
+		The family table retains original-association prediction errors; the selected-state details show the active profile's error.</p>
 	<p class="caption">The 2024 baseline now uses the official House Clerk candidate totals across all 435 districts,
 		including explicit same-nominee party lines but excluding blank, overvote and ranked-choice accounting.
 		This corrects 21 earlier baselines and adds 12 state comparisons without refitting NORC.

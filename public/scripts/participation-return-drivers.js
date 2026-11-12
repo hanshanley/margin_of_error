@@ -3,7 +3,8 @@ import { participationDownload } from "./participation-downloads.js";
 import { calibratedTerms, validateCalibratedSwing, calibratedMapValue, roundedContributions, switchingConstraintBounds } from "./participation-calibrated-swing.js";
 import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
   scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
-import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection, norcFamilies } from "./participation-norc-house.js";
+import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection, norcFamilies,
+  norcAssociations, norcSharedBound, validateNorcAssociation } from "./participation-norc-house.js";
 
 export const effectTerms = [
   ["switching", "Switching", "#3e7d84"],
@@ -145,6 +146,8 @@ export async function initializeReturnDrivers() {
     const stateSelect = root.querySelector("[data-driver-state]");
     const group = root.querySelector("[data-driver-group]");
     const familySelect = root.querySelector("[data-driver-family]");
+    const associationSelect = root.querySelector("[data-driver-association]");
+    const associationNote = root.querySelector("[data-driver-association-note]");
     const unitsSelect = root.querySelector("[data-driver-units]");
     const detail = root.querySelector("[data-driver-detail]");
     const summary = root.querySelector("[data-driver-summary]");
@@ -157,7 +160,8 @@ export async function initializeReturnDrivers() {
     for (const item of items) names[item.feature.properties.STUSAB] ||= item.feature.properties.NAME;
     const codes = items.map(item => item.feature.properties.STUSAB).sort((a, b) => names[a].localeCompare(names[b]));
     let selectedCode = "TX";
-    let scenarios, norc, norcComparison, norcFamily, hitObserver, groupKind="", generation = 0;
+    let scenarios, norc, norcComparison, norcOriginalComparison, norcFamily, hitObserver, groupKind="", generation = 0;
+    const associationKey=()=>associationSelect?.value || "original";
     const norcUnits=()=>unitsSelect?.value || "margin";
     const legacyMapNote = root.querySelector(".driver-map-note").cloneNode(true);
     stateSelect.replaceChildren(new Option("Select a state on the map…", ""),
@@ -336,7 +340,10 @@ export async function initializeReturnDrivers() {
       else if (office.value==="house" && payload.norc_source) {
         if (norc && code) renderNorcSelection(norc.rows.find(r=>r.state_code===code),
           view.value==="reported_total"?"":group.value,names[code],summary,detail,
-          {units:norcUnits(),family:norcFamily,comparison:norcComparison});
+          {units:norcUnits(),family:norcFamily,comparison:norcComparison,
+            association:norcComparison?.association_profile,
+            associationState:norc?.historical_association_stress?.state_parameters[code],
+            originalComparison:norcOriginalComparison});
         else { summary.replaceChildren();detail.replaceChildren();summary.hidden=true;detail.hidden=true; }
       }
       else if (row) select(row);
@@ -353,6 +360,11 @@ export async function initializeReturnDrivers() {
     const render = async () => {
       const current = ++generation, scenario = isScenarioView(view.value);
       const norcMode=office.value==="house" && !scenario && Boolean(payload.norc_source);
+      if (associationNote) associationNote.hidden=true;
+      if (associationSelect) {
+        associationSelect.closest("label").hidden=!norcMode || !payload.norc_association_sources;
+        associationSelect.disabled=!norcMode || !payload.norc_association_sources;
+      }
       if (familySelect) {
         familySelect.closest("label").hidden=!norcMode || Boolean(norc && !norcComparison);
         familySelect.disabled=!norcComparison;
@@ -367,11 +379,19 @@ export async function initializeReturnDrivers() {
         status.textContent="Loading the checksum-verified NORC demographic House model.";
         root.querySelector("[data-driver-map]").replaceChildren();summary.hidden=true;detail.hidden=true;
         try {
-          const loaded=await loadNorcHouse(payload.norc_source);
+          const requested=associationKey();
+          const receipt=requested==="original"?payload.norc_source:payload.norc_association_sources?.profiles?.[requested];
+          if (!receipt) throw new Error("Missing pinned association profile");
+          const [loaded,original]=await Promise.all([
+            loadNorcHouse(receipt),
+            requested==="original"?Promise.resolve(null):loadNorcHouse(payload.norc_source),
+          ]);
           if (current!==generation) return;
+          if (requested!=="original") validateNorcAssociation(loaded,original);
           if (loaded.contract==="participation.house_model_families.v1") {
             norcComparison=loaded;
-            norcFamily=loaded.preferred_family;
+            norcOriginalComparison=requested==="original"?loaded:original;
+            norcFamily=loaded.families[norcFamily]?norcFamily:loaded.preferred_family;
             if (familySelect) {
               familySelect.replaceChildren(...norcFamilies.map(([key,label])=>new Option(label,key)));
               familySelect.value=norcFamily;familySelect.disabled=false;
@@ -387,6 +407,14 @@ export async function initializeReturnDrivers() {
         }
       }
       if (norcMode) {setGroups("norc");group.disabled=view.value==="reported_total";}
+      if (norcMode && associationNote) {
+        const share=norcUnits()==="democratic_two_party_share";
+        associationNote.textContent=`Before conditioning: ${norc.summary.return_anchored}-state `
+          +`${share?"Democratic two-party-share":"D−R margin"} mean absolute error `
+          +`${(norc.preconditioning_margin_MAE_pp*(share ? .5 : 1)).toFixed(2)} pp. `
+          +"Temporal-association profiles were not selected using these return errors.";
+        associationNote.hidden=false;
+      }
       if (scenario && !scenarios) {
         status.textContent = "Loading verified conditional scenarios; previous values are cleared.";
         root.querySelector("[data-driver-map]").replaceChildren();
@@ -409,10 +437,8 @@ export async function initializeReturnDrivers() {
       const byCode = new Map(all.map(row => [row.state_code, row]));
       const norcByCode=norcMode?new Map(norc.rows.map(r=>[r.state_code,r])):null;
       const retention=norcMode && view.value==="retaining";
-      const comparedModels=norcComparison?Object.values(norcComparison.families):[norc];
-      const bound = retention ? 100 : norcMode ? Math.max(5,Math.ceil(Math.max(0,
-        ...comparedModels.flatMap(model=>model.rows.flatMap(row=>norcViews.filter(([key])=>key!=="retaining")
-          .map(([key])=>Math.abs(norcMapValue(row,key,group.value,norcUnits())??0)))))/5)*5)
+      const sharedMaximum=payload.norc_association_sources?.shared_max_abs_margin?.[group.value] ?? null;
+      const bound = retention ? 100 : norcMode ? norcSharedBound(norcComparison || norc,group.value,norcUnits(),sharedMaximum)
         : scenario ? scenarioScale(Object.keys(scenarios.state_scenarios).map(code =>
         scenarioEstimate(scenarios, code, view.value, group.value)?.value ?? null)) : mapScale(all, calibration);
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
@@ -420,6 +446,7 @@ export async function initializeReturnDrivers() {
         +`${50-norc.summary.return_anchored} are NORC source scenarios with unavailable observed comparisons. `
         +"Gray means unsupported, not zero. Demographic values contribute to the statewide shift. "
         +(norcComparison?`${norcComparison.family_labels[norcFamily]}. `:"")
+        +(payload.norc_association_sources?`${norcAssociations.find(([key])=>key===associationKey())?.[1]}. `:"")
         +(retention?"Retained-choice percentages keep their own denominator; change units do not apply."
           :norcUnits()==="democratic_two_party_share"?"Change units: Democratic two-party share points.":"Change units: D−R margin points.")
         : scenario
@@ -446,7 +473,8 @@ export async function initializeReturnDrivers() {
         : "NORC-informed, return-constrained model estimates, not observed voter histories. Net participation combines modeled exits and entry/return. "
           +"Each demographic dimension separately partitions its state; dimensions overlap and are not additive causes. "
           +(norcUnits()==="democratic_two_party_share"?"Democratic two-party share changes are half D−R margin changes; Other is outside that denominator. ":"")
-          +"Model-family differences are not confidence intervals. No state model is spread onto precincts.";
+          +"Model-family and historical-association stresses are not confidence intervals. Historical transport is not validated for 2026. "
+          +"No state model is spread onto precincts.";
       else if (scenario) note.textContent = "Synthetic shares within recalled major-party source choices, not all voters, "
         + "electoral swing contributions or confirmed missing ballots. The five gross outcomes include Other and unresolved choices. "
         + "State models are not allocated to counties or precincts.";
@@ -532,6 +560,10 @@ export async function initializeReturnDrivers() {
     familySelect?.addEventListener("change",()=>{
       if (!norcComparison?.families[familySelect.value]) return;
       norcFamily=familySelect.value;norc=norcComparison.families[norcFamily];render();
+    });
+    associationSelect?.addEventListener("change",()=>{
+      norc=undefined;norcComparison=undefined;
+      render();
     });
     unitsSelect?.addEventListener("change",render);
     window.addEventListener("participation:effects-state", event => {
