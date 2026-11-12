@@ -3,6 +3,7 @@ import { participationDownload } from "./participation-downloads.js";
 import { calibratedTerms, validateCalibratedSwing, calibratedMapValue, roundedContributions, switchingConstraintBounds } from "./participation-calibrated-swing.js";
 import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
   scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
+import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection } from "./participation-norc-house.js";
 
 export const effectTerms = [
   ["switching", "Switching", "#3e7d84"],
@@ -154,13 +155,29 @@ export async function initializeReturnDrivers() {
     for (const item of items) names[item.feature.properties.STUSAB] ||= item.feature.properties.NAME;
     const codes = items.map(item => item.feature.properties.STUSAB).sort((a, b) => names[a].localeCompare(names[b]));
     let selectedCode = "TX";
-    let scenarios, generation = 0;
+    let scenarios, norc, hitObserver, groupKind="", generation = 0;
     const legacyMapNote = root.querySelector(".driver-map-note").cloneNode(true);
     stateSelect.replaceChildren(new Option("Select a state on the map…", ""),
       ...codes.map(code => new Option(names[code], code)));
     const paintSelection = () => {
-      for (const path of root.querySelectorAll(".driver-state"))
+      for (const path of root.querySelectorAll(".driver-state")) {
         path.classList.toggle("selected", path.dataset.stateCode === selectedCode);
+        path.setAttribute("tabindex",path.dataset.stateCode === selectedCode ? "0" : "-1");
+      }
+      const selected=root.querySelector(".driver-state.selected");
+      if (selected) selected.parentNode.append(selected);
+      for (const hit of root.querySelectorAll("[data-driver-hit]"))
+        hit.parentNode.append(hit);
+    };
+    const setGroups = kind => {
+      if (groupKind===kind) return;
+      const previous=group.value;
+      const options=kind==="norc" ? norcGroups(norc).map(g=>new Option(g.label,g.value))
+        : scenarioGroups(scenarios).map(g=>new Option(g.label,g.key));
+      group.replaceChildren(new Option(kind==="norc"?"All source groups":"Overall source frame",""),...options);
+      if ([...group.options].some(o=>o.value===previous)) group.value=previous;
+      groupKind=kind;
+      root.querySelector("[data-driver-group-control]").childNodes[0].textContent=kind==="norc"?"Demographic group":"Source group";
     };
     const selectScenario = (row, code) => {
       const estimate = row && scenarioEstimate(scenarios, code, view.value, group.value);
@@ -313,6 +330,11 @@ export async function initializeReturnDrivers() {
       const row = data.rows.find(value => value.state_code === code && value.office === office.value);
       if (isScenarioView(view.value) && scenarios && code) selectScenario(row, code);
       else if (isScenarioView(view.value)) { detail.hidden = true; summary.hidden = true; }
+      else if (office.value==="house" && payload.norc_source) {
+        if (norc && code) renderNorcSelection(norc.rows.find(r=>r.state_code===code),
+          view.value==="reported_total"?"":group.value,names[code],summary,detail);
+        else { summary.replaceChildren();detail.replaceChildren();summary.hidden=true;detail.hidden=true; }
+      }
       else if (row) select(row);
       else if (code) {
         detail.replaceChildren(element("h3", names[code]),
@@ -326,8 +348,24 @@ export async function initializeReturnDrivers() {
     };
     const render = async () => {
       const current = ++generation, scenario = isScenarioView(view.value);
-      root.querySelector("[data-driver-group-control]").hidden = !scenario;
-      root.querySelector(".driver-controls").dataset.scenarios = String(scenario);
+      const norcMode=office.value==="house" && !scenario && Boolean(payload.norc_source);
+      root.querySelector("[data-driver-group-control]").hidden = !scenario && !norcMode;
+      root.querySelector(".driver-controls").dataset.scenarios = String(scenario || norcMode);
+      if (norcMode && !norc) {
+        status.textContent="Loading the checksum-verified NORC demographic House model.";
+        root.querySelector("[data-driver-map]").replaceChildren();summary.hidden=true;detail.hidden=true;
+        try {
+          const loaded=await loadNorcHouse(payload.norc_source);
+          if (current!==generation) return;
+          norc=loaded;
+        } catch (error) {
+          if (current!==generation) return;
+          status.textContent=`NORC House model unavailable: ${error.message}. No older fitted model is substituted.`;
+          const retry=element("button","Retry NORC model");retry.type="button";retry.addEventListener("click",render);
+          root.querySelector("[data-driver-map]").replaceChildren(retry);return;
+        }
+      }
+      if (norcMode) {setGroups("norc");group.disabled=view.value==="reported_total";}
       if (scenario && !scenarios) {
         status.textContent = "Loading verified conditional scenarios; previous values are cleared.";
         root.querySelector("[data-driver-map]").replaceChildren();
@@ -336,9 +374,6 @@ export async function initializeReturnDrivers() {
           const loaded = await loadScenarios();
           if (current !== generation) return;
           scenarios = loaded;
-          group.replaceChildren(new Option("Overall source frame", ""),
-            ...scenarioGroups(scenarios).map(row => new Option(row.label, row.key)));
-          group.disabled = false;
         } catch (error) {
           if (current !== generation) return;
           status.textContent = `Scenario map unavailable: ${error.message}. Other map views and complete downloads remain available.`;
@@ -348,49 +383,69 @@ export async function initializeReturnDrivers() {
           return;
         }
       }
+      if (scenario) {setGroups("legacy");group.disabled=false;}
       const all = driverRows(data, office.value, "", "magnitude", names);
       const byCode = new Map(all.map(row => [row.state_code, row]));
-      const bound = scenario ? scenarioScale(Object.keys(scenarios.state_scenarios).map(code =>
+      const norcByCode=norcMode?new Map(norc.rows.map(r=>[r.state_code,r])):null;
+      const retention=norcMode && view.value==="retaining";
+      const bound = retention ? 100 : norcMode ? Math.max(5,Math.ceil(Math.max(0,
+        ...norc.rows.flatMap(row=>norcViews.filter(([key])=>key!=="retaining")
+          .map(([key])=>Math.abs(norcMapValue(row,key,group.value)??0))))/5)*5)
+        : scenario ? scenarioScale(Object.keys(scenarios.state_scenarios).map(code =>
         scenarioEstimate(scenarios, code, view.value, group.value)?.value ?? null)) : mapScale(all, calibration);
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
-      status.textContent = scenario
+      status.textContent = norcMode ? `${norc.summary.return_anchored} House reconstructions use recorded endpoints; `
+        +`${50-norc.summary.return_anchored} are NORC source scenarios with unavailable observed comparisons. `
+        +"Gray means unsupported, not zero. Demographic values contribute to the statewide shift."
+        : scenario
         ? `${all.filter(row => scenarioEstimate(scenarios, row.state_code, view.value, group.value)).length} supported source scenarios in ${office.value} frames. `
           + "Gross source-weight shares, not swing contributions or measured staying home."
         : `${all.filter(row => calibration.get(row.id)?.point).length}/${all.length} `
         + `${office.value === "house" ? "House states" : office.value === "governor" ? "governor source frames" : "Senate races"} `
         + "have comparable endpoints. Gray is unavailable; views share one signed scale.";
-      root.querySelector("[data-driver-scale-min]").textContent = scenario ? "0%" : `−${bound} pp`;
-      root.querySelector("[data-driver-scale-max]").textContent = scenario ? `${Math.round(bound * 100)}%` : `+${bound} pp`;
-      root.querySelector(".driver-map-ticks").children[1].textContent = scenario ? `${Math.round(bound * 50)}%` : "0";
-      root.querySelector(".driver-map-ramp").style.background = scenario
+      root.querySelector("[data-driver-scale-min]").textContent = retention?"0%":scenario ? "0%" : `−${bound} pp`;
+      root.querySelector("[data-driver-scale-max]").textContent = retention?"100%":scenario ? `${Math.round(bound * 100)}%` : `+${bound} pp`;
+      root.querySelector(".driver-map-ticks").children[1].textContent = retention?"50%":scenario ? `${Math.round(bound * 50)}%` : "0";
+      root.querySelector(".driver-map-ramp").style.background = scenario || retention
         ? "linear-gradient(to right,#f1eee6,#2c6c75)" : "";
-      root.querySelector(".driver-map-key").setAttribute("aria-label", scenario
-        ? "Sequential synthetic source-weight share scale" : "Shared signed margin-point scale");
+      root.querySelector(".driver-map-key").setAttribute("aria-label", retention
+        ? "Sequential modeled party-retention percentage scale" : scenario
+          ? "Sequential synthetic source-weight share scale" : "Shared signed margin-point scale");
       const directions = root.querySelector(".driver-map-directions").children;
-      directions[0].textContent = scenario ? "Lower share" : "Republican direction";
-      directions[1].textContent = scenario ? "Higher share" : "Democratic direction";
+      directions[0].textContent = scenario || retention ? "Lower share" : "Republican direction";
+      directions[1].textContent = scenario || retention ? "Higher share" : "Democratic direction";
       const note = root.querySelector(".driver-map-note");
-      if (scenario) note.textContent = "Synthetic shares within recalled major-party source choices, not all voters, "
+      if (norcMode) note.textContent=retention
+        ? "Modeled share of previous major-party choices assigned the same party. Retention is not a contribution to the change in margin."
+        : "NORC-informed, return-constrained model estimates, not observed voter histories. Net participation combines modeled exits and entry/return. "
+          +"Each demographic dimension separately partitions its state; dimensions overlap and are not additive causes. No state model is spread onto precincts.";
+      else if (scenario) note.textContent = "Synthetic shares within recalled major-party source choices, not all voters, "
         + "electoral swing contributions or confirmed missing ballots. The five gross outcomes include Other and unresolved choices. "
         + "State models are not allocated to counties or precincts.";
       else note.replaceChildren(...Array.from(legacyMapNote.childNodes).map(node => node.cloneNode(true)));
       {
-        const [key, label] = [...mapTerms, ...scenarioViews].find(([value]) => value === view.value);
+        const [key, label] = [...(norcMode?norcViews:mapTerms), ...scenarioViews].find(([value]) => value === view.value);
         const host = root.querySelector("[data-driver-map]");
         host.dataset.driverMap = key;
         root.querySelector("[data-driver-map-title]").textContent = label;
-        root.querySelector("[data-driver-map-caption]").textContent = scenario
+        root.querySelector("[data-driver-map-caption]").textContent = norcMode
+          ? key==="reported_total" ? "Observed same-office House margin change; no demographic vote shares are inferred."
+            : `${group.selectedOptions[0].textContent}. ${retention?"Share retaining party":"Contribution to statewide margin change"}. `
+              +(key==="modeled_nonparticipation"?"Entry/return and modeled absence are included together.":"")
+          : scenario
           ? `${group.selectedOptions[0].textContent}. Share of recalled major-party source weight; assumption-dependent, not identified histories.`
           : mapDescriptions[key];
         const svg = svgElement("svg", { viewBox: "0 0 1000 640", role: "group",
-          "aria-label": `${label}: ${scenario ? "synthetic source-weight shares" : "signed margin points"} by state`, "data-scale": bound });
+          "aria-label": `${label}: ${retention ? "modeled percentages" : scenario ? "synthetic source-weight shares" : "signed margin points"} by state`, "data-scale": bound });
         for (const item of items) {
           const code = item.feature.properties.STUSAB, row = byCode.get(code);
-          const value = scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key, calibration.get(row?.id));
+          const value = norcMode ? norcMapValue(norcByCode.get(code),key,group.value)
+            : scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key, calibration.get(row?.id));
           const normalized = value ?? null;
           const text = `${names[code]} · ${label}: ${normalized === null ? "no qualified comparison, group or model"
-            : scenario ? `${(normalized * 100).toFixed(1)}%` : signedPP(normalized)}. `
-            + (scenario ? "Synthetic source-weight share, not measured staying home." : "Margin points, not a vote share or turnout rate.");
+            : retention ? `${normalized.toFixed(1)}%` : scenario ? `${(normalized * 100).toFixed(1)}%` : signedPP(normalized)}. `
+            + (retention ? "Modeled party-retention share, not a margin contribution."
+              : scenario ? "Synthetic source-weight share, not measured staying home." : "Margin points, not a vote share or turnout rate.");
           const path = svgElement("path", { d: item.d, fill: effectFill(normalized, bound),
             class: "driver-state", "fill-rule": "evenodd", "data-state-code": code,
             "data-model-value": normalized ?? "", ...(row ? { "data-model-id": row.id } : {}),
@@ -398,6 +453,9 @@ export async function initializeReturnDrivers() {
             "aria-label": text });
           const title = svgElement("title", {}); title.textContent = text; path.append(title);
           path.addEventListener("click", () => selectState(code));
+          path.addEventListener("keydown",event=>{
+            if (event.key==="Enter" || event.key===" ") {event.preventDefault();selectState(code);}
+          });
           svg.append(path);
         }
         for (const [x, text] of [[60, "Alaska"], [310, "Hawaii · insets not to scale"]]) {
@@ -405,20 +463,45 @@ export async function initializeReturnDrivers() {
           caption.textContent = text; svg.append(caption);
         }
         host.replaceChildren(svg);
+        const updateHitTargets=()=>{
+          svg.querySelectorAll("[data-driver-hit]").forEach(node=>node.remove());
+          const scale=svg.getBoundingClientRect().width/1000;
+          if (scale>0) for (const path of svg.querySelectorAll("path")) {
+            const box=path.getBBox();
+            if (box.width*scale>=6 || box.height*scale>=6) continue;
+            const hit=svgElement("circle",{cx:box.x+box.width/2,cy:box.y+box.height/2,
+              r:3/scale,fill:"transparent","data-driver-hit":path.dataset.stateCode,
+              "aria-hidden":"true",style:"cursor:pointer"});
+            hit.addEventListener("click",()=>selectState(path.dataset.stateCode));
+            svg.append(hit);
+          }
+        };
+        hitObserver?.disconnect();
+        hitObserver=new ResizeObserver(updateHitTargets);hitObserver.observe(svg);
+        updateHitTargets();
       }
       selectState(selectedCode);
     };
     for (const control of [office, view, stateSelect]) {
       control.disabled = false;
     }
-    office.addEventListener("change", render);
+    const changeOffice=() => {
+      const previous=view.value, options=office.value==="house" && payload.norc_source?norcViews:mapTerms;
+      view.replaceChildren(...options.map(([key,label])=>new Option(label,key)));
+      const archived=element("optgroup");archived.label="Archived survey-frame scenarios";
+      for (const [key,label] of scenarioViews) archived.append(new Option(label,key));
+      view.append(archived);
+      view.value=[...view.options].some(o=>o.value===previous)?previous:"reported_total";
+      render();
+    };
+    office.addEventListener("change",changeOffice);
     view.addEventListener("change", render);
     stateSelect.addEventListener("change", () => selectState(stateSelect.value));
     group.addEventListener("change", render);
     window.addEventListener("participation:effects-state", event => {
       selectState(codes.find(code => names[code] === event.detail || code === event.detail) || "");
     });
-    render();
+    changeOffice();
   } catch (error) {
     status.textContent = `Model map unavailable: ${error.message}. Saved numerical tables and complete downloads remain below.`;
   }

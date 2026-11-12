@@ -45,7 +45,7 @@ with sync_playwright() as runtime:
                     f'{float(value["bounds"]["switching"]["lower_percent"]):.1f}% to '
                     f'{float(value["bounds"]["switching"]["upper_percent"]):.1f}%')
                 expect(root.locator(f'[data-saved-switching-bounds="{identity}"]')).to_have_text(expected)
-            for name in ("house", "senate", "governor"):
+            for name in ("senate", "governor"):
                 office.select_option(name)
                 state.select_option("TX")
                 rows = [row for row in data["rows"] if row["office"] == name]

@@ -1,28 +1,38 @@
 ---
 import { readFileSync } from 'node:fs';
 import { roundedContributions, switchingConstraintBounds } from '../../public/scripts/participation-calibrated-swing.js';
+import { roundedNorcContributions } from '../../public/scripts/participation-norc-house.js';
 const { names } = Astro.props as { names: Record<string, string> };
 type DriverRow = { id: string; state_code: string; office: string; components_pp: Record<string, number>;
 	reported_comparison: { baseline_year?: number; reported_change_pp: number | null;
 		other_and_unallocated_pp: number | null; baseline_alignment_pp: number | null } };
 const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/viewer-data.json', 'utf8'));
 const calibration = JSON.parse(readFileSync('data/participation-return-attribution/20261111-03/return-constrained-viewer.json', 'utf8'));
+const norcSource = JSON.parse(readFileSync('data/participation-return-attribution/20261111-05/norc-receipt.json', 'utf8'));
+const norcPoints = JSON.parse(readFileSync('data/participation-return-attribution/20261111-05/norc-point-summary.json', 'utf8'));
 type CalibratedRow = { id: string; state_code: string; office: string;
 	point: { reported_change_pp: number; components_pp: Record<string, number> } | null };
 const receipt = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/download.json', 'utf8'));
-const payload = JSON.stringify({ data, calibration, names }).replaceAll('<', '\\u003c');
+const payload = JSON.stringify({ data, calibration, names, norc_source: norcSource }).replaceAll('<', '\\u003c');
 const pp = (value: number | null) => value === null ? 'Unavailable' : `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
+const validation = norcPoints.validation;
+const tests = [
+	['2024 House baseline bridge', validation.house_2024_bridge_without_demographics, validation.house_2024_bridge],
+	['2026 House response holdout', validation.current_2026_response_without_demographics, validation.current_2026_response],
+	['Untouched 2022 → 2024 transfer', validation.historical_transfer.without_demographics, validation.historical_transfer.with_demographics],
+];
 ---
 <section id="participation-return-drivers" class="participation-current" aria-labelledby="return-drivers-title">
 	<header class="section-intro">
-		<p class="kicker">2026 · Swing and transition scenarios</p>
-		<h2 id="return-drivers-title">Swing, switching and participation</h2>
-		<p>Explore the <strong>reported swing</strong> and fitted transition scenarios on one map.
-			Each scenario is constrained to both elections, not independently measured voter histories.</p>
+		<p class="kicker">2026 · NORC House vote-flow model</p>
+		<h2 id="return-drivers-title">Why House margins changed</h2>
+		<p>Model retained voters, switching, entry/return and nonparticipation using NORC responses.
+			Choose a state and demographic group to see how its estimated flows contribute to the House shift.</p>
 	</header>
 	<p class="caption">Reported swing compares earlier <strong>same-office returns</strong>.
 		Known-D/R margin = 100 × (D − R) / (D + R). Gray is unavailable.
-		Assumptions and ranges remain below the map.</p>
+		NORC source models are trained separately from the reported results; the reconstruction then uses those results as constraints.
+		Estimates, model checks and assumptions appear below the map.</p>
 	<div class="driver-controls">
 		<label>2026 office<select data-driver-office disabled><option value="house">House · states</option>
 			<option value="senate">Senate</option><option value="governor">Governor · frames</option></select></label>
@@ -43,8 +53,7 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 		</select></label>
 		<label class="driver-state-control">State<select data-driver-state disabled><option value="">Loading state context…</option></select></label>
 	</div>
-	<p data-driver-status class="caption" role="status">Saved return-constrained scenarios; original unfitted source estimates remain archived below.</p>
-	<div data-driver-summary class="driver-summary" hidden aria-live="polite"></div>
+	<p data-driver-status class="caption" role="status">Loading NORC House estimates; every saved state summary and complete download remains below.</p>
 	<div class="driver-maps">
 		<section class="driver-map-card" aria-labelledby="driver-map-title">
 			<h3 id="driver-map-title" data-driver-map-title>Reported swing</h3>
@@ -59,38 +68,75 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 		<span class="driver-no-model"><i></i>No qualified comparison / model</span>
 	</div>
 	<p class="caption driver-map-note">Colour shows <strong>signed percentage-point changes or contributions to the margin</strong>,
-		not party vote shares or turnout rates. In each fitted scenario, reported total =
-		party-choice switching + no current-contest vote + entry/return + Other-party choice.
+		not party vote shares or turnout rates. House model change =
+		switching + net participation + Other-party choice + unresolved responses.
 		The common accounting-frame size and transitions are modeled, not measured people.
 		No state estimate is spread onto counties or precincts.</p>
-	<details class="explorer-notes"><summary>Selected state: fitted contributions and assumption ranges</summary>
+	<div data-driver-summary class="driver-summary" hidden aria-live="polite"></div>
+	<details class="explorer-notes"><summary>Selected state: demographic breakdown, retained voters and model checks</summary>
 		<div data-driver-detail class="driver-detail" hidden></div>
 	</details>
 	<details class="explorer-notes"><summary>How to read these estimates and their uncertainty</summary>
-	<p class="caption">Nine scenarios vary prior persistence from half to double and the assumed
-		common accounting-frame size from 0.8× to 1.25×. Their ranges are
-		<strong>assumption sensitivity, not confidence or identification intervals</strong>.
-		Each scenario has a nonnegative transition table constrained to both return endpoints.
-		Shapley averaging includes denominator effects in the four mechanisms rather than
-		adding an unmodeled residual. Displayed equation terms use sum-preserving rounding.</p>
-	<p class="caption">The original survey-derived synthetic transitions are a prior only.
-		Recalled presidential choice is not substituted for the previous same-office result.
-		The synthetic accounting frame is not a measured eligible population; outside the
-		target contest does not identify no ballot, new eligibility, death, migration or first-ever voting.
-		Unreported Other-party totals remain unknown in the source and are explicitly prior-assumed
-		in the scenario, never filled as observed zeros. No state model is allocated to counties or precincts.</p>
-	<p class="caption">Aggregate totals leave many possible transition tables. In all 89 comparable
-		central frames, <strong>zero D↔R switching is compatible with the same totals</strong>.
-		The selected-state details report its sharp gross-switching feasibility range, not a margin
-		contribution or confidence interval. A separate complete constraint-only analysis includes every
-		witness table; it does not refit the transition model or convert missing Other into nonvote.</p>
-	<p class="caption">The separate party-choice scenarios simulate gross shares within recalled major-party
+	<p class="caption">The House model learns from <strong>113,020 NORC CHEP 2026 responses</strong> and
+		<strong>136,435 AP/NORC 2024 responses with positive state weights</strong>.
+		It learns prior-choice and demographic associations jointly, rather than assigning each group the same party transitions.
+		CHEP recalls 2024 President, not House: the AP2024 President/House association and recalled 2022 House choice supply an explicit baseline bridge.</p>
+	<p class="caption">Source training does not use 2026 partisan return totals. Held-out NORC response tests,
+		an untouched 2022-to-2024 source-transfer test and the before-conditioning state prediction remain separate from endpoint reconstruction.
+		A match after conditioning on results is not independent validation.</p>
+	<p class="caption">Three accounting-frame sizes and half/double latent-choice affinity give
+		<strong>assumption sensitivity, not confidence intervals</strong>.
+		Denominator effects are assigned inside each transition mechanism using exact symmetric accounting.
+		Entry/return and modeled absence together make the net participation effect.
+		Current demographic dimensions overlap; each dimension separately adds to its state, not to the other dimensions.</p>
+	<p class="caption">Source likely-voter classes are not administratively confirmed staying home.
+		Prior-contest nonvote is not proven first-ever voting or new eligibility.
+		Unknown answers remain separate from nonparticipation. Age, residence, source-weight targets,
+		changing candidate availability and reporting scope remain assumptions or qualifications.
+		No state estimates are allocated to counties or precincts.</p>
+	<p class="caption">The archived party-choice scenarios simulate gross shares within recalled major-party
 		choices, not contributions to the electoral swing. Their half/double persistence envelopes are
 		assumption sensitivity, not confidence intervals. Gross-switching state-held-out error is 1.39 pp;
 		House-model transport to Senate/governor and demographic party associations remain unvalidated.
 		Historical voting marginals do not identify individual staying-home or switching histories.</p>
+	<p class="caption">Aggregate returns do not uniquely identify behavior. The archived constraint-only
+		analysis permits zero D↔R switching in all 89 earlier central frames.
+		NORC-informed estimates add learned associations and assumptions, not identified causes.</p>
+	<div class="table-wrap">
+		<table data-norc-validation><caption>Prediction checks before return conditioning · lower scores are better</caption>
+			<thead><tr><th>Test</th><th>Log loss: prior/state only</th><th>With demographics</th>
+				<th>Brier: prior/state only</th><th>With demographics</th></tr></thead>
+			<tbody>{tests.map(([label, baseline, model]) => <tr><th scope="row">{label}</th>
+				{[baseline.source_weighted_log_loss, model.source_weighted_log_loss,
+					baseline.source_weighted_multiclass_brier ?? baseline.source_weighted_brier,
+					model.source_weighted_multiclass_brier ?? model.source_weighted_brier]
+					.map(value => <td class="numeric">{value.toFixed(4)}</td>)}</tr>)}</tbody>
+		</table>
+	</div>
+	<p class="caption">The baseline bridge's Brier score is slightly worse with demographics; the historical
+		transfer improvement is modest. These predict source responses, not independently verified voter histories.
+		Before conditioning on current party totals, the 35-state margin mean absolute error is 5.99 pp.
+		Selected-state details retain each prediction gap as model error.</p>
 	</details>
-	<details class="explorer-notes"><summary>Every saved return-constrained scenario</summary>
+	<details class="explorer-notes"><summary>Every saved NORC House-state estimate</summary>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="All 50 NORC House state models">
+			<table><caption>Return-informed estimates, not identified histories. Unavailable observed comparisons remain separate from NORC source scenarios.</caption>
+				<thead><tr><th scope="col">State</th><th scope="col">Observed shift</th>
+					<th scope="col">Model shift</th><th scope="col">Switching</th>
+					<th scope="col">Net participation</th><th scope="col">Other / unresolved</th></tr></thead>
+				<tbody>{norcPoints.rows.map((row: any) => {
+					const rounded = roundedNorcContributions(row.point);
+					return <tr data-saved-norc={row.state_code}><th scope="row">{names[row.state_code]}</th>
+						<td class="numeric">{pp(row.source_comparison_available ? row.reported_comparison.reported_change_pp : null)}</td>
+						<td class="numeric">{pp(row.point.total_change_pp)}</td>
+						<td class="numeric">{pp(rounded.switching)}</td>
+						<td class="numeric">{pp(rounded.entry + rounded.exit)}</td>
+						<td class="numeric">{pp(rounded.other_choice + rounded.unresolved)}</td></tr>;
+				})}</tbody>
+			</table>
+		</div>
+	</details>
+	<details class="explorer-notes"><summary>Archived earlier return-constrained scenarios</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 113 return-constrained decisions">
 			<table><caption>Central fitted scenario; not independently observed voter histories. The final column is a compatible gross-switching percentage of previous D/R votes, not margin points or a confidence interval. Unavailable is not zero.</caption>
 				<thead><tr><th scope="col">State / office</th><th scope="col">Reported swing</th>
@@ -131,6 +177,7 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 		</div>
 	</details>
 	<div class="download-links"><a href={receipt.url}>Complete historical returns, inputs, all models/scenarios, code and checksums · ZIP</a></div>
+	<div class="download-links"><a href={norcSource.complete_download_url}>Complete NORC demographic House model: permitted fitted inputs, every state/group/seed/assumption query, code and tests · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-return-constrained-20261111-01/complete-analysis.zip">Complete return-constrained model, all 801 scenarios and transition cells, inputs, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-flow-identification-20261111-01/complete-analysis.zip">Complete compatible-flow bounds, all 3,824 extremal tables, original inputs, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-transition-simulation-20261111-01/complete-analysis.zip">Complete conditional transition simulations, every input/query/seed, code and checksums · ZIP</a></div>
@@ -155,8 +202,9 @@ const pp = (value: number | null) => value === null ? 'Unavailable' : `${value >
 	.driver-map-card > p { margin: 0 0 .5rem; }
 	.driver-map { min-height: 120px; }
 	.driver-map :global(svg) { display: block; width: 100%; max-width: 62.5rem; height: auto; margin-inline: auto; }
-	.driver-map :global(.driver-state) { stroke: var(--paper); stroke-width: .8; vector-effect: non-scaling-stroke; cursor: pointer; }
-	.driver-map :global(.driver-state:hover), .driver-map :global(.driver-state.selected) { stroke: #243f49; stroke-width: 1.8; }
+	.driver-map :global(.driver-state) { stroke: #8d958e; stroke-width: .85; stroke-linejoin: round; vector-effect: non-scaling-stroke; cursor: pointer; }
+	.driver-map :global(.driver-state:hover) { stroke: #355b61; stroke-width: 1.35; }
+	.driver-map :global(.driver-state.selected) { stroke: #173d48; stroke-width: 2.2; }
 	.driver-map :global(.driver-inset-label) { fill: var(--muted); font: 15px var(--sans); }
 	.driver-map-key { display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
 		gap: .5rem .75rem; font: .66rem/1.4 var(--sans); color: var(--muted); margin-block: .75rem; }
