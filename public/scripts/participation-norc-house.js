@@ -97,7 +97,7 @@ export function validateNorcHouse(data) {
 export async function loadNorcHouse(receipt) {
   if (!receipt || !/^[a-f0-9]{64}$/.test(receipt.sha256)
       || !Number.isSafeInteger(receipt.bytes) || receipt.bytes<=0 || receipt.bytes>10_000_000
-      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/norc-house-demographic\/20261111-01\/viewer-data\.json$/.test(receipt.url))
+      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01)\/viewer-data\.json$/.test(receipt.url))
     throw new Error("Unpinned NORC model input");
   const pin = `${receipt.url}|${receipt.sha256}|${receipt.bytes}`;
   if (!cached || cachedPin !== pin) {

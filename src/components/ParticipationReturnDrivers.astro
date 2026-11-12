@@ -8,8 +8,8 @@ type DriverRow = { id: string; state_code: string; office: string; components_pp
 		other_and_unallocated_pp: number | null; baseline_alignment_pp: number | null } };
 const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/viewer-data.json', 'utf8'));
 const calibration = JSON.parse(readFileSync('data/participation-return-attribution/20261111-03/return-constrained-viewer.json', 'utf8'));
-const norcSource = JSON.parse(readFileSync('data/participation-return-attribution/20261111-05/norc-receipt.json', 'utf8'));
-const norcPoints = JSON.parse(readFileSync('data/participation-return-attribution/20261111-05/norc-point-summary.json', 'utf8'));
+const norcSource = JSON.parse(readFileSync('data/participation-return-attribution/20261112-01/norc-receipt.json', 'utf8'));
+const norcPoints = JSON.parse(readFileSync('data/participation-return-attribution/20261112-01/norc-point-summary.json', 'utf8'));
 type CalibratedRow = { id: string; state_code: string; office: string;
 	point: { reported_change_pp: number; components_pp: Record<string, number> } | null };
 const receipt = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/download.json', 'utf8'));
@@ -84,6 +84,12 @@ const tests = [
 	<p class="caption">Source training does not use 2026 partisan return totals. Held-out NORC response tests,
 		an untouched 2022-to-2024 source-transfer test and the before-conditioning state prediction remain separate from endpoint reconstruction.
 		A match after conditioning on results is not independent validation.</p>
+	<p class="caption">The 2024 baseline now uses the official House Clerk candidate totals across all 435 districts,
+		including explicit same-nominee party lines but excluding blank, overvote and ranked-choice accounting.
+		This corrects 21 earlier baselines and adds 12 state comparisons without refitting NORC.
+		The 2026 counts remain the November 7 source snapshot, not newly updated or certified final totals.
+		Alaska is held for nonpartisan classification, Maine for unresolved ranked-choice round compatibility,
+		and Pennsylvania for missing candidate totals. Unreported counts are never filled with zero.</p>
 	<p class="caption">Three accounting-frame sizes and half/double latent-choice affinity give
 		<strong>assumption sensitivity, not confidence intervals</strong>.
 		Denominator effects are assigned inside each transition mechanism using exact symmetric accounting.
@@ -115,7 +121,7 @@ const tests = [
 	</div>
 	<p class="caption">The baseline bridge's Brier score is slightly worse with demographics; the historical
 		transfer improvement is modest. These predict source responses, not independently verified voter histories.
-		Before conditioning on current party totals, the 35-state margin mean absolute error is 5.99 pp.
+		Before conditioning on current party totals, the {norcPoints.summary.return_anchored}-state margin mean absolute error is {norcPoints.preconditioning_margin_MAE_pp.toFixed(2)} pp.
 		Selected-state details retain each prediction gap as model error.</p>
 	</details>
 	<details class="explorer-notes"><summary>Every saved NORC House-state estimate</summary>
@@ -178,6 +184,7 @@ const tests = [
 	</details>
 	<div class="download-links"><a href={receipt.url}>Complete historical returns, inputs, all models/scenarios, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href={norcSource.complete_download_url}>Complete NORC demographic House model: permitted fitted inputs, every state/group/seed/assumption query, code and tests · ZIP</a></div>
+	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-norc-house-demographic-20261111-01/complete-analysis.zip">Archived original NORC model and complete queries · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-return-constrained-20261111-01/complete-analysis.zip">Complete return-constrained model, all 801 scenarios and transition cells, inputs, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-flow-identification-20261111-01/complete-analysis.zip">Complete compatible-flow bounds, all 3,824 extremal tables, original inputs, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-transition-simulation-20261111-01/complete-analysis.zip">Complete conditional transition simulations, every input/query/seed, code and checksums · ZIP</a></div>
