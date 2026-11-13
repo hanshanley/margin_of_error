@@ -96,6 +96,24 @@ with sync_playwright() as playwright:
             assert page.locator("#reviewed-county-overview button").count() == 0
         for width in (1440, 390):
             page.set_viewport_size(dict(width=width, height=1000))
+            for row in current_expected["reporting"]:
+                page.goto(args.base_url.rstrip("/") +
+                    f'/voter-participation/?year=2026&state={row["state"]}&mode=official&map-level=state',
+                    wait_until="domcontentloaded", timeout=90000)
+                panel = page.locator("#selection-panel")
+                expect(panel).to_contain_text(f'{row["ballots"]:,}', timeout=90000)
+                if row["denominator"] is not None and row["validated_pct"] is not None:
+                    expect(panel).to_contain_text(f'{row["denominator"]:,}')
+                if row["source_update_label"]:
+                    expect(panel).to_contain_text(row["source_update_label"])
+                expect(panel.locator("a.source-link").first).to_have_attribute("href", row["source_url"])
+                assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+                if row["state_code"] == "OR":
+                    page.locator("#historical-explorer").screenshot(
+                        path=str(args.proof.with_suffix(f".or.{width}.png")))
+                cases.append(dict(width=width, state=row["state"],
+                    native_state_reference_checked=True, reported_ballots=row["ballots"],
+                    native_source_clock_and_link_exact=True, no_overflow=True))
             page.goto(args.base_url.rstrip("/") +
                 "/voter-participation/?year=2026&state=Minnesota&mode=official&map-level=county",
                 wait_until="domcontentloaded", timeout=90000)

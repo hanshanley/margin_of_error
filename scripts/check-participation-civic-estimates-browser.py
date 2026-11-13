@@ -14,7 +14,7 @@ from playwright.sync_api import expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/participation-civic-estimates/20261108-01/output"
-NATIVE = ROOT / "data/participation-registered-controls/20261113-32/display-model.json"
+NATIVE = ROOT / "data/participation-registered-controls/20261113-33/display-model.json"
 
 
 def pct(value):
@@ -33,6 +33,8 @@ def check(base, proof, focus_state="VT"):
     expected = json.loads((DATA / "summary.json").read_text())
     metadata = json.loads((DATA / "download.json").read_text())
     native = json.loads(NATIVE.read_bytes())
+    focus_control = next(row["control_id"] for row in native["scenarios"]
+                         if row["state_code"] == focus_state)
     modes = []
     with sync_playwright() as runtime:
         browser = runtime.chromium.launch()
@@ -110,9 +112,11 @@ def check(base, proof, focus_state="VT"):
                     if groups:
                         expect(frame).to_contain_text("not full demographic turnout")
                     frame.locator(":scope > summary").click()
-                    expect(frame.locator(f'[data-native-state="{focus_state}"]')).to_be_visible()
+                    focus_row = frame.locator(
+                        f'[data-native-registered-scenario={json.dumps(focus_control)}]')
+                    expect(focus_row).to_be_visible()
                     if proof and mode in ("desktop", "mobile"):
-                        frame.locator(f'[data-native-state="{focus_state}"]').scroll_into_view_if_needed()
+                        focus_row.scroll_into_view_if_needed()
                         page.screenshot(path=str(proof.with_suffix(f".{mode}.png")))
                     frame.get_by_text("Every state and D.C. source-frame decision", exact=True).click()
                     expect(frame.locator('[data-native-registered-state="DC"]')).to_be_visible()

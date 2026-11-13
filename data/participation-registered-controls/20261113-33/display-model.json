@@ -1,0 +1,880 @@
+{
+  "complete_download": {
+    "bytes": 283098707,
+    "sha256": "c3f315eae798b4bdc693afdf1024b710e1bdc3c5ebe9940e17c0b9d315452f05",
+    "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-state-controls-20261113-33/complete-analysis.zip"
+  },
+  "contract": "participation.registered_control_display.v1",
+  "frame_exchangeability_or_observed_staying_home_qualified": false,
+  "model_variant_or_study_probabilities_changed": false,
+  "native_control_version": 33,
+  "native_outcome_fitting_applied": false,
+  "query_downloads": {
+    "complete-conditional-registered-scenarios.csv": {
+      "bytes": 31512,
+      "sha256": "cb743361fe71bfbf100d9e0b36947cb202c8a3ce2733b16178b11d6e8553e657",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-state-controls-20261113-33/complete-conditional-registered-scenarios.csv"
+    },
+    "complete-native-control-dispositions.csv": {
+      "bytes": 55394,
+      "sha256": "1db6a368297b5ea344109c8e2ecce426ebd4029ce34b4604a75be7a56fad49b6",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-state-controls-20261113-33/complete-native-control-dispositions.csv"
+    },
+    "complete-state-control-query.csv": {
+      "bytes": 26005,
+      "sha256": "0b888c865caa83ed1529d9dfda1d2dbe7ac520ba429684fab5a92db800d15054",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-state-controls-20261113-33/complete-state-control-query.csv"
+    }
+  },
+  "release_base": "https://github.com/hanshanley/margin_of_error/releases/download/participation-state-controls-20261113-33/",
+  "scenarios": [
+    {
+      "civic_source_n": "1811",
+      "conditional_modeled_nonvoter_count": "2074177.2074509895036011263676802980445385487821623913409095659363176820046788304",
+      "conditional_modeled_voter_count": "1778769.7925490104963988736323197019554614512178376086590904340636823179953211696",
+      "control_id": "reporting-AL",
+      "native_denominator_basis": "registered_voters_source_definition",
+      "native_registered_denominator": "3852947",
+      "source_time_label": "11/04/2026 11:16:06 AM",
+      "source_url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
+      "state_code": "AL"
+    },
+    {
+      "civic_source_n": "6101",
+      "conditional_modeled_nonvoter_count": "9410388.5452375533674821519352316012409356742339511174317350335354175384877646857",
+      "conditional_modeled_voter_count": "13863201.454762446632517848064768398759064325766048882568264966464582461512235314",
+      "control_id": "ca-2026-native-voter-turnout-20261106",
+      "native_denominator_basis": "native_totalRegisteredVoters_definition_unqualified",
+      "native_registered_denominator": "23273590",
+      "source_time_label": "Native last report 'November 6, 2026, 11:00 p.m.' (timezone not declared); V26 generation date 20261107, time literal 1518432 (timezone not declared)",
+      "source_url": "https://media.sos.ca.gov/media/status_GG.json",
+      "state_code": "CA"
+    },
+    {
+      "civic_source_n": "1886",
+      "conditional_modeled_nonvoter_count": "1807768.9107667075366758468945991275109179027600878703573529069106461562628948401",
+      "conditional_modeled_voter_count": "2820171.0892332924633241531054008724890820972399121296426470930893538437371051599",
+      "control_id": "co-2026-returned-processed-20261105",
+      "native_denominator_basis": "eligible_registered_including_election_day_preregistrants",
+      "native_registered_denominator": "4627940",
+      "source_time_label": "Period end '11:59 PM November 5, 2026' (source timezone not declared); publication date 2026-11-06",
+      "source_url": "https://www.coloradosos.gov/pubs/newsRoom/pressReleases/2026/20261105GenElectionActivity.xlsx",
+      "state_code": "CO"
+    },
+    {
+      "civic_source_n": "4180",
+      "conditional_modeled_nonvoter_count": "6228846.6238999350897867932039497982931138756111854708835740025442753533605898308",
+      "conditional_modeled_voter_count": "7475648.3761000649102132067960502017068861243888145291164259974557246466394101692",
+      "control_id": "fl-2026-held-statewide-eligible-active-register",
+      "native_denominator_basis": "eligible_active_registered_voters_deadline_20261005_report_frame",
+      "native_registered_denominator": "13704495",
+      "source_time_label": "Native update time/timezone missing; held November 6 snapshot, not an as-of clock",
+      "source_url": "https://floridaelectionwatch.gov/CountyReportingStatus",
+      "state_code": "FL"
+    },
+    {
+      "civic_source_n": "695",
+      "conditional_modeled_nonvoter_count": "441848.65098532433255593871597362727179444532425891470888329570832178650685323522",
+      "conditional_modeled_voter_count": "411550.34901467566744406128402637272820555467574108529111670429167821349314676478",
+      "control_id": "hi-2026-held-state-summary-report-3",
+      "native_denominator_basis": "registered_voters_source_definition",
+      "native_registered_denominator": "853399",
+      "source_time_label": "Printed on: 11/04/2026 at 09:09:04 am",
+      "source_url": "https://elections.hawaii.gov/wp-content/results/2026%20General/histatewide.pdf",
+      "state_code": "HI"
+    },
+    {
+      "civic_source_n": "3895",
+      "conditional_modeled_nonvoter_count": "3457131.5945978426263719065913184515200936210611573127111218933291335034614564352",
+      "conditional_modeled_voter_count": "4427914.4054021573736280934086815484799063789388426872888781066708664965385435648",
+      "control_id": "reporting-NC",
+      "native_denominator_basis": "active_and_inactive_registered_voters",
+      "native_registered_denominator": "7885046",
+      "source_time_label": "November 12, 2026 6:33 pm",
+      "source_url": "https://er.ncsbe.gov/enr/20261103/data/county.txt",
+      "state_code": "NC"
+    },
+    {
+      "civic_source_n": "1655",
+      "conditional_modeled_nonvoter_count": "1025783.7328710128767248047952625844044586654926650395463490203105184187099335829",
+      "conditional_modeled_voter_count": "2083361.2671289871232751952047374155955413345073349604536509796894815812900664171",
+      "control_id": "reporting-OR",
+      "native_denominator_basis": "active_registered_voters",
+      "native_registered_denominator": "3109145",
+      "source_time_label": "11/13/2026 | 1:45 AM PT",
+      "source_url": "https://results.oregonvotes.gov/?ID=39",
+      "state_code": "OR"
+    },
+    {
+      "civic_source_n": "946",
+      "conditional_modeled_nonvoter_count": "415433.34950553926056596812243011443020102556155949625653784119212990100199870938",
+      "conditional_modeled_voter_count": "378832.65049446073943403187756988556979897443844050374346215880787009899800129062",
+      "control_id": "ri-2026-held-all-locality-ballots",
+      "native_denominator_basis": "native_state_totalVoters_registration_definition_unqualified",
+      "native_registered_denominator": "794266",
+      "source_time_label": "2026-11-05T01:02:59.1989035Z",
+      "source_url": "https://electionresults.ri.gov/results/public/rhodeisland/elections/2026StatewideGeneralElection",
+      "state_code": "RI"
+    },
+    {
+      "civic_source_n": "754",
+      "conditional_modeled_nonvoter_count": "179356.10276154103653317992520465172970426609304565418156667659310560565997956764",
+      "conditional_modeled_voter_count": "327473.89723845896346682007479534827029573390695434581843332340689439434002043236",
+      "control_id": "vt-2026-held-municipal-registration",
+      "native_denominator_basis": "municipal_source_registered_voters_active_inactive_unspecified",
+      "native_registered_denominator": "506830",
+      "source_time_label": "11/09/2026",
+      "source_url": "https://outside.vermont.gov/dept/sos/Elections_Division/election_info_resources/elections_results_data/2026_general_election_voter_turnout.pdf",
+      "state_code": "VT"
+    },
+    {
+      "civic_source_n": "1936",
+      "conditional_modeled_nonvoter_count": "704023.10450450482346044776578424681142018257190316686848501134308315660150778282",
+      "conditional_modeled_voter_count": "765694.89549549517653955223421575318857981742809683313151498865691684339849221718",
+      "control_id": "nm-2026-native-general-registered-turnout",
+      "native_denominator_basis": "native_export_Registered_Voters_general_turnout_frame",
+      "native_registered_denominator": "1469718",
+      "source_time_label": "Native results last updated 11/6/2026 9:55 AM MT; download literal timezone not declared",
+      "source_url": "https://electionresults.sos.nm.gov/VoterTurnoutDetails.aspx?map=TURN",
+      "state_code": "NM"
+    },
+    {
+      "civic_source_n": "1000",
+      "conditional_modeled_nonvoter_count": "412724.45269109226926848086405422090302774716321628304599506916892924158801177815",
+      "conditional_modeled_voter_count": "397682.54730890773073151913594577909697225283678371695400493083107075841198822185",
+      "control_id": "de-2026-held-state-and-house-district-turnout",
+      "native_denominator_basis": "native_Reg_Voters_same_report_definition_unqualified",
+      "native_registered_denominator": "810407",
+      "source_time_label": "Native turnout clock/timezone not supplied; candidate clock is separate and not substituted",
+      "source_url": "https://elections.delaware.gov/results/enr/GE2026.html?group=state",
+      "state_code": "DE"
+    },
+    {
+      "civic_source_n": "1509",
+      "conditional_modeled_nonvoter_count": "910825.07555712361763668260879669938301959057836010295798121939944958323143576594",
+      "conditional_modeled_voter_count": "945578.92444287638236331739120330061698040942163989704201878060055041676856423406",
+      "control_id": "ar-2026-held-explicit-state-county-parent-turnout",
+      "native_denominator_basis": "native_registeredVoters_explicit_parent_active_inactive_unspecified",
+      "native_registered_denominator": "1856404",
+      "source_time_label": "Native API lastUpdated 2026-11-04T21:21:28.2891014Z; version v173; unofficial",
+      "source_url": "https://arkansas.tally-enr.com/#bucket=results",
+      "state_code": "AR"
+    },
+    {
+      "civic_source_n": "1262",
+      "conditional_modeled_nonvoter_count": "1739014.3260474805660046833562523270417980785180880647465163627211693314871302961",
+      "conditional_modeled_voter_count": "3431936.6739525194339953166437476729582019214819119352534836372788306685128697039",
+      "control_id": "wa-2026-held-explicit-register-parent-no-state-ballot-reference",
+      "native_denominator_basis": "native_totalVoters_parent_corroborated_voterRegistration_active_inactive_unspecified",
+      "native_registered_denominator": "5170951",
+      "source_time_label": "asOf=2026-11-05T04:01:31.3211464Z; lastUpdated=2026-11-05T03:57:41.6823065Z; publishDate=2026-11-05T04:07:12.8391684Z",
+      "source_url": "https://results.votewa.gov/results/public/api/elections/washington/20261103/data",
+      "state_code": "WA"
+    },
+    {
+      "civic_source_n": "3435",
+      "conditional_modeled_nonvoter_count": "2179005.1005223743762323885744563635204127098590391935879013791992688001812007344",
+      "conditional_modeled_voter_count": "2195821.8994776256237676114255436364795872901409608064120986208007311998187992656",
+      "control_id": "az-2026-held-explicit-register-parent-source-components-conflict",
+      "native_denominator_basis": "native_totalVoters_explicit_parent_active_inactive_components_inconsistent",
+      "native_registered_denominator": "4374827",
+      "source_time_label": "asOf=2026-11-05T01:56:20.7372053Z; lastUpdated=2026-11-05T01:56:17.3000739Z; publishDate=2026-11-05T03:50:35.7268964Z",
+      "source_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+      "state_code": "AZ"
+    },
+    {
+      "civic_source_n": "3512",
+      "conditional_modeled_nonvoter_count": "2731557.7615756362560181446847148066098428574420041805826262425047259937130571841",
+      "conditional_modeled_voter_count": "3762883.2384243637439818553152851933901571425579958194173737574952740062869428159",
+      "control_id": "va-2026-held-explicit-register-parent-no-state-ballot-reference",
+      "native_denominator_basis": "native_totalVoters_explicit_parent_active_inactive_components_reconcile_definition_unspecified",
+      "native_registered_denominator": "6494441",
+      "source_time_label": "asOf=2026-11-05T02:19:25.4373295Z; lastUpdated=2026-11-04T23:28:02.0027742Z; publishDate=2026-11-05T02:19:26.5289707Z",
+      "source_url": "https://enr.elections.virginia.gov/results/public/api/elections/virginia/2026-November-General/data",
+      "state_code": "VA"
+    },
+    {
+      "civic_source_n": "1086",
+      "conditional_modeled_nonvoter_count": "314420.78998399096280492817039740794035495220279633504406624737447108156068518204",
+      "conditional_modeled_voter_count": "291012.21001600903719507182960259205964504779720366495593375262552891843931481796",
+      "control_id": "ak-2026-held-native-federal-ballot-registration-parent",
+      "native_denominator_basis": "native_federal_scope_registered_v_status_definition_unspecified",
+      "native_registered_denominator": "605433",
+      "source_time_label": "Native updated=11/04/2026 2:11 PM; timezone undeclared; uncertified",
+      "source_url": "https://www.elections.alaska.gov/enr/26GENR/results/statewide.js",
+      "state_code": "AK"
+    },
+    {
+      "civic_source_n": "942",
+      "conditional_modeled_nonvoter_count": "331984.59557874595627606099385106819107245589155942736157188658576324319573903191",
+      "conditional_modeled_voter_count": "296578.40442125404372393900614893180892754410844057263842811341423675680426096809",
+      "control_id": "sd-2026-derived-complete-county-registration-frame",
+      "native_denominator_basis": "derived_sum_all_66_native_county_Voters_parents_counted_once",
+      "native_registered_denominator": "628563",
+      "source_time_label": "Native CurrentDateTime retained per county; update-clock meaning/timezone unqualified",
+      "source_url": "https://electionresults.sd.gov/VoterTurnoutDetails.aspx?map=TURN",
+      "state_code": "SD"
+    },
+    {
+      "civic_source_n": "754",
+      "conditional_modeled_nonvoter_count": "650565.38226714089148206543113045090397664825884452249924871817834763518179459768",
+      "conditional_modeled_voter_count": "1133689.6177328591085179345688695490960233517411554775007512818216523648182054023",
+      "control_id": "ut-2026-held-20261102-native-active-registration-parent",
+      "native_denominator_basis": "native_2026_11_02_Total_active_parent_not_election_time_register",
+      "native_registered_denominator": "1784255",
+      "source_time_label": "Native registration date 11/02/2026; timezone/time-of-day absent; not an election-time denominator",
+      "source_url": "https://vote.utah.gov/wp-content/uploads/2026/11/11.02.2026-Active-Voters-by-County-and-Party.pdf",
+      "state_code": "UT"
+    },
+    {
+      "civic_source_n": "1625",
+      "conditional_modeled_nonvoter_count": "1025955.9462530885392279299132954446171869058068891033737838991629705699845014716",
+      "conditional_modeled_voter_count": "1229441.0537469114607720700867045553828130941931108966262161008370294300154985284",
+      "control_id": "ct-2026-native-20261019-active-registration-parent",
+      "native_denominator_basis": "native_2026_10_19_Totals_Active_parent_not_reported_results_RV",
+      "native_registered_denominator": "2255397",
+      "source_time_label": "Native registration date 10/19/2026; timezone/time-of-day absent; not an election-time denominator",
+      "source_url": "https://portal.ct.gov/-/media/sots/electionservices/registration-and_enrollment_statistics/2026/registration-enrollment-statistics-11032026-general-election.pdf?hash=B63BA7D920D0CDC5EEEBCDE76D6661B4&rev=fef46a197a054c8c8b96fba43c563ffc",
+      "state_code": "CT"
+    },
+    {
+      "civic_source_n": "2105",
+      "conditional_modeled_nonvoter_count": "3594059.0892651447881652174175861625206215929665629612023760014137570976875879283",
+      "conditional_modeled_voter_count": "3153315.9107348552118347825824138374793784070334370387976239985862429023124120717",
+      "control_id": "nj-2026-native-20261103-total-registration-parent",
+      "native_denominator_basis": "native_2026_11_03_total_parent_active_inactive_status_unspecified",
+      "native_registered_denominator": "6747375",
+      "source_time_label": "Native report date 11/3/26; time-of-day/timezone and active/inactive status unspecified",
+      "source_url": "https://www.nj.gov/state/elections/assets/pdf/svrs-reports/2026/2026-1103-voter-registration-by-county.pdf",
+      "state_code": "NJ"
+    },
+    {
+      "civic_source_n": "1565",
+      "conditional_modeled_nonvoter_count": "1279500.3221789473881630215310291461179905229647476252632202924798644949957711772",
+      "conditional_modeled_voter_count": "1176234.6778210526118369784689708538820094770352523747367797075201355050042288228",
+      "control_id": "ok-2026-native-source-registration-parent",
+      "native_denominator_basis": "native_2026_11_01_Grand_Total_parent_status_unspecified",
+      "native_registered_denominator": "2455735",
+      "source_time_label": "Declared as of November1,2026; native printed clock11/1/2026 3:05AM; timezone absent; not an election-time denominator",
+      "source_url": "https://oklahoma.gov/content/dam/ok/en/elections/voter-registration-statistics/2026-vr-statistics/2026-11-01-vrstats-county.pdf",
+      "state_code": "OK"
+    },
+    {
+      "civic_source_n": "3665",
+      "conditional_modeled_nonvoter_count": "3782111.9686351706209157587921820278525660198978108133620353459853114281991514216",
+      "conditional_modeled_voter_count": "5270583.0313648293790842412078179721474339801021891866379646540146885718008485784",
+      "control_id": "pa-2026-native-source-registration-parent",
+      "native_denominator_basis": "native_2026_general_All_Parties_Total_parent_cutoff_and_status_unspecified",
+      "native_registered_denominator": "9052695",
+      "source_time_label": "Election label November3,2026 General Election; registration cutoff, report time and timezone not stated",
+      "source_url": "https://www.pa.gov/content/dam/copapwp-pagov/en/dos/resources/voting-and-elections/voting-and-election-statistics/voter-registration-statistics/certified%20voter%20registration%20stats%20general%20election%202026%20-%20final.pdf",
+      "state_code": "PA"
+    },
+    {
+      "civic_source_n": "2483",
+      "conditional_modeled_nonvoter_count": "887190.05186681365817744457832860396882666289735100353704558397038710790301348417",
+      "conditional_modeled_voter_count": "1140329.9481331863418225554216713960311733371026489964629544160296128920969865158",
+      "control_id": "ks-2026-native-20261001-Grand-Total-registration-parent",
+      "native_denominator_basis": "native_2026_10_01_Grand_Total_parent_blank_party_cells_preserved",
+      "native_registered_denominator": "2027520",
+      "source_time_label": "Native Date column October1,2026; date-only Excel style, not an observed midnight clock; timezone absent",
+      "source_url": "https://sos.ks.gov/elections/vr-statistics/2026/10-2026-Voter-Registration-Numbers-by-County.xlsx",
+      "state_code": "KS"
+    },
+    {
+      "civic_source_n": "1513",
+      "conditional_modeled_nonvoter_count": "734324.86542043367754583647434952027003022165264162962646359715872051015049582336",
+      "conditional_modeled_voter_count": "476060.13457956632245416352565047972996977834735837037353640284127948984950417664",
+      "control_id": "wv-2026-native-preliminary-official-release-20261106",
+      "native_denominator_basis": "registered_voters_in_same_preliminary_release_cutoff_and_status_unspecified",
+      "native_registered_denominator": "1210385",
+      "source_time_label": "Agency release publication November6,2026; count snapshot/registration cutoff/timezone unknown; preliminary before canvass",
+      "source_url": "https://sos.wv.gov/article/wv-secretary-state-kris-warner-announces-canvassing-will-start-monday-november-9",
+      "state_code": "WV"
+    },
+    {
+      "civic_source_n": "2068",
+      "conditional_modeled_nonvoter_count": "1531805.7617285246644791503618380740758081219304127020070601353701006913984671198",
+      "conditional_modeled_voter_count": "1938414.2382714753355208496381619259241918780695872979929398646298993086015328802",
+      "control_id": "sc-2026-native-RP0040-registration-report-labelled-20261102",
+      "native_denominator_basis": "native_RP0040_Race_All_TOTAL_All_Total_report_label_not_cutoff",
+      "native_registered_denominator": "3470220",
+      "source_time_label": "Declared report label November2,2026; embedded registration cutoff/report clock/timezone not stated",
+      "source_url": "https://scvotes.gov/wp-content/uploads/2026/11/VR-Totals-Race-County-Gender-Age-2026-11-2.xlsx",
+      "state_code": "SC"
+    },
+    {
+      "civic_source_n": "1900",
+      "conditional_modeled_nonvoter_count": "486298.39199538028936620426504553973429370578017644606072119527991956277959926742",
+      "conditional_modeled_voter_count": "778723.60800461971063379573495446026570629421982355393927880472008043722040073258",
+      "control_id": "ne-2026-native-registry-eligible-count-processed-20261101",
+      "native_denominator_basis": "native_registry_eligible_to_vote_Grand_Total_source_filter_not_estimated_eligible_population",
+      "native_registered_denominator": "1265022",
+      "source_time_label": "Native Processed11/01/2026 2:00AM; Printed11/02/2026 8:27AM; timezone/cutoff unknown, neither is a live update",
+      "source_url": "https://sos.nebraska.gov/sites/default/files/doc/elections/vrstats/2026VR/Statewide-November-2026.pdf",
+      "state_code": "NE"
+    },
+    {
+      "civic_source_n": "1655",
+      "conditional_modeled_nonvoter_count": "1026826.9547739277110976641610247538407142593296484568057710014668240458968164108",
+      "conditional_modeled_voter_count": "2085480.0452260722889023358389752461592857406703515431942289985331759541031835892",
+      "control_id": "or-2026-monthly-registration-prepared-20261103",
+      "native_denominator_basis": "native_November_registration_Total_prepared_20261103_status_and_cutoff_unspecified",
+      "native_registered_denominator": "3112307",
+      "source_time_label": "Native November2026 report prepared11/3/2026; registration cutoff/timezone/status unspecified",
+      "source_url": "https://sos.oregon.gov/elections/Documents/Registration/2026-November.pdf",
+      "state_code": "OR"
+    },
+    {
+      "civic_source_n": "1087",
+      "conditional_modeled_nonvoter_count": "300600.47422172129108791515914283725938824105240680922393758506934676428554037297",
+      "conditional_modeled_voter_count": "756202.52577827870891208484085716274061175894759319077606241493065323571445962703",
+      "control_id": "id-2026-native-monthly-registration-202611",
+      "native_denominator_basis": "native_202611_CountyTotals_Total_corroborated_by_two_district_views_status_unspecified",
+      "native_registered_denominator": "1056803",
+      "source_time_label": "Native archive month2026-11; index lastupdatedNovember2,2026 is not registry cutoff/clock; status/TZ unspecified",
+      "source_url": "https://archive.voteidaho.gov/data/voter-registrations/202611_CountyTotals.csv",
+      "state_code": "ID"
+    },
+    {
+      "civic_source_n": "2965",
+      "conditional_modeled_nonvoter_count": "989627.43389989704923112568976842448797970755663935033170105472072283962551021534",
+      "conditional_modeled_voter_count": "2937408.5661001029507688743102315755120202924433606496682989452792771603744897847",
+      "control_id": "mn-2026-native-registered-only-snapshot-20261102",
+      "native_denominator_basis": "native_Registered_Voters_TOTAL_asof20261102_excluding_separate_PreRegistered_16_17",
+      "native_registered_denominator": "3927036",
+      "source_time_label": "Native county table asofNovember2,2026; exact clock/timezone and active/inactive status unspecified",
+      "source_url": "https://www.sos.mn.gov/election-administration-campaigns/data-maps/voter-registration-counts/",
+      "state_code": "MN"
+    },
+    {
+      "civic_source_n": "1811",
+      "conditional_modeled_nonvoter_count": "1825148.7016358943999127431518132671530097820274833104684264105473436845636176427",
+      "conditional_modeled_voter_count": "1565208.2983641056000872568481867328469902179725166895315735894526563154363823573",
+      "control_id": "al-2026-native-monthly-active-202610",
+      "native_denominator_basis": "native_active_registration_TOTAL_cached_L3",
+      "native_registered_denominator": "3390357",
+      "source_time_label": "Native worksheet October/year2026; cutoff date/clock/timezone unknown; URL2026-11 is not snapshot month",
+      "source_url": "https://www.sos.alabama.gov/sites/default/files/election-data/2026-11/ALVR-2026.xlsx",
+      "state_code": "AL"
+    },
+    {
+      "civic_source_n": "1811",
+      "conditional_modeled_nonvoter_count": "2074303.1779007630228174152664297584419285004270760187537895699536138187897394852",
+      "conditional_modeled_voter_count": "1778877.8220992369771825847335702415580714995729239812462104300463861812102605148",
+      "control_id": "al-2026-native-monthly-combined-202610",
+      "native_denominator_basis": "native_combined_registration_TOTAL_cached_B3",
+      "native_registered_denominator": "3853181",
+      "source_time_label": "Native worksheet October/year2026; cutoff date/clock/timezone unknown; URL2026-11 is not snapshot month",
+      "source_url": "https://www.sos.alabama.gov/sites/default/files/election-data/2026-11/ALVR-2026.xlsx",
+      "state_code": "AL"
+    },
+    {
+      "civic_source_n": "1260",
+      "conditional_modeled_nonvoter_count": "2652686.6106862557101129115839429557635938613691559030311617474444216630194008882",
+      "conditional_modeled_voter_count": "2061059.3893137442898870884160570442364061386308440969688382525555783369805991118",
+      "control_id": "in-2026-native-primary-context-register",
+      "native_denominator_basis": "native_Registered_Voters_Statewide_primary_context_not_November_election_time_population",
+      "native_registered_denominator": "4713746",
+      "source_time_label": "Native2026Primary report context; registration cutoff/date/clock/timezone/status unqualified; NOTNovemberGeneral register",
+      "source_url": "https://www.in.gov/dA/21e5da4ae7/2026-Primary-Registration-and-Turnout-Data.xlsx?language_id=1",
+      "state_code": "IN"
+    },
+    {
+      "civic_source_n": "1443",
+      "conditional_modeled_nonvoter_count": "960026.32030306918813178334766194927583751710850309985309228544113318997727095859",
+      "conditional_modeled_voter_count": "928335.67969693081186821665233805072416248289149690014690771455886681002272904141",
+      "control_id": "ms-2026-october-active-register-all82-county-sum",
+      "native_denominator_basis": "derived_sum_all82_native_county_ACTIVE_counts_not_printed_statewide_parent_not_CVAP",
+      "native_registered_denominator": "1888362",
+      "source_time_label": "October2026 official index label; actual cutoff/day/clock/timezone unknown; NOTNovember election-time stock",
+      "source_url": "https://www.sos.ms.gov/sites/default/files/active-voter-count-reports/2026October%20Voter%20Count%20Red.pdf",
+      "state_code": "MS"
+    },
+    {
+      "civic_source_n": "1905",
+      "conditional_modeled_nonvoter_count": "1977326.3321685860039383787825245832448734011101659667298463029485201245644671955",
+      "conditional_modeled_voter_count": "2315995.6678314139960616212174754167551265988898340332701536970514798754355328045",
+      "control_id": "md-2026-general-oct18-eligible-active-precinct-register",
+      "native_denominator_basis": "printed_statewide_eligible_ACTIVE_precinct_register_asof_2026-10-18_same_agency24_county_corroboration",
+      "native_registered_denominator": "4293322",
+      "source_time_label": "register as of October18,2026; November3 General; paired UNOFFICIAL card report run November8,2026 7:44pm; timezone unspecified",
+      "source_url": "https://elections.maryland.gov/press_room/2026_stats/GG26/Eligible%20Active%20Voters%20by%20County%20-%20GG26.xlsx",
+      "state_code": "MD"
+    }
+  ],
+  "source_group_downloads": {
+    "complete-current-native-source-queries.json.gz": {
+      "bytes": 1843747,
+      "sha256": "1e403a4b1bc50113efa3c6e565728b682a1c88f136e6ea9928e6e2db2fbea943",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-state-controls-20261113-33/complete-current-native-source-queries.json.gz"
+    },
+    "complete-native-participation-group-controls.csv": {
+      "bytes": 553003,
+      "sha256": "ed278eb60d021cc345cd4c97a180e326706fd5c5d266cee29dc2af7559f67157",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-state-controls-20261113-33/complete-native-participation-group-controls.csv"
+    }
+  },
+  "states": [
+    {
+      "civic_source_n": "1086",
+      "control_denominator_basis": "native_federal_scope_registered_v_status_definition_unspecified",
+      "control_id": "ak-2026-held-native-federal-ballot-registration-parent",
+      "control_native_time": "Native updated=11/04/2026 2:11 PM; timezone undeclared; uncertified",
+      "control_registered_denominator": "605433",
+      "control_source_url": "https://www.elections.alaska.gov/enr/26GENR/results/statewide.js",
+      "state_code": "AK"
+    },
+    {
+      "civic_source_n": "1811",
+      "control_denominator_basis": "registered_voters_source_definition",
+      "control_id": "reporting-AL",
+      "control_native_time": "11/04/2026 11:16:06 AM",
+      "control_registered_denominator": "3852947",
+      "control_source_url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
+      "state_code": "AL"
+    },
+    {
+      "civic_source_n": "1509",
+      "control_denominator_basis": "native_registeredVoters_explicit_parent_active_inactive_unspecified",
+      "control_id": "ar-2026-held-explicit-state-county-parent-turnout",
+      "control_native_time": "Native API lastUpdated 2026-11-04T21:21:28.2891014Z; version v173; unofficial",
+      "control_registered_denominator": "1856404",
+      "control_source_url": "https://arkansas.tally-enr.com/#bucket=results",
+      "state_code": "AR"
+    },
+    {
+      "civic_source_n": "3435",
+      "control_denominator_basis": "native_totalVoters_explicit_parent_active_inactive_components_inconsistent",
+      "control_id": "az-2026-held-explicit-register-parent-source-components-conflict",
+      "control_native_time": "asOf=2026-11-05T01:56:20.7372053Z; lastUpdated=2026-11-05T01:56:17.3000739Z; publishDate=2026-11-05T03:50:35.7268964Z",
+      "control_registered_denominator": "4374827",
+      "control_source_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+      "state_code": "AZ"
+    },
+    {
+      "civic_source_n": "6101",
+      "control_denominator_basis": "native_totalRegisteredVoters_definition_unqualified",
+      "control_id": "ca-2026-native-voter-turnout-20261106",
+      "control_native_time": "Native last report 'November 6, 2026, 11:00 p.m.' (timezone not declared); V26 generation date 20261107, time literal 1518432 (timezone not declared)",
+      "control_registered_denominator": "23273590",
+      "control_source_url": "https://media.sos.ca.gov/media/status_GG.json",
+      "state_code": "CA"
+    },
+    {
+      "civic_source_n": "1886",
+      "control_denominator_basis": "eligible_registered_including_election_day_preregistrants",
+      "control_id": "co-2026-returned-processed-20261105",
+      "control_native_time": "Period end '11:59 PM November 5, 2026' (source timezone not declared); publication date 2026-11-06",
+      "control_registered_denominator": "4627940",
+      "control_source_url": "https://www.coloradosos.gov/pubs/newsRoom/pressReleases/2026/20261105GenElectionActivity.xlsx",
+      "state_code": "CO"
+    },
+    {
+      "civic_source_n": "1625",
+      "control_denominator_basis": "native_2026_10_19_Totals_Active_parent_not_reported_results_RV",
+      "control_id": "ct-2026-native-20261019-active-registration-parent",
+      "control_native_time": "Native registration date 10/19/2026; timezone/time-of-day absent; not an election-time denominator",
+      "control_registered_denominator": "2255397",
+      "control_source_url": "https://portal.ct.gov/-/media/sots/electionservices/registration-and_enrollment_statistics/2026/registration-enrollment-statistics-11032026-general-election.pdf?hash=B63BA7D920D0CDC5EEEBCDE76D6661B4&rev=fef46a197a054c8c8b96fba43c563ffc",
+      "state_code": "CT"
+    },
+    {
+      "civic_source_n": "",
+      "control_denominator_basis": "registered_voters_source_definition",
+      "control_id": "dc-2026-held-citywide-ballots",
+      "control_native_time": "Provisional November 3, 2026 snapshot; registration reference date unqualified",
+      "control_registered_denominator": "457371",
+      "control_source_url": "https://electionresults.dcboe.org/election_results/2026-General-Election",
+      "state_code": "DC"
+    },
+    {
+      "civic_source_n": "1000",
+      "control_denominator_basis": "native_Reg_Voters_same_report_definition_unqualified",
+      "control_id": "de-2026-held-state-and-house-district-turnout",
+      "control_native_time": "Native turnout clock/timezone not supplied; candidate clock is separate and not substituted",
+      "control_registered_denominator": "810407",
+      "control_source_url": "https://elections.delaware.gov/results/enr/GE2026.html?group=state",
+      "state_code": "DE"
+    },
+    {
+      "civic_source_n": "4180",
+      "control_denominator_basis": "eligible_active_registered_voters_deadline_20261005_report_frame",
+      "control_id": "fl-2026-held-statewide-eligible-active-register",
+      "control_native_time": "Native update time/timezone missing; held November 6 snapshot, not an as-of clock",
+      "control_registered_denominator": "13704495",
+      "control_source_url": "https://floridaelectionwatch.gov/CountyReportingStatus",
+      "state_code": "FL"
+    },
+    {
+      "civic_source_n": "3826",
+      "control_denominator_basis": "unqualified_missing_county_denominators",
+      "control_id": "ga-2026-reported-ballots-20261107",
+      "control_native_time": "API asOf '2026-11-07T00:58:49.5754876Z' (UTC); rendered 'Friday, November 6, 2026 at 7:58:49 PM' (rendered timezone not declared)",
+      "control_registered_denominator": "",
+      "control_source_url": "https://results.sos.ga.gov/results/public/Georgia/elections/11032026GeneralAndSpecialElection/voters?fr=true",
+      "state_code": "GA"
+    },
+    {
+      "civic_source_n": "695",
+      "control_denominator_basis": "registered_voters_source_definition",
+      "control_id": "hi-2026-held-state-summary-report-3",
+      "control_native_time": "Printed on: 11/04/2026 at 09:09:04 am",
+      "control_registered_denominator": "853399",
+      "control_source_url": "https://elections.hawaii.gov/wp-content/results/2026%20General/histatewide.pdf",
+      "state_code": "HI"
+    },
+    {
+      "civic_source_n": "2587",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "IA"
+    },
+    {
+      "civic_source_n": "1087",
+      "control_denominator_basis": "unqualified_county_registration_disagreement",
+      "control_id": "id-2026-held-separate-ballot-report",
+      "control_native_time": "2026-11-04T22:15:32.675786Z",
+      "control_registered_denominator": "",
+      "control_source_url": "https://results.voteidaho.gov/results/public/id/elections/nov2026",
+      "state_code": "ID"
+    },
+    {
+      "civic_source_n": "3852",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "IL"
+    },
+    {
+      "civic_source_n": "1260",
+      "control_denominator_basis": "native_Registered_Voters_Statewide_primary_context_not_November_election_time_population",
+      "control_id": "in-2026-native-primary-context-register",
+      "control_native_time": "Native2026Primary report context; registration cutoff/date/clock/timezone/status unqualified; NOTNovemberGeneral register",
+      "control_registered_denominator": "4713746",
+      "control_source_url": "https://www.in.gov/dA/21e5da4ae7/2026-Primary-Registration-and-Turnout-Data.xlsx?language_id=1",
+      "state_code": "IN"
+    },
+    {
+      "civic_source_n": "2483",
+      "control_denominator_basis": "native_2026_10_01_Grand_Total_parent_blank_party_cells_preserved",
+      "control_id": "ks-2026-native-20261001-Grand-Total-registration-parent",
+      "control_native_time": "Native Date column October1,2026; date-only Excel style, not an observed midnight clock; timezone absent",
+      "control_registered_denominator": "2027520",
+      "control_source_url": "https://sos.ks.gov/elections/vr-statistics/2026/10-2026-Voter-Registration-Numbers-by-County.xlsx",
+      "state_code": "KS"
+    },
+    {
+      "civic_source_n": "1783",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "KY"
+    },
+    {
+      "civic_source_n": "1852",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "LA"
+    },
+    {
+      "civic_source_n": "1956",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "MA"
+    },
+    {
+      "civic_source_n": "1905",
+      "control_denominator_basis": "printed_statewide_eligible_ACTIVE_precinct_register_asof_2026-10-18_same_agency24_county_corroboration",
+      "control_id": "md-2026-general-oct18-eligible-active-precinct-register",
+      "control_native_time": "register as of October18,2026; November3 General; paired UNOFFICIAL card report run November8,2026 7:44pm; timezone unspecified",
+      "control_registered_denominator": "4293322",
+      "control_source_url": "https://elections.maryland.gov/press_room/2026_stats/GG26/Eligible%20Active%20Voters%20by%20County%20-%20GG26.xlsx",
+      "state_code": "MD"
+    },
+    {
+      "civic_source_n": "2134",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "ME"
+    },
+    {
+      "civic_source_n": "4303",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "MI"
+    },
+    {
+      "civic_source_n": "2965",
+      "control_denominator_basis": "native_Registered_Voters_TOTAL_asof20261102_excluding_separate_PreRegistered_16_17",
+      "control_id": "mn-2026-native-registered-only-snapshot-20261102",
+      "control_native_time": "Native county table asofNovember2,2026; exact clock/timezone and active/inactive status unspecified",
+      "control_registered_denominator": "3927036",
+      "control_source_url": "https://www.sos.mn.gov/election-administration-campaigns/data-maps/voter-registration-counts/",
+      "state_code": "MN"
+    },
+    {
+      "civic_source_n": "1741",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "MO"
+    },
+    {
+      "civic_source_n": "1443",
+      "control_denominator_basis": "derived_sum_all82_native_county_ACTIVE_counts_not_printed_statewide_parent_not_CVAP",
+      "control_id": "ms-2026-october-active-register-all82-county-sum",
+      "control_native_time": "October2026 official index label; actual cutoff/day/clock/timezone unknown; NOTNovember election-time stock",
+      "control_registered_denominator": "1888362",
+      "control_source_url": "https://www.sos.ms.gov/sites/default/files/active-voter-count-reports/2026October%20Voter%20Count%20Red.pdf",
+      "state_code": "MS"
+    },
+    {
+      "civic_source_n": "955",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "MT"
+    },
+    {
+      "civic_source_n": "3895",
+      "control_denominator_basis": "active_and_inactive_registered_voters",
+      "control_id": "reporting-NC",
+      "control_native_time": "November 12, 2026 6:33 pm",
+      "control_registered_denominator": "7885046",
+      "control_source_url": "https://er.ncsbe.gov/enr/20261103/data/county.txt",
+      "state_code": "NC"
+    },
+    {
+      "civic_source_n": "282",
+      "control_denominator_basis": "eligible_voters_source_estimate",
+      "control_id": "reporting-ND",
+      "control_native_time": "Tuesday, November 3, 2026 - 11:30pm",
+      "control_registered_denominator": "",
+      "control_source_url": "https://www.sos.nd.gov/news/398-voter-turnout-north-dakota-general-election",
+      "state_code": "ND"
+    },
+    {
+      "civic_source_n": "1900",
+      "control_denominator_basis": "native_registry_eligible_to_vote_Grand_Total_source_filter_not_estimated_eligible_population",
+      "control_id": "ne-2026-native-registry-eligible-count-processed-20261101",
+      "control_native_time": "Native Processed11/01/2026 2:00AM; Printed11/02/2026 8:27AM; timezone/cutoff unknown, neither is a live update",
+      "control_registered_denominator": "1265022",
+      "control_source_url": "https://sos.nebraska.gov/sites/default/files/doc/elections/vrstats/2026VR/Statewide-November-2026.pdf",
+      "state_code": "NE"
+    },
+    {
+      "civic_source_n": "1659",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "NH"
+    },
+    {
+      "civic_source_n": "2105",
+      "control_denominator_basis": "native_2026_11_03_total_parent_active_inactive_status_unspecified",
+      "control_id": "nj-2026-native-20261103-total-registration-parent",
+      "control_native_time": "Native report date 11/3/26; time-of-day/timezone and active/inactive status unspecified",
+      "control_registered_denominator": "6747375",
+      "control_source_url": "https://www.nj.gov/state/elections/assets/pdf/svrs-reports/2026/2026-1103-voter-registration-by-county.pdf",
+      "state_code": "NJ"
+    },
+    {
+      "civic_source_n": "1936",
+      "control_denominator_basis": "native_export_Registered_Voters_general_turnout_frame",
+      "control_id": "nm-2026-native-general-registered-turnout",
+      "control_native_time": "Native results last updated 11/6/2026 9:55 AM MT; download literal timezone not declared",
+      "control_registered_denominator": "1469718",
+      "control_source_url": "https://electionresults.sos.nm.gov/VoterTurnoutDetails.aspx?map=TURN",
+      "state_code": "NM"
+    },
+    {
+      "civic_source_n": "2682",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "NV"
+    },
+    {
+      "civic_source_n": "4511",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "NY"
+    },
+    {
+      "civic_source_n": "4005",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "OH"
+    },
+    {
+      "civic_source_n": "1565",
+      "control_denominator_basis": "native_2026_11_01_Grand_Total_parent_status_unspecified",
+      "control_id": "ok-2026-native-source-registration-parent",
+      "control_native_time": "Declared as of November1,2026; native printed clock11/1/2026 3:05AM; timezone absent; not an election-time denominator",
+      "control_registered_denominator": "2455735",
+      "control_source_url": "https://oklahoma.gov/content/dam/ok/en/elections/voter-registration-statistics/2026-vr-statistics/2026-11-01-vrstats-county.pdf",
+      "state_code": "OK"
+    },
+    {
+      "civic_source_n": "1655",
+      "control_denominator_basis": "active_registered_voters",
+      "control_id": "reporting-OR",
+      "control_native_time": "11/13/2026 | 1:45 AM PT",
+      "control_registered_denominator": "3109145",
+      "control_source_url": "https://results.oregonvotes.gov/?ID=39",
+      "state_code": "OR"
+    },
+    {
+      "civic_source_n": "3665",
+      "control_denominator_basis": "native_2026_general_All_Parties_Total_parent_cutoff_and_status_unspecified",
+      "control_id": "pa-2026-native-source-registration-parent",
+      "control_native_time": "Election label November3,2026 General Election; registration cutoff, report time and timezone not stated",
+      "control_registered_denominator": "9052695",
+      "control_source_url": "https://www.pa.gov/content/dam/copapwp-pagov/en/dos/resources/voting-and-elections/voting-and-election-statistics/voter-registration-statistics/certified%20voter%20registration%20stats%20general%20election%202026%20-%20final.pdf",
+      "state_code": "PA"
+    },
+    {
+      "civic_source_n": "946",
+      "control_denominator_basis": "native_state_totalVoters_registration_definition_unqualified",
+      "control_id": "ri-2026-held-all-locality-ballots",
+      "control_native_time": "2026-11-05T01:02:59.1989035Z",
+      "control_registered_denominator": "794266",
+      "control_source_url": "https://electionresults.ri.gov/results/public/rhodeisland/elections/2026StatewideGeneralElection",
+      "state_code": "RI"
+    },
+    {
+      "civic_source_n": "2068",
+      "control_denominator_basis": "native_RP0040_Race_All_TOTAL_All_Total_report_label_not_cutoff",
+      "control_id": "sc-2026-native-RP0040-registration-report-labelled-20261102",
+      "control_native_time": "Declared report label November2,2026; embedded registration cutoff/report clock/timezone not stated",
+      "control_registered_denominator": "3470220",
+      "control_source_url": "https://scvotes.gov/wp-content/uploads/2026/11/VR-Totals-Race-County-Gender-Age-2026-11-2.xlsx",
+      "state_code": "SC"
+    },
+    {
+      "civic_source_n": "942",
+      "control_denominator_basis": "derived_sum_all_66_native_county_Voters_parents_counted_once",
+      "control_id": "sd-2026-derived-complete-county-registration-frame",
+      "control_native_time": "Native CurrentDateTime retained per county; update-clock meaning/timezone unqualified",
+      "control_registered_denominator": "628563",
+      "control_source_url": "https://electionresults.sd.gov/VoterTurnoutDetails.aspx?map=TURN",
+      "state_code": "SD"
+    },
+    {
+      "civic_source_n": "2026",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "TN"
+    },
+    {
+      "civic_source_n": "5853",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "TX"
+    },
+    {
+      "civic_source_n": "754",
+      "control_denominator_basis": "native_2026_11_02_Total_active_parent_not_election_time_register",
+      "control_id": "ut-2026-held-20261102-native-active-registration-parent",
+      "control_native_time": "Native registration date 11/02/2026; timezone/time-of-day absent; not an election-time denominator",
+      "control_registered_denominator": "1784255",
+      "control_source_url": "https://vote.utah.gov/wp-content/uploads/2026/11/11.02.2026-Active-Voters-by-County-and-Party.pdf",
+      "state_code": "UT"
+    },
+    {
+      "civic_source_n": "3512",
+      "control_denominator_basis": "native_totalVoters_explicit_parent_active_inactive_components_reconcile_definition_unspecified",
+      "control_id": "va-2026-held-explicit-register-parent-no-state-ballot-reference",
+      "control_native_time": "asOf=2026-11-05T02:19:25.4373295Z; lastUpdated=2026-11-04T23:28:02.0027742Z; publishDate=2026-11-05T02:19:26.5289707Z",
+      "control_registered_denominator": "6494441",
+      "control_source_url": "https://enr.elections.virginia.gov/results/public/api/elections/virginia/2026-November-General/data",
+      "state_code": "VA"
+    },
+    {
+      "civic_source_n": "754",
+      "control_denominator_basis": "municipal_source_registered_voters_active_inactive_unspecified",
+      "control_id": "vt-2026-held-municipal-registration",
+      "control_native_time": "11/09/2026",
+      "control_registered_denominator": "506830",
+      "control_source_url": "https://outside.vermont.gov/dept/sos/Elections_Division/election_info_resources/elections_results_data/2026_general_election_voter_turnout.pdf",
+      "state_code": "VT"
+    },
+    {
+      "civic_source_n": "1262",
+      "control_denominator_basis": "native_totalVoters_parent_corroborated_voterRegistration_active_inactive_unspecified",
+      "control_id": "wa-2026-held-explicit-register-parent-no-state-ballot-reference",
+      "control_native_time": "asOf=2026-11-05T04:01:31.3211464Z; lastUpdated=2026-11-05T03:57:41.6823065Z; publishDate=2026-11-05T04:07:12.8391684Z",
+      "control_registered_denominator": "5170951",
+      "control_source_url": "https://results.votewa.gov/results/public/api/elections/washington/20261103/data",
+      "state_code": "WA"
+    },
+    {
+      "civic_source_n": "3289",
+      "control_denominator_basis": "",
+      "control_id": "",
+      "control_native_time": "",
+      "control_registered_denominator": "",
+      "control_source_url": "",
+      "state_code": "WI"
+    },
+    {
+      "civic_source_n": "1513",
+      "control_denominator_basis": "registered_voters_in_same_preliminary_release_cutoff_and_status_unspecified",
+      "control_id": "wv-2026-native-preliminary-official-release-20261106",
+      "control_native_time": "Agency release publication November6,2026; count snapshot/registration cutoff/timezone unknown; preliminary before canvass",
+      "control_registered_denominator": "1210385",
+      "control_source_url": "https://sos.wv.gov/article/wv-secretary-state-kris-warner-announces-canvassing-will-start-monday-november-9",
+      "state_code": "WV"
+    },
+    {
+      "civic_source_n": "781",
+      "control_denominator_basis": "registered_denominator_not_supplied",
+      "control_id": "wy-2026-held-reconciled-county-ballots",
+      "control_native_time": "Native workbook result clock/timezone not supplied; acquisition time is separate",
+      "control_registered_denominator": "",
+      "control_source_url": "https://sos.wyo.gov/Elections/Docs/2026/Results/General/2026_Wyoming_General_Results.zip",
+      "state_code": "WY"
+    }
+  ],
+  "year": 2026
+}
