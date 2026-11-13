@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { platformCover } from '../lib/platform-analysis';
+import { candidateImage } from '../../scripts/prepare-which-candidate-pages.mjs';
 ---
 
 <BaseLayout
@@ -14,7 +15,7 @@ import { platformCover } from '../lib/platform-analysis';
 		<ul class="analysis-list">
 			<li>
 				<a class="analysis-preview" href="/which-candidate/" tabindex="-1" aria-hidden="true">
-					<img src="/artifacts/which-candidate/2026-v2/marginoferror/house-characteristics.png"
+					<img src={candidateImage('marginoferror/house-characteristics.png')}
 						alt="" width="2360" height="1500" loading="eager" decoding="async" />
 				</a>
 				<div>

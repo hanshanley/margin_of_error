@@ -7,12 +7,15 @@ import { fileURLToPath } from 'node:url';
 
 const releaseRoot = 'https://github.com/hanshanley/which-candidate/releases/download/2026-v2/';
 const sourceCommit = 'b4a0668e1b1069f8113ca5f9eb90ee6d9081c79b';
-const external = path => path.endsWith('.zip') || path.startsWith('substack/');
 const assetName = path => path.replaceAll('/', '--');
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 
 export function candidateDownload(path) {
-	return external(path) ? releaseRoot + assetName(path) : `/artifacts/which-candidate/2026-v2/${path}`;
+	return releaseRoot + assetName(path);
+}
+
+export function candidateImage(path) {
+	return `https://raw.githubusercontent.com/hanshanley/which-candidate/${sourceCommit}/publication/2026-v2/${path}`;
 }
 
 export async function prepareCandidatePages(output, manifest, release) {
@@ -21,7 +24,7 @@ export async function prepareCandidatePages(output, manifest, release) {
 	assert.equal(release.draft, false);
 	const assets = new Map(release.assets.map(asset => [asset.name, asset]));
 	const removable = [];
-	for (const [path, expected] of Object.entries(manifest.files).filter(([path]) => external(path))) {
+	for (const [path, expected] of Object.entries(manifest.files)) {
 		assert.ok(!path.split('/').includes('..') && !path.startsWith('/'), `Unsafe publication path: ${path}`);
 		const asset = assets.get(assetName(path));
 		assert.ok(asset, `Missing complete candidate download: ${path}`);
@@ -40,8 +43,10 @@ export async function prepareCandidatePages(output, manifest, release) {
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-	const manifest = JSON.parse(await readFile(new URL('../public/artifacts/which-candidate/2026-v2/manifest.json', import.meta.url)));
+	const bytes = await readFile(new URL('../public/artifacts/which-candidate/2026-v2/manifest.json', import.meta.url));
+	const manifest = JSON.parse(bytes);
 	const release = JSON.parse(execFileSync('gh', ['api', 'repos/hanshanley/which-candidate/releases/tags/2026-v2'], { encoding: 'utf8' }));
-	const count = await prepareCandidatePages(resolve('dist'), manifest, release);
-	console.log(`Verified ${count} complete candidate downloads on the pinned release; website figures remain local.`);
+	const files = { ...manifest.files, 'manifest.json': { bytes: bytes.length, sha256: sha256(bytes) } };
+	const count = await prepareCandidatePages(resolve('dist'), { files }, release);
+	console.log(`Verified ${count} complete candidate downloads on the pinned release; display images use the frozen source commit.`);
 }

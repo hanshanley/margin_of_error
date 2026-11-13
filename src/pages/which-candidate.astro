@@ -1,13 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import release from '../../public/artifacts/which-candidate/2026-v2/manifest.json';
-import { candidateDownload } from '../../scripts/prepare-which-candidate-pages.mjs';
+import { candidateDownload, candidateImage } from '../../scripts/prepare-which-candidate-pages.mjs';
 
 if (release.target_year !== 2026 || !release.provisional || release.charts.length !== 9) {
 	throw new Error('Review the candidate-figure release before publishing a different snapshot.');
 }
 
-const assets = '/artifacts/which-candidate/2026-v2/';
 const repository = 'https://github.com/hanshanley/which-candidate';
 const results = `${repository}/tree/50cfd7bfe48058542ffc9ffd27aa73669a7d52e5/results/2026`;
 const sectionLabels: Record<string, string> = {
@@ -26,7 +25,7 @@ const sectionLabels: Record<string, string> = {
 <BaseLayout
 	title="Which candidate?"
 	description="Nine evidence-led views of Democratic congressional candidate performance in 2026, with 2016–2024 comparisons, uncertainty, coverage and complete downloadable queries."
-	image={`${assets}${release.charts[0].files.marginoferror.png}`}
+	image={candidateImage(release.charts[0].files.marginoferror.png)}
 >
 	<section class="standard-page candidate-page">
 		<header class="page-heading">
@@ -72,22 +71,22 @@ const sectionLabels: Record<string, string> = {
 				<section id={chart.id} class="candidate-figure" aria-labelledby={`${chart.id}-title`}>
 					<h2 id={`${chart.id}-title`}>{sectionLabels[chart.id]}</h2>
 					<figure>
-						<a href={`${assets}${chart.files.marginoferror.png}`} data-original-chart
+						<a href={candidateImage(chart.files.marginoferror.png)} data-original-chart
 							aria-label={`Open full-size figure: ${chart.title}`}>
-							<img src={`${assets}${chart.files.marginoferror.png}`} alt={chart.alt}
+							<img src={candidateImage(chart.files.marginoferror.png)} alt={chart.alt}
 								width={chart.files.marginoferror.width} height={chart.files.marginoferror.height}
 								loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
 						</a>
 						<figcaption>{chart.caption}</figcaption>
 					</figure>
 					<p class="figure-downloads">
-						<a href={`${assets}${chart.files.marginoferror.png}`} data-original-chart download>
+						<a href={candidateDownload(chart.files.marginoferror.png)} data-original-chart download>
 							PNG
 						</a>
-						<a href={`${assets}${chart.files.marginoferror.svg}`} data-original-chart download>
+						<a href={candidateDownload(chart.files.marginoferror.svg)} data-original-chart download>
 							Vector SVG
 						</a>
-						<a href={`${assets}${chart.data}`} download>Plotted values (CSV)</a>
+						<a href={candidateDownload(chart.data)} download>Plotted values (CSV)</a>
 						<a href={candidateDownload(chart.files.substack.png)} data-original-chart download>
 							Substack PNG
 						</a>
@@ -124,7 +123,7 @@ const sectionLabels: Record<string, string> = {
 				downloads remain usable without JavaScript.</p>
 			<p><a href={`${results}/report.md`}>Read the frozen statistical report</a>
 				&middot; <a href={`${results}/religion-race-report.md`}>Identity evidence and limitations</a>
-				&middot; <a href={`${assets}manifest.json`}>Checksums and provenance</a></p>
+				&middot; <a href={candidateDownload('manifest.json')}>Checksums and provenance</a></p>
 		</section>
 	</section>
 </BaseLayout>

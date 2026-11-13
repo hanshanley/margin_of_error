@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
 import test from 'node:test';
 import { load } from 'cheerio';
-import { candidateDownload, prepareCandidatePages } from './prepare-which-candidate-pages.mjs';
+import { candidateDownload, candidateImage, prepareCandidatePages } from './prepare-which-candidate-pages.mjs';
 
 const root = new URL('../', import.meta.url);
 const dist = resolve(process.env.WHICH_CANDIDATE_DIST ?? new URL('dist/', root).pathname);
@@ -43,12 +43,12 @@ test('candidate gallery exposes every figure and complete download without JavaS
 	for (const chart of manifest.charts) {
 		const figure = $(`#${chart.id}`);
 		const image = figure.find('img');
-		assert.equal(image.attr('src'), `${prefix}${chart.files.marginoferror.png}`);
+		assert.equal(image.attr('src'), candidateImage(chart.files.marginoferror.png));
 		assert.equal(image.attr('alt'), chart.alt);
 		assert.equal(Number(image.attr('width')), chart.files.marginoferror.width);
 		assert.equal(Number(image.attr('height')), chart.files.marginoferror.height);
 		assert.equal(figure.find('figcaption').text(), chart.caption);
-		assert.equal(figure.find(`a[href="${prefix}${chart.data}"][download]`).length, 1);
+		assert.equal(figure.find(`a[href="${candidateDownload(chart.data)}"][download]`).length, 1);
 		assert.equal(figure.find(`a[href="${candidateDownload(chart.files.substack.png)}"][download]`).length, 1);
 	}
 	for (const path of Object.values(manifest.downloads)) {
@@ -75,7 +75,7 @@ test('Pages offloading verifies every remote and local byte before removing any 
 			await mkdir(resolve(target, '..'), { recursive: true });
 			await writeFile(target, await readFile(new URL(`public${prefix}${path}`, root)));
 		}
-		const retained = resolve(output, `.${prefix}marginoferror/house-history.png`);
+		const retained = resolve(output, 'unrelated-website-figure.png');
 		await mkdir(resolve(retained, '..'), { recursive: true });
 		await writeFile(retained, 'retained local website figure');
 		const invalid = structuredClone(release);
