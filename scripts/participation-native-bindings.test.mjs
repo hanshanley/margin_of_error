@@ -2,9 +2,17 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { canonicalObservation } from "./compile-participation-counts.mjs";
 import { validateNativeShard, bindNativeGeometry, bindCountyReference,
-  countyQualifier } from "../public/scripts/participation-native-bindings.js";
+  countyQualifier, countyCoverageMessage } from "../public/scripts/participation-native-bindings.js";
 
 const hash = "a".repeat(64);
+test("missing county detail describes the selected source inventory after additions", () => {
+  const rows = ["Bay County", "Isabella County", "Wayne County"].map(county => ({ county }));
+  const message = countyCoverageMessage(rows);
+  for (const row of rows) assert.ok(message.includes(row.county));
+  assert.ok(message.includes("Missing counts are not zero"));
+  assert.ok(!countyCoverageMessage(rows.slice(0, 2)).includes("Wayne County"));
+  assert.ok(!countyCoverageMessage([{ county: "Other County" }]).includes("Bay County"));
+});
 function fixture() {
   const properties = { key: "MN|1", year: 2026, state_code: "MN", county: "Example",
     county_id: "native:1", unit_key: "1", unit: "Unit 1", ballots: 0,

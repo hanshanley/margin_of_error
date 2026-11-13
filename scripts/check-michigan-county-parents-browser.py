@@ -69,7 +69,7 @@ with sync_playwright() as runtime:
             missing = page.locator('[data-level="county"][data-count=""]').first
             missing.focus()
             missing.press("Enter")
-            expect(page.locator("#current-county-detail")).to_contain_text("No matching county ballot parent")
+            expect(page.locator("#current-county-detail")).to_contain_text("No matching county participation observation")
             expect(page.locator("#current-county-detail")).not_to_contain_text("26,288")
             expect(page.locator("#current-unit-select")).to_have_count(0)
             shape = page.locator('[data-level="county"][data-geography="26017"]')

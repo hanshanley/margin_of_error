@@ -6,6 +6,8 @@ const qualifierKeys = ["state_code", "county_id", "county", "geography_level", "
   "participation_measure_kind", "participation_measure_literal", "participation_measure_label",
   "cast_ballot_count_qualified", "unique_voter_count_qualified"];
 export const countyQualifier = row => Object.fromEntries(qualifierKeys.map(key => [key, row[key] ?? null]));
+export const countyCoverageMessage = rows => "No matching county participation observation in this source. "
+  + `Observed: ${rows.map(row => row.county).join(", ")}. Missing counts are not zero.`;
 const ordered = value => JSON.stringify(Object.fromEntries(Object.entries(value).sort(([a], [b]) => a.localeCompare(b))));
 const valueAt = (object, path) => path.reduce((value, key) => value?.[key], object);
 const paths = new Set(["ballots", "denominator", "registered_voters", "reported_pct",

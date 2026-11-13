@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { installResidentContext } from "./participation-resident-context.js";
 import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, clearCountState } from "./participation-counts.js";
-import { loadNativeIndex, loadBoundNative, loadCountyBinding, loadMunicipalReference, loadReportingRows, bindCountyReference } from "./participation-native-bindings.js";
+import { loadNativeIndex, loadBoundNative, loadCountyBinding, loadMunicipalReference, loadReportingRows, bindCountyReference, countyCoverageMessage } from "./participation-native-bindings.js";
 import { installCoverage } from "./participation-coverage.js";
 import { rings, boundsFor, conicProjection, projectFeatures } from "./participation-map-projection.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
@@ -744,7 +744,7 @@ function stateParticipationRows() {
                 ? `No native city source observation for this reference municipality. Only ${observations.map(row => row.county).join(", ")} are loaded; other areas are unknown, not zero or county allocations.`
                 : localityActivity
                 ? "No uniquely matched source activity count for this reference area. Ambiguous and unmatched regions are held, not allocated or filled with zero."
-                : "No matching county ballot parent in this source. Only Bay and Isabella are observed; missing counts are not zero.";
+                : countyCoverageMessage(observations);
               $("current-county-detail")?.replaceChildren(html("h4", "", feature.properties.name),
                 html("p", "selection-note", message));
               setTable([{ county: feature.properties.name, ballots: null, reported_pct: null, quality: [message] }],
