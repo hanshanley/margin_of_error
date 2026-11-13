@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import release from '../../public/artifacts/which-candidate/2026-v2/manifest.json';
+import { candidateDownload } from '../../scripts/prepare-which-candidate-pages.mjs';
 
 if (release.target_year !== 2026 || !release.provisional || release.charts.length !== 9) {
 	throw new Error('Review the candidate-figure release before publishing a different snapshot.');
@@ -45,10 +46,10 @@ const sectionLabels: Record<string, string> = {
 		</aside>
 
 		<div class="lead-actions">
-			<a class="primary-action" href={`${assets}${release.downloads.queries}`} download>
+			<a class="primary-action" href={candidateDownload(release.downloads.queries)} download>
 				Complete derived queries
 			</a>
-			<a href={`${assets}${release.downloads.substack}`} download>Substack figure package</a>
+			<a href={candidateDownload(release.downloads.substack)} download>Substack figure package</a>
 			<a href={repository}>Code and methodology</a>
 		</div>
 		<p class="download-note">
@@ -87,7 +88,7 @@ const sectionLabels: Record<string, string> = {
 							Vector SVG
 						</a>
 						<a href={`${assets}${chart.data}`} download>Plotted values (CSV)</a>
-						<a href={`${assets}${chart.files.substack.png}`} data-original-chart download>
+						<a href={candidateDownload(chart.files.substack.png)} data-original-chart download>
 							Substack PNG
 						</a>
 					</p>

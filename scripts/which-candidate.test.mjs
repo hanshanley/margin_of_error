@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
 import test from 'node:test';
 import { load } from 'cheerio';
+import { candidateDownload, prepareCandidatePages } from './prepare-which-candidate-pages.mjs';
 
 const root = new URL('../', import.meta.url);
 const dist = resolve(process.env.WHICH_CANDIDATE_DIST ?? new URL('dist/', root).pathname);
@@ -47,10 +49,51 @@ test('candidate gallery exposes every figure and complete download without JavaS
 		assert.equal(Number(image.attr('height')), chart.files.marginoferror.height);
 		assert.equal(figure.find('figcaption').text(), chart.caption);
 		assert.equal(figure.find(`a[href="${prefix}${chart.data}"][download]`).length, 1);
-		assert.equal(figure.find(`a[href="${prefix}${chart.files.substack.png}"][download]`).length, 1);
+		assert.equal(figure.find(`a[href="${candidateDownload(chart.files.substack.png)}"][download]`).length, 1);
 	}
 	for (const path of Object.values(manifest.downloads)) {
-		assert.equal($(`a[href="${prefix}${path}"][download]`).length, 1);
+		assert.equal($(`a[href="${candidateDownload(path)}"][download]`).length, 1);
+	}
+});
+
+test('Pages offloading verifies every remote and local byte before removing any complete download', async () => {
+	const output = await mkdtemp(resolve(tmpdir(), 'candidate-pages-'));
+	const files = Object.fromEntries(Object.entries(manifest.files).filter(([path]) =>
+		path === 'complete-query-set.zip' || path === 'substack/house-history.png'));
+	const release = {
+		tag_name: '2026-v2',
+		target_commitish: 'b4a0668e1b1069f8113ca5f9eb90ee6d9081c79b',
+		draft: false,
+		assets: Object.entries(files).map(([path, expected]) => ({
+			name: path.replaceAll('/', '--'), size: expected.bytes,
+			digest: `sha256:${expected.sha256}`, browser_download_url: candidateDownload(path),
+		})),
+	};
+	try {
+		for (const path of Object.keys(files)) {
+			const target = resolve(output, `.${prefix}${path}`);
+			await mkdir(resolve(target, '..'), { recursive: true });
+			await writeFile(target, await readFile(new URL(`public${prefix}${path}`, root)));
+		}
+		const retained = resolve(output, `.${prefix}marginoferror/house-history.png`);
+		await mkdir(resolve(retained, '..'), { recursive: true });
+		await writeFile(retained, 'retained local website figure');
+		const invalid = structuredClone(release);
+		invalid.assets[1].digest = 'sha256:incorrect';
+		await assert.rejects(prepareCandidatePages(output, { files }, invalid));
+		for (const path of Object.keys(files)) await readFile(resolve(output, `.${prefix}${path}`));
+		const corrupt = resolve(output, `.${prefix}substack/house-history.png`);
+		await writeFile(corrupt, 'corrupt image');
+		await assert.rejects(prepareCandidatePages(output, { files }, release));
+		await readFile(resolve(output, `.${prefix}complete-query-set.zip`));
+		await writeFile(corrupt, await readFile(new URL(`public${prefix}substack/house-history.png`, root)));
+		assert.equal(await prepareCandidatePages(output, { files }, release), 2);
+		for (const path of Object.keys(files)) {
+			await assert.rejects(readFile(resolve(output, `.${prefix}${path}`)), { code: 'ENOENT' });
+		}
+		assert.equal(await readFile(retained, 'utf8'), 'retained local website figure');
+	} finally {
+		await rm(output, { recursive: true, force: true });
 	}
 });
 
