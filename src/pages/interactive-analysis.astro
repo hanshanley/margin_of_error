@@ -1,12 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { platformCover } from '../lib/platform-analysis';
-import { candidateDownload, candidateImage } from '../../scripts/prepare-which-candidate-pages.mjs';
 ---
 
 <BaseLayout
 	title="Interactive analysis"
-	description="Explore Democratic candidate performance, voter participation, party platforms, U.S.–China Exchange, change in the United Kingdom, and the language of Congress."
+	description="Explore voter participation, party platforms, U.S.–China Exchange, change in the United Kingdom, and the language of Congress."
 >
 	<section class="standard-page">
 		<header class="page-heading">
@@ -14,26 +13,9 @@ import { candidateDownload, candidateImage } from '../../scripts/prepare-which-c
 		</header>
 		<ul class="analysis-list">
 			<li>
-				<a class="analysis-preview" href="/which-candidate/" tabindex="-1" aria-hidden="true">
-					<img src={candidateImage('marginoferror/house-characteristics.png')}
-						alt="" width="2560" height="1560" loading="eager" decoding="async" />
-				</a>
-				<div>
-					<h2><a href="/which-candidate/">Which candidate?</a></h2>
-					<p>Nine views of Democratic congressional candidate performance in 2026:
-						characteristics, moderation, voting records and identity coverage,
-						with historical comparisons and benchmark sensitivities.
-						Corrected v3 uses provisional November 12–13 counts, with complete queries.</p>
-					<div class="lead-actions">
-						<a class="primary-action" href="/which-candidate/">Open analysis</a>
-						<a href={candidateDownload('substack-figures.zip')}>Substack figures and data</a>
-					</div>
-				</div>
-			</li>
-			<li>
 				<a class="analysis-preview" href="/voter-participation/" tabindex="-1" aria-hidden="true">
 					<img src="/artifacts/voter-participation/voter-participation-editorial.png" alt="" width="1536" height="1024"
-						loading="lazy" decoding="async" />
+						loading="eager" decoding="async" />
 				</a>
 				<div>
 					<h2><a href="/voter-participation/">Who participates?</a></h2>
