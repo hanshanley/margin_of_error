@@ -560,6 +560,8 @@ function stateParticipationRows() {
       if (token !== state.drillToken || state.map !== map) return;
       const collection = bound.data, byFeature = bindCountyReference(observations,
         collection, bound.reference, bound.binding), count = collection.features.length;
+      const rates = observations.filter(row => Number.isFinite(row.reported_pct)).length;
+      const withheld = observations.length - rates;
       const reference = vermont ? metadata.boundary_label : "2024 Census reference boundaries";
       const maximum = Math.max(0, ...observations.map(row => row.ballots ?? 0));
       for (const feature of collection.features) {
@@ -567,7 +569,7 @@ function stateParticipationRows() {
         const item = projectInside(feature, selected.point);
         const path = featurePath(item, row.reported_pct,
           `${feature.properties.name} · 2026 observations on ${reference}\n`
-          + `${fmt(row.ballots)} ballots · ${fmt(row.denominator)} source registrations`
+          + `${fmt(row.ballots)} reported participation · ${fmt(row.denominator)} source registrations`
           + `\n${row.reported_pct === null ? "Rate withheld" : pct(row.reported_pct)}; municipality counts are not assigned to precincts.`, () => {
             if ($("current-county-select")) {
               $("current-county-select").value = row.county_id;
@@ -584,25 +586,30 @@ function stateParticipationRows() {
       }
       map.localLayer = true;
       map.stateTable ||= { rows: state.table, columns: state.columns };
-      setTable(observations, [["county", "Municipality"], ["ballots", "Ballots reported"],
+      setTable(observations, [["county", "Municipality"], ["ballots", "Reported participation"],
         ["denominator", "Source registrations"], ["reported_pct", "Analysis fraction"],
         ["source_update_label", "Source update"], ["quality", "Notes"]]);
       header("2026 midterms · uncertified municipality observations", `Local participation in ${state.selectedState}`,
-        vermont ? "Native municipality ballots / source-registered voters; six reviewed rates remain withheld."
+        vermont ? `Native municipality participation / source-registered voters; ${rates} reviewed rates and ${withheld} withheld.`
           : "Native municipality ballots and registrations; no analysis fraction is calculated or displayed.",
         `${reference}, explicitly not a newly verified 2026 precinct-boundary snapshot. Municipal counts are never assigned to legislative reporting splits or precincts.`);
       if (vermont) {
         ramp();
-        const complete = html("a", "source-link", "Complete municipality counts, exact boundary query and verification (ZIP)");
+        const complete = html("a", "source-link", "Reviewed municipality boundaries and geographic verification (ZIP)");
         complete.href = metadata.complete_download_url; $("caption").append(" ", complete);
+        const downloads = [...new Set(observations.map(row => row.complete_download_url).filter(Boolean))];
+        if (downloads.length === 1 && downloads[0] !== metadata.complete_download_url) {
+          const current = html("a", "source-link", "Complete current municipality counts and source queries (ZIP)");
+          current.href = downloads[0]; $("caption").append(" ", current);
+        }
       } else countLegend(maximum, "Municipality ballots · no rate");
       $("coverage-note").textContent = vermont
-        ? "247 municipality observations; 241 reviewed rates and six withheld. Nine unincorporated reference polygons have no source observation and remain excluded."
+        ? `${observations.length} municipality observations; ${rates} reviewed rates and ${withheld} withheld. Nine unincorporated reference polygons have no source observation and remain excluded.`
         : "39 municipality observations; all analysis rates remain withheld. Federal and limited-only units are not assigned to towns or precincts.";
       $("geography-note").textContent = `${state.selectedState} · ${count} municipality observations on ${reference} · `
-        + `${vermont ? metadata.rates : 0} approved rates. `
+        + `${vermont ? rates : 0} approved rates. `
         + (vermont ? "Gray is withheld, not zero. " : "Color shows ballot counts, not a rate. ")
-        + "Select a municipality for native ballots and registrations. No municipal count or registration is assigned to a precinct; Federal/limited-only units remain unallocated.";
+        + "Select a municipality for native counts and registrations. No municipal count or registration is assigned to a precinct; Federal/limited-only units remain unallocated.";
     }
     async function drawCurrentGeography(map, selected, code, token) {
       if (code === "VT") return drawCurrentMunicipalityGeography(map, selected, code, token);
@@ -2312,7 +2319,7 @@ function sourceNote(row) {
     + (row.quality?.length ? ` Source caveats: ${row.quality.join("; ").replaceAll("_", " ")}.` : "");
 }
 function sourceLink(row) {
-  const link = html("a", "source-link", row.review_id ? "Complete native participation table (CSV)" : "Original source");
+  const link = html("a", "source-link", row.review_id ? "Native participation source" : "Original source");
   link.href = row.source_url;
   return link;
 }

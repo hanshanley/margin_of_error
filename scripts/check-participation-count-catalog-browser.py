@@ -105,6 +105,43 @@ with sync_playwright() as playwright:
             page.locator("#historical-explorer").screenshot(path=str(args.proof.with_suffix(f".{width}.png")))
             cases.append(dict(width=width, state="Minnesota", county_count=9019,
                 native_county_choices=87, compact_sidebar=True, no_overflow=True))
+            towns = [row for row in expected["VT"]["available"]["counties"]
+                if row["geography_level"] == "municipality"]
+            rates = sum(row["reported_pct"] is not None for row in towns)
+            page.goto(args.base_url.rstrip("/") +
+                "/voter-participation/?year=2026&state=Vermont&mode=available&map-level=county",
+                wait_until="domcontentloaded", timeout=90000)
+            expect(page.locator("#current-county-select option")).to_have_count(len(towns) + 1, timeout=90000)
+            page.locator('#visualization path.map-feature[data-state="Vermont"]').dispatch_event("click")
+            expect(page.locator('#visualization [data-level="municipality"]')).to_have_count(
+                len(towns), timeout=90000)
+            mapped = page.evaluate("""() => [...document.querySelectorAll(
+                '#visualization [data-level="municipality"]')].map(path => ({
+                  id:path.dataset.sourceCountyId,count:Number(path.dataset.count),
+                  registered:Number(path.dataset.registered),
+                  rate:path.dataset.rate===""?null:Number(path.dataset.rate)
+                }))""")
+            assert {row["id"]: row for row in mapped} == {row["county_id"]: dict(
+                id=row["county_id"], count=row["ballots"], registered=row["denominator"],
+                rate=row["reported_pct"]) for row in towns}
+            expect(page.locator("#coverage-note")).to_contain_text(
+                f"{rates} reviewed rates and {len(towns)-rates} withheld")
+            expect(page.locator("#geography-note")).to_contain_text(f"{rates} approved rates")
+            selected = towns[0]
+            page.locator("#current-county-select").select_option(selected["county_id"])
+            detail = page.locator("#current-county-detail")
+            expect(detail.locator("a", has_text="Native participation source")).to_have_attribute(
+                "href", selected["source_url"])
+            downloads = {row["complete_download_url"] for row in towns if row.get("complete_download_url")}
+            if len(downloads) == 1:
+                expect(page.locator("#caption a", has_text="Complete current municipality counts")).to_have_attribute(
+                    "href", downloads.pop())
+            assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+            page.locator("#historical-explorer").screenshot(
+                path=str(args.proof.with_suffix(f".vt.{width}.png")))
+            cases.append(dict(width=width, state="Vermont", municipality_counts_bound=len(mapped),
+                reviewed_registered_fractions=rates, withheld_rates=len(towns)-rates,
+                native_source_label_correct=True, current_complete_queries_linked=True, no_overflow=True))
         assert not errors, errors
         assert not [url for url in requests if re.search(r"/participation-local/[A-Z]{2}\.json\.gz(?:\?|$)", url)], \
             "Active legacy 2026 county export request"
