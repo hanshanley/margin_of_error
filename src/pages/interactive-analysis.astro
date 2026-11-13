@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { platformCover } from '../lib/platform-analysis';
-import { candidateImage } from '../../scripts/prepare-which-candidate-pages.mjs';
+import { candidateDownload, candidateImage } from '../../scripts/prepare-which-candidate-pages.mjs';
 ---
 
 <BaseLayout
@@ -16,17 +16,17 @@ import { candidateImage } from '../../scripts/prepare-which-candidate-pages.mjs'
 			<li>
 				<a class="analysis-preview" href="/which-candidate/" tabindex="-1" aria-hidden="true">
 					<img src={candidateImage('marginoferror/house-characteristics.png')}
-						alt="" width="2360" height="1500" loading="eager" decoding="async" />
+						alt="" width="2560" height="1560" loading="eager" decoding="async" />
 				</a>
 				<div>
 					<h2><a href="/which-candidate/">Which candidate?</a></h2>
 					<p>Nine views of Democratic congressional candidate performance in 2026:
-						characteristics, voting records, identity evidence and partisan geography,
-						with separate comparisons to 2016–2024.
-						Provisional November 7–8 counts, with uncertainty and complete queries.</p>
+						characteristics, moderation, voting records and identity coverage,
+						with historical comparisons and benchmark sensitivities.
+						Corrected v3 uses provisional November 12–13 counts, with complete queries.</p>
 					<div class="lead-actions">
 						<a class="primary-action" href="/which-candidate/">Open analysis</a>
-						<a href="https://github.com/hanshanley/which-candidate/releases/download/2026-v2/substack-figures.zip">Substack figures and data</a>
+						<a href={candidateDownload('substack-figures.zip')}>Substack figures and data</a>
 					</div>
 				</div>
 			</li>

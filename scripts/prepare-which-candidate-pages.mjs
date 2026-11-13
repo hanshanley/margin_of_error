@@ -5,23 +5,29 @@ import { readFile, unlink } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const releaseRoot = 'https://github.com/hanshanley/which-candidate/releases/download/2026-v2/';
-const sourceCommit = 'b4a0668e1b1069f8113ca5f9eb90ee6d9081c79b';
+const releases = {
+	'2026-v3': { commit: 'e36e39819f7e11a606634951124557e1cf346922', immutable: true },
+	'2026-v2': { commit: 'b4a0668e1b1069f8113ca5f9eb90ee6d9081c79b', immutable: false },
+};
 const assetName = path => path.replaceAll('/', '--');
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 
-export function candidateDownload(path) {
-	return releaseRoot + assetName(path);
+export function candidateDownload(path, version = '2026-v3') {
+	assert.ok(Object.hasOwn(releases, version), `Unknown candidate release: ${version}`);
+	return `https://github.com/hanshanley/which-candidate/releases/download/${version}/${assetName(path)}`;
 }
 
-export function candidateImage(path) {
-	return `https://raw.githubusercontent.com/hanshanley/which-candidate/${sourceCommit}/publication/2026-v2/${path}`;
+export function candidateImage(path, version = '2026-v3') {
+	assert.ok(Object.hasOwn(releases, version), `Unknown candidate release: ${version}`);
+	return `https://raw.githubusercontent.com/hanshanley/which-candidate/${releases[version].commit}/publication/${version}/${path}`;
 }
 
-export async function prepareCandidatePages(output, manifest, release) {
-	assert.equal(release.tag_name, '2026-v2');
-	assert.equal(release.target_commitish, sourceCommit);
+export async function prepareCandidatePages(output, manifest, release, version = '2026-v3') {
+	assert.ok(Object.hasOwn(releases, version), `Unknown candidate release: ${version}`);
+	assert.equal(release.tag_name, version);
+	assert.equal(release.target_commitish, releases[version].commit);
 	assert.equal(release.draft, false);
+	if (releases[version].immutable) assert.equal(release.immutable, true);
 	const assets = new Map(release.assets.map(asset => [asset.name, asset]));
 	const removable = [];
 	for (const [path, expected] of Object.entries(manifest.files)) {
@@ -30,8 +36,8 @@ export async function prepareCandidatePages(output, manifest, release) {
 		assert.ok(asset, `Missing complete candidate download: ${path}`);
 		assert.equal(asset.size, expected.bytes, path);
 		assert.equal(asset.digest, `sha256:${expected.sha256}`, path);
-		assert.equal(asset.browser_download_url, candidateDownload(path), path);
-		const local = resolve(output, 'artifacts/which-candidate/2026-v2', path);
+		assert.equal(asset.browser_download_url, candidateDownload(path, version), path);
+		const local = resolve(output, 'artifacts/which-candidate', version, path);
 		const bytes = await readFile(local);
 		assert.equal(bytes.length, expected.bytes, path);
 		assert.equal(sha256(bytes), expected.sha256, path);
@@ -43,10 +49,12 @@ export async function prepareCandidatePages(output, manifest, release) {
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-	const bytes = await readFile(new URL('../public/artifacts/which-candidate/2026-v2/manifest.json', import.meta.url));
-	const manifest = JSON.parse(bytes);
-	const release = JSON.parse(execFileSync('gh', ['api', 'repos/hanshanley/which-candidate/releases/tags/2026-v2'], { encoding: 'utf8' }));
-	const files = { ...manifest.files, 'manifest.json': { bytes: bytes.length, sha256: sha256(bytes) } };
-	const count = await prepareCandidatePages(resolve('dist'), { files }, release);
-	console.log(`Verified ${count} complete candidate downloads on the pinned release; display images use the frozen source commit.`);
+	for (const version of Object.keys(releases)) {
+		const bytes = await readFile(new URL(`../public/artifacts/which-candidate/${version}/manifest.json`, import.meta.url));
+		const manifest = JSON.parse(bytes);
+		const release = JSON.parse(execFileSync('gh', ['api', `repos/hanshanley/which-candidate/releases/tags/${version}`], { encoding: 'utf8' }));
+		const files = { ...manifest.files, 'manifest.json': { bytes: bytes.length, sha256: sha256(bytes) } };
+		const count = await prepareCandidatePages(resolve('dist'), { files }, release, version);
+		console.log(`Verified ${count} complete ${version} downloads before offloading build copies; source and archived downloads remain intact.`);
+	}
 }

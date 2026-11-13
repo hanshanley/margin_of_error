@@ -9,7 +9,7 @@ import { candidateDownload, candidateImage, prepareCandidatePages } from './prep
 
 const root = new URL('../', import.meta.url);
 const dist = resolve(process.env.WHICH_CANDIDATE_DIST ?? new URL('dist/', root).pathname);
-const prefix = '/artifacts/which-candidate/2026-v2/';
+const prefix = '/artifacts/which-candidate/2026-v3/';
 const manifest = JSON.parse(await readFile(new URL(`public${prefix}manifest.json`, root), 'utf8'));
 
 test('all candidate publication assets retain their complete released bytes', async () => {
@@ -38,10 +38,17 @@ test('candidate gallery exposes every figure and complete download without JavaS
 	assert.equal($('.candidate-figure').length, 9);
 	assert.equal($('.candidate-figure img[loading="eager"]').length, 1);
 	assert.equal($('.candidate-figure img[loading="lazy"]').length, 8);
-	assert.match($('.snapshot-note').text(), /November 7–8, 2026/);
+	assert.match($('.snapshot-note').text(), /Acquired November 13, 2026/);
+	assert.match($('.snapshot-note').text(), /November 12–13/);
+	assert.match($('.snapshot-note').text(), /405 House and 28 Senate/);
 	assert.match($('.snapshot-note').text(), /not live/);
+	assert.match($('.correction-note').text(), /v3 supersedes v2/);
+	assert.equal($('.correction-note a[href$="/releases/tag/2026-v2"]').length, 1);
+	assert.match($('.methods').text(), /only eight Blue Dogs/);
+	assert.match($('.methods').text(), /nor that it shrank in 2026/);
 	for (const chart of manifest.charts) {
 		const figure = $(`#${chart.id}`);
+		assert.ok(figure.find('h2').text().trim(), chart.id);
 		const image = figure.find('img');
 		assert.equal(image.attr('src'), candidateImage(chart.files.marginoferror.png));
 		assert.equal(image.attr('alt'), chart.alt);
@@ -56,46 +63,63 @@ test('candidate gallery exposes every figure and complete download without JavaS
 	}
 });
 
-test('Pages offloading verifies every remote and local byte before removing any complete download', async () => {
+async function checkPagesOffload(version, commit, imagePath) {
 	const output = await mkdtemp(resolve(tmpdir(), 'candidate-pages-'));
-	const files = Object.fromEntries(Object.entries(manifest.files).filter(([path]) =>
-		path === 'complete-query-set.zip' || path === 'substack/house-history.png'));
+	const localPrefix = `/artifacts/which-candidate/${version}/`;
+	const localManifest = JSON.parse(await readFile(new URL(`public${localPrefix}manifest.json`, root), 'utf8'));
+	const files = Object.fromEntries(Object.entries(localManifest.files).filter(([path]) =>
+		path === 'complete-query-set.zip' || path === imagePath));
+	assert.equal(Object.keys(files).length, 2);
 	const release = {
-		tag_name: '2026-v2',
-		target_commitish: 'b4a0668e1b1069f8113ca5f9eb90ee6d9081c79b',
+		tag_name: version,
+		target_commitish: commit,
 		draft: false,
+		immutable: version === '2026-v3',
 		assets: Object.entries(files).map(([path, expected]) => ({
 			name: path.replaceAll('/', '--'), size: expected.bytes,
-			digest: `sha256:${expected.sha256}`, browser_download_url: candidateDownload(path),
+			digest: `sha256:${expected.sha256}`, browser_download_url: candidateDownload(path, version),
 		})),
 	};
 	try {
 		for (const path of Object.keys(files)) {
-			const target = resolve(output, `.${prefix}${path}`);
+			const target = resolve(output, `.${localPrefix}${path}`);
 			await mkdir(resolve(target, '..'), { recursive: true });
-			await writeFile(target, await readFile(new URL(`public${prefix}${path}`, root)));
+			await writeFile(target, await readFile(new URL(`public${localPrefix}${path}`, root)));
 		}
 		const retained = resolve(output, 'unrelated-website-figure.png');
 		await mkdir(resolve(retained, '..'), { recursive: true });
 		await writeFile(retained, 'retained local website figure');
 		const invalid = structuredClone(release);
 		invalid.assets[1].digest = 'sha256:incorrect';
-		await assert.rejects(prepareCandidatePages(output, { files }, invalid));
-		for (const path of Object.keys(files)) await readFile(resolve(output, `.${prefix}${path}`));
-		const corrupt = resolve(output, `.${prefix}substack/house-history.png`);
+		await assert.rejects(prepareCandidatePages(output, { files }, invalid, version));
+		await assert.rejects(prepareCandidatePages(output, { files }, { ...release, draft: true }, version));
+		await assert.rejects(prepareCandidatePages(output, { files }, { ...release, target_commitish: 'main' }, version));
+		if (version === '2026-v3') {
+			await assert.rejects(prepareCandidatePages(output, { files }, { ...release, immutable: false }, version));
+		}
+		for (const path of Object.keys(files)) await readFile(resolve(output, `.${localPrefix}${path}`));
+		const corrupt = resolve(output, `.${localPrefix}${imagePath}`);
 		await writeFile(corrupt, 'corrupt image');
-		await assert.rejects(prepareCandidatePages(output, { files }, release));
-		await readFile(resolve(output, `.${prefix}complete-query-set.zip`));
-		await writeFile(corrupt, await readFile(new URL(`public${prefix}substack/house-history.png`, root)));
-		assert.equal(await prepareCandidatePages(output, { files }, release), 2);
+		await assert.rejects(prepareCandidatePages(output, { files }, release, version));
+		await readFile(resolve(output, `.${localPrefix}complete-query-set.zip`));
+		await writeFile(corrupt, await readFile(new URL(`public${localPrefix}${imagePath}`, root)));
+		assert.equal(await prepareCandidatePages(output, { files }, release, version), 2);
 		for (const path of Object.keys(files)) {
-			await assert.rejects(readFile(resolve(output, `.${prefix}${path}`)), { code: 'ENOENT' });
+			await assert.rejects(readFile(resolve(output, `.${localPrefix}${path}`)), { code: 'ENOENT' });
 		}
 		assert.equal(await readFile(retained, 'utf8'), 'retained local website figure');
 	} finally {
 		await rm(output, { recursive: true, force: true });
 	}
-});
+}
+
+for (const [version, commit, imagePath] of [
+	['2026-v3', 'e36e39819f7e11a606634951124557e1cf346922', 'substack/moderation-history.png'],
+	['2026-v2', 'b4a0668e1b1069f8113ca5f9eb90ee6d9081c79b', 'substack/house-history.png'],
+]) {
+	test(`Pages offloading verifies every ${version} remote and local byte before removing downloads`,
+		() => checkPagesOffload(version, commit, imagePath));
+}
 
 test('interactive analysis leads with the new gallery and eagerly loads only its first preview', async () => {
 	const html = await readFile(resolve(dist, 'interactive-analysis/index.html'), 'utf8');

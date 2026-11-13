@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import release from '../../public/artifacts/which-candidate/2026-v2/manifest.json';
+import release from '../../public/artifacts/which-candidate/2026-v3/manifest.json';
 import { candidateDownload, candidateImage } from '../../scripts/prepare-which-candidate-pages.mjs';
 
 if (release.target_year !== 2026 || !release.provisional || release.charts.length !== 9) {
@@ -8,23 +8,24 @@ if (release.target_year !== 2026 || !release.provisional || release.charts.lengt
 }
 
 const repository = 'https://github.com/hanshanley/which-candidate';
-const results = `${repository}/tree/50cfd7bfe48058542ffc9ffd27aa73669a7d52e5/results/2026`;
+const revision = `${repository}/blob/e36e39819f7e11a606634951124557e1cf346922`;
+const results = `${revision}/results/2026-v3/analysis`;
 const sectionLabels: Record<string, string> = {
 	'house-characteristics': 'House characteristics',
-	'house-history': 'House across elections',
-	'senate-characteristics': 'Senate characteristics',
-	'senate-history': 'Senate across elections',
-	'house-voting-records': 'Voting records',
-	'identity-comparisons': 'Religion and race',
+	'moderation-history': 'Moderation across elections',
+	'moderation-sensitivity': 'Moderation and benchmark coverage',
+	'voting-record-coverage': 'Voting-record coverage',
+	'benchmark-sensitivity': 'Presidential benchmark sensitivity',
 	'identity-coverage': 'Coverage and missing identities',
-	'predictive-lift': 'Predictive lift',
-	'partisan-geography': 'Partisan geography',
+	'predictive-error': 'Absolute predictive error',
+	'third-party-holds': 'Third parties and held comparisons',
+	'source-clocks': 'Native count clocks and reporting',
 };
 ---
 
 <BaseLayout
 	title="Which candidate?"
-	description="Nine evidence-led views of Democratic congressional candidate performance in 2026, with 2016–2024 comparisons, uncertainty, coverage and complete downloadable queries."
+	description="Corrected 2026 Democratic candidate analysis: moderation, historical comparisons, voting records, uncertainty and complete downloadable queries."
 	image={candidateImage(release.charts[0].files.marginoferror.png)}
 >
 	<section class="standard-page candidate-page">
@@ -36,12 +37,20 @@ const sectionLabels: Record<string, string> = {
 				backgrounds, keeping the limits of the evidence in view.</p>
 		</header>
 
+		<aside class="correction-note" aria-label="Correction notice">
+			<strong>Corrected release v3 supersedes v2.</strong>
+			This version fixes federal-incumbency coding, refreshes the counts and replaces
+			unsupported Senate and identity headlines with coverage and sensitivity diagnostics.
+			The <a href={`${revision}/audits/2026-v2/critical-review.md`}>original audit</a>
+			and <a href={`${repository}/releases/tag/2026-v2`}>unchanged v2 archive</a> remain available.
+		</aside>
+
 		<aside class="snapshot-note" aria-label="Snapshot and interpretation">
-			<strong>Provisional November 7–8, 2026 snapshot.</strong>
+			<strong>Acquired November 13, 2026; native count clocks November 12–13.</strong>
 			These are held counts, not live election-night updates or certified final results.
-			The analysis retains all 435 House and 35 Senate contests; 408 House and 29 Senate
-			comparisons qualify. No primary characteristic comparison passes the
-			six-test-per-chamber multiple-comparison correction.
+			The analysis retains all 435 House and 35 Senate contests; 405 House and 28 Senate
+			comparisons qualify. No primary House characteristic clears the six-test
+			multiple-comparison correction. Senate samples fail the headline support gate.
 		</aside>
 
 		<div class="lead-actions">
@@ -103,33 +112,43 @@ const sectionLabels: Record<string, string> = {
 				D-minus-R margin.</p>
 			<p>Association models adjust for presidential lean and lean squared. Apart from
 				incumbency, primary characteristics compare verified Democratic incumbents,
-				not all nominees. Voting records come from the prior completed Congress.
-				Intervals are state-clustered, pointwise 95% intervals, not simultaneous
-				or causal estimates. Senate samples are especially small.</p>
+				not all nominees. Ideology comes from the 118th Congress (2023–24);
+				party defection uses actual votes in the 119th Congress before November 3, 2026.
+				Pointwise 95% uncertainty envelopes include state-clustered and state-deletion
+				uncertainty. Support and leverage gates hold sparse estimates.
+				These are exploratory associations, not causal candidate effects.</p>
+			<p>The Blue Dog–Congressional Progressive Caucus contrasts use state-cross-fitted
+				structural residuals, not Split Ticket's exact Wins Above Replacement.
+				The full 2026 contrast has only eight Blue Dogs; adding a map-qualified swing
+				control leaves three. Identical-subset comparisons isolate the control from
+				sample loss. This evidence establishes neither a precise moderation advantage
+				nor that it shrank in 2026. Caucus rosters have different vintages; qualified
+				CPC archives start in 2020, so 2016/2018 contrasts are held.</p>
 			<p>Religion and race comparisons are exploratory. Census race and Hispanic-origin
 				controls describe residents, not voters; Census does not collect religion.
 				Old-map district controls are held where 2026 boundaries changed. Unknown
 				identity is never treated as White, non-Hispanic, Protestant or atheist.</p>
-			<p>Predictive-lift bars compare each feature with its own same-sample baseline,
+			<p>Historical predictive replay compares each feature with its own same-sample baseline,
 				using earlier elections and excluding test states and identified test people.
-				This is a retrospective replay, not an actual pre-election forecast.</p>
-			<p>The historical panels compare 2026 with separate annual estimates for 2016,
-				2018, 2020, 2022 and 2024. The 2026 fits are preserved unchanged. Midterms use
-				the preceding presidential election; presidential years use same-year votes.
-				Samples and maps differ. Historical fits are exploratory, with correction
-				within each year and chamber, not across the entire historical search.
-				A coefficient difference is not a formal test that an association changed.</p>
+				The 2026 House absolute errors remain about 6.6–7.4 share points: small feature
+				lifts do not make a calibrated forecast. Bias is observed minus predicted;
+				positive means underprediction. Fixed-prediction intervals omit model-refitting
+				uncertainty. This is retrospective replay, not an actual pre-election forecast.</p>
+			<p>Historical evidence includes 2016, 2018, 2020, 2022 and 2024. Midterms use the
+				preceding presidential election; presidential years use same-year votes.
+				Cohorts, maps and roster vintages differ. An apparent coefficient difference
+				is not a formal test that an association changed.</p>
 			<p>Select any figure to open a full-size image. All figures, captions, methods and
 				downloads remain usable without JavaScript.</p>
 			<p><a href={`${results}/report.md`}>Read the frozen statistical report</a>
-				&middot; <a href={`${results}/religion-race-report.md`}>Identity evidence and limitations</a>
+				&middot; <a href={`${revision}/docs/CORRECTIONS_2026_V3.md`}>Correction methods and evidence limits</a>
 				&middot; <a href={candidateDownload('manifest.json')}>Checksums and provenance</a></p>
 		</section>
 	</section>
 </BaseLayout>
 
 <style>
-	.snapshot-note {
+	.snapshot-note, .correction-note {
 		max-width: 850px;
 		padding: 1.1rem 0;
 		border-block: 1px solid var(--rule);
