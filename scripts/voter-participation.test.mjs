@@ -13,6 +13,23 @@ import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles, verifyPage
 import { appendPrecinctHistory } from './build-precinct-histories.mjs';
 import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation } from '../public/scripts/participation-geography.js';
 
+test('overall reported observations retain native participation measures rather than relabeling people as ballots', () => {
+	const source = readFileSync(new URL('../public/scripts/participation-explorer.js', import.meta.url), 'utf8');
+	const definition = source.slice(source.indexOf('function currentGroups() {'),
+		source.indexOf('\nfunction sourceNote('));
+	for (const label of ['Native Total Voter Turnout', 'Native Ballots Cast', undefined]) {
+		const row = { state_code: 'SC', ballots: 0, participation_measure_label: label };
+		const rows = runInNewContext(`${definition}\ncurrentGroups();`, {
+			state: { countState: 'SC' }, $: () => ({ value: 'overall' }),
+			currentStateRows: () => [row],
+			participationLabel: value => value.participation_measure_label || value.participation_measure_literal,
+		});
+		assert.equal(rows[0].group, label || 'All reported source counts');
+		assert.equal(rows[0].ballots, 0);
+		assert.equal(rows[0].turnout_pct, null);
+	}
+});
+
 test('Virginia exposes only reviewed native identities and counts while withholding every rate', () => {
 	const raw = readFileSync(new URL('../data/precinct-results/20261105-virginia-02/2026/VA.geojson.gz', import.meta.url));
 	const pointer = JSON.parse(readFileSync(new URL('../public/precinct-results.json', import.meta.url)));

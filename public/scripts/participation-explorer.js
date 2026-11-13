@@ -458,7 +458,7 @@ function stateParticipationRows() {
           container.replaceChildren(html("h4", "", "2026 local reporting"),
             html("p", "selection-note", data.source_mode_unavailable || (data.additional_error
               ? `${data.additional_error}. Imported source tables and complete downloads remain in Methods & data; no missing observations are replaced with zero.`
-              : "No verified full-election county/precinct counts ingested for this state yet. Statewide early/mail observations above are separate, not final turnout.")));
+              : "No verified full-election county/precinct counts ingested for this state yet. Statewide observations are separate and do not supply local counts.")));
           if (data.mode_review_complete_download) {
             const link = html("a", "selection-link", "Complete source-frame analysis and queries");
             link.href = data.mode_review_complete_download;
@@ -2307,7 +2307,7 @@ function currentStateRows() {
 function currentGroups() {
   if ($("dimension").value === "overall") {
     const total = currentStateRows().find(row => row.state_code === state.countState);
-    return total ? [{ ...total, group: "All reported ballots", dimension: "overall", turnout_pct: null }] : [];
+    return total ? [{ ...total, group: participationLabel(total) || "All reported source counts", dimension: "overall", turnout_pct: null }] : [];
   }
   return (state.current?.demographics ?? []).filter(row => row.state_code === state.countState
     && row.mode === $("mode").value && row.dimension === currentDimension() && row.demographic_source_total > 0);
@@ -2329,7 +2329,7 @@ function provisionalGroupsView() {
   const rows = currentGroups().filter(row => group === "All groups" || row.group === group)
     .sort((a, b) => b.ballots - a.ballots);
   header("2026 midterm election · reported observations", `Participation in ${name}`,
-    `${modeLabels[$("mode").value]}. Ballot counts, not demographic turnout rates.`,
+    `${modeLabels[$("mode").value]}. Reported source counts, not demographic turnout rates.`,
     "Provisional counts cover only the selected voting mode and state. No matched group population denominator is available; these counts are not added to historical turnout-rate lines.");
   $("map-tools").hidden = true; $("map-help").hidden = true;
   state.map = null; state.mapPaths = [];
