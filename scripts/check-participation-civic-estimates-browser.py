@@ -14,7 +14,7 @@ from playwright.sync_api import expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/participation-civic-estimates/20261108-01/output"
-NATIVE = ROOT / "data/participation-registered-controls/20261113-29/display-model.json"
+NATIVE = ROOT / "data/participation-registered-controls/20261113-30/display-model.json"
 
 
 def pct(value):
