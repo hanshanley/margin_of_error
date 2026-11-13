@@ -96,6 +96,51 @@ test("current comparability receipts reject a correctly hashed legacy model",asy
   }finally{globalThis.fetch=original;}
 });
 
+const officialRevision=()=>{
+  const data=comparison();
+  data.official_source_revisions=["HI","WY"].map(state_code=>({
+    state_code,year:2026,office:"house",stage:"general",native_updated_at:null,
+    independent_behavioral_validation:false,counting_complete_independently_qualified:false,
+    query_pin:{sha256:"e398311dcecd7607ec41a1af7fda21f99b1e023405503979beb3667941a82f1a"},
+  }));
+  for(const [family] of norcFamilies){
+    const model=withComparability();
+    model.comparison_policy.input_source_counts_revised_from_previous_release=true;
+    model.endpoint_update={native_source_counts_revised_from_previous_release:true,
+      source_count_repairs:0,source_model_refitted:false,survey_weights_changed:false,changed_states:["HI","WY"]};
+    for(const row of model.rows.filter(row=>["HI","WY"].includes(row.state_code)))
+      row.reported_comparison.current_native_clock=null;
+    data.families[family]=model;
+  }
+  data.comparison_policy=data.families.accepted_ridge_multinomial.comparison_policy;
+  return data;
+};
+
+test("official source receipts require the pinned review, unchanged fits, and absent native clocks",async()=>{
+  const {loadNorcHouse}=await import("../public/scripts/participation-norc-house.js?official-revision-loader");
+  const original=globalThis.fetch;
+  try{
+    for(const mutate of [
+      null,
+      data=>{delete data.official_source_revisions;},
+      data=>{data.official_source_revisions[0].query_pin.sha256="a".repeat(64);},
+      data=>{data.families.accepted_ridge_multinomial.endpoint_update.source_model_refitted=true;},
+      data=>{data.families.accepted_ridge_multinomial.endpoint_update.source_count_repairs=1;},
+      data=>{data.families.accepted_ridge_multinomial.rows.find(row=>row.state_code==="HI")
+        .reported_comparison.current_native_clock="2026-11-12T23:06:26Z";},
+    ]){
+      const data=officialRevision();mutate?.(data);
+      const body=Buffer.from(JSON.stringify(data));
+      const receipt={url:"https://raw.githubusercontent.com/hanshanley/voter-participation/"+"e".repeat(40)
+        +"/data/house-official-source-update/20261113-01/viewer-original.json",
+        bytes:body.length,sha256:createHash("sha256").update(body).digest("hex")};
+      globalThis.fetch=async()=>new Response(body);
+      if(mutate)await assert.rejects(loadNorcHouse(receipt));
+      else assert.equal((await loadNorcHouse(receipt)).official_source_revisions.length,2);
+    }
+  }finally{globalThis.fetch=original;}
+});
+
 test("all House mechanisms and separate demographic partitions reconcile to each state", () => {
   validateNorcHouse(source);
   for (const row of source.rows) {

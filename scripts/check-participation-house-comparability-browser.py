@@ -14,9 +14,11 @@ ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", required=True)
 parser.add_argument("--proof", type=Path, required=True)
+parser.add_argument("--receipt-directory", type=Path,
+    default=ROOT/"data/participation-return-attribution/20261113-01")
 args = parser.parse_args()
 assert not args.proof.exists()
-directory = ROOT/"data/participation-return-attribution/20261112-06"
+directory = args.receipt_directory
 receipts = {"original": json.loads((directory/"norc-receipt.json").read_bytes()),
             **json.loads((directory/"copula-receipt.json").read_bytes())["profiles"]}
 datasets = {}
@@ -97,6 +99,21 @@ with sync_playwright() as runtime:
             expect(summary).to_contain_text("unadjusted candidate totals")
             expect(root.locator('[data-saved-recorded="TX"]')).to_contain_text("+11.98")
             root.screenshot(path=str(args.proof.with_suffix(f".TX-{width}.png")))
+            for code, totals in (("HI", ("256,268", "105,749", "9,359")),
+                                 ("WY", ("61,689", "99,906", "22,659"))):
+                state.select_option(code)
+                expect(summary).to_have_attribute("data-norc-state", code)
+                for total in totals:
+                    expect(summary).to_contain_text(total)
+                expect(summary.locator('[data-norc-mechanism="other_choice"]').locator("xpath=..")).to_contain_text("Other / unassigned choice")
+                row = datasets["original"]["families"]["accepted_ridge_multinomial"]["rows"]
+                row = next(item for item in row if item["state_code"] == code)
+                target = expected(row, "reported_counts", "", "democratic_two_party_share")
+                expect(root.locator(f'[data-saved-recorded="{code}"]')).to_contain_text(f"{target:+.2f}")
+                actual = root.locator(f'.driver-state[data-state-code="{code}"]').get_attribute("data-model-value")
+                assert abs(float(actual) - target) < 1e-8
+                assert row["reported_comparison"]["current_native_clock"] is None
+                root.screenshot(path=str(args.proof.with_suffix(f".{code}-{width}.png")))
             view.select_option("reported_total")
             state.select_option("PA")
             checked = 0
@@ -179,6 +196,9 @@ with sync_playwright() as runtime:
             for receipt in receipts.values():
                 assert requests.count(receipt["url"]) == 1
             assert root.locator('a[href$="participation-house-comparability-20261112-01/complete-profile-family-state-comparisons.csv"]').count() == 1
+            for name in ("complete-analysis.zip", "complete-profile-family-state-comparisons.csv",
+                         "complete-recorded-counts.csv", "complete-recorded-counts.json"):
+                assert root.locator(f'a[href$="participation-house-official-refresh-20261113-01/{name}"]').count() >= 1
             assert root.locator('a[href$="/complete-state-family-comparisons.csv"]').count() == 0
             assert root.locator('a[href$="participation-house-recorded-counts-20261113-01/complete-analysis.zip"]').count() == 1
             assert not errors, errors

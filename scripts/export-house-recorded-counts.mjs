@@ -38,7 +38,11 @@ const fields = Object.keys(flattened[0]);
 const csv = value => value == null ? "" : `"${String(value).replaceAll('"', '""')}"`;
 const dataset = { contract: "participation.house_recorded_counts.v1",
   source_sha256: values["source-sha256"], jurisdictions: records.length,
-  source_counts_changed: false, new_model_fits: 0, records };
+  source_counts_changed: false, new_model_fits: 0,
+  ...(model.comparison_policy?.input_source_counts_revised_from_previous_release
+    ? { input_source_counts_revised_from_previous_release: true, source_count_repairs: 0,
+      official_source_revisions: model.endpoint_update.official_source_revisions } : {}),
+  records };
 await mkdir(values.output);
 await writeFile(join(values.output, "complete-recorded-counts.json"), JSON.stringify(dataset) + "\n");
 await writeFile(join(values.output, "complete-recorded-counts.csv"),

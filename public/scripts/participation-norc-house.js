@@ -2,7 +2,7 @@ export const norcTerms = [
   ["switching", "Switching"],
   ["exit", "Previous voters absent"],
   ["entry", "New / returning to the contest"],
-  ["other_choice", "Other-party choice"],
+  ["other_choice", "Other / unassigned choice"],
   ["unresolved", "Unresolved responses"],
 ];
 export const norcViews = [
@@ -12,7 +12,7 @@ export const norcViews = [
   ["modeled_nonparticipation", "Net participation · NORC estimate"],
   ["entry", "New / returning · NORC estimate"],
   ["exit", "Previous voters absent · NORC estimate"],
-  ["other_choice", "Other-party choice · NORC estimate"],
+  ["other_choice", "Other / unassigned choice · NORC estimate"],
   ["unresolved", "Unresolved responses · NORC estimate"],
   ["retaining", "Kept party · modeled share"],
 ];
@@ -235,11 +235,13 @@ export function validateNorcAssociation(data, original) {
 export async function loadNorcHouse(receipt) {
   if (!receipt || !/^[a-f0-9]{64}$/.test(receipt.sha256)
       || !Number.isSafeInteger(receipt.bytes) || receipt.bytes<=0 || receipt.bytes>10_000_000
-      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01|house-model-families\/20261112-01)\/viewer-data|house-fixed-copula\/20261112-01\/viewer-(?:attenuated|full)|house-comparability\/20261112-01\/viewer-(?:original|attenuated|full))\.json$/.test(receipt.url))
+      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01|house-model-families\/20261112-01)\/viewer-data|house-fixed-copula\/20261112-01\/viewer-(?:attenuated|full)|(?:house-comparability\/20261112-01|house-official-source-update\/20261113-01)\/viewer-(?:original|attenuated|full))\.json$/.test(receipt.url))
     throw new Error("Unpinned NORC model input");
+  const requireOfficialRevision=receipt.official_source_revision_required===true
+    || receipt.url.includes("/data/house-official-source-update/");
   const requireComparability=receipt.contest_comparability_required===true
-    || receipt.url.includes("/data/house-comparability/");
-  const pin = `${receipt.url}|${receipt.sha256}|${receipt.bytes}|${requireComparability}`;
+    || receipt.url.includes("/data/house-comparability/") || requireOfficialRevision;
+  const pin = `${receipt.url}|${receipt.sha256}|${receipt.bytes}|${requireComparability}|${requireOfficialRevision}`;
   if (!cached.has(pin)) {
     const promise = (async()=>{
       const controller = new AbortController(), timer = setTimeout(()=>controller.abort(),20_000);
@@ -256,6 +258,28 @@ export async function loadNorcHouse(receipt) {
             result.comparison_policy?.contract!=="participation.house_comparability.v1"
             || Object.values(result.families || {model:result}).some(model=>!model.comparison_policy)))
           throw new Error("Required House comparability audit is missing; no legacy comparison substituted");
+        if (requireOfficialRevision) {
+          const revisions=result.official_source_revisions;
+          if (!Array.isArray(revisions) || revisions.length!==2
+              || revisions.map(row=>row.state_code).sort().join(",")!=="HI,WY"
+              || revisions.some(row=>row.year!==2026 || row.office!=="house" || row.stage!=="general"
+                || row.native_updated_at!==null || row.independent_behavioral_validation!==false
+                || row.counting_complete_independently_qualified!==false
+                || row.query_pin?.sha256!=="e398311dcecd7607ec41a1af7fda21f99b1e023405503979beb3667941a82f1a"))
+            throw new Error("Required reviewed official source revision is missing");
+          for (const model of Object.values(result.families || {model:result})) {
+            const update=model.endpoint_update;
+            if (model.comparison_policy.input_source_counts_revised_from_previous_release!==true
+                || update?.native_source_counts_revised_from_previous_release!==true
+                || update.source_count_repairs!==0 || update.source_model_refitted!==false
+                || update.survey_weights_changed!==false
+                || !Array.isArray(update.changed_states) || [...update.changed_states].sort().join(",")!=="HI,WY")
+              throw new Error("Official source revision changed its model/refit qualification");
+            for (const code of ["HI","WY"])
+              if (model.rows.find(row=>row.state_code===code)?.reported_comparison.current_native_clock!==null)
+                throw new Error("A retrieval time cannot replace the absent native update clock");
+          }
+        }
         const profile=receipt.url.match(/viewer-(attenuated|full)\.json$/)?.[1];
         if ((profile || result.association_profile) && result.association_profile?.profile!==profile)
           throw new Error("Association receipt and source profile differ");
@@ -369,9 +393,12 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
       +`(${pp(recorded.share_change_pp*2)} D−R margin change). `
       +"These are unadjusted candidate totals, not a measured voter-preference swing.",
     "driver-recorded-endpoints"));
-    summary.append(element("p",`2024 recorded D/R: ${recorded.previous.D.toLocaleString("en-US")} / `
-      +`${recorded.previous.R.toLocaleString("en-US")}; held 2026: ${recorded.current.D.toLocaleString("en-US")} / `
-      +`${recorded.current.R.toLocaleString("en-US")}. Snapshot: ${recorded.snapshot}. `
+    const count=value=>Number.isSafeInteger(value)&&value>=0?value.toLocaleString("en-US"):"Unavailable";
+    const snapshot=typeof recorded.snapshot==="string"&&recorded.snapshot.startsWith("native-query:")
+      ?`reviewed official query ${recorded.snapshot.slice(13,25)}`:recorded.snapshot;
+    summary.append(element("p",`2024 recorded D/R/Other-unassigned: ${count(recorded.previous.D)} / `
+      +`${count(recorded.previous.R)} / ${count(recorded.previous.O)}; held 2026: ${count(recorded.current.D)} / `
+      +`${count(recorded.current.R)} / ${count(recorded.current.O)}. Snapshot: ${snapshot}. `
       +"Changed competition or coalition labels can distort the raw change; Other is outside the two-party denominator.",
     "caption"));
   }
@@ -416,7 +443,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   for (const [label,value,key] of [
     ["Switching",rounded.switching,"switching"],
     ["Net participation",Number((rounded.entry+rounded.exit).toFixed(2)),"net_participation"],
-    ["Other-party choice",rounded.other_choice,"other_choice"],
+    ["Other / unassigned choice",rounded.other_choice,"other_choice"],
     ["Unresolved responses",rounded.unresolved,"unresolved"],
     [group?"Group contribution":`Modeled ${unitLabel}`,estimate.total_contribution_pp*factor,"total"],
   ]) {
