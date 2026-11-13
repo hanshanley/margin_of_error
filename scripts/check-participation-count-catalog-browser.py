@@ -157,7 +157,7 @@ with sync_playwright() as playwright:
                 expect(page.locator("#current-county-detail .selection-rate")).to_have_text(f'{row["ballots"]:,}')
             selected = counties[-1]
             detail = page.locator("#current-county-detail")
-            expect(detail.locator("a", has_text="Native participation source")).to_have_attribute(
+            expect(detail.locator("a.source-link")).to_have_attribute(
                 "href", selected["source_url"])
             assert len(counties) == 100 and sum(row["ballots"] for row in counties) == 4243180
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
