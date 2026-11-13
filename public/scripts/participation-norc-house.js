@@ -1,7 +1,7 @@
 export const norcTerms = [
   ["switching", "Switching"],
-  ["exit", "Previous voters absent"],
-  ["entry", "New / returning to the contest"],
+  ["exit", "Modeled prior D/R → no House choice"],
+  ["entry", "Modeled prior no House choice → D/R"],
   ["other_choice", "Other / unassigned choice"],
   ["unresolved", "Unresolved responses"],
 ];
@@ -10,8 +10,8 @@ export const norcViews = [
   ["reported_total", "Like-for-like House comparisons only"],
   ["switching", "Switching · NORC estimate"],
   ["modeled_nonparticipation", "Net participation · NORC estimate"],
-  ["entry", "New / returning · NORC estimate"],
-  ["exit", "Previous voters absent · NORC estimate"],
+  ["entry", "Modeled no House choice → D/R"],
+  ["exit", "Modeled D/R → no House choice"],
   ["other_choice", "Other / unassigned choice · NORC estimate"],
   ["unresolved", "Unresolved responses · NORC estimate"],
   ["retaining", "Kept party · modeled share"],
@@ -358,6 +358,15 @@ export function roundedNorcContributions(value,units="margin") {
   return Object.fromEntries(Object.entries(output).map(([k,v])=>[k,v/100]));
 }
 
+export function roundedNorcSensitivityRange(range,metric,units="margin") {
+  if (!range) return null;
+  const factor=norcContributionScale(units),retention=metric==="retaining";
+  const precision=retention?10:100,scale=(retention?100:factor)*precision;
+  const allowance=metric==="modeled_nonparticipation"?1:0;
+  return {minimum:(Math.floor(range.minimum*scale)-allowance)/precision,
+    maximum:(Math.ceil(range.maximum*scale)+allowance)/precision};
+}
+
 const element = (tag,text,className="") => {
   const node=document.createElement(tag); if (text!=null) node.textContent=text; node.className=className; return node;
 };
@@ -376,6 +385,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   delete summary.dataset.norcAssociation;
   delete summary.dataset.norcHold;
   delete summary.dataset.recordedShareChange;
+  delete summary.dataset.norcSensitivity;
   detail.replaceChildren();
   if (!row) {
     summary.append(element("p","D.C. has no NORC CHEP sample; no House transition estimate is invented.","caption"));
@@ -385,6 +395,12 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   summary.dataset.norcFamily=options.family || "accepted_ridge_multinomial";
   summary.dataset.norcUnits=units;
   summary.dataset.norcAssociation=options.association?.profile || "original";
+  const comparison=row.source_aggregate_comparison || row.reported_comparison;
+  summary.append(element("p",
+    `Endpoint version: ${comparison.current_snapshot || "not supplied"}. `
+    +`Native count-update clock: ${comparison.current_native_clock || "not supplied"}. `
+    +"Counting completion is not independently qualified; a version identifier is not an update time.",
+  "caption driver-endpoint-version"));
   const recorded=norcRecordedComparison(row);
   if (recorded && (!row.source_comparison_available || options.view==="reported_counts")) {
     summary.dataset.recordedShareChange=String(recorded.share_change_pp);
@@ -442,35 +458,63 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
     summary.hidden=false; detail.hidden=true; return;
   }
   const rounded=roundedNorcContributions(estimate,units);
-  const table=element("table"), body=element("tbody");
+  const table=element("table"), body=element("tbody"), head=element("thead"), headings=element("tr");
   table.append(element("caption",group
     ? `${selected.label}: contribution to the statewide modeled shift, not this group's vote share`
     : "NORC-informed, return-constrained reconstruction · not observed individual histories"));
+  for (const label of ["Term", "Selected estimate", "Nine-variant range"]) {
+    const th=element("th",label);th.scope="col";headings.append(th);
+  }
+  head.append(headings);table.append(head);
   for (const [label,value,key] of [
     ["Switching",rounded.switching,"switching"],
     ["Net participation",Number((rounded.entry+rounded.exit).toFixed(2)),"net_participation"],
     ["Other / unassigned choice",rounded.other_choice,"other_choice"],
     ["Unresolved responses",rounded.unresolved,"unresolved"],
-    [group?"Group contribution":`Modeled ${unitLabel}`,estimate.total_contribution_pp*factor,"total"],
+    [group?"Group contribution":"Conditioned endpoint total",estimate.total_contribution_pp*factor,"total"],
+    ["Kept modeled party choice",estimate.gross_outcomes?.retaining,"retaining"],
   ]) {
     const tr=element("tr"), th=element("th",label);th.scope="row";
-    const td=element("td",pp(value),"numeric");td.dataset.norcMechanism=key;
-    tr.append(th,td);body.append(tr);
+    const retention=key==="retaining",metric=key==="net_participation"?"modeled_nonparticipation":key;
+    const point=retention?(finite(value)?`${(100*value).toFixed(1)}%`:"Unavailable"):pp(value);
+    const range=roundedNorcSensitivityRange(options.sensitivityScope?.metrics[metric],metric,units);
+    const format=value=>retention?`${value.toFixed(1)}%`:pp(value);
+    const td=element("td",point,"numeric");td.dataset.norcMechanism=key;
+    const spread=element("td",range?`${format(range.minimum)} to ${format(range.maximum)}`:"Unavailable","numeric");
+    spread.dataset.norcSensitivityMetric=metric;
+    tr.append(th,td,spread);body.append(tr);
   }
   table.append(body);
-  const wrap=element("div",null,"table-wrap");wrap.append(table);
+  const wrap=element("div",null,"table-wrap");wrap.tabIndex=0;
+  wrap.role="region";wrap.ariaLabel="Selected estimates and model sensitivity";wrap.append(table);
+  if (options.sensitivityScope) summary.dataset.norcSensitivity="nine-variants";
   summary.append(wrap,element("p",
-    `Net participation includes ${pp(rounded.exit)} from modeled nonparticipation and ${pp(rounded.entry)} from entry/return. `
+    `Net participation includes ${pp(rounded.exit)} from modeled prior D/R to no House choice and ${pp(rounded.entry)} from modeled prior no House choice to D/R. `
     +"Positive contributions move the result toward Democrats; negative contributions move it toward Republicans. "
-    +"NORC responses inform the marginal models; temporal dependence and the accounting frame remain assumptions. Reported results constrain the reconstruction, not its validation.",
+    +"These model-assigned categories do not establish prior voters staying home or first-ever or returning people.",
     "caption"));
+  summary.append(element("p",
+    "The statewide conditioned total equals the held endpoint by construction, not predictive accuracy. "
+    +"Group totals are contributions to that statewide change. Retention uses prior model-assigned D/R mass, not margin points or observed people.",
+    "caption"));
+  summary.append(element("p",options.sensitivityScope
+    ? "Range spans three existing model families × three association profiles for this exact state/group. "
+      +"Ranges round outward to displayed precision; net participation includes a 0.01 pp allowance for adding rounded entry/exit terms. Exact bounds remain in the download. "
+      +"It is model sensitivity, not a confidence interval or all survey, transport, frame or endpoint uncertainty."
+    : options.sensitivityState==="loading" ? "Loading the separately checksum-verified model-sensitivity ranges; point estimates are unchanged."
+      : "Model-sensitivity ranges are unavailable; point estimates are unchanged. No statewide range is substituted for a group.",
+  "caption"));
+  if (!options.sensitivityScope && options.sensitivityState==="failed" && options.onSensitivityRetry) {
+    const retry=element("button","Retry sensitivity ranges");retry.type="button";
+    retry.addEventListener("click",options.onSensitivityRetry);summary.append(retry);
+  }
   summary.dataset.norcState=row.state_code;summary.dataset.norcGroup=group;
   summary.dataset.norcUnits=units;summary.dataset.norcFamily=options.family || "accepted_ridge_multinomial";
   const dimension=selected?.dimension || "AGE6";
-  const groupTable=element("table"), groupBody=element("tbody"), head=element("thead"), headings=element("tr");
+  const groupTable=element("table"), groupBody=element("tbody"), groupHead=element("thead"), groupHeadings=element("tr");
   groupTable.append(element("caption",`${demographicLabels[dimension]} breakdown · rows add to the state; different demographic dimensions overlap`));
-  for (const label of ["Group","Switching","Participation","Other / unresolved","Total"]) headings.append(element("th",label));
-  head.append(headings);groupTable.append(head);
+  for (const label of ["Group","Switching","Participation","Other / unresolved","Total"]) groupHeadings.append(element("th",label));
+  groupHead.append(groupHeadings);groupTable.append(groupHead);
   for (const g of row.groups.filter(g=>g.dimension===dimension)) {
     const tr=element("tr"), th=element("th",g.label);th.scope="row";
     tr.dataset.norcGroupRow=g.dimension+"|"+g.group;
@@ -501,7 +545,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
         const tr=element("tr"),th=element("th",label);th.scope="row";
         tr.append(th,element("td",signed(value.contributions_pp.switching),"numeric"),
           element("td",signed(value.net_participation_pp),"numeric"),
-          element("td",value.gross_outcomes?`${(100*value.gross_outcomes.retaining).toFixed(1)}%`:"Unavailable","numeric"));
+          element("td",finite(value.gross_outcomes?.retaining)?`${(100*value.gross_outcomes.retaining).toFixed(1)}%`:"Unavailable","numeric"));
         body.append(tr);
       }
       comparison.append(body);
@@ -510,7 +554,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   }
   const flow=estimate.joint, flows=element("table"), flowBody=element("tbody"), flowHead=element("thead"), flowLabels=element("tr");
   flows.append(element("caption","Model-assigned outcomes within previous D/R choices · percentages, not margin points"));
-  for (const label of ["Previous choice","Kept party","Switched party","Absent","Other / unresolved"]) flowLabels.append(element("th",label));
+  for (const label of ["Prior modeled choice","Kept party","Switched party","No House choice","Other / unresolved"]) flowLabels.append(element("th",label));
   flowHead.append(flowLabels);flows.append(flowHead);
   for (let i=0;i<2;i++) {
     const denominator=flow[i].reduce((s,v)=>s+v,0), tr=element("tr"), th=element("th",i?"Republican":"Democratic");th.scope="row";
@@ -546,7 +590,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
       tr.append(th,element("td",value?signed(value.contributions_pp.switching):"Unavailable","numeric"),
         element("td",value?signed(value.net_participation_pp):"Unavailable","numeric"),
         element("td",error==null?"Unavailable":signed(error),"numeric"),
-        element("td",value?.gross_outcomes?`${(100*value.gross_outcomes.retaining).toFixed(1)}%`:"Unavailable","numeric"));
+        element("td",finite(value?.gross_outcomes?.retaining)?`${(100*value.gross_outcomes.retaining).toFixed(1)}%`:"Unavailable","numeric"));
       body.append(tr);
     }
     table.append(body);

@@ -1,0 +1,12 @@
+{
+  "bytes": 159948,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-house-model-disclosures-20261113-01/complete-analysis.zip",
+  "complete_query_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-house-model-disclosures-20261113-01/complete-nine-variant-query.csv",
+  "compression": "gzip",
+  "decoded_bytes": 942084,
+  "decoded_sha256": "7a7c144774b183f4405a54cc7b4a00dc5d0599d3e172cebbc860445f387ebf87",
+  "fitted_aggregate_projection_replay_only": true,
+  "sha256": "ac008fc2ee863cb12c22a57c7c10737501dac8b67dc3103b2bf1290c12b3a742",
+  "source_fits_reproduced": false,
+  "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/ae9c99747f2c5f5565cb20135ee8d3cf0095d10d/data/house-model-disclosures/20261113-01/sensitivity.json.gz"
+}

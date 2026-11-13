@@ -11,6 +11,7 @@ const calibration = JSON.parse(readFileSync('data/participation-return-attributi
 const norcSource = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/norc-receipt.json', 'utf8'));
 const families = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/family-summary.json', 'utf8'));
 const association = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/copula-receipt.json', 'utf8'));
+const sensitivity = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/sensitivity-receipt.json', 'utf8'));
 const norcPoints = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/norc-point-summary.json', 'utf8'));
 type CalibratedRow = { id: string; state_code: string; office: string;
 	point: { reported_change_pp: number; components_pp: Record<string, number> } | null };
@@ -27,7 +28,7 @@ const recordedHouse = norcPoints.rows.map((row: any) => ({
 		.map(key => [key, row.contest_comparability[key]])),
 }));
 const payload = JSON.stringify({ data, calibration, names, norc_source: norcSource, house_comparison_holds: houseHolds,
-	recorded_house_counts: recordedHouse, norc_association_sources: association }).replaceAll('<', '\\u003c');
+	recorded_house_counts: recordedHouse, norc_association_sources: association, norc_sensitivity: sensitivity }).replaceAll('<', '\\u003c');
 const pp = (value: number | null) => value === null ? 'Unavailable' : `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 const validation = norcPoints.validation;
 const tests = [
@@ -41,7 +42,7 @@ const tests = [
 		<p class="kicker">2024 → 2026 · House results</p>
 		<h2 id="return-drivers-title">House swings and modeled drivers</h2>
 		<p>See the change in recorded Democratic two-party vote share. Select a state for both years' totals,
-			or choose a modeled view for switching, participation and entry/return.</p>
+			or choose modeled switching, net participation and prior no-House-choice to D/R contributions.</p>
 	</header>
 	<p class="caption">Reported change compares held <strong>same-office candidate counts</strong>, not measured voter preference.
 		Known-D/R margin = 100 × (D − R) / (D + R), twice the Democratic-share change. In the recorded view, gray means missing counts.
@@ -60,8 +61,8 @@ const tests = [
 			<option value="reported_counts">Reported House swing · recorded votes</option>
 			<option value="reported_total">Like-for-like House comparisons only</option>
 			<option value="switching">Switching · fitted</option>
-			<option value="modeled_nonparticipation">No contest vote · fitted</option>
-			<option value="entry">Entry / return · fitted</option>
+			<option value="modeled_nonparticipation">Net participation · NORC estimate</option>
+			<option value="entry">Modeled no House choice → D/R</option>
 			<option value="other_choice">Other / unassigned choice · fitted</option>
 			<optgroup label="Original survey-frame demographic scenarios · not return-fitted">
 				<option value="scenario_retaining">Keep party choice · scenario</option>
@@ -124,6 +125,11 @@ const tests = [
 		a 2022-to-2024 source-transfer test and the before-conditioning state prediction remain separate from endpoint reconstruction.
 		The publisher's weight targets are not independently qualified here; source-response checks are not population validation.
 		A match after conditioning on results is not independent validation.</p>
+	<p class="caption">Selected-state ranges span the three existing families and three association profiles
+		for the same state and demographic group. They are model sensitivity, not confidence intervals
+		or all survey, transport, accounting-frame or endpoint uncertainty.
+		Modeled prior D/R to no House choice does not establish prior voters staying home;
+		the reverse category does not identify first-ever or returning people.</p>
 	<p class="caption">Compare three fixed model families on the same respondents, holdouts, endpoints,
 		demographic disclosure masks, assumption grid and simulation seeds.
 		The preregistered source-only selection rule retains <strong>multinomial ridge</strong>.
@@ -243,9 +249,11 @@ const tests = [
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 50 NORC House state models">
 			<table><caption>D-minus-R margin points, twice the Democratic-share change shown by default on the map.
 				Conditional estimates for compatible held comparisons, not identified histories.
+				The conditioned total equals the endpoint change by construction, not predictive accuracy.
+				Endpoint versions are identifiers, not native count-update times; counting completion is not independently qualified.
 				Incompatible source-only scenarios are available in the complete download, not substituted here.</caption>
 				<thead><tr><th scope="col">State</th><th scope="col">Qualified reported change</th>
-					<th scope="col">Model shift</th><th scope="col">Switching</th>
+					<th scope="col">Conditioned endpoint total</th><th scope="col">Switching</th>
 					<th scope="col">Net participation</th><th scope="col">Other / unresolved</th><th scope="col">Qualification</th></tr></thead>
 				<tbody>{norcPoints.rows.map((row: any) => {
 					const rounded = roundedNorcContributions(row.point);
@@ -255,7 +263,8 @@ const tests = [
 						<td class="numeric">{pp(row.source_comparison_available ? rounded.switching : null)}</td>
 						<td class="numeric">{pp(row.source_comparison_available ? rounded.entry + rounded.exit : null)}</td>
 						<td class="numeric">{pp(row.source_comparison_available ? rounded.other_choice + rounded.unresolved : null)}</td>
-						<td>{row.source_comparison_available ? `${['HI', 'WY'].includes(row.state_code) ? 'Official source' : 'Held'} snapshot; candidate-coverage checks passed` : row.reported_comparison.reason}</td></tr>;
+						<td>{row.source_comparison_available ? `${['HI', 'WY'].includes(row.state_code) ? 'Official source' : 'Held'} snapshot; candidate-coverage checks passed` : row.reported_comparison.reason}
+							<span class="driver-endpoint-version"> Endpoint version: {row.reported_comparison.current_snapshot || 'not supplied'}.</span></td></tr>;
 				})}</tbody>
 			</table>
 		</div>
@@ -302,6 +311,8 @@ const tests = [
 	</details>
 	<div class="download-links"><a href={receipt.url}>Archived historical returns, inputs and superseded scenarios, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href={norcSource.complete_download_url}>Complete NORC demographic House model: permitted fitted inputs, every state/group/seed/assumption query, code and tests · ZIP</a></div>
+	<div class="download-links"><a href={sensitivity.complete_download_url}>Complete nine-variant sensitivity projection: public aggregate inputs, code, tests and every numerical/held decision · ZIP</a> ·
+		<a href={sensitivity.complete_query_url}>All 118,800 state/group/metric/variant decisions · CSV</a></div>
 	<div class="download-links"><a href={norcSource.complete_download_url.replace('complete-analysis.zip', 'complete-profile-family-state-comparisons.csv')}>All 450 corrected profile/family/state decisions in both change units · CSV</a> · <a href={norcSource.complete_download_url}>All 900 profile/family/mechanism-spread decisions and source scores · complete ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-comparability-20261112-01/complete-analysis.zip">Earlier 33-comparison audit and every query · ZIP</a> · <a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-comparability-20261112-01/complete-profile-family-state-comparisons.csv">Earlier 450 profile/family/state decisions · CSV</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-model-families-20261112-01/complete-source-validation.csv">Unchanged frozen source-only validation comparisons · CSV</a></div>
@@ -352,6 +363,7 @@ const tests = [
 	.driver-summary { margin-block: 1rem; padding-block: .75rem; border-block: 1px solid var(--rule); }
 	.driver-summary :global(h3) { margin: 0 0 .4rem; font: 400 1.15rem var(--serif); }
 	.driver-summary :global(p) { margin: .4rem 0; }
+	#participation-return-drivers :global(.driver-endpoint-version) { overflow-wrap: anywhere; }
 	.driver-summary :global(.driver-equation) { font: .85rem/1.65 var(--sans); font-variant-numeric: tabular-nums; }
 	@media(max-width:760px) {
 		.driver-controls { grid-template-columns: repeat(2,minmax(0,1fr)); }

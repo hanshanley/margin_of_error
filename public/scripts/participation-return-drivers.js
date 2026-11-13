@@ -5,6 +5,7 @@ import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
   scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
 import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection, norcFamilies,
   norcAssociations, norcSharedBound, norcRecordedBound, validateNorcAssociation } from "./participation-norc-house.js";
+import { loadHouseSensitivity, houseSensitivityScope } from "./participation-house-sensitivity.js";
 
 export const effectTerms = [
   ["switching", "Switching", "#3e7d84"],
@@ -161,6 +162,8 @@ export async function initializeReturnDrivers() {
     const codes = items.map(item => item.feature.properties.STUSAB).sort((a, b) => names[a].localeCompare(names[b]));
     let selectedCode = "TX";
     let scenarios, norc, norcComparison, norcOriginalComparison, norcFamily, hitObserver, groupKind="", generation = 0;
+    let sensitivity, sensitivityState="idle";
+    const sensitivitySources={original:payload.norc_source, ...payload.norc_association_sources?.profiles};
     const associationKey=()=>associationSelect?.value || "original";
     const norcUnits=()=>unitsSelect?.value || "margin";
     const recordedHouse = payload.recorded_house_counts ? {rows:payload.recorded_house_counts} : null;
@@ -351,12 +354,23 @@ export async function initializeReturnDrivers() {
       else if (isScenarioView(view.value)) { detail.hidden = true; summary.hidden = true; }
       else if (office.value==="house" && payload.norc_source) {
         const selectedHouse=view.value==="reported_counts" && recordedHouse ? recordedHouse : norc;
-        if (selectedHouse && code) renderNorcSelection(selectedHouse.rows.find(r=>r.state_code===code),
-          ["reported_total","reported_counts"].includes(view.value)?"":group.value,names[code],summary,detail,
+        if (selectedHouse && code) {
+          const row=selectedHouse.rows.find(r=>r.state_code===code);
+          const selectedGroup=["reported_total","reported_counts"].includes(view.value)?"":group.value;
+          let scope=null,rangeState=sensitivityState;
+          if (sensitivity && view.value!=="reported_counts") {
+            try { scope=houseSensitivityScope(sensitivity,row,selectedGroup); }
+            catch { rangeState="failed"; }
+          }
+          renderNorcSelection(row,selectedGroup,names[code],summary,detail,
           {units:norcUnits(),view:view.value,family:norcFamily,comparison:norcComparison,
             association:norcComparison?.association_profile,
             associationState:norc?.historical_association_stress?.state_parameters[code],
-            originalComparison:norcOriginalComparison});
+            originalComparison:norcOriginalComparison,sensitivityScope:scope,sensitivityState:rangeState,
+            onSensitivityRetry:()=>{
+              sensitivity=null;sensitivityState="idle";requestSensitivity();selectState(selectedCode);
+            }});
+        }
         else { summary.replaceChildren();detail.replaceChildren();summary.hidden=true;detail.hidden=true; }
       }
       else if (row) select(row);
@@ -369,6 +383,17 @@ export async function initializeReturnDrivers() {
         summary.hidden = false;
       } else { detail.hidden = true; summary.hidden = true; }
       paintSelection();
+    };
+    const requestSensitivity=()=>{
+      if (!payload.norc_sensitivity || sensitivityState!=="idle") return;
+      sensitivityState="loading";
+      loadHouseSensitivity(payload.norc_sensitivity,sensitivitySources)
+        .then(value=>{sensitivity=value;sensitivityState="loaded";})
+        .catch(()=>{sensitivity=null;sensitivityState="failed";})
+        .finally(()=>{
+          if (office.value==="house" && view.value!=="reported_counts" && !isScenarioView(view.value) && norc)
+            selectState(selectedCode);
+        });
     };
     const render = async () => {
       const current = ++generation, scenario = isScenarioView(view.value);
@@ -421,12 +446,14 @@ export async function initializeReturnDrivers() {
         }
       }
       if (norcMode && !recordedMode) {setGroups("norc");group.disabled=view.value==="reported_total";}
+      if (norcMode && !recordedMode) requestSensitivity();
       if (recordedMode) group.disabled=true;
       if (norcMode && !recordedMode && associationNote) {
         const share=norcUnits()==="democratic_two_party_share";
-        associationNote.textContent=`Before conditioning: ${norc.summary.return_anchored}-state `
+        associationNote.textContent=`Pre-conditioning diagnostic: ${norc.summary.return_anchored}-state `
           +`${share?"Democratic two-party-share":"D−R margin"} mean absolute error `
           +`${(norc.preconditioning_margin_MAE_pp*(share ? .5 : 1)).toFixed(2)} pp. `
+          +"This is not the accuracy of the conditioned total, which matches endpoints by construction. "
           +"Temporal-association profiles were not selected using these return errors.";
         associationNote.hidden=view.value==="reported_counts";
       }
