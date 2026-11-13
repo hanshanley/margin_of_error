@@ -67,6 +67,7 @@ def open_map(page):
     expect(page.locator("#state-select option")).to_have_count(51, timeout=90000)
     page.locator("#tab-effects").click()
     root = page.locator("#participation-return-drivers")
+    root.locator("[data-driver-view]").select_option("reported_total")
     return root
 
 

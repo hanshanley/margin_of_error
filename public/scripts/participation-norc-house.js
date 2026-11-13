@@ -6,8 +6,8 @@ export const norcTerms = [
   ["unresolved", "Unresolved responses"],
 ];
 export const norcViews = [
-  ["reported_total", "Comparable reported House change"],
-  ["reported_counts", "Recorded party-share change · unadjusted"],
+  ["reported_counts", "Reported House swing · recorded votes"],
+  ["reported_total", "Like-for-like House comparisons only"],
   ["switching", "Switching · NORC estimate"],
   ["modeled_nonparticipation", "Net participation · NORC estimate"],
   ["entry", "New / returning · NORC estimate"],
@@ -369,7 +369,8 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   const signed=value=>pp(value*factor),share=units==="democratic_two_party_share";
   const unitLabel=share?"Democratic two-party share change":"margin change";
   const endpoint=value=>share?`${(50+value/2).toFixed(2)}% Democratic two-party share`:margin(value);
-  const estimate=norcEstimate(row,group), selected=group ? row?.groups.find(g=>g.dimension+"|"+g.group===group) : null;
+  const estimate=options.view==="reported_counts"?null:norcEstimate(row,group);
+  const selected=group ? row?.groups.find(g=>g.dimension+"|"+g.group===group) : null;
   summary.replaceChildren(element("h3",`${name} · House ${unitLabel}`));
   delete summary.dataset.norcState;delete summary.dataset.norcGroup;
   delete summary.dataset.norcAssociation;
@@ -401,6 +402,11 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
       +`${count(recorded.current.R)} / ${count(recorded.current.O)}. Snapshot: ${snapshot}. `
       +"Changed competition or coalition labels can distort the raw change; Other is outside the two-party denominator.",
     "caption"));
+  }
+  if (options.view==="reported_counts" && row.source_comparison_available) {
+    summary.append(element("p","Candidate-coverage checks passed. This recorded change does not identify how much came from switching, participation or entry; select a modeled view for the separate conditional explanation.","caption"));
+    summary.dataset.norcState=row.state_code;
+    summary.hidden=false;detail.hidden=true;return;
   }
   summary.append(element("p",row.source_comparison_available
     ? `2024 ${endpoint(row.reported_comparison.previous_margin_pp)} → held 2026 ${endpoint(row.reported_comparison.current_margin_pp)}. ${signed(point.total_change_pp)} ${share?"change in Democratic two-party share":"change in the Democratic–Republican margin"}.`

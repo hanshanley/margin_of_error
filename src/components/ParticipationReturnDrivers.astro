@@ -18,8 +18,16 @@ const receipt = JSON.parse(readFileSync('data/participation-return-attribution/2
 const houseHolds = Object.fromEntries(norcPoints.rows.filter((row: any) => !row.source_comparison_available)
 	.map((row: any) => [row.state_code, row.reported_comparison.reason]));
 const heldHouse = (row: { office: string; state_code: string }) => row.office === 'house' && Boolean(houseHolds[row.state_code]);
+const recordedHouse = norcPoints.rows.map((row: any) => ({
+	state_code: row.state_code, source_comparison_available: row.source_comparison_available,
+	reported_comparison: { reason: row.reported_comparison.reason,
+		current_snapshot: row.reported_comparison.current_snapshot },
+	contest_comparability: Object.fromEntries(['previous_counts', 'current_counts', 'districts',
+		'previous_named_R_districts', 'current_named_R_districts']
+		.map(key => [key, row.contest_comparability[key]])),
+}));
 const payload = JSON.stringify({ data, calibration, names, norc_source: norcSource, house_comparison_holds: houseHolds,
-	norc_association_sources: association }).replaceAll('<', '\\u003c');
+	recorded_house_counts: recordedHouse, norc_association_sources: association }).replaceAll('<', '\\u003c');
 const pp = (value: number | null) => value === null ? 'Unavailable' : `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 const validation = norcPoints.validation;
 const tests = [
@@ -30,13 +38,14 @@ const tests = [
 ---
 <section id="participation-return-drivers" class="participation-current" aria-labelledby="return-drivers-title">
 	<header class="section-intro">
-		<p class="kicker">2026 · NORC House vote-flow model</p>
-		<h2 id="return-drivers-title">House results and modeled drivers</h2>
-		<p>Model retained voters, switching, entry/return and nonparticipation using NORC responses.
-			Choose a state and demographic group to see how its estimated flows contribute to the House shift.</p>
+		<p class="kicker">2024 → 2026 · House results</p>
+		<h2 id="return-drivers-title">House swings and modeled drivers</h2>
+		<p>See the change in recorded Democratic two-party vote share. Select a state for both years' totals,
+			or choose a modeled view for switching, participation and entry/return.</p>
 	</header>
 	<p class="caption">Reported change compares held <strong>same-office candidate counts</strong>, not measured voter preference.
-		Known-D/R margin = 100 × (D − R) / (D + R). Gray is unavailable.
+		Known-D/R margin = 100 × (D − R) / (D + R), twice the Democratic-share change. In the recorded view, gray means missing counts.
+		Hatching marks changed candidate competition or election scope, not missing results.
 		Changed major-party candidate coverage, missing native counts and unqualified election stages cannot constrain a behavioral explanation.
 		NORC source models are trained separately from the reported results; qualified comparisons constrain the reconstruction.
 		Estimates, model checks and assumptions appear below the map.</p>
@@ -48,8 +57,8 @@ const tests = [
 		<label>2026 office<select data-driver-office disabled><option value="house">House · states</option>
 			<option value="senate">Senate</option><option value="governor">Governor · frames</option></select></label>
 		<label>Map view<select data-driver-view disabled>
-			<option value="reported_total">Comparable reported House change</option>
-			<option value="reported_counts">Recorded party-share change · unadjusted</option>
+			<option value="reported_counts">Reported House swing · recorded votes</option>
+			<option value="reported_total">Like-for-like House comparisons only</option>
 			<option value="switching">Switching · fitted</option>
 			<option value="modeled_nonparticipation">No contest vote · fitted</option>
 			<option value="entry">Entry / return · fitted</option>
@@ -77,13 +86,13 @@ const tests = [
 			<option value="margin">D−R margin points</option>
 		</select></label>
 	</div>
-	<p data-driver-status class="caption" role="status">Loading NORC House estimates; every saved state summary and complete download remains below.</p>
+	<p data-driver-status class="caption" role="status">Loading recorded House swings; every saved state summary and complete download remains below.</p>
 	<p data-driver-association-note class="caption" hidden></p>
 	<div class="driver-maps">
 		<section class="driver-map-card" aria-labelledby="driver-map-title">
-			<h3 id="driver-map-title" data-driver-map-title>Comparable reported House change</h3>
-			<p class="caption" data-driver-map-caption>Held source margin changes passing candidate-coverage checks; not population turnout or a measured preference swing.</p>
-			<div class="driver-map" data-driver-map="reported_total"></div>
+			<h3 id="driver-map-title" data-driver-map-title>Reported House swing · recorded votes</h3>
+			<p class="caption" data-driver-map-caption>Recorded vote-share changes, not population turnout or measured switching. Hatching flags comparisons affected by candidate competition or election scope.</p>
+			<div class="driver-map" data-driver-map="reported_counts"></div>
 		</section>
 	</div>
 	<div class="driver-map-key" aria-label="Shared signed margin-point scale">
@@ -91,6 +100,7 @@ const tests = [
 			<span data-driver-scale-min></span><span>0</span><span data-driver-scale-max></span>
 		</div><div class="driver-map-directions"><span>Republican direction</span><span>Democratic direction</span></div></div>
 		<span class="driver-no-model"><i></i>No qualified comparison / model</span>
+		<span class="driver-comparison-caution" data-driver-comparison-caution hidden><i></i>Changed competition / scope</span>
 	</div>
 	<p class="caption driver-map-note">Colour shows <strong>signed percentage-point changes or contributions to the margin</strong>,
 		not party vote shares or turnout rates. House model change =
@@ -172,7 +182,7 @@ const tests = [
 		Pennsylvania now uses all 17 native district totals: its unmatched county-validation rows were not missing native votes.
 		Provider district totals omit known county-source write-ins; those are kept separate, not added to Other.
 		Every district is now audited for named major-party coverage, missing native counts and multiple same-party nominees.
-		There are {norcPoints.summary.return_anchored} conditional comparisons; incompatible or unresolved cases remain unavailable in every current view.
+		There are {norcPoints.summary.return_anchored} conditional comparisons; incompatible or unresolved cases remain unavailable in modeled views.
 		In Massachusetts, Republican candidates appear in 2 of 9 districts in 2024 but 5 of 9 in the held 2026 snapshot.
 		The old aggregate change therefore was not a like-for-like statewide preference swing. A common-district subtotal is not a statewide correction, and matching IDs do not certify unchanged geography.
 		Maine's unresolved ranked-choice-round hold remains independent. Unreported counts are never filled with zero.</p>
@@ -333,6 +343,10 @@ const tests = [
 	.driver-map-directions { display: flex; justify-content: space-between; margin-top: .25rem; }
 	.driver-no-model { display: inline-flex; align-items: center; gap: .35rem; margin-left: .5rem; }
 	.driver-no-model i { width: .65rem; height: .65rem; background: #d6d3cb; }
+	.driver-comparison-caution { display: inline-flex; align-items: center; gap: .35rem; }
+	.driver-comparison-caution[hidden] { display: none; }
+	.driver-comparison-caution i { width: .65rem; height: .65rem; border: 1px solid #8d958e;
+		background: repeating-linear-gradient(135deg,transparent 0 3px,#173d4866 3px 4px); }
 	.driver-map-note { max-width: 85ch; margin-inline: auto; }
 	.driver-detail { margin-top: 1rem; padding-top: .5rem; border-top: 1px solid var(--rule); min-width: 0; }
 	.driver-summary { margin-block: 1rem; padding-block: .75rem; border-block: 1px solid var(--rule); }

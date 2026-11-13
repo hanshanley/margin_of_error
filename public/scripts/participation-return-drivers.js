@@ -163,6 +163,12 @@ export async function initializeReturnDrivers() {
     let scenarios, norc, norcComparison, norcOriginalComparison, norcFamily, hitObserver, groupKind="", generation = 0;
     const associationKey=()=>associationSelect?.value || "original";
     const norcUnits=()=>unitsSelect?.value || "margin";
+    const recordedHouse = payload.recorded_house_counts ? {rows:payload.recorded_house_counts} : null;
+    if (recordedHouse && (recordedHouse.rows.length!==50
+        || new Set(recordedHouse.rows.map(row=>row.state_code)).size!==50
+        || recordedHouse.rows.some(row=>row.state_code==="DC" || !codes.includes(row.state_code)
+          || norcMapValue(row,"reported_counts")===null)))
+      throw new Error("Recorded House count inventory differs");
     const legacyMapNote = root.querySelector(".driver-map-note").cloneNode(true);
     stateSelect.replaceChildren(new Option("Select a state on the map…", ""),
       ...codes.map(code => new Option(names[code], code)));
@@ -344,7 +350,8 @@ export async function initializeReturnDrivers() {
       else if (isScenarioView(view.value) && scenarios && code) selectScenario(row, code);
       else if (isScenarioView(view.value)) { detail.hidden = true; summary.hidden = true; }
       else if (office.value==="house" && payload.norc_source) {
-        if (norc && code) renderNorcSelection(norc.rows.find(r=>r.state_code===code),
+        const selectedHouse=view.value==="reported_counts" && recordedHouse ? recordedHouse : norc;
+        if (selectedHouse && code) renderNorcSelection(selectedHouse.rows.find(r=>r.state_code===code),
           ["reported_total","reported_counts"].includes(view.value)?"":group.value,names[code],summary,detail,
           {units:norcUnits(),view:view.value,family:norcFamily,comparison:norcComparison,
             association:norcComparison?.association_profile,
@@ -366,6 +373,7 @@ export async function initializeReturnDrivers() {
     const render = async () => {
       const current = ++generation, scenario = isScenarioView(view.value);
       const norcMode=office.value==="house" && !scenario && Boolean(payload.norc_source);
+      const recordedMode=norcMode && view.value==="reported_counts";
       if (associationNote) associationNote.hidden=true;
       if (associationSelect) {
         associationSelect.closest("label").hidden=!norcMode || !payload.norc_association_sources || view.value==="reported_counts";
@@ -377,11 +385,11 @@ export async function initializeReturnDrivers() {
       }
       if (unitsSelect) {
         unitsSelect.closest("label").hidden=!norcMode;
-        unitsSelect.disabled=!norc || view.value==="retaining";
+        unitsSelect.disabled=!(recordedMode && recordedHouse || norc) || view.value==="retaining";
       }
-      root.querySelector("[data-driver-group-control]").hidden = !scenario && !norcMode;
+      root.querySelector("[data-driver-group-control]").hidden = !scenario && (!norcMode || recordedMode);
       root.querySelector(".driver-controls").dataset.scenarios = String(scenario || norcMode);
-      if (norcMode && !norc) {
+      if (norcMode && !norc && !(recordedMode && recordedHouse)) {
         status.textContent="Loading the checksum-verified NORC demographic House model.";
         root.querySelector("[data-driver-map]").replaceChildren();summary.hidden=true;detail.hidden=true;
         try {
@@ -412,8 +420,9 @@ export async function initializeReturnDrivers() {
           root.querySelector("[data-driver-map]").replaceChildren(retry);return;
         }
       }
-      if (norcMode) {setGroups("norc");group.disabled=["reported_total","reported_counts"].includes(view.value);}
-      if (norcMode && associationNote) {
+      if (norcMode && !recordedMode) {setGroups("norc");group.disabled=view.value==="reported_total";}
+      if (recordedMode) group.disabled=true;
+      if (norcMode && !recordedMode && associationNote) {
         const share=norcUnits()==="democratic_two_party_share";
         associationNote.textContent=`Before conditioning: ${norc.summary.return_anchored}-state `
           +`${share?"Democratic two-party-share":"D−R margin"} mean absolute error `
@@ -441,12 +450,13 @@ export async function initializeReturnDrivers() {
       if (scenario) {setGroups("legacy");group.disabled=false;}
       const all = driverRows(data, office.value, "", "magnitude", names);
       const byCode = new Map(all.map(row => [row.state_code, row]));
-      const norcByCode=norcMode?new Map(norc.rows.map(r=>[r.state_code,r])):null;
+      const activeHouse=recordedMode && recordedHouse ? recordedHouse : norc;
+      const norcByCode=norcMode?new Map(activeHouse.rows.map(r=>[r.state_code,r])):null;
       const retention=norcMode && view.value==="retaining";
       const sharedMaximum=payload.norc_association_sources?.shared_max_abs_margin?.[group.value] ?? null;
       let bound;
       try {
-        bound = retention ? 100 : norcMode && view.value==="reported_counts" ? norcRecordedBound(norc,norcUnits())
+        bound = retention ? 100 : recordedMode ? norcRecordedBound(activeHouse,norcUnits())
           : norcMode ? norcSharedBound(norcComparison || norc,group.value,norcUnits(),sharedMaximum)
           : scenario ? scenarioScale(Object.keys(scenarios.state_scenarios).map(code =>
           scenarioEstimate(scenarios, code, view.value, group.value)?.value ?? null)) : mapScale(all, calibration);
@@ -458,8 +468,8 @@ export async function initializeReturnDrivers() {
       }
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
       status.textContent = norcMode && view.value==="reported_counts"
-        ? "Unadjusted recorded party shares; model eligibility does not hide known totals. "
-          +"Changed competition and coalition labels can produce misleading apparent swings. "
+        ? `${activeHouse.rows.length} states with recorded vote-share changes. Hatching flags changed competition or election scope; `
+          +"these raw comparisons are not like-for-like preference estimates or measured switching. "
           +(norcUnits()==="democratic_two_party_share"?"Change units: Democratic two-party-share points.":"Change units: D−R margin points.")
         : norcMode ? `${norc.summary.return_anchored} House reconstructions use recorded endpoints; `
         +`${50-norc.summary.return_anchored} are NORC source scenarios with unavailable observed comparisons. `
@@ -488,6 +498,8 @@ export async function initializeReturnDrivers() {
       directions[1].textContent = scenario || retention ? "Higher share" : "Democratic direction";
       root.querySelector(".driver-no-model").lastChild.textContent = norcMode && view.value==="reported_counts"
         ? "No recorded party-count comparison" : "No qualified comparison / model";
+      const caution=root.querySelector("[data-driver-comparison-caution]");
+      if (caution) caution.hidden=!recordedMode;
       const note = root.querySelector(".driver-map-note");
       if (norcMode && view.value==="reported_counts") note.textContent=
         "Recorded candidate totals only, not a population preference-swing estimate or a behavioral decomposition. "
@@ -510,7 +522,7 @@ export async function initializeReturnDrivers() {
         host.dataset.driverMap = key;
         root.querySelector("[data-driver-map-title]").textContent = label;
         root.querySelector("[data-driver-map-caption]").textContent = norcMode
-          ? key==="reported_counts" ? `Unadjusted recorded House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change. Negative raw changes can reflect unopposed contests or different coalition labels, not a Republican preference swing. Select a state to inspect counts and model qualifications.`
+          ? key==="reported_counts" ? `2024 → held 2026 recorded House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change. Hatching marks changed candidate competition or election scope: not a like-for-like preference swing. Select a state for both years' totals and qualifications.`
             : key==="reported_total" ? `Held reported House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change passing candidate-coverage checks; not a measured voter-preference swing. Gray means an incompatible or unavailable comparison, not a Republican result. Known raw totals remain available in the recorded-count view and state details.`
             : `${group.selectedOptions[0].textContent}. ${retention?"Share retaining party":norcUnits()==="democratic_two_party_share"?"Contribution to statewide Democratic two-party-share change":"Contribution to statewide margin change"}. `
               +(key==="modeled_nonparticipation"?"Entry/return and modeled absence are included together.":"")
@@ -519,21 +531,33 @@ export async function initializeReturnDrivers() {
           : mapDescriptions[key];
         const svg = svgElement("svg", { viewBox: "0 0 1000 640", role: "group",
           "aria-label": `${label}: ${retention ? "modeled percentages" : scenario ? "synthetic source-weight shares" : "signed percentage-point changes"} by state`, "data-scale": bound });
+        const patterns=svgElement("defs",{});svg.append(patterns);
         for (const item of items) {
           const code = item.feature.properties.STUSAB, row = byCode.get(code);
           const value = office.value==="house" && key!=="reported_counts" && payload.house_comparison_holds?.[code] ? null
             : norcMode ? norcMapValue(norcByCode.get(code),key,group.value,norcUnits())
             : scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key, calibration.get(row?.id));
           const normalized = value ?? null;
+          const cautioned=recordedMode && normalized!==null && !norcByCode.get(code).source_comparison_available;
           const text = `${names[code]} · ${label}: ${normalized === null ? "no qualified comparison, group or model"
             : retention ? `${normalized.toFixed(1)}%` : scenario ? `${(normalized * 100).toFixed(1)}%` : signedPP(normalized)}. `
             + (retention ? "Modeled party-retention share, not a margin contribution."
               : scenario ? "Synthetic source-weight share, not measured staying home."
                 : norcMode && norcUnits()==="democratic_two_party_share"
                   ? "Change in Democratic two-party-share points, not population turnout."
-                  : "Margin points, not a vote share or turnout rate.");
-          const path = svgElement("path", { d: item.d, fill: effectFill(normalized, bound),
+                  : "Margin points, not a vote share or turnout rate.")
+            +(cautioned?" Changed candidate competition or election scope; not a like-for-like preference swing.":"");
+          let fill=effectFill(normalized,bound);
+          if (cautioned) {
+            const id=`driver-count-caution-${code}`,pattern=svgElement("pattern",
+              {id,width:8,height:8,patternUnits:"userSpaceOnUse"});
+            pattern.append(svgElement("rect",{width:8,height:8,fill}),
+              svgElement("path",{d:"M-2 2L2-2M0 8L8 0M6 10L10 6",stroke:"#173d48","stroke-opacity":.28,"stroke-width":1}));
+            patterns.append(pattern);fill=`url(#${id})`;
+          }
+          const path = svgElement("path", { d: item.d, fill,
             class: "driver-state", "fill-rule": "evenodd", "pointer-events": "visibleFill", "data-state-code": code,
+            "data-comparison-caution":String(cautioned),
             "data-model-value": normalized ?? "", ...(row ? { "data-model-id": row.id } : {}),
             role: "button", tabindex: "-1",
             "aria-label": text });
@@ -552,7 +576,7 @@ export async function initializeReturnDrivers() {
         const updateHitTargets=()=>{
           svg.querySelectorAll("[data-driver-hit]").forEach(node=>node.remove());
           const scale=svg.getBoundingClientRect().width/1000;
-          if (scale>0) for (const path of svg.querySelectorAll("path")) {
+          if (scale>0) for (const path of svg.querySelectorAll(".driver-state")) {
             const box=path.getBBox();
             if (box.width*scale>=6 || box.height*scale>=6) continue;
             const hit=svgElement("circle",{cx:box.x+box.width/2,cy:box.y+box.height/2,

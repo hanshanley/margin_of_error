@@ -37,6 +37,7 @@ def open_map(page):
     page.locator("#tab-effects").click()
     root=page.locator("#participation-return-drivers")
     root.scroll_into_view_if_needed()
+    root.locator("[data-driver-view]").select_option("reported_total")
     return root
 
 def check_values(root,field,group=""):

@@ -55,6 +55,7 @@ with sync_playwright() as runtime:
             family = root.locator("[data-driver-family]")
             units = root.locator("[data-driver-units]")
             view = root.locator("[data-driver-view]")
+            view.select_option("reported_total")
             group = root.locator("[data-driver-group]")
             state = root.locator("[data-driver-state]")
             summary = root.locator("[data-driver-summary]")

@@ -5,7 +5,7 @@ import { createHash } from "node:crypto";
 import { validateNorcHouse, norcGroups, norcEstimate, norcMapValue,
   roundedNorcContributions, norcTerms, validateNorcFamilies, norcFamilies,
   norcContributionScale, norcSharedBound, norcRecordedComparison, norcRecordedBound,
-  validateNorcAssociation } from "../public/scripts/participation-norc-house.js";
+  validateNorcAssociation, renderNorcSelection } from "../public/scripts/participation-norc-house.js";
 
 const bytes = readFileSync("data/participation-return-attribution/20261112-02/norc-test-oracle.json");
 const source = JSON.parse(bytes);
@@ -44,6 +44,29 @@ test("held Texas counts expose +12 share points without authorizing a behavioral
   assert.equal(norcMapValue(row,"reported_counts"),comparison.share_change_pp*2);
   for(const key of ["reported_total","switching","entry","modeled_nonparticipation"])
     assert.equal(norcMapValue(row,key),null);
+});
+
+test("recorded state summaries need counts and qualifications, not fitted model points",()=>{
+  class Node {
+    dataset={};children=[];hidden=true;
+    append(...nodes){this.children.push(...nodes);}
+    replaceChildren(...nodes){this.children=nodes;}
+  }
+  const original=globalThis.document;
+  globalThis.document={createElement:()=>new Node()};
+  try{
+    for(const eligible of [false,true]){
+      const row=recordedTexas(),summary=new Node(),detail=new Node();
+      row.source_comparison_available=eligible;
+      row.reported_comparison.reason="Changed candidate coverage";
+      renderNorcSelection(row,"","Texas",summary,detail,{view:"reported_counts",units:"democratic_two_party_share"});
+      assert.equal(summary.hidden,false);
+      assert.equal(detail.hidden,true);
+      assert.equal(summary.dataset.norcState,"TX");
+      assert.ok(summary.children.some(node=>node.textContent?.includes("+11.98 pp share change")));
+      assert.equal(summary.dataset.norcHold,eligible?undefined:"true");
+    }
+  }finally{globalThis.document=original;}
 });
 
 test("recorded counts preserve unknowns and reject invalid count denominators",()=>{
