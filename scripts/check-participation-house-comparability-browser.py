@@ -25,11 +25,16 @@ for profile, receipt in receipts.items():
         body = response.read()
     assert len(body) == receipt["bytes"] and hashlib.sha256(body).hexdigest() == receipt["sha256"]
     datasets[profile] = json.loads(body)
-fields = ("reported_total", "switching", "modeled_nonparticipation", "entry",
+fields = ("reported_total", "reported_counts", "switching", "modeled_nonparticipation", "entry",
           "exit", "other_choice", "unresolved", "retaining")
 
 
 def expected(row, field, group, units):
+    if row and field == "reported_counts":
+        review = row["contest_comparability"]
+        before, after = review["previous_counts"], review["current_counts"]
+        share = lambda counts: 100 * counts["D"] / (counts["D"] + counts["R"])
+        return (share(after) - share(before)) * (1 if units == "democratic_two_party_share" else 2)
     if not row or not row["source_comparison_available"]:
         return None
     scale = .5 if units == "democratic_two_party_share" else 1
@@ -79,6 +84,20 @@ with sync_playwright() as runtime:
             group, state = root.locator("[data-driver-group]"), root.locator("[data-driver-state]")
             summary = root.locator("[data-driver-summary]")
             expect(family).to_be_enabled(timeout=90000)
+            expect(units).to_have_value("democratic_two_party_share")
+            state.select_option("TX")
+            expect(summary).to_contain_text("+11.98 pp share change")
+            expect(summary).to_have_attribute("data-norc-hold", "true")
+            assert root.locator('.driver-state[data-state-code="TX"]').get_attribute("data-model-value") == ""
+            view.select_option("reported_counts")
+            expect(group).to_be_disabled()
+            expect(root.locator(".driver-no-model")).to_contain_text("No recorded party-count comparison")
+            assert abs(float(root.locator('.driver-state[data-state-code="TX"]').get_attribute("data-model-value"))
+                       - 11.97610547994342) < 1e-8
+            expect(summary).to_contain_text("unadjusted candidate totals")
+            expect(root.locator('[data-saved-recorded="TX"]')).to_contain_text("+11.98")
+            root.screenshot(path=str(args.proof.with_suffix(f".TX-{width}.png")))
+            view.select_option("reported_total")
             state.select_option("PA")
             checked = 0
             for profile, data in datasets.items():
@@ -140,8 +159,9 @@ with sync_playwright() as runtime:
             expect(state).to_have_value("MA")
             expect(summary).to_contain_text("2/9")
             expect(summary).to_contain_text("5/9")
-            assert "22.91" not in summary.inner_text()
-            assert "5.65" not in summary.inner_text()
+            expect(summary.locator(".driver-recorded-endpoints")).to_contain_text("not a measured voter-preference swing")
+            assert "22.91" not in summary.locator(".driver-endpoints").inner_text()
+            assert "5.65" not in summary.locator(".driver-endpoints").inner_text()
             root.locator('.driver-state[data-state-code="PA"]').press("Enter")
             expect(state).to_have_value("PA")
             root.locator('.driver-state[data-state-code="MA"]').press("Space")
@@ -160,9 +180,12 @@ with sync_playwright() as runtime:
                 assert requests.count(receipt["url"]) == 1
             assert root.locator('a[href$="participation-house-comparability-20261112-01/complete-profile-family-state-comparisons.csv"]').count() == 1
             assert root.locator('a[href$="/complete-state-family-comparisons.csv"]').count() == 0
+            assert root.locator('a[href$="participation-house-recorded-counts-20261113-01/complete-analysis.zip"]').count() == 1
             assert not errors, errors
             cases.append(dict(width=width, exact_map_values=checked, state_selections=50,
-                true_Massachusetts_pointer_selection=True, incompatible_states_unavailable_in_every_view=True,
+                true_Massachusetts_pointer_selection=True, incompatible_states_unavailable_in_behavioral_views=True,
+                recorded_counts_visible_without_behavioral_promotion=True,
+                default_Democratic_share_units=True, Texas_share_change_checked=11.97610547994342,
                 keyboard_enter_space_selection=True,
                 corrected_CSV_not_superseded_targets=True,
                 original_full_download_link_present=root.locator('a[href$="participation-house-comparability-20261112-01/complete-analysis.zip"]').count()>0,
@@ -197,7 +220,7 @@ with sync_playwright() as runtime:
         page.close()
     finally:
         browser.close()
-proof = dict(status="passed_corrected_House_comparability_desktop_phone", base_url=args.base_url,
+proof = dict(status="passed_recorded_counts_and_comparability_desktop_phone", base_url=args.base_url,
     valid_data_overrides=False, intentional_source_failure_fails_closed=True,
     intentional_bad_scale_clears_and_recovers=True, cases=cases)
 args.proof.write_text(json.dumps(proof, indent=2, sort_keys=True)+"\n")

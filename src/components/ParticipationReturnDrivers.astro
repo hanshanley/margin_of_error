@@ -1,7 +1,7 @@
 ---
 import { readFileSync } from 'node:fs';
 import { roundedContributions, switchingConstraintBounds } from '../../public/scripts/participation-calibrated-swing.js';
-import { roundedNorcContributions } from '../../public/scripts/participation-norc-house.js';
+import { roundedNorcContributions, norcRecordedComparison } from '../../public/scripts/participation-norc-house.js';
 const { names } = Astro.props as { names: Record<string, string> };
 type DriverRow = { id: string; state_code: string; office: string; components_pp: Record<string, number>;
 	reported_comparison: { baseline_year?: number; reported_change_pp: number | null;
@@ -31,7 +31,7 @@ const tests = [
 <section id="participation-return-drivers" class="participation-current" aria-labelledby="return-drivers-title">
 	<header class="section-intro">
 		<p class="kicker">2026 · NORC House vote-flow model</p>
-		<h2 id="return-drivers-title">Why House margins changed</h2>
+		<h2 id="return-drivers-title">House results and modeled drivers</h2>
 		<p>Model retained voters, switching, entry/return and nonparticipation using NORC responses.
 			Choose a state and demographic group to see how its estimated flows contribute to the House shift.</p>
 	</header>
@@ -44,7 +44,8 @@ const tests = [
 		<label>2026 office<select data-driver-office disabled><option value="house">House · states</option>
 			<option value="senate">Senate</option><option value="governor">Governor · frames</option></select></label>
 		<label>Map view<select data-driver-view disabled>
-			<option value="reported_total">Qualified reported House change</option>
+			<option value="reported_total">Comparable reported House change</option>
+			<option value="reported_counts">Recorded party-share change · unadjusted</option>
 			<option value="switching">Switching · fitted</option>
 			<option value="modeled_nonparticipation">No contest vote · fitted</option>
 			<option value="entry">Entry / return · fitted</option>
@@ -68,15 +69,15 @@ const tests = [
 			<option value="full">Historical association · stronger stress</option>
 		</select></label>
 		<label>Change units<select data-driver-units disabled>
-			<option value="margin">D−R margin points</option>
 			<option value="democratic_two_party_share">Democratic two-party-share points</option>
+			<option value="margin">D−R margin points</option>
 		</select></label>
 	</div>
 	<p data-driver-status class="caption" role="status">Loading NORC House estimates; every saved state summary and complete download remains below.</p>
 	<p data-driver-association-note class="caption" hidden></p>
 	<div class="driver-maps">
 		<section class="driver-map-card" aria-labelledby="driver-map-title">
-			<h3 id="driver-map-title" data-driver-map-title>Qualified reported House change</h3>
+			<h3 id="driver-map-title" data-driver-map-title>Comparable reported House change</h3>
 			<p class="caption" data-driver-map-caption>Held source margin changes passing candidate-coverage checks; not population turnout or a measured preference swing.</p>
 			<div class="driver-map" data-driver-map="reported_total"></div>
 		</section>
@@ -92,6 +93,8 @@ const tests = [
 		switching + net participation + Other-party choice + unresolved responses.
 		The common accounting-frame size and transitions are modeled, not measured people.
 		No state estimate is spread onto counties or precincts.</p>
+	<p class="caption"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-recorded-counts-20261113-01/complete-analysis.zip">Complete recorded-count queries and interface correction</a>:
+		all 50 states, both change units, model qualifications, exact code/tests and the entire preceding scientific packet.</p>
 	<div data-driver-summary class="driver-summary" hidden aria-live="polite"></div>
 	<details class="explorer-notes"><summary>Selected state: demographic breakdown, retained voters and model checks</summary>
 		<div data-driver-detail class="driver-detail" hidden></div>
@@ -200,9 +203,30 @@ const tests = [
 		Before conditioning on current party totals, the {norcPoints.summary.return_anchored}-state margin mean absolute error is {norcPoints.preconditioning_margin_MAE_pp.toFixed(2)} pp.
 		Selected-state details retain each prediction gap as model error.</p>
 	</details>
+	<details class="explorer-notes"><summary>Every recorded House party-share change · unadjusted</summary>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Recorded House party-share changes">
+			<table><caption>Raw candidate totals, not voter-preference swings or identified histories.
+				Changed competition and coalition labels can distort the change. Model holds do not erase recorded counts.
+				All values below use Democratic two-party-share points; double them for D-minus-R margin points.</caption>
+				<thead><tr><th scope="col">State</th><th scope="col">2024 D share</th>
+					<th scope="col">Held 2026 D share</th><th scope="col">Share change</th>
+					<th scope="col">Behavioral reconstruction</th></tr></thead>
+				<tbody>{norcPoints.rows.map((row: any) => {
+					const recorded = norcRecordedComparison(row);
+					return <tr data-saved-recorded={row.state_code}><th scope="row">{names[row.state_code]}</th>
+						<td class="numeric">{recorded ? `${recorded.previous_share.toFixed(2)}%` : 'Unavailable'}</td>
+						<td class="numeric">{recorded ? `${recorded.current_share.toFixed(2)}%` : 'Unavailable'}</td>
+						<td class="numeric">{pp(recorded?.share_change_pp ?? null)}</td>
+						<td>{row.source_comparison_available ? 'Conditional model available' : row.reported_comparison.reason}</td></tr>;
+				})}</tbody>
+			</table>
+		</div>
+	</details>
 	<details class="explorer-notes"><summary>Every saved NORC House-state estimate</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 50 NORC House state models">
-			<table><caption>Conditional estimates for compatible held comparisons, not identified histories. Incompatible source-only scenarios are available in the complete download, not substituted here.</caption>
+			<table><caption>D-minus-R margin points, twice the Democratic-share change shown by default on the map.
+				Conditional estimates for compatible held comparisons, not identified histories.
+				Incompatible source-only scenarios are available in the complete download, not substituted here.</caption>
 				<thead><tr><th scope="col">State</th><th scope="col">Qualified reported change</th>
 					<th scope="col">Model shift</th><th scope="col">Switching</th>
 					<th scope="col">Net participation</th><th scope="col">Other / unresolved</th><th scope="col">Qualification</th></tr></thead>

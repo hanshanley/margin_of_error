@@ -6,7 +6,8 @@ export const norcTerms = [
   ["unresolved", "Unresolved responses"],
 ];
 export const norcViews = [
-  ["reported_total", "Qualified reported House change"],
+  ["reported_total", "Comparable reported House change"],
+  ["reported_counts", "Recorded party-share change · unadjusted"],
   ["switching", "Switching · NORC estimate"],
   ["modeled_nonparticipation", "Net participation · NORC estimate"],
   ["entry", "New / returning · NORC estimate"],
@@ -42,7 +43,8 @@ export function norcSharedBound(comparison, group="", units="margin", sharedMaxi
   const factor=norcContributionScale(units);
   const models=comparison?.families?Object.values(comparison.families):[comparison];
   const local=Math.max(0,...models.flatMap(model=>(model?.rows || []).flatMap(row=>
-    norcViews.filter(([key])=>key!=="retaining").map(([key])=>Math.abs(norcMapValue(row,key,group,"margin")??0)))));
+    norcViews.filter(([key])=>key!=="retaining" && key!=="reported_counts")
+      .map(([key])=>Math.abs(norcMapValue(row,key,group,"margin")??0)))));
   if (sharedMaximum!==null && (!finite(sharedMaximum) || sharedMaximum<local-1e-7))
     throw new Error("Association comparison scale omits a displayed estimate");
   return Math.max(5,Math.ceil((sharedMaximum??local)*factor/5)*5);
@@ -282,7 +284,33 @@ export function norcEstimate(row, group="") {
   return selected?.available ? selected : null;
 }
 
+export function norcRecordedComparison(row) {
+  if (!row) return null;
+  const review=row.contest_comparability;
+  const comparison=row.source_aggregate_comparison || row.reported_comparison;
+  const previous=review?.previous_counts || comparison?.previous;
+  const current=review?.current_counts || comparison?.current;
+  const valid=counts=>counts && ["D","R","O"].every(key=>Number.isSafeInteger(counts[key]) && counts[key]>=0)
+    && Number.isSafeInteger(counts.D+counts.R) && counts.D+counts.R>0;
+  if (!valid(previous) || !valid(current)) return null;
+  const share=counts=>100*counts.D/(counts.D+counts.R);
+  return {previous,current,previous_share:share(previous),current_share:share(current),
+    share_change_pp:share(current)-share(previous),
+    model_eligible:row.source_comparison_available===true,
+    snapshot:comparison?.current_snapshot || "held source snapshot",
+    raw_party_totals_are_not_preference_swing:true};
+}
+
+export function norcRecordedBound(model,units="margin") {
+  const maximum=Math.max(0,...model.rows.map(row=>Math.abs(norcMapValue(row,"reported_counts","",units)??0)));
+  return Math.max(5,Math.ceil(maximum/5)*5);
+}
+
 export function norcMapValue(row, key, group="", units="margin") {
+  if (key==="reported_counts") {
+    const recorded=norcRecordedComparison(row);
+    return recorded ? recorded.share_change_pp*2*norcContributionScale(units) : null;
+  }
   if (!row || !row.source_comparison_available) return null;
   const factor=norcContributionScale(units);
   if (key === "reported_total") return row.source_comparison_available ? row.reported_comparison.reported_change_pp*factor : null;
@@ -322,6 +350,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   delete summary.dataset.norcState;delete summary.dataset.norcGroup;
   delete summary.dataset.norcAssociation;
   delete summary.dataset.norcHold;
+  delete summary.dataset.recordedShareChange;
   detail.replaceChildren();
   if (!row) {
     summary.append(element("p","D.C. has no NORC CHEP sample; no House transition estimate is invented.","caption"));
@@ -331,6 +360,21 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   summary.dataset.norcFamily=options.family || "accepted_ridge_multinomial";
   summary.dataset.norcUnits=units;
   summary.dataset.norcAssociation=options.association?.profile || "original";
+  const recorded=norcRecordedComparison(row);
+  if (recorded && (!row.source_comparison_available || options.view==="reported_counts")) {
+    summary.dataset.recordedShareChange=String(recorded.share_change_pp);
+    summary.append(element("p",
+      `Recorded Democratic two-party share: 2024 ${recorded.previous_share.toFixed(2)}% → held 2026 `
+      +`${recorded.current_share.toFixed(2)}%; ${pp(recorded.share_change_pp)} share change `
+      +`(${pp(recorded.share_change_pp*2)} D−R margin change). `
+      +"These are unadjusted candidate totals, not a measured voter-preference swing.",
+    "driver-recorded-endpoints"));
+    summary.append(element("p",`2024 recorded D/R: ${recorded.previous.D.toLocaleString("en-US")} / `
+      +`${recorded.previous.R.toLocaleString("en-US")}; held 2026: ${recorded.current.D.toLocaleString("en-US")} / `
+      +`${recorded.current.R.toLocaleString("en-US")}. Snapshot: ${recorded.snapshot}. `
+      +"Changed competition or coalition labels can distort the raw change; Other is outside the two-party denominator.",
+    "caption"));
+  }
   summary.append(element("p",row.source_comparison_available
     ? `2024 ${endpoint(row.reported_comparison.previous_margin_pp)} → held 2026 ${endpoint(row.reported_comparison.current_margin_pp)}. ${signed(point.total_change_pp)} ${share?"change in Democratic two-party share":"change in the Democratic–Republican margin"}.`
     : `House comparison unavailable: ${row.reported_comparison.reason} No switching, absence or entry estimate is presented as an explanation of incompatible returns.`,

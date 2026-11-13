@@ -4,7 +4,8 @@ import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { validateNorcHouse, norcGroups, norcEstimate, norcMapValue,
   roundedNorcContributions, norcTerms, validateNorcFamilies, norcFamilies,
-  norcContributionScale, norcSharedBound, validateNorcAssociation } from "../public/scripts/participation-norc-house.js";
+  norcContributionScale, norcSharedBound, norcRecordedComparison, norcRecordedBound,
+  validateNorcAssociation } from "../public/scripts/participation-norc-house.js";
 
 const bytes = readFileSync("data/participation-return-attribution/20261112-02/norc-test-oracle.json");
 const source = JSON.parse(bytes);
@@ -24,6 +25,49 @@ const withComparability=()=>{
     current_counts:structuredClone(row.reported_comparison.current)};
   return model;
 };
+
+const recordedTexas=()=>({
+  state_code:"TX",source_comparison_available:false,
+  reported_comparison:{status:"unavailable",reported_change_pp:null},
+  contest_comparability:{
+    previous_counts:{D:4310913,R:6234918,O:128081},
+    current_counts:{D:5147146,R:4591278,O:44093},
+  },
+});
+
+test("held Texas counts expose +12 share points without authorizing a behavioral explanation",()=>{
+  const row=recordedTexas(),comparison=norcRecordedComparison(row);
+  assert.ok(Math.abs(comparison.share_change_pp-11.97610547994342)<1e-10);
+  assert.equal(comparison.model_eligible,false);
+  assert.equal(comparison.raw_party_totals_are_not_preference_swing,true);
+  assert.equal(norcMapValue(row,"reported_counts","","democratic_two_party_share"),comparison.share_change_pp);
+  assert.equal(norcMapValue(row,"reported_counts"),comparison.share_change_pp*2);
+  for(const key of ["reported_total","switching","entry","modeled_nonparticipation"])
+    assert.equal(norcMapValue(row,key),null);
+});
+
+test("recorded counts preserve unknowns and reject invalid count denominators",()=>{
+  for(const mutate of [
+    row=>{row.contest_comparability.current_counts.D=null;},
+    row=>{row.contest_comparability.current_counts.R=-1;},
+    row=>{row.contest_comparability.current_counts.D=.5;},
+    row=>{row.contest_comparability.current_counts={D:0,R:0,O:12};},
+  ]){
+    const row=recordedTexas();mutate(row);
+    assert.equal(norcRecordedComparison(row),null);
+    assert.equal(norcMapValue(row,"reported_counts"),null);
+  }
+});
+
+test("unadjusted negative changes are preserved and have a separate recorded-count scale",()=>{
+  const positive=recordedTexas(),negative=recordedTexas();
+  negative.state_code="MA";
+  [negative.contest_comparability.previous_counts,negative.contest_comparability.current_counts]
+    =[negative.contest_comparability.current_counts,negative.contest_comparability.previous_counts];
+  assert.equal(norcMapValue(negative,"reported_counts"),-norcMapValue(positive,"reported_counts"));
+  assert.equal(norcRecordedBound({rows:[positive,negative]}),25);
+  assert.equal(norcRecordedBound({rows:[positive,negative]},"democratic_two_party_share"),15);
+});
 
 test("changed candidate coverage and native-count substitutions cannot condition behavioral models",()=>{
   validateNorcHouse(withComparability());

@@ -4,7 +4,7 @@ import { calibratedTerms, validateCalibratedSwing, calibratedMapValue, roundedCo
 import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
   scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
 import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection, norcFamilies,
-  norcAssociations, norcSharedBound, validateNorcAssociation } from "./participation-norc-house.js";
+  norcAssociations, norcSharedBound, norcRecordedBound, validateNorcAssociation } from "./participation-norc-house.js";
 
 export const effectTerms = [
   ["switching", "Switching", "#3e7d84"],
@@ -345,8 +345,8 @@ export async function initializeReturnDrivers() {
       else if (isScenarioView(view.value)) { detail.hidden = true; summary.hidden = true; }
       else if (office.value==="house" && payload.norc_source) {
         if (norc && code) renderNorcSelection(norc.rows.find(r=>r.state_code===code),
-          view.value==="reported_total"?"":group.value,names[code],summary,detail,
-          {units:norcUnits(),family:norcFamily,comparison:norcComparison,
+          ["reported_total","reported_counts"].includes(view.value)?"":group.value,names[code],summary,detail,
+          {units:norcUnits(),view:view.value,family:norcFamily,comparison:norcComparison,
             association:norcComparison?.association_profile,
             associationState:norc?.historical_association_stress?.state_parameters[code],
             originalComparison:norcOriginalComparison});
@@ -368,12 +368,12 @@ export async function initializeReturnDrivers() {
       const norcMode=office.value==="house" && !scenario && Boolean(payload.norc_source);
       if (associationNote) associationNote.hidden=true;
       if (associationSelect) {
-        associationSelect.closest("label").hidden=!norcMode || !payload.norc_association_sources;
-        associationSelect.disabled=!norcMode || !payload.norc_association_sources;
+        associationSelect.closest("label").hidden=!norcMode || !payload.norc_association_sources || view.value==="reported_counts";
+        associationSelect.disabled=!norcMode || !payload.norc_association_sources || view.value==="reported_counts";
       }
       if (familySelect) {
-        familySelect.closest("label").hidden=!norcMode || Boolean(norc && !norcComparison);
-        familySelect.disabled=!norcComparison;
+        familySelect.closest("label").hidden=!norcMode || Boolean(norc && !norcComparison) || view.value==="reported_counts";
+        familySelect.disabled=!norcComparison || view.value==="reported_counts";
       }
       if (unitsSelect) {
         unitsSelect.closest("label").hidden=!norcMode;
@@ -412,14 +412,14 @@ export async function initializeReturnDrivers() {
           root.querySelector("[data-driver-map]").replaceChildren(retry);return;
         }
       }
-      if (norcMode) {setGroups("norc");group.disabled=view.value==="reported_total";}
+      if (norcMode) {setGroups("norc");group.disabled=["reported_total","reported_counts"].includes(view.value);}
       if (norcMode && associationNote) {
         const share=norcUnits()==="democratic_two_party_share";
         associationNote.textContent=`Before conditioning: ${norc.summary.return_anchored}-state `
           +`${share?"Democratic two-party-share":"D−R margin"} mean absolute error `
           +`${(norc.preconditioning_margin_MAE_pp*(share ? .5 : 1)).toFixed(2)} pp. `
           +"Temporal-association profiles were not selected using these return errors.";
-        associationNote.hidden=false;
+        associationNote.hidden=view.value==="reported_counts";
       }
       if (scenario && !scenarios) {
         status.textContent = "Loading verified conditional scenarios; previous values are cleared.";
@@ -446,7 +446,8 @@ export async function initializeReturnDrivers() {
       const sharedMaximum=payload.norc_association_sources?.shared_max_abs_margin?.[group.value] ?? null;
       let bound;
       try {
-        bound = retention ? 100 : norcMode ? norcSharedBound(norcComparison || norc,group.value,norcUnits(),sharedMaximum)
+        bound = retention ? 100 : norcMode && view.value==="reported_counts" ? norcRecordedBound(norc,norcUnits())
+          : norcMode ? norcSharedBound(norcComparison || norc,group.value,norcUnits(),sharedMaximum)
           : scenario ? scenarioScale(Object.keys(scenarios.state_scenarios).map(code =>
           scenarioEstimate(scenarios, code, view.value, group.value)?.value ?? null)) : mapScale(all, calibration);
       } catch (error) {
@@ -456,7 +457,11 @@ export async function initializeReturnDrivers() {
         return;
       }
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
-      status.textContent = norcMode ? `${norc.summary.return_anchored} House reconstructions use recorded endpoints; `
+      status.textContent = norcMode && view.value==="reported_counts"
+        ? "Unadjusted recorded party shares; model eligibility does not hide known totals. "
+          +"Changed competition and coalition labels can produce misleading apparent swings. "
+          +(norcUnits()==="democratic_two_party_share"?"Change units: Democratic two-party-share points.":"Change units: D−R margin points.")
+        : norcMode ? `${norc.summary.return_anchored} House reconstructions use recorded endpoints; `
         +`${50-norc.summary.return_anchored} are NORC source scenarios with unavailable observed comparisons. `
         +"Gray means unsupported, not zero. Demographic values contribute to the statewide shift. "
         +(norcComparison?`${norcComparison.family_labels[norcFamily]}. `:"")
@@ -481,8 +486,14 @@ export async function initializeReturnDrivers() {
       const directions = root.querySelector(".driver-map-directions").children;
       directions[0].textContent = scenario || retention ? "Lower share" : "Republican direction";
       directions[1].textContent = scenario || retention ? "Higher share" : "Democratic direction";
+      root.querySelector(".driver-no-model").lastChild.textContent = norcMode && view.value==="reported_counts"
+        ? "No recorded party-count comparison" : "No qualified comparison / model";
       const note = root.querySelector(".driver-map-note");
-      if (norcMode) note.textContent=retention
+      if (norcMode && view.value==="reported_counts") note.textContent=
+        "Recorded candidate totals only, not a population preference-swing estimate or a behavioral decomposition. "
+        +"Incompatible contests and coalition labels remain held for model explanations; their raw totals are shown here for inspection. "
+        +"Other is excluded from the two-party denominator. Source snapshots are preliminary, not independently certified final counts.";
+      else if (norcMode) note.textContent=retention
         ? "Modeled share of previous major-party choices assigned the same party. Retention is not a contribution to the change in margin."
         : "NORC-informed, return-constrained model estimates, not observed voter histories. Net participation combines modeled exits and entry/return. "
           +"Each demographic dimension separately partitions its state; dimensions overlap and are not additive causes. "
@@ -499,7 +510,8 @@ export async function initializeReturnDrivers() {
         host.dataset.driverMap = key;
         root.querySelector("[data-driver-map-title]").textContent = label;
         root.querySelector("[data-driver-map-caption]").textContent = norcMode
-          ? key==="reported_total" ? `Held reported House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change passing candidate-coverage checks; not a measured voter-preference swing. Gray means an incompatible or unavailable comparison.`
+          ? key==="reported_counts" ? `Unadjusted recorded House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change. Negative raw changes can reflect unopposed contests or different coalition labels, not a Republican preference swing. Select a state to inspect counts and model qualifications.`
+            : key==="reported_total" ? `Held reported House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change passing candidate-coverage checks; not a measured voter-preference swing. Gray means an incompatible or unavailable comparison, not a Republican result. Known raw totals remain available in the recorded-count view and state details.`
             : `${group.selectedOptions[0].textContent}. ${retention?"Share retaining party":norcUnits()==="democratic_two_party_share"?"Contribution to statewide Democratic two-party-share change":"Contribution to statewide margin change"}. `
               +(key==="modeled_nonparticipation"?"Entry/return and modeled absence are included together.":"")
           : scenario
@@ -509,7 +521,7 @@ export async function initializeReturnDrivers() {
           "aria-label": `${label}: ${retention ? "modeled percentages" : scenario ? "synthetic source-weight shares" : "signed percentage-point changes"} by state`, "data-scale": bound });
         for (const item of items) {
           const code = item.feature.properties.STUSAB, row = byCode.get(code);
-          const value = office.value==="house" && payload.house_comparison_holds?.[code] ? null
+          const value = office.value==="house" && key!=="reported_counts" && payload.house_comparison_holds?.[code] ? null
             : norcMode ? norcMapValue(norcByCode.get(code),key,group.value,norcUnits())
             : scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key, calibration.get(row?.id));
           const normalized = value ?? null;
