@@ -21,6 +21,8 @@ assert not args.proof.exists()
 runtime_root = args.runtime_root
 descriptor = json.loads((runtime_root / "dataset.json").read_bytes())
 index = json.loads((runtime_root / "index.json").read_bytes())
+current_expected = json.loads(gzip.decompress(
+    (runtime_root / index["current_snapshot"]["file"]).read_bytes()))["snapshot"]
 expected = {}
 for code, declaration in index["states"].items():
     data = json.loads(gzip.decompress((runtime_root / declaration["file"]).read_bytes()))
@@ -70,11 +72,13 @@ with sync_playwright() as playwright:
           }
           const current=await module.loadCurrentCountSnapshot();
           return {version:entry.version,base_url:entry.base_url,cases,
-            reporting:current.snapshot.reporting.length,early:current.snapshot.early_voting.length};
+            reporting:current.snapshot.reporting.length,early:current.snapshot.early_voting.length,
+            snapshot:current.snapshot};
         }""", expected)
         assert result["version"] == descriptor["version"]
         assert len(result["cases"]) == 306
         assert result["reporting"] == 7 and result["early"] == 6450
+        assert result["snapshot"] == current_expected
         cases.extend(result["cases"])
         state_names = {feature["properties"]["NAME"]: feature["properties"]["STUSAB"] for feature in
             json.loads((ROOT / "public/voter-participation/data/states.geojson").read_bytes())["features"]
@@ -143,6 +147,27 @@ with sync_playwright() as playwright:
             cases.append(dict(width=width, state="Vermont", municipality_counts_bound=len(mapped),
                 reviewed_registered_fractions=rates, withheld_rates=len(towns)-rates,
                 native_source_label_correct=True, current_complete_queries_linked=True, no_overflow=True))
+            page.goto(args.base_url.rstrip("/") +
+                "/voter-participation/?year=2026&state=North%20Carolina&mode=official&map-level=county",
+                wait_until="domcontentloaded", timeout=90000)
+            counties = expected["NC"]["official"]["counties"]
+            expect(page.locator("#current-county-select option")).to_have_count(len(counties) + 1, timeout=90000)
+            for row in counties:
+                page.locator("#current-county-select").select_option(row["county_id"])
+                expect(page.locator("#current-county-detail .selection-rate")).to_have_text(f'{row["ballots"]:,}')
+            selected = counties[-1]
+            detail = page.locator("#current-county-detail")
+            expect(detail.locator("a", has_text="Native participation source")).to_have_attribute(
+                "href", selected["source_url"])
+            assert len(counties) == 100 and sum(row["ballots"] for row in counties) == 4243180
+            assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+            assert page.locator("#participation-research").get_attribute("open") is None
+            page.locator("#historical-explorer").screenshot(
+                path=str(args.proof.with_suffix(f".nc.{width}.png")))
+            cases.append(dict(width=width, state="North Carolina", native_counties_checked=len(counties),
+                reported_ballots=4243180, state_and_county_snapshot_exact=True,
+                separate_early_and_demographic_provider_frames_preserved=True,
+                native_source_link_verified=True, no_overflow=True))
             if args.native_runtime_root:
                 native_root = args.native_runtime_root
                 native_descriptor = json.loads((native_root / "dataset.json").read_bytes())
@@ -195,6 +220,7 @@ with sync_playwright() as playwright:
             test_fixture_used=False, version=result["version"], immutable_base=result["base_url"],
             reporting_rows=result["reporting"], retained_early_rows=result["early"],
             all_state_UI_cases=len(state_names), cases=cases, active_legacy_count_requests=0)
+        proof["complete_current_snapshot_exact"] = True
         args.proof.write_text(json.dumps(proof, indent=2) + "\n")
         print(json.dumps({key: value for key, value in proof.items() if key != "cases"}))
     finally:

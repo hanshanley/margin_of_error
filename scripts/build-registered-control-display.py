@@ -36,6 +36,21 @@ def build(analysis, publication):
                     or matches[0]["sha256"] != hashlib.sha256(original).hexdigest()):
                 raise ValueError("A full numerical CSV differs from its verified archive member")
             query_downloads[name] = {key: matches[0][key] for key in ("url", "bytes", "sha256")}
+        group_names = {"complete-native-participation-group-controls.csv",
+            "complete-current-native-source-queries.json.gz"}
+        present = group_names & set(archive.namelist())
+        group_downloads = {}
+        if present or "changed_registered_reference" in summary:
+            if present != group_names:
+                raise ValueError("Both complete native group observations and original-source queries are required")
+            for name in sorted(group_names):
+                matches = [a for a in proof["assets"] if a["name"] == name]
+                original = archive.read(name)
+                if (len(matches) != 1 or matches[0].get("anonymous_status") != 200
+                        or matches[0]["bytes"] != len(original)
+                        or matches[0]["sha256"] != hashlib.sha256(original).hexdigest()):
+                    raise ValueError("A full native group download differs from its verified archive member")
+                group_downloads[name] = {key: matches[0][key] for key in ("url", "bytes", "sha256")}
     if (len(states) != 51 or len({r["state_code"] for r in states}) != 51
             or "DC" not in {r["state_code"] for r in states}
             or len(scenarios) != summary["conditional_scenarios"]
@@ -55,7 +70,7 @@ def build(analysis, publication):
         "state_code", "control_id", "native_registered_denominator", "native_denominator_basis",
         "source_time_label", "source_url", "civic_source_n",
         "conditional_modeled_voter_count", "conditional_modeled_nonvoter_count")
-    return dict(
+    result = dict(
         contract="participation.registered_control_display.v1", year=2026,
         native_control_version=summary["native_control_version"],
         states=[{key: row[key] for key in state_fields} for row in states],
@@ -66,6 +81,9 @@ def build(analysis, publication):
         complete_download={key: asset[key] for key in ("url", "bytes", "sha256")},
         query_downloads=query_downloads,
         release_base=asset["url"].rsplit("/", 1)[0] + "/")
+    if group_downloads:
+        result["source_group_downloads"] = group_downloads
+    return result
 
 
 if __name__ == "__main__":

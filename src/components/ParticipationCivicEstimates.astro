@@ -37,8 +37,9 @@ const native: { contract: string; year: number; native_control_version: number;
 	states: NativeState[]; scenarios: NativeScenario[];
 	model_variant_or_study_probabilities_changed: boolean;
 	frame_exchangeability_or_observed_staying_home_qualified: boolean; native_outcome_fitting_applied: boolean;
-	complete_download: { url: string; bytes: number; sha256: string }; release_base: string } =
-	JSON.parse(readFileSync('data/participation-registered-controls/20261113-31/display-model.json', 'utf8'));
+	complete_download: { url: string; bytes: number; sha256: string }; release_base: string;
+	source_group_downloads?: Record<string, { url: string; bytes: number; sha256: string }> } =
+	JSON.parse(readFileSync('data/participation-registered-controls/20261113-32/display-model.json', 'utf8'));
 if (native.contract !== 'participation.registered_control_display.v1' || native.year !== 2026
 	|| native.states.length !== 51 || new Set(native.states.map(row => row.state_code)).size !== 51
 	|| native.states.some(row => !names[row.state_code])
@@ -147,7 +148,15 @@ const count = (value: string) => Number(value).toLocaleString('en-US', { maximum
 			<a href={`${native.release_base}complete-state-control-query.csv`} download>All 51 state / D.C. decisions (CSV)</a>
 			<a href={`${native.release_base}complete-native-control-dispositions.csv`} download>All native source controls and holds (CSV)</a>
 			<a href={`${native.release_base}complete-conditional-registered-scenarios.csv`} download>Every unrounded conditional scenario (CSV)</a>
+			{native.source_group_downloads && <>
+				<a href={native.source_group_downloads['complete-native-participation-group-controls.csv'].url}
+					download data-native-group-download="groups">Native source-mode participation groups (CSV)</a>
+				<a href={native.source_group_downloads['complete-current-native-source-queries.json.gz'].url}
+					download data-native-group-download="queries">Every native source row and query (JSON · gzip)</a>
+			</>}
 		</div>
+		{native.source_group_downloads && <p class="caption">Source-mode group observations are separate administrative
+			counts, not full demographic turnout. Different cutoffs and overlapping methods are not added to reporting totals.</p>}
 		<p class="caption">Native-control revision {native.native_control_version}; the study weights and probabilities
 			have not changed. Complete ZIP: {native.complete_download.bytes.toLocaleString('en-US')} bytes · SHA-256
 			<code>{native.complete_download.sha256}</code>.</p>

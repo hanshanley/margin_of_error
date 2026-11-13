@@ -62,7 +62,7 @@ class RegisteredDisplayTests(unittest.TestCase):
         body = (self.root / "complete-analysis.zip").read_bytes()
         assets = []
         for name, content in {"complete-analysis.zip": body, **{
-                k: v for k, v in self.members.items() if k.endswith(".csv")}}.items():
+                k: v for k, v in self.members.items() if k.endswith((".csv", ".json.gz"))}}.items():
             assets.append(dict(name=name, anonymous_status=200, bytes=len(content),
                                sha256=hashlib.sha256(content).hexdigest(),
                                url="https://github.com/example/releases/download/immutable/" + name))
@@ -105,6 +105,23 @@ class RegisteredDisplayTests(unittest.TestCase):
         self.members["complete-conditional-registered-scenarios.csv"] = csv_bytes([self.scenario])
         self.prepare()
         with self.assertRaisesRegex(ValueError, "validated population"):
+            module.build(self.root, self.publication)
+
+    def test_native_group_downloads_require_both_full_verified_archive_members(self):
+        names = ("complete-native-participation-group-controls.csv",
+            "complete-current-native-source-queries.json.gz")
+        self.members[names[0]] = b"state_code,reported_source_ballots\n00,0\n"
+        self.members[names[1]] = b"complete-query-input-fixture"
+        self.prepare()
+        model = module.build(self.root, self.publication)
+        self.assertEqual(set(model["source_group_downloads"]), set(names))
+        next(asset for asset in self.proof["assets"] if asset["name"] == names[1])["sha256"] = "0" * 64
+        self.save()
+        with self.assertRaisesRegex(ValueError, "native group download differs"):
+            module.build(self.root, self.publication)
+        self.members.pop(names[1])
+        self.prepare()
+        with self.assertRaisesRegex(ValueError, "Both complete native group"):
             module.build(self.root, self.publication)
 
 

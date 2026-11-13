@@ -14,7 +14,7 @@ from playwright.sync_api import expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/participation-civic-estimates/20261108-01/output"
-NATIVE = ROOT / "data/participation-registered-controls/20261113-31/display-model.json"
+NATIVE = ROOT / "data/participation-registered-controls/20261113-32/display-model.json"
 
 
 def pct(value):
@@ -29,7 +29,7 @@ def source_units(value):
     return format(Decimal(value).quantize(Decimal(1), rounding=ROUND_HALF_UP), ",")
 
 
-def check(base, proof):
+def check(base, proof, focus_state="VT"):
     expected = json.loads((DATA / "summary.json").read_text())
     metadata = json.loads((DATA / "download.json").read_text())
     native = json.loads(NATIVE.read_bytes())
@@ -79,6 +79,7 @@ def check(base, proof):
                     for row in native["scenarios"]:
                         target = frame.locator(
                             f'[data-native-registered-scenario={json.dumps(row["control_id"])}]')
+                        expect(target).to_contain_text(row["source_time_label"])
                         for attribute, field in (
                                 ("registered", "native_registered_denominator"),
                                 ("modeled-voter", "conditional_modeled_voter_count"),
@@ -99,10 +100,19 @@ def check(base, proof):
                     expect(frame).to_contain_text("overlapping frames must not be added")
                     expect(frame.locator('[data-native-registered-download="zip"]')).to_have_attribute(
                         "href", native["complete_download"]["url"])
+                    groups = native.get("source_group_downloads", {})
+                    for kind, name in (
+                            ("groups", "complete-native-participation-group-controls.csv"),
+                            ("queries", "complete-current-native-source-queries.json.gz")):
+                        if name in groups:
+                            expect(frame.locator(f'[data-native-group-download="{kind}"]')).to_have_attribute(
+                                "href", groups[name]["url"])
+                    if groups:
+                        expect(frame).to_contain_text("not full demographic turnout")
                     frame.locator(":scope > summary").click()
-                    expect(frame.locator('[data-native-state="VT"]')).to_be_visible()
+                    expect(frame.locator(f'[data-native-state="{focus_state}"]')).to_be_visible()
                     if proof and mode in ("desktop", "mobile"):
-                        frame.locator('[data-native-state="VT"]').scroll_into_view_if_needed()
+                        frame.locator(f'[data-native-state="{focus_state}"]').scroll_into_view_if_needed()
                         page.screenshot(path=str(proof.with_suffix(f".{mode}.png")))
                     frame.get_by_text("Every state and D.C. source-frame decision", exact=True).click()
                     expect(frame.locator('[data-native-registered-state="DC"]')).to_be_visible()
@@ -137,7 +147,7 @@ def check(base, proof):
                     expect(page.locator("#participation-survey [data-survey-status]")).to_have_count(936)
                     assert not errors, (mode, errors)
                     if mode == "desktop":
-                        for filename, item in native["query_downloads"].items():
+                        for filename, item in {**native["query_downloads"], **groups}.items():
                             expect(frame.locator(f'a[href="{item["url"]}"]')).to_have_count(1)
                             response = context.request.get(item["url"])
                             assert response.ok, filename
@@ -173,6 +183,7 @@ def check(base, proof):
                         "native_registered_scenarios": len(native["scenarios"]),
                         "native_source_frame_decisions": 51,
                         "native_complete_download_matches_verified_immutable_asset": True,
+                        "native_source_group_downloads": len(groups),
                     })
                 finally:
                     context.close()
@@ -188,5 +199,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base-url", required=True)
     parser.add_argument("--proof", type=Path)
+    parser.add_argument("--focus-state", default="VT")
     args = parser.parse_args()
-    check(args.base_url, args.proof)
+    check(args.base_url, args.proof, args.focus_state)
