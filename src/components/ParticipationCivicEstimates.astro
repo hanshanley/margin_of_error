@@ -7,6 +7,12 @@ type Flow = { prior_election: string; dimension: string; group: string; label: s
 type Margin = { prior_election: string; switching_pp: string; modeled_nonparticipation_pp: string;
 	no_prior_contest_vote_entry_pp: string; other_or_unresolved_pp: string; denominator_pp: string;
 	total_within_source_margin_change_pp: string };
+type NativeState = { state_code: string; civic_source_n: string; control_id: string;
+	control_registered_denominator: string; control_denominator_basis: string;
+	control_native_time: string; control_source_url: string };
+type NativeScenario = { state_code: string; control_id: string; native_registered_denominator: string;
+	native_denominator_basis: string; source_time_label: string; source_url: string; civic_source_n: string;
+	conditional_modeled_voter_count: string; conditional_modeled_nonvoter_count: string };
 const { names } = Astro.props as { names: Record<string, string> };
 const data = 'data/participation-civic-estimates/20261108-01/';
 const result: { participation: Participation[]; conditional_flows: Flow[]; margin_components: Margin[];
@@ -27,6 +33,36 @@ const prior = (year: string, value: string) => value === 'N' ? `No recalled ${ye
 		: (value === 'D' ? 'Recalled Democratic House' : 'Recalled Republican House');
 const withheld = result.conditional_flow_dispositions.filter(row =>
 	row.status === 'withheld_sparse_source_joint_support').length;
+const native: { contract: string; year: number; native_control_version: number;
+	states: NativeState[]; scenarios: NativeScenario[];
+	model_variant_or_study_probabilities_changed: boolean;
+	frame_exchangeability_or_observed_staying_home_qualified: boolean; native_outcome_fitting_applied: boolean;
+	complete_download: { url: string; bytes: number; sha256: string }; release_base: string } =
+	JSON.parse(readFileSync('data/participation-registered-controls/20261113-29/display-model.json', 'utf8'));
+if (native.contract !== 'participation.registered_control_display.v1' || native.year !== 2026
+	|| native.states.length !== 51 || new Set(native.states.map(row => row.state_code)).size !== 51
+	|| native.states.some(row => !names[row.state_code])
+	|| new Set(native.scenarios.map(row => row.control_id)).size !== native.scenarios.length
+	|| native.model_variant_or_study_probabilities_changed !== false
+	|| native.frame_exchangeability_or_observed_staying_home_qualified !== false
+	|| native.native_outcome_fitting_applied !== false) throw new Error('Registered source-frame contract changed');
+const civicStateParents = new Map(states.map(row => [row.scope, row]));
+const nativeByState = new Map(native.states.map(row => [row.state_code,
+	native.scenarios.filter(scenario => scenario.state_code === row.state_code)]));
+for (const row of native.scenarios) {
+	const parent = civicStateParents.get(row.state_code);
+	const registered = Number(row.native_registered_denominator);
+	const modeled = Number(row.conditional_modeled_voter_count);
+	const nonmodeled = Number(row.conditional_modeled_nonvoter_count);
+	if (!parent || String(parent.n) !== row.civic_source_n || !Number.isSafeInteger(registered) || registered <= 0
+		|| !Number.isFinite(modeled) || !Number.isFinite(nonmodeled) || Math.min(modeled, nonmodeled) < 0
+		|| Math.abs(modeled + nonmodeled - registered) > 1e-6
+		|| Math.abs(100 * modeled / registered - Number(parent.modeled_voter_pct)) > 1e-8) {
+		throw new Error('Registered source-frame scenario differs from the accepted Civic parent');
+	}
+}
+const nativeJurisdictions = new Set(native.scenarios.map(row => row.state_code)).size;
+const count = (value: string) => Number(value).toLocaleString('en-US', { maximumFractionDigits: 0 });
 ---
 
 <section id="participation-civic-estimates" class="participation-current" aria-labelledby="civic-estimates-title"
@@ -68,6 +104,53 @@ const withheld = result.conditional_flow_dispositions.filter(row =>
 				</tbody>
 			</table>
 		</div>
+	</details>
+	<details class="explorer-notes" data-native-registered-controls data-native-version={native.native_control_version}>
+		<summary>Native registration frames: {native.scenarios.length} conditional scenarios in {nativeJurisdictions} jurisdictions</summary>
+		<p>These are the existing source-weighted scenarios, not another model family. Each applies the same
+			state study propensity to a source's registered-voter stock. <strong>The results are conditional
+			source units, not observed voters, confirmed staying home or certified turnout.</strong>{' '}
+			Registration status, cutoff and study-frame exchangeability remain unvalidated; no native outcome
+			is fitted, no design confidence interval is invented, and overlapping frames must not be added.</p>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Conditional registered source-frame scenarios">
+			<table><caption>Native registered frame × unchanged Civic modeled voter/nonvoter share.
+				Source units are rounded for display; complete unrounded queries remain downloadable.</caption>
+				<thead><tr><th scope="col">State / native registration frame</th><th scope="col">Registered source units</th>
+					<th scope="col">Modeled voter units</th><th scope="col">Modeled nonvoter units</th></tr></thead>
+				<tbody>{native.scenarios.map(row => <tr data-native-registered-scenario={row.control_id}
+					data-native-state={row.state_code}>
+					<th scope="row">{names[row.state_code]}
+						<br /><small>{row.native_denominator_basis.replaceAll('_', ' ')}</small>
+						<br /><small>{row.source_time_label}</small></th>
+					<td data-native-registered={row.native_registered_denominator}>{count(row.native_registered_denominator)}</td>
+					<td data-native-modeled-voter={row.conditional_modeled_voter_count}>{count(row.conditional_modeled_voter_count)}</td>
+					<td data-native-modeled-nonvoter={row.conditional_modeled_nonvoter_count}>{count(row.conditional_modeled_nonvoter_count)}</td>
+				</tr>)}</tbody>
+			</table>
+		</div>
+		<details class="explorer-notes"><summary>Every state and D.C. source-frame decision</summary>
+			<div class="table-wrap" tabindex="0" role="region" aria-label="All 51 registration-frame decisions">
+				<table><caption>Missing registration frames are not zero; D.C. receives no allocated Civic estimate.</caption>
+					<thead><tr><th scope="col">Jurisdiction</th><th scope="col">Selected registered source frame</th>
+						<th scope="col">Conditional scenarios</th><th scope="col">Study n</th></tr></thead>
+					<tbody>{native.states.map(row => <tr data-native-registered-state={row.state_code}>
+						<th scope="row">{names[row.state_code]}</th>
+						<td>{row.control_registered_denominator ? count(row.control_registered_denominator) : 'Not supplied'}</td>
+						<td>{nativeByState.get(row.state_code)?.length || 'No source-frame scenario'}</td>
+						<td>{row.civic_source_n || 'Not sampled'}</td>
+					</tr>)}</tbody>
+				</table>
+			</div>
+		</details>
+		<div class="download-links">
+			<a href={native.complete_download.url} download data-native-registered-download="zip">Complete native controls + prior inputs + model code (ZIP)</a>
+			<a href={`${native.release_base}complete-state-control-query.csv`} download>All 51 state / D.C. decisions (CSV)</a>
+			<a href={`${native.release_base}complete-native-control-dispositions.csv`} download>All native source controls and holds (CSV)</a>
+			<a href={`${native.release_base}complete-conditional-registered-scenarios.csv`} download>Every unrounded conditional scenario (CSV)</a>
+		</div>
+		<p class="caption">Native-control revision {native.native_control_version}; the study weights and probabilities
+			have not changed. Complete ZIP: {native.complete_download.bytes.toLocaleString('en-US')} bytes · SHA-256
+			<code>{native.complete_download.sha256}</code>.</p>
 	</details>
 	<details class="explorer-notes"><summary>Broad demographic source comparisons and conditional choices</summary>
 		<p>Current attributes are not fixed 2024 cohorts. Unknown and disclosure-removed attributes remain in the

@@ -2,6 +2,7 @@
 
 import argparse
 import csv
+from decimal import Decimal, ROUND_HALF_UP
 import hashlib
 import io
 import json
@@ -13,6 +14,7 @@ from playwright.sync_api import expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/participation-civic-estimates/20261108-01/output"
+NATIVE = ROOT / "data/participation-registered-controls/20261113-29/display-model.json"
 
 
 def pct(value):
@@ -23,9 +25,14 @@ def pp(value):
     return ("+" if float(value) > 0 else "") + f"{float(value):.2f}"
 
 
+def source_units(value):
+    return format(Decimal(value).quantize(Decimal(1), rounding=ROUND_HALF_UP), ",")
+
+
 def check(base, proof):
     expected = json.loads((DATA / "summary.json").read_text())
     metadata = json.loads((DATA / "download.json").read_text())
+    native = json.loads(NATIVE.read_bytes())
     modes = []
     with sync_playwright() as runtime:
         browser = runtime.chromium.launch()
@@ -41,11 +48,14 @@ def check(base, proof):
                     if mode == "failed_json":
                         context.route("**/participation-civic-estimates/**/*.json", lambda route: route.abort())
                     page = context.new_page()
+                    errors = []
+                    page.on("pageerror", lambda error: errors.append(str(error)))
                     page.goto(base.rstrip("/") + "/voter-participation/", wait_until="domcontentloaded")
                     drawer = page.locator("#participation-research")
                     assert not drawer.evaluate("element => element.open"), mode
                     drawer.locator(":scope > summary").click()
                     panel = page.locator("#participation-civic-estimates")
+                    drawer.get_by_text("Additional survey tables and model assumptions", exact=True).click()
                     expect(panel).to_be_visible()
                     expect(panel.locator("[data-civic-state]")).to_have_count(51)
                     for row in expected["participation"]:
@@ -62,6 +72,40 @@ def check(base, proof):
                         ):
                             expect(target.locator(f"[data-civic-{attribute}]")).to_have_text(pct(row[field]))
                     expect(panel.locator('[data-civic-state="DC"]')).to_contain_text("Not sampled; no estimate allocated")
+                    frame = panel.locator("[data-native-registered-controls]")
+                    expect(frame).to_have_attribute("data-native-version", str(native["native_control_version"]))
+                    expect(frame.locator("[data-native-registered-scenario]")).to_have_count(len(native["scenarios"]))
+                    expect(frame.locator("[data-native-registered-state]")).to_have_count(51)
+                    for row in native["scenarios"]:
+                        target = frame.locator(
+                            f'[data-native-registered-scenario={json.dumps(row["control_id"])}]')
+                        for attribute, field in (
+                                ("registered", "native_registered_denominator"),
+                                ("modeled-voter", "conditional_modeled_voter_count"),
+                                ("modeled-nonvoter", "conditional_modeled_nonvoter_count")):
+                            cell = target.locator(f"[data-native-{attribute}]")
+                            expect(cell).to_have_attribute("data-native-" + attribute, row[field])
+                            expect(cell).to_have_text(source_units(row[field]))
+                    for row in native["states"]:
+                        target = frame.locator(f'[data-native-registered-state="{row["state_code"]}"]')
+                        cells = target.locator("td")
+                        expect(cells.nth(0)).to_have_text(
+                            source_units(row["control_registered_denominator"])
+                            if row["control_registered_denominator"] else "Not supplied")
+                        scenarios = sum(item["state_code"] == row["state_code"] for item in native["scenarios"])
+                        expect(cells.nth(1)).to_have_text(str(scenarios) if scenarios else "No source-frame scenario")
+                        expect(cells.nth(2)).to_have_text(row["civic_source_n"] or "Not sampled")
+                    expect(frame).to_contain_text("not observed voters, confirmed staying home or certified turnout")
+                    expect(frame).to_contain_text("overlapping frames must not be added")
+                    expect(frame.locator('[data-native-registered-download="zip"]')).to_have_attribute(
+                        "href", native["complete_download"]["url"])
+                    frame.locator(":scope > summary").click()
+                    expect(frame.locator('[data-native-state="VT"]')).to_be_visible()
+                    if proof and mode in ("desktop", "mobile"):
+                        frame.locator('[data-native-state="VT"]').scroll_into_view_if_needed()
+                        page.screenshot(path=str(proof.with_suffix(f".{mode}.png")))
+                    frame.get_by_text("Every state and D.C. source-frame decision", exact=True).click()
+                    expect(frame.locator('[data-native-registered-state="DC"]')).to_be_visible()
                     expect(panel.locator("[data-civic-flow]")).to_have_count(112)
                     for row in expected["conditional_flows"]:
                         selector = f'[data-civic-flow="{row["prior_election"]}:{row["dimension"]}:{row["group"]}:{row["prior_choice"]}"]'
@@ -91,7 +135,15 @@ def check(base, proof):
                     expect(panel.locator('[data-civic-margin="2024"]')).to_be_visible()
                     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), mode
                     expect(page.locator("#participation-survey [data-survey-status]")).to_have_count(936)
+                    assert not errors, (mode, errors)
                     if mode == "desktop":
+                        for filename, item in native["query_downloads"].items():
+                            expect(frame.locator(f'a[href="{item["url"]}"]')).to_have_count(1)
+                            response = context.request.get(item["url"])
+                            assert response.ok, filename
+                            body = response.body()
+                            assert len(body) == item["bytes"], filename
+                            assert hashlib.sha256(body).hexdigest() == item["sha256"], filename
                         for key, filename, count in (
                             ("zip", "complete-analysis.zip", None),
                             ("participation", "participation.csv", 79),
@@ -118,6 +170,9 @@ def check(base, proof):
                         "mode": mode, "passed": True, "participation_rows": 79,
                         "conditional_rows": 112, "margin_rows": 2,
                         "default_closed_research_preserved": True,
+                        "native_registered_scenarios": len(native["scenarios"]),
+                        "native_source_frame_decisions": 51,
+                        "native_complete_download_matches_verified_immutable_asset": True,
                     })
                 finally:
                     context.close()

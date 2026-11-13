@@ -34,7 +34,7 @@
     "migrate:legacy": "node scripts/migrate-google-sites.mjs",
     "migrate:substack": "node scripts/migrate-substack.mjs",
     "test:publication-decision": "node --test scripts/participation-publication-decision.test.mjs",
-    "test:civic-estimates": "python3 scripts/test-package-civic-estimates.py && npm run test:return-drivers && npm run test:resident-context",
+    "test:civic-estimates": "python3 scripts/test-build-registered-control-display.py && python3 scripts/test-package-civic-estimates.py && npm run test:return-drivers && npm run test:resident-context",
     "test:resident-context": "node --test scripts/participation-resident-context.test.mjs && npm run test:count-contract",
     "test:count-contract": "node --test scripts/participation-counts.test.mjs scripts/participation-native-bindings.test.mjs scripts/participation-coverage.test.mjs",
     "test:return-drivers": "node --test scripts/participation-return-drivers.test.mjs scripts/participation-transition-scenarios.test.mjs scripts/participation-calibrated-swing.test.mjs scripts/participation-norc-house.test.mjs",
