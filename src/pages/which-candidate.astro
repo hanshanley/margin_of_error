@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import release from '../../public/artifacts/which-candidate/2026-v2/manifest.json';
+
+if (release.target_year !== 2026 || !release.provisional || release.charts.length !== 9) {
+	throw new Error('Review the candidate-figure release before publishing a different snapshot.');
+}
+
+const assets = '/artifacts/which-candidate/2026-v2/';
+const repository = 'https://github.com/hanshanley/which-candidate';
+const results = `${repository}/tree/50cfd7bfe48058542ffc9ffd27aa73669a7d52e5/results/2026`;
+const sectionLabels: Record<string, string> = {
+	'house-characteristics': 'House characteristics',
+	'house-history': 'House across elections',
+	'senate-characteristics': 'Senate characteristics',
+	'senate-history': 'Senate across elections',
+	'house-voting-records': 'Voting records',
+	'identity-comparisons': 'Religion and race',
+	'identity-coverage': 'Coverage and missing identities',
+	'predictive-lift': 'Predictive lift',
+	'partisan-geography': 'Partisan geography',
+};
+---
+
+<BaseLayout
+	title="Which candidate?"
+	description="Nine evidence-led views of Democratic congressional candidate performance in 2026, with 2016–2024 comparisons, uncertainty, coverage and complete downloadable queries."
+	image={`${assets}${release.charts[0].files.marginoferror.png}`}
+>
+	<section class="standard-page candidate-page">
+		<header class="page-heading">
+			<p class="eyebrow">2026 congressional elections</p>
+			<h1>Which candidate?</h1>
+			<p>Which kinds of Democrats did better than their constituencies' partisanship
+				would suggest? Compare characteristics, voting records and documented
+				backgrounds, keeping the limits of the evidence in view.</p>
+		</header>
+
+		<aside class="snapshot-note" aria-label="Snapshot and interpretation">
+			<strong>Provisional November 7–8, 2026 snapshot.</strong>
+			These are held counts, not live election-night updates or certified final results.
+			The analysis retains all 435 House and 35 Senate contests; 408 House and 29 Senate
+			comparisons qualify. No primary characteristic comparison passes the
+			six-test-per-chamber multiple-comparison correction.
+		</aside>
+
+		<div class="lead-actions">
+			<a class="primary-action" href={`${assets}${release.downloads.queries}`} download>
+				Complete derived queries
+			</a>
+			<a href={`${assets}${release.downloads.substack}`} download>Substack figure package</a>
+			<a href={repository}>Code and methodology</a>
+		</div>
+		<p class="download-note">
+			Both ZIPs include the complete derived query set, not just metadata.
+			The Substack package also contains warm-paper PNG/SVG originals and captions.
+			Restricted original workbooks are excluded.
+			Select any figure below to open its full-size image.
+		</p>
+
+		<nav aria-label="Figures" class="figure-index">
+			<ol>
+				{release.charts.map((chart) => (
+					<li><a href={`#${chart.id}`}>{chart.title}</a></li>
+				))}
+			</ol>
+		</nav>
+
+		<div class="candidate-figures">
+			{release.charts.map((chart, index) => (
+				<section id={chart.id} class="candidate-figure" aria-labelledby={`${chart.id}-title`}>
+					<h2 id={`${chart.id}-title`}>{sectionLabels[chart.id]}</h2>
+					<figure>
+						<a href={`${assets}${chart.files.marginoferror.png}`} data-original-chart
+							aria-label={`Open full-size figure: ${chart.title}`}>
+							<img src={`${assets}${chart.files.marginoferror.png}`} alt={chart.alt}
+								width={chart.files.marginoferror.width} height={chart.files.marginoferror.height}
+								loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+						</a>
+						<figcaption>{chart.caption}</figcaption>
+					</figure>
+					<p class="figure-downloads">
+						<a href={`${assets}${chart.files.marginoferror.png}`} data-original-chart download>
+							PNG
+						</a>
+						<a href={`${assets}${chart.files.marginoferror.svg}`} data-original-chart download>
+							Vector SVG
+						</a>
+						<a href={`${assets}${chart.data}`} download>Plotted values (CSV)</a>
+						<a href={`${assets}${chart.files.substack.png}`} data-original-chart download>
+							Substack PNG
+						</a>
+					</p>
+				</section>
+			))}
+		</div>
+
+		<section class="methods" aria-labelledby="candidate-methods">
+			<h2 id="candidate-methods">How to read these comparisons</h2>
+			<p>The outcome is Democratic two-party vote share minus the constituency's 2024
+				presidential Democratic share. House benchmarks use the 2026 district maps;
+				Senate benchmarks are statewide. One share point equals two points of
+				D-minus-R margin.</p>
+			<p>Association models adjust for presidential lean and lean squared. Apart from
+				incumbency, primary characteristics compare verified Democratic incumbents,
+				not all nominees. Voting records come from the prior completed Congress.
+				Intervals are state-clustered, pointwise 95% intervals, not simultaneous
+				or causal estimates. Senate samples are especially small.</p>
+			<p>Religion and race comparisons are exploratory. Census race and Hispanic-origin
+				controls describe residents, not voters; Census does not collect religion.
+				Old-map district controls are held where 2026 boundaries changed. Unknown
+				identity is never treated as White, non-Hispanic, Protestant or atheist.</p>
+			<p>Predictive-lift bars compare each feature with its own same-sample baseline,
+				using earlier elections and excluding test states and identified test people.
+				This is a retrospective replay, not an actual pre-election forecast.</p>
+			<p>The historical panels compare 2026 with separate annual estimates for 2016,
+				2018, 2020, 2022 and 2024. The 2026 fits are preserved unchanged. Midterms use
+				the preceding presidential election; presidential years use same-year votes.
+				Samples and maps differ. Historical fits are exploratory, with correction
+				within each year and chamber, not across the entire historical search.
+				A coefficient difference is not a formal test that an association changed.</p>
+			<p>Select any figure to open a full-size image. All figures, captions, methods and
+				downloads remain usable without JavaScript.</p>
+			<p><a href={`${results}/report.md`}>Read the frozen statistical report</a>
+				&middot; <a href={`${results}/religion-race-report.md`}>Identity evidence and limitations</a>
+				&middot; <a href={`${assets}manifest.json`}>Checksums and provenance</a></p>
+		</section>
+	</section>
+</BaseLayout>
+
+<style>
+	.snapshot-note {
+		max-width: 850px;
+		padding: 1.1rem 0;
+		border-block: 1px solid var(--rule);
+		font-size: 1.05rem;
+		line-height: 1.6;
+	}
+	.download-note, .methods p { max-width: 850px; line-height: 1.65; }
+	.download-note { color: var(--muted); font-size: 0.95rem; }
+	.figure-index { margin: 2rem 0 3rem; }
+	.figure-index ol { padding-left: 1.4rem; line-height: 1.8; }
+	.candidate-figure { margin: 0 0 3.5rem; scroll-margin-top: 2rem; }
+	.candidate-figure h2, .methods h2 {
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		font-weight: 500;
+		line-height: 1.2;
+	}
+	.candidate-figure figure { margin: 0; }
+	.candidate-figure img { display: block; width: 100%; height: auto; }
+	.candidate-figure figcaption {
+		max-width: 900px;
+		margin-top: 1rem;
+		font-size: 1rem;
+		line-height: 1.65;
+	}
+	.figure-downloads { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.9rem; }
+	.methods { border-top: 1px solid var(--rule); padding-top: 1rem; }
+</style>
