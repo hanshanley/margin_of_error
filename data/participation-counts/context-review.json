@@ -1,15 +1,15 @@
 {
   "pointer": {
-    "base_url": "https://raw.githubusercontent.com/hanshanley/voter-participation/b1f514990fdf24022433851af8965b7aee6f8311/data/participation-access/20261113-king-native-count-refresh-01/context/",
-    "complete_download_bytes": 14514584,
-    "complete_download_sha256": "5891a233f0787cf882a1bc73ec5ae5e8f0e698cf7f2f77613a3593aed53f518c",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/voter-participation/8a1da7fb80b0c87ad17391f77507c26831adb5e6/data/participation-access/20261113-missouri-native-counts-01/context/",
+    "complete_download_bytes": 25589619,
+    "complete_download_sha256": "80a262cb117e80b74197f5fdb921bf41f32eadafcb8ec16147ec2dbad0156293",
     "counts": {
-      "complete_source_records": 1329,
-      "contextual_joins": 834,
+      "complete_source_records": 1331,
+      "contextual_joins": 836,
       "excluded_missing_county_totals": 208,
       "excluded_municipalities": 286,
       "jurisdictions": 20,
-      "missing_rates": 388,
+      "missing_rates": 390,
       "retained_duplicate_source_observations": 1,
       "reviewed_rates": 446
     },
@@ -55,7 +55,7 @@
         "rates": 64
       },
       "MO": {
-        "counties": 1,
+        "counties": 3,
         "rates": 0
       },
       "NJ": {
@@ -97,6 +97,22 @@
     },
     "downloads": [
       {
+        "label": "Complete reviewed contextual joins: all836 observations, including Boone and Cole (CSV)",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-missouri-context-successor-20261113-01/county-participation-joins.csv"
+      },
+      {
+        "label": "Complete1331 selected county/locality records; all1329 previous records retained (JSON, gzip)",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-missouri-context-successor-20261113-01/complete-source-records.json.gz"
+      },
+      {
+        "label": "Full identity review: Boone and Cole counts, held rates and unchanged contextual boundaries (JSON)",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-missouri-context-successor-20261113-01/review.json"
+      },
+      {
+        "label": "Complete contextual query, prior King analysis, all31 Missouri observations, original context and reproduction (ZIP)",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-missouri-context-successor-20261113-01/complete-context-successor.zip"
+      },
+      {
         "label": "Complete reviewed contextual joins: all 834 observations, including the updated King count (CSV)",
         "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-king-context-successor-20261113-01/county-participation-joins.csv"
       },
@@ -113,102 +129,188 @@
         "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-king-context-successor-20261113-01/complete-context-successor.zip"
       }
     ],
-    "review_bytes": 1268194,
-    "review_sha256": "d8e06e58de8d882d3b6145d5d4c7e99b7660d6d50340fcb82920b9ac9f532658",
+    "review_bytes": 1270137,
+    "review_sha256": "4fb401cbfe5b4aae90b0ffff133ca81be19b6d2b6dec995d1cba42d302145f8a",
     "schema_version": 1
   },
   "predecessor_review_sha256": "e9ece9b8918dd3fec4ab4b5cbdfa30bfde181219bd1f6303c2c70077eb8b072e",
-  "reviewed_source_record": {
-    "ballots": 935956,
-    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-king-native-count-refresh-20261113-01/complete-analysis.zip",
-    "county": "King County",
-    "county_id": "additional:WA:01000000-F977-1A83-D40F-08DDD6A09CB2",
-    "denominator": 1460414,
-    "denominator_basis": "native_registered_voters",
-    "geography_level": "county",
-    "maps_approved": false,
-    "native_printed_pct": "64.09%",
-    "native_record": {
-      "cross_source_counter_comparisons": [
-        {
-          "choice": "Jesse Salomon",
-          "contest": "Legislative District No. 32 State Senator (Vote for 1)",
-          "contest_id": "59",
-          "csv_per_choice_overvote_counter": 186,
-          "csv_source_rows": [
-            {
-              "row": 62,
-              "table": null,
-              "workbook": null
-            }
-          ],
-          "pdf_source": {
-            "page": 4,
-            "row": 6,
-            "table": "complete-factual-body-page-4"
-          },
-          "pdf_total_overvoted_ballots": 185,
-          "repaired": false,
-          "signed_difference": 1,
-          "status": "unresolved_cross_source_counter_or_snapshot_difference"
-        }
-      ],
-      "csv_native_clock": null,
-      "declared_timezone": null,
-      "full_previous_observation_preserved_in_baseline": true,
-      "native_ballots": 935956,
-      "native_fraction_literal": "64.09%",
-      "native_global_parent_copies": 17,
-      "native_pdf_clock": "2026-11-12 15:10:05",
-      "native_registered": 1460414,
-      "no_native_counts_repaired": true,
-      "original_contest_accounting_discrepancies": [
-        {
-          "contest_id": "59",
-          "native_ballots_with_contest": 37419,
-          "native_choice_total": 34783,
-          "native_overvoted_ballots": 185,
-          "native_undervotes": 2450,
-          "repaired": false,
-          "signed_accounted_minus_ballots": -1,
-          "source": {
-            "page": 4,
-            "row": 6,
-            "table": "complete-factual-body-page-4"
-          },
-          "title": "Legislative District No. 32 State Senator (Vote for 1)"
-        }
-      ],
-      "selected_native_parent_literal": "Total Ballots Cast:",
-      "source_id": "king-current-native-summary",
-      "source_pin": {
-        "bytes": 49581,
-        "sha256": "51ba603ec7b4092eab8d093e33ab77909aa796ebd54da89ec74e9b69f7f3427a"
+  "reviewed_source_records": [
+    {
+      "ballots": 935956,
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-king-native-count-refresh-20261113-01/complete-analysis.zip",
+      "county": "King County",
+      "county_id": "additional:WA:01000000-F977-1A83-D40F-08DDD6A09CB2",
+      "denominator": 1460414,
+      "denominator_basis": "native_registered_voters",
+      "geography_level": "county",
+      "maps_approved": false,
+      "native_printed_pct": "64.09%",
+      "native_record": {
+        "cross_source_counter_comparisons": [
+          {
+            "choice": "Jesse Salomon",
+            "contest": "Legislative District No. 32 State Senator (Vote for 1)",
+            "contest_id": "59",
+            "csv_per_choice_overvote_counter": 186,
+            "csv_source_rows": [
+              {
+                "row": 62,
+                "table": null,
+                "workbook": null
+              }
+            ],
+            "pdf_source": {
+              "page": 4,
+              "row": 6,
+              "table": "complete-factual-body-page-4"
+            },
+            "pdf_total_overvoted_ballots": 185,
+            "repaired": false,
+            "signed_difference": 1,
+            "status": "unresolved_cross_source_counter_or_snapshot_difference"
+          }
+        ],
+        "csv_native_clock": null,
+        "declared_timezone": null,
+        "full_previous_observation_preserved_in_baseline": true,
+        "native_ballots": 935956,
+        "native_fraction_literal": "64.09%",
+        "native_global_parent_copies": 17,
+        "native_pdf_clock": "2026-11-12 15:10:05",
+        "native_registered": 1460414,
+        "no_native_counts_repaired": true,
+        "original_contest_accounting_discrepancies": [
+          {
+            "contest_id": "59",
+            "native_ballots_with_contest": 37419,
+            "native_choice_total": 34783,
+            "native_overvoted_ballots": 185,
+            "native_undervotes": 2450,
+            "repaired": false,
+            "signed_accounted_minus_ballots": -1,
+            "source": {
+              "page": 4,
+              "row": 6,
+              "table": "complete-factual-body-page-4"
+            },
+            "title": "Legislative District No. 32 State Senator (Vote for 1)"
+          }
+        ],
+        "selected_native_parent_literal": "Total Ballots Cast:",
+        "source_id": "king-current-native-summary",
+        "source_pin": {
+          "bytes": 49581,
+          "sha256": "51ba603ec7b4092eab8d093e33ab77909aa796ebd54da89ec74e9b69f7f3427a"
+        },
+        "source_role": "native_registration_ballot_reported_turnout_statistics",
+        "source_table": "county-statistics-page-1"
       },
-      "source_role": "native_registration_ballot_reported_turnout_statistics",
-      "source_table": "county-statistics-page-1"
+      "quality": [
+        "Native PDF Total Ballots Cast, not candidate-vote totals, unique people or observed staying home.",
+        "All17 identical county header copies are retained and compared, never added.",
+        "Native printed64.09% and1460414 registered voters remain separate from any population turnout estimate.",
+        "One legislative-contest accounting control is short by1; a separate per-choice CSV overvote comparison differs by1. Both remain unrepaired.",
+        "The analytical fraction is held conservatively with these source diagnostics; no registration-frame or rate promotion.",
+        "PDF clock2026-11-12 15:10:05 has no supplied timezone; the separately acquired CSV has no native clock.",
+        "PV/VBM remain literal candidate-count groups, not inferred county participation by voting method.",
+        "Blocked index and mid-election precinct CSV remain stopped; no new precinct counts or geometry are claimed."
+      ],
+      "reported_pct": null,
+      "reported_units": null,
+      "review_id": "participation-king-native-count-refresh-20261113-01",
+      "source_reporting_label": "Native PDF Total Ballots Cast, not candidate-vote totals, unique people or observed staying home.; All17 identical county header copies are retained and compared, never added.; Native printed64.09% and1460414 registered voters remain separate from any population turnout estimate.; One legislative-contest accounting control is short by1; a separate per-choice CSV overvote comparison differs by1. Both remain unrepaired.; The analytical fraction is held conservatively with these source diagnostics; no registration-frame or rate promotion.; PDF clock2026-11-12 15:10:05 has no supplied timezone; the separately acquired CSV has no native clock.; PV/VBM remain literal candidate-count groups, not inferred county participation by voting method.; Blocked index and mid-election precinct CSV remain stopped; no new precinct counts or geometry are claimed.",
+      "source_rows": 0,
+      "source_status_literal": null,
+      "source_update_label": "2026-11-12 15:10:05",
+      "source_update_timezone": null,
+      "source_url": "https://election-results-01.kingcounty.gov/results.pdf",
+      "state_code": "WA",
+      "total_units": null,
+      "year": 2026
     },
-    "quality": [
-      "Native PDF Total Ballots Cast, not candidate-vote totals, unique people or observed staying home.",
-      "All17 identical county header copies are retained and compared, never added.",
-      "Native printed64.09% and1460414 registered voters remain separate from any population turnout estimate.",
-      "One legislative-contest accounting control is short by1; a separate per-choice CSV overvote comparison differs by1. Both remain unrepaired.",
-      "The analytical fraction is held conservatively with these source diagnostics; no registration-frame or rate promotion.",
-      "PDF clock2026-11-12 15:10:05 has no supplied timezone; the separately acquired CSV has no native clock.",
-      "PV/VBM remain literal candidate-count groups, not inferred county participation by voting method.",
-      "Blocked index and mid-election precinct CSV remain stopped; no new precinct counts or geometry are claimed."
-    ],
-    "reported_pct": null,
-    "reported_units": null,
-    "review_id": "participation-king-native-count-refresh-20261113-01",
-    "source_reporting_label": "Native PDF Total Ballots Cast, not candidate-vote totals, unique people or observed staying home.; All17 identical county header copies are retained and compared, never added.; Native printed64.09% and1460414 registered voters remain separate from any population turnout estimate.; One legislative-contest accounting control is short by1; a separate per-choice CSV overvote comparison differs by1. Both remain unrepaired.; The analytical fraction is held conservatively with these source diagnostics; no registration-frame or rate promotion.; PDF clock2026-11-12 15:10:05 has no supplied timezone; the separately acquired CSV has no native clock.; PV/VBM remain literal candidate-count groups, not inferred county participation by voting method.; Blocked index and mid-election precinct CSV remain stopped; no new precinct counts or geometry are claimed.",
-    "source_rows": 0,
-    "source_status_literal": null,
-    "source_update_label": "2026-11-12 15:10:05",
-    "source_update_timezone": null,
-    "source_url": "https://election-results-01.kingcounty.gov/results.pdf",
-    "state_code": "WA",
-    "total_units": null,
-    "year": 2026
-  }
+    {
+      "ballots": 29108,
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-missouri-native-counts-20261113-01/complete-analysis.zip",
+      "county": "Cole County",
+      "county_id": "native:MO:cole",
+      "denominator": null,
+      "denominator_basis": "electorate_not_qualified",
+      "geography_level": "county",
+      "maps_approved": false,
+      "native_printed_pct": "52.54%",
+      "native_record": {
+        "ballots": 29108,
+        "native_clock_literal": "11/9/2026 10:05:40 AM",
+        "native_fraction": "52.54%",
+        "native_unit": "Total",
+        "registered": 55406,
+        "source_method": "visually_reviewed_source_image_transcription"
+      },
+      "official": true,
+      "participation_measure_kind": "ballots_cast",
+      "participation_measure_label": "Native Ballots Cast",
+      "participation_measure_literal": "Ballots Cast",
+      "quality": [
+        "Native Ballots Cast statistics, not candidate votes, unique people or observed staying home.",
+        "Registered Voters and printed percentages remain source context; analytical rates are not qualified.",
+        "Distinct November9 report clocks have unknown timezones and are not a common statewide snapshot.",
+        "Cole has28 locality labels plus a separate ABSENTEE statistical row; no source reporting row has qualified precinct geometry.",
+        "Cole ABSENTEE repeats the full55406 registration stock; registration columns are never summed across these rows.",
+        "The source's printed Official status is retained, not an independent certification or completed-counting determination."
+      ],
+      "registered": 55406,
+      "reported_pct": null,
+      "review_id": "participation-missouri-native-counts-20261113-01",
+      "source": "Official Cole County election statistics",
+      "source_reporting_label": "Native Registered Voters: 55,406; printed fraction: 52.54%. Native Ballots Cast statistics, not candidate votes, unique people or observed staying home.; Registered Voters and printed percentages remain source context; analytical rates are not qualified.; Distinct November9 report clocks have unknown timezones and are not a common statewide snapshot.; Cole has28 locality labels plus a separate ABSENTEE statistical row; no source reporting row has qualified precinct geometry.; Cole ABSENTEE repeats the full55406 registration stock; registration columns are never summed across these rows.; The source's printed Official status is retained, not an independent certification or completed-counting determination.",
+      "source_status_literal": "OFFICIAL RESULTS",
+      "source_update_label": "11/9/2026 10:05:40 AM",
+      "source_update_timezone": null,
+      "source_url": "https://www.colecounty.org/DocumentCenter/View/14460/November-3-2026-Unofficial-Turnout-and-Abstract",
+      "state_code": "MO",
+      "year": 2026
+    },
+    {
+      "ballots": 67527,
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-missouri-native-counts-20261113-01/complete-analysis.zip",
+      "county": "Boone County",
+      "county_id": "native:MO:boone",
+      "denominator": null,
+      "denominator_basis": "electorate_not_qualified",
+      "geography_level": "county",
+      "maps_approved": false,
+      "native_printed_pct": "51.88%",
+      "native_record": {
+        "ballots": 67527,
+        "native_clock_literal": "11/09/2026 1:36 PM",
+        "native_fraction": "51.88%",
+        "native_unit": "Ballots Cast - Total",
+        "registered": 130157,
+        "source_method": "decoded_PDF_characters"
+      },
+      "official": true,
+      "participation_measure_kind": "ballots_cast",
+      "participation_measure_label": "Native Ballots Cast",
+      "participation_measure_literal": "Ballots Cast",
+      "quality": [
+        "Native Ballots Cast statistics, not candidate votes, unique people or observed staying home.",
+        "Registered Voters and printed percentages remain source context; analytical rates are not qualified.",
+        "Distinct November9 report clocks have unknown timezones and are not a common statewide snapshot.",
+        "Cole has28 locality labels plus a separate ABSENTEE statistical row; no source reporting row has qualified precinct geometry.",
+        "Cole ABSENTEE repeats the full55406 registration stock; registration columns are never summed across these rows.",
+        "The source's printed Official status is retained, not an independent certification or completed-counting determination."
+      ],
+      "registered": 130157,
+      "reported_pct": null,
+      "review_id": "participation-missouri-native-counts-20261113-01",
+      "source": "Official Boone County election statistics",
+      "source_reporting_label": "Native Registered Voters: 130,157; printed fraction: 51.88%. Native Ballots Cast statistics, not candidate votes, unique people or observed staying home.; Registered Voters and printed percentages remain source context; analytical rates are not qualified.; Distinct November9 report clocks have unknown timezones and are not a common statewide snapshot.; Cole has28 locality labels plus a separate ABSENTEE statistical row; no source reporting row has qualified precinct geometry.; Cole ABSENTEE repeats the full55406 registration stock; registration columns are never summed across these rows.; The source's printed Official status is retained, not an independent certification or completed-counting determination.",
+      "source_status_literal": "Final Official",
+      "source_update_label": "11/09/2026 1:36 PM",
+      "source_update_timezone": null,
+      "source_url": "https://www.boonemo.gov/clerk/webpublish/elections/results/20261103sgn.pdf",
+      "state_code": "MO",
+      "year": 2026
+    }
+  ]
 }

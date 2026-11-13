@@ -16,12 +16,18 @@ const successor = json("data/participation-counts/context-review.json");
 
 function fixture() {
   const records = JSON.parse(gunzipSync(readFileSync(directory + "complete-source-records.json.gz")));
-  const selected = successor.reviewed_source_record;
-  const index = records.findIndex(row => row.state_code === selected.state_code && row.county_id === selected.county_id);
-  assert.ok(index >= 0);
-  assert.equal(digest(canonicalJson(records[index])), prior.observations.find(row =>
-    row.county_id === selected.county_id).source_record_sha256);
-  records[index] = structuredClone(selected);
+  const selections = successor.reviewed_source_records ?? [successor.reviewed_source_record];
+  const selected = selections[0];
+  for (const candidate of selections) {
+    const index = records.findIndex(row => row.state_code === candidate.state_code && row.county_id === candidate.county_id);
+    if (index >= 0) {
+      assert.equal(digest(canonicalJson(records[index])), prior.observations.find(row =>
+        row.county_id === candidate.county_id).source_record_sha256);
+      records[index] = structuredClone(candidate);
+    } else {
+      records.push(structuredClone(candidate));
+    }
+  }
   const inventories = Object.fromEntries(["2024", "2026"].map(year => [year,
     JSON.parse(gunzipSync(readFileSync(directory + `complete-${year}-county-identities.json.gz`)))]));
   const collections = Object.fromEntries(Object.entries(prior.geometry).map(([code, entry]) =>
@@ -29,25 +35,34 @@ function fixture() {
   const review = createCountyContextReview(records, inventories, collections, {
     geometry_checks: json(directory + "geometry-verification.json"),
   });
-  return { records, collections, review, selected };
+  return { records, collections, review, selected, selections };
 }
 
 test("the pinned successor reproduces every numerical join without changing any geography or other source", async () => {
-  const { records, collections, review, selected } = fixture();
+  const { records, collections, review, selections } = fixture();
   const body = JSON.stringify(review, null, 2) + "\n";
   assert.equal(Buffer.byteLength(body), successor.pointer.review_bytes);
   assert.equal(digest(body), successor.pointer.review_sha256);
   assert.deepEqual(review.geometry, prior.geometry);
   assert.deepEqual(review.excluded, prior.excluded);
   assert.deepEqual(review.source_selections, prior.source_selections);
-  assert.deepEqual(review.observations.filter(row => row.county_id !== selected.county_id),
-    prior.observations.filter(row => row.county_id !== selected.county_id));
+  const ids = new Set(selections.map(row => row.county_id));
+  assert.deepEqual(review.observations.filter(row => !ids.has(row.county_id)),
+    prior.observations.filter(row => !ids.has(row.county_id)));
   const mapped = await contextualCountyRows(records.filter(row => row.state_code === "WA"), review,
     collections.WA, "WA", review.context_base_url, review.geometry.WA.file);
   assert.equal(mapped.size, 39);
   assert.equal(mapped.get("53033").ballots, 935956);
   assert.equal(mapped.get("53033").reported_pct, null);
   assert.equal(mapped.get("53033").maps_approved, false);
+  const missouri = await contextualCountyRows(records.filter(row => row.state_code === "MO"), review,
+    collections.MO, "MO", review.context_base_url, review.geometry.MO.file);
+  assert.equal(missouri.size, 3);
+  for (const [geoid, ballots] of [["29019", 67527], ["29051", 29108]]) {
+    assert.equal(missouri.get(geoid).ballots, ballots);
+    assert.equal(missouri.get(geoid).reported_pct, null);
+    assert.equal(missouri.get(geoid).maps_approved, false);
+  }
   const loaded = loadCountPublication().countyContext;
   assert.equal(loaded.coverage.WA.counties, 39);
   assert.equal(loaded.coverage.WA.rates, 38);
