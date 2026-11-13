@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { gunzipSync } from "node:zlib";
 import { countStates, validateCountShard } from "../public/scripts/participation-counts.js";
@@ -17,6 +17,19 @@ const digest = body => createHash("sha256").update(body).digest("hex");
  */
 /** @type {CountPublication|undefined} */
 let publication;
+
+export function countyContextSuccessor(baseline, successor) {
+  const pointer = successor?.pointer;
+  if (successor?.predecessor_review_sha256 !== baseline.review_sha256
+    || pointer?.schema_version !== 1
+    || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/participation-access\/[a-z0-9-]+\/context\/$/.test(pointer.base_url)
+    || !/^[a-f0-9]{64}$/.test(pointer.review_sha256)
+    || !Number.isSafeInteger(pointer.review_bytes) || pointer.review_bytes <= 0
+    || !/^[a-f0-9]{64}$/.test(pointer.complete_download_sha256)
+    || !Number.isSafeInteger(pointer.complete_download_bytes) || pointer.complete_download_bytes <= 0)
+    throw new Error("Invalid pinned contextual county review successor");
+  return { ...baseline, ...pointer, downloads: [...pointer.downloads, ...baseline.downloads] };
+}
 
 export function loadCountPublication() {
   if (publication) return publication;
@@ -52,8 +65,12 @@ export function loadCountPublication() {
     if (data.county_frames) additional.county_frames[code] = data.county_frames;
     if (data.county_frame_holds) additional.county_frame_holds[code] = data.county_frame_holds;
   }
+  const successorPath = resolve("data/participation-counts/context-review.json");
+  const countyContext = existsSync(successorPath)
+    ? countyContextSuccessor(reviewed.county_context, JSON.parse(readFileSync(successorPath)))
+    : reviewed.county_context;
   publication = { additional, reviewedCounties: reviewed.counties, reviewedStates: reviewed.states,
-    countyContext: reviewed.county_context, index, descriptor, metadata };
+    countyContext, index, descriptor, metadata };
   return publication;
 }
 

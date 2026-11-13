@@ -1,0 +1,214 @@
+{
+  "pointer": {
+    "base_url": "https://raw.githubusercontent.com/hanshanley/voter-participation/b1f514990fdf24022433851af8965b7aee6f8311/data/participation-access/20261113-king-native-count-refresh-01/context/",
+    "complete_download_bytes": 14514584,
+    "complete_download_sha256": "5891a233f0787cf882a1bc73ec5ae5e8f0e698cf7f2f77613a3593aed53f518c",
+    "counts": {
+      "complete_source_records": 1329,
+      "contextual_joins": 834,
+      "excluded_missing_county_totals": 208,
+      "excluded_municipalities": 286,
+      "jurisdictions": 20,
+      "missing_rates": 388,
+      "retained_duplicate_source_observations": 1,
+      "reviewed_rates": 446
+    },
+    "coverage": {
+      "AL": {
+        "counties": 67,
+        "rates": 0
+      },
+      "AR": {
+        "counties": 75,
+        "rates": 0
+      },
+      "AZ": {
+        "counties": 15,
+        "rates": 0
+      },
+      "CA": {
+        "counties": 58,
+        "rates": 58
+      },
+      "DC": {
+        "counties": 1,
+        "rates": 1
+      },
+      "FL": {
+        "counties": 67,
+        "rates": 67
+      },
+      "GA": {
+        "counties": 159,
+        "rates": 157
+      },
+      "IA": {
+        "counties": 1,
+        "rates": 1
+      },
+      "KY": {
+        "counties": 1,
+        "rates": 0
+      },
+      "MN": {
+        "counties": 75,
+        "rates": 64
+      },
+      "MO": {
+        "counties": 1,
+        "rates": 0
+      },
+      "NJ": {
+        "counties": 19,
+        "rates": 1
+      },
+      "NV": {
+        "counties": 1,
+        "rates": 0
+      },
+      "OR": {
+        "counties": 36,
+        "rates": 0
+      },
+      "PA": {
+        "counties": 43,
+        "rates": 40
+      },
+      "UT": {
+        "counties": 19,
+        "rates": 18
+      },
+      "VA": {
+        "counties": 133,
+        "rates": 0
+      },
+      "WA": {
+        "counties": 39,
+        "rates": 38
+      },
+      "WI": {
+        "counties": 1,
+        "rates": 1
+      },
+      "WY": {
+        "counties": 23,
+        "rates": 0
+      }
+    },
+    "downloads": [
+      {
+        "label": "Complete reviewed contextual joins: all 834 observations, including the updated King count (CSV)",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-king-context-successor-20261113-01/county-participation-joins.csv"
+      },
+      {
+        "label": "Complete selected source records: all 1,329 observations, retaining the other 1,328 unchanged (JSON, gzip)",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-king-context-successor-20261113-01/complete-source-records.json.gz"
+      },
+      {
+        "label": "Complete contextual identity review; King rate withheld, boundaries unchanged (JSON)",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-king-context-successor-20261113-01/review.json"
+      },
+      {
+        "label": "Complete contextual query, all original geometry, native King analysis and offline reproduction (ZIP)",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-king-context-successor-20261113-01/complete-context-successor.zip"
+      }
+    ],
+    "review_bytes": 1268194,
+    "review_sha256": "d8e06e58de8d882d3b6145d5d4c7e99b7660d6d50340fcb82920b9ac9f532658",
+    "schema_version": 1
+  },
+  "predecessor_review_sha256": "e9ece9b8918dd3fec4ab4b5cbdfa30bfde181219bd1f6303c2c70077eb8b072e",
+  "reviewed_source_record": {
+    "ballots": 935956,
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-king-native-count-refresh-20261113-01/complete-analysis.zip",
+    "county": "King County",
+    "county_id": "additional:WA:01000000-F977-1A83-D40F-08DDD6A09CB2",
+    "denominator": 1460414,
+    "denominator_basis": "native_registered_voters",
+    "geography_level": "county",
+    "maps_approved": false,
+    "native_printed_pct": "64.09%",
+    "native_record": {
+      "cross_source_counter_comparisons": [
+        {
+          "choice": "Jesse Salomon",
+          "contest": "Legislative District No. 32 State Senator (Vote for 1)",
+          "contest_id": "59",
+          "csv_per_choice_overvote_counter": 186,
+          "csv_source_rows": [
+            {
+              "row": 62,
+              "table": null,
+              "workbook": null
+            }
+          ],
+          "pdf_source": {
+            "page": 4,
+            "row": 6,
+            "table": "complete-factual-body-page-4"
+          },
+          "pdf_total_overvoted_ballots": 185,
+          "repaired": false,
+          "signed_difference": 1,
+          "status": "unresolved_cross_source_counter_or_snapshot_difference"
+        }
+      ],
+      "csv_native_clock": null,
+      "declared_timezone": null,
+      "full_previous_observation_preserved_in_baseline": true,
+      "native_ballots": 935956,
+      "native_fraction_literal": "64.09%",
+      "native_global_parent_copies": 17,
+      "native_pdf_clock": "2026-11-12 15:10:05",
+      "native_registered": 1460414,
+      "no_native_counts_repaired": true,
+      "original_contest_accounting_discrepancies": [
+        {
+          "contest_id": "59",
+          "native_ballots_with_contest": 37419,
+          "native_choice_total": 34783,
+          "native_overvoted_ballots": 185,
+          "native_undervotes": 2450,
+          "repaired": false,
+          "signed_accounted_minus_ballots": -1,
+          "source": {
+            "page": 4,
+            "row": 6,
+            "table": "complete-factual-body-page-4"
+          },
+          "title": "Legislative District No. 32 State Senator (Vote for 1)"
+        }
+      ],
+      "selected_native_parent_literal": "Total Ballots Cast:",
+      "source_id": "king-current-native-summary",
+      "source_pin": {
+        "bytes": 49581,
+        "sha256": "51ba603ec7b4092eab8d093e33ab77909aa796ebd54da89ec74e9b69f7f3427a"
+      },
+      "source_role": "native_registration_ballot_reported_turnout_statistics",
+      "source_table": "county-statistics-page-1"
+    },
+    "quality": [
+      "Native PDF Total Ballots Cast, not candidate-vote totals, unique people or observed staying home.",
+      "All17 identical county header copies are retained and compared, never added.",
+      "Native printed64.09% and1460414 registered voters remain separate from any population turnout estimate.",
+      "One legislative-contest accounting control is short by1; a separate per-choice CSV overvote comparison differs by1. Both remain unrepaired.",
+      "The analytical fraction is held conservatively with these source diagnostics; no registration-frame or rate promotion.",
+      "PDF clock2026-11-12 15:10:05 has no supplied timezone; the separately acquired CSV has no native clock.",
+      "PV/VBM remain literal candidate-count groups, not inferred county participation by voting method.",
+      "Blocked index and mid-election precinct CSV remain stopped; no new precinct counts or geometry are claimed."
+    ],
+    "reported_pct": null,
+    "reported_units": null,
+    "review_id": "participation-king-native-count-refresh-20261113-01",
+    "source_reporting_label": "Native PDF Total Ballots Cast, not candidate-vote totals, unique people or observed staying home.; All17 identical county header copies are retained and compared, never added.; Native printed64.09% and1460414 registered voters remain separate from any population turnout estimate.; One legislative-contest accounting control is short by1; a separate per-choice CSV overvote comparison differs by1. Both remain unrepaired.; The analytical fraction is held conservatively with these source diagnostics; no registration-frame or rate promotion.; PDF clock2026-11-12 15:10:05 has no supplied timezone; the separately acquired CSV has no native clock.; PV/VBM remain literal candidate-count groups, not inferred county participation by voting method.; Blocked index and mid-election precinct CSV remain stopped; no new precinct counts or geometry are claimed.",
+    "source_rows": 0,
+    "source_status_literal": null,
+    "source_update_label": "2026-11-12 15:10:05",
+    "source_update_timezone": null,
+    "source_url": "https://election-results-01.kingcounty.gov/results.pdf",
+    "state_code": "WA",
+    "total_units": null,
+    "year": 2026
+  }
+}
