@@ -3325,7 +3325,7 @@ async function drawReportingUnitCounts(map, code, year, token) {
       html("p", "selection-note", `Native registrations: ${fmt(row.registered)} · not a qualified rate denominator.`),
       html("p", "selection-note", row.basis),
       html("p", "selection-note", (row.quality_flags || []).join("; ")),
-      html("p", "selection-note", `Source label: ${source.source_update_label}.`));
+      html("p", "selection-note", `Source label: ${source.source_update_label || "Not supplied; retrieval time is separate"}.`));
     syncURL();
   };
   select.addEventListener("change", choose);

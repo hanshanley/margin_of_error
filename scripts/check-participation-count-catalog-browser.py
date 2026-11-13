@@ -15,6 +15,7 @@ parser.add_argument("--base-url", default="http://127.0.0.1:4399")
 parser.add_argument("--proof", type=Path, required=True)
 parser.add_argument("--runtime-root", type=Path,
     default=ROOT / "data/participation-counts/20261110-02/runtime")
+parser.add_argument("--native-runtime-root", type=Path)
 args = parser.parse_args()
 assert not args.proof.exists()
 runtime_root = args.runtime_root
@@ -142,6 +143,49 @@ with sync_playwright() as playwright:
             cases.append(dict(width=width, state="Vermont", municipality_counts_bound=len(mapped),
                 reviewed_registered_fractions=rates, withheld_rates=len(towns)-rates,
                 native_source_label_correct=True, current_complete_queries_linked=True, no_overflow=True))
+            if args.native_runtime_root:
+                native_root = args.native_runtime_root
+                native_descriptor = json.loads((native_root / "dataset.json").read_bytes())
+                native_index = json.loads((native_root / "index.json").read_bytes())
+                native_table = native_index["reporting_tables"]["WY"]
+                native_records = json.loads(gzip.decompress(
+                    (native_root / native_table["file"]).read_bytes()))["records"]
+                native_rows = [row["properties"] for row in native_records]
+                native_source = native_index["reporting_sources"]["WY"]
+                actual = page.evaluate("""async () => {
+                  const module = await import('/scripts/participation-native-bindings.js');
+                  const {entry,index} = await module.loadNativeIndex();
+                  return {version:entry.version,rows:await module.loadReportingRows('WY'),
+                    source:index.reporting_sources.WY};
+                }""")
+                assert actual == dict(version=native_descriptor["version"],
+                    rows=native_rows, source=native_source)
+                assert len(native_rows) == 432 and sum(row["ballots"] for row in native_rows) == 191713
+                page.goto(args.base_url.rstrip("/") +
+                    "/voter-participation/?view=precincts&year=2026&state=Wyoming&precinct-layer=participation",
+                    wait_until="domcontentloaded", timeout=90000)
+                select = page.locator("#source-reporting-unit-select")
+                expect(select.locator("option")).to_have_count(len(native_rows), timeout=90000)
+                for row in native_rows:
+                    select.select_option(row["key"])
+                    expect(page.locator("#source-reporting-unit-detail .selection-rate")).to_have_text(
+                        f'{row["ballots"]:,}')
+                detail = page.locator("#source-reporting-unit-detail")
+                expect(detail).to_contain_text("Not supplied; retrieval time is separate")
+                expect(detail).not_to_contain_text("Source label: null")
+                expect(detail).to_contain_text("no participation rate")
+                expect(page.locator("#geography-note")).to_contain_text("No geographic overlays")
+                expect(page.locator("#substate-detail a", has_text="All native reporting-unit observations")).to_have_attribute(
+                    "href", native_source["data_url"])
+                expect(page.locator("#substate-detail a", has_text="Complete original sources")).to_have_attribute(
+                    "href", native_source["complete_download_url"])
+                assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+                page.locator("#historical-explorer").screenshot(
+                    path=str(args.proof.with_suffix(f".wy.{width}.png")))
+                cases.append(dict(width=width, state="Wyoming", native_units_checked=len(native_rows),
+                    reported_ballots=191713, all_native_properties_exact=True,
+                    unknown_clock_explicit=True, geographic_and_rate_holds_preserved=True,
+                    complete_numerical_downloads_linked=True, no_overflow=True))
         assert not errors, errors
         assert not [url for url in requests if re.search(r"/participation-local/[A-Z]{2}\.json\.gz(?:\?|$)", url)], \
             "Active legacy 2026 county export request"

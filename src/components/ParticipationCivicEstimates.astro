@@ -38,7 +38,7 @@ const native: { contract: string; year: number; native_control_version: number;
 	model_variant_or_study_probabilities_changed: boolean;
 	frame_exchangeability_or_observed_staying_home_qualified: boolean; native_outcome_fitting_applied: boolean;
 	complete_download: { url: string; bytes: number; sha256: string }; release_base: string } =
-	JSON.parse(readFileSync('data/participation-registered-controls/20261113-30/display-model.json', 'utf8'));
+	JSON.parse(readFileSync('data/participation-registered-controls/20261113-31/display-model.json', 'utf8'));
 if (native.contract !== 'participation.registered_control_display.v1' || native.year !== 2026
 	|| native.states.length !== 51 || new Set(native.states.map(row => row.state_code)).size !== 51
 	|| native.states.some(row => !names[row.state_code])
