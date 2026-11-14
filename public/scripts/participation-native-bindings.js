@@ -69,6 +69,19 @@ export function rebindNativeCounts(data, counts) {
   return validateNativeShard(rebound, data.id);
 }
 
+export function validatedNativeSnapshot(data, identity, nativeSource, countSource) {
+  const native = nativeSource.automatic_runtime, counts = countSource.automatic_runtime;
+  if (Boolean(native) !== Boolean(counts)
+      || native && (native.version !== counts.version
+        || native.runtime_commit !== counts.runtime_commit
+        || nativeSource.entry.version !== native.native?.version
+        || countSource.entry.version !== counts.counts?.version))
+    throw new Error("Native and canonical counts do not share one verified runtime snapshot");
+  // Native observations have their own reviewed IDs; the producer refreshes their
+  // approved projections before publishing the count/native snapshot atomically.
+  return validateNativeShard(data, identity);
+}
+
 export function validateNativeShard(data, identity) {
   if (data?.contract !== "participation.native_bindings.v1" || data.id !== identity
       || identity.split("/")[1] !== data.state_code
@@ -168,38 +181,39 @@ export function loadNativeIndex() {
 export async function loadBoundNative(identity) {
   const nativeSource=await loadNativeIndex(), {entry,index}=nativeSource, declaration = index.layers[identity];
   if (!declaration) throw new Error("No approved native count/reference binding");
-  if (!shards.has(identity)) shards.set(identity, checkedDatasetFile(entry.base_url, declaration)
-    .then(async data => {
-      const countIndex = await loadCountIndex();
-      const bind = async (source, sourceIndex=countIndex.index) => {
-        if (data.contract !== "participation.reference_bindings.v1")
-          return rebindNativeCounts(validateNativeShard(data, identity), source);
+  try {
+    if (!shards.has(identity)) shards.set(identity, checkedDatasetFile(entry.base_url, declaration)
+      .then(async data => {
         if (data.rows.length !== declaration.features) throw new Error("Separate reference coverage differs");
-        return validateReferenceBindings(data, identity, source, sourceIndex.states[data.state_code]);
-      };
-      try {
-        return await bind(await loadCountState(data.state_code));
-      } catch (error) {
-        if (!countIndex.automatic_runtime) throw error;
-        rejectCountRuntime(error);
-        const fallbackIndex = await loadCountIndex();
-        return bind(await loadAcceptedCountState(data.state_code), fallbackIndex.index);
-      }
-    }).catch(async error => {
-      shards.delete(identity);
-      if (!nativeSource.automatic_runtime) throw error;
-      rejectCountRuntime(error);dataset=null;geometries.clear();
-      return loadBoundNative(identity);
-    }));
-  const data = await shards.get(identity);
-  if (!geometries.has(data.geometry.sha256)) geometries.set(data.geometry.sha256,
-    checkedDatasetFile(entry.base_url, data.geometry).catch(error => {
-      geometries.delete(data.geometry.sha256); throw error;
-    }));
-  const geometry = await geometries.get(data.geometry.sha256);
-  const bind = data.contract === "participation.reference_bindings.v1" ? bindReferenceGeometry : bindNativeGeometry;
-  return { data: bind(data, geometry, data.geometry.sha256),
-    verified_geometry_sha256: data.geometry.sha256, binding: data };
+        const countIndex = await loadCountIndex();
+        if (data.contract !== "participation.reference_bindings.v1")
+          return validatedNativeSnapshot(data, identity, nativeSource, countIndex);
+        const bind = async (source, sourceIndex=countIndex.index) =>
+          validateReferenceBindings(data, identity, source, sourceIndex.states[data.state_code]);
+        try {
+          return await bind(await loadCountState(data.state_code));
+        } catch (error) {
+          if (!countIndex.automatic_runtime) throw error;
+          rejectCountRuntime(error);
+          const fallbackIndex = await loadCountIndex();
+          return bind(await loadAcceptedCountState(data.state_code), fallbackIndex.index);
+        }
+      }));
+    const data = await shards.get(identity);
+    if (!geometries.has(data.geometry.sha256)) geometries.set(data.geometry.sha256,
+      checkedDatasetFile(entry.base_url, data.geometry).catch(error => {
+        geometries.delete(data.geometry.sha256); throw error;
+      }));
+    const geometry = await geometries.get(data.geometry.sha256);
+    const bind = data.contract === "participation.reference_bindings.v1" ? bindReferenceGeometry : bindNativeGeometry;
+    return { data: bind(data, geometry, data.geometry.sha256),
+      verified_geometry_sha256: data.geometry.sha256, binding: data };
+  } catch (error) {
+    shards.delete(identity);
+    if (!nativeSource.automatic_runtime) throw error;
+    rejectCountRuntime(error);dataset=null;geometries.clear();
+    return loadBoundNative(identity);
+  }
 }
 export async function loadCountyBinding(code, mode) {
   const { index } = await loadNativeIndex();

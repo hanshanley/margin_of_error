@@ -1,8 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { canonicalObservation } from "./compile-participation-counts.mjs";
 import { validateNativeShard, bindNativeGeometry, bindCountyReference,
-  countyQualifier, countyCoverageMessage, rebindNativeCounts
+  countyQualifier, countyCoverageMessage, rebindNativeCounts, validatedNativeSnapshot
 } from "../public/scripts/participation-native-bindings.js";
 
 const hash = "a".repeat(64);
@@ -71,6 +72,122 @@ test("runtime canonical counts replace native map properties only under the exis
     assert.throws(() => rebindNativeCounts(data, { records: [invalid] }),
       /identity|geography|qualification|label/);
   }
+});
+test("atomic native projections retain their reviewed IDs instead of joining independently keyed table rows", () => {
+  const { data, geometry } = fixture();
+  data.rows[0].properties.ballots = 25;
+  data.rows[0].observation.count.value = 25;
+  data.rows[0].observation.view.ballots = 25;
+  const runtime = { version: "b".repeat(64), runtime_commit: "c".repeat(40),
+    native: { version: "d".repeat(64) }, counts: { version: "e".repeat(64) } };
+  const native = { automatic_runtime: runtime, entry: runtime.native };
+  const counts = { automatic_runtime: structuredClone(runtime), entry: runtime.counts };
+  const result = validatedNativeSnapshot(data, "precinct/MN", native, counts);
+  assert.equal(result.rows[0].observation.id, data.rows[0].observation.id);
+  assert.equal(bindNativeGeometry(result, geometry, hash).features[0].properties.ballots, 25);
+  for (const mutate of [
+    source => { source.automatic_runtime = null; },
+    source => { source.automatic_runtime.version = "f".repeat(64); },
+    source => { source.automatic_runtime.runtime_commit = "f".repeat(40); },
+    source => { source.entry = { version: "f".repeat(64) }; },
+  ]) {
+    const invalid = structuredClone(counts); mutate(invalid);
+    assert.throws(() => validatedNativeSnapshot(data, "precinct/MN", native, invalid),
+      /verified runtime snapshot/);
+  }
+  const invalid = structuredClone(data);
+  invalid.rows[0].observation.geography.join.reference_id = "f".repeat(64);
+  assert.throws(() => validatedNativeSnapshot(invalid, "precinct/MN", native, counts),
+    /binding differs/);
+});
+test("accepted native fallback retains independently sourced counts and rejects mixed automatic data", () => {
+  const { data, geometry } = fixture();
+  const accepted = { automatic_runtime: null };
+  assert.equal(bindNativeGeometry(
+    validatedNativeSnapshot(data, "precinct/MN", accepted, accepted), geometry, hash)
+    .features[0].properties.ballots, 0);
+  assert.throws(() => validatedNativeSnapshot(data, "precinct/MN",
+    { automatic_runtime: { version: "b".repeat(64) } }, accepted),
+  /verified runtime snapshot/);
+});
+let loaderFixtureId = 0;
+async function loaderFixture(options = {}) {
+  const key = `participation-native-loader-test-${loaderFixtureId++}`;
+  const accepted = fixture(), current = fixture();
+  current.data.rows[0].properties.ballots = 25;
+  current.data.rows[0].observation.count.value = 25;
+  current.data.rows[0].observation.view.ballots = 25;
+  const runtime = { version: "b".repeat(64), runtime_commit: "c".repeat(40),
+    native: { version: "d".repeat(64) }, counts: { version: "e".repeat(64) } };
+  const state = { rejected: false, geometryBases: [], countStateLoads: 0 };
+  state.loadDataset = async () => {
+    const automatic = !state.rejected;
+    return { entry: { version: automatic ? runtime.native.version : "f".repeat(64),
+      base_url: automatic ? "https://example.org/current/" : "https://example.org/accepted/" },
+    index: { contract: "participation.native_index.v1", layers: {
+      "precinct/MN": { file: "native.json", features: 1 } } },
+    automatic_runtime: automatic ? runtime : null };
+  };
+  state.loadCountIndex = async () => ({
+    entry: { version: runtime.counts.version }, index: {},
+    automatic_runtime: state.rejected || options.mixedRuntime ? null : runtime,
+  });
+  state.checkedDatasetFile = async (base, declaration) => {
+    if (declaration.file === "native.json")
+      return structuredClone(base.includes("/accepted/") ? accepted.data : current.data);
+    state.geometryBases.push(base);
+    if (options.corruptGeometry && base.includes("/current/"))
+      throw new Error("Native geometry checksum differs");
+    if (options.corruptAccepted && base.includes("/accepted/"))
+      throw new Error("Accepted geometry checksum differs");
+    return structuredClone(accepted.geometry);
+  };
+  state.loadCountState = async () => { state.countStateLoads++; throw new Error("Unexpected ID join"); };
+  state.rejectCountRuntime = () => { state.rejected = true; };
+  globalThis[Symbol.for(key)] = state;
+  const toURL = source => `data:text/javascript;base64,${Buffer.from(source).toString("base64")}`;
+  const dependencies = toURL(`
+    const state = globalThis[Symbol.for(${JSON.stringify(key)})];
+    export { validateCountObservation } from ${JSON.stringify(
+      new URL("../public/scripts/participation-counts.js", import.meta.url).href)};
+    export const loadDataset = (...args) => state.loadDataset(...args);
+    export const checkedDatasetFile = (...args) => state.checkedDatasetFile(...args);
+    export const loadCountIndex = (...args) => state.loadCountIndex(...args);
+    export const loadCountState = (...args) => state.loadCountState(...args);
+    export const loadAcceptedCountState = loadCountState;
+    export const rejectCountRuntime = (...args) => state.rejectCountRuntime(...args);
+    export const validateReferenceBindings = () => { throw new Error("Unexpected reference contract"); };
+    export const bindReferenceGeometry = validateReferenceBindings;
+  `);
+  const source = readFileSync(new URL(
+    "../public/scripts/participation-native-bindings.js", import.meta.url), "utf8")
+    .replaceAll(/from "\.\/participation-(?:dataset|counts|reference-bindings)\.js"/g,
+      `from ${JSON.stringify(dependencies)}`);
+  const loader = await import(toURL(source));
+  delete globalThis[Symbol.for(key)];
+  return { loader, state, accepted };
+}
+test("native loader consumes the atomic projection without a canonical table-ID join", async () => {
+  const { loader, state } = await loaderFixture();
+  const result = await loader.loadBoundNative("precinct/MN");
+  assert.equal(result.data.features[0].properties.ballots, 25);
+  assert.equal(result.verified_geometry_sha256, hash);
+  assert.equal(state.countStateLoads, 0);
+  assert.equal(state.rejected, false);
+  assert.deepEqual(state.geometryBases, ["https://example.org/current/"]);
+});
+test("native loader restarts with the accepted snapshot and its own geometry after rejection", async () => {
+  for (const options of [{ mixedRuntime: true }, { corruptGeometry: true }]) {
+    const { loader, state, accepted } = await loaderFixture(options);
+    const result = await loader.loadBoundNative("precinct/MN");
+    assert.deepEqual(result.data, accepted.geometry);
+    assert.equal(result.binding.rows[0].observation.count.value, 0);
+    assert.equal(state.rejected, true);
+    assert.equal(state.countStateLoads, 0);
+    assert.equal(state.geometryBases.at(-1), "https://example.org/accepted/");
+  }
+  const { loader } = await loaderFixture({ mixedRuntime: true, corruptAccepted: true });
+  await assert.rejects(loader.loadBoundNative("precinct/MN"), /Accepted geometry checksum differs/);
 });
 test("hash, inventory, state, duplicate keys and denominator promotion cannot qualify a native binding", () => {
   for (const mutate of [
