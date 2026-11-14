@@ -5,6 +5,7 @@ import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, c
 import { loadNativeIndex, loadBoundNative, loadCountyBinding, loadMunicipalReference, loadReportingRows, bindCountyReference, countyCoverageMessage } from "./participation-native-bindings.js";
 import { installCoverage } from "./participation-coverage.js";
 import { installHistoricalNativeCounts } from "./participation-historical-native.js";
+import { installLouisianaNativeGroups } from "./participation-louisiana-native-groups.js";
 import { rings, boundsFor, conicProjection, projectFeatures } from "./participation-map-projection.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
@@ -68,10 +69,13 @@ const state = {
 const residentContext = installResidentContext();
 const sourceCoverage = installCoverage();
 const historicalNativeCounts = installHistoricalNativeCounts();
+const louisianaNativeGroups = installLouisianaNativeGroups();
 function syncHistoricalNativeScope() {
-  historicalNativeCounts.setScope({ year: Number($("year").value),
+  const scope = { year: Number($("year").value),
     code: state.geometry ? stateCode() : null, name: state.selectedState,
-    enabled: ["states", "precincts"].includes(state.view) });
+    enabled: ["states", "precincts"].includes(state.view) };
+  historicalNativeCounts.setScope(scope);
+  louisianaNativeGroups.setScope(scope);
 }
 function setExplorerState(name) {
   state.selectedState = name;
