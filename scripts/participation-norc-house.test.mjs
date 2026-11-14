@@ -116,6 +116,25 @@ test("Massachusetts changed competition cannot become a Republican swing in eith
     "Genuinely comparable negative source changes must not be forced positive");
 });
 
+test("unchanged automatic profiles retain their complete accepted comparison audit",()=>{
+  const data=withComparability();
+  data.automatic_estimate_update={contract:"participation.automatic_estimates.v1",
+    existing_17_behavioral_holds_preserved:true,official_HI_WY_scope_guarded:true,
+    qualification_mask_sha256:"a".repeat(64),changed_states:[]};
+  data.comparison_policy.changed_state_scenarios_recomputed=["HI","WY"];
+  assert.equal(validateNorcHouse(data),data);
+  const changed=structuredClone(data);
+  changed.automatic_estimate_update.changed_states=["AR"];
+  assert.throws(()=>validateNorcHouse(changed),/separately pinned comparison gate/);
+  const incompatible=structuredClone(data);
+  incompatible.rows.find(row=>row.source_comparison_available)
+    .contest_comparability.like_for_like_statewide_source_comparison=false;
+  assert.throws(()=>validateNorcHouse(incompatible),/Incompatible House/);
+  const missing=structuredClone(data);
+  delete missing.comparison_policy;
+  assert.throws(()=>validateNorcHouse(missing),/Unqualified automatic/);
+});
+
 test("changed candidate coverage and native-count substitutions cannot condition behavioral models",()=>{
   validateNorcHouse(withComparability());
   for(const mutate of [

@@ -62,7 +62,7 @@ export function validateNorcHouse(data) {
   const identities = new Set();
   const policy=data.comparison_policy;
   const automatic=data.automatic_estimate_update;
-  if (automatic && (automatic.contract!=="participation.automatic_estimates.v1"
+  if (automatic && (!policy || automatic.contract!=="participation.automatic_estimates.v1"
       || automatic.existing_17_behavioral_holds_preserved!==true
       || automatic.official_HI_WY_scope_guarded!==true
       || !/^[a-f0-9]{64}$/.test(automatic.qualification_mask_sha256)
@@ -81,7 +81,7 @@ export function validateNorcHouse(data) {
     identities.add(row.state_code);
     if (policy) {
       const review=row.contest_comparability;
-      if (automatic && (policy.existing_behavioral_holds_preserved!==true
+      if (automatic?.changed_states.length && (policy.existing_behavioral_holds_preserved!==true
           || policy.source_weights_changed!==false
           || !Array.isArray(policy.automatic_changed_state_scenarios_recomputed)
           || policy.automatic_changed_state_scenarios_recomputed.join()
