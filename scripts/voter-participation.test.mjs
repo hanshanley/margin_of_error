@@ -342,6 +342,32 @@ test('different pinned paths may share filenames but every entire original must 
 	await assert.rejects(verifyRemoteFiles(files, async () => new Response('complete-context-13')), /checksum changed/);
 });
 
+test('pinned downloads retry only bounded transport failures, never denied or changed bodies', async () => {
+	const bytes = Buffer.from('complete-source-body');
+	const file = { path: '/source.json', url: 'https://example.com/source.json',
+		bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') };
+	const reset = () => Object.assign(new TypeError('fetch failed'), {
+		cause: Object.assign(new Error('connection reset'), { code: 'ECONNRESET' }),
+	});
+	let calls = 0;
+	await verifyRemoteFiles([file], async () => {
+		calls++;
+		if (calls === 1) throw reset();
+		if (calls === 2) return { ok: true, arrayBuffer: async () => { throw reset(); } };
+		return new Response(bytes);
+	});
+	assert.equal(calls, 3);
+	calls = 0;
+	await assert.rejects(verifyRemoteFiles([file], async () => { calls++; throw reset(); }), /fetch failed/);
+	assert.equal(calls, 3);
+	for (const response of [new Response('', { status: 403 }), new Response('', { status: 404 }),
+		new Response(Buffer.alloc(bytes.length))]) {
+		calls = 0;
+		await assert.rejects(verifyRemoteFiles([file], async () => { calls++; return response; }));
+		assert.equal(calls, 1);
+	}
+});
+
 test('pinned current data must be complete and byte-identical before removing site copies', async () => {
 	const bytes = Buffer.from('{"complete":[1,2,3]}');
 	const file = { path: '/current.json', url: 'source', bytes: bytes.length,

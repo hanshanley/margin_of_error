@@ -14,6 +14,7 @@ parser.add_argument("--base-url", required=True)
 parser.add_argument("--fixture", type=Path, required=True)
 parser.add_argument("--rolling-proof", type=Path, required=True)
 parser.add_argument("--proof", type=Path, required=True)
+parser.add_argument("--retained", action="store_true")
 args = parser.parse_args()
 assert not args.proof.exists()
 
@@ -42,6 +43,19 @@ projection["automatic_update"] = {
     "unsupported_local_or_demographic_estimates_created": False,
     "coverage_claim": "Only Oregon's explicitly compatible registered frame changed.",
 }
+if args.retained:
+    projection["automatic_update"].update({
+        "fresh_compatible_scenarios": 0,
+        "changed_registered_frames": 0,
+        "fresh_jurisdictions": [],
+        "decisions": [{
+            "state_code": "AL", "decision": "native_registered_reference_only",
+            "native_registered_denominator": 3852947,
+            "denominator_basis": "different_registered_frame",
+            "matching_accepted_scenarios": [],
+            "local_or_demographic_estimate": False,
+        }],
+    })
 decoded = (json.dumps(projection, sort_keys=True, separators=(",", ":")) + "\n").encode()
 projection_body = gzip.compress(decoded, compresslevel=9, mtime=0)
 
@@ -149,9 +163,15 @@ with sync_playwright() as runtime:
                 "Native source clock not supplied")
             expect(panel.locator('[data-native-registered-state="OR"] '
                                  '[data-native-state-registered]')).to_have_text("3,109,133")
-            expect(panel.locator("[data-native-automatic-decision]")).to_have_count(1)
-            expect(panel.locator("[data-native-automatic-decision]")).to_contain_text(
-                "No native source clock was supplied")
+            expect(panel.locator("[data-native-automatic-decision]")).to_have_count(
+                0 if args.retained else 1)
+            if args.retained:
+                expect(panel.locator("[data-native-automatic-reference]")).to_have_count(1)
+                expect(panel.locator("[data-native-automatic-reference]")).to_contain_text(
+                    "No registered-control scenario")
+            else:
+                expect(panel.locator("[data-native-automatic-decision]")).to_contain_text(
+                    "No native source clock was supplied")
             expect(panel.locator("[data-native-reference-change]")).to_have_count(0)
             expect(panel.locator('[data-native-registered-scenario="reporting-AL"] '
                                  '[data-native-registered]')).to_have_text("3,852,947")
@@ -161,16 +181,18 @@ with sync_playwright() as runtime:
                 panel.locator('[data-native-registered-scenario][data-native-fresh="false"]').count(),
                 panel.locator('[data-native-registered-state][data-native-fresh="false"]').count(),
             )
-            assert fresh_counts == (2, 1, 32, 50), fresh_counts
+            assert fresh_counts == ((0, 0, 34, 51) if args.retained
+                                    else (2, 1, 32, 50)), fresh_counts
             expect(panel.locator("[data-native-automatic-download]")).to_have_attribute(
                 "href", complete["url"])
             expect(panel.locator("[data-native-runtime-fingerprint]")).to_contain_text(
                 "123,456 bytes")
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             assert not errors, errors
-            results.append({"case": "changed-registered-frame", "width": width,
+            results.append({"case": "retained-registered-frame" if args.retained
+                            else "changed-registered-frame", "width": width,
                             "OR_registered": 3109133, "scenarios": 34, "states": 51,
-                            "fresh_DOM_nodes": 3, "errors": errors})
+                            "fresh_DOM_nodes": 0 if args.retained else 3, "errors": errors})
             context.close()
 
         context, page, errors = open_page(browser, 390, corrupt=True)

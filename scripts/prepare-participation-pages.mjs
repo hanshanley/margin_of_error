@@ -43,9 +43,19 @@ export function verifyReleaseAssets(files, assets) {
 
 export async function verifyRemoteFiles(files, fetcher = fetch) {
 	for (const file of files) {
-		const response = await fetcher(file.url);
-		assert.ok(response.ok, `Missing pinned complete data: ${file.path}`);
-		const bytes = Buffer.from(await response.arrayBuffer());
+		let bytes;
+		for (let attempt = 0; ; attempt++) {
+			try {
+				const response = await fetcher(file.url);
+				assert.ok(response.ok, `Missing pinned complete data: ${file.path}`);
+				bytes = Buffer.from(await response.arrayBuffer());
+				break;
+			} catch (error) {
+				if (attempt >= 2 || !['ECONNRESET', 'ETIMEDOUT', 'UND_ERR_SOCKET', 'UND_ERR_CONNECT_TIMEOUT']
+					.includes(error.cause?.code || error.code)) throw error;
+				await new Promise(resolve => setTimeout(resolve, 500 * (attempt + 1)));
+			}
+		}
 		assert.equal(bytes.length, file.bytes, `Pinned data size changed: ${file.path}`);
 		assert.equal(sha256(bytes), file.sha256, `Pinned data checksum changed: ${file.path}`);
 	}

@@ -18,10 +18,7 @@ export function validateAutomaticRegisteredControls(data,scenarioRows,stateRows)
       || update.native_outcome_fitting_applied!==false
       || update.unsupported_local_or_demographic_estimates_created!==false
       || !Array.isArray(update.fresh_jurisdictions) || !Array.isArray(update.decisions)
-      || new Set(update.fresh_jurisdictions).size!==update.fresh_jurisdictions.length
-      || update.fresh_compatible_scenarios!==update.decisions.length
-      || update.changed_registered_frames!==update.decisions
-        .filter(row=>Number(row.registered_denominator_difference)!==0).length)
+      || new Set(update.fresh_jurisdictions).size!==update.fresh_jurisdictions.length)
     throw new Error("Automatic registered-control update policy differs");
   if (data.model_variant_or_study_probabilities_changed!==false
       || data.frame_exchangeability_or_observed_staying_home_qualified!==false
@@ -34,6 +31,11 @@ export function validateAutomaticRegisteredControls(data,scenarioRows,stateRows)
       || [...scenarioRows.keys()].some(id=>!scenarios.has(id)))
     throw new Error("Automatic registered-control identity inventory differs");
   const fresh=new Set(update.fresh_jurisdictions);
+  const compatible=update.decisions.filter(row=>typeof row?.control_id==="string");
+  if (update.fresh_compatible_scenarios!==compatible.length
+      || update.changed_registered_frames!==compatible
+        .filter(row=>Number(row.registered_denominator_difference)!==0).length)
+    throw new Error("Automatic registered-control decision counts differ");
   for (const [id,{baseline}] of scenarioRows) {
     const row=scenarios.get(id);
     if (row.state_code!==baseline.state || row.native_denominator_basis!==baseline.basis
@@ -45,13 +47,22 @@ export function validateAutomaticRegisteredControls(data,scenarioRows,stateRows)
           +Number(row.conditional_modeled_nonvoter_count)
           -Number(row.native_registered_denominator))>1e-6)
       throw new Error("Automatic registered-control scenario scope differs");
-    if (!fresh.has(row.state_code)
-        && [row.native_registered_denominator,row.conditional_modeled_voter_count,
-          row.conditional_modeled_nonvoter_count,row.source_time_label]
-          .some((value,index)=>String(value??"")!==baseline.values[index]))
-      throw new Error("Unlisted registered-control scenario changed");
+    const expected=Number(baseline.values[1])*Number(row.native_registered_denominator)
+      /Number(baseline.values[0]);
+    if (!(Number(row.native_registered_denominator)>0)
+        || !Number.isFinite(expected)
+        || Math.abs(Number(row.conditional_modeled_voter_count)-expected)>1e-6)
+      throw new Error("Registered-control scenario changed its frozen Civic probability");
   }
   for (const decision of update.decisions) {
+    if (!decision.control_id) {
+      if (!states.has(decision.state_code)
+          || !["held_invalid_native_reference","held_registration_frame_check_failed",
+            "held_ambiguous_registered_frame","native_registered_reference_only"]
+            .includes(decision.decision))
+        throw new Error("Unknown held native registered-control reference");
+      continue;
+    }
     const row=scenarios.get(decision.control_id);
     if (!row || row.state_code!==decision.state_code || !fresh.has(row.state_code)
         || decision.native_clock_supplied!==Boolean(decision.native_clock)
@@ -68,6 +79,13 @@ function renderChanges(host,update,names) {
   const paragraphs=update.decisions.map(decision=>{
     const p=document.createElement("p");
     p.className="caption";
+    if (!decision.control_id) {
+      p.dataset.nativeAutomaticReference=decision.state_code;
+      p.textContent=`Native reference held · ${names[decision.state_code]||decision.state_code}: `
+        +decision.decision.replaceAll("_"," ")
+        +". No registered-control scenario or frozen Civic probability is changed by this reference.";
+      return p;
+    }
     p.dataset.nativeAutomaticDecision=decision.control_id;
     const time=decision.native_clock_supplied
       ?` Native clock: ${decision.native_clock}.`
@@ -165,7 +183,7 @@ export async function installAutomaticRegisteredControls() {
     root.dataset.nativeAutomaticVersion=manifest.version;
     status.textContent=validated.fresh.size
       ?`Automatic registered frames active for ${[...validated.fresh].join(", ")}; all other accepted values retained.`
-      :"Automatic snapshot checked; all 34 accepted registered-control scenarios are unchanged.";
+      :"Automatic snapshot checked; last verified registered-control scenarios retained.";
     status.dataset.state="active";
     setAutomaticRuntimeStatus("civic","active","registered-control estimates",manifest);
   } catch (error) {

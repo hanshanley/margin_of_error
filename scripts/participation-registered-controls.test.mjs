@@ -63,6 +63,35 @@ test("changed registered frame updates one existing scenario and preserves every
     accepted.scenarios.find(row=>row.control_id==="reporting-AL").native_registered_denominator);
 });
 
+test("rolling last-good registered frames remain usable without being marked fresh again",()=>{
+  const data=fixture(),{scenarioRows,stateRows}=baselines();
+  Object.assign(data.automatic_update,{
+    fresh_compatible_scenarios:0,changed_registered_frames:0,
+    fresh_jurisdictions:[],decisions:[],
+  });
+  const value=validateAutomaticRegisteredControls(data,scenarioRows,stateRows);
+  assert.equal(value.fresh.size,0);
+  assert.equal(value.scenarios.get("reporting-OR").native_registered_denominator,"3109133");
+  const wrong=structuredClone(data);
+  const scenario=wrong.scenarios.find(row=>row.control_id==="reporting-OR");
+  scenario.conditional_modeled_voter_count="2000000";
+  scenario.conditional_modeled_nonvoter_count="1109133";
+  assert.throws(()=>validateAutomaticRegisteredControls(wrong,scenarioRows,stateRows));
+});
+
+test("held native references do not invalidate compatible or retained registered scenarios",()=>{
+  const data=fixture(),{scenarioRows,stateRows}=baselines();
+  data.automatic_update.decisions.push({
+    state_code:"AL",decision:"native_registered_reference_only",
+    native_registered_denominator:3852947,denominator_basis:"different_registered_frame",
+    matching_accepted_scenarios:[],local_or_demographic_estimate:false,
+  });
+  const value=validateAutomaticRegisteredControls(data,scenarioRows,stateRows);
+  assert.deepEqual([...value.fresh],["OR"]);
+  assert.equal(value.scenarios.get("reporting-AL").native_registered_denominator,
+    accepted.scenarios.find(row=>row.control_id==="reporting-AL").native_registered_denominator);
+});
+
 test("missing, unlisted, relabeled and model-changing automatic values fail closed",()=>{
   for(const mutate of [
     data=>data.scenarios.pop(),
