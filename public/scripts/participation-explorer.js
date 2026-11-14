@@ -401,12 +401,15 @@ function stateParticipationRows() {
     const countyName = value => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
       .toUpperCase().replace(/\s*\(VOTE CENTER\)/g, "").replace(/\b(COUNTY|PARISH)\b/g, "")
       .replace(/[^A-Z0-9]/g, "");
-    const electorateLabel = row => row.denominator_basis.replaceAll("_", " ");
+    const electorateLabel = row => typeof row.denominator_basis === "string" && row.denominator_basis
+      ? row.denominator_basis.replaceAll("_", " ") : "source electorate not supplied";
     const participationLabel = row => row.participation_measure_label || row.participation_measure_literal;
     const registryHistoryContext = row => row.administrative_history_context_only === true
       && row.source_frame_kind === "current_registry_date_token";
     function currentCountDetail(host, row, county = false) {
       const registryContext = registryHistoryContext(row);
+      const hasReportingMetadata = [row.reported_units, row.total_units, row.source_rows]
+        .some(value => value !== null && value !== undefined);
       if (!registryContext) residentSource(row, county);
       const missingCountScope = county ? "County total" : "Reporting-unit count";
       const separateReference = state.currentPrecinctShapes.get(row.state_code)?.features.find(({ properties: p }) =>
@@ -454,16 +457,18 @@ function stateParticipationRows() {
       } else if (registryContext) host.append(html("p", "selection-note",
         "Current registration-record context only. No election-day electorate, complete participation or precinct count is established."));
       else if (county) {
-        if ([row.reported_units, row.total_units, row.source_rows].some(value => value !== null && value !== undefined))
+        if (hasReportingMetadata)
           host.append(html("p", "selection-note",
             `${fmt(row.reported_units)} / ${fmt(row.total_units)} source precincts reporting. `
             + `${fmt(row.source_rows)} source rows available below; special units and vote centers are identified separately.`));
       }
       else host.append(html("p", "selection-note",
-        `${row.unit_kind.replaceAll("_", " ")}. County + snapshot-local row ordinal identifies this 2026 reporting row, not a stable historical precinct. Boundary matches are documented separately on the precinct map.`));
+        `${row.unit_kind.replaceAll("_", " ")}. County and the source-specific reporting-row identifier identify this 2026 observation, not a stable historical precinct. Boundary matches are documented separately on the precinct map.`));
       if (!row.review_id && row.complete_download_url) {
         const complete = html("a", "source-link", "Complete source tables and source package");
-        complete.href = row.complete_download_url; host.append(complete);
+        complete.href = row.complete_download_url;
+        if (county && !registryContext && !hasReportingMetadata) host.append(html("span", "", " · "));
+        host.append(complete);
       }
     }
     function appendRegistryHistoryContexts(container, rows) {

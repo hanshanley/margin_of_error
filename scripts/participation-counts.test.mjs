@@ -231,3 +231,29 @@ test("non-review county details retain literal source status and only supplied r
   detail(host, { ...row, reported_units: 0, total_units: 10, source_rows: 0 }, true);
   assert(host.children.some(node => node.textContent?.startsWith("0 / 10 source precincts reporting.")));
 });
+
+test("unknown source electorate metadata renders as unknown without inventing a denominator", () => {
+  const { detail, host } = detailHarness();
+  for (const denominator_basis of [null, undefined]) {
+    const row = { ...view(), denominator: null, denominator_basis, reported_pct: null };
+    const before = structuredClone(row);
+    detail(host, row, true);
+    assert(host.children.some(node => node.textContent?.includes("source electorate not supplied")));
+    assert.equal(host.children.find(node => node.className === "selection-rate").textContent, "0");
+    assert.deepEqual(row, before);
+  }
+});
+
+test("native reporting identifiers are not called ordinals and adjacent source downloads stay distinct", () => {
+  const { detail, host } = detailHarness();
+  const row = { ...view(), unit: "5-3", unit_kind: "source_native_precinct_code",
+    complete_download_url: "https://example.org/complete-source.zip" };
+  detail(host, row);
+  const text = host.children.map(node => node.textContent).filter(Boolean).join("\n");
+  assert.match(text, /source native precinct code/);
+  assert.doesNotMatch(text, /row ordinal/);
+  detail(host, row, true);
+  const source = host.children.findIndex(node => node.tag === "a");
+  assert.equal(host.children[source + 1].textContent, " · ");
+  assert.equal(host.children[source + 2].href, row.complete_download_url);
+});
