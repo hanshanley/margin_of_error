@@ -403,8 +403,11 @@ function stateParticipationRows() {
       .replace(/[^A-Z0-9]/g, "");
     const electorateLabel = row => row.denominator_basis.replaceAll("_", " ");
     const participationLabel = row => row.participation_measure_label || row.participation_measure_literal;
+    const registryHistoryContext = row => row.administrative_history_context_only === true
+      && row.source_frame_kind === "current_registry_date_token";
     function currentCountDetail(host, row, county = false) {
-      residentSource(row, county);
+      const registryContext = registryHistoryContext(row);
+      if (!registryContext) residentSource(row, county);
       const missingCountScope = county ? "County total" : "Reporting-unit count";
       const separateReference = state.currentPrecinctShapes.get(row.state_code)?.features.find(({ properties: p }) =>
         p.reference_context_only && p.maps_approved && p.unit_key === row.unit_key && p.county_id === row.county_id);
@@ -419,12 +422,16 @@ function stateParticipationRows() {
             ? `${missingCountScope} not supplied · no declared source report`
             : row.native_record?.all_statistics_reported === "false"
               ? `${missingCountScope} not supplied · incomplete native statistics` : `${missingCountScope} not supplied · source value remains unknown`
-          : row.review_id ? `2026 ${participationLabel(row) || "ballots reported"} · not final/certified` : "2026 ballots reported · unofficial"),
-        html("p", "selection-note", row.source_mode === "all_method_native_city_snapshot"
+          : registryContext ? `${participationLabel(row)} · current registry, not an election ballot total`
+            : row.review_id ? `2026 ${participationLabel(row) || "ballots reported"} · not final/certified`
+              : `2026 ${participationLabel(row) || "ballots reported"} · unofficial`),
+        html("p", "selection-note", registryContext
+          ? "Records in one current registry file with a date-coded history token, not ballots, unique participants or a turnout rate. Missing history is not observed nonparticipation."
+          : row.source_mode === "all_method_native_city_snapshot"
           ? "Native source counts only. Registered fields remain separate; no unique-person count or analysis turnout rate is qualified."
           : `${fmt(row.denominator)} ${electorateLabel(row)}; `
             + `${pct(row.reported_pct)} ${participationLabel(row) || "reported-ballot"} fraction. Not final turnout or a CPS estimate.`),
-        html("p", "selection-note", `Source update: ${row.source_update_label || "not supplied"}. `
+        html("p", "selection-note", `${registryContext ? "Registry file update" : "Source update"}: ${row.source_update_label || "not supplied"}. `
           + row.quality.join(" ")), sourceLink(row));
       if (row.review_id) {
         host.append(html("p", "selection-note", `Native result-status literal: ${row.source_status_literal || "not supplied"}.`),
@@ -444,7 +451,9 @@ function stateParticipationRows() {
             ? `A separate review qualifies current ${row.county} municipal ward context, not newly certified2026 legal precincts; the original source counts and withheld rate remain unchanged.`
             : "A separate subsequent review qualifies this direct-count precinct identity; the original source review and withheld rate remain unchanged."
             : row.geometry_withheld_reason || "This source row is not approved as precinct geography.")));
-      } else if (county) host.append(html("p", "selection-note",
+      } else if (registryContext) host.append(html("p", "selection-note",
+        "Current registration-record context only. No election-day electorate, complete participation or precinct count is established."));
+      else if (county) host.append(html("p", "selection-note",
         `${fmt(row.reported_units)} / ${fmt(row.total_units)} source precincts reporting. `
         + `${fmt(row.source_rows)} source rows available below; special units and vote centers are identified separately.`));
       else host.append(html("p", "selection-note",
@@ -453,6 +462,40 @@ function stateParticipationRows() {
         const complete = html("a", "source-link", "Complete source tables and source package");
         complete.href = row.complete_download_url; host.append(complete);
       }
+    }
+    function appendRegistryHistoryContexts(container, rows) {
+      if (!rows.length) return;
+      const section = html("section", "substate-detail");
+      section.id = "registry-history-context";
+      const label = html("label", "selection-note", "Administrative registry snapshot");
+      const select = html("select"); select.id = "current-registry-select"; label.htmlFor = select.id;
+      options(select, [["", "Choose a registry snapshot…"],
+        ...rows.map(row => [row.county_id, row.county])]);
+      const detail = html("div", "substate-detail"); detail.id = "registry-history-detail";
+      const table = html("button", "selection-link", "Show this administrative snapshot in the data table");
+      table.type = "button"; table.id = "show-registry-context-table";
+      table.setAttribute("aria-pressed", "false");
+      const choose = () => {
+        const row = rows.find(row => row.county_id === select.value);
+        detail.replaceChildren(); table.hidden = !row; table.setAttribute("aria-pressed", "false");
+        if (row) currentCountDetail(detail, row, true);
+      };
+      select.addEventListener("change", choose);
+      table.addEventListener("click", () => {
+        const row = rows.find(row => row.county_id === select.value);
+        if (row) {
+          table.setAttribute("aria-pressed", "true");
+          setTable([row], [["county", "Source county"],
+            ["ballots", participationLabel(row)], ["source_update_label", "Registry file update"],
+            ["quality", "Source frame and interpretation"]]);
+        }
+      });
+      section.append(html("h4", "", "Separate current-registry history context"),
+        html("p", "selection-note", "These records are not ballot totals or complete election participation. They never enter county-map joins, turnout denominators or early/mail totals."),
+        label, select, detail, table);
+      container.append(section);
+      if (rows.length === 1) select.value = rows[0].county_id;
+      choose();
     }
     async function currentNavigation(container) {
       container.append(html("p", "selection-note", "Loading 2026 local counts…"));
@@ -487,6 +530,7 @@ function stateParticipationRows() {
             link.href = data.mode_review_complete_download;
             container.append(link);
           }
+          appendRegistryHistoryContexts(container, data.administrative_contexts || []);
           return;
         }
         const label = html("label", "selection-note", nativeCities ? "2026 native city source"
@@ -499,6 +543,7 @@ function stateParticipationRows() {
         const detail = html("div", "substate-detail"); detail.id = "current-county-detail";
         const units = html("div", "substate-detail"); units.id = "current-unit-navigation";
         container.replaceChildren(html("h4", "", "2026 local reporting"), label, select, detail, units);
+        appendRegistryHistoryContexts(container, data.administrative_contexts || []);
         if (data.additional_error) container.append(html("p", "selection-note",
           `${data.additional_error}. Imported source tables and complete downloads remain in Methods & data.`));
         for (const row of data.nongeographic || []) container.append(html("p", "selection-note",
@@ -525,6 +570,7 @@ function stateParticipationRows() {
           container.insertBefore(overview, label);
         }
         const choose = () => {
+          $("show-registry-context-table")?.setAttribute("aria-pressed", "false");
           const county = counties.find(row => row.county_id === select.value);
           const previousUnit = state.currentCounty === code + "|" + select.value ? state.currentUnit : "";
           state.currentCounty = code + "|" + select.value; state.currentUnit = "";
@@ -793,6 +839,8 @@ function stateParticipationRows() {
       setTable(counties, [["county", nativeCities ? "City" : countyNamedContext ? "County-named source region" : localityActivity ? "Source locality" : towns ? "Town" : administrations ? "Election administration" : "County"], ["ballots", countLabel],
         ["denominator", "Source electorate"], ["reported_pct", "Reported-ballot fraction"],
         ["reported_units", "Precincts reporting"], ["total_units", "Total precincts"], ["quality", "Notes"]]);
+      const registryTable = $("show-registry-context-table");
+      if (registryTable?.getAttribute("aria-pressed") === "true") registryTable.click();
       header(nativeCities ? "2026 midterms · source city / ward observations"
         : providerActivity ? "2026 project · provider-reported source activity"
         : "2026 midterms · unofficial administrative counts", nativeCities

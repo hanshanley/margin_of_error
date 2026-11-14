@@ -82,7 +82,32 @@ export function validateCountShard(data, code, declaration) {
     if (declaration.views?.[mode] && ["counties", "precincts", "nongeographic", "holds"]
       .some(key => frame[key].length !== declaration.views[mode][key]))
       throw new Error("Canonical participation frame coverage differs");
+    const contexts = frame.administrative_contexts ?? [];
+    if (!Array.isArray(contexts) || new Set(contexts).size !== contexts.length
+        || mode !== "available" && contexts.length
+        || contexts.some(id => !records.has(id))
+        || contexts.length !== (declaration.views?.[mode]?.administrative_contexts ?? contexts.length))
+      throw new Error("Unqualified administrative context inventory");
+    for (const id of contexts) {
+      const row = records.get(id), view = row.view;
+      if (row.measure.kind !== "source_activity" || row.measure.mode !== "source_defined"
+          || row.measure.unit !== "current_registration_records"
+          || row.election.type !== "date_coded_history_context"
+          || row.election.qualification !== "collector_context"
+          || row.denominator !== null || view.reported_pct !== null || view.maps_approved !== false
+          || view.source_frame_kind !== "current_registry_date_token"
+          || view.administrative_history_context_only !== true
+          || row.source.fields.source_input_kind !== "person_record_file_retained_privately"
+          || row.source.fields.derived_aggregate !== true)
+        throw new Error("Unqualified current-registry context");
+    }
   }
+  const contextIds = new Set(data.views.available.administrative_contexts || []);
+  for (const mode of countModes)
+    if (["counties", "precincts", "nongeographic"].some(key =>
+      data.views[mode][key].some(id => contextIds.has(id)
+        || records.get(id).view.administrative_history_context_only === true)))
+      throw new Error("Administrative context cannot substitute for participation counts");
   return data;
 }
 
@@ -97,6 +122,7 @@ export function countFrame(data, mode) {
     unmapped_source_regions: frame.holds,
     source_mode_unavailable: frame.unavailable_note || undefined,
     mode_review_complete_download: frame.mode_review_complete_download,
+    administrative_contexts: (frame.administrative_contexts || []).map(id => records.get(id)),
   };
 }
 

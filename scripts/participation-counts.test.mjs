@@ -78,6 +78,52 @@ test("canonical mode bindings reject missing references, duplicate identities an
   }
 });
 
+function registryShard() {
+  const data = shard(), context = observation();
+  context.id = "c".repeat(32);
+  context.measure = { id: "registry-date-token", literal: "Current registration records",
+    kind: "source_activity", mode: "source_defined", unit: "current_registration_records" };
+  context.election.type = "date_coded_history_context";
+  context.election.qualification = "collector_context";
+  context.denominator = null;
+  context.view = { ...context.view, denominator: null, reported_pct: null, maps_approved: false,
+    administrative_history_context_only: true, source_frame_kind: "current_registry_date_token",
+    source_input_kind: "person_record_file_retained_privately", derived_aggregate: true };
+  context.source.fields = context.view;
+  data.records.push(context);
+  data.views.available.administrative_contexts = [context.id];
+  return data;
+}
+
+test("registry context is a separate optional channel and preserves the original county inventory", () => {
+  const data = registryShard();
+  validateCountShard(data, "MN", { records: 2 });
+  assert.equal(countFrame(data, "available").counties.length, 1);
+  assert.equal(countFrame(data, "available").administrative_contexts.length, 1);
+  assert.equal(countFrame(data, "available").administrative_contexts[0].ballots, 0);
+  assert.deepEqual(countFrame(shard(), "available").administrative_contexts, []);
+  assert.deepEqual(countFrame(data, "official").administrative_contexts, []);
+});
+
+test("registry context rejects ballot, electorate, map and ordinary-frame promotions", () => {
+  for (const mutate of [
+    data => { data.records[1].measure.kind = "ballots_cast"; },
+    data => { data.records[1].measure.mode = "all_methods"; },
+    data => { data.records[1].measure.unit = "voters"; },
+    data => { data.records[1].election.type = "general"; },
+    data => { data.records[1].view.maps_approved = true; },
+    data => { data.records[1].view.derived_aggregate = false; },
+    data => { data.views.available.administrative_contexts.push(data.records[1].id); },
+    data => { data.views.official.administrative_contexts = [data.records[1].id]; },
+    data => { data.views.available.counties.push(data.records[1].id); },
+    data => { data.views.official.counties.push(data.records[1].id); },
+  ]) {
+    const data = registryShard();
+    mutate(data);
+    assert.throws(() => validateCountShard(data, "MN", { records: 2 }));
+  }
+});
+
 test("old frame migration keeps unmatched source regions separate and never enables an unsupported mode", () => {
   const unavailable = selectedFrame({ counties: [view()], precincts: [], nongeographic: [] }, null, "NH", "mail_returned");
   assert.equal(unavailable.qualified, false);
@@ -107,25 +153,29 @@ test("the current statewide/provider snapshot requires all distinct jurisdiction
   }
 });
 
-test("legacy reporting details expose supplied complete packages without claiming a native review", () => {
+function detailHarness() {
   const source = readFileSync(new URL("../public/scripts/participation-explorer.js", import.meta.url), "utf8");
-  const start = source.indexOf("function currentCountDetail(");
+  const start = source.indexOf("const electorateLabel =");
   const end = source.indexOf("\n    async function currentNavigation(", start);
   assert(start >= 0 && end > start);
   const html = (tag, className, textContent) => ({ tag, className, textContent });
-  const detail = runInNewContext(`(${source.slice(start, end)})`, {
+  const detail = runInNewContext(`(() => { ${source.slice(start, end)}; return currentCountDetail; })()`, {
     residentSource() {}, html, state: { currentPrecinctShapes: new Map() },
-    fmt: value => value === null ? "\u2014" : String(value),
-    pct: () => "Unavailable", electorateLabel: () => "source definition",
-    participationLabel: () => "Source-defined count",
+    fmt: value => value == null ? "\u2014" : String(value),
+    pct: () => "Unavailable",
     sourceLink: row => ({ ...html("a", "source-link", "Original source"), href: row.source_url }),
   });
+  const host = { children: [], replaceChildren(...children) { this.children = children; },
+    append(...children) { this.children.push(...children); } };
+  return { detail, host };
+}
+
+test("legacy reporting details expose supplied complete packages without claiming a native review", () => {
+  const { detail, host } = detailHarness();
   const row = { ...view(), unit: "Native reporting row", unit_kind: "precinct",
     denominator: null, reported_pct: null, source_update_label: null,
     complete_download_url: "https://example.org/complete-source.zip" };
   const before = structuredClone(row);
-  const host = { children: [], replaceChildren(...children) { this.children = children; },
-    append(...children) { this.children.push(...children); } };
   detail(host, row);
   const links = host.children.filter(node => node.tag === "a");
   assert.deepEqual(links.map(node => node.href), [row.source_url, row.complete_download_url]);
@@ -137,4 +187,34 @@ test("legacy reporting details expose supplied complete packages without claimin
     assert.deepEqual(host.children.filter(node => node.tag === "a").map(node => node.href),
       [row.source_url]);
   }
+});
+
+test("non-review details honor the source measure label and literal while preserving the ballot fallback", () => {
+  const { detail, host } = detailHarness();
+  for (const [fields, label] of [
+    [{ participation_measure_label: "Current-registration records",
+      participation_measure_literal: "Native history tokens" }, "Current-registration records"],
+    [{ participation_measure_literal: "Absentee In-person" }, "Absentee In-person"],
+    [{}, "ballots reported"],
+  ]) {
+    detail(host, { ...view(), ...fields }, true);
+    assert.equal(host.children.find(node => node.className === "selection-basis").textContent,
+      `2026 ${label} · unofficial`);
+  }
+});
+
+test("registry-history details disclose their record frame without ballot fractions or precinct reporting", () => {
+  const { detail, host } = detailHarness();
+  const row = { ...view(), ballots: 12, denominator: null, reported_pct: null,
+    administrative_history_context_only: true, source_frame_kind: "current_registry_date_token",
+    participation_measure_label: "Current-registration records with a date-coded history token",
+    source_update_label: "Native file-update literal; timezone unknown" };
+  const before = structuredClone(row);
+  detail(host, row, true);
+  const text = host.children.map(node => node.textContent).filter(Boolean).join("\n");
+  assert.match(text, /current registry, not an election ballot total/);
+  assert.match(text, /Registry file update: Native file-update literal/);
+  assert.match(text, /Missing history is not observed nonparticipation/);
+  assert.doesNotMatch(text, /source precincts reporting|fraction\. Not final turnout|2026 ballots reported/);
+  assert.deepEqual(row, before);
 });

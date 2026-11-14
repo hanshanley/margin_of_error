@@ -129,6 +129,33 @@ with sync_playwright() as playwright:
                     missing_statewide_total_distinct_from_local_reports=True,
                     local_rows_retained=len(local), local_count_checked=selected["ballots"],
                     no_statewide_zero_or_local_sum_substituted=True, no_overflow=True))
+            for code, mode in (("OK", "in_person_early"), ("OH", "available")):
+                local = expected[code][mode]["counties"]
+                selected = next((row for row in local if row["ballots"] is not None
+                    and not row.get("review_id") and (row.get("participation_measure_label")
+                        or row.get("participation_measure_literal"))), None)
+                if selected is None:
+                    continue
+                label = selected.get("participation_measure_label") or selected["participation_measure_literal"]
+                page.goto(args.base_url.rstrip("/") +
+                    f'/voter-participation/?year=2026&state={names_by_code[code]}&mode={mode}&map-level=county',
+                    wait_until="domcontentloaded", timeout=90000)
+                expect(page.locator("#current-county-select option")).to_have_count(len(local) + 1, timeout=90000)
+                page.select_option("#current-county-select", selected["county_id"])
+                detail = page.locator("#current-county-detail")
+                registry_context = selected.get("administrative_history_context_only") is True
+                expect(detail.locator(".selection-basis")).to_have_text(
+                    f"{label} · current registry, not an election ballot total" if registry_context
+                    else f"2026 {label} · unofficial")
+                expect(detail.locator(".selection-rate")).to_have_text(f'{selected["ballots"]:,}')
+                if registry_context:
+                    expect(detail).to_contain_text("Registry file update:")
+                    expect(detail).to_contain_text("Missing history is not observed nonparticipation.")
+                    expect(detail).not_to_contain_text("source precincts reporting.")
+                cases.append(dict(width=width, state=names_by_code[code],
+                    native_measure_label_honored_without_review_id=True,
+                    registry_history_context=registry_context,
+                    source_measure_label=label, source_count_unchanged=selected["ballots"]))
             for row in current_expected["reporting"]:
                 page.goto(args.base_url.rstrip("/") +
                     f'/voter-participation/?year=2026&state={row["state"]}&mode=official&map-level=state',
