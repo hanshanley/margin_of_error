@@ -14,7 +14,7 @@ from playwright.sync_api import expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/participation-civic-estimates/20261108-01/output"
-NATIVE = ROOT / "data/participation-registered-controls/20261113-33/display-model.json"
+NATIVE = ROOT / "data/participation-registered-controls/20261113-34/display-model.json"
 
 
 def pct(value):
@@ -29,10 +29,11 @@ def source_units(value):
     return format(Decimal(value).quantize(Decimal(1), rounding=ROUND_HALF_UP), ",")
 
 
-def check(base, proof, focus_state="VT"):
+def check(base, proof, focus_state="NM"):
     expected = json.loads((DATA / "summary.json").read_text())
     metadata = json.loads((DATA / "download.json").read_text())
     native = json.loads(NATIVE.read_bytes())
+    native_change = native["native_reference_change"]
     focus_control = next(row["control_id"] for row in native["scenarios"]
                          if row["state_code"] == focus_state)
     modes = []
@@ -78,6 +79,18 @@ def check(base, proof, focus_state="VT"):
                     expect(frame).to_have_attribute("data-native-version", str(native["native_control_version"]))
                     expect(frame.locator("[data-native-registered-scenario]")).to_have_count(len(native["scenarios"]))
                     expect(frame.locator("[data-native-registered-state]")).to_have_count(51)
+                    change = frame.locator(
+                        f'[data-native-reference-change={json.dumps(native_change["control_id"])}]')
+                    expect(change).to_have_attribute(
+                        "data-native-reference-current", str(native_change["current_native_numerator"]))
+                    expect(change).to_have_attribute(
+                        "data-native-reference-clock", native_change["current_native_clock"])
+                    expect(change).to_have_attribute(
+                        "data-native-reference-diagnostic",
+                        native_change["current_native_minus_model_diagnostic"])
+                    expect(change).to_contain_text("Civic weights and conditional modeled units do not change")
+                    expect(change).to_contain_text(
+                        "not validated model error or observed nonparticipation")
                     for row in native["scenarios"]:
                         target = frame.locator(
                             f'[data-native-registered-scenario={json.dumps(row["control_id"])}]')
@@ -188,6 +201,12 @@ def check(base, proof, focus_state="VT"):
                         "native_source_frame_decisions": 51,
                         "native_complete_download_matches_verified_immutable_asset": True,
                         "native_source_group_downloads": len(groups),
+                        "native_reference_changed_state": native_change["state_code"],
+                        "native_reference_current": native_change["current_native_numerator"],
+                        "native_reference_clock": native_change["current_native_clock"],
+                        "native_reference_diagnostic": native_change[
+                            "current_native_minus_model_diagnostic"],
+                        "all_other_scenario_means_checked": True,
                     })
                 finally:
                     context.close()
@@ -203,6 +222,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base-url", required=True)
     parser.add_argument("--proof", type=Path)
-    parser.add_argument("--focus-state", default="VT")
+    parser.add_argument("--focus-state", default="NM")
     args = parser.parse_args()
     check(args.base_url, args.proof, args.focus_state)

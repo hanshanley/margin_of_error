@@ -13,6 +13,11 @@ type NativeState = { state_code: string; civic_source_n: string; control_id: str
 type NativeScenario = { state_code: string; control_id: string; native_registered_denominator: string;
 	native_denominator_basis: string; source_time_label: string; source_url: string; civic_source_n: string;
 	conditional_modeled_voter_count: string; conditional_modeled_nonvoter_count: string };
+type NativeReferenceChange = { state_code: string; control_id: string; previous_native_numerator: number;
+	current_native_numerator: number; native_numerator_difference: number; registered_denominator: number;
+	previous_native_clock: string; current_native_clock: string;
+	previous_native_minus_model_diagnostic: string; current_native_minus_model_diagnostic: string;
+	diagnostic_is_not_validated_model_error: boolean };
 const { names } = Astro.props as { names: Record<string, string> };
 const data = 'data/participation-civic-estimates/20261108-01/';
 const result: { participation: Participation[]; conditional_flows: Flow[]; margin_components: Margin[];
@@ -35,11 +40,12 @@ const withheld = result.conditional_flow_dispositions.filter(row =>
 	row.status === 'withheld_sparse_source_joint_support').length;
 const native: { contract: string; year: number; native_control_version: number;
 	states: NativeState[]; scenarios: NativeScenario[];
+	native_reference_change: NativeReferenceChange;
 	model_variant_or_study_probabilities_changed: boolean;
 	frame_exchangeability_or_observed_staying_home_qualified: boolean; native_outcome_fitting_applied: boolean;
 	complete_download: { url: string; bytes: number; sha256: string }; release_base: string;
 	source_group_downloads?: Record<string, { url: string; bytes: number; sha256: string }> } =
-	JSON.parse(readFileSync('data/participation-registered-controls/20261113-33/display-model.json', 'utf8'));
+	JSON.parse(readFileSync('data/participation-registered-controls/20261113-34/display-model.json', 'utf8'));
 if (native.contract !== 'participation.registered_control_display.v1' || native.year !== 2026
 	|| native.states.length !== 51 || new Set(native.states.map(row => row.state_code)).size !== 51
 	|| native.states.some(row => !names[row.state_code])
@@ -47,6 +53,15 @@ if (native.contract !== 'participation.registered_control_display.v1' || native.
 	|| native.model_variant_or_study_probabilities_changed !== false
 	|| native.frame_exchangeability_or_observed_staying_home_qualified !== false
 	|| native.native_outcome_fitting_applied !== false) throw new Error('Registered source-frame contract changed');
+const nativeChange = native.native_reference_change;
+const changedScenario = native.scenarios.find(row => row.state_code === nativeChange.state_code
+	&& row.control_id === nativeChange.control_id);
+if (!changedScenario || native.native_control_version !== 34
+	|| nativeChange.registered_denominator !== Number(changedScenario.native_registered_denominator)
+	|| !changedScenario.source_time_label.includes(nativeChange.current_native_clock)
+	|| nativeChange.diagnostic_is_not_validated_model_error !== true
+	|| nativeChange.current_native_numerator - nativeChange.previous_native_numerator
+		!== nativeChange.native_numerator_difference) throw new Error('Native reference-change projection changed');
 const civicStateParents = new Map(states.map(row => [row.scope, row]));
 const nativeByState = new Map(native.states.map(row => [row.state_code,
 	native.scenarios.filter(scenario => scenario.state_code === row.state_code)]));
@@ -113,6 +128,18 @@ const count = (value: string) => Number(value).toLocaleString('en-US', { maximum
 			source units, not observed voters, confirmed staying home or certified turnout.</strong>{' '}
 			Registration status, cutoff and study-frame exchangeability remain unvalidated; no native outcome
 			is fitted, no design confidence interval is invented, and overlapping frames must not be added.</p>
+		<p class="caption" data-native-reference-change={nativeChange.control_id}
+			data-native-reference-current={nativeChange.current_native_numerator}
+			data-native-reference-clock={nativeChange.current_native_clock}
+			data-native-reference-diagnostic={nativeChange.current_native_minus_model_diagnostic}>
+			Revision {native.native_control_version} advances {names[nativeChange.state_code]}'s source-defined native
+			participation reference from {nativeChange.previous_native_numerator.toLocaleString('en-US')} to{' '}
+			{nativeChange.current_native_numerator.toLocaleString('en-US')} at {nativeChange.current_native_clock}.
+			The registered source frame remains {nativeChange.registered_denominator.toLocaleString('en-US')};
+			the Civic weights and conditional modeled units do not change. Native minus modeled participant units is{' '}
+			{Number(nativeChange.current_native_minus_model_diagnostic).toLocaleString('en-US', { maximumFractionDigits: 0 })},
+			a source comparison diagnostic—not validated model error or observed nonparticipation.
+		</p>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="Conditional registered source-frame scenarios">
 			<table><caption>Native registered frame × unchanged Civic modeled voter/nonvoter share.
 				Source units are rounded for display; complete unrounded queries remain downloadable.</caption>
