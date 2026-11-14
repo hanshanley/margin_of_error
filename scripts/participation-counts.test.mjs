@@ -218,3 +218,16 @@ test("registry-history details disclose their record frame without ballot fracti
   assert.doesNotMatch(text, /source precincts reporting|fraction\. Not final turnout|2026 ballots reported/);
   assert.deepEqual(row, before);
 });
+
+test("non-review county details retain literal source status and only supplied reporting metadata", () => {
+  const { detail, host } = detailHarness();
+  const row = { ...view(), source_status_literal: "Official results following county canvass" };
+  detail(host, row, true);
+  assert.equal(host.children.find(node => node.className === "selection-basis").textContent,
+    "2026 ballots reported · Official results following county canvass");
+  assert(!host.children.some(node => node.textContent?.includes("source precincts reporting")));
+  detail(host, { ...row, reported_units: null, total_units: null, source_rows: null }, true);
+  assert(!host.children.some(node => node.textContent?.includes("source precincts reporting")));
+  detail(host, { ...row, reported_units: 0, total_units: 10, source_rows: 0 }, true);
+  assert(host.children.some(node => node.textContent?.startsWith("0 / 10 source precincts reporting.")));
+});

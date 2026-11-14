@@ -146,7 +146,7 @@ with sync_playwright() as playwright:
                 registry_context = selected.get("administrative_history_context_only") is True
                 expect(detail.locator(".selection-basis")).to_have_text(
                     f"{label} · current registry, not an election ballot total" if registry_context
-                    else f"2026 {label} · unofficial")
+                    else f"2026 {label} · {selected.get('source_status_literal') or 'unofficial'}")
                 expect(detail.locator(".selection-rate")).to_have_text(f'{selected["ballots"]:,}')
                 if registry_context:
                     expect(detail).to_contain_text("Registry file update:")

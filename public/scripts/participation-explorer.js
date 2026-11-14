@@ -424,7 +424,7 @@ function stateParticipationRows() {
               ? `${missingCountScope} not supplied · incomplete native statistics` : `${missingCountScope} not supplied · source value remains unknown`
           : registryContext ? `${participationLabel(row)} · current registry, not an election ballot total`
             : row.review_id ? `2026 ${participationLabel(row) || "ballots reported"} · not final/certified`
-              : `2026 ${participationLabel(row) || "ballots reported"} · unofficial`),
+              : `2026 ${participationLabel(row) || "ballots reported"} · ${row.source_status_literal || "unofficial"}`),
         html("p", "selection-note", registryContext
           ? "Records in one current registry file with a date-coded history token, not ballots, unique participants or a turnout rate. Missing history is not observed nonparticipation."
           : row.source_mode === "all_method_native_city_snapshot"
@@ -453,9 +453,12 @@ function stateParticipationRows() {
             : row.geometry_withheld_reason || "This source row is not approved as precinct geography.")));
       } else if (registryContext) host.append(html("p", "selection-note",
         "Current registration-record context only. No election-day electorate, complete participation or precinct count is established."));
-      else if (county) host.append(html("p", "selection-note",
-        `${fmt(row.reported_units)} / ${fmt(row.total_units)} source precincts reporting. `
-        + `${fmt(row.source_rows)} source rows available below; special units and vote centers are identified separately.`));
+      else if (county) {
+        if ([row.reported_units, row.total_units, row.source_rows].some(value => value !== null && value !== undefined))
+          host.append(html("p", "selection-note",
+            `${fmt(row.reported_units)} / ${fmt(row.total_units)} source precincts reporting. `
+            + `${fmt(row.source_rows)} source rows available below; special units and vote centers are identified separately.`));
+      }
       else host.append(html("p", "selection-note",
         `${row.unit_kind.replaceAll("_", " ")}. County + snapshot-local row ordinal identifies this 2026 reporting row, not a stable historical precinct. Boundary matches are documented separately on the precinct map.`));
       if (!row.review_id && row.complete_download_url) {
