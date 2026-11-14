@@ -405,7 +405,9 @@ function stateParticipationRows() {
     function currentCountDetail(host, row, county = false) {
       residentSource(row, county);
       const missingCountScope = county ? "County total" : "Reporting-unit count";
-      const approvedGeometry = row.maps_approved || ["MI", "NH", "MA"].includes(row.state_code)
+      const separateReference = state.currentPrecinctShapes.get(row.state_code)?.features.find(({ properties: p }) =>
+        p.reference_context_only && p.maps_approved && p.unit_key === row.unit_key && p.county_id === row.county_id);
+      const approvedGeometry = separateReference || row.maps_approved || ["MI", "NH", "MA"].includes(row.state_code)
         && state.currentPrecinctShapes.get(row.state_code)?.features.some(({ properties: p }) =>
           p.maps_approved && p.unit_key === row.unit_key && p.county_id === row.county_id);
       host.replaceChildren(html("h4", "", county ? row.county : row.unit),
@@ -436,7 +438,8 @@ function stateParticipationRows() {
         complete.href = row.complete_download_url; host.append(complete);
         if (!county) host.append(html("p", "selection-note",
           `Native reporting-unit type: ${row.unit_kind.replaceAll("_", " ")}. `
-          + (approvedGeometry ? row.state_code === "NH"
+          + (separateReference ? separateReference.properties.boundary_label
+            : approvedGeometry ? row.state_code === "NH"
             ? `A separate review qualifies current ${row.county} municipal ward context, not newly certified2026 legal precincts; the original source counts and withheld rate remain unchanged.`
             : "A separate subsequent review qualifies this direct-count precinct identity; the original source review and withheld rate remain unchanged."
             : row.geometry_withheld_reason || "This source row is not approved as precinct geography.")));
@@ -1302,6 +1305,10 @@ async function loadCurrentPrecincts() {
     if (chosen) precinctResultDetail(chosen.properties);
   }
 function currentPrecinctDescription(p) {
+  if (p.reference_context_only)
+    return `${fmt(p.ballots)} native ${p.participation_measure_literal}. `
+      + "Separate official reference context, not a certified election-day boundary or unique-person count. "
+      + "No qualified participation rate is inferred.";
   if (["20261110-minnesota-followup-02", "20261110-minnesota-complete-native-03"].includes(p.source_snapshot)) {
     const n = p.native_record;
     return (p.source_count_qualified ? `${fmt(p.ballots)} literal native Total Number Voted. `
@@ -1372,7 +1379,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     && metadata.source_id === "20261110-massachusetts-city-precinct-reference-02";
   const massachusettsReporting = code === "MA" && (massachusettsCityReferences
     || metadata.source_id === "20261110-massachusetts-native-local-counts-01");
-  const nativeReporting = nativeWards || massachusettsReporting;
+  const referenceContext = metadata.reference_context_only === true;
+  const nativeReporting = nativeWards || massachusettsReporting || referenceContext;
   if (!file || !(ufMode() || ["available", "official"].includes($("mode").value))) {
     if (map.full[0] / state.viewport[2] >= 2.3 && state.countyResults?.year === 2026
       && state.countyResults.coverage[code] && matchedPrecinctParticipationMode())
@@ -1421,7 +1429,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
         for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
         path.classList.add("selected"); fit(item.bounds);
         residentReference(p, code);
-      }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": nativeWards ? "ward"
+      }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": referenceContext
+        ? "reporting_reference" : nativeWards ? "ward"
         : massachusettsReporting && p.unit_kind === "municipal_subprecinct" ? "subprecinct" : "precinct",
         "data-match": p.match_status, "data-rate": p.reported_pct ?? "", "data-count": p.ballots ?? "",
         ...(nativeWards ? { "data-reference-year": p.reference_geometry.boundary_vintage ?? "current",
@@ -1445,10 +1454,12 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
   setTable(features.map(feature => feature.properties), [["county", metadata.area_column_label || "County"], ["unit", "Reporting unit"],
     ["ballots", metadata.ballot_column_label || "Ballots reported"], ["denominator", "Source electorate"],
     ["reported_pct", "Participation rate"], ["rate_withheld_reason", "Rate review"]]);
-  header(nativeWards ? "2026 midterms · native municipal ward reports · partial coverage"
+  header(referenceContext ? "2026 native ballot counts · partial official reference map"
+    : nativeWards ? "2026 midterms · native municipal ward reports · partial coverage"
     : massachusettsReporting ? "2026 midterms · native local reporting units · partial coverage"
     : "2026 midterms · unofficial precinct observations · partial coverage",
-    minnesotaNative ? "Native precinct counts in Minnesota"
+    referenceContext ? metadata.reference_title
+      : minnesotaNative ? "Native precinct counts in Minnesota"
       : massachusettsReporting ? "Native reporting-unit counts in Boston and Somerville"
       : doverNativeWards ? "Native ward counts in four New Hampshire cities"
       : nashuaNativeWards ? "Native ward counts in three New Hampshire cities"
@@ -1466,7 +1477,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     const complete = html("a", "source-link", "Complete originals, matched/withheld rows and exact geometry (ZIP)");
     complete.href = metadata.complete_download_url; $("caption").append(" ", complete);
   }
-  $("coverage-note").textContent = minnesotaNative ? metadata.notes : massachusettsReporting ? metadata.notes : doverNativeWards
+  $("coverage-note").textContent = referenceContext ? metadata.notes
+    : minnesotaNative ? metadata.notes : massachusettsReporting ? metadata.notes : doverNativeWards
     ? "Manchester12 / Concord10 / Nashua9 / Dover6: all37 native ward rows have direct references. Four cities only; no source repairs or analysis rates. " + metadata.notes
     : nashuaNativeWards
     ? "Manchester12 / Concord10 / Nashua9 native ward counts. Other6 Dover ward rows remain in tables. "
@@ -1486,7 +1498,8 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
   if (observed) ramp();
   else if (countsOnly) countLegend(maximum, massachusettsReporting ? "Native source counts · no rate" : "Reported ballots · no rate");
   else legend([["Direct counts available · rate withheld", fill(null)]]);
-  $("geography-note").textContent = massachusettsReporting
+  $("geography-note").textContent = referenceContext ? metadata.reference_coverage_label
+    : massachusettsReporting
     ? (massachusettsCityReferences
       ? "Boston 275 / Somerville 32 direct native precinct/subprecinct references; all 307 source rows map without clipping. Somerville's city metadata was updated September 22, 2023 using the 2020 Census; this is not a certified 2026 boundary vintage. "
       : "Boston 275 / Somerville 28 unchanged native precinct/subprecinct references; all 307 source rows retained. Four split-parent count joins remain table-only, not clipped. ")

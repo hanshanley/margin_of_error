@@ -135,6 +135,39 @@ candidate-result and survey readers remain separate. The complete download
 contains all 14,470 queries, sufficient original inputs, unchanged references,
 the original qualification oracle, original contract and offline reproduction.
 
+Jefferson Kentucky's partial LOJIC layer uses the separate
+`participation.reference_bindings.v1` contract. It preserves all original count
+observations and checks the exact loaded Kentucky count-shard pin before binding
+529 literal reporting labels. The other 117 labels remain held/unmapped, not zero;
+all 646 counts remain available in source controls and complete downloads. Never
+strip the 60 suffixed labels, repair invalid/overlapping exports, or promote this
+reference context into certified election-day boundaries, turnout rates,
+unique-person counts or local demographic estimates. Geometry retrieval on
+November 14, 2026 and the companion map's printed November 7 date are distinct.
+The complete permitted geometry, facts, query dispositions and offline replay
+are offloaded under `participation-ky-jefferson-precinct-reference-20261114-01`.
+Do not copy the 41.8MB SDK or reference coordinates into the Pages payload.
+
+The registered-control revision35 display overlays only North Carolina and
+Oregon on the current revision34 website projection. Preserve New Mexico's
+later revision34 bookkeeping and all other 49 jurisdiction decisions/32 scenarios;
+the revision35 scientific packet starts from a different predecessor and must
+not roll New Mexico back. Keep the prior complete release accessible alongside
+the new count/model ZIPs. Both actual immutable publication receipts must verify
+before rendering public-ready download links; frozen SDK creation flags remain
+planned inside the archives. `#member=` descriptors are inventory entries,
+not standalone HTTP assets: validate their bytes inside the complete downloaded
+ZIP. Native count/register revisions do not refit unchanged survey probabilities
+or establish observed switching or staying home.
+
+The two external publication receipts are retained beside
+`data/participation-registered-controls/20261114-35/display-model.json`.
+With the exact public count/model SDKs downloaded locally, regenerate the
+display using `scripts/build-registered-control-private-preview.py`, the
+revision34 base display, both SDK paths and both `--*-publication` receipt paths.
+Use a fresh output path and compare it byte-for-byte before replacing the
+accepted display. The complete numerical SDKs are never embedded in the site.
+
 The default-closed administrative coverage disclosure follows the actual
 selected year, mode and county/local or precinct/reference scope across all
 51 jurisdictions. Loaded source rows, count-bearing rows, reference units,

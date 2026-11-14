@@ -177,13 +177,15 @@ with sync_playwright() as playwright:
             detail = page.locator("#current-county-detail")
             expect(detail.locator("a.source-link")).to_have_attribute(
                 "href", selected["source_url"])
-            assert len(counties) == 100 and sum(row["ballots"] for row in counties) == 4243180
+            nc_total = next(row["ballots"] for row in current_expected["reporting"]
+                            if row["state_code"] == "NC")
+            assert len(counties) == 100 and sum(row["ballots"] for row in counties) == nc_total
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             assert page.locator("#participation-research").get_attribute("open") is None
             page.locator("#historical-explorer").screenshot(
                 path=str(args.proof.with_suffix(f".nc.{width}.png")))
             cases.append(dict(width=width, state="North Carolina", native_counties_checked=len(counties),
-                reported_ballots=4243180, state_and_county_snapshot_exact=True,
+                reported_ballots=nc_total, state_and_county_snapshot_exact=True,
                 separate_early_and_demographic_provider_frames_preserved=True,
                 native_source_link_verified=True, no_overflow=True))
             if args.native_runtime_root:

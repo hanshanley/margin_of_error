@@ -14,7 +14,7 @@ from playwright.sync_api import expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/participation-civic-estimates/20261108-01/output"
-NATIVE = ROOT / "data/participation-registered-controls/20261113-34/display-model.json"
+NATIVE = ROOT / "data/participation-registered-controls/20261114-35/display-model.json"
 
 
 def pct(value):
@@ -33,7 +33,7 @@ def check(base, proof, focus_state="NM"):
     expected = json.loads((DATA / "summary.json").read_text())
     metadata = json.loads((DATA / "download.json").read_text())
     native = json.loads(NATIVE.read_bytes())
-    native_change = native["native_reference_change"]
+    native_changes = native["native_reference_changes"]
     focus_control = next(row["control_id"] for row in native["scenarios"]
                          if row["state_code"] == focus_state)
     modes = []
@@ -79,18 +79,31 @@ def check(base, proof, focus_state="NM"):
                     expect(frame).to_have_attribute("data-native-version", str(native["native_control_version"]))
                     expect(frame.locator("[data-native-registered-scenario]")).to_have_count(len(native["scenarios"]))
                     expect(frame.locator("[data-native-registered-state]")).to_have_count(51)
-                    change = frame.locator(
-                        f'[data-native-reference-change={json.dumps(native_change["control_id"])}]')
-                    expect(change).to_have_attribute(
-                        "data-native-reference-current", str(native_change["current_native_numerator"]))
-                    expect(change).to_have_attribute(
-                        "data-native-reference-clock", native_change["current_native_clock"])
-                    expect(change).to_have_attribute(
-                        "data-native-reference-diagnostic",
-                        native_change["current_native_minus_model_diagnostic"])
-                    expect(change).to_contain_text("Civic weights and conditional modeled units do not change")
-                    expect(change).to_contain_text(
-                        "not validated model error or observed nonparticipation")
+                    for native_change in native_changes:
+                        change = frame.locator(
+                            f'[data-native-reference-change={json.dumps(native_change["control_id"])}]')
+                        expect(change).to_have_attribute(
+                            "data-native-reference-current", str(native_change["current_native_numerator"]))
+                        expect(change).to_have_attribute(
+                            "data-native-reference-clock", native_change["current_native_clock"])
+                        expect(change).to_have_attribute(
+                            "data-native-reference-diagnostic",
+                            native_change["current_native_minus_model_diagnostic"])
+                        expect(change).to_have_attribute(
+                            "data-native-registered-difference",
+                            str(native_change["registered_denominator_difference"]))
+                        expect(change).to_have_attribute(
+                            "data-native-modeled-voter-difference",
+                            native_change["conditional_modeled_voter_unit_difference"])
+                        if native_change["registered_denominator_difference"] == 0:
+                            expect(change).to_contain_text(
+                                "Civic weights and conditional modeled units do not change")
+                        else:
+                            expect(change).to_contain_text(
+                                "Under unchanged Civic probabilities")
+                            expect(change).to_contain_text("change mechanically")
+                        expect(change).to_contain_text(
+                            "not validated model error or observed nonparticipation")
                     for row in native["scenarios"]:
                         target = frame.locator(
                             f'[data-native-registered-scenario={json.dumps(row["control_id"])}]')
@@ -113,15 +126,22 @@ def check(base, proof, focus_state="NM"):
                         expect(cells.nth(2)).to_have_text(row["civic_source_n"] or "Not sampled")
                     expect(frame).to_contain_text("not observed voters, confirmed staying home or certified turnout")
                     expect(frame).to_contain_text("overlapping frames must not be added")
-                    expect(frame.locator('[data-native-registered-download="zip"]')).to_have_attribute(
-                        "href", native["complete_download"]["url"])
                     groups = native.get("source_group_downloads", {})
-                    for kind, name in (
-                            ("groups", "complete-native-participation-group-controls.csv"),
-                            ("queries", "complete-current-native-source-queries.json.gz")):
-                        if name in groups:
-                            expect(frame.locator(f'[data-native-group-download="{kind}"]')).to_have_attribute(
-                                "href", groups[name]["url"])
+                    if native["publication_status"]["status"] == "verified_immutable":
+                        assert native["count_publication_status"]["status"] == "verified_immutable"
+                        expect(frame.locator('[data-native-publication-status="verified_immutable"]')).to_contain_text(
+                            "Verified immutable releases")
+                        expect(frame.locator('[data-native-registered-download="model-zip"]')).to_have_attribute(
+                            "href", native["complete_download"]["url"])
+                        expect(frame.locator('[data-native-registered-download="count-zip"]')).to_have_attribute(
+                            "href", native["count_download"]["url"])
+                    else:
+                        assert native["count_publication_status"]["status"] == "planned_immutable"
+                        expect(frame.locator('[data-native-publication-status="planned_immutable"]')).to_contain_text(
+                            "not yet both immutable-published and anonymously")
+                        expect(frame.locator('[data-native-registered-download]')).to_have_count(0)
+                    expect(frame.locator("[data-native-member-inventory] code")).to_have_count(
+                        len(native["query_downloads"]) + len(native["source_group_downloads"]))
                     if groups:
                         expect(frame).to_contain_text("not full demographic turnout")
                     for kind, filename in (
@@ -134,7 +154,7 @@ def check(base, proof, focus_state="NM"):
                         expect(frame.locator(
                             f'[data-native-previous-download="{kind}"]')).to_have_attribute(
                             "href", "https://github.com/hanshanley/margin_of_error/releases/download/"
-                            f"participation-state-controls-20261113-33/{filename}")
+                            f"participation-state-controls-20261113-34/{filename}")
                     frame.locator(":scope > summary").click()
                     focus_row = frame.locator(
                         f'[data-native-registered-scenario={json.dumps(focus_control)}]')
@@ -174,14 +194,28 @@ def check(base, proof, focus_state="NM"):
                     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), mode
                     expect(page.locator("#participation-survey [data-survey-status]")).to_have_count(936)
                     assert not errors, (mode, errors)
-                    if mode == "desktop":
-                        for filename, item in {**native["query_downloads"], **groups}.items():
-                            expect(frame.locator(f'a[href="{item["url"]}"]')).to_have_count(1)
-                            response = context.request.get(item["url"])
-                            assert response.ok, filename
-                            body = response.body()
-                            assert len(body) == item["bytes"], filename
-                            assert hashlib.sha256(body).hexdigest() == item["sha256"], filename
+                    if mode == "desktop" and native["publication_status"]["status"] == "verified_immutable":
+                        response = context.request.get(native["complete_download"]["url"])
+                        assert response.ok, "model complete-analysis.zip"
+                        model_body = response.body()
+                        assert len(model_body) == native["complete_download"]["bytes"]
+                        assert hashlib.sha256(model_body).hexdigest() == native["complete_download"]["sha256"]
+                        with zipfile.ZipFile(io.BytesIO(model_body)) as archive:
+                            assert archive.testzip() is None
+                            for filename, item in {**native["query_downloads"], **groups}.items():
+                                member_body = archive.read(item["member"])
+                                assert len(member_body) == item["bytes"], filename
+                                assert hashlib.sha256(member_body).hexdigest() == item["sha256"], filename
+                        response = context.request.get(native["count_download"]["url"])
+                        assert response.ok, "count complete-analysis.zip"
+                        count_body = response.body()
+                        assert len(count_body) == native["count_download"]["bytes"]
+                        assert hashlib.sha256(count_body).hexdigest() == native["count_download"]["sha256"]
+                        with zipfile.ZipFile(io.BytesIO(count_body)) as archive:
+                            assert archive.testzip() is None
+                            count_dataset = json.loads(
+                                archive.read("queries/reference-counts/dataset.json"))
+                            assert count_dataset["version"] == native["count_download"]["version"]
                         for key, filename, count in (
                             ("zip", "complete-analysis.zip", None),
                             ("participation", "participation.csv", 79),
@@ -212,11 +246,13 @@ def check(base, proof, focus_state="NM"):
                         "native_source_frame_decisions": 51,
                         "native_complete_download_matches_verified_immutable_asset": True,
                         "native_source_group_downloads": len(groups),
-                        "native_reference_changed_state": native_change["state_code"],
-                        "native_reference_current": native_change["current_native_numerator"],
-                        "native_reference_clock": native_change["current_native_clock"],
-                        "native_reference_diagnostic": native_change[
-                            "current_native_minus_model_diagnostic"],
+                        "native_reference_changed_states": [
+                            item["state_code"] for item in native_changes],
+                        "native_reference_currents": {
+                            item["state_code"]: item["current_native_numerator"]
+                            for item in native_changes},
+                        "planned_unverified_downloads_not_requested": (
+                            native["publication_status"]["status"] == "planned_immutable"),
                         "all_other_scenario_means_checked": True,
                     })
                 finally:

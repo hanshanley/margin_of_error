@@ -1,0 +1,17 @@
+{
+  "all_assets_authenticated_draft_and_anonymous_public_full_body_verified": true,
+  "assets": [
+    {
+      "bytes": 15734471,
+      "id": 746822805,
+      "name": "complete-analysis.zip",
+      "sha256": "f08cd25269fe2bd2fe5a053d34c372758d3f82a408b3bb3156d98aa9eecf6182",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-nc-or-native-counts-20261114-01/complete-analysis.zip"
+    }
+  ],
+  "id": 445143216,
+  "immutable": true,
+  "passed": true,
+  "source_or_data_activation_or_website_builds": 0,
+  "tag": "participation-nc-or-native-counts-20261114-01"
+}

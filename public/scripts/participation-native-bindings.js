@@ -1,5 +1,6 @@
 import { loadDataset, checkedDatasetFile } from "./participation-dataset.js";
-import { validateCountObservation } from "./participation-counts.js";
+import { validateCountObservation, loadCountState, loadCountIndex } from "./participation-counts.js";
+import { validateReferenceBindings, bindReferenceGeometry } from "./participation-reference-bindings.js";
 
 const qualifierKeys = ["state_code", "county_id", "county", "geography_level", "county_fips",
   "reference_municipality_key", "source_administration_id", "source_mode", "denominator_basis",
@@ -107,14 +108,20 @@ export async function loadBoundNative(identity) {
   const { entry, index } = await loadNativeIndex(), declaration = index.layers[identity];
   if (!declaration) throw new Error("No approved native count/reference binding");
   if (!shards.has(identity)) shards.set(identity, checkedDatasetFile(entry.base_url, declaration)
-    .then(data => validateNativeShard(data, identity)).catch(error => { shards.delete(identity); throw error; }));
+    .then(async data => {
+      if (data.contract !== "participation.reference_bindings.v1") return validateNativeShard(data, identity);
+      const source = await loadCountState(data.state_code), { index: sourceIndex } = await loadCountIndex();
+      if (data.rows.length !== declaration.features) throw new Error("Separate reference coverage differs");
+      return validateReferenceBindings(data, identity, source, sourceIndex.states[data.state_code]);
+    }).catch(error => { shards.delete(identity); throw error; }));
   const data = await shards.get(identity);
   if (!geometries.has(data.geometry.sha256)) geometries.set(data.geometry.sha256,
     checkedDatasetFile(entry.base_url, data.geometry).catch(error => {
       geometries.delete(data.geometry.sha256); throw error;
     }));
   const geometry = await geometries.get(data.geometry.sha256);
-  return { data: bindNativeGeometry(data, geometry, data.geometry.sha256),
+  const bind = data.contract === "participation.reference_bindings.v1" ? bindReferenceGeometry : bindNativeGeometry;
+  return { data: bind(data, geometry, data.geometry.sha256),
     verified_geometry_sha256: data.geometry.sha256, binding: data };
 }
 export async function loadCountyBinding(code, mode) {
