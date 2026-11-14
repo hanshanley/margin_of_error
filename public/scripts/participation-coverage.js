@@ -79,6 +79,13 @@ export function installCoverage(host = document.getElementById("participation-co
       const loaded = rows.filter(row => row.status.startsWith("Loaded")).length;
       caption.textContent = `2026 · ${scope.mode.replaceAll("_", " ")} · ${scope.level === "precinct" ? "precinct/reference" : "county/local"} scope: `
         + `${loaded} of 51 jurisdictions have a loaded frame. Counts, reference units and source rows are separate; these are not people or national coverage percentages.`;
+      const selected = scope.level === "precinct" ? native?.entry : counts?.entry;
+      const download = selected?.complete_download;
+      if (typeof download?.url === "string" && download.url.startsWith("https://")) {
+        const complete = document.createElement("a");
+        complete.href = download.url; complete.textContent = "Complete numerical inputs, queries and results";
+        caption.append(" ", complete);
+      }
       host.dataset.datasetVersion = counts?.entry.version || "";
     } catch (error) {
       if (token === generation) caption.textContent = `${error.message}. Coverage unavailable; missing data are not zero.`;

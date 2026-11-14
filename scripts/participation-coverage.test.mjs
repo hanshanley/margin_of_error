@@ -1,5 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { runInNewContext } from "node:vm";
 import { coverageRows } from "../public/scripts/participation-coverage.js";
 
 const catalog = { datasets: {
@@ -37,4 +39,60 @@ test("table-only reporting units are loaded without inventing geographic referen
   assert.equal(row.reference_units, 0);
   assert.equal(row.unknown, 1);
   assert.equal(row.fractions, 0);
+});
+
+test("coverage links the validated scope package and clears rejected, historical or unsafe links", async () => {
+  const source = readFileSync(new URL("../public/scripts/participation-coverage.js", import.meta.url), "utf8");
+  const start = source.indexOf("export function installCoverage(");
+  assert(start >= 0);
+  const element = tag => ({
+    tag, children: [], dataset: {},
+    set textContent(value) { this.text = value; this.children = []; },
+    get textContent() { return this.text; },
+    append(...children) { this.children.push(...children); },
+    replaceChildren(...children) { this.children = children; },
+  });
+  const caption = element("p"), body = element("tbody");
+  const host = { dataset: {}, querySelector: selector =>
+    selector === "tbody" ? body : caption };
+  const pointers = {
+    counts: { version: "counts-version", complete_download: { url: "https://example.org/complete-counts.zip" } },
+    native: { version: "native-version", complete_download: { url: "https://example.org/complete-native.zip" } },
+  };
+  const rejected = new Set();
+  const install = runInNewContext(`(${source.slice(start + "export ".length)})`, {
+    document: { createElement: element }, coverageRows,
+    loadDatasetCatalog: async () => catalog,
+    loadCountIndex: async () => {
+      if (rejected.has("counts")) throw new Error("counts checksum differs");
+      return { index: counts, entry: pointers.counts };
+    },
+    loadNativeIndex: async () => {
+      if (rejected.has("native")) throw new Error("native checksum differs");
+      return { index: {}, entry: pointers.native };
+    },
+  });
+  const coverage = install(host);
+  const scope = { year: 2026, mode: "available", level: "county" };
+  const links = () => caption.children.filter(node => node?.tag === "a");
+  await coverage.setScope(scope);
+  assert.equal(links().length, 1);
+  assert.equal(links()[0].href, pointers.counts.complete_download.url);
+  assert.equal(links()[0].textContent, "Complete numerical inputs, queries and results");
+  await coverage.setScope({ ...scope, level: "precinct" });
+  assert.equal(links()[0].href, pointers.native.complete_download.url);
+  for (const [level, dataset] of [["county", "counts"], ["precinct", "native"]]) {
+    rejected.add(dataset);
+    await coverage.setScope({ ...scope, level });
+    assert.equal(links().length, 0);
+    rejected.clear();
+  }
+  await coverage.setScope(scope);
+  await coverage.setScope({ ...scope, year: 2024 });
+  assert.equal(links().length, 0);
+  for (const url of [null, undefined, "javascript:alert(1)", "http://example.org/complete.zip"]) {
+    pointers.counts.complete_download.url = url;
+    await coverage.setScope(scope);
+    assert.equal(links().length, 0);
+  }
 });
