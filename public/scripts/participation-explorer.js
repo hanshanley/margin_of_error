@@ -4,6 +4,7 @@ import { installResidentContext } from "./participation-resident-context.js";
 import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, clearCountState } from "./participation-counts.js";
 import { loadNativeIndex, loadBoundNative, loadCountyBinding, loadMunicipalReference, loadReportingRows, bindCountyReference, countyCoverageMessage } from "./participation-native-bindings.js";
 import { installCoverage } from "./participation-coverage.js";
+import { installHistoricalNativeCounts } from "./participation-historical-native.js";
 import { rings, boundsFor, conicProjection, projectFeatures } from "./participation-map-projection.js";
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
@@ -66,6 +67,16 @@ const state = {
 };
 const residentContext = installResidentContext();
 const sourceCoverage = installCoverage();
+const historicalNativeCounts = installHistoricalNativeCounts();
+function syncHistoricalNativeScope() {
+  historicalNativeCounts.setScope({ year: Number($("year").value),
+    code: state.geometry ? stateCode() : null, name: state.selectedState,
+    enabled: ["states", "precincts"].includes(state.view) });
+}
+function setExplorerState(name) {
+  state.selectedState = name;
+  syncHistoricalNativeScope();
+}
 function residentReference(row, code = row.state_code || stateCode()) {
   residentContext.selectPrecinct({ ...row, state_code: code },
     { sha256: state.currentPrecinctHashes.get(code) });
@@ -935,7 +946,7 @@ async function loadCurrentPrecincts() {
           group.append(featurePath(item, null,
             `${p.name} · ${year}\n${marginLabel(election)} · ${fmt(election.contest_votes)} candidate votes\nCounty results, not turnout`,
             () => {
-              state.selectedState = selected.feature.properties.NAME;
+              setExplorerState(selected.feature.properties.NAME);
               $("state-select").value = state.selectedState;
               state.countySelection = { year, code: p.state_code, key: p.key };
               stateDetail(); countyResultDetail(p, election); syncURL(); fit(item.bounds);
@@ -1392,7 +1403,7 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
           state.currentCounty = code + "|" + p.county_id; state.currentUnit = p.unit_key;
         }
         if (state.selectedState !== name) {
-          state.selectedState = name; $("state-select").value = name; stateDetail(); syncURL();
+          setExplorerState(name); $("state-select").value = name; stateDetail(); syncURL();
         }
         currentPrecinctDetail(p, metadata);
         if (p.unit_key && $("current-county-select")) {
@@ -1848,7 +1859,7 @@ function configure(preferred = viewSelection()) {
       || state.viewSelections.precincts?.["precinct-state-select"]
       || state.selectedState || "North Carolina";
     options($("precinct-state-select"), codes.map(code => [stateName(code), stateName(code)]), requestedState);
-    state.selectedState = $("precinct-state-select").value;
+    setExplorerState($("precinct-state-select").value);
     state.precinctControlNote = requestedState && requestedState !== state.selectedState
       ? `No loaded precinct map source for ${requestedState}; showing ${state.selectedState}. Other states' shapes are not substituted.`
       : "";
@@ -1938,7 +1949,7 @@ function showView(view) {
   rememberView();
   state.view = view;
   if (view === "states" && state.viewSelections.states?.selectedState) {
-    state.selectedState = state.viewSelections.states.selectedState;
+    setExplorerState(state.viewSelections.states.selectedState);
     $("state-select").value = state.selectedState;
   }
   clearTimeout(state.drillTimer); ++state.drillToken; state.drillKey = "";
@@ -2834,14 +2845,14 @@ function stateMap(byName, provisional = false) {
             note(`No loaded precinct map source for ${name}. Other years' or county boundaries are not substituted.`);
             return;
           }
-          state.selectedState = name;
+          setExplorerState(name);
           $("precinct-state-select").value = name;
           state.county = ""; state.precinct = "";
           configure({ ...viewSelection(), "precinct-state-select": name });
           render();
           return;
         }
-        state.selectedState = name; $("state-select").value = name; stateDetail(); syncURL(); fit(item.bounds);
+        setExplorerState(name); $("state-select").value = name; stateDetail(); syncURL(); fit(item.bounds);
       };
       const election = marginRow("state", abbreviation);
       const partisan = $("map-color").value === "margin";
@@ -2961,7 +2972,7 @@ function projectInside(feature, point) {
     if (zoomLevel >= 2.3 && !selectedVisible) {
       const hit = [...map.statePaths.entries()].find(([, path]) => path.isPointInFill(center));
       if (hit && map.stateItems.get(hit[0]).feature.properties.NAME !== state.selectedState) {
-        state.selectedState = map.stateItems.get(hit[0]).feature.properties.NAME;
+        setExplorerState(map.stateItems.get(hit[0]).feature.properties.NAME);
         $("state-select").value = state.selectedState; stateDetail(); syncURL();
       }
     }
@@ -3078,7 +3089,7 @@ function projectInside(feature, point) {
       return unavailable(`No verified ${year} county boundary/result snapshot. The ${year} state participation estimate remains available; newer county shapes are not presented as historical results.`);
     let features;
     if (level === "precinct") {
-      state.selectedState = "North Carolina"; $("state-select").value = state.selectedState; syncURL();
+      setExplorerState("North Carolina"); $("state-select").value = state.selectedState; syncURL();
       if (!state.shapes.has(year)) state.shapes.set(year, await get(`nc/geometry-${year}.geojson`));
       if (!state.nc.has(year)) state.nc.set(year, await get(`nc/${year}.json`));
       features = state.shapes.get(year).features;
@@ -3361,7 +3372,7 @@ function precinctCoverageNavigation(panel, year) {
   select.addEventListener("change", () => {
     const code = select.value;
     if (code) {
-      state.selectedState = stateName(code); state.county = ""; state.precinct = "";
+      setExplorerState(stateName(code)); state.county = ""; state.precinct = "";
       configure({ year: String(year), "precinct-state-select": state.selectedState, "precinct-layer": "participation" });
       render();
     }
@@ -3589,6 +3600,7 @@ async function precinctsView(generation) {
 }
 async function render() {
   const generation = ++state.generation;
+  syncHistoricalNativeScope();
   sourceCoverage.setScope({ year: Number($("year").value),
     mode: state.view === "precincts" ? "official" : $("mode").value || "available",
     level: state.view === "precincts" ? "precinct" : $("map-level").value,
@@ -3656,12 +3668,12 @@ async function main() {
   $("method-history-mode").addEventListener("change", methodsView);
   $("search").addEventListener("input", renderTable);
   $("state-select").addEventListener("change", () => {
-    state.selectedState = $("state-select").value; stateDetail(); syncURL();
+    setExplorerState($("state-select").value); stateDetail(); syncURL();
     const item = state.map?.stateItems?.get(stateCode());
     if (item) fit(item.bounds);
   });
   $("precinct-state-select").addEventListener("change", () => {
-    state.selectedState = $("precinct-state-select").value;
+    setExplorerState($("precinct-state-select").value);
     state.county = ""; state.precinct = "";
     configure({ ...viewSelection(), "precinct-state-select": state.selectedState });
     render();
@@ -3721,7 +3733,7 @@ async function main() {
   currentAudit();
   const names = unique(geometry.features.map(f => f.properties.NAME)).filter(name => states.some(row => row.state === name)).sort();
   options($("state-select"), names.map(name => [name, name]), state.selectedState);
-  state.selectedState = $("state-select").value;
+  setExplorerState($("state-select").value);
   options($("demographic-state"), [["US", "United States"],
     ...demographicStates.map(code => [code, stateName(code)])], params.get("demographic-state") || "US");
   options($("current-state-select"), (state.current?.coverage ?? []).map(row => [row.state_code, row.state]), state.countState);
