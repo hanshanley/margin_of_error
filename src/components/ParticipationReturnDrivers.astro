@@ -41,12 +41,12 @@ const tests = [
 	<header class="section-intro">
 		<p class="kicker">2024 → 2026 · House results</p>
 		<h2 id="return-drivers-title">House swings and modeled drivers</h2>
-		<p>See the change in recorded Democratic two-party vote share. Select a state for both years' totals,
+		<p>Compare recorded Democratic two-party vote share where candidate coverage is compatible. Select any state for both years' raw totals,
 			or choose modeled switching, net participation and prior no-House-choice to D/R contributions.</p>
 	</header>
 	<p class="caption">Reported change compares held <strong>same-office candidate counts</strong>, not measured voter preference.
-		Known-D/R margin = 100 × (D − R) / (D + R), twice the Democratic-share change. In the recorded view, gray means missing counts.
-		Hatching marks changed candidate competition or election scope, not missing results.
+		Known-D/R margin = 100 × (D − R) / (D + R), twice the Democratic-share change.
+		Neutral hatching means the statewide change is not comparable, not a Republican or Democratic swing.
 		Changed major-party candidate coverage, missing native counts and unqualified election stages cannot constrain a behavioral explanation.
 		NORC source models are trained separately from the reported results; qualified comparisons constrain the reconstruction.
 		Estimates, model checks and assumptions appear below the map.</p>
@@ -58,7 +58,7 @@ const tests = [
 		<label>2026 office<select data-driver-office disabled><option value="house">House · states</option>
 			<option value="senate">Senate</option><option value="governor">Governor · frames</option></select></label>
 		<label>Map view<select data-driver-view disabled>
-			<option value="reported_counts">Reported House swing · recorded votes</option>
+			<option value="reported_counts">Comparable House change</option>
 			<option value="reported_total">Like-for-like House comparisons only</option>
 			<option value="switching">Switching · fitted</option>
 			<option value="modeled_nonparticipation">Net participation · NORC estimate</option>
@@ -87,12 +87,12 @@ const tests = [
 			<option value="margin">D−R margin points</option>
 		</select></label>
 	</div>
-	<p data-driver-status class="caption" role="status">Loading recorded House swings; every saved state summary and complete download remains below.</p>
+	<p data-driver-status class="caption" role="status">Loading comparable House changes; every state's raw totals and complete downloads remain available.</p>
 	<p data-driver-association-note class="caption" hidden></p>
 	<div class="driver-maps">
 		<section class="driver-map-card" aria-labelledby="driver-map-title">
-			<h3 id="driver-map-title" data-driver-map-title>Reported House swing · recorded votes</h3>
-			<p class="caption" data-driver-map-caption>Recorded vote-share changes, not population turnout or measured switching. Hatching flags comparisons affected by candidate competition or election scope.</p>
+			<h3 id="driver-map-title" data-driver-map-title>Comparable House change</h3>
+			<p class="caption" data-driver-map-caption>Directional colour requires compatible candidate coverage. Neutral hatching marks an unavailable comparison, not a partisan swing. Raw totals remain in state details.</p>
 			<div class="driver-map" data-driver-map="reported_counts"></div>
 		</section>
 	</div>
@@ -101,7 +101,7 @@ const tests = [
 			<span data-driver-scale-min></span><span>0</span><span data-driver-scale-max></span>
 		</div><div class="driver-map-directions"><span>Republican direction</span><span>Democratic direction</span></div></div>
 		<span class="driver-no-model"><i></i>No qualified comparison / model</span>
-		<span class="driver-comparison-caution" data-driver-comparison-caution hidden><i></i>Changed competition / scope</span>
+		<span class="driver-comparison-caution" data-driver-comparison-caution hidden><i></i>Not comparable · competition / scope</span>
 	</div>
 	<p class="caption driver-map-note">Colour shows <strong>signed percentage-point changes or contributions to the margin</strong>,
 		not party vote shares or turnout rates. House model change =

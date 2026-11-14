@@ -38,7 +38,7 @@ def open_map(page):
     expect(root.locator("[data-driver-view]")).to_have_value("reported_counts")
     expect(root.locator("[data-driver-state]")).to_have_value("TX")
     expect(root.locator("[data-driver-units]")).to_have_value("democratic_two_party_share")
-    expect(root.locator("[data-driver-status]")).to_contain_text("50 states with recorded")
+    expect(root.locator("[data-driver-status]")).to_contain_text("33 comparable recorded House changes")
     return root
 
 
@@ -52,14 +52,15 @@ def check_map(root, multiplier):
         if code == "DC":
             assert row["value"] == "" and row["caution"] == "false" and row["fill"] == "#d6d3cb"
             continue
-        assert abs(float(row["value"]) - expected[code] * multiplier) < 1e-8, row
         held = not rows[code]["source_comparison_available"]
         assert row["caution"] == str(held).lower(), row
         if held:
+            assert row["value"] == "", row
             assert row["fill"] == f"url(#driver-count-caution-{code})"
-            assert "not a like-for-like" in row["label"]
-            assert root.locator(f'pattern[id="driver-count-caution-{code}"] rect').get_attribute("fill") != "#d6d3cb"
+            assert "not comparable" in row["label"]
+            assert root.locator(f'pattern[id="driver-count-caution-{code}"] rect').get_attribute("fill") == "#d6d3cb"
         else:
+            assert abs(float(row["value"]) - expected[code] * multiplier) < 1e-8, row
             assert row["fill"].startswith("#") and row["fill"] != "#d6d3cb"
     assert root.locator("pattern").count() == 17
     assert root.locator("[data-driver-comparison-caution]").is_visible()
@@ -82,12 +83,22 @@ with sync_playwright() as runtime:
             checked = check_map(root, 1)
             assert model_requests == [], model_requests
             summary = root.locator("[data-driver-summary]")
-            expect(summary).to_contain_text("+11.98 pp share change")
-            expect(summary).to_contain_text("+23.95 pp")
+            expect(summary.locator("h3")).to_contain_text("not comparable")
+            raw = summary.locator("[data-recorded-raw-diagnostic]")
+            raw.locator("summary").click()
+            expect(raw).to_contain_text("+11.98 pp share change")
+            expect(raw).to_contain_text("+23.95 pp")
+            raw.locator("summary").click()
             for code in sorted(rows):
                 root.locator("[data-driver-state]").select_option(code)
                 expect(summary).to_have_attribute("data-norc-state", code)
-                assert abs(float(summary.get_attribute("data-recorded-share-change")) - expected[code]) < 1e-8
+                assert abs(float(summary.get_attribute("data-recorded-raw-share-change")) - expected[code]) < 1e-8
+                if not rows[code]["source_comparison_available"]:
+                    assert summary.get_attribute("data-recorded-share-change") is None
+                    expect(summary.locator("h3")).to_contain_text("not comparable")
+                    assert summary.locator("[data-recorded-raw-diagnostic]").evaluate("node => node.open === false")
+                else:
+                    assert abs(float(summary.get_attribute("data-recorded-share-change")) - expected[code]) < 1e-8
                 assert summary.get_attribute("data-norc-hold") == ("true" if not rows[code]["source_comparison_available"] else None)
             root.locator("[data-driver-state]").select_option("TX")
             root.locator("[data-driver-units]").select_option("margin")

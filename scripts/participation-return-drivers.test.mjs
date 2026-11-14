@@ -1,9 +1,25 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { driverRows, driverScale, validateModels, mapScale, effectFill, mapTerms, mapValue } from '../public/scripts/participation-return-drivers.js';
+import { driverRows, driverScale, validateModels, mapScale, effectFill, mapTerms, mapValue, validateRecordedHouseCounts } from '../public/scripts/participation-return-drivers.js';
 
 const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/viewer-data.json'));
+
+test('raw all-state inventory remains valid when directional comparisons are held', () => {
+  const { rows } = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/norc-point-summary.json'));
+  const codes = rows.map(row => row.state_code).concat('DC');
+  assert.equal(validateRecordedHouseCounts(rows, codes).rows.length, 50);
+  assert.equal(rows.filter(row => !row.source_comparison_available).length, 17);
+  for (const change of [
+    copy => { copy[0] = copy[1]; },
+    copy => { copy[0].contest_comparability.current_counts.D = null; },
+    copy => { delete copy[0].source_comparison_available; },
+  ]) {
+    const invalid = structuredClone(rows);
+    change(invalid);
+    assert.throws(() => validateRecordedHouseCounts(invalid, codes), /inventory differs/);
+  }
+});
 
 test('all modeled offices retain every computed state/race and complete accounting', () => {
   validateModels(data);

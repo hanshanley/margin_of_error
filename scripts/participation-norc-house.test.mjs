@@ -35,13 +35,13 @@ const recordedTexas=()=>({
   },
 });
 
-test("held Texas counts expose +12 share points without authorizing a behavioral explanation",()=>{
+test("incompatible raw totals stay accessible without direction-coloring a statewide swing",()=>{
   const row=recordedTexas(),comparison=norcRecordedComparison(row);
   assert.ok(Math.abs(comparison.share_change_pp-11.97610547994342)<1e-10);
   assert.equal(comparison.model_eligible,false);
   assert.equal(comparison.raw_party_totals_are_not_preference_swing,true);
-  assert.equal(norcMapValue(row,"reported_counts","","democratic_two_party_share"),comparison.share_change_pp);
-  assert.equal(norcMapValue(row,"reported_counts"),comparison.share_change_pp*2);
+  assert.equal(norcMapValue(row,"reported_counts","","democratic_two_party_share"),null);
+  assert.equal(norcMapValue(row,"reported_counts"),null);
   for(const key of ["reported_total","switching","entry","modeled_nonparticipation"])
     assert.equal(norcMapValue(row,key),null);
 });
@@ -63,7 +63,12 @@ test("recorded state summaries need counts and qualifications, not fitted model 
       assert.equal(summary.hidden,false);
       assert.equal(detail.hidden,true);
       assert.equal(summary.dataset.norcState,"TX");
-      assert.ok(summary.children.some(node=>node.textContent?.includes("+11.98 pp share change")));
+      assert.equal(summary.dataset.recordedRawShareChange,String(norcRecordedComparison(row).share_change_pp));
+      assert.equal(summary.dataset.recordedShareChange,eligible?summary.dataset.recordedRawShareChange:undefined);
+      if (!eligible) {
+        assert.ok(summary.children[0].textContent.includes("not comparable"));
+        assert.ok(summary.children.some(node=>node.dataset.recordedRawDiagnostic===""));
+      } else assert.ok(summary.children.some(node=>node.textContent?.includes("+11.98 pp share change")));
       assert.equal(summary.dataset.norcHold,eligible?undefined:"true");
     }
   }finally{globalThis.document=original;}
@@ -84,12 +89,30 @@ test("recorded counts preserve unknowns and reject invalid count denominators",(
 
 test("unadjusted negative changes are preserved and have a separate recorded-count scale",()=>{
   const positive=recordedTexas(),negative=recordedTexas();
+  positive.source_comparison_available=true;negative.source_comparison_available=true;
   negative.state_code="MA";
   [negative.contest_comparability.previous_counts,negative.contest_comparability.current_counts]
     =[negative.contest_comparability.current_counts,negative.contest_comparability.previous_counts];
   assert.equal(norcMapValue(negative,"reported_counts"),-norcMapValue(positive,"reported_counts"));
   assert.equal(norcRecordedBound({rows:[positive,negative]}),25);
   assert.equal(norcRecordedBound({rows:[positive,negative]},"democratic_two_party_share"),15);
+});
+
+test("Massachusetts changed competition cannot become a Republican swing in either map unit",()=>{
+  const row=recordedTexas();
+  row.state_code="MA";
+  row.contest_comparability.previous_counts={D:2386143,R:304460,O:285560};
+  row.contest_comparability.current_counts={D:1722855,R:507904,O:110672};
+  row.contest_comparability.previous_named_R_districts=2;
+  row.contest_comparability.current_named_R_districts=5;
+  const original=structuredClone(row),raw=norcRecordedComparison(row);
+  assert.ok(Math.abs(raw.share_change_pp+11.452535714187288)<1e-8);
+  for(const units of ["margin","democratic_two_party_share"])
+    assert.equal(norcMapValue(row,"reported_counts","",units),null);
+  assert.deepEqual(row,original);
+  row.source_comparison_available=true;
+  assert.equal(norcMapValue(row,"reported_counts"),raw.share_change_pp*2,
+    "Genuinely comparable negative source changes must not be forced positive");
 });
 
 test("changed candidate coverage and native-count substitutions cannot condition behavioral models",()=>{

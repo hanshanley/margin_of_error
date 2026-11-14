@@ -6,7 +6,7 @@ export const norcTerms = [
   ["unresolved", "Unresolved responses"],
 ];
 export const norcViews = [
-  ["reported_counts", "Reported House swing · recorded votes"],
+  ["reported_counts", "Comparable House change"],
   ["reported_total", "Like-for-like House comparisons only"],
   ["switching", "Switching · NORC estimate"],
   ["modeled_nonparticipation", "Net participation · NORC estimate"],
@@ -332,6 +332,7 @@ export function norcRecordedBound(model,units="margin") {
 
 export function norcMapValue(row, key, group="", units="margin") {
   if (key==="reported_counts") {
+    if (row?.source_comparison_available!==true) return null;
     const recorded=norcRecordedComparison(row);
     return recorded ? recorded.share_change_pp*2*norcContributionScale(units) : null;
   }
@@ -385,6 +386,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   delete summary.dataset.norcAssociation;
   delete summary.dataset.norcHold;
   delete summary.dataset.recordedShareChange;
+  delete summary.dataset.recordedRawShareChange;
   delete summary.dataset.norcSensitivity;
   detail.replaceChildren();
   if (!row) {
@@ -403,13 +405,22 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   "caption driver-endpoint-version"));
   const recorded=norcRecordedComparison(row);
   if (recorded && (!row.source_comparison_available || options.view==="reported_counts")) {
-    summary.dataset.recordedShareChange=String(recorded.share_change_pp);
-    summary.append(element("p",
+    summary.dataset.recordedRawShareChange=String(recorded.share_change_pp);
+    if (row.source_comparison_available) summary.dataset.recordedShareChange=String(recorded.share_change_pp);
+    else summary.children[0].textContent=`${name} · House swing not comparable`;
+    const raw=element("p",
       `Recorded Democratic two-party share: 2024 ${recorded.previous_share.toFixed(2)}% → held 2026 `
       +`${recorded.current_share.toFixed(2)}%; ${pp(recorded.share_change_pp)} share change `
       +`(${pp(recorded.share_change_pp*2)} D−R margin change). `
       +"These are unadjusted candidate totals, not a measured voter-preference swing.",
-    "driver-recorded-endpoints"));
+    "driver-recorded-endpoints");
+    if (row.source_comparison_available) summary.append(raw);
+    else {
+      const diagnostic=element("details",null,"explorer-notes");
+      diagnostic.dataset.recordedRawDiagnostic="";
+      diagnostic.append(element("summary","Raw source arithmetic · not a comparable swing"),raw);
+      summary.append(diagnostic);
+    }
     const count=value=>Number.isSafeInteger(value)&&value>=0?value.toLocaleString("en-US"):"Unavailable";
     const snapshot=typeof recorded.snapshot==="string"&&recorded.snapshot.startsWith("native-query:")
       ?`reviewed official query ${recorded.snapshot.slice(13,25)}`:recorded.snapshot;

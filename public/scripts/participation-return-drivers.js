@@ -4,7 +4,7 @@ import { calibratedTerms, validateCalibratedSwing, calibratedMapValue, roundedCo
 import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
   scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
 import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection, norcFamilies,
-  norcAssociations, norcSharedBound, norcRecordedBound, validateNorcAssociation } from "./participation-norc-house.js";
+  norcAssociations, norcSharedBound, norcRecordedBound, norcRecordedComparison, validateNorcAssociation } from "./participation-norc-house.js";
 import { loadHouseSensitivity, houseSensitivityScope } from "./participation-house-sensitivity.js";
 
 export const effectTerms = [
@@ -133,6 +133,15 @@ export function effectFill(value, bound) {
     .toString(16).padStart(2, "0")).join("");
 }
 
+export function validateRecordedHouseCounts(rows, codes) {
+  if (!Array.isArray(rows) || rows.length!==50
+      || new Set(rows.map(row=>row.state_code)).size!==50
+      || rows.some(row=>row.state_code==="DC" || !codes.includes(row.state_code)
+        || typeof row.source_comparison_available!=="boolean" || norcRecordedComparison(row)===null))
+    throw new Error("Recorded House count inventory differs");
+  return {rows};
+}
+
 export async function initializeReturnDrivers() {
   const root = document.querySelector("#participation-return-drivers");
   if (!root || root.dataset.initialized) return;
@@ -166,12 +175,8 @@ export async function initializeReturnDrivers() {
     const sensitivitySources={original:payload.norc_source, ...payload.norc_association_sources?.profiles};
     const associationKey=()=>associationSelect?.value || "original";
     const norcUnits=()=>unitsSelect?.value || "margin";
-    const recordedHouse = payload.recorded_house_counts ? {rows:payload.recorded_house_counts} : null;
-    if (recordedHouse && (recordedHouse.rows.length!==50
-        || new Set(recordedHouse.rows.map(row=>row.state_code)).size!==50
-        || recordedHouse.rows.some(row=>row.state_code==="DC" || !codes.includes(row.state_code)
-          || norcMapValue(row,"reported_counts")===null)))
-      throw new Error("Recorded House count inventory differs");
+    const recordedHouse = payload.recorded_house_counts
+      ? validateRecordedHouseCounts(payload.recorded_house_counts,codes) : null;
     const legacyMapNote = root.querySelector(".driver-map-note").cloneNode(true);
     stateSelect.replaceChildren(new Option("Select a state on the map…", ""),
       ...codes.map(code => new Option(names[code], code)));
@@ -495,8 +500,8 @@ export async function initializeReturnDrivers() {
       }
       if (byCode.size !== all.length) throw new Error("Multiple race frames require separate state selection");
       status.textContent = norcMode && view.value==="reported_counts"
-        ? `${activeHouse.rows.length} states with recorded vote-share changes. Hatching flags changed competition or election scope; `
-          +"these raw comparisons are not like-for-like preference estimates or measured switching. "
+        ? `${activeHouse.rows.filter(row=>row.source_comparison_available).length} comparable recorded House changes; `
+          +"incompatible states are neutral, not Republican or Democratic swings. All raw totals remain in state details. "
           +(norcUnits()==="democratic_two_party_share"?"Change units: Democratic two-party-share points.":"Change units: D−R margin points.")
         : norcMode ? `${norc.summary.return_anchored} House reconstructions use recorded endpoints; `
         +`${50-norc.summary.return_anchored} are NORC source scenarios with unavailable observed comparisons. `
@@ -524,13 +529,13 @@ export async function initializeReturnDrivers() {
       directions[0].textContent = scenario || retention ? "Lower share" : "Republican direction";
       directions[1].textContent = scenario || retention ? "Higher share" : "Democratic direction";
       root.querySelector(".driver-no-model").lastChild.textContent = norcMode && view.value==="reported_counts"
-        ? "No recorded party-count comparison" : "No qualified comparison / model";
+        ? "No comparable change" : "No qualified comparison / model";
       const caution=root.querySelector("[data-driver-comparison-caution]");
       if (caution) caution.hidden=!recordedMode;
       const note = root.querySelector(".driver-map-note");
       if (norcMode && view.value==="reported_counts") note.textContent=
-        "Recorded candidate totals only, not a population preference-swing estimate or a behavioral decomposition. "
-        +"Incompatible contests and coalition labels remain held for model explanations; their raw totals are shown here for inspection. "
+        "Only candidate-coverage-qualified changes receive directional colour. Changed competition or election scope is neutral and hatched, not a partisan swing. "
+        +"Every state's raw totals and unadjusted arithmetic remain available in its details and the complete downloads. "
         +"Other is excluded from the two-party denominator. Source snapshots are preliminary, not independently certified final counts.";
       else if (norcMode) note.textContent=retention
         ? "Modeled share of previous major-party choices assigned the same party. Retention is not a contribution to the change in margin."
@@ -549,7 +554,7 @@ export async function initializeReturnDrivers() {
         host.dataset.driverMap = key;
         root.querySelector("[data-driver-map-title]").textContent = label;
         root.querySelector("[data-driver-map-caption]").textContent = norcMode
-          ? key==="reported_counts" ? `2024 → held 2026 recorded House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change. Hatching marks changed candidate competition or election scope: not a like-for-like preference swing. Select a state for both years' totals and qualifications.`
+          ? key==="reported_counts" ? `2024 → held 2026 comparable House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change. Neutral hatching means not comparable, not a partisan swing. Select any state for both years' raw totals and the reason.`
             : key==="reported_total" ? `Held reported House ${norcUnits()==="democratic_two_party_share"?"Democratic two-party-share":"margin"} change passing candidate-coverage checks; not a measured voter-preference swing. Gray means an incompatible or unavailable comparison, not a Republican result. Known raw totals remain available in the recorded-count view and state details.`
             : `${group.selectedOptions[0].textContent}. ${retention?"Share retaining party":norcUnits()==="democratic_two_party_share"?"Contribution to statewide Democratic two-party-share change":"Contribution to statewide margin change"}. `
               +(key==="modeled_nonparticipation"?"Entry/return and modeled absence are included together.":"")
@@ -565,8 +570,9 @@ export async function initializeReturnDrivers() {
             : norcMode ? norcMapValue(norcByCode.get(code),key,group.value,norcUnits())
             : scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key, calibration.get(row?.id));
           const normalized = value ?? null;
-          const cautioned=recordedMode && normalized!==null && !norcByCode.get(code).source_comparison_available;
-          const text = `${names[code]} · ${label}: ${normalized === null ? "no qualified comparison, group or model"
+          const cautioned=recordedMode && Boolean(norcByCode.get(code)) && !norcByCode.get(code).source_comparison_available;
+          const text = `${names[code]} · ${label}: ${cautioned ? "not comparable"
+            : normalized === null ? "no qualified comparison, group or model"
             : retention ? `${normalized.toFixed(1)}%` : scenario ? `${(normalized * 100).toFixed(1)}%` : signedPP(normalized)}. `
             + (retention ? "Modeled party-retention share, not a margin contribution."
               : scenario ? "Synthetic source-weight share, not measured staying home."
