@@ -79,6 +79,7 @@ for (const row of native.scenarios) {
 }
 const nativeJurisdictions = new Set(native.scenarios.map(row => row.state_code)).size;
 const count = (value: string) => Number(value).toLocaleString('en-US', { maximumFractionDigits: 0 });
+const priorNativeRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-state-controls-20261113-33/';
 ---
 
 <section id="participation-civic-estimates" class="participation-current" aria-labelledby="civic-estimates-title"
@@ -181,6 +182,12 @@ const count = (value: string) => Number(value).toLocaleString('en-US', { maximum
 				<a href={native.source_group_downloads['complete-current-native-source-queries.json.gz'].url}
 					download data-native-group-download="queries">Every native source row and query (JSON · gzip)</a>
 			</>}
+			<a href={`${priorNativeRelease}complete-analysis.zip`} download data-native-previous-download="zip">Prior revision 33 complete analysis (ZIP)</a>
+			<a href={`${priorNativeRelease}complete-state-control-query.csv`} download data-native-previous-download="states">Prior revision 33 state / D.C. decisions (CSV)</a>
+			<a href={`${priorNativeRelease}complete-native-control-dispositions.csv`} download data-native-previous-download="controls">Prior revision 33 source controls (CSV)</a>
+			<a href={`${priorNativeRelease}complete-conditional-registered-scenarios.csv`} download data-native-previous-download="scenarios">Prior revision 33 conditional scenarios (CSV)</a>
+			<a href={`${priorNativeRelease}complete-native-participation-group-controls.csv`} download data-native-previous-download="groups">Prior revision 33 native source groups (CSV)</a>
+			<a href={`${priorNativeRelease}complete-current-native-source-queries.json.gz`} download data-native-previous-download="queries">Prior revision 33 native source queries (JSON · gzip)</a>
 		</div>
 		{native.source_group_downloads && <p class="caption">Source-mode group observations are separate administrative
 			counts, not full demographic turnout. Different cutoffs and overlapping methods are not added to reporting totals.</p>}

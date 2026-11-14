@@ -124,6 +124,17 @@ def check(base, proof, focus_state="NM"):
                                 "href", groups[name]["url"])
                     if groups:
                         expect(frame).to_contain_text("not full demographic turnout")
+                    for kind, filename in (
+                            ("zip", "complete-analysis.zip"),
+                            ("states", "complete-state-control-query.csv"),
+                            ("controls", "complete-native-control-dispositions.csv"),
+                            ("scenarios", "complete-conditional-registered-scenarios.csv"),
+                            ("groups", "complete-native-participation-group-controls.csv"),
+                            ("queries", "complete-current-native-source-queries.json.gz")):
+                        expect(frame.locator(
+                            f'[data-native-previous-download="{kind}"]')).to_have_attribute(
+                            "href", "https://github.com/hanshanley/margin_of_error/releases/download/"
+                            f"participation-state-controls-20261113-33/{filename}")
                     frame.locator(":scope > summary").click()
                     focus_row = frame.locator(
                         f'[data-native-registered-scenario={json.dumps(focus_control)}]')
