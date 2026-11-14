@@ -77,7 +77,8 @@ with sync_playwright() as playwright:
         }""", expected)
         assert result["version"] == descriptor["version"]
         assert len(result["cases"]) == 306
-        assert result["reporting"] == 7 and result["early"] == 6450
+        assert result["reporting"] == len(current_expected["reporting"])
+        assert result["early"] == len(current_expected["early_voting"])
         assert result["snapshot"] == current_expected
         cases.extend(result["cases"])
         state_names = {feature["properties"]["NAME"]: feature["properties"]["STUSAB"] for feature in
@@ -175,7 +176,7 @@ with sync_playwright() as playwright:
                 expect(page.locator("#current-county-detail .selection-rate")).to_have_text(f'{row["ballots"]:,}')
             selected = counties[-1]
             detail = page.locator("#current-county-detail")
-            expect(detail.locator("a.source-link")).to_have_attribute(
+            expect(detail.get_by_role("link", name="Original source", exact=True)).to_have_attribute(
                 "href", selected["source_url"])
             nc_total = next(row["ballots"] for row in current_expected["reporting"]
                             if row["state_code"] == "NC")
