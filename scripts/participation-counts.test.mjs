@@ -1,5 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { runInNewContext } from "node:vm";
 import { canonicalObservation, encoded, digest, pin, selectedFrame } from "./compile-participation-counts.mjs";
 import { countModes, countStates, validateCountObservation, validateCountShard,
   validateCurrentCountSnapshot, countFrame } from "../public/scripts/participation-counts.js";
@@ -102,5 +104,37 @@ test("the current statewide/provider snapshot requires all distinct jurisdiction
   ]) {
     const data = current(); mutate(data);
     assert.throws(() => validateCurrentCountSnapshot(data), /Unqualified/);
+  }
+});
+
+test("legacy reporting details expose supplied complete packages without claiming a native review", () => {
+  const source = readFileSync(new URL("../public/scripts/participation-explorer.js", import.meta.url), "utf8");
+  const start = source.indexOf("function currentCountDetail(");
+  const end = source.indexOf("\n    async function currentNavigation(", start);
+  assert(start >= 0 && end > start);
+  const html = (tag, className, textContent) => ({ tag, className, textContent });
+  const detail = runInNewContext(`(${source.slice(start, end)})`, {
+    residentSource() {}, html, state: { currentPrecinctShapes: new Map() },
+    fmt: value => value === null ? "\u2014" : String(value),
+    pct: () => "Unavailable", electorateLabel: () => "source definition",
+    participationLabel: () => "Source-defined count",
+    sourceLink: row => ({ ...html("a", "source-link", "Original source"), href: row.source_url }),
+  });
+  const row = { ...view(), unit: "Native reporting row", unit_kind: "precinct",
+    denominator: null, reported_pct: null, source_update_label: null,
+    complete_download_url: "https://example.org/complete-source.zip" };
+  const before = structuredClone(row);
+  const host = { children: [], replaceChildren(...children) { this.children = children; },
+    append(...children) { this.children.push(...children); } };
+  detail(host, row);
+  const links = host.children.filter(node => node.tag === "a");
+  assert.deepEqual(links.map(node => node.href), [row.source_url, row.complete_download_url]);
+  assert.equal(links[1].textContent, "Complete source tables and source package");
+  assert(!host.children.some(node => node.textContent?.startsWith("Native result-status literal:")));
+  assert.deepEqual(row, before);
+  for (const complete_download_url of [null, undefined]) {
+    detail(host, { ...row, complete_download_url });
+    assert.deepEqual(host.children.filter(node => node.tag === "a").map(node => node.href),
+      [row.source_url]);
   }
 });

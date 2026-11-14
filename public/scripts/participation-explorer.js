@@ -430,6 +430,10 @@ function stateParticipationRows() {
         + `${fmt(row.source_rows)} source rows available below; special units and vote centers are identified separately.`));
       else host.append(html("p", "selection-note",
         `${row.unit_kind.replaceAll("_", " ")}. County + snapshot-local row ordinal identifies this 2026 reporting row, not a stable historical precinct. Boundary matches are documented separately on the precinct map.`));
+      if (!row.review_id && row.complete_download_url) {
+        const complete = html("a", "source-link", "Complete source tables and source package");
+        complete.href = row.complete_download_url; host.append(complete);
+      }
     }
     async function currentNavigation(container) {
       container.append(html("p", "selection-note", "Loading 2026 local counts…"));
