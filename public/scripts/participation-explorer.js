@@ -330,6 +330,7 @@ async function loadCurrent() {
   try {
     const data = await loadCurrentCountSnapshot();
     state.current = data.snapshot;
+    state.currentError = "";
     state.currentPath = data.original_base;
     state.reviewedStates = data.reviewed_states;
   } catch (error) {
@@ -2457,7 +2458,7 @@ function stateDetail() {
     html("h3", "", state.selectedState),
     html("p", `selection-rate${selected ? "" : " selection-unavailable"}`,
       provisional ? selected?.turnout_pct != null ? participationRate(selected)
-        : selected ? fmt(selected.ballots) : "Not reported" : pct(selected?.turnout_pct)),
+        : selected ? fmt(selected.ballots) : "Statewide total unavailable" : pct(selected?.turnout_pct)),
     html("p", "selection-basis", provisional ? selected?.uf_source
       ? `${ufBasis().toUpperCase()} turnout · UF ${selected.source_status}`
       : `${selected ? modeFor(selected) : modeLabels[$("mode").value]} · not final turnout`
@@ -2473,7 +2474,8 @@ function stateDetail() {
     panel.append(html("p", "selection-note", selected?.uf_source
       ? `${fmt(selected.ballots)} source-estimated ballots / ${fmt(selected.denominator)} ${selected.denominator_basis}. `
         + `${selected.source_date}. Not final official counts, a CPS estimate or a demographic turnout rate.`
-      : sourceNote(selected)));
+      : selected ? sourceNote(selected) : state.currentError
+        || "No matching statewide count is supplied. Any local reports below are separate, not a statewide total."));
     if ($("mode").value === "official" && state.ufTurnout.length && $("map-color").value !== "margin") {
       const restore = html("button", "selection-link", "Show nationwide turnout estimates");
       restore.id = "show-nationwide-turnout"; restore.type = "button";

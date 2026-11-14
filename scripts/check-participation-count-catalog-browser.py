@@ -16,6 +16,8 @@ parser.add_argument("--proof", type=Path, required=True)
 parser.add_argument("--runtime-root", type=Path,
     default=ROOT / "data/participation-counts/20261110-02/runtime")
 parser.add_argument("--native-runtime-root", type=Path)
+parser.add_argument("--explorer-script", type=Path,
+    help="Explicit private script-response override; never production acceptance")
 args = parser.parse_args()
 assert not args.proof.exists()
 runtime_root = args.runtime_root
@@ -36,6 +38,10 @@ with sync_playwright() as playwright:
     browser = playwright.chromium.launch()
     try:
         page = browser.new_page(viewport=dict(width=1440, height=1000))
+        if args.explorer_script:
+            page.route("**/scripts/participation-explorer.js*", lambda route: route.fulfill(
+                status=200, content_type="application/javascript",
+                body=args.explorer_script.read_bytes()))
         requests, errors = [], []
         page.on("request", lambda request: requests.append(request.url))
         page.on("pageerror", lambda error: errors.append(str(error)))
@@ -97,6 +103,32 @@ with sync_playwright() as playwright:
             assert page.locator("#reviewed-county-overview button").count() == 0
         for width in (1440, 390):
             page.set_viewport_size(dict(width=width, height=1000))
+            statewide_codes = {row["state_code"] for row in current_expected["reporting"]}
+            names_by_code = {code: name for name, code in state_names.items()}
+            for code in ("KY", "TX"):
+                if code in statewide_codes:
+                    continue
+                local = expected[code]["official"]["counties"]
+                if not local:
+                    continue
+                page.goto(args.base_url.rstrip("/") +
+                    f'/voter-participation/?year=2026&state={names_by_code[code]}&mode=official&map-level=county',
+                    wait_until="domcontentloaded", timeout=90000)
+                panel = page.locator("#selection-panel")
+                expect(panel.locator(":scope > .selection-unavailable")).to_have_text(
+                    "Statewide total unavailable", timeout=90000)
+                expect(panel).to_contain_text("Any local reports below are separate, not a statewide total.")
+                expect(panel).not_to_contain_text("No observation has been ingested for this selection.")
+                expect(page.locator("#current-county-select option")).to_have_count(len(local) + 1)
+                selected = next(row for row in local if row["ballots"] is not None)
+                page.select_option("#current-county-select", selected["county_id"])
+                expect(page.locator("#current-county-detail .selection-rate")).to_have_text(
+                    f'{selected["ballots"]:,}')
+                assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+                cases.append(dict(width=width, state=names_by_code[code],
+                    missing_statewide_total_distinct_from_local_reports=True,
+                    local_rows_retained=len(local), local_count_checked=selected["ballots"],
+                    no_statewide_zero_or_local_sum_substituted=True, no_overflow=True))
             for row in current_expected["reporting"]:
                 page.goto(args.base_url.rstrip("/") +
                     f'/voter-participation/?year=2026&state={row["state"]}&mode=official&map-level=state',
@@ -236,9 +268,13 @@ with sync_playwright() as playwright:
         assert not [url for url in requests if re.search(r"/participation-local/[A-Z]{2}\.json\.gz(?:\?|$)", url)], \
             "Active legacy 2026 county export request"
         assert not [url for url in requests if "/public/participation-current/" in url], "Active legacy state snapshot request"
-        proof = dict(status="PASS_actual_public_catalog_all_306_bindings_state_UI_and_phone",
-            base_url=args.base_url, production=args.base_url.startswith("https://www.themarginoferror.com"),
-            test_fixture_used=False, version=result["version"], immutable_base=result["base_url"],
+        proof = dict(status=("PASS_explicit_script_override_preview" if args.explorer_script
+                else "PASS_actual_public_catalog_all_306_bindings_state_UI_and_phone"),
+            base_url=args.base_url, production=args.base_url.startswith("https://www.themarginoferror.com")
+                and args.explorer_script is None,
+            test_fixture_used=args.explorer_script is not None,
+            source_script_response_overridden=args.explorer_script is not None,
+            version=result["version"], immutable_base=result["base_url"],
             reporting_rows=result["reporting"], retained_early_rows=result["early"],
             all_state_UI_cases=len(state_names), cases=cases, active_legacy_count_requests=0)
         proof["complete_current_snapshot_exact"] = True
