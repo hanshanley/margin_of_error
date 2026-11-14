@@ -1,4 +1,5 @@
 import { checkedDatasetFile, loadDataset } from "./participation-dataset.js";
+import { rejectAutomaticRuntime, setAutomaticRuntimeStatus } from "./participation-automatic-runtime.js";
 
 export const countStates = "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split(" ");
 export const countModes = ["available", "official", "uf_vep", "uf_vap", "in_person_early", "mail_returned"];
@@ -128,26 +129,82 @@ export function countFrame(data, mode) {
 
 const states = new Map();
 let dataset;
+export function rejectCountRuntime(error) {
+  rejectAutomaticRuntime("counts", error);
+  states.clear();
+  dataset = null;
+}
 export function clearCountState(code) {
   states.delete(code);
 }
+function validateCountIndex(value) {
+  const { entry, index, automatic_runtime: runtime } = value;
+  if (index.contract !== "participation.count_index.v1" || index.year !== 2026
+      || Object.keys(index.states || {}).sort().join() !== [...countStates].sort().join())
+    throw new Error("Canonical participation jurisdiction inventory differs");
+  if (runtime) {
+    const declarations = [index.current_snapshot, ...Object.values(index.states)];
+    for (const declaration of declarations) {
+      const expected = entry.files?.[declaration.file];
+      if (!expected || expected.bytes !== declaration.bytes || expected.sha256 !== declaration.sha256)
+        throw new Error("Automatic count index and committed file inventory differ");
+    }
+    if (runtime.election_date !== "2026-11-03"
+        || Object.keys(index.states).length !== countStates.length)
+      throw new Error("Automatic count election identity differs");
+  }
+  return value;
+}
+async function resolveCountIndex(automatic) {
+  const value = await loadDataset("participation-counts-2026", { automatic });
+  try {
+    return validateCountIndex(value);
+  } catch (error) {
+    if (!value.automatic_runtime) throw error;
+    rejectAutomaticRuntime("counts", error);
+    return validateCountIndex(await loadDataset("participation-counts-2026", { automatic: false }));
+  }
+}
 export async function loadCountIndex() {
-  dataset ||= loadDataset("participation-counts-2026").then(value => {
-    if (value.index.contract !== "participation.count_index.v1" || value.index.year !== 2026
-        || Object.keys(value.index.states || {}).sort().join() !== [...countStates].sort().join())
-      throw new Error("Canonical participation jurisdiction inventory differs");
-    return value;
-  }).catch(error => { dataset = null; throw error; });
+  dataset ||= resolveCountIndex(true).catch(error => { dataset = null; throw error; });
   return dataset;
 }
 
+async function checkedCountState(code, source) {
+  const declaration = source.index.states[code];
+  const data=validateCountShard(
+    await checkedDatasetFile(source.entry.base_url,declaration),code,declaration);
+  if (source.automatic_runtime) for (const row of data.records)
+    if (row.view.automatic_source_refresh===true) {
+      if (row.view.complete_download_url
+          && row.view.complete_download_url!==source.automatic_runtime.complete_download.url)
+        row.view.accepted_complete_download_url=row.view.complete_download_url;
+      row.view.complete_download_url=source.automatic_runtime.complete_download.url;
+    }
+  return data;
+}
 export async function loadCountState(code) {
   if (!countStates.includes(code)) throw new Error("Unknown participation jurisdiction");
-  if (!states.has(code)) states.set(code, loadCountIndex().then(async ({ entry, index }) => {
-    const declaration = index.states[code];
-    return validateCountShard(await checkedDatasetFile(entry.base_url, declaration), code, declaration);
+  if (!states.has(code)) states.set(code, loadCountIndex().then(async source => {
+    try {
+      const result = await checkedCountState(code, source);
+      if (source.automatic_runtime)
+        setAutomaticRuntimeStatus("counts", "active", "county/precinct counts", source.automatic_runtime);
+      return result;
+    } catch (error) {
+      if (!source.automatic_runtime) throw error;
+      rejectCountRuntime(error);
+      return loadAcceptedCountState(code);
+    }
   }).catch(error => { states.delete(code); throw error; }));
   return states.get(code);
+}
+
+export async function loadAcceptedCountState(code) {
+  if (!countStates.includes(code)) throw new Error("Unknown participation jurisdiction");
+  const source = validateCountIndex(
+    await loadDataset("participation-counts-2026", { automatic: false }));
+  return checkedCountState(code, source);
 }
 
 export function validateCurrentCountSnapshot(data) {
@@ -163,7 +220,28 @@ export function validateCurrentCountSnapshot(data) {
 }
 
 export async function loadCurrentCountSnapshot() {
-  const { entry, index } = await loadCountIndex();
-  const data = validateCurrentCountSnapshot(await checkedDatasetFile(entry.base_url, index.current_snapshot));
-  return { ...data, original_base: index.original_current_base };
+  const source = await loadCountIndex();
+  try {
+    const data = validateCurrentCountSnapshot(
+      await checkedDatasetFile(source.entry.base_url, source.index.current_snapshot));
+    if (source.automatic_runtime) for (const rows of [
+      data.snapshot.reporting,data.snapshot.early_voting])
+      for (const row of rows) if (row.automatic_source_refresh===true) {
+        if (row.complete_download_url
+            && row.complete_download_url!==source.automatic_runtime.complete_download.url)
+          row.accepted_complete_download_url=row.complete_download_url;
+        row.complete_download_url=source.automatic_runtime.complete_download.url;
+      }
+    if (source.automatic_runtime)
+      setAutomaticRuntimeStatus("counts", "active", "county/precinct counts", source.automatic_runtime);
+    return { ...data, original_base: source.index.original_current_base };
+  } catch (error) {
+    if (!source.automatic_runtime) throw error;
+    rejectCountRuntime(error);
+    const fallback = validateCountIndex(
+      await loadDataset("participation-counts-2026", { automatic: false }));
+    const data = validateCurrentCountSnapshot(
+      await checkedDatasetFile(fallback.entry.base_url, fallback.index.current_snapshot));
+    return { ...data, original_base: fallback.index.original_current_base };
+  }
 }

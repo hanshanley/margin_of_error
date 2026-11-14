@@ -74,6 +74,17 @@ test("compressed checksum cache retries failures and cannot substitute other sou
     assert.equal(requests,2);
     await assert.rejects(loadHouseSensitivity(receipt,{...sources,full:{...sources.full,bytes:2}}),/source versions/);
     assert.equal(requests,3);
+    const commit="a".repeat(40),version="b".repeat(64);
+    const runtime={...receipt,
+      url:`https://raw.githubusercontent.com/hanshanley/margin_of_error/${commit}/automatic/versions/${version}/house/sensitivity.json.gz`,
+      automatic_runtime_commit:commit,automatic_runtime_version:version};
+    await loadHouseSensitivity(runtime,sources);
+    for(const invalid of [
+      {...runtime,url:runtime.url.replace("/automatic/versions/","/automatic/")},
+      {...runtime,automatic_runtime_commit:"c".repeat(40)},
+      {...runtime,automatic_runtime_version:"d".repeat(64)},
+    ]) await assert.rejects(loadHouseSensitivity(invalid,sources),/Missing pinned/);
+    assert.equal(requests,4);
   } finally {globalThis.fetch=original;}
 });
 

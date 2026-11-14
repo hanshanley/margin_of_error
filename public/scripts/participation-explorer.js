@@ -3794,6 +3794,13 @@ async function main() {
       : (tabs.indexOf(tab) + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
     tabs[index].focus(); showView(tabs[index].dataset.view);
   });
+  window.addEventListener("participation:automatic-runtime-rejected", event => {
+    if (event.detail?.component !== "counts") return;
+    state.currentPrecinctShapes.clear();
+    state.currentPrecinctHashes.clear();
+    state.drillToken++;
+    render();
+  });
   await Promise.all([loadContext(), loadMethods(), loadLocal(), loadCurrentPrecincts(), loadPrecinctResults(),
     loadReportingUnitSources(), loadCountIndex().then(({ index }) => { state.countIndex = index; }).catch(() => {})]);
   const [national, states, geometry, ncSummary, audits] = await Promise.all([

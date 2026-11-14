@@ -3,6 +3,7 @@ export const participationReleaseRoot = `https://github.com/hanshanley/margin_of
 export const participationCurrentRoot = "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/";
 export const participationHistoricalRoot = "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/";
 export const participationArchivedNationwideRoot = "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nationwide/";
+export const participationSwingScopeRoot = "https://raw.githubusercontent.com/hanshanley/margin_of_error/93a8018683cd8fd319c8318104e27c3e5ca283fa/public/participation-swing/20261106-02/";
 export const participationCountyContextRoots = {
   "20261106-09": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2f839e94dcbef8f35786bc7f8184f2b844ebaaf4/public/participation-county-context/20261106-09/",
   "20261106-10": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/",
@@ -24,6 +25,8 @@ export const participationCountyContextRoots = {
 };
 
 export function participationDownload(path) {
+  if (path === "/participation-swing/20261106-02/nationwide-scope.json")
+    return participationSwingScopeRoot + "nationwide-scope.json";
   const archivedNationwide = /^\/voter-participation\/data\/nationwide\/(20261104T(?:152630|144402|144145|143957)Z\/snapshot\.json)$/.exec(path);
   if (archivedNationwide) return participationArchivedNationwideRoot + archivedNationwide[1];
   const swingArchive = /^\/participation-swing\/(20261106-0[12])\/complete-analysis\.zip$/.exec(path);

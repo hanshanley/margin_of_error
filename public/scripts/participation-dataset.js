@@ -1,3 +1,6 @@
+import { automaticRuntimeRejected, loadAutomaticRuntime, rejectAutomaticRuntime,
+  setAutomaticRuntimeStatus } from "./participation-automatic-runtime.js";
+
 export const datasetCatalogURL = "https://raw.githubusercontent.com/hanshanley/margin_of_error/participation-data/catalog.json";
 const hash = /^[a-f0-9]{64}$/;
 const immutableBase = /^https:\/\/raw\.githubusercontent\.com\/hanshanley\/margin_of_error\/[a-f0-9]{40}\//;
@@ -48,8 +51,27 @@ export function loadDatasetCatalog() {
   return catalogPromise;
 }
 
-export async function loadDataset(id) {
+async function loadEntry(entry, automatic_runtime=null) {
+  return { entry, index: await checkedDatasetFile(entry.base_url, entry.index), automatic_runtime };
+}
+
+export async function loadDataset(id, { automatic=true }={}) {
   const catalog = await loadDatasetCatalog(), entry = catalog.datasets[id];
   if (!entry || entry.status !== "loaded") throw new Error("This dataset is awaiting publication");
-  return { entry, index: await checkedDatasetFile(entry.base_url, entry.index) };
+  const runtimeKey = id === "participation-counts-2026" ? "counts"
+    : id === "participation-native-bindings-2026" ? "native" : null;
+  if (!runtimeKey || !automatic || automaticRuntimeRejected("counts"))
+    return loadEntry(entry);
+  try {
+    const manifest = await loadAutomaticRuntime();
+    if (!manifest[runtimeKey]) {
+      setAutomaticRuntimeStatus("counts", "fallback",
+        `No automatic ${runtimeKey} descriptor was supplied.`, manifest);
+      return loadEntry(entry);
+    }
+    return await loadEntry(manifest[runtimeKey], manifest);
+  } catch (error) {
+    rejectAutomaticRuntime("counts", error);
+    return loadEntry(entry);
+  }
 }

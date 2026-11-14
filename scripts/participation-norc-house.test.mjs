@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { gzipSync } from "node:zlib";
 import { validateNorcHouse, norcGroups, norcEstimate, norcMapValue,
   roundedNorcContributions, norcTerms, validateNorcFamilies, norcFamilies,
   norcContributionScale, norcSharedBound, norcRecordedComparison, norcRecordedBound,
@@ -293,6 +294,29 @@ test("flipping pinned profiles reuses each checksum cache; failed and mismatched
     const wrong={...receipt,url:receipt.url.replace("b".repeat(40),"c".repeat(40)).replace("viewer-full","viewer-attenuated")};
     globalThis.fetch=async()=>new Response(bytes);
     await assert.rejects(loadNorcHouse(wrong),/profile differ/);
+  }finally{globalThis.fetch=original;}
+});
+
+test("automatic models accept producer version paths and reject mismatched publication identities",async()=>{
+  const {loadNorcHouse}=await import("../public/scripts/participation-norc-house.js?versioned-runtime-test");
+  const decoded=Buffer.from(JSON.stringify(comparison())),bytes=gzipSync(decoded);
+  const commit="a".repeat(40),version="b".repeat(64);
+  const receipt={url:`https://raw.githubusercontent.com/hanshanley/margin_of_error/${commit}/automatic/versions/${version}/house/viewer-original.json.gz`,
+    bytes:bytes.length,sha256:createHash("sha256").update(bytes).digest("hex"),
+    compression:"gzip",media_type:"application/json",decoded_bytes:decoded.length,
+    decoded_sha256:createHash("sha256").update(decoded).digest("hex"),
+    automatic_runtime_commit:commit,automatic_runtime_version:version,automatic_profile:"original"};
+  const original=globalThis.fetch;
+  let requests=0;
+  try{
+    globalThis.fetch=async()=>{requests++;return new Response(bytes);};
+    assert.equal((await loadNorcHouse(receipt)).preferred_family,"accepted_ridge_multinomial");
+    for(const invalid of [
+      {...receipt,url:receipt.url.replace("/automatic/versions/","/automatic/")},
+      {...receipt,automatic_runtime_commit:"c".repeat(40)},
+      {...receipt,automatic_runtime_version:"d".repeat(64)},
+    ]) await assert.rejects(loadNorcHouse(invalid),/Unpinned/);
+    assert.equal(requests,1);
   }finally{globalThis.fetch=original;}
 });
 

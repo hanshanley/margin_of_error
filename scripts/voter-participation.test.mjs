@@ -8,7 +8,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { gunzipSync } from 'node:zlib';
 import { previewSvg, publicationScript, sourceRevision } from './stage-voter-participation.mjs';
-import { participationDownload, participationHistoricalRoot, participationArchivedNationwideRoot } from '../public/scripts/participation-downloads.js';
+import { participationDownload, participationHistoricalRoot, participationArchivedNationwideRoot, participationSwingScopeRoot } from '../public/scripts/participation-downloads.js';
 import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles, verifyPagesSize, verifyPagesByteCounts } from './prepare-participation-pages.mjs';
 import { appendPrecinctHistory } from './build-precinct-histories.mjs';
 import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation } from '../public/scripts/participation-geography.js';
@@ -118,6 +118,19 @@ test('bulk download routing preserves full snapshots and leaves interactive JSON
 	assert.equal(participationDownload('/participation-current/latest.json'), '/participation-current/latest.json');
 	assert.equal(rewriteDownloadHtml(`<a href="${path}" download>Full data</a><script>fetch("${path}")</script>`,
 		[{ path, url }]), `<a href="${url}" download>Full data</a><script>fetch("${path}")</script>`);
+});
+
+test('only the byte-verified historical scope ledger routes to its complete immutable body', () => {
+	const path = '/participation-swing/20261106-02/nationwide-scope.json';
+	const url = participationSwingScopeRoot + 'nationwide-scope.json';
+	assert.equal(participationDownload(path), url);
+	assert.equal(rewriteDownloadHtml(`<a href="${path}" download>Full scope</a>`, [{ path, url }]),
+		`<a href="${url}" download>Full scope</a>`);
+	for (const other of [
+		'/participation-swing/20261106-01/nationwide-scope.json',
+		'/participation-swing/20261106-03/nationwide-scope.json',
+		'/participation-swing/20261106-02/analysis.json',
+	]) assert.equal(participationDownload(other), other);
 });
 
 test('only four byte-verified archived nationwide snapshots route to complete pinned originals', () => {
@@ -377,6 +390,7 @@ test('standalone compatibility renderer includes every dependency of the shared 
 		'/participation-methods/20261104T183000Z/complete-methods.zip',
 		'/participation-current/20261104T220424Z/local.json',
 		'/participation-swing/20261106-02/complete-analysis.zip',
+		'/participation-swing/20261106-02/nationwide-scope.json',
 	]) assert.equal(window.download(path), participationDownload(path));
 });
 

@@ -1,5 +1,6 @@
 import { loadDataset, checkedDatasetFile } from "./participation-dataset.js";
-import { validateCountObservation, loadCountState, loadCountIndex } from "./participation-counts.js";
+import { validateCountObservation, loadCountState, loadCountIndex, loadAcceptedCountState,
+  rejectCountRuntime } from "./participation-counts.js";
 import { validateReferenceBindings, bindReferenceGeometry } from "./participation-reference-bindings.js";
 
 const qualifierKeys = ["state_code", "county_id", "county", "geography_level", "county_fips",
@@ -18,6 +19,54 @@ function put(object, path, value) {
   let target = object;
   for (const key of path.slice(0, -1)) target = target[key];
   target[path.at(-1)] = value;
+}
+
+const nativePropertyIdentity = [
+  "key", "year", "state_code", "county", "county_id", "county_fips", "geography_level",
+  "reference_municipality_key", "source_administration_id", "source_mode", "unit", "unit_key",
+  "unit_kind", "denominator_basis", "participation_measure_kind", "participation_measure_literal",
+  "participation_measure_label", "cast_ballot_count_qualified", "unique_voter_count_qualified",
+  "maps_approved",
+];
+function countBindingIdentity(observation) {
+  const denominator = observation.denominator;
+  return ordered({
+    id: observation.id,
+    election: observation.election,
+    geography: observation.geography,
+    measure: observation.measure,
+    denominator: denominator && {
+      literal: denominator.literal, basis: denominator.basis, qualified: denominator.qualified,
+    },
+    view: Object.fromEntries(nativePropertyIdentity
+      .map(key=>[key,observation.view?.[key]??null])),
+  });
+}
+function propertyIdentity(properties) {
+  return ordered(Object.fromEntries(nativePropertyIdentity.map(key => [key, properties?.[key] ?? null])));
+}
+function updatedProperties(properties, view) {
+  const updated=structuredClone(properties);
+  for (const key of Object.keys(updated))
+    if (!nativePropertyIdentity.includes(key) && Object.hasOwn(view,key))
+      updated[key]=structuredClone(view[key]);
+  return updated;
+}
+
+export function rebindNativeCounts(data, counts) {
+  const current = new Map(counts.records.map(row => [row.id, row]));
+  const rebound = structuredClone(data);
+  for (const row of rebound.rows) {
+    const observation = current.get(row.observation.id);
+    if (!observation || countBindingIdentity(observation) !== countBindingIdentity(row.observation))
+      throw new Error("Automatic count identity or approved native join differs");
+    const properties = updatedProperties(row.properties,observation.view);
+    if (propertyIdentity(properties) !== propertyIdentity(row.properties))
+      throw new Error("Automatic count geography, unit label or map qualification differs");
+    row.observation = structuredClone(observation);
+    row.properties = properties;
+  }
+  return validateNativeShard(rebound, data.id);
 }
 
 export function validateNativeShard(data, identity) {
@@ -96,24 +145,52 @@ export function bindCountyReference(rows, collection, reference, binding) {
 
 let dataset;
 const shards = new Map(), geometries = new Map();
+globalThis.addEventListener?.("participation:automatic-runtime-rejected", event => {
+  if (event.detail?.component === "counts") shards.clear();
+});
 export function loadNativeIndex() {
-  dataset ||= loadDataset("participation-native-bindings-2026").then(result => {
-    if (result.index.contract !== "participation.native_index.v1")
-      throw new Error("Unknown native reference catalog");
-    return result;
-  }).catch(error => { dataset = null; throw error; });
+  dataset ||= (async()=>{
+    const result=await loadDataset("participation-native-bindings-2026");
+    try {
+      if (result.index.contract!=="participation.native_index.v1")
+        throw new Error("Unknown native reference catalog");
+      return result;
+    } catch (error) {
+      if (!result.automatic_runtime) throw error;
+      rejectCountRuntime(error);
+      const fallback=await loadDataset("participation-native-bindings-2026",{automatic:false});
+      if (fallback.index.contract!=="participation.native_index.v1") throw error;
+      return fallback;
+    }
+  })().catch(error=>{dataset=null;throw error;});
   return dataset;
 }
 export async function loadBoundNative(identity) {
-  const { entry, index } = await loadNativeIndex(), declaration = index.layers[identity];
+  const nativeSource=await loadNativeIndex(), {entry,index}=nativeSource, declaration = index.layers[identity];
   if (!declaration) throw new Error("No approved native count/reference binding");
   if (!shards.has(identity)) shards.set(identity, checkedDatasetFile(entry.base_url, declaration)
     .then(async data => {
-      if (data.contract !== "participation.reference_bindings.v1") return validateNativeShard(data, identity);
-      const source = await loadCountState(data.state_code), { index: sourceIndex } = await loadCountIndex();
-      if (data.rows.length !== declaration.features) throw new Error("Separate reference coverage differs");
-      return validateReferenceBindings(data, identity, source, sourceIndex.states[data.state_code]);
-    }).catch(error => { shards.delete(identity); throw error; }));
+      const countIndex = await loadCountIndex();
+      const bind = async (source, sourceIndex=countIndex.index) => {
+        if (data.contract !== "participation.reference_bindings.v1")
+          return rebindNativeCounts(validateNativeShard(data, identity), source);
+        if (data.rows.length !== declaration.features) throw new Error("Separate reference coverage differs");
+        return validateReferenceBindings(data, identity, source, sourceIndex.states[data.state_code]);
+      };
+      try {
+        return await bind(await loadCountState(data.state_code));
+      } catch (error) {
+        if (!countIndex.automatic_runtime) throw error;
+        rejectCountRuntime(error);
+        const fallbackIndex = await loadCountIndex();
+        return bind(await loadAcceptedCountState(data.state_code), fallbackIndex.index);
+      }
+    }).catch(async error => {
+      shards.delete(identity);
+      if (!nativeSource.automatic_runtime) throw error;
+      rejectCountRuntime(error);dataset=null;geometries.clear();
+      return loadBoundNative(identity);
+    }));
   const data = await shards.get(identity);
   if (!geometries.has(data.geometry.sha256)) geometries.set(data.geometry.sha256,
     checkedDatasetFile(entry.base_url, data.geometry).catch(error => {
@@ -136,14 +213,43 @@ export async function loadMunicipalReference(code, mode) {
     reference: { sha256: binding.sha256 } };
 }
 export async function loadReportingRows(code) {
-  const { entry, index } = await loadNativeIndex(), declaration = index.reporting_tables?.[code];
+  const nativeSource=await loadNativeIndex(), {entry,index}=nativeSource;
+  const declaration = index.reporting_tables?.[code];
   if (!declaration) throw new Error("No qualified reporting-unit count table");
-  const data = await checkedDatasetFile(entry.base_url, declaration);
+  let data;
+  try {
+    data=await checkedDatasetFile(entry.base_url,declaration);
+  } catch (error) {
+    if (!nativeSource.automatic_runtime) throw error;
+    rejectCountRuntime(error);dataset=null;
+    return loadReportingRows(code);
+  }
   if (data.contract !== "participation.reporting_units.v1" || data.state_code !== code
       || data.records?.length !== declaration.rows)
     throw new Error("Reporting-unit source inventory differs");
+  const bind = counts => {
+    const current = new Map(counts.records.map(row => [row.id, row]));
+    return data.records.map(row => {
+      const observation = current.get(row.observation.id);
+      if (!observation || countBindingIdentity(observation) !== countBindingIdentity(row.observation))
+        throw new Error("Automatic reporting-unit identity differs");
+      const properties = updatedProperties(row.properties,observation.view);
+      if (propertyIdentity(properties) !== propertyIdentity(row.properties))
+        throw new Error("Automatic reporting-unit labels or qualification differ");
+      return { properties, observation };
+    });
+  };
+  const countIndex = await loadCountIndex();
+  let records;
+  try {
+    records = bind(await loadCountState(code));
+  } catch (error) {
+    if (!countIndex.automatic_runtime) throw error;
+    rejectCountRuntime(error);
+    records = bind(await loadAcceptedCountState(code));
+  }
   const keys = new Set();
-  for (const { properties, observation } of data.records) {
+  for (const { properties, observation } of records) {
     validateCountObservation(observation, code);
     if (!properties.key || !properties.precinct || !properties.reporting_unit_kind
         || keys.has(properties.key) || properties.year !== 2026
@@ -152,5 +258,5 @@ export async function loadReportingRows(code) {
       throw new Error("Unqualified reporting-unit count or rate substitution");
     keys.add(properties.key);
   }
-  return data.records.map(row => row.properties);
+  return records.map(row => row.properties);
 }

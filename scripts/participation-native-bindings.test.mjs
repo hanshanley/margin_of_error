@@ -2,7 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { canonicalObservation } from "./compile-participation-counts.mjs";
 import { validateNativeShard, bindNativeGeometry, bindCountyReference,
-  countyQualifier, countyCoverageMessage } from "../public/scripts/participation-native-bindings.js";
+  countyQualifier, countyCoverageMessage, rebindNativeCounts
+} from "../public/scripts/participation-native-bindings.js";
 
 const hash = "a".repeat(64);
 test("missing county detail describes the selected source inventory after additions", () => {
@@ -44,6 +45,32 @@ test("count-only updates change returned counts without changing or rebuilding t
   assert.equal(geometry.features[0].properties.ballots, 0);
   assert.equal(result.features[0].geometry, geometry.features[0].geometry);
   assert.equal(result.features[0].properties.reported_pct, null);
+});
+test("runtime canonical counts replace native map properties only under the existing identity and join", () => {
+  const { data, geometry } = fixture();
+  const changed = structuredClone(data.rows[0].observation);
+  changed.count.value = 25;
+  changed.view.ballots = 25;
+  changed.source_clock.literal = "November 14; timezone not supplied";
+  changed.view.source_update_label = changed.source_clock.literal;
+  changed.source.input_sha256 = "b".repeat(64);
+  changed.source.fields = changed.view;
+  const rebound = rebindNativeCounts(data, { records: [changed] });
+  const mapped = bindNativeGeometry(rebound, geometry, hash);
+  assert.equal(mapped.features[0].properties.ballots, 25);
+  assert.equal(rebound.rows[0].observation.view.source_update_label, changed.source_clock.literal);
+  assert.equal(geometry.features[0].properties.ballots, 0);
+  for (const mutate of [
+    row => { row.id = "b".repeat(32); },
+    row => { row.geography.join.feature_key = "MN|2"; },
+    row => { row.view.unit = "Different unit"; row.source.fields = row.view; },
+    row => { row.election.qualification = "collector_context"; },
+  ]) {
+    const invalid = structuredClone(changed);
+    mutate(invalid);
+    assert.throws(() => rebindNativeCounts(data, { records: [invalid] }),
+      /identity|geography|qualification|label/);
+  }
 });
 test("hash, inventory, state, duplicate keys and denominator promotion cannot qualify a native binding", () => {
   for (const mutate of [

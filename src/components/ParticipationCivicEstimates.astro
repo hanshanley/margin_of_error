@@ -169,7 +169,10 @@ const priorNativeRelease = 'https://github.com/hanshanley/margin_of_error/releas
 		</div>
 	</details>
 	<details class="explorer-notes" data-native-registered-controls data-native-version={native.native_control_version}>
-		<summary>Native registration frames: {native.scenarios.length} conditional scenarios in {nativeJurisdictions} jurisdictions</summary>
+		<summary data-native-summary>Native registration frames: {native.scenarios.length} conditional scenarios in {nativeJurisdictions} jurisdictions</summary>
+		<p class="caption" data-native-automatic-status role="status">
+			Checking the optional automatic registered-control snapshot; accepted revision 35 values remain available.
+		</p>
 		<p>These are the existing source-weighted scenarios, not another model family. Each applies the same
 			state study propensity to a source's registered-voter stock. <strong>The results are conditional
 			source units, not observed voters, confirmed staying home or certified turnout.</strong>{' '}
@@ -205,10 +208,14 @@ const priorNativeRelease = 'https://github.com/hanshanley/margin_of_error/releas
 				<thead><tr><th scope="col">State / native registration frame</th><th scope="col">Registered source units</th>
 					<th scope="col">Modeled voter units</th><th scope="col">Modeled nonvoter units</th></tr></thead>
 				<tbody>{native.scenarios.map(row => <tr data-native-registered-scenario={row.control_id}
-					data-native-state={row.state_code}>
+					data-native-state={row.state_code} data-native-basis={row.native_denominator_basis}
+					data-native-civic-n={row.civic_source_n} data-native-source-url={row.source_url}
+					data-native-time={row.source_time_label ?? ''} data-native-registered={row.native_registered_denominator}
+					data-native-modeled-voter={row.conditional_modeled_voter_count}
+					data-native-modeled-nonvoter={row.conditional_modeled_nonvoter_count}>
 					<th scope="row">{names[row.state_code]}
 						<br /><small>{row.native_denominator_basis.replaceAll('_', ' ')}</small>
-						<br /><small>{row.source_time_label}</small></th>
+						<br /><small data-native-time>{row.source_time_label}</small></th>
 					<td data-native-registered={row.native_registered_denominator}>{count(row.native_registered_denominator)}</td>
 					<td data-native-modeled-voter={row.conditional_modeled_voter_count}>{count(row.conditional_modeled_voter_count)}</td>
 					<td data-native-modeled-nonvoter={row.conditional_modeled_nonvoter_count}>{count(row.conditional_modeled_nonvoter_count)}</td>
@@ -222,14 +229,17 @@ const priorNativeRelease = 'https://github.com/hanshanley/margin_of_error/releas
 						<th scope="col">Conditional scenarios</th><th scope="col">Study n</th></tr></thead>
 					<tbody>{native.states.map(row => <tr data-native-registered-state={row.state_code}>
 						<th scope="row">{names[row.state_code]}</th>
-						<td>{row.control_registered_denominator ? count(row.control_registered_denominator) : 'Not supplied'}</td>
-						<td>{nativeByState.get(row.state_code)?.length || 'No source-frame scenario'}</td>
-						<td>{row.civic_source_n || 'Not sampled'}</td>
+						<td data-native-state-registered>{row.control_registered_denominator ? count(row.control_registered_denominator) : 'Not supplied'}</td>
+						<td data-native-state-scenarios>{nativeByState.get(row.state_code)?.length || 'No source-frame scenario'}</td>
+						<td data-native-state-study-n>{row.civic_source_n || 'Not sampled'}</td>
 					</tr>)}</tbody>
 				</table>
 			</div>
 		</details>
 		<div class="download-links">
+			<a href={native.complete_download.url} download data-native-automatic-download hidden>
+				Complete automatic runtime: counts, registered controls, House estimates and reproduction (ZIP)
+			</a>
 			{nativePublicationReady
 				? <>
 					<p data-native-publication-status="verified_immutable"><strong>Verified immutable releases:</strong>
@@ -257,8 +267,9 @@ const priorNativeRelease = 'https://github.com/hanshanley/margin_of_error/releas
 			Different cutoffs and overlapping methods are not added to reporting totals.</p>
 		<p class="caption">Native-control projection {native.native_control_version}; the study weights and probabilities
 			have not changed. {nativePublicationReady ? 'Verified' : 'Planned'} complete model SDK:
-			{' '}{native.complete_download.bytes.toLocaleString('en-US')} bytes · SHA-256
-			<code>{native.complete_download.sha256}</code>.</p>
+			{' '}<span data-native-runtime-fingerprint>{native.complete_download.bytes.toLocaleString('en-US')} bytes · SHA-256
+			<code>{native.complete_download.sha256}</code></span>.</p>
+		<script type="application/json" is:inline data-native-names set:html={JSON.stringify(names).replaceAll('<', '\\u003c')}></script>
 	</details>
 	<details class="explorer-notes"><summary>Broad demographic source comparisons and conditional choices</summary>
 		<p>Current attributes are not fixed 2024 cohorts. Unknown and disclosure-removed attributes remain in the
@@ -339,6 +350,11 @@ const priorNativeRelease = 'https://github.com/hanshanley/margin_of_error/releas
 	<p class="caption" data-civic-archive>Complete ZIP: {download.bytes.toLocaleString('en-US')} bytes · SHA-256
 		<code>{download.sha256}</code>. Attribution to NORC does not imply endorsement.</p>
 </section>
+
+<script>
+	import { installAutomaticRegisteredControls } from '../../public/scripts/participation-registered-controls.js';
+	installAutomaticRegisteredControls();
+</script>
 
 <style>
 	#participation-civic-estimates { min-width: 0; }

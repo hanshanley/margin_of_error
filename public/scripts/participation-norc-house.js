@@ -61,6 +61,13 @@ export function validateNorcHouse(data) {
     throw new Error("Unqualified NORC House model");
   const identities = new Set();
   const policy=data.comparison_policy;
+  const automatic=data.automatic_estimate_update;
+  if (automatic && (automatic.contract!=="participation.automatic_estimates.v1"
+      || automatic.existing_17_behavioral_holds_preserved!==true
+      || automatic.official_HI_WY_scope_guarded!==true
+      || !/^[a-f0-9]{64}$/.test(automatic.qualification_mask_sha256)
+      || !Array.isArray(automatic.changed_states)))
+    throw new Error("Unqualified automatic House estimate update");
   if (policy && (policy.contract!=="participation.house_comparability.v1"
       || policy.all_districts_audited!==435 || policy.all_states_audited!==50
       || policy.unchanged_major_party_coverage_required!==true
@@ -74,16 +81,26 @@ export function validateNorcHouse(data) {
     identities.add(row.state_code);
     if (policy) {
       const review=row.contest_comparability;
-      if (review?.state_code!==row.state_code || review.raw_aggregate_is_not_voter_preference_swing!==true
-          || review.common_source_id_is_not_statewide_estimate!==true
-          || review.common_source_id_boundary_stability_qualified!==false
-          || (row.source_comparison_available && (!review.like_for_like_statewide_source_comparison
-            || review.coverage_changed_districts.length || review.missing_count_districts.length
-            || review.multiple_same_party_nominee_districts.length)))
-        throw new Error("Incompatible House contests cannot constrain behavior");
-      if (row.source_comparison_available && ["previous","current"].some(phase=>
-        ["D","R","O"].some(party=>review[phase+"_counts"][party]!==row.reported_comparison[phase][party])))
-        throw new Error("Comparability audit changed native endpoint counts");
+      if (automatic && (policy.existing_behavioral_holds_preserved!==true
+          || policy.source_weights_changed!==false
+          || !Array.isArray(policy.automatic_changed_state_scenarios_recomputed)
+          || policy.automatic_changed_state_scenarios_recomputed.join()
+            !==automatic.changed_states.join()))
+        throw new Error("Automatic viewer did not retain its separately pinned comparison gate");
+      const separatelyPinnedAutomaticChange=automatic?.changed_states.includes(row.state_code)
+        && row.source_comparison_available && review===undefined;
+      if (!separatelyPinnedAutomaticChange) {
+        if (review?.state_code!==row.state_code || review.raw_aggregate_is_not_voter_preference_swing!==true
+            || review.common_source_id_is_not_statewide_estimate!==true
+            || review.common_source_id_boundary_stability_qualified!==false
+            || (row.source_comparison_available && (!review.like_for_like_statewide_source_comparison
+              || review.coverage_changed_districts.length || review.missing_count_districts.length
+              || review.multiple_same_party_nominee_districts.length)))
+          throw new Error("Incompatible House contests cannot constrain behavior");
+        if (row.source_comparison_available && ["previous","current"].some(phase=>
+          ["D","R","O"].some(party=>review[phase+"_counts"][party]!==row.reported_comparison[phase][party])))
+          throw new Error("Comparability audit changed native endpoint counts");
+      }
     }
     if (!finite(row.point?.total_change_pp) || !close(row.point.current_margin_pp-row.point.previous_margin_pp,
       row.point.total_change_pp) || !close(norcTerms.reduce((s,[key])=>s+row.point.contributions_pp[key],0),
@@ -149,6 +166,8 @@ export function validateNorcFamilies(data) {
     throw new Error("Unqualified model-family comparison");
   const baseline = data.families.accepted_ridge_multinomial;
   for (const [family] of norcFamilies) {
+    if (data.automatic_estimate_update && !data.families[family].automatic_estimate_update)
+      data.families[family].automatic_estimate_update=data.automatic_estimate_update;
     const model = validateNorcHouse(data.families[family]);
     for (const row of model.rows) {
       const original = baseline.rows.find(value=>value.state_code===row.state_code);
@@ -233,15 +252,27 @@ export function validateNorcAssociation(data, original) {
 }
 
 export async function loadNorcHouse(receipt) {
+  const researchSource = /^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01|house-model-families\/20261112-01)\/viewer-data|house-fixed-copula\/20261112-01\/viewer-(?:attenuated|full)|(?:house-comparability\/20261112-01|house-official-source-update\/20261113-01)\/viewer-(?:original|attenuated|full))\.json$/;
+  const runtimeSource = /^https:\/\/raw\.githubusercontent\.com\/hanshanley\/margin_of_error\/([a-f0-9]{40})\/automatic\/versions\/([a-f0-9]{64})\/house\/[A-Za-z0-9_./-]+\.json\.gz$/;
+  const runtimeMatch = runtimeSource.exec(receipt?.url || "");
+  const compressed = receipt?.compression === "gzip";
   if (!receipt || !/^[a-f0-9]{64}$/.test(receipt.sha256)
       || !Number.isSafeInteger(receipt.bytes) || receipt.bytes<=0 || receipt.bytes>10_000_000
-      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/(?:(?:norc-house-demographic\/20261111-01|house-clerk-norc-endpoints\/20261112-01|pa-house-native-controls\/20261112-01|house-model-families\/20261112-01)\/viewer-data|house-fixed-copula\/20261112-01\/viewer-(?:attenuated|full)|(?:house-comparability\/20261112-01|house-official-source-update\/20261113-01)\/viewer-(?:original|attenuated|full))\.json$/.test(receipt.url))
+      || !(researchSource.test(receipt.url) || runtimeMatch)
+      || Boolean(runtimeMatch) !== compressed
+      || compressed && (!Number.isSafeInteger(receipt.decoded_bytes) || receipt.decoded_bytes<=0
+        || receipt.decoded_bytes>20_000_000 || !/^[a-f0-9]{64}$/.test(receipt.decoded_sha256)
+        || receipt.media_type !== "application/json"
+        || receipt.automatic_runtime_commit !== runtimeMatch[1]
+        || receipt.automatic_runtime_version !== runtimeMatch[2]
+        || !["original","attenuated","full"].includes(receipt.automatic_profile)))
     throw new Error("Unpinned NORC model input");
   const requireOfficialRevision=receipt.official_source_revision_required===true
     || receipt.url.includes("/data/house-official-source-update/");
   const requireComparability=receipt.contest_comparability_required===true
     || receipt.url.includes("/data/house-comparability/") || requireOfficialRevision;
-  const pin = `${receipt.url}|${receipt.sha256}|${receipt.bytes}|${requireComparability}|${requireOfficialRevision}`;
+  const pin = `${receipt.url}|${receipt.sha256}|${receipt.bytes}|${receipt.decoded_sha256 || ""}`
+    +`|${requireComparability}|${requireOfficialRevision}`;
   if (!cached.has(pin)) {
     const promise = (async()=>{
       const controller = new AbortController(), timer = setTimeout(()=>controller.abort(),20_000);
@@ -252,7 +283,16 @@ export async function loadNorcHouse(receipt) {
         const digest = Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes)),
           v=>v.toString(16).padStart(2,"0")).join("");
         if (bytes.byteLength !== receipt.bytes || digest !== receipt.sha256) throw new Error("NORC model checksum mismatch");
-        const data=JSON.parse(new TextDecoder().decode(bytes));
+        const decoded = compressed
+          ? await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).arrayBuffer()
+          : bytes;
+        if (compressed) {
+          const decodedDigest = Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",decoded)),
+            v=>v.toString(16).padStart(2,"0")).join("");
+          if (decoded.byteLength !== receipt.decoded_bytes || decodedDigest !== receipt.decoded_sha256)
+            throw new Error("NORC model decoded checksum mismatch");
+        }
+        const data=JSON.parse(new TextDecoder("utf-8",{fatal:true}).decode(decoded));
         const result=data.contract==="participation.house_model_families.v1"?validateNorcFamilies(data):validateNorcHouse(data);
         if (requireComparability && (
             result.comparison_policy?.contract!=="participation.house_comparability.v1"
@@ -269,19 +309,31 @@ export async function loadNorcHouse(receipt) {
             throw new Error("Required reviewed official source revision is missing");
           for (const model of Object.values(result.families || {model:result})) {
             const update=model.endpoint_update;
+            const automaticUpdate=update?.contract==="participation.automatic_estimates.v1"
+              && update.candidate_votes_are_not_ballots_or_turnout===true
+              && update.official_HI_WY_scope_preserved===true
+              && update.qualification_mask_preserved===true
+              && update.source_model_refitted===false && update.source_weights_changed===false
+              && update.unchanged_state_numerics_and_seeds_reused===true
+              && JSON.stringify(update.changed_states)===
+                JSON.stringify(model.automatic_estimate_update?.changed_states);
+            const reviewedUpdate=update?.native_source_counts_revised_from_previous_release===true
+              && update.source_count_repairs===0 && update.source_model_refitted===false
+              && update.survey_weights_changed===false
+              && Array.isArray(update.changed_states)
+              && [...update.changed_states].sort().join(",")==="HI,WY";
             if (model.comparison_policy.input_source_counts_revised_from_previous_release!==true
-                || update?.native_source_counts_revised_from_previous_release!==true
-                || update.source_count_repairs!==0 || update.source_model_refitted!==false
-                || update.survey_weights_changed!==false
-                || !Array.isArray(update.changed_states) || [...update.changed_states].sort().join(",")!=="HI,WY")
+                || !(automaticUpdate || reviewedUpdate))
               throw new Error("Official source revision changed its model/refit qualification");
             for (const code of ["HI","WY"])
               if (model.rows.find(row=>row.state_code===code)?.reported_comparison.current_native_clock!==null)
                 throw new Error("A retrieval time cannot replace the absent native update clock");
           }
         }
-        const profile=receipt.url.match(/viewer-(attenuated|full)\.json$/)?.[1];
-        if ((profile || result.association_profile) && result.association_profile?.profile!==profile)
+        const profile=receipt.automatic_profile
+          || receipt.url.match(/viewer-(attenuated|full)\.json$/)?.[1];
+        if (profile==="original" ? result.association_profile
+          : (profile || result.association_profile) && result.association_profile?.profile!==profile)
           throw new Error("Association receipt and source profile differ");
         return result;
       } finally { clearTimeout(timer); }

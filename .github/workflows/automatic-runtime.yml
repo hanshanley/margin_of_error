@@ -1,0 +1,67 @@
+name: Publish automatic participation runtime
+
+on:
+  schedule:
+    - cron: "31 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: participation-automatic-runtime-writer
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout website publisher
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Checkout reviewed public results producer
+        uses: actions/checkout@v7
+        with:
+          repository: hanshanley/voter-participation
+          ref: 4d73fd215c564a53ac3ee4cfd2e3a4b06e9d1780
+          path: research-source
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            pyproject.toml
+            data/results-intake/model-seed
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: research-source/pyproject.toml
+
+      - name: Install the reviewed producer environment
+        run: python -m pip install 'requests>=2.31' 'xlrd>=2'
+
+      - name: Verify and atomically publish the data-only runtime
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/research-source
+        run: |
+          python -m scripts.automatic_runtime \
+            --results-pointer \
+              https://raw.githubusercontent.com/hanshanley/voter-participation/results-data/latest.json \
+            --repository "$GITHUB_WORKSPACE" \
+            --work-dir "$RUNNER_TEMP/participation-automatic-runtime"
+
+      - name: Retain failed runtime evidence only
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: participation-automatic-runtime-failure
+          retention-days: 30
+          path: |
+            ${{ runner.temp }}/participation-automatic-runtime/*.json
+            ${{ runner.temp }}/participation-automatic-runtime/*.log
+          if-no-files-found: ignore

@@ -22,10 +22,16 @@ export function validateHouseSensitivity(data, sources) {
       || JSON.stringify(data.families) !== JSON.stringify(norcFamilies.map(([key]) => key))
       || !Array.isArray(data.rows) || data.rows.length !== 50)
     throw new Error("Unqualified model-sensitivity projection");
-  for (const [profile] of norcAssociations)
-    if (!sources?.[profile] || ["url", "bytes", "sha256"].some(key =>
-      data.source_pins?.[profile]?.[key] !== sources[profile][key]))
+  for (const [profile] of norcAssociations) {
+    const declared=data.source_pins?.[profile],source=sources?.[profile];
+    const addressMatches=declared?.url===source?.url
+      || typeof declared?.path==="string" && source?.url?.endsWith("/"+declared.path);
+    if (!source || !addressMatches || ["bytes", "sha256"].some(key =>
+      declared?.[key] !== source[key])
+      || ["decoded_bytes","decoded_sha256"].some(key =>
+        declared?.[key]!==undefined && declared[key]!==source[key]))
       throw new Error("Sensitivity and current model source versions differ");
+  }
   const seen = new Set();
   let groups = 0, supported = 0;
   for (const row of data.rows) {
@@ -81,7 +87,12 @@ export function houseSensitivityScope(data, row, group="") {
 }
 
 export async function loadHouseSensitivity(receipt, sources) {
-  if (!/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/house-model-disclosures\/[a-zA-Z0-9-]+\/sensitivity\.json\.gz$/.test(receipt?.url)
+  const research=/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/[a-f0-9]{40}\/data\/house-model-disclosures\/[a-zA-Z0-9-]+\/sensitivity\.json\.gz$/;
+  const runtime=/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/margin_of_error\/([a-f0-9]{40})\/automatic\/versions\/([a-f0-9]{64})\/house\/[A-Za-z0-9_./-]+\.json\.gz$/;
+  const runtimeMatch=runtime.exec(receipt?.url || "");
+  if (!(research.test(receipt?.url) || runtimeMatch)
+      || runtimeMatch && (receipt.automatic_runtime_commit!==runtimeMatch[1]
+        || receipt.automatic_runtime_version!==runtimeMatch[2])
       || receipt.compression !== "gzip"
       || !Number.isSafeInteger(receipt.bytes) || receipt.bytes <= 0
       || !Number.isSafeInteger(receipt.decoded_bytes) || receipt.decoded_bytes <= 0

@@ -6,6 +6,9 @@ import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
 import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection, norcFamilies,
   norcAssociations, norcSharedBound, norcRecordedBound, norcRecordedComparison, validateNorcAssociation } from "./participation-norc-house.js";
 import { loadHouseSensitivity, houseSensitivityScope } from "./participation-house-sensitivity.js";
+import { automaticHouseDescriptor, automaticHouseProfileReceipt, automaticHouseSensitivityReceipt,
+  automaticHouseSources, loadAutomaticRecordedHouse, rejectAutomaticRuntime,
+  setAutomaticRuntimeStatus } from "./participation-automatic-runtime.js";
 
 export const effectTerms = [
   ["switching", "Switching", "#3e7d84"],
@@ -161,7 +164,18 @@ export async function initializeReturnDrivers() {
     const unitsSelect = root.querySelector("[data-driver-units]");
     const detail = root.querySelector("[data-driver-detail]");
     const summary = root.querySelector("[data-driver-summary]");
-    const response = await fetch(participationDownload("/voter-participation/data/states.geojson"));
+    const embeddedHouse = {
+      original: payload.norc_source,
+      profiles: payload.norc_association_sources?.profiles,
+      sensitivity: payload.norc_sensitivity,
+      shared_max_abs_margin: payload.norc_association_sources?.shared_max_abs_margin,
+    };
+    const [response, selectedSources] = await Promise.all([
+      fetch(participationDownload("/voter-participation/data/states.geojson")),
+      automaticHouseSources(embeddedHouse),
+    ]);
+    let houseSelection = selectedSources;
+    root.dataset.automaticRuntime = houseSelection.automatic?.version || "fallback";
     if (!response.ok) throw new Error(`State context: HTTP ${response.status}`);
     const collection = await response.json();
     const items = projectStateContext(collection.features);
@@ -172,11 +186,83 @@ export async function initializeReturnDrivers() {
     let selectedCode = "TX";
     let scenarios, norc, norcComparison, norcOriginalComparison, norcFamily, hitObserver, groupKind="", generation = 0;
     let sensitivity, sensitivityState="idle";
-    const sensitivitySources={original:payload.norc_source, ...payload.norc_association_sources?.profiles};
+    let sensitivitySources={original:embeddedHouse.original, ...embeddedHouse.profiles};
+    let sensitivityReceipt=embeddedHouse.sensitivity;
+    let sharedMaximums=embeddedHouse.shared_max_abs_margin;
+    let houseComparisonHolds={...payload.house_comparison_holds};
     const associationKey=()=>associationSelect?.value || "original";
     const norcUnits=()=>unitsSelect?.value || "margin";
-    const recordedHouse = payload.recorded_house_counts
+    let recordedHouse = houseSelection.automatic ? null : payload.recorded_house_counts
       ? validateRecordedHouseCounts(payload.recorded_house_counts,codes) : null;
+    if (houseSelection.automatic) {
+      sensitivitySources=Object.fromEntries(["original","attenuated","full"]
+        .map(profile=>[profile,automaticHouseProfileReceipt(houseSelection,profile)]));
+      sensitivityReceipt=automaticHouseSensitivityReceipt(houseSelection);
+      sharedMaximums=houseSelection.contract.shared_max_abs_margin;
+    }
+    const profileReceipt = profile => houseSelection.automatic
+      ? automaticHouseProfileReceipt(houseSelection, profile)
+      : profile==="original" ? embeddedHouse.original : embeddedHouse.profiles?.[profile];
+    const validateAutomaticProfile = (loaded, profile) => {
+      if (!houseSelection.automatic) return loaded;
+      for (const [family] of norcFamilies) {
+        const descriptor=automaticHouseDescriptor(houseSelection,profile,family);
+        const model=loaded.families?.[family];
+        const qualified=model?.rows.filter(row=>row.source_comparison_available)
+          .map(row=>row.state_code).sort();
+        const held=model?.rows.filter(row=>!row.source_comparison_available)
+          .map(row=>row.state_code).sort();
+        if (model?.contract!==descriptor.estimate_contract
+            || JSON.stringify(qualified)!==JSON.stringify([...descriptor.qualified_state_codes].sort())
+            || JSON.stringify(held)!==JSON.stringify([...descriptor.held_state_codes].sort()))
+          throw new Error("Automatic House viewer changed its selected gate or hold identities");
+      }
+      return loaded;
+    };
+    const recordedCounts = (row, phase) => {
+      const source=row[phase] || row[`${phase}_counts`] || {};
+      const value=party=>source[party] ?? row[`${phase}_${party}`] ?? row[`${phase}_${party.toLowerCase()}`];
+      const counts=Object.fromEntries(["D","R","O"].map(party=>[party,value(party)]));
+      if (Object.values(counts).some(number=>!Number.isSafeInteger(number) || number<0)
+          || counts.D+counts.R<=0)
+        throw new Error("Automatic recorded House party counts differ");
+      return counts;
+    };
+    const mergeRecordedHouse = (baseline, recorded) => {
+      const byCode=new Map(recorded.states.map(row=>[row.state_code,row]));
+      return validateRecordedHouseCounts(baseline.rows.map(row=>{
+        const fresh=byCode.get(row.state_code);
+        if (!fresh) throw new Error("Automatic recorded House state is missing");
+        const previous=recordedCounts(fresh,"previous"),current=recordedCounts(fresh,"current");
+        const share=counts=>100*counts.D/(counts.D+counts.R);
+        const change=2*(share(current)-share(previous));
+        if (!Number.isFinite(fresh.recorded_margin_change_pp)
+            || Math.abs(change-fresh.recorded_margin_change_pp)>1e-7
+            || fresh.candidate_votes_are_not_ballots_or_turnout!==true
+            || fresh.candidate_votes!==current.D+current.R+current.O
+            || fresh.major_party_votes!==current.D+current.R)
+          throw new Error("Automatic recorded House margin or candidate-vote scope differs");
+        return {...row,contest_comparability:{...row.contest_comparability,
+          previous_counts:previous,current_counts:current,
+          raw_reported_aggregate_margin_change_pp:change},
+        reported_comparison:{...row.reported_comparison,
+          current_snapshot:fresh.source_update_labels?.join(" · ")
+            || fresh.source_status || row.reported_comparison.current_snapshot}};
+      }),codes);
+    };
+    const useEmbeddedHouse = error => {
+      rejectAutomaticRuntime("house",error);
+      houseSelection={...embeddedHouse,automatic:null};
+      root.dataset.automaticRuntime="fallback";
+      sensitivitySources={original:embeddedHouse.original,...embeddedHouse.profiles};
+      sensitivityReceipt=embeddedHouse.sensitivity;
+      sharedMaximums=embeddedHouse.shared_max_abs_margin;
+      houseComparisonHolds={...payload.house_comparison_holds};
+      recordedHouse=payload.recorded_house_counts
+        ?validateRecordedHouseCounts(payload.recorded_house_counts,codes):null;
+      sensitivity=null;sensitivityState="idle";
+      norc=undefined;norcComparison=undefined;norcOriginalComparison=undefined;norcFamily=undefined;
+    };
     const legacyMapNote = root.querySelector(".driver-map-note").cloneNode(true);
     stateSelect.replaceChildren(new Option("Select a state on the map…", ""),
       ...codes.map(code => new Option(names[code], code)));
@@ -349,7 +435,7 @@ export async function initializeReturnDrivers() {
     const selectState = code => {
       selectedCode = code; stateSelect.value = code;
       const row = data.rows.find(value => value.state_code === code && value.office === office.value);
-      const hold=office.value==="house" && payload.house_comparison_holds?.[code];
+      const hold=office.value==="house" && houseComparisonHolds?.[code];
       if (hold && isScenarioView(view.value)) {
         summary.replaceChildren(element("h3",`${names[code]} · House comparison unavailable`),
           element("p",hold+" No archived scenario is substituted as a current election explanation.","caption"));
@@ -357,7 +443,7 @@ export async function initializeReturnDrivers() {
       }
       else if (isScenarioView(view.value) && scenarios && code) selectScenario(row, code);
       else if (isScenarioView(view.value)) { detail.hidden = true; summary.hidden = true; }
-      else if (office.value==="house" && payload.norc_source) {
+      else if (office.value==="house" && embeddedHouse.original) {
         const selectedHouse=view.value==="reported_counts" && recordedHouse ? recordedHouse : norc;
         if (selectedHouse && code) {
           const row=selectedHouse.rows.find(r=>r.state_code===code);
@@ -390,9 +476,9 @@ export async function initializeReturnDrivers() {
       paintSelection();
     };
     const requestSensitivity=()=>{
-      if (!payload.norc_sensitivity || sensitivityState!=="idle") return;
+      if (!sensitivityReceipt || sensitivityState!=="idle") return;
       sensitivityState="loading";
-      loadHouseSensitivity(payload.norc_sensitivity,sensitivitySources)
+      loadHouseSensitivity(sensitivityReceipt,sensitivitySources)
         .then(value=>{sensitivity=value;sensitivityState="loaded";})
         .catch(()=>{sensitivity=null;sensitivityState="failed";})
         .finally(()=>{
@@ -402,12 +488,13 @@ export async function initializeReturnDrivers() {
     };
     const render = async () => {
       const current = ++generation, scenario = isScenarioView(view.value);
-      const norcMode=office.value==="house" && !scenario && Boolean(payload.norc_source);
+      const norcMode=office.value==="house" && !scenario && Boolean(embeddedHouse.original);
       const recordedMode=norcMode && view.value==="reported_counts";
       if (associationNote) associationNote.hidden=true;
       if (associationSelect) {
-        associationSelect.closest("label").hidden=!norcMode || !payload.norc_association_sources || view.value==="reported_counts";
-        associationSelect.disabled=!norcMode || !payload.norc_association_sources || view.value==="reported_counts";
+        const associations=houseSelection.automatic || embeddedHouse.profiles;
+        associationSelect.closest("label").hidden=!norcMode || !associations || view.value==="reported_counts";
+        associationSelect.disabled=!norcMode || !associations || view.value==="reported_counts";
       }
       if (familySelect) {
         familySelect.closest("label").hidden=!norcMode || Boolean(norc && !norcComparison) || view.value==="reported_counts";
@@ -424,13 +511,16 @@ export async function initializeReturnDrivers() {
         root.querySelector("[data-driver-map]").replaceChildren();summary.hidden=true;detail.hidden=true;
         try {
           const requested=associationKey();
-          const receipt=requested==="original"?payload.norc_source:payload.norc_association_sources?.profiles?.[requested];
+          const receipt=profileReceipt(requested);
           if (!receipt) throw new Error("Missing pinned association profile");
-          const [loaded,original]=await Promise.all([
+          const [loaded,original,recorded]=await Promise.all([
             loadNorcHouse(receipt),
-            requested==="original"?Promise.resolve(null):loadNorcHouse(payload.norc_source),
+            requested==="original"?Promise.resolve(null):loadNorcHouse(profileReceipt("original")),
+            houseSelection.automatic?loadAutomaticRecordedHouse(houseSelection):Promise.resolve(null),
           ]);
           if (current!==generation) return;
+          validateAutomaticProfile(loaded,requested);
+          if (original) validateAutomaticProfile(original,"original");
           if (requested!=="original") validateNorcAssociation(loaded,original);
           if (loaded.contract==="participation.house_model_families.v1") {
             norcComparison=loaded;
@@ -442,9 +532,23 @@ export async function initializeReturnDrivers() {
             }
             norc=loaded.families[norcFamily];
           } else norc=loaded;
+          if (houseSelection.automatic) {
+            const originalComparison=requested==="original"?loaded:original;
+            const baseline=originalComparison.families.accepted_ridge_multinomial;
+            recordedHouse=mergeRecordedHouse(baseline,recorded);
+            houseComparisonHolds=Object.fromEntries(baseline.rows
+              .filter(row=>!row.source_comparison_available)
+              .map(row=>[row.state_code,row.reported_comparison.reason]));
+            setAutomaticRuntimeStatus("house","active","House recorded/model estimates",
+              houseSelection.automatic);
+          }
           if (unitsSelect) unitsSelect.disabled=view.value==="retaining";
         } catch (error) {
           if (current!==generation) return;
+          if (houseSelection.automatic) {
+            useEmbeddedHouse(error);
+            return render();
+          }
           status.textContent=`NORC House model unavailable: ${error.message}. No older fitted model is substituted.`;
           const retry=element("button","Retry NORC model");retry.type="button";retry.addEventListener("click",render);
           root.querySelector("[data-driver-map]").replaceChildren(retry);return;
@@ -485,7 +589,7 @@ export async function initializeReturnDrivers() {
       const activeHouse=recordedMode && recordedHouse ? recordedHouse : norc;
       const norcByCode=norcMode?new Map(activeHouse.rows.map(r=>[r.state_code,r])):null;
       const retention=norcMode && view.value==="retaining";
-      const sharedMaximum=payload.norc_association_sources?.shared_max_abs_margin?.[group.value] ?? null;
+      const sharedMaximum=sharedMaximums?.[group.value] ?? null;
       let bound;
       try {
         bound = retention ? 100 : recordedMode ? norcRecordedBound(activeHouse,norcUnits())
@@ -507,7 +611,8 @@ export async function initializeReturnDrivers() {
         +`${50-norc.summary.return_anchored} are NORC source scenarios with unavailable observed comparisons. `
         +"Gray means unsupported, not zero. Demographic values contribute to the statewide shift. "
         +(norcComparison?`${norcComparison.family_labels[norcFamily]}. `:"")
-        +(payload.norc_association_sources?`${norcAssociations.find(([key])=>key===associationKey())?.[1]}. `:"")
+        +((houseSelection.automatic || embeddedHouse.profiles)
+          ?`${norcAssociations.find(([key])=>key===associationKey())?.[1]}. `:"")
         +(retention?"Retained-choice percentages keep their own denominator; change units do not apply."
           :norcUnits()==="democratic_two_party_share"?"Change units: Democratic two-party share points.":"Change units: D−R margin points.")
         : scenario
@@ -566,7 +671,7 @@ export async function initializeReturnDrivers() {
         const patterns=svgElement("defs",{});svg.append(patterns);
         for (const item of items) {
           const code = item.feature.properties.STUSAB, row = byCode.get(code);
-          const value = office.value==="house" && key!=="reported_counts" && payload.house_comparison_holds?.[code] ? null
+          const value = office.value==="house" && key!=="reported_counts" && houseComparisonHolds?.[code] ? null
             : norcMode ? norcMapValue(norcByCode.get(code),key,group.value,norcUnits())
             : scenario ? row && scenarioEstimate(scenarios, code, key, group.value)?.value : mapValue(row, key, calibration.get(row?.id));
           const normalized = value ?? null;
@@ -629,7 +734,7 @@ export async function initializeReturnDrivers() {
       control.disabled = false;
     }
     const changeOffice=() => {
-      const previous=view.value, options=office.value==="house" && payload.norc_source?norcViews:mapTerms;
+      const previous=view.value, options=office.value==="house" && embeddedHouse.original?norcViews:mapTerms;
       view.replaceChildren(...options.map(([key,label])=>new Option(label,key)));
       const archived=element("optgroup");archived.label="Archived survey-frame scenarios";
       for (const [key,label] of scenarioViews) archived.append(new Option(label,key));
