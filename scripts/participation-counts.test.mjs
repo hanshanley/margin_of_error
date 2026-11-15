@@ -253,6 +253,24 @@ test("non-review county details retain literal source status and only supplied r
   assert(host.children.some(node => node.textContent?.startsWith("0 / 10 source precincts reporting.")));
 });
 
+test("an explicitly missing automatic native result status is not relabeled unofficial", () => {
+  const { detail, host } = detailHarness();
+  const row = { ...view(), automatic_source_refresh: true, source_status_literal: null,
+    participation_measure_label: "Source-reported turnout total",
+    native_record: { native_report_status_literal: null,
+      query: { native_report_status_literal: null } } };
+  const before = structuredClone(row);
+  detail(host, row, true);
+  assert.equal(host.children.find(node => node.className === "selection-basis").textContent,
+    "2026 Source-reported turnout total · result status not supplied");
+  assert.deepEqual(row, before);
+  for (const status of ["OFFICIAL", "UNOFFICIAL"]) {
+    detail(host, { ...row, source_status_literal: status }, true);
+    assert.equal(host.children.find(node => node.className === "selection-basis").textContent,
+      `2026 Source-reported turnout total · ${status}`);
+  }
+});
+
 function ncCounty(status = "OFFICIAL") {
   return { ...view(), state_code: "NC", county_id: "1", county: "ALAMANCE",
     native_record: { query: { county_id: "1", county: "ALAMANCE",

@@ -416,6 +416,9 @@ function stateParticipationRows() {
           .exec(native.election_literal);
         if (title?.[2] === row.county) return title[1];
       }
+      if (row.automatic_source_refresh === true
+          && row.native_record?.native_report_status_literal === null
+          && native?.native_report_status_literal === null) return "result status not supplied";
       return "unofficial";
     }
     function sourceUnitCountLabel(rows) {
