@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { validateHistoricalNativeIndex, validateHistoricalNativeState, createHistoricalNativeReader,
-  historicalNativeRows } from "../public/scripts/participation-historical-native.js";
+  historicalNativeRows, historicalNativeQualificationDownload } from "../public/scripts/participation-historical-native.js";
 
 function fixture() {
   const snapshot = { id: "a".repeat(32), state_code: "AL", year: 2018,
@@ -154,4 +154,48 @@ test("historical navigation keeps at most four state bodies instead of retaining
   assert.equal(bodies, 5);
   await reader.loadState("AL");
   assert.equal(bodies, 6);
+});
+
+test("qualified-pair downloads are separate from unchanged unpaired historical counts", async () => {
+  const { entry, index, state } = fixture(), before = structuredClone(state);
+  assert.equal(historicalNativeQualificationDownload(entry, index), null);
+  const file = "qualified-precinct-observations.jsonl.gz";
+  entry.files[file] = { bytes: 42, sha256: "f".repeat(64) };
+  index.historical_precinct_qualification = {
+    contract: "participation.historical_precinct_qualification.v2", file,
+    qualified_observations: 2, held_pairs: 3, qualified_sidecar: { ...entry.files[file] },
+    candidate_votes_used_as_ballots: false, person_panel_or_individual_transition_claimed: false,
+  };
+  const reader = createHistoricalNativeReader({
+    loadDataset: async () => ({ entry, index }), checkedDatasetFile: async () => state,
+  });
+  assert.deepEqual(historicalNativeQualificationDownload(entry, index),
+    { url: entry.base_url + file, qualified: 2, held: 3 });
+  assert.equal((await reader.loadState("AL")).state, state);
+  assert.deepEqual(state, before);
+  assert.equal(state.records[0].count.value, 0);
+  assert.equal(state.records[0].rate, null);
+});
+
+test("changed or overpromoted qualification descriptors cannot publish download links", async () => {
+  for (const mutate of [
+    ({ descriptor }) => { descriptor.file = "../other.jsonl.gz"; },
+    ({ descriptor }) => { descriptor.qualified_observations = true; },
+    ({ descriptor }) => { descriptor.held_pairs = -1; },
+    ({ descriptor }) => { descriptor.candidate_votes_used_as_ballots = true; },
+    ({ descriptor }) => { descriptor.person_panel_or_individual_transition_claimed = true; },
+    ({ descriptor }) => { descriptor.qualified_sidecar.sha256 = "e".repeat(64); },
+    ({ entry }) => { entry.base_url = "javascript:alert(1)"; },
+  ]) {
+    const { entry, index } = fixture(), file = "qualified-precinct-observations.jsonl.gz";
+    entry.files[file] = { bytes: 42, sha256: "f".repeat(64) };
+    const descriptor = index.historical_precinct_qualification = {
+      contract: "participation.historical_precinct_qualification.v2", file,
+      qualified_observations: 2, held_pairs: 3, qualified_sidecar: { ...entry.files[file] },
+      candidate_votes_used_as_ballots: false, person_panel_or_individual_transition_claimed: false,
+    };
+    mutate({ descriptor, entry });
+    const reader = createHistoricalNativeReader({ loadDataset: async () => ({ entry, index }) });
+    await assert.rejects(reader.loadIndex(), /qualification supplement/);
+  }
 });

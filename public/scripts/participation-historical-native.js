@@ -15,6 +15,25 @@ const require = (condition, message) => {
 };
 const https = value => typeof value === "string" && value.startsWith("https://");
 
+export function historicalNativeQualificationDownload(entry, index) {
+  const descriptor = index.historical_precinct_qualification;
+  if (descriptor === undefined) return null;
+  require(descriptor?.contract === "participation.historical_precinct_qualification.v2"
+    && descriptor.file === "qualified-precinct-observations.jsonl.gz"
+    && descriptor.candidate_votes_used_as_ballots === false
+    && descriptor.person_panel_or_individual_transition_claimed === false
+    && [descriptor.qualified_observations, descriptor.held_pairs].every(value =>
+      Number.isSafeInteger(value) && value >= 0), "qualification supplement scope");
+  const expected = descriptor.qualified_sidecar, actual = entry.files?.[descriptor.file];
+  require(https(entry.base_url) && expected && actual
+    && Number.isSafeInteger(expected.bytes) && expected.bytes > 0
+    && /^[a-f0-9]{64}$/.test(expected.sha256)
+    && expected.bytes === actual.bytes && expected.sha256 === actual.sha256,
+  "qualification supplement checksum");
+  return { url: entry.base_url + descriptor.file,
+    qualified: descriptor.qualified_observations, held: descriptor.held_pairs };
+}
+
 export function validateHistoricalNativeIndex(index) {
   require(index?.contract === contract && JSON.stringify(index.years) === JSON.stringify(years), "contract/year");
   require(Array.isArray(index.jurisdictions) && index.jurisdictions.length === 51
@@ -119,7 +138,9 @@ export function createHistoricalNativeReader(dependencies = { loadDataset, check
   const loadIndex = () => indexPromise ||= dependencies.loadDataset(datasetId)
     .then(({ entry, index }) => {
       require(entry.id === datasetId && https(entry.complete_download?.url), "complete numerical download");
-      return { entry, index: validateHistoricalNativeIndex(index) };
+      validateHistoricalNativeIndex(index);
+      historicalNativeQualificationDownload(entry, index);
+      return { entry, index };
     })
     .catch(error => { indexPromise = null; throw error; });
   return { loadIndex, async loadState(code) {
@@ -196,6 +217,17 @@ export function installHistoricalNativeCounts(anchor = document.getElementById("
         item.append(link); downloads.append(item);
       }
       content.append(downloads);
+      const qualification = historicalNativeQualificationDownload(entry, index);
+      if (qualification) {
+        const item = node("li"), link = node("a",
+          "Separately qualified native-unit ballot / registration pairs (JSONL.gz)", "source-link");
+        link.href = qualification.url; item.append(link); downloads.append(item);
+        content.append(node("p",
+          `Separate qualification supplement: ${qualification.qualified.toLocaleString("en-US")} `
+          + `native-unit fractions; ${qualification.held.toLocaleString("en-US")} held pairs. `
+          + "These apply only to each row's stated source, state and year, not every displayed cell. "
+          + "They do not qualify population turnout, demographic estimates or precinct boundaries."));
+      }
       const snapshots = (state?.snapshots || []).filter(row => row.year === selected.year);
       if (!snapshots.length) {
         content.append(node("p",
