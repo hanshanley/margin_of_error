@@ -2,6 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { canonicalObservation } from "./compile-participation-counts.mjs";
+import { countModes } from "../public/scripts/participation-counts.js";
+import { validateReferenceBindings } from "../public/scripts/participation-reference-bindings.js";
 import { validateNativeShard, bindNativeGeometry, bindCountyReference,
   countyQualifier, countyCoverageMessage, rebindNativeCounts, validatedNativeSnapshot
 } from "../public/scripts/participation-native-bindings.js";
@@ -111,15 +113,50 @@ test("accepted native fallback retains independently sourced counts and rejects 
   /verified runtime snapshot/);
 });
 let loaderFixtureId = 0;
+function referenceFixture(ballots) {
+  const observation = canonicalObservation({
+    year: 2026, state_code: "MN", county: "Example", county_id: "native:1",
+    geography_level: "reporting_unit", unit: "Unit 1", unit_key: "native:unit-1",
+    ballots, denominator: null, denominator_basis: "not_supplied", reported_pct: null,
+    maps_approved: false, unique_voter_count_qualified: false, quality: [],
+    automatic_source_refresh: true, complete_download_url: "https://example.org/original.zip",
+  }, { file: "original.json", sha256: hash, url: "https://example.org/input" }, "native-MN", 0);
+  const declaration = { file: "states/MN.json.gz", bytes: 100, sha256: hash, records: 1 };
+  const counts = { contract: "participation.count_snapshot.v1", year: 2026, state_code: "MN",
+    records: [observation], views: Object.fromEntries(countModes.map(mode => [mode, {
+      qualified: true, holds: [], counties: [], nongeographic: [],
+      precincts: ["available", "official"].includes(mode) ? [observation.id] : [],
+    }])) };
+  const review = { reviewed: true, review_id: "reference-review", rates_approved: false,
+    scope: "public_authoritative_reference_context", matching: "exact_literal_only",
+    legal_election_boundaries_certified: false, source_observations_preserved: true,
+    reference_label: "Public reference; not certified election-day boundaries",
+    geometry_retrieved_at_utc: "2026-11-14T07:29:17Z",
+    omitted_units_note: "Omitted units are held, not zero." };
+  const properties = { ...observation.view, key: "Unit 1", maps_approved: true,
+    reference_context_only: true, legal_election_boundaries_certified: false,
+    boundary_label: review.reference_label, registered: null,
+    source_count_observation_id: observation.id, source_update_label: observation.source_clock.literal,
+    source_update_timezone: observation.source_clock.timezone };
+  const data = { contract: "participation.reference_bindings.v1", id: "precinct/MN", state_code: "MN",
+    source_counts: { ...declaration, source_id: observation.source.id, source_rows: 1 },
+    geometry: { file: "geometry.json", sha256: hash }, review, held_rows: [],
+    rows: [{ key: "Unit 1", geometry_type: "Polygon",
+      observation: structuredClone(observation), properties }] };
+  const geometry = fixture().geometry;
+  geometry.features[0].properties = { ...properties };
+  return { data, geometry, counts, declaration };
+}
 async function loaderFixture(options = {}) {
   const key = `participation-native-loader-test-${loaderFixtureId++}`;
-  const accepted = fixture(), current = fixture();
+  const accepted = options.reference ? referenceFixture(0) : fixture();
+  const current = options.reference ? referenceFixture(25) : fixture();
   current.data.rows[0].properties.ballots = 25;
   current.data.rows[0].observation.count.value = 25;
   current.data.rows[0].observation.view.ballots = 25;
   const runtime = { version: "b".repeat(64), runtime_commit: "c".repeat(40),
     native: { version: "d".repeat(64) }, counts: { version: "e".repeat(64) } };
-  const state = { rejected: false, geometryBases: [], countStateLoads: 0 };
+  const state = { rejected: false, geometryBases: [], countStateLoads: 0, canonicalBases: [] };
   state.loadDataset = async () => {
     const automatic = !state.rejected;
     return { entry: { version: automatic ? runtime.native.version : "f".repeat(64),
@@ -129,12 +166,23 @@ async function loaderFixture(options = {}) {
     automatic_runtime: automatic ? runtime : null };
   };
   state.loadCountIndex = async () => ({
-    entry: { version: runtime.counts.version }, index: {},
+    entry: { version: runtime.counts.version,
+      base_url: state.rejected ? "https://example.org/accepted/" : "https://example.org/current/" },
+    index: { states: { MN: current.declaration } },
     automatic_runtime: state.rejected || options.mixedRuntime ? null : runtime,
   });
   state.checkedDatasetFile = async (base, declaration) => {
     if (declaration.file === "native.json")
       return structuredClone(base.includes("/accepted/") ? accepted.data : current.data);
+    if (declaration.file === "states/MN.json.gz") {
+      state.canonicalBases.push(base);
+      const counts = structuredClone(base.includes("/accepted/") ? accepted.counts : current.counts);
+      if (base.includes("/current/")) {
+        if (options.corruptReference) counts.records[0].source.input_sha256 = "f".repeat(64);
+        if (options.corruptCountShard) counts.records[0].count.status = "unknown";
+      }
+      return counts;
+    }
     state.geometryBases.push(base);
     if (options.corruptGeometry && base.includes("/current/"))
       throw new Error("Native geometry checksum differs");
@@ -142,13 +190,22 @@ async function loaderFixture(options = {}) {
       throw new Error("Accepted geometry checksum differs");
     return structuredClone(accepted.geometry);
   };
-  state.loadCountState = async () => { state.countStateLoads++; throw new Error("Unexpected ID join"); };
+  state.loadCountState = async () => {
+    state.countStateLoads++;
+    if (!options.reference) throw new Error("Unexpected ID join");
+    const counts = structuredClone(state.rejected ? accepted.counts : current.counts);
+    for (const row of counts.records) {
+      row.view.accepted_complete_download_url = row.view.complete_download_url;
+      row.view.complete_download_url = "https://example.org/current-runtime.zip";
+    }
+    return counts;
+  };
   state.rejectCountRuntime = () => { state.rejected = true; };
   globalThis[Symbol.for(key)] = state;
   const toURL = source => `data:text/javascript;base64,${Buffer.from(source).toString("base64")}`;
   const dependencies = toURL(`
     const state = globalThis[Symbol.for(${JSON.stringify(key)})];
-    export { validateCountObservation } from ${JSON.stringify(
+    export { validateCountObservation, validateCountShard } from ${JSON.stringify(
       new URL("../public/scripts/participation-counts.js", import.meta.url).href)};
     export const loadDataset = (...args) => state.loadDataset(...args);
     export const checkedDatasetFile = (...args) => state.checkedDatasetFile(...args);
@@ -156,8 +213,8 @@ async function loaderFixture(options = {}) {
     export const loadCountState = (...args) => state.loadCountState(...args);
     export const loadAcceptedCountState = loadCountState;
     export const rejectCountRuntime = (...args) => state.rejectCountRuntime(...args);
-    export const validateReferenceBindings = () => { throw new Error("Unexpected reference contract"); };
-    export const bindReferenceGeometry = validateReferenceBindings;
+    export { validateReferenceBindings, bindReferenceGeometry } from ${JSON.stringify(
+      new URL("../public/scripts/participation-reference-bindings.js", import.meta.url).href)};
   `);
   const source = readFileSync(new URL(
     "../public/scripts/participation-native-bindings.js", import.meta.url), "utf8")
@@ -165,8 +222,42 @@ async function loaderFixture(options = {}) {
       `from ${JSON.stringify(dependencies)}`);
   const loader = await import(toURL(source));
   delete globalThis[Symbol.for(key)];
-  return { loader, state, accepted };
+  return { loader, state, accepted, current };
 }
+test("reference loader validates canonical facts before current-download presentation decoration", async () => {
+  const { loader, state, current } = await loaderFixture({ reference: true });
+  validateReferenceBindings(current.data, "precinct/MN", current.counts, current.declaration);
+  const displayed = await state.loadCountState();
+  assert.equal(displayed.records[0].view.complete_download_url, "https://example.org/current-runtime.zip");
+  assert.throws(() => validateReferenceBindings(
+    current.data, "precinct/MN", displayed, current.declaration), /changed a source observation/);
+  state.countStateLoads = 0;
+  const result = await loader.loadBoundNative("precinct/MN");
+  assert.equal(result.data.features[0].properties.ballots, 25);
+  assert.equal(result.binding.rows[0].observation.view.complete_download_url,
+    "https://example.org/original.zip");
+  assert.deepEqual(result.binding, current.data);
+  assert.equal(state.rejected, false);
+  assert.equal(state.countStateLoads, 0);
+  assert.deepEqual(state.canonicalBases, ["https://example.org/current/"]);
+});
+test("reference loader refuses mixed snapshots and corrupted canonical facts before accepted fallback", async () => {
+  for (const options of [{ mixedRuntime: true }, { corruptReference: true },
+    { corruptCountShard: true }, { corruptGeometry: true }]) {
+    const { loader, state, accepted } = await loaderFixture({ reference: true, ...options });
+    const result = await loader.loadBoundNative("precinct/MN");
+    assert.equal(result.data.features[0].properties.ballots, 0);
+    assert.deepEqual(result.binding, accepted.data);
+    assert.equal(state.rejected, true);
+    assert.equal(state.countStateLoads, 0);
+    assert.equal(state.canonicalBases.at(-1), "https://example.org/accepted/");
+    assert.equal(state.geometryBases.at(-1), "https://example.org/accepted/");
+  }
+  const { loader } = await loaderFixture({
+    reference: true, corruptGeometry: true, corruptAccepted: true,
+  });
+  await assert.rejects(loader.loadBoundNative("precinct/MN"), /Accepted geometry checksum differs/);
+});
 test("native loader consumes the atomic projection without a canonical table-ID join", async () => {
   const { loader, state } = await loaderFixture();
   const result = await loader.loadBoundNative("precinct/MN");

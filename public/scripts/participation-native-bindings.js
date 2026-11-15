@@ -1,5 +1,5 @@
 import { loadDataset, checkedDatasetFile } from "./participation-dataset.js";
-import { validateCountObservation, loadCountState, loadCountIndex, loadAcceptedCountState,
+import { validateCountObservation, validateCountShard, loadCountState, loadCountIndex, loadAcceptedCountState,
   rejectCountRuntime } from "./participation-counts.js";
 import { validateReferenceBindings, bindReferenceGeometry } from "./participation-reference-bindings.js";
 
@@ -69,7 +69,7 @@ export function rebindNativeCounts(data, counts) {
   return validateNativeShard(rebound, data.id);
 }
 
-export function validatedNativeSnapshot(data, identity, nativeSource, countSource) {
+function validateRuntimeSnapshot(nativeSource, countSource) {
   const native = nativeSource.automatic_runtime, counts = countSource.automatic_runtime;
   if (Boolean(native) !== Boolean(counts)
       || native && (native.version !== counts.version
@@ -77,6 +77,10 @@ export function validatedNativeSnapshot(data, identity, nativeSource, countSourc
         || nativeSource.entry.version !== native.native?.version
         || countSource.entry.version !== counts.counts?.version))
     throw new Error("Native and canonical counts do not share one verified runtime snapshot");
+}
+
+export function validatedNativeSnapshot(data, identity, nativeSource, countSource) {
+  validateRuntimeSnapshot(nativeSource, countSource);
   // Native observations have their own reviewed IDs; the producer refreshes their
   // approved projections before publishing the count/native snapshot atomically.
   return validateNativeShard(data, identity);
@@ -188,16 +192,13 @@ export async function loadBoundNative(identity) {
         const countIndex = await loadCountIndex();
         if (data.contract !== "participation.reference_bindings.v1")
           return validatedNativeSnapshot(data, identity, nativeSource, countIndex);
-        const bind = async (source, sourceIndex=countIndex.index) =>
-          validateReferenceBindings(data, identity, source, sourceIndex.states[data.state_code]);
-        try {
-          return await bind(await loadCountState(data.state_code));
-        } catch (error) {
-          if (!countIndex.automatic_runtime) throw error;
-          rejectCountRuntime(error);
-          const fallbackIndex = await loadCountIndex();
-          return bind(await loadAcceptedCountState(data.state_code), fallbackIndex.index);
-        }
+        validateRuntimeSnapshot(nativeSource, countIndex);
+        const sourceDeclaration = countIndex.index.states[data.state_code];
+        // Full observation equality requires canonical bytes, not decorated download links.
+        const source = validateCountShard(
+          await checkedDatasetFile(countIndex.entry.base_url, sourceDeclaration),
+          data.state_code, sourceDeclaration);
+        return validateReferenceBindings(data, identity, source, sourceDeclaration);
       }));
     const data = await shards.get(identity);
     if (!geometries.has(data.geometry.sha256)) geometries.set(data.geometry.sha256,
