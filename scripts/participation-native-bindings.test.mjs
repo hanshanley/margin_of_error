@@ -184,6 +184,7 @@ async function loaderFixture(options = {}) {
     current.data.rows[0].observation.view.ballots = 25;
   }
   const runtime = { version: "b".repeat(64), runtime_commit: "c".repeat(40),
+    complete_download: { url: "https://example.org/current-runtime.zip" },
     native: { version: "d".repeat(64) }, counts: { version: "e".repeat(64) } };
   const state = { rejected: false, geometryBases: [], countStateLoads: 0, canonicalBases: [] };
   state.loadDataset = async () => {
@@ -320,7 +321,7 @@ test("reporting downloads expose complete current queries without replacing olde
   });
   assert.deepEqual(nativeSource, before);
   const missing = structuredClone(nativeSource);
-  delete missing.entry.complete_download;
+  delete missing.automatic_runtime.complete_download;
   assert.throws(() => reportingUnitDownloads("WY", missing, countSource), /complete/);
   const mixed = structuredClone(countSource);
   mixed.automatic_runtime.runtime_commit = "f".repeat(40);
@@ -328,6 +329,17 @@ test("reporting downloads expose complete current queries without replacing olde
   state.rejected = true;
   assert.equal(reportingUnitDownloads(
     "WY", await state.loadDataset(), await state.loadCountIndex()), null);
+});
+test("reporting downloads advance with the runtime when native dataset contents are unchanged", async () => {
+  const { state } = await loaderFixture({ reporting: true });
+  const nativeSource = await state.loadDataset(), countSource = await state.loadCountIndex();
+  nativeSource.entry.complete_download.url = "https://example.org/previous-runtime.zip";
+  assert.equal(reportingUnitDownloads("WY", nativeSource, countSource).complete,
+    "https://example.org/current-runtime.zip");
+  assert.equal(nativeSource.entry.complete_download.url, "https://example.org/previous-runtime.zip");
+  const mixed = structuredClone(countSource);
+  mixed.automatic_runtime.complete_download.url = "https://example.org/different-runtime.zip";
+  assert.throws(() => reportingUnitDownloads("WY", nativeSource, mixed), /complete/);
 });
 test("reviewed reporting sources cannot bypass vector checks when their complete label identities match", async () => {
   const { state } = await loaderFixture({ reporting: true });

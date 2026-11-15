@@ -320,9 +320,9 @@ export function bindReportingRows(data, code, nativeSource, countSource, counts)
 export function reportingUnitDownloads(code, nativeSource, countSource) {
   validateRuntimeSnapshot(nativeSource, countSource);
   if (!nativeSource.automatic_runtime) return null;
-  const complete = nativeSource.entry.complete_download?.url;
+  const complete = nativeSource.automatic_runtime.complete_download?.url;
   const declaration = nativeSource.index.reporting_tables?.[code];
-  if (!complete || !declaration?.file)
+  if (!complete || complete !== countSource.automatic_runtime.complete_download?.url || !declaration?.file)
     throw new Error("Missing complete automatic reporting-unit downloads");
   return { complete, rows: nativeSource.entry.base_url + declaration.file };
 }
