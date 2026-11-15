@@ -404,6 +404,20 @@ function stateParticipationRows() {
     const electorateLabel = row => typeof row.denominator_basis === "string" && row.denominator_basis
       ? row.denominator_basis.replaceAll("_", " ") : "source electorate not supplied";
     const participationLabel = row => row.participation_measure_label || row.participation_measure_literal;
+    function sourceResultStatus(row) {
+      if (row.source_status_literal) return row.source_status_literal;
+      const native = row.native_record?.query;
+      const countyId = String(row.county_id ?? "");
+      if (row.state_code === "NC" && row.year === 2026 && /^(?:[1-9]\d?|100)$/.test(countyId)
+          && native?.county === row.county
+          && String(native.county_id) === countyId
+          && typeof native.election_literal === "string") {
+        const title = /^11\/03\/2026 (UNOFFICIAL|OFFICIAL) GENERAL ELECTION RESULTS - (.+)$/
+          .exec(native.election_literal);
+        if (title?.[2] === row.county) return title[1];
+      }
+      return "unofficial";
+    }
     function sourceUnitCountLabel(rows) {
       const labels = rows.map(participationLabel), first = labels[0];
       return first && labels.every(label => label === first) ? first
@@ -432,7 +446,7 @@ function stateParticipationRows() {
               ? `${missingCountScope} not supplied · incomplete native statistics` : `${missingCountScope} not supplied · source value remains unknown`
           : registryContext ? `${participationLabel(row)} · current registry, not an election ballot total`
             : row.review_id ? `2026 ${participationLabel(row) || "ballots reported"} · not final/certified`
-              : `2026 ${participationLabel(row) || "ballots reported"} · ${row.source_status_literal || "unofficial"}`),
+              : `2026 ${participationLabel(row) || "ballots reported"} · ${sourceResultStatus(row)}`),
         html("p", "selection-note", registryContext
           ? "Records in one current registry file with a date-coded history token, not ballots, unique participants or a turnout rate. Missing history is not observed nonparticipation."
           : row.source_mode === "all_method_native_city_snapshot"

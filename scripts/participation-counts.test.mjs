@@ -253,6 +253,54 @@ test("non-review county details retain literal source status and only supplied r
   assert(host.children.some(node => node.textContent?.startsWith("0 / 10 source precincts reporting.")));
 });
 
+function ncCounty(status = "OFFICIAL") {
+  return { ...view(), state_code: "NC", county_id: "1", county: "ALAMANCE",
+    native_record: { query: { county_id: "1", county: "ALAMANCE",
+      election_literal: `11/03/2026 ${status} GENERAL ELECTION RESULTS - ALAMANCE` } },
+    native_state_reference: {
+      election_literal: "11/03/2026 UNOFFICIAL GENERAL ELECTION RESULTS - STATEWIDE" } };
+}
+
+test("NC county cards use their own literal official or unofficial title without changing facts", () => {
+  const { detail, host } = detailHarness();
+  for (const status of ["OFFICIAL", "UNOFFICIAL"]) {
+    const row = ncCounty(status), before = structuredClone(row);
+    detail(host, row, true);
+    assert.equal(host.children.find(node => node.className === "selection-basis").textContent,
+      `2026 ballots reported · ${status}`);
+    assert.deepEqual(row, before);
+  }
+  const row = { ...ncCounty(), source_status_literal: "Publisher's explicit provisional status" };
+  detail(host, row, true);
+  assert.equal(host.children.find(node => node.className === "selection-basis").textContent,
+    "2026 ballots reported · Publisher's explicit provisional status");
+});
+
+test("NC county status cannot come from a different identity, election or statewide parent", () => {
+  const { detail, host } = detailHarness();
+  for (const mutate of [
+    row => { row.native_record.query.county = "HALIFAX"; },
+    row => { row.native_record.query.county_id = "42"; },
+    row => { row.native_record.query.election_literal =
+      "11/03/2026 OFFICIAL GENERAL ELECTION RESULTS - HALIFAX"; },
+    row => { row.native_record.query.election_literal =
+      "11/03/2026 OFFICIAL PRIMARY ELECTION RESULTS - ALAMANCE"; },
+    row => { row.native_record.query.election_literal =
+      "11/05/2024 OFFICIAL GENERAL ELECTION RESULTS - ALAMANCE"; },
+    row => { row.state_code = "NE"; },
+    row => { row.year = 2024; },
+    row => { row.county_id = 0; row.native_record.query.county_id = 0; },
+    row => { delete row.county_id; delete row.native_record.query.county_id; },
+    row => { row.native_record = {}; },
+  ]) {
+    const row = ncCounty();
+    mutate(row);
+    detail(host, row, true);
+    assert.equal(host.children.find(node => node.className === "selection-basis").textContent,
+      "2026 ballots reported · unofficial");
+  }
+});
+
 test("unknown source electorate metadata renders as unknown without inventing a denominator", () => {
   const { detail, host } = detailHarness();
   for (const denominator_basis of [null, undefined]) {
