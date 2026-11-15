@@ -2,7 +2,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 import { contextualCountyRows } from "./participation-county-context.js";
 import { installResidentContext } from "./participation-resident-context.js";
 import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, clearCountState } from "./participation-counts.js";
-import { loadNativeIndex, loadBoundNative, loadCountyBinding, loadMunicipalReference, loadReportingRows, bindCountyReference, countyCoverageMessage } from "./participation-native-bindings.js";
+import { loadNativeIndex, loadBoundNative, loadCountyBinding, loadMunicipalReference, loadReportingRows, reportingUnitDownloads, bindCountyReference, countyCoverageMessage } from "./participation-native-bindings.js";
 import { installCoverage } from "./participation-coverage.js";
 import { installHistoricalNativeCounts } from "./participation-historical-native.js";
 import { installLouisianaNativeGroups } from "./participation-louisiana-native-groups.js";
@@ -3382,6 +3382,7 @@ async function drawReportingUnitCounts(map, code, year, token) {
     state.reportingUnitData.set(code, promise);
   }
   const rows = await state.reportingUnitData.get(code);
+  const downloads = reportingUnitDownloads(code, await loadNativeIndex(), await loadCountIndex());
   if (state.map !== map || state.drillToken !== token) return;
   setTable(rows, [["precinct", "Native reporting label"], ["reporting_unit_kind", "Source unit type"],
     ["source_split_label", "Native split"], ["ballots", "Reported ballots"],
@@ -3389,7 +3390,7 @@ async function drawReportingUnitCounts(map, code, year, token) {
   header(`${year} midterms · source reporting units · geometry withheld`,
     `Reported participation counts in ${state.selectedState}`,
     "Source-unit ballot counts are available below. No precinct map or participation rate is inferred.",
-    source.scope);
+    `Current table: ${fmt(rows.length)} source units; ${fmt(rows.filter(row => row.ballots === null).length)} missing source counts (not zeros). Original reviewed source scope: ${source.scope}`);
   legend([["State outline only · reporting-unit counts in table", "#edf0f3"]]);
   $("coverage-note").textContent = `${fmt(rows.length)} source reporting-unit observations. ${source.geometry_note}`;
   $("geography-note").hidden = false;
@@ -3411,11 +3412,12 @@ async function drawReportingUnitCounts(map, code, year, token) {
       html("p", "selection-rate", row.ballots === null ? "Not supplied" : fmt(row.ballots)),
       html("p", "selection-basis", row.ballots === null
         ? "Native ballot total is missing, not zero · no participation rate"
-        : "Native reported ballots · no participation rate"),
+        : `${row.source_frame === "saved_reviewed_native_export" ? "Saved native" : "Native"} reported ballots · no participation rate`),
       html("p", "selection-note", `Native registrations: ${fmt(row.registered)} · not a qualified rate denominator.`),
       html("p", "selection-note", row.basis),
       html("p", "selection-note", (row.quality_flags || []).join("; ")),
-      html("p", "selection-note", `Source label: ${source.source_update_label || "Not supplied; retrieval time is separate"}.`));
+      html("p", "selection-note", `Source label: ${(Object.hasOwn(row, "source_update_label")
+        ? row.source_update_label : source.source_update_label) || "Not supplied; retrieval time is separate"}.`));
     syncURL();
   };
   select.addEventListener("change", choose);
@@ -3428,11 +3430,23 @@ async function drawReportingUnitCounts(map, code, year, token) {
     $("search").focus();
   });
   panel.append(table);
+  const sourceLinks = [];
+  if (downloads) {
+    const current = html("a", "source-link", "Complete current count, native and estimate queries (ZIP)");
+    current.href = downloads.complete;
+    const observations = html("a", "source-link", "Current native reporting-unit observations (JSON · gzip)");
+    observations.href = downloads.rows;
+    sourceLinks.push(current, observations);
+  }
   const complete = html("a", "source-link", "Complete original sources and every reporting-unit query (ZIP)");
   complete.href = source.complete_download_url;
   const counts = html("a", "source-link", "All native reporting-unit observations (JSON · gzip)");
   counts.href = source.data_url;
-  panel.append(complete, counts);
+  sourceLinks.push(complete, counts);
+  for (const link of sourceLinks) {
+    const line = html("p", "selection-note");
+    line.append(link); panel.append(line);
+  }
   choose();
 }
 function precinctCoverageNavigation(panel, year) {

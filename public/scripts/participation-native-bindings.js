@@ -227,42 +227,84 @@ export async function loadMunicipalReference(code, mode) {
   return { data: await checkedDatasetFile(entry.base_url, binding.geometry), binding,
     reference: { sha256: binding.sha256 } };
 }
-export async function loadReportingRows(code) {
-  const nativeSource=await loadNativeIndex(), {entry,index}=nativeSource;
-  const declaration = index.reporting_tables?.[code];
-  if (!declaration) throw new Error("No qualified reporting-unit count table");
-  let data;
-  try {
-    data=await checkedDatasetFile(entry.base_url,declaration);
-  } catch (error) {
-    if (!nativeSource.automatic_runtime) throw error;
-    rejectCountRuntime(error);dataset=null;
-    return loadReportingRows(code);
-  }
+const reviewedReportingSources = {
+  AR: "accepted-export:b128dc3cef02ae063e840495611b3747dc9454692d2788a8cb94e3b160f4908a:reporting/AR",
+  AZ: "accepted-export:bc9f1e93785e4a83148b96afa6855701f511be995f7469b8e9e4dfcb7e6cb51f:reporting/AZ",
+  WY: "accepted-export:cea7eba88d5ae521db73653ce33992dbe2d253a2854cd81d27655890e74be161:reporting/WY",
+};
+const frozenReportingSources = {
+  AK: { sha256: "5eb889e4ebb1dbcf6687b19f6bb3d27a790b1d498b6c3ad854f7ae59d6a1d138", rows: 523 },
+  HI: { sha256: "96b670b42e2156d563bb6dde943817a222ad90e26bcb74727f1d360db68b6052", rows: 496 },
+};
+const frozenReportingRoot = "https://raw.githubusercontent.com/hanshanley/margin_of_error/"
+  + "269406570805a8f9a030f4f01d1ff49f608cc9d5/data/precinct-source-reviews/20261105/";
+function heldReportingObservation(observation) {
+  return observation.view.reported_pct === null && !observation.denominator?.qualified
+    && ["maps_approved", "cast_ballot_count_qualified", "unique_voter_count_qualified"]
+      .every(key => observation.view[key] == null || observation.view[key] === false);
+}
+function frozenReportingObservation(observation, code, index) {
+  const profile = frozenReportingSources[code], source = index.reporting_sources?.[code];
+  if (!profile || !source) return false;
+  const url = frozenReportingRoot + code + "/participation.json.gz";
+  return source.sha256 === profile.sha256 && source.rows === profile.rows
+    && index.reporting_tables[code].rows === profile.rows && source.data_url === url
+    && observation.source.id === `accepted-export:${profile.sha256}:reporting/${code}`
+    && observation.source.input_sha256 === profile.sha256 && observation.source.url === url
+    && observation.view.source_url === source.source_url
+    && observation.geography.level === "reporting_unit"
+    && observation.geography.join.status === "unreviewed"
+    && observation.source_clock.literal === source.source_update_label
+    && observation.source_clock.timezone === null
+    && ordered(observation.source.fields) === ordered(observation.view)
+    && heldReportingObservation(observation);
+}
+function reviewedReportingIdentity(native, current, code) {
+  return native.source.id === reviewedReportingSources[code]
+    && native.id === current.id && heldReportingObservation(native)
+    && heldReportingObservation(current)
+    && native.geography.level === "reporting_unit"
+    && ["election", "measure", "count", "denominator"]
+      .every(key => ordered(native[key] || {}) === ordered(current[key] || {}))
+    && ["id", "name", "state_code", "level", "join"]
+      .every(key => JSON.stringify(native.geography[key]) === JSON.stringify(current.geography[key]))
+    && ["id", "input_sha256", "url", "selector", "classification"]
+      .every(key => JSON.stringify(native.source[key]) === JSON.stringify(current.source[key]))
+    && ordered(native.source.fields) === ordered(native.view)
+    && ["state_code", "key", "unit", "year", "native_record"]
+      .every(key => JSON.stringify(native.view[key]) === JSON.stringify(current.view[key]))
+    && ["literal", "timezone"]
+      .every(key => native.source_clock[key] === current.source_clock[key]);
+}
+export function bindReportingRows(data, code, nativeSource, countSource, counts) {
+  validateRuntimeSnapshot(nativeSource, countSource);
+  const declaration = nativeSource.index.reporting_tables?.[code];
   if (data.contract !== "participation.reporting_units.v1" || data.state_code !== code
-      || data.records?.length !== declaration.rows)
+      || !declaration || data.records?.length !== declaration.rows)
     throw new Error("Reporting-unit source inventory differs");
-  const bind = counts => {
-    const current = new Map(counts.records.map(row => [row.id, row]));
-    return data.records.map(row => {
-      const observation = current.get(row.observation.id);
-      if (!observation || countBindingIdentity(observation) !== countBindingIdentity(row.observation))
-        throw new Error("Automatic reporting-unit identity differs");
-      const properties = updatedProperties(row.properties,observation.view);
-      if (propertyIdentity(properties) !== propertyIdentity(row.properties))
-        throw new Error("Automatic reporting-unit labels or qualification differ");
-      return { properties, observation };
-    });
-  };
-  const countIndex = await loadCountIndex();
-  let records;
-  try {
-    records = bind(await loadCountState(code));
-  } catch (error) {
-    if (!countIndex.automatic_runtime) throw error;
-    rejectCountRuntime(error);
-    records = bind(await loadAcceptedCountState(code));
-  }
+  const current = new Map(counts.records.map(row => [row.id, row]));
+  const records = data.records.map(row => {
+    validateCountObservation(row.observation, code);
+    let observation = current.get(row.observation.id);
+    const saved = !observation && frozenReportingObservation(row.observation, code, nativeSource.index);
+    if (saved) observation = row.observation;
+    if (observation) validateCountObservation(observation, code);
+    const reviewed = reviewedReportingSources[code];
+    const compatible = saved || observation && (
+      reviewed && [row.observation.source.id, observation.source.id].includes(reviewed)
+        ? reviewedReportingIdentity(row.observation, observation, code)
+        : countBindingIdentity(observation) === countBindingIdentity(row.observation));
+    if (!compatible)
+      throw new Error("Automatic reporting-unit identity differs");
+    const properties = updatedProperties(row.properties,observation.view);
+    properties.source_update_label = observation.view.source_update_label
+      ?? observation.source_clock.literal;
+    properties.source_update_timezone = observation.source_clock.timezone;
+    if (saved) properties.source_frame = "saved_reviewed_native_export";
+    if (propertyIdentity(properties) !== propertyIdentity(row.properties))
+      throw new Error("Automatic reporting-unit labels or qualification differ");
+    return { properties, observation };
+  });
   const keys = new Set();
   for (const { properties, observation } of records) {
     validateCountObservation(observation, code);
@@ -274,4 +316,27 @@ export async function loadReportingRows(code) {
     keys.add(properties.key);
   }
   return records.map(row => row.properties);
+}
+export function reportingUnitDownloads(code, nativeSource, countSource) {
+  validateRuntimeSnapshot(nativeSource, countSource);
+  if (!nativeSource.automatic_runtime) return null;
+  const complete = nativeSource.entry.complete_download?.url;
+  const declaration = nativeSource.index.reporting_tables?.[code];
+  if (!complete || !declaration?.file)
+    throw new Error("Missing complete automatic reporting-unit downloads");
+  return { complete, rows: nativeSource.entry.base_url + declaration.file };
+}
+export async function loadReportingRows(code) {
+  const nativeSource=await loadNativeIndex(), {entry,index}=nativeSource;
+  const declaration = index.reporting_tables?.[code];
+  if (!declaration) throw new Error("No qualified reporting-unit count table");
+  try {
+    const data = await checkedDatasetFile(entry.base_url,declaration);
+    const countSource = await loadCountIndex();
+    return bindReportingRows(data, code, nativeSource, countSource, await loadCountState(code));
+  } catch (error) {
+    if (!nativeSource.automatic_runtime) throw error;
+    rejectCountRuntime(error);dataset=null;
+    return loadReportingRows(code);
+  }
 }
