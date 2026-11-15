@@ -159,7 +159,9 @@ function detailHarness() {
   const end = source.indexOf("\n    async function currentNavigation(", start);
   assert(start >= 0 && end > start);
   const html = (tag, className, textContent) => ({ tag, className, textContent });
-  const detail = runInNewContext(`(() => { ${source.slice(start, end)}; return currentCountDetail; })()`, {
+  const { detail, countLabel } = runInNewContext(`(() => { ${source.slice(start, end)};
+    return { detail: currentCountDetail, countLabel: typeof sourceUnitCountLabel === "function"
+      ? sourceUnitCountLabel : undefined }; })()`, {
     residentSource() {}, html, state: { currentPrecinctShapes: new Map() },
     fmt: value => value == null ? "\u2014" : String(value),
     pct: () => "Unavailable",
@@ -167,8 +169,27 @@ function detailHarness() {
   });
   const host = { children: [], replaceChildren(...children) { this.children = children; },
     append(...children) { this.children.push(...children); } };
-  return { detail, host };
+  return { detail, host, countLabel };
 }
+
+test("source-unit count headings preserve native measures without treating mixed counts as ballots", () => {
+  const { countLabel } = detailHarness();
+  for (const [rows, expected] of [
+    [[{ ballots: 0, participation_measure_literal: "# VOTING" }], "# VOTING"],
+    [[{ ballots: null, participation_measure_label: "Native voters participating" },
+      { ballots: 12, participation_measure_label: "Native voters participating" }], "Native voters participating"],
+    [[{ participation_measure_literal: "Cards Cast" }], "Cards Cast"],
+    [[{ participation_measure_label: "Voters Cast", participation_measure_literal: "# VOTING" },
+      { participation_measure_literal: "Ballots Cast" }], "Source participation count"],
+    [[{ participation_measure_literal: "Voters Cast" }, {}], "Source participation count"],
+    [[{ ballots: 0 }, { ballots: null }], "Ballots reported"],
+    [[], "Ballots reported"],
+  ]) {
+    const before = structuredClone(rows);
+    assert.equal(countLabel(rows), expected);
+    assert.deepEqual(rows, before);
+  }
+});
 
 test("legacy reporting details expose supplied complete packages without claiming a native review", () => {
   const { detail, host } = detailHarness();

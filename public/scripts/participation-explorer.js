@@ -404,6 +404,11 @@ function stateParticipationRows() {
     const electorateLabel = row => typeof row.denominator_basis === "string" && row.denominator_basis
       ? row.denominator_basis.replaceAll("_", " ") : "source electorate not supplied";
     const participationLabel = row => row.participation_measure_label || row.participation_measure_literal;
+    function sourceUnitCountLabel(rows) {
+      const labels = rows.map(participationLabel), first = labels[0];
+      return first && labels.every(label => label === first) ? first
+        : labels.some(Boolean) ? "Source participation count" : "Ballots reported";
+    }
     const registryHistoryContext = row => row.administrative_history_context_only === true
       && row.source_frame_kind === "current_registry_date_token";
     function currentCountDetail(host, row, county = false) {
@@ -588,7 +593,7 @@ function stateParticipationRows() {
           const rows = data.precincts.filter(row => row.state_code === code && row.county_id === county.county_id);
           setTable(rows.length ? rows : [county], rows.length
             ? [["county", nativeCities ? "City" : "County"], ["unit", "Source precinct / reporting location"], ["unit_kind", "Unit type"],
-              ["ballots", massachusettsCities ? "Native source count" : "Ballots reported"], ["denominator", "Source electorate"],
+              ["ballots", massachusettsCities ? "Native source count" : sourceUnitCountLabel(rows)], ["denominator", "Source electorate"],
               ["reported_pct", "Reported-ballot fraction"], ["quality", "Notes"]]
             : [["county", administrations ? "Election administration" : "County"], ["ballots", participationLabel(county) || "Ballots reported"], ["denominator", "Source electorate"],
               ["reported_pct", participationLabel(county) ? `${participationLabel(county)} fraction` : "Reported-ballot fraction"],
@@ -614,7 +619,7 @@ function stateParticipationRows() {
             else unitDetail.replaceChildren();
           });
           units.append(unitLabel, unitSelect, unitDetail,
-            html("p", "selection-note", "Every source row is available in the observations table and complete downloads. No early/mail counts are added to these ballot totals."));
+            html("p", "selection-note", "Every source row is available in the observations table and complete downloads. No early/mail counts are added to these participation counts."));
           if (rows.some(row => row.unit_key === previousUnit)) {
             unitSelect.value = previousUnit;
             unitSelect.dispatchEvent(new Event("change"));
