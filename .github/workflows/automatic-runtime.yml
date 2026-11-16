@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: fd6886bb5cb827b2bb8d614b2d74f7497ab1e16b
+          ref: decf7222e75b9a8c1a5cc0fc546604474911d11e
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -41,6 +41,7 @@ jobs:
             pyproject.toml
             data/results-intake/model-seed
             data/results-intake/reviewed-eligibility.json
+            data/results-intake/analytical-handoff
 
       - uses: actions/setup-python@v6
         with:
