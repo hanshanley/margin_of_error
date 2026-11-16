@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "31 * * * *"
   workflow_dispatch:
+    inputs:
+      results_pointer:
+        description: Immutable results-pointer URL for a reviewed release; blank keeps hourly latest
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -27,13 +32,15 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: a132ac4b4a7d2e06df12d92c7cefb0593a251949
+          ref: 16edf5782112b88dae16e58e5c9256b46031cb24
           path: research-source
           persist-credentials: false
+          sparse-checkout-cone-mode: false
           sparse-checkout: |
             scripts
             pyproject.toml
             data/results-intake/model-seed
+            data/results-intake/reviewed-eligibility.json
 
       - uses: actions/setup-python@v6
         with:
@@ -48,10 +55,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/research-source
+          RESULTS_POINTER: ${{ inputs.results_pointer }}
         run: |
+          pointer="${RESULTS_POINTER:-https://raw.githubusercontent.com/hanshanley/voter-participation/results-data/latest.json}"
           python -m scripts.automatic_runtime \
-            --results-pointer \
-              https://raw.githubusercontent.com/hanshanley/voter-participation/results-data/latest.json \
+            --results-pointer "$pointer" \
             --repository "$GITHUB_WORKSPACE" \
             --work-dir "$RUNNER_TEMP/participation-automatic-runtime"
 
