@@ -55,7 +55,7 @@ const state = {
   reportingUnitSources: {}, reportingUnitData: new Map(), reportingUnitError: "",
   context: null, contextPath: "", margins: [], contextError: "", subshapes: new Map(),
   results: null, resultsError: "",
-  countyResults: null, countyResultsPath: "", countyResultsError: "",
+  countyResults: null, countyResultsPath: "", countyResultsDownload: "", countyResultsError: "",
   countyOverview: null,
   precinctResults: null, precinctResultsPath: "", precinctResultShapes: new Map(),
   precinctResultSelection: "", precinctResultsError: "",
@@ -992,7 +992,7 @@ async function loadCurrentPrecincts() {
     try {
       const pointer = await fetch("/county-results.json");
       if (!pointer.ok) throw new Error(`County result pointer: HTTP ${pointer.status}`);
-      const { base_url, overview_url } = await pointer.json();
+      const { base_url, overview_url, complete_download_url } = await pointer.json();
       const response = await fetch(base_url + "index.json");
       if (!response.ok) throw new Error(`County result coverage: HTTP ${response.status}`);
       const index = await response.json();
@@ -1006,6 +1006,7 @@ async function loadCurrentPrecincts() {
         && index.coverage[row.state_code])), ...rows];
       state.countyResults = index;
       state.countyResultsPath = base_url;
+      state.countyResultsDownload = complete_download_url;
       if (overview_url) {
         const response = await fetch(overview_url);
         if (!response.ok) throw new Error(`County overview: HTTP ${response.status}`);
@@ -1057,6 +1058,93 @@ async function loadCurrentPrecincts() {
       $("geography-note").hidden = false;
       $("geography-note").textContent = "County colors are visible at national scale. Select a county to zoom; "
         + "full 2026 Census county shapes load as you zoom. The national overview uses display-simplified copies.";
+  }
+  function countyResultHold(code, year) {
+    const index = state.countyResults, hold = index?.withheld_states?.[code];
+    return index?.year === year && !index.coverage[code] && hold?.status === "withheld"
+      && typeof hold.error === "string" && hold.error.trim() ? hold : null;
+  }
+  async function drawHeldCountyResults(map, selected, code, year, token, hold) {
+    const boundaryYear = state.context?.boundary_year, path = state.context?.geometry?.county?.[code];
+    if (!path || !Number.isInteger(boundaryYear) || boundaryYear > year)
+      throw new Error(`No dated county reference for ${code}`);
+    const cacheKey = state.contextPath + path;
+    if (!state.subshapes.has(cacheKey)) {
+      state.subshapes.set(cacheKey, contextGet(path).then(data => {
+        const features = data?.features;
+        if (data?.type !== "FeatureCollection" || !Array.isArray(features) || !features.length
+          || new Set(features.map(feature => feature.properties?.key)).size !== features.length
+          || features.some(feature => {
+            const p = feature.properties;
+            if (feature.type !== "Feature" || p?.state_code !== code || p.boundary_year !== boundaryYear
+              || !/^\d{5}$/.test(p.key) || !p.key.startsWith(selected.feature.properties.STATE)
+              || typeof p.name !== "string" || !p.name.trim()
+              || !["Polygon", "MultiPolygon"].includes(feature.geometry?.type)) return true;
+            const parts = rings(feature.geometry);
+            return !parts.length || parts.some(ring => !Array.isArray(ring) || ring.length < 4
+              || ring.some(point => !Array.isArray(point) || point.length !== 2
+                || !Number.isFinite(point[0]) || !Number.isFinite(point[1])
+                || Math.abs(point[0]) > 180 || Math.abs(point[1]) > 90)
+              || ring[0][0] !== ring.at(-1)[0] || ring[0][1] !== ring.at(-1)[1]);
+          })) throw new Error(`Unqualified county reference for ${code}`);
+        return data;
+      }).catch(error => { state.subshapes.delete(cacheKey); throw error; }));
+    }
+    const data = await state.subshapes.get(cacheKey);
+    if (token !== state.drillToken || state.map !== map) return;
+    const name = selected.feature.properties.NAME;
+    const explanation = `${year} county results are unavailable: ${hold.error}. `
+      + `${boundaryYear} Census county outlines are geographic context only, not verified ${year} election boundaries. `
+      + "No county votes, margins or turnout rates have been inferred from statewide results. Missing is not zero.";
+    const detail = p => {
+      const panel = $("substate-detail");
+      panel.replaceChildren(html("h4", "", p?.name || `${name} county results`),
+        html("p", "selection-note", explanation));
+      const audit = html("a", "selection-link", "County source coverage and hold decision");
+      audit.href = new URL("index.json", state.countyResultsPath).href;
+      panel.append(audit);
+      if (state.countyResultsDownload) {
+        const download = html("a", "selection-link", "Complete county results and source audit");
+        download.href = state.countyResultsDownload;
+        panel.append(download);
+      }
+    };
+    referenceOutline(map, code, data.features);
+    for (const feature of data.features) {
+      const p = feature.properties, item = projectInside(feature, selected.point);
+      const shape = featurePath(item, null, `${p.name} · ${year} results unavailable\n${explanation}`, () => {
+        state.countySelection = { year, code, key: p.key };
+        detail(p);
+        for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
+        shape.classList.add("selected"); fit(item.bounds);
+      }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": "county",
+        "data-color-level": "none", "data-results-status": "withheld", "data-year": year,
+        "data-boundary-year": boundaryYear, fill: "#d6d3cb", tabindex: "0" });
+      if (state.countySelection?.year === year && state.countySelection.code === code
+        && state.countySelection.key === p.key) shape.classList.add("selected");
+      map.detail.append(shape);
+    }
+    map.stateTable ||= { rows: state.table, columns: state.columns };
+    setTable(data.features.map(({ properties: p }) => ({
+      county_id: p.key, county: p.name, year, boundary_year: boundaryYear,
+      contest_votes: null, margin_pp: null, status: "withheld", reason: hold.error,
+    })), [["county_id", "County ID"], ["county", "County"], ["year", "Election year"],
+      ["boundary_year", "Context boundary year"], ["contest_votes", "Contest votes"],
+      ["margin_pp", "Margin (pp)"], ["status", "Result status"], ["reason", "Hold reason"]]);
+    map.countyLayer = true;
+    header(`${year} · county source hold`, `County results unavailable in ${name}`,
+      "Gray county outlines show geographic context, not election results or participation.",
+      `${boundaryYear} Census county reference; no ${year} county counts or margins are assigned.`);
+    $("coverage-note").textContent = `${name} · ${data.features.length} contextual counties; all ${year} county results withheld. ${hold.error}.`;
+    $("geography-note").hidden = false;
+    $("geography-note").textContent = explanation;
+    legend([["Gray: county results unavailable", "#d6d3cb"]]);
+    detail(data.features.find(feature => state.countySelection?.year === year
+      && state.countySelection.code === code && feature.properties.key === state.countySelection.key)?.properties);
+    if (map.heldCountyFocus !== `${year}|${code}`) {
+      map.heldCountyFocus = `${year}|${code}`;
+      fit(selected.bounds);
+    }
   }
   function countyResultDetail(p, election, countsOnly = false) {
     residentContext.selectCounty(p.key, p.state_code || stateCode());
@@ -3060,7 +3148,6 @@ function projectInside(feature, point) {
     const nationalCounties = $("map-color").value === "margin" && $("map-level").value === "county"
       && state.countyResults?.year === year && state.countyOverview;
     if (map.countyOverview) map.countyOverview.style.display = nationalCounties ? "" : "none";
-    if (nationalCounties) drawNationalCountyResults(map, year);
     const center = new DOMPoint(state.viewport[0] + state.viewport[2] / 2, state.viewport[1] + state.viewport[3] / 2);
     const currentBounds = map.stateItems.get(stateCode())?.bounds;
     const [vx, vy, vw, vh] = state.viewport;
@@ -3104,7 +3191,7 @@ function projectInside(feature, point) {
     for (const path of map.statePaths.values()) path.style.opacity = "";
     if (nationalCounties) drawNationalCountyResults(map, year);
     if (map.precinctLayer || map.localLayer || map.countyLayer) {
-      if ((map.precinctLayer || map.localLayer || map.candidateCountFallback) && map.stateTable)
+      if (map.stateTable)
         setTable(map.stateTable.rows, map.stateTable.columns);
       map.precinctLayer = false;
       map.localLayer = false;
@@ -3117,6 +3204,9 @@ function projectInside(feature, point) {
     map.detail.replaceChildren(); $("substate-detail")?.replaceChildren();
     $("geography-note").hidden = !nationalCounties && zoomLevel < 2.3 && level !== "precinct";
     for (const label of map.svg.querySelectorAll(".map-label, .map-callout-line")) label.style.display = zoomLevel >= 2.3 ? "none" : "";
+    const countyHold = level === "county" && $("map-color").value === "margin" && countyResultHold(code, year);
+    if (selected && countyHold)
+      return drawHeldCountyResults(map, selected, code, year, token, countyHold);
     if (zoomLevel < 2.3 && level !== "precinct") {
       if (nationalCounties) {
         header(`${year} midterm election · county candidate returns`,

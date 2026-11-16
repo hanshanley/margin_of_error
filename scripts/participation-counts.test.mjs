@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
+import { rings } from "../public/scripts/participation-map-projection.js";
 import { canonicalObservation, encoded, digest, pin, selectedFrame } from "./compile-participation-counts.mjs";
 import { countModes, countStates, validateCountObservation, validateCountShard,
   validateCurrentCountSnapshot, countFrame } from "../public/scripts/participation-counts.js";
@@ -12,6 +13,166 @@ const view = () => ({ year: 2026, state_code: "MN", county_id: "native:1", count
   source_url: "https://example.org/counts", quality: ["Native conflict remains in original fields."] });
 const input = { file: "original.json", sha256: "a".repeat(64), url: "https://example.org/export.json" };
 const observation = () => canonicalObservation(view(), input, "counties", 0);
+
+function heldCountyHarness(contextGet) {
+  const source = readFileSync(new URL("../public/scripts/participation-explorer.js", import.meta.url), "utf8");
+  const start = source.indexOf("  function countyResultHold(");
+  const end = source.indexOf("  function countyResultDetail(", start);
+  assert(start >= 0 && end > start, "The explorer must handle explicitly held county results");
+  const node = () => ({
+    children: [], style: {}, classList: { add() {}, remove() {} },
+    replaceChildren(...children) { this.children = children; },
+    append(...children) { this.children.push(...children); },
+    querySelectorAll() { return []; },
+  });
+  const elements = new Map();
+  for (const [id, value] of Object.entries({
+    year: "2026", "map-level": "county", "map-color": "margin", mode: "available",
+  })) elements.set(id, { ...node(), value });
+  const $ = id => {
+    if (!elements.has(id)) elements.set(id, node());
+    return elements.get(id);
+  };
+  const selected = { bounds: [0, 0, 1000, 610],
+    feature: { properties: { NAME: "Maine", STUSAB: "ME", STATE: "23" } } };
+  const state = {
+    code: "ME", view: "states", selectedState: "Maine", viewport: [0, 0, 1000, 610],
+    drillKey: "", drillToken: 1, subshapes: new Map(), margins: [],
+    contextPath: "/participation-context/reviewed/",
+    context: { boundary_year: 2024, geometry: { county: { ME: "geometry/county-ME.geojson" } } },
+    countyResults: { year: 2026, coverage: { FL: {} },
+      withheld_states: { ME: { status: "withheld", error: "District / county vectors do not reconcile" } } },
+    countyResultsPath: "https://example.org/county/",
+    countyResultsDownload: "https://example.org/complete-county-results.zip",
+    countyOverview: {},
+    table: [{ state: "Original statewide row" }], columns: [["state", "State"]],
+  };
+  const map = {
+    full: [1000, 610], detail: node(), svg: node(), statePaths: new Map(),
+    stateItems: new Map([["ME", selected], ["FL", {
+      bounds: selected.bounds, feature: { properties: { NAME: "Florida" } },
+    }]]),
+    stateHeading: ["state subtitle", "State results", "State measure", "State caption"],
+    stateCoverage: "State coverage",
+  };
+  state.map = map;
+  const geometry = { type: "FeatureCollection", features: [{
+    type: "Feature", properties: { key: "23031", name: "York County", state_code: "ME", boundary_year: 2024 },
+    geometry: { type: "Polygon", coordinates: [[[-70, 43], [-69, 43], [-69, 44], [-70, 43]]] },
+  }] };
+  const effects = { legends: [], headings: [], outlines: 0, sourceCalls: 0 };
+  const dispatchStart = source.indexOf("  async function updateGeography()");
+  const dispatchEnd = source.indexOf("\nfunction resetMap()", dispatchStart);
+  const helpers = runInNewContext(`(() => { ${source.slice(start, end)}
+    ${source.slice(dispatchStart, dispatchEnd)}
+    return { hold: countyResultHold, draw: drawHeldCountyResults, update: updateGeography }; })()`, {
+    state, $, rings, URL, DOMPoint: class {},
+    contextGet: async path => {
+      effects.sourceCalls++;
+      return contextGet ? contextGet(path, geometry) : geometry;
+    },
+    html: (tag, className, textContent) => ({ ...node(), tag, className, textContent }),
+    projectInside: feature => ({ feature, bounds: selected.bounds }),
+    featurePath: (item, value, label, action, attrs) => ({ ...node(), label, action, attrs, value }),
+    referenceOutline: () => { effects.outlines++; },
+    header: (...args) => { effects.headings.push(args); },
+    legend: items => { effects.legends = items; },
+    fmt: String, fit() {}, stateCode: () => state.code, stateDetail() {},
+    setTable: (rows, columns) => { state.table = rows; state.columns = columns; },
+    drawNationalCountyResults: () => { $("geography-note").textContent = "Generic national overview"; },
+    drawCountyResults: () => { map.countyLayer = true; effects.qualified = true; },
+    marginLegend() {}, isProvisional: () => true,
+  });
+  return { ...helpers, state, map, selected, geometry, effects, $ };
+}
+
+test("held county boundaries remain neutral and export missing counts rather than zero", async () => {
+  const h = heldCountyHarness();
+  await h.draw(h.map, h.selected, "ME", 2026, 1, h.hold("ME", 2026));
+  assert.equal(h.map.detail.children.length, 1);
+  const path = h.map.detail.children[0];
+  assert.equal(path.attrs["data-color-level"], "none");
+  assert.equal(path.attrs["data-boundary-year"], 2024);
+  assert.equal(path.attrs["data-results-status"], "withheld");
+  assert.equal(path.attrs["data-margin"], undefined);
+  assert.equal(path.attrs["data-total-votes"], undefined);
+  assert.equal(h.state.table[0].contest_votes, null);
+  assert.equal(h.state.table[0].margin_pp, null);
+  assert.match(h.$("geography-note").textContent, /2024 Census/);
+  assert.match(h.$("geography-note").textContent, /do not reconcile/);
+  path.action();
+  assert.equal(h.$("substate-detail").children[0].textContent, "York County");
+  assert.match(h.$("substate-detail").children[1].textContent, /unavailable/i);
+  assert(h.$("substate-detail").children.some(child =>
+    child.href === h.state.countyResultsDownload));
+});
+
+test("a county hold cannot override a supported state, other year or unreviewed omission", () => {
+  const h = heldCountyHarness();
+  assert.equal(h.hold("FL", 2026), null);
+  assert.equal(h.hold("ME", 2024), null);
+  assert.equal(h.hold("DC", 2026), null);
+  h.state.countyResults.coverage.ME = {};
+  assert.equal(h.hold("ME", 2026), null);
+});
+
+test("held county references reject changed identity, vintage, missing and malformed geometry", async () => {
+  for (const mutate of [
+    data => { data.features = []; },
+    data => { data.features[0].properties.state_code = "NH"; },
+    data => { data.features[0].properties.key = "33031"; },
+    data => { data.features[0].properties.boundary_year = 2026; },
+    data => { data.features.push(structuredClone(data.features[0])); },
+    data => { data.features[0].geometry.type = "Point"; },
+    data => { data.features[0].geometry.coordinates[0][0][0] = NaN; },
+  ]) {
+    const h = heldCountyHarness((path, geometry) => {
+      const data = structuredClone(geometry); mutate(data); return data;
+    });
+    await assert.rejects(h.draw(h.map, h.selected, "ME", 2026, 1, h.hold("ME", 2026)),
+      /county reference/i);
+    assert.equal(h.map.detail.children.length, 0);
+    assert.equal(h.effects.outlines, 0);
+    assert.equal(h.state.table[0].state, "Original statewide row");
+  }
+});
+
+test("failed held-reference fetches retry and stale responses cannot paint another selection", async () => {
+  let release;
+  const h = heldCountyHarness((path, geometry) => new Promise(resolve => {
+    release = () => resolve(geometry);
+  }));
+  const pending = h.draw(h.map, h.selected, "ME", 2026, 1, h.hold("ME", 2026));
+  h.state.drillToken++;
+  release(); await pending;
+  assert.equal(h.map.detail.children.length, 0);
+  assert.equal(h.effects.headings.length, 0);
+  let attempts = 0;
+  const retry = heldCountyHarness((path, geometry) => {
+    if (!attempts++) throw new Error("HTTP 503");
+    return geometry;
+  });
+  await assert.rejects(retry.draw(retry.map, retry.selected, "ME", 2026, 1, retry.hold("ME", 2026)), /503/);
+  await retry.draw(retry.map, retry.selected, "ME", 2026, 1, retry.hold("ME", 2026));
+  assert.equal(retry.effects.sourceCalls, 2);
+  assert.equal(retry.map.detail.children.length, 1);
+});
+
+test("initial county deep links and repeated viewport updates retain the held explanation", async () => {
+  const h = heldCountyHarness();
+  await h.update();
+  assert.equal(h.map.detail.children.length, 1);
+  const explanation = h.$("geography-note").textContent;
+  await h.update();
+  assert.equal(h.$("geography-note").textContent, explanation);
+  assert.match(explanation, /do not reconcile/);
+  h.state.code = "FL"; h.state.selectedState = "Florida";
+  h.state.viewport = [0, 0, 300, 180];
+  await h.update();
+  assert.equal(h.effects.qualified, true);
+  assert.equal(h.state.table[0].state, "Original statewide row");
+  assert.equal(h.map.detail.children.length, 0);
+});
 
 test("canonical migration preserves zero, unknown, withheld fraction and literal source fields", () => {
   const row = observation();
