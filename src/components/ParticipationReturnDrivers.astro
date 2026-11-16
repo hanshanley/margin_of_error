@@ -248,6 +248,33 @@ const tests = [
 			</table>
 		</div>
 	</details>
+	<details class="explorer-notes" data-congressional-results>
+		<summary>Current nationwide House and Senate returns · source dates, seats and comparisons</summary>
+		<p>Automatically discovered national returns, separate from the fitted behavioral scenarios above.
+			Regular and special Senate seats, runoff stages and ranked-choice rounds stay separate.
+			Raw recorded changes remain inspectable when comparison qualifications are held.</p>
+		<p data-congress-status role="status">Open to load the current complete congressional snapshot.</p>
+		<div class="driver-controls" data-congress-controls></div>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="National congressional returns">
+			<table data-congress-table>
+				<caption>Candidate selections, not participation or observed individual switching. Positive changes favor Democrats.
+					Share changes and D-minus-R margin changes have different scales.</caption>
+				<thead><tr><th scope="col">Contest / seat / stage / round</th><th scope="col">D</th>
+					<th scope="col">R</th><th scope="col">Other</th><th scope="col">Unknown party</th>
+					<th scope="col">D two-party share</th><th scope="col">D-minus-R margin</th>
+					<th scope="col">Raw margin change</th><th scope="col">Comparison</th>
+					<th scope="col">Freshness</th><th scope="col">Native update (UTC)</th></tr></thead>
+			</table>
+		</div>
+		<div class="table-wrap" tabindex="0" role="region" aria-label="Statewide House comparisons" data-congress-house-states></div>
+		<div data-congress-detail></div>
+		<div class="download-links" data-congress-downloads></div>
+		<p><a data-congress-saved-download href="https://github.com/hanshanley/margin_of_error/releases/download/automatic-participation-a0e36c10c6600463bb6a76c47c081f000bc4e82167752f2e68bfb09e13743247/complete-analysis.zip">Saved complete House/Senate release · inputs, every query and result · ZIP</a>.
+			Source snapshot checked November 16, 2026 at 13:57 UTC; individual count clocks remain separate.
+			The live download links above advance automatically; this saved release remains available.</p>
+		<noscript><p>Interactive current returns require JavaScript. All saved analyses and complete downloadable
+			inputs, queries and results remain accessible, including the complete House/Senate release above.</p></noscript>
+	</details>
 	<details class="explorer-notes"><summary>Every saved NORC House-state estimate</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 50 NORC House state models">
 			<table><caption>D-minus-R margin points, twice the Democratic-share change shown by default on the map.

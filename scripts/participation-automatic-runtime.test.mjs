@@ -122,6 +122,36 @@ test("the latest runtime accepts one committed count/model snapshot and all nine
   assert.equal(result.house_sources.qualification.held_state_codes.length, 17);
 });
 
+function congressDescriptor() {
+  const result = {
+    ...bodyPin("congressional/results.json.gz"),
+    contract: "participation.congressional_results.v1",
+    base_url: houseSources().base_url, complete_download: download,
+    downloads: Object.fromEntries(["results.json.gz", "queries.json.gz", "congress-races.csv",
+      "congress-candidates.csv", "congress-coverage.csv", "congress-comparisons.csv",
+      "congress-house-states.csv"]
+      .map(file => [`congressional/${file}`, bodyPin(`congressional/${file}`)])),
+  };
+  return result;
+}
+
+test("both chambers require complete queries and one coherent runtime commit", () => {
+  const value = manifest();
+  value.congressional = congressDescriptor();
+  assert.equal(validateAutomaticRuntime(value).runtime_commit, runtimeCommit);
+  for (const mutate of [
+    row => { row.base_url = row.base_url.replace(runtimeCommit, "f".repeat(40)); },
+    row => { delete row.downloads["congressional/queries.json.gz"]; },
+    row => { row.downloads[row.path].sha256 = "f".repeat(64); },
+    row => { row.complete_download = { ...row.complete_download, bytes: 42 }; },
+  ]) {
+    const invalid = manifest();
+    invalid.congressional = congressDescriptor();
+    mutate(invalid.congressional);
+    assert.throws(() => validateAutomaticRuntime(invalid), /Congressional|committed snapshot/);
+  }
+});
+
 test("mixed commits, corruption metadata and changed hold identities reject the whole runtime", () => {
   for (const mutate of [
     value => { value.counts = countEntry("a".repeat(40)); },
@@ -230,7 +260,8 @@ test("the website workflow is data-only and the overlapping legacy refresh is ma
   assert.match(workflow, /data\/results-intake\/model-seed/);
   assert.match(workflow, /GH_TOKEN: \$\{\{ github\.token \}\}/);
   assert.match(workflow, /python -m scripts\.automatic_runtime/);
-  assert.match(workflow, /--results-pointer[\s\S]+results-data\/latest\.json/);
+  assert.match(workflow, /pointer="\$\{RESULTS_POINTER:-https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/results-data\/latest\.json\}"/);
+  assert.match(workflow, /--results-pointer "\$pointer"/);
   assert.match(workflow, /--repository "\$GITHUB_WORKSPACE"/);
   const legacy = readFileSync(new URL("../.github/workflows/refresh-2026-data.yml", import.meta.url), "utf8");
   assert.match(legacy, /workflow_dispatch:/);

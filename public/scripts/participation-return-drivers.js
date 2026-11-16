@@ -6,6 +6,7 @@ import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
 import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection, norcFamilies,
   norcAssociations, norcSharedBound, norcRecordedBound, norcRecordedComparison, validateNorcAssociation } from "./participation-norc-house.js";
 import { loadHouseSensitivity, houseSensitivityScope } from "./participation-house-sensitivity.js";
+import { installCongressionalReturns } from "./participation-congress.js";
 import { automaticHouseDescriptor, automaticHouseProfileReceipt, automaticHouseSensitivityReceipt,
   automaticHouseSources, loadAutomaticRecordedHouse, rejectAutomaticRuntime,
   setAutomaticRuntimeStatus } from "./participation-automatic-runtime.js";
@@ -149,6 +150,7 @@ export async function initializeReturnDrivers() {
   const root = document.querySelector("#participation-return-drivers");
   if (!root || root.dataset.initialized) return;
   root.dataset.initialized = "true";
+  installCongressionalReturns(root);
   const status = root.querySelector("[data-driver-status]");
   try {
     const payload = JSON.parse(root.querySelector("[data-driver-data]").textContent);

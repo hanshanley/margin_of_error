@@ -187,6 +187,32 @@ export function validateAutomaticRuntime(manifest) {
         || manifest.complete_download.sha256 !== manifest.house_sources.complete_download.sha256)
       throw new Error("Automatic runtime and House complete download differ");
   }
+  if (manifest.congressional) {
+    const declaration = manifest.congressional;
+    validateBodyPin(declaration);
+    validateCompleteDownload(declaration.complete_download);
+    const base = immutableRaw.exec(declaration.base_url?.replace(/\/?$/, "/") || "");
+    if (declaration.contract !== "participation.congressional_results.v1"
+        || !base || base[2] !== `automatic/versions/${manifest.version}/`
+        || declaration.path !== "congressional/results.json.gz"
+        || declaration.complete_download.url !== manifest.complete_download.url
+        || declaration.complete_download.sha256 !== manifest.complete_download.sha256
+        || declaration.complete_download.bytes !== manifest.complete_download.bytes
+        || !declaration.downloads)
+      throw new Error("Congressional results are not one committed complete runtime");
+    for (const [file, value] of Object.entries(declaration.downloads))
+      if (!/^congressional\/[a-z-]+\.(csv|json\.gz)$/.test(file) || !pin(value))
+        throw new Error("Congressional download inventory differs");
+    for (const file of ["results.json.gz", "queries.json.gz", "congress-races.csv",
+      "congress-candidates.csv", "congress-coverage.csv", "congress-comparisons.csv",
+      "congress-house-states.csv"])
+      if (!declaration.downloads[`congressional/${file}`])
+        throw new Error("Congressional complete queries or tables are missing");
+    if (declaration.downloads[declaration.path].sha256 !== declaration.sha256
+        || declaration.downloads[declaration.path].bytes !== declaration.bytes)
+      throw new Error("Congressional results pin differs from its download inventory");
+    commits.add(base[1]);
+  }
   if (!manifest.counts && !manifest.native && !manifest.house_sources)
     throw new Error("Automatic runtime contains no consumable snapshot");
   if (commits.size !== 1)
@@ -342,6 +368,16 @@ export async function loadAutomaticRecordedHouse(selection) {
       || new Set(data.states.map(row => row.state_code)).size !== 50)
     throw new Error("Automatic recorded House state inventory differs");
   return data;
+}
+
+export async function loadAutomaticCongress() {
+  const manifest = await loadAutomaticRuntime();
+  const declaration = manifest.congressional;
+  if (!declaration) throw new Error("This accepted runtime predates the congressional bulk collector.");
+  const data = await checkedAutomaticBody({
+    ...declaration, url: new URL(declaration.path, declaration.base_url.replace(/\/?$/, "/")).href,
+  });
+  return { data, manifest, declaration };
 }
 
 export async function loadAutomaticRegisteredControlDisplay() {
