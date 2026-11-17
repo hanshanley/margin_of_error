@@ -55,3 +55,36 @@ test("retained scenarios retain their own source date and show an explicit updat
   value.summary.retained_partial_scenarios = 1;
   assert.equal(validate(value).get(row.id).model_source_clock, row.model_source_clock);
 });
+
+test("accepts the explicit FEC-identity successor without weakening the original version", () => {
+  const successor = JSON.parse(readFileSync(new URL("./fixtures/senate-partial-new-mexico.json", import.meta.url)));
+  const before = JSON.stringify(successor);
+  const check = value => validateSenatePartial(value, successor.legacy, successor.calibration);
+  const rows = check(successor.data);
+  assert.equal([...rows.values()].filter(row => row.model).length, 2);
+  const nm = rows.get("NM-senate-87288");
+  assert.equal(nm.model.reported_comparison.previous.O, 24271);
+  assert.equal(Object.hasOwn(nm.model.reported_comparison.current, "O"), false);
+  assert.equal(nm.model.complete_scenarios.length, 9);
+  assert.equal(JSON.stringify(successor), before);
+  for (const mutate of [
+    value => value.review_version = "20261117-01",
+    value => value.review_version = "20261117-03",
+    value => value.rows.find(row => row.id === nm.id).model.reported_comparison.current.O = 0,
+    value => value.rows.find(row => row.id === nm.id).model.reported_comparison.previous.O = 0,
+    value => value.rows.find(row => row.id === nm.id).model.senate_respondent_model = true,
+    value => value.rows.find(row => row.id === nm.id).model.reported_comparison.current_stage = "runoff",
+  ]) {
+    const changed = structuredClone(successor.data);
+    mutate(changed);
+    assert.throws(() => check(changed));
+  }
+  const held = structuredClone(successor.data);
+  const row = held.rows.find(value => value.id === nm.id);
+  row.status = "held_retain_last_good_partial_scenario";
+  row.holds = ["Source unavailable"];
+  held.summary.fresh_partial_scenarios -= 1;
+  held.summary.fresh_sensitivity_fits -= 9;
+  held.summary.retained_partial_scenarios += 1;
+  assert.equal(check(held).get(row.id).model_source_clock, nm.model_source_clock);
+});

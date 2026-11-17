@@ -2,6 +2,10 @@ import { calibratedTerms, validateCalibratedSwing } from "./participation-calibr
 import { loadAutomaticSenatePartial } from "./participation-automatic-runtime.js";
 
 const contract = "participation.senate_legacy_partial_scenarios.v1";
+const reviewedModels = new Map([
+  ["20261117-01", new Set(["AL-senate-86907"])],
+  ["20261117-02", new Set(["AL-senate-86907", "NM-senate-87288"])],
+]);
 const fresh = row => row.status.startsWith("fresh_");
 const statuses = new Set(["fresh_partial_scenario", "fresh_unchanged_partial_scenario",
   "held_retain_last_good_partial_scenario", "held_no_compatible_partial_bridge"]);
@@ -10,7 +14,8 @@ const close = (a, b) => Number.isFinite(a) && Number.isFinite(b) && Math.abs(a -
 export function validateSenatePartial(data, legacy, calibration) {
   const original = new Map(calibration.rows.filter(row => row.office === "senate" && row.point)
     .map(row => [row.id, row]));
-  if (data?.contract !== contract || data.review_version !== "20261117-01"
+  const approved = reviewedModels.get(data?.review_version);
+  if (data?.contract !== contract || !approved
       || data.source_models_refitted !== false || data.measured_staying_home !== null
       || data.confidence_intervals !== null || data.local_allocation !== false
       || data.complete_candidate_universe_qualified !== false || !Array.isArray(data.rows)
@@ -33,7 +38,7 @@ export function validateSenatePartial(data, legacy, calibration) {
     }
     const model = row.model, comparison = model?.reported_comparison;
     if (row.status === "held_no_compatible_partial_bridge"
-        || row.id !== "AL-senate-86907" || model.id !== row.id || model.state_code !== row.state_code
+        || !approved.has(row.id) || model.id !== row.id || model.state_code !== row.state_code
         || model.office !== "senate" || model.separately_versioned_partial_extension !== true
         || model.current_unreported_other_unknown !== true
         || model.complete_candidate_universe_qualified !== false || model.senate_respondent_model !== false
