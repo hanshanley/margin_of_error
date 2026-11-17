@@ -268,7 +268,8 @@ function validatePayload(data, reviewed = false) {
 export function validateCongressionalResults(data) {
   validatePayload(data);
   if (data.reviewed_races === undefined) return data;
-  require(["20261116-01", "20261117-identity-01", "20261117-declarations-01"]
+  require(["20261116-01", "20261117-identity-01", "20261117-declarations-01",
+    "20261117-categories-01"]
     .includes(data.analytical_handoff?.review_version)
     && Array.isArray(data.reviewed_races) && data.reviewed_races.length === data.races.length,
   "Congressional reviewed comparison version or inventory differs");

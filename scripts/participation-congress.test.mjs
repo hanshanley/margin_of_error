@@ -151,7 +151,8 @@ test("reviewed inventory cannot change counts, drop holds, substitute seats or g
   }
 });
 
-for (const version of ["20261117-identity-01", "20261117-declarations-01"]) {
+for (const version of ["20261117-identity-01", "20261117-declarations-01",
+  "20261117-categories-01"]) {
 test(`the reviewed ${version} successor preserves the same seat-aware recorded contract`, () => {
   const input = reviewedFixture();
   input.analytical_handoff.review_version = version;
@@ -163,6 +164,7 @@ test(`the reviewed ${version} successor preserves the same seat-aware recorded c
   for (const mutate of [
     value => { value.analytical_handoff.review_version = "20261118-identity-01"; },
     value => { value.analytical_handoff.review_version = "20261118-declarations-01"; },
+    value => { value.analytical_handoff.review_version = "20261118-categories-01"; },
     value => { value.reviewed_races[1].baseline.seat = "2"; },
     value => { value.reviewed_races[3].baseline.stage = "general"; },
     value => { value.reviewed_races[1].behavioral_estimate_updated = true; },
