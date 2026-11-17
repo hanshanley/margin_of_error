@@ -268,7 +268,7 @@ function validatePayload(data, reviewed = false) {
 export function validateCongressionalResults(data) {
   validatePayload(data);
   if (data.reviewed_races === undefined) return data;
-  require(data.analytical_handoff?.review_version === "20261116-01"
+  require(["20261116-01", "20261117-identity-01"].includes(data.analytical_handoff?.review_version)
     && Array.isArray(data.reviewed_races) && data.reviewed_races.length === data.races.length,
   "Congressional reviewed comparison version or inventory differs");
   const legacy = new Map(data.races.map(row => [row.id, row]));

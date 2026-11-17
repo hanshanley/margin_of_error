@@ -151,6 +151,27 @@ test("reviewed inventory cannot change counts, drop holds, substitute seats or g
   }
 });
 
+test("the reviewed candidate-identity successor preserves the same seat-aware recorded contract", () => {
+  const input = reviewedFixture();
+  input.analytical_handoff.review_version = "20261117-identity-01";
+  const before = structuredClone(input);
+  const result = validateCongressionalResults(input);
+  assert.equal(result.races.filter(row => row.chamber === "senate" && row.qualified_comparison).length, 3);
+  assert.deepEqual(result.candidates, before.candidates);
+  assert.deepEqual(input, before);
+  for (const mutate of [
+    value => { value.analytical_handoff.review_version = "20261118-identity-01"; },
+    value => { value.reviewed_races[1].baseline.seat = "2"; },
+    value => { value.reviewed_races[3].baseline.stage = "general"; },
+    value => { value.reviewed_races[1].behavioral_estimate_updated = true; },
+    value => { value.reviewed_races[1].D++; },
+  ]) {
+    const changed = structuredClone(input);
+    mutate(changed);
+    assert.throws(() => validateCongressionalResults(changed), /Congressional|Senate/);
+  }
+});
+
 test("same-seat review checks the complete historical frame, not just major-party totals or names", () => {
   for (const mutate of [
     row => { row.baseline.comparison_policy = "same_names"; },
