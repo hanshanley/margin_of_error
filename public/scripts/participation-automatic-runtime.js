@@ -380,6 +380,19 @@ export async function loadAutomaticCongress() {
   return { data, manifest, declaration };
 }
 
+export async function loadAutomaticSenatePartial() {
+  const manifest = await loadAutomaticRuntime();
+  const declaration = manifest.house_sources?.senate_partial_scenarios;
+  if (!declaration) return null;
+  validateBodyPin(declaration);
+  if (declaration.contract !== "participation.senate_legacy_partial_scenarios.v1"
+      || declaration.path !== "senate/legacy-partial-results.json.gz"
+      || declaration.url !== new URL(declaration.path,
+        manifest.house_sources.base_url.replace(/\/?$/, "/")).href)
+    throw new Error("Senate partial scenario is not part of this committed runtime");
+  return { data: await checkedAutomaticBody(declaration), manifest };
+}
+
 export async function loadAutomaticRegisteredControlDisplay() {
   const manifest=await loadAutomaticRuntime();
   const declaration=manifest.house_sources?.participation_state_projections;

@@ -1,10 +1,12 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
+import { gzipSync } from "node:zlib";
 import { readFileSync } from "node:fs";
 import {
   automaticRuntimeURL, loadAutomaticRuntime, resetAutomaticRuntimeForTests,
   validateAutomaticRuntime,
+  loadAutomaticSenatePartial,
 } from "../public/scripts/participation-automatic-runtime.js";
 
 const hash = body => createHash("sha256").update(body).digest("hex");
@@ -215,6 +217,55 @@ test("Astro-bundled and standalone readers share one page-session snapshot", asy
     globalThis.fetch = original;
     resetAutomaticRuntimeForTests();
     standalone.resetAutomaticRuntimeForTests();
+  }
+});
+
+test("the optional Senate loader shares one pinned body, rejects corruption and retries without a new snapshot", async () => {
+  const original = globalThis.fetch;
+  const data = { contract: "participation.senate_legacy_partial_scenarios.v1", rows: [] };
+  const decoded = Buffer.from(JSON.stringify(data)), body = gzipSync(decoded);
+  const declaration = {
+    contract: data.contract, path: "senate/legacy-partial-results.json.gz",
+    compression: "gzip", media_type: "application/json",
+    bytes: body.length, sha256: hash(body), decoded_bytes: decoded.length, decoded_sha256: hash(decoded),
+  };
+  const value = manifest();
+  declaration.url = new URL(declaration.path, value.house_sources.base_url).href;
+  value.house_sources.senate_partial_scenarios = declaration;
+  let manifests = 0, bodies = 0, corrupt = true;
+  resetAutomaticRuntimeForTests();
+  try {
+    globalThis.fetch = async url => {
+      if (url === automaticRuntimeURL) { manifests++; return Response.json(value); }
+      assert.equal(url, declaration.url); bodies++;
+      return new Response(corrupt ? Buffer.from("corrupt") : body);
+    };
+    await assert.rejects(loadAutomaticSenatePartial(), /checksum/);
+    corrupt = false;
+    const [first, second] = await Promise.all([loadAutomaticSenatePartial(), loadAutomaticSenatePartial()]);
+    assert.deepEqual(first.data, data);
+    assert.equal(first.data, second.data);
+    assert.equal(manifests, 1);
+    assert.equal(bodies, 2);
+    resetAutomaticRuntimeForTests();
+    delete value.house_sources.senate_partial_scenarios;
+    assert.equal(await loadAutomaticSenatePartial(), null);
+    assert.equal(bodies, 2);
+    for (const mutate of [
+      item => { item.url = item.url.replace(runtimeCommit, "f".repeat(40)); },
+      item => { item.contract = "unreviewed"; },
+      item => { item.path = "../senate/legacy-partial-results.json.gz"; },
+      item => { item.decoded_sha256 = "f".repeat(64); },
+      item => { item.decoded_bytes++; },
+    ]) {
+      resetAutomaticRuntimeForTests();
+      const changed = structuredClone(declaration); mutate(changed);
+      value.house_sources.senate_partial_scenarios = changed;
+      await assert.rejects(loadAutomaticSenatePartial());
+    }
+  } finally {
+    globalThis.fetch = original;
+    resetAutomaticRuntimeForTests();
   }
 });
 
