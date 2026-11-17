@@ -10,6 +10,7 @@ import { rings, boundsFor, conicProjection, projectFeatures } from "./participat
 import { demographicStates, demographicSource, demographicGroups, loadDemographics, demographicRows } from "./participation-state-demographics.js";
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
 import { countFill, precinctSelectionYears } from "./participation-geography.js";
+import { loadCountySubsets, subsetMarginLabel, subsetColorValue } from "./participation-county-subsets.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -57,6 +58,7 @@ const state = {
   results: null, resultsError: "",
   countyResults: null, countyResultsPath: "", countyResultsDownload: "", countyResultsError: "",
   countyOverview: null,
+  countySubsetDescriptors: {}, countySubsets: new Map(),
   precinctResults: null, precinctResultsPath: "", precinctResultShapes: new Map(),
   precinctResultSelection: "", precinctResultsError: "",
   drillKey: "", drillToken: 0, drillTimer: null, subSelection: null,
@@ -1016,6 +1018,17 @@ async function loadCurrentPrecincts() {
           throw new Error("National county overview scope disagrees with reviewed counts");
         state.countyOverview = data;
       }
+      try {
+        const response = await fetch("/county-candidate-subsets.json");
+        if (!response.ok) throw new Error(`County candidate subset index: HTTP ${response.status}`);
+        const subsets = await response.json();
+        if (subsets.contract !== "participation.county_candidate_subset_index.v1"
+          || subsets.year !== index.year || !subsets.states || Array.isArray(subsets.states))
+          throw new Error("Unqualified county candidate-subset index");
+        state.countySubsetDescriptors = subsets.states;
+      } catch {
+        state.countySubsetDescriptors = {};
+      }
     } catch (error) {
       state.countyResultsError = `County candidate returns unavailable; state results remain. ${error.message}.`;
     }
@@ -1058,6 +1071,117 @@ async function loadCurrentPrecincts() {
       $("geography-note").hidden = false;
       $("geography-note").textContent = "County colors are visible at national scale. Select a county to zoom; "
         + "full 2026 Census county shapes load as you zoom. The national overview uses display-simplified copies.";
+  }
+  async function drawSubsetCountyResults(map, selected, code, year, token, hold) {
+    const descriptor = state.countySubsetDescriptors[code];
+    if (!state.countySubsets.has(descriptor.sha256)) {
+      const pending = loadCountySubsets(descriptor, {
+        year, state_code: code, state_fips: selected.feature.properties.STATE,
+        counties: descriptor.county_ids?.length, county_ids: descriptor.county_ids,
+      }).catch(error => { state.countySubsets.delete(descriptor.sha256); throw error; });
+      state.countySubsets.set(descriptor.sha256, pending);
+    }
+    let data;
+    try {
+      data = await state.countySubsets.get(descriptor.sha256);
+    } catch (error) {
+      if (token !== state.drillToken || state.map !== map) return;
+      await drawHeldCountyResults(map, selected, code, year, token,
+        { ...hold, error: `${hold.error}; the dated candidate subset could not load: ${error.message}` });
+      if (token !== state.drillToken || state.map !== map) return;
+      const retry = html("button", "selection-link", "Retry dated county results");
+      retry.type = "button";
+      retry.addEventListener("click", () => { state.drillKey = ""; loadGeography(); });
+      $("substate-detail").append(retry);
+      return;
+    }
+    if (token !== state.drillToken || state.map !== map) return;
+    const returns = new Map(data.rows.map(row => [row.geography, row]));
+    const name = selected.feature.properties.NAME;
+    const dates = [...new Set(data.district_decisions.map(d => d.source_updated_at.slice(0, 10)))].sort().join(" / ");
+    const explanation = `${data.unlocated_other_votes} district-level write-ins have no county allocation. `
+      + "Recorded Democratic and Republican county counts reconcile exactly to their source districts. "
+      + "Ranges bound the all-candidate margin; color uses the bound nearest zero, not an exact margin. "
+      + "These are dated round-1 returns, not latest/final ranked-choice results, turnout or a cross-election swing.";
+    const detail = key => {
+      const row = returns.get(key), panel = $("substate-detail");
+      if (!row) {
+        panel.replaceChildren(html("h4", "", `${name} county results`),
+          html("p", "selection-note", "Select a county for recorded candidate counts and its source date."),
+          html("p", "selection-note", explanation));
+      } else {
+        panel.replaceChildren(html("h4", "", row.geography_name),
+          html("p", "selection-rate", subsetMarginLabel(row)),
+          html("p", "selection-note", `${fmt(row.democratic_votes)} Democratic; ${fmt(row.republican_votes)} Republican. `
+            + `${fmt(row.known_candidate_votes)} located candidate votes; `
+            + (row.unlocated_other_upper_bound
+              ? `0–${fmt(row.unlocated_other_upper_bound)} additional write-ins possible here; total and Other are not fully located. `
+              : `${fmt(row.located_other_votes)} other; this county's source vector is complete. `)),
+          html("p", "selection-note", explanation));
+        for (const fragment of row.district_fragments) {
+          const link = html("a", "selection-link",
+            `${fragment.district} · round ${fragment.source_round} · ${fragment.source_updated_at} (retained)`);
+          link.href = fragment.source_url; panel.append(" ", link);
+        }
+        residentContext.selectCounty(key, code);
+      }
+      const download = html("a", "selection-link", "Complete county counts, bounds, sources and offline reproduction (ZIP)");
+      download.href = descriptor.complete_download_url; panel.append(" ", download);
+      const table = html("a", "selection-link", "All county results (CSV)");
+      table.href = descriptor.csv_url; panel.append(" ", table);
+      const audit = html("a", "selection-link", "Original complete-result hold (unchanged)");
+      audit.href = new URL("index.json", state.countyResultsPath).href; panel.append(" ", audit);
+      panel.parentElement.prepend(panel);
+    };
+    referenceOutline(map, code, data.geometry.features);
+    for (const feature of data.geometry.features) {
+      const p = feature.properties, row = returns.get(p.key), item = projectInside(feature, selected.point);
+      const value = subsetColorValue(row);
+      const path = featurePath(item, null,
+        `${p.name} · ${dates} retained round 1\n${fmt(row.democratic_votes)} Democratic; `
+          + `${fmt(row.republican_votes)} Republican · ${subsetMarginLabel(row)}\n${explanation}`, () => {
+          state.countySelection = { year, code, key: p.key }; detail(p.key);
+          for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
+          path.classList.add("selected"); fit(item.bounds);
+        }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": "county",
+          "data-color-level": value === null ? "none" : "county-margin-bound",
+          "data-results-status": row.complete_vector_qualified ? "dated_complete_vector" : "partial_candidate_coverage",
+          "data-democratic-votes": row.democratic_votes, "data-republican-votes": row.republican_votes,
+          "data-margin-lower": row.margin_bounds_pp?.[0] ?? "", "data-margin-upper": row.margin_bounds_pp?.[1] ?? "",
+          "data-known-candidate-votes": row.known_candidate_votes, "data-unlocated-other-bound": row.unlocated_other_upper_bound,
+          "data-year": year, "data-boundary-year": data.boundary_reference_year, "data-source-round": 1,
+          fill: value === null ? "#d6d3cb" : marginFill(value), tabindex: "0" });
+      if (state.countySelection?.year === year && state.countySelection.code === code
+        && state.countySelection.key === p.key) path.classList.add("selected");
+      map.detail.append(path);
+    }
+    map.stateTable ||= { rows: state.table, columns: state.columns };
+    setTable(data.rows.map(row => ({ county_id: row.geography, county: row.geography_name,
+      democratic_votes: row.democratic_votes, republican_votes: row.republican_votes,
+      located_other_votes: row.located_other_votes, unlocated_other_upper_bound: row.unlocated_other_upper_bound,
+      contest_votes: row.contest_votes, margin_lower_pp: row.margin_bounds_pp?.[0] ?? null,
+      margin_upper_pp: row.margin_bounds_pp?.[1] ?? null,
+      source_updated_at: row.district_fragments.map(f => f.source_updated_at).join(" / "),
+      source_round: 1, freshness: row.freshness })),
+      [["county", "County"], ["democratic_votes", "Democratic votes"], ["republican_votes", "Republican votes"],
+        ["located_other_votes", "Located Other"], ["unlocated_other_upper_bound", "Unlocated Other: upper bound"],
+        ["contest_votes", "Complete contest votes"], ["margin_lower_pp", "Margin lower (pp)"],
+        ["margin_upper_pp", "Margin upper (pp)"], ["source_updated_at", "Source updated (UTC)"],
+        ["source_round", "Source round"], ["freshness", "Freshness"]]);
+    map.countyLayer = true;
+    header(`${year} midterm election · retained ${dates} snapshot`, `County election results in ${name}`,
+      "Direct recorded candidate counts; incomplete Other remains unallocated.",
+      `${data.boundary_reference_year} Census county reference · round 1, not final RCV. Color uses the all-candidate margin bound nearest zero.`);
+    $("coverage-note").textContent = `${name} · ${data.rows.length} counties with direct D/R counts; ${data.unlocated_other_votes} write-ins remain unlocated.`;
+    $("geography-note").hidden = false;
+    $("geography-note").textContent = `Source updated ${dates} (UTC); retained historical evidence, not a fresh collection. `
+      + "Margin ranges are accounting bounds, not confidence intervals. These are not turnout or cross-election swings.";
+    marginLegend("House · conservative all-candidate margin bound");
+    detail(state.countySelection?.year === year && state.countySelection.code === code
+      ? state.countySelection.key : null);
+    if (map.subsetCountyFocus !== `${year}|${code}`) {
+      map.subsetCountyFocus = `${year}|${code}`; fit(selected.bounds);
+    }
   }
   function countyResultHold(code, year) {
     const index = state.countyResults, hold = index?.withheld_states?.[code];
@@ -3205,8 +3329,11 @@ function projectInside(feature, point) {
     $("geography-note").hidden = !nationalCounties && zoomLevel < 2.3 && level !== "precinct";
     for (const label of map.svg.querySelectorAll(".map-label, .map-callout-line")) label.style.display = zoomLevel >= 2.3 ? "none" : "";
     const countyHold = level === "county" && $("map-color").value === "margin" && countyResultHold(code, year);
-    if (selected && countyHold)
+    if (selected && countyHold) {
+      if (state.countySubsetDescriptors?.[code])
+        return drawSubsetCountyResults(map, selected, code, year, token, countyHold);
       return drawHeldCountyResults(map, selected, code, year, token, countyHold);
+    }
     if (zoomLevel < 2.3 && level !== "precinct") {
       if (nationalCounties) {
         header(`${year} midterm election · county candidate returns`,

@@ -1,0 +1,19 @@
+{
+  "contract": "participation.county_candidate_subset_index.v1",
+  "year": 2026,
+  "states": {
+    "ME": {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9501fe2ce9b6d9090a9a95c505f58a10ee1f0c98/data/county-candidate-subsets/20261117-maine-01/county-subsets.json.gz",
+      "bytes": 709501,
+      "sha256": "e22af3c32495c78dbd45d1d4d7c029e31895cce1aacce96320a8daccff00a3c0",
+      "county_ids": [
+        "23001", "23003", "23005", "23007", "23009", "23011", "23013", "23015",
+        "23017", "23019", "23021", "23023", "23025", "23027", "23029", "23031"
+      ],
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-maine-county-subsets-20261117-01/complete-maine-county-results.zip",
+      "complete_download_bytes": 1452110,
+      "complete_download_sha256": "f287fdaee3018b6fc437c5ee70a71a557eb87b561cb145bc499a570fcc1d3bd9",
+      "csv_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-maine-county-subsets-20261117-01/county-results.csv"
+    }
+  }
+}
