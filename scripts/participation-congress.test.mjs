@@ -174,3 +174,64 @@ test("same-seat review checks the complete historical frame, not just major-part
     assert.throws(() => validateCongressionalResults(data), /Congressional|Senate/);
   }
 });
+
+function boundaryFixture(split = false) {
+  const data = fixture(), version = "20261117-01";
+  for (const rows of [data.races, data.candidates, data.coverage])
+    for (const row of rows.filter(row => row.chamber === "house"))
+      Object.assign(row, { id: "npr:house:AL:3:regular:general:not_ranked", seat: "3" });
+  const row = data.races[0];
+  row.baseline = { year: 2024, stage: "general", seat: "3", district: "AL-03",
+    boundary_eligibility: { district: "AL-03", state_code: "AL", state_fips: "01",
+      district_code: "03", previous_year: 2024, current_year: 2026,
+      previous_congress: 119, current_congress: 120,
+      previous_membership: { blocks: 2, sha256: "a".repeat(64) },
+      current_membership: { blocks: 2, sha256: "a".repeat(64) },
+      affected_split_blocks: split ? ["010010201001000"] : [],
+      whole_block_membership_equal: true, boundary_compatible: !split,
+      holds: split ? ["split_block_geometry_unresolved"] : [],
+      review_version: version,
+      method: "identical_2020_census_block_union_without_affected_split_blocks",
+      legal_boundary_certification: false, historical_votes_allocated: false,
+      behavioral_model_qualified: false } };
+  if (split) Object.assign(row, { qualified_comparison: false, qualified_margin_change_pp: null,
+    comparison_holds: ["House boundary hold: split_block_geometry_unresolved"] });
+  data.house_boundary_review = { contract: "participation.congressional_boundary_review.v1",
+    version, districts: 435, boundary_compatible: 288, qualified_recorded_comparisons: split ? 0 : 1,
+    evidence: Object.fromEntries(["cd119.zip", "cd120.zip", "CD119_BlockSplits.pdf", "CD120_BlockSplits.pdf"]
+      .map(name => {
+        const congress = name.includes("119") ? 119 : 120;
+        return [name, { bytes: 10, sha256: "b".repeat(64),
+          url: "https://www2.census.gov/programs-surveys/decennial/rdo/mapping-files/"
+            + `${congress === 119 ? 2025 : 2027}/${congress}-congressional-district-befs/${name}` }];
+      })) };
+  data.scientific_comparison_coverage = { reviewed_qualified_house_districts: split ? 0 : 1 };
+  return data;
+}
+
+test("district boundary qualification preserves split holds and inspectable raw changes", () => {
+  assert.equal(validateCongressionalResults(boundaryFixture()).races[0].qualified_comparison, true);
+  const held = validateCongressionalResults(boundaryFixture(true)).races[0];
+  assert.equal(held.raw_recorded_margin_change_pp, 20);
+  assert.equal(held.qualified_margin_change_pp, null);
+});
+
+test("district numbering, equal assigned blocks or boundary compatibility alone cannot grant a swing", () => {
+  for (const mutate of [
+    value => { delete value.races[0].baseline.boundary_eligibility; },
+    value => { value.house_boundary_review.version = "unreviewed"; },
+    value => { delete value.house_boundary_review.evidence["CD120_BlockSplits.pdf"]; },
+    value => { value.house_boundary_review.evidence["cd120.zip"].url += "?superseded"; },
+    value => { value.house_boundary_review.qualified_recorded_comparisons++; },
+    value => { value.races[0].baseline.boundary_eligibility.district_code = "01"; },
+    value => { value.races[0].baseline.boundary_eligibility.previous_year = 2022; },
+    value => { value.races[0].baseline.boundary_eligibility.current_membership.sha256 = "c".repeat(64); },
+    value => { value.races[0].baseline.boundary_eligibility.affected_split_blocks = ["010010201001000"]; },
+    value => { value.races[0].baseline.boundary_eligibility.historical_votes_allocated = true; },
+    value => { value.races[0].freshness = "retained_last_good"; },
+    value => { value.races[0].comparison_holds = ["Current nominee absent"]; },
+  ]) {
+    const data = boundaryFixture(); mutate(data);
+    assert.throws(() => validateCongressionalResults(data), /Congressional/);
+  }
+});

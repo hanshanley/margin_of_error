@@ -21,6 +21,43 @@ const historicalParties = { D: "D", DEM: "D", DFL: "D", R: "R",
   "DEM/IP/WF": "D", "D/IP/WF": "D", "D/IP": "D", "R/CON": "R",
   Democratic: "D", Republican: "R" };
 
+function reviewedHouseBoundary(row, review) {
+  const boundary = row.baseline?.boundary_eligibility;
+  if (boundary === undefined) {
+    require(!review || row.chamber !== "house" || !row.qualified_comparison,
+      "Congressional House comparison lacks reviewed boundary evidence");
+    return;
+  }
+  const fingerprint = value => value && Number.isSafeInteger(value.blocks)
+    && value.blocks > 0 && /^[a-f0-9]{64}$/.test(value.sha256);
+  require(review && row.chamber === "house"
+    && boundary.review_version === review.version
+    && boundary.state_code === row.state_code && /^[0-9]{2}$/.test(boundary.state_fips)
+    && /^[0-9]{2}$/.test(boundary.district_code)
+    && boundary.district === `${row.state_code}-${boundary.district_code === "00" ? "AL" : boundary.district_code}`
+    && boundary.district === row.baseline.district && row.baseline.seat === row.seat
+    && Number(row.seat) === (boundary.district_code === "00" ? 1 : Number(boundary.district_code))
+    && boundary.previous_year === 2024 && boundary.current_year === 2026
+    && boundary.previous_congress === 119 && boundary.current_congress === 120
+    && boundary.method === "identical_2020_census_block_union_without_affected_split_blocks"
+    && fingerprint(boundary.previous_membership) && fingerprint(boundary.current_membership)
+    && Array.isArray(boundary.affected_split_blocks)
+    && new Set(boundary.affected_split_blocks).size === boundary.affected_split_blocks.length
+    && boundary.affected_split_blocks.every(block => /^[0-9]{15}$/.test(block)
+      && block.startsWith(boundary.state_fips))
+    && boundary.legal_boundary_certification === false
+    && boundary.historical_votes_allocated === false && boundary.behavioral_model_qualified === false,
+  "Congressional House boundary identity, source frame or method differs");
+  const same = equal(boundary.previous_membership, boundary.current_membership);
+  const holds = [...(!same ? ["changed_2020_block_membership"] : []),
+    ...(boundary.affected_split_blocks.length ? ["split_block_geometry_unresolved"] : [])];
+  require(boundary.whole_block_membership_equal === same
+    && equal(boundary.holds, holds) && boundary.boundary_compatible === !holds.length
+    && holds.every(hold => row.comparison_holds.includes(`House boundary hold: ${hold}`))
+    && (!row.qualified_comparison || boundary.boundary_compatible),
+  "Congressional House boundary qualification differs from membership or split evidence");
+}
+
 function reviewedSenateFrame(row, candidates) {
   const baseline = row.baseline, facts = row.previous_candidates;
   require(baseline?.comparison_policy === finalElectionPolicy
@@ -69,6 +106,25 @@ function validatePayload(data, reviewed = false) {
     && data.election_date === "2026-11-03" && data.source_models_refitted === false
     && data.observed_individual_behavior === false && Array.isArray(data.races)
     && Array.isArray(data.candidates) && Array.isArray(data.coverage), "Congressional result contract differs");
+  const boundaries = data.house_boundary_review;
+  if (boundaries !== undefined) {
+    require(boundaries?.contract === "participation.congressional_boundary_review.v1"
+      && boundaries.version === "20261117-01" && boundaries.districts === 435
+      && Number.isSafeInteger(boundaries.boundary_compatible)
+      && boundaries.boundary_compatible >= 0 && boundaries.boundary_compatible <= 435
+      && Number.isSafeInteger(boundaries.qualified_recorded_comparisons)
+      && boundaries.qualified_recorded_comparisons >= 0,
+    "Congressional House boundary review contract differs");
+    const names = ["cd119.zip", "cd120.zip", "CD119_BlockSplits.pdf", "CD120_BlockSplits.pdf"];
+    require(boundaries.evidence && equal(Object.keys(boundaries.evidence).sort(), names.sort())
+      && names.every(name => {
+        const congress = name.includes("119") ? 119 : 120;
+        const value = boundaries.evidence[name];
+        return value?.url === "https://www2.census.gov/programs-surveys/decennial/rdo/mapping-files/"
+          + `${congress === 119 ? 2025 : 2027}/${congress}-congressional-district-befs/${name}`
+          && Number.isSafeInteger(value.bytes) && value.bytes > 0 && /^[a-f0-9]{64}$/.test(value.sha256);
+      }), "Congressional House complete Census source inventory differs");
+  }
   const races = new Map(), candidates = new Map();
   for (const row of data.races) {
     require(typeof row.id === "string" && !races.has(row.id)
@@ -148,6 +204,7 @@ function validatePayload(data, reviewed = false) {
     "Congressional comparison qualification differs");
     if (reviewed && row.chamber === "senate" && row.qualified_comparison)
       reviewedSenateFrame(row, selected);
+    reviewedHouseBoundary(row, boundaries);
   }
   require(new Set(data.coverage.map(row => row.id)).size === data.coverage.length,
     "Congressional coverage identities are duplicated");
@@ -200,6 +257,11 @@ function validatePayload(data, reviewed = false) {
         && row.selected_race_ids.length === row.expected_voting_seats)),
     "House-state comparison arithmetic or qualification differs");
   }
+  if (boundaries !== undefined) require(boundaries.qualified_recorded_comparisons
+    === data.races.filter(row => row.chamber === "house" && row.qualified_comparison).length
+    && data.scientific_comparison_coverage?.reviewed_qualified_house_districts
+      === boundaries.qualified_recorded_comparisons,
+  "Congressional House district coverage differs");
   return data;
 }
 
@@ -288,7 +350,11 @@ export function installCongressionalReturns(root) {
               + (row.baseline.previous_stage_differs
                 ? "Final election to final election; the prior decisive runoff is not a preliminary round."
                 : "Election kinds and stages are preserved separately.")
-              : "Qualified recorded source-ID comparison; cross-year district boundaries are not independently certified."),
+              : row.baseline.boundary_eligibility?.boundary_compatible
+                ? "Qualified recorded House comparison: identical reviewed 2020 Census block unions "
+                  + "for the 119th and 120th Congress, with affected split blocks excluded. "
+                  + "This is not legal boundary certification or a behavioral model."
+                : "Qualified recorded source-ID comparison; cross-year district boundaries are not independently certified."),
           node("p", `Previous ${row.baseline.year ?? "unavailable"} D/R: `
             + `${number(row.previous?.D ?? null)} / ${number(row.previous?.R ?? null)}. `
             + `Current D/R: ${number(row.D)} / ${number(row.R)}. `
