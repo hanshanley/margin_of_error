@@ -47,6 +47,8 @@ test("source, candidate, arithmetic, frame and freshness corruptions are rejecte
     value => { value.candidates[0].votes = -1; },
     value => { value.candidates[0].literal_party = "Ind"; },
     value => { value.candidates[0].round = "round-2"; },
+    value => { value.candidates[0].seat = "3"; },
+    value => { value.candidates[0].chamber = "senate"; },
     value => { value.races[0].D_minus_R_margin_pp = -20; },
     value => { value.races[0].source_updated_at = "2024-11-05T00:00:00Z"; },
     value => { value.races[1].baseline.seat = "3"; },
@@ -70,4 +72,105 @@ test("a held RCV comparison keeps its raw recorded change without becoming a qua
   row.qualified_margin_change_pp = null;
   row.comparison_holds = ["Previous/current RCV rounds not matched"];
   assert.equal(validateCongressionalResults(data).races[1].raw_recorded_margin_change_pp, 20);
+});
+
+const readerLimit = "Reviewed same-seat comparison is qualified in congress-comparisons.csv; "
+  + "the deployed v1 reader can badge only regular Class II, same-stage comparisons. "
+  + "Raw counts and changes remain available here.";
+
+function reviewedFixture() {
+  const data = fixture(), senate = data.races[1];
+  data.races = [data.races[0], ...["FL", "OH", "GA"].map(state => {
+    const row = structuredClone(senate), runoff = state === "GA";
+    Object.assign(row, { state_code: state, seat: runoff ? "2" : "3",
+      seat_label: runoff ? "Class II" : "Class III",
+      election_kind: runoff ? "regular" : "special", native_runoff: false });
+    row.id = `npr:senate:${state}:${row.seat}:${row.election_kind}:general:not_ranked`;
+    const year = runoff ? 2021 : 2022, cycle = runoff ? 2020 : 2022;
+    const url = `https://www.fec.gov/resources/cms-content/documents/federalelections${cycle}.xlsx`;
+    row.baseline = { year, cycle_year: cycle, seat: row.seat,
+      stage: runoff ? "general_runoff" : "general", election_kind: "regular",
+      source_urls: [url],
+      comparison_policy: "latest_completed_same_seat_final_election_to_final_election",
+      previous_stage_differs: runoff, previous_regular_special_differs: !runoff };
+    row.previous_candidates = ["D", "R", "O"].map(party => ({
+      candidate: `${party} historical candidate`, party_group: party,
+      literal_party: party === "D" ? "DEM" : party === "R" ? "R" : "LIB",
+      votes: party === "O" ? 0 : 50, state_code: state, seat: row.seat,
+      year, cycle_year: cycle, stage: row.baseline.stage, election_kind: "regular",
+      ranked_choice: false, round: "not_ranked", source_url: url,
+    }));
+    return row;
+  })];
+  data.candidates = data.races.flatMap(row => [
+    { ...row, candidate_id: "d", name: "D Candidate", literal_party: "Dem",
+      party_group: "D", role: "named_candidate", votes: 60 },
+    { ...row, candidate_id: "r", name: "R Candidate", literal_party: "GOP",
+      party_group: "R", role: "named_candidate", votes: 40 },
+    { ...row, candidate_id: "other", name: "Other", literal_party: "Other",
+      party_group: "O", role: "provider_aggregate_other", votes: 0 },
+  ]);
+  data.coverage = structuredClone(data.races);
+  data.summary.senate.discovered = data.summary.senate.refreshed = 3;
+  data.reviewed_races = structuredClone(data.races);
+  for (const row of data.races.filter(row => row.chamber === "senate"))
+    Object.assign(row, { reviewed_qualified_comparison: true,
+      reviewed_qualified_margin_change_pp: 20, qualified_comparison: false,
+      qualified_margin_change_pp: null, comparison_holds: [readerLimit],
+      legacy_reader_display_limit: true });
+  data.analytical_handoff = { review_version: "20261116-01" };
+  data.scientific_comparison_coverage = { reviewed_qualified_senate: 3,
+    legacy_reader_qualified_senate: 0, reviewed_qualified_house_states: 0 };
+  return data;
+}
+
+test("reviewed same-seat specials and decisive prior runoffs reach the reader without changing native data", () => {
+  const input = reviewedFixture(), before = structuredClone(input);
+  const result = validateCongressionalResults(input);
+  assert.equal(result.races.filter(row => row.chamber === "senate" && row.qualified_comparison).length, 3);
+  assert.equal(result.races[3].baseline.stage, "general_runoff");
+  assert.deepEqual(result.candidates, input.candidates);
+  assert.deepEqual(input, before);
+});
+
+test("reviewed inventory cannot change counts, drop holds, substitute seats or grant model eligibility", () => {
+  for (const mutate of [
+    value => { value.reviewed_races.pop(); },
+    value => { value.reviewed_races[2] = structuredClone(value.reviewed_races[1]); },
+    value => { value.reviewed_races[1].D++; },
+    value => { value.reviewed_races[1].baseline.seat = "2"; },
+    value => { value.reviewed_races[1].source_updated_at = "2026-11-16T00:00:00Z"; },
+    value => { value.races[1].comparison_holds.push("Source frame incompatible"); },
+    value => { value.races[1].reviewed_qualified_comparison = false; },
+    value => { value.reviewed_races[1].behavioral_estimate_updated = true; },
+    value => { value.analytical_handoff.review_version = "unreviewed"; },
+    value => { value.scientific_comparison_coverage.reviewed_qualified_senate++; },
+  ]) {
+    const data = reviewedFixture(); mutate(data);
+    assert.throws(() => validateCongressionalResults(data), /Congressional|Senate/);
+  }
+});
+
+test("same-seat review checks the complete historical frame, not just major-party totals or names", () => {
+  for (const mutate of [
+    row => { row.baseline.comparison_policy = "same_names"; },
+    row => { row.baseline.stage = "primary"; },
+    row => { row.baseline.previous_regular_special_differs = false; },
+    row => { row.previous_candidates[0].seat = "2"; },
+    row => { row.previous_candidates[0].state_code = "OH"; },
+    row => { row.previous_candidates[0].votes--; },
+    row => { row.previous_candidates[2].votes = null; },
+    row => { row.previous_candidates[2].round = "round-1"; },
+    row => { row.previous_candidates[0].source_url = "https://example.com/unreviewed"; },
+    row => {
+      row.baseline.source_urls[0] = "https://www.fec.gov/resources/cms-content/documents/federalelections2020.xlsx";
+      for (const fact of row.previous_candidates) fact.source_url = row.baseline.source_urls[0];
+    },
+    row => { row.previous_candidates[0].literal_party = "IND"; },
+    row => { row.native_runoff = true; },
+  ]) {
+    const data = reviewedFixture();
+    for (const rows of [data.races, data.reviewed_races]) mutate(rows[1]);
+    assert.throws(() => validateCongressionalResults(data), /Congressional|Senate/);
+  }
 });
