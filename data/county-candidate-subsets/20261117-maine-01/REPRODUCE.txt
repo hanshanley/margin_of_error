@@ -1,0 +1,25 @@
+Complete retained Maine county candidate-subset reproduction
+
+python3 code/scripts/test-county-candidate-subsets.py
+node --test code/scripts/participation-county-subsets.test.mjs
+python3 code/scripts/review-county-candidate-subsets.py --inputs inputs --output reproduced
+
+Compare all three reproduced files byte-for-byte with results/.
+No requests, respondent fitting or external data are required.
+
+The inputs include both complete retained native district responses, their
+receipts, complete selected Census county geometry facts and the versioned
+candidate/source-frame review. Geometry facts were extracted from the retained
+official TIGER/Line 2026 county archive by the existing county compiler, with
+no repairs. This command reproduces results from those complete selected facts;
+it does not claim to rerun national TIGER extraction. The full original national
+source is retained in the preceding immutable complete county-results download:
+https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261110t071244z/complete-county-results.zip
+
+These are retained 2026-11-07 round-1 candidate counts, not latest or final RCV
+results, ballots, unique participants or turnout. Democratic and Republican
+county vectors reconcile exactly. All 165 unlocated write-ins remain in the
+district decisions. An affected county's all-candidate margin bounds allow
+0..165 additional write-ins there; bounds are marginal, not simultaneous
+allocations or confidence intervals. No swing, model or participation
+eligibility is granted. No write-ins are allocated or silently set to zero.

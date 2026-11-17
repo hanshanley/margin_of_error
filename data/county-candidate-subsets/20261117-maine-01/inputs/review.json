@@ -1,0 +1,92 @@
+{
+  "boundary_reference_year": 2026,
+  "contract": "participation.county_candidate_subset_review.v1",
+  "districts": [
+    {
+      "candidate_roles": [
+        {
+          "candidate_id": 220466,
+          "name": "Chellie Pingree",
+          "party": "Democratic",
+          "role": "D"
+        },
+        {
+          "candidate_id": 220467,
+          "name": "Ronald Russell",
+          "party": "Republican",
+          "role": "R"
+        }
+      ],
+      "district": "ME-01",
+      "file": "me-01.json",
+      "receipt": {
+        "acquired_at": "2026-11-07T05:54:18.647980+00:00",
+        "bytes": 54789,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Date": "Sat, 07 Nov 2026 05:54:18 GMT"
+        },
+        "sha256": "231a4a29d15d32d2f795e7af6bb8032f26e924ad7e87cb6df669ad4542c55814",
+        "status": 200,
+        "url": "https://civicapi.org/api/v2/race/87186"
+      }
+    },
+    {
+      "candidate_roles": [
+        {
+          "candidate_id": 220469,
+          "name": "Paul LePage",
+          "party": "Republican",
+          "role": "R"
+        },
+        {
+          "candidate_id": 220468,
+          "name": "Matthew Dunlap",
+          "party": "Democratic",
+          "role": "D"
+        },
+        {
+          "candidate_id": 22495314,
+          "name": "Write-in",
+          "party": "Nonpartisan",
+          "role": "unallocated_other"
+        }
+      ],
+      "district": "ME-02",
+      "file": "me-02.json",
+      "receipt": {
+        "acquired_at": "2026-11-07T05:54:18.662214+00:00",
+        "bytes": 232962,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Date": "Sat, 07 Nov 2026 05:54:18 GMT"
+        },
+        "sha256": "b035c82775a36851b8b454863550c79de027a03af8a28d7206c1b746d4e340ed",
+        "status": 200,
+        "url": "https://civicapi.org/api/v2/race/87187"
+      }
+    }
+  ],
+  "freshness": "retained_historical_observation",
+  "geometry_scope": "Complete selected Maine geometries from the retained official 2026 Census county reference, transformed by the existing county compiler; no repairs or simplification. The original national archive remains in the preceding complete county download.",
+  "office": "U.S. House",
+  "reference_file": "reference.json.gz",
+  "reference_receipt": {
+    "acquired_at": "2026-11-05T08:37:35.339019+00:00",
+    "bytes": 83378454,
+    "headers": {
+      "Content-Type": "application/zip",
+      "Date": "Thu, 05 Nov 2026 08:37:34 GMT",
+      "Last-Modified": "Wed, 07 Oct 2026 01:45:57 GMT"
+    },
+    "sha256": "b527c9ba7aeb8f17ef118f026eae5e5a938aa1d00b873bc32342d0dce59321c0",
+    "status": 200,
+    "url": "https://www2.census.gov/geo/tiger/TIGER2026/COUNTY/tl_2026_us_county.zip"
+  },
+  "reference_sha256": "757c09b839abc464c3a28e8f35296588e30547f47d6749c9ca03aadcf4cfea88",
+  "round": 1,
+  "stage": "General",
+  "state_code": "ME",
+  "state_fips": "23",
+  "year": 2026
+}
