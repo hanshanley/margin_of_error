@@ -1,0 +1,7 @@
+endpoint,id,native_candidate_count,observed_count_supplied,office,party,state_code
+previous,AL-senate-86907,920478,True,senate,D,AL
+previous,AL-senate-86907,1392076,True,senate,R,AL
+previous,AL-senate-86907,3891,True,senate,O,AL
+current,AL-senate-86907,759321,True,senate,D,AL
+current,AL-senate-86907,917338,True,senate,R,AL
+current,AL-senate-86907,,False,senate,O,AL
