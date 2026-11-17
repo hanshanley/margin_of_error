@@ -216,7 +216,82 @@ export function validateCurrentCountSnapshot(data) {
       || [...data.snapshot.reporting, ...data.snapshot.early_voting].some(row =>
         !countStates.includes(row.state_code) || !(row.ballots === null || integer(row.ballots))))
     throw new Error("Unqualified current participation snapshot");
+  if (data.uf_turnout !== undefined) validateUfTurnout(data.uf_turnout);
   return data;
+}
+
+export function validateUfTurnout(data) {
+  const expected = [...countStates, "US"].sort().join();
+  const sourceURL = `https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v${data?.version}.csv`;
+  if (data?.contract !== "participation.uf_statewide_turnout.v1"
+      || data.election_date !== "2026-11-03" || !/^\d+\.\d+$/.test(data.version)
+      || !["reported", "retained_after_failure"].includes(data.status)
+      || !text(data.first_observed_at) || !Number.isFinite(Date.parse(data.first_observed_at))
+      || data.source?.url !== sourceURL || !sha.test(data.source?.sha256)
+      || !integer(data.source?.bytes) || data.source.bytes < 1
+      || data.csv_edition?.body_sha256 !== data.source.sha256
+      || !(data.csv_edition?.http_last_modified === null
+        || text(data.csv_edition?.http_last_modified)
+          && Number.isFinite(Date.parse(data.csv_edition.http_last_modified)))
+      || data.documentation?.version !== data.version
+      || data.documentation?.license !== "CC-BY-4.0"
+      || !text(data.documentation?.attribution) || !Array.isArray(data.documentation?.anomalies)
+      || data.documentation.anomalies.some(value => !text(value))
+      || !Array.isArray(data.limitations) || data.limitations.some(value => !text(value))
+      || !Array.isArray(data.rows) || data.rows.length !== 52
+      || data.rows.map(row => row?.state_code).sort().join() !== expected)
+    throw new Error("Unqualified UF statewide turnout contract");
+  const nativeCount = value => {
+    if (typeof value !== "string" || !/^(?:\s*|\s*(?:\d+|\d{1,3}(?:,\d{3})+)\s*)$/.test(value))
+      throw new Error("Unqualified UF native count");
+    const number = value.trim() === "" ? null : Number(value.replaceAll(",", ""));
+    if (number !== null && !integer(number)) throw new Error("Unsafe UF native count");
+    return number;
+  };
+  for (const row of data.rows) {
+    const literal = row.native?.STATUS, status = typeof literal === "string" ? literal.trim() : null;
+    const classification = status === "" ? "estimate"
+      : ["Official", "Final"].includes(status) ? "source_reported_not_independently_certified"
+        : "unrecognized_source_status";
+    if (row.year !== 2026 || !text(row.state) || row.state !== row.native?.STATE
+        || row.state_code !== row.native?.STATE_ABV || !text(row.native?.SOURCE)
+        || row.geographic_level !== (row.state_code === "US" ? "national" : "state")
+        || status === null || row.source_status_literal !== literal
+        || row.ballots_status !== classification || row.source_update_label !== null
+        || row.source_update_timezone !== null || row.independently_certified !== false
+        || row.local_allocation_qualified !== false
+        || row.ballots !== nativeCount(row.native.TOTAL_BALLOTS_COUNTED)
+        || row.vep !== nativeCount(row.native.VEP) || row.vap !== nativeCount(row.native.VAP))
+      throw new Error("Unqualified UF source identity, status or population frame");
+    for (const basis of ["vep", "vap"]) {
+      const literalRate = row.native[basis.toUpperCase() + "_TURNOUT_RATE"]?.trim();
+      const rate = row[basis + "_rate"], denominator = row[basis];
+      if (typeof literalRate !== "string"
+          || !(literalRate === "" || /^\d+(?:\.\d+)?%$/.test(literalRate))
+          || rate !== (literalRate === "" ? null : Number(literalRate.slice(0, -1)))
+          || rate !== null && (!Number.isFinite(rate) || rate < 0 || rate > 100
+            || row.ballots === null || denominator === null || denominator <= 0
+            || Math.abs(100 * row.ballots / denominator - rate) > .0060000001))
+        throw new Error("Unqualified UF turnout numerator/denominator/rate");
+    }
+  }
+  return data;
+}
+
+export function ufTurnoutRows(data) {
+  validateUfTurnout(data);
+  return data.rows.map(row => ({
+    ...row, uf_source: true, source_status: row.ballots_status === "estimate" ? "estimated"
+      : row.ballots_status === "source_reported_not_independently_certified"
+        ? `source-reported ${row.source_status_literal}; certification not independently verified`
+        : `unrecognized source status (${row.source_status_literal})`,
+    status: data.status, source_url: data.source.url, source_version: data.version,
+    source_sha256: data.source.sha256, first_observed_at: data.first_observed_at,
+    source_date: `UF version ${data.version}; edition first observed ${data.first_observed_at}; count-update time not supplied`,
+    complete_download_url: data.complete_download?.url,
+    quality: [...data.limitations, ...(data.documentation.anomalies.length
+      ? ["Publisher documentation contains stale or incomplete descriptions; retained in the complete queries."] : [])],
+  }));
 }
 
 export async function loadCurrentCountSnapshot() {
@@ -232,6 +307,8 @@ export async function loadCurrentCountSnapshot() {
           row.accepted_complete_download_url=row.complete_download_url;
         row.complete_download_url=source.automatic_runtime.complete_download.url;
       }
+    if (data.uf_turnout && source.automatic_runtime)
+      data.uf_turnout.complete_download = source.automatic_runtime.complete_download;
     if (source.automatic_runtime)
       setAutomaticRuntimeStatus("counts", "active", "county/precinct counts", source.automatic_runtime);
     return { ...data, original_base: source.index.original_current_base };

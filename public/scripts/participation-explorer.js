@@ -1,7 +1,7 @@
 import { installParticipationDownloads, participationDownload } from "./participation-downloads.js";
 import { contextualCountyRows } from "./participation-county-context.js";
 import { installResidentContext } from "./participation-resident-context.js";
-import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, clearCountState } from "./participation-counts.js";
+import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, clearCountState, ufTurnoutRows } from "./participation-counts.js";
 import { loadNativeIndex, loadBoundNative, loadCountyBinding, loadMunicipalReference, loadReportingRows, reportingUnitDownloads, bindCountyReference, countyCoverageMessage } from "./participation-native-bindings.js";
 import { installCoverage } from "./participation-coverage.js";
 import { installHistoricalNativeCounts } from "./participation-historical-native.js";
@@ -335,6 +335,8 @@ async function loadCurrent() {
     state.currentError = "";
     state.currentPath = data.original_base;
     state.reviewedStates = data.reviewed_states;
+    if (data.uf_turnout) state.ufTurnout = ufTurnoutRows(data.uf_turnout);
+    else loadUfTurnout();
   } catch (error) {
     state.currentError = `Saved 2026 observations could not be loaded: ${error.message}.`;
   }
@@ -2762,8 +2764,10 @@ function stateDetail() {
     });
     if (stateCode() !== "DC") panel.append(effects);
     panel.append(html("p", "selection-note", selected?.uf_source
-      ? `${fmt(selected.ballots)} source-estimated ballots / ${fmt(selected.denominator)} ${selected.denominator_basis}. `
-        + `${selected.source_date}. Not final official counts, a CPS estimate or a demographic turnout rate.`
+      ? `${fmt(selected.ballots)} ballots (${selected.source_status}) / ${fmt(selected.denominator)} ${selected.denominator_basis}. `
+        + `${selected.source_date}. `
+        + (selected.status === "retained_after_failure" ? "Last-good edition retained after a source failure. " : "")
+        + "Not independently certified, a CPS estimate or a demographic turnout rate."
       : selected ? sourceNote(selected) : state.currentError
         || "No matching statewide count is supplied. Any local reports below are separate, not a statewide total."));
     if ($("mode").value === "official" && state.ufTurnout.length && $("map-color").value !== "margin") {
@@ -2774,6 +2778,10 @@ function stateDetail() {
     }
     if (selected) {
       panel.append(sourceLink(selected));
+      if (selected.uf_source && selected.complete_download_url) {
+        const download = html("a", "source-link", "Complete current turnout queries and offline reproduction");
+        download.href = selected.complete_download_url; panel.append(download);
+      }
       if (!selected.uf_source && selected.validated_pct != null) panel.append(html("p", "selection-note",
         `${fmt(selected.ballots)} ${participationLabel(selected) || "reported ballots"} / ${selected.denominator_basis.replaceAll("_", " ")} (${fmt(selected.denominator)}). Not a CPS survey rate.`));
     }
@@ -2916,8 +2924,8 @@ function statesView() {
     const population = ufBasis() === "vep" ? "voting-eligible population" : "all voting-age residents";
     header("2026 midterm election · UF turnout estimates", "Participation across the United States",
       `${participationRate({ uf_source: true, turnout_pct: national?.[ufBasis() + "_rate"] })} nationally. `
-        + `Estimated ballots / ${population}. Select a state for turnout and separate official observations.`,
-      "UF Election Lab source-labeled estimates, not final official counts or Census CPS survey rates. "
+        + `UF ballots / estimated ${population}. Select a state for its source status and separate official observations.`,
+      "UF Election Lab source-defined turnout; estimated and source-reported counts are distinguished, not independently certified or Census CPS survey rates. "
         + "State estimates are never assigned to counties or precincts. County colors, where available, use their own administrative counts and denominator.");
     ramp();
     note(state.currentError);
@@ -3169,10 +3177,10 @@ function stateMap(byName, provisional = false) {
       const path = featurePath(item, row?.turnout_pct,
         `${name} · ${$("year").value}\n${partisan ? `${election?.office || "Election"} · ${marginLabel(election)} · ${fmt(election?.contest_votes)} contest votes\nWhole-state result color; not a precinct result or participation rate`
           : provisional ? `${participationRate(row)}${row?.uf_source ? ` ${ufBasis().toUpperCase()} turnout · UF ${row.source_status}`
-            : row?.turnout_pct != null ? " / source-defined electorate" : ""}\n${fmt(row?.ballots)} ballots · ${row?.uf_source ? "source estimate" : row ? modeFor(row) : "not reported"} · provisional`
+            : row?.turnout_pct != null ? " / source-defined electorate" : ""}\n${fmt(row?.ballots)} ballots · ${row?.uf_source ? row.source_status : row ? modeFor(row) : "not reported"} · provisional`
             : `${pct(row?.turnout_pct)} reported voting`}`,
         select, { "data-state": name, "data-color-level": partisan ? "state" : precinctColors ? "none" : "state",
-          "data-rate": row?.turnout_pct ?? "", "data-rate-source": row?.uf_source ? "uf_estimate"
+          "data-rate": row?.turnout_pct ?? "", "data-rate-source": row?.uf_source ? "uf_" + (row.ballots_status || "estimate")
             : provisional ? "administrative" : "cps_survey",
           tabindex: "0",
           ...(partisan ? { fill: marginFill(election?.margin_pp) }
@@ -3765,7 +3773,7 @@ function unavailablePrecincts(year, code, layer) {
     html("p", "selection-note", "County data and statewide estimates are separate from precinct participation."));
   const estimate = year === 2026 && state.ufTurnout.find(row => row.state_code === code);
   if (estimate?.vep_rate != null) panel.append(html("p", "selection-basis",
-    `${estimate.vep_rate.toFixed(2)}% statewide VEP turnout · UF estimate, not precinct turnout.`));
+    `${estimate.vep_rate.toFixed(2)}% statewide VEP turnout · UF ${estimate.source_status || "estimated"}, not precinct turnout.`));
   const counties = html("button", "selection-link", `View ${state.selectedState} state / county data`);
   counties.type = "button"; counties.id = "show-state-county-data";
   counties.addEventListener("click", () => {

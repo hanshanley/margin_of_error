@@ -5,7 +5,8 @@ import { runInNewContext } from "node:vm";
 import { rings } from "../public/scripts/participation-map-projection.js";
 import { canonicalObservation, encoded, digest, pin, selectedFrame } from "./compile-participation-counts.mjs";
 import { countModes, countStates, validateCountObservation, validateCountShard,
-  validateCurrentCountSnapshot, countFrame } from "../public/scripts/participation-counts.js";
+  validateCurrentCountSnapshot, countFrame, validateUfTurnout,
+  ufTurnoutRows } from "../public/scripts/participation-counts.js";
 
 const view = () => ({ year: 2026, state_code: "MN", county_id: "native:1", county: "Example",
   ballots: 0, denominator: 100, denominator_basis: "native_registered_voters",
@@ -13,6 +14,184 @@ const view = () => ({ year: 2026, state_code: "MN", county_id: "native:1", count
   source_url: "https://example.org/counts", quality: ["Native conflict remains in original fields."] });
 const input = { file: "original.json", sha256: "a".repeat(64), url: "https://example.org/export.json" };
 const observation = () => canonicalObservation(view(), input, "counties", 0);
+
+function ufSnapshot() {
+  const version = "0.3", sha256 = "b".repeat(64);
+  return {
+    contract: "participation.uf_statewide_turnout.v1", election_date: "2026-11-03",
+    version, status: "reported", first_observed_at: "2026-11-17T12:00:00+00:00",
+    source: { url: `https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v${version}.csv`,
+      bytes: 8000, sha256 },
+    csv_edition: { body_sha256: sha256, http_last_modified: null },
+    documentation: { version, license: "CC-BY-4.0", attribution: "Michael McDonald / UF",
+      anomalies: ["documentation_date_predates_election_not_a_count_clock"] },
+    limitations: ["Statewide only; not independently certified."],
+    rows: [...countStates, "US"].map(code => ({
+      state_code: code, state: code, year: 2026,
+      geographic_level: code === "US" ? "national" : "state",
+      ballots: 500, vep: 1000, vap: 2000, vep_rate: 50, vap_rate: 25,
+      source_status_literal: "", ballots_status: "estimate",
+      source_update_label: null, source_update_timezone: null,
+      independently_certified: false, local_allocation_qualified: false,
+      native: { STATE_ABV: code, STATE: code, STATUS: "",
+        SOURCE: "https://official.test/returns", TOTAL_BALLOTS_COUNTED: "500",
+        VEP: "1000", VAP: "2000", VEP_TURNOUT_RATE: "50.00%", VAP_TURNOUT_RATE: "25.00%" },
+    })),
+  };
+}
+
+test("UF consumer preserves source statuses, estimated denominators, zeroes and unknowns", () => {
+  const data = ufSnapshot(), before = structuredClone(data);
+  assert.equal(validateUfTurnout(data), data);
+  assert.equal(ufTurnoutRows(data).length, 52);
+  assert.equal(ufTurnoutRows(data)[0].source_status, "estimated");
+  assert.deepEqual(data, before);
+  for (const literal of ["Official", "Final", "Offiical"]) {
+    const row = data.rows[0];
+    row.native.STATUS = row.source_status_literal = literal;
+    row.ballots_status = literal === "Offiical" ? "unrecognized_source_status"
+      : "source_reported_not_independently_certified";
+    const result = ufTurnoutRows(data)[0];
+    assert.match(result.source_status, literal === "Offiical" ? /unrecognized/ : /not independently verified/);
+    assert.equal(result.independently_certified, false);
+    assert.equal(result.source_update_label, null);
+    assert.equal(result.native.STATUS, literal);
+  }
+  const row = data.rows[1];
+  row.ballots = row.vep_rate = row.vap_rate = 0;
+  Object.assign(row.native, { TOTAL_BALLOTS_COUNTED: "0", VEP_TURNOUT_RATE: "0.00%", VAP_TURNOUT_RATE: "0.00%" });
+  assert.equal(ufTurnoutRows(data)[1].ballots, 0);
+  row.ballots = row.vep_rate = row.vap_rate = null;
+  Object.assign(row.native, { TOTAL_BALLOTS_COUNTED: "", VEP_TURNOUT_RATE: "", VAP_TURNOUT_RATE: "" });
+  assert.equal(ufTurnoutRows(data)[1].ballots, null);
+  data.status = "retained_after_failure";
+  assert.equal(ufTurnoutRows(data)[0].status, "retained_after_failure");
+  assert.equal(ufTurnoutRows(data)[0].first_observed_at, before.first_observed_at);
+});
+
+test("UF consumer refuses inconsistent status, identity, counts, rates and unsupported promotions", () => {
+  for (const mutate of [
+    data => data.rows.pop(),
+    data => { data.rows[0] = structuredClone(data.rows[1]); },
+    data => { data.rows[0].year = 2024; },
+    data => { data.rows[0].geographic_level = "county"; },
+    data => { data.rows[0].native.STATUS = "Official"; },
+    data => { data.rows[0].source_status_literal = "Final"; },
+    data => { data.rows[0].ballots++; },
+    data => { data.rows[0].native.VEP = "-1"; },
+    data => { data.rows[0].vep_rate++; },
+    data => { data.rows[0].local_allocation_qualified = true; },
+    data => { data.rows[0].independently_certified = true; },
+    data => { data.rows[0].source_update_label = data.first_observed_at; },
+    data => { data.csv_edition.body_sha256 = "c".repeat(64); },
+    data => { data.source.url = "https://wrong.test/turnout.csv"; },
+    data => { data.documentation.license = null; },
+  ]) {
+    const data = ufSnapshot(); mutate(data);
+    assert.throws(() => validateUfTurnout(data), /UF/);
+  }
+});
+
+test("actual explorer loading replaces dated UF rows without altering local or model frames", async () => {
+  const source = readFileSync(new URL("../public/scripts/participation-explorer.js", import.meta.url), "utf8");
+  const start = source.indexOf("async function loadCurrent()");
+  const end = source.indexOf("\nfunction loadUfTurnout()", start);
+  assert(start >= 0 && end > start);
+  const data = ufSnapshot();
+  data.complete_download = { url: "https://github.com/hanshanley/margin_of_error/releases/download/current/complete-analysis.zip" };
+  const current = { snapshot: { reporting: [{ ballots: 9 }] },
+    reviewed_states: [{ ballots: 10 }], original_base: "retained-originals", uf_turnout: data };
+  const state = { ufTurnout: [{ ballots: 1 }], models: ["unchanged"] };
+  const load = runInNewContext(`(${source.slice(start, end)})`, {
+    state, loadCurrentCountSnapshot: async () => current, ufTurnoutRows,
+    loadUfTurnout: () => { state.ufTurnout = [{ ballots: 1, source_date: "dated saved edition" }]; },
+  });
+  await load();
+  assert.equal(state.ufTurnout.length, 52);
+  assert.equal(state.ufTurnout[0].ballots, 500);
+  assert.equal(state.ufTurnout[0].complete_download_url, data.complete_download.url);
+  assert.equal(state.current, current.snapshot);
+  assert.equal(state.reviewedStates, current.reviewed_states);
+  assert.deepEqual(state.models, ["unchanged"]);
+  delete current.uf_turnout;
+  await load();
+  assert.equal(state.ufTurnout[0].ballots, 1);
+  assert.equal(state.ufTurnout[0].source_date, "dated saved edition");
+});
+
+test("actual asynchronous current loader rejects corrupt UF as one runtime and restores accepted fallback", async () => {
+  const source = readFileSync(new URL("../public/scripts/participation-counts.js", import.meta.url), "utf8");
+  const start = source.indexOf("export async function loadCurrentCountSnapshot()");
+  const current = () => ({
+    contract: "participation.current_snapshot.v1", reviewed_states: [],
+    snapshot: { reporting: [], early_voting: [],
+      coverage: countStates.map(state_code => ({ state_code })) },
+  });
+  const download = { url: "https://github.com/hanshanley/margin_of_error/releases/download/current/complete-analysis.zip" };
+  for (const corrupt of [false, true]) {
+    const active = { ...current(), uf_turnout: ufSnapshot() }, fallback = current(), events = [];
+    if (corrupt) active.uf_turnout.rows[0].ballots++;
+    const automatic = { entry: { base_url: "active/" },
+      index: { current_snapshot: "active-current", original_current_base: "active-originals" },
+      automatic_runtime: { complete_download: download } };
+    const accepted = { entry: { base_url: "accepted/" },
+      index: { current_snapshot: "accepted-current", original_current_base: "accepted-originals" } };
+    const load = runInNewContext(`(${source.slice(start).replace(/^export /, "")})`, {
+      loadCountIndex: async () => automatic,
+      checkedDatasetFile: async (base, file) => {
+        events.push([base, file]);
+        return base === "active/" ? active : fallback;
+      },
+      validateCurrentCountSnapshot,
+      setAutomaticRuntimeStatus: (...args) => events.push(["active", ...args]),
+      rejectCountRuntime: error => events.push(["rejected", error.message]),
+      validateCountIndex: value => value,
+      loadDataset: async (id, options) => {
+        assert.equal(id, "participation-counts-2026");
+        assert.equal(options.automatic, false);
+        return accepted;
+      },
+    });
+    const loaded = await load();
+    assert.equal(loaded.original_base, corrupt ? "accepted-originals" : "active-originals");
+    if (corrupt) {
+      assert.equal(loaded.uf_turnout, undefined);
+      assert.equal(events.filter(row => row[0] === "rejected").length, 1);
+      assert.equal(events.some(row => row[0] === "active"), false);
+    } else {
+      assert.equal(loaded.uf_turnout.complete_download, download);
+      assert.equal(events.filter(row => row[0] === "active/").length, 1);
+      assert.equal(events.some(row => row[0] === "rejected"), false);
+    }
+  }
+});
+
+test("unavailable precincts retain UF native status without claiming local turnout", () => {
+  const source = readFileSync(new URL("../public/scripts/participation-explorer.js", import.meta.url), "utf8");
+  const start = source.indexOf("function unavailablePrecincts(");
+  const end = source.indexOf("\nasync function sourcedPrecinctsView(", start);
+  assert(start >= 0 && end > start);
+  for (const literal of ["", "Official", "Final", "Offiical"]) {
+    const data = ufSnapshot(), native = data.rows[0];
+    native.native.STATUS = native.source_status_literal = literal;
+    native.ballots_status = !literal ? "estimate" : literal === "Offiical" ? "unrecognized_source_status"
+      : "source_reported_not_independently_certified";
+    const row = ufTurnoutRows(data)[0], elements = new Map();
+    const $ = id => {
+      if (!elements.has(id)) elements.set(id, { children: [], append(...items) { this.children.push(...items); } });
+      return elements.get(id);
+    };
+    const render = runInNewContext(`(${source.slice(start, end)})`, {
+      $, state: { selectedState: row.state, ufTurnout: [row] },
+      options() {}, header() {}, legend() {}, precinctCoverageNavigation() {},
+      html: (tag, className, text) => ({ tag, className, text, addEventListener() {} }),
+    });
+    render(2026, row.state_code, "participation");
+    const note = $("substate-detail").children.find(item => item.className === "selection-basis");
+    assert(note.text.includes(`UF ${row.source_status}, not precinct turnout.`));
+    assert.equal(note.text.includes("UF estimate,"), false);
+  }
+});
 
 function heldCountyHarness(contextGet) {
   const source = readFileSync(new URL("../public/scripts/participation-explorer.js", import.meta.url), "utf8");
