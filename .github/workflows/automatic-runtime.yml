@@ -38,6 +38,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             scripts
+            tests
             pyproject.toml
             data/results-intake/model-seed
             data/results-intake/reviewed-eligibility.json
