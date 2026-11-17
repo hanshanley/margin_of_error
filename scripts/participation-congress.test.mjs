@@ -151,9 +151,10 @@ test("reviewed inventory cannot change counts, drop holds, substitute seats or g
   }
 });
 
-test("the reviewed candidate-identity successor preserves the same seat-aware recorded contract", () => {
+for (const version of ["20261117-identity-01", "20261117-declarations-01"]) {
+test(`the reviewed ${version} successor preserves the same seat-aware recorded contract`, () => {
   const input = reviewedFixture();
-  input.analytical_handoff.review_version = "20261117-identity-01";
+  input.analytical_handoff.review_version = version;
   const before = structuredClone(input);
   const result = validateCongressionalResults(input);
   assert.equal(result.races.filter(row => row.chamber === "senate" && row.qualified_comparison).length, 3);
@@ -161,6 +162,7 @@ test("the reviewed candidate-identity successor preserves the same seat-aware re
   assert.deepEqual(input, before);
   for (const mutate of [
     value => { value.analytical_handoff.review_version = "20261118-identity-01"; },
+    value => { value.analytical_handoff.review_version = "20261118-declarations-01"; },
     value => { value.reviewed_races[1].baseline.seat = "2"; },
     value => { value.reviewed_races[3].baseline.stage = "general"; },
     value => { value.reviewed_races[1].behavioral_estimate_updated = true; },
@@ -171,6 +173,7 @@ test("the reviewed candidate-identity successor preserves the same seat-aware re
     assert.throws(() => validateCongressionalResults(changed), /Congressional|Senate/);
   }
 });
+}
 
 test("same-seat review checks the complete historical frame, not just major-party totals or names", () => {
   for (const mutate of [
