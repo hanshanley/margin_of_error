@@ -7,12 +7,25 @@ const fresh = row => row.status.startsWith("fresh_");
 const statuses = new Set(["fresh_complete_scenario", "fresh_unchanged_complete_scenario",
   "held_retain_last_good_complete_scenario", "held_no_compatible_complete_bridge"]);
 const close = (a, b) => Number.isFinite(a) && Number.isFinite(b) && Math.abs(a - b) < 1e-8;
+const precedence = "reviewed_complete_official_inventory_with_strictly_newer_native_clock";
+const countClock = value => {
+  const parts = typeof value === "string" && value.match(
+    /^([0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2})(?:\.([0-9]+))?(?:Z|\+00:00)$/);
+  if (!parts || parts[1].startsWith("0000") || !Number.isFinite(Date.parse(parts[1] + "Z"))
+      || new Date(parts[1] + "Z").toISOString().slice(0, 19) !== parts[1])
+    throw new Error("Complete Senate native UTC count clock differs");
+  return [Date.parse(parts[1] + "Z"), parts[2] || ""];
+};
+const newer = (left, right) => {
+  const a = countClock(left), b = countClock(right), length = Math.max(a[1].length, b[1].length);
+  return a[0] > b[0] || a[0] === b[0] && a[1].padEnd(length, "0") > b[1].padEnd(length, "0");
+};
 
 export function validateSenateComplete(data, legacy, calibration) {
   const originals = new Map(calibration.rows.filter(row => row.office === "senate" && row.point)
     .map(row => [row.id, row]));
   if (data?.contract !== "participation.senate_complete_category_scenarios.v1"
-      || data.review_version !== "20261118-01" || data.source_models_refitted !== false
+      || !["20261118-01", "20261118-02"].includes(data.review_version) || data.source_models_refitted !== false
       || data.measured_staying_home !== null || data.confidence_intervals !== null
       || data.local_allocation !== false || originals.size !== 26
       || !Array.isArray(data.rows) || data.rows.length !== originals.size)
@@ -30,7 +43,9 @@ export function validateSenateComplete(data, legacy, calibration) {
     if (row.model === null) {
       if (row.status !== "held_no_compatible_complete_bridge"
           || row.model_source_clock !== null || row.official_evidence_clock !== null
-          || row.official_source !== null)
+          || row.official_source !== null
+          || data.review_version === "20261118-02"
+            && (row.national_source_clock !== null || row.model_review_version !== null))
         throw new Error("Missing complete model must remain held");
       continue;
     }
@@ -63,6 +78,40 @@ export function validateSenateComplete(data, legacy, calibration) {
         }).some(([name, value]) => frame[name] !== value)
         || !Array.isArray(model.complete_scenarios) || model.complete_scenarios.length !== 9)
       throw new Error("Complete Other, same-seat history or transported Senate prior differs");
+    if (data.review_version === "20261118-02"
+        && row.model_review_version !== "20261118-02") {
+      if (row.model_review_version !== "20261118-01" || fresh(row)
+          || row.national_source_clock !== row.model_source_clock
+          || comparison.source_reconciliation !== undefined)
+        throw new Error("Unreviewed retained legacy Senate model");
+      countClock(row.model_source_clock);
+      countClock(row.official_evidence_clock);
+    }
+    if (data.review_version === "20261118-02" && row.model_review_version === "20261118-02") {
+      const audit = comparison.source_reconciliation;
+      const parties = ["D", "R", "O"];
+      const equal = audit && parties.every(party => audit.official_counts?.[party] === audit.national_counts?.[party]);
+      if (!audit || audit.rule !== precedence || audit.counts_agree !== equal
+          || audit.individual_votes_allocated_from_Other !== false || audit.provider_and_official_counts_added !== false
+          || row.model_source_clock !== row.official_evidence_clock
+          || audit.official_native_clock !== row.model_source_clock
+          || audit.national_native_clock !== row.national_source_clock
+          || comparison.current_source_url !== row.official_source.url
+          || ["bytes", "sha256", "url"].some(name => audit.official_source?.[name] !== row.official_source[name])
+          || !Number.isSafeInteger(audit.national_source?.bytes) || audit.national_source.bytes < 1
+          || !/^[a-f0-9]{64}$/.test(audit.national_source.sha256)
+          || audit.national_source.url !== "https://apps.npr.org/2026-election-results/data/senate.json"
+          || parties.some(party => audit.official_counts?.[party] !== comparison.current[party]
+            || !Number.isSafeInteger(audit.national_counts?.[party]) || audit.national_counts[party] < 0
+            || !Number.isSafeInteger(audit.official_minus_national?.[party])
+            || audit.official_minus_national[party] !== comparison.current[party] - audit.national_counts[party])
+          || ["D", "R"].some(party => comparison.current[party] < 1 || audit.national_counts[party] < 1))
+        throw new Error("Complete Senate official/provider source reconciliation differs");
+      countClock(row.model_source_clock);
+      countClock(row.national_source_clock);
+      if (!equal && !newer(row.model_source_clock, row.national_source_clock))
+        throw new Error("Different Senate counts require a strictly newer complete official report");
+    }
     const comparisonData = { ...legacy, rows: legacy.rows.map(value =>
       value.id === row.id ? { ...value, reported_comparison: comparison } : value) };
     const validate = point => validateCalibratedSwing({
@@ -124,12 +173,19 @@ export function senateCompleteController(legacy, calibration, load = loadAutomat
       section.dataset.status = row.status;
       section.replaceChildren(node("h4", "Current complete-category Senate scenario"),
         node("p", `${fresh(row) ? "Compatible current report" : "Held update; last-good scenario retained"}. `
-          + `National count clock: ${row.model_source_clock}; official inventory clock: ${row.official_evidence_clock}. `
+          + `Model count clock: ${row.model_source_clock}; national provider count clock: `
+          + `${row.national_source_clock ?? row.model_source_clock}; official inventory clock: ${row.official_evidence_clock}. `
           + row.holds.join("; "), "caption"),
         node("p", "Full reported D/R/Other candidate universe, including the independent candidate and write-ins; "
           + "reviewed regular Class II seat and 2020 Senate baseline. "
           + "Transported President/House synthetic associations, not a Senate respondent fit, turnout or measured staying home. "
           + "The dated archived map remains unchanged.", "caption"));
+      const audit = row.model.reported_comparison.source_reconciliation;
+      if (audit && !audit.counts_agree) section.append(node("p",
+        "The newer complete official report supplies the model counts. Official minus national provider counts: "
+        + ["D", "R", "O"].map(party => `${party === "O" ? "Other" : party} `
+          + `${audit.official_minus_national[party] > 0 ? "+" : ""}${audit.official_minus_national[party]}`).join("; ")
+        + ". Both source frames are retained, not added together. Candidate counts are not ballots.", "caption"));
       const table = node("table"), body = node("tbody"), head = node("thead"), headings = node("tr");
       table.append(node("caption", "Separate complete extension · D−R margin contributions; nine assumptions, not confidence intervals"));
       for (const label of ["Term", "Contribution", "Assumption sensitivity"]) headings.append(node("th", label));
