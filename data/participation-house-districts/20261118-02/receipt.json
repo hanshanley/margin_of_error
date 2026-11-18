@@ -1,0 +1,17 @@
+{
+  "bytes": 168220,
+  "complete_download": {
+    "bytes": 84131767,
+    "immutable": true,
+    "sha256": "7cd27f414ec1ec4f701dca83d8f06fd124e49e1ebd02a124728d6d2da08399cb",
+    "url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-house-district-geography-20261118-02/complete-analysis.zip"
+  },
+  "complete_geography_csv_url": "https://raw.githubusercontent.com/hanshanley/voter-participation/f8d4f56a75589d7ca13f56957f5b993e5f3040b7/data/congressional-geometry/20261118-02/district-geography.csv",
+  "contract": "participation.house_district_geometry.v1",
+  "decoded_bytes": 546475,
+  "decoded_sha256": "bc46e78684cb87a093d60a86c96dfd549a7fba18f17546804006d499ad294564",
+  "new_electoral_qualifications": 0,
+  "sha256": "566b5c5d4f03e3c464021c3a2a1ab45ad54a26b14e1f3b98cb91c4901bea4f4d",
+  "source_commit": "f8d4f56a75589d7ca13f56957f5b993e5f3040b7",
+  "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/f8d4f56a75589d7ca13f56957f5b993e5f3040b7/data/congressional-geometry/20261118-02/district-paths.json.gz"
+}

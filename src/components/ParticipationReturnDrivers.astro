@@ -12,6 +12,7 @@ const norcSource = JSON.parse(readFileSync('data/participation-return-attributio
 const families = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/family-summary.json', 'utf8'));
 const association = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/copula-receipt.json', 'utf8'));
 const sensitivity = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/sensitivity-receipt.json', 'utf8'));
+const districtGeometry = JSON.parse(readFileSync('data/participation-house-districts/20261118-02/receipt.json', 'utf8'));
 const norcPoints = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/norc-point-summary.json', 'utf8'));
 type CalibratedRow = { id: string; state_code: string; office: string;
 	point: { reported_change_pp: number; components_pp: Record<string, number> } | null };
@@ -28,7 +29,8 @@ const recordedHouse = norcPoints.rows.map((row: any) => ({
 		.map(key => [key, row.contest_comparability[key]])),
 }));
 const payload = JSON.stringify({ data, calibration, names, norc_source: norcSource, house_comparison_holds: houseHolds,
-	recorded_house_counts: recordedHouse, norc_association_sources: association, norc_sensitivity: sensitivity }).replaceAll('<', '\\u003c');
+	recorded_house_counts: recordedHouse, norc_association_sources: association, norc_sensitivity: sensitivity,
+	district_geometry: districtGeometry }).replaceAll('<', '\\u003c');
 const pp = (value: number | null) => value === null ? 'Unavailable' : `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 const validation = norcPoints.validation;
 const tests = [
@@ -55,8 +57,12 @@ const tests = [
 		Overvotes and undervotes remain separate. Hawaii's seven-ballot accounting difference remains unresolved.
 		Survey fits, weights and all existing behavioral holds are unchanged.</p>
 	<div class="driver-controls">
-		<label>2026 office<select data-driver-office disabled><option value="house">House · states</option>
+		<label>2026 office<select data-driver-office disabled><option value="house">House</option>
 			<option value="senate">Senate</option><option value="governor">Governor · frames</option></select></label>
+		<label>Geography<select data-driver-geography disabled>
+			<option value="state">State comparisons</option>
+			<option value="district">House districts</option>
+		</select></label>
 		<label>Map view<select data-driver-view disabled>
 			<option value="reported_counts">Comparable House change</option>
 			<option value="reported_total">Like-for-like House comparisons only</option>
@@ -74,6 +80,9 @@ const tests = [
 			<option value="">Overall source frame</option>
 		</select></label>
 		<label class="driver-state-control">State<select data-driver-state disabled><option value="">Loading state context…</option></select></label>
+		<label data-driver-district-control hidden>District<select data-driver-district disabled>
+			<option value="">Select a district…</option>
+		</select></label>
 		<label>House model<select data-driver-family disabled>
 			<option value="accepted_ridge_multinomial">Multinomial ridge · accepted baseline</option>
 		</select></label>
@@ -88,6 +97,11 @@ const tests = [
 		</select></label>
 	</div>
 	<p data-driver-status class="caption" role="status">Loading comparable House changes; every state's raw totals and complete downloads remain available.</p>
+	<p class="caption">The House district view uses the same automatically refreshed returns and exported comparison decisions.
+		<a href={districtGeometry.complete_download.url}>All 100 geography originals, complete queries, code and tests · ZIP</a> ·
+		<a href={districtGeometry.complete_geography_csv_url}>Every district geography decision · CSV</a>.
+		<noscript>The interactive district map requires JavaScript; both complete downloads remain available.</noscript>
+	</p>
 	<p data-automatic-runtime-status class="caption" role="status">
 		Checking the optional automatic House snapshot; accepted website estimates remain available.
 	</p>
@@ -116,7 +130,7 @@ const tests = [
 		<a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-recorded-counts-20261113-01/complete-analysis.zip">Earlier recorded-count queries and interface correction</a>:
 		all 50 states, both change units, model qualifications, exact code/tests and the entire preceding scientific packet.</p>
 	<div data-driver-summary class="driver-summary" hidden aria-live="polite"></div>
-	<details class="explorer-notes"><summary>Selected state: demographic breakdown, retained voters and model checks</summary>
+	<details class="explorer-notes"><summary data-driver-detail-title>Selected state: demographic breakdown, retained voters and model checks</summary>
 		<div data-driver-detail class="driver-detail" hidden></div>
 	</details>
 	<details class="explorer-notes"><summary>How to read these estimates and their uncertainty</summary>
@@ -375,6 +389,9 @@ const tests = [
 	.driver-map :global(.driver-state) { stroke: #8d958e; stroke-width: .85; stroke-linejoin: round; vector-effect: non-scaling-stroke; cursor: pointer; }
 	.driver-map :global(.driver-state:hover) { stroke: #355b61; stroke-width: 1.35; }
 	.driver-map :global(.driver-state.selected) { stroke: #173d48; stroke-width: 2.2; }
+	.driver-map :global(.driver-district) { stroke-width: .35; }
+	.driver-map :global(.driver-district.selected) { stroke-width: 1.5; }
+	.driver-map :global(.driver-district:focus-visible) { outline: none; stroke: #102f38; stroke-width: 2; }
 	.driver-map :global(.driver-inset-label) { fill: var(--muted); font: 15px var(--sans); }
 	.driver-map-key { display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
 		gap: .5rem .75rem; font: .66rem/1.4 var(--sans); color: var(--muted); margin-block: .75rem; }

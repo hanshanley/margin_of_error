@@ -7,6 +7,7 @@ import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection
   norcAssociations, norcSharedBound, norcRecordedBound, norcRecordedComparison, validateNorcAssociation } from "./participation-norc-house.js";
 import { loadHouseSensitivity, houseSensitivityScope } from "./participation-house-sensitivity.js";
 import { installCongressionalReturns } from "./participation-congress.js";
+import { houseDistrictController } from "./participation-house-districts.js";
 import { senatePartialController } from "./participation-senate-partial.js";
 import { senateCompleteController } from "./participation-senate-complete.js";
 import { automaticHouseDescriptor, automaticHouseProfileReceipt, automaticHouseSensitivityReceipt,
@@ -168,6 +169,7 @@ export async function initializeReturnDrivers() {
     const associationSelect = root.querySelector("[data-driver-association]");
     const associationNote = root.querySelector("[data-driver-association-note]");
     const unitsSelect = root.querySelector("[data-driver-units]");
+    const geographySelect = root.querySelector("[data-driver-geography]");
     const detail = root.querySelector("[data-driver-detail]");
     const summary = root.querySelector("[data-driver-summary]");
     const embeddedHouse = {
@@ -189,7 +191,12 @@ export async function initializeReturnDrivers() {
       throw new Error("State context inventory differs");
     for (const item of items) names[item.feature.properties.STUSAB] ||= item.feature.properties.NAME;
     const codes = items.map(item => item.feature.properties.STUSAB).sort((a, b) => names[a].localeCompare(names[b]));
-    let selectedCode = "TX";
+    let selectedCode = "TX", districtScope = "";
+    const districts = geographySelect ? houseDistrictController(root, payload.district_geometry, {
+      onSelectState:code=>{selectedCode=code;},
+    }) : null;
+    const districtMode = () => Boolean(districts && geographySelect.value === "district"
+      && office.value === "house" && view.value === "reported_counts");
     let scenarios, norc, norcComparison, norcOriginalComparison, norcFamily, hitObserver, groupKind="", generation = 0;
     let sensitivity, sensitivityState="idle";
     let sensitivitySources={original:embeddedHouse.original, ...embeddedHouse.profiles};
@@ -441,6 +448,7 @@ export async function initializeReturnDrivers() {
       detail.hidden = false;
     };
     const selectState = code => {
+      if (districtMode()) { districtScope=code;districts.filter(code);return; }
       selectedCode = code; stateSelect.value = code;
       const row = data.rows.find(value => value.state_code === code && value.office === office.value);
       const hold=office.value==="house" && houseComparisonHolds?.[code];
@@ -498,6 +506,28 @@ export async function initializeReturnDrivers() {
       const current = ++generation, scenario = isScenarioView(view.value);
       const norcMode=office.value==="house" && !scenario && Boolean(embeddedHouse.original);
       const recordedMode=norcMode && view.value==="reported_counts";
+      if (geographySelect) {
+        geographySelect.closest("label").hidden=!recordedMode;
+        geographySelect.disabled=!recordedMode;
+        root.querySelector("[data-driver-district-control]").hidden=!districtMode();
+        stateSelect.options[0].textContent=districtMode()?"All states":"Select a state on the map…";
+        root.querySelector("[data-driver-detail-title]").textContent=districtMode()
+          ?"Selected district: counts, comparison holds and source dates"
+          :"Selected state: demographic breakdown, retained voters and model checks";
+      }
+      if (districtMode()) {
+        hitObserver?.disconnect();
+        for (const control of [familySelect,associationSelect]) if (control) {
+          control.disabled=true;control.closest("label").hidden=true;
+        }
+        if (associationNote) associationNote.hidden=true;
+        root.querySelector("[data-driver-group-control]").hidden=true;
+        group.disabled=true;unitsSelect.disabled=false;unitsSelect.closest("label").hidden=false;
+        stateSelect.value=districtScope;
+        await districts.render({units:norcUnits(),state:districtScope,isCurrent:()=>current===generation && districtMode()});
+        return;
+      }
+      districts?.leave();
       if (associationNote) associationNote.hidden=true;
       if (associationSelect) {
         const associations=houseSelection.automatic || embeddedHouse.profiles;
@@ -763,6 +793,7 @@ export async function initializeReturnDrivers() {
       render();
     });
     unitsSelect?.addEventListener("change",render);
+    geographySelect?.addEventListener("change",render);
     window.addEventListener("participation:effects-state", event => {
       selectState(codes.find(code => names[code] === event.detail || code === event.detail) || "");
     });
