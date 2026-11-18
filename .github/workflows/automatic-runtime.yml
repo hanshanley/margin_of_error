@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: 3385b01fc050c02943d6b451fd58596d7e7c66bd
+          ref: 851699a616a8c375575c994eae2dfee2e03d2f5d
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -43,6 +43,7 @@ jobs:
             data/results-intake/model-seed
             data/results-intake/reviewed-eligibility.json
             data/results-intake/analytical-handoff
+            data/results-intake/official-house-precedence
             data/results-intake/district-boundaries
             data/results-intake/district-splits
             data/results-intake/senate-legacy

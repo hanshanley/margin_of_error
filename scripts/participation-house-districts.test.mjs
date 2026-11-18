@@ -11,6 +11,8 @@ const body = readFileSync(new URL("./fixtures/district-paths.json.gz", import.me
 const decoded = gunzipSync(body);
 const geometry = JSON.parse(decoded);
 const original = JSON.parse(gunzipSync(readFileSync(new URL("./fixtures/district-congress.json.gz", import.meta.url))));
+const splitOriginal = JSON.parse(gunzipSync(readFileSync(
+  new URL("./fixtures/district-congress-split.json.gz", import.meta.url))));
 const clone = value => structuredClone(value);
 const sha = value => createHash("sha256").update(value).digest("hex");
 const receipt = {
@@ -56,6 +58,50 @@ test("all 435 native outlines join once; all exported qualifications and counts 
     for (const party of ["D","R","O","U"]) assert.equal(row[party],literal[party]);
   }
   assert.equal(JSON.stringify(original),before);
+});
+
+test("reviewed exact split fragments admit both Colorado districts without dropping the other 433",()=>{
+  const before = JSON.stringify(splitOriginal), map = bindDistrictResults(geometry,splitOriginal);
+  assert.equal(map.length,435);
+  assert.equal(map.filter(item=>item.row.qualified_comparison).length,261);
+  assert.equal(map.filter(item=>!item.row.qualified_comparison).length,174);
+  for (const district of ["CO-07","CO-08"]) {
+    const {row} = map.find(item=>item.path.district===district);
+    assert(row.qualified_comparison);
+    assert.equal(districtValue(row,"margin"),row.raw_recorded_margin_change_pp);
+    assert.equal(districtValue(row,"democratic_two_party_share"),row.raw_recorded_margin_change_pp/2);
+  }
+  for (const {row} of map) {
+    const native = splitOriginal.races.find(item=>item.id===row.id);
+    for (const party of ["D","R","O","U"]) assert.equal(row[party],native[party]);
+  }
+  assert.equal(JSON.stringify(splitOriginal),before);
+});
+
+test("split qualification still requires its exact reviewed policy, district, block and memberships",()=>{
+  for (const mutate of [
+    b=>{b.split_geometry_review_version="unreviewed";},
+    b=>{b.split_geometry_review_sha256="0".repeat(64);},
+    b=>{b.affected_split_blocks=["080010096072001"];},
+    b=>{b.previous_membership.sha256="0".repeat(64);},
+    b=>{b.method="identical_split_blocks_by_number";},
+    b=>{b.historical_votes_allocated=true;},
+    b=>{b.legal_boundary_certification=true;},
+  ]) {
+    const raw=clone(splitOriginal);
+    for (const rows of [raw.races,raw.reviewed_races]) {
+      mutate(rows.find(row=>row.baseline?.district==="CO-07").baseline.boundary_eligibility);
+    }
+    assert.throws(()=>bindDistrictResults(geometry,raw),/boundary/);
+  }
+  const raw=clone(splitOriginal);
+  const approved=raw.races.find(row=>row.baseline?.district==="CO-07").baseline.boundary_eligibility;
+  for (const rows of [raw.races,raw.reviewed_races]) {
+    const boundary=rows.find(row=>row.baseline?.district==="CO-06").baseline.boundary_eligibility;
+    for (const field of ["method","split_geometry_review_version","split_geometry_review_sha256",
+      "affected_split_blocks"]) boundary[field]=clone(approved[field]);
+  }
+  assert.throws(()=>bindDistrictResults(geometry,raw),/boundary/);
 });
 
 test("north-up SVG display places northern districts above southern districts",()=>{

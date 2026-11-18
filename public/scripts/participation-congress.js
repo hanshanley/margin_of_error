@@ -20,6 +20,13 @@ const readerLimit = "Reviewed same-seat comparison is qualified in congress-comp
 const historicalParties = { D: "D", DEM: "D", DFL: "D", R: "R",
   "DEM/IP/WF": "D", "D/IP/WF": "D", "D/IP": "D", "R/CON": "R",
   Democratic: "D", Republican: "R" };
+const splitGeometryReview = {
+  version: "20261118-01",
+  sha256: "ab7e5936486b9843c5676537be091cd7a545515f048d2c9c6efeb25d94060147",
+  method: "identical_whole_block_membership_and_exact_unsimplified_split_fragments",
+  districts: ["CO-07", "CO-08"],
+  blocks: ["080010096072000"],
+};
 
 function reviewedHouseBoundary(row, review) {
   const boundary = row.baseline?.boundary_eligibility;
@@ -30,6 +37,11 @@ function reviewedHouseBoundary(row, review) {
   }
   const fingerprint = value => value && Number.isSafeInteger(value.blocks)
     && value.blocks > 0 && /^[a-f0-9]{64}$/.test(value.sha256);
+  const reviewedSplit = boundary.method === splitGeometryReview.method
+    && boundary.split_geometry_review_version === splitGeometryReview.version
+    && boundary.split_geometry_review_sha256 === splitGeometryReview.sha256
+    && splitGeometryReview.districts.includes(boundary.district)
+    && equal(boundary.affected_split_blocks, splitGeometryReview.blocks);
   require(review && row.chamber === "house"
     && boundary.review_version === review.version
     && boundary.state_code === row.state_code && /^[0-9]{2}$/.test(boundary.state_fips)
@@ -39,7 +51,8 @@ function reviewedHouseBoundary(row, review) {
     && Number(row.seat) === (boundary.district_code === "00" ? 1 : Number(boundary.district_code))
     && boundary.previous_year === 2024 && boundary.current_year === 2026
     && boundary.previous_congress === 119 && boundary.current_congress === 120
-    && boundary.method === "identical_2020_census_block_union_without_affected_split_blocks"
+    && (boundary.method === "identical_2020_census_block_union_without_affected_split_blocks"
+      || reviewedSplit)
     && fingerprint(boundary.previous_membership) && fingerprint(boundary.current_membership)
     && Array.isArray(boundary.affected_split_blocks)
     && new Set(boundary.affected_split_blocks).size === boundary.affected_split_blocks.length
@@ -50,7 +63,8 @@ function reviewedHouseBoundary(row, review) {
   "Congressional House boundary identity, source frame or method differs");
   const same = equal(boundary.previous_membership, boundary.current_membership);
   const holds = [...(!same ? ["changed_2020_block_membership"] : []),
-    ...(boundary.affected_split_blocks.length ? ["split_block_geometry_unresolved"] : [])];
+    ...(boundary.affected_split_blocks.length && !reviewedSplit
+      ? ["split_block_geometry_unresolved"] : [])];
   require(boundary.whole_block_membership_equal === same
     && equal(boundary.holds, holds) && boundary.boundary_compatible === !holds.length
     && holds.every(hold => row.comparison_holds.includes(`House boundary hold: ${hold}`))
