@@ -1,0 +1,2 @@
+state_code,year,ballots,status,denominator,validated_pct,source_update_label,source_update_timezone,source_url,source_sha256
+WY,2026,191713,reported,,,,,https://sos.wyo.gov/Elections/Docs/2026/Results/General/2026_Wyoming_General_Results.zip,c378306bd8df97437a3d11fac7792e23a8297a7e3eded8129a9cd61e3e654ff1
