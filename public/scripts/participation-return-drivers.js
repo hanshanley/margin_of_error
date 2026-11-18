@@ -8,6 +8,7 @@ import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection
 import { loadHouseSensitivity, houseSensitivityScope } from "./participation-house-sensitivity.js";
 import { installCongressionalReturns } from "./participation-congress.js";
 import { senatePartialController } from "./participation-senate-partial.js";
+import { senateCompleteController } from "./participation-senate-complete.js";
 import { automaticHouseDescriptor, automaticHouseProfileReceipt, automaticHouseSensitivityReceipt,
   automaticHouseSources, loadAutomaticRecordedHouse, rejectAutomaticRuntime,
   setAutomaticRuntimeStatus } from "./participation-automatic-runtime.js";
@@ -158,6 +159,7 @@ export async function initializeReturnDrivers() {
     const data = validateModels(payload.data), names = payload.names;
     const calibration = validateCalibratedSwing(payload.calibration, data);
     const renderSenatePartial = senatePartialController(data, payload.calibration);
+    const renderSenateComplete = senateCompleteController(data, payload.calibration);
     const office = root.querySelector("[data-driver-office]");
     const view = root.querySelector("[data-driver-view]");
     const stateSelect = root.querySelector("[data-driver-state]");
@@ -435,6 +437,7 @@ export async function initializeReturnDrivers() {
           + `${comparison.current_percent_reporting == null ? "" : `Source reporting: ${comparison.current_percent_reporting}%. `}`
           + `Reported count margins: ${signedPP(comparison.previous_margin_pp)} → ${signedPP(comparison.current_margin_pp)}.`, "caption"));
       renderSenatePartial(row.id, detail);
+      renderSenateComplete(row.id, detail);
       detail.hidden = false;
     };
     const selectState = code => {

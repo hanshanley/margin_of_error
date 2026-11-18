@@ -393,6 +393,19 @@ export async function loadAutomaticSenatePartial() {
   return { data: await checkedAutomaticBody(declaration), manifest };
 }
 
+export async function loadAutomaticSenateComplete() {
+  const manifest = await loadAutomaticRuntime();
+  const declaration = manifest.house_sources?.senate_complete_scenarios;
+  if (!declaration) return null;
+  validateBodyPin(declaration);
+  if (declaration.contract !== "participation.senate_complete_category_scenarios.v1"
+      || declaration.path !== "senate/legacy-complete-results.json.gz"
+      || declaration.url !== new URL(declaration.path,
+        manifest.house_sources.base_url.replace(/\/?$/, "/")).href)
+    throw new Error("Complete Senate scenario is not part of this committed runtime");
+  return { data: await checkedAutomaticBody(declaration), manifest };
+}
+
 export async function loadAutomaticRegisteredControlDisplay() {
   const manifest=await loadAutomaticRuntime();
   const declaration=manifest.house_sources?.participation_state_projections;

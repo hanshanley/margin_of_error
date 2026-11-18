@@ -7,6 +7,7 @@ import {
   automaticRuntimeURL, loadAutomaticRuntime, resetAutomaticRuntimeForTests,
   validateAutomaticRuntime,
   loadAutomaticSenatePartial,
+  loadAutomaticSenateComplete,
 } from "../public/scripts/participation-automatic-runtime.js";
 
 const hash = body => createHash("sha256").update(body).digest("hex");
@@ -220,18 +221,23 @@ test("Astro-bundled and standalone readers share one page-session snapshot", asy
   }
 });
 
-test("the optional Senate loader shares one pinned body, rejects corruption and retries without a new snapshot", async () => {
+for (const [load, field, contract, path] of [
+  [loadAutomaticSenatePartial, "senate_partial_scenarios",
+    "participation.senate_legacy_partial_scenarios.v1", "senate/legacy-partial-results.json.gz"],
+  [loadAutomaticSenateComplete, "senate_complete_scenarios",
+    "participation.senate_complete_category_scenarios.v1", "senate/legacy-complete-results.json.gz"],
+]) test(`the ${field} loader shares one pinned body, rejects corruption and retries without a new snapshot`, async () => {
   const original = globalThis.fetch;
-  const data = { contract: "participation.senate_legacy_partial_scenarios.v1", rows: [] };
+  const data = { contract, rows: [] };
   const decoded = Buffer.from(JSON.stringify(data)), body = gzipSync(decoded);
   const declaration = {
-    contract: data.contract, path: "senate/legacy-partial-results.json.gz",
+    contract: data.contract, path,
     compression: "gzip", media_type: "application/json",
     bytes: body.length, sha256: hash(body), decoded_bytes: decoded.length, decoded_sha256: hash(decoded),
   };
   const value = manifest();
   declaration.url = new URL(declaration.path, value.house_sources.base_url).href;
-  value.house_sources.senate_partial_scenarios = declaration;
+  value.house_sources[field] = declaration;
   let manifests = 0, bodies = 0, corrupt = true;
   resetAutomaticRuntimeForTests();
   try {
@@ -240,16 +246,16 @@ test("the optional Senate loader shares one pinned body, rejects corruption and 
       assert.equal(url, declaration.url); bodies++;
       return new Response(corrupt ? Buffer.from("corrupt") : body);
     };
-    await assert.rejects(loadAutomaticSenatePartial(), /checksum/);
+    await assert.rejects(load(), /checksum/);
     corrupt = false;
-    const [first, second] = await Promise.all([loadAutomaticSenatePartial(), loadAutomaticSenatePartial()]);
+    const [first, second] = await Promise.all([load(), load()]);
     assert.deepEqual(first.data, data);
     assert.equal(first.data, second.data);
     assert.equal(manifests, 1);
     assert.equal(bodies, 2);
     resetAutomaticRuntimeForTests();
-    delete value.house_sources.senate_partial_scenarios;
-    assert.equal(await loadAutomaticSenatePartial(), null);
+    delete value.house_sources[field];
+    assert.equal(await load(), null);
     assert.equal(bodies, 2);
     for (const mutate of [
       item => { item.url = item.url.replace(runtimeCommit, "f".repeat(40)); },
@@ -260,8 +266,8 @@ test("the optional Senate loader shares one pinned body, rejects corruption and 
     ]) {
       resetAutomaticRuntimeForTests();
       const changed = structuredClone(declaration); mutate(changed);
-      value.house_sources.senate_partial_scenarios = changed;
-      await assert.rejects(loadAutomaticSenatePartial());
+      value.house_sources[field] = changed;
+      await assert.rejects(load());
     }
   } finally {
     globalThis.fetch = original;
