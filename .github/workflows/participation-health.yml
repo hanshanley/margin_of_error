@@ -1,0 +1,33 @@
+name: Monitor participation updates
+
+on:
+  schedule:
+    - cron: "52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+  issues: write
+
+concurrency:
+  group: participation-health
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout the reviewed read-only monitor
+        uses: actions/checkout@v7
+        with:
+          repository: hanshanley/voter-participation
+          ref: 4e8b82ac298d02b38f3d3d9da69c421100dddb5f
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: scripts/automatic_health.py
+      - name: Compare scheduled jobs and active data; maintain one issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/automatic_health.py --update-issue

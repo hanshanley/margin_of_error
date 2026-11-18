@@ -25,14 +25,14 @@ jobs:
       - name: Checkout website publisher
         uses: actions/checkout@v7
         with:
-          ref: main
+          ref: ${{ github.sha }}
           fetch-depth: 0
 
       - name: Checkout reviewed public results producer
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: f4d4e0f59d04d1de213763ebbfc3be2825295c83
+          ref: 4e8b82ac298d02b38f3d3d9da69c421100dddb5f
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -62,16 +62,30 @@ jobs:
         run: python -m pip install 'requests>=2.31' 'xlrd>=2'
 
       - name: Verify and atomically publish the data-only runtime
+        shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/research-source
           RESULTS_POINTER: ${{ inputs.results_pointer }}
         run: |
-          pointer="${RESULTS_POINTER:-https://raw.githubusercontent.com/hanshanley/voter-participation/results-data/latest.json}"
+          pointer="$RESULTS_POINTER"
+          if [ -z "$pointer" ]; then
+            source_commit="$(git ls-remote --exit-code \
+              https://github.com/hanshanley/voter-participation.git refs/tags/results-data | cut -f1)"
+            [[ "$source_commit" =~ ^[0-9a-f]{40}$ ]]
+            pointer="https://raw.githubusercontent.com/hanshanley/voter-participation/$source_commit/latest.json"
+          fi
           python -m scripts.automatic_runtime \
             --results-pointer "$pointer" \
             --repository "$GITHUB_WORKSPACE" \
-            --work-dir "$RUNNER_TEMP/participation-automatic-runtime"
+            --work-dir "$RUNNER_TEMP/participation-automatic-runtime" \
+            | tee "$RUNNER_TEMP/participation-automatic-runtime-result.json"
+          {
+            echo '### Automatic participation publication'
+            echo '```json'
+            cat "$RUNNER_TEMP/participation-automatic-runtime-result.json"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Retain failed runtime evidence only
         if: failure()
