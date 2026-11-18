@@ -152,7 +152,8 @@ test("reviewed inventory cannot change counts, drop holds, substitute seats or g
 });
 
 for (const version of ["20261117-identity-01", "20261117-declarations-01",
-  "20261117-categories-01", "20261117-declarations-02", "20261117-declarations-03"]) {
+  "20261117-categories-01", "20261117-declarations-02", "20261117-declarations-03",
+  "20261117-categories-02"]) {
 test(`the reviewed ${version} successor preserves the same seat-aware recorded contract`, () => {
   const input = reviewedFixture();
   input.analytical_handoff.review_version = version;
