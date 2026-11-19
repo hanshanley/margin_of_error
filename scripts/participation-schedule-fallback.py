@@ -4,6 +4,7 @@ import argparse
 import base64
 from datetime import datetime, timedelta, timezone
 import fcntl
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -66,6 +67,29 @@ def pointer(request, repo, tag, file, contract):
     if body["contract"] != contract:
         raise ValueError(f"Unexpected {tag} pointer contract")
     return body
+
+
+def same_clock_successor(request, source, live):
+    staged = source.get("results_commit", "")
+    if not re.fullmatch(r"[a-f0-9]{40}", staged):
+        return False
+    commit = request(f"repos/{SOURCE}/git/commits/{staged}")
+    parents = commit["parents"]
+    if commit["sha"] != staged or len(parents) != 1:
+        return False
+    parent = parents[0]["sha"]
+    if not re.fullmatch(r"[a-f0-9]{40}", parent):
+        return False
+    previous = request(f"repos/{SOURCE}/contents/latest.json?ref={parent}", raw=True)
+    if (previous.get("contract") != "participation.automatic_results_latest.v1"
+            or previous.get("version") != live["input_results_version"]
+            or clock(previous["checked_at"]) != clock(source["checked_at"])):
+        return False
+    body = (json.dumps(previous, sort_keys=True, ensure_ascii=True,
+                       separators=(",", ":"), allow_nan=False) + "\n").encode()
+    return live.get("input_results_pointer") == {
+        "bytes": len(body), "sha256": hashlib.sha256(body).hexdigest(),
+    }
 
 
 def producer_pin(request, ref):
@@ -140,8 +164,10 @@ def tick(now, request, journal, record, *, apply=False):
                for version in (accepted, consumed, live["version"])):
         raise ValueError("Invalid source or runtime version")
     changed = accepted != consumed
-    if changed and clock(source["checked_at"]) <= clock(live["checked_at"]):
-        raise ValueError("Refusing to dispatch a publisher against older or ambiguous source data")
+    if changed:
+        source_time, live_time = clock(source["checked_at"]), clock(live["checked_at"])
+        if source_time < live_time or (source_time == live_time and not same_clock_successor(request, source, live)):
+            raise ValueError("Refusing to dispatch a publisher against older or ambiguous source data")
 
     def active(stage):
         return any(run["status"] in ACTIVE for run in runs[stage])

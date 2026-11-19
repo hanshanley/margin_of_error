@@ -1,4 +1,6 @@
 import base64
+import hashlib
+import json
 import runpy
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -32,6 +34,7 @@ class FallbackTests(unittest.TestCase):
         self.main = "d" * 40
         self.source_main = "d" * 40
         self.diff = None
+        self.previous_source = None
         self.pins = {"d" * 40: "e" * 40, "f" * 40: "e" * 40}
 
     def request(self, path, *, raw=False, dispatch=False):
@@ -49,6 +52,11 @@ class FallbackTests(unittest.TestCase):
         if "/git/ref/heads/" in path:
             return {"object": {"type": "commit", "sha": self.source_main
                                if code["SOURCE"] in path else self.main}}
+        if path.endswith("/git/commits/" + "1" * 40):
+            return {"sha": "1" * 40, "parents": [{"sha": "2" * 40}]}
+        if path.endswith("/contents/latest.json?ref=" + "2" * 40):
+            self.assertTrue(raw)
+            return self.previous_source
         if "/compare/" in path:
             return self.diff
         if "/contents/.github/workflows/automatic-runtime.yml?" in path:
@@ -164,6 +172,18 @@ class FallbackTests(unittest.TestCase):
             self.result()
         self.source["contract"] = "wrong"
         with self.assertRaisesRegex(ValueError, "pointer contract"):
+            self.result()
+        self.assertEqual(self.effects, [])
+
+    def test_same_time_reprojection_requires_the_exact_consumed_predecessor(self):
+        self.backlog()
+        self.source.update(checked_at=self.live["checked_at"], results_commit="1" * 40)
+        self.previous_source = {**self.source, "version": self.live["input_results_version"]}
+        body = (json.dumps(self.previous_source, sort_keys=True, separators=(",", ":")) + "\n").encode()
+        self.live["input_results_pointer"] = {"bytes": len(body), "sha256": hashlib.sha256(body).hexdigest()}
+        self.assertEqual(self.result(apply=False), "would_dispatch_publication")
+        self.previous_source["base_url"] = "https://example.test/changed"
+        with self.assertRaisesRegex(ValueError, "older or ambiguous"):
             self.result()
         self.assertEqual(self.effects, [])
 
