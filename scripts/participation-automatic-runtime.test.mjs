@@ -8,6 +8,7 @@ import {
   validateAutomaticRuntime,
   loadAutomaticSenatePartial,
   loadAutomaticSenateComplete,
+  loadPennsylvaniaVoteHistory,
 } from "../public/scripts/participation-automatic-runtime.js";
 
 const hash = body => createHash("sha256").update(body).digest("hex");
@@ -269,6 +270,49 @@ for (const [load, field, contract, path] of [
       value.house_sources[field] = changed;
       await assert.rejects(load());
     }
+  } finally {
+    globalThis.fetch = original;
+    resetAutomaticRuntimeForTests();
+  }
+});
+
+test("Pennsylvania history binds all age and county data and downloads to the active release", async () => {
+  const pointer = manifest(), root = pointer.house_sources.base_url;
+  const path = "participation/pennsylvania-general-election-vote-history";
+  const dataPath = path + ".json.gz", csvPath = path + ".csv";
+  const ages = ["18 to 24", "25 to 34", "35 to 44", "45 to 54", "55 to 64", "65 to 74", "75+"];
+  const rows = [...Array.from({ length: 67 }, (_, i) => `County ${i}`), "TOTAL"].map(county => ({
+    county, vote_history: 8, registered: 16, rate_pct: 50, age_not_tabulated: { vote_history: 1, registered: 2 },
+    ages: ages.map(age => ({ age, vote_history: 1, registered: 2, rate_pct: 50 })),
+  }));
+  const decoded = Buffer.from(JSON.stringify({
+    contract: "participation.pa_sure_general_vote_history.v1", state_code: "PA",
+    certified_ballots_cast: false, geographic_allocation: false,
+    editions: [{ year: 2024, election_date: "2024-11-05", status: "reported", rows }],
+  }));
+  const compressed = gzipSync(decoded), dataURL = new URL(dataPath, root).href;
+  const csvURL = new URL(csvPath, root).href;
+  const files = pointer.house_sources.pennsylvania_general_vote_history = {
+    data: { ...bodyPin(dataPath), url: dataURL, bytes: compressed.length, sha256: hash(compressed),
+      decoded_bytes: decoded.length, decoded_sha256: hash(decoded) },
+    csv: { path: csvPath, url: csvURL, bytes: 8, sha256: hash(Buffer.from("csv-data")) },
+  };
+  pointer.house_sources.base_url = root.replace(/\/$/, "");
+  const original = globalThis.fetch;
+  try {
+    resetAutomaticRuntimeForTests();
+    globalThis.fetch = async url => {
+      if (String(url) === automaticRuntimeURL) return Response.json(pointer);
+      if (String(url) === dataURL) return new Response(compressed);
+      throw new Error("Unpinned request: " + url);
+    };
+    const history = await loadPennsylvaniaVoteHistory();
+    assert.equal(history.data.editions[0].rows.length, 68);
+    assert.equal(history.csv, csvURL);
+    assert.equal(history.complete, pointer.complete_download.url);
+    resetAutomaticRuntimeForTests();
+    files.csv.url = "https://example.test/other.csv";
+    await assert.rejects(loadPennsylvaniaVoteHistory(), /not bound/);
   } finally {
     globalThis.fetch = original;
     resetAutomaticRuntimeForTests();

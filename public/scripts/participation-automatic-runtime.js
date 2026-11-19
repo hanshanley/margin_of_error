@@ -403,6 +403,42 @@ export async function loadAutomaticTurnoutHistory(code) {
   return { data, measure, countLabel, csv: files.csv.url, complete: manifest.complete_download.url };
 }
 
+export async function loadPennsylvaniaVoteHistory() {
+  const manifest = await loadAutomaticRuntime();
+  const sources = manifest.house_sources;
+  const files = sources?.pennsylvania_general_vote_history;
+  if (!files) return null;
+  const path = "participation/pennsylvania-general-election-vote-history";
+  validateBodyPin(files.data);
+  if (!pin(files.csv) || files.data.path !== path + ".json.gz" || files.csv.path !== path + ".csv"
+      || [files.data, files.csv].some(file => file.url !== `${sources.base_url}/${file.path}`))
+    throw new Error("Pennsylvania vote history is not bound to the accepted runtime");
+  const data = await checkedAutomaticBody(files.data);
+  const electionDates = { 2024: "2024-11-05", 2026: "2026-11-03" };
+  const ages = ["18 to 24", "25 to 34", "35 to 44", "45 to 54", "55 to 64", "65 to 74", "75+"];
+  const validCounts = row => ["vote_history", "registered"].every(
+    field => Number.isSafeInteger(row?.[field]) && row[field] >= 0);
+  const validRate = row => validCounts(row) && row.registered > 0 && row.registered >= row.vote_history
+    && Number.isFinite(row.rate_pct)
+    && Math.abs(row.rate_pct - 100 * row.vote_history / row.registered) < 1e-8;
+  if (data?.contract !== "participation.pa_sure_general_vote_history.v1" || data.state_code !== "PA"
+      || data.certified_ballots_cast !== false || data.geographic_allocation !== false
+      || !Array.isArray(data.editions) || !data.editions.length
+      || new Set(data.editions.map(edition => edition.year)).size !== data.editions.length
+      || data.editions.some(edition => !Object.hasOwn(electionDates, edition.year)
+        || edition.election_date !== electionDates[edition.year]
+        || !["reported", "retained_after_failure"].includes(edition.status)
+        || !Array.isArray(edition.rows) || edition.rows.length !== 68 || edition.rows.at(-1)?.county !== "TOTAL"
+        || new Set(edition.rows.map(row => row.county.toUpperCase())).size !== 68
+        || edition.rows.some(row => !validRate(row) || !validCounts(row.age_not_tabulated)
+          || !Array.isArray(row.ages) || row.ages.length !== ages.length
+          || row.ages.some((group, i) => group?.age !== ages[i] || !validRate(group))
+          || ["registered", "vote_history"].some(field => row.ages.reduce(
+            (total, group) => total + group[field], row.age_not_tabulated[field]) !== row[field]))))
+    throw new Error("Pennsylvania vote-history scope or rows differ");
+  return { data, csv: files.csv.url, complete: manifest.complete_download.url };
+}
+
 export async function loadAutomaticCongress() {
   const manifest = await loadAutomaticRuntime();
   const declaration = manifest.congressional;

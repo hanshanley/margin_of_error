@@ -12,7 +12,7 @@ import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civ
 import { countFill, precinctSelectionYears } from "./participation-geography.js";
 import { loadCountySubsets, subsetMarginLabel, subsetColorValue } from "./participation-county-subsets.js";
 import { updateUfTurnoutTable } from "./participation-uf-turnout-table.js";
-import { loadAutomaticTurnoutHistory } from "./participation-automatic-runtime.js";
+import { loadAutomaticTurnoutHistory, loadPennsylvaniaVoteHistory } from "./participation-automatic-runtime.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -287,6 +287,7 @@ async function drawLocalGeography(map, selected, code, year, token) {
   detail.append(html("p", "selection-note", "Select a reporting unit on the map or above to see its counts and history."));
   panel.replaceChildren(html("p", "eyebrow", `${year} · administrative reporting`),
     html("h3", "", state.selectedState), navigation, detail);
+  if (code === "PA") appendPennsylvaniaVoteHistory(panel);
   localNavigation(navigation);
   const byKey = new Map(current.filter(row => row.geography?.level === level).map(row => [row.geography.key, row]));
   let observed = 0;
@@ -2815,6 +2816,84 @@ function appendTurnoutHistory(panel, code) {
   });
 }
 
+let pennsylvaniaVoteHistoryPanel;
+function appendPennsylvaniaVoteHistory(panel) {
+  if (pennsylvaniaVoteHistoryPanel) {
+    panel.append(pennsylvaniaVoteHistoryPanel);
+    return;
+  }
+  const section = html("details", "substate-detail");
+  pennsylvaniaVoteHistoryPanel = section;
+  const body = html("div", "");
+  section.append(html("summary", "", "Pennsylvania vote history by age"), body);
+  panel.append(section);
+  let loading = false;
+  section.addEventListener("toggle", async () => {
+    if (!section.open || loading) return;
+    loading = true;
+    body.replaceChildren(html("p", "selection-note", "Checking the accepted Pennsylvania data…"));
+    try {
+      const history = await loadPennsylvaniaVoteHistory();
+      if (!history) {
+        body.replaceChildren(html("p", "selection-note", "No verified edition in the active release."));
+        loading = false;
+        return;
+      }
+      const editions = [...history.data.editions].sort((a, b) => b.year - a.year);
+      const scopeLabel = html("label", "", "Geography ");
+      const scope = html("select", "");
+      for (const county of [editions[0].rows.at(-1), ...editions[0].rows.slice(0, -1)]) {
+        const key = county.county.toUpperCase();
+        const option = html("option", "", key === "TOTAL" ? "Pennsylvania (statewide)" : county.county);
+        option.value = key;
+        scope.append(option);
+      }
+      scopeLabel.append(scope);
+      const table = html("table", "");
+      table.append(html("caption", "", "November general elections in the Pennsylvania voter system"));
+      const header = table.createTHead().insertRow();
+      for (const label of ["Year", "Age", "Voters with vote history", "Registered", "Share"]) {
+        const cell = html("th", "", label); cell.scope = "col"; header.append(cell);
+      }
+      const rows = table.createTBody();
+      function renderRows() {
+        rows.replaceChildren();
+        for (const edition of editions) {
+          const row = edition.rows.find(item => item.county.toUpperCase() === scope.value);
+          if (!row) continue;
+          for (const item of [{ ...row, age: "All ages" }, ...row.ages,
+            { ...row.age_not_tabulated, age: "Age not tabulated", rate_pct: null }]) {
+            const line = rows.insertRow();
+            line.append(html("td", "", String(edition.year)));
+            const age = html("th", "", item.age); age.scope = "row"; line.append(age);
+            for (const value of [fmt(item.vote_history), fmt(item.registered),
+              item.rate_pct == null ? "Not calculated" : pct(item.rate_pct)])
+              line.append(html("td", "", value));
+          }
+        }
+      }
+      scope.addEventListener("change", renderRows);
+      renderRows();
+      const scroller = html("div", "table-wrap");
+      scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region");
+      scroller.setAttribute("aria-label", "Pennsylvania vote history by age and geography");
+      scroller.append(table);
+      const csv = html("a", "source-link", "Download all counties and age groups (CSV)"); csv.href = history.csv;
+      const complete = html("a", "source-link", "Complete queries and reproduction (ZIP)"); complete.href = history.complete;
+      body.replaceChildren(html("p", "selection-note",
+        "Point-in-time count of people with vote history in the state registration system. "
+        + "Shares use registrations from the same workbook, not eligible population or certified ballots. "
+        + (editions.some(edition => edition.year === 2026) ? "" : "No November 2026 edition is in this release. ")
+        + (editions.some(edition => edition.status === "retained_after_failure") ? "An earlier edition was retained after an update failure." : "")),
+        csv, complete, scopeLabel, scroller);
+    } catch (error) {
+      body.replaceChildren(html("p", "selection-note", "Vote history could not be verified. Close and reopen to retry."));
+      loading = false;
+    }
+  });
+}
+
 function stateDetail() {
   const basis = $("basis").value, year = Number($("year").value);
   const rows = state.states.filter(row => row.state === state.selectedState && row.denominator === basis)
@@ -2965,6 +3044,7 @@ function stateDetail() {
     ? "CPS survey estimates. The dashed 1992–1994 connector marks a citizenship-measurement change, not missing data."
     : "CPS survey estimates. Dashed connectors mark definition changes; missing elections remain gaps."));
   appendTurnoutHistory(panel, stateCode());
+  if (stateCode() === "PA") appendPennsylvaniaVoteHistory(panel);
   const election = marginRow("state", stateCode());
   if (election) panel.append(html("h4", "", `${election.office} · map context`),
     html("p", "selection-note", `${marginLabel(election)} · ${fmt(election.contest_votes)} contest votes. `
