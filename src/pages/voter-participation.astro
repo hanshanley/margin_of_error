@@ -206,6 +206,9 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<h1>Who participates?</h1>
 			<p class="participation-deck">Voter turnout across elections, places and demographic groups.</p>
 		</header>
+		{ufPointer && <noscript><p class="participation-scope">
+			<a href="/voter-participation/?view=methods#uf-turnout-2026">View saved 2026 turnout for all states and D.C.</a>
+		</p></noscript>}
 
 		<nav class="participation-nav" aria-label="Explore participation" role="tablist">
 			{[['states', 'States'], ['national', 'Demographics'], ['effects', '2026 swing maps'],
