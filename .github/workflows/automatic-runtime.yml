@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: 40e19b24e7a7ef0f8b01bf74725c3cfea2225e8a
+          ref: a170eb8f902f501a8cbff2be25899cef3e6e131b
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -65,6 +65,7 @@ jobs:
             data/results-intake/reviewed-eligibility.json
             data/results-intake/historical-eac-county-facts.json.gz
             data/results-intake/nc-20261113-statewide-and-counties.json
+            data/results-intake/tx-reviewed-turnout-history.json
             data/results-intake/analytical-handoff
             data/results-intake/official-house-precedence
             data/results-intake/native-official-house

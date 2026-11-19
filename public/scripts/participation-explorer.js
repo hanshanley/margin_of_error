@@ -2805,8 +2805,8 @@ function appendTurnoutHistory(panel, code) {
       const complete = html("a", "source-link", "Complete queries and reproduction (ZIP)"); complete.href = history.complete;
       body.replaceChildren(html("p", "selection-note",
         "Registered-voter denominator, not CPS, VEP or a local turnout rate. Rates are withheld when the printed figures do not reconcile or the registration basis is ambiguous."
-        + (data.current_election_status === "not_yet_published" ? " The source does not yet include 2026." : "")
-        + (data.status === "retained_after_failure" ? " Last successful source capture retained after a failure." : "")),
+        + (data.current_election_status === "not_yet_published" ? " This edition does not include 2026." : "")
+        + (data.status === "retained_after_failure" ? " Earlier source capture retained after an update failure." : "")),
         csv, complete, scroller);
     } catch (error) {
       body.replaceChildren(html("p", "selection-note", "Turnout history could not be verified. Close and reopen to retry."));
