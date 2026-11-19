@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
-import { administrativeRows, coverageRows } from "../public/scripts/participation-coverage.js";
+import { administrativeRows, coverageRows, historicalCountyDownload } from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 
 const catalog = { datasets: {
@@ -13,6 +13,20 @@ const counts = { states: { MN: { views: {
   available: { counties: 87, precincts: 4105, holds: 0,
     dispositions: { counties: { reported: 87, unknown: 0, withheld: 0, qualified_fractions: 73 } } },
 } } } };
+
+test("historical county downloads are bound to the exact runtime and separate from 2026", () => {
+  const path = "participation/eac-county-year-decisions.csv.gz";
+  const base_url = "https://example.org/runtime";
+  const url = `${base_url}/${path}`;
+  const series = { contract: "participation.eac_county_counted_ballot_reconciliation.v1",
+    historical_not_2026: true, no_county_boundary_equivalence_inferred: true,
+    direct_count_rows: 8, county_rows: 10, downloads: { [path]: { path, url, bytes: 42, sha256: "a".repeat(64) } } };
+  const sources = { base_url, historical_eac_counties: series };
+  assert.deepEqual(historicalCountyDownload(sources), { url, counts: 8, rows: 10 });
+  assert.equal(historicalCountyDownload({ ...sources, base_url: "https://example.org/older" }), null);
+  assert.equal(historicalCountyDownload({ ...sources,
+    historical_eac_counties: { ...series, historical_not_2026: false } }), null);
+});
 
 test("administrative audit preserves zero records and rejects incomplete or inconsistent coverage", () => {
   const fields = ["state_code", "year", ...["statewide", "county_or_equivalent", "precinct"]

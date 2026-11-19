@@ -4,6 +4,7 @@ import { loadNativeIndex } from "./participation-native-bindings.js";
 import { loadAutomaticRuntime } from "./participation-automatic-runtime.js";
 
 const coveragePath = "release/participation-administrative-coverage.csv.gz";
+const historicalCountyPath = "participation/eac-county-year-decisions.csv.gz";
 const scopes = ["statewide", "county_or_equivalent", "precinct"];
 const metrics = scopes.flatMap(scope => ["count", "rate"].map(kind =>
   `${scope}_election_participation_${kind}_records`));
@@ -29,6 +30,19 @@ export function administrativeRows(csv) {
   });
   if (seen.size !== countStates.length) throw new Error("Incomplete administrative coverage export");
   return rows;
+}
+
+export function historicalCountyDownload(sources) {
+  const series = sources?.historical_eac_counties;
+  const file = series?.downloads?.[historicalCountyPath];
+  if (series?.contract !== "participation.eac_county_counted_ballot_reconciliation.v1"
+      || series.historical_not_2026 !== true || series.no_county_boundary_equivalence_inferred !== true
+      || typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
+      || file?.path !== historicalCountyPath || file.url !== `${sources.base_url}/${historicalCountyPath}`
+      || !Number.isSafeInteger(file.bytes) || file.bytes <= 0 || !/^[a-f0-9]{64}$/.test(file.sha256)
+      || !Number.isSafeInteger(series.direct_count_rows) || series.direct_count_rows < 1
+      || !Number.isSafeInteger(series.county_rows) || series.county_rows < series.direct_count_rows) return null;
+  return { url: file.url, counts: series.direct_count_rows, rows: series.county_rows };
 }
 
 async function loadAdministrativeCoverage() {
@@ -100,6 +114,16 @@ function installAdministrativeCoverage(host) {
       }
       scroller.append(table);
       content.replaceChildren(note, download, " · ", complete, scroller);
+      const historical = historicalCountyDownload(manifest.house_sources);
+      if (historical) {
+        const history = document.createElement("p");
+        const link = document.createElement("a");
+        link.href = historical.url; link.textContent = "EAC county-year counts and decisions, 2004–2024 (CSV · gzip)";
+        history.append(link, `: ${historical.counts.toLocaleString("en-US")} of `
+          + `${historical.rows.toLocaleString("en-US")} rows match direct county reports. `
+          + "Held rows remain in the download. This does not fill 2026 gaps or establish comparable boundaries.");
+        content.append(history);
+      }
       panel.dataset.runtimeVersion = manifest.version;
     } catch {
       content.textContent = "Administrative coverage could not be verified. Close and reopen to retry.";

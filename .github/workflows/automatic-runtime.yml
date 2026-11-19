@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: f76809b2b1fb80055562a810c7cc55aeb56ee914
+          ref: 1dd4c4cd6c1b5676fa7a03d6666479ecdc25618a
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -63,6 +63,7 @@ jobs:
             pyproject.toml
             data/results-intake/model-seed
             data/results-intake/reviewed-eligibility.json
+            data/results-intake/historical-eac-county-facts.json.gz
             data/results-intake/analytical-handoff
             data/results-intake/official-house-precedence
             data/results-intake/native-official-house
