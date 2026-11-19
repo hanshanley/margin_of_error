@@ -37,6 +37,7 @@ class FallbackTests(unittest.TestCase):
         self.main = "d" * 40
         self.source_main = "d" * 40
         self.diff = None
+        self.pin_diff = None
         self.previous_source = None
         self.pins = {"d" * 40: "e" * 40, "f" * 40: "e" * 40}
         self.collector_workflows = {}
@@ -69,6 +70,8 @@ class FallbackTests(unittest.TestCase):
             self.assertTrue(raw)
             return self.previous_source
         if "/compare/" in path:
+            if "/compare/" + "e" * 40 + "..." in path and self.pin_diff is not None:
+                return self.pin_diff
             return self.diff
         if "/contents/.github/workflows/election-night.yml?" in path:
             body = self.collector_workflows[path.split("?ref=")[-1]].encode()
@@ -156,6 +159,40 @@ class FallbackTests(unittest.TestCase):
         self.diff["files"] = [{"filename": "scripts/results_granular.py"}]
         self.backlog()
         self.assertEqual(self.result(apply=False), "would_dispatch_publication")
+
+    def test_collector_entrypoint_fix_collects_without_repinning_publisher(self):
+        self.source_main = "1" * 40
+        self.runs["publication"] = [run(45, 35)]
+        self.runs["collection"] = [{**run(55, 40), "display_title": "Collect full election results"}]
+        self.diff = {"status": "ahead", "merge_base_commit": {"sha": "d" * 40},
+                     "files": [{"filename": "scripts/results_granular.py"},
+                               {"filename": "scripts/results_intake.py"}]}
+        self.pin_diff = {"status": "ahead", "merge_base_commit": {"sha": "e" * 40},
+                         "files": [{"filename": "scripts/results_intake.py", "status": "modified"},
+                                   {"filename": "tests/test_results_intake.py", "status": "modified"}]}
+        self.assertEqual(self.result(apply=False), "would_dispatch_collection")
+        self.runs["collection"][0]["head_sha"] = self.source_main
+        self.assertEqual(self.result(apply=False), "no_dispatch")
+
+    def test_incomplete_or_incompatible_pin_comparison_does_not_collect_early(self):
+        self.source_main = "1" * 40
+        self.runs["publication"] = [run(45, 35)]
+        self.runs["collection"] = [{**run(55, 40), "display_title": "Collect full election results"}]
+        changed = {"filename": "scripts/results_intake.py", "status": "modified"}
+        self.diff = {"status": "ahead", "merge_base_commit": {"sha": "d" * 40},
+                     "files": [changed]}
+        complete = {**self.diff, "merge_base_commit": {"sha": "e" * 40}}
+        for comparison in (
+            {**complete, "status": "diverged"},
+            {**complete, "files": []},
+            {**complete, "files": [changed] * 300},
+            {**complete, "files": [{**changed, "previous_filename": "scripts/automatic_runtime.py"}]},
+            {**complete, "files": [changed, {"filename": "data/results-intake/registry.json",
+                                             "status": "modified"}]},
+        ):
+            with self.subTest(comparison=comparison):
+                self.pin_diff = comparison
+                self.assertEqual(self.result(apply=False), "no_dispatch")
 
     def test_successful_stale_collection_or_cooled_failure_gets_recovery(self):
         self.runs["collection"] = [run(110, 12, conclusion="failure")]

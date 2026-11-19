@@ -29,6 +29,13 @@ ARCHIVE_RETRY = timedelta(hours=6)
 ARCHIVE_TITLE = "Check late participation archives"
 ACTIVE = {"queued", "in_progress", "requested", "waiting", "pending"}
 MAX_WORKFLOW_BYTES = 64 * 1024
+COLLECTOR_ONLY_PATHS = {
+    ".github/workflows/election-night.yml",
+    "scripts/results_intake.py",
+    "docs/RESULTS_INTAKE.md",
+    "tests/test_election_night_workflow.py",
+    "tests/test_results_intake.py",
+}
 
 
 def clock(value):
@@ -203,6 +210,16 @@ def collector_change(request, files, base, tip):
         return True
 
 
+def forward_comparison(request, base, tip):
+    diff = request(f"repos/{SOURCE}/compare/{base}...{tip}?per_page=1")
+    files = diff["files"]
+    # GitHub caps the complete file list at 300, even on a paginated commit response.
+    if (diff["status"] != "ahead" or diff["merge_base_commit"]["sha"] != base
+            or not isinstance(files, list) or not 0 < len(files) < 300):
+        return []
+    return files
+
+
 def new_reviewed_collection(request, collections):
     previous = next((run for run in collections if run["status"] == "completed"
                      and run["conclusion"] == "success"
@@ -214,14 +231,18 @@ def new_reviewed_collection(request, collections):
         if main["type"] != "commit" or not re.fullmatch(r"[a-f0-9]{40}", main["sha"]):
             return False
         sha, base = main["sha"], previous["head_sha"]
-        if sha == base or producer_pin(request, "main") != sha:
+        if sha == base:
             return False
-        diff = request(f"repos/{SOURCE}/compare/{base}...{sha}?per_page=1")
-        files = diff["files"]
-        if (diff["status"] != "ahead" or diff["merge_base_commit"]["sha"] != base
-                or not isinstance(files, list) or not 0 < len(files) < 300):
+        pin = producer_pin(request, "main")
+        files = forward_comparison(request, base, sha)
+        if not files or not collector_change(request, files, base, sha):
             return False
-        return collector_change(request, files, base, sha)
+        if pin == sha:
+            return True
+        since_pin = files if pin == base else forward_comparison(request, pin, sha)
+        return bool(since_pin) and all(
+            file["status"] == "modified" and "previous_filename" not in file
+            and file["filename"] in COLLECTOR_ONLY_PATHS for file in since_pin)
     except (KeyError, TypeError, ValueError, subprocess.SubprocessError):
         return False
 

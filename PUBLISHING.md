@@ -95,7 +95,12 @@ minutes on a separate scheduler. It compares the accepted source and active read
 versions, gives existing runs priority, and dispatches at most one existing workflow
 per check. An unconsumed source takes priority over recollection. The collector gets
 a fallback dispatch after 90 minutes without a new run, or after a 30-minute cooldown
-following a failed run. An unchanged source does not dispatch the publisher. The
+following a failed run. It can start earlier for a changed collector after the
+same cooldown: the publisher must pin that revision, or the complete forward
+comparison from its pin must touch only the explicitly allowed collector
+entry point, workflow, and their tests or guide. Shared analytical code and
+input changes still require the matching pin for an early start. An unchanged
+source does not dispatch the publisher unless its reviewed producer pin changes. The
 fallback also runs the existing issue monitor if its own schedule is missed. An
 accepted dispatch and a successful data activation are distinct; confirm the latter
 with `input_results_version` in `automatic/latest.json`.
