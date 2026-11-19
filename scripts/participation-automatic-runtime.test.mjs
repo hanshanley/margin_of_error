@@ -317,7 +317,9 @@ test("the website workflow is data-only and the overlapping legacy refresh is ma
   assert.match(workflow, /data\/results-intake\/model-seed/);
   assert.match(workflow, /GH_TOKEN: \$\{\{ github\.token \}\}/);
   assert.match(workflow, /python -m scripts\.automatic_runtime/);
-  assert.match(workflow, /pointer="\$\{RESULTS_POINTER:-https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/results-data\/latest\.json\}"/);
+  assert.match(workflow, /pointer="\$RESULTS_POINTER"\s+if \[ -z "\$pointer" \]; then/);
+  assert.match(workflow, /git ls-remote --exit-code[\\\s]+https:\/\/github\.com\/hanshanley\/voter-participation\.git refs\/tags\/results-data/);
+  assert.match(workflow, /pointer="https:\/\/raw\.githubusercontent\.com\/hanshanley\/voter-participation\/\$source_commit\/latest\.json"/);
   assert.match(workflow, /--results-pointer "\$pointer"/);
   assert.match(workflow, /--repository "\$GITHUB_WORKSPACE"/);
   const legacy = readFileSync(new URL("../.github/workflows/refresh-2026-data.yml", import.meta.url), "utf8");
