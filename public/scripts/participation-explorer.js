@@ -11,6 +11,7 @@ import { demographicStates, demographicSource, demographicGroups, loadDemographi
 import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civicGroupOptions } from "./participation-civic-state-demographics.js";
 import { countFill, precinctSelectionYears } from "./participation-geography.js";
 import { loadCountySubsets, subsetMarginLabel, subsetColorValue } from "./participation-county-subsets.js";
+import { updateUfTurnoutTable } from "./participation-uf-turnout-table.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -335,8 +336,10 @@ async function loadCurrent() {
     state.currentError = "";
     state.currentPath = data.original_base;
     state.reviewedStates = data.reviewed_states;
-    if (data.uf_turnout) state.ufTurnout = ufTurnoutRows(data.uf_turnout);
-    else loadUfTurnout();
+    if (data.uf_turnout) {
+      state.ufTurnout = ufTurnoutRows(data.uf_turnout);
+      updateUfTurnoutTable(document.querySelector("#uf-turnout-2026"), data.uf_turnout, state.ufTurnout);
+    } else loadUfTurnout();
   } catch (error) {
     state.currentError = `Saved 2026 observations could not be loaded: ${error.message}.`;
   }

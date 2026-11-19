@@ -7,6 +7,7 @@ import { canonicalObservation, encoded, digest, pin, selectedFrame } from "./com
 import { countModes, countStates, validateCountObservation, validateCountShard,
   validateCurrentCountSnapshot, countFrame, validateUfTurnout,
   ufTurnoutRows } from "../public/scripts/participation-counts.js";
+import { updateUfTurnoutTable } from "../public/scripts/participation-uf-turnout-table.js";
 
 const view = () => ({ year: 2026, state_code: "MN", county_id: "native:1", county: "Example",
   ballots: 0, denominator: 100, denominator_basis: "native_registered_voters",
@@ -102,14 +103,20 @@ test("actual explorer loading replaces dated UF rows without altering local or m
   const current = { snapshot: { reporting: [{ ballots: 9 }] },
     reviewed_states: [{ ballots: 10 }], original_base: "retained-originals", uf_turnout: data };
   const state = { ufTurnout: [{ ballots: 1 }], models: ["unchanged"] };
+  const section = {};
+  const updates = [];
   const load = runInNewContext(`(${source.slice(start, end)})`, {
     state, loadCurrentCountSnapshot: async () => current, ufTurnoutRows,
+    document: { querySelector: () => section },
+    updateUfTurnoutTable: (...args) => updates.push(args),
     loadUfTurnout: () => { state.ufTurnout = [{ ballots: 1, source_date: "dated saved edition" }]; },
   });
   await load();
   assert.equal(state.ufTurnout.length, 52);
   assert.equal(state.ufTurnout[0].ballots, 500);
   assert.equal(state.ufTurnout[0].complete_download_url, data.complete_download.url);
+  assert.deepEqual(updates, [[section, data, state.ufTurnout]]);
+  assert.equal(state.currentError, "");
   assert.equal(state.current, current.snapshot);
   assert.equal(state.reviewedStates, current.reviewed_states);
   assert.deepEqual(state.models, ["unchanged"]);
@@ -117,6 +124,36 @@ test("actual explorer loading replaces dated UF rows without altering local or m
   await load();
   assert.equal(state.ufTurnout[0].ballots, 1);
   assert.equal(state.ufTurnout[0].source_date, "dated saved edition");
+  assert.equal(updates.length, 1);
+});
+
+test("the full table replaces the saved edition with the validated rows and retained-source status", () => {
+  const node = () => ({
+    dataset: {}, childNodes: [],
+    append(...children) { this.childNodes.push(...children); },
+    replaceChildren(...children) { this.childNodes = children; },
+  });
+  const tbody = node(), table = { ...node(), tBodies: [tbody] }, label = node(), downloads = node();
+  const section = { ownerDocument: { createElement: node },
+    querySelector: selector => ({
+      'table[data-uf-turnout="2026"]': table, "[data-uf-edition]": label,
+      "[data-uf-edition-downloads]": downloads,
+    })[selector] };
+  const edition = ufSnapshot();
+  edition.complete_download = { url: "https://example.test/complete-analysis.zip" };
+  const rows = ufTurnoutRows(edition);
+  updateUfTurnoutTable(section, edition, rows);
+  assert.equal(tbody.childNodes.length, 52);
+  assert.equal(tbody.childNodes.at(-1).dataset.stateCode, "US");
+  assert.equal(tbody.childNodes[0].childNodes[4].textContent, "50.00%");
+  assert.equal(table.dataset.sourceVersion, edition.version);
+  assert.equal(downloads.childNodes.at(-1).href, edition.complete_download.url);
+  const revised = { ...edition, version: "0.4", status: "retained_after_failure" };
+  updateUfTurnoutTable(section, revised, [{ ...rows[0], ballots: 0, vep_rate: null }]);
+  assert.equal(tbody.childNodes.length, 1);
+  assert.equal(tbody.childNodes[0].childNodes[1].textContent, "0");
+  assert.equal(tbody.childNodes[0].childNodes[4].textContent, "Not reported");
+  assert.match(label.textContent, /Last verified edition retained.*version 0.4/);
 });
 
 test("actual asynchronous current loader rejects corrupt UF as one runtime and restores accepted fallback", async () => {

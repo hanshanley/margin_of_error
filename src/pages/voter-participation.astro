@@ -758,9 +758,10 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		{ufPointer && <section id="uf-turnout-2026" class="participation-current" aria-labelledby="uf-turnout-title">
 			<p class="kicker">Separate state-level source · 2026</p>
 			<h2 id="uf-turnout-title">UF Election Lab state and national turnout</h2>
-			<p>Michael McDonald’s source table, version {ufAudit.version}, covers all 50 states, D.C.
+			<p data-uf-edition>Michael McDonald’s saved source table, version {ufAudit.version}, covers all 50 states, D.C.
 				and a separate national aggregate. {ufAudit.estimate_rows} of {ufRows.length} rows are
-				source-labeled estimates. Estimates are not final official ballot counts; source-reported counts
+				source-labeled estimates.</p>
+			<p>Estimates are not final official ballot counts; source-reported counts
 				retain their original status rather than being recertified here. This table is separate from county
 				candidate results and demographic turnout. No values are spliced into the measured historical series.</p>
 			<p>VEP means voting-eligible population; VAP means all voting-age residents.
@@ -785,8 +786,9 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					</tr>)}</tbody>
 				</table>
 			</div>
-			<p><a href={ufAudit.dataset_url}>UF dataset and attribution</a> ·{' '}
-				<a href={`${ufPointer.base_url}originals/documentation.txt`}>Preserved source methodology and license</a>.
+			<p data-uf-edition-downloads hidden></p>
+			<p><a href={ufAudit.dataset_url}>Saved UF dataset and attribution</a> ·{' '}
+				<a href={`${ufPointer.base_url}originals/documentation.txt`}>Saved source methodology and license</a>.
 				Census population estimates and noncitizen estimates, BJS ineligibility inputs and overseas
 				adjustments inform the published denominator. They do not measure party preference.</p>
 		</section>}
