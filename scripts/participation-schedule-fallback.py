@@ -128,18 +128,22 @@ def same_clock_successor(request, source, live):
     }
 
 
-def producer_pin(request, ref):
-    repo, workflow = WORKFLOWS["publication"]
+def workflow_source(request, stage, ref):
+    repo, workflow = WORKFLOWS[stage]
     path = f".github/workflows/{workflow}"
     file = request(f"repos/{repo}/contents/{path}?ref={ref}")
     if file["path"] != path or file["encoding"] != "base64" or not 0 < file["size"] <= 16384:
-        raise ValueError("Unexpected publisher workflow contents")
+        raise ValueError("Unexpected workflow contents")
     body = base64.b64decode("".join(file["content"].split()), validate=True)
     if len(body) != file["size"]:
-        raise ValueError("Incomplete publisher workflow contents")
+        raise ValueError("Incomplete workflow contents")
+    return body.decode("utf-8")
+
+
+def producer_pin(request, ref):
     pattern = (rf"(?m)^[ \t]+repository: {re.escape(SOURCE)}[ \t]*\r?\n"
                r"[ \t]+ref: ([a-f0-9]{40})[ \t]*\r?\n[ \t]+path: research-source[ \t]*\r?$")
-    matches = re.findall(pattern, body.decode("utf-8"))
+    matches = re.findall(pattern, workflow_source(request, "publication", ref))
     if len(matches) != 1:
         raise ValueError("Missing or ambiguous reviewed producer pin")
     return matches[0]
@@ -161,6 +165,38 @@ def new_producer_pin(request, publications):
         return False
 
 
+def without_validation_selectors(body):
+    header = re.compile(r"(?m)^        id: validation_tests\n"
+                        r"        if: [^\n]+\n"
+                        r"        run: >\n")
+    matches = list(header.finditer(body))
+    if len(matches) != 1:
+        return body
+    start = matches[0].end()
+    test = r"tests/test_[A-Za-z0-9_]+\.py"
+    command = re.match(rf"          python -m pytest -q(?: {test})+(?:\n          "
+                       rf"{test}(?: {test})*)*\n(?![ \t]*\S)", body[start:])
+    if command is None:
+        return body
+    return body[:start] + "          python -m pytest -q\n" + body[start + command.end():]
+
+
+def collector_change(request, files, base, tip):
+    names = {name for file in files for name in (file["filename"], file.get("previous_filename", ""))}
+    if any(re.fullmatch(r"scripts/results_[^/]+\.py|data/results-intake/registry\.json", name)
+           for name in names):
+        return True
+    path = f".github/workflows/{WORKFLOWS['collection'][1]}"
+    if path not in names:
+        return False
+    try:
+        before, after = (workflow_source(request, "collection", ref) for ref in (base, tip))
+        return without_validation_selectors(before) != without_validation_selectors(after)
+    except (KeyError, TypeError, ValueError, subprocess.SubprocessError):
+        # If we cannot prove selector-only changes, keep the ordinary collection behavior.
+        return True
+
+
 def new_reviewed_collection(request, collections):
     previous = next((run for run in collections if run["status"] == "completed"
                      and run["conclusion"] == "success"
@@ -179,10 +215,7 @@ def new_reviewed_collection(request, collections):
         if (diff["status"] != "ahead" or diff["merge_base_commit"]["sha"] != base
                 or not isinstance(files, list) or not 0 < len(files) < 300):
             return False
-        return any(re.fullmatch(r"(?:scripts/results_[^/]+\.py|"
-                                r"data/results-intake/registry\.json|"
-                                r"\.github/workflows/election-night\.yml)", name)
-                   for file in files for name in (file["filename"], file.get("previous_filename", "")))
+        return collector_change(request, files, base, sha)
     except (KeyError, TypeError, ValueError, subprocess.SubprocessError):
         return False
 

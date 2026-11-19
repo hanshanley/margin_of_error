@@ -39,6 +39,7 @@ class FallbackTests(unittest.TestCase):
         self.diff = None
         self.previous_source = None
         self.pins = {"d" * 40: "e" * 40, "f" * 40: "e" * 40}
+        self.collector_workflows = {}
         self.archive_history = [{"total_count": 0, "workflow_runs": []}]
 
     def request(self, path, *, raw=False, dispatch=False, archive_only=False):
@@ -69,6 +70,10 @@ class FallbackTests(unittest.TestCase):
             return self.previous_source
         if "/compare/" in path:
             return self.diff
+        if "/contents/.github/workflows/election-night.yml?" in path:
+            body = self.collector_workflows[path.split("?ref=")[-1]].encode()
+            return {"path": ".github/workflows/election-night.yml", "encoding": "base64",
+                    "size": len(body), "content": base64.b64encode(body).decode()}
         if "/contents/.github/workflows/automatic-runtime.yml?" in path:
             ref = path.split("?ref=")[-1]
             pin = self.pins.get(self.main if ref == "main" else ref)
@@ -160,6 +165,46 @@ class FallbackTests(unittest.TestCase):
         self.journal.clear()
         self.runs["collection"] = [run(90, 62)]
         self.assertEqual(self.result(), "dispatched_collection")
+
+    def test_collector_test_inventory_changes_do_not_force_full_collection(self):
+        self.main, self.source_main = "f" * 40, "1" * 40
+        self.pins[self.main] = self.source_main
+        self.runs["publication"] = [run(45, 35)]
+        self.runs["collection"] = [{**run(55, 40), "display_title": "Collect full election results"}]
+        self.diff = {"status": "ahead", "merge_base_commit": {"sha": "d" * 40},
+                     "files": [{"filename": ".github/workflows/election-night.yml"},
+                               {"filename": "scripts/statewide_ballot_totals.py"}]}
+        before = (
+            "      - name: Validate\n"
+            "        id: validation_tests\n"
+            "        if: steps.window.outputs.active == 'true'\n"
+            "        run: >\n"
+            "          python -m pytest -q tests/test_statewide_ballot_totals.py\n"
+            "          tests/test_ohio_retained_turnout.py\n"
+            "\n"
+            "      - name: Collect\n"
+            "        run: python -m scripts.results_intake collect\n"
+        )
+        after = before.replace("tests/test_ohio_retained_turnout.py\n",
+                               "tests/test_ohio_retained_turnout.py\n"
+                               "          tests/test_retained_turnout.py\n")
+        self.collector_workflows = {"d" * 40: before, self.source_main: after}
+        self.assertEqual(self.result(apply=False), "would_dispatch_publication")
+        for changed in (
+            after.replace(" collect\n", " refresh-selected\n"),
+            after.replace("active == 'true'", "active == 'false'"),
+            after.replace("test_retained_turnout.py\n", "test_retained_turnout.py -k partial\n"),
+            after.replace("test_retained_turnout.py\n", "test_retained_turnout.py\n          ; true\n"),
+        ):
+            with self.subTest(changed=changed):
+                self.collector_workflows[self.source_main] = changed
+                self.assertEqual(self.result(apply=False), "would_dispatch_collection")
+        del self.collector_workflows[self.source_main]
+        self.assertEqual(self.result(apply=False), "would_dispatch_collection")
+        self.collector_workflows[self.source_main] = after
+        self.diff["files"].append({"filename": "scripts/results_county_frame.py",
+                                   "previous_filename": "scripts/results_granular.py"})
+        self.assertEqual(self.result(apply=False), "would_dispatch_collection")
 
     def test_lost_dispatch_response_does_not_duplicate(self):
         self.backlog()
