@@ -18,7 +18,28 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  await-source:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout the source handoff check
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: scripts/wait-for-participation-source.py
+
+      - name: Give the current scheduled collection time to publish
+        run: |
+          python3 scripts/wait-for-participation-source.py | tee -a "$GITHUB_STEP_SUMMARY"
+
   publish:
+    needs: await-source
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
