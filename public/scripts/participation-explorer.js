@@ -724,7 +724,11 @@ function stateParticipationRows() {
       if (token !== state.drillToken || state.map !== map) return;
       $("source-region-holds")?.remove();
       const observations = data?.counties.filter(row => row.state_code === code) ?? [];
-      const reference = observations.find(row => row.reference_geometry)?.reference_geometry;
+      const supplementalReference = observations.find(row =>
+        row.supplemental_reference_geometry?.geography_scope === "native_partial_county_context")
+        ?.supplemental_reference_geometry;
+      const reference = observations.find(row => row.reference_geometry)?.reference_geometry
+        ?? supplementalReference;
       const administrations = code === "HI" && reference?.geography_scope === "native_election_administration";
       const towns = code === "CT" && reference?.geography_scope === "native_town_reporting_area";
       const localityActivity = code === "ME" && reference?.geography_scope === "provider_partial_locality_activity";
@@ -778,8 +782,8 @@ function stateParticipationRows() {
       if (reference) {
         try {
           const candidates = reference.geography_scope === "native_partial_county_context"
-            ? observations.filter(row => row.maps_approved === true
-              && row.reference_geometry?.sha256 === reference.sha256)
+            ? observations.filter(row =>
+              row.supplemental_reference_geometry?.sha256 === reference.sha256)
             : observations;
           nativeByFips = bindCountyReference(candidates, collection, reference,
             await loadCountyBinding(code, $("mode").value));
@@ -797,9 +801,11 @@ function stateParticipationRows() {
       }
       if (token !== state.drillToken || state.map !== map) return;
       const contextualIds = new Set([...contextRows.values()].map(row => row.county_id));
+      const supplementalIds = new Set(supplementalReference === reference
+        ? [...nativeByFips.values()].map(row => row.county_id) : []);
       const counties = observations.filter(row => row.maps_approved !== false
         && (!row.reference_geometry || row.reference_geometry.url === file)
-        || contextualIds.has(row.county_id));
+        || contextualIds.has(row.county_id) || supplementalIds.has(row.county_id));
       if (observations.length && !counties.length) {
         if (state.countyResults?.year === 2026 && state.countyResults.coverage[code])
           return drawCountyCountFallback(map, selected, code, 2026, token,
