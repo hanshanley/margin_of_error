@@ -2666,7 +2666,10 @@ function currentGroups() {
 }
 function sourceNote(row) {
   if (!row) return "No observation has been ingested for this selection. Missing is not zero.";
-  return `Source update: ${row.source_date || row.source_update_label || "not dated"}.`
+  const date = row.source_update_label
+    ? `Source update: ${row.source_update_label}.`
+    : `Source date: ${row.source_date || "not dated"}.`;
+  return date
     + (row.status === "retained_after_failure" ? " Retained from an earlier capture after a source failure." : "")
     + (row.quality?.length ? ` Source caveats: ${row.quality.join("; ").replaceAll("_", " ")}.` : "");
 }
