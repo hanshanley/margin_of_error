@@ -62,6 +62,12 @@ class TestWaitForSource(unittest.TestCase):
         self.assertEqual(self.simulate([{"workflow_runs": [full]}, scoped])["status"],
                          "collection_status_unavailable")
 
+    def test_weekly_archive_check_does_not_delay_hourly_publication(self):
+        archive = dict(RUN, id=1, display_title="Check late participation archives")
+        finished = dict(RUN, status="completed", conclusion="success")
+        self.assertEqual(self.simulate([{"workflow_runs": [archive, RUN]}, finished]),
+                         {"status": "collection_completed", "run_id": RUN["id"], "conclusion": "success"})
+
     def test_completed_missing_or_stale_run_does_not_hold_publication(self):
         for runs, expected in (([], "no_collection_in_progress"),
                                ([dict(RUN, status="completed")], "no_collection_in_progress"),

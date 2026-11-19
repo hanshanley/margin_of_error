@@ -12,7 +12,7 @@ ACTIVE = {"queued", "in_progress", "requested", "waiting", "pending"}
 
 
 def is_full_collection(run):
-    return run["event"] == "schedule" or (
+    return (run["event"] == "schedule" and run.get("display_title") != "Check late participation archives") or (
         run["event"] == "workflow_dispatch"
         and run["display_title"] == "Collect full election results"
     )
