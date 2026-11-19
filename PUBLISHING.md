@@ -113,8 +113,13 @@ launchctl print "gui/$(id -u)/com.hanshanley.participation-schedule-fallback"
 ```
 
 The installer uses the existing `hanshanley` GitHub CLI login; it neither creates nor
-copies a token. The check is confined to the election window ending February 1, 2027
-UTC. Without `--apply`, the script makes only read requests. The installed copy,
+copies a token. Automatic full-election recovery ends February 1, 2027 UTC.
+After that, the timer can recover a missed Monday 10:19 UTC check of the six
+registered late participation archives. It gives the scheduled run 90 minutes
+to start, does not repeat a successful weekly run, and waits six hours after a
+failed dispatch or run before retrying. It still publishes accepted data that
+the explorer has not consumed. Without `--apply`, the script makes only read
+requests. The installed copy,
 dispatch journal and logs are in `~/Library/Application Support/ParticipationScheduleFallback`.
 To stop it, use `launchctl bootout "gui/$(id -u)/com.hanshanley.participation-schedule-fallback"`
 and move the matching `~/Library/LaunchAgents/` plist out of that directory to

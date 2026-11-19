@@ -5,11 +5,14 @@ import runpy
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import unittest
+from unittest.mock import patch
+from urllib.parse import parse_qs, urlsplit
 
 
 code = runpy.run_path(str(Path(__file__).with_name("participation-schedule-fallback.py")))
 tick = code["tick"]
 NOW = datetime(2026, 11, 19, 0, 10, tzinfo=timezone.utc)
+LATE = datetime(2027, 2, 1, 12, 0, tzinfo=timezone.utc)
 
 
 def ago(minutes):
@@ -36,14 +39,21 @@ class FallbackTests(unittest.TestCase):
         self.diff = None
         self.previous_source = None
         self.pins = {"d" * 40: "e" * 40, "f" * 40: "e" * 40}
+        self.archive_history = [{"total_count": 0, "workflow_runs": []}]
 
-    def request(self, path, *, raw=False, dispatch=False):
+    def request(self, path, *, raw=False, dispatch=False, archive_only=False):
+        if "/runs?" in path and "created=" in path:
+            self.assertTrue(path.startswith(code["workflow_path"]("collection") + "/runs?"))
+            query = parse_qs(urlsplit(path).query)
+            self.assertEqual(query["created"], [">=2027-02-01T10:19:00+00:00"])
+            self.assertEqual(query["per_page"], ["100"])
+            return self.archive_history[int(query["page"][0]) - 1]
         for stage in self.runs:
             if path == code["workflow_path"](stage) + "/runs?branch=main&per_page=20":
                 return {"workflow_runs": self.runs[stage]}
             if path == code["workflow_path"](stage) + "/dispatches":
                 self.assertTrue(dispatch)
-                self.effects.append(("dispatch", stage))
+                self.effects.append(("dispatch", "archive" if archive_only else stage))
                 if self.fail_dispatch:
                     raise TimeoutError("Response lost")
                 return {"workflow_run_id": 102}
@@ -187,11 +197,51 @@ class FallbackTests(unittest.TestCase):
             self.result()
         self.assertEqual(self.effects, [])
 
-    def test_no_remote_call_after_close(self):
+    def test_no_remote_call_before_election_window(self):
         def unexpected(*args, **kwargs):
             self.fail("Outside the election window")
-        self.assertEqual(tick(code["WINDOW"][1], unexpected, {}, None, apply=True),
+        self.assertEqual(tick(code["WINDOW"][0] - timedelta(seconds=1), unexpected, {}, None, apply=True),
                          {"decision": "outside_election_window"})
+
+    def test_late_missed_slot_dispatches_only_archive_and_records_attempt_first(self):
+        self.assertEqual(self.result(now=LATE - timedelta(minutes=12)), "no_dispatch")
+        self.assertEqual(self.result(now=LATE), "dispatched_archive")
+        self.assertEqual(self.effects, [("journal", {"archive": LATE.isoformat()}),
+                                        ("dispatch", "archive")])
+        self.assertEqual(self.result(now=LATE + timedelta(hours=5)), "no_dispatch")
+
+    def test_late_completed_or_active_archive_is_not_hidden_by_hourly_check_runs(self):
+        slot = (LATE - timedelta(minutes=101)).isoformat()
+        skipped = {**run(0, 0), "created_at": slot, "updated_at": slot, "event": "schedule",
+                   "display_title": "Collect full election results"}
+        self.archive_history = [
+            {"total_count": 101, "workflow_runs": [{**skipped, "id": i} for i in range(1, 101)]},
+            {"total_count": 101, "workflow_runs": [{**skipped, "id": 101, "event": "workflow_dispatch",
+                                                  "display_title": code["ARCHIVE_TITLE"]}]},
+        ]
+        self.assertEqual(self.result(now=LATE + timedelta(days=5)), "no_dispatch")
+        self.archive_history[1]["workflow_runs"][0].update(status="queued", conclusion=None)
+        self.assertEqual(self.result(now=LATE + timedelta(days=5)), "no_dispatch")
+        self.archive_history[1]["workflow_runs"][0].update(status="completed", conclusion="failure")
+        self.assertEqual(self.result(now=LATE + timedelta(days=5)), "dispatched_archive")
+
+    def test_late_source_revision_reaches_consumer_even_before_the_weekly_slot(self):
+        self.backlog()
+        self.assertEqual(self.result(now=code["WINDOW"][1]), "dispatched_publication")
+        self.assertEqual(self.effects[-1], ("dispatch", "publication"))
+
+    def test_lost_archive_dispatch_response_is_not_immediately_retried(self):
+        self.fail_dispatch = True
+        with self.assertRaises(TimeoutError):
+            self.result(now=LATE)
+        self.assertEqual(self.result(now=LATE + timedelta(minutes=5)), "no_dispatch")
+
+    def test_archive_dispatch_posts_the_boolean_as_a_nested_input(self):
+        with patch("subprocess.run") as process:
+            process.return_value.stdout = '{"workflow_run_id":102}'
+            path = code["workflow_path"]("collection") + "/dispatches"
+            self.assertEqual(code["api"]("gh", path, dispatch=True, archive_only=True), {"workflow_run_id": 102})
+            self.assertEqual(process.call_args.args[0][-2:], ["-F", "inputs[archive_only]=true"])
 
 
 if __name__ == "__main__":

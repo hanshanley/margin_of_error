@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 import subprocess
 import tempfile
+from urllib.parse import urlencode
 
 
 SOURCE = "hanshanley/voter-participation"
@@ -24,6 +25,8 @@ WINDOW = (datetime(2026, 11, 3, tzinfo=timezone.utc),
           datetime(2027, 2, 1, tzinfo=timezone.utc))
 MISSED = timedelta(minutes=90)
 RETRY = timedelta(minutes=30)
+ARCHIVE_RETRY = timedelta(hours=6)
+ARCHIVE_TITLE = "Check late participation archives"
 ACTIVE = {"queued", "in_progress", "requested", "waiting", "pending"}
 
 
@@ -34,12 +37,14 @@ def clock(value):
     return observed
 
 
-def api(gh, path, *, raw=False, dispatch=False):
+def api(gh, path, *, raw=False, dispatch=False, archive_only=False):
     args = [gh, "api", "--hostname", "github.com", path]
     if raw:
         args += ["-H", "Accept: application/vnd.github.raw+json"]
     if dispatch:
         args += ["--method", "POST", "-H", "X-GitHub-Api-Version: 2026-03-10", "-f", "ref=main"]
+        if archive_only:
+            args += ["-F", "inputs[archive_only]=true"]
     result = subprocess.run(args, text=True, capture_output=True, timeout=30, check=True,
                             env={**os.environ, "GH_PROMPT_DISABLED": "1", "GH_PAGER": "cat"})
     return json.loads(result.stdout) if result.stdout else None
@@ -52,11 +57,42 @@ def workflow_path(stage):
 
 def history(request, stage):
     runs = request(workflow_path(stage) + "/runs?branch=main&per_page=20")["workflow_runs"]
+    return ordered_runs(runs, stage)
+
+
+def ordered_runs(runs, stage):
     for run in runs:
         if (run["head_branch"] != "main" or type(run["id"]) is not int
                 or run["status"] not in ACTIVE | {"completed"}):
             raise ValueError(f"Unrecognized {stage} run")
     return sorted(runs, key=lambda run: (clock(run["created_at"]), run["id"]), reverse=True)
+
+
+def archive_due(now, request):
+    utc = now.astimezone(timezone.utc)
+    slot = (utc - timedelta(days=utc.weekday())).replace(hour=10, minute=19, second=0, microsecond=0)
+    if now < slot + MISSED:
+        return False
+    seen = set()
+    # Hourly skipped jobs share this workflow and can hide Monday's run after a day.
+    for page in range(1, 4):
+        query = urlencode({"branch": "main", "created": f">={slot.isoformat()}",
+                           "per_page": 100, "page": page})
+        response = request(workflow_path("collection") + "/runs?" + query)
+        runs = ordered_runs(response["workflow_runs"], "archive")
+        for run in runs:
+            if run["id"] in seen or not slot <= clock(run["created_at"]) <= now:
+                return False
+            seen.add(run["id"])
+            if run.get("display_title") == ARCHIVE_TITLE and run.get("event") in {"schedule", "workflow_dispatch"}:
+                if (run["status"] in ACTIVE or run.get("conclusion") == "success"
+                        or now - clock(run["updated_at"]) < ARCHIVE_RETRY):
+                    return False
+        if len(seen) == response["total_count"]:
+            return True
+        if len(runs) < 100:
+            return False
+    return False
 
 
 def pointer(request, repo, tag, file, contract):
@@ -152,9 +188,10 @@ def new_reviewed_collection(request, collections):
 
 
 def tick(now, request, journal, record, *, apply=False):
-    if not WINDOW[0] <= now < WINDOW[1]:
+    if now < WINDOW[0]:
         return {"decision": "outside_election_window"}
-    runs = {stage: history(request, stage) for stage in WORKFLOWS}
+    hourly = now < WINDOW[1]
+    runs = {stage: history(request, stage) for stage in WORKFLOWS if hourly or stage != "health"}
     source = pointer(request, SOURCE, "results-data", "latest.json",
                      "participation.automatic_results_latest.v1")
     live = pointer(request, SITE, "participation-data", "automatic/latest.json",
@@ -186,7 +223,7 @@ def tick(now, request, journal, record, *, apply=False):
     can_collect = ready("collection") and not active("publication") and cooled("collection")
     if changed and can_publish:
         stage, publish_reason = "publication", "unconsumed_source"
-    elif can_collect:
+    elif hourly and can_collect:
         if missed("collection"):
             collect_reason = "missed_schedule"
         elif runs["collection"] and runs["collection"][0]["conclusion"] != "success":
@@ -197,7 +234,11 @@ def tick(now, request, journal, record, *, apply=False):
             stage = "collection"
     if stage is None and not changed and can_publish and new_producer_pin(request, runs["publication"]):
         stage, publish_reason = "publication", "reviewed_producer_changed"
-    if stage is None and ready("health") and missed("health"):
+    if (stage is None and not hourly and not changed and can_collect
+            and ("archive" not in journal or now - clock(journal["archive"]) >= ARCHIVE_RETRY)
+            and archive_due(now, request)):
+        stage, collect_reason = "archive", "missed_weekly_archive"
+    if stage is None and hourly and ready("health") and missed("health"):
         stage = "health"
     report = {"decision": "no_dispatch", "latest_source": accepted, "live_source": consumed,
               "active_workflows": [key for key in runs if active(key)]}
@@ -209,7 +250,10 @@ def tick(now, request, journal, record, *, apply=False):
         # A lost response can mean GitHub accepted the dispatch; never immediately retry it.
         journal[stage] = now.isoformat()
         record(journal)
-        receipt = request(workflow_path(stage) + "/dispatches", dispatch=True)
+        if stage == "archive":
+            receipt = request(workflow_path("collection") + "/dispatches", dispatch=True, archive_only=True)
+        else:
+            receipt = request(workflow_path(stage) + "/dispatches", dispatch=True)
         if receipt is not None:
             run_id = receipt["workflow_run_id"]
             if type(run_id) is not int or run_id < 1:
@@ -236,11 +280,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--gh", default="gh")
     parser.add_argument("--state-dir", type=Path, required=True)
-    parser.add_argument("--apply", action="store_true", help="Allow the three preconfigured dispatches")
+    parser.add_argument("--apply", action="store_true", help="Allow the preconfigured dispatches")
     args = parser.parse_args()
     now = datetime.now(timezone.utc)
     request = lambda path, **kwargs: api(args.gh, path, **kwargs)
-    if not (args.apply and WINDOW[0] <= now < WINDOW[1]):
+    if not (args.apply and WINDOW[0] <= now):
         print(json.dumps(tick(now, request, {}, None), sort_keys=True))
         return
     os.umask(0o077)
@@ -255,7 +299,7 @@ def main():
                 raise ValueError("Unexpected GitHub account; no dispatch was made")
             path = args.state_dir / "dispatches.json"
             journal = json.loads(path.read_text()) if path.exists() else {}
-            if not isinstance(journal, dict) or set(journal) - WORKFLOWS.keys():
+            if not isinstance(journal, dict) or set(journal) - (WORKFLOWS.keys() | {"archive"}):
                 raise ValueError("Invalid fallback journal")
             if any(clock(value) > now for value in journal.values()):
                 raise ValueError("Fallback journal clock is in the future")
