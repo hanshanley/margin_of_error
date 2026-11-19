@@ -1,0 +1,12 @@
+state_code,year,ballots,status,denominator,validated_pct,source_update_label,source_update_timezone,source_url,source_sha256
+SC,2026,2054835,reported,,,,,https://scvotes.gov/state-election-commission-certifies-2026-statewide-general-election/,53f09b73e91b5e0c940db92811fa0ae226d82993717128ec683c43dc76cb95c6
+WY,2026,191713,reported,,,,,https://sos.wyo.gov/Elections/Docs/2026/Results/General/2026_Wyoming_General_Results.zip,c378306bd8df97437a3d11fac7792e23a8297a7e3eded8129a9cd61e3e654ff1
+AZ,2026,2608919,reported,,,,,https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data,474572825f80ae614dfadbf378deaf39fd2a81a09b44ac9b8e2d6f6f3b5e9e29
+VT,2026,311510,reported,506830,61.4624232977527,,,https://outside.vermont.gov/dept/sos/Elections_Division/election_info_resources/elections_results_data/2026_general_election_voter_turnout.pdf,1a8826e99f2c263ed13940b4136c63f80af0e0dbe0c88502cd7d6bfcd8af4b5c
+AK,2026,290323,reported,605433,47.95295268014793,,,https://www.elections.alaska.gov/enr/26GENR/results/ElectionSummaryReportRPT.pdf,6a8315ec13227d1cc8db32181fc2b475c3aa50ba9b88cddc1a8d1834cf5384cc
+MN,2026,2851615,reported,,,11/13/26 1:38 PM,,https://electionresults.sos.mn.gov/Results/CountyStatisticsStatewide/Index?ersElectionId=201,cb9970bc03caf72a0c823ca1f491516021ca2fbb3c9cf69bc3daf02dbfb0b412
+AR,2026,893026,retained_after_failure,,,,,https://arkansas.tally-enr.com/assets/__verdict-download/6a1f15f8fcc7/mw3h9e64-0-7yxhd8qe/2026_General_Election_%26_Judical_Runoff.json,079518a65d5f66385ec1cb5cedcd93a02973d6ae24a0793427af8d08c9fe14bd
+FL,2026,8335497,retained_after_failure,,,,,https://floridaelectionwatch.gov/CountyReportingStatus,f4a4ff86238aadf10336ba428aaef8a8c04374e0774642734968d7d14362ce72
+CT,2026,1150127,retained_after_failure,,,,,https://ctemspublic.tgstg.net/ng-app/data/election/108/52337/voterTurnout_Electiondata.json,4edd27b258832d7ab7013f404383f273fc292bbd9f91e131c4e5aa953ee42404
+HI,2026,392428,reported,,,,,https://elections.hawaii.gov/wp-content/results/2026%20General/histatewide.pdf,f59ac156768347faf26fa2ff71a02227b66625c3461058ddbc3e65647c276fec
+DC,2026,185086,retained_after_failure,457371,40.46736675477894,2026-11-04T04:36:21.283Z,UTC,https://electionresults.dcboe.org/cityWide/getVoterSummaryInfo/2026-General-Election,fd6e5c4d2349d7b536734a31ccdb1ef20eeedc9ed2110dddcb3263268b159887
