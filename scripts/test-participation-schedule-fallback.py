@@ -30,6 +30,8 @@ class FallbackTests(unittest.TestCase):
         self.journal = {}
         self.fail_dispatch = False
         self.main = "d" * 40
+        self.source_main = "d" * 40
+        self.diff = None
         self.pins = {"d" * 40: "e" * 40, "f" * 40: "e" * 40}
 
     def request(self, path, *, raw=False, dispatch=False):
@@ -45,9 +47,13 @@ class FallbackTests(unittest.TestCase):
         if "/git/ref/tags/" in path:
             return {"object": {"type": "commit", "sha": "d" * 40}}
         if "/git/ref/heads/" in path:
-            return {"object": {"type": "commit", "sha": self.main}}
+            return {"object": {"type": "commit", "sha": self.source_main
+                               if code["SOURCE"] in path else self.main}}
+        if "/compare/" in path:
+            return self.diff
         if "/contents/.github/workflows/automatic-runtime.yml?" in path:
-            pin = self.pins.get(path.split("?ref=")[-1])
+            ref = path.split("?ref=")[-1]
+            pin = self.pins.get(self.main if ref == "main" else ref)
             body = (f"  repository: {code['SOURCE']}\n  ref: {pin}\n  path: research-source\n").encode()
             return {"path": ".github/workflows/automatic-runtime.yml", "encoding": "base64",
                     "size": len(body), "content": base64.b64encode(body).decode()}
@@ -100,6 +106,33 @@ class FallbackTests(unittest.TestCase):
             self.assertEqual(self.result(), "no_dispatch")
             self.runs[stage].pop()
         self.assertEqual(self.effects, [])
+
+    def test_pinned_source_changes_collect_before_analysis_only_republish(self):
+        self.main, self.source_main = "f" * 40, "1" * 40
+        self.pins[self.main] = self.source_main
+        self.runs["publication"] = [run(45, 35)]
+        self.runs["collection"] = [{**run(55, 40), "display_title": "Collect full election results"}]
+        self.diff = {"status": "ahead", "merge_base_commit": {"sha": "d" * 40},
+                     "files": [{"filename": "scripts/results_granular.py"}]}
+        report = tick(NOW, self.request, self.journal, lambda data: None, apply=True)
+        self.assertEqual(report["decision"], "dispatched_collection")
+        self.assertEqual(report["collection_reason"], "reviewed_collector_changed")
+        self.runs["collection"].insert(0, run(1, 0, status="queued", conclusion=None))
+        self.assertEqual(self.result(), "no_dispatch")
+
+    def test_analysis_only_change_and_unreviewed_pin_do_not_collect_early(self):
+        self.main, self.source_main = "f" * 40, "1" * 40
+        self.runs["publication"] = [run(45, 35)]
+        self.runs["collection"] = [{**run(55, 40), "display_title": "Collect full election results"}]
+        self.diff = {"status": "ahead", "merge_base_commit": {"sha": "d" * 40},
+                     "files": [{"filename": "scripts/results_granular.py"}]}
+        self.assertEqual(self.result(apply=False), "no_dispatch")
+        self.pins[self.main] = self.source_main
+        self.diff["files"] = [{"filename": "scripts/automatic_runtime.py"}]
+        self.assertEqual(self.result(apply=False), "would_dispatch_publication")
+        self.diff["files"] = [{"filename": "scripts/results_granular.py"}]
+        self.backlog()
+        self.assertEqual(self.result(apply=False), "would_dispatch_publication")
 
     def test_successful_stale_collection_or_cooled_failure_gets_recovery(self):
         self.runs["collection"] = [run(110, 12, conclusion="failure")]

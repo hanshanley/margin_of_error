@@ -101,6 +101,32 @@ def new_producer_pin(request, publications):
         return False
 
 
+def new_reviewed_collection(request, collections):
+    previous = next((run for run in collections if run["status"] == "completed"
+                     and run["conclusion"] == "success"
+                     and run.get("display_title") == "Collect full election results"), None)
+    if not previous or not re.fullmatch(r"[a-f0-9]{40}", previous.get("head_sha", "")):
+        return False
+    try:
+        main = request(f"repos/{SOURCE}/git/ref/heads/main")["object"]
+        if main["type"] != "commit" or not re.fullmatch(r"[a-f0-9]{40}", main["sha"]):
+            return False
+        sha, base = main["sha"], previous["head_sha"]
+        if sha == base or producer_pin(request, "main") != sha:
+            return False
+        diff = request(f"repos/{SOURCE}/compare/{base}...{sha}?per_page=1")
+        files = diff["files"]
+        if (diff["status"] != "ahead" or diff["merge_base_commit"]["sha"] != base
+                or not isinstance(files, list) or not 0 < len(files) < 300):
+            return False
+        return any(re.fullmatch(r"(?:scripts/results_[^/]+\.py|"
+                                r"data/results-intake/registry\.json|"
+                                r"\.github/workflows/election-night\.yml)", name)
+                   for file in files for name in (file["filename"], file.get("previous_filename", "")))
+    except (KeyError, TypeError, ValueError, subprocess.SubprocessError):
+        return False
+
+
 def tick(now, request, journal, record, *, apply=False):
     if not WINDOW[0] <= now < WINDOW[1]:
         return {"decision": "outside_election_window"}
@@ -129,25 +155,30 @@ def tick(now, request, journal, record, *, apply=False):
     def cooled(stage):
         return not runs[stage] or now - clock(runs[stage][0]["updated_at"]) >= RETRY
 
-    stage, publish_reason = None, None
-    if ready("publication") and not active("collection") and cooled("publication"):
-        if changed:
-            publish_reason = "unconsumed_source"
-        elif new_producer_pin(request, runs["publication"]):
-            publish_reason = "reviewed_producer_changed"
-    if publish_reason:
-        stage = "publication"
-    elif ready("collection") and not active("publication") and cooled("collection") and (
-        missed("collection")
-        or (runs["collection"] and runs["collection"][0]["conclusion"] != "success")
-    ):
-        stage = "collection"
-    elif ready("health") and missed("health"):
+    stage, publish_reason, collect_reason = None, None, None
+    can_publish = ready("publication") and not active("collection") and cooled("publication")
+    can_collect = ready("collection") and not active("publication") and cooled("collection")
+    if changed and can_publish:
+        stage, publish_reason = "publication", "unconsumed_source"
+    elif can_collect:
+        if missed("collection"):
+            collect_reason = "missed_schedule"
+        elif runs["collection"] and runs["collection"][0]["conclusion"] != "success":
+            collect_reason = "collection_failed"
+        elif not changed and new_reviewed_collection(request, runs["collection"]):
+            collect_reason = "reviewed_collector_changed"
+        if collect_reason:
+            stage = "collection"
+    if stage is None and not changed and can_publish and new_producer_pin(request, runs["publication"]):
+        stage, publish_reason = "publication", "reviewed_producer_changed"
+    if stage is None and ready("health") and missed("health"):
         stage = "health"
     report = {"decision": "no_dispatch", "latest_source": accepted, "live_source": consumed,
               "active_workflows": [key for key in runs if active(key)]}
     if publish_reason:
         report["publication_reason"] = publish_reason
+    if collect_reason:
+        report["collection_reason"] = collect_reason
     if stage and apply:
         # A lost response can mean GitHub accepted the dispatch; never immediately retry it.
         journal[stage] = now.isoformat()
