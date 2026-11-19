@@ -3226,7 +3226,10 @@ function stateMap(byName, provisional = false) {
     "pointer-events": "none", "aria-hidden": "true",
   });
   svg.append(state.map.stateSelectionOutline);
-  setViewport(previousViewport || state.viewport);
+  const linkedState = !state.initialized && params.get("map-level") === "county" && $("map-level").value === "county"
+    && params.get("state") === state.selectedState ? items.get(stateCode()) : null;
+  if (linkedState) fit(linkedState.bounds);
+  else setViewport(previousViewport || state.viewport);
 }
 function projectInside(feature, point) {
     const projected = rings(feature.geometry).map(ring => ring.map(point));

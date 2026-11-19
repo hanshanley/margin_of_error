@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import re
 import unicodedata
+from urllib.parse import urlencode
 
 from playwright.sync_api import expect, sync_playwright
 
@@ -55,6 +56,10 @@ for mode, category in [("in_person_early", "inperson"), ("mail_returned", "retur
     expected[mode] = values
 assert "2339422" not in expected["in_person_early"]
 cases = []
+query = urlencode({"view": "states", "year": 2026, "basis": "cvap", "dimension": "overall",
+    "group": "All groups", "map-color": "turnout", "map-level": "county", "mode": "available"})
+overview = base + "/voter-participation/?" + query
+state_link = overview + "&state=Maine"
 
 
 def choose(page, mode="available"):
@@ -88,8 +93,13 @@ with sync_playwright() as runtime:
             page = context.new_page()
             errors = []
             page.on("pageerror", lambda error: errors.append(str(error)))
-            page.goto(base + "/voter-participation/", wait_until="domcontentloaded")
-            expect(page.locator('.map-feature[data-state="Maine"]')).to_have_count(1, timeout=90000)
+            page.goto(overview, wait_until="domcontentloaded")
+            expect(page.locator("svg.turnout-map")).to_have_attribute("data-zoom", "1", timeout=90000)
+            page.goto(state_link, wait_until="domcontentloaded")
+            verify(page, "in_person_early")
+            page.locator("#map-reset").click()
+            expect(page.locator("svg.turnout-map")).to_have_attribute("data-zoom", "1")
+            expect(page.locator("#title")).to_have_text("Participation across the United States")
             for mode in ["in_person_early", "mail_returned"]:
                 choose(page, mode)
                 verify(page, mode)
@@ -128,34 +138,26 @@ with sync_playwright() as runtime:
             assert not errors, errors
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             cases.append(dict(mobile=mobile, source_modes=2, all_mapped_values_checked=True,
+                direct_state_link=True, national_overview_preserved=True, reset_to_national=True,
                 mapped_per_mode=480, reference_shapes=528, source_held_per_mode=104,
                 reference_held_per_mode=48, true_contextual_year=2024, official_not_provider=True,
                 unknown_clears_stale_detail=True, methods_roundtrip=True, no_rates=True))
             context.close()
         context = browser.new_context(viewport={"width": 1440, "height": 1100})
         page = context.new_page()
-        def malformed(route):
-            response = route.fetch()
-            data = json.loads(gzip.decompress(response.body()))
-            data["county_frames"]["in_person_early"].pop()
-            headers = dict(response.headers)
-            headers.pop("content-length", None)
-            headers.pop("content-encoding", None)
-            route.fulfill(status=200, headers=headers, body=gzip.compress(json.dumps(data).encode()))
-        page.route("**/participation-local/ME.json.gz", malformed)
-        page.goto(base + "/voter-participation/", wait_until="domcontentloaded")
-        expect(page.locator('.map-feature[data-state="Maine"]')).to_have_count(1, timeout=90000)
-        choose(page)
-        expect(page.locator("#geography-note")).to_contain_text("Unqualified Maine locality activity frame", timeout=90000)
+        reference_url = base + inputs["reference"]["url"]
+        page.route(reference_url, lambda route: route.fulfill(status=200, body=b"invalid Maine reference"))
+        page.goto(state_link, wait_until="domcontentloaded")
+        expect(page.locator("#geography-note")).to_contain_text("Native county reference checksum disagrees", timeout=90000)
         expect(page.locator(".geographic-detail .map-feature")).to_have_count(0)
-        page.unroute("**/participation-local/ME.json.gz", malformed)
+        page.unroute(reference_url)
         page.get_by_role("button", name="Retry geographic detail").click()
         verify(page, "in_person_early")
         context.close()
     finally:
         browser.close()
 proof = dict(status="PASS_ME_partial_locality_activity_not_county_or_precinct_turnout",
-    base_url=base, cases=cases, invalid_frame_rejected=True, actual_retry_recovered=True,
+    base_url=base, cases=cases, invalid_reference_rejected=True, actual_retry_recovered=True,
     valid_source_overrides=False)
 args.proof.write_text(json.dumps(proof, indent=2) + "\n")
 print(json.dumps(proof))
