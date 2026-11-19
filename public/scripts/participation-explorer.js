@@ -1695,7 +1695,9 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
     || metadata.source_id === "20261110-massachusetts-native-local-counts-01");
   const referenceContext = metadata.reference_context_only === true;
   const nativeReporting = nativeWards || massachusettsReporting || referenceContext;
-  if (!file || !(ufMode() || ["available", "official"].includes($("mode").value))) {
+  const philadelphia = code === "PA" && metadata.source_id === "PA-philadelphia-division-ballots";
+  if (!file || !(ufMode() || ["available", "official"].includes($("mode").value))
+      || philadelphia && $("mode").value === "available") {
     if (map.full[0] / state.viewport[2] >= 2.3 && state.countyResults?.year === 2026
       && state.countyResults.coverage[code] && matchedPrecinctParticipationMode())
       return drawCountyCountFallback(map, selected, code, 2026, token,
@@ -1787,9 +1789,12 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
       : `Color shows reported ballot counts, not turnout rates. All ${nativeWards ? "ward" : "precinct"} rates remain withheld.`)
       : "Reported ballots / source-defined electorate where qualified. Gray shapes can still carry direct counts.",
     `${metadata.boundary_label || "Reviewed 2026 reference boundaries"}. Rates remain withheld where inputs or electorate definitions are unqualified. State-level colors underneath are separate, never assigned to precincts.`);
-  if (metadata.complete_download_url) {
+  const downloadURL = metadata.complete_download_url
+    || (philadelphia ? (await loadNativeIndex()).automatic_runtime?.complete_download?.url : null);
+  if (token !== state.drillToken || state.map !== map) return;
+  if (downloadURL) {
     const complete = html("a", "source-link", "Complete originals, matched/withheld rows and exact geometry (ZIP)");
-    complete.href = metadata.complete_download_url; $("caption").append(" ", complete);
+    complete.href = downloadURL; $("caption").append(" ", complete);
   }
   $("coverage-note").textContent = referenceContext ? metadata.notes
     : minnesotaNative ? metadata.notes : massachusettsReporting ? metadata.notes : doverNativeWards
