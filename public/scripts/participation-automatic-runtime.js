@@ -371,10 +371,11 @@ export async function loadAutomaticRecordedHouse(selection) {
 }
 
 export async function loadAutomaticTurnoutHistory(code) {
-  const states = { VA: ["virginia", 1976, "total_voting"],
-    WA: ["washington", 1980, "ballots_counted"] };
+  const states = { TX: ["texas", 1970, 2024, 2, "total_voting", "Reported turnout count"],
+    VA: ["virginia", 1976, 2025, 1, "total_voting", "Total voting"],
+    WA: ["washington", 1980, 2025, 1, "ballots_counted", "Ballots counted"] };
   if (!Object.hasOwn(states, code)) return null;
-  const [name, first, measure] = states[code];
+  const [name, first, lastHistorical, step, measure, countLabel] = states[code];
   const manifest = await loadAutomaticRuntime();
   const sources = manifest.house_sources;
   const files = sources?.general_election_turnout_history?.[code];
@@ -385,18 +386,21 @@ export async function loadAutomaticTurnoutHistory(code) {
       || [files.data, files.csv].some(file => file.url !== `${sources.base_url}/${file.path}`))
     throw new Error("Turnout history is not bound to the accepted runtime");
   const data = await checkedAutomaticBody(files.data);
-  const last = data.current_election_status === "row_published" ? 2026 : 2025;
+  const last = data.current_election_status === "row_published" ? 2026 : lastHistorical;
+  const printedRate = code === "TX" ? /^[0-9]{1,3}(?:\.[0-9]{1,2})?%?$/ : /^[0-9]{1,3}(?:\.[0-9]{1,2})?%$/;
   const rows = data.complete_native_query;
   if (data.contract !== "participation.statewide_general_election_history.v1" || data.state_code !== code
       || !["reported", "retained_after_failure"].includes(data.status)
       || !["row_published", "not_yet_published"].includes(data.current_election_status)
-      || !Array.isArray(rows) || rows.length !== last - first + 1
-      || rows.some((row, i) => row.year !== last - i || !Number.isSafeInteger(row[measure])
+      || (code === "TX" && data.native_measure !== "Turnout")
+      || !Array.isArray(rows) || rows.length !== (last - first) / step + 1
+      || rows.some((row, i) => row.year !== last - i * step || !Number.isSafeInteger(row[measure])
         || !Number.isSafeInteger(row.registered_voters) || row[measure] < 0
         || row.registered_voters <= 0 || row[measure] > row.registered_voters
-        || typeof row.rate_qualified !== "boolean" || !/^[0-9]{1,3}(?:\.[0-9]{1,2})?%$/.test(row.published_turnout)))
+        || typeof row.rate_qualified !== "boolean" || typeof row.published_turnout !== "string"
+        || !printedRate.test(row.published_turnout)))
     throw new Error("Turnout history scope or rows differ");
-  return { data, measure, csv: files.csv.url, complete: manifest.complete_download.url };
+  return { data, measure, countLabel, csv: files.csv.url, complete: manifest.complete_download.url };
 }
 
 export async function loadAutomaticCongress() {
