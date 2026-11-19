@@ -1,3 +1,4 @@
+import base64
 import runpy
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -15,7 +16,7 @@ def ago(minutes):
 
 def run(created, updated, *, status="completed", conclusion="success"):
     return {"id": 101, "head_branch": "main", "status": status, "conclusion": conclusion,
-            "created_at": ago(created), "updated_at": ago(updated)}
+            "created_at": ago(created), "updated_at": ago(updated), "head_sha": "d" * 40}
 
 
 class FallbackTests(unittest.TestCase):
@@ -28,6 +29,8 @@ class FallbackTests(unittest.TestCase):
         self.effects = []
         self.journal = {}
         self.fail_dispatch = False
+        self.main = "d" * 40
+        self.pins = {"d" * 40: "e" * 40, "f" * 40: "e" * 40}
 
     def request(self, path, *, raw=False, dispatch=False):
         for stage in self.runs:
@@ -41,6 +44,13 @@ class FallbackTests(unittest.TestCase):
                 return {"workflow_run_id": 102}
         if "/git/ref/tags/" in path:
             return {"object": {"type": "commit", "sha": "d" * 40}}
+        if "/git/ref/heads/" in path:
+            return {"object": {"type": "commit", "sha": self.main}}
+        if "/contents/.github/workflows/automatic-runtime.yml?" in path:
+            pin = self.pins.get(path.split("?ref=")[-1])
+            body = (f"  repository: {code['SOURCE']}\n  ref: {pin}\n  path: research-source\n").encode()
+            return {"path": ".github/workflows/automatic-runtime.yml", "encoding": "base64",
+                    "size": len(body), "content": base64.b64encode(body).decode()}
         self.assertTrue(raw)
         self.assertTrue(path.endswith("?ref=" + "d" * 40))
         return self.live if "/automatic/latest.json?" in path else self.source
@@ -67,6 +77,21 @@ class FallbackTests(unittest.TestCase):
         self.assertEqual((report["decision"], report["run_id"]), ("dispatched_publication", 102))
         self.assertEqual(self.effects, [("journal", {"publication": NOW.isoformat()}),
                                         ("dispatch", "publication")])
+
+    def test_new_reviewed_producer_republishes_the_same_source_once(self):
+        self.main = "f" * 40
+        self.runs["publication"] = [run(45, 35)]
+        self.assertEqual(self.result(), "no_dispatch")  # Site-only changes do not need a publication.
+        self.pins[self.main] = None
+        self.assertEqual(self.result(), "no_dispatch")
+        self.pins[self.main] = "1" * 40
+        report = tick(NOW, self.request, self.journal, lambda data: None, apply=True)
+        self.assertEqual(report["decision"], "dispatched_publication")
+        self.assertEqual(report["publication_reason"], "reviewed_producer_changed")
+        self.assertEqual(self.result(), "no_dispatch")
+        self.runs["publication"] = [{**run(45, 35), "head_sha": self.main}]
+        self.journal.clear()
+        self.assertEqual(self.result(), "no_dispatch")
 
     def test_already_running_collectors_and_publishers_are_not_duplicated(self):
         self.backlog()

@@ -1,6 +1,7 @@
 """Recover a missed election update from an independent Unix scheduler."""
 
 import argparse
+import base64
 from datetime import datetime, timedelta, timezone
 import fcntl
 import json
@@ -67,6 +68,39 @@ def pointer(request, repo, tag, file, contract):
     return body
 
 
+def producer_pin(request, ref):
+    repo, workflow = WORKFLOWS["publication"]
+    path = f".github/workflows/{workflow}"
+    file = request(f"repos/{repo}/contents/{path}?ref={ref}")
+    if file["path"] != path or file["encoding"] != "base64" or not 0 < file["size"] <= 16384:
+        raise ValueError("Unexpected publisher workflow contents")
+    body = base64.b64decode("".join(file["content"].split()), validate=True)
+    if len(body) != file["size"]:
+        raise ValueError("Incomplete publisher workflow contents")
+    pattern = (rf"(?m)^[ \t]+repository: {re.escape(SOURCE)}[ \t]*\r?\n"
+               r"[ \t]+ref: ([a-f0-9]{40})[ \t]*\r?\n[ \t]+path: research-source[ \t]*\r?$")
+    matches = re.findall(pattern, body.decode("utf-8"))
+    if len(matches) != 1:
+        raise ValueError("Missing or ambiguous reviewed producer pin")
+    return matches[0]
+
+
+def new_producer_pin(request, publications):
+    last_good = next((run for run in publications if run["status"] == "completed"
+                      and run["conclusion"] == "success"), None)
+    if not last_good or not re.fullmatch(r"[a-f0-9]{40}", last_good.get("head_sha", "")):
+        return False
+    try:
+        main = request(f"repos/{SITE}/git/ref/heads/main")["object"]
+        if main["type"] != "commit" or not re.fullmatch(r"[a-f0-9]{40}", main["sha"]):
+            raise ValueError("Invalid publisher branch ref")
+        previous = last_good["head_sha"]
+        return main["sha"] != previous and producer_pin(request, main["sha"]) != producer_pin(request, previous)
+    except (KeyError, TypeError, ValueError, subprocess.SubprocessError):
+        # An unreadable workflow is not evidence that the publisher changed.
+        return False
+
+
 def tick(now, request, journal, record, *, apply=False):
     if not WINDOW[0] <= now < WINDOW[1]:
         return {"decision": "outside_election_window"}
@@ -95,8 +129,13 @@ def tick(now, request, journal, record, *, apply=False):
     def cooled(stage):
         return not runs[stage] or now - clock(runs[stage][0]["updated_at"]) >= RETRY
 
-    stage = None
-    if changed and ready("publication") and not active("collection") and cooled("publication"):
+    stage, publish_reason = None, None
+    if ready("publication") and not active("collection") and cooled("publication"):
+        if changed:
+            publish_reason = "unconsumed_source"
+        elif new_producer_pin(request, runs["publication"]):
+            publish_reason = "reviewed_producer_changed"
+    if publish_reason:
         stage = "publication"
     elif ready("collection") and not active("publication") and cooled("collection") and (
         missed("collection")
@@ -107,6 +146,8 @@ def tick(now, request, journal, record, *, apply=False):
         stage = "health"
     report = {"decision": "no_dispatch", "latest_source": accepted, "live_source": consumed,
               "active_workflows": [key for key in runs if active(key)]}
+    if publish_reason:
+        report["publication_reason"] = publish_reason
     if stage and apply:
         # A lost response can mean GitHub accepted the dispatch; never immediately retry it.
         journal[stage] = now.isoformat()
