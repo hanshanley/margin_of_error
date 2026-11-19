@@ -728,14 +728,15 @@ function stateParticipationRows() {
       const administrations = code === "HI" && reference?.geography_scope === "native_election_administration";
       const towns = code === "CT" && reference?.geography_scope === "native_town_reporting_area";
       const localityActivity = code === "ME" && reference?.geography_scope === "provider_partial_locality_activity";
+      const maineTownTurnout = code === "ME" && reference?.geography_scope === "native_partial_town_turnout";
       const countyNamedContext = code === "IL" && reference?.geography_scope === "county_context_not_source_authority_territory";
       const massachusettsCities = code === "MA" && reference?.geography_scope === "native_partial_city_reporting_context";
       const massachusettsCityReferences = massachusettsCities && observations.every(row =>
         row.native_reporting_reference_snapshot === "20261110-massachusetts-city-precinct-reference-02"
         && row.held_reporting_reference_rows === 0);
       const nativeCities = massachusettsCities || code === "NH" && reference?.geography_scope === "native_partial_city_reporting_context";
-      const municipalityContext = towns || localityActivity || nativeCities;
-      const partialMunicipalityContext = localityActivity || nativeCities;
+      const municipalityContext = towns || localityActivity || maineTownTurnout || nativeCities;
+      const partialMunicipalityContext = localityActivity || maineTownTurnout || nativeCities;
       const providerActivity = observations.length > 0
         && observations.every(row => row.source_provider === "civicAPI early activity");
       const file = reference?.url || state.context?.geometry.county?.[code];
@@ -851,6 +852,8 @@ function stateParticipationRows() {
                 ? `No native city source observation for this reference municipality. Only ${observations.map(row => row.county).join(", ")} are loaded; other areas are unknown, not zero or county allocations.`
                 : localityActivity
                 ? "No uniquely matched source activity count for this reference area. Ambiguous and unmatched regions are held, not allocated or filled with zero."
+                : maineTownTurnout
+                ? "No reviewed town turnout report for this municipality. Its count and rate are unknown, not zero."
                 : countyCoverageMessage(observations);
               $("current-county-detail")?.replaceChildren(html("h4", "", feature.properties.name),
                 html("p", "selection-note", message));
@@ -874,7 +877,7 @@ function stateParticipationRows() {
       }
       map.localLayer = true;
       map.stateTable ||= { rows: state.table, columns: state.columns };
-      setTable(counties, [["county", nativeCities ? "City" : countyNamedContext ? "County-named source region" : localityActivity ? "Source locality" : towns ? "Town" : administrations ? "Election administration" : "County"], ["ballots", countLabel],
+      setTable(counties, [["county", nativeCities ? "City" : countyNamedContext ? "County-named source region" : localityActivity ? "Source locality" : towns || maineTownTurnout ? "Town" : administrations ? "Election administration" : "County"], ["ballots", countLabel],
         ["denominator", "Source electorate"], ["reported_pct", "Reported-ballot fraction"],
         ["reported_units", "Precincts reporting"], ["total_units", "Total precincts"], ["quality", "Notes"]]);
       const registryTable = $("show-registry-context-table");
@@ -885,7 +888,8 @@ function stateParticipationRows() {
           ? `City source counts in ${state.selectedState}` : countyNamedContext
           ? `Source-region activity in ${state.selectedState}` : localityActivity
           ? `Local source activity in ${state.selectedState}` : `${towns ? "Town" : "Local"} participation in ${state.selectedState}`,
-        countsOnly ? (providerActivity
+        maineTownTurnout ? "Townwide ballots cast divided by the same report’s registered voters. Select a town to see its source."
+        : countsOnly ? (providerActivity
           ? `${countLabel}. This is provider-reported source activity, not ${countyNamedContext ? "whole-county totals, " : ""}official full-election turnout, certified ballots or unique people.`
           : massachusettsCities ? "Native Boston and Somerville source counts, not statewide/county totals, unique people or analysis rates. Their distinct printed count fields and source disagreements remain separate."
           : nativeCities ? "Native source city counts only, not statewide/county totals or analysis rates. Printed parents and derived ward-total sums stay distinct; source disagreements and federal-only fields are retained."
@@ -897,7 +901,7 @@ function stateParticipationRows() {
           : "Color shows source participation counts; no county turnout rates are qualified. Select a county for its original counts.")
           : "Reported ballots / source-defined electorate. Select a county, then a precinct or reporting row in the sidebar.",
         (countsOnly ? `Not final turnout. Color shows counts, not a fraction; ${municipalityContext ? "localities" : "counties"} have different population sizes. `
-          : "Not final turnout. County colors use their own reviewed reported fraction, not the UF state population denominator. Counts with missing or withheld rates remain gray. ")
+          : `Not final turnout. ${maineTownTurnout ? "Town" : "County"} colors use their own reviewed reported fraction, not the UF state population denominator. Counts with missing or withheld rates remain gray. `)
         + (providerActivity ? "Native source dates are retained below and differ across frames; collector 2026 context is not an independently qualified native election identifier. Early and returned frames are never added. " : "")
         + (massachusettsCities ? `Two native city sources use 350 valid unchanged municipal display references from 351 originals. Other 349 source areas have no count; invalid Wayland geometry is held. All 307 native reporting rows remain available; ${massachusettsCityReferences ? "all 307 have separate checked references, including 32 direct city polygons in Somerville." : "303 have separate checked references and four split-parent rows stay table-only."} No certified 2026 legal boundary claim or source repair. `
           : nativeCities ? `${observations.length} native source cities use full259-area 2024 municipality context;${259-observations.length} areas remain unknown, not zero. All${data.precincts.filter(row => row.state_code === "NH").length} ward rows remain available in tables. `
@@ -907,6 +911,7 @@ function stateParticipationRows() {
           + "No newly certified2026 legal precinct boundaries are claimed. Source amendments, school-district splits, register stocks, native printed percentages and federal-only cells remain separate. "
           : countyNamedContext ? "102 literal county-named source regions use Census county shapes as context only, not qualified electoral-authority territories. Six city-named records remain separate and unallocated in each mode; they are never added into county records. These are not whole-county totals or precinct observations. "
           : localityActivity ? "480 source regions match the full 528-area 2024 contextual municipality reference. Per mode, 104 source regions and 48 reference areas remain held, not allocated or filled with zero. Historical counts are never transferred. Not county totals or certified 2026 precincts. "
+          : maineTownTurnout ? "Town clerk observations use 2024 contextual municipality shapes, not county totals or certified 2026 precincts. This frame is separate from early and mail activity. "
           : towns ? "169 native towns use the held full 2024 contextual municipality reference, not 2026 election or precinct boundaries. Native Total is separate, not an extra town. No nine-county totals or precinct observations are inferred. "
           : administrations ? "Four election administrations use grouped full 2026 Census county components; Maui includes Kalawao. No separate Maui/Kalawao count is supplied, allocated or duplicated. These are not certified precinct boundaries. "
           : providerActivity ? "Provider-region identities are separately matched to the full 2026 Census county reference; these are not native FIPS, official county parents or precincts. "
@@ -937,6 +942,8 @@ function stateParticipationRows() {
         ? "Illinois · 102 county-named source records on county context · six city-named records per mode remain separate and unallocated. Not whole-county totals or qualified source-authority territories; all rates withheld. "
         : localityActivity
         ? "Maine · 480 mapped local source counts · 528 full 2024 contextual areas · 104 source regions / 48 reference areas held per mode · no rates. Missing is not zero; no county or precinct allocation. "
+        : maineTownTurnout
+        ? `Maine · ${fmt(observed)} reported town turnout rate on ${fmt(features.length)} contextual areas. Unreported areas are unknown; no county or precinct allocation. `
         : towns
         ? "Connecticut · 169 native town observations · 2024 contextual municipality shapes · no analysis rates. Not nine county totals or certified 2026 precincts. "
         : administrations
@@ -948,7 +955,7 @@ function stateParticipationRows() {
           ? `Only ${fmt(nativeByFips.size)} of ${fmt(reference.counties)} counties have native parents in this source; other counties are missing, not zero. ` : "")
         + (availableCounts < counties.length
           ? `${fmt(availableCounts)} available participation counts; ${fmt(counties.length - availableCounts)} source totals are withheld, not zero turnout. ` : "")
-        + "Gray does not mean zero participation; select a county to inspect its actual counts and missingness. "
+        + `Gray does not mean zero participation; select a ${maineTownTurnout ? "town" : "county"} to inspect its actual counts and missingness. `
         + "Precinct mapping uses a separate, source-specific layer; use the sidebar where a qualified 2026 layer is available. "
         + contextError
         + ($("map-color").value === "margin" ? "This local layer shows participation, not party margins." : "");
