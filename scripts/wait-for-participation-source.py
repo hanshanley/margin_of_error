@@ -1,4 +1,4 @@
-"""Let an already-started scheduled election collection finish before publishing."""
+"""Let an already-started full election collection finish before publishing."""
 
 import json
 import time
@@ -7,8 +7,15 @@ from urllib.request import Request, urlopen
 
 
 SOURCE_ACTIONS = "https://api.github.com/repos/hanshanley/voter-participation/actions"
-LATEST = "/workflows/election-night.yml/runs?branch=main&event=schedule&per_page=1"
+LATEST = "/workflows/election-night.yml/runs?branch=main&per_page=20"
 ACTIVE = {"queued", "in_progress", "requested", "waiting", "pending"}
+
+
+def is_full_collection(run):
+    return run["event"] == "schedule" or (
+        run["event"] == "workflow_dispatch"
+        and run["display_title"] == "Collect full election results"
+    )
 
 
 def request(path):
@@ -25,15 +32,15 @@ def wait_for_collection(fetch=request, *, monotonic=time.monotonic, sleep=time.s
     deadline = monotonic() + wait_seconds
     try:
         runs = fetch(LATEST)["workflow_runs"]
-        if not runs or runs[0]["status"] == "completed":
+        run = next((item for item in runs if is_full_collection(item)), None)
+        if run is None or run["status"] == "completed":
             return {"status": "no_collection_in_progress"}
-        run = runs[0]
         run_id = run["id"]
         created = datetime.fromisoformat(run["created_at"].replace("Z", "+00:00"))
         if (type(run_id) is not int or run_id <= 0 or run["status"] not in ACTIVE
-                or run["head_branch"] != "main" or run["event"] != "schedule"
+                or run["head_branch"] != "main"
                 or created.utcoffset() is None):
-            raise ValueError("Unexpected scheduled run evidence")
+            raise ValueError("Unexpected full collection evidence")
         if not timedelta(0) <= now - created <= timedelta(minutes=75):
             return {"status": "no_recent_collection_in_progress"}
 
@@ -42,7 +49,8 @@ def wait_for_collection(fetch=request, *, monotonic=time.monotonic, sleep=time.s
             if monotonic() >= deadline:
                 break
             observed = fetch(f"/runs/{run_id}")
-            if observed["id"] != run_id or observed["event"] != "schedule":
+            if (observed["id"] != run_id or observed["head_branch"] != "main"
+                    or observed["event"] != run["event"] or not is_full_collection(observed)):
                 raise ValueError("Collection run identity changed")
             if observed["status"] == "completed":
                 return {"status": "collection_completed", "run_id": run_id,

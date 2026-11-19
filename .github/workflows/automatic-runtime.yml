@@ -33,7 +33,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: scripts/wait-for-participation-source.py
 
-      - name: Give the current scheduled collection time to publish
+      - name: Give the current full collection time to publish
         run: |
           python3 scripts/wait-for-participation-source.py | tee -a "$GITHUB_STEP_SUMMARY"
 

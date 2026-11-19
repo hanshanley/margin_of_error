@@ -100,6 +100,11 @@ fallback also runs the existing issue monitor if its own schedule is missed. An
 accepted dispatch and a successful data activation are distinct; confirm the latter
 with `input_results_version` in `automatic/latest.json`.
 
+The native scheduled publisher gives an already-running full collector time to
+finish, whether GitHub's schedule or the independent timer started it. Scoped
+manual collections do not hold the publisher. The wait is bounded and does not
+replace validation of the accepted data pointer.
+
 On the maintainer's Mac, run from a reviewed website checkout:
 
 ```bash
