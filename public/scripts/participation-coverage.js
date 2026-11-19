@@ -1,6 +1,113 @@
 import { loadDatasetCatalog } from "./participation-dataset.js";
 import { countStates, loadCountIndex } from "./participation-counts.js";
 import { loadNativeIndex } from "./participation-native-bindings.js";
+import { loadAutomaticRuntime } from "./participation-automatic-runtime.js";
+
+const coveragePath = "release/participation-administrative-coverage.csv.gz";
+const scopes = ["statewide", "county_or_equivalent", "precinct"];
+const metrics = scopes.flatMap(scope => ["count", "rate"].map(kind =>
+  `${scope}_election_participation_${kind}_records`));
+
+export function administrativeRows(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = header.split(",");
+  const fields = ["state_code", "year", ...metrics];
+  if (fields.some(field => columns.indexOf(field) < 0 || columns.indexOf(field) !== columns.lastIndexOf(field)))
+    throw new Error("Missing or repeated administrative coverage field");
+  const seen = new Set();
+  const rows = lines.map(line => {
+    const cells = line.split(",");
+    const [code, year, ...values] = fields.map(field => cells[columns.indexOf(field)]);
+    if (cells.length !== columns.length || !countStates.includes(code) || seen.has(code) || year !== "2026"
+        || values.some(value => !/^(?:0|[1-9][0-9]*)$/.test(value) || !Number.isSafeInteger(Number(value))))
+      throw new Error("Invalid jurisdiction or administrative coverage count");
+    seen.add(code);
+    const counts = values.map(Number);
+    if (counts.some((value, i) => i % 2 && value > counts[i - 1]))
+      throw new Error("Qualified rates exceed count-bearing records");
+    return { code, counts };
+  });
+  if (seen.size !== countStates.length) throw new Error("Incomplete administrative coverage export");
+  return rows;
+}
+
+async function loadAdministrativeCoverage() {
+  const manifest = await loadAutomaticRuntime();
+  const sources = manifest.house_sources;
+  const file = sources?.supported_release?.downloads?.[coveragePath];
+  if (!file) return null;
+  if (file.path !== coveragePath || file.url !== `${sources.base_url}/${coveragePath}`
+      || file.media_type !== "text/csv" || file.compression !== "gzip"
+      || !Number.isSafeInteger(file.bytes) || file.bytes < 1 || file.bytes > 65536
+      || !/^[a-f0-9]{64}$/.test(file.sha256))
+    throw new Error("Administrative coverage is not bound to the accepted runtime");
+  const response = await fetch(file.url);
+  if (!response.ok) throw new Error("Administrative coverage could not be loaded");
+  const body = await response.arrayBuffer();
+  const digest = [...new Uint8Array(await crypto.subtle.digest("SHA-256", body))]
+    .map(byte => byte.toString(16).padStart(2, "0")).join("");
+  if (body.byteLength !== file.bytes || digest !== file.sha256)
+    throw new Error("Administrative coverage checksum differs");
+  const csv = await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+  return { rows: administrativeRows(csv), file, manifest };
+}
+
+function installAdministrativeCoverage(host) {
+  const panel = document.createElement("details");
+  const heading = document.createElement("summary");
+  heading.textContent = "Election participation by jurisdiction";
+  const content = document.createElement("div");
+  panel.append(heading, content);
+  host.append(panel);
+  let names = {}, pending = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || pending) return;
+    pending = true;
+    content.textContent = "Checking the accepted administrative coverage export…";
+    try {
+      const coverage = await loadAdministrativeCoverage();
+      if (!coverage) {
+        content.textContent = "This release has no administrative coverage export.";
+        return;
+      }
+      const { rows, file, manifest } = coverage;
+      const note = document.createElement("p");
+      note.textContent = `2026 · Accepted source check ${new Date(manifest.checked_at).toISOString()}. `
+        + `${rows.filter(row => row.counts[0]).length} of 51 jurisdictions have a statewide count. `
+        + "Zeros mean no qualifying records, not zero votes. Counts are records, not people or proof of complete coverage. "
+        + "The strict precinct class is not the inventory of separate reporting-unit and matched precinct layers.";
+      const download = document.createElement("a");
+      download.href = file.url; download.textContent = "Coverage audit (CSV · gzip)";
+      const complete = document.createElement("a");
+      complete.href = manifest.complete_download.url; complete.textContent = "Complete inputs, queries and results (ZIP)";
+      const scroller = document.createElement("div");
+      scroller.className = "table-wrap"; scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region"); scroller.setAttribute("aria-label", heading.textContent);
+      const table = document.createElement("table");
+      table.createCaption().textContent = "Qualifying 2026 participation records (excludes early or returned-only activity)";
+      const header = table.createTHead().insertRow();
+      for (const label of ["Jurisdiction", "State counts", "State rates", "County counts", "County rates",
+        "Precinct counts", "Precinct rates"]) {
+        const cell = document.createElement("th");
+        cell.scope = "col"; cell.textContent = label; header.append(cell);
+      }
+      const tbody = table.createTBody();
+      for (const { code, counts } of rows) {
+        const row = tbody.insertRow(); row.dataset.stateCode = code;
+        const key = document.createElement("th");
+        key.scope = "row"; key.textContent = names[code] || code; row.append(key);
+        for (const value of counts) row.insertCell().textContent = String(value);
+      }
+      scroller.append(table);
+      content.replaceChildren(note, download, " · ", complete, scroller);
+      panel.dataset.runtimeVersion = manifest.version;
+    } catch {
+      content.textContent = "Administrative coverage could not be verified. Close and reopen to retry.";
+      pending = false;
+    }
+  });
+  return scopeNames => { names = scopeNames; };
+}
 
 export function coverageRows(catalog, countIndex, nativeIndex, scope, rejected = {}) {
   if (scope.year !== 2026) return [];
@@ -40,8 +147,10 @@ export function installCoverage(host = document.getElementById("participation-co
   let generation = 0;
   const caption = host?.querySelector("[data-coverage-caption]");
   const body = host?.querySelector("tbody");
+  const updateAdministrativeNames = host && installAdministrativeCoverage(host);
   return { async setScope(scope) {
     if (!host) return;
+    updateAdministrativeNames(scope.names || {});
     const token = ++generation;
     body.replaceChildren();
     host.dataset.year = scope.year;
@@ -61,7 +170,11 @@ export function installCoverage(host = document.getElementById("participation-co
         rejected["participation-native-bindings-2026"] = error.message; return null;
       });
       if (token !== generation) return;
-      const rows = coverageRows(catalog, counts?.index, native?.index, scope, rejected);
+      const selectedCatalog = { datasets: { ...catalog.datasets } };
+      for (const source of [counts, native]) {
+        if (source?.entry) selectedCatalog.datasets[source.entry.id] = source.entry;
+      }
+      const rows = coverageRows(selectedCatalog, counts?.index, native?.index, scope, rejected);
       const names = scope.names || {};
       for (const row of rows) {
         const tr = document.createElement("tr"); tr.dataset.stateCode = row.code; tr.dataset.status = row.status;

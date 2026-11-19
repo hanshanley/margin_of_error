@@ -2,7 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
-import { coverageRows } from "../public/scripts/participation-coverage.js";
+import { administrativeRows, coverageRows } from "../public/scripts/participation-coverage.js";
+import { countStates } from "../public/scripts/participation-counts.js";
 
 const catalog = { datasets: {
   "participation-counts-2026": { status: "loaded" },
@@ -12,6 +13,17 @@ const counts = { states: { MN: { views: {
   available: { counties: 87, precincts: 4105, holds: 0,
     dispositions: { counties: { reported: 87, unknown: 0, withheld: 0, qualified_fractions: 73 } } },
 } } } };
+
+test("administrative audit preserves zero records and rejects incomplete or inconsistent coverage", () => {
+  const fields = ["state_code", "year", ...["statewide", "county_or_equivalent", "precinct"]
+    .flatMap(scope => ["count", "rate"].map(kind => `${scope}_election_participation_${kind}_records`))];
+  const rows = countStates.map(code => `${code},2026,1,0,2,1,0,0`);
+  const parse = lines => administrativeRows([fields.join(","), ...lines].join("\n"));
+  assert.deepEqual(parse(rows)[0], { code: countStates[0], counts: [1, 0, 2, 1, 0, 0] });
+  assert.throws(() => parse(rows.slice(1)), /Incomplete administrative coverage/);
+  assert.throws(() => parse([rows[1], ...rows.slice(1)]), /Invalid jurisdiction/);
+  assert.throws(() => parse([rows[0].replace(",2,1,", ",0,1,"), ...rows.slice(1)]), /rates exceed/);
+});
 test("coverage uses the actual selected frame, not an old audit badge or source-row sum", () => {
   const rows = coverageRows(catalog, counts, {}, { year: 2026, mode: "available", level: "county" });
   assert.equal(rows.length, 51);
@@ -62,6 +74,7 @@ test("coverage links the validated scope package and clears rejected, historical
   const rejected = new Set();
   const install = runInNewContext(`(${source.slice(start + "export ".length)})`, {
     document: { createElement: element }, coverageRows,
+    installAdministrativeCoverage: () => () => {},
     loadDatasetCatalog: async () => catalog,
     loadCountIndex: async () => {
       if (rejected.has("counts")) throw new Error("counts checksum differs");
