@@ -485,6 +485,13 @@ test("county bindings preserve identity and scope but do not hardcode old numeri
     rows: [{ feature_key: "27001", county_id: row.county_id, qualifier: countyQualifier(row) }] };
   row.ballots = 20;
   assert.equal(bindCountyReference([row], collection, row.reference_geometry, binding).get("27001").ballots, 20);
+  const optional = { ...binding, embedded_reference_required: false };
+  const selectorOnly = { ...row, county_id: "native:unmapped", maps_approved: false };
+  assert.equal(bindCountyReference([row, selectorOnly], collection, row.reference_geometry, optional).size, 1);
+  assert.throws(() => bindCountyReference([row, selectorOnly], collection, row.reference_geometry, binding), /inventory/);
+  assert.throws(() => bindCountyReference([row, { ...selectorOnly, maps_approved: true }],
+    collection, row.reference_geometry, optional), /inventory/);
+  assert.throws(() => bindCountyReference([selectorOnly], collection, row.reference_geometry, optional), /inventory/);
   assert.throws(() => bindCountyReference([{ ...row, geography_level: "municipality" }],
     collection, row.reference_geometry, binding), /differs/);
   collection.features[0].properties.boundary_year = 2024;
