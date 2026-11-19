@@ -1,0 +1,8 @@
+state_code,year,ballots,status,denominator,validated_pct,source_update_label,source_update_timezone,source_url,source_sha256
+WY,2026,191713,reported,,,,,https://sos.wyo.gov/Elections/Docs/2026/Results/General/2026_Wyoming_General_Results.zip,c378306bd8df97437a3d11fac7792e23a8297a7e3eded8129a9cd61e3e654ff1
+AZ,2026,2608919,reported,,,,,https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data,474572825f80ae614dfadbf378deaf39fd2a81a09b44ac9b8e2d6f6f3b5e9e29
+VT,2026,311510,reported,506830,61.4624232977527,,,https://outside.vermont.gov/dept/sos/Elections_Division/election_info_resources/elections_results_data/2026_general_election_voter_turnout.pdf,1a8826e99f2c263ed13940b4136c63f80af0e0dbe0c88502cd7d6bfcd8af4b5c
+AK,2026,290323,reported,605433,47.95295268014793,,,https://www.elections.alaska.gov/enr/26GENR/results/ElectionSummaryReportRPT.pdf,6a8315ec13227d1cc8db32181fc2b475c3aa50ba9b88cddc1a8d1834cf5384cc
+MN,2026,2851615,reported,,,11/13/26 1:38 PM,,https://electionresults.sos.mn.gov/Results/CountyStatisticsStatewide/Index?ersElectionId=201,5472e21acdbc6805995db5fe29b046e5e1f7842c696ccac24aa7202004b15cf9
+AR,2026,893026,retained_after_failure,,,,,https://arkansas.tally-enr.com/assets/__verdict-download/6a1f15f8fcc7/mw3h9e64-0-7yxhd8qe/2026_General_Election_%26_Judical_Runoff.json,079518a65d5f66385ec1cb5cedcd93a02973d6ae24a0793427af8d08c9fe14bd
+FL,2026,8335497,retained_after_failure,,,,,https://floridaelectionwatch.gov/CountyReportingStatus,f4a4ff86238aadf10336ba428aaef8a8c04374e0774642734968d7d14362ce72
