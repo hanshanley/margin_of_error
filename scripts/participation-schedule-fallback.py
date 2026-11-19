@@ -28,6 +28,7 @@ RETRY = timedelta(minutes=30)
 ARCHIVE_RETRY = timedelta(hours=6)
 ARCHIVE_TITLE = "Check late participation archives"
 ACTIVE = {"queued", "in_progress", "requested", "waiting", "pending"}
+MAX_WORKFLOW_BYTES = 64 * 1024
 
 
 def clock(value):
@@ -132,10 +133,15 @@ def workflow_source(request, stage, ref):
     repo, workflow = WORKFLOWS[stage]
     path = f".github/workflows/{workflow}"
     file = request(f"repos/{repo}/contents/{path}?ref={ref}")
-    if file["path"] != path or file["encoding"] != "base64" or not 0 < file["size"] <= 16384:
+    size = file["size"]
+    if (file["path"] != path or file["encoding"] != "base64"
+            or type(size) is not int or not 0 < size <= MAX_WORKFLOW_BYTES):
         raise ValueError("Unexpected workflow contents")
-    body = base64.b64decode("".join(file["content"].split()), validate=True)
-    if len(body) != file["size"]:
+    encoded = "".join(file["content"].split())
+    if len(encoded) != 4 * ((size + 2) // 3):
+        raise ValueError("Incomplete workflow contents")
+    body = base64.b64decode(encoded, validate=True)
+    if len(body) != size:
         raise ValueError("Incomplete workflow contents")
     return body.decode("utf-8")
 

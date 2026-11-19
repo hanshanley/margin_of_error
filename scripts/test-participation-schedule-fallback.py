@@ -174,7 +174,7 @@ class FallbackTests(unittest.TestCase):
         self.diff = {"status": "ahead", "merge_base_commit": {"sha": "d" * 40},
                      "files": [{"filename": ".github/workflows/election-night.yml"},
                                {"filename": "scripts/statewide_ballot_totals.py"}]}
-        before = (
+        before = "# Workflow configuration\n" * 900 + (
             "      - name: Validate\n"
             "        id: validation_tests\n"
             "        if: steps.window.outputs.active == 'true'\n"
@@ -205,6 +205,17 @@ class FallbackTests(unittest.TestCase):
         self.diff["files"].append({"filename": "scripts/results_county_frame.py",
                                    "previous_filename": "scripts/results_granular.py"})
         self.assertEqual(self.result(apply=False), "would_dispatch_collection")
+
+    def test_incomplete_or_oversized_workflow_still_requires_collection(self):
+        for size, body in ((768, b"partial"), (True, b"x"), (65537, b"x" * 65537)):
+            with self.subTest(size=size):
+                def request(_path):
+                    return {"path": ".github/workflows/election-night.yml", "encoding": "base64",
+                            "size": size, "content": base64.b64encode(body).decode()}
+
+                self.assertTrue(code["collector_change"](
+                    request, [{"filename": ".github/workflows/election-night.yml"}],
+                    "d" * 40, "1" * 40))
 
     def test_lost_dispatch_response_does_not_duplicate(self):
         self.backlog()
