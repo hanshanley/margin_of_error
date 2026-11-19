@@ -370,6 +370,35 @@ export async function loadAutomaticRecordedHouse(selection) {
   return data;
 }
 
+export async function loadAutomaticTurnoutHistory(code) {
+  const states = { VA: ["virginia", 1976, "total_voting"],
+    WA: ["washington", 1980, "ballots_counted"] };
+  if (!Object.hasOwn(states, code)) return null;
+  const [name, first, measure] = states[code];
+  const manifest = await loadAutomaticRuntime();
+  const sources = manifest.house_sources;
+  const files = sources?.general_election_turnout_history?.[code];
+  if (!files) return null;
+  const path = `participation/${name}-general-election-turnout-history`;
+  validateBodyPin(files.data);
+  if (!pin(files.csv) || files.data.path !== path + ".json.gz" || files.csv.path !== path + ".csv"
+      || [files.data, files.csv].some(file => file.url !== `${sources.base_url}/${file.path}`))
+    throw new Error("Turnout history is not bound to the accepted runtime");
+  const data = await checkedAutomaticBody(files.data);
+  const last = data.current_election_status === "row_published" ? 2026 : 2025;
+  const rows = data.complete_native_query;
+  if (data.contract !== "participation.statewide_general_election_history.v1" || data.state_code !== code
+      || !["reported", "retained_after_failure"].includes(data.status)
+      || !["row_published", "not_yet_published"].includes(data.current_election_status)
+      || !Array.isArray(rows) || rows.length !== last - first + 1
+      || rows.some((row, i) => row.year !== last - i || !Number.isSafeInteger(row[measure])
+        || !Number.isSafeInteger(row.registered_voters) || row[measure] < 0
+        || row.registered_voters <= 0 || row[measure] > row.registered_voters
+        || typeof row.rate_qualified !== "boolean" || !/^[0-9]{1,3}(?:\.[0-9]{1,2})?%$/.test(row.published_turnout)))
+    throw new Error("Turnout history scope or rows differ");
+  return { data, measure, csv: files.csv.url, complete: manifest.complete_download.url };
+}
+
 export async function loadAutomaticCongress() {
   const manifest = await loadAutomaticRuntime();
   const declaration = manifest.congressional;

@@ -12,6 +12,7 @@ import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civ
 import { countFill, precinctSelectionYears } from "./participation-geography.js";
 import { loadCountySubsets, subsetMarginLabel, subsetColorValue } from "./participation-county-subsets.js";
 import { updateUfTurnoutTable } from "./participation-uf-turnout-table.js";
+import { loadAutomaticTurnoutHistory } from "./participation-automatic-runtime.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -2740,6 +2741,58 @@ async function civicStateModelView(generation) {
     setTable([], [["label", "Source group"], ["modeled_share", "Modeled voter share"]]);
   }
 }
+function appendTurnoutHistory(panel, code) {
+  if (!["VA", "WA"].includes(code)) return;
+  const section = html("details", "substate-detail");
+  section.append(html("summary", "", "Administrative turnout by year"));
+  const body = html("div", "");
+  section.append(body);
+  panel.append(section);
+  let loading = false;
+  section.addEventListener("toggle", async () => {
+    if (!section.open || loading) return;
+    loading = true;
+    body.replaceChildren(html("p", "selection-note", "Loading statewide November general-election totals…"));
+    try {
+      const history = await loadAutomaticTurnoutHistory(code);
+      if (!history) {
+        body.replaceChildren(html("p", "selection-note", "This series has not entered the accepted explorer release."));
+        return;
+      }
+      const { data, measure } = history;
+      const table = html("table", "");
+      table.append(html("caption", "", "November general elections · statewide administrative totals"));
+      const header = table.createTHead().insertRow();
+      for (const label of ["Year", code === "VA" ? "Total voting" : "Ballots counted", "Registered", "Turnout"]) {
+        const cell = html("th", "", label); cell.scope = "col"; header.append(cell);
+      }
+      const rows = table.createTBody();
+      for (const row of data.complete_native_query) {
+        const line = rows.insertRow();
+        const year = html("th", "", String(row.year)); year.scope = "row"; line.append(year);
+        for (const value of [fmt(row[measure]), fmt(row.registered_voters),
+          row.rate_qualified ? row.published_turnout : "Withheld"])
+          line.append(html("td", "", value));
+      }
+      const scroller = html("div", "table-wrap");
+      scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region");
+      scroller.setAttribute("aria-label", "Statewide administrative turnout by year");
+      scroller.append(table);
+      const csv = html("a", "source-link", "Download all years (CSV)"); csv.href = history.csv;
+      const complete = html("a", "source-link", "Complete queries and reproduction (ZIP)"); complete.href = history.complete;
+      body.replaceChildren(html("p", "selection-note",
+        "Registered-voter denominator, not CPS, VEP or a local turnout rate. Printed rates that disagree with their counts are withheld."
+        + (data.current_election_status === "not_yet_published" ? " The source does not yet include 2026." : "")
+        + (data.status === "retained_after_failure" ? " Last successful source capture retained after a failure." : "")),
+        csv, complete, scroller);
+    } catch (error) {
+      body.replaceChildren(html("p", "selection-note", "Turnout history could not be verified. Close and reopen to retry."));
+      loading = false;
+    }
+  });
+}
+
 function stateDetail() {
   const basis = $("basis").value, year = Number($("year").value);
   const rows = state.states.filter(row => row.state === state.selectedState && row.denominator === basis)
@@ -2889,6 +2942,7 @@ function stateDetail() {
   panel.append(html("p", "selection-note", basis === "cvap"
     ? "CPS survey estimates. The dashed 1992–1994 connector marks a citizenship-measurement change, not missing data."
     : "CPS survey estimates. Dashed connectors mark definition changes; missing elections remain gaps."));
+  appendTurnoutHistory(panel, stateCode());
   const election = marginRow("state", stateCode());
   if (election) panel.append(html("h4", "", `${election.office} · map context`),
     html("p", "selection-note", `${marginLabel(election)} · ${fmt(election.contest_votes)} contest votes. `
