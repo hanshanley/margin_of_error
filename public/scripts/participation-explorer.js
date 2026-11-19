@@ -777,7 +777,11 @@ function stateParticipationRows() {
       let nativeByFips = new Map();
       if (reference) {
         try {
-          nativeByFips = bindCountyReference(observations, collection, reference,
+          const candidates = reference.geography_scope === "native_partial_county_context"
+            ? observations.filter(row => row.maps_approved === true
+              && row.reference_geometry?.sha256 === reference.sha256)
+            : observations;
+          nativeByFips = bindCountyReference(candidates, collection, reference,
             await loadCountyBinding(code, $("mode").value));
         } catch (error) {
           clearCountState(code);
