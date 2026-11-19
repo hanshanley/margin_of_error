@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: 4e8b82ac298d02b38f3d3d9da69c421100dddb5f
+          ref: f07d95dcce42a03152dbcf4e8a867c15ae4558cc
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: scripts/automatic_health.py
