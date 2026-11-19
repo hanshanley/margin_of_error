@@ -87,6 +87,36 @@ The author-supplied editorial thumbnail is stored byte-for-byte at
 Use it for the Interactive analysis preview and the explorer's social image,
 not as an in-page chart. Keep it outside chart recoloring and the pinned research export.
 
+### Automatic participation recovery
+
+The GitHub collector and data-only publisher are the primary scheduled writers.
+For missed starts, `scripts/participation-schedule-fallback.py` can run every five
+minutes on a separate scheduler. It compares the accepted source and active reader
+versions, gives existing runs priority, and dispatches at most one existing workflow
+per check. An unconsumed source takes priority over recollection. The collector gets
+a fallback dispatch after 90 minutes without a new run, or after a 30-minute cooldown
+following a failed run. An unchanged source does not dispatch the publisher. The
+fallback also runs the existing issue monitor if its own schedule is missed. An
+accepted dispatch and a successful data activation are distinct; confirm the latter
+with `input_results_version` in `automatic/latest.json`.
+
+On the maintainer's Mac, run from a reviewed website checkout:
+
+```bash
+bash scripts/install-participation-schedule-fallback.sh "$(command -v python3)" "$(command -v gh)"
+launchctl print "gui/$(id -u)/com.hanshanley.participation-schedule-fallback"
+```
+
+The installer uses the existing `hanshanley` GitHub CLI login; it neither creates nor
+copies a token. The check is confined to the election window ending February 1, 2027
+UTC. Without `--apply`, the script makes only read requests. The installed copy,
+dispatch journal and logs are in `~/Library/Application Support/ParticipationScheduleFallback`.
+To stop it, use `launchctl bootout "gui/$(id -u)/com.hanshanley.participation-schedule-fallback"`
+and move the matching `~/Library/LaunchAgents/` plist out of that directory to
+prevent relaunch at the next login. A sleeping, offline or logged-out Mac cannot
+dispatch fallback runs; GitHub's regular schedules continue independently. Neither
+path edits the site's source or bypasses validation to publish data.
+
 Resident context uses the independent `participation-data` catalog through
 `participation-dataset.js`, not new embedded source tables. Its immutable index
 and state shards are byte/hash checked before decoding. The default-closed
