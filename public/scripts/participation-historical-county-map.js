@@ -25,6 +25,16 @@ export const officialArchiveGeometry = {
     sha256: "43e5fbcd88f268e84fa6e667f172539a835ff46878137137af7dee8df15dfc0c",
     referenceDate: "2006-01-01",
   },
+  "NJ/2023": {
+    path: "participation-archive-geometry/county-NJ-2023.geojson.gz",
+    bytes: 62105,
+    sha256: "76c1610cf67ef5a7544e4c0a81588f4b8f0a40c89d9752a8323d382dbd22355b",
+  },
+  "NJ/2025": {
+    path: "participation-archive-geometry/county-NJ-2025.geojson.gz",
+    bytes: 62203,
+    sha256: "2c7db843a5fae1d58e539969da1a2b38ff8ddcab26405ff0ab4a6039c6c72151",
+  },
 };
 const countyName = name => name.trim().toUpperCase().replace(/\s+(COUNTY|PARISH|BOROUGH)$/, "")
   .replace(/[^A-Z0-9]/g, "");
