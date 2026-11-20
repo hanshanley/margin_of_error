@@ -758,8 +758,6 @@ function archiveStateHistory(panel, frames, name) {
   scroller.setAttribute("aria-label", "Statewide turnout history");
   scroller.append(table);
   chart.style.marginInline = "0";
-  note.textContent = "Each dot uses that election report’s own registration count. Reports can use different "
-    + "count definitions and registration dates. Withheld rates have no dot.";
   chart.append(note);
   const caption = table.createCaption(), header = table.createTHead().insertRow(), body = table.createTBody();
   for (const label of ["Election", "Reported count", "Registrations", "Registration basis", "Same-report registration fraction"]) {
@@ -782,6 +780,11 @@ function archiveStateHistory(panel, frames, name) {
     if (panel.hidden) return;
     const label = name(code);
     caption.textContent = `${label} statewide reports`;
+    const hasRates = reports.some(frame => frame.rows.get("state").rate !== null);
+    note.textContent = hasRates
+      ? "Each dot uses that election report’s own registration count. Reports can use different "
+        + "count definitions and registration dates. Withheld rates have no dot."
+      : "No comparable registration fractions are available. See the table for reported counts.";
     const svg = svgNode("svg", { viewBox: "0 0 480 156", width: "480", role: "img",
       "aria-label": `${label} statewide registration fractions by election; exact values in the table` });
     svg.style.maxWidth = "100%";
@@ -818,7 +821,7 @@ function archiveStateHistory(panel, frames, name) {
         svg.append(dot);
       }
     }
-    chart.prepend(svg);
+    if (hasRates) chart.prepend(svg);
   };
 }
 

@@ -47,6 +47,12 @@ export const officialArchiveGeometry = {
     bytes: 62203,
     sha256: "2c7db843a5fae1d58e539969da1a2b38ff8ddcab26405ff0ab4a6039c6c72151",
   },
+  "WY/2006": {
+    path: "participation-archive-geometry/county-WY-2006.geojson.gz",
+    bytes: 222451,
+    sha256: "6eeb4e5c783d0602903136f032b0050d3216db2893ed1f5c308bdd8e4efb6c8f",
+    referenceDate: "2006-01-01",
+  },
 };
 const countyName = name => name.trim().toUpperCase().replace(/\s+(COUNTY|PARISH|BOROUGH)$/, "")
   .replace(/[^A-Z0-9]/g, "");
