@@ -267,7 +267,7 @@ export function publishedCpsRows(csv, summary) {
         || !["overall", "age", "sex", "race_or_hispanic_origin"].includes(row.dimension)
         || (row.dimension !== "overall" && row.source_table !== (row.dimension === "age" ? "4c" : "4b"))
         || !["4b", "4c"].includes(row.source_table) || row.confidence_level_pct !== "90"
-        || !/^https:\/\/www2\.census\.gov\/programs-surveys\/cps\/tables\/p20\/\d+\/[a-z0-9_]+\.xlsx$/.test(row.source_url))
+        || !/^https:\/\/www2\.census\.gov\/programs-surveys\/cps\/tables\/p20\/(?:\d+|voting-registration-2010-election)\/[a-z0-9_]+\.xlsx?$/.test(row.source_url))
       throw new Error("Census cohort or source identity differs");
     for (const prefix of rates) {
       const point = row[`${prefix}_pct`], moe = row[`${prefix}_moe_pp`];
@@ -308,7 +308,7 @@ function installPublishedCps(sources, file, names) {
   download.textContent = "Complete Census state turnout tables (CSV · gzip)";
   note.append("Census survey estimates of reported voting and registration, not official ballot counts. "
     + "The margins of error are for individual estimates at the 90% confidence level, not for changes across years. "
-    + "Race and Hispanic-origin categories can overlap. ", download);
+    + "Race and Hispanic-origin categories can overlap. The age bands available vary by election. ", download);
   button.type = "button"; button.textContent = "Load Census turnout comparisons";
   status.setAttribute("role", "status");
   panel.append(heading, note, button, status);
@@ -347,14 +347,25 @@ function installPublishedCps(sources, file, names) {
         caption.textContent = `${names[state.value] || (state.value === "US" ? "United States" : state.value)} · `
           + `${group.selectedOptions[0].textContent} · ${basis.selectedOptions[0].textContent}`;
         tbody.replaceChildren();
-        for (const r of rows.filter(r => r.state_code === state.value && r.group === group.value)) {
-          const tr = tbody.insertRow(), label = document.createElement("th"), source = document.createElement("a");
-          label.scope = "row"; label.textContent = `${r.year} ${r.election_type}`; tr.append(label);
+        const selected = new Map(rows.filter(r => r.state_code === state.value && r.group === group.value)
+          .map(r => [Number(r.year), r]));
+        for (const year of survey.published_state_tables.years) {
+          const r = selected.get(year);
+          const tr = tbody.insertRow(), label = document.createElement("th");
+          label.scope = "row"; label.textContent = `${year} ${year % 4 === 0 ? "presidential" : "midterm"}`;
+          tr.append(label);
+          if (!r) {
+            const missing = tr.insertCell();
+            missing.colSpan = 3;
+            missing.textContent = "Group not published for this election";
+            continue;
+          }
           for (const measure of ["voted", "registered"]) {
             const key = `${basis.value}_${measure}`;
             tr.insertCell().textContent = r[`${key}_pct`] === "" ? "Not published"
               : `${r[`${key}_pct`]}% ± ${r[`${key}_moe_pp`]} pp`;
           }
+          const source = document.createElement("a");
           source.href = r.source_url; source.textContent = `Table ${r.source_table}`;
           tr.insertCell().append(source);
         }
