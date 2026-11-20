@@ -1,7 +1,7 @@
 import { loadDatasetCatalog } from "./participation-dataset.js";
 import { countStates, loadCountIndex, validateCurrentCountSnapshot } from "./participation-counts.js";
 import { loadNativeIndex } from "./participation-native-bindings.js";
-import { loadAutomaticRuntime } from "./participation-automatic-runtime.js";
+import { loadAutomaticRuntime, loadWyomingPrecinctCanvass } from "./participation-automatic-runtime.js";
 import { checkedCountyBody, installHistoricalCountyMap } from "./participation-historical-county-map.js";
 import { participationDownload } from "./participation-downloads.js";
 import { projectStateContext } from "./participation-map-projection.js";
@@ -858,18 +858,32 @@ export function wyomingCurrentCountyFrame(reporting) {
     status: row.status, note: "The workbook reports ballots, not unique voters, and does not establish certification." };
 }
 
-function installStateCountyArchives(sources, url, names, { currentCalifornia = false, wyomingCounts = null } = {}) {
+export function wyomingCanvassCountyFrame(data) {
+  const makeRow = (name, count) => ({ name, count, registered: null, rate: null, hold: "registration_not_in_report" });
+  const rows = new Map([["state", makeRow("Wyoming", data.state_ballots_cast)]]);
+  for (const { county, ballots_cast } of data.county_controls)
+    rows.set(`county/${county}`, makeRow(county, ballots_cast));
+  return { code: "WY", date: data.election_date, measure: "ballots_cast", basis: null, rows,
+    url: data.source.url, status: data.status,
+    note: "The official canvass reports ballots, not unique voters. County totals reconcile to the precinct tables." };
+}
+
+function installStateCountyArchives(sources, url, names, { currentCalifornia = false, wyomingCounts = null,
+  wyomingCanvass = false } = {}) {
   const panel = document.createElement("details"), heading = document.createElement("summary");
   const download = document.createElement("a"), note = document.createElement("p");
   const button = document.createElement("button"), status = document.createElement("p");
-  heading.textContent = wyomingCounts ? "Wyoming county ballots cast, 2026"
+  const wyoming = wyomingCanvass || wyomingCounts;
+  heading.textContent = wyoming ? "Wyoming county ballots cast, 2026"
     : currentCalifornia ? "California’s 2026 statewide and county turnout report"
     : "Browse official state and county turnout archives";
   download.href = url;
-  download.textContent = wyomingCounts ? "Complete analysis with Wyoming workbook queries (ZIP)"
+  download.textContent = wyomingCanvass ? "Complete analysis with Wyoming canvass queries (ZIP)"
+    : wyomingCounts ? "Complete analysis with Wyoming workbook queries (ZIP)"
     : currentCalifornia ? "Complete California 2026 report query (CSV · gzip)"
     : "State election office turnout archives (CSV · gzip)";
-  note.append(download, wyomingCounts ? ". County ballot counts from the accepted Wyoming workbook; no turnout rates."
+  note.append(download, wyomingCanvass ? ". County ballot counts from the same canvass as the precinct table; no turnout rates."
+    : wyomingCounts ? ". County ballot counts from the accepted Wyoming workbook; no turnout rates."
     : currentCalifornia
     ? ". This report is separate from the live election-results feed and does not establish certification."
     : ". These official reports are separate from EAC data and the 2026 map.");
@@ -882,7 +896,11 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
     status.textContent = "Checking the stored election-office reports…";
     try {
       let frames;
-      if (wyomingCounts) {
+      if (wyomingCanvass) {
+        const canvass = await loadWyomingPrecinctCanvass();
+        if (!canvass) throw new Error("Missing Wyoming canvass in accepted runtime");
+        frames = [wyomingCanvassCountyFrame(canvass.data)];
+      } else if (wyomingCounts) {
         const path = "current.json.gz", file = wyomingCounts.files[path];
         const bytes = await checkedCountyBody(new URL(path, wyomingCounts.base_url).href, file, retry);
         const json = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).json();
@@ -910,7 +928,7 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
       const body = table.createTBody(), number = new Intl.NumberFormat("en-US");
       const currentFrame = () => frames.find(item => item.code === state.value && item.date === year.value);
       const history = document.createElement("details");
-      const historical = !currentCalifornia && !wyomingCounts;
+      const historical = !currentCalifornia && !wyoming;
       const renderHistory = historical ? archiveStateHistory(history, frames, code => names[code] || code) : () => {};
       const render = () => {
         const frame = currentFrame();
@@ -1122,7 +1140,9 @@ function installAdministrativeCoverage(host) {
       }
       const stateCountyArchives = stateCountyArchivesDownload(manifest.house_sources);
       if (stateCountyArchives) content.append(installStateCountyArchives(manifest.house_sources, stateCountyArchives, names));
-      if (manifest.counts?.files["current.json.gz"]) content.append(installStateCountyArchives(
+      if (manifest.house_sources?.wyoming_precinct_canvass) content.append(installStateCountyArchives(
+        manifest.house_sources, manifest.complete_download.url, names, { wyomingCanvass: true }));
+      else if (manifest.counts?.files["current.json.gz"]) content.append(installStateCountyArchives(
         manifest.house_sources, manifest.complete_download.url, names, { wyomingCounts: manifest.counts }));
       content.append(installNorthCarolina2006CountyRates());
       try {

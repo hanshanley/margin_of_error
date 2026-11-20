@@ -6,11 +6,24 @@ import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis, wyomingCurrentCountyFrame }
+  northCarolinaAgeRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
+  wyomingCurrentCountyFrame, wyomingCanvassCountyFrame }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive } from "../public/scripts/participation-historical-county-map.js";
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
+
+test("the Wyoming county map uses county controls and the freshness of the accepted precinct canvass", () => {
+  const frame = wyomingCanvassCountyFrame({
+    election_date: "2026-11-03", state_ballots_cast: 12, status: "retained_after_failure",
+    source: { url: "https://example.test/official-canvass.pdf" },
+    county_controls: [{ county: "Teton", ballots_cast: 12 }],
+  });
+  assert.equal(frame.status, "retained_after_failure");
+  assert.match(frame.url, /official-canvass\.pdf$/);
+  assert.equal(frame.rows.get("county/Teton").count, 12);
+  assert.equal(frame.rows.get("county/Teton").rate, null);
+});
 
 test("the Teton display layer maps a revised count and rejects a replaced or missing precinct ID", () => {
   const layer = JSON.parse(gunzipSync(readFileSync(new URL(
