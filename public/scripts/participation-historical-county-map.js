@@ -8,8 +8,8 @@ const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
 const officialCountySizes = { CA: 58, CO: 64, KS: 105, NC: 100, NE: 93, NJ: 21, WV: 55, WY: 23 };
-const nebraskaGeometryRelease = "https://github.com/hanshanley/voter-participation/releases/download/"
-  + "nebraska-legacy-county-geometry-20261120/";
+const geometryReleases = "https://github.com/hanshanley/voter-participation/releases/download/";
+const nebraskaGeometryRelease = geometryReleases + "nebraska-legacy-county-geometry-20261120/";
 export const officialArchiveGeometry = {
   "CA/1990": {
     path: "participation-archive-geometry/county-CA-1990.geojson.gz",
@@ -37,6 +37,8 @@ export const officialArchiveGeometry = {
     path: "participation-archive-geometry/county-CO-2000.geojson.gz",
     bytes: 121966,
     sha256: "d066e3986aaff57ef8690cdde73216d4dcb7bb42b801243116874cc8fc9a9b9a",
+    reproduction: "co-2000-county-map-reproduction.zip",
+    reproductionBase: geometryReleases + "colorado-2000-county-geometry-20261120/",
   },
   "NC/2006": {
     path: "participation-archive-geometry/county-NC-2006.geojson.gz",
@@ -255,7 +257,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
     reproduction.hidden = !legacy?.reproduction;
     reproduction.removeAttribute("href");
     if (legacy?.reproduction) {
-      reproduction.href = nebraskaGeometryRelease + legacy.reproduction;
+      reproduction.href = (legacy.reproductionBase ?? nebraskaGeometryRelease) + legacy.reproduction;
       reproduction.textContent = `Reproduce ${vintage} county boundaries (ZIP)`;
     }
     figure.hidden = false;
