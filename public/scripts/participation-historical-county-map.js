@@ -37,6 +37,12 @@ export const officialArchiveGeometry = {
     sha256: "85d9377888d95c012d10654d17b9b1eb4cbdbea9036e1c8f1d8a4a1b45508d63",
     referenceDate: "2006-01-01",
   },
+  "NE/2006": {
+    path: "participation-archive-geometry/county-NE-2006.geojson.gz",
+    bytes: 742132,
+    sha256: "7a85788d1e30c4f490a6bce5be943304eae4eeeb830f6b5eba4b30489561360a",
+    referenceDate: "2006-01-01",
+  },
   "NE/2026": {
     path: "participation-archive-geometry/county-NE-2026.geojson.gz",
     bytes: 730273,
