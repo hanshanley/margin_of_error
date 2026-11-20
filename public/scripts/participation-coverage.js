@@ -3,6 +3,7 @@ import { countStates, loadCountIndex, validateCurrentCountSnapshot } from "./par
 import { loadNativeIndex } from "./participation-native-bindings.js";
 import { loadAutomaticRuntime, loadWyomingPrecinctCanvass } from "./participation-automatic-runtime.js";
 import { checkedCountyBody, installHistoricalCountyMap } from "./participation-historical-county-map.js";
+import { installDenverPrecinctMap } from "./participation-denver-precinct-map.js";
 import { participationDownload } from "./participation-downloads.js";
 import { projectStateContext } from "./participation-map-projection.js";
 
@@ -887,7 +888,8 @@ export function installColoradoPrecinctStatistics(file) {
   const panel = document.createElement("details"), title = document.createElement("summary");
   title.textContent = "Colorado historical precinct participation";
   const note = document.createElement("p"), load = document.createElement("button"), status = document.createElement("p");
-  note.textContent = "Official ballots cast and total registration (active plus inactive). No precinct boundaries are inferred.";
+  note.textContent = "Official ballots cast and total registration (active plus inactive). "
+    + "A map appears only for an election and county with verified boundaries.";
   load.type = "button";
   load.textContent = "Load precinct statistics";
   status.setAttribute("role", "status");
@@ -954,7 +956,9 @@ export function installColoradoPrecinctStatistics(file) {
       wrapper.append(table);
       selectCounties();
       load.remove();
-      panel.append(electionLabel, " · ", countyLabel, " · ", original, wrapper);
+      panel.append(electionLabel, " · ", countyLabel, " · ", original);
+      installDenverPrecinctMap(panel, election, county, frames);
+      panel.append(wrapper);
     } catch {
       load.disabled = false;
       load.textContent = "Retry precinct statistics";

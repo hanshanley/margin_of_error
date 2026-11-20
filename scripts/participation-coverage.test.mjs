@@ -13,6 +13,18 @@ import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill }
   from "../public/scripts/participation-historical-county-map.js";
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
+import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-precinct-map.js";
+
+test("Denver map requires exact full 2022 precinct identities, not matching suffixes", () => {
+  const asset = new URL("../public/participation-archive-geometry/precinct-CO-Denver-2022.json.gz", import.meta.url);
+  const layer = JSON.parse(gunzipSync(readFileSync(asset)));
+  const rows = layer.features.map(({ properties }) => ({ precinct: properties.precinct, count: 70, rate: 50 }));
+  assert.equal(bindDenverPrecinctMap(layer, [...rows].reverse())[2], rows[2]);
+  const wrong = [{ ...rows[0], precinct: `${rows[0].precinct[0] === "7" ? "6" : "7"}${rows[0].precinct.slice(1)}` },
+    ...rows.slice(1)];
+  assert.throws(() => bindDenverPrecinctMap(layer, wrong), /roster/);
+  assert.throws(() => bindDenverPrecinctMap({ ...layer, election_date: "2024-11-05" }, rows), /scope/);
+});
 
 test("Colorado precinct statistics retain observed zero and reject missing or incompatible rate decisions", () => {
   const header = "state_code,election_date,county,precinct,registered,active,inactive,ballots_cast,"
