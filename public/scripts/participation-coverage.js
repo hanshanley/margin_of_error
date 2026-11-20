@@ -28,6 +28,15 @@ const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
 const marylandPrecinctPath = "release/participation-md-precinct-affiliation-snapshots.csv.gz";
 const marylandGroupPath = "release/participation-md-county-affiliation-snapshots.csv.gz";
+const marylandArchiveDownload = "https://github.com/hanshanley/voter-participation/releases/download/"
+  + "maryland-2016-2024-turnout-archive-20261120/maryland-five-election-turnout-archive.zip";
+const marylandArchive = [
+  [marylandGroupPath, 22982, "6d3041c95f0712d57ec38b8000507415662e1ffb809b5452280b0bfeeef054c2"],
+  [marylandPrecinctPath, 1089244, "5d2281078f76889e4977b52483334a5cba682454d306193cf9e7a09f599ff5f2"],
+].map(([path, bytes, sha256]) => ({
+  url: new URL(`../participation-archive-geometry/${path.slice("release/".length)}`, import.meta.url).href,
+  bytes, sha256,
+}));
 const californiaCurrentReportPath = "release/participation-ca-2026-county-turnout-report.csv.gz";
 const nebraskaCurrentReportPath = "release/participation-ne-2026-county-canvass.csv.gz";
 const nebraskaCountyReportsPath = "release/participation-ne-2026-county-reports.csv.gz";
@@ -248,7 +257,7 @@ export function coverageCsvFile(sources, path) {
   return file;
 }
 
-export function installMarylandAffiliationSnapshots(groupFile, precinctFile) {
+export function installMarylandAffiliationSnapshots(groupFile, precinctFile, { archival = false } = {}) {
   const panel = document.createElement("details"), title = document.createElement("summary");
   const note = document.createElement("p"), load = document.createElement("button"), status = document.createElement("p");
   title.textContent = "Maryland turnout activity by registration affiliation";
@@ -259,6 +268,11 @@ export function installMarylandAffiliationSnapshots(groupFile, precinctFile) {
     link.href = file.url; link.textContent = `${text} (CSV · gzip)`;
     note.append(" ", link);
   }
+  const replay = document.createElement("a");
+  replay.href = marylandArchiveDownload;
+  replay.textContent = "2016–2024 historical archive and offline reproduction (ZIP)";
+  note.append(" ", replay);
+  if (archival) note.append(" Showing the verified historical archive; these data are not refreshed by the hosted collector.");
   status.setAttribute("role", "status");
   load.type = "button"; load.textContent = "Compare registration groups";
   panel.append(title, note, load, status);
@@ -352,6 +366,22 @@ export function installMarylandAffiliationSnapshots(groupFile, precinctFile) {
     }
   });
   return panel;
+}
+
+export function installMarylandCoverage(parent, sources) {
+  try {
+    const groups = coverageCsvFile(sources, marylandGroupPath);
+    const precincts = coverageCsvFile(sources, marylandPrecinctPath);
+    if (groups && precincts) {
+      parent.append(installMarylandAffiliationSnapshots(groups, precincts));
+      return;
+    }
+  } catch {
+    const notice = document.createElement("p");
+    notice.textContent = "The Maryland participation download descriptors could not be verified.";
+    parent.append(notice);
+  }
+  parent.append(installMarylandAffiliationSnapshots(...marylandArchive, { archival: true }));
 }
 
 function installNorthCarolina2006CountyRates() {
@@ -1598,15 +1628,7 @@ function installAdministrativeCoverage(host) {
         notice.textContent = "The Minnesota precinct download descriptor could not be verified.";
         content.append(notice);
       }
-      try {
-        const groups = coverageCsvFile(manifest.house_sources, marylandGroupPath);
-        const precincts = coverageCsvFile(manifest.house_sources, marylandPrecinctPath);
-        if (groups && precincts) content.append(installMarylandAffiliationSnapshots(groups, precincts));
-      } catch {
-        const notice = document.createElement("p");
-        notice.textContent = "The Maryland participation download descriptors could not be verified.";
-        content.append(notice);
-      }
+      installMarylandCoverage(content, manifest.house_sources);
       if (manifest.house_sources?.wyoming_precinct_canvass) content.append(installStateCountyArchives(
         manifest.house_sources, manifest.complete_download.url, names, { wyomingCanvass: true }));
       else if (manifest.counts?.files["current.json.gz"]) content.append(installStateCountyArchives(
