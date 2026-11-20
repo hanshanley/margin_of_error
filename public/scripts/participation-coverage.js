@@ -1824,8 +1824,11 @@ function installSoutheastHistory(host, sources, state) {
         controls.append(wrapper);
         return select;
       };
-      const county = alabama ? choose("Geography", [...new Set(rows.map(r => r.geography))].sort().map(
-        name => [name, name === "Alabama" ? "Alabama statewide" : name.replaceAll("_", " ")])) : null;
+      const county = alabama ? choose("Geography", [
+        ["Alabama", "Alabama statewide"],
+        ...[...new Set(rows.map(r => r.geography))].filter(name => name !== "Alabama").sort()
+          .map(name => [name, name.replaceAll("_", " ")]),
+      ]) : null;
       const ages = ["all", "18-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80-89", "90-99", "100+"];
       const age = alabama ? choose("Age", ages.map(group => [group, group === "all" ? "All ages" : group])) : null;
       const region = document.createElement("div");
