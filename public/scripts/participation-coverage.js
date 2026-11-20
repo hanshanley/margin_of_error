@@ -4,6 +4,7 @@ import { loadNativeIndex } from "./participation-native-bindings.js";
 import { loadAutomaticRuntime, loadWyomingPrecinctCanvass } from "./participation-automatic-runtime.js";
 import { checkedCountyBody, installHistoricalCountyMap } from "./participation-historical-county-map.js";
 import { installDenverPrecinctMap } from "./participation-denver-precinct-map.js";
+import { installMinnesotaPrecinctMap } from "./participation-minnesota-precinct-map.js";
 import { participationDownload } from "./participation-downloads.js";
 import { projectStateContext } from "./participation-map-projection.js";
 
@@ -23,6 +24,7 @@ const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
+const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
 const californiaCurrentReportPath = "release/participation-ca-2026-county-turnout-report.csv.gz";
 const nebraskaCurrentReportPath = "release/participation-ne-2026-county-canvass.csv.gz";
 const nebraskaCountyReportsPath = "release/participation-ne-2026-county-reports.csv.gz";
@@ -761,10 +763,12 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     const stateGap = field("state_ballot_shortfall") ?? "";
     const countyGap = field("county_ballot_shortfall") ?? "";
     const virginia = code === "VA" && date === "2022-11-08";
-    const countOnly = measure === "ballots_cast" && basis === "" && stock === "" && rate === null
+    const minnesota = code === "MN" && measure === "total_voters" && basis === "Pre-registered at 7 a.m."
+      && stock === "" && rate === null && hold === "pre_registration_excludes_same_day_registrants";
+    const countOnly = minnesota || (measure === "ballots_cast" && basis === "" && stock === "" && rate === null
       && ((code === "WY" && hold === "registration_not_in_report")
         || (virginia && hold === "registration_not_in_report")
-        || (code === "CO" && hold === coloradoCountOnlyReasons.get(date)));
+        || (code === "CO" && hold === coloradoCountOnlyReasons.get(date))));
     const edition = field("report_edition"), note = field("report_note") || "";
     if (!countStates.includes(code) || !/^\d{4}$/.test(year) || !/^\d{4}-11-\d{2}$/.test(date)
         || !date.startsWith(`${year}-`) || (!["state", "county"].includes(level)
@@ -803,9 +807,15 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
   if ([...frames.values()].some(frame => frame.code === "NE" && frame.rows.size !== 94))
     throw new Error("Incomplete Nebraska statewide and county report");
   for (const frame of frames.values()) {
-    if (!["CO", "VA"].includes(frame.code)) continue;
+    if (!["CO", "VA", "MN"].includes(frame.code)) continue;
     const state = frame.rows.get("state");
     const countySum = [...frame.rows.entries()].reduce((sum, [key, row]) => sum + (key === "state" ? 0 : row.count), 0);
+    if (frame.code === "MN") {
+      if (frame.rows.size !== 88 || state.count !== countySum || state.name !== "Minnesota"
+          || [...frame.rows.values()].some(row => row.registered !== null || row.rate !== null))
+        throw new Error("Incomplete or inconsistent Minnesota county report");
+      continue;
+    }
     if (frame.code === "VA") {
       if (frame.rows.size !== 134 || state.count !== countySum
           || [...frame.rows.keys()].filter(key => key.endsWith(" CITY")).length !== 38)
@@ -1467,6 +1477,14 @@ function installAdministrativeCoverage(host) {
       } catch {
         const notice = document.createElement("p");
         notice.textContent = "The Colorado precinct download descriptor could not be verified.";
+        content.append(notice);
+      }
+      try {
+        const statistics = coverageCsvFile(manifest.house_sources, minnesotaPrecinctStatisticsPath);
+        if (statistics) content.append(installMinnesotaPrecinctMap(statistics, historicalCsvLine));
+      } catch {
+        const notice = document.createElement("p");
+        notice.textContent = "The Minnesota precinct download descriptor could not be verified.";
         content.append(notice);
       }
       if (manifest.house_sources?.wyoming_precinct_canvass) content.append(installStateCountyArchives(

@@ -14,6 +14,26 @@ import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill }
   from "../public/scripts/participation-historical-county-map.js";
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
 import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-precinct-map.js";
+import { bindMinnesotaPrecinctLayer, minnesotaPrecinctFrames }
+  from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Minnesota maps require equal participation counts and election-year precinct IDs", () => {
+  const layer = {
+    contract: "participation.mn_historical_precinct_display.v1", state_code: "MN",
+    county_geoid: "27001", election_date: "2024-11-05", coordinate_system: "EPSG:4326",
+    display_only: true, ballots_allocated_by_geometry: false,
+    features: [{ properties: { precinct_id: "270010005", reported_total_voters: 0 },
+      geometry: { type: "Polygon", coordinates: [] } }],
+  };
+  const rows = [{ id: "270010005", count: 0 }];
+  assert.deepEqual(bindMinnesotaPrecinctLayer(layer, "2024-11-05", "27001", rows), rows);
+  assert.throws(() => bindMinnesotaPrecinctLayer(layer, "2022-11-08", "27001", rows), /scope/);
+  assert.throws(() => bindMinnesotaPrecinctLayer(layer, "2024-11-05", "27001", [{ ...rows[0], count: 1 }]), /differs/);
+  const csv = "state_code,election_date,county_geoid,county,precinct_id,precinct_name,source_status,rate_hold_reason,reported_total_voters,registered_at_7am,same_day_registrations\n"
+    + "MN,2024-11-05,27001,Aitkin,270010005,Aitkin,reported,pre_registration_excludes_same_day_registrants,0,10,0";
+  assert.throws(() => minnesotaPrecinctFrames(csv, line => line.split(",")), /Incomplete/);
+  assert.throws(() => minnesotaPrecinctFrames(csv.replace(",0,10,0", ",,10,0"), line => line.split(",")), /Invalid/);
+});
 
 test("Denver map requires exact full 2022 precinct identities, not matching suffixes", () => {
   const asset = new URL("../public/participation-archive-geometry/precinct-CO-Denver-2022.json.gz", import.meta.url);
