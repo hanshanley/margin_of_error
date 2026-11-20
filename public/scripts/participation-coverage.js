@@ -23,6 +23,7 @@ const indianaTurnoutPath = "release/participation-indiana-general-turnout-histor
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const californiaCurrentReportPath = "release/participation-ca-2026-county-turnout-report.csv.gz";
 const publishedCpsPath = "release/participation-cps-published-state-tables.csv.gz";
+const archivedCpsPath = "release/participation-cps-archived-state-tables.csv.gz";
 const overallCpsPath = "release/participation-cps-state-overall-history.csv.gz";
 const nc2006CountyCsv = {
   bytes: 23208,
@@ -320,7 +321,7 @@ export function stateCountyArchivesDownload(sources) {
   }
 }
 
-export function publishedCpsRows(csv, summary) {
+export function publishedCpsRows(csv, summary, { archived = false } = {}) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const columns = historicalCsvLine(header);
   const rates = ["vap_voted", "cvap_voted", "vap_registered", "cvap_registered"];
@@ -336,16 +337,26 @@ export function publishedCpsRows(csv, summary) {
     if (cells.length !== columns.length) throw new Error("Census CSV record differs");
     const row = Object.fromEntries(columns.map((key, index) => [key, cells[index]]));
     const year = Number(row.year), code = row.state_code;
-    const earlyVolume = year === 2002 ? 552 : year === 2004 ? 556 : null;
-    const nativeTables = earlyVolume
-      ? { overall: ["4a", "4b", "4c"], age: ["4b"], sex: ["4a"], race_or_hispanic_origin: ["4a"] }
+    const earlyVolume = year === 2000 ? 542 : year === 2002 ? 552 : year === 2004 ? 556 : null;
+    const earlyText = year === 1996 ? `504/tab${row.source_table}.txt`
+      : year === 1998 ? "523-rv/tab04.txt" : null;
+    const nativeTables = year === 1996
+      ? { overall: ["4a", "4b", "4c"], age: ["4b"], sex: ["4b", "4c"], race_or_hispanic_origin: ["4a"] }
+      : year === 1998 ? { overall: ["4"], sex: ["4"], race_or_hispanic_origin: ["4"] }
+      : earlyVolume ? { overall: ["4a", "4b", "4c"], age: ["4b"], sex: ["4a"], race_or_hispanic_origin: ["4a"] }
       : { overall: ["4b", "4c"], age: ["4c"], sex: ["4b"], race_or_hispanic_origin: ["4b"] };
     const key = `${year}/${code}/${row.group}/${row.source_table}`;
+    const uncertainty = year === 1996 ? "not_published" : year === 1998 ? "standard_error" : "margin_90";
+    const numeric = v => typeof v === "string" && /^\d+(?:\.\d+)?$/.test(v) && Number(v) <= 100;
     if (!summary.years.includes(year) || !expectedStates.has(code) || seen.has(key)
+        || archived !== [1996, 1998, 2000].includes(year)
         || row.election_type !== (year % 4 === 0 ? "presidential" : "midterm")
         || !Object.hasOwn(nativeTables, row.dimension) || !nativeTables[row.dimension].includes(row.source_table)
-        || row.confidence_level_pct !== "90"
-        || !(earlyVolume
+        || row.confidence_level_pct !== (earlyText ? "" : "90")
+        || (archived && row.source_uncertainty !== uncertainty)
+        || !(earlyText
+          ? row.source_url === `https://www2.census.gov/programs-surveys/cps/tables/p20/${earlyText}`
+          : earlyVolume
           ? row.source_url === `https://www2.census.gov/programs-surveys/cps/tables/p20/${earlyVolume}/tab0${row.source_table}.xls`
           : year === 2008
           ? row.source_url === `https://www2.census.gov/programs-surveys/cps/tables/p20/562-rv/table-0${row.source_table}.xls`
@@ -353,9 +364,11 @@ export function publishedCpsRows(csv, summary) {
       throw new Error("Census cohort or source identity differs");
     for (const prefix of rates) {
       const point = row[`${prefix}_pct`], moe = row[`${prefix}_moe_pp`];
-      if ((earlyVolume && !prefix.startsWith(row.source_table === "4c" ? "cvap_" : "vap_") && point !== "")
-        || (point === "") !== (moe === "") || [point, moe].some(v =>
-        v !== "" && (!/^\d+(?:\.\d+)?$/.test(v) || Number(v) > 100)))
+      const se = row[`${prefix}_se_pp`] ?? "";
+      if (((earlyVolume || earlyText) && !prefix.startsWith(row.source_table === "4c" ? "cvap_" : "vap_") && point !== "")
+        || (earlyText ? moe !== "" : (point === "") !== (moe === ""))
+        || (year === 1998 && prefix.startsWith("vap_") ? (point === "") !== (se === "") : se !== "")
+        || [point, moe, se].some(v => v !== "" && !numeric(v)))
         throw new Error("Census point or margin differs");
     }
     seen.add(key);
@@ -371,8 +384,11 @@ export function publishedCpsRows(csv, summary) {
 }
 
 export function cpsRowsForBasis(rows, basis) {
-  return rows.filter(r => r.group !== "Total" || Number(r.year) > 2004
-    || r.source_table === (basis === "cvap" ? "4c" : "4a"));
+  return rows.filter(r => {
+    const year = Number(r.year);
+    if ([1996, 1998, 2000].includes(year)) return basis === (r.source_table === "4c" ? "cvap" : "vap");
+    return r.group !== "Total" || year > 2004 || r.source_table === (basis === "cvap" ? "4c" : "4a");
+  });
 }
 
 export function overallCpsRows(csv, summary) {
@@ -423,7 +439,7 @@ export function cpsMapCells(rows, year, basis, group) {
     if (row.year !== year || row.state_code === "US"
         || (group ? row.group !== group : row.denominator_basis !== basis)) continue;
     const point = group ? row[`${basis}_voted_pct`] : row.reported_voted_pct;
-    if (point !== "") cells.set(row.state_code, { point, moe: group ? row[`${basis}_voted_moe_pp`] : null });
+    if (point !== "") cells.set(row.state_code, { point, moe: group ? row[`${basis}_voted_moe_pp`] || null : null });
   }
   return cells;
 }
@@ -585,21 +601,24 @@ export function publishedCpsStatus(check) {
   return "The latest November 2026 Census check could not verify the tables.";
 }
 
-function installPublishedCps(sources, file, names) {
+function installPublishedCps(sources, file, names, { archived = false } = {}) {
   const panel = document.createElement("details"), heading = document.createElement("summary");
   const note = document.createElement("p"), download = document.createElement("a");
   const button = document.createElement("button"), status = document.createElement("p");
-  heading.textContent = "Compare Census survey turnout by state and group";
+  heading.textContent = archived ? "Compare Census survey turnout by group, 1996–2000"
+    : "Compare Census survey turnout by state and group";
   download.href = file.url;
   download.textContent = "Complete Census state turnout tables (CSV · gzip)";
   note.append("Census survey estimates of reported voting and registration, not official ballot counts. "
-    + "The margins of error are for individual estimates at the 90% confidence level, not for changes across years. "
+    + (archived ? "The 1998 tables give standard errors, not margins of error. The 1996 tables shown here do not report uncertainty. "
+      : "The margins of error are for individual estimates at the 90% confidence level, not for changes across years. ")
     + "Race and Hispanic-origin categories can overlap. The age bands available vary by election. ", download);
   button.type = "button"; button.textContent = "Load Census turnout comparisons";
   status.setAttribute("role", "status");
   panel.append(heading, note, button, status);
   const survey = sources.supported_release.coverage.historical_survey;
-  const checkMessage = publishedCpsStatus(survey.current_published_state_tables);
+  const series = archived ? survey.archived_state_tables : survey.published_state_tables;
+  const checkMessage = archived ? "" : publishedCpsStatus(survey.current_published_state_tables);
   if (checkMessage) {
     const sourceStatus = document.createElement("p");
     sourceStatus.textContent = checkMessage;
@@ -612,7 +631,7 @@ function installPublishedCps(sources, file, names) {
     try {
       const body = await checkedCountyBody(file.url, file, retry);
       const text = await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
-      const rows = publishedCpsRows(text, survey.published_state_tables);
+      const rows = publishedCpsRows(text, series, { archived });
       const state = document.createElement("select"), group = document.createElement("select");
       const basis = document.createElement("select");
       state.append(new Option("United States", "US"), ...countStates.map(code => new Option(names[code] || code, code)));
@@ -637,7 +656,7 @@ function installPublishedCps(sources, file, names) {
         const selected = new Map(cpsRowsForBasis(rows, basis.value)
           .filter(r => r.state_code === state.value && r.group === group.value)
           .map(r => [Number(r.year), r]));
-        for (const year of survey.published_state_tables.years) {
+        for (const year of series.years) {
           const r = selected.get(year);
           const tr = tbody.insertRow(), label = document.createElement("th");
           label.scope = "row"; label.textContent = `${year} ${year % 4 === 0 ? "presidential" : "midterm"}`;
@@ -645,8 +664,8 @@ function installPublishedCps(sources, file, names) {
           if (!r) {
             const missing = tr.insertCell();
             missing.colSpan = 3;
-            const heldAge = year === 2008 ? survey.published_state_tables.held_2008_age_frames
-              : survey.published_state_tables.held_vap_age_frames?.[String(year)];
+            const heldAge = year === 2008 ? series.held_2008_age_frames
+              : series.held_vap_age_frames?.[String(year)];
             missing.textContent = groups.get(group.value) === "age" && heldAge?.includes(state.value)
               ? "Age estimates withheld: Census tables disagree"
               : "Group not published for this state and election";
@@ -656,9 +675,12 @@ function installPublishedCps(sources, file, names) {
             const key = `${basis.value}_${measure}`;
             const withheld = r.source_markers?.includes(`"${key}_pct":"invalid_published_rate"`);
             const notInTable = r.source_markers?.includes(`"${key}_pct":"not_in_table"`);
+            const disagreement = r.source_markers?.includes(`"${key}_pct":"source_control_disagreement"`);
+            const moe = r[`${key}_moe_pp`], se = r[`${key}_se_pp`];
             tr.insertCell().textContent = r[`${key}_pct`] === "" ? (withheld ? "Withheld: invalid source rate"
+              : disagreement ? "Withheld: Census counts disagree"
               : notInTable ? "Not published for this denominator" : "Not published")
-              : `${r[`${key}_pct`]}% ± ${r[`${key}_moe_pp`]} pp`;
+              : `${r[`${key}_pct`]}%` + (moe ? ` ± ${moe} pp` : se ? ` (SE ${se} pp)` : "");
           }
           const source = document.createElement("a");
           source.href = r.source_url; source.textContent = `Table ${r.source_table}`;
@@ -673,7 +695,7 @@ function installPublishedCps(sources, file, names) {
           return label;
         }));
       status.textContent = "";
-      addCpsMap(panel, rows, survey.published_state_tables, basis, state, names, group);
+      addCpsMap(panel, rows, series, basis, state, names, group);
       scroller.append(table); panel.append(scroller); render(); state.focus();
     } catch {
       retry = true;
@@ -1156,6 +1178,8 @@ function installAdministrativeCoverage(host) {
       try {
         const census = coverageCsvFile(manifest.house_sources, publishedCpsPath);
         if (census) content.append(installPublishedCps(manifest.house_sources, census, names));
+        const archived = coverageCsvFile(manifest.house_sources, archivedCpsPath);
+        if (archived) content.append(installPublishedCps(manifest.house_sources, archived, names, { archived: true }));
         const overall = coverageCsvFile(manifest.house_sources, overallCpsPath);
         const summary = manifest.house_sources.supported_release?.coverage?.historical_survey?.published_state_overall_history;
         if (overall && summary) content.append(installOverallCps(overall, summary, names));
