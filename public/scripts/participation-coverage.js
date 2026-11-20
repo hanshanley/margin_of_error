@@ -447,7 +447,7 @@ function installStateCountyArchives(sources, url, names, currentCalifornia = fal
       state.addEventListener("change", selectYears);
       year.addEventListener("change", render);
       selectYears();
-      if (!currentCalifornia) installHistoricalCountyMap(panel, state, year, null, names, currentFrame);
+      installHistoricalCountyMap(panel, state, year, null, names, currentFrame);
       panel.append(scroller);
       if (!currentCalifornia) panel.append(history);
       state.focus();

@@ -25,6 +25,12 @@ export const officialArchiveGeometry = {
     sha256: "43e5fbcd88f268e84fa6e667f172539a835ff46878137137af7dee8df15dfc0c",
     referenceDate: "2006-01-01",
   },
+  "CA/2026": {
+    path: "participation-archive-geometry/county-CA-2026.geojson.gz",
+    bytes: 1743930,
+    sha256: "3a422ef0e610eb98d0a16d1fd8b28a403bff1b31dded6bc2874b15e6c607e635",
+    boundaryLabel: "2026 Census TIGER/Line county boundaries.",
+  },
   "NJ/2023": {
     path: "participation-archive-geometry/county-NJ-2023.geojson.gz",
     bytes: 62105,
@@ -234,7 +240,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         + "Darker blue means a higher fraction of registered voters (0–100%). Blue-gray means count only; "
         + "light gray means no verified mapped count, not zero. "
         + (legacy?.referenceDate ? "Census reference boundaries dated January 1, 2006."
-          : legacy ? `${vintage} Census cartographic county boundaries (simplified).`
+          : legacy ? legacy.boundaryLabel ?? `${vintage} Census cartographic county boundaries (simplified).`
           : "Boundaries are for this election year only.");
       figure.append(svg);
     } catch {
