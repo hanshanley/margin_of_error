@@ -23,6 +23,7 @@ const indianaTurnoutPath = "release/participation-indiana-general-turnout-histor
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const californiaCurrentReportPath = "release/participation-ca-2026-county-turnout-report.csv.gz";
 const nebraskaCurrentReportPath = "release/participation-ne-2026-county-canvass.csv.gz";
+const nebraskaCountyReportsPath = "release/participation-ne-2026-county-reports.csv.gz";
 const publishedCpsPath = "release/participation-cps-published-state-tables.csv.gz";
 const archivedCpsPath = "release/participation-cps-archived-state-tables.csv.gz";
 const overallCpsPath = "release/participation-cps-state-overall-history.csv.gz";
@@ -774,6 +775,106 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
 const archiveMeasureLabel = measure => measure === "voter_history_credits" ? "Voter-history credits"
   : measure === "total_voters" ? "Total Voters" : "Ballots Cast";
 
+export function nebraskaCountyReportsFrame(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const fields = ["county", "election_date", "disposition", "ballots", "election_day", "early", "provisional",
+    "source_status", "report_status", "report_clock", "index_clock", "source_url", "source_sha256", "source_bytes"];
+  if (lines.length !== 93 || new Set(columns).size !== columns.length
+      || fields.some(field => !columns.includes(field))) throw new Error("Incomplete Nebraska county reports");
+  const rows = new Map(), integer = text => /^\d+$/.test(text) && Number.isSafeInteger(Number(text));
+  const clock = /^\d{1,2}\/\d{1,2}\/2026 \d{1,2}:\d{2} [AP]M$/;
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), field = key => cells[columns.indexOf(key)];
+    const name = field("county"), disposition = field("disposition"), url = field("source_url");
+    const reportStatus = field("report_status"), sourceStatus = field("source_status");
+    const measures = ["ballots", "election_day", "early", "provisional"].map(field);
+    if (cells.length !== columns.length || !/^[A-Za-z]+(?: [A-Za-z]+)*$/.test(name)
+        || rows.has(`county/${name}`) || field("election_date") !== "2026-11-03"
+        || !/^[a-z_]+$/.test(disposition)) throw new Error("Invalid Nebraska county report identity");
+    const observed = measures[0] !== "";
+    const modes = measures.slice(1);
+    if (observed ? (!integer(measures[0]) || (!modes.every(value => value === "")
+        && (!modes.every(integer) || Number(measures[0]) !== modes.reduce((a, v) => a + Number(v), 0)))
+        || sourceStatus !== (disposition === "reported" ? "reported" : "retained_after_failure")
+        || !["official", "unofficial"].includes(reportStatus) || !clock.test(field("report_clock"))
+        || !clock.test(field("index_clock")) || !/^[a-f0-9]{64}$/.test(field("source_sha256"))
+        || !integer(field("source_bytes")) || Number(field("source_bytes")) <= 0
+        || url !== `https://countyelectionresults.nebraska.gov/election_files/${encodeURIComponent(name)}/2026_General_${reportStatus}_results.pdf`)
+      : (disposition === "reported" || fields.slice(3).some(key => field(key) !== "")))
+      throw new Error("Invalid Nebraska county count or provenance");
+    rows.set(`county/${name}`, { name, count: observed ? Number(measures[0]) : null, rate: null,
+      disposition, sourceStatus, reportStatus, url, clock: field("report_clock") });
+  }
+  if (![...rows.values()].some(row => row.count !== null)) throw new Error("No verified county counts");
+  return { code: "NE", date: "2026-11-03", measure: "ballots_cast", partialCountyReports: true, rows };
+}
+
+export function installNebraskaCountyReports(file) {
+  const panel = document.createElement("details"), title = document.createElement("summary");
+  title.textContent = "Nebraska’s 2026 county ballot reports";
+  const note = document.createElement("p"), load = document.createElement("button"), status = document.createElement("p");
+  note.textContent = "County reports may reflect different editions. These are counts, not turnout rates or a statewide total.";
+  load.type = "button";
+  load.textContent = "Load county reports";
+  status.setAttribute("role", "status");
+  const download = document.createElement("a");
+  download.href = file.url;
+  download.textContent = "Complete county reports (CSV · gzip)";
+  panel.append(title, note, download, " · ", load, status);
+  load.addEventListener("click", async () => {
+    const retry = load.textContent === "Retry county reports";
+    load.disabled = true;
+    status.textContent = "Checking the stored reports…";
+    try {
+      const bytes = await checkedCountyBody(file.url, file, retry);
+      const csv = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+      const frame = nebraskaCountyReportsFrame(csv), wrapper = document.createElement("div");
+      const table = document.createElement("table"), caption = table.createCaption();
+      caption.textContent = "November 3, 2026 · Nebraska county ballot counts";
+      wrapper.className = "table-wrap";
+      wrapper.tabIndex = 0;
+      wrapper.setAttribute("role", "region");
+      wrapper.setAttribute("aria-label", "Nebraska county ballot reports");
+      const head = table.createTHead().insertRow(), body = table.createTBody();
+      for (const label of ["County", "Ballots cast", "Source status", "Report clock", "Original report"]) {
+        const cell = document.createElement("th");
+        cell.scope = "col"; cell.textContent = label; head.append(cell);
+      }
+      const number = new Intl.NumberFormat("en-US");
+      let qualified = 0;
+      for (const value of frame.rows.values()) {
+        const row = body.insertRow(), name = document.createElement("th");
+        name.scope = "row"; name.textContent = value.name; row.append(name);
+        const reported = value.count !== null;
+        if (reported) qualified++;
+        row.insertCell().textContent = reported ? number.format(value.count) : "Not verified";
+        row.insertCell().textContent = reported
+          ? `${value.reportStatus === "official" ? "Official" : "Unofficial"}${value.sourceStatus === "reported" ? "" : " · last verified"}`
+          : value.disposition === "compatible_report_not_linked" ? "No compatible PDF linked" : "Report not qualified";
+        row.insertCell().textContent = value.clock || "—";
+        const source = row.insertCell();
+        if (reported) {
+          const link = document.createElement("a");
+          link.href = value.url; link.textContent = `${value.name} PDF`; source.append(link);
+        } else source.textContent = "—";
+      }
+      wrapper.append(table);
+      panel.append(wrapper);
+      const state = document.createElement("input"), year = document.createElement("input");
+      state.value = frame.code; year.value = frame.date;
+      installHistoricalCountyMap(panel, state, year, null, { NE: "Nebraska" }, () => frame);
+      load.remove();
+      status.textContent = `${qualified} of 93 county counts verified.`;
+    } catch {
+      load.disabled = false;
+      load.textContent = "Retry county reports";
+      status.textContent = "The stored Nebraska county reports could not be verified.";
+    }
+  });
+  return panel;
+}
+
 function archiveStateHistory(panel, frames, name) {
   const table = document.createElement("table"), chart = document.createElement("figure");
   const note = document.createElement("figcaption"), scroller = document.createElement("div");
@@ -1188,6 +1289,10 @@ function installAdministrativeCoverage(host) {
         const report = coverageCsvFile(manifest.house_sources, nebraskaCurrentReportPath);
         if (report) content.append(installStateCountyArchives(
           manifest.house_sources, report.url, names, { currentNebraska: true }));
+        else {
+          const countyReports = coverageCsvFile(manifest.house_sources, nebraskaCountyReportsPath);
+          if (countyReports) content.append(installNebraskaCountyReports(countyReports));
+        }
       } catch {
         const notice = document.createElement("p");
         notice.textContent = "The Nebraska 2026 canvass descriptor could not be verified.";

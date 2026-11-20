@@ -7,11 +7,35 @@ import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
-  wyomingCurrentCountyFrame, wyomingCanvassCountyFrame }
+  wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive } from "../public/scripts/participation-historical-county-map.js";
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
+
+test("the partial Nebraska map preserves a reported zero and leaves unverified counties blank", () => {
+  const asset = new URL("../public/participation-archive-geometry/county-NE-2026.geojson.gz", import.meta.url);
+  const geometry = JSON.parse(gunzipSync(readFileSync(asset)));
+  const header = "county,election_date,disposition,ballots,election_day,early,provisional,source_status,"
+    + "report_status,report_clock,index_clock,source_url,source_sha256,source_bytes";
+  const data = geometry.features.map(({ properties: { name } }, index) => {
+    if (index === 0) return `${name},2026-11-03,reported,0,0,0,0,reported,official,11/11/2026 9:19 AM,`
+      + `11/11/2026 10:00 AM,https://countyelectionresults.nebraska.gov/election_files/${encodeURIComponent(name)}`
+      + `/2026_General_official_results.pdf,${"a".repeat(64)},100`;
+    return `${name},2026-11-03,layout_unqualified,,,,,,,,,,,`;
+  });
+  const csv = [header, ...data].join("\n");
+  const frame = nebraskaCountyReportsFrame(csv);
+  assert.equal(frame.rows.has("state"), false);
+  const bound = bindOfficialCountyArchive(geometry, frame);
+  assert.equal(bound[0].value.count, 0);
+  assert.equal(bound.slice(1).every(row => row.value === null), true);
+  assert.throws(() => nebraskaCountyReportsFrame(csv.replace("reported,0,0,0,0", "reported,7,0,0,0")), /provenance/);
+  assert.throws(() => nebraskaCountyReportsFrame(csv.replace("layout_unqualified,,,,", "layout_unqualified,,3,,")), /provenance/);
+  const replaced = structuredClone(geometry);
+  replaced.features[1].properties.name = "Not A Nebraska County";
+  assert.throws(() => bindOfficialCountyArchive(replaced, frame), /roster/);
+});
 
 test("the Wyoming county map uses county controls and the freshness of the accepted precinct canvass", () => {
   const frame = wyomingCanvassCountyFrame({

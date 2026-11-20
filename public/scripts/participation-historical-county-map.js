@@ -166,8 +166,11 @@ export function bindOfficialCountyArchive(collection, frame) {
   const { code, date, rows } = frame;
   const year = Number(date.slice(0, 4));
   const size = officialCountySizes[code];
+  const partial = frame.partialCountyReports === true && code === "NE" && date === "2026-11-03";
   if (!size || collection?.type !== "FeatureCollection" || !Array.isArray(collection.features)
-      || collection.features.length !== size || rows.size !== size + 1 || !rows.has("state"))
+      || collection.features.length !== size
+      || (partial ? rows.size !== size || rows.has("state")
+        : rows.size !== size + 1 || !rows.has("state")))
     throw new Error("Missing complete official county frame");
   const byName = new Map(), keys = new Set();
   for (const [key, row] of rows) {
@@ -188,7 +191,7 @@ export function bindOfficialCountyArchive(collection, frame) {
         || !Number.isInteger(value.rate) || value.rate < 0 || value.rate > 100)))
       throw new Error("Official county roster differs from its dated reference");
     byName.delete(name);
-    return { feature, value };
+    return { feature, value: partial && value.count === null ? null : value };
   });
 }
 
@@ -279,6 +282,10 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         ? `${label}: ${rates} of ${bound.length} counties have published whole-percent rates. `
           + "Darker blue indicates higher reported turnout (0–100%). "
           + "The report does not specify the count or denominator. Census reference boundaries dated January 1, 2006."
+        : frame?.partialCountyReports
+          ? `${label}: ${counts} of ${bound.length} county reports have verified counts. `
+            + "Blue-gray means reported; light gray means no verified count, not zero. "
+            + "Reports have separate editions; no statewide total or rates are calculated."
         : `${label}: ${counts} of ${bound.length} areas have verified counts; ${rates} have rates. `
         + (frame?.measure === "voter_history_credits" ? "Counts are voter-history credits, not physical ballot counts. " : "")
         + "Darker blue means a higher fraction of registered voters (0–100%). Blue-gray means count only; "
