@@ -35,6 +35,8 @@ const demographicRelease = 'https://github.com/hanshanley/margin_of_error/releas
 const civicStateGroups = JSON.parse(readFileSync(
 	resolve('data/participation-civic-state-demographics/20261108-01/viewer-data.json'), 'utf8')).groups;
 const civicStateRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-civic-state-demographics-20261108-01/';
+const historicalCountyFallback = 'd18ed6729900c807377176afea20859a187081c0e376365f5f5031d17728d91e';
+const historicalCountyFallbackCommit = 'fbb4fda6374e119076e5ff081424b246575ab18b';
 const mapRepairRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-map-repairs-20261107-01/';
 const precinctResultsPointerPath = resolve('public/precinct-results.json');
 const precinctResultsPointer = existsSync(precinctResultsPointerPath)
@@ -340,6 +342,17 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<a href={`${demographicRelease}complete-state-demographic-participation.csv`} download>Every state and demographic estimate (CSV)</a>
 				</div>
 			</details></noscript>
+
+		<noscript><details class="participation-reference" id="historical-county-downloads">
+			<summary>Historical county participation downloads, 2004–2024</summary>
+			<p>This fixed Election Assistance Commission snapshot contains every county-year count and review decision,
+				including withheld values. Supported rates use registrations from the same report. Interactive maps and
+				the latest verified release require JavaScript.</p>
+			<div class="download-links">
+				<a href={`https://raw.githubusercontent.com/hanshanley/margin_of_error/${historicalCountyFallbackCommit}/automatic/versions/${historicalCountyFallback}/participation/eac-county-year-decisions.csv.gz`}>Complete EAC county-year counts and decisions (CSV · gzip)</a>
+				<a href={`https://github.com/hanshanley/margin_of_error/releases/download/automatic-participation-${historicalCountyFallback}/complete-analysis.zip`}>Complete inputs, queries and results (ZIP)</a>
+			</div>
+		</details></noscript>
 
 		<noscript><details class="participation-reference" id="civic-state-model-snapshot">
 			<summary>2026 statewide modeled participation</summary>

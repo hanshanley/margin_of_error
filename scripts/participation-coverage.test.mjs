@@ -2,13 +2,80 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
-import { administrativeRows, coverageRows, historicalCountyDownload } from "../public/scripts/participation-coverage.js";
+import { createHash } from "node:crypto";
+import { gzipSync } from "node:zlib";
+import { administrativeRows, coverageRows, historicalCountyDownload, historicalCountyRows,
+  loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames, northCarolinaAgeRows }
+  from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
+import { bindHistoricalCountyMap, bindOfficialCountyArchive } from "../public/scripts/participation-historical-county-map.js";
 
 const catalog = { datasets: {
   "participation-counts-2026": { status: "loaded" },
   "participation-native-bindings-2026": { status: "loaded" },
 } };
+
+test("election-office archive frames preserve native measures, held rates and last-good metadata", () => {
+  const header = "state_code,year,election_date,geography_level,geography,reported_ballots_cast,"
+    + "reported_registered_voters,qualified_same_report_registration_fraction_pct,rate_hold_reason,source_status,"
+    + "source_url,source_sha256,report_edition,participation_measure,reported_total_voters,registration_basis";
+  const source = `retained_after_failure,https://example.test/report.pdf,${"a".repeat(64)},,total_voters,`;
+  const statewide = `CA,2024,2024-11-05,state,California,,120,50,,${source}60,"15-day report, not election-day stock"`;
+  const county = `CA,2024,2024-11-05,county,Alameda,,100,,printed_disagreement,${source}60,"15-day report, not election-day stock"`;
+  const [frame] = stateCountyArchiveFrames([header, statewide, county].join("\n"));
+  assert.equal(frame.measure, "total_voters");
+  assert.equal(frame.status, "retained_after_failure");
+  assert.equal(frame.basis, "15-day report, not election-day stock");
+  assert.equal(frame.rows.get("state").count, 60);
+  assert.equal(frame.rows.get("county/Alameda").rate, null);
+  assert.throws(() => stateCountyArchiveFrames([header, statewide, county, county].join("\n")), /repeated/);
+  assert.throws(() => stateCountyArchiveFrames([header, statewide.replace(",50,,", ",51,,"), county].join("\n")), /fraction/);
+  assert.throws(() => stateCountyArchiveFrames([header, statewide, county.replace("Alameda,,100", "Alameda,60,100")].join("\n")), /count/);
+  assert.throws(() => stateCountyArchiveFrames([header, county].join("\n")), /state or county total/);
+  const current = [statewide, ...Array.from({ length: 58 }, (_, i) =>
+    county.replace("Alameda", `County ${i + 1}`))].map(row => row.replace("CA,2024,2024-11-05", "CA,2026,2026-11-03"));
+  const currentCsv = [header, ...current].join("\n");
+  assert.throws(() => stateCountyArchiveFrames(currentCsv), /identity/);
+  assert.equal(stateCountyArchiveFrames(currentCsv, { currentCalifornia: true })[0].rows.size, 59);
+  assert.throws(() => stateCountyArchiveFrames(
+    [header, ...current.slice(0, -1)].join("\n"), { currentCalifornia: true }), /Incomplete California/);
+  assert.throws(() => stateCountyArchiveFrames(currentCsv.replaceAll("2026-11-03", "2026-11-04"),
+    { currentCalifornia: true }), /identity/);
+});
+
+test("pre-2015 Shannon County uses the dated code without changing the source row", () => {
+  const feature = { type: "Feature", properties: { key: "46113", name: "Shannon", state_code: "SD",
+    boundary_year: 2014, level: "county" }, geometry: { type: "Polygon" } };
+  const collection = { type: "FeatureCollection", features: [feature] };
+  const row = { year: 2014, code: "SD", fips: "46102", name: "Oglala Lakota County",
+    count: 2793, registered: 8457, rate: 33.03 };
+  const reference = { year: 2014, state_code: "SD", geography: { key: "46113", level: "county" },
+    jurisdiction_id: "4611300000", jurisdiction: "Shannon County", total_participation: 2793, registered: 8457 };
+  const bind = (rows = [row], prior = [reference]) => bindHistoricalCountyMap(collection, prior, rows, "SD", 2014)[0];
+  assert.equal(bind().value, row);
+  assert.equal(bind().method, "sd_shannon_county_pre_2015_code");
+  assert.equal(bind([row], [{ ...reference, registered: 8000 }]).value, null);
+  assert.equal(bind([row], [{ ...reference, total_participation: 2794 }]).value, null);
+  assert.throws(() => bind([row, { ...row, fips: "46113", name: "Shannon County" }]), /Ambiguous/);
+});
+
+test("official county maps require a complete, unique roster on the exact dated layer", () => {
+  const rows = new Map([["state", { name: "New Jersey" }]]);
+  const features = Array.from({ length: 21 }, (_, i) => {
+    const name = `Area ${i + 1}`;
+    rows.set(`county/${name}`, { name, count: i, rate: i ? null : 0 });
+    return { type: "Feature", properties: { key: `34${String(i * 2 + 1).padStart(3, "0")}`,
+      name, boundary_year: 2024, state_code: "NJ", level: "county" }, geometry: { type: "Polygon" } };
+  });
+  const collection = { type: "FeatureCollection", features };
+  const frame = { code: "NJ", date: "2024-11-05", rows };
+  assert.deepEqual(bindOfficialCountyArchive(collection, frame).map(({ value }) => value.count),
+    Array.from({ length: 21 }, (_, i) => i));
+  assert.throws(() => bindOfficialCountyArchive(collection, { ...frame, date: "2022-11-08" }), /identity/);
+  assert.throws(() => bindOfficialCountyArchive({ ...collection, features: features.slice(1) }, frame), /complete/);
+  const wrong = { ...features[0], properties: { ...features[0].properties, name: "Unrelated county" } };
+  assert.throws(() => bindOfficialCountyArchive({ ...collection, features: [wrong, ...features.slice(1)] }, frame), /roster/);
+});
 const counts = { states: { MN: { views: {
   available: { counties: 87, precincts: 4105, holds: 0,
     dispositions: { counties: { reported: 87, unknown: 0, withheld: 0, qualified_fractions: 73 } } },
@@ -28,15 +95,154 @@ test("historical county downloads are bound to the exact runtime and separate fr
     historical_eac_counties: { ...series, historical_not_2026: false } }), null);
 });
 
+const historicalCsv = [
+  "state,year,county_fips,county_name,county_registered,county_turnout,county_highest_office_flag,direct_registered,direct_turnout,direct_highest_office_flag,decision,direct_reported_turnout,same_report_registration_fraction_pct",
+  'AL,2024,01001,"COUNTY, ""A""",25,0,0,25,0,0,reconciled_direct_county_turnout,0,0.0',
+  "AL,2022,01001,A COUNTY,25,17,0,26,17,0,reconciled_direct_county_turnout,17,",
+  "AL,2022,01003,B COUNTY,25,17,1,25,17,1,highest_office_source_reported,,",
+  "AK,2022,02000,ALASKA,25,17,0,25,17,0,not_a_county_scope,,",
+].join("\n");
+const historicalSeries = { county_rows: 4, direct_count_rows: 2, same_report_registration_fraction_rows: 1,
+  election_years: [2022, 2024], decisions: {
+    reconciled_direct_county_turnout: 2, highest_office_source_reported: 1, not_a_county_scope: 1,
+  } };
+
+test("historical county table preserves literal identities, true zeros, missing rates and held counts", () => {
+  const rows = historicalCountyRows(historicalCsv, historicalSeries);
+  assert.deepEqual(rows[0], { code: "AL", year: 2024, fips: "01001", name: 'COUNTY, "A"',
+    registered: 25, count: 0, rate: 0, decision: "reconciled_direct_county_turnout" });
+  assert.deepEqual(rows.slice(1).map(row => [row.count, row.registered, row.rate]),
+    [[17, null, null], [null, null, null], [null, null, null]]);
+  assert.throws(() => historicalCountyRows(historicalCsv.replace(",2024,", ",2026,"), historicalSeries), /identity/);
+  assert.throws(() => historicalCountyRows(historicalCsv.replace("highest_office_source_reported,,",
+    "highest_office_source_reported,17,"), historicalSeries), /decision/);
+  assert.throws(() => historicalCountyRows(historicalCsv.replace(",0,0.0", ",0,0.1"), historicalSeries), /fraction/);
+  assert.throws(() => historicalCountyRows(historicalCsv, { ...historicalSeries, direct_count_rows: 3 }), /summary/);
+});
+
+test("same-year maps require reviewed native county identities and preserve eligible zero and count-only rows", () => {
+  const feature = key => ({ type: "Feature", properties: { key, state_code: "AL",
+    boundary_year: 2024, level: "county" }, geometry: { type: "Polygon" } });
+  const features = ["01001", "01003", "01005", "01007", "01009"].map(feature);
+  const collection = { type: "FeatureCollection", features };
+  const row = (fips, name, count, rate) => ({ code: "AL", year: 2024, fips, name, count, rate });
+  const rows = [row("01001", "A County", 0, 0), row("01003", "B", 15, null),
+    row("01005", "C", 17, 50), row("01007", "D", 21, 60), row("01009", "E", 22, 65)];
+  const prior = (key, jurisdiction, count, extra) => ({ year: 2024, state_code: "AL",
+    geography: { key, level: "county" }, jurisdiction_id: `${key}00000`,
+    total_participation: count, jurisdiction, ...extra });
+  const references = [prior("01001", "A", 0), prior("01003", "B County", 15),
+    prior("01005", "Wrong name", 17), prior("01007", "D", 20),
+    prior("01009", "E", 22, { supplemental_unit: true })];
+  assert.deepEqual(bindHistoricalCountyMap(collection, references, rows, "AL", 2024)
+    .map(({ value }) => value), [rows[0], rows[1], null, null, null]);
+  assert.equal(bindHistoricalCountyMap(collection, [{ ...references[0], year: 2022 }],
+    rows, "AL", 2024)[0].value, null);
+  assert.throws(() => bindHistoricalCountyMap(collection, [...references, references[0]], rows,
+    "AL", 2024), /Ambiguous/);
+  assert.throws(() => bindHistoricalCountyMap(collection, references, [...rows, rows[0]],
+    "AL", 2024), /Ambiguous/);
+  assert.throws(() => bindHistoricalCountyMap(collection, references, rows, "AL", 2022), /identity/);
+});
+
+test("2008 Ohio maps a five-digit county only with explicit matching ballot evidence", () => {
+  const collection = { type: "FeatureCollection", features: [{
+    type: "Feature", properties: { key: "39093", name: "Lorain", state_code: "OH",
+      boundary_year: 2008, level: "county" }, geometry: { type: "Polygon" },
+  }] };
+  const row = { code: "OH", year: 2008, fips: "39093", name: "LORAIN COUNTY",
+    count: 148218, registered: 204400, rate: 72.51 };
+  const source = { year: 2008, state_code: "OH", jurisdiction_id: "39093", jurisdiction: "LORAIN",
+    total_participation: 148218, registered: 204400,
+    source_url: "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip",
+    source_details: { f2: "Number of ballots counted at precincts and/or at a central location "
+      + "(including UOCAVA and other absentee or early vote ballots)" } };
+  const bind = (sources, value = row) => bindHistoricalCountyMap(collection, sources, [value], "OH", 2008)[0];
+  assert.equal(bind([source]).value, row);
+  assert.equal(bind([source]).method, "ohio_2008_native_counted_ballot_report");
+  assert.equal(bind([{ ...source, source_details: { f2: "Number of voters generated after \"vote history\" has been added." } }]).value, null);
+  assert.equal(bind([{ ...source, source_details: { ...source.source_details, f1_comments: "Includes rejected ballots." } }]).value, null);
+  assert.equal(bind([{ ...source, source_details: { ...source.source_details, f2_comments: "Includes rejected ballots." } }]).value, null);
+  assert.equal(bind([{ ...source, registered: 204399 }]).value, null);
+  assert.equal(bind([{ ...source, total_participation: 148219 }]).value, null);
+  assert.equal(bind([{ ...source, source_url: "https://example.test/unreviewed" }]).value, null);
+  assert.throws(() => bind([source, source]), /Ambiguous/);
+});
+
+test("historical county reader verifies the complete gzip and rejects changed or unbound sources", async t => {
+  const path = "participation/eac-county-year-decisions.csv.gz", base_url = "https://example.test/accepted";
+  const url = `${base_url}/${path}`, original = gzipSync(historicalCsv);
+  const series = { ...historicalSeries, contract: "participation.eac_county_counted_ballot_reconciliation.v1",
+    historical_not_2026: true, no_county_boundary_equivalence_inferred: true, held_rows_are_not_zero: true,
+    source_registered_voter_fraction_not_populational_turnout: true, downloads: { [path]: {
+      path, url, bytes: original.length, sha256: createHash("sha256").update(original).digest("hex"),
+    } } };
+  const sources = { base_url, historical_eac_counties: series };
+  const fetch = t.mock.method(globalThis, "fetch", async target => {
+    assert.equal(target, url);
+    return new Response(original);
+  });
+  assert.equal((await loadHistoricalCountyRows(sources)).length, 4);
+  await assert.rejects(loadHistoricalCountyRows({ ...sources, base_url: "https://example.test/different" }), /qualified/);
+  assert.equal(fetch.mock.callCount(), 1);
+  const changed = Buffer.from(original);
+  changed[10] ^= 1;
+  fetch.mock.mockImplementation(async () => new Response(changed));
+  await assert.rejects(loadHistoricalCountyRows(sources), /checksum/);
+});
+
+for (const [filename, download] of [
+  ["participation-indiana-general-turnout-history", indianaTurnoutDownload],
+  ["participation-state-county-turnout-archives", stateCountyArchivesDownload],
+]) test(`${filename} is linked only to the accepted release`, () => {
+  const path = `release/${filename}.csv.gz`;
+  const base_url = "https://example.test/accepted";
+  const file = { path, url: `${base_url}/${path}`, bytes: 5800, sha256: "a".repeat(64),
+    compression: "gzip", media_type: "text/csv" };
+  const sources = { base_url, supported_release: { downloads: { [path]: file } } };
+  assert.equal(download(sources), file.url);
+  assert.equal(download({ base_url }), null);
+  assert.equal(download({ ...sources, base_url: "https://example.test/other" }), null);
+  assert.equal(download({ ...sources, base_url: null }), null);
+});
+
+test("North Carolina keeps both archive editions and withholds an incompatible fraction", () => {
+  const header = "state_code,election_date,geography_level,native_age_label,voters_with_history,"
+    + "active_and_inactive_registered_voters,source_defined_rate_pct,history_edition,registration_edition,status";
+  const ages = ["Age 18 - 25", "Age 26 - 40", "Age 41 - 65", "Age Over 66"];
+  const lines = ages.map((age, i) => `NC,2026-11-03,state,${age},${i ? "40,100,40.0" : "101,100,"},`
+    + "2026-12-01,2026-11-03,retained_after_failure");
+  const parse = lines => northCarolinaAgeRows([header, ...lines].join("\n"));
+  const rows = parse(lines);
+  assert.deepEqual(rows[0], { age: ages[0], voted: 101, registered: 100, fraction: null,
+    historyEdition: "2026-12-01", registrationEdition: "2026-11-03", status: "retained_after_failure" });
+  assert.equal(rows[1].fraction, 40);
+  assert.throws(() => parse([lines[0].replace(",101,100,,", ",101,100,100,"), ...lines.slice(1)]), /Invalid/);
+  assert.throws(() => parse([lines[0].replace("2026-12-01", "2026-12-02"), ...lines.slice(1)]), /Mixed/);
+  assert.throws(() => parse(lines.slice(0, -1)), /Incomplete/);
+});
+
 test("administrative audit preserves zero records and rejects incomplete or inconsistent coverage", () => {
   const fields = ["state_code", "year", ...["statewide", "county_or_equivalent", "precinct"]
     .flatMap(scope => ["count", "rate"].map(kind => `${scope}_election_participation_${kind}_records`))];
   const rows = countStates.map(code => `${code},2026,1,0,2,1,0,0`);
   const parse = lines => administrativeRows([fields.join(","), ...lines].join("\n"));
-  assert.deepEqual(parse(rows)[0], { code: countStates[0], counts: [1, 0, 2, 1, 0, 0] });
+  assert.deepEqual(parse(rows)[0], { code: countStates[0], counts: [1, 0, 2, 1, null, null, null, null, 0, 0] });
   assert.throws(() => parse(rows.slice(1)), /Incomplete administrative coverage/);
   assert.throws(() => parse([rows[1], ...rows.slice(1)]), /Invalid jurisdiction/);
   assert.throws(() => parse([rows[0].replace(",2,1,", ",0,1,"), ...rows.slice(1)]), /rates exceed/);
+});
+
+test("administrative audit separates municipal and reporting-unit metrics from strict precincts", () => {
+  const fields = ["state_code", "year", ...["statewide", "county_or_equivalent", "precinct", "reporting_unit", "municipality"]
+    .flatMap(scope => ["count", "rate"].map(kind => `${scope}_election_participation_${kind}_records`))];
+  const rows = countStates.map(code => `${code},2026,1,0,2,1,0,0,37,0,7,0`);
+  assert.deepEqual(administrativeRows([fields.join(","), ...rows].join("\n"))[0],
+    { code: countStates[0], counts: [1, 0, 2, 1, 7, 0, 37, 0, 0, 0] });
+  assert.throws(() => administrativeRows([fields.slice(0, -1).join(","),
+    ...rows.map(row => row.slice(0, -2))].join("\n")), /Missing or repeated/);
+  assert.throws(() => administrativeRows([fields.join(","),
+    ...rows.map(row => row.replace(",37,0,", ",0,1,"))].join("\n")), /rates exceed/);
 });
 test("coverage uses the actual selected frame, not an old audit badge or source-row sum", () => {
   const rows = coverageRows(catalog, counts, {}, { year: 2026, mode: "available", level: "county" });
