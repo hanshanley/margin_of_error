@@ -7,7 +7,7 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { CA: 58, CO: 64, KS: 105, NC: 100, NE: 93, NJ: 21, WV: 55, WY: 23 };
+const officialCountySizes = { CA: 58, CO: 64, KS: 105, NC: 100, NE: 93, NJ: 21, VA: 133, WV: 55, WY: 23 };
 const geometryReleases = "https://github.com/hanshanley/voter-participation/releases/download/";
 const nebraskaGeometryRelease = geometryReleases + "nebraska-legacy-county-geometry-20261120/";
 export const officialArchiveGeometry = {
@@ -198,9 +198,11 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
         : rows.size !== size + 1 || !rows.has("state")))
     throw new Error("Missing complete official county frame");
   const byName = new Map(), keys = new Set();
+  const virginia = code === "VA" && date === "2022-11-08";
+  const localityName = name => name.trim().toUpperCase().replace("KING & QUEEN COUNTY", "KING AND QUEEN COUNTY");
   for (const [key, row] of rows) {
     if (key === "state") continue;
-    const name = countyName(row.name);
+    const name = virginia ? localityName(row.name) : countyName(row.name);
     if (!name || byName.has(name)) throw new Error("Ambiguous official county name");
     byName.set(name, row);
   }
@@ -213,7 +215,9 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
         || typeof p.name !== "string" || !["Polygon", "MultiPolygon"].includes(feature.geometry?.type))
       throw new Error("Official county geometry identity differs");
     keys.add(p.key);
-    const name = countyName(p.name), value = byName.get(name);
+    const name = virginia ? localityName(`${p.name} ${Number(p.key.slice(2)) >= 500 ? "CITY" : "COUNTY"}`)
+      : countyName(p.name);
+    const value = byName.get(name);
     if (!value || (frame.rateOnly && (rows.get(p.key) !== value
         || !Number.isInteger(value.rate) || value.rate < 0 || value.rate > 100)))
       throw new Error("Official county roster differs from its dated reference");
@@ -319,7 +323,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         path.setAttribute("fill-rule", "evenodd");
         path.dataset.county = feature.properties.key;
         const title = document.createElementNS(svgNS, "title");
-        title.textContent = `${feature.properties.name}: ${frame?.rateOnly ? `${rate}% published turnout`
+        const area = frame?.code === "VA" ? value?.name ?? feature.properties.name : feature.properties.name;
+        title.textContent = `${area}: ${frame?.rateOnly ? `${rate}% published turnout`
           : value ? `${number.format(value.count)} ${frame?.measure === "voter_history_credits"
             ? "voter-history credits" : "reported"}; `
           + (rate == null ? "rate withheld" : `${rate.toFixed(2)}% of same-report registrations`)

@@ -277,6 +277,30 @@ test("pre-2015 Shannon County uses the dated code without changing the source ro
   assert.throws(() => bind([row, { ...row, fips: "46113", name: "Shannon County" }]), /Ambiguous/);
 });
 
+test("Virginia turnout keeps a county and independent city with the same name separate", () => {
+  const header = "state_code,year,election_date,geography_level,geography,reported_ballots_cast,"
+    + "reported_registered_voters,qualified_same_report_registration_fraction_pct,rate_hold_reason,source_status,"
+    + "source_url,source_sha256,report_edition,participation_measure,reported_total_voters,registration_basis";
+  const row = (level, name, count) => `VA,2022,2022-11-08,${level},${name},${count},,,registration_not_in_report,`
+    + `reported,https://example.test/turnout.html,${"a".repeat(64)},2022-12-06T02:16:00,ballots_cast,,`;
+  const records = [header, row("state", "Virginia", 134)];
+  const features = [];
+  for (const [level, suffix, size, offset] of [["county", "COUNTY", 95, 1], ["county_equivalent", "CITY", 38, 500]]) {
+    for (let i = 0; i < size; i++) {
+      const name = i === 0 ? "Fairfax" : `Area ${i}`;
+      records.push(row(level, `${name.toUpperCase()} ${suffix}`, offset === 500 && i === 0 ? 2 : 1));
+      features.push({ type: "Feature", properties: { key: `51${String(i + offset).padStart(3, "0")}`,
+        name, boundary_year: 2022, state_code: "VA", level: "county" }, geometry: { type: "Polygon" } });
+    }
+  }
+  const [frame] = stateCountyArchiveFrames(records.join("\n"));
+  const joined = bindOfficialCountyArchive({ type: "FeatureCollection", features }, frame);
+  assert.equal(joined.length, 133);
+  assert.deepEqual(joined.filter(({ feature }) => feature.properties.name === "Fairfax")
+    .map(({ value }) => [value.name, value.count, value.rate]), [["FAIRFAX COUNTY", 1, null], ["FAIRFAX CITY", 2, null]]);
+  assert.throws(() => stateCountyArchiveFrames(records.slice(0, -1).join("\n")), /Incomplete/);
+});
+
 test("official county maps require a complete, unique roster on the exact dated layer", () => {
   const rows = new Map([["state", { name: "New Jersey" }]]);
   const features = Array.from({ length: 21 }, (_, i) => {

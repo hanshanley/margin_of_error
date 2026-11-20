@@ -760,12 +760,17 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     const basis = hasMeasures ? field("registration_basis") : "Report's registered voters";
     const stateGap = field("state_ballot_shortfall") ?? "";
     const countyGap = field("county_ballot_shortfall") ?? "";
+    const virginia = code === "VA" && date === "2022-11-08";
     const countOnly = measure === "ballots_cast" && basis === "" && stock === "" && rate === null
       && ((code === "WY" && hold === "registration_not_in_report")
+        || (virginia && hold === "registration_not_in_report")
         || (code === "CO" && hold === coloradoCountOnlyReasons.get(date)));
     const edition = field("report_edition"), note = field("report_note") || "";
     if (!countStates.includes(code) || !/^\d{4}$/.test(year) || !/^\d{4}-11-\d{2}$/.test(date)
-        || !date.startsWith(`${year}-`) || !["state", "county"].includes(level)
+        || !date.startsWith(`${year}-`) || (!["state", "county"].includes(level)
+          && !(virginia && level === "county_equivalent"))
+        || (code === "VA" && (!virginia || !countOnly
+          || (level === "state" ? name !== "Virginia" : !name.endsWith(level === "county" ? " COUNTY" : " CITY"))))
         || (currentCalifornia || currentNebraska
           ? code !== (currentCalifornia ? "CA" : "NE") || date !== "2026-11-03" || measure !== "total_voters"
           : Number(year) >= 2026)
@@ -798,9 +803,15 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
   if ([...frames.values()].some(frame => frame.code === "NE" && frame.rows.size !== 94))
     throw new Error("Incomplete Nebraska statewide and county report");
   for (const frame of frames.values()) {
-    if (frame.code !== "CO") continue;
+    if (!["CO", "VA"].includes(frame.code)) continue;
     const state = frame.rows.get("state");
     const countySum = [...frame.rows.entries()].reduce((sum, [key, row]) => sum + (key === "state" ? 0 : row.count), 0);
+    if (frame.code === "VA") {
+      if (frame.rows.size !== 134 || state.count !== countySum
+          || [...frame.rows.keys()].filter(key => key.endsWith(" CITY")).length !== 38)
+        throw new Error("Incomplete or inconsistent Virginia locality report");
+      continue;
+    }
     const beforeBroomfield = frame.date < "2002";
     if (frame.rows.size !== (beforeBroomfield ? 64 : 65)
         || frame.rows.has("county/Broomfield") === beforeBroomfield
@@ -1249,7 +1260,7 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
           + "Not a rate among all eligible residents." : ". The report supplies no registration denominator.")
           + (frame.edition ? ` Report edition: ${frame.edition}.` : "")
           + (frame.note ? ` ${frame.note}` : ""));
-        status.textContent = `${frame.rows.size - 1} county reports and one state total.`
+        status.textContent = `${frame.rows.size - 1} ${frame.code === "VA" ? "localities" : "counties"} and one state total.`
           + (frame.status === "retained_after_failure" ? " Latest check failed; showing the last verified report." : "");
         body.replaceChildren();
         for (const row of [frame.rows.get("state"), ...[...frame.rows].filter(([key]) => key !== "state").map(([, row]) => row)]) {
