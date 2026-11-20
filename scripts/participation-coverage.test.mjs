@@ -37,6 +37,21 @@ test("the partial Nebraska map preserves a reported zero and leaves unverified c
   assert.throws(() => bindOfficialCountyArchive(replaced, frame), /roster/);
 });
 
+test("the 2002 Nebraska map admits only a complementary dated geometry subset", () => {
+  const asset = new URL("../public/participation-archive-geometry/county-NE-2002.geojson.gz", import.meta.url);
+  const geometry = JSON.parse(gunzipSync(readFileSync(asset)));
+  const rows = new Map([["state", { name: "Nebraska", count: 490914 }]]);
+  for (const { properties: { name } } of geometry.features) rows.set(`county/${name}`, { name, count: 1 });
+  for (const id of geometry.missing_counties) rows.set(`county/${id}`, { name: `Unmapped ${id}`, count: 1 });
+  const frame = { code: "NE", date: "2002-11-05", rows };
+  assert.throws(() => bindOfficialCountyArchive(geometry, frame), /complete/);
+  assert.equal(bindOfficialCountyArchive(geometry, frame, true).length, 75);
+  const overlap = structuredClone(geometry);
+  overlap.missing_counties[0] = overlap.features[0].properties.key;
+  assert.throws(() => bindOfficialCountyArchive(overlap, frame, true), /identity/);
+  assert.throws(() => bindOfficialCountyArchive({ ...geometry, reference_date: "2006-01-01" }, frame, true), /complete/);
+});
+
 test("the Wyoming county map uses county controls and the freshness of the accepted precinct canvass", () => {
   const frame = wyomingCanvassCountyFrame({
     election_date: "2026-11-03", state_ballots_cast: 12, status: "retained_after_failure",

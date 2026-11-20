@@ -42,6 +42,13 @@ export const officialArchiveGeometry = {
     bytes: 95038,
     sha256: "22d07562f91c6b4021d1dc95abdd9046e92f7f0b1c43e4bb74587fcb0444a4c6",
   },
+  "NE/2002": {
+    path: "participation-archive-geometry/county-NE-2002.geojson.gz",
+    bytes: 243116,
+    sha256: "2d6ddc575dacad67fef84107f4b48164e71749da4043be21f4f9b383006464f1",
+    referenceDate: "2002-01-01",
+    partialGeometry: true,
+  },
   "NE/2006": {
     path: "participation-archive-geometry/county-NE-2006.geojson.gz",
     bytes: 742132,
@@ -162,13 +169,19 @@ export function bindHistoricalCountyMap(collection, prior, rows, code, year) {
   });
 }
 
-export function bindOfficialCountyArchive(collection, frame) {
+export function bindOfficialCountyArchive(collection, frame, allowPartialGeometry = false) {
   const { code, date, rows } = frame;
   const year = Number(date.slice(0, 4));
   const size = officialCountySizes[code];
   const partial = frame.partialCountyReports === true && code === "NE" && date === "2026-11-03";
+  const missing = allowPartialGeometry && code === "NE" && date === "2002-11-05"
+    && collection?.reference_date === "2002-01-01" && Array.isArray(collection.missing_counties)
+    ? new Set(collection.missing_counties) : new Set();
+  if (missing.size && (missing.size !== collection.missing_counties.length || missing.size >= size
+      || [...missing].some(key => !/^31\d{3}$/.test(key) || Number(key.slice(2)) % 2 !== 1
+        || Number(key.slice(2)) > 185))) throw new Error("Unverified missing county boundary inventory");
   if (!size || collection?.type !== "FeatureCollection" || !Array.isArray(collection.features)
-      || collection.features.length !== size
+      || collection.features.length + missing.size !== size
       || (partial ? rows.size !== size || rows.has("state")
         : rows.size !== size + 1 || !rows.has("state")))
     throw new Error("Missing complete official county frame");
@@ -182,7 +195,9 @@ export function bindOfficialCountyArchive(collection, frame) {
   return collection.features.map(feature => {
     const p = feature.properties;
     if (feature.type !== "Feature" || p?.state_code !== code || p.boundary_year !== year
-        || p.level !== "county" || !/^[0-9]{5}$/.test(p.key) || keys.has(p.key)
+        || p.level !== "county" || !/^[0-9]{5}$/.test(p.key) || keys.has(p.key) || missing.has(p.key)
+        || (missing.size && (!/^31\d{3}$/.test(p.key) || Number(p.key.slice(2)) % 2 !== 1
+          || Number(p.key.slice(2)) > 185))
         || typeof p.name !== "string" || !["Polygon", "MultiPolygon"].includes(feature.geometry?.type))
       throw new Error("Official county geometry identity differs");
     keys.add(p.key);
@@ -242,7 +257,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
           frame ? null : referenceJson(sources, files[sources], retry)]);
       }
       if (token !== generation) return;
-      const bound = frame ? bindOfficialCountyArchive(collection, frame)
+      const bound = frame ? bindOfficialCountyArchive(collection, frame, legacy?.partialGeometry)
         : bindHistoricalCountyMap(collection, prior, rows, code, vintage);
       const projection = code === "AK" ? conicProjection(-154, 55, 65)
         : code === "HI" ? conicProjection(-157, 8, 18) : conicProjection(-96, 29.5, 45.5);
@@ -278,6 +293,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
       }
       const counts = bound.filter(item => item.value).length;
       const rates = bound.filter(item => item.value?.rate != null).length;
+      const missingGeometry = legacy?.partialGeometry ? collection.missing_counties?.length ?? 0 : 0;
       status.textContent = frame?.rateOnly
         ? `${label}: ${rates} of ${bound.length} counties have published whole-percent rates. `
           + "Darker blue indicates higher reported turnout (0–100%). "
@@ -286,11 +302,14 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
           ? `${label}: ${counts} of ${bound.length} county reports have verified counts. `
             + "Blue-gray means reported; light gray means no verified count, not zero. "
             + "Reports have separate editions; no statewide total or rates are calculated."
-        : `${label}: ${counts} of ${bound.length} areas have verified counts; ${rates} have rates. `
+        : (missingGeometry
+          ? `${label}: ${counts} of ${bound.length + missingGeometry} counties are mapped; ${rates} have mapped rates. `
+            + `${missingGeometry} counties are not drawn because matching outlines were unavailable; see the complete table. `
+          : `${label}: ${counts} of ${bound.length} areas have verified counts; ${rates} have rates. `)
         + (frame?.measure === "voter_history_credits" ? "Counts are voter-history credits, not physical ballot counts. " : "")
         + "Darker blue means a higher fraction of registered voters (0–100%). Blue-gray means count only; "
         + "light gray means no verified mapped count, not zero. "
-        + (legacy?.referenceDate ? "Census reference boundaries dated January 1, 2006."
+        + (legacy?.referenceDate ? `Census reference boundaries dated January 1, ${vintage}.`
           : legacy ? legacy.boundaryLabel ?? `${vintage} Census cartographic county boundaries (simplified).`
           : "Boundaries are for this election year only.");
       figure.append(svg);
