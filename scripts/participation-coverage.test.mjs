@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
 import { administrativeRows, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, publishedCpsStatus, cpsMapCells }
+  northCarolinaAgeRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive } from "../public/scripts/participation-historical-county-map.js";
@@ -33,6 +33,17 @@ test("Census group maps preserve a published zero but exclude suppressed points 
     { ...cohort, state_code: "AZ", group: "25 to 34" },
   ];
   assert.deepEqual([...cpsMapCells(rows, "2010", "cvap", "25 to 44")], [["AL", { point: "0", moe: "2" }]]);
+});
+
+test("legacy statewide totals keep the selected denominator's actual source table", () => {
+  const rows = [
+    { year: "2004", group: "Total", source_table: "4a", vap_voted_pct: "58.3" },
+    { year: "2004", group: "Total", source_table: "4c", cvap_voted_pct: "63.8" },
+    { year: "2004", group: "18 to 24", source_table: "4b", vap_voted_pct: "41.9" },
+    { year: "2006", group: "Total", source_table: "4b", cvap_voted_pct: "47.8" },
+  ];
+  assert.deepEqual(cpsRowsForBasis(rows, "vap"), [rows[0], rows[2], rows[3]]);
+  assert.deepEqual(cpsRowsForBasis(rows, "cvap"), [rows[1], rows[2], rows[3]]);
 });
 
 test("the archive reader does not treat West Virginia voter-history credits as physical ballots", () => {

@@ -336,19 +336,25 @@ export function publishedCpsRows(csv, summary) {
     if (cells.length !== columns.length) throw new Error("Census CSV record differs");
     const row = Object.fromEntries(columns.map((key, index) => [key, cells[index]]));
     const year = Number(row.year), code = row.state_code;
+    const earlyVolume = year === 2002 ? 552 : year === 2004 ? 556 : null;
+    const nativeTables = earlyVolume
+      ? { overall: ["4a", "4b", "4c"], age: ["4b"], sex: ["4a"], race_or_hispanic_origin: ["4a"] }
+      : { overall: ["4b", "4c"], age: ["4c"], sex: ["4b"], race_or_hispanic_origin: ["4b"] };
     const key = `${year}/${code}/${row.group}/${row.source_table}`;
     if (!summary.years.includes(year) || !expectedStates.has(code) || seen.has(key)
         || row.election_type !== (year % 4 === 0 ? "presidential" : "midterm")
-        || !["overall", "age", "sex", "race_or_hispanic_origin"].includes(row.dimension)
-        || (row.dimension !== "overall" && row.source_table !== (row.dimension === "age" ? "4c" : "4b"))
-        || !["4b", "4c"].includes(row.source_table) || row.confidence_level_pct !== "90"
-        || !(year === 2008
+        || !Object.hasOwn(nativeTables, row.dimension) || !nativeTables[row.dimension].includes(row.source_table)
+        || row.confidence_level_pct !== "90"
+        || !(earlyVolume
+          ? row.source_url === `https://www2.census.gov/programs-surveys/cps/tables/p20/${earlyVolume}/tab0${row.source_table}.xls`
+          : year === 2008
           ? row.source_url === `https://www2.census.gov/programs-surveys/cps/tables/p20/562-rv/table-0${row.source_table}.xls`
           : /^https:\/\/www2\.census\.gov\/programs-surveys\/cps\/tables\/p20\/(?:\d+|voting-registration-2010-election)\/[a-z0-9_]+\.xlsx?$/.test(row.source_url)))
       throw new Error("Census cohort or source identity differs");
     for (const prefix of rates) {
       const point = row[`${prefix}_pct`], moe = row[`${prefix}_moe_pp`];
-      if ((point === "") !== (moe === "") || [point, moe].some(v =>
+      if ((earlyVolume && !prefix.startsWith(row.source_table === "4c" ? "cvap_" : "vap_") && point !== "")
+        || (point === "") !== (moe === "") || [point, moe].some(v =>
         v !== "" && (!/^\d+(?:\.\d+)?$/.test(v) || Number(v) > 100)))
         throw new Error("Census point or margin differs");
     }
@@ -360,8 +366,13 @@ export function publishedCpsRows(csv, summary) {
   if (byYear.size !== summary.years.length || [...byYear.values()].some(states => states.size !== expectedStates.size)
       || rows.filter(r => r.cvap_voted_pct !== "").length !== summary.cvap_voting_rates)
     throw new Error("Census coverage differs from the accepted runtime");
-  // Both source tables publish the same totals. Keep both in the CSV, show one.
-  return rows.filter(r => r.dimension !== "overall" || r.source_table === "4b");
+  return rows.filter(r => r.dimension !== "overall" || (Number(r.year) <= 2004
+    ? r.source_table !== "4b" : r.source_table === "4b"));
+}
+
+export function cpsRowsForBasis(rows, basis) {
+  return rows.filter(r => r.group !== "Total" || Number(r.year) > 2004
+    || r.source_table === (basis === "cvap" ? "4c" : "4a"));
 }
 
 export function overallCpsRows(csv, summary) {
@@ -623,7 +634,8 @@ function installPublishedCps(sources, file, names) {
         caption.textContent = `${names[state.value] || (state.value === "US" ? "United States" : state.value)} · `
           + `${group.selectedOptions[0].textContent} · ${basis.selectedOptions[0].textContent}`;
         tbody.replaceChildren();
-        const selected = new Map(rows.filter(r => r.state_code === state.value && r.group === group.value)
+        const selected = new Map(cpsRowsForBasis(rows, basis.value)
+          .filter(r => r.state_code === state.value && r.group === group.value)
           .map(r => [Number(r.year), r]));
         for (const year of survey.published_state_tables.years) {
           const r = selected.get(year);
@@ -633,8 +645,9 @@ function installPublishedCps(sources, file, names) {
           if (!r) {
             const missing = tr.insertCell();
             missing.colSpan = 3;
-            missing.textContent = year === 2008 && groups.get(group.value) === "age"
-              && survey.published_state_tables.held_2008_age_frames?.includes(state.value)
+            const heldAge = year === 2008 ? survey.published_state_tables.held_2008_age_frames
+              : survey.published_state_tables.held_vap_age_frames?.[String(year)];
+            missing.textContent = groups.get(group.value) === "age" && heldAge?.includes(state.value)
               ? "Age estimates withheld: Census tables disagree"
               : "Group not published for this state and election";
             continue;
@@ -642,7 +655,9 @@ function installPublishedCps(sources, file, names) {
           for (const measure of ["voted", "registered"]) {
             const key = `${basis.value}_${measure}`;
             const withheld = r.source_markers?.includes(`"${key}_pct":"invalid_published_rate"`);
-            tr.insertCell().textContent = r[`${key}_pct`] === "" ? (withheld ? "Withheld: invalid source rate" : "Not published")
+            const notInTable = r.source_markers?.includes(`"${key}_pct":"not_in_table"`);
+            tr.insertCell().textContent = r[`${key}_pct`] === "" ? (withheld ? "Withheld: invalid source rate"
+              : notInTable ? "Not published for this denominator" : "Not published")
               : `${r[`${key}_pct`]}% ± ${r[`${key}_moe_pp`]} pp`;
           }
           const source = document.createElement("a");
