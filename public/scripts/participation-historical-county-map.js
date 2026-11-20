@@ -7,7 +7,7 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { CA: 58, KS: 105, NC: 100, NJ: 21 };
+const officialCountySizes = { CA: 58, KS: 105, NC: 100, NJ: 21, WV: 55 };
 export const officialArchiveGeometry = {
   "CA/1990": {
     path: "participation-archive-geometry/county-CA-1990.geojson.gz",
@@ -237,7 +237,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         path.dataset.county = feature.properties.key;
         const title = document.createElementNS(svgNS, "title");
         title.textContent = `${feature.properties.name}: ${frame?.rateOnly ? `${rate}% published turnout`
-          : value ? `${number.format(value.count)} reported; `
+          : value ? `${number.format(value.count)} ${frame?.measure === "voter_history_credits"
+            ? "voter-history credits" : "reported"}; `
           + (rate == null ? "rate withheld" : `${rate.toFixed(2)}% of same-report registrations`)
           : "no verified mapped count"}`;
         path.append(title);
@@ -250,6 +251,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
           + "Darker blue indicates higher reported turnout (0–100%). "
           + "The report does not specify the count or denominator. Census reference boundaries dated January 1, 2006."
         : `${label}: ${counts} of ${bound.length} areas have verified counts; ${rates} have rates. `
+        + (frame?.measure === "voter_history_credits" ? "Counts are voter-history credits, not physical ballot counts. " : "")
         + "Darker blue means a higher fraction of registered voters (0–100%). Blue-gray means count only; "
         + "light gray means no verified mapped count, not zero. "
         + (legacy?.referenceDate ? "Census reference boundaries dated January 1, 2006."

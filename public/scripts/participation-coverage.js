@@ -690,8 +690,11 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false } = {}
     const level = field("geography_level"), name = field("geography");
     const measure = hasMeasures ? field("participation_measure") : "ballots_cast";
     const ballots = field("reported_ballots_cast"), voters = hasMeasures ? field("reported_total_voters") : "";
-    const value = measure === "ballots_cast" && voters === "" ? ballots
-      : measure === "total_voters" && ballots === "" ? voters : "";
+    const credits = field("reported_voter_history_credits") ?? "";
+    const value = measure === "ballots_cast" && voters === "" && credits === "" ? ballots
+      : measure === "total_voters" && ballots === "" && credits === "" ? voters
+      : measure === "voter_history_credits" && code === "WV" && ["2008", "2010"].includes(year)
+        && ballots === "" && voters === "" ? credits : "";
     const stock = field("reported_registered_voters"), fraction = field("qualified_same_report_registration_fraction_pct");
     const rate = fraction === "" ? null : Number(fraction), hold = field("rate_hold_reason");
     const status = field("source_status"), url = field("source_url"), sha = field("source_sha256");
@@ -721,6 +724,9 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false } = {}
     throw new Error("Incomplete California statewide and county report");
   return [...frames.values()].sort((a, b) => a.code.localeCompare(b.code) || b.date.localeCompare(a.date));
 }
+
+const archiveMeasureLabel = measure => measure === "voter_history_credits" ? "Voter-history credits"
+  : measure === "total_voters" ? "Total Voters" : "Ballots Cast";
 
 function archiveStateHistory(panel, frames, name) {
   const table = document.createElement("table"), chart = document.createElement("figure");
@@ -778,7 +784,7 @@ function archiveStateHistory(panel, frames, name) {
       const link = document.createElement("a");
       link.href = frame.url; link.textContent = frame.date;
       key.scope = "row"; key.append(link); tr.append(key);
-      const measure = frame.measure === "total_voters" ? "Total Voters" : "Ballots Cast";
+      const measure = archiveMeasureLabel(frame.measure);
       tr.insertCell().textContent = `${number.format(row.count)} (${measure})`;
       tr.insertCell().textContent = number.format(row.registered);
       tr.insertCell().textContent = frame.basis;
@@ -841,7 +847,7 @@ function installStateCountyArchives(sources, url, names, currentCalifornia = fal
       const renderHistory = currentCalifornia ? () => {} : archiveStateHistory(history, frames, code => names[code] || code);
       const render = () => {
         const frame = currentFrame();
-        const measure = frame.measure === "total_voters" ? "Total Voters" : "Ballots Cast";
+        const measure = archiveMeasureLabel(frame.measure);
         caption.textContent = `${names[frame.code] || frame.code} · ${frame.date} · ${measure}`;
         original.href = frame.url;
         report.replaceChildren(original, `. Registration basis: ${frame.basis}. `

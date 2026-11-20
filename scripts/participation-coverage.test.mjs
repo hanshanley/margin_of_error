@@ -35,6 +35,22 @@ test("Census group maps preserve a published zero but exclude suppressed points 
   assert.deepEqual([...cpsMapCells(rows, "2010", "cvap", "25 to 44")], [["AL", { point: "0", moe: "2" }]]);
 });
 
+test("the archive reader does not treat West Virginia voter-history credits as physical ballots", () => {
+  const header = "state_code,year,election_date,geography_level,geography,reported_ballots_cast,"
+    + "reported_registered_voters,qualified_same_report_registration_fraction_pct,rate_hold_reason,source_status,"
+    + "source_url,source_sha256,report_edition,participation_measure,reported_total_voters,registration_basis,"
+    + "reported_voter_history_credits";
+  const facts = `,100,50,,reported,https://sos.wv.gov/media/655/download?inline,${"a".repeat(64)},`
+    + ",voter_history_credits,,Registered voters,50";
+  const state = "WV,2008,2008-11-04,state,West Virginia," + facts;
+  const county = "WV,2008,2008-11-04,county,Barbour," + facts;
+  const [frame] = stateCountyArchiveFrames([header, state, county].join("\n"));
+  assert.equal(frame.measure, "voter_history_credits");
+  assert.equal(frame.rows.get("county/Barbour").count, 50);
+  assert.throws(() => stateCountyArchiveFrames([header, state, county.replace("Barbour,,100", "Barbour,50,100")].join("\n")),
+    /report identity differs/);
+});
+
 test("election-office archive frames preserve native measures, held rates and last-good metadata", () => {
   const header = "state_code,year,election_date,geography_level,geography,reported_ballots_cast,"
     + "reported_registered_voters,qualified_same_report_registration_fraction_pct,rate_hold_reason,source_status,"
