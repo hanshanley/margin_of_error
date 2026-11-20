@@ -149,6 +149,25 @@ test("election-office archive frames preserve native measures, held rates and la
     { currentCalifornia: true }), /identity/);
 });
 
+test("the 2026 Nebraska canvass needs its own slot and all 93 counties", () => {
+  const layer = JSON.parse(gunzipSync(readFileSync(new URL(
+    "../public/participation-archive-geometry/county-NE-2026.geojson.gz", import.meta.url))));
+  const header = "state_code,year,election_date,geography_level,geography,reported_ballots_cast,"
+    + "reported_registered_voters,qualified_same_report_registration_fraction_pct,rate_hold_reason,source_status,"
+    + "source_url,source_sha256,report_edition,participation_measure,reported_total_voters,registration_basis";
+  const row = (level, name, scale) => `NE,2026,2026-11-03,${level},${name},,${2 * scale},50,,reported,`
+    + `https://example.test/fixture.pdf,${"a".repeat(64)},,total_voters,${scale},Registered voters in same book`;
+  const records = [header, row("state", "Nebraska", 93),
+    ...layer.features.map(({ properties }) => row("county", properties.name, 1))];
+  const csv = records.join("\n");
+  assert.throws(() => stateCountyArchiveFrames(csv), /identity/);
+  assert.throws(() => stateCountyArchiveFrames(csv, { currentCalifornia: true }), /identity/);
+  assert.throws(() => stateCountyArchiveFrames(records.slice(0, -1).join("\n"),
+    { currentNebraska: true }), /Incomplete Nebraska/);
+  const [frame] = stateCountyArchiveFrames(csv, { currentNebraska: true });
+  assert.equal(bindOfficialCountyArchive(layer, frame).length, 93);
+});
+
 test("pre-2015 Shannon County uses the dated code without changing the source row", () => {
   const feature = { type: "Feature", properties: { key: "46113", name: "Shannon", state_code: "SD",
     boundary_year: 2014, level: "county" }, geometry: { type: "Polygon" } };
