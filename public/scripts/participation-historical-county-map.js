@@ -53,6 +53,12 @@ export const officialArchiveGeometry = {
     sha256: "6eeb4e5c783d0602903136f032b0050d3216db2893ed1f5c308bdd8e4efb6c8f",
     referenceDate: "2006-01-01",
   },
+  "WY/2026": {
+    path: "participation-archive-geometry/county-WY-2026.geojson.gz",
+    bytes: 383495,
+    sha256: "c73b0ac8381b6ac77ebc8d9d018d103916e1cf9d05ec8f995c8511d3f3ad7be3",
+    boundaryLabel: "2026 Census TIGER/Line county boundaries.",
+  },
 };
 const countyName = name => name.trim().toUpperCase().replace(/\s+(COUNTY|PARISH|BOROUGH)$/, "")
   .replace(/[^A-Z0-9]/g, "");

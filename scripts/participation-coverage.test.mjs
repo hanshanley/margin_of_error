@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
 import { administrativeRows, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis }
+  northCarolinaAgeRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis, wyomingCurrentCountyFrame }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive } from "../public/scripts/participation-historical-county-map.js";
@@ -44,6 +44,34 @@ test("legacy statewide totals keep the selected denominator's actual source tabl
   ];
   assert.deepEqual(cpsRowsForBasis(rows, "vap"), [rows[0], rows[2], rows[3]]);
   assert.deepEqual(cpsRowsForBasis(rows, "cvap"), [rows[1], rows[2], rows[3]]);
+});
+
+test("Wyoming current county workbook is count-only and rejects unreconciled or duplicated rows", () => {
+  const url = "https://sos.wyo.gov/Elections/Docs/2026/Results/General/2026_Wyoming_General_Results.zip";
+  const sha256 = "a".repeat(64);
+  const counties = Array.from({ length: 23 }, (_, i) => ({
+    county: `County ${String.fromCharCode(65 + i)}`, ballots: i, physical_row: 5 + i,
+  }));
+  const row = {
+    state_code: "WY", year: 2026, status: "reported", cast_ballot_count_qualified: true,
+    participation_measure_literal: "Total Ballots Cast", denominator: null,
+    source_url: url, source_sha256: sha256, ballots: 253,
+    statewide_ballot_parent: {
+      contract: "participation.reviewed_statewide_ballot_parent.v1",
+      workbook: "2026 General Results Summaries - OFFICIAL.xlsx",
+      sheet: "Statewide Total Ballots Cast", cell: "B28", source: { url, sha256 },
+      ballots: 253, counties,
+    },
+  };
+  const frame = wyomingCurrentCountyFrame([row]);
+  assert.equal(frame.rows.size, 24);
+  assert.equal(frame.rows.get("county/County A").count, 0);
+  assert([...frame.rows.values()].every(value => value.rate === null && value.registered === null));
+  assert.throws(() => wyomingCurrentCountyFrame([row, row]), /Unverified/);
+  counties[1].ballots = 2;
+  assert.throws(() => wyomingCurrentCountyFrame([row]), /statewide total/);
+  counties[1].county = counties[0].county;
+  assert.throws(() => wyomingCurrentCountyFrame([row]), /ambiguous/);
 });
 
 test("the archive reader does not treat West Virginia voter-history credits as physical ballots", () => {

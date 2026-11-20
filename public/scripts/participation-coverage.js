@@ -1,5 +1,5 @@
 import { loadDatasetCatalog } from "./participation-dataset.js";
-import { countStates, loadCountIndex } from "./participation-counts.js";
+import { countStates, loadCountIndex, validateCurrentCountSnapshot } from "./participation-counts.js";
 import { loadNativeIndex } from "./participation-native-bindings.js";
 import { loadAutomaticRuntime } from "./participation-automatic-runtime.js";
 import { checkedCountyBody, installHistoricalCountyMap } from "./participation-historical-county-map.js";
@@ -825,16 +825,52 @@ function archiveStateHistory(panel, frames, name) {
   };
 }
 
-function installStateCountyArchives(sources, url, names, currentCalifornia = false) {
+export function wyomingCurrentCountyFrame(reporting) {
+  const candidates = reporting.filter(row => row.state_code === "WY" && row.year === 2026
+    && row.statewide_ballot_parent);
+  const row = candidates[0], parent = row?.statewide_ballot_parent;
+  const url = "https://sos.wyo.gov/Elections/Docs/2026/Results/General/2026_Wyoming_General_Results.zip";
+  const count = value => Number.isSafeInteger(value) && value >= 0;
+  if (candidates.length !== 1 || row.cast_ballot_count_qualified !== true
+      || row.participation_measure_literal !== "Total Ballots Cast" || row.denominator !== null
+      || !["reported", "retained_after_failure"].includes(row.status)
+      || parent.contract !== "participation.reviewed_statewide_ballot_parent.v1"
+      || parent.workbook !== "2026 General Results Summaries - OFFICIAL.xlsx"
+      || parent.sheet !== "Statewide Total Ballots Cast" || parent.cell !== "B28"
+      || row.source_url !== url || parent.source?.url !== url
+      || !/^[a-f0-9]{64}$/.test(row.source_sha256) || parent.source.sha256 !== row.source_sha256
+      || !count(row.ballots) || parent.ballots !== row.ballots
+      || !Array.isArray(parent.counties) || parent.counties.length !== 23)
+    throw new Error("Unverified Wyoming county ballot workbook");
+  const makeRow = (name, count) => ({ name, count, registered: null, rate: null, hold: "registration_not_in_report" });
+  const rows = new Map([["state", makeRow("Wyoming", row.ballots)]]);
+  let total = 0;
+  for (const [index, item] of parent.counties.entries()) {
+    if (item?.physical_row !== index + 5 || typeof item.county !== "string"
+        || !/^[A-Za-z]+(?: [A-Za-z]+)*$/.test(item.county)
+        || !count(item.ballots) || rows.has(`county/${item.county}`))
+      throw new Error("Incomplete or ambiguous Wyoming county workbook");
+    rows.set(`county/${item.county}`, makeRow(item.county, item.ballots));
+    total += item.ballots;
+  }
+  if (total !== row.ballots) throw new Error("Wyoming county ballot counts do not match the statewide total");
+  return { code: "WY", date: "2026-11-03", measure: "ballots_cast", basis: null, rows, url,
+    status: row.status, note: "The workbook reports ballots, not unique voters, and does not establish certification." };
+}
+
+function installStateCountyArchives(sources, url, names, { currentCalifornia = false, wyomingCounts = null } = {}) {
   const panel = document.createElement("details"), heading = document.createElement("summary");
   const download = document.createElement("a"), note = document.createElement("p");
   const button = document.createElement("button"), status = document.createElement("p");
-  heading.textContent = currentCalifornia ? "California’s 2026 statewide and county turnout report"
+  heading.textContent = wyomingCounts ? "Wyoming county ballots cast, 2026"
+    : currentCalifornia ? "California’s 2026 statewide and county turnout report"
     : "Browse official state and county turnout archives";
   download.href = url;
-  download.textContent = currentCalifornia ? "Complete California 2026 report query (CSV · gzip)"
+  download.textContent = wyomingCounts ? "Complete analysis with Wyoming workbook queries (ZIP)"
+    : currentCalifornia ? "Complete California 2026 report query (CSV · gzip)"
     : "State election office turnout archives (CSV · gzip)";
-  note.append(download, currentCalifornia
+  note.append(download, wyomingCounts ? ". County ballot counts from the accepted Wyoming workbook; no turnout rates."
+    : currentCalifornia
     ? ". This report is separate from the live election-results feed and does not establish certification."
     : ". These official reports are separate from EAC data and the 2026 map.");
   status.setAttribute("role", "status");
@@ -845,10 +881,18 @@ function installStateCountyArchives(sources, url, names, currentCalifornia = fal
     button.disabled = true;
     status.textContent = "Checking the stored election-office reports…";
     try {
-      const file = coverageCsvFile(sources, currentCalifornia ? californiaCurrentReportPath : stateCountyArchivesPath);
-      const bytes = await checkedCountyBody(file.url, file, retry);
-      const csv = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
-      const frames = stateCountyArchiveFrames(csv, { currentCalifornia });
+      let frames;
+      if (wyomingCounts) {
+        const path = "current.json.gz", file = wyomingCounts.files[path];
+        const bytes = await checkedCountyBody(new URL(path, wyomingCounts.base_url).href, file, retry);
+        const json = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).json();
+        frames = [wyomingCurrentCountyFrame(validateCurrentCountSnapshot(json).snapshot.reporting)];
+      } else {
+        const file = coverageCsvFile(sources, currentCalifornia ? californiaCurrentReportPath : stateCountyArchivesPath);
+        const bytes = await checkedCountyBody(file.url, file, retry);
+        const csv = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+        frames = stateCountyArchiveFrames(csv, { currentCalifornia });
+      }
       const state = document.createElement("select"), year = document.createElement("select");
       for (const code of new Set(frames.map(frame => frame.code))) state.add(new Option(names[code] || code, code));
       const stateLabel = document.createElement("label"), yearLabel = document.createElement("label");
@@ -866,7 +910,8 @@ function installStateCountyArchives(sources, url, names, currentCalifornia = fal
       const body = table.createTBody(), number = new Intl.NumberFormat("en-US");
       const currentFrame = () => frames.find(item => item.code === state.value && item.date === year.value);
       const history = document.createElement("details");
-      const renderHistory = currentCalifornia ? () => {} : archiveStateHistory(history, frames, code => names[code] || code);
+      const historical = !currentCalifornia && !wyomingCounts;
+      const renderHistory = historical ? archiveStateHistory(history, frames, code => names[code] || code) : () => {};
       const render = () => {
         const frame = currentFrame();
         const measure = archiveMeasureLabel(frame.measure);
@@ -903,7 +948,7 @@ function installStateCountyArchives(sources, url, names, currentCalifornia = fal
       selectYears();
       installHistoricalCountyMap(panel, state, year, null, names, currentFrame);
       panel.append(scroller);
-      if (!currentCalifornia) panel.append(history);
+      if (historical) panel.append(history);
       state.focus();
     } catch {
       retry = true;
@@ -1077,10 +1122,12 @@ function installAdministrativeCoverage(host) {
       }
       const stateCountyArchives = stateCountyArchivesDownload(manifest.house_sources);
       if (stateCountyArchives) content.append(installStateCountyArchives(manifest.house_sources, stateCountyArchives, names));
+      if (manifest.counts?.files["current.json.gz"]) content.append(installStateCountyArchives(
+        manifest.house_sources, manifest.complete_download.url, names, { wyomingCounts: manifest.counts }));
       content.append(installNorthCarolina2006CountyRates());
       try {
         const report = coverageCsvFile(manifest.house_sources, californiaCurrentReportPath);
-        if (report) content.append(installStateCountyArchives(manifest.house_sources, report.url, names, true));
+        if (report) content.append(installStateCountyArchives(manifest.house_sources, report.url, names, { currentCalifornia: true }));
       } catch {
         const notice = document.createElement("p");
         notice.textContent = "The California 2026 county report descriptor could not be verified.";
