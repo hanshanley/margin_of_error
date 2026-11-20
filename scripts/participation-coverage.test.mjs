@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
+  northCarolinaAgeRows, washingtonAgeSeries, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
@@ -17,6 +17,25 @@ import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-pr
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Washington history distinguishes placeholders, held age labels, missing counts and real zeros", () => {
+  const row = (year, election_type, observation_status, total_ballots) => ({
+    geography: "Adams", age_group: "55-64", election_date: `${year}-11-04`,
+    election_type, observation_status, total_ballots,
+  });
+  const rows = [
+    row(2026, "midterm", "workbook_placeholder", ""),
+    row(2024, "presidential", "reported_workbook_aggregate", "0"),
+    row(2022, "midterm", "reported_workbook_aggregate", ""),
+    row(2018, "midterm", "reported_workbook_aggregate", "30"),
+    row(2014, "midterm", "held_ambiguous_age_label", "83"),
+    row(2014, "midterm", "held_ambiguous_age_label", "92"),
+  ];
+  assert.deepEqual(washingtonAgeSeries(rows, "Adams", "55-64", "total", "ballots", "midterm")
+    .map(p => p.value), [null, null, 30, null]);
+  assert.equal(washingtonAgeSeries(rows, "Adams", "55-64", "total", "ballots", "presidential")[0].value, 0);
+  assert.throws(() => washingtonAgeSeries([...rows, rows[1]], "Adams", "55-64", "total", "ballots", ""), /Duplicate/);
+});
 
 test("Minnesota county history keeps election type, reported zero, and retained counts distinct", () => {
   const code = "27001";

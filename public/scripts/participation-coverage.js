@@ -23,6 +23,7 @@ const countyDecisions = {
 };
 const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
+const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
@@ -246,7 +247,7 @@ export function coverageCsvFile(sources, path) {
   const file = sources?.supported_release?.downloads?.[path];
   if (!file) return null;
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath].includes(path)
-    ? 2_000_000 : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
+    ? 2_000_000 : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath, washingtonAgePath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
       || file.media_type !== "text/csv" || file.compression !== "gzip"
@@ -1472,6 +1473,139 @@ async function loadCoverageCsv(sources, path) {
   return { csv, file };
 }
 
+const washingtonAges = new Map([
+  ["0TOTAL", "All ages"], ["18-24", "18–24"], ["25-34", "25–34"], ["35-44", "35–44"],
+  ["45-54", "45–54"], ["55-64", "55–64"], ["65-", "65+"],
+]);
+const washingtonSex = [["total", "All reported sexes"], ["female", "Female"], ["male", "Male"],
+  ["unknown_sex", "Unknown sex"]];
+const washingtonMeasures = [["ballots", "Reported ballots"], ["registration_estimate", "Ballots / estimated registrations"],
+  ["april_vap_estimate", "Ballots / estimated voting-age population"]];
+
+export function washingtonAgeRows(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const fields = ["state_code", "geography_level", "geography", "election_date", "election_type", "age_group",
+    "observation_status", "collection_status", "last_checked_week_utc", "state_ballots_minus_sum_of_counties",
+    ...washingtonSex.flatMap(([sex]) => [`${sex}_ballots`, ...(sex === "unknown_sex" ? [] :
+      washingtonMeasures.slice(1).map(([m]) => `${sex}_ballots_per_${m}`))])];
+  if (new Set(columns).size !== columns.length || fields.some(field => !columns.includes(field)))
+    throw new Error("Missing Washington aggregate fields");
+  return lines.map(line => {
+    const cells = historicalCsvLine(line);
+    const row = Object.fromEntries(fields.map(field => [field, cells[columns.indexOf(field)]]));
+    if (cells.length !== columns.length || row.state_code !== "WA" || !row.geography
+        || !["state", "county"].includes(row.geography_level) || !washingtonAges.has(row.age_group)
+        || !/^\d{4}-11-\d{2}$/.test(row.election_date)
+        || !["presidential", "midterm", "odd_year"].includes(row.election_type)
+        || !["reported", "retained_after_failure"].includes(row.collection_status)
+        || !["reported_workbook_aggregate", "workbook_placeholder", "held_ambiguous_age_label"].includes(row.observation_status))
+      throw new Error("Invalid Washington aggregate row");
+    return row;
+  });
+}
+
+export function washingtonAgeSeries(rows, geography, age, sex, measure, cycle) {
+  const column = measure === "ballots" ? `${sex}_ballots` : `${sex}_ballots_per_${measure}`;
+  const byDate = new Map();
+  for (const row of rows) {
+    if (row.geography !== geography || row.age_group !== age || (cycle && row.election_type !== cycle)) continue;
+    const raw = row[column];
+    const value = raw === undefined || raw === "" ? null : Number(raw);
+    const reported = row.observation_status === "reported_workbook_aggregate";
+    if (reported && value !== null && (!Number.isFinite(value) || value < 0
+        || (measure === "ballots" ? !Number.isSafeInteger(value) : value > 1)))
+      throw new Error("Invalid Washington count or fraction");
+    const previous = byDate.get(row.election_date);
+    if (previous && (reported || previous.row.observation_status === "reported_workbook_aggregate"))
+      throw new Error("Duplicate Washington age result");
+    byDate.set(row.election_date, { row, value: reported ? value : null });
+  }
+  return [...byDate.values()].sort((a, b) => b.row.election_date.localeCompare(a.row.election_date));
+}
+
+function installWashingtonAge(host, sources) {
+  if (!sources?.supported_release?.downloads?.[washingtonAgePath]) return;
+  const panel = document.createElement("details"), title = document.createElement("summary");
+  const content = document.createElement("div");
+  title.textContent = "Washington turnout by county, age and sex";
+  panel.append(title, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    content.textContent = "Checking Washington’s published aggregates…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, washingtonAgePath);
+      const rows = washingtonAgeRows(csv);
+      const first = rows[0];
+      const note = document.createElement("p");
+      note.textContent = "The workbook reports ballots, not vote choice. Rates use election-period registration estimates "
+        + "or April voting-age population estimates, not certified voter rolls or eligible-population counts. "
+        + "The statewide row is published separately from county sums. Unpublished editions and unresolved age labels are not zero."
+        + (first.collection_status === "retained_after_failure" ? " Showing the last verified workbook after a failed check." : "")
+        + (first.last_checked_week_utc ? ` Last check: week of ${first.last_checked_week_utc} UTC.` : "");
+      const download = document.createElement("a");
+      download.href = file.url;
+      download.textContent = "Complete Washington workbook extract and decisions (CSV · gzip)";
+      const choose = (label, choices) => {
+        const el = document.createElement("label"), select = document.createElement("select");
+        for (const [value, text] of choices) select.append(new Option(text, value));
+        el.append(`${label} `, select, " ");
+        return [el, select];
+      };
+      const counties = [...new Set(rows.filter(row => row.geography_level === "county").map(row => row.geography))].sort();
+      const controls = [
+        choose("Geography", [["Washington", "Washington statewide"], ...counties.map(c => [c, c])]),
+        choose("Age", washingtonAges), choose("Sex", washingtonSex), choose("Measure", washingtonMeasures),
+        choose("Election cycle", [["", "All general elections"], ["presidential", "Presidential"], ["midterm", "Midterm"],
+          ["odd_year", "Odd-year"]]),
+      ];
+      const region = document.createElement("div");
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", title.textContent);
+      const controlsRegion = document.createElement("p");
+      controlsRegion.append(...controls.map(([element]) => element));
+      const update = () => {
+        const [geo, age, sex, measure, cycle] = controls.map(([, select]) => select.value);
+        const series = washingtonAgeSeries(rows, geo, age, sex, measure, cycle);
+        const max = measure === "ballots" ? Math.max(1, ...series.map(point => point.value ?? 0)) : 1;
+        const table = document.createElement("table");
+        table.createCaption().textContent = `${geo} · ${washingtonAges.get(age)} · ${new Map(washingtonSex).get(sex)}`;
+        const head = table.createTHead().insertRow();
+        for (const label of ["General election", new Map(washingtonMeasures).get(measure), "Comparison"]) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = label;
+          head.append(th);
+        }
+        const tbody = table.createTBody();
+        for (const { row, value } of series) {
+          const tr = tbody.insertRow(), label = document.createElement("th");
+          label.scope = "row"; label.textContent = row.election_date; tr.append(label);
+          tr.insertCell().textContent = value === null
+            ? ({ workbook_placeholder: "Not published", held_ambiguous_age_label: "Age label held" }[row.observation_status]
+              ?? (sex === "unknown_sex" && measure !== "ballots" ? "No supported denominator" : "Not reported"))
+            : measure === "ballots" ? value.toLocaleString("en-US") : `${(value * 100).toFixed(1)}%`;
+          const chart = tr.insertCell();
+          if (value !== null) {
+            const bar = document.createElement("meter");
+            bar.max = max; bar.value = value; bar.setAttribute("aria-hidden", "true");
+            chart.append(bar);
+          }
+        }
+        region.replaceChildren(table);
+      };
+      update();
+      for (const [, select] of controls) select.addEventListener("change", update);
+      content.replaceChildren(note, download, controlsRegion, region);
+    } catch {
+      content.textContent = "The checked Washington data could not be loaded. Reopen this section to retry.";
+      loading = false;
+    }
+  });
+}
+
 export function northCarolinaAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = header.split(",");
@@ -1677,6 +1811,7 @@ function installAdministrativeCoverage(host) {
         content.append(notice);
       }
       installNorthCarolinaAge(content, manifest.house_sources);
+      installWashingtonAge(content, manifest.house_sources);
       panel.dataset.runtimeVersion = manifest.version;
     } catch {
       content.textContent = "Administrative coverage could not be verified. Close and reopen to retry.";
