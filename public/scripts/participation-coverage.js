@@ -288,6 +288,7 @@ export function installMarylandAffiliationSnapshots(groupFile, precinctFile, { a
       const columns = ["election_date", "geography", "registration_affiliation", "reported_ballot_activity",
         "eligible_registered", "reported_ballot_activity_without_precinct", "participation_measure", "source_status",
         "report_edition", "source_sha256"];
+      const archiveIndex = keys.indexOf("archive_status"), acquisitionIndex = keys.indexOf("latest_acquisition_status");
       const editions = new Map([
         ["2016-11-08", [6, ""]], ["2018-11-06", [6, ""]], ["2020-11-03", [8, ""]],
         ["2022-11-08", [7, "December 8, 2022"]], ["2024-11-05", [7, "April 29, 2026"]],
@@ -298,17 +299,21 @@ export function installMarylandAffiliationSnapshots(groupFile, precinctFile, { a
         const row = historicalCsvLine(line);
         const [date, place, party, activity, registered, unplaced, measure, sourceStatus, edition, sha] =
           columns.map(key => row[keys.indexOf(key)]);
+        const archived = row[archiveIndex] === "reviewed_historical_archive";
+        const acquisition = row[acquisitionIndex] || "";
         const id = `${date}/${place}/${party}`;
         if (row.length !== keys.length || !editions.has(date) || !place || !party
             || seen.has(id) || measure !== "reported_ballot_activity_voter_file_snapshot"
             || !["reported", "retained_after_failure"].includes(sourceStatus) || edition !== editions.get(date)[1]
             || !/^[a-f0-9]{64}$/.test(sha)
+            || (archived && (sourceStatus !== "retained_after_failure" || !acquisition))
             || ![activity, registered, unplaced].every(n => /^\d+$/.test(n) && Number.isSafeInteger(Number(n)))
             || Number(unplaced) > Number(activity)) throw new Error("Invalid Maryland profile");
         seen.add(id);
-        if (!frames.has(date)) frames.set(date, { places: new Map(), sourceStatus, edition, sha });
+        if (!frames.has(date)) frames.set(date, { places: new Map(), sourceStatus, edition, sha, archived, acquisition });
         const frame = frames.get(date);
-        if (frame.sourceStatus !== sourceStatus || frame.edition !== edition || frame.sha !== sha)
+        if (frame.sourceStatus !== sourceStatus || frame.edition !== edition || frame.sha !== sha
+            || frame.archived !== archived || frame.acquisition !== acquisition)
           throw new Error("Mixed Maryland editions");
         if (!frame.places.has(place)) frame.places.set(place, []);
         frame.places.get(place).push([party, Number(activity), Number(registered), Number(unplaced)]);
@@ -330,14 +335,17 @@ export function installMarylandAffiliationSnapshots(groupFile, precinctFile, { a
       }
       const updateMap = installMarylandPrecinctMap(panel);
       const render = () => {
-        const { places, sourceStatus, edition, sha } = frames.get(election.value);
+        const { places, sourceStatus, edition, sha, archived, acquisition } = frames.get(election.value);
         const rows = places.get(area.value);
         updateMap({ date: election.value, county: area.value, sha,
           activity: rows.reduce((sum, row) => sum + row[1], 0),
           unplaced: rows.reduce((sum, row) => sum + row[3], 0) });
         caption.textContent = `${area.value} · ${election.value}`;
         status.textContent = (edition ? `Voter-file snapshot dated ${edition}.` : "The archive does not give a voter-file snapshot date.")
-          + (sourceStatus === "reported" ? "" : " Showing last verified edition.");
+          + (archived ? (acquisition === "source_stopped"
+            ? " Hosted access was denied. Showing the verified historical archive."
+            : " Showing the verified historical archive; no hosted edition has been accepted.")
+            : sourceStatus === "reported" ? "" : " Showing last verified edition.");
         body.replaceChildren();
         for (const [name, ...values] of rows) {
           const row = body.insertRow(), label = document.createElement("th");
