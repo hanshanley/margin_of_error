@@ -93,9 +93,12 @@ The GitHub collector and data-only publisher are the primary scheduled writers.
 For missed starts, `scripts/participation-schedule-fallback.py` can run every five
 minutes on a separate scheduler. It compares the accepted source and active reader
 versions, gives existing runs priority, and dispatches at most one existing workflow
-per check. An unconsumed source takes priority over recollection. The collector gets
-a fallback dispatch after 90 minutes without a new run, or after a 30-minute cooldown
-following a failed run. It can start earlier for a changed collector after the
+per check. An unconsumed source takes priority over recollection, even during
+publisher cooldown. For national recovery, only full collection runs count toward
+the missed-run and failure checks; a scoped or late-archive run cannot mask a
+missed national run or trigger a national retry. The full collector gets a
+fallback dispatch after 90 minutes without a new full run, or after a 30-minute
+cooldown following a failed full run. It can start earlier for a changed collector after the
 same cooldown: the publisher must pin that revision, or the complete forward
 comparison from its pin must touch only the explicitly allowed collector
 entry point, workflow, and their tests or guide. Shared analytical code and

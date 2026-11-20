@@ -27,6 +27,7 @@ MISSED = timedelta(minutes=90)
 RETRY = timedelta(minutes=30)
 ARCHIVE_RETRY = timedelta(hours=6)
 ARCHIVE_TITLE = "Check late participation archives"
+FULL_COLLECTION_TITLE = "Collect full election results"
 ACTIVE = {"queued", "in_progress", "requested", "waiting", "pending"}
 MAX_WORKFLOW_BYTES = 64 * 1024
 COLLECTOR_ONLY_PATHS = {
@@ -223,7 +224,7 @@ def forward_comparison(request, base, tip):
 def new_reviewed_collection(request, collections):
     previous = next((run for run in collections if run["status"] == "completed"
                      and run["conclusion"] == "success"
-                     and run.get("display_title") == "Collect full election results"), None)
+                     and run.get("display_title") == FULL_COLLECTION_TITLE), None)
     if not previous or not re.fullmatch(r"[a-f0-9]{40}", previous.get("head_sha", "")):
         return False
     try:
@@ -252,6 +253,7 @@ def tick(now, request, journal, record, *, apply=False):
         return {"decision": "outside_election_window"}
     hourly = now < WINDOW[1]
     runs = {stage: history(request, stage) for stage in WORKFLOWS if hourly or stage != "health"}
+    full_collections = [run for run in runs["collection"] if run.get("display_title") == FULL_COLLECTION_TITLE]
     source = pointer(request, SOURCE, "results-data", "latest.json",
                      "participation.automatic_results_latest.v1")
     live = pointer(request, SITE, "participation-data", "automatic/latest.json",
@@ -272,23 +274,23 @@ def tick(now, request, journal, record, *, apply=False):
     def ready(stage):
         return not active(stage) and (stage not in journal or now - clock(journal[stage]) >= RETRY)
 
-    def missed(stage):
-        return not runs[stage] or now - clock(runs[stage][0]["created_at"]) >= MISSED
+    def missed(entries):
+        return not entries or now - clock(entries[0]["created_at"]) >= MISSED
 
-    def cooled(stage):
-        return not runs[stage] or now - clock(runs[stage][0]["updated_at"]) >= RETRY
+    def cooled(entries):
+        return not entries or now - clock(entries[0]["updated_at"]) >= RETRY
 
     stage, publish_reason, collect_reason = None, None, None
-    can_publish = ready("publication") and not active("collection") and cooled("publication")
-    can_collect = ready("collection") and not active("publication") and cooled("collection")
+    can_publish = ready("publication") and not active("collection") and cooled(runs["publication"])
+    can_collect = ready("collection") and not active("publication") and cooled(full_collections)
     if changed and can_publish:
         stage, publish_reason = "publication", "unconsumed_source"
-    elif hourly and can_collect:
-        if missed("collection"):
+    elif not changed and hourly and can_collect:
+        if missed(full_collections):
             collect_reason = "missed_schedule"
-        elif runs["collection"] and runs["collection"][0]["conclusion"] != "success":
+        elif full_collections[0]["conclusion"] != "success":
             collect_reason = "collection_failed"
-        elif not changed and new_reviewed_collection(request, runs["collection"]):
+        elif new_reviewed_collection(request, full_collections):
             collect_reason = "reviewed_collector_changed"
         if collect_reason:
             stage = "collection"
@@ -298,7 +300,7 @@ def tick(now, request, journal, record, *, apply=False):
             and ("archive" not in journal or now - clock(journal["archive"]) >= ARCHIVE_RETRY)
             and archive_due(now, request)):
         stage, collect_reason = "archive", "missed_weekly_archive"
-    if stage is None and hourly and ready("health") and missed("health"):
+    if stage is None and hourly and ready("health") and missed(runs["health"]):
         stage = "health"
     report = {"decision": "no_dispatch", "latest_source": accepted, "live_source": consumed,
               "active_workflows": [key for key in runs if active(key)]}

@@ -21,7 +21,8 @@ def ago(minutes):
 
 def run(created, updated, *, status="completed", conclusion="success"):
     return {"id": 101, "head_branch": "main", "status": status, "conclusion": conclusion,
-            "created_at": ago(created), "updated_at": ago(updated), "head_sha": "d" * 40}
+            "created_at": ago(created), "updated_at": ago(updated), "head_sha": "d" * 40,
+            "display_title": "Collect full election results"}
 
 
 class FallbackTests(unittest.TestCase):
@@ -109,6 +110,19 @@ class FallbackTests(unittest.TestCase):
         self.assertEqual((report["decision"], report["run_id"]), ("dispatched_publication", 102))
         self.assertEqual(self.effects, [("journal", {"publication": NOW.isoformat()}),
                                         ("dispatch", "publication")])
+
+    def test_scoped_failure_does_not_schedule_a_national_retry(self):
+        scoped = {**run(34, 30, conclusion="failure"), "display_title": "Run scoped election results update"}
+        self.runs["collection"] = [scoped, run(60, 45)]
+        self.assertEqual(self.result(apply=False), "no_dispatch")
+        self.runs["collection"] = [scoped, run(120, 110)]
+        self.assertEqual(self.result(apply=False), "would_dispatch_collection")
+
+    def test_publication_cooldown_does_not_allow_recollecting_unconsumed_source(self):
+        self.backlog()
+        self.runs["publication"] = [run(15, 5, conclusion="failure")]
+        self.runs["collection"] = [run(130, 110)]
+        self.assertEqual(self.result(apply=False), "no_dispatch")
 
     def test_new_reviewed_producer_republishes_the_same_source_once(self):
         self.main = "f" * 40
