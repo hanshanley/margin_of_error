@@ -714,11 +714,13 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false } = {}
     const rate = fraction === "" ? null : Number(fraction), hold = field("rate_hold_reason");
     const status = field("source_status"), url = field("source_url"), sha = field("source_sha256");
     const basis = hasMeasures ? field("registration_basis") : "Report's registered voters";
+    const countOnly = code === "WY" && measure === "ballots_cast"
+      && basis === "" && stock === "" && rate === null && hold === "registration_not_in_report";
     const edition = field("report_edition"), note = field("report_note") || "";
     if (!countStates.includes(code) || !/^\d{4}$/.test(year) || !/^\d{4}-11-\d{2}$/.test(date)
         || !date.startsWith(`${year}-`) || !["state", "county"].includes(level)
         || (currentCalifornia ? code !== "CA" || date !== "2026-11-03" || measure !== "total_voters" : Number(year) >= 2026)
-        || !name || !basis || ![value, stock].every(integer)
+        || !name || !integer(value) || (!countOnly && (!basis || !integer(stock)))
         || !["reported", "retained_after_failure"].includes(status)
         || !/^https:\/\/[^/@?#\s]+\/[^#\s]+$/.test(url) || !/^[a-f0-9]{64}$/.test(sha)
         || (rate === null ? !hold : hold || !/^\d+(?:\.\d+)?(?:e[+-]?\d+)?$/i.test(fraction)
@@ -731,12 +733,14 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false } = {}
     if (frame.rows.has(rowKey) || frame.measure !== measure || frame.basis !== basis || frame.edition !== edition
         || frame.status !== status || frame.url !== url || frame.sha !== sha || frame.note !== note)
       throw new Error("Mixed or repeated election-office report rows");
-    frame.rows.set(rowKey, { name, count: Number(value), registered: Number(stock), rate, hold });
+    frame.rows.set(rowKey, { name, count: Number(value), registered: countOnly ? null : Number(stock), rate, hold });
   }
   if ([...frames.values()].some(frame => !frame.rows.has("state") || frame.rows.size < 2))
     throw new Error("Election-office archive lacks a state or county total");
   if (currentCalifornia && [...frames.values()].some(frame => frame.rows.size !== 59))
     throw new Error("Incomplete California statewide and county report");
+  if ([...frames.values()].some(frame => frame.code === "WY" && frame.rows.size !== 24))
+    throw new Error("Incomplete Wyoming statewide and county report");
   return [...frames.values()].sort((a, b) => a.code.localeCompare(b.code) || b.date.localeCompare(a.date));
 }
 
@@ -801,8 +805,8 @@ function archiveStateHistory(panel, frames, name) {
       key.scope = "row"; key.append(link); tr.append(key);
       const measure = archiveMeasureLabel(frame.measure);
       tr.insertCell().textContent = `${number.format(row.count)} (${measure})`;
-      tr.insertCell().textContent = number.format(row.registered);
-      tr.insertCell().textContent = frame.basis;
+      tr.insertCell().textContent = row.registered === null ? "Not reported" : number.format(row.registered);
+      tr.insertCell().textContent = frame.basis || "Not in report";
       const fraction = row.rate === null ? `Withheld · ${row.hold.replaceAll("_", " ")}` : `${row.rate.toFixed(2)}%`;
       const retained = frame.status === "retained_after_failure";
       tr.insertCell().textContent = fraction + (retained ? " · Last verified report" : "");
@@ -865,8 +869,8 @@ function installStateCountyArchives(sources, url, names, currentCalifornia = fal
         const measure = archiveMeasureLabel(frame.measure);
         caption.textContent = `${names[frame.code] || frame.code} · ${frame.date} · ${measure}`;
         original.href = frame.url;
-        report.replaceChildren(original, `. Registration basis: ${frame.basis}. `
-          + "Not a rate among all eligible residents."
+        report.replaceChildren(original, (frame.basis ? `. Registration basis: ${frame.basis}. `
+          + "Not a rate among all eligible residents." : ". The report supplies no registration denominator.")
           + (frame.edition ? ` Report edition: ${frame.edition}.` : "")
           + (frame.note ? ` ${frame.note}` : ""));
         status.textContent = `${frame.rows.size - 1} county reports and one state total.`
@@ -876,7 +880,7 @@ function installStateCountyArchives(sources, url, names, currentCalifornia = fal
           const tr = body.insertRow(), key = document.createElement("th");
           key.scope = "row"; key.textContent = row.name; tr.append(key);
           tr.insertCell().textContent = number.format(row.count);
-          tr.insertCell().textContent = number.format(row.registered);
+          tr.insertCell().textContent = row.registered === null ? "Not reported" : number.format(row.registered);
           const rate = tr.insertCell();
           rate.textContent = row.rate === null ? "Withheld" : `${row.rate.toFixed(2)}%`;
           if (row.hold) rate.append(` · ${row.hold.replaceAll("_", " ")}`);

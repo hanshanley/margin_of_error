@@ -7,7 +7,7 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { CA: 58, KS: 105, NC: 100, NJ: 21, WV: 55 };
+const officialCountySizes = { CA: 58, KS: 105, NC: 100, NJ: 21, WV: 55, WY: 23 };
 export const officialArchiveGeometry = {
   "CA/1990": {
     path: "participation-archive-geometry/county-CA-1990.geojson.gz",
