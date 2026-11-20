@@ -247,7 +247,8 @@ export function coverageCsvFile(sources, path) {
   const file = sources?.supported_release?.downloads?.[path];
   if (!file) return null;
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath].includes(path)
-    ? 2_000_000 : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath, washingtonAgePath].includes(path) ? 524288 : 65536;
+    ? 2_000_000 : path === washingtonAgePath ? 1_000_000
+      : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
       || file.media_type !== "text/csv" || file.compression !== "gzip"
@@ -1551,6 +1552,7 @@ function installWashingtonAge(host, sources) {
       download.textContent = "Complete Washington workbook extract and decisions (CSV · gzip)";
       const choose = (label, choices) => {
         const el = document.createElement("label"), select = document.createElement("select");
+        select.setAttribute("aria-label", label);
         for (const [value, text] of choices) select.append(new Option(text, value));
         el.append(`${label} `, select, " ");
         return [el, select];
