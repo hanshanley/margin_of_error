@@ -29,6 +29,8 @@ const southeastHistory = {
   AL: "release/participation-al-general-election-by-age.csv.gz",
   SC: "release/participation-sc-general-election-history.csv.gz",
 };
+const alBallotUnits = "release/participation-al-precinct-ballot-archives.csv.gz";
+const alBallotControls = "release/participation-al-precinct-ballot-county-controls.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
@@ -252,7 +254,7 @@ export function coverageCsvFile(sources, path) {
   const file = sources?.supported_release?.downloads?.[path];
   if (!file) return null;
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath].includes(path)
-    ? 2_000_000 : path === washingtonAgePath ? 1_000_000
+    ? 2_000_000 : path === washingtonAgePath ? 1_000_000 : path === alBallotUnits ? 262144
       : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
@@ -1881,6 +1883,121 @@ function installSoutheastHistory(host, sources, state) {
   });
 }
 
+export function alabamaBallotRows(csv, units) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const fields = ["state_code", "year", "county", "reconciliation", "archive_status", "control_status",
+    ...(units ? ["reporting_unit", "unit_type", "reported_ballots", "source_unit_ordinal"]
+      : ["county_archive_ballots", "county_control_ballots", "archive_minus_control"])];
+  if (!lines.length || new Set(columns).size !== columns.length || fields.some(field => !columns.includes(field)))
+    throw new Error("Missing Alabama ballot archive fields");
+  const number = value => /^-?\d+$/.test(value) && Number.isSafeInteger(Number(value));
+  const seen = new Set();
+  return lines.map(line => {
+    const cells = historicalCsvLine(line);
+    const row = Object.fromEntries(fields.map(field => [field, cells[columns.indexOf(field)]]));
+    const key = `${row.year}/${row.county}/${row.source_unit_ordinal ?? ""}`;
+    if (cells.length !== columns.length || row.state_code !== "AL" || !["2022", "2024"].includes(row.year)
+        || !/^[A-Z_]+$/.test(row.county) || seen.has(key)
+        || !["reconciled", "county_control_disagrees", "not_reconciled_without_both_sources"].includes(row.reconciliation))
+      throw new Error("Invalid Alabama ballot archive row");
+    seen.add(key);
+    if (units) {
+      if (!row.reporting_unit || row.county === "TOTAL" || !number(row.source_unit_ordinal)
+          || Number(row.source_unit_ordinal) <= 0 || !number(row.reported_ballots) || Number(row.reported_ballots) < 0
+          || !["central_mode_or_provisional", "reporting_unit_no_boundary_binding"].includes(row.unit_type))
+        throw new Error("Invalid Alabama reporting unit");
+    } else {
+      const { county_archive_ballots: a, county_control_ballots: c, archive_minus_control: d } = row;
+      const both = a !== "" && c !== "";
+      if ([a, c].some(v => v !== "" && (!number(v) || Number(v) < 0))
+          || (both ? !number(d) || Number(a) - Number(c) !== Number(d)
+            || row.reconciliation !== (Number(d) === 0 ? "reconciled" : "county_control_disagrees")
+            : d !== "" || row.reconciliation !== "not_reconciled_without_both_sources"))
+        throw new Error("Invalid Alabama county-control decision");
+    }
+    return row;
+  });
+}
+
+function installAlabamaBallots(host, sources) {
+  if (!sources?.supported_release?.downloads?.[alBallotControls]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const content = document.createElement("div");
+  summary.textContent = "Alabama precinct reporting units and county ballot controls";
+  panel.append(summary, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    content.textContent = "Checking reporting units and county ballot controls…";
+    try {
+      const [controls, units] = await Promise.all([loadCoverageCsv(sources, alBallotControls),
+        loadCoverageCsv(sources, alBallotUnits)]);
+      const counties = alabamaBallotRows(controls.csv, false);
+      const reportingUnits = units ? alabamaBallotRows(units.csv, true) : [];
+      const groups = new Map();
+      for (const row of reportingUnits) {
+        const key = `${row.year}/${row.county}`;
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(row);
+      }
+      const note = document.createElement("p");
+      note.textContent = "Workbook ballot counts include central and provisional units. No reporting-unit boundaries "
+        + "or compatible registration denominators are established. Conflicting counts remain visible.";
+      const downloads = document.createElement("p");
+      for (const [asset, label] of [[controls, "Complete county checks"], [units, "Complete reporting units"]]) {
+        if (!asset) continue;
+        const link = document.createElement("a");
+        link.href = asset.file.url; link.textContent = `${label} (CSV · gzip)`;
+        downloads.append(link, " ");
+      }
+      const select = document.createElement("select"), label = document.createElement("label");
+      select.setAttribute("aria-label", "Election and county");
+      for (const row of counties.filter(row => row.county !== "TOTAL"))
+        select.append(new Option(`${row.year} · ${row.county.replaceAll("_", " ")}`, `${row.year}/${row.county}`));
+      label.append("Election and county ", select);
+      const status = document.createElement("p"), region = document.createElement("div");
+      status.setAttribute("role", "status");
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", summary.textContent);
+      const format = value => value === "" ? "Not reported" : Number(value).toLocaleString("en-US");
+      const render = () => {
+        const row = counties.find(row => `${row.year}/${row.county}` === select.value);
+        const reported = groups.get(select.value) ?? [];
+        status.textContent = `Workbook: ${format(row.county_archive_ballots)}. County control: `
+          + `${format(row.county_control_ballots)}. `
+          + ({ reconciled: "Counts agree.", county_control_disagrees: "Counts disagree.",
+            not_reconciled_without_both_sources: "Both sources are needed to reconcile." }[row.reconciliation])
+          + ([row.archive_status, row.control_status].includes("retained_after_failure") ? " Showing retained source data." : "");
+        const table = document.createElement("table");
+        table.createCaption().textContent = select.selectedOptions[0].text;
+        const header = table.createTHead().insertRow();
+        for (const heading of ["Reporting unit", "Reported ballots", "Scope"]) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = heading; header.append(th);
+        }
+        const tbody = table.createTBody();
+        for (const unit of reported) {
+          const tr = tbody.insertRow(), name = document.createElement("th");
+          name.scope = "row"; name.textContent = unit.reporting_unit; tr.append(name);
+          tr.insertCell().textContent = format(unit.reported_ballots);
+          tr.insertCell().textContent = unit.unit_type === "central_mode_or_provisional"
+            ? "Central or provisional" : "Boundary not verified";
+        }
+        region.replaceChildren(reported.length ? table : "No workbook reporting units available.");
+      };
+      select.addEventListener("change", render);
+      render();
+      content.replaceChildren(note, downloads, label, status, region);
+    } catch {
+      loading = false;
+      content.textContent = "The checked Alabama archive could not be loaded. Reopen this section to retry.";
+    }
+  });
+}
+
 export function northCarolinaAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = header.split(",");
@@ -2089,6 +2206,7 @@ function installAdministrativeCoverage(host) {
       installWashingtonAge(content, manifest.house_sources);
       installOregonHistory(content, manifest.house_sources);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
+      installAlabamaBallots(content, manifest.house_sources);
       panel.dataset.runtimeVersion = manifest.version;
     } catch {
       content.textContent = "Administrative coverage could not be verified. Close and reopen to retry.";

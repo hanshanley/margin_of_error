@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
+  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, alabamaBallotRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
@@ -17,6 +17,19 @@ import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-pr
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Alabama reporting-unit controls retain conflicting totals and reject an inconsistent decision", () => {
+  const prefix = "state_code,year,county,reconciliation,archive_status,control_status,";
+  const controls = prefix + "county_archive_ballots,county_control_ballots,archive_minus_control\n"
+    + "AL,2024,CLEBURNE,county_control_disagrees,reported,reported,7680,7860,-180\n"
+    + "AL,2024,AUTAUGA,not_reconciled_without_both_sources,source_stopped,reported,,28388,";
+  assert.equal(alabamaBallotRows(controls, false)[0].archive_minus_control, "-180");
+  assert.equal(alabamaBallotRows(controls, false)[1].county_archive_ballots, "");
+  assert.throws(() => alabamaBallotRows(controls.replace("-180", "180"), false), /Invalid Alabama county-control/);
+  const units = prefix + "reporting_unit,unit_type,reported_ballots,source_unit_ordinal\n"
+    + "AL,2024,CLEBURNE,county_control_disagrees,reported,reported,ABSENTEE,central_mode_or_provisional,12,17";
+  assert.equal(alabamaBallotRows(units, true)[0].unit_type, "central_mode_or_provisional");
+});
 
 test("Southeast histories preserve missing ages and distinguish printed and calculated rates", () => {
   const al = "state_code,year,source_status,geography,geography_level,age_group,reported_ballots\n"
