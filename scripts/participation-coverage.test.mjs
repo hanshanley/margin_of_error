@@ -7,11 +7,29 @@ import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
-  wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame }
+  wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive } from "../public/scripts/participation-historical-county-map.js";
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
+
+test("Colorado precinct statistics retain observed zero and reject missing or incompatible rate decisions", () => {
+  const header = "state_code,election_date,county,precinct,registered,active,inactive,ballots_cast,"
+    + "qualified_same_report_registration_fraction_pct,rate_hold_reason,source_status,source_url,source_sha256,"
+    + "source_bytes,registration_basis";
+  const rows = Array.from({ length: 64 }, (_, i) =>
+    `CO,2024-11-05,County ${i},${String(i).padStart(10, "0")},10,9,1,`
+    + (i ? "0,0," : "11,,ballots_exceed_registered")
+    + `,reported,https://co.elstats3.civera.com/api/download_contest/26759_table.csv?split_party=false,${"a".repeat(64)},`
+    + "100,Total registration (active plus inactive)");
+  const csv = [header, ...rows].join("\n");
+  const frame = coloradoPrecinctFrames(csv).get("2024-11-05");
+  assert.equal(frame.counties.get("County 0")[0].rate, null);
+  assert.equal(frame.counties.get("County 1")[0].rate, 0);
+  assert.throws(() => coloradoPrecinctFrames(csv.replace("11,,ballots_exceed_registered", "11,110,")), /differ/);
+  assert.throws(() => coloradoPrecinctFrames(csv + "\n" + rows[0]), /repeat/);
+  assert.throws(() => coloradoPrecinctFrames([header, ...rows.slice(1)].join("\n")), /Incomplete/);
+});
 
 test("the partial Nebraska map preserves a reported zero and leaves unverified counties blank", () => {
   const asset = new URL("../public/participation-archive-geometry/county-NE-2026.geojson.gz", import.meta.url);

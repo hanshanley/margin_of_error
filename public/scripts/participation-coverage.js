@@ -813,6 +813,122 @@ export function nebraskaCountyReportsFrame(csv) {
   return { code: "NE", date: "2026-11-03", measure: "ballots_cast", partialCountyReports: true, rows };
 }
 
+export function coloradoPrecinctFrames(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const fields = ["state_code", "election_date", "county", "precinct", "registered", "active", "inactive",
+    "ballots_cast", "qualified_same_report_registration_fraction_pct", "rate_hold_reason", "source_status",
+    "source_url", "source_sha256", "source_bytes", "registration_basis"];
+  if (!lines.length || lines.length > 20_000 || new Set(columns).size !== columns.length
+      || fields.some(field => !columns.includes(field))) throw new Error("Incomplete Colorado precinct statistics");
+  const frames = new Map(), integer = text => /^\d+$/.test(text) && Number.isSafeInteger(Number(text));
+  const editions = new Map([["2022-11-08", "25989"], ["2024-11-05", "26759"]]);
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), field = key => cells[columns.indexOf(key)];
+    const date = field("election_date"), id = editions.get(date);
+    const county = field("county"), precinct = field("precinct"), disposition = field("rate_hold_reason");
+    const integers = ["registered", "active", "inactive", "ballots_cast", "source_bytes"].map(field);
+    const [registered, active, inactive, count, bytes] = integers.map(Number);
+    const url = field("source_url"), sha = field("source_sha256"), status = field("source_status");
+    const literalRate = field("qualified_same_report_registration_fraction_pct");
+    const rate = literalRate === "" ? null : Number(literalRate);
+    const hold = count > registered ? "ballots_exceed_registered" : registered === 0 ? "no_positive_registration_denominator" : "";
+    if (cells.length !== columns.length || field("state_code") !== "CO" || !id || !county || !/^\d{10}$/.test(precinct)
+        || !integers.every(integer) || !bytes || registered !== active + inactive || disposition !== hold
+        || (hold ? rate !== null : rate === null || !Number.isFinite(rate) || Math.abs(rate - 100 * count / registered) > 1e-10)
+        || !/^[a-f0-9]{64}$/.test(sha) || !["reported", "retained_after_failure"].includes(status)
+        || field("registration_basis") !== "Total registration (active plus inactive)"
+        || url !== `https://co.elstats3.civera.com/api/download_contest/${id}_table.csv?split_party=false`)
+      throw new Error("Colorado precinct statistics or provenance differ");
+    if (!frames.has(date)) frames.set(date, { url, sha, bytes, status, counties: new Map(), ids: new Set() });
+    const frame = frames.get(date);
+    if (frame.ids.has(precinct) || frame.sha !== sha || frame.bytes !== bytes || frame.status !== status)
+      throw new Error("Colorado precinct statistics mix editions or repeat a precinct");
+    frame.ids.add(precinct);
+    if (!frame.counties.has(county)) frame.counties.set(county, []);
+    frame.counties.get(county).push({ precinct, count, registered, rate, hold });
+  }
+  if ([...frames.values()].some(frame => frame.counties.size !== 64)) throw new Error("Incomplete Colorado precinct counties");
+  return frames;
+}
+
+export function installColoradoPrecinctStatistics(file) {
+  const panel = document.createElement("details"), title = document.createElement("summary");
+  title.textContent = "Colorado historical precinct participation";
+  const note = document.createElement("p"), load = document.createElement("button"), status = document.createElement("p");
+  note.textContent = "Official ballots cast and total registration (active plus inactive). No precinct boundaries are inferred.";
+  load.type = "button";
+  load.textContent = "Load precinct statistics";
+  status.setAttribute("role", "status");
+  const download = document.createElement("a");
+  download.href = file.url;
+  download.textContent = "Complete Colorado precinct statistics (CSV · gzip)";
+  panel.append(title, note, download, " · ", load, status);
+  load.addEventListener("click", async () => {
+    const retry = load.textContent === "Retry precinct statistics";
+    load.disabled = true;
+    status.textContent = "Checking the stored precinct statistics…";
+    try {
+      const bytes = await checkedCountyBody(file.url, file, retry);
+      const csv = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+      const frames = coloradoPrecinctFrames(csv);
+      const election = document.createElement("select"), county = document.createElement("select");
+      election.setAttribute("aria-label", "Election date");
+      county.setAttribute("aria-label", "County");
+      for (const date of [...frames.keys()].sort().reverse()) election.add(new Option(date));
+      const electionLabel = document.createElement("label"), countyLabel = document.createElement("label");
+      electionLabel.append("Election date ", election);
+      countyLabel.append("County ", county);
+      const original = document.createElement("a");
+      original.textContent = "Original voting statistics CSV";
+      const wrapper = document.createElement("div"), table = document.createElement("table");
+      wrapper.className = "table-wrap";
+      wrapper.tabIndex = 0;
+      wrapper.setAttribute("role", "region");
+      wrapper.setAttribute("aria-label", "Colorado historical precinct participation");
+      const caption = table.createCaption(), head = table.createTHead().insertRow(), body = table.createTBody();
+      for (const label of ["Precinct", "Ballots cast", "Total registration", "Same-report registration fraction"]) {
+        const cell = document.createElement("th");
+        cell.scope = "col"; cell.textContent = label; head.append(cell);
+      }
+      const number = new Intl.NumberFormat("en-US");
+      function render() {
+        const frame = frames.get(election.value), rows = frame.counties.get(county.value);
+        caption.textContent = `${county.value} County · ${election.value}`;
+        original.href = frame.url;
+        status.textContent = `${rows.length} reported precincts.${frame.status === "reported" ? "" : " Showing last verified edition."}`;
+        body.replaceChildren();
+        for (const value of [...rows].sort((a, b) => a.precinct.localeCompare(b.precinct))) {
+          const row = body.insertRow(), id = document.createElement("th");
+          id.scope = "row"; id.textContent = value.precinct; row.append(id);
+          row.insertCell().textContent = number.format(value.count);
+          row.insertCell().textContent = number.format(value.registered);
+          row.insertCell().textContent = value.rate !== null ? `${value.rate.toFixed(2)}%`
+            : value.hold === "ballots_exceed_registered" ? "Withheld: ballots exceed registration"
+            : "Withheld: no positive registration count";
+        }
+      }
+      function selectCounties() {
+        const previous = county.value, choices = [...frames.get(election.value).counties.keys()].sort();
+        county.replaceChildren(...choices.map(name => new Option(name)));
+        if (choices.includes(previous)) county.value = previous;
+        render();
+      }
+      election.addEventListener("change", selectCounties);
+      county.addEventListener("change", render);
+      wrapper.append(table);
+      selectCounties();
+      load.remove();
+      panel.append(electionLabel, " · ", countyLabel, " · ", original, wrapper);
+    } catch {
+      load.disabled = false;
+      load.textContent = "Retry precinct statistics";
+      status.textContent = "The stored Colorado precinct statistics could not be verified.";
+    }
+  });
+  return panel;
+}
+
 export function installNebraskaCountyReports(file) {
   const panel = document.createElement("details"), title = document.createElement("summary");
   title.textContent = "Nebraska’s 2026 county ballot reports";
@@ -1277,14 +1393,7 @@ function installAdministrativeCoverage(host) {
       if (stateCountyArchives) content.append(installStateCountyArchives(manifest.house_sources, stateCountyArchives, names));
       try {
         const statistics = coverageCsvFile(manifest.house_sources, coloradoPrecinctStatisticsPath);
-        if (statistics) {
-          const note = document.createElement("p"), link = document.createElement("a");
-          link.href = statistics.url;
-          link.textContent = "Colorado historical precinct participation (CSV · gzip)";
-          note.append(link, " · Official ballots cast and total registration (active plus inactive), "
-            + "with incompatible fractions withheld. Precinct boundaries are not inferred.");
-          content.append(note);
-        }
+        if (statistics) content.append(installColoradoPrecinctStatistics(statistics));
       } catch {
         const notice = document.createElement("p");
         notice.textContent = "The Colorado precinct download descriptor could not be verified.";
