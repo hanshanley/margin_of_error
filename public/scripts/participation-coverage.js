@@ -24,6 +24,7 @@ const countyDecisions = {
 const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
+const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
@@ -1664,6 +1665,83 @@ function installWashingtonAge(host, sources) {
   });
 }
 
+export function oregonHistoryRows(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const fields = ["state_code", "year", "election_type", "history_count", "control_count", "history_registered",
+    "control_registered", "reconciliation", "matched_returned_ballots_per_active_voter",
+    "history_source_status", "control_source_status"];
+  if (![33, 34].includes(lines.length)
+      || new Set(columns).size !== columns.length || fields.some(field => !columns.includes(field)))
+    throw new Error("Missing Oregon history fields");
+  return lines.map((line, i) => {
+    const cells = historicalCsvLine(line);
+    const [state, year, cycle, history, control, hr, cr, decision, fraction, hs, cs] =
+      fields.map(field => cells[columns.indexOf(field)]);
+    const count = v => v === "" ? null : /^[1-9]\d*$/.test(v) && Number.isSafeInteger(Number(v)) ? Number(v) : NaN;
+    const [a, b, ar, br] = [history, control, hr, cr].map(count);
+    const rate = fraction === "" ? null : Number(fraction);
+    if (cells.length !== columns.length || state !== "OR" || !/^\d{4}$/.test(year)
+        || Number(year) !== 1960 + 2 * (lines.length - 1 - i)
+        || cycle !== (Number(year) % 4 === 0 ? "presidential" : "midterm")
+        || [a, b, ar, br].some(Number.isNaN) || (a === null) !== (ar === null) || (b === null) !== (br === null)
+        || (a !== null && a > ar) || (b !== null && b > br)
+        || [hs, cs].some(status => !["", "reported", "retained_after_failure"].includes(status))
+        || (decision === "counts_agree" ? a === null || b === null || a !== b || ar !== br || rate !== b / br
+          : decision === "counts_differ" ? a === null || b === null || (a === b && ar === br) || rate !== null
+            : decision !== "one_source" || (a === null) === (b === null) || rate !== null))
+      throw new Error("Invalid Oregon historical reconciliation");
+    return { year, cycle, history: a, control: b, rate, decision, retained: [hs, cs].includes("retained_after_failure") };
+  });
+}
+
+function installOregonHistory(host, sources) {
+  if (!sources?.supported_release?.downloads?.[oregonHistoryPath]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const content = document.createElement("div");
+  summary.textContent = "Oregon statewide general-election turnout history";
+  panel.append(summary, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    content.textContent = "Checking the two Oregon reports…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, oregonHistoryPath);
+      const rows = oregonHistoryRows(csv);
+      const note = document.createElement("p"), download = document.createElement("a");
+      note.textContent = "The historical summary labels its measure votes cast; the comparison report labels its measure "
+        + "ballots returned. The fraction uses active registrations only when both published counts and "
+        + "registration totals agree. It is not a counted-ballot or eligible-population turnout rate. "
+        + (rows.some(row => row.retained) ? "At least one edition was retained after a failed check." : "");
+      download.href = file.url;
+      download.textContent = "Complete Oregon comparisons and source decisions (CSV · gzip)";
+      const scroller = document.createElement("div"), table = document.createElement("table");
+      scroller.className = "table-wrap"; scroller.tabIndex = 0;
+      table.createCaption().textContent = "Oregon statewide general elections";
+      const headings = table.createTHead().insertRow();
+      for (const label of ["Year", "Historical votes cast", "Comparison ballots returned", "Ballots / active voters"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = label; headings.append(th);
+      }
+      const body = table.createTBody();
+      for (const row of rows) {
+        const tr = body.insertRow(), label = document.createElement("th");
+        label.scope = "row"; label.textContent = `${row.year} ${row.cycle}`; tr.append(label);
+        for (const n of [row.history, row.control]) tr.insertCell().textContent = n?.toLocaleString("en-US") ?? "Not reported";
+        tr.insertCell().textContent = row.rate !== null ? `${(100 * row.rate).toFixed(2)}%`
+          : row.decision === "counts_differ" ? "Reports disagree" : "One report only";
+      }
+      scroller.append(table);
+      content.replaceChildren(note, download, scroller);
+    } catch {
+      loading = false;
+      content.textContent = "The checked Oregon data could not be loaded. Reopen this section to retry.";
+    }
+  });
+}
+
 export function northCarolinaAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = header.split(",");
@@ -1870,6 +1948,7 @@ function installAdministrativeCoverage(host) {
       }
       installNorthCarolinaAge(content, manifest.house_sources);
       installWashingtonAge(content, manifest.house_sources);
+      installOregonHistory(content, manifest.house_sources);
       panel.dataset.runtimeVersion = manifest.version;
     } catch {
       content.textContent = "Administrative coverage could not be verified. Close and reopen to retry.";
