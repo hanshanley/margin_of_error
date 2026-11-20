@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: 04310a120f253e16632da19bfeb611bd2d492b91
+          ref: 25175f039df42c8a6d95e3f83f6dc418f8b4b8f6
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -71,6 +71,7 @@ jobs:
             data/results-intake/retained-county-canvasses-20261119.json
             data/results-intake/tx-reviewed-turnout-history.json
             data/results-intake/md-reviewed-turnout-archive.json.gz
+            data/results-intake/reviewed-bulk-turnout-archive.json.gz
             data/results-intake/analytical-handoff
             data/results-intake/official-house-precedence
             data/results-intake/native-official-house
