@@ -3,6 +3,8 @@ import { countStates, loadCountIndex } from "./participation-counts.js";
 import { loadNativeIndex } from "./participation-native-bindings.js";
 import { loadAutomaticRuntime } from "./participation-automatic-runtime.js";
 import { checkedCountyBody, installHistoricalCountyMap } from "./participation-historical-county-map.js";
+import { participationDownload } from "./participation-downloads.js";
+import { projectStateContext } from "./participation-map-projection.js";
 
 const coveragePath = "release/participation-administrative-coverage.csv.gz";
 const historicalCountyPath = "participation/eac-county-year-decisions.csv.gz";
@@ -332,6 +334,73 @@ export function overallCpsRows(csv, summary) {
   });
 }
 
+function addOverallCpsMap(panel, rows, summary, basis, state, names) {
+  const load = document.createElement("button"), status = document.createElement("p");
+  load.type = "button"; load.textContent = "Show statewide turnout map";
+  status.setAttribute("role", "status");
+  panel.append(load, status);
+  load.addEventListener("click", async () => {
+    load.disabled = true;
+    status.textContent = "Loading state outlines…";
+    try {
+      const response = await fetch(participationDownload("/voter-participation/data/states.geojson"),
+        { signal: AbortSignal.timeout(20_000) });
+      if (!response.ok) throw new Error("State outlines could not be loaded");
+      const collection = await response.json();
+      const shapes = projectStateContext(collection.features);
+      const codes = new Set(shapes.map(({ feature }) => feature.properties.STUSAB));
+      if (shapes.length !== countStates.length || !countStates.every(code => codes.has(code))
+          || shapes.some(({ d }) => !d || /NaN|Infinity/.test(d)))
+        throw new Error("State map inventory differs");
+      const figure = document.createElement("figure"), caption = document.createElement("figcaption");
+      const label = document.createElement("label"), year = document.createElement("select");
+      for (const value of [...summary.years].reverse()) year.add(new Option(String(value), String(value)));
+      label.append("Map election year ", year);
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 1000 640");
+      svg.setAttribute("width", "100%");
+      svg.setAttribute("role", "img");
+      const colors = ["#eef5f3", "#c5e0d9", "#87bbac", "#458778", "#23564f"];
+      const paint = () => {
+        const selected = rows.filter(r => r.year === year.value && r.denominator_basis === basis.value);
+        const byCode = new Map(selected.map(r => [r.state_code, r]));
+        svg.replaceChildren();
+        const metric = basis.selectedOptions[0].textContent;
+        svg.setAttribute("aria-label", `${year.value} reported voting rates by state, ${metric}`);
+        for (const { feature, d } of shapes) {
+          const code = feature.properties.STUSAB, row = byCode.get(code);
+          const point = row?.reported_voted_pct;
+          const hasRate = point !== undefined && point !== "";
+          const shade = hasRate ? colors.filter((_, i) => i === 0 || Number(point) >= 30 + i * 10).at(-1) : "#dededb";
+          const path = document.createElementNS(svg.namespaceURI, "path");
+          const title = document.createElementNS(svg.namespaceURI, "title");
+          path.setAttribute("d", d);
+          path.setAttribute("fill", shade);
+          path.setAttribute("fill-rule", "evenodd");
+          path.setAttribute("stroke", code === state.value ? "#222" : "#fcfcfa");
+          path.setAttribute("stroke-width", code === state.value ? "2" : "1");
+          path.dataset.state = code;
+          path.dataset.rate = hasRate ? point : "";
+          title.textContent = `${names[code] || feature.properties.NAME}: ${hasRate ? `${point}%` : "not available"}`;
+          path.append(title); svg.append(path);
+        }
+        caption.textContent = `${selected.filter(r => r.reported_voted_pct !== "").length} of 51 jurisdictions with published rates. `
+          + "Light to dark: below 40%, 40–49%, 50–59%, 60–69%, 70% or more. Gray: not available. "
+          + "State outlines are for display; Alaska and Hawaii are insets. "
+          + (basis.value === "cvap" && Number(year.value) < 1996 ? "Earlier citizenship measure; not directly comparable." : "");
+      };
+      for (const control of [year, basis, state]) control.addEventListener("change", paint);
+      figure.append(label, svg, caption);
+      load.replaceWith(figure);
+      status.textContent = "";
+      paint();
+    } catch {
+      load.disabled = false;
+      status.textContent = "The state map is unavailable; the statewide history table and CSV still work.";
+    }
+  });
+}
+
 function installOverallCps(file, summary, names) {
   const panel = document.createElement("details"), heading = document.createElement("summary");
   const note = document.createElement("p"), download = document.createElement("a");
@@ -397,6 +466,7 @@ function installOverallCps(file, summary, names) {
         panel.append(label, control, " ");
         control.addEventListener("change", render);
       }
+      addOverallCpsMap(panel, rows, summary, basis, state, names);
       scroller.append(table); panel.append(scroller);
       render();
       status.textContent = ""; button.remove();
