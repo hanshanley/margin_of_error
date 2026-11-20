@@ -2768,7 +2768,7 @@ async function civicStateModelView(generation) {
   }
 }
 function appendTurnoutHistory(panel, code) {
-  if (!["TX", "VA", "WA"].includes(code)) return;
+  if (!["NC", "TX", "VA", "WA"].includes(code)) return;
   const section = html("details", "substate-detail");
   section.append(html("summary", "", "Administrative turnout by year"));
   const body = html("div", "");
@@ -2785,18 +2785,18 @@ function appendTurnoutHistory(panel, code) {
         body.replaceChildren(html("p", "selection-note", "This series has not entered the accepted explorer release."));
         return;
       }
-      const { data, measure, countLabel } = history;
+      const { data, measure, countLabel, denominator, denominatorLabel } = history;
       const table = html("table", "");
       table.append(html("caption", "", "November general elections · statewide administrative totals"));
       const header = table.createTHead().insertRow();
-      for (const label of ["Year", countLabel, "Registered", "Turnout"]) {
+      for (const label of ["Year", countLabel, denominatorLabel, "Turnout"]) {
         const cell = html("th", "", label); cell.scope = "col"; header.append(cell);
       }
       const rows = table.createTBody();
       for (const row of data.complete_native_query) {
         const line = rows.insertRow();
         const year = html("th", "", String(row.year)); year.scope = "row"; line.append(year);
-        for (const value of [fmt(row[measure]), fmt(row.registered_voters),
+        for (const value of [fmt(row[measure]), fmt(row[denominator]),
           row.rate_qualified ? `${row.published_turnout.replace(/%$/, "")}%` : "Withheld"])
           line.append(html("td", "", value));
       }
@@ -2808,7 +2808,8 @@ function appendTurnoutHistory(panel, code) {
       const csv = html("a", "source-link", "Download all years (CSV)"); csv.href = history.csv;
       const complete = html("a", "source-link", "Complete queries and reproduction (ZIP)"); complete.href = history.complete;
       body.replaceChildren(html("p", "selection-note",
-        "Registered-voter denominator, not CPS, VEP or a local turnout rate. Rates are withheld when the printed figures do not reconcile or the registration basis is ambiguous."
+        (code === "NC" ? "The denominator is the election office’s published “Eligible Voters” figure, not a Census estimate or a local turnout rate. Rates are withheld when the printed figures do not reconcile."
+          : "Registered-voter denominator, not CPS, VEP or a local turnout rate. Rates are withheld when the printed figures do not reconcile or the registration basis is ambiguous.")
         + (data.current_election_status === "not_yet_published" ? " This edition does not include 2026." : "")
         + (data.status === "retained_after_failure" ? " Earlier source capture retained after an update failure." : "")),
         csv, complete, scroller);

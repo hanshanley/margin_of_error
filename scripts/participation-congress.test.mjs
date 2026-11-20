@@ -74,6 +74,39 @@ test("a held RCV comparison keeps its raw recorded change without becoming a qua
   assert.equal(validateCongressionalResults(data).races[1].raw_recorded_margin_change_pp, 20);
 });
 
+test("a superseded pending record stays downloadable and must link to the same contest's newer final", () => {
+  const data = fixture(), final = data.races[0];
+  const oldId = final.id;
+  const noComparison = { qualified_comparison: false, qualified_margin_change_pp: null,
+    comparison_holds: ["RCV rounds are not comparable"] };
+  Object.assign(final, noComparison, { ranked_choice: true, round: "rcv-final",
+    native_rcv_result: "final", provider_race_id: "2015", id: oldId.replace("not_ranked", "rcv-final") });
+  const timestamp = "2026-11-14T00:00:00.000+00:00";
+  const pending = { ...final, id: oldId.replace("not_ranked", "rcv-pending"), round: "rcv-pending",
+    native_rcv_result: "pending", advertised: false, status: "retained_after_failure",
+    freshness: "retained_last_good", hold_reason: "Race no longer advertised",
+    source_updated_at: timestamp, source_updated_epoch_ms: Date.parse(timestamp), superseded_by_race_id: final.id };
+  data.races.push(pending);
+  for (const candidate of data.candidates.filter(row => row.id === oldId)) {
+    const fields = { candidate_id: candidate.candidate_id, name: candidate.name,
+      literal_party: candidate.literal_party, party_group: candidate.party_group, votes: candidate.votes };
+    Object.assign(candidate, final, fields);
+    data.candidates.push({ ...pending, ...fields });
+  }
+  data.coverage = data.races.map(row => ({ ...row }));
+  Object.assign(data.summary.house, { retained: 1, superseded_rcv_records: 1 });
+  assert.equal(validateCongressionalResults(data).races.length, 3);
+  for (const mutate of [
+    copy => { copy.races[0].provider_race_id = "2016"; },
+    copy => { copy.races[0].native_rcv_result = "pending"; },
+    copy => { copy.summary.house.superseded_rcv_records = 0; },
+    copy => { delete copy.coverage[2].superseded_by_race_id; },
+  ]) {
+    const copy = structuredClone(data); mutate(copy);
+    assert.throws(() => validateCongressionalResults(copy), /Congressional/);
+  }
+});
+
 const readerLimit = "Reviewed same-seat comparison is qualified in congress-comparisons.csv; "
   + "the deployed v1 reader can badge only regular Class II, same-stage comparisons. "
   + "Raw counts and changes remain available here.";

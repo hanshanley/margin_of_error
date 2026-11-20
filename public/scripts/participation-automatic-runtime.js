@@ -371,11 +371,14 @@ export async function loadAutomaticRecordedHouse(selection) {
 }
 
 export async function loadAutomaticTurnoutHistory(code) {
-  const states = { TX: ["texas", 1970, 2024, 2, "total_voting", "Reported turnout count"],
+  const states = { NC: ["north-carolina", 1972, 2024, 2, "ballots_cast", "Ballots cast"],
+    TX: ["texas", 1970, 2024, 2, "total_voting", "Reported turnout count"],
     VA: ["virginia", 1976, 2025, 1, "total_voting", "Total voting"],
     WA: ["washington", 1980, 2025, 1, "ballots_counted", "Ballots counted"] };
   if (!Object.hasOwn(states, code)) return null;
   const [name, first, lastHistorical, step, measure, countLabel] = states[code];
+  const denominator = code === "NC" ? "eligible_voters" : "registered_voters";
+  const denominatorLabel = code === "NC" ? "Eligible voters (NCSBE)" : "Registered";
   const manifest = await loadAutomaticRuntime();
   const sources = manifest.house_sources;
   const files = sources?.general_election_turnout_history?.[code];
@@ -392,15 +395,17 @@ export async function loadAutomaticTurnoutHistory(code) {
   if (data.contract !== "participation.statewide_general_election_history.v1" || data.state_code !== code
       || !["reported", "retained_after_failure"].includes(data.status)
       || !["row_published", "not_yet_published"].includes(data.current_election_status)
+      || (code === "NC" && (data.native_denominator !== "Eligible Voters" || data.native_measure !== "Ballots Cast"
+        || data.source?.url !== "https://www.ncsbe.gov/results-data/voter-turnout"))
       || (code === "TX" && data.native_measure !== "Turnout")
       || !Array.isArray(rows) || rows.length !== (last - first) / step + 1
       || rows.some((row, i) => row.year !== last - i * step || !Number.isSafeInteger(row[measure])
-        || !Number.isSafeInteger(row.registered_voters) || row[measure] < 0
-        || row.registered_voters <= 0 || row[measure] > row.registered_voters
+        || !Number.isSafeInteger(row[denominator]) || row[measure] < 0
+        || row[denominator] <= 0 || row[measure] > row[denominator]
         || typeof row.rate_qualified !== "boolean" || typeof row.published_turnout !== "string"
         || !printedRate.test(row.published_turnout)))
     throw new Error("Turnout history scope or rows differ");
-  return { data, measure, countLabel, csv: files.csv.url, complete: manifest.complete_download.url };
+  return { data, measure, countLabel, denominator, denominatorLabel, csv: files.csv.url, complete: manifest.complete_download.url };
 }
 
 export async function loadPennsylvaniaVoteHistory() {

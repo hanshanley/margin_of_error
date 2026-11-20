@@ -8,6 +8,7 @@ import {
   validateAutomaticRuntime,
   loadAutomaticSenatePartial,
   loadAutomaticSenateComplete,
+  loadAutomaticTurnoutHistory,
   loadPennsylvaniaVoteHistory,
 } from "../public/scripts/participation-automatic-runtime.js";
 
@@ -313,6 +314,52 @@ test("Pennsylvania history binds all age and county data and downloads to the ac
     resetAutomaticRuntimeForTests();
     files.csv.url = "https://example.test/other.csv";
     await assert.rejects(loadPennsylvaniaVoteHistory(), /not bound/);
+  } finally {
+    globalThis.fetch = original;
+    resetAutomaticRuntimeForTests();
+  }
+});
+
+test("North Carolina history uses source-defined eligible voters, not registration", async () => {
+  const pointer = manifest(), root = pointer.house_sources.base_url.replace(/\/$/, "");
+  pointer.house_sources.base_url = root;
+  const path = "participation/north-carolina-general-election-turnout-history";
+  const dataPath = path + ".json.gz", csvPath = path + ".csv", url = `${root}/${dataPath}`;
+  const data = {
+    contract: "participation.statewide_general_election_history.v1", state_code: "NC", status: "reported",
+    current_election_status: "not_yet_published", native_denominator: "Eligible Voters", native_measure: "Ballots Cast",
+    source: { url: "https://www.ncsbe.gov/results-data/voter-turnout" },
+    complete_native_query: Array.from({ length: 27 }, (_, i) => ({
+      year: 2024 - 2 * i, ballots_cast: 3, eligible_voters: 10, rate_qualified: true, published_turnout: "30%",
+    })),
+  };
+  let zipped;
+  const setBody = () => {
+    const body = Buffer.from(JSON.stringify(data));
+    zipped = gzipSync(body);
+    pointer.house_sources.general_election_turnout_history = { NC: {
+      data: { ...bodyPin(dataPath), url, bytes: zipped.length, sha256: hash(zipped),
+        decoded_bytes: body.length, decoded_sha256: hash(body) },
+      csv: { path: csvPath, url: `${root}/${csvPath}`, bytes: 8, sha256: hash("csv-data") },
+    } };
+  };
+  const original = globalThis.fetch;
+  try {
+    resetAutomaticRuntimeForTests();
+    setBody();
+    globalThis.fetch = async path => {
+      if (String(path) === automaticRuntimeURL) return Response.json(pointer);
+      if (String(path) === url) return new Response(zipped);
+      throw new Error("Unpinned request: " + path);
+    };
+    const history = await loadAutomaticTurnoutHistory("NC");
+    assert.equal(history.denominator, "eligible_voters");
+    assert.equal(history.data.complete_native_query.length, 27);
+    assert.equal(history.csv, `${root}/${csvPath}`);
+    resetAutomaticRuntimeForTests();
+    data.native_denominator = "Registered Voters";
+    setBody();
+    await assert.rejects(loadAutomaticTurnoutHistory("NC"), /scope or rows differ/);
   } finally {
     globalThis.fetch = original;
     resetAutomaticRuntimeForTests();

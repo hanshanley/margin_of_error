@@ -226,8 +226,19 @@ function validatePayload(data, reviewed = false) {
   for (const race of races.values()) {
     const row = coverageById.get(race.id);
     require(row && ["chamber", "state_code", "status", "freshness", "advertised",
-      "source_updated_at"].every(key => row[key] === race[key]),
+      "source_updated_at", "superseded_by_race_id"].every(key => row[key] === race[key]),
     "Congressional coverage differs from its race");
+    if (race.superseded_by_race_id !== undefined) {
+      const final = races.get(race.superseded_by_race_id);
+      require(race.status === "retained_after_failure" && race.advertised === false
+        && race.hold_reason === "Race no longer advertised" && race.ranked_choice
+        && race.native_rcv_result === "pending" && typeof race.provider_race_id === "string"
+        && final?.status === "reported" && final.advertised && final.ranked_choice
+        && final.native_rcv_result === "final" && final.count_coverage_complete
+        && final.source_updated_epoch_ms > race.source_updated_epoch_ms
+        && ["provider_race_id", "chamber", "state_code", "seat", "election_date", "election_kind", "stage"]
+          .every(key => final[key] === race[key]), "Congressional final round does not supersede this record");
+    }
   }
   for (const row of data.coverage)
     require(races.has(row.id) || (row.status === "held" && row.freshness === "unavailable"
@@ -238,6 +249,7 @@ function validatePayload(data, reviewed = false) {
     const coverage = data.coverage.filter(row => row.chamber === chamber), summary = data.summary?.[chamber];
     require(summary && summary.refreshed === rows.filter(row => row.status === "reported").length
       && summary.retained === rows.filter(row => row.status !== "reported").length
+      && (summary.superseded_rcv_records ?? 0) === rows.filter(row => row.superseded_by_race_id !== undefined).length
       && summary.held === coverage.filter(row => row.status === "held").length
       && summary.discovered === coverage.filter(row => row.advertised).length,
     "Congressional freshness summary differs");
@@ -323,6 +335,11 @@ function node(tag, text, attributes = {}) {
   return element;
 }
 
+function roundFreshness(row) {
+  return row.superseded_by_race_id ? "archived; superseded by the provider's final ranked-choice count"
+    : row.freshness.replaceAll("_", " ");
+}
+
 export function installCongressionalReturns(root) {
   const disclosure = root.querySelector("[data-congressional-results]");
   if (!disclosure) return;
@@ -356,7 +373,7 @@ export function installCongressionalReturns(root) {
       const show = row => {
         detail.replaceChildren(
           node("h4", `${row.state_code} · ${row.chamber} · ${row.seat_label} · ${row.election_kind}`),
-          node("p", `${row.native_type} · ${row.round} · ${row.freshness.replaceAll("_", " ")}. `
+          node("p", `${row.native_type} · ${row.round} · ${roundFreshness(row)}. `
             + `Native count update: ${row.source_updated_at}. `
             + `Source results type: ${row.native_results_type ?? "not supplied"}. `
             + `Certification flag: ${row.native_certified ?? "not supplied"}.`),
@@ -394,8 +411,10 @@ export function installCongressionalReturns(root) {
         const selected = data.races.filter(row => row.chamber === chamber.value
           && (!state.value || row.state_code === state.value));
         const totals = data.summary[chamber.value];
+        const superseded = totals.superseded_rcv_records ?? 0;
         status.textContent = `${totals.discovered} advertised ${chamber.value} contests: `
-          + `${totals.refreshed} source-verified, ${totals.retained} retained, ${totals.held} unavailable holds. `
+          + `${totals.refreshed} source-verified, ${totals.retained - superseded} retained, ${totals.held} unavailable holds. `
+          + (superseded ? `${superseded} superseded ranked-choice records archived. ` : "")
           + (totals.discovered === 0 ? "The live inventory is unavailable, not proof that no contests exist. " : "")
           + `Checked ${manifest.checked_at}; native count dates are shown separately. `
           + `${selected.filter(row => row.qualified_comparison).length} qualified recorded comparisons in this selection.`;
@@ -412,7 +431,7 @@ export function installCongressionalReturns(root) {
             percent(row.D_two_party_share_pct),
             points(row.D_minus_R_margin_pp), points(row.raw_recorded_margin_change_pp),
             row.qualified_comparison ? "Qualified recorded" : "Held; raw arithmetic only",
-            row.freshness.replaceAll("_", " "), row.source_updated_at])
+            roundFreshness(row), row.source_updated_at])
             tr.append(node("td", value));
           body.append(tr);
         }
