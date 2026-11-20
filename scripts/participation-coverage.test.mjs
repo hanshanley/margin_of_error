@@ -15,8 +15,26 @@ import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill }
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
 import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-precinct-map.js";
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
-import { bindMinnesotaPrecinctLayer, minnesotaPrecinctFrames }
+import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Minnesota county history keeps election type, reported zero, and retained counts distinct", () => {
+  const code = "27001";
+  const frame = (status, counts) => ({
+    status, counties: new Map([[code, { rows: counts.map(count => ({ count })) }]]),
+  });
+  const frames = new Map([
+    ["2024-11-05", frame("reported", [4, 17])],
+    ["2022-11-08", frame("retained_after_failure", [7, 0])],
+    ["2020-11-03", frame("reported", [0])],
+  ]);
+  assert.deepEqual(minnesotaCountyHistory(frames, code), [
+    { year: 2020, type: "Presidential", status: "reported", count: 0 },
+    { year: 2022, type: "Midterm", status: "retained_after_failure", count: 7 },
+    { year: 2024, type: "Presidential", status: "reported", count: 21 },
+  ]);
+  assert.deepEqual(minnesotaCountyHistory(frames, "27003"), []);
+});
 
 test("Maryland maps bind only the matching edition and exclude unassigned activity", () => {
   const asset = new URL("../public/participation-archive-geometry/precinct-MD-2022.json.gz", import.meta.url);

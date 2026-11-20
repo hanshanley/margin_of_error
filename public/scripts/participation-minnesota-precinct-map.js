@@ -62,6 +62,40 @@ export function bindMinnesotaPrecinctLayer(layer, date, county, rows) {
   });
 }
 
+export function minnesotaCountyHistory(frames, code) {
+  return [...frames].sort(([a], [b]) => a.localeCompare(b)).flatMap(([date, frame]) => {
+    const county = frame.counties.get(code);
+    if (!county) return [];
+    const year = Number(date.slice(0, 4));
+    return [{ year, type: year % 4 === 0 ? "Presidential" : "Midterm", status: frame.status,
+      count: county.rows.reduce((total, row) => total + row.count, 0) }];
+  });
+}
+
+function renderCountyHistory(table, frames, code, name) {
+  const rows = minnesotaCountyHistory(frames, code);
+  const ceiling = Math.max(1, ...rows.map(row => row.count));
+  table.caption.textContent = `${name} County: people voting by election (counts, not rates)`;
+  table.tBodies[0].replaceChildren();
+  for (const { year, type, status, count } of rows) {
+    const row = table.tBodies[0].insertRow(), label = document.createElement("th");
+    label.scope = "row";
+    label.textContent = `${year} ${type.toLowerCase()}`;
+    row.append(label);
+    const cell = row.insertCell(), bar = document.createElement("span");
+    bar.style.cssText = "display:block;height:.5rem;border-radius:1px";
+    bar.style.width = `${100 * count / ceiling}%`;
+    bar.style.backgroundColor = type === "Presidential" ? "#24586d" : "#79afbf";
+    bar.setAttribute("aria-hidden", "true");
+    cell.style.minWidth = "4rem";
+    cell.style.width = "45%";
+    cell.append(bar);
+    const value = row.insertCell();
+    value.textContent = count.toLocaleString("en-US") + (status === "reported" ? "" : " (retained)");
+    value.style.textAlign = "right";
+  }
+}
+
 async function loadGzip(url, pin, retry) {
   const bytes = await checkedCountyBody(url, pin, retry);
   return new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip")));
@@ -97,6 +131,14 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
       caption.setAttribute("role", "status");
       figure.style.marginInline = "0";
       figure.append(caption);
+      const history = document.createElement("table");
+      history.createCaption();
+      history.createTBody();
+      const historyHeader = history.createTHead().insertRow();
+      for (const label of ["General election", "Relative count", "People voting"]) {
+        const cell = document.createElement("th");
+        cell.scope = "col"; cell.textContent = label; historyHeader.append(cell);
+      }
       const wrapper = document.createElement("div"), table = document.createElement("table");
       wrapper.className = "table-wrap";
       wrapper.tabIndex = 0;
@@ -112,6 +154,7 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
       async function render() {
         const token = ++renderId, date = election.value, code = county.value, frame = frames.get(date);
         const { name, rows } = frame.counties.get(code);
+        renderCountyHistory(history, frames, code, name);
         tableCaption.textContent = `${name} County · ${date}`;
         status.textContent = `${rows.length} reported precincts.${frame.status === "reported" ? "" : " Showing last verified edition."}`;
         body.replaceChildren();
@@ -172,7 +215,7 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
       election.addEventListener("change", selectCounties);
       county.addEventListener("change", render);
       load.remove();
-      panel.append(electionLabel, " · ", countyLabel, figure, wrapper);
+      panel.append(electionLabel, " · ", countyLabel, history, figure, wrapper);
       selectCounties();
     } catch {
       retry = true;
