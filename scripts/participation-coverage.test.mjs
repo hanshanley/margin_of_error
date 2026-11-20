@@ -14,8 +14,19 @@ import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill }
   from "../public/scripts/participation-historical-county-map.js";
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
 import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-precinct-map.js";
+import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
 import { bindMinnesotaPrecinctLayer, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Maryland maps bind only the matching edition and exclude unassigned activity", () => {
+  const asset = new URL("../public/participation-archive-geometry/precinct-MD-2022.json.gz", import.meta.url);
+  const layer = JSON.parse(gunzipSync(readFileSync(asset)));
+  const frame = { date: "2022-11-08", county: "Howard", sha: layer.source_sha256, activity: 131738, unplaced: 21 };
+  assert.equal(bindMarylandPrecinctLayer(layer, frame).length, 118);
+  assert.throws(() => bindMarylandPrecinctLayer(layer, { ...frame, sha: "0".repeat(64) }), /scope/);
+  assert.throws(() => bindMarylandPrecinctLayer(layer, { ...frame, activity: 131717 }), /reconcile/);
+  assert.throws(() => bindMarylandPrecinctLayer(layer, { ...frame, county: "Somerset" }), /scope/);
+});
 
 test("full-size precinct descriptors allow verified bulk data without relaxing ordinary coverage limits", () => {
   const base_url = "https://example.test/verified";

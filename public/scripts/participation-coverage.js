@@ -5,6 +5,7 @@ import { loadAutomaticRuntime, loadWyomingPrecinctCanvass } from "./participatio
 import { checkedCountyBody, installHistoricalCountyMap } from "./participation-historical-county-map.js";
 import { installDenverPrecinctMap } from "./participation-denver-precinct-map.js";
 import { installMinnesotaPrecinctMap } from "./participation-minnesota-precinct-map.js";
+import { installMarylandPrecinctMap } from "./participation-maryland-precinct-map.js";
 import { participationDownload } from "./participation-downloads.js";
 import { projectStateContext } from "./participation-map-projection.js";
 
@@ -272,7 +273,7 @@ export function installMarylandAffiliationSnapshots(groupFile, precinctFile) {
       const keys = historicalCsvLine(header), frames = new Map(), seen = new Set();
       const columns = ["election_date", "geography", "registration_affiliation", "reported_ballot_activity",
         "eligible_registered", "reported_ballot_activity_without_precinct", "participation_measure", "source_status",
-        "report_edition"];
+        "report_edition", "source_sha256"];
       const editions = new Map([
         ["2016-11-08", [6, ""]], ["2018-11-06", [6, ""]], ["2020-11-03", [8, ""]],
         ["2022-11-08", [7, "December 8, 2022"]], ["2024-11-05", [7, "April 29, 2026"]],
@@ -281,18 +282,20 @@ export function installMarylandAffiliationSnapshots(groupFile, precinctFile) {
         throw new Error("Missing Maryland profile");
       for (const line of lines) {
         const row = historicalCsvLine(line);
-        const [date, place, party, activity, registered, unplaced, measure, sourceStatus, edition] =
+        const [date, place, party, activity, registered, unplaced, measure, sourceStatus, edition, sha] =
           columns.map(key => row[keys.indexOf(key)]);
         const id = `${date}/${place}/${party}`;
         if (row.length !== keys.length || !editions.has(date) || !place || !party
             || seen.has(id) || measure !== "reported_ballot_activity_voter_file_snapshot"
             || !["reported", "retained_after_failure"].includes(sourceStatus) || edition !== editions.get(date)[1]
+            || !/^[a-f0-9]{64}$/.test(sha)
             || ![activity, registered, unplaced].every(n => /^\d+$/.test(n) && Number.isSafeInteger(Number(n)))
             || Number(unplaced) > Number(activity)) throw new Error("Invalid Maryland profile");
         seen.add(id);
-        if (!frames.has(date)) frames.set(date, { places: new Map(), sourceStatus, edition });
+        if (!frames.has(date)) frames.set(date, { places: new Map(), sourceStatus, edition, sha });
         const frame = frames.get(date);
-        if (frame.sourceStatus !== sourceStatus || frame.edition !== edition) throw new Error("Mixed Maryland editions");
+        if (frame.sourceStatus !== sourceStatus || frame.edition !== edition || frame.sha !== sha)
+          throw new Error("Mixed Maryland editions");
         if (!frame.places.has(place)) frame.places.set(place, []);
         frame.places.get(place).push([party, Number(activity), Number(registered), Number(unplaced)]);
       }
@@ -311,13 +314,18 @@ export function installMarylandAffiliationSnapshots(groupFile, precinctFile) {
         const cell = document.createElement("th");
         cell.scope = "col"; cell.textContent = text; head.append(cell);
       }
+      const updateMap = installMarylandPrecinctMap(panel);
       const render = () => {
-        const { places, sourceStatus, edition } = frames.get(election.value);
+        const { places, sourceStatus, edition, sha } = frames.get(election.value);
+        const rows = places.get(area.value);
+        updateMap({ date: election.value, county: area.value, sha,
+          activity: rows.reduce((sum, row) => sum + row[1], 0),
+          unplaced: rows.reduce((sum, row) => sum + row[3], 0) });
         caption.textContent = `${area.value} · ${election.value}`;
         status.textContent = (edition ? `Voter-file snapshot dated ${edition}.` : "The archive does not give a voter-file snapshot date.")
           + (sourceStatus === "reported" ? "" : " Showing last verified edition.");
         body.replaceChildren();
-        for (const [name, ...values] of places.get(area.value)) {
+        for (const [name, ...values] of rows) {
           const row = body.insertRow(), label = document.createElement("th");
           label.scope = "row"; label.textContent = name; row.append(label);
           for (const n of values) row.insertCell().textContent = n.toLocaleString("en-US");
