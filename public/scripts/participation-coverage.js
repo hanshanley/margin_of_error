@@ -21,6 +21,7 @@ const countyDecisions = {
 const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
+const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const californiaCurrentReportPath = "release/participation-ca-2026-county-turnout-report.csv.gz";
 const nebraskaCurrentReportPath = "release/participation-ne-2026-county-canvass.csv.gz";
 const nebraskaCountyReportsPath = "release/participation-ne-2026-county-reports.csv.gz";
@@ -767,6 +768,8 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     throw new Error("Incomplete California statewide and county report");
   if ([...frames.values()].some(frame => frame.code === "NE" && frame.rows.size !== 94))
     throw new Error("Incomplete Nebraska statewide and county report");
+  if ([...frames.values()].some(frame => frame.code === "CO" && frame.rows.size !== 65))
+    throw new Error("Incomplete Colorado statewide and county report");
   if ([...frames.values()].some(frame => frame.code === "WY" && frame.rows.size !== 24))
     throw new Error("Incomplete Wyoming statewide and county report");
   return [...frames.values()].sort((a, b) => a.code.localeCompare(b.code) || b.date.localeCompare(a.date));
@@ -1272,6 +1275,21 @@ function installAdministrativeCoverage(host) {
       }
       const stateCountyArchives = stateCountyArchivesDownload(manifest.house_sources);
       if (stateCountyArchives) content.append(installStateCountyArchives(manifest.house_sources, stateCountyArchives, names));
+      try {
+        const statistics = coverageCsvFile(manifest.house_sources, coloradoPrecinctStatisticsPath);
+        if (statistics) {
+          const note = document.createElement("p"), link = document.createElement("a");
+          link.href = statistics.url;
+          link.textContent = "Colorado historical precinct participation (CSV · gzip)";
+          note.append(link, " · Official ballots cast and total registration (active plus inactive), "
+            + "with incompatible fractions withheld. Precinct boundaries are not inferred.");
+          content.append(note);
+        }
+      } catch {
+        const notice = document.createElement("p");
+        notice.textContent = "The Colorado precinct download descriptor could not be verified.";
+        content.append(notice);
+      }
       if (manifest.house_sources?.wyoming_precinct_canvass) content.append(installStateCountyArchives(
         manifest.house_sources, manifest.complete_download.url, names, { wyomingCanvass: true }));
       else if (manifest.counts?.files["current.json.gz"]) content.append(installStateCountyArchives(

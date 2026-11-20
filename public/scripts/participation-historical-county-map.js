@@ -7,7 +7,7 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { CA: 58, KS: 105, NC: 100, NE: 93, NJ: 21, WV: 55, WY: 23 };
+const officialCountySizes = { CA: 58, CO: 64, KS: 105, NC: 100, NE: 93, NJ: 21, WV: 55, WY: 23 };
 const nebraskaGeometryRelease = "https://github.com/hanshanley/voter-participation/releases/download/"
   + "nebraska-legacy-county-geometry-20261120/";
 export const officialArchiveGeometry = {
