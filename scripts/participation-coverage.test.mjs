@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
-import { administrativeRows, coverageRows, historicalCountyDownload, historicalCountyRows,
+import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
@@ -16,6 +16,25 @@ import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-prec
 import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-precinct-map.js";
 import { bindMinnesotaPrecinctLayer, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("full-size precinct descriptors allow verified bulk data without relaxing ordinary coverage limits", () => {
+  const base_url = "https://example.test/verified";
+  const descriptor = (path, bytes) => ({ path, bytes, url: `${base_url}/${path}`, media_type: "text/csv",
+    compression: "gzip", sha256: "a".repeat(64) });
+  const downloads = {};
+  const sources = { base_url, supported_release: { downloads } };
+  for (const [file, bytes] of [["participation-co-precinct-voting-statistics", 390202],
+    ["participation-mn-historical-precinct-turnout", 759753]]) {
+    const path = `release/${file}.csv.gz`;
+    downloads[path] = descriptor(path, bytes);
+    assert.equal(coverageCsvFile(sources, path), downloads[path]);
+    downloads[path] = descriptor(path, 2000001);
+    assert.throws(() => coverageCsvFile(sources, path), /not bound/);
+  }
+  const coverage = "release/participation-administrative-coverage.csv.gz";
+  downloads[coverage] = descriptor(coverage, 65537);
+  assert.throws(() => coverageCsvFile(sources, coverage), /not bound/);
+});
 
 test("Minnesota maps require equal participation counts and election-year precinct IDs", () => {
   const layer = {

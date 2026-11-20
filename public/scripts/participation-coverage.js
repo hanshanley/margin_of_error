@@ -25,6 +25,8 @@ const indianaTurnoutPath = "release/participation-indiana-general-turnout-histor
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
+const marylandPrecinctPath = "release/participation-md-precinct-affiliation-snapshots.csv.gz";
+const marylandGroupPath = "release/participation-md-county-affiliation-snapshots.csv.gz";
 const californiaCurrentReportPath = "release/participation-ca-2026-county-turnout-report.csv.gz";
 const nebraskaCurrentReportPath = "release/participation-ne-2026-county-canvass.csv.gz";
 const nebraskaCountyReportsPath = "release/participation-ne-2026-county-reports.csv.gz";
@@ -230,17 +232,112 @@ function installHistoricalCounties(sources, historical, names) {
   return [note, panel];
 }
 
-function coverageCsvFile(sources, path) {
+export function coverageCsvFile(sources, path) {
   const file = sources?.supported_release?.downloads?.[path];
   if (!file) return null;
+  const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath].includes(path)
+    ? 2_000_000 : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
       || file.media_type !== "text/csv" || file.compression !== "gzip"
       || !Number.isSafeInteger(file.bytes) || file.bytes < 1
-      || file.bytes > ([stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536)
+      || file.bytes > maxBytes
       || !/^[a-f0-9]{64}$/.test(file.sha256))
     throw new Error("Administrative coverage is not bound to the accepted runtime");
   return file;
+}
+
+export function installMarylandAffiliationSnapshots(groupFile, precinctFile) {
+  const panel = document.createElement("details"), title = document.createElement("summary");
+  const note = document.createElement("p"), load = document.createElement("button"), status = document.createElement("p");
+  title.textContent = "Maryland turnout activity by registration affiliation";
+  note.textContent = "Affiliation is registration, not vote choice. These snapshots count ballot activity, including rejected "
+    + "ballots and occasional duplicate activity. They do not measure unique voters or counted ballots.";
+  for (const [file, text] of [[groupFile, "Complete county and state data"], [precinctFile, "Complete precinct data"]]) {
+    const link = document.createElement("a");
+    link.href = file.url; link.textContent = `${text} (CSV · gzip)`;
+    note.append(" ", link);
+  }
+  status.setAttribute("role", "status");
+  load.type = "button"; load.textContent = "Compare registration groups";
+  panel.append(title, note, load, status);
+  let retry = false;
+  load.addEventListener("click", async () => {
+    load.disabled = true;
+    status.textContent = "Checking the stored group counts…";
+    try {
+      const bytes = await checkedCountyBody(groupFile.url, groupFile, retry);
+      const csv = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+      const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+      const keys = historicalCsvLine(header), frames = new Map(), seen = new Set();
+      const columns = ["election_date", "geography", "registration_affiliation", "reported_ballot_activity",
+        "eligible_registered", "reported_ballot_activity_without_precinct", "participation_measure", "source_status",
+        "report_edition"];
+      if (!lines.length || lines.length > 350 || columns.some(c => !keys.includes(c)))
+        throw new Error("Missing Maryland profile");
+      for (const line of lines) {
+        const row = historicalCsvLine(line);
+        const [date, place, party, activity, registered, unplaced, measure, sourceStatus, edition] =
+          columns.map(key => row[keys.indexOf(key)]);
+        const id = `${date}/${place}/${party}`;
+        if (row.length !== keys.length || !["2022-11-08", "2024-11-05"].includes(date) || !place || !party
+            || seen.has(id) || measure !== "reported_ballot_activity_voter_file_snapshot"
+            || !["reported", "retained_after_failure"].includes(sourceStatus) || !edition
+            || ![activity, registered, unplaced].every(n => /^\d+$/.test(n) && Number.isSafeInteger(Number(n)))
+            || Number(unplaced) > Number(activity)) throw new Error("Invalid Maryland profile");
+        seen.add(id);
+        if (!frames.has(date)) frames.set(date, { places: new Map(), sourceStatus, edition });
+        const frame = frames.get(date);
+        if (frame.sourceStatus !== sourceStatus || frame.edition !== edition) throw new Error("Mixed Maryland editions");
+        if (!frame.places.has(place)) frame.places.set(place, []);
+        frame.places.get(place).push([party, Number(activity), Number(registered), Number(unplaced)]);
+      }
+      if ([...frames.values()].some(({ places }) => places.size !== 25 || !places.has("Maryland")
+          || [...places.values()].some(rows => rows.length !== 7))) throw new Error("Incomplete Maryland profile");
+      const election = document.createElement("select"), area = document.createElement("select");
+      election.setAttribute("aria-label", "Maryland election");
+      area.setAttribute("aria-label", "Maryland locality");
+      for (const date of [...frames.keys()].sort().reverse()) election.add(new Option(date));
+      const wrapper = document.createElement("div"), table = document.createElement("table");
+      wrapper.className = "table-wrap"; wrapper.tabIndex = 0;
+      wrapper.setAttribute("role", "region"); wrapper.setAttribute("aria-label", title.textContent);
+      const caption = table.createCaption(), head = table.createTHead().insertRow(), body = table.createTBody();
+      for (const text of ["Registration affiliation", "Ballot activity", "Eligible registrations", "Activity without precinct"]) {
+        const cell = document.createElement("th");
+        cell.scope = "col"; cell.textContent = text; head.append(cell);
+      }
+      const render = () => {
+        const { places, sourceStatus, edition } = frames.get(election.value);
+        caption.textContent = `${area.value} · ${election.value}`;
+        status.textContent = `Voter-file snapshot dated ${edition}.${sourceStatus === "reported" ? "" : " Showing last verified edition."}`;
+        body.replaceChildren();
+        for (const [name, ...values] of places.get(area.value)) {
+          const row = body.insertRow(), label = document.createElement("th");
+          label.scope = "row"; label.textContent = name; row.append(label);
+          for (const n of values) row.insertCell().textContent = n.toLocaleString("en-US");
+        }
+      };
+      const selectAreas = () => {
+        const previous = area.value;
+        const choices = ["Maryland", ...[...frames.get(election.value).places.keys()].filter(k => k !== "Maryland").sort()];
+        area.replaceChildren(...choices.map(k => new Option(k === "Maryland" ? "Statewide" : k, k)));
+        if (choices.includes(previous)) area.value = previous;
+        render();
+      };
+      election.addEventListener("change", selectAreas);
+      area.addEventListener("change", render);
+      wrapper.append(table);
+      panel.append(election, " · ", area, wrapper);
+      selectAreas();
+      load.remove();
+    } catch {
+      retry = true;
+      load.disabled = false;
+      status.textContent = "The stored Maryland group counts could not be verified.";
+      load.textContent = "Retry Maryland group counts";
+    }
+  });
+  return panel;
 }
 
 function installNorthCarolina2006CountyRates() {
@@ -1485,6 +1582,15 @@ function installAdministrativeCoverage(host) {
       } catch {
         const notice = document.createElement("p");
         notice.textContent = "The Minnesota precinct download descriptor could not be verified.";
+        content.append(notice);
+      }
+      try {
+        const groups = coverageCsvFile(manifest.house_sources, marylandGroupPath);
+        const precincts = coverageCsvFile(manifest.house_sources, marylandPrecinctPath);
+        if (groups && precincts) content.append(installMarylandAffiliationSnapshots(groups, precincts));
+      } catch {
+        const notice = document.createElement("p");
+        notice.textContent = "The Maryland participation download descriptors could not be verified.";
         content.append(notice);
       }
       if (manifest.house_sources?.wyoming_precinct_canvass) content.append(installStateCountyArchives(
