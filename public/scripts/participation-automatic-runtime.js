@@ -408,6 +408,44 @@ export async function loadAutomaticTurnoutHistory(code) {
   return { data, measure, countLabel, denominator, denominatorLabel, csv: files.csv.url, complete: manifest.complete_download.url };
 }
 
+export async function loadWyomingTurnoutProfile() {
+  const manifest = await loadAutomaticRuntime();
+  const sources = manifest.house_sources;
+  const files = sources?.wyoming_turnout_profile;
+  if (!files) return null;
+  const path = "participation/wyoming-primary-general-turnout-profile";
+  validateBodyPin(files.data);
+  if (!pin(files.csv) || files.data.path !== path + ".json.gz" || files.csv.path !== path + ".csv"
+      || [files.data, files.csv].some(file => file.url !== `${sources.base_url}/${file.path}`))
+    throw new Error("Wyoming turnout profile is not bound to the accepted runtime");
+  const data = await checkedAutomaticBody(files.data);
+  const rows = data?.complete_native_query;
+  const validCount = value => Number.isSafeInteger(value) && value >= 0;
+  if (data?.contract !== "participation.wyoming_primary_general_turnout.v1" || data.state_code !== "WY"
+      || !["reported", "retained_after_failure"].includes(data.status)
+      || data.certified_ballots_cast !== false || data.registered_turnout_qualified !== false
+      || data.geographic_allocation !== false || !/^\d{4}-(0[1-9]|1[0-2])$/.test(data.date)
+      || !pin(data.source) || data.source.url !== "https://sos.wyo.gov/Elections/Docs/VoterProfile.pdf"
+      || !Array.isArray(rows) || rows.length < 50 || rows.length % 2 !== 0
+      || rows.some((row, i) => row.year !== 1978 + 2 * Math.floor(i / 2)
+        || row.year > Number(data.date.slice(0, 4))
+        || row.election_type !== (i % 2 ? "primary" : "general") || row.state_code !== "WY"
+        || row.election_time_registered !== null || row.registered_voter_turnout_rate !== null
+        || row.eligible_citizen_turnout_rate !== null || row.demographic_allocation !== null
+        || !validCount(row.voting_age_population) || row.voting_age_population === 0
+        || (row.native_voter_turnout === null
+          ? !(i === rows.length - 2 && row.native_day_before_registered === null
+            && row.native_turnout_percent_of_vap === null && row.turnout_percentage_check === "not_reported")
+          : !(validCount(row.native_voter_turnout) && row.native_voter_turnout <= row.voting_age_population
+            && validCount(row.native_day_before_registered)
+            && typeof row.native_turnout_percent_of_vap === "string"
+            && /^\d{1,3}(\.\d+)?$/.test(row.native_turnout_percent_of_vap)
+            && Number(row.native_turnout_percent_of_vap) <= 100
+            && ["within_printed_precision", "source_disagreement"].includes(row.turnout_percentage_check)))))
+    throw new Error("Wyoming turnout profile scope or rows differ");
+  return { data, csv: files.csv.url, complete: manifest.complete_download.url };
+}
+
 export async function loadPennsylvaniaVoteHistory() {
   const manifest = await loadAutomaticRuntime();
   const sources = manifest.house_sources;

@@ -12,7 +12,7 @@ import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civ
 import { countFill, precinctSelectionYears } from "./participation-geography.js";
 import { loadCountySubsets, subsetMarginLabel, subsetColorValue } from "./participation-county-subsets.js";
 import { updateUfTurnoutTable } from "./participation-uf-turnout-table.js";
-import { loadAutomaticTurnoutHistory, loadPennsylvaniaVoteHistory } from "./participation-automatic-runtime.js";
+import { loadAutomaticTurnoutHistory, loadPennsylvaniaVoteHistory, loadWyomingTurnoutProfile } from "./participation-automatic-runtime.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -2768,6 +2768,10 @@ async function civicStateModelView(generation) {
   }
 }
 function appendTurnoutHistory(panel, code) {
+  if (code === "WY") {
+    appendWyomingTurnoutProfile(panel);
+    return;
+  }
   if (!["NC", "TX", "VA", "WA"].includes(code)) return;
   const section = html("details", "substate-detail");
   section.append(html("summary", "", "Administrative turnout by year"));
@@ -2814,6 +2818,74 @@ function appendTurnoutHistory(panel, code) {
         + (data.status === "retained_after_failure" ? " Earlier source capture retained after an update failure." : "")),
         csv, complete, scroller);
     } catch (error) {
+      body.replaceChildren(html("p", "selection-note", "Turnout history could not be verified. Close and reopen to retry."));
+      loading = false;
+    }
+  });
+}
+
+function appendWyomingTurnoutProfile(panel) {
+  const section = html("details", "substate-detail"), body = html("div", "");
+  section.append(html("summary", "", "Wyoming statewide turnout by year"), body);
+  panel.append(section);
+  let loading = false;
+  section.addEventListener("toggle", async () => {
+    if (!section.open || loading) return;
+    loading = true;
+    body.replaceChildren(html("p", "selection-note", "Checking the official Wyoming turnout series…"));
+    try {
+      const history = await loadWyomingTurnoutProfile();
+      if (!history) {
+        body.replaceChildren(html("p", "selection-note", "No verified edition in the active release."));
+        loading = false;
+        return;
+      }
+      const { data } = history;
+      const table = html("table", ""), caption = html("caption", "", "General elections · statewide");
+      table.append(caption);
+      const header = table.createTHead().insertRow();
+      for (const title of ["Year", "Reported turnout", "Estimated population aged 18+", "Turnout / population aged 18+"]) {
+        const cell = html("th", "", title); cell.scope = "col"; header.append(cell);
+      }
+      const rows = table.createTBody(), scroller = html("div", "table-wrap");
+      scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region");
+      scroller.setAttribute("aria-label", "Wyoming statewide turnout table");
+      scroller.append(table);
+      const filter = html("label", "", "Election type ");
+      const select = html("select", "");
+      for (const type of ["general", "primary"]) {
+        const option = html("option", "", type === "general" ? "General" : "Primary");
+        option.value = type;
+        select.append(option);
+      }
+      filter.append(select);
+      const renderRows = () => {
+        rows.replaceChildren();
+        caption.textContent = `${select.value === "general" ? "General" : "Primary"} elections · statewide`;
+        for (const row of data.complete_native_query.slice().reverse()) {
+          if (row.election_type !== select.value) continue;
+          const line = rows.insertRow(), year = html("th", "", String(row.year));
+          year.scope = "row";
+          line.append(year);
+          const rate = row.turnout_percentage_check === "within_printed_precision"
+            ? `${row.native_turnout_percent_of_vap}%`
+            : row.native_voter_turnout === null ? "Not reported" : "Source figures disagree";
+          for (const value of [row.native_voter_turnout === null ? "Not reported" : fmt(row.native_voter_turnout),
+            fmt(row.voting_age_population), rate]) line.append(html("td", "", value));
+        }
+      };
+      select.addEventListener("change", renderRows);
+      renderRows();
+      const source = html("a", "source-link", "Wyoming election office report"); source.href = data.source.url;
+      const csv = html("a", "source-link", "Download all primary and general years (CSV)"); csv.href = history.csv;
+      const complete = html("a", "source-link", "Complete queries and reproduction (ZIP)"); complete.href = history.complete;
+      body.replaceChildren(html("p", "selection-note",
+        `Wyoming report revised ${data.date}. Rates use the state’s estimated population aged 18+, not registered or eligible voters. `
+        + "The registration counts in the download exclude Election Day registrations."
+        + (data.status === "retained_after_failure" ? " Earlier verified edition retained after an update failure." : "")),
+        source, csv, complete, filter, scroller);
+    } catch {
       body.replaceChildren(html("p", "selection-note", "Turnout history could not be verified. Close and reopen to retry."));
       loading = false;
     }

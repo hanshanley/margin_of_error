@@ -10,6 +10,7 @@ import {
   loadAutomaticSenateComplete,
   loadAutomaticTurnoutHistory,
   loadPennsylvaniaVoteHistory,
+  loadWyomingTurnoutProfile,
 } from "../public/scripts/participation-automatic-runtime.js";
 
 const hash = body => createHash("sha256").update(body).digest("hex");
@@ -360,6 +361,61 @@ test("North Carolina history uses source-defined eligible voters, not registrati
     data.native_denominator = "Registered Voters";
     setBody();
     await assert.rejects(loadAutomaticTurnoutHistory("NC"), /scope or rows differ/);
+  } finally {
+    globalThis.fetch = original;
+    resetAutomaticRuntimeForTests();
+  }
+});
+
+test("Wyoming turnout preserves VAP, election type, retained status and unpublished rows", async () => {
+  const pointer = manifest(), root = pointer.house_sources.base_url.replace(/\/$/, "");
+  pointer.house_sources.base_url = root;
+  const path = "participation/wyoming-primary-general-turnout-profile";
+  const dataPath = path + ".json.gz", csvPath = path + ".csv", url = `${root}/${dataPath}`;
+  const data = {
+    contract: "participation.wyoming_primary_general_turnout.v1", state_code: "WY",
+    status: "retained_after_failure", date: "2026-11", certified_ballots_cast: false,
+    registered_turnout_qualified: false, geographic_allocation: false,
+    source: { bytes: 42, sha256: hash("pdf"), url: "https://sos.wyo.gov/Elections/Docs/VoterProfile.pdf" },
+    complete_native_query: Array.from({ length: 50 }, (_, i) => ({
+      year: 1978 + 2 * Math.floor(i / 2), election_type: i % 2 ? "primary" : "general", state_code: "WY",
+      voting_age_population: 100, native_voter_turnout: 50, native_day_before_registered: 40,
+      native_turnout_percent_of_vap: "50.0", turnout_percentage_check: "within_printed_precision",
+      election_time_registered: null, registered_voter_turnout_rate: null,
+      eligible_citizen_turnout_rate: null, demographic_allocation: null,
+    })),
+  };
+  Object.assign(data.complete_native_query[48], {
+    native_voter_turnout: null, native_day_before_registered: null,
+    native_turnout_percent_of_vap: null, turnout_percentage_check: "not_reported",
+  });
+  let zipped;
+  const refresh = () => {
+    resetAutomaticRuntimeForTests();
+    const body = Buffer.from(JSON.stringify(data));
+    zipped = gzipSync(body);
+    pointer.house_sources.wyoming_turnout_profile = {
+      data: { ...bodyPin(dataPath), url, bytes: zipped.length, sha256: hash(zipped),
+        decoded_bytes: body.length, decoded_sha256: hash(body) },
+      csv: { path: csvPath, url: `${root}/${csvPath}`, bytes: 8, sha256: hash("csv-data") },
+    };
+  };
+  const original = globalThis.fetch;
+  try {
+    globalThis.fetch = async path => {
+      if (String(path) === automaticRuntimeURL) return Response.json(pointer);
+      if (String(path) === url) return new Response(zipped);
+      throw new Error("Unpinned request: " + path);
+    };
+    refresh();
+    const profile = await loadWyomingTurnoutProfile();
+    assert.equal(profile.data.status, "retained_after_failure");
+    assert.equal(profile.data.complete_native_query[48].native_voter_turnout, null);
+    assert.equal(profile.data.complete_native_query[49].native_voter_turnout, 50);
+    assert.equal(profile.csv, `${root}/${csvPath}`);
+    data.complete_native_query[49].registered_voter_turnout_rate = 0.5;
+    refresh();
+    await assert.rejects(loadWyomingTurnoutProfile(), /scope or rows differ/);
   } finally {
     globalThis.fetch = original;
     resetAutomaticRuntimeForTests();
