@@ -8,6 +8,11 @@ const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
 const officialCountySizes = { CA: 58, KS: 105, NJ: 21 };
+export const legacyCalifornia = {
+  path: "participation-archive-geometry/county-CA-2006.geojson.gz",
+  bytes: 1227706,
+  sha256: "43e5fbcd88f268e84fa6e667f172539a835ff46878137137af7dee8df15dfc0c",
+};
 const countyName = name => name.trim().toUpperCase().replace(/\s+(COUNTY|PARISH|BOROUGH)$/, "")
   .replace(/[^A-Z0-9]/g, "");
 
@@ -135,27 +140,37 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
   const load = async (retry = false) => {
     const token = ++generation, code = state.value, vintage = Number(year.value.slice(0, 4));
     const label = `${names[code] || code} · ${vintage}`;
+    const legacy = officialFrame && code === "CA" && vintage === 2006;
     figure.querySelector("svg")?.remove();
     figure.hidden = false;
     button.textContent = "Hide county map";
-    if (vintage < 2008 || (officialFrame && !officialCountySizes[code])) {
+    if ((!legacy && vintage < 2008) || (officialFrame && !officialCountySizes[code])) {
       status.textContent = `${label}: no reviewed same-year county shapes; use the table.`;
       return;
     }
     status.textContent = `Checking county map for ${label}…`;
     try {
-      inventory ??= referenceJson("checksums.json", { sha256: inventoryPin }, retry)
-        .catch(error => { inventory = undefined; throw error; });
-      const files = await inventory;
-      if (token !== generation) return;
       const geography = `geometry/${vintage}/county-${code}.geojson.gz`, sources = `states/${code}.json.gz`;
-      if (!files[geography] || (!officialFrame && !files[sources])) {
-        status.textContent = `${label}: no reviewed same-year county shapes; use the table.`;
-        return;
-      }
       const frame = officialFrame?.();
-      const [collection, prior] = await Promise.all([referenceJson(geography, files[geography], retry),
-        frame ? null : referenceJson(sources, files[sources], retry)]);
+      let collection, prior;
+      if (legacy) {
+        const url = new URL(`../${legacyCalifornia.path}`, import.meta.url).href;
+        const bytes = await checkedCountyBody(url, legacyCalifornia, retry);
+        const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+        collection = await new Response(stream).json();
+        if (collection.reference_date !== "2006-01-01") throw new Error("California county reference date differs");
+      } else {
+        inventory ??= referenceJson("checksums.json", { sha256: inventoryPin }, retry)
+          .catch(error => { inventory = undefined; throw error; });
+        const files = await inventory;
+        if (token !== generation) return;
+        if (!files[geography] || (!officialFrame && !files[sources])) {
+          status.textContent = `${label}: no reviewed same-year county shapes; use the table.`;
+          return;
+        }
+        [collection, prior] = await Promise.all([referenceJson(geography, files[geography], retry),
+          frame ? null : referenceJson(sources, files[sources], retry)]);
+      }
       if (token !== generation) return;
       const bound = frame ? bindOfficialCountyArchive(collection, frame)
         : bindHistoricalCountyMap(collection, prior, rows, code, vintage);
@@ -193,7 +208,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
       const rates = bound.filter(item => item.value?.rate != null).length;
       status.textContent = `${label}: ${counts} of ${bound.length} areas have verified counts; ${rates} have rates. `
         + "Darker blue means a higher fraction of registered voters (0–100%). Blue-gray means count only; "
-        + "light gray means no verified mapped count, not zero. Boundaries are for this election year only.";
+        + "light gray means no verified mapped count, not zero. "
+        + (legacy ? "Census reference boundaries dated January 1, 2006." : "Boundaries are for this election year only.");
       figure.append(svg);
     } catch {
       if (token !== generation) return;
