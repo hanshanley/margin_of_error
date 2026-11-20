@@ -5,7 +5,8 @@ import { runInNewContext } from "node:vm";
 import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
 import { administrativeRows, coverageRows, historicalCountyDownload, historicalCountyRows,
-  loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames, northCarolinaAgeRows }
+  loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
+  northCarolinaAgeRows, publishedCpsStatus }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive } from "../public/scripts/participation-historical-county-map.js";
@@ -14,6 +15,14 @@ const catalog = { datasets: {
   "participation-counts-2026": { status: "loaded" },
   "participation-native-bindings-2026": { status: "loaded" },
 } };
+
+test("Census release status distinguishes missing links, denied access, and retained tables", () => {
+  assert.equal(publishedCpsStatus(undefined), "");
+  assert.match(publishedCpsStatus({ status: "reported", rows: 884 }), /are included/);
+  assert.match(publishedCpsStatus({ status: "report_not_linked", rows: 0 }), /did not find both/);
+  assert.match(publishedCpsStatus({ status: "source_stopped", rows: 0 }), /denied/);
+  assert.match(publishedCpsStatus({ status: "retained_after_failure", rows: 884 }), /last verified/);
+});
 
 test("election-office archive frames preserve native measures, held rates and last-good metadata", () => {
   const header = "state_code,year,election_date,geography_level,geography,reported_ballots_cast,"

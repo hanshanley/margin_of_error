@@ -287,6 +287,18 @@ export function publishedCpsRows(csv, summary) {
   return rows.filter(r => r.dimension !== "overall" || r.source_table === "4b");
 }
 
+export function publishedCpsStatus(check) {
+  if (!check) return "";
+  if (check.status === "reported" && check.rows > 0) return "The November 2026 Census tables are included.";
+  if (check.status === "retained_after_failure" && check.rows > 0)
+    return "The latest November 2026 Census check failed; the last verified tables are still included.";
+  if (check.status === "report_not_linked")
+    return "The latest Census check did not find both November 2026 tables.";
+  if (check.status === "source_stopped")
+    return "Access to the November 2026 Census source was denied; no 2026 tables were accepted.";
+  return "The latest November 2026 Census check could not verify the tables.";
+}
+
 function installPublishedCps(sources, file, names) {
   const panel = document.createElement("details"), heading = document.createElement("summary");
   const note = document.createElement("p"), download = document.createElement("a");
@@ -300,6 +312,13 @@ function installPublishedCps(sources, file, names) {
   button.type = "button"; button.textContent = "Load Census turnout comparisons";
   status.setAttribute("role", "status");
   panel.append(heading, note, button, status);
+  const survey = sources.supported_release.coverage.historical_survey;
+  const checkMessage = publishedCpsStatus(survey.current_published_state_tables);
+  if (checkMessage) {
+    const sourceStatus = document.createElement("p");
+    sourceStatus.textContent = checkMessage;
+    note.after(sourceStatus);
+  }
   let retry = false;
   button.addEventListener("click", async () => {
     button.disabled = true;
@@ -307,7 +326,7 @@ function installPublishedCps(sources, file, names) {
     try {
       const body = await checkedCountyBody(file.url, file, retry);
       const text = await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
-      const rows = publishedCpsRows(text, sources.supported_release.coverage.historical_survey.published_state_tables);
+      const rows = publishedCpsRows(text, survey.published_state_tables);
       const state = document.createElement("select"), group = document.createElement("select");
       const basis = document.createElement("select");
       state.append(new Option("United States", "US"), ...countStates.map(code => new Option(names[code] || code, code)));
