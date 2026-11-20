@@ -8,6 +8,8 @@ const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
 const officialCountySizes = { CA: 58, KS: 105, NC: 100, NE: 93, NJ: 21, WV: 55, WY: 23 };
+const nebraskaGeometryRelease = "https://github.com/hanshanley/voter-participation/releases/download/"
+  + "nebraska-legacy-county-geometry-20261120/";
 export const officialArchiveGeometry = {
   "CA/1990": {
     path: "participation-archive-geometry/county-CA-1990.geojson.gz",
@@ -41,6 +43,7 @@ export const officialArchiveGeometry = {
     path: "participation-archive-geometry/county-NE-2000.geojson.gz",
     bytes: 95038,
     sha256: "22d07562f91c6b4021d1dc95abdd9046e92f7f0b1c43e4bb74587fcb0444a4c6",
+    reproduction: "ne-2000-county-map-reproduction.zip",
   },
   "NE/2002": {
     path: "participation-archive-geometry/county-NE-2002.geojson.gz",
@@ -48,12 +51,14 @@ export const officialArchiveGeometry = {
     sha256: "2d6ddc575dacad67fef84107f4b48164e71749da4043be21f4f9b383006464f1",
     referenceDate: "2002-01-01",
     partialGeometry: true,
+    reproduction: "ne-2002-county-map-reproduction.zip",
   },
   "NE/2006": {
     path: "participation-archive-geometry/county-NE-2006.geojson.gz",
     bytes: 742132,
     sha256: "7a85788d1e30c4f490a6bce5be943304eae4eeeb830f6b5eba4b30489561360a",
     referenceDate: "2006-01-01",
+    reproduction: "ne-2006-county-map-reproduction.zip",
   },
   "NE/2026": {
     path: "participation-archive-geometry/county-NE-2026.geojson.gz",
@@ -213,10 +218,12 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
 export function installHistoricalCountyMap(panel, state, year, rows, names, officialFrame) {
   const button = document.createElement("button"), figure = document.createElement("figure");
   const status = document.createElement("figcaption");
+  const reproduction = document.createElement("a");
+  reproduction.hidden = true;
   status.setAttribute("role", "status");
   figure.hidden = true;
   figure.style.marginInline = "0";
-  figure.append(status);
+  figure.append(status, reproduction);
   button.type = "button";
   button.textContent = "Show county map";
   panel.append(button, figure);
@@ -226,6 +233,12 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
     const label = `${names[code] || code} · ${vintage}`;
     const legacy = officialFrame && officialArchiveGeometry[`${code}/${vintage}`];
     figure.querySelector("svg")?.remove();
+    reproduction.hidden = !legacy?.reproduction;
+    reproduction.removeAttribute("href");
+    if (legacy?.reproduction) {
+      reproduction.href = nebraskaGeometryRelease + legacy.reproduction;
+      reproduction.textContent = `Reproduce ${vintage} county boundaries (ZIP)`;
+    }
     figure.hidden = false;
     button.textContent = "Hide county map";
     if ((!legacy && vintage < 2008) || (officialFrame && !officialCountySizes[code])) {
