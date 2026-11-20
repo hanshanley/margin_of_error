@@ -3,13 +3,31 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 import { createHash } from "node:crypto";
-import { gzipSync } from "node:zlib";
+import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis, wyomingCurrentCountyFrame }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive } from "../public/scripts/participation-historical-county-map.js";
+import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
+
+test("the Teton display layer maps a revised count and rejects a replaced or missing precinct ID", () => {
+  const layer = JSON.parse(gunzipSync(readFileSync(new URL(
+    "../public/participation-archive-geometry/precinct-WY-Teton-2026.json.gz", import.meta.url))));
+  const { election_date, state_code, county } = layer;
+  const rows = layer.features.map(({ properties }) => ({
+    precinct_key: properties.precinct_key, county, election_date, state_code, ballots_cast: 100,
+  }));
+  const canvass = { election_date, state_code, complete_native_query: rows };
+  assert.equal(bindTetonPrecinctMap(layer, canvass).length, 17);
+  rows[0].ballots_cast = 0;
+  assert.equal(bindTetonPrecinctMap(layer, canvass)[0].ballots_cast, 0);
+  rows[0].precinct_key = "99-1";
+  assert.throws(() => bindTetonPrecinctMap(layer, canvass), /IDs or polygons/);
+  rows.pop();
+  assert.throws(() => bindTetonPrecinctMap(layer, canvass), /count inventory/);
+});
 
 const catalog = { datasets: {
   "participation-counts-2026": { status: "loaded" },

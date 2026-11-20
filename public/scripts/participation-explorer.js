@@ -16,6 +16,7 @@ import {
   loadAutomaticTurnoutHistory, loadPennsylvaniaVoteHistory, loadWyomingTurnoutProfile,
   loadWyomingPrecinctCanvass,
 } from "./participation-automatic-runtime.js";
+import { installTetonPrecinctMap } from "./participation-teton-precinct-map.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -2951,6 +2952,7 @@ function appendWyomingPrecinctCanvass(panel) {
         + "A precinct without a row is not counted as zero."
         + (data.status === "retained_after_failure" ? " Earlier verified edition retained after an update failure." : "")),
         source, csv, complete, filter, scroller);
+      installTetonPrecinctMap(body, data, select);
     } catch {
       body.replaceChildren(html("p", "selection-note", "The precinct canvass could not be verified. Close and reopen to retry."));
       loading = false;
