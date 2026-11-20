@@ -408,17 +408,23 @@ export async function loadAutomaticTurnoutHistory(code) {
   return { data, measure, countLabel, denominator, denominatorLabel, csv: files.csv.url, complete: manifest.complete_download.url };
 }
 
-export async function loadWyomingTurnoutProfile() {
+async function loadWyomingProduct(product, filename) {
   const manifest = await loadAutomaticRuntime();
   const sources = manifest.house_sources;
-  const files = sources?.wyoming_turnout_profile;
+  const files = sources?.[product];
   if (!files) return null;
-  const path = "participation/wyoming-primary-general-turnout-profile";
+  const path = "participation/" + filename;
   validateBodyPin(files.data);
   if (!pin(files.csv) || files.data.path !== path + ".json.gz" || files.csv.path !== path + ".csv"
       || [files.data, files.csv].some(file => file.url !== `${sources.base_url}/${file.path}`))
-    throw new Error("Wyoming turnout profile is not bound to the accepted runtime");
-  const data = await checkedAutomaticBody(files.data);
+    throw new Error("Wyoming data is not bound to the accepted runtime");
+  return { data: await checkedAutomaticBody(files.data), csv: files.csv.url, complete: manifest.complete_download.url };
+}
+
+export async function loadWyomingTurnoutProfile() {
+  const result = await loadWyomingProduct("wyoming_turnout_profile", "wyoming-primary-general-turnout-profile");
+  if (!result) return null;
+  const { data } = result;
   const rows = data?.complete_native_query;
   const validCount = value => Number.isSafeInteger(value) && value >= 0;
   if (data?.contract !== "participation.wyoming_primary_general_turnout.v1" || data.state_code !== "WY"
@@ -443,7 +449,45 @@ export async function loadWyomingTurnoutProfile() {
             && Number(row.native_turnout_percent_of_vap) <= 100
             && ["within_printed_precision", "source_disagreement"].includes(row.turnout_percentage_check)))))
     throw new Error("Wyoming turnout profile scope or rows differ");
-  return { data, csv: files.csv.url, complete: manifest.complete_download.url };
+  return result;
+}
+
+export async function loadWyomingPrecinctCanvass() {
+  const result = await loadWyomingProduct("wyoming_precinct_canvass", "wyoming-2026-precinct-ballot-canvass");
+  if (!result) return null;
+  const { data } = result;
+  const date = "2026-11-03";
+  const counties = ["Albany", "Big Horn", "Campbell", "Carbon", "Converse", "Crook", "Fremont", "Goshen",
+    "Hot Springs", "Johnson", "Laramie", "Lincoln", "Natrona", "Niobrara", "Park", "Platte", "Sheridan",
+    "Sublette", "Sweetwater", "Teton", "Uinta", "Washakie", "Weston"];
+  const validCount = value => Number.isSafeInteger(value) && value >= 0;
+  const rows = data?.complete_native_query, controls = data?.county_controls;
+  if (data?.contract !== "participation.wyoming_precinct_ballot_canvass.v1"
+      || data.state_code !== "WY" || data.election_date !== date || data.source_stage !== "official_general_canvass"
+      || !["reported", "retained_after_failure"].includes(data.status) || data.geographic_allocation !== false
+      || !pin(data.source) || data.source.url !== "https://sos.wyo.gov/Elections/Docs/2026/Results/General/2026_Wyoming_General_Election_Results.pdf"
+      || !validCount(data.state_ballots_cast) || !Array.isArray(rows)
+      || !Array.isArray(controls) || controls.length !== counties.length
+      || controls.some((row, i) => row?.county !== counties[i] || !validCount(row.ballots_cast)
+        || !validCount(row.precinct_rows) || row.precinct_rows === 0 || row.pdf_page !== i + 3))
+    throw new Error("Wyoming precinct canvass scope differs");
+  const summary = new Map(controls.map(row => [row.county, { rows: new Set(), total: 0, page: row.pdf_page }]));
+  for (const row of rows) {
+    const bucket = summary.get(row?.county);
+    if (!bucket || row.state_code !== "WY" || row.election_date !== date || row.pdf_page !== bucket.page
+        || typeof row.native_precinct !== "string" || !/^\d{1,2}-\d{1,2}$/.test(row.native_precinct)
+        || row.native_precinct.split("-").map(Number).join("-") !== row.precinct_key
+        || bucket.rows.has(row.precinct_key) || !validCount(row.ballots_cast)
+        || row.registration !== null || row.turnout_rate !== null || row.geometry_qualified !== false)
+      throw new Error("Wyoming precinct canvass row differs");
+    bucket.rows.add(row.precinct_key);
+    bucket.total += row.ballots_cast;
+  }
+  if (controls.some(row => summary.get(row.county).total !== row.ballots_cast
+        || summary.get(row.county).rows.size !== row.precinct_rows)
+      || controls.reduce((sum, row) => sum + row.ballots_cast, 0) !== data.state_ballots_cast)
+    throw new Error("Wyoming precinct canvass totals differ");
+  return result;
 }
 
 export async function loadPennsylvaniaVoteHistory() {

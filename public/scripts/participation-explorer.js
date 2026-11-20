@@ -12,7 +12,10 @@ import { civicStateSource, civicDimensions, loadCivicStates, civicStateRows, civ
 import { countFill, precinctSelectionYears } from "./participation-geography.js";
 import { loadCountySubsets, subsetMarginLabel, subsetColorValue } from "./participation-county-subsets.js";
 import { updateUfTurnoutTable } from "./participation-uf-turnout-table.js";
-import { loadAutomaticTurnoutHistory, loadPennsylvaniaVoteHistory, loadWyomingTurnoutProfile } from "./participation-automatic-runtime.js";
+import {
+  loadAutomaticTurnoutHistory, loadPennsylvaniaVoteHistory, loadWyomingTurnoutProfile,
+  loadWyomingPrecinctCanvass,
+} from "./participation-automatic-runtime.js";
 
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
@@ -2770,6 +2773,7 @@ async function civicStateModelView(generation) {
 function appendTurnoutHistory(panel, code) {
   if (code === "WY") {
     appendWyomingTurnoutProfile(panel);
+    appendWyomingPrecinctCanvass(panel);
     return;
   }
   if (!["NC", "TX", "VA", "WA"].includes(code)) return;
@@ -2887,6 +2891,68 @@ function appendWyomingTurnoutProfile(panel) {
         source, csv, complete, filter, scroller);
     } catch {
       body.replaceChildren(html("p", "selection-note", "Turnout history could not be verified. Close and reopen to retry."));
+      loading = false;
+    }
+  });
+}
+
+function appendWyomingPrecinctCanvass(panel) {
+  const section = html("details", "substate-detail"), body = html("div", "");
+  section.append(html("summary", "", "Wyoming 2026 precinct ballot counts"), body);
+  panel.append(section);
+  let loading = false;
+  section.addEventListener("toggle", async () => {
+    if (!section.open || loading) return;
+    loading = true;
+    body.replaceChildren(html("p", "selection-note", "Checking the official Wyoming precinct canvass…"));
+    try {
+      const canvass = await loadWyomingPrecinctCanvass();
+      if (!canvass) {
+        body.replaceChildren(html("p", "selection-note", "No verified edition in the active release."));
+        loading = false;
+        return;
+      }
+      const { data } = canvass;
+      const filter = html("label", "", "County ");
+      const select = html("select", "");
+      select.setAttribute("aria-label", "County");
+      for (const row of data.county_controls) select.append(html("option", "", row.county));
+      filter.append(select);
+      const table = html("table", ""), caption = html("caption", "", "");
+      table.append(caption);
+      const header = table.createTHead().insertRow();
+      for (const title of ["Reported precinct", "Ballots cast"]) {
+        const cell = html("th", "", title); cell.scope = "col"; header.append(cell);
+      }
+      const rows = table.createTBody(), scroller = html("div", "table-wrap");
+      scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region");
+      scroller.setAttribute("aria-label", "Wyoming precinct ballot counts by county");
+      scroller.append(table);
+      const renderRows = () => {
+        rows.replaceChildren();
+        const county = select.value, control = data.county_controls.find(row => row.county === county);
+        caption.textContent = `${county} County · ${fmt(control.ballots_cast)} ballots cast`;
+        for (const row of data.complete_native_query) {
+          if (row.county !== county) continue;
+          const line = rows.insertRow(), label = html("th", "", row.native_precinct);
+          label.scope = "row";
+          line.append(label, html("td", "", fmt(row.ballots_cast)));
+        }
+      };
+      select.addEventListener("change", renderRows);
+      renderRows();
+      const source = html("a", "source-link", "Official Wyoming canvass"); source.href = data.source.url;
+      const csv = html("a", "source-link", "Download all precinct counts (CSV)"); csv.href = canvass.csv;
+      const complete = html("a", "source-link", "Complete queries and reproduction (ZIP)"); complete.href = canvass.complete;
+      body.replaceChildren(html("p", "selection-note",
+        `${fmt(data.state_ballots_cast)} ballots across ${fmt(data.complete_native_query.length)} reported precincts. `
+        + "Counts only: this report does not supply a registration denominator or boundary map. "
+        + "A precinct without a row is not counted as zero."
+        + (data.status === "retained_after_failure" ? " Earlier verified edition retained after an update failure." : "")),
+        source, csv, complete, filter, scroller);
+    } catch {
+      body.replaceChildren(html("p", "selection-note", "The precinct canvass could not be verified. Close and reopen to retry."));
       loading = false;
     }
   });
