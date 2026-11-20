@@ -8,10 +8,23 @@ const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
 const officialCountySizes = { CA: 58, KS: 105, NJ: 21 };
-export const legacyCalifornia = {
-  path: "participation-archive-geometry/county-CA-2006.geojson.gz",
-  bytes: 1227706,
-  sha256: "43e5fbcd88f268e84fa6e667f172539a835ff46878137137af7dee8df15dfc0c",
+export const officialArchiveGeometry = {
+  "CA/1990": {
+    path: "participation-archive-geometry/county-CA-1990.geojson.gz",
+    bytes: 149674,
+    sha256: "ae2d02864d93e39719ce1d3d280984a96d995d9c2c6ab20b1c06a97cc623b28e",
+  },
+  "CA/2000": {
+    path: "participation-archive-geometry/county-CA-2000.geojson.gz",
+    bytes: 238216,
+    sha256: "45c07057063363c464169885be7158aa0225da9c9c0df94c38bc17b232ec47fe",
+  },
+  "CA/2006": {
+    path: "participation-archive-geometry/county-CA-2006.geojson.gz",
+    bytes: 1227706,
+    sha256: "43e5fbcd88f268e84fa6e667f172539a835ff46878137137af7dee8df15dfc0c",
+    referenceDate: "2006-01-01",
+  },
 };
 const countyName = name => name.trim().toUpperCase().replace(/\s+(COUNTY|PARISH|BOROUGH)$/, "")
   .replace(/[^A-Z0-9]/g, "");
@@ -140,7 +153,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
   const load = async (retry = false) => {
     const token = ++generation, code = state.value, vintage = Number(year.value.slice(0, 4));
     const label = `${names[code] || code} · ${vintage}`;
-    const legacy = officialFrame && code === "CA" && vintage === 2006;
+    const legacy = officialFrame && officialArchiveGeometry[`${code}/${vintage}`];
     figure.querySelector("svg")?.remove();
     figure.hidden = false;
     button.textContent = "Hide county map";
@@ -154,11 +167,12 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
       const frame = officialFrame?.();
       let collection, prior;
       if (legacy) {
-        const url = new URL(`../${legacyCalifornia.path}`, import.meta.url).href;
-        const bytes = await checkedCountyBody(url, legacyCalifornia, retry);
+        const url = new URL(`../${legacy.path}`, import.meta.url).href;
+        const bytes = await checkedCountyBody(url, legacy, retry);
         const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
         collection = await new Response(stream).json();
-        if (collection.reference_date !== "2006-01-01") throw new Error("California county reference date differs");
+        if (legacy.referenceDate ? collection.reference_date !== legacy.referenceDate
+          : collection.boundary_vintage !== vintage) throw new Error("County reference vintage differs");
       } else {
         inventory ??= referenceJson("checksums.json", { sha256: inventoryPin }, retry)
           .catch(error => { inventory = undefined; throw error; });
@@ -209,7 +223,9 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
       status.textContent = `${label}: ${counts} of ${bound.length} areas have verified counts; ${rates} have rates. `
         + "Darker blue means a higher fraction of registered voters (0–100%). Blue-gray means count only; "
         + "light gray means no verified mapped count, not zero. "
-        + (legacy ? "Census reference boundaries dated January 1, 2006." : "Boundaries are for this election year only.");
+        + (legacy?.referenceDate ? "Census reference boundaries dated January 1, 2006."
+          : legacy ? `${vintage} Census cartographic county boundaries (simplified).`
+          : "Boundaries are for this election year only.");
       figure.append(svg);
     } catch {
       if (token !== generation) return;
