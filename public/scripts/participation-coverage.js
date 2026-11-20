@@ -1488,6 +1488,52 @@ const washingtonSex = [["total", "All reported sexes"], ["female", "Female"], ["
 const washingtonMeasures = [["ballots", "Reported ballots"], ["registration_estimate", "Ballots / estimated registrations"],
   ["april_vap_estimate", "Ballots / estimated voting-age population"]];
 
+function installGroupCountyMap(host, { code, name, dates, filters, countRows }) {
+  if (!dates.length) return;
+  const panel = document.createElement("details"), title = document.createElement("summary");
+  title.textContent = `Compare ${name} counties on a map`;
+  const controls = document.createElement("p"), label = document.createElement("label");
+  const election = document.createElement("select"), state = document.createElement("select");
+  election.setAttribute("aria-label", "Map election");
+  for (const date of dates) election.append(new Option(date, date));
+  state.append(new Option(name, code));
+  label.append("Map election ", election);
+  controls.append(label, " Map shows the selected group’s reported counts, not rates.");
+  panel.append(title, controls);
+  const frame = () => ({ code, date: election.value, measure: "group_report_ballots",
+    rows: countRows(election.value) });
+  installHistoricalCountyMap(panel, state, election, null, { [code]: name }, frame);
+  const region = document.createElement("div");
+  region.className = "table-wrap"; region.tabIndex = 0;
+  region.setAttribute("role", "region"); region.setAttribute("aria-label", `${name} mapped county counts`);
+  panel.append(region);
+  const compare = () => {
+    const table = document.createElement("table");
+    table.createCaption().textContent = `${name} county ballot counts · ${election.value}`;
+    const header = table.createTHead().insertRow();
+    for (const heading of ["County", "Reported ballots"]) {
+      const th = document.createElement("th");
+      th.scope = "col"; th.textContent = heading; header.append(th);
+    }
+    const body = table.createTBody();
+    for (const [key, { name: county, count }] of frame().rows) {
+      if (key === "state") continue;
+      const tr = body.insertRow(), th = document.createElement("th");
+      th.scope = "row"; th.textContent = county.replaceAll("_", " "); tr.append(th);
+      tr.insertCell().textContent = count === null ? "Not available" : count.toLocaleString("en-US");
+    }
+    region.replaceChildren(table);
+  };
+  panel.addEventListener("toggle", () => { if (panel.open) compare(); });
+  election.addEventListener("change", compare);
+  for (const select of filters) select.addEventListener("change", () => {
+    if (!panel.open) return;
+    compare();
+    state.dispatchEvent(new Event("change"));
+  });
+  host.append(panel);
+}
+
 export function washingtonAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const columns = historicalCsvLine(header);
@@ -1606,62 +1652,19 @@ function installWashingtonAge(host, sources) {
       update();
       for (const [, select] of controls) select.addEventListener("change", update);
       content.replaceChildren(note, download, controlsRegion, region);
-      const countyMap = document.createElement("details"), mapTitle = document.createElement("summary");
-      mapTitle.textContent = "Compare Washington counties on a map";
-      countyMap.append(mapTitle);
-      const [dateLabel, dateSelect] = choose("Map election", [...new Set(rows
-        .filter(row => row.geography_level === "state" && /^(200[8]|201[02468]|202[024])-/.test(row.election_date))
-        .map(row => row.election_date))].sort().reverse().map(date => [date, date]));
-      if (dateSelect.options.length) {
-        const counts = document.createElement("div");
-        counts.className = "table-wrap"; counts.tabIndex = 0;
-        const mapControl = document.createElement("p");
-        mapControl.append(dateLabel, "Map shows counts for the selected age and sex, not rates.");
-        countyMap.append(mapControl);
-        const frame = () => {
-          const age = controls[1][1].value, sex = controls[2][1].value;
-          const date = dateSelect.value;
-          const pairs = [["state", "Washington"], ...counties.map(name => [name, name])];
-          return {
-            code: "WA", date, measure: "workbook_ballots", rows: new Map(pairs.map(([key, name]) => {
-              const point = washingtonAgeSeries(rows, name, age, sex, "ballots", "")
-                .find(item => item.row.election_date === date);
-              return [key, { name, count: point?.value ?? null, rate: null }];
-            })),
-          };
-        };
-        const state = document.createElement("select");
-        state.append(new Option("Washington", "WA"));
-        installHistoricalCountyMap(countyMap, state, dateSelect, null, { WA: "Washington" }, frame);
-        countyMap.append(counts);
-        const compare = () => {
-          const table = document.createElement("table");
-          table.createCaption().textContent = `Washington county ballot counts · ${dateSelect.value}`;
-          const header = table.createTHead().insertRow();
-          for (const title of ["County", "Reported ballots"]) {
-            const cell = document.createElement("th");
-            cell.scope = "col"; cell.textContent = title; header.append(cell);
-          }
-          const body = table.createTBody();
-          for (const [key, { name, count }] of frame().rows) {
-            if (key === "state") continue;
-            const tr = body.insertRow(), label = document.createElement("th");
-            label.scope = "row"; label.textContent = name; tr.append(label);
-            tr.insertCell().textContent = count === null ? "Not available" : count.toLocaleString("en-US");
-          }
-          counts.replaceChildren(table);
-        };
-        countyMap.addEventListener("toggle", () => { if (countyMap.open) compare(); });
-        dateSelect.addEventListener("change", compare);
-        for (const select of [controls[1][1], controls[2][1]]) {
-          select.addEventListener("change", () => {
-            if (!countyMap.open) return;
-            compare();
-            state.dispatchEvent(new Event("change"));
-          });
-        }
-        content.append(countyMap);
-      }
+      const [ageFilter, sexFilter] = [controls[1][1], controls[2][1]];
+      installGroupCountyMap(content, {
+        code: "WA", name: "Washington", filters: [ageFilter, sexFilter],
+        dates: [...new Set(rows
+          .filter(row => row.geography_level === "state" && /^(200[8]|201[02468]|202[024])-/.test(row.election_date))
+          .map(row => row.election_date))].sort().reverse(),
+        countRows: date => new Map([["state", "Washington"], ...counties.map(name => [name, name])]
+          .map(([key, name]) => {
+            const point = washingtonAgeSeries(rows, name, ageFilter.value, sexFilter.value, "ballots", "")
+              .find(item => item.row.election_date === date);
+            return [key, { name, count: point?.value ?? null, rate: null }];
+          })),
+      });
     } catch {
       content.textContent = "The checked Washington data could not be loaded. Reopen this section to retry.";
       loading = false;
@@ -1863,6 +1866,14 @@ function installSoutheastHistory(host, sources, state) {
       for (const select of [county, age]) select?.addEventListener("change", render);
       render();
       content.replaceChildren(note, download, ...(alabama ? [controls] : []), region);
+      if (alabama) installGroupCountyMap(content, {
+        code: "AL", name: "Alabama", filters: [age],
+        dates: ["2024-11-05", "2020-11-03", "2018-11-06"].filter(date =>
+          rows.some(row => row.year === date.slice(0, 4) && row.geography === "Alabama")),
+        countRows: date => new Map(rows.filter(row => row.year === date.slice(0, 4) && row.age === age.value)
+          .map(row => [row.geography === "Alabama" ? "state" : row.geography,
+            { name: row.geography, count: row.count, rate: null }])),
+      });
     } catch {
       loading = false;
       content.textContent = "The checked historical data could not be loaded. Reopen this section to retry.";
