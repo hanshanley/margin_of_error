@@ -7,7 +7,7 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { CA: 58, KS: 105, NJ: 21 };
+const officialCountySizes = { CA: 58, KS: 105, NC: 100, NJ: 21 };
 export const officialArchiveGeometry = {
   "CA/1990": {
     path: "participation-archive-geometry/county-CA-1990.geojson.gz",
@@ -30,6 +30,12 @@ export const officialArchiveGeometry = {
     bytes: 1743930,
     sha256: "3a422ef0e610eb98d0a16d1fd8b28a403bff1b31dded6bc2874b15e6c607e635",
     boundaryLabel: "2026 Census TIGER/Line county boundaries.",
+  },
+  "NC/2006": {
+    path: "participation-archive-geometry/county-NC-2006.geojson.gz",
+    bytes: 1333876,
+    sha256: "85d9377888d95c012d10654d17b9b1eb4cbdbea9036e1c8f1d8a4a1b45508d63",
+    referenceDate: "2006-01-01",
   },
   "NJ/2023": {
     path: "participation-archive-geometry/county-NJ-2023.geojson.gz",
@@ -149,7 +155,9 @@ export function bindOfficialCountyArchive(collection, frame) {
       throw new Error("Official county geometry identity differs");
     keys.add(p.key);
     const name = countyName(p.name), value = byName.get(name);
-    if (!value) throw new Error("Official county roster differs from its dated reference");
+    if (!value || (frame.rateOnly && (rows.get(p.key) !== value
+        || !Number.isInteger(value.rate) || value.rate < 0 || value.rate > 100)))
+      throw new Error("Official county roster differs from its dated reference");
     byName.delete(name);
     return { feature, value };
   });
@@ -228,7 +236,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         path.setAttribute("fill-rule", "evenodd");
         path.dataset.county = feature.properties.key;
         const title = document.createElementNS(svgNS, "title");
-        title.textContent = `${feature.properties.name}: ${value ? `${number.format(value.count)} reported; `
+        title.textContent = `${feature.properties.name}: ${frame?.rateOnly ? `${rate}% published turnout`
+          : value ? `${number.format(value.count)} reported; `
           + (rate == null ? "rate withheld" : `${rate.toFixed(2)}% of same-report registrations`)
           : "no verified mapped count"}`;
         path.append(title);
@@ -236,7 +245,11 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
       }
       const counts = bound.filter(item => item.value).length;
       const rates = bound.filter(item => item.value?.rate != null).length;
-      status.textContent = `${label}: ${counts} of ${bound.length} areas have verified counts; ${rates} have rates. `
+      status.textContent = frame?.rateOnly
+        ? `${label}: ${rates} of ${bound.length} counties have published whole-percent rates. `
+          + "Darker blue indicates higher reported turnout (0–100%). "
+          + "The report does not specify the count or denominator. Census reference boundaries dated January 1, 2006."
+        : `${label}: ${counts} of ${bound.length} areas have verified counts; ${rates} have rates. `
         + "Darker blue means a higher fraction of registered voters (0–100%). Blue-gray means count only; "
         + "light gray means no verified mapped count, not zero. "
         + (legacy?.referenceDate ? "Census reference boundaries dated January 1, 2006."

@@ -24,6 +24,10 @@ const stateCountyArchivesPath = "release/participation-state-county-turnout-arch
 const californiaCurrentReportPath = "release/participation-ca-2026-county-turnout-report.csv.gz";
 const publishedCpsPath = "release/participation-cps-published-state-tables.csv.gz";
 const overallCpsPath = "release/participation-cps-state-overall-history.csv.gz";
+const nc2006CountyCsv = {
+  bytes: 23208,
+  sha256: "8f41611649303cd067dccf790c2c7f188de379d278951b1991c209296cf1a83d",
+};
 const ncAges = ["Age 18 - 25", "Age 26 - 40", "Age 41 - 65", "Age Over 66"];
 const scopes = [
   ["statewide", "State"], ["county_or_equivalent", "County"],
@@ -230,6 +234,74 @@ function coverageCsvFile(sources, path) {
       || !/^[a-f0-9]{64}$/.test(file.sha256))
     throw new Error("Administrative coverage is not bound to the accepted runtime");
   return file;
+}
+
+function installNorthCarolina2006CountyRates() {
+  const panel = document.createElement("details"), heading = document.createElement("summary");
+  const note = document.createElement("p"), download = document.createElement("a");
+  const source = document.createElement("a");
+  const button = document.createElement("button"), status = document.createElement("p");
+  heading.textContent = "North Carolina county turnout, 2006";
+  download.href = new URL("../participation-archive-geometry/nc-2006-county-turnout.csv", import.meta.url).href;
+  download.download = "nc-2006-county-turnout.csv";
+  download.textContent = "All 100 county rates (CSV)";
+  source.href = "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2006_11_07/voter_turnout_data_20061107.pdf";
+  source.textContent = "Original report (PDF)";
+  note.append("The state election office published these rounded percentages without the underlying count or denominator. "
+    + "They are separate from EAC counts and rates. ", download, " · ", source);
+  button.type = "button"; button.textContent = "Load published county rates";
+  status.setAttribute("role", "status");
+  panel.append(heading, note, button, status);
+  let retry = false;
+  button.addEventListener("click", async () => {
+    button.disabled = true;
+    try {
+      const body = await checkedCountyBody(download.href, nc2006CountyCsv, retry);
+      const [header, ...lines] = new TextDecoder().decode(body).trimEnd().split(/\r?\n/);
+      if (header !== "election_date,county_fips,county,published_turnout_pct,measure,denominator_basis,source_page,source_url,source_sha256"
+          || lines.length !== 100) throw new Error("County rate inventory differs");
+      const rows = new Map([["state", null]]);
+      for (const line of lines) {
+        const [date, id, name, rate, measure, basis] = historicalCsvLine(line);
+        if (date !== "2006-11-07" || !/^37[0-9]{3}$/.test(id) || rows.has(id) || !name
+            || !/^(?:\d{1,2}|100)$/.test(rate) || measure !== "published_overall_turnout"
+            || basis !== "not_specified_in_report") throw new Error("County rate record differs");
+        rows.set(id, { name, rate: Number(rate) });
+      }
+      const state = document.createElement("select"), year = document.createElement("select");
+      state.add(new Option("North Carolina", "NC"));
+      year.add(new Option("2006", "2006"));
+      installHistoricalCountyMap(panel, state, year, [], { NC: "North Carolina" },
+        () => ({ code: "NC", date: "2006-11-07", rows, rateOnly: true }));
+      const wrap = document.createElement("div"), table = document.createElement("table");
+      wrap.className = "table-wrap"; wrap.tabIndex = 0;
+      wrap.setAttribute("role", "region"); wrap.setAttribute("aria-label", "Published county rates");
+      table.createCaption().textContent = "November 7, 2006 general election";
+      const headerRow = table.createTHead().insertRow(), tbody = table.createTBody();
+      for (const label of ["County", "Published turnout"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = label; headerRow.append(th);
+      }
+      for (const row of rows.values()) {
+        if (!row) continue;
+        const tr = tbody.insertRow(), nameCell = document.createElement("th");
+        nameCell.scope = "row"; nameCell.textContent = row.name; tr.append(nameCell);
+        tr.insertCell().textContent = `${row.rate}%`;
+      }
+      const verifiedDownload = URL.createObjectURL(new Blob([body], { type: "text/csv" }));
+      download.href = verifiedDownload;
+      window.addEventListener("pagehide", event => {
+        if (!event.persisted) URL.revokeObjectURL(verifiedDownload);
+      });
+      wrap.append(table); panel.append(wrap); button.remove();
+      status.textContent = "";
+    } catch {
+      retry = true; button.disabled = false;
+      status.textContent = "The county rate table could not be verified.";
+      button.textContent = "Retry published county rates";
+    }
+  });
+  return panel;
 }
 
 export function indianaTurnoutDownload(sources) {
@@ -965,6 +1037,7 @@ function installAdministrativeCoverage(host) {
       }
       const stateCountyArchives = stateCountyArchivesDownload(manifest.house_sources);
       if (stateCountyArchives) content.append(installStateCountyArchives(manifest.house_sources, stateCountyArchives, names));
+      content.append(installNorthCarolina2006CountyRates());
       try {
         const report = coverageCsvFile(manifest.house_sources, californiaCurrentReportPath);
         if (report) content.append(installStateCountyArchives(manifest.house_sources, report.url, names, true));
