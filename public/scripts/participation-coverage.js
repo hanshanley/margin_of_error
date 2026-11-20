@@ -739,8 +739,9 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     const rate = fraction === "" ? null : Number(fraction), hold = field("rate_hold_reason");
     const status = field("source_status"), url = field("source_url"), sha = field("source_sha256");
     const basis = hasMeasures ? field("registration_basis") : "Report's registered voters";
-    const countOnly = code === "WY" && measure === "ballots_cast"
-      && basis === "" && stock === "" && rate === null && hold === "registration_not_in_report";
+    const countOnly = measure === "ballots_cast" && basis === "" && stock === "" && rate === null
+      && ((code === "WY" && hold === "registration_not_in_report")
+        || (code === "CO" && date === "2020-11-03" && hold === "registration_column_party_labeled"));
     const edition = field("report_edition"), note = field("report_note") || "";
     if (!countStates.includes(code) || !/^\d{4}$/.test(year) || !/^\d{4}-11-\d{2}$/.test(date)
         || !date.startsWith(`${year}-`) || !["state", "county"].includes(level)
@@ -822,7 +823,7 @@ export function coloradoPrecinctFrames(csv) {
   if (!lines.length || lines.length > 20_000 || new Set(columns).size !== columns.length
       || fields.some(field => !columns.includes(field))) throw new Error("Incomplete Colorado precinct statistics");
   const frames = new Map(), integer = text => /^\d+$/.test(text) && Number.isSafeInteger(Number(text));
-  const editions = new Map([["2022-11-08", "25989"], ["2024-11-05", "26759"]]);
+  const editions = new Map([["2020-11-03", "25358"], ["2022-11-08", "25989"], ["2024-11-05", "26759"]]);
   for (const line of lines) {
     const cells = historicalCsvLine(line), field = key => cells[columns.indexOf(key)];
     const date = field("election_date"), id = editions.get(date);
@@ -832,12 +833,16 @@ export function coloradoPrecinctFrames(csv) {
     const url = field("source_url"), sha = field("source_sha256"), status = field("source_status");
     const literalRate = field("qualified_same_report_registration_fraction_pct");
     const rate = literalRate === "" ? null : Number(literalRate);
-    const hold = count > registered ? "ballots_exceed_registered" : registered === 0 ? "no_positive_registration_denominator" : "";
+    const countOnly = date === "2020-11-03" && integers.slice(0, 3).every(value => value === "")
+      && field("registration_basis") === "";
+    const hold = countOnly ? "registration_column_party_labeled"
+      : count > registered ? "ballots_exceed_registered" : registered === 0 ? "no_positive_registration_denominator" : "";
     if (cells.length !== columns.length || field("state_code") !== "CO" || !id || !county || !/^\d{10}$/.test(precinct)
-        || !integers.every(integer) || !bytes || registered !== active + inactive || disposition !== hold
+        || !(countOnly ? integers.slice(3) : integers).every(integer) || !bytes
+        || registered !== active + inactive || disposition !== hold
         || (hold ? rate !== null : rate === null || !Number.isFinite(rate) || Math.abs(rate - 100 * count / registered) > 1e-10)
         || !/^[a-f0-9]{64}$/.test(sha) || !["reported", "retained_after_failure"].includes(status)
-        || field("registration_basis") !== "Total registration (active plus inactive)"
+        || (!countOnly && field("registration_basis") !== "Total registration (active plus inactive)")
         || url !== `https://co.elstats3.civera.com/api/download_contest/${id}_table.csv?split_party=false`)
       throw new Error("Colorado precinct statistics or provenance differ");
     if (!frames.has(date)) frames.set(date, { url, sha, bytes, status, counties: new Map(), ids: new Set() });
@@ -846,7 +851,7 @@ export function coloradoPrecinctFrames(csv) {
       throw new Error("Colorado precinct statistics mix editions or repeat a precinct");
     frame.ids.add(precinct);
     if (!frame.counties.has(county)) frame.counties.set(county, []);
-    frame.counties.get(county).push({ precinct, count, registered, rate, hold });
+    frame.counties.get(county).push({ precinct, count, registered: countOnly ? null : registered, rate, hold });
   }
   if ([...frames.values()].some(frame => frame.counties.size !== 64)) throw new Error("Incomplete Colorado precinct counties");
   return frames;
@@ -902,9 +907,10 @@ export function installColoradoPrecinctStatistics(file) {
           const row = body.insertRow(), id = document.createElement("th");
           id.scope = "row"; id.textContent = value.precinct; row.append(id);
           row.insertCell().textContent = number.format(value.count);
-          row.insertCell().textContent = number.format(value.registered);
+          row.insertCell().textContent = value.registered === null ? "Not qualified" : number.format(value.registered);
           row.insertCell().textContent = value.rate !== null ? `${value.rate.toFixed(2)}%`
             : value.hold === "ballots_exceed_registered" ? "Withheld: ballots exceed registration"
+            : value.hold === "registration_column_party_labeled" ? "Withheld: registration column carries a party label"
             : "Withheld: no positive registration count";
         }
       }

@@ -29,6 +29,14 @@ test("Colorado precinct statistics retain observed zero and reject missing or in
   assert.throws(() => coloradoPrecinctFrames(csv.replace("11,,ballots_exceed_registered", "11,110,")), /differ/);
   assert.throws(() => coloradoPrecinctFrames(csv + "\n" + rows[0]), /repeat/);
   assert.throws(() => coloradoPrecinctFrames([header, ...rows.slice(1)].join("\n")), /Incomplete/);
+  const countOnly = [header, ...rows.map((_, i) =>
+    `CO,2020-11-03,County ${i},${String(i).padStart(10, "0")},,,,1,,registration_column_party_labeled,`
+    + `reported,https://co.elstats3.civera.com/api/download_contest/25358_table.csv?split_party=false,${"a".repeat(64)},100,`
+  )].join("\n");
+  assert.deepEqual(coloradoPrecinctFrames(countOnly).get("2020-11-03").counties.get("County 0")[0], {
+    precinct: "0000000000", count: 1, registered: null, rate: null, hold: "registration_column_party_labeled",
+  });
+  assert.throws(() => coloradoPrecinctFrames(countOnly.replace(",,,,1,,", ",,,,1,50,")), /differ/);
 });
 
 test("the partial Nebraska map preserves a reported zero and leaves unverified counties blank", () => {
