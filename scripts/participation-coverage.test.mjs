@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
 import { administrativeRows, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, publishedCpsStatus }
+  northCarolinaAgeRows, publishedCpsStatus, cpsMapCells }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive } from "../public/scripts/participation-historical-county-map.js";
@@ -22,6 +22,17 @@ test("Census release status distinguishes missing links, denied access, and reta
   assert.match(publishedCpsStatus({ status: "report_not_linked", rows: 0 }), /did not find both/);
   assert.match(publishedCpsStatus({ status: "source_stopped", rows: 0 }), /denied/);
   assert.match(publishedCpsStatus({ status: "retained_after_failure", rows: 884 }), /last verified/);
+});
+
+test("Census group maps preserve a published zero but exclude suppressed points and the U.S. benchmark", () => {
+  const cohort = { year: "2010", group: "25 to 44", cvap_voted_pct: "0", cvap_voted_moe_pp: "2" };
+  const rows = [
+    { ...cohort, state_code: "AL" },
+    { ...cohort, state_code: "AK", cvap_voted_pct: "", cvap_voted_moe_pp: "" },
+    { ...cohort, state_code: "US" },
+    { ...cohort, state_code: "AZ", group: "25 to 34" },
+  ];
+  assert.deepEqual([...cpsMapCells(rows, "2010", "cvap", "25 to 44")], [["AL", { point: "0", moe: "2" }]]);
 });
 
 test("election-office archive frames preserve native measures, held rates and last-good metadata", () => {

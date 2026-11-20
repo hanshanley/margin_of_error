@@ -406,9 +406,20 @@ export function overallCpsRows(csv, summary) {
   });
 }
 
-function addOverallCpsMap(panel, rows, summary, basis, state, names) {
+export function cpsMapCells(rows, year, basis, group) {
+  const cells = new Map();
+  for (const row of rows) {
+    if (row.year !== year || row.state_code === "US"
+        || (group ? row.group !== group : row.denominator_basis !== basis)) continue;
+    const point = group ? row[`${basis}_voted_pct`] : row.reported_voted_pct;
+    if (point !== "") cells.set(row.state_code, { point, moe: group ? row[`${basis}_voted_moe_pp`] : null });
+  }
+  return cells;
+}
+
+function addCpsMap(panel, rows, summary, basis, state, names, group) {
   const load = document.createElement("button"), status = document.createElement("p");
-  load.type = "button"; load.textContent = "Show statewide turnout map";
+  load.type = "button"; load.textContent = group ? "Show turnout map by group" : "Show statewide turnout map";
   status.setAttribute("role", "status");
   panel.append(load, status);
   load.addEventListener("click", async () => {
@@ -434,16 +445,14 @@ function addOverallCpsMap(panel, rows, summary, basis, state, names) {
       svg.setAttribute("role", "img");
       const colors = ["#eef5f3", "#c5e0d9", "#87bbac", "#458778", "#23564f"];
       const paint = () => {
-        const selected = rows.filter(r => r.year === year.value && r.denominator_basis === basis.value);
-        const byCode = new Map(selected.map(r => [r.state_code, r]));
+        const byCode = cpsMapCells(rows, year.value, basis.value, group?.value);
         svg.replaceChildren();
         const metric = basis.selectedOptions[0].textContent;
-        svg.setAttribute("aria-label", `${year.value} reported voting rates by state, ${metric}`);
+        const cohort = group ? `, ${group.selectedOptions[0].textContent}` : "";
+        svg.setAttribute("aria-label", `${year.value} reported voting rates by state${cohort}, ${metric}`);
         for (const { feature, d } of shapes) {
           const code = feature.properties.STUSAB, row = byCode.get(code);
-          const point = row?.reported_voted_pct;
-          const hasRate = point !== undefined && point !== "";
-          const shade = hasRate ? colors.filter((_, i) => i === 0 || Number(point) >= 30 + i * 10).at(-1) : "#dededb";
+          const shade = row ? colors.filter((_, i) => i === 0 || Number(row.point) >= 30 + i * 10).at(-1) : "#dededb";
           const path = document.createElementNS(svg.namespaceURI, "path");
           const title = document.createElementNS(svg.namespaceURI, "title");
           path.setAttribute("d", d);
@@ -452,23 +461,25 @@ function addOverallCpsMap(panel, rows, summary, basis, state, names) {
           path.setAttribute("stroke", code === state.value ? "#222" : "#fcfcfa");
           path.setAttribute("stroke-width", code === state.value ? "2" : "1");
           path.dataset.state = code;
-          path.dataset.rate = hasRate ? point : "";
-          title.textContent = `${names[code] || feature.properties.NAME}: ${hasRate ? `${point}%` : "not available"}`;
+          path.dataset.rate = row ? row.point : "";
+          title.textContent = `${names[code] || feature.properties.NAME}: `
+            + (row ? `${row.point}%${row.moe === null ? "" : ` ± ${row.moe} pp`}` : "not available");
           path.append(title); svg.append(path);
         }
-        caption.textContent = `${selected.filter(r => r.reported_voted_pct !== "").length} of 51 jurisdictions with published rates. `
+        caption.textContent = `${byCode.size} of 51 jurisdictions with published rates. `
           + "Light to dark: below 40%, 40–49%, 50–59%, 60–69%, 70% or more. Gray: not available. "
           + "State outlines are for display; Alaska and Hawaii are insets. "
-          + (basis.value === "cvap" && Number(year.value) < 1996 ? "Earlier citizenship measure; not directly comparable." : "");
+          + (group ? "Colors show point estimates, not statistical differences. See the table for uncertainty and holds."
+            : basis.value === "cvap" && Number(year.value) < 1996 ? "Earlier citizenship measure; not directly comparable." : "");
       };
-      for (const control of [year, basis, state]) control.addEventListener("change", paint);
+      for (const control of [year, basis, state, group].filter(Boolean)) control.addEventListener("change", paint);
       figure.append(label, svg, caption);
       load.replaceWith(figure);
       status.textContent = "";
       paint();
     } catch {
       load.disabled = false;
-      status.textContent = "The state map is unavailable; the statewide history table and CSV still work.";
+      status.textContent = "The state map is unavailable; the table and CSV still work.";
     }
   });
 }
@@ -538,7 +549,7 @@ function installOverallCps(file, summary, names) {
         panel.append(label, control, " ");
         control.addEventListener("change", render);
       }
-      addOverallCpsMap(panel, rows, summary, basis, state, names);
+      addCpsMap(panel, rows, summary, basis, state, names);
       scroller.append(table); panel.append(scroller);
       render();
       status.textContent = ""; button.remove();
@@ -647,6 +658,7 @@ function installPublishedCps(sources, file, names) {
           return label;
         }));
       status.textContent = "";
+      addCpsMap(panel, rows, survey.published_state_tables, basis, state, names, group);
       scroller.append(table); panel.append(scroller); render(); state.focus();
     } catch {
       retry = true;
