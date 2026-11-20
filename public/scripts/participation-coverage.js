@@ -22,6 +22,7 @@ const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const californiaCurrentReportPath = "release/participation-ca-2026-county-turnout-report.csv.gz";
+const nebraskaCurrentReportPath = "release/participation-ne-2026-county-canvass.csv.gz";
 const publishedCpsPath = "release/participation-cps-published-state-tables.csv.gz";
 const archivedCpsPath = "release/participation-cps-archived-state-tables.csv.gz";
 const overallCpsPath = "release/participation-cps-state-overall-history.csv.gz";
@@ -707,7 +708,7 @@ function installPublishedCps(sources, file, names, { archived = false } = {}) {
   return panel;
 }
 
-export function stateCountyArchiveFrames(csv, { currentCalifornia = false } = {}) {
+export function stateCountyArchiveFrames(csv, { currentCalifornia = false, currentNebraska = false } = {}) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const columns = historicalCsvLine(header);
   const required = ["state_code", "year", "election_date", "geography_level", "geography",
@@ -741,7 +742,9 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false } = {}
     const edition = field("report_edition"), note = field("report_note") || "";
     if (!countStates.includes(code) || !/^\d{4}$/.test(year) || !/^\d{4}-11-\d{2}$/.test(date)
         || !date.startsWith(`${year}-`) || !["state", "county"].includes(level)
-        || (currentCalifornia ? code !== "CA" || date !== "2026-11-03" || measure !== "total_voters" : Number(year) >= 2026)
+        || (currentCalifornia || currentNebraska
+          ? code !== (currentCalifornia ? "CA" : "NE") || date !== "2026-11-03" || measure !== "total_voters"
+          : Number(year) >= 2026)
         || !name || !integer(value) || (!countOnly && (!basis || !integer(stock)))
         || !["reported", "retained_after_failure"].includes(status)
         || !/^https:\/\/[^/@?#\s]+\/[^#\s]+$/.test(url) || !/^[a-f0-9]{64}$/.test(sha)
@@ -761,6 +764,8 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false } = {}
     throw new Error("Election-office archive lacks a state or county total");
   if (currentCalifornia && [...frames.values()].some(frame => frame.rows.size !== 59))
     throw new Error("Incomplete California statewide and county report");
+  if ([...frames.values()].some(frame => frame.code === "NE" && frame.rows.size !== 94))
+    throw new Error("Incomplete Nebraska statewide and county report");
   if ([...frames.values()].some(frame => frame.code === "WY" && frame.rows.size !== 24))
     throw new Error("Incomplete Wyoming statewide and county report");
   return [...frames.values()].sort((a, b) => a.code.localeCompare(b.code) || b.date.localeCompare(a.date));
@@ -890,7 +895,7 @@ export function wyomingCanvassCountyFrame(data) {
     note: "The official canvass reports ballots, not unique voters. County totals reconcile to the precinct tables." };
 }
 
-function installStateCountyArchives(sources, url, names, { currentCalifornia = false, wyomingCounts = null,
+function installStateCountyArchives(sources, url, names, { currentCalifornia = false, currentNebraska = false, wyomingCounts = null,
   wyomingCanvass = false } = {}) {
   const panel = document.createElement("details"), heading = document.createElement("summary");
   const download = document.createElement("a"), note = document.createElement("p");
@@ -898,16 +903,19 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
   const wyoming = wyomingCanvass || wyomingCounts;
   heading.textContent = wyoming ? "Wyoming county ballots cast, 2026"
     : currentCalifornia ? "California’s 2026 statewide and county turnout report"
+    : currentNebraska ? "Nebraska’s 2026 statewide and county canvass"
     : "Browse official state and county turnout archives";
   download.href = url;
   download.textContent = wyomingCanvass ? "Complete analysis with Wyoming canvass queries (ZIP)"
     : wyomingCounts ? "Complete analysis with Wyoming workbook queries (ZIP)"
     : currentCalifornia ? "Complete California 2026 report query (CSV · gzip)"
+    : currentNebraska ? "Complete Nebraska 2026 canvass query (CSV · gzip)"
     : "State election office turnout archives (CSV · gzip)";
   note.append(download, wyomingCanvass ? ". County ballot counts from the same canvass as the precinct table; no turnout rates."
     : wyomingCounts ? ". County ballot counts from the accepted Wyoming workbook; no turnout rates."
     : currentCalifornia
     ? ". This report is separate from the live election-results feed and does not establish certification."
+    : currentNebraska ? ". Official canvass totals and same-report registration, separate from candidate returns."
     : ". These official reports are separate from EAC data and the 2026 map.");
   status.setAttribute("role", "status");
   button.type = "button"; button.textContent = "Load election-office reports";
@@ -928,10 +936,11 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
         const json = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).json();
         frames = [wyomingCurrentCountyFrame(validateCurrentCountSnapshot(json).snapshot.reporting)];
       } else {
-        const file = coverageCsvFile(sources, currentCalifornia ? californiaCurrentReportPath : stateCountyArchivesPath);
+        const file = coverageCsvFile(sources, currentCalifornia ? californiaCurrentReportPath
+          : currentNebraska ? nebraskaCurrentReportPath : stateCountyArchivesPath);
         const bytes = await checkedCountyBody(file.url, file, retry);
         const csv = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
-        frames = stateCountyArchiveFrames(csv, { currentCalifornia });
+        frames = stateCountyArchiveFrames(csv, { currentCalifornia, currentNebraska });
       }
       const state = document.createElement("select"), year = document.createElement("select");
       for (const code of new Set(frames.map(frame => frame.code))) state.add(new Option(names[code] || code, code));
@@ -950,7 +959,7 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
       const body = table.createTBody(), number = new Intl.NumberFormat("en-US");
       const currentFrame = () => frames.find(item => item.code === state.value && item.date === year.value);
       const history = document.createElement("details");
-      const historical = !currentCalifornia && !wyoming;
+      const historical = !currentCalifornia && !currentNebraska && !wyoming;
       const renderHistory = historical ? archiveStateHistory(history, frames, code => names[code] || code) : () => {};
       const render = () => {
         const frame = currentFrame();
@@ -1173,6 +1182,15 @@ function installAdministrativeCoverage(host) {
       } catch {
         const notice = document.createElement("p");
         notice.textContent = "The California 2026 county report descriptor could not be verified.";
+        content.append(notice);
+      }
+      try {
+        const report = coverageCsvFile(manifest.house_sources, nebraskaCurrentReportPath);
+        if (report) content.append(installStateCountyArchives(
+          manifest.house_sources, report.url, names, { currentNebraska: true }));
+      } catch {
+        const notice = document.createElement("p");
+        notice.textContent = "The Nebraska 2026 canvass descriptor could not be verified.";
         content.append(notice);
       }
       try {
