@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, washingtonAgeSeries, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
+  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
@@ -17,6 +17,22 @@ import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-pr
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Southeast histories preserve missing ages and distinguish printed and calculated rates", () => {
+  const al = "state_code,year,source_status,geography,geography_level,age_group,reported_ballots\n"
+    + "AL,2018,reported,BARBOUR,county,100+,\nAL,2024,reported,BARBOUR,county,100+,0";
+  assert.deepEqual(southeastHistoryRows(al, "AL").map(row => row.count), [null, 0]);
+  const sc = "state_code,year,source_status,reported_participation,reported_registered,numerator_basis,"
+    + "published_turnout_pct,published_rate_matches_counts,participation_per_reported_registration\n"
+    + "SC,2018,reported,600,1000,ballots_cast,50.0%,False,0.6\n"
+    + "SC,2006,retained_after_failure,500,1000,voter_history_credits,50.0%,True,0.5";
+  const rows = southeastHistoryRows(sc, "SC");
+  assert.equal(rows[0].matches, false);
+  assert.equal(rows[0].fraction, 0.6);
+  assert.equal(rows[1].basis, "voter_history_credits");
+  assert.equal(rows[1].retained, true);
+  assert.throws(() => southeastHistoryRows(sc.replace("False,0.6", "False,0.5"), "SC"), /Invalid South Carolina/);
+});
 
 test("Washington history distinguishes placeholders, held age labels, missing counts and real zeros", () => {
   const row = (year, election_type, observation_status, total_ballots) => ({

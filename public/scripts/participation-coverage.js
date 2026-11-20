@@ -25,6 +25,10 @@ const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
 const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
+const southeastHistory = {
+  AL: "release/participation-al-general-election-by-age.csv.gz",
+  SC: "release/participation-sc-general-election-history.csv.gz",
+};
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
@@ -1742,6 +1746,127 @@ function installOregonHistory(host, sources) {
   });
 }
 
+export function southeastHistoryRows(csv, state) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const alabama = state === "AL";
+  const needed = alabama
+    ? ["geography", "geography_level", "age_group", "reported_ballots"]
+    : ["reported_participation", "reported_registered", "numerator_basis",
+      "published_turnout_pct", "published_rate_matches_counts", "participation_per_reported_registration"];
+  if (!Object.hasOwn(southeastHistory, state) || !lines.length || new Set(fields).size !== fields.length
+      || ["state_code", "year", "source_status", ...needed].some(field => !fields.includes(field)))
+    throw new Error("Missing historical participation fields");
+  const seen = new Set();
+  const integer = value => /^(?:0|[1-9]\d*)$/.test(value) && Number.isSafeInteger(Number(value));
+  return lines.map(line => {
+    const cells = historicalCsvLine(line);
+    const row = Object.fromEntries(fields.map((field, i) => [field, cells[i]]));
+    const { year, geography, age_group: age, reported_ballots: ballots } = row;
+    const key = alabama ? `${year}|${row.geography_level}|${geography}|${age}` : year;
+    if (cells.length !== fields.length || row.state_code !== state || seen.has(key)
+        || !["reported", "retained_after_failure"].includes(row.source_status)
+        || !/^\d{4}$/.test(year)) throw new Error("Invalid historical participation row");
+    seen.add(key);
+    if (alabama) {
+      if (!["2018", "2020", "2024"].includes(year)
+          || !(row.geography_level === "state" ? geography === "Alabama"
+            : row.geography_level === "county" && /^[A-Z_]+$/.test(geography))
+          || !/^(?:all|18-29|[3-9]0-[3-9]9|100\+)$/.test(age)
+          || (ballots === "" ? year !== "2018" || age !== "100+" : !integer(ballots)))
+        throw new Error("Invalid Alabama age row");
+      return { year, geography, age, retained: row.source_status !== "reported",
+        count: ballots === "" ? null : Number(ballots) };
+    }
+    const { reported_participation: count, reported_registered: register, numerator_basis: basis,
+      published_turnout_pct: published, published_rate_matches_counts: matches,
+      participation_per_reported_registration: fraction } = row;
+    if (Number(year) < 1998 || Number(year) > 2026 || Number(year) % 2
+        || basis !== (Number(year) <= 2006 ? "voter_history_credits" : "ballots_cast")
+        || !integer(count) || !integer(register) || Number(count) < 1 || Number(count) > Number(register)
+        || !/^\d{1,3}\.\d%$/.test(published) || !["True", "False"].includes(matches)
+        || Number(fraction) !== Number(count) / Number(register))
+      throw new Error("Invalid South Carolina participation row");
+    return { year, basis, published, matches: matches === "True", count: Number(count),
+      register: Number(register), fraction: Number(fraction), retained: row.source_status !== "reported" };
+  });
+}
+
+function installSoutheastHistory(host, sources, state) {
+  const path = southeastHistory[state];
+  if (!sources?.supported_release?.downloads?.[path]) return;
+  const alabama = state === "AL";
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const content = document.createElement("div");
+  summary.textContent = alabama ? "Alabama general-election ballots by county and age" : "South Carolina statewide participation history";
+  panel.append(summary, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    content.textContent = "Checking the historical report…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, path);
+      const rows = southeastHistoryRows(csv, state);
+      const note = document.createElement("p"), download = document.createElement("a");
+      note.textContent = alabama
+        ? "These reports count ballots by age. Their statewide totals do not include every ballot in the separate election totals. No matching age-specific registration denominator is supplied."
+        : "From 2008 onward the report counts ballots cast. Earlier values are voter-history credits, a different measure. The calculated percentage uses the report’s registered-voter count.";
+      download.href = file.url;
+      download.textContent = "Complete participation data and source checks (CSV · gzip)";
+      const controls = document.createElement("p");
+      const choose = (label, options) => {
+        const wrapper = document.createElement("label"), select = document.createElement("select");
+        select.setAttribute("aria-label", label);
+        for (const [value, text] of options) select.append(new Option(text, value));
+        wrapper.append(`${label} `, select, " ");
+        controls.append(wrapper);
+        return select;
+      };
+      const county = alabama ? choose("Geography", [...new Set(rows.map(r => r.geography))].sort().map(
+        name => [name, name === "Alabama" ? "Alabama statewide" : name.replaceAll("_", " ")])) : null;
+      const ages = ["all", "18-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80-89", "90-99", "100+"];
+      const age = alabama ? choose("Age", ages.map(group => [group, group === "all" ? "All ages" : group])) : null;
+      const region = document.createElement("div");
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", summary.textContent);
+      const format = value => value === null ? "Not reported" : value.toLocaleString("en-US");
+      const render = () => {
+        const table = document.createElement("table");
+        table.createCaption().textContent = alabama ? `${county.selectedOptions[0].text} · ${age.selectedOptions[0].text}`
+          : "South Carolina general elections";
+        const header = table.createTHead().insertRow();
+        const headers = alabama ? ["Election year", "Ballots in age report", "Source"]
+          : ["Election year", "Participation", "Count type", "Registered", "Published %", "Calculated %", "Source"];
+        for (const name of headers) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = name; header.append(th);
+        }
+        const tbody = table.createTBody();
+        const selected = alabama ? rows.filter(row => row.geography === county.value && row.age === age.value) : rows;
+        for (const row of selected) {
+          const tr = tbody.insertRow(), label = document.createElement("th");
+          label.scope = "row"; label.textContent = row.year; tr.append(label);
+          tr.insertCell().textContent = format(row.count);
+          if (!alabama) for (const value of [
+            row.basis === "ballots_cast" ? "Ballots cast" : "Voter-history credits", format(row.register),
+            row.published, `${(100 * row.fraction).toFixed(1)}%${row.matches ? "" : " — disagrees with report"}`,
+          ]) tr.insertCell().textContent = value;
+          tr.insertCell().textContent = row.retained ? "Retained" : "Reported";
+        }
+        region.replaceChildren(table);
+      };
+      for (const select of [county, age]) select?.addEventListener("change", render);
+      render();
+      content.replaceChildren(note, download, ...(alabama ? [controls] : []), region);
+    } catch {
+      loading = false;
+      content.textContent = "The checked historical data could not be loaded. Reopen this section to retry.";
+    }
+  });
+}
+
 export function northCarolinaAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = header.split(",");
@@ -1949,6 +2074,7 @@ function installAdministrativeCoverage(host) {
       installNorthCarolinaAge(content, manifest.house_sources);
       installWashingtonAge(content, manifest.house_sources);
       installOregonHistory(content, manifest.house_sources);
+      for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       panel.dataset.runtimeVersion = manifest.version;
     } catch {
       content.textContent = "Administrative coverage could not be verified. Close and reopen to retry.";
