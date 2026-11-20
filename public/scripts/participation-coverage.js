@@ -1601,6 +1601,62 @@ function installWashingtonAge(host, sources) {
       update();
       for (const [, select] of controls) select.addEventListener("change", update);
       content.replaceChildren(note, download, controlsRegion, region);
+      const countyMap = document.createElement("details"), mapTitle = document.createElement("summary");
+      mapTitle.textContent = "Compare Washington counties on a map";
+      countyMap.append(mapTitle);
+      const [dateLabel, dateSelect] = choose("Map election", [...new Set(rows
+        .filter(row => row.geography_level === "state" && /^(200[8]|201[02468]|202[024])-/.test(row.election_date))
+        .map(row => row.election_date))].sort().reverse().map(date => [date, date]));
+      if (dateSelect.options.length) {
+        const counts = document.createElement("div");
+        counts.className = "table-wrap"; counts.tabIndex = 0;
+        const mapControl = document.createElement("p");
+        mapControl.append(dateLabel, "Map shows counts for the selected age and sex, not rates.");
+        countyMap.append(mapControl);
+        const frame = () => {
+          const age = controls[1][1].value, sex = controls[2][1].value;
+          const date = dateSelect.value;
+          const pairs = [["state", "Washington"], ...counties.map(name => [name, name])];
+          return {
+            code: "WA", date, measure: "workbook_ballots", rows: new Map(pairs.map(([key, name]) => {
+              const point = washingtonAgeSeries(rows, name, age, sex, "ballots", "")
+                .find(item => item.row.election_date === date);
+              return [key, { name, count: point?.value ?? null, rate: null }];
+            })),
+          };
+        };
+        const state = document.createElement("select");
+        state.append(new Option("Washington", "WA"));
+        installHistoricalCountyMap(countyMap, state, dateSelect, null, { WA: "Washington" }, frame);
+        countyMap.append(counts);
+        const compare = () => {
+          const table = document.createElement("table");
+          table.createCaption().textContent = `Washington county ballot counts · ${dateSelect.value}`;
+          const header = table.createTHead().insertRow();
+          for (const title of ["County", "Reported ballots"]) {
+            const cell = document.createElement("th");
+            cell.scope = "col"; cell.textContent = title; header.append(cell);
+          }
+          const body = table.createTBody();
+          for (const [key, { name, count }] of frame().rows) {
+            if (key === "state") continue;
+            const tr = body.insertRow(), label = document.createElement("th");
+            label.scope = "row"; label.textContent = name; tr.append(label);
+            tr.insertCell().textContent = count === null ? "Not available" : count.toLocaleString("en-US");
+          }
+          counts.replaceChildren(table);
+        };
+        countyMap.addEventListener("toggle", () => { if (countyMap.open) compare(); });
+        dateSelect.addEventListener("change", compare);
+        for (const select of [controls[1][1], controls[2][1]]) {
+          select.addEventListener("change", () => {
+            if (!countyMap.open) return;
+            compare();
+            state.dispatchEvent(new Event("change"));
+          });
+        }
+        content.append(countyMap);
+      }
     } catch {
       content.textContent = "The checked Washington data could not be loaded. Reopen this section to retry.";
       loading = false;

@@ -7,7 +7,7 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { CA: 58, CO: 64, KS: 105, NC: 100, NE: 93, NJ: 21, VA: 133, WV: 55, WY: 23 };
+const officialCountySizes = { CA: 58, CO: 64, KS: 105, NC: 100, NE: 93, NJ: 21, VA: 133, WA: 39, WV: 55, WY: 23 };
 const geometryReleases = "https://github.com/hanshanley/voter-participation/releases/download/";
 const nebraskaGeometryRelease = geometryReleases + "nebraska-legacy-county-geometry-20261120/";
 export const officialArchiveGeometry = {
@@ -222,7 +222,7 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
         || !Number.isInteger(value.rate) || value.rate < 0 || value.rate > 100)))
       throw new Error("Official county roster differs from its dated reference");
     byName.delete(name);
-    return { feature, value: partial && value.count === null ? null : value };
+    return { feature, value: (partial || frame.measure === "workbook_ballots") && value.count === null ? null : value };
   });
 }
 
@@ -299,7 +299,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         : bindHistoricalCountyMap(collection, prior, rows, code, vintage);
       const counts = bound.filter(item => item.value).length;
       const rates = bound.filter(item => item.value?.rate != null).length;
-      const countOnly = Boolean(frame && !frame.rateOnly && counts && !rates);
+      const countOnly = Boolean(frame && !frame.rateOnly && !rates && (counts || frame.measure === "workbook_ballots"));
       const projection = code === "AK" ? conicProjection(-154, 55, 65)
         : code === "HI" ? conicProjection(-157, 8, 18) : conicProjection(-96, 29.5, 45.5);
       const items = projectFeatures(collection.features, projection, [12, 12, 576, 336]);
@@ -325,6 +325,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         const title = document.createElementNS(svgNS, "title");
         const area = frame?.code === "VA" ? value?.name ?? feature.properties.name : feature.properties.name;
         title.textContent = `${area}: ${frame?.rateOnly ? `${rate}% published turnout`
+          : value && frame?.measure === "workbook_ballots" ? `${number.format(value.count)} reported ballots`
           : value ? `${number.format(value.count)} ${frame?.measure === "voter_history_credits"
             ? "voter-history credits" : "reported"}; `
           + (rate == null ? "rate withheld" : `${rate.toFixed(2)}% of same-report registrations`)
@@ -333,7 +334,10 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         svg.append(path);
       }
       const missingGeometry = legacy?.partialGeometry ? collection.missing_counties?.length ?? 0 : 0;
-      status.textContent = frame?.rateOnly
+      status.textContent = frame?.measure === "workbook_ballots"
+        ? `${label}: ${counts} of ${bound.length} counties have ballot counts for the selected group. `
+          + countMapLegend + "Shading shows ballot counts, not rates. Boundaries are for this election year only."
+        : frame?.rateOnly
         ? `${label}: ${rates} of ${bound.length} counties have published whole-percent rates. `
           + "Darker blue indicates higher reported turnout (0–100%). "
           + "The report does not specify the count or denominator. Census reference boundaries dated January 1, 2006."
