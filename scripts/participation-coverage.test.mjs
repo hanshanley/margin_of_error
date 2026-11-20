@@ -10,7 +10,8 @@ import { administrativeRows, coverageRows, historicalCountyDownload, historicalC
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
-import { bindHistoricalCountyMap, bindOfficialCountyArchive } from "../public/scripts/participation-historical-county-map.js";
+import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill }
+  from "../public/scripts/participation-historical-county-map.js";
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
 
 test("Colorado precinct statistics retain observed zero and reject missing or incompatible rate decisions", () => {
@@ -64,6 +65,13 @@ test("the partial Nebraska map preserves a reported zero and leaves unverified c
   const bound = bindOfficialCountyArchive(geometry, frame);
   assert.equal(bound[0].value.count, 0);
   assert.equal(bound.slice(1).every(row => row.value === null), true);
+  const fill = count => countyMapFill({ count, rate: null }, true);
+  assert.notEqual(fill(0), countyMapFill(bound[1].value, true));
+  assert.notEqual(fill(0), fill(1));
+  assert.notEqual(fill(999), fill(1_000));
+  assert.equal(fill(1_000), fill(4_999));
+  assert.notEqual(fill(4_999), fill(5_000));
+  assert.equal(countyMapFill({ count: 100, rate: 50 }, false), countyMapFill({ count: 200, rate: 50 }, false));
   assert.throws(() => nebraskaCountyReportsFrame(csv.replace("reported,0,0,0,0", "reported,7,0,0,0")), /provenance/);
   assert.throws(() => nebraskaCountyReportsFrame(csv.replace("layout_unqualified,,,,", "layout_unqualified,,3,,")), /provenance/);
   const replaced = structuredClone(geometry);

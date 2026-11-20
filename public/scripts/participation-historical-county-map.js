@@ -215,6 +215,20 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
   });
 }
 
+const countMapColors = ["#fcfdfd", "#d9e8ed", "#b3d2dc", "#79afbf", "#48879d", "#24586d"];
+const countMapLegend = "Light to dark blue: 1–999; 1,000–4,999; 5,000–19,999; 20,000–99,999; "
+  + "100,000 or more. White means reported zero; light gray means no verified count. ";
+
+export function countyMapFill(value, countOnly) {
+  if (!value) return "#ebedf0";
+  if (countOnly) {
+    const count = value.count;
+    return countMapColors[count === 0 ? 0 : count < 1_000 ? 1 : count < 5_000 ? 2
+      : count < 20_000 ? 3 : count < 100_000 ? 4 : 5];
+  }
+  return value.rate == null ? "#c4d2d7" : `hsl(193 47% ${90 - value.rate * 0.62}%)`;
+}
+
 export function installHistoricalCountyMap(panel, state, year, rows, names, officialFrame) {
   const button = document.createElement("button"), figure = document.createElement("figure");
   const status = document.createElement("figcaption");
@@ -272,6 +286,9 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
       if (token !== generation) return;
       const bound = frame ? bindOfficialCountyArchive(collection, frame, legacy?.partialGeometry)
         : bindHistoricalCountyMap(collection, prior, rows, code, vintage);
+      const counts = bound.filter(item => item.value).length;
+      const rates = bound.filter(item => item.value?.rate != null).length;
+      const countOnly = Boolean(frame && !frame.rateOnly && counts && !rates);
       const projection = code === "AK" ? conicProjection(-154, 55, 65)
         : code === "HI" ? conicProjection(-157, 8, 18) : conicProjection(-96, 29.5, 45.5);
       const items = projectFeatures(collection.features, projection, [12, 12, 576, 336]);
@@ -289,8 +306,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         const { feature, value } = bound[i], rate = value?.rate;
         const path = document.createElementNS(svgNS, "path");
         path.setAttribute("d", d);
-        path.setAttribute("fill", rate == null ? (value ? "#c4d2d7" : "#ebedf0")
-          : `hsl(193 47% ${90 - rate * 0.62}%)`);
+        path.setAttribute("fill", countyMapFill(value, countOnly));
         path.setAttribute("stroke", "#70828a");
         path.setAttribute("stroke-width", ".65");
         path.setAttribute("fill-rule", "evenodd");
@@ -304,8 +320,6 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         path.append(title);
         svg.append(path);
       }
-      const counts = bound.filter(item => item.value).length;
-      const rates = bound.filter(item => item.value?.rate != null).length;
       const missingGeometry = legacy?.partialGeometry ? collection.missing_counties?.length ?? 0 : 0;
       status.textContent = frame?.rateOnly
         ? `${label}: ${rates} of ${bound.length} counties have published whole-percent rates. `
@@ -313,15 +327,16 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
           + "The report does not specify the count or denominator. Census reference boundaries dated January 1, 2006."
         : frame?.partialCountyReports
           ? `${label}: ${counts} of ${bound.length} county reports have verified counts. `
-            + "Blue-gray means reported; light gray means no verified count, not zero. "
+            + countMapLegend
             + "Reports have separate editions; no statewide total or rates are calculated."
         : (missingGeometry
           ? `${label}: ${counts} of ${bound.length + missingGeometry} counties are mapped; ${rates} have mapped rates. `
             + `${missingGeometry} counties are not drawn because matching outlines were unavailable; see the complete table. `
           : `${label}: ${counts} of ${bound.length} areas have verified counts; ${rates} have rates. `)
         + (frame?.measure === "voter_history_credits" ? "Counts are voter-history credits, not physical ballot counts. " : "")
-        + "Darker blue means a higher fraction of registered voters (0–100%). Blue-gray means count only; "
-        + "light gray means no verified mapped count, not zero. "
+        + (countOnly ? countMapLegend + "Shading shows counts, not turnout rates. "
+          : "Darker blue means a higher fraction of registered voters (0–100%). Blue-gray means count only; "
+            + "light gray means no verified mapped count, not zero. ")
         + (legacy?.referenceDate ? `Census reference boundaries dated January 1, ${vintage}.`
           : legacy ? legacy.boundaryLabel ?? `${vintage} Census cartographic county boundaries (simplified).`
           : "Boundaries are for this election year only.");
