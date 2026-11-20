@@ -20,6 +20,7 @@ const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const californiaCurrentReportPath = "release/participation-ca-2026-county-turnout-report.csv.gz";
+const publishedCpsPath = "release/participation-cps-published-state-tables.csv.gz";
 const ncAges = ["Age 18 - 25", "Age 26 - 40", "Age 41 - 65", "Age Over 66"];
 const scopes = [
   ["statewide", "State"], ["county_or_equivalent", "County"],
@@ -222,7 +223,7 @@ function coverageCsvFile(sources, path) {
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
       || file.media_type !== "text/csv" || file.compression !== "gzip"
       || !Number.isSafeInteger(file.bytes) || file.bytes < 1
-      || file.bytes > (path === stateCountyArchivesPath ? 524288 : 65536)
+      || file.bytes > ([stateCountyArchivesPath, publishedCpsPath].includes(path) ? 524288 : 65536)
       || !/^[a-f0-9]{64}$/.test(file.sha256))
     throw new Error("Administrative coverage is not bound to the accepted runtime");
   return file;
@@ -242,6 +243,120 @@ export function stateCountyArchivesDownload(sources) {
   } catch {
     return null;
   }
+}
+
+export function publishedCpsRows(csv, summary) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const rates = ["vap_voted", "cvap_voted", "vap_registered", "cvap_registered"];
+  const required = ["year", "election_type", "state_code", "dimension", "group", "source_table",
+    "source_url", "confidence_level_pct", ...rates.flatMap(key => [`${key}_pct`, `${key}_moe_pp`])];
+  if (summary?.separate_from_other_survey_series !== true || summary.administratively_observed_turnout !== false
+      || summary.states_and_dc !== 51 || lines.length !== summary.rows || lines.length > 20000
+      || required.some(key => !columns.includes(key)) || new Set(columns).size !== columns.length)
+    throw new Error("Incomplete published Census tables");
+  const seen = new Set(), byYear = new Map(), expectedStates = new Set([...countStates, "US"]);
+  const rows = lines.map(line => {
+    const cells = historicalCsvLine(line);
+    if (cells.length !== columns.length) throw new Error("Census CSV record differs");
+    const row = Object.fromEntries(columns.map((key, index) => [key, cells[index]]));
+    const year = Number(row.year), code = row.state_code;
+    const key = `${year}/${code}/${row.group}/${row.source_table}`;
+    if (!summary.years.includes(year) || !expectedStates.has(code) || seen.has(key)
+        || row.election_type !== (year % 4 === 0 ? "presidential" : "midterm")
+        || !["overall", "age", "sex", "race_or_hispanic_origin"].includes(row.dimension)
+        || (row.dimension !== "overall" && row.source_table !== (row.dimension === "age" ? "4c" : "4b"))
+        || !["4b", "4c"].includes(row.source_table) || row.confidence_level_pct !== "90"
+        || !/^https:\/\/www2\.census\.gov\/programs-surveys\/cps\/tables\/p20\/\d+\/[a-z0-9_]+\.xlsx$/.test(row.source_url))
+      throw new Error("Census cohort or source identity differs");
+    for (const prefix of rates) {
+      const point = row[`${prefix}_pct`], moe = row[`${prefix}_moe_pp`];
+      if ((point === "") !== (moe === "") || [point, moe].some(v =>
+        v !== "" && (!/^\d+(?:\.\d+)?$/.test(v) || Number(v) > 100)))
+        throw new Error("Census point or margin differs");
+    }
+    seen.add(key);
+    if (!byYear.has(year)) byYear.set(year, new Set());
+    byYear.get(year).add(code);
+    return row;
+  });
+  if (byYear.size !== summary.years.length || [...byYear.values()].some(states => states.size !== expectedStates.size)
+      || rows.filter(r => r.cvap_voted_pct !== "").length !== summary.cvap_voting_rates)
+    throw new Error("Census coverage differs from the accepted runtime");
+  // Both source tables publish the same totals. Keep both in the CSV, show one.
+  return rows.filter(r => r.dimension !== "overall" || r.source_table === "4b");
+}
+
+function installPublishedCps(sources, file, names) {
+  const panel = document.createElement("details"), heading = document.createElement("summary");
+  const note = document.createElement("p"), download = document.createElement("a");
+  const button = document.createElement("button"), status = document.createElement("p");
+  heading.textContent = "Compare Census survey turnout by state and group";
+  download.href = file.url;
+  download.textContent = "Complete Census state turnout tables (CSV · gzip)";
+  note.append("Census survey estimates of reported voting and registration, not official ballot counts. "
+    + "The margins of error are for individual estimates at the 90% confidence level, not for changes across years. "
+    + "Race and Hispanic-origin categories can overlap. ", download);
+  button.type = "button"; button.textContent = "Load Census turnout comparisons";
+  status.setAttribute("role", "status");
+  panel.append(heading, note, button, status);
+  let retry = false;
+  button.addEventListener("click", async () => {
+    button.disabled = true;
+    status.textContent = "Checking the Census turnout tables…";
+    try {
+      const body = await checkedCountyBody(file.url, file, retry);
+      const text = await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+      const rows = publishedCpsRows(text, sources.supported_release.coverage.historical_survey.published_state_tables);
+      const state = document.createElement("select"), group = document.createElement("select");
+      const basis = document.createElement("select");
+      state.append(new Option("United States", "US"), ...countStates.map(code => new Option(names[code] || code, code)));
+      for (const label of new Set(rows.filter(r => r.state_code === "US").map(r => r.group)))
+        group.add(new Option(label === "Total" ? "All adults" : label, label));
+      basis.add(new Option("Citizen voting-age population", "cvap"));
+      basis.add(new Option("Total voting-age population", "vap"));
+      const scroller = document.createElement("div"), table = document.createElement("table");
+      scroller.className = "table-wrap"; scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region"); scroller.setAttribute("aria-label", "Census turnout comparisons");
+      const caption = table.createCaption(), header = table.createTHead().insertRow();
+      for (const label of ["Election", "Reported voted", "Reported registered", "Census workbook"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = label; header.append(th);
+      }
+      const tbody = table.createTBody();
+      const render = () => {
+        caption.textContent = `${names[state.value] || (state.value === "US" ? "United States" : state.value)} · `
+          + `${group.selectedOptions[0].textContent} · ${basis.selectedOptions[0].textContent}`;
+        tbody.replaceChildren();
+        for (const r of rows.filter(r => r.state_code === state.value && r.group === group.value)) {
+          const tr = tbody.insertRow(), label = document.createElement("th"), source = document.createElement("a");
+          label.scope = "row"; label.textContent = `${r.year} ${r.election_type}`; tr.append(label);
+          for (const measure of ["voted", "registered"]) {
+            const key = `${basis.value}_${measure}`;
+            tr.insertCell().textContent = r[`${key}_pct`] === "" ? "Not published"
+              : `${r[`${key}_pct`]}% ± ${r[`${key}_moe_pp`]} pp`;
+          }
+          source.href = r.source_url; source.textContent = `Table ${r.source_table}`;
+          tr.insertCell().append(source);
+        }
+      };
+      button.replaceWith(...[[state, "State or U.S."], [group, "Census group"], [basis, "Denominator"]]
+        .map(([select, text]) => {
+          const label = document.createElement("label");
+          label.append(`${text} `, select, " ");
+          select.addEventListener("change", render);
+          return label;
+        }));
+      status.textContent = "";
+      scroller.append(table); panel.append(scroller); render(); state.focus();
+    } catch {
+      retry = true;
+      status.textContent = "The Census tables could not be verified. The complete download remains available.";
+      button.disabled = false;
+      button.textContent = "Retry Census turnout comparisons";
+    }
+  });
+  return panel;
 }
 
 export function stateCountyArchiveFrames(csv, { currentCalifornia = false } = {}) {
@@ -629,6 +744,14 @@ function installAdministrativeCoverage(host) {
       } catch {
         const notice = document.createElement("p");
         notice.textContent = "The California 2026 county report descriptor could not be verified.";
+        content.append(notice);
+      }
+      try {
+        const census = coverageCsvFile(manifest.house_sources, publishedCpsPath);
+        if (census) content.append(installPublishedCps(manifest.house_sources, census, names));
+      } catch {
+        const notice = document.createElement("p");
+        notice.textContent = "The published Census state tables descriptor could not be verified.";
         content.append(notice);
       }
       installNorthCarolinaAge(content, manifest.house_sources);
