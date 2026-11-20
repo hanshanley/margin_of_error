@@ -37,6 +37,12 @@ export const officialArchiveGeometry = {
     sha256: "85d9377888d95c012d10654d17b9b1eb4cbdbea9036e1c8f1d8a4a1b45508d63",
     referenceDate: "2006-01-01",
   },
+  "NE/2026": {
+    path: "participation-archive-geometry/county-NE-2026.geojson.gz",
+    bytes: 730273,
+    sha256: "0dbd9e78623afb6dba1be348113778d471d9cb5c41549fc9887f3f5d3b4e7dbc",
+    boundaryLabel: "2026 Census TIGER/Line county boundaries.",
+  },
   "NJ/2023": {
     path: "participation-archive-geometry/county-NJ-2023.geojson.gz",
     bytes: 62105,
