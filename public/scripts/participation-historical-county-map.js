@@ -33,6 +33,11 @@ export const officialArchiveGeometry = {
     sha256: "3a422ef0e610eb98d0a16d1fd8b28a403bff1b31dded6bc2874b15e6c607e635",
     boundaryLabel: "2026 Census TIGER/Line county boundaries.",
   },
+  "CO/2000": {
+    path: "participation-archive-geometry/county-CO-2000.geojson.gz",
+    bytes: 121966,
+    sha256: "d066e3986aaff57ef8690cdde73216d4dcb7bb42b801243116874cc8fc9a9b9a",
+  },
   "NC/2006": {
     path: "participation-archive-geometry/county-NC-2006.geojson.gz",
     bytes: 1333876,
@@ -177,7 +182,7 @@ export function bindHistoricalCountyMap(collection, prior, rows, code, year) {
 export function bindOfficialCountyArchive(collection, frame, allowPartialGeometry = false) {
   const { code, date, rows } = frame;
   const year = Number(date.slice(0, 4));
-  const size = officialCountySizes[code];
+  const size = code === "CO" && year === 2000 ? 63 : officialCountySizes[code];
   const partial = frame.partialCountyReports === true && code === "NE" && date === "2026-11-03";
   const missing = allowPartialGeometry && code === "NE" && date === "2002-11-05"
     && collection?.reference_date === "2002-01-01" && Array.isArray(collection.missing_counties)
