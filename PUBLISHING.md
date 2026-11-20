@@ -94,7 +94,10 @@ For missed starts, `scripts/participation-schedule-fallback.py` can run every fi
 minutes on a separate scheduler. It compares the accepted source and active reader
 versions, gives existing runs priority, and dispatches at most one existing workflow
 per check. An unconsumed source takes priority over recollection, even during
-publisher cooldown. For national recovery, only full collection runs count toward
+publisher cooldown. A newly accepted checkpoint can follow a confirmed successful
+publish after five minutes if the previous publish read an older checkpoint.
+Failed or unconfirmed dispatches keep their 30-minute backoff.
+For national recovery, only full collection runs count toward
 the missed-run and failure checks; a scoped or late-archive run cannot mask a
 missed national run or trigger a national retry. The full collector gets a
 fallback dispatch after 90 minutes without a new full run, or after a 30-minute

@@ -25,6 +25,7 @@ WINDOW = (datetime(2026, 11, 3, tzinfo=timezone.utc),
           datetime(2027, 2, 1, tzinfo=timezone.utc))
 MISSED = timedelta(minutes=90)
 RETRY = timedelta(minutes=30)
+PUBLICATION_SETTLE = timedelta(minutes=5)
 ARCHIVE_RETRY = timedelta(hours=6)
 ARCHIVE_TITLE = "Check late participation archives"
 FULL_COLLECTION_TITLE = "Collect full election results"
@@ -282,6 +283,14 @@ def tick(now, request, journal, record, *, apply=False):
 
     stage, publish_reason, collect_reason = None, None, None
     can_publish = ready("publication") and not active("collection") and cooled(runs["publication"])
+    # A successful run may have pinned the previous checkpoint before its successor activated.
+    latest_publish = next(iter(runs["publication"]), None)
+    if (changed and latest_publish and latest_publish["status"] == "completed"
+            and latest_publish["conclusion"] == "success"
+            and now - clock(latest_publish["updated_at"]) >= PUBLICATION_SETTLE
+            and ("publication" not in journal
+                 or clock(latest_publish["created_at"]) >= clock(journal["publication"]))):
+        can_publish = not active("publication") and not active("collection")
     can_collect = ready("collection") and not active("publication") and cooled(full_collections)
     if changed and can_publish:
         stage, publish_reason = "publication", "unconsumed_source"

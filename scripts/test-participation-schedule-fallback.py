@@ -124,6 +124,17 @@ class FallbackTests(unittest.TestCase):
         self.runs["collection"] = [run(130, 110)]
         self.assertEqual(self.result(apply=False), "no_dispatch")
 
+    def test_new_checkpoint_follows_recent_success_without_retrying_an_unconfirmed_dispatch(self):
+        self.backlog()
+        self.runs["publication"] = [run(15, 5)]
+        self.journal["publication"] = ago(16)
+        self.assertEqual(self.result(apply=False), "would_dispatch_publication")
+        self.runs["publication"] = [run(15, 4)]
+        self.assertEqual(self.result(apply=False), "no_dispatch")
+        self.runs["publication"] = [run(15, 5)]
+        self.journal["publication"] = ago(14)
+        self.assertEqual(self.result(apply=False), "no_dispatch")
+
     def test_new_reviewed_producer_republishes_the_same_source_once(self):
         self.main = "f" * 40
         self.runs["publication"] = [run(45, 35)]
