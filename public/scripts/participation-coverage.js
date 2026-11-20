@@ -21,6 +21,7 @@ const indianaTurnoutPath = "release/participation-indiana-general-turnout-histor
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const californiaCurrentReportPath = "release/participation-ca-2026-county-turnout-report.csv.gz";
 const publishedCpsPath = "release/participation-cps-published-state-tables.csv.gz";
+const overallCpsPath = "release/participation-cps-state-overall-history.csv.gz";
 const ncAges = ["Age 18 - 25", "Age 26 - 40", "Age 41 - 65", "Age Over 66"];
 const scopes = [
   ["statewide", "State"], ["county_or_equivalent", "County"],
@@ -223,7 +224,7 @@ function coverageCsvFile(sources, path) {
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
       || file.media_type !== "text/csv" || file.compression !== "gzip"
       || !Number.isSafeInteger(file.bytes) || file.bytes < 1
-      || file.bytes > ([stateCountyArchivesPath, publishedCpsPath].includes(path) ? 524288 : 65536)
+      || file.bytes > ([stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536)
       || !/^[a-f0-9]{64}$/.test(file.sha256))
     throw new Error("Administrative coverage is not bound to the accepted runtime");
   return file;
@@ -287,6 +288,125 @@ export function publishedCpsRows(csv, summary) {
     throw new Error("Census coverage differs from the accepted runtime");
   // Both source tables publish the same totals. Keep both in the CSV, show one.
   return rows.filter(r => r.dimension !== "overall" || r.source_table === "4b");
+}
+
+export function overallCpsRows(csv, summary) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const required = ["year", "election_type", "state_code", "denominator_basis", "citizenship_measurement_caution",
+    "reported_voted_pct", "reported_registered_pct", "voted_source_marker", "registered_source_marker",
+    "voted_source_url", "registered_source_url"];
+  const states = new Set(countStates), seen = new Set();
+  const years = new Set(summary?.years);
+  if (summary?.administratively_observed_turnout !== false || summary.published_margins_of_error !== false
+      || summary.states_and_dc !== states.size || lines.length !== summary.rows || lines.length > 10000
+      || lines.length !== years.size * states.size * 2 || required.some(key => !columns.includes(key))
+      || new Set(columns).size !== columns.length)
+    throw new Error("Incomplete statewide Census history");
+  const counts = {voted: 0, registered: 0};
+  const base = "https://www2.census.gov/programs-surveys/cps/tables/time-series/voting-historical-time-series/";
+  return lines.map((line, index) => {
+    const cells = historicalCsvLine(line);
+    if (cells.length !== columns.length) throw new Error("Census history row differs");
+    const row = Object.fromEntries(columns.map((key, idx) => [key, cells[idx]]));
+    const year = Number(row.year), basis = row.denominator_basis;
+    const presidential = year % 4 === 0;
+    const key = `${year}/${row.state_code}/${basis}`;
+    if (!years.has(year) || !states.has(row.state_code) || !["vap", "cvap"].includes(basis) || seen.has(key)
+        || row.election_type !== (presidential ? "presidential" : "midterm")
+        || row.citizenship_measurement_caution !== (basis === "cvap" && year < 1996 ? "True" : "False"))
+      throw new Error("Census history cohort differs");
+    seen.add(key);
+    for (const [measure, suffix] of [["voted", "a"], ["registered", "b"]]) {
+      const point = row[`reported_${measure}_pct`], marker = row[`${measure}_source_marker`];
+      if (row[`${measure}_source_url`] !== `${base}${presidential ? "a5" : "hst_vote03"}${suffix}.xlsx`
+          || (point === "" ? !["N", "not_in_table"].includes(marker)
+            : marker !== "" || !/^\d+(?:\.\d+)?$/.test(point) || Number(point) > 100))
+        throw new Error("Census history source cell differs");
+      counts[measure] += Number(point !== "");
+    }
+    if (index === lines.length - 1 && (counts.voted !== summary.reported_voting_rates
+        || counts.registered !== summary.reported_registration_rates))
+      throw new Error("Census history coverage differs");
+    return row;
+  });
+}
+
+function installOverallCps(file, summary, names) {
+  const panel = document.createElement("details"), heading = document.createElement("summary");
+  const note = document.createElement("p"), download = document.createElement("a");
+  const button = document.createElement("button"), status = document.createElement("p");
+  heading.textContent = "Compare statewide Census turnout since 1972";
+  download.href = file.url;
+  download.textContent = "Complete statewide Census history (CSV · gzip)";
+  note.append("Self-reported survey rates, not ballot counts. These workbooks do not publish margins of error. "
+    + "Early state coverage is partial, and citizen voting-age estimates before 1996 are not directly comparable with later years. ",
+    download);
+  button.type = "button"; button.textContent = "Load statewide Census history";
+  status.setAttribute("role", "status");
+  panel.append(heading, note, button, status);
+  let retry = false;
+  button.addEventListener("click", async () => {
+    button.disabled = true;
+    status.textContent = "Checking the statewide Census history…";
+    try {
+      const body = await checkedCountyBody(file.url, file, retry);
+      const text = await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+      const rows = overallCpsRows(text, summary);
+      const state = document.createElement("select"), basis = document.createElement("select");
+      const election = document.createElement("select");
+      for (const code of countStates) state.add(new Option(names[code] || code, code));
+      basis.add(new Option("Total voting-age population", "vap"));
+      basis.add(new Option("Citizen voting-age population", "cvap"));
+      election.append(new Option("All elections", ""), new Option("Presidential", "presidential"), new Option("Midterm", "midterm"));
+      const scroller = document.createElement("div"), table = document.createElement("table");
+      scroller.className = "table-wrap"; scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region"); scroller.setAttribute("aria-label", "Statewide Census history");
+      const caption = table.createCaption(), header = table.createTHead().insertRow(), tbody = table.createTBody();
+      for (const label of ["Election", "Reported voted", "Reported registered", "Census workbooks"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = label; header.append(th);
+      }
+      const render = () => {
+        caption.textContent = `${names[state.value] || state.value} · ${basis.selectedOptions[0].textContent}`;
+        tbody.replaceChildren();
+        for (const row of rows.filter(r => r.state_code === state.value && r.denominator_basis === basis.value
+          && (!election.value || r.election_type === election.value))) {
+          const tr = tbody.insertRow(), label = document.createElement("th");
+          label.scope = "row"; label.textContent = `${row.year} ${row.election_type}`; tr.append(label);
+          for (const measure of ["voted", "registered"]) {
+            const point = row[`reported_${measure}_pct`];
+            tr.insertCell().textContent = point === "" ? "Not available" : `${point}%`;
+          }
+          const source = tr.insertCell();
+          for (const [i, measure] of ["voted", "registered"].entries()) {
+            const link = document.createElement("a");
+            link.href = row[`${measure}_source_url`];
+            link.textContent = measure === "voted" ? "Voting" : "Registration";
+            source.append(i ? " · " : "", link);
+          }
+          if (row.citizenship_measurement_caution === "True" && row.reported_voted_pct !== "")
+            source.append(" · Earlier citizenship measure");
+        }
+      };
+      for (const [slug, name, control] of [["state", "State", state], ["denominator", "Denominator", basis],
+        ["election", "Election type", election]]) {
+        const label = document.createElement("label");
+        control.id = `cps-overall-${slug}`;
+        label.htmlFor = control.id; label.textContent = `${name} `;
+        panel.append(label, control, " ");
+        control.addEventListener("change", render);
+      }
+      scroller.append(table); panel.append(scroller);
+      render();
+      status.textContent = ""; button.remove();
+    } catch {
+      retry = true; button.disabled = false;
+      button.textContent = "Retry statewide Census history";
+      status.textContent = "The statewide Census history could not be verified.";
+    }
+  });
+  return panel;
 }
 
 export function publishedCpsStatus(check) {
@@ -786,6 +906,9 @@ function installAdministrativeCoverage(host) {
       try {
         const census = coverageCsvFile(manifest.house_sources, publishedCpsPath);
         if (census) content.append(installPublishedCps(manifest.house_sources, census, names));
+        const overall = coverageCsvFile(manifest.house_sources, overallCpsPath);
+        const summary = manifest.house_sources.supported_release?.coverage?.historical_survey?.published_state_overall_history;
+        if (overall && summary) content.append(installOverallCps(overall, summary, names));
       } catch {
         const notice = document.createElement("p");
         notice.textContent = "The published Census state tables descriptor could not be verified.";
