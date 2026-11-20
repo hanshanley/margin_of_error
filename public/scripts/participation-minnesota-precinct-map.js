@@ -4,6 +4,7 @@ import { projectFeatures } from "./participation-map-projection.js";
 const root = new URL("../participation-archive-geometry/mn-precinct/", import.meta.url);
 const measures = ["reported_total_voters", "registered_at_7am", "same_day_registrations"];
 const dates = {
+  "2006-11-07": [4123, 2217818],
   "2012-11-06": [4102, 2950780], "2014-11-04": [4106, 1992566],
   "2016-11-08": [4120, 2968281], "2018-11-06": [4113, 2611365], "2020-11-03": [4110, 3292997],
   "2022-11-08": [4103, 2525873], "2024-11-05": [4103, 3272414],
@@ -15,7 +16,7 @@ export function minnesotaPrecinctFrames(csv, parseLine) {
   const fields = parseLine(header), frames = new Map(), ids = new Set();
   const required = ["state_code", "election_date", "county_geoid", "county", "precinct_id",
     "precinct_name", "source_status", "rate_hold_reason", ...measures];
-  if (!lines.length || lines.length > 28757 || new Set(fields).size !== fields.length
+  if (!lines.length || lines.length > 32880 || new Set(fields).size !== fields.length
       || required.some(name => !fields.includes(name))) throw new Error("Missing Minnesota precinct data");
   for (const line of lines) {
     const row = parseLine(line);
@@ -165,6 +166,10 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
             row.insertCell().textContent = n.toLocaleString("en-US");
         }
         figure.querySelector("svg")?.remove();
+        if (date === "2006-11-07") {
+          caption.textContent = "The 2006 precinct table is available, but no election-year boundaries have been verified.";
+          return;
+        }
         caption.textContent = "Checking election-year precinct boundaries…";
         try {
           const manifest = await fetch(new URL("mn-precinct-geometry.json", root)).then(r => {
