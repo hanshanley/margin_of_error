@@ -710,6 +710,9 @@ function installPublishedCps(sources, file, names, { archived = false } = {}) {
   return panel;
 }
 
+const coloradoCountyBallotGaps = new Map([["2014-11-04/Larimer", 43], ["2014-11-04/Rio Grande", 48],
+  ["2014-11-04/Summit", 78], ["2016-11-08/Larimer", 32]]);
+
 export function stateCountyArchiveFrames(csv, { currentCalifornia = false, currentNebraska = false } = {}) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const columns = historicalCsvLine(header);
@@ -739,9 +742,12 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     const rate = fraction === "" ? null : Number(fraction), hold = field("rate_hold_reason");
     const status = field("source_status"), url = field("source_url"), sha = field("source_sha256");
     const basis = hasMeasures ? field("registration_basis") : "Report's registered voters";
+    const stateGap = field("state_ballot_shortfall") ?? "";
+    const countyGap = field("county_ballot_shortfall") ?? "";
     const countOnly = measure === "ballots_cast" && basis === "" && stock === "" && rate === null
       && ((code === "WY" && hold === "registration_not_in_report")
-        || (code === "CO" && date === "2020-11-03" && hold === "registration_column_party_labeled"));
+        || (code === "CO" && ["2018-11-06", "2020-11-03"].includes(date)
+          && hold === "registration_column_party_labeled"));
     const edition = field("report_edition"), note = field("report_note") || "";
     if (!countStates.includes(code) || !/^\d{4}$/.test(year) || !/^\d{4}-11-\d{2}$/.test(date)
         || !date.startsWith(`${year}-`) || !["state", "county"].includes(level)
@@ -749,6 +755,11 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
           ? code !== (currentCalifornia ? "CA" : "NE") || date !== "2026-11-03" || measure !== "total_voters"
           : Number(year) >= 2026)
         || !name || !integer(value) || (!countOnly && (!basis || !integer(stock)))
+        || (stateGap !== "" && (code !== "CO" || date !== "2014-11-04" || level !== "state" || stateGap !== "36"
+          || hold !== "state_ballot_control_disagrees"))
+        || (hold === "state_ballot_control_disagrees" && !stateGap)
+        || (countyGap !== "" && (code !== "CO" || level !== "county"
+          || !integer(countyGap) || Number(countyGap) !== coloradoCountyBallotGaps.get(`${date}/${name}`)))
         || !["reported", "retained_after_failure"].includes(status)
         || !/^https:\/\/[^/@?#\s]+\/[^#\s]+$/.test(url) || !/^[a-f0-9]{64}$/.test(sha)
         || (rate === null ? !hold : hold || !/^\d+(?:\.\d+)?(?:e[+-]?\d+)?$/i.test(fraction)
@@ -761,7 +772,8 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     if (frame.rows.has(rowKey) || frame.measure !== measure || frame.basis !== basis || frame.edition !== edition
         || frame.status !== status || frame.url !== url || frame.sha !== sha || frame.note !== note)
       throw new Error("Mixed or repeated election-office report rows");
-    frame.rows.set(rowKey, { name, count: Number(value), registered: countOnly ? null : Number(stock), rate, hold });
+    frame.rows.set(rowKey, { name, count: Number(value), registered: countOnly ? null : Number(stock), rate, hold,
+      ...(stateGap || countyGap ? { shortfall: Number(stateGap || countyGap) } : {}) });
   }
   if ([...frames.values()].some(frame => !frame.rows.has("state") || frame.rows.size < 2))
     throw new Error("Election-office archive lacks a state or county total");
@@ -769,8 +781,13 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     throw new Error("Incomplete California statewide and county report");
   if ([...frames.values()].some(frame => frame.code === "NE" && frame.rows.size !== 94))
     throw new Error("Incomplete Nebraska statewide and county report");
-  if ([...frames.values()].some(frame => frame.code === "CO" && frame.rows.size !== 65))
-    throw new Error("Incomplete Colorado statewide and county report");
+  for (const frame of frames.values()) {
+    if (frame.code !== "CO") continue;
+    const state = frame.rows.get("state");
+    const countySum = [...frame.rows.entries()].reduce((sum, [key, row]) => sum + (key === "state" ? 0 : row.count), 0);
+    if (frame.rows.size !== 65 || state.count - countySum !== (state.shortfall ?? 0))
+      throw new Error("Incomplete or inconsistent Colorado statewide and county report");
+  }
   if ([...frames.values()].some(frame => frame.code === "WY" && frame.rows.size !== 24))
     throw new Error("Incomplete Wyoming statewide and county report");
   return [...frames.values()].sort((a, b) => a.code.localeCompare(b.code) || b.date.localeCompare(a.date));
@@ -823,7 +840,8 @@ export function coloradoPrecinctFrames(csv) {
   if (!lines.length || lines.length > 20_000 || new Set(columns).size !== columns.length
       || fields.some(field => !columns.includes(field))) throw new Error("Incomplete Colorado precinct statistics");
   const frames = new Map(), integer = text => /^\d+$/.test(text) && Number.isSafeInteger(Number(text));
-  const editions = new Map([["2020-11-03", "25358"], ["2022-11-08", "25989"], ["2024-11-05", "26759"]]);
+  const editions = new Map([["2014-11-04", "25361"], ["2016-11-08", "25362"], ["2018-11-06", "25360"],
+    ["2020-11-03", "25358"], ["2022-11-08", "25989"], ["2024-11-05", "26759"]]);
   for (const line of lines) {
     const cells = historicalCsvLine(line), field = key => cells[columns.indexOf(key)];
     const date = field("election_date"), id = editions.get(date);
@@ -833,12 +851,17 @@ export function coloradoPrecinctFrames(csv) {
     const url = field("source_url"), sha = field("source_sha256"), status = field("source_status");
     const literalRate = field("qualified_same_report_registration_fraction_pct");
     const rate = literalRate === "" ? null : Number(literalRate);
-    const countOnly = date === "2020-11-03" && integers.slice(0, 3).every(value => value === "")
+    const gapLiteral = field("county_ballot_shortfall") ?? "";
+    const shortfall = gapLiteral === "" ? 0 : Number(gapLiteral);
+    const countOnly = ["2018-11-06", "2020-11-03"].includes(date) && integers.slice(0, 3).every(value => value === "")
       && field("registration_basis") === "";
     const hold = countOnly ? "registration_column_party_labeled"
+      : shortfall ? "county_ballot_control_disagrees"
       : count > registered ? "ballots_exceed_registered" : registered === 0 ? "no_positive_registration_denominator" : "";
     if (cells.length !== columns.length || field("state_code") !== "CO" || !id || !county || !/^\d{10}$/.test(precinct)
         || !(countOnly ? integers.slice(3) : integers).every(integer) || !bytes
+        || (gapLiteral !== "" && (countOnly || !integer(gapLiteral)
+          || shortfall !== coloradoCountyBallotGaps.get(`${date}/${county}`)))
         || registered !== active + inactive || disposition !== hold
         || (hold ? rate !== null : rate === null || !Number.isFinite(rate) || Math.abs(rate - 100 * count / registered) > 1e-10)
         || !/^[a-f0-9]{64}$/.test(sha) || !["reported", "retained_after_failure"].includes(status)
@@ -851,7 +874,10 @@ export function coloradoPrecinctFrames(csv) {
       throw new Error("Colorado precinct statistics mix editions or repeat a precinct");
     frame.ids.add(precinct);
     if (!frame.counties.has(county)) frame.counties.set(county, []);
-    frame.counties.get(county).push({ precinct, count, registered: countOnly ? null : registered, rate, hold });
+    const units = frame.counties.get(county);
+    if (units.length && (units[0].shortfall ?? 0) !== shortfall)
+      throw new Error("Mixed Colorado county control dispositions");
+    units.push({ precinct, count, registered: countOnly ? null : registered, rate, hold, ...(shortfall ? { shortfall } : {}) });
   }
   if ([...frames.values()].some(frame => frame.counties.size !== 64)) throw new Error("Incomplete Colorado precinct counties");
   return frames;
@@ -902,6 +928,8 @@ export function installColoradoPrecinctStatistics(file) {
         caption.textContent = `${county.value} County · ${election.value}`;
         original.href = frame.url;
         status.textContent = `${rows.length} reported precincts.${frame.status === "reported" ? "" : " Showing last verified edition."}`;
+        if (rows[0].shortfall)
+          status.textContent += ` The reported precinct counts sum to ${rows[0].shortfall} fewer ballots than the county control.`;
         body.replaceChildren();
         for (const value of [...rows].sort((a, b) => a.precinct.localeCompare(b.precinct))) {
           const row = body.insertRow(), id = document.createElement("th");
@@ -911,6 +939,7 @@ export function installColoradoPrecinctStatistics(file) {
           row.insertCell().textContent = value.rate !== null ? `${value.rate.toFixed(2)}%`
             : value.hold === "ballots_exceed_registered" ? "Withheld: ballots exceed registration"
             : value.hold === "registration_column_party_labeled" ? "Withheld: registration column carries a party label"
+            : value.hold === "county_ballot_control_disagrees" ? "Withheld: precinct sum differs from the county control"
             : "Withheld: no positive registration count";
         }
       }

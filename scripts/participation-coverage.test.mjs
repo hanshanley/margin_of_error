@@ -37,6 +37,14 @@ test("Colorado precinct statistics retain observed zero and reject missing or in
     precinct: "0000000000", count: 1, registered: null, rate: null, hold: "registration_column_party_labeled",
   });
   assert.throws(() => coloradoPrecinctFrames(countOnly.replace(",,,,1,,", ",,,,1,50,")), /differ/);
+  const shortfall = [header + ",county_ballot_shortfall", ...rows.map((row, i) => row
+    .replace("2024-11-05", "2016-11-08").replace("26759_table", "25362_table")
+    .replace("County 0,", "Larimer,").replace("11,,ballots_exceed_registered", "9,,county_ballot_control_disagrees")
+    + (i ? "," : ",32"))].join("\n");
+  assert.deepEqual(coloradoPrecinctFrames(shortfall).get("2016-11-08").counties.get("Larimer")[0], {
+    precinct: "0000000000", count: 9, registered: 10, rate: null, hold: "county_ballot_control_disagrees", shortfall: 32,
+  });
+  assert.throws(() => coloradoPrecinctFrames(shortfall.replace("),32", "),31")), /differ/);
 });
 
 test("the partial Nebraska map preserves a reported zero and leaves unverified counties blank", () => {
