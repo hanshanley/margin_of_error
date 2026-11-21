@@ -1,5 +1,6 @@
 """Wait for a recent collector if no accepted checkpoint is ready."""
 
+import argparse
 import json
 import re
 import time
@@ -39,7 +40,7 @@ def request(path):
     return fetch_json(SOURCE_ACTIONS + path)
 
 
-def unconsumed_checkpoint(fetch=fetch_json):
+def unconsumed_checkpoint(fetch=fetch_json, *, now=None):
     def pointer(repo, tag, file, contract):
         ref = fetch(f"https://api.github.com/repos/{repo}/git/ref/tags/{tag}")["object"]
         if ref["type"] != "commit" or not re.fullmatch(r"[a-f0-9]{40}", ref["sha"]):
@@ -59,6 +60,8 @@ def unconsumed_checkpoint(fetch=fetch_json):
         clocks = [datetime.fromisoformat(item["checked_at"].replace("Z", "+00:00"))
                   for item in (source, live)]
         if all(clock.utcoffset() is not None for clock in clocks) and clocks[0] > clocks[1] and accepted != consumed:
+            if now is not None and not (START <= clocks[1] < clocks[0] <= now):
+                return None
             return accepted
     except (OSError, ValueError, KeyError, TypeError, AttributeError):
         return None
@@ -117,5 +120,18 @@ def wait_for_collection(fetch=request, *, monotonic=time.monotonic, sleep=time.s
         return {"status": "collection_status_unavailable"}
 
 
+def backup_publication(now, fetch=fetch_json):
+    if now < START:
+        return {"status": "outside_collection_window", "publish": False}
+    version = unconsumed_checkpoint(fetch, now=now)
+    if version is None:
+        return {"status": "no_verified_newer_checkpoint", "publish": False}
+    return {"status": "accepted_checkpoint_ready", "input_results_version": version, "publish": True}
+
+
 if __name__ == "__main__":
-    print(json.dumps(wait_for_collection()))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--backup", action="store_true")
+    args = parser.parse_args()
+    result = backup_publication(datetime.now(timezone.utc)) if args.backup else wait_for_collection()
+    print(json.dumps(result))

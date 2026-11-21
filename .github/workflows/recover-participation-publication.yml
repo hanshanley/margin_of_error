@@ -1,0 +1,46 @@
+name: Recover pending participation publication
+
+on:
+  schedule:
+    - cron: "13 * * * *"
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: participation-publication-recovery
+  cancel-in-progress: false
+
+jobs:
+  recovery:
+    if: github.repository == 'hanshanley/margin_of_error' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: scripts/wait-for-participation-source.py
+      - name: Recover only an unconsumed accepted source
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          receipt="$(python3 scripts/wait-for-participation-source.py --backup)"
+          printf '%s\n' "$receipt" >> "$GITHUB_STEP_SUMMARY"
+          publish="$(jq -er '.publish | booleans | tostring' <<< "$receipt")"
+          if [[ "$publish" != true ]]; then
+            exit 0
+          fi
+          groups="$(gh api "repos/$GITHUB_REPOSITORY/actions/concurrency_groups?per_page=100")"
+          jq -e '(.concurrency_groups|type=="array") and
+            (.total_count == (.concurrency_groups|length)) and
+            all(.concurrency_groups[]; .group_name|type=="string")' <<< "$groups" >/dev/null
+          if jq -e 'any(.concurrency_groups[]; .group_name|ascii_downcase=="participation-automatic-runtime-writer")' \
+            <<< "$groups" >/dev/null; then
+            echo "Publication is already active or queued." >> "$GITHUB_STEP_SUMMARY"
+          else
+            gh workflow run automatic-runtime.yml --repo "$GITHUB_REPOSITORY" --ref main
+          fi

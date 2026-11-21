@@ -71,6 +71,13 @@ class TestWaitForSource(unittest.TestCase):
             f"https://raw.githubusercontent.com/{wait.SITE}/{'2' * 40}/automatic/latest.json": live,
         }
         self.assertEqual(wait.unconsumed_checkpoint(route.__getitem__), source["version"])
+        self.assertEqual(wait.backup_publication(NOW, route.__getitem__), {
+            "status": "accepted_checkpoint_ready", "input_results_version": source["version"], "publish": True})
+        source_key = list(route)[1]
+        future_source = {**source, "checked_at": "2026-11-18T22:19:00Z"}
+        self.assertFalse(wait.backup_publication(NOW, {**route, source_key: future_source}.__getitem__)["publish"])
+        self.assertFalse(wait.backup_publication(wait.START.replace(year=2025), {}.__getitem__)["publish"])
+        self.assertFalse(wait.backup_publication(NOW, {}.__getitem__)["publish"])
         for update in ({"input_results_version": source["version"]},
                        {"checked_at": source["checked_at"]},
                        {"checked_at": "2026-11-18T22:06:00Z"},
@@ -78,6 +85,7 @@ class TestWaitForSource(unittest.TestCase):
                        {"contract": "invalid"}, {"input_results_version": "invalid"}):
             key = next(reversed(route))
             self.assertIsNone(wait.unconsumed_checkpoint({**route, key: {**live, **update}}.__getitem__))
+            self.assertFalse(wait.backup_publication(NOW, {**route, key: {**live, **update}}.__getitem__)["publish"])
         self.assertIsNone(wait.unconsumed_checkpoint({}.__getitem__))
 
     def test_prefers_running_scoped_collection_over_a_newer_queued_full_run(self):
