@@ -48,6 +48,7 @@ const southeastHistory = {
 };
 const alBallotUnits = "release/participation-al-precinct-ballot-archives.csv.gz";
 const alBallotControls = "release/participation-al-precinct-ballot-county-controls.csv.gz";
+const alBallotWorkbookAudit = "release/participation-al-legacy-workbook-controls.csv.gz";
 const akBallotUnits = "release/participation-ak-2024-precinct-ballot-archive.csv.gz";
 const akCurrentBallotUnits = "release/participation-ak-2026-precinct-ballot-archive.csv.gz";
 const akCardsArchive = "release/participation-ak-general-cards-cast-archive.csv.gz";
@@ -281,8 +282,8 @@ export function coverageCsvFile(sources, path) {
   if (!file) return null;
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath,
     ncArchivePaths[2]].includes(path)
-    ? 2_000_000 : [washingtonAgePath, eacLocalityPath, scDetailPath].includes(path) ? 1_000_000 : [alBallotUnits, ctTownArchive].includes(path) ? 262144
-      : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
+    ? 2_000_000 : [washingtonAgePath, eacLocalityPath, scDetailPath].includes(path) ? 1_000_000 : path === ctTownArchive ? 262144
+      : [alBallotUnits, stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
       || file.media_type !== "text/csv" || file.compression !== "gzip"
@@ -3341,7 +3342,8 @@ export function alabamaBallotRows(csv, units) {
     const cells = historicalCsvLine(line);
     const row = Object.fromEntries(fields.map(field => [field, cells[columns.indexOf(field)]]));
     const key = `${row.year}/${row.county}/${row.source_unit_ordinal ?? ""}`;
-    if (cells.length !== columns.length || row.state_code !== "AL" || !["2016", "2018", "2020", "2022", "2024", "2026"].includes(row.year)
+    if (cells.length !== columns.length || row.state_code !== "AL"
+        || !["2010", "2012", "2016", "2018", "2020", "2022", "2024", "2026"].includes(row.year)
         || !/^[A-Z_]+$/.test(row.county) || seen.has(key)
         || !["reconciled", "county_control_disagrees", "not_reconciled_without_both_sources"].includes(row.reconciliation))
       throw new Error("Invalid Alabama ballot archive row");
@@ -3401,10 +3403,12 @@ function installAlabamaBallots(host, sources) {
       note.textContent = "Workbook ballot counts include central and provisional units. No reporting-unit boundaries "
         + "or compatible registration denominators are established. Conflicting counts remain visible.";
       const downloads = document.createElement("p");
-      for (const [asset, label] of [[controls, "Complete county checks"], [units, "Complete reporting units"]]) {
-        if (!asset) continue;
+      const workbookAudit = coverageCsvFile(sources, alBallotWorkbookAudit);
+      for (const [file, label] of [[controls.file, "Complete county checks"], [units?.file, "Complete reporting units"],
+        [workbookAudit, "2010–2012 workbook control audit"]]) {
+        if (!file) continue;
         const link = document.createElement("a");
-        link.href = asset.file.url; link.textContent = `${label} (CSV · gzip)`;
+        link.href = file.url; link.textContent = `${label} (CSV · gzip)`;
         downloads.append(link, " ");
       }
       const select = document.createElement("select"), label = document.createElement("label");

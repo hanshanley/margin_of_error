@@ -397,6 +397,8 @@ test("Alabama reporting-unit controls retain conflicting totals and reject an in
   const legacy = prefix + "county_archive_ballots,county_control_ballots,archive_minus_control\n"
     + "AL,2016,TOTAL,not_reconciled_without_both_sources,reported,,2134051,,";
   assert.equal(alabamaBallotRows(legacy, false)[0].county_archive_ballots, "2134051");
+  assert.equal(alabamaBallotRows(legacy.replace("2016,TOTAL", "2012,TOTAL")
+    .replace("2134051", ""), false)[0].county_archive_ballots, "");
 });
 
 test("Alabama maps only checked county agreements in a whole dated frame", () => {
