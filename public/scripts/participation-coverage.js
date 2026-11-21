@@ -3247,6 +3247,94 @@ function installSouthCarolinaDetail(host, sources) {
   });
 }
 
+const alStatewideHistoryPath = "release/participation-al-statewide-general-election-history.csv.gz";
+const alStatewideDecisions = {
+  contest_vote_context_only: "Candidate-contest votes only; not turnout",
+  source_election_date_disagrees: "Source election date disagrees",
+  printed_rate_disagrees: "Printed rate disagrees with counts",
+  qualified_ballots_per_reported_registration: "Ballots per election-date registration",
+};
+
+export function alStatewideHistoryRows(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const required = ["state_code", "year", "election_date", "native_election_label", "measure", "reported_total",
+    "reported_registered", "printed_pct", "printed_pct_matches_counts", "qualified_turnout_rate_pct", "decision",
+    "source_revision_date", "source_status"];
+  if (new Set(fields).size !== fields.length || required.some(key => !fields.includes(key)) || lines.length !== 20)
+    throw new Error("Alabama statewide history fields differ");
+  return lines.map((line, i) => {
+    const cells = historicalCsvLine(line), row = Object.fromEntries(fields.map((key, j) => [key, cells[j]]));
+    const year = 1986 + 2 * i, count = Number(row.reported_total), registered = Number(row.reported_registered);
+    const accepted = row.decision === "qualified_ballots_per_reported_registration";
+    const rate = accepted ? Number(row.qualified_turnout_rate_pct) : null;
+    if (cells.length !== fields.length || row.state_code !== "AL" || row.year !== String(year)
+        || !new RegExp(`^${year}-11-0[2-8]$`).test(row.election_date) || !row.native_election_label
+        || !/^\d{4}-\d\d-\d\d$/.test(row.source_revision_date)
+        || !["reported", "retained_after_failure"].includes(row.source_status)
+        || !Object.hasOwn(alStatewideDecisions, row.decision)
+        || row.measure !== (year < 2014 ? "candidate_contest_votes_not_turnout" : "ballots_cast")
+        || (year < 2014) !== (row.decision === "contest_vote_context_only")
+        || !/^\d{1,3}(?:\.\d+)?%$/.test(row.printed_pct)
+        || !["True", "False"].includes(row.printed_pct_matches_counts)
+        || ![row.reported_total, row.reported_registered].every(v => /^\d{1,9}$/.test(v))
+        || count <= 0 || count > registered
+        || (accepted ? row.printed_pct_matches_counts !== "True" || !Number.isFinite(rate)
+          || Math.abs(rate - 100 * count / registered) > 1e-10 : row.qualified_turnout_rate_pct !== ""))
+      throw new Error("Invalid Alabama statewide history row");
+    return { ...row, count, registered, rate };
+  });
+}
+
+function installAlabamaStatewideHistory(host, sources) {
+  if (!sources?.supported_release?.downloads?.[alStatewideHistoryPath]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const body = document.createElement("div"), status = document.createElement("p");
+  summary.textContent = "Alabama statewide general-election turnout history";
+  status.setAttribute("role", "status");
+  panel.append(summary, status, body);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    status.textContent = "Checking the statewide report…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, alStatewideHistoryPath);
+      const rows = alStatewideHistoryRows(csv);
+      const note = document.createElement("p"), download = document.createElement("a");
+      note.textContent = "The report uses candidate-contest vote totals through 2012. Those are not ballot counts or turnout. "
+        + "Checked rates divide separately reported ballots by the same report’s election-date registration count.";
+      download.href = file.url;
+      download.textContent = "Complete statewide history and source checks (CSV · gzip)";
+      const region = document.createElement("div"), table = document.createElement("table");
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", summary.textContent);
+      table.createCaption().textContent = "State report totals and checked turnout rates";
+      const header = table.createTHead().insertRow();
+      for (const name of ["Election", "Reported total", "Reported registered", "Printed percentage", "Checked turnout", "Basis or hold"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = name; header.append(th);
+      }
+      const rowsBody = table.createTBody(), format = new Intl.NumberFormat("en-US");
+      for (const row of rows.toReversed()) {
+        const tr = rowsBody.insertRow(), heading = document.createElement("th");
+        heading.scope = "row"; heading.textContent = row.year; tr.append(heading);
+        for (const value of [format.format(row.count), format.format(row.registered), row.printed_pct,
+          row.rate === null ? "Not qualified" : `${row.rate.toFixed(2)}%`, alStatewideDecisions[row.decision]])
+          tr.insertCell().textContent = value;
+      }
+      region.append(table);
+      body.replaceChildren(note, download, region);
+      status.textContent = `Report revised ${rows.at(-1).source_revision_date}.`
+        + (rows.some(row => row.source_status === "retained_after_failure") ? " Showing the last verified report." : "");
+    } catch {
+      loading = false;
+      status.textContent = "The statewide report could not be verified. Use the complete download or reopen to retry.";
+    }
+  });
+}
+
 function installSoutheastHistory(host, sources, state) {
   const path = southeastHistory[state];
   if (!sources?.supported_release?.downloads?.[path]) return;
@@ -4599,6 +4687,7 @@ function installAdministrativeCoverage(host) {
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);
+      installAlabamaStatewideHistory(content, manifest.house_sources);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       installSouthCarolinaDetail(content, manifest.house_sources);
       installAlabamaBallots(content, manifest.house_sources);

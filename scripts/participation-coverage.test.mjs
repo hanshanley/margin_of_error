@@ -11,7 +11,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   washingtonAgeSeries, southeastHistoryRows, southCarolinaDetailFrames, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
   californiaMediaTurnout, californiaHistoryFrames, hawaiiPrecinctFrame, dakotaHistoryFrames, newJerseyPeriodicFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
-  connecticutTownRows, alabamaReconciledCountyFrame, alabamaCountyMapDates, alaskaAgeRows,
+  connecticutTownRows, alabamaReconciledCountyFrame, alabamaCountyMapDates, alStatewideHistoryRows, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
@@ -451,6 +451,24 @@ test("Alabama 2026 is not offered before a county control reconciles", () => {
     rows: alabamaReconciledCountyFrame(counties, date) });
   assert.deepEqual(bound.filter(entry => entry.value).map(entry => entry.value.count), [19200]);
   assert.equal(bound.find(entry => entry.value).value.retained, true);
+});
+
+test("Alabama statewide history withholds rates on candidate counts and conflicting dates", () => {
+  const header = "state_code,year,election_date,native_election_label,measure,reported_total,reported_registered,"
+    + "printed_pct,printed_pct_matches_counts,qualified_turnout_rate_pct,decision,source_revision_date,source_status";
+  const rows = Array.from({ length: 20 }, (_, i) => {
+    const year = 1986 + i * 2;
+    const accepted = year >= 2016;
+    const measure = year < 2014 ? "candidate_contest_votes_not_turnout" : "ballots_cast";
+    const decision = accepted ? "qualified_ballots_per_reported_registration"
+      : year === 2014 ? "source_election_date_disagrees" : "contest_vote_context_only";
+    return `AL,${year},${year}-11-04,General Election ${year},${measure},600,1000,60%,True,${accepted ? 60 : ""},${decision},2026-07-13,reported`;
+  });
+  const csv = [header, ...rows].join("\n");
+  assert.deepEqual(alStatewideHistoryRows(csv).filter(row => row.rate !== null).map(row => row.year),
+    ["2016", "2018", "2020", "2022", "2024"]);
+  assert.throws(() => alStatewideHistoryRows(csv.replace(",True,,source_election", ",True,60,source_election")),
+    /Invalid Alabama statewide history/);
 });
 
 test("Southeast histories preserve missing ages and distinguish printed and calculated rates", () => {
