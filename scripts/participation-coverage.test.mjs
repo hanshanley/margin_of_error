@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames,
+  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
@@ -488,6 +488,20 @@ test("Hawaii map binds one Maui reporting area, including Kalawao, for 2024 only
   assert.throws(() => bindOfficialCountyArchive(collection, { ...frame, date: "2022" }), /geometry identity/);
   collection.features.find(({ properties }) => properties.key === "15009").properties.source_counties = ["15009"];
   assert.throws(() => bindOfficialCountyArchive(collection, frame), /geometry identity/);
+});
+
+test("turnout release watch distinguishes a retained link from validated turnout", () => {
+  const header = "source_id,election_year,index_url,source_status,release_status,release_url,"
+    + "index_check_week_utc,participation_observation_qualified";
+  const index = "https://www.census.gov/topics/public-sector/voting/data/tables.html";
+  const target = "https://www.census.gov/data/tables/example.html";
+  const row = `US-2026-CPS-turnout-release-index,2026,${index},retained_after_failure,`
+    + `candidate_links_require_admission,${target},2026-11-16,False`;
+  const csv = `${header}\n${row}`;
+  assert.equal(turnoutReleaseRows(csv)[0].release, "Linked; not validated for this atlas");
+  assert.equal(turnoutReleaseRows(csv)[0].retained, true);
+  assert.throws(() => turnoutReleaseRows(csv.replace(target, "https://example.test/not-official")), /Invalid turnout release link/);
+  assert.throws(() => turnoutReleaseRows(csv.replace(",False", ",True")), /Invalid turnout release watch row/);
 });
 
 test("Kansas study validates an entire statewide series and its registration fraction", () => {

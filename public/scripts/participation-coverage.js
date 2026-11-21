@@ -27,6 +27,7 @@ const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv
 const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
 const kansasStudyPath = "release/participation-ks-statewide-turnout-study.csv.gz";
 const hawaiiHistoryPath = "release/participation-hi-general-election-county-turnout.csv.gz";
+const turnoutReleaseWatchPath = "release/participation-turnout-release-watch.csv.gz";
 const southeastHistory = {
   AL: "release/participation-al-general-election-by-age.csv.gz",
   SC: "release/participation-sc-general-election-history.csv.gz",
@@ -1931,6 +1932,93 @@ function installHawaiiHistory(host, sources) {
   });
 }
 
+const turnoutReleaseIndexes = {
+  "US-2026-CPS-turnout-release-index": ["Census voting and registration tables",
+    "https://www.census.gov/topics/public-sector/voting/data/tables.html"],
+  "US-2026-EAVS-turnout-release-index": ["Election Administration and Voting Survey",
+    "https://www.eac.gov/research-and-data/studies-and-reports"],
+  "CT-2026-general-statement-of-vote-index": ["Connecticut Statement of Vote",
+    "https://portal.ct.gov/SOTS/Election-Services/Statement-Of-Vote-PDFs/General-Elections-Statement-of-Vote-1922"],
+};
+const turnoutReleaseStates = {
+  not_yet_linked: "Not yet linked",
+  candidate_links_require_admission: "Linked; not validated for this atlas",
+  incomplete_release_links: "Some release files linked",
+  index_not_verified: "Index could not be verified",
+};
+
+export function turnoutReleaseRows(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const seen = new Set();
+  if (!lines.length || lines.length > 100 || new Set(fields).size !== fields.length)
+    throw new Error("Invalid turnout release watch");
+  return lines.map(line => {
+    const cells = historicalCsvLine(line);
+    const field = key => cells[fields.indexOf(key)];
+    const source = field("source_id"), release = field("release_status"), href = field("release_url");
+    const index = field("index_url"), status = field("source_status"), week = field("index_check_week_utc");
+    const key = `${source}\n${href}`;
+    if (cells.length !== fields.length || !Object.hasOwn(turnoutReleaseIndexes, source)
+        || !Object.hasOwn(turnoutReleaseStates, release) || index !== turnoutReleaseIndexes[source][1]
+        || field("election_year") !== "2026" || field("participation_observation_qualified") !== "False"
+        || !/^[a-z][a-z0-9_]*$/.test(status) || (week && !/^\d{4}-\d{2}-\d{2}$/.test(week))
+        || (href !== "") !== ["candidate_links_require_admission", "incomplete_release_links"].includes(release)
+        || seen.has(key))
+      throw new Error("Invalid turnout release watch row");
+    if (href) {
+      const url = new URL(href);
+      if (url.origin !== new URL(index).origin || url.username || url.password || url.hash)
+        throw new Error("Invalid turnout release link");
+    }
+    seen.add(key);
+    return { name: turnoutReleaseIndexes[source][0], index, href,
+      release: turnoutReleaseStates[release], week, retained: status === "retained_after_failure" };
+  });
+}
+
+function installTurnoutReleaseWatch(host, sources) {
+  const file = coverageCsvFile(sources, turnoutReleaseWatchPath);
+  if (!file) return;
+  const panel = document.createElement("details"), title = document.createElement("summary");
+  const note = document.createElement("p"), download = document.createElement("a");
+  const list = document.createElement("ul");
+  title.textContent = "Watched 2026 turnout releases";
+  note.textContent = "A linked file is not a turnout observation. Its counts and denominators must pass validation. ";
+  download.href = file.url;
+  download.textContent = "Download release checks and links (CSV · gzip)";
+  note.append(download);
+  panel.append(title, note, list);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    try {
+      const { csv } = await loadCoverageCsv(sources, turnoutReleaseWatchPath);
+      list.replaceChildren(...turnoutReleaseRows(csv).map(row => {
+        const item = document.createElement("li"), index = document.createElement("a");
+        index.href = row.index;
+        index.textContent = row.name;
+        item.append(index, `: ${row.release}${row.retained ? " · Last verified index" : ""}`
+          + (row.week ? ` · Check week starting ${row.week} UTC` : ""));
+        if (row.href) {
+          const release = document.createElement("a");
+          release.href = row.href;
+          release.textContent = `Open listed file for ${row.name}`;
+          item.append(" · ", release);
+        }
+        return item;
+      }));
+    } catch {
+      loading = false;
+      const item = document.createElement("li");
+      item.textContent = "The release checks could not be verified. Reopen this section to retry.";
+      list.replaceChildren(item);
+    }
+  });
+}
+
 export function southeastHistoryRows(csv, state) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = historicalCsvLine(header);
@@ -2986,6 +3074,7 @@ function installAdministrativeCoverage(host) {
       installOregonHistory(content, manifest.house_sources);
       installKansasStudy(content, manifest.house_sources);
       installHawaiiHistory(content, manifest.house_sources);
+      installTurnoutReleaseWatch(content, manifest.house_sources);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       installAlabamaBallots(content, manifest.house_sources);
       installAlaskaBallots(content, manifest.house_sources);
