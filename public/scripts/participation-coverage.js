@@ -2454,6 +2454,110 @@ function installDakotaHistory(host, sources) {
   });
 }
 
+const californiaHistoryPath = "release/participation-ca-statewide-general-special-turnout-history.csv.gz";
+
+export function californiaHistoryFrames(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  if (new Set(fields).size !== fields.length || !lines.length || lines.length > 200)
+    throw new Error("California statewide history inventory differs");
+  const types = ["midterm", "presidential", "statewide_special"];
+  const bases = { registered: "reported_registered_voters", eligible: "reported_eligible" };
+  const integer = value => /^[1-9]\d*$/.test(value) && Number.isSafeInteger(Number(value));
+  const series = { registered: [], eligible: [] };
+  let lineage, previous = "", generalYear = 1910;
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), get = key => cells[fields.indexOf(key)];
+    const date = get("election_date"), kind = get("election_type"), count = get("reported_total_voters");
+    const sha = get("source_sha256"), url = get("source_url"), status = get("source_status");
+    const edition = get("report_edition_year"), identity = `${edition}/${status}/${sha}/${url}`;
+    if (cells.length !== fields.length
+        || !/^\d{4}-\d{2}-\d{2}$/.test(date) || date <= previous || !types.includes(kind)
+        || !integer(count) || get("state_code") !== "CA" || get("geography_level") !== "state"
+        || get("participation_measure") !== "total_voters" || !/^[a-f0-9]{64}$/.test(sha)
+        || !/^\d{4}$/.test(edition) || !["reported", "retained_after_failure"].includes(status)
+        || !/^https:\/\/(?:elections\.cdn\.sos\.ca\.gov|admin\.cdn\.sos\.ca\.gov\/elections)\/sov\/\d{4}-(?:general|special)\/sov\/04-historical-voter-reg-general\.pdf$/.test(url)
+        || !url.includes(`/sov/${edition}-`) || lineage && identity !== lineage)
+      throw new Error("California statewide history identity or edition differs");
+    lineage = identity; previous = date;
+    if (kind !== "statewide_special") {
+      const nov1 = new Date(Date.UTC(generalYear, 10, 1));
+      const day = (8 - nov1.getUTCDay()) % 7 + 2;
+      if (date !== `${generalYear}-11-${String(day).padStart(2, "0")}`
+          || kind !== (generalYear % 4 === 0 ? "presidential" : "midterm"))
+        throw new Error("California statewide general election roster differs");
+      generalYear += 2;
+    }
+    for (const [base, stock] of Object.entries(bases)) {
+      const raw = get(stock), hold = get(`${base}_hold_reason`), rate = get(`qualified_${base}_pct`);
+      const denominator = raw === "" ? null : Number(raw);
+      if (denominator === null ? base !== "registered" || date.slice(0, 4) !== "1910" : !integer(raw))
+        throw new Error("California turnout denominator differs");
+      if (hold ? rate !== "" || ![
+        "denominator_or_percentage_not_reported", "voters_exceed_denominator",
+        "printed_percentage_disagrees", "registration_components_disagree",
+      ].includes(hold) : !rate || !denominator || Number(count) > denominator
+          || !Number.isFinite(Number(rate)) || Math.abs(Number(rate) - 100 * Number(count) / denominator) > 1e-8)
+        throw new Error("California statewide history rate differs");
+      series[base].push({ code: "CA", date, kind, url, status, measure: "total_voters",
+        basis: `${kind.replaceAll("_", " ")} · ${edition} report`,
+        rows: new Map([["state", { count: Number(count), registered: denominator,
+          rate: hold ? null : Number(rate), hold }]]) });
+    }
+  }
+  const last = series.registered.at(-1);
+  if (!last || !lineage.startsWith(last.date.slice(0, 4) + "/")
+      || generalYear !== Number(last.date.slice(0, 4)) + (Number(last.date.slice(0, 4)) % 2 ? 1 : 2))
+    throw new Error("California statewide history is truncated");
+  return { registered: series.registered.reverse(), eligible: series.eligible.reverse() };
+}
+
+function installCaliforniaHistory(host, sources) {
+  const file = coverageCsvFile(sources, californiaHistoryPath);
+  if (!file) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const note = document.createElement("p"), status = document.createElement("p"), download = document.createElement("a");
+  summary.textContent = "California statewide participation since 1910";
+  note.textContent = "The source's historical Eligible column is not a standardized modern population estimate. "
+    + "These statewide figures do not fill county gaps. ";
+  download.href = file.url;
+  download.textContent = "Complete California statewide history (CSV · gzip)";
+  note.append(download);
+  status.setAttribute("role", "status");
+  panel.append(summary, note, status);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    status.textContent = "Checking the stored California statewide reports…";
+    try {
+      const { csv } = await loadCoverageCsv(sources, californiaHistoryPath);
+      const series = californiaHistoryFrames(csv);
+      const label = document.createElement("label"), select = document.createElement("select"), item = document.createElement("div");
+      select.add(new Option("Reported registration", "registered"));
+      select.add(new Option("Source’s Eligible population", "eligible"));
+      label.append("Denominator ", select);
+      panel.append(label, item);
+      const render = () => {
+        const history = document.createElement("details");
+        archiveStateHistory(history, series[select.value], () => "California", {
+          denominator: "Reported denominator", fractionHeading: "Qualified participation fraction",
+          chartNote: "Withheld rates have no dot. The table distinguishes presidential elections, midterms and statewide specials.",
+        })("CA");
+        history.open = true;
+        item.replaceChildren(history);
+      };
+      select.addEventListener("change", render);
+      render();
+      status.textContent = "";
+    } catch {
+      loading = false;
+      status.textContent = "The California statewide reports could not be verified. Reopen this section to retry.";
+    }
+  });
+}
+
 function installKansasStudy(host, sources) {
   const file = coverageCsvFile(sources, kansasStudyPath);
   if (!file) return;
@@ -4006,6 +4110,13 @@ function installAdministrativeCoverage(host) {
       installKansasStudy(content, manifest.house_sources);
       installHawaiiHistory(content, manifest.house_sources);
       installDakotaHistory(content, manifest.house_sources);
+      try {
+        installCaliforniaHistory(content, manifest.house_sources);
+      } catch {
+        const notice = document.createElement("p");
+        notice.textContent = "The California statewide history descriptor could not be verified.";
+        content.append(notice);
+      }
       installEacLocalityHistory(content, manifest.house_sources, names);
       installNewJerseyPeriodicComponents(content, manifest.house_sources);
       installCaliforniaMedia(content, manifest.house_sources);

@@ -9,7 +9,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, northCarolinaPrecinctCounts,
   washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
-  californiaMediaTurnout, dakotaHistoryFrames, newJerseyPeriodicFrames,
+  californiaMediaTurnout, californiaHistoryFrames, dakotaHistoryFrames, newJerseyPeriodicFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
@@ -24,6 +24,30 @@ import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryl
 import { bindNorthCarolinaReference } from "../public/scripts/participation-nc-precinct-reference.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("California statewide history keeps selected denominators separate and refuses a missing election", () => {
+  const header = "state_code,geography_level,election_date,election_type,reported_total_voters,participation_measure,"
+    + "source_url,source_status,source_sha256,report_edition_year,reported_registered_voters,qualified_registered_pct,"
+    + "registered_hold_reason,reported_eligible,qualified_eligible_pct,eligible_hold_reason";
+  const url = "https://elections.cdn.sos.ca.gov/sov/2025-special/sov/04-historical-voter-reg-general.pdf";
+  const rows = Array.from({ length: 58 }, (_, index) => {
+    const year = 1910 + index * 2;
+    const monday = Array.from({ length: 7 }, (_, i) => i + 1)
+      .find(day => new Date(Date.UTC(year, 10, day)).getUTCDay() === 1);
+    return [`${year}-11-${String(monday + 1).padStart(2, "0")}`, year % 4 ? "midterm" : "presidential"];
+  });
+  rows.push(["2025-11-04", "statewide_special"]);
+  const lines = rows.map(([date, type]) =>
+    `CA,state,${date},${type},50,total_voters,${url},reported,${"a".repeat(64)},2025,`
+    + (date.startsWith("1910") ? ",,denominator_or_percentage_not_reported" : "100,50,")
+    + ",200,25,");
+  const { registered, eligible } = californiaHistoryFrames([header, ...lines].join("\n"));
+  assert.equal(registered[0].kind, "statewide_special");
+  assert.equal(registered[0].rows.get("state").rate, 50);
+  assert.equal(registered.at(-1).rows.get("state").rate, null);
+  assert.equal(eligible.at(-1).rows.get("state").rate, 25);
+  assert.throws(() => californiaHistoryFrames([header, ...lines.slice(1)].join("\n")), /roster differs/);
+});
 
 test("EAC locality reader distinguishes zero from an unqualified highest-office proxy", () => {
   const csv = [
