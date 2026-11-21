@@ -2558,6 +2558,148 @@ function installCaliforniaHistory(host, sources) {
   });
 }
 
+const hawaiiPrecinctReports = {
+  2020: ["2020-11-03", 251, "https://files.hawaii.gov/elections/files/results/2020/general/"],
+  2022: ["2022-11-08", 250, "https://files.hawaii.gov/elections/files/results/2022/general/"],
+  2024: ["2024-11-05", 250, "https://files.hawaii.gov/elections/files/results/2024/General/"],
+  2026: ["2026-11-03", 249, "https://elections.hawaii.gov/wp-content/results/2026%20General/"],
+};
+const hawaiiPrecinctPath = year => `release/participation-hi-${year}-native-precinct-turnout.csv.gz`;
+
+export function hawaiiPrecinctFrame(csv, year) {
+  const [date, count, root] = hawaiiPrecinctReports[year];
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header), units = new Set(), rows = [];
+  const integer = value => /^(?:0|[1-9]\d*)$/.test(value) && Number.isSafeInteger(Number(value));
+  const difference = key => `precinct_sum_minus_state_reported_${key}`;
+  const clocks = ["detail_report_clock", "state_report_clock"];
+  const statusFields = [...clocks, "detail_source_sha256", "state_source_sha256", "source_status",
+    ...["registration", "mail", "in_person", "mode_sum"].map(difference)];
+  let lineage, edition;
+  if (new Set(fields).size !== fields.length || lines.length !== count)
+    throw new Error("Hawaii reporting-unit inventory differs");
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), get = key => cells[fields.indexOf(key)];
+    const unit = get("native_unit"), geographic = /^\d{2}-\d{2}$/.test(unit);
+    const status = get("source_status"), parts = statusFields.map(get), identity = parts.join("/");
+    const [registered, mail, inPerson, sum] = ["registration", "mail", "in_person", "mode_sum"]
+      .map(key => get(`reported_${key}`));
+    const delta = Number(get(difference("mode_sum")));
+    const rate = get("qualified_registration_fraction_pct"), hold = get("rate_hold_reason");
+    const expectedHold = !geographic ? "nongeographic_reporting_unit"
+      : Number(sum) > Number(registered) ? "reported_ballots_exceed_registration"
+      : [difference("mail"), difference("in_person"), difference("mode_sum")].some(key => Number(get(key)))
+        ? "precinct_and_state_ballot_counts_disagree"
+        : Number(registered) === 0 ? "no_positive_registration_denominator" : "";
+    if (cells.length !== fields.length || units.has(unit)
+        || (!geographic && !["OS I", "OS II", "PRES", "Presidential"].includes(unit))
+        || get("geography_level") !== (geographic ? "precinct" : "nongeographic")
+        || get("state_code") !== "HI" || get("election_date") !== date
+        || get("detail_source_url") !== `${root}precinct.pdf` || get("state_source_url") !== `${root}histatewide.pdf`
+        || get("geography_match_qualified") !== "False"
+        || !["reported", "retained_after_failure"].includes(status)
+        || parts.slice(0, 2).some(value => !/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d-10:00$/.test(value))
+        || parts.slice(2, 4).some(value => !/^[a-f0-9]{64}$/.test(value))
+        || parts.slice(5).some(value => !/^-?\d+$/.test(value) || !Number.isSafeInteger(Number(value)))
+        || Number(get(difference("registration"))) !== 0
+        || delta !== Number(get(difference("mail"))) + Number(get(difference("in_person")))
+        || lineage && lineage !== identity
+        || ![registered, mail, inPerson, sum].every(integer) || Number(mail) + Number(inPerson) !== Number(sum)
+        || !geographic && [registered, mail, inPerson].some(value => value !== "0")
+        || hold !== expectedHold || (hold ? rate !== ""
+          : !rate || !Number.isFinite(Number(rate)) || Math.abs(Number(rate) - 100 * Number(sum) / Number(registered)) > 1e-8))
+      throw new Error("Hawaii reporting-unit counts, denominator, or source edition differ");
+    units.add(unit);
+    lineage = identity;
+    edition ??= { date, status, delta, detailClock: parts[0], stateClock: parts[1] };
+    rows.push({ unit, geographic, registered: Number(registered), mail: Number(mail), inPerson: Number(inPerson),
+      sum: Number(sum), rate: hold ? null : Number(rate), hold });
+  }
+  return { ...edition, rows };
+}
+
+function installHawaiiPrecinctHistory(host, sources) {
+  const files = Object.keys(hawaiiPrecinctReports).reverse().flatMap(year => {
+    try {
+      const file = coverageCsvFile(sources, hawaiiPrecinctPath(year));
+      return file ? [[year, file]] : [];
+    } catch { return []; }
+  });
+  if (!files.length) return;
+  const node = (name, text) => {
+    const el = document.createElement(name);
+    if (text) el.textContent = text;
+    return el;
+  };
+  const panel = node("details"), select = node("select"), filter = node("input"), download = node("a");
+  const status = node("p"), summary = node("p"), scroller = node("div"), table = node("table");
+  const electionLabel = node("label", "Election "), filterLabel = node("label", "Reporting unit ");
+  filter.type = "search";
+  electionLabel.append(select);
+  filterLabel.append(filter);
+  for (const [year] of files) select.add(new Option(year, year));
+  status.setAttribute("role", "status");
+  scroller.className = "table-wrap";
+  scroller.tabIndex = 0;
+  scroller.setAttribute("role", "region");
+  scroller.setAttribute("aria-label", "Hawaii precinct and other reporting units");
+  scroller.append(table);
+  const head = table.createTHead().insertRow(), body = table.createTBody();
+  for (const text of ["Unit", "Registered", "Mail", "In person", "Sum of modes", "Registration fraction"]) {
+    const th = node("th", text);
+    th.scope = "col";
+    head.append(th);
+  }
+  download.textContent = "Download every reporting unit for this election (CSV · gzip)";
+  panel.append(node("summary", "Hawaii mail and in-person turnout by reporting unit"),
+    node("p", "These are native counts, not a claim that precinct boundaries are comparable across years."),
+    electionLabel, filterLabel, node("br"), download, summary, status, scroller);
+  host.append(panel);
+  const loaded = new Map(), number = new Intl.NumberFormat("en-US");
+  let frame, generation = 0;
+  const draw = () => {
+    body.replaceChildren();
+    if (!frame) return;
+    const query = filter.value.trim().toLowerCase();
+    const rows = frame.rows.filter(row => row.unit.toLowerCase().includes(query));
+    for (const row of rows) {
+      const tr = body.insertRow(), key = node("th", row.unit + (row.geographic ? "" : " · nongeographic"));
+      key.scope = "row";
+      tr.append(key);
+      for (const value of [row.registered, row.mail, row.inPerson, row.sum]) tr.insertCell().textContent = number.format(value);
+      tr.insertCell().textContent = row.rate === null ? `Withheld · ${row.hold.replaceAll("_", " ")}` : `${row.rate.toFixed(2)}%`;
+    }
+    status.textContent = `Showing ${rows.length} of ${frame.rows.length} reporting units.`;
+  };
+  const load = async () => {
+    const id = ++generation, year = select.value;
+    download.href = files.find(([key]) => key === year)[1].url;
+    frame = null;
+    summary.textContent = "";
+    scroller.hidden = true;
+    status.textContent = "Verifying the precinct turnout file…";
+    try {
+      if (!loaded.has(year)) {
+        const { csv } = await loadCoverageCsv(sources, hawaiiPrecinctPath(year));
+        loaded.set(year, hawaiiPrecinctFrame(csv, year));
+      }
+      if (id !== generation) return;
+      frame = loaded.get(year);
+      const comparison = frame.delta === 0 ? "The aggregate matches the statewide summary."
+        : `The precinct sum minus the statewide reported total is ${frame.delta} ballots.`;
+      summary.textContent = `${frame.status === "retained_after_failure" ? "Last verified edition. " : ""}`
+        + `${comparison} Precinct report: ${frame.detailClock}. Statewide summary: ${frame.stateClock}.`;
+      scroller.hidden = false;
+      draw();
+    } catch {
+      if (id === generation) status.textContent = "This turnout file could not be verified. Reopen to retry.";
+    }
+  };
+  panel.addEventListener("toggle", () => { if (panel.open) load(); });
+  select.addEventListener("change", load);
+  filter.addEventListener("input", draw);
+}
+
 function installKansasStudy(host, sources) {
   const file = coverageCsvFile(sources, kansasStudyPath);
   if (!file) return;
@@ -4109,6 +4251,7 @@ function installAdministrativeCoverage(host) {
       installOregonHistory(content, manifest.house_sources);
       installKansasStudy(content, manifest.house_sources);
       installHawaiiHistory(content, manifest.house_sources);
+      installHawaiiPrecinctHistory(content, manifest.house_sources);
       installDakotaHistory(content, manifest.house_sources);
       try {
         installCaliforniaHistory(content, manifest.house_sources);
@@ -4130,18 +4273,6 @@ function installAdministrativeCoverage(host) {
         ["Pennsylvania", "release/participation-pa-2026-ballot-audit.csv.gz",
           "Pennsylvania ballot audit figures and sampled-batch counts",
           "This is the audit's reporting scope, not final statewide turnout or county totals."],
-        ["Hawaii", "release/participation-hi-2026-native-precinct-turnout.csv.gz",
-          "Hawaii mail and in-person turnout by native reporting unit",
-          "Includes both report clocks, the statewide reconciliation, and any withheld rates. No boundaries are implied."],
-        ["Hawaii", "release/participation-hi-2024-native-precinct-turnout.csv.gz",
-          "Hawaii 2024 native precinct turnout and registration fractions",
-          "Rates use the same report’s registration count. This archive is separate from the 2026 midterm."],
-        ["Hawaii", "release/participation-hi-2022-native-precinct-turnout.csv.gz",
-          "Hawaii 2022 native precinct turnout",
-          "Rates are withheld where the precinct and state reports disagree."],
-        ["Hawaii", "release/participation-hi-2020-native-precinct-turnout.csv.gz",
-          "Hawaii 2020 native precinct turnout and registration fractions",
-          "In-person blocks do not repeat registration counts."],
       ]) {
         try {
           const file = coverageCsvFile(manifest.house_sources, path);

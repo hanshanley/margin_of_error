@@ -9,7 +9,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, northCarolinaPrecinctCounts,
   washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
-  californiaMediaTurnout, californiaHistoryFrames, dakotaHistoryFrames, newJerseyPeriodicFrames,
+  californiaMediaTurnout, californiaHistoryFrames, hawaiiPrecinctFrame, dakotaHistoryFrames, newJerseyPeriodicFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
@@ -24,6 +24,30 @@ import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryl
 import { bindNorthCarolinaReference } from "../public/scripts/participation-nc-precinct-reference.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Hawaii precinct reader preserves native counts while withholding rates from an unreconciled report", () => {
+  const root = "https://elections.hawaii.gov/wp-content/results/2026%20General/";
+  const rows = Array.from({ length: 249 }, (_, i) => ({
+    state_code: "HI", election_date: "2026-11-03", native_unit: `${String(1 + Math.floor(i / 10)).padStart(2, "0")}-0${i % 10}`,
+    geography_level: "precinct", geography_match_qualified: "False", source_status: "reported",
+    detail_report_clock: "2026-11-10T20:00:58-10:00", state_report_clock: "2026-11-10T20:00:08-10:00",
+    detail_source_sha256: "a".repeat(64), state_source_sha256: "b".repeat(64),
+    detail_source_url: `${root}precinct.pdf`, state_source_url: `${root}histatewide.pdf`,
+    precinct_sum_minus_state_reported_registration: 0, precinct_sum_minus_state_reported_mail: 2,
+    precinct_sum_minus_state_reported_in_person: 5, precinct_sum_minus_state_reported_mode_sum: 7,
+    reported_registration: i ? 100 : 0, reported_mail: i ? 40 : 0, reported_in_person: 1,
+    reported_mode_sum: i ? 41 : 1, qualified_registration_fraction_pct: "",
+    rate_hold_reason: i ? "precinct_and_state_ballot_counts_disagree" : "reported_ballots_exceed_registration",
+  }));
+  const serialize = values => [Object.keys(rows[0]).join(","), ...values.map(r => Object.values(r).join(","))].join("\n");
+  const frame = hawaiiPrecinctFrame(serialize(rows), 2026);
+  assert.equal(frame.delta, 7);
+  assert.equal(frame.rows[0].sum, 1);
+  assert.equal(frame.rows[1].rate, null);
+  assert.throws(() => hawaiiPrecinctFrame(serialize(rows.slice(1)), 2026), /inventory differs/);
+  rows[1].qualified_registration_fraction_pct = 41;
+  assert.throws(() => hawaiiPrecinctFrame(serialize(rows), 2026), /denominator/);
+});
 
 test("California statewide history keeps selected denominators separate and refuses a missing election", () => {
   const header = "state_code,geography_level,election_date,election_type,reported_total_voters,participation_measure,"
