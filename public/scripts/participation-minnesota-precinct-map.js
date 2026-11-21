@@ -2,6 +2,12 @@ import { checkedCountyBody } from "./participation-historical-county-map.js";
 import { projectFeatures } from "./participation-map-projection.js";
 
 const root = new URL("../participation-archive-geometry/mn-precinct/", import.meta.url);
+const legacyRoot = new URL("https://raw.githubusercontent.com/hanshanley/voter-participation/"
+  + "c1ef82dbcbeb49de10b8bcb3e16effec7f69e4ac/data/minnesota-legacy-precinct-geometry/");
+const legacyIndex = { bytes: 26879, sha256: "f0490969515290eb384ea052c56498fa99c3ae00a37e093ffd7eda053cc8e755" };
+const legacyDates = new Set(["2008-11-04", "2010-11-02"]);
+const legacyDownload = "https://github.com/hanshanley/voter-participation/releases/download/"
+  + "minnesota-2008-2010-precinct-maps/minnesota-2008-2010-precinct-maps.zip";
 const measures = ["reported_total_voters", "registered_at_7am", "same_day_registrations"];
 const dates = {
   "1994-11-08": [4033, 1794618], "1996-11-05": [4047, 2211161],
@@ -52,7 +58,9 @@ export function minnesotaPrecinctFrames(csv, parseLine) {
     if (!frame.counties.has(code)) frame.counties.set(code, { name, rows: [] });
     const county = frame.counties.get(code);
     if (county.name !== name) throw new Error("Mixed Minnesota report identity");
-    county.rows.push({ id, precinct, count, registered, sameDay });
+    const sourceSha = get("source_sha256");
+    county.rows.push({ id, precinct, count, registered, sameDay,
+      ...(legacyDates.has(date) && sourceSha ? { sourceSha } : {}) });
     ++frame.n;
     frame.count += count;
   }
@@ -64,12 +72,18 @@ export function minnesotaPrecinctFrames(csv, parseLine) {
 }
 
 export function bindMinnesotaPrecinctLayer(layer, date, county, rows) {
+  const legacy = legacyDates.has(date);
+  const held = legacy ? layer?.held_precinct_ids : [];
   if (layer?.contract !== "participation.mn_historical_precinct_display.v1" || layer.state_code !== "MN"
       || layer.election_date !== date || layer.county_geoid !== county || layer.coordinate_system !== "EPSG:4326"
       || layer.display_only !== true || layer.ballots_allocated_by_geometry !== false
-      || !Array.isArray(layer.features) || layer.features.length !== rows.length)
+      || !Array.isArray(layer.features) || !Array.isArray(held) || layer.features.length + held.length !== rows.length
+      || legacy && (layer.workbook_precincts !== rows.length || !/^[a-f0-9]{64}$/.test(layer.workbook_sha256)
+        || rows.some(row => row.sourceSha !== layer.workbook_sha256)))
     throw new Error("Minnesota precinct layer has the wrong scope");
   const byId = new Map(rows.map(row => [row.id, row]));
+  for (const id of held)
+    if (!byId.delete(id)) throw new Error("Minnesota held precinct inventory differs");
   return layer.features.map(f => {
     const key = f.properties?.precinct_id, row = byId.get(key);
     if (!row || row.count !== f.properties.reported_total_voters
@@ -123,6 +137,7 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
   const panel = document.createElement("details"), title = document.createElement("summary");
   const note = document.createElement("p"), load = document.createElement("button"), status = document.createElement("p");
   const download = document.createElement("a"), replay = document.createElement("a");
+  const earlierReplay = document.createElement("a"), terms = document.createElement("a");
   title.textContent = "Minnesota historical precinct participation";
   note.textContent = "Official people voting, not candidate votes. Pre-registration and same-day registrations "
     + "are separate counts; neither supplies a comparable all-voter turnout rate.";
@@ -130,10 +145,14 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
   download.textContent = "Complete Minnesota precinct participation (CSV · gzip)";
   replay.href = new URL("minnesota-precinct-map-reproduction.zip", root);
   replay.textContent = "Complete Minnesota map data and reproduction (ZIP)";
+  earlierReplay.href = legacyDownload;
+  earlierReplay.textContent = "2008 and 2010 partial maps, complete tables and reproduction (ZIP)";
+  terms.href = new URL("LCC-GIS-DISTRIBUTION-NOTICE.txt", legacyRoot);
+  terms.textContent = "LCC-GIS distribution notice";
   load.type = "button";
   load.textContent = "Load precinct map and table";
   status.setAttribute("role", "status");
-  panel.append(title, note, download, " · ", replay, " · ", load, status);
+  panel.append(title, note, download, " · ", replay, " · ", earlierReplay, " · ", terms, " · ", load, status);
   let retry = false;
   load.addEventListener("click", async () => {
     load.disabled = true;
@@ -187,13 +206,17 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
             row.insertCell().textContent = n.toLocaleString("en-US");
         }
         figure.querySelector("svg")?.remove();
-        if (Number(date.slice(0, 4)) < 2012) {
+        const legacy = legacyDates.has(date);
+        if (Number(date.slice(0, 4)) < 2012 && !legacy) {
           caption.textContent = `The ${date.slice(0, 4)} precinct table is available, but no election-year boundaries have been verified.`;
           return;
         }
         caption.textContent = "Checking election-year precinct boundaries…";
         try {
-          const manifest = await fetch(new URL("mn-precinct-geometry.json", root)).then(r => {
+          const mapRoot = legacy ? legacyRoot : root;
+          const manifest = legacy
+            ? await new Response(await checkedCountyBody(new URL("mn-legacy-precinct-geometry.json", mapRoot), legacyIndex)).json()
+            : await fetch(new URL("mn-precinct-geometry.json", mapRoot)).then(r => {
             if (!r.ok) throw new Error("Geometry index unavailable");
             return r.json();
           });
@@ -202,10 +225,15 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
           if (pin?.filename !== filename || !Number.isSafeInteger(pin.bytes) || pin.bytes <= 0
               || pin.bytes > 2_000_000 || !/^[a-f0-9]{64}$/.test(pin.sha256))
             throw new Error("Invalid Minnesota geometry pin");
-          const layer = await (await loadGzip(new URL(filename, root), pin, false)).json();
+          const layer = await (await loadGzip(new URL(filename, mapRoot), pin, false)).json();
           const matched = bindMinnesotaPrecinctLayer(layer, date, code, rows);
+          if (token !== renderId) return;
+          if (!matched.length) {
+            caption.textContent = "No precinct polygons in this county passed the map checks. All precincts remain in the table.";
+            return;
+          }
           const items = projectFeatures(layer.features, ([x,y]) => [x * .69, -y], [10, 10, 580, 340]);
-          if (items.length !== rows.length || items.some(({ d }) => !d || /NaN|Infinity/.test(d)))
+          if (items.length !== matched.length || items.some(({ d }) => !d || /NaN|Infinity/.test(d)))
             throw new Error("Invalid Minnesota map paths");
           if (token !== renderId) return;
           const make = tag => document.createElementNS("http://www.w3.org/2000/svg", tag);
@@ -213,7 +241,8 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
           svg.setAttribute("viewBox", "0 0 600 360"); svg.setAttribute("width", "600");
           svg.style.maxWidth = "100%"; svg.style.height = "auto";
           svg.setAttribute("role", "img");
-          svg.setAttribute("aria-label", `${name} County precinct counts, ${date}; exact values follow in the table.`);
+          svg.setAttribute("aria-label", `${name} County precinct counts, ${date}; `
+            + `${matched.length} of ${rows.length} precincts shown. Exact values follow in the table.`);
           const palette = ["#fcfdfd", "#d9e8ed", "#b3d2dc", "#79afbf", "#48879d", "#24586d"];
           for (const [i, { d }] of items.entries()) {
             const value = matched[i], n = value.count, path = make("path"), tooltip = make("title");
@@ -225,8 +254,10 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
             path.append(tooltip); svg.append(path);
           }
           figure.prepend(svg);
-          caption.textContent = "People voting: 0 (white), 1–249, 250–499, 500–999, 1,000–1,999, 2,000 or more (dark blue). "
-            + "Election-year display boundaries: Minnesota Secretary of State and MnGeo.";
+          caption.textContent = (legacy
+            ? `${matched.length} of ${rows.length} precincts shown. Unmapped precincts are not zero and remain in the table. `
+            : "") + "People voting: 0 (white), 1–249, 250–499, 500–999, 1,000–1,999, 2,000 or more (dark blue). "
+            + `Election-year display boundaries: Minnesota Secretary of State and ${legacy ? "LCC-GIS" : "MnGeo"}.`;
         } catch {
           if (token === renderId) caption.textContent = "The election-year map could not be verified. The table remains available.";
         }

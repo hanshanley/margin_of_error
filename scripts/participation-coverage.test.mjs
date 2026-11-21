@@ -491,6 +491,24 @@ test("Minnesota's two 2008 unallocated rows reconcile statewide without entering
     const count = i === 0 ? 2921498 - 1284 : 0;
     return `MN,${date},${county},County ${county},${county}${unit},Precinct,${status},${count},0,0,,`;
   });
+
+  test("Legacy Minnesota map tiles partition the full table and reject stale workbook revisions", () => {
+    const sourceSha = "a".repeat(64), date = "2008-11-04", county = "27001";
+    const rows = [{ id: `${county}0005`, count: 15, sourceSha }, { id: `${county}0010`, count: 85, sourceSha }];
+    const layer = {
+      contract: "participation.mn_historical_precinct_display.v1", state_code: "MN",
+      county_geoid: county, election_date: date, coordinate_system: "EPSG:4326",
+      display_only: true, ballots_allocated_by_geometry: false, workbook_precincts: 2, workbook_sha256: sourceSha,
+      held_precinct_ids: [rows[1].id],
+      features: [{ properties: { precinct_id: rows[0].id, reported_total_voters: 15 }, geometry: { type: "Polygon" } }],
+    };
+    assert.deepEqual(bindMinnesotaPrecinctLayer(layer, date, county, rows), [rows[0]]);
+    assert.throws(() => bindMinnesotaPrecinctLayer({ ...layer, held_precinct_ids: [rows[0].id] },
+      date, county, rows), /differs/);
+    assert.throws(() => bindMinnesotaPrecinctLayer({ ...layer, held_precinct_ids: [] }, date, county, rows), /scope/);
+    assert.throws(() => bindMinnesotaPrecinctLayer(layer, date, county, [{ ...rows[0], sourceSha: "b".repeat(64) }, rows[1]]),
+      /scope/);
+  });
   const unallocated = ["STATE ABSENTEE COUNT JAN 3RD", "STATE COURT CONTEST APR 7TH"].map((name, i) =>
     `MN,${date},,,,${name},${status},${numbers[i]},0,0,nongeographic,${i ? "0010" : "0005"}`);
   const parse = last => minnesotaPrecinctFrames([header, ...regular, ...last].join("\n"), line => line.split(","));
