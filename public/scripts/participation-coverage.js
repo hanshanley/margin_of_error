@@ -4133,6 +4133,9 @@ function installAdministrativeCoverage(host) {
         ["Hawaii", "release/participation-hi-2026-native-precinct-turnout.csv.gz",
           "Hawaii mail and in-person turnout by native reporting unit",
           "Includes both report clocks, the statewide reconciliation, and any withheld rates. No boundaries are implied."],
+        ["Hawaii", "release/participation-hi-2024-native-precinct-turnout.csv.gz",
+          "Hawaii 2024 native precinct turnout and registration fractions",
+          "Rates use the same report’s registration count. This archive is separate from the 2026 midterm."],
       ]) {
         try {
           const file = coverageCsvFile(manifest.house_sources, path);
