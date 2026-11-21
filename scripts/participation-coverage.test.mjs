@@ -13,7 +13,8 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alabamaCountyMapDates, alStatewideHistoryRows, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
-  wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
+  wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames,
+  virginiaPrecinctCounts }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill, officialArchiveGeometry }
@@ -88,6 +89,23 @@ test("Historical Louisiana precincts reconcile within each parish and retain a d
   assert.throws(() => louisianaPrecinctHistory([header, ...rows, rows[0]].join("\n")), /Conflicting/);
   assert.throws(() => louisianaPrecinctHistory(csv.replace(",10,10,11,", ",9,10,11,")), /do not reconcile/);
   assert.throws(() => louisianaPrecinctHistory(csv.replace(",false,false,", ",true,false,")), /Invalid/);
+});
+
+test("Virginia precinct reader keeps central ballots separate and requires balanced locality controls", () => {
+  const header = "state,election_date,locality,reporting_unit,precinct_code,unit_kind,ballot_component,ballots,"
+    + "locality_ballots_control,source_edition,source_status,checked_week_utc,geometry_qualified,registration_denominator,turnout_rate";
+  const central = ["mail", "early_voting", "post_election_mail", "provisional"];
+  const rows = Array.from({ length: 133 }, (_, i) =>
+    ["101 - Precinct,101,physical_precinct,election_day,10", ...central.map(mode =>
+      `${mode},,central_reporting_unit,${mode},1`)].map(unit =>
+      `VA,2022-11-08,Locality ${i},${unit},14,2022-12-06T02:16:00,retained_after_failure,2026-11-16,false,,`)).flat();
+  const full = [header, ...rows].join("\n");
+  const result = virginiaPrecinctCounts(full);
+  assert.equal(result.status, "retained_after_failure");
+  assert.equal(result.localities.get("Locality 0").electionDay.get("101").ballots, 10);
+  assert.equal(result.localities.get("Locality 0").central.get("mail").ballots, 1);
+  assert.throws(() => virginiaPrecinctCounts([header, ...rows.slice(1)].join("\n")), /reconcile/);
+  assert.throws(() => virginiaPrecinctCounts(full.replace(/,false,,/, ",false,50,")), /Invalid/);
 });
 
 test("South Carolina preserves provisional units and withholds rates on the checked detail export", () => {

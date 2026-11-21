@@ -1223,6 +1223,111 @@ export function louisianaPrecinctHistory(csv) {
   return elections;
 }
 
+const vaPrecinctCountsPath = "release/virginia-2022-native-precinct-counts.csv.gz";
+const vaCentralModes = new Set(["mail", "early_voting", "post_election_mail", "provisional"]);
+
+export function virginiaPrecinctCounts(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header), localities = new Map();
+  const required = ["state", "election_date", "locality", "reporting_unit", "precinct_code",
+    "unit_kind", "ballot_component", "ballots", "locality_ballots_control",
+    "source_edition", "source_status", "checked_week_utc", "geometry_qualified",
+    "registration_denominator", "turnout_rate"];
+  if (!lines.length || new Set(columns).size !== columns.length || required.some(name => !columns.includes(name)))
+    throw new Error("Missing Virginia precinct count columns");
+  let edition, status, week;
+  for (const line of lines) {
+    const cells = historicalCsvLine(line);
+    const r = Object.fromEntries(columns.map((key, index) => [key, cells[index]]));
+    const physical = r.unit_kind === "physical_precinct";
+    if (cells.length !== columns.length || r.state !== "VA" || r.election_date !== "2022-11-08"
+        || !r.locality || !r.reporting_unit || !/^\d{1,9}$/.test(r.ballots)
+        || !/^\d{1,9}$/.test(r.locality_ballots_control) || r.geometry_qualified !== "false"
+        || r.registration_denominator !== "" || r.turnout_rate !== ""
+        || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/.test(r.source_edition)
+        || !/^\d{4}-\d{2}-\d{2}$/.test(r.checked_week_utc)
+        || !["reported", "retained_after_failure"].includes(r.source_status)
+        || (physical ? (!/^\d{3}$/.test(r.precinct_code) || !r.reporting_unit.startsWith(r.precinct_code)
+          || r.ballot_component !== "election_day") : (r.unit_kind !== "central_reporting_unit"
+          || r.precinct_code || !vaCentralModes.has(r.ballot_component))))
+      throw new Error("Invalid Virginia precinct count row");
+    [edition, status, week] = [edition ?? r.source_edition, status ?? r.source_status, week ?? r.checked_week_utc];
+    if (edition !== r.source_edition || status !== r.source_status || week !== r.checked_week_utc)
+      throw new Error("Mixed Virginia precinct turnout editions");
+    const control = Number(r.locality_ballots_control);
+    if (!localities.has(r.locality)) localities.set(r.locality, { control, electionDay: new Map(), central: new Map() });
+    const locality = localities.get(r.locality), units = physical ? locality.electionDay : locality.central;
+    const key = physical ? r.precinct_code : r.ballot_component;
+    if (units.has(key) || locality.control !== control) throw new Error("Conflicting Virginia locality controls");
+    units.set(key, { name: r.reporting_unit, ballots: Number(r.ballots) });
+  }
+  if (localities.size !== 133 || [...localities.values()].some(locality => {
+    const units = [...locality.electionDay.values(), ...locality.central.values()];
+    return !locality.electionDay.size || locality.central.size !== vaCentralModes.size
+      || units.reduce((total, row) => total + row.ballots, 0) !== locality.control;
+  })) throw new Error("Virginia precinct counts do not reconcile");
+  return { edition, status, week, localities };
+}
+
+function installVirginiaPrecinctCounts(host, sources) {
+  if (!sources?.supported_release?.downloads?.[vaPrecinctCountsPath]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const notice = document.createElement("p"), body = document.createElement("div");
+  summary.textContent = "Virginia Election Day precinct counts, November 2022";
+  notice.setAttribute("role", "status");
+  panel.append(summary, notice, body);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    notice.textContent = "Checking Virginia precinct counts…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, vaPrecinctCountsPath);
+      const { edition, status, week, localities } = virginiaPrecinctCounts(csv);
+      const note = document.createElement("p"), link = document.createElement("a");
+      note.textContent = "Physical precinct rows count Election Day ballots only. Early, mail and provisional "
+        + "ballots remain in central reporting units; there is no precinct rate or boundary match.";
+      link.href = file.url; link.textContent = "Complete precinct and central counts (CSV · gzip)";
+      const label = document.createElement("label"), choice = document.createElement("select");
+      label.htmlFor = choice.id = "va-2022-precinct-locality";
+      label.textContent = "Locality";
+      for (const name of [...localities.keys()].sort()) choice.add(new Option(name, name));
+      const region = document.createElement("div");
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", "Virginia precinct and central ballot counts");
+      const format = new Intl.NumberFormat("en-US");
+      function render() {
+        const locality = localities.get(choice.value), table = document.createElement("table");
+        table.createCaption().textContent = `${choice.value} · November 8, 2022`;
+        const header = table.createTHead().insertRow(), rows = table.createTBody();
+        for (const title of ["Reporting unit", "Scope", "Ballots"]) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = title; header.append(th);
+        }
+        for (const [units, scope] of [[locality.electionDay, "Election Day precinct"], [locality.central, "Central"]]) {
+          for (const unit of units.values()) {
+            const tr = rows.insertRow(), key = document.createElement("th");
+            key.scope = "row"; key.textContent = unit.name; tr.append(key);
+            tr.insertCell().textContent = scope;
+            tr.insertCell().textContent = format.format(unit.ballots);
+          }
+        }
+        region.replaceChildren(table);
+        notice.textContent = (status === "reported" ? "" : "Showing the last verified report. ")
+          + `Report edition ${edition.replace("T", " ")} (as published). Checked the week of ${week} (UTC). `
+          + `The physical and central rows reconcile to ${format.format(locality.control)} locality ballots.`;
+      }
+      choice.addEventListener("change", render);
+      body.replaceChildren(note, link, " · ", label, " ", choice, region);
+      render();
+    } catch {
+      loading = false;
+      notice.textContent = "The Virginia precinct counts could not be verified. Reopen this section to retry.";
+    }
+  });
+}
+
 function installLouisianaPrecinctHistory(host, sources) {
   if (!sources?.supported_release?.downloads?.[laPrecinctHistoryPath]) return;
   const panel = document.createElement("details"), summary = document.createElement("summary");
@@ -5109,9 +5214,6 @@ function installAdministrativeCoverage(host) {
         ["Pennsylvania", "release/participation-pa-2026-ballot-audit.csv.gz",
           "Pennsylvania ballot audit figures and sampled-batch counts",
           "This is the audit's reporting scope, not final statewide turnout or county totals."],
-        ["Virginia", "release/virginia-2022-native-precinct-counts.csv.gz",
-          "Virginia 2022 physical precinct and central reporting-unit counts",
-          "Physical precinct rows count Election Day ballots only. Early, mail and provisional ballots remain separate; no precinct rate or map match is supplied."],
         ["Virginia", "release/virginia-2024-native-precinct-turnout-audit.csv.gz",
           "Virginia 2024 native precinct turnout audit",
           "These are the report’s printed figures, not verified precinct turnout or rates."],
@@ -5139,6 +5241,7 @@ function installAdministrativeCoverage(host) {
       installLouisianaElectionGroups(content, manifest.house_sources);
       installLouisianaGroupHistory(content, manifest.house_sources);
       installLouisianaPrecinctHistory(content, manifest.house_sources);
+      installVirginiaPrecinctCounts(content, manifest.house_sources);
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);
