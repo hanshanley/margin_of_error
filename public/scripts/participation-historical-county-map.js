@@ -7,7 +7,7 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { AL: 67, CA: 58, CO: 64, HI: 4, ID: 44, IN: 92, KS: 105, LA: 64, NC: 100, NE: 93, NJ: 21, SC: 46, VA: 133, WA: 39, WV: 55, WY: 23 };
+const officialCountySizes = { AL: 67, CA: 58, CO: 64, HI: 4, ID: 44, IN: 92, KS: 105, LA: 64, MA: 14, NC: 100, NE: 93, NJ: 21, SC: 46, VA: 133, WA: 39, WV: 55, WY: 23 };
 const hawaiiReportingCounties = { "15001": ["15001"], "15003": ["15003"], "15007": ["15007"], "15009": ["15009", "15005"] };
 const geometryReleases = "https://github.com/hanshanley/voter-participation/releases/download/";
 const nebraskaGeometryRelease = geometryReleases + "nebraska-legacy-county-geometry-20261120/";
@@ -25,6 +25,14 @@ const scGeometry = [
   [2024, 150998, "b1d1c1577320294e1b33b04bd88b5e7f78ad62cd068b86fdac275595610f8fa3"],
 ];
 export const officialArchiveGeometry = {
+  "MA/2026": {
+    path: "participation-archive-geometry/county-MA-2026.geojson.gz",
+    bytes: 240661,
+    sha256: "8067a5cdc344b13c2d683c3ba0dcddb918dd971fa8c2799921e43c31a667bef0",
+    boundaryLabel: "2026 Census TIGER/Line county reference boundaries, not precincts.",
+    reproduction: "massachusetts-2026-county-reference.zip",
+    reproductionBase: geometryReleases + "massachusetts-2026-county-reference/",
+  },
   "AL/2026": {
     path: "participation-archive-geometry/county-AL-2026.geojson.gz",
     bytes: 140187,

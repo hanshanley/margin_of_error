@@ -36,6 +36,7 @@ const idahoStatePath = "release/participation-id-statewide-general-turnout.csv.g
 const idahoWorkbookPath = "release/participation-id-2024-native-turnout-workbook.csv.gz";
 const idahoCountyHistoryPath = "release/participation-id-2020-2022-county-turnout.csv.gz";
 const idahoAgePath = "release/participation-id-2026-early-and-absentee-age.csv.gz";
+const maCanvassPath = "release/participation-ma-2026-paired-canvass-ballot-counts.csv.gz";
 const indianaEarlyPaths = ["statewide", "county"].map(level => `release/participation-in-early-${level}-turnout-history.csv.gz`);
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
 const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
@@ -2662,6 +2663,88 @@ async function loadCoverageCsv(sources, path) {
     throw new Error("Administrative coverage checksum differs");
   const csv = await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
   return { csv, file };
+}
+
+export function massachusettsCanvassFrame(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const required = ["state_code", "election_date", "geography_level", "name", "ballots_including_blanks",
+    "source_status", "rate_hold_reason", "precinct_geometry_verified"];
+  if (new Set(columns).size !== columns.length || required.some(field => !columns.includes(field)))
+    throw new Error("Missing Massachusetts canvass fields");
+  const areas = new Set("Barnstable Berkshire Bristol Dukes Essex Franklin Hampden Hampshire Middlesex Nantucket Norfolk Plymouth Suffolk Worcester".split(" "));
+  const rows = new Map();
+  let status, total = 0;
+  for (const line of lines) {
+    const cells = historicalCsvLine(line);
+    if (cells.length !== columns.length) throw new Error("Malformed Massachusetts canvass row");
+    const field = name => cells[columns.indexOf(name)];
+    const level = field("geography_level");
+    if (level !== "statewide" && level !== "county") continue;
+    const name = field("name"), native = field("ballots_including_blanks"), count = Number(native);
+    const key = level === "statewide" ? "state" : `county/${name}`;
+    status ??= field("source_status");
+    if (field("state_code") !== "MA" || field("election_date") !== "2026-11-03"
+        || field("source_status") !== status || !["reported", "retained_after_failure"].includes(status)
+        || field("rate_hold_reason") !== "no_registration_denominator_in_paired_canvasses"
+        || !["False", "false"].includes(field("precinct_geometry_verified"))
+        || !/^\d{1,9}$/.test(native) || rows.has(key)
+        || (level === "statewide" ? name !== "Massachusetts" : !areas.delete(name)))
+      throw new Error("Massachusetts county canvass identity or count differs");
+    rows.set(key, { name, count, registered: null, rate: null });
+    if (level === "county") total += count;
+  }
+  if (areas.size || rows.size !== 15 || rows.get("state")?.count !== total)
+    throw new Error("Massachusetts counties do not reconcile to the statewide control");
+  return { code: "MA", date: "2026-11-03", measure: "reconciled_ballot_count",
+    requirePinnedCountyGeometry: true, rows, status };
+}
+
+export function installMassachusettsCanvass(host, sources) {
+  if (!sources?.supported_release?.downloads?.[maCanvassPath]) return;
+  const panel = document.createElement("details"), title = document.createElement("summary");
+  const content = document.createElement("div");
+  title.textContent = "Massachusetts county ballots cast, 2026";
+  panel.append(title, content);
+  host.append(panel);
+  let pending = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || pending) return;
+    pending = true;
+    content.textContent = "Checking the paired canvass…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, maCanvassPath);
+      const frame = massachusettsCanvassFrame(csv);
+      const note = document.createElement("p"), download = document.createElement("a");
+      note.textContent = "The two statewide canvasses agree on ballots including blanks. No turnout rate is available. "
+        + "Municipalities and native reporting units are in the download, not on this county map."
+        + (frame.status === "retained_after_failure" ? " Showing the last verified canvass." : "");
+      download.href = file.url;
+      download.textContent = "Complete statewide, county, municipal and reporting-unit counts (CSV · gzip)";
+      const region = document.createElement("div"), table = document.createElement("table");
+      region.className = "table-wrap";
+      region.tabIndex = 0;
+      region.setAttribute("role", "region");
+      region.setAttribute("aria-label", title.textContent);
+      table.createCaption().textContent = "Ballots including blanks";
+      const header = table.createTHead().insertRow(), body = table.createTBody();
+      for (const label of ["Reporting area", "Ballots"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = label; header.append(th);
+      }
+      for (const fact of frame.rows.values()) {
+        const tr = body.insertRow(), name = document.createElement("th");
+        name.scope = "row"; name.textContent = fact.name; tr.append(name);
+        tr.insertCell().textContent = fact.count.toLocaleString("en-US");
+      }
+      region.append(table);
+      content.replaceChildren(note, download, region);
+      installHistoricalCountyMap(content, "MA", frame.date, null, { MA: "Massachusetts" }, () => frame);
+    } catch {
+      pending = false;
+      content.textContent = "The Massachusetts canvass could not be verified. Reopen this panel to retry.";
+    }
+  });
 }
 
 export function idahoAgeRows(csv) {
@@ -5529,6 +5612,7 @@ function installAdministrativeCoverage(host) {
       installLouisianaPrecinctHistory(content, manifest.house_sources);
       installVirginiaPrecinctCounts(content, manifest.house_sources);
       installIdahoAge(content, manifest.house_sources);
+      installMassachusettsCanvass(content, manifest.house_sources);
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);

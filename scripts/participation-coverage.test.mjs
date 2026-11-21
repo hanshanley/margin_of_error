@@ -14,7 +14,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   connecticutTownRows, alabamaReconciledCountyFrame, alabamaCountyMapDates, alStatewideHistoryRows, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames,
-  virginiaPrecinctCounts, releaseQueryFiles, idahoCountyArchiveFrame, idahoAgeRows }
+  virginiaPrecinctCounts, releaseQueryFiles, idahoCountyArchiveFrame, idahoAgeRows, massachusettsCanvassFrame }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill, officialArchiveGeometry }
@@ -1287,6 +1287,21 @@ test("table-only reporting units are loaded without inventing geographic referen
   assert.equal(row.reference_units, 0);
   assert.equal(row.unknown, 1);
   assert.equal(row.fractions, 0);
+});
+
+test("the Massachusetts county map uses complete all-ballot totals without inventing rates", () => {
+  const header = "state_code,election_date,geography_level,name,ballots_including_blanks,source_status,rate_hold_reason,precinct_geometry_verified";
+  const row = (scope, name, count) => `MA,2026-11-03,${scope},${name},${count},reported,no_registration_denominator_in_paired_canvasses,False`;
+  const names = "Barnstable Berkshire Bristol Dukes Essex Franklin Hampden Hampshire Middlesex Nantucket Norfolk Plymouth Suffolk Worcester".split(" ");
+  const csv = [header, row("statewide", "Massachusetts", 14), ...names.map(name => row("county", name, 1)),
+    row("reporting_unit", "Lawrence", 1)].join("\n");
+  const frame = massachusettsCanvassFrame(csv);
+  assert.equal(frame.rows.size, 15);
+  assert.equal(frame.rows.get("county/Essex").count, 1);
+  assert.equal(frame.rows.get("county/Essex").rate, null);
+  assert.throws(() => massachusettsCanvassFrame(csv.replace("Massachusetts,14,", "Massachusetts,13,")),
+    /do not reconcile/);
+  assert.throws(() => massachusettsCanvassFrame(csv.replace("Worcester", "Essex")), /identity or count differs/);
 });
 
 test("the Idaho age query preserves mode counts and rejects incompatible rows", () => {
