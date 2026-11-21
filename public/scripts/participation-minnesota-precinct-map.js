@@ -4,6 +4,8 @@ import { projectFeatures } from "./participation-map-projection.js";
 const root = new URL("../participation-archive-geometry/mn-precinct/", import.meta.url);
 const measures = ["reported_total_voters", "registered_at_7am", "same_day_registrations"];
 const dates = {
+  "1994-11-08": [4033, 1794618], "1996-11-05": [4047, 2211161],
+  "2002-11-05": [4106, 2282860], "2004-11-02": [4108, 2842912],
   "2006-11-07": [4123, 2217818],
   "2008-11-04": [4130, 2921498],
   "2010-11-02": [4136, 2123369],
@@ -18,7 +20,7 @@ export function minnesotaPrecinctFrames(csv, parseLine) {
   const fields = parseLine(header), frames = new Map(), ids = new Set();
   const required = ["state_code", "election_date", "county_geoid", "county", "precinct_id",
     "precinct_name", "source_status", "rate_hold_reason", ...measures];
-  if (!lines.length || lines.length > 42000 || new Set(fields).size !== fields.length
+  if (!lines.length || lines.length > 60000 || new Set(fields).size !== fields.length
       || required.some(name => !fields.includes(name))) throw new Error("Missing Minnesota precinct data");
   for (const line of lines) {
     const row = parseLine(line);
