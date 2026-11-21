@@ -39,6 +39,8 @@ const idahoAgePath = "release/participation-id-2026-early-and-absentee-age.csv.g
 const maCanvassPath = "release/participation-ma-2026-paired-canvass-ballot-counts.csv.gz";
 const maCanvassHistoryPath = "release/participation-ma-2020-2024-paired-canvass-ballot-counts.csv.gz";
 const maCountyRollupPath = "release/participation-ma-2022-county-rollup.csv.gz";
+const maMunicipalityMap = "https://github.com/hanshanley/voter-participation/releases/download/"
+  + "massachusetts-paired-canvass-turnout-2020-2024/massachusetts-2022-municipality-map.zip";
 const maCanvassDates = ["2026-11-03", "2024-11-05", "2022-11-08", "2020-11-03"];
 const indianaEarlyPaths = ["statewide", "county"].map(level => `release/participation-in-early-${level}-turnout-history.csv.gz`);
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
@@ -2786,6 +2788,9 @@ export function installMassachusettsCanvass(host, sources) {
     if (frames.size) {
       const note = document.createElement("p"), label = document.createElement("label");
       const select = document.createElement("select"), map = document.createElement("div");
+      const municipalityMap = document.createElement("a");
+      municipalityMap.href = maMunicipalityMap;
+      municipalityMap.textContent = "Download the fixed 2022 city and town map and data (ZIP)";
       for (const date of frames.keys()) select.append(new Option(date, date));
       label.append("Election date ", select);
       const region = document.createElement("div"), table = document.createElement("table");
@@ -2801,6 +2806,7 @@ export function installMassachusettsCanvass(host, sources) {
       }
       const render = () => {
         const frame = frames.get(select.value);
+        municipalityMap.hidden = frame.date !== "2022-11-08" || Boolean(frame.shortfall);
         note.textContent = "Ballots include blanks. No turnout rate is available. Municipalities and native reporting units are in the downloads."
           + (frame.status === "retained_after_failure" ? " Showing the last verified canvass." : "")
           + (frame.shortfall ? ` The county pages are short by ${frame.shortfall.toLocaleString("en-US")} ballots relative to the statewide control; the county map is withheld.` : "")
@@ -2821,7 +2827,7 @@ export function installMassachusettsCanvass(host, sources) {
         const warning = document.createElement("p");
         warning.textContent = text;
         return warning;
-      }), label, region, map);
+      }), label, region, map, municipalityMap);
       render();
     } else {
       pending = false;
