@@ -29,6 +29,7 @@ class TestWaitForSource(unittest.TestCase):
             self.elapsed += seconds
 
         return wait.wait_for_collection(fetch, monotonic=lambda: self.elapsed, sleep=sleep,
+                                        pending=options.pop("pending", lambda: None),
                                         now=options.pop("now", NOW), **options)
 
     def test_waits_for_exact_scheduled_run_before_handoff(self):
@@ -49,6 +50,35 @@ class TestWaitForSource(unittest.TestCase):
         self.assertEqual(result["status"], "collection_completed")
         self.assertGreaterEqual(self.elapsed, delay)
         self.assertLess(self.elapsed, 2400)
+
+    def test_publishes_already_accepted_input_without_waiting_for_new_collection(self):
+        self.assertEqual(self.simulate([{"workflow_runs": [RUN]}], pending=lambda: "a" * 64),
+                         {"status": "accepted_checkpoint_ready", "input_results_version": "a" * 64})
+        self.assertEqual(self.paths, [wait.LATEST])
+        self.assertEqual(self.elapsed, 0)
+
+    def test_only_known_newer_commit_pinned_input_skips_wait(self):
+        source = {"contract": "participation.automatic_results_latest.v1",
+                  "version": "a" * 64, "checked_at": "2026-11-18T22:04:00Z"}
+        live = {"contract": "participation.automatic_runtime.v1",
+                "version": "c" * 64, "input_results_version": "b" * 64,
+                "checked_at": "2026-11-18T22:00:00Z"}
+        refs = [{"object": {"type": "commit", "sha": ch * 40}} for ch in ("1", "2")]
+        route = {
+            f"https://api.github.com/repos/{wait.SOURCE}/git/ref/tags/results-data": refs[0],
+            f"https://raw.githubusercontent.com/{wait.SOURCE}/{'1' * 40}/latest.json": source,
+            f"https://api.github.com/repos/{wait.SITE}/git/ref/tags/participation-data": refs[1],
+            f"https://raw.githubusercontent.com/{wait.SITE}/{'2' * 40}/automatic/latest.json": live,
+        }
+        self.assertEqual(wait.unconsumed_checkpoint(route.__getitem__), source["version"])
+        for update in ({"input_results_version": source["version"]},
+                       {"checked_at": source["checked_at"]},
+                       {"checked_at": "2026-11-18T22:06:00Z"},
+                       {"checked_at": "2026-11-18T22:00:00"},
+                       {"contract": "invalid"}, {"input_results_version": "invalid"}):
+            key = next(reversed(route))
+            self.assertIsNone(wait.unconsumed_checkpoint({**route, key: {**live, **update}}.__getitem__))
+        self.assertIsNone(wait.unconsumed_checkpoint({}.__getitem__))
 
     def test_waits_for_full_dispatch_but_ignores_scoped_collection(self):
         scoped = dict(RUN, id=1, event="workflow_dispatch", display_title="Run scoped election results update")
