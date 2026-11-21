@@ -5,7 +5,7 @@ import { runInNewContext } from "node:vm";
 import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
-  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, louisianaParishFrame, eacLocalityFrames,
+  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, indianaEarlyFrames, louisianaParishFrame, eacLocalityFrames,
   stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, northCarolinaPrecinctCounts,
   washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
@@ -195,6 +195,24 @@ test("North Carolina's partial county map shows only verified 2002 outlines", ()
     /Missing complete/);
   const corrupt = { ...collection, missing_counties: ["31081", ...collection.missing_counties.slice(1)] };
   assert.throws(() => bindOfficialCountyArchive(corrupt, frame, true), /missing county boundary inventory/);
+});
+
+test("Indiana early statewide history rejects a promoted estimate or mixed source edition", () => {
+  const header = "state_code,election_date,election_type,source_sha256,source_url,source_status,report_edition,"
+    + "reported_participants,reported_registrations,printed_registered_pct,participants_flagged_as_source_estimate,"
+    + "registrations_flagged_as_source_estimate,qualified_registered_fraction_pct,registration_fraction_hold";
+  const years = [1948, ...Array.from({ length: 23 }, (_, i) => 1952 + 2 * i)];
+  const rows = years.map(year => {
+    const day = (8 - new Date(Date.UTC(year, 10, 1)).getUTCDay()) % 7 + 2;
+    return `IN,${year}-11-${String(day).padStart(2, "0")},${year % 4 === 0 ? "presidential" : "midterm"},`
+      + `${"a".repeat(64)},https://www.in.gov/dA/4371f6fa9f/particip.pdf?language_id=1,reported,2001-08-29T16:56:00,`
+      + (year === 1948 ? "400,1001,40.0%,True,False,,source_estimate" : `401,1001,40.1%,False,False,${40100 / 1001},`);
+  });
+  const parse = lines => indianaEarlyFrames([header, ...lines].join("\n"));
+  assert.equal(parse(rows).at(-1).rows.get("state").rate, null);
+  assert.equal(parse(rows)[0].rows.get("state").rate, 40100 / 1001);
+  assert.throws(() => parse([rows[0].replace(",,source_estimate", `,${40000 / 1001},`), ...rows.slice(1)]), /rates differ/);
+  assert.throws(() => parse([rows[0].replace("2001-08-29", "2001-08-30"), ...rows.slice(1)]), /mixed editions/);
 });
 
 test("Indiana admits whole county histories but never shades a withheld rate as qualified", () => {

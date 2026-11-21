@@ -31,6 +31,7 @@ const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
 const ncArchivePaths = ["county-history", "state-groups", "native-precincts"]
   .map(kind => `release/participation-nc-general-${kind}.csv.gz`);
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
+const indianaEarlyPaths = ["statewide", "county"].map(level => `release/participation-in-early-${level}-turnout-history.csv.gz`);
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
 const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
 const kansasStudyPath = "release/participation-ks-statewide-turnout-study.csv.gz";
@@ -1923,6 +1924,161 @@ async function loadCoverageCsv(sources, path) {
     throw new Error("Administrative coverage checksum differs");
   const csv = await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
   return { csv, file };
+}
+
+const indianaEarlyCountyFiles = {
+  1990: "56566627ff/genl90.pdf", 1992: "dfcdd3a85e/genl92.pdf", 1994: "f19a3cf5d3/genl94.pdf",
+  1998: "3c1031e871/genl98.pdf",
+};
+
+export function indianaEarlyFrames(csv, county = false) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header), frames = new Map(), expected = county ? 5 : 24;
+  const size = county ? 93 : 1;
+  const years = new Set(county ? [1990, 1992, 1994, 1996, 1998]
+    : [1948, ...Array.from({ length: 23 }, (_, i) => 1952 + 2 * i)]);
+  const integer = raw => /^\d+$/.test(raw) && Number.isSafeInteger(Number(raw));
+  let summaryIdentity;
+  if (new Set(fields).size !== fields.length || lines.length !== expected * size)
+    throw new Error("Indiana early report inventory differs");
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), get = key => cells[fields.indexOf(key)];
+    const date = get("election_date"), year = Number(date?.slice(0, 4));
+    const label = year % 4 === 0 ? "Presidential" : "Midterm";
+    const status = get("source_status"), edition = get("report_edition");
+    const url = get("source_url"), sha = get("source_sha256");
+    const report = !county ? "4371f6fa9f/particip.pdf" : indianaEarlyCountyFiles[year];
+    const expectedUrl = county && year === 1996 ? "https://www.in.gov/sos/elections/voter-information/register-to-vote/"
+      + "voter-registration-and-turnout-statistics/1996-general-election-registration-and-turnout-data"
+      : `https://www.in.gov/dA/${report}?language_id=1`;
+    const nov1 = new Date(Date.UTC(year, 10, 1));
+    const day = (8 - nov1.getUTCDay()) % 7 + 2;
+    if (cells.length !== fields.length || get("state_code") !== "IN"
+        || !years.has(year)
+        || date !== `${year}-11-${String(day).padStart(2, "0")}`
+        || (!county && get("election_type") !== label.toLowerCase())
+        || url !== expectedUrl || !/^[a-f0-9]{64}$/.test(sha)
+        || !["reported", "retained_after_failure"].includes(status)
+        || (county && [1996, 1998].includes(year) ? edition !== "" : !/^20\d{2}-\d\d-\d\dT\d\d:\d\d:\d\d$/.test(edition)))
+      throw new Error("Indiana early source identity differs");
+    const count = get(county ? "reported_voter_turnout" : "reported_participants");
+    const stock = get(county ? "reported_registered_voters" : "reported_registrations");
+    const level = county ? get("geography_level") : "state";
+    const name = county ? get("native_geography") : "Indiana";
+    const key = level === "state" ? "state" : name;
+    const hold = get("registration_fraction_hold"), raw = get("qualified_registered_fraction_pct");
+    const identity = `${edition}/${status}/${sha}/${url}`;
+    if (!county && summaryIdentity && identity !== summaryIdentity)
+      throw new Error("Indiana statewide report has mixed editions");
+    if (!county) summaryIdentity = identity;
+    const printed = county ? get("printed_registered_pct") : get("printed_registered_pct")?.replace(/%$/, "");
+    const precision = /^\d{1,3}(?:\.(\d{1,2}))?$/.exec(printed);
+    const estimate = !county && (count?.endsWith("00") || stock?.endsWith("00"));
+    const inPerson = get("reported_in_person"), absentee = get("reported_absentee");
+    const gap = county && inPerson !== "" && absentee !== ""
+      ? Number(inPerson) + Number(absentee) - Number(count) : null;
+    const geoHold = county && year === 1998 && ["Starke", "St. Joseph"].includes(name)
+      ? "source_county_identity_unresolved" : "";
+    const exact = 100 * Number(count) / Number(stock);
+    const expectedHold = geoHold || (gap ? "mode_counts_do_not_sum_to_voters_voting"
+      : !Number(stock) || printed === "unknown" ? "not_reported"
+      : estimate ? "source_estimate" : Number(count) > Number(stock) ? "invalid_denominator"
+      : Math.abs(exact - Number(printed)) > 0.5 * 10 ** -(precision?.[1]?.length ?? 0) + 1e-10
+        ? "printed_percentage_disagrees" : "");
+    if (!frames.has(date)) frames.set(date, { code: "IN", date, url, status, identity,
+      basis: `${label} · ${edition ? edition.slice(0, 10) + " report" : "undated county edition"}`,
+      measure: "state_reported_turnout", rows: new Map() });
+    const frame = frames.get(date);
+    if (frame.identity !== identity || frame.rows.has(key) || !["state", "county"].includes(level)
+        || (county && level === "state" && name !== "INDIANA") || !/^[A-Za-z. -]+$/.test(name)
+        || !integer(count) || (county || stock !== "") && !integer(stock) || (!precision && printed !== "unknown")
+        || (county && (get("geometry_hold") !== geoHold
+          || ![inPerson, absentee].every(value => value === "" || integer(value))
+          || get("mode_count_minus_reported_turnout") !== (gap === null ? "" : String(gap))))
+        || (!county && (get("participants_flagged_as_source_estimate") !== (count.endsWith("00") ? "True" : "False")
+          || get("registrations_flagged_as_source_estimate") !== (stock.endsWith("00") ? "True" : "False")))
+        || hold !== expectedHold
+        || (hold ? raw !== "" : !raw || !Number.isFinite(Number(raw)) || Math.abs(Number(raw) - exact) > 1e-8))
+      throw new Error("Indiana early participation totals or rates differ");
+    frame.rows.set(key, { name, count: Number(count), registered: stock === "" ? null : Number(stock),
+      rate: hold ? null : Number(raw), hold });
+  }
+  if (frames.size !== expected || [...frames.values()].some(frame => {
+    const state = frame.rows.get("state");
+    if (!state || frame.rows.size !== size) return true;
+    return county && ["count", "registered"].some(key =>
+      [...frame.rows.entries()].reduce((sum, [id, row]) => id === "state" ? sum : sum + row[key], 0) !== state[key]);
+  })) throw new Error("Indiana early county totals do not reconcile");
+  return [...frames.values()].sort((a, b) => b.date.localeCompare(a.date));
+}
+
+function installIndianaEarlyHistory(host, sources) {
+  for (const [index, path] of indianaEarlyPaths.entries()) {
+    const file = coverageCsvFile(sources, path);
+    if (!file) continue;
+    const county = index === 1;
+    const panel = document.createElement("details"), title = document.createElement("summary");
+    const note = document.createElement("p"), status = document.createElement("p"), link = document.createElement("a");
+    title.textContent = county ? "Indiana county participation, 1990–1998" : "Indiana statewide participation, 1948–1996";
+    note.textContent = county
+      ? "The 1990 county report and the separate statewide summary report different totals. County counts follow the source labels; unresolved identities are not mapped. "
+      : "Counts marked as estimates and unknown registrations are retained in the download. Printed voting-age ratios are not rates of eligible voters. ";
+    link.href = file.url;
+    link.textContent = "Complete source report table (CSV · gzip)";
+    note.append(link);
+    status.setAttribute("role", "status");
+    panel.append(title, note, status);
+    host.append(panel);
+    let loading = false;
+    panel.addEventListener("toggle", async () => {
+      if (!panel.open || loading) return;
+      loading = true;
+      status.textContent = "Checking the election reports…";
+      try {
+        const { csv } = await loadCoverageCsv(sources, path);
+        const frames = indianaEarlyFrames(csv, county), history = document.createElement("details");
+        archiveStateHistory(history, frames, () => "Indiana", {
+          chartNote: "Dots use registration from the same report. Held or estimated fractions have no dot.",
+        })("IN");
+        history.open = true;
+        panel.append(history);
+        if (county) {
+          const label = document.createElement("label"), select = document.createElement("select");
+          const region = document.createElement("div"), table = document.createElement("table");
+          const caption = table.createCaption(), heading = table.createTHead().insertRow(), body = table.createTBody();
+          for (const column of ["Source county name", "Voters", "Registered", "Checked fraction"]) {
+            const th = document.createElement("th");
+            th.scope = "col"; th.textContent = column; heading.append(th);
+          }
+          region.className = "table-wrap"; region.tabIndex = 0;
+          region.setAttribute("role", "region"); region.setAttribute("aria-label", "Indiana county report table");
+          for (const frame of frames) select.add(new Option(frame.date, frame.date));
+          const render = () => {
+            const frame = frames.find(item => item.date === select.value);
+            caption.textContent = `Indiana counties · ${frame.date}${frame.status === "reported" ? "" : " · Retained"}`;
+            body.replaceChildren();
+            for (const [key, row] of frame.rows) {
+              if (key === "state") continue;
+              const tr = body.insertRow(), name = document.createElement("th");
+              name.scope = "row"; name.textContent = row.name; tr.append(name);
+              for (const n of [row.count, row.registered]) tr.insertCell().textContent = n.toLocaleString("en-US");
+              tr.insertCell().textContent = row.rate === null ? `Held · ${row.hold.replaceAll("_", " ")}`
+                : `${row.rate.toFixed(2)}%`;
+            }
+          };
+          select.addEventListener("change", render);
+          label.append("County report election ", select);
+          region.append(table);
+          panel.append(label, region);
+          render();
+        }
+        status.textContent = "";
+      } catch {
+        loading = false;
+        status.textContent = "The election reports could not be verified. Reopen this section to retry or use the download.";
+      }
+    });
+  }
 }
 
 export function eacLocalityFrames(csv) {
@@ -4255,6 +4411,7 @@ function installAdministrativeCoverage(host) {
       }
       installNorthCarolinaAge(content, manifest.house_sources);
       installNorthCarolinaArchives(content, manifest.house_sources);
+      installIndianaEarlyHistory(content, manifest.house_sources);
       installWashingtonAge(content, manifest.house_sources);
       installOregonHistory(content, manifest.house_sources);
       installKansasStudy(content, manifest.house_sources);
