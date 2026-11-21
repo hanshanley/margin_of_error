@@ -7,6 +7,7 @@ import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
+  connecticutTownRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
@@ -45,6 +46,18 @@ test("Alaska midterm mapping follows a verified geometry receipt, not a hardcode
     assert.equal(alaskaMidtermMapQualified(held), false);
     assert.equal(held[0].count, 5);
   }
+});
+
+test("Connecticut keeps split-town components and withholds inconsistent rates", () => {
+  const csv = "state_code,election_date,geography_level,reporting_unit,source_unit_occurrence,active_checklist,"
+    + "checked_as_voted,checked_as_voted_fraction,rate_hold_reason,source_status\n"
+    + "CT,1998-11-03,town,Southbury,1,12130,,,malformed_count,reported\n"
+    + "CT,2008-11-04,town_part,Durham,1,10,5,0.50000000,,reported\n"
+    + "CT,2008-11-04,town_part,Durham,2,20,11,0.55000000,,reported";
+  assert.deepEqual(connecticutTownRows(csv).map(row => [row.name, row.part, row.fraction]),
+    [["Southbury", "1", ""], ["Durham", "1", "0.50000000"], ["Durham", "2", "0.55000000"]]);
+  assert.throws(() => connecticutTownRows(csv.replace("Durham,2", "Durham,1")), /Invalid Connecticut/);
+  assert.throws(() => connecticutTownRows(csv.replace("0.55000000", "0.50000000")), /Invalid Connecticut/);
 });
 
 test("Alabama reporting-unit controls retain conflicting totals and reject an inconsistent decision", () => {

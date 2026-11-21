@@ -35,6 +35,7 @@ const akBallotUnits = "release/participation-ak-2024-precinct-ballot-archive.csv
 const akCurrentBallotUnits = "release/participation-ak-2026-precinct-ballot-archive.csv.gz";
 const akCardsArchive = "release/participation-ak-general-cards-cast-archive.csv.gz";
 const akAgeArchive = "release/participation-ak-general-age-voter-history.csv.gz";
+const ctTownArchive = "release/participation-ct-general-town-turnout-archive.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
@@ -2378,6 +2379,102 @@ function installAlaskaAge(host, sources) {
   });
 }
 
+export function connecticutTownRows(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const fields = ["state_code", "election_date", "geography_level", "reporting_unit", "source_unit_occurrence",
+    "active_checklist", "checked_as_voted", "checked_as_voted_fraction", "rate_hold_reason", "source_status"];
+  const positions = fields.map(field => columns.indexOf(field));
+  if (!lines.length || positions.includes(-1) || new Set(columns).size !== columns.length)
+    throw new Error("Missing Connecticut turnout fields");
+  const integer = value => value !== "" && /^\d+$/.test(value) && Number.isSafeInteger(Number(value));
+  const seen = new Set();
+  return lines.map(line => {
+    const cells = historicalCsvLine(line);
+    const [state, date, scope, name, part, reg, votes, fraction, hold, status] = positions.map(i => cells[i]);
+    const key = `${date}/${name}/${part}`;
+    if (cells.length !== columns.length || state !== "CT" || !/^(?:1998|200[02468])-11-\d\d$/.test(date)
+        || !["state", "town", "town_part"].includes(scope) || !name || seen.has(key)
+        || (scope === "town_part" ? !["1", "2"].includes(part) : part !== "1")
+        || !["reported", "retained_after_failure"].includes(status)
+        || [reg, votes].some(value => value !== "" && !integer(value))
+        || (reg !== "" && votes !== "" && Number(reg) < Number(votes))
+        || (fraction === "" ? !["malformed_count", "town_counts_do_not_reconcile", "printed_percentage_differs"].includes(hold)
+          : hold || !integer(reg) || !integer(votes) || Number(reg) === 0 || !/^[01]\.\d{8}$/.test(fraction)
+            || Math.abs(Number(fraction) - Number(votes) / Number(reg)) > 0.000000006))
+      throw new Error("Invalid Connecticut turnout archive row");
+    seen.add(key);
+    return { date, scope, name, part, reg, votes, fraction, hold, status };
+  });
+}
+
+function installConnecticutTowns(host, sources) {
+  if (!sources?.supported_release?.downloads?.[ctTownArchive]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const content = document.createElement("div");
+  summary.textContent = "Connecticut turnout by town, 1998–2008";
+  panel.append(summary, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    content.textContent = "Checking Connecticut’s official turnout reports…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, ctTownArchive);
+      const rows = connecticutTownRows(csv);
+      const note = document.createElement("p"), download = document.createElement("a");
+      note.textContent = "The fraction uses people checked as having voted divided by names on the same report’s active checklist. "
+        + "It is not a share of the eligible population. The 2008 split-town components remain separate. "
+        + "The download includes the printed cells and absentee-ballot accounting.";
+      download.href = file.url;
+      download.textContent = "Complete Connecticut town counts and provenance (CSV · gzip)";
+      const label = document.createElement("label"), town = document.createElement("select");
+      town.setAttribute("aria-label", "Connecticut geography");
+      town.append(new Option("Statewide", ""));
+      for (const name of [...new Set(rows.filter(row => row.scope !== "state").map(row => row.name))].sort())
+        town.append(new Option(name, name));
+      label.append("Geography ", town);
+      const region = document.createElement("div");
+      region.className = "table-wrap";
+      region.tabIndex = 0;
+      region.setAttribute("role", "region");
+      region.setAttribute("aria-label", summary.textContent);
+      const reasons = {
+        malformed_count: "Unreadable count", town_counts_do_not_reconcile: "Town and state counts do not reconcile",
+        printed_percentage_differs: "Printed percentage differs from counts",
+      };
+      const displayCount = value => value === "" ? "Not usable" : Number(value).toLocaleString("en-US");
+      const render = () => {
+        const table = document.createElement("table");
+        table.createCaption().textContent = town.selectedOptions[0].text;
+        const header = table.createTHead().insertRow();
+        for (const label of ["General election", "Checked as having voted", "Active checklist", "Fraction", "Source status"]) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = label; header.append(th);
+        }
+        const body = table.createTBody();
+        for (const item of rows.filter(row => town.value ? row.scope !== "state" && row.name === town.value : row.scope === "state")) {
+          const row = body.insertRow(), year = document.createElement("th");
+          year.scope = "row";
+          year.textContent = item.date.slice(0, 4) + (item.scope === "town_part" ? ` (part ${item.part})` : "");
+          row.append(year);
+          for (const value of [displayCount(item.votes), displayCount(item.reg),
+            item.hold ? `Withheld — ${reasons[item.hold]}` : `${(Number(item.fraction) * 100).toFixed(2)}%`,
+            item.status === "retained_after_failure" ? "Retained" : "Reported"]) row.insertCell().textContent = value;
+        }
+        region.replaceChildren(table);
+      };
+      town.addEventListener("change", render);
+      render();
+      content.replaceChildren(note, download, " ", label, region);
+    } catch {
+      loading = false;
+      content.textContent = "The checked Connecticut archive could not be loaded. Reopen this section to retry.";
+    }
+  });
+}
+
 export function northCarolinaAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = header.split(",");
@@ -2591,6 +2688,7 @@ function installAdministrativeCoverage(host) {
       installAlaskaBallots(content, manifest.house_sources, true);
       installAlaskaCards(content, manifest.house_sources);
       installAlaskaAge(content, manifest.house_sources);
+      installConnecticutTowns(content, manifest.house_sources);
       panel.dataset.runtimeVersion = manifest.version;
     } catch {
       content.textContent = "Administrative coverage could not be verified. Close and reopen to retry.";
