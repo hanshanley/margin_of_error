@@ -13,9 +13,10 @@ import { projectStateContext } from "./participation-map-projection.js";
 const coveragePath = "release/participation-administrative-coverage.csv.gz";
 const historicalCountyPath = "participation/eac-county-year-decisions.csv.gz";
 const eacLocalityPath = "release/participation-eac-locality-history.csv.gz";
-const eacReferenceYears = { MA: ["2018", "2020"], ME: ["2018", "2020", "2022", "2024"],
-  NH: ["2018", "2020", "2022"], VT: ["2018", "2020", "2022", "2024"] };
-const eacReferenceBase = "https://github.com/hanshanley/voter-participation/releases/download/eac-locality-reference-maps-2018-2024";
+const eacReferenceYears = { MA: ["2010", "2018", "2020"],
+  ME: ["2008", "2010", "2012", "2018", "2020", "2022", "2024"],
+  NH: ["2018", "2020", "2022"], VT: ["2010", "2012", "2018", "2020", "2022", "2024"] };
+const eacReferenceBase = "https://github.com/hanshanley/voter-participation/releases/download/eac-locality-reference-maps-";
 const countyYears = Array.from({ length: 11 }, (_, i) => 2004 + 2 * i);
 const countyDecisions = {
   reconciled_direct_county_turnout: "Matches the direct county report",
@@ -2007,10 +2008,11 @@ function installEacLocalityHistory(host, sources, names) {
         status.textContent = `${rows.filter(row => row.count !== null).length} of ${rows.length} records have usable counts.`;
         references.replaceChildren();
         if (eacReferenceYears[state.value]?.includes(year.value)) {
+          const release = Number(year.value) < 2018 ? "2008-2012" : "2018-2024";
           references.append("Fixed Census reference maps for this election: ");
           for (const [measure, label] of [["count", "counts"], ["rate", "registration fractions"]]) {
             const link = document.createElement("a");
-            link.href = `${eacReferenceBase}/${state.value}-${year.value}-${measure}.svg`;
+            link.href = `${eacReferenceBase}${release}/${state.value}-${year.value}-${measure}.svg`;
             link.textContent = `${label} (SVG)`;
             if (measure === "rate") references.append(" · ");
             references.append(link);
