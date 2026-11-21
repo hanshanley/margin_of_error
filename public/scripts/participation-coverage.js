@@ -2468,11 +2468,95 @@ function installConnecticutTowns(host, sources) {
       town.addEventListener("change", render);
       render();
       content.replaceChildren(note, download, " ", label, region);
+      installConnecticutTownMap(content, rows);
     } catch {
       loading = false;
       content.textContent = "The checked Connecticut archive could not be loaded. Reopen this section to retry.";
     }
   });
+}
+
+const ctTownLayers = {
+  "2000-11-07": { bytes: 607788, sha256: "87fd7f27376ae4b3269919535ee1995747f0b88eae295f1628c9688340dbf136" },
+  "2008-11-04": { bytes: 607890, sha256: "5e02fc8bba44d99c2fa9cb25e411685b08e7344c947bf8681a0aed7a249006e6" },
+};
+
+function installConnecticutTownMap(host, rows) {
+  const dates = Object.keys(ctTownLayers).filter(date => rows.some(row => row.date === date));
+  if (!dates.length) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const label = document.createElement("label"), choice = document.createElement("select"), content = document.createElement("div");
+  summary.textContent = "Map Connecticut town participation";
+  choice.setAttribute("aria-label", "Connecticut map election");
+  choice.append(...dates.map(date => new Option(date.slice(0, 4), date)));
+  label.append("Map election ", choice);
+  panel.append(summary, label, content);
+  host.append(panel);
+  let generation = 0, retry = false;
+  const render = async () => {
+    const token = ++generation;
+    if (!panel.open) return;
+    const date = choice.value, year = date.slice(0, 4);
+    content.textContent = "Checking the dated Census town layer…";
+    try {
+      const { checkedCountyBody } = await import("./participation-historical-county-map.js");
+      const { conicProjection, projectFeatures } = await import("./participation-map-projection.js");
+      const asset = new URL(`../participation-archive-geometry/town-CT-${year}.geojson.gz`, import.meta.url);
+      const bytes = await checkedCountyBody(asset.href, ctTownLayers[date], retry);
+      const layer = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).json();
+      const report = rows.filter(row => row.date === date && row.scope !== "state");
+      const names = new Set(report.map(row => row.name));
+      const exact = new Map(report.filter(row => row.scope === "town").map(row => [row.name, row]));
+      const features = layer.features;
+      if (layer.type !== "FeatureCollection" || layer.state_code !== "CT" || layer.election_date !== date
+          || features.length !== 169 || names.size !== 169
+          || new Set(features.map(feature => feature.properties.town)).size !== 169
+          || features.some(feature => !names.has(feature.properties.town)))
+        throw new Error("Connecticut map roster or election differs");
+      const paths = projectFeatures(features, conicProjection(-72.7, 40, 43), [10, 10, 500, 300]);
+      if (paths.some(path => !path.d || /NaN|Infinity/.test(path.d))) throw new Error("Invalid Connecticut town paths");
+      if (token !== generation) return;
+      const ns = "http://www.w3.org/2000/svg", svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("viewBox", "0 0 520 320");
+      svg.setAttribute("width", "520");
+      svg.setAttribute("role", "img");
+      svg.setAttribute("aria-label", `Connecticut ${year} town participation. Exact counts and fractions are in the table.`);
+      svg.style.maxWidth = "100%";
+      svg.style.height = "auto";
+      const fills = ["#d9ece8", "#a9d0c8", "#6aaaa2", "#2c756e"];
+      let qualified = 0;
+      for (const { feature, d } of paths) {
+        const town = feature.properties.town, row = exact.get(town), path = document.createElementNS(ns, "path");
+        const rate = row?.fraction ? Number(row.fraction) : null;
+        if (rate !== null) qualified++;
+        path.setAttribute("d", d);
+        path.setAttribute("fill", rate === null ? "#f5f5f4" : fills[rate < .6 ? 0 : rate < .7 ? 1 : rate < .8 ? 2 : 3]);
+        path.setAttribute("stroke", "#5a6667");
+        path.setAttribute("stroke-width", ".45");
+        path.setAttribute("fill-rule", "evenodd");
+        path.dataset.town = town;
+        const title = document.createElementNS(ns, "title");
+        title.textContent = `${town}: ${rate !== null ? `${(rate * 100).toFixed(2)}% of active checklist`
+          : row ? "fraction withheld" : "split-town rows; no whole-town fraction"}`;
+        path.append(title);
+        svg.append(path);
+      }
+      const legend = document.createElement("p");
+      legend.textContent = `${qualified} of 169 towns have a whole-town fraction. Light to dark: below 60%, `
+        + "60% to below 70%, 70% to below 80%, 80% or higher. Gray means withheld, not zero. Census town display boundaries.";
+      const archive = document.createElement("a");
+      archive.href = "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-1998-2008/connecticut-town-maps-2000-2008.zip";
+      archive.textContent = "Download original Census layers, baseline counts, and map rebuild code (ZIP)";
+      content.replaceChildren(svg, legend, archive);
+      retry = false;
+    } catch {
+      if (token !== generation) return;
+      retry = true;
+      content.textContent = "The Connecticut map could not be verified. The complete table and download remain available.";
+    }
+  };
+  panel.addEventListener("toggle", render);
+  choice.addEventListener("change", render);
 }
 
 export function northCarolinaAgeRows(csv) {
