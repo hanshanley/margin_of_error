@@ -1308,6 +1308,23 @@ test("the Idaho map uses reconciled county parents, not reporting units", () => 
     /do not reconcile/);
   assert.throws(() => idahoCountyArchiveFrame(state, workbook.replace(",Total,50,", ",Total,25,")),
     /count, rate or source differs/);
+  const date = "2022-11-08";
+  const url = "https://voteidaho.gov/election-results/2022-election-stats/";
+  const older = [countyHeader, ...countyRecords.map(line => {
+    const cells = line.split(",");
+    cells[1] = date;
+    cells[2] = "reported";
+    cells[3] = url;
+    cells[9] = cells[8];
+    return cells.join(",");
+  }), `ID,${date},reported,${url},${hash},440,880,state,,GRAND TOTAL,50,`].join("\n");
+  const historical = state.replace("2024-11-05", date);
+  assert.equal(idahoCountyArchiveFrame(historical, older, date).rows.size, 45);
+  assert.equal(idahoCountyArchiveFrame(historical, older, "2020-11-03"), null);
+  const held = older.replace(",A A,A A,50,", ",A A,A A,,printed_rate_disagrees");
+  assert.equal(idahoCountyArchiveFrame(historical, held, date).rows.get("county/A A").rate, null);
+  assert.throws(() => idahoCountyArchiveFrame(historical, older.replace("GRAND TOTAL", "TOTAL"), date),
+    /Incomplete Idaho county control/);
 });
 
 test("the release inventory discovers new query files and omits invalid descriptors", () => {
