@@ -3885,19 +3885,30 @@ function installAdministrativeCoverage(host) {
       installDakotaHistory(content, manifest.house_sources);
       installNewJerseyPeriodicComponents(content, manifest.house_sources);
       installCaliforniaMedia(content, manifest.house_sources);
-      try {
-        const newMexico = coverageCsvFile(manifest.house_sources, "release/participation-nm-2026-native-turnout.csv.gz");
-        if (newMexico) {
+      for (const [state, path, title, note] of [
+        ["New Mexico", "release/participation-nm-2026-native-turnout.csv.gz",
+          "New Mexico statewide, county and native precinct participation",
+          "Includes reporting units without a verified map match."],
+        ["Rhode Island", "release/participation-ri-2026-native-turnout.csv.gz",
+          "Rhode Island municipal and federal reporting counts",
+          "The federal count is not allocated to towns. The statewide count and all rates are withheld."],
+        ["Pennsylvania", "release/participation-pa-2026-ballot-audit.csv.gz",
+          "Pennsylvania ballot audit figures and sampled-batch counts",
+          "This is the audit's reporting scope, not final statewide turnout or county totals."],
+      ]) {
+        try {
+          const file = coverageCsvFile(manifest.house_sources, path);
+          if (!file) continue;
           const paragraph = document.createElement("p"), link = document.createElement("a");
-          link.href = newMexico.url;
-          link.textContent = "New Mexico statewide, county and native precinct participation (complete CSV · gzip)";
-          paragraph.append(link, " Includes reporting units without a verified map match.");
+          link.href = file.url;
+          link.textContent = `${title} (complete CSV · gzip)`;
+          paragraph.append(link, ` ${note}`);
           content.append(paragraph);
+        } catch {
+          const notice = document.createElement("p");
+          notice.textContent = `The complete ${state} source download could not be verified.`;
+          content.append(notice);
         }
-      } catch {
-        const notice = document.createElement("p");
-        notice.textContent = "The complete New Mexico precinct download could not be verified.";
-        content.append(notice);
       }
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
