@@ -37,6 +37,7 @@ const akCardsArchive = "release/participation-ak-general-cards-cast-archive.csv.
 const akAgeArchive = "release/participation-ak-general-age-voter-history.csv.gz";
 const ctTownArchive = "release/participation-ct-general-town-turnout-archive.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
+const virginiaLocalityArchivePath = "release/participation-va-2024-official-locality-ballots.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
 const marylandPrecinctPath = "release/participation-md-precinct-affiliation-snapshots.csv.gz";
@@ -894,7 +895,7 @@ const coloradoCountOnlyReasons = new Map([
   ...["2008-11-04", "2010-11-02"].map(date => [date, "active_registration_only"]),
 ]);
 
-export function stateCountyArchiveFrames(csv, { currentCalifornia = false, currentNebraska = false } = {}) {
+export function stateCountyArchiveFrames(csv, { currentCalifornia = false, currentNebraska = false, virginiaNative = false } = {}) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const columns = historicalCsvLine(header);
   const required = ["state_code", "year", "election_date", "geography_level", "geography",
@@ -925,17 +926,19 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     const basis = hasMeasures ? field("registration_basis") : "Report's registered voters";
     const stateGap = field("state_ballot_shortfall") ?? "";
     const countyGap = field("county_ballot_shortfall") ?? "";
-    const virginia = code === "VA" && date === "2022-11-08";
+    const virginia = code === "VA" && date === (virginiaNative ? "2024-11-05" : "2022-11-08");
     const minnesota = code === "MN" && measure === "total_voters" && basis === "Pre-registered at 7 a.m."
       && stock === "" && rate === null && hold === "pre_registration_excludes_same_day_registrants";
     const countOnly = minnesota || (measure === "ballots_cast" && basis === "" && stock === "" && rate === null
       && ((code === "WY" && hold === "registration_not_in_report")
-        || (virginia && hold === "registration_not_in_report")
+        || (virginia && hold === (virginiaNative ? "native_registration_frame_not_certified_turnout_denominator"
+          : "registration_not_in_report"))
         || (code === "CO" && hold === coloradoCountOnlyReasons.get(date))));
     const edition = field("report_edition"), note = field("report_note") || "";
     if (!countStates.includes(code) || !/^\d{4}$/.test(year) || !/^\d{4}-11-\d{2}$/.test(date)
         || !date.startsWith(`${year}-`) || (!["state", "county"].includes(level)
           && !(virginia && level === "county_equivalent"))
+        || (virginiaNative && (!virginia || level === "state"))
         || (code === "VA" && (!virginia || !countOnly
           || (level === "state" ? name !== "Virginia" : !name.endsWith(level === "county" ? " COUNTY" : " CITY"))))
         || (currentCalifornia || currentNebraska
@@ -955,7 +958,8 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
           || Math.abs(rate - 100 * Number(value) / Number(stock)) > 1e-10))
       throw new Error("Election-office count, fraction or report identity differs");
     const key = `${code}/${date}`;
-    if (!frames.has(key)) frames.set(key, { code, date, measure, basis, edition, status, url, sha, note, rows: new Map() });
+    if (!frames.has(key)) frames.set(key, { code, date, measure, basis, edition, status, url, sha, note,
+      ...(virginiaNative ? { localityCountsOnly: true } : {}), rows: new Map() });
     const frame = frames.get(key), rowKey = level === "state" ? "state" : `county/${name}`;
     if (frame.rows.has(rowKey) || frame.measure !== measure || frame.basis !== basis || frame.edition !== edition
         || frame.status !== status || frame.url !== url || frame.sha !== sha || frame.note !== note)
@@ -963,7 +967,7 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     frame.rows.set(rowKey, { name, count: Number(value), registered: countOnly ? null : Number(stock), rate, hold,
       ...(stateGap || countyGap ? { shortfall: Number(stateGap || countyGap) } : {}) });
   }
-  if ([...frames.values()].some(frame => !frame.rows.has("state") || frame.rows.size < 2))
+  if (!virginiaNative && [...frames.values()].some(frame => !frame.rows.has("state") || frame.rows.size < 2))
     throw new Error("Election-office archive lacks a state or county total");
   if (currentCalifornia && [...frames.values()].some(frame => frame.rows.size !== 59))
     throw new Error("Incomplete California statewide and county report");
@@ -980,7 +984,7 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
       continue;
     }
     if (frame.code === "VA") {
-      if (frame.rows.size !== 134 || state.count !== countySum
+      if ((virginiaNative ? frame.rows.size !== 133 : frame.rows.size !== 134 || state.count !== countySum)
           || [...frame.rows.keys()].filter(key => key.endsWith(" CITY")).length !== 38)
         throw new Error("Incomplete or inconsistent Virginia locality report");
       continue;
@@ -1263,7 +1267,7 @@ function archiveStateHistory(panel, frames, name) {
     return element;
   };
   return code => {
-    const reports = frames.filter(frame => frame.code === code).reverse();
+    const reports = frames.filter(frame => frame.code === code && frame.rows.has("state")).reverse();
     panel.hidden = reports.length < 2;
     body.replaceChildren();
     chart.querySelector("svg")?.remove();
@@ -1383,6 +1387,14 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
   status.setAttribute("role", "status");
   button.type = "button"; button.textContent = "Load election-office reports";
   panel.append(heading, note, button, status);
+  const virginiaFile = !wyoming && !currentCalifornia && !currentNebraska
+    ? coverageCsvFile(sources, virginiaLocalityArchivePath) : null;
+  if (virginiaFile) {
+    const link = document.createElement("a");
+    link.href = virginiaFile.url;
+    link.textContent = "Virginia 2024 locality ballot counts (CSV · gzip)";
+    note.append(" ", link);
+  }
   let retry = false;
   button.addEventListener("click", async () => {
     button.disabled = true;
@@ -1404,6 +1416,19 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
         const bytes = await checkedCountyBody(file.url, file, retry);
         const csv = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
         frames = stateCountyArchiveFrames(csv, { currentCalifornia, currentNebraska });
+        if (virginiaFile) {
+          try {
+            const extra = await checkedCountyBody(virginiaFile.url, virginiaFile, retry);
+            const csv = await new Response(new Blob([extra]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+            frames.push(...stateCountyArchiveFrames(csv, { virginiaNative: true }));
+            frames.sort((a, b) => a.code.localeCompare(b.code) || b.date.localeCompare(a.date));
+          } catch {
+            const warning = document.createElement("p");
+            warning.setAttribute("role", "status");
+            warning.textContent = "The Virginia 2024 locality table could not be verified.";
+            panel.append(warning);
+          }
+        }
       }
       const state = document.createElement("select"), year = document.createElement("select");
       for (const code of new Set(frames.map(frame => frame.code))) state.add(new Option(names[code] || code, code));
@@ -1430,13 +1455,18 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
         caption.textContent = `${names[frame.code] || frame.code} · ${frame.date} · ${measure}`;
         original.href = frame.url;
         report.replaceChildren(original, (frame.basis ? `. Registration basis: ${frame.basis}. `
-          + "Not a rate among all eligible residents." : ". The report supplies no registration denominator.")
+          + "Not a rate among all eligible residents." : frame.localityCountsOnly
+            ? ". No comparable locality registration denominator or statewide total is shown."
+            : ". The report supplies no registration denominator.")
           + (frame.edition ? ` Report edition: ${frame.edition}.` : "")
           + (frame.note ? ` ${frame.note}` : ""));
-        status.textContent = `${frame.rows.size - 1} ${frame.code === "VA" ? "localities" : "counties"} and one state total.`
+        const statewide = frame.rows.get("state");
+        status.textContent = `${frame.rows.size - Number(Boolean(statewide))} ${frame.code === "VA" ? "localities" : "counties"}`
+          + (statewide ? " and one state total." : ". No compatible statewide total.")
           + (frame.status === "retained_after_failure" ? " Latest check failed; showing the last verified report." : "");
         body.replaceChildren();
-        for (const row of [frame.rows.get("state"), ...[...frame.rows].filter(([key]) => key !== "state").map(([, row]) => row)]) {
+        const localities = [...frame.rows].filter(([key]) => key !== "state").map(([, row]) => row);
+        for (const row of statewide ? [statewide, ...localities] : localities) {
           const tr = body.insertRow(), key = document.createElement("th");
           key.scope = "row"; key.textContent = row.name; tr.append(key);
           tr.insertCell().textContent = number.format(row.count);

@@ -186,6 +186,7 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
   const year = Number(date.slice(0, 4));
   const size = code === "CO" && year === 2000 ? 63 : officialCountySizes[code];
   const partial = frame.partialCountyReports === true && code === "NE" && date === "2026-11-03";
+  const localityCountsOnly = frame.localityCountsOnly === true && code === "VA" && date === "2024-11-05";
   const missing = allowPartialGeometry && code === "NE" && date === "2002-11-05"
     && collection?.reference_date === "2002-01-01" && Array.isArray(collection.missing_counties)
     ? new Set(collection.missing_counties) : new Set();
@@ -194,11 +195,11 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
         || Number(key.slice(2)) > 185))) throw new Error("Unverified missing county boundary inventory");
   if (!size || collection?.type !== "FeatureCollection" || !Array.isArray(collection.features)
       || collection.features.length + missing.size !== size
-      || (partial ? rows.size !== size || rows.has("state")
+      || (partial || localityCountsOnly ? rows.size !== size || rows.has("state")
         : rows.size !== size + 1 || !rows.has("state")))
     throw new Error("Missing complete official county frame");
   const byName = new Map(), keys = new Set();
-  const virginia = code === "VA" && date === "2022-11-08";
+  const virginia = code === "VA" && (date === "2022-11-08" || localityCountsOnly);
   const localityName = name => name.trim().toUpperCase().replace("KING & QUEEN COUNTY", "KING AND QUEEN COUNTY");
   for (const [key, row] of rows) {
     if (key === "state") continue;

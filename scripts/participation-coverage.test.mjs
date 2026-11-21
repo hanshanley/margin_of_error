@@ -480,6 +480,16 @@ test("Virginia turnout keeps a county and independent city with the same name se
   assert.deepEqual(joined.filter(({ feature }) => feature.properties.name === "Fairfax")
     .map(({ value }) => [value.name, value.count, value.rate]), [["FAIRFAX COUNTY", 1, null], ["FAIRFAX CITY", 2, null]]);
   assert.throws(() => stateCountyArchiveFrames(records.slice(0, -1).join("\n")), /Incomplete/);
+  const native = [header, ...records.slice(2).map(row => row.replace("VA,2022,2022-11-08", "VA,2024,2024-11-05")
+    .replace("registration_not_in_report", "native_registration_frame_not_certified_turnout_denominator"))];
+  const readNative = lines => stateCountyArchiveFrames(lines.join("\n"), { virginiaNative: true });
+  const [localityFrame] = readNative(native);
+  assert.equal(localityFrame.rows.has("state"), false);
+  const nativeFeatures = features.map(feature => ({ ...feature,
+    properties: { ...feature.properties, boundary_year: 2024 } }));
+  assert.equal(bindOfficialCountyArchive({ type: "FeatureCollection", features: nativeFeatures }, localityFrame).length, 133);
+  assert.throws(() => readNative(native.slice(0, -1)), /Incomplete/);
+  assert.throws(() => stateCountyArchiveFrames(native.join("\n")), /identity/);
 });
 
 test("official county maps require a complete, unique roster on the exact dated layer", () => {
