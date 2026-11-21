@@ -98,14 +98,15 @@ test("Virginia precinct reader keeps central ballots separate and requires balan
   const rows = Array.from({ length: 133 }, (_, i) =>
     ["101 - Precinct,101,physical_precinct,election_day,10", ...central.map(mode =>
       `${mode},,central_reporting_unit,${mode},1`)].map(unit =>
-      `VA,2022-11-08,Locality ${i},${unit},14,2022-12-06T02:16:00,retained_after_failure,2026-11-16,false,,`)).flat();
+      `VA,2022-11-08,Locality ${i},${unit},14,2022-12-06T02:16:00,retained_after_failure,2026-11-16,False,,`)).flat();
   const full = [header, ...rows].join("\n");
   const result = virginiaPrecinctCounts(full);
   assert.equal(result.status, "retained_after_failure");
   assert.equal(result.localities.get("Locality 0").electionDay.get("101").ballots, 10);
   assert.equal(result.localities.get("Locality 0").central.get("mail").ballots, 1);
   assert.throws(() => virginiaPrecinctCounts([header, ...rows.slice(1)].join("\n")), /reconcile/);
-  assert.throws(() => virginiaPrecinctCounts(full.replace(/,false,,/, ",false,50,")), /Invalid/);
+  assert.throws(() => virginiaPrecinctCounts(full.replace(",False,,", ",False,50,")), /Invalid/);
+  assert.throws(() => virginiaPrecinctCounts(full.replace(",False,,", ",True,,")), /Invalid/);
 });
 
 test("South Carolina preserves provisional units and withholds rates on the checked detail export", () => {

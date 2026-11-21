@@ -1242,7 +1242,7 @@ export function virginiaPrecinctCounts(csv) {
     const physical = r.unit_kind === "physical_precinct";
     if (cells.length !== columns.length || r.state !== "VA" || r.election_date !== "2022-11-08"
         || !r.locality || !r.reporting_unit || !/^\d{1,9}$/.test(r.ballots)
-        || !/^\d{1,9}$/.test(r.locality_ballots_control) || r.geometry_qualified !== "false"
+        || !/^\d{1,9}$/.test(r.locality_ballots_control) || !/^false$/i.test(r.geometry_qualified)
         || r.registration_denominator !== "" || r.turnout_rate !== ""
         || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/.test(r.source_edition)
         || !/^\d{4}-\d{2}-\d{2}$/.test(r.checked_week_utc)
