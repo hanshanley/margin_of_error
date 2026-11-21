@@ -3248,6 +3248,8 @@ function installSouthCarolinaDetail(host, sources) {
 }
 
 const alStatewideHistoryPath = "release/participation-al-statewide-general-election-history.csv.gz";
+const alStatewideHistoryPdf = "https://www.sos.alabama.gov/sites/default/files/election-data/"
+  + "2026-07/Comprehensive%20Voter%20Turnout%201986-2024.pdf";
 const alStatewideDecisions = {
   contest_vote_context_only: "Candidate-contest votes only; not turnout",
   source_election_date_disagrees: "Source election date disagrees",
@@ -3302,6 +3304,17 @@ function installAlabamaStatewideHistory(host, sources) {
     try {
       const { csv, file } = await loadCoverageCsv(sources, alStatewideHistoryPath);
       const rows = alStatewideHistoryRows(csv);
+      const history = document.createElement("details");
+      const frames = rows.filter(row => row.measure === "ballots_cast").toReversed().map(row => ({
+        code: "AL", date: row.election_date, url: alStatewideHistoryPdf, measure: "ballots_cast",
+        status: row.source_status, basis: "Election-date registration",
+        rows: new Map([["state", { count: row.count, registered: row.registered, rate: row.rate,
+          hold: row.rate === null ? alStatewideDecisions[row.decision] : null }]]),
+      }));
+      archiveStateHistory(history, frames, () => "Alabama", {
+        fractionHeading: "Checked turnout rate",
+        chartNote: "Ballots cast divided by election-date registration. Withheld rates have no dot.",
+      })("AL");
       const note = document.createElement("p"), download = document.createElement("a");
       note.textContent = "The report uses candidate-contest vote totals through 2012. Those are not ballot counts or turnout. "
         + "Checked rates divide separately reported ballots by the same report’s election-date registration count.";
@@ -3325,7 +3338,7 @@ function installAlabamaStatewideHistory(host, sources) {
           tr.insertCell().textContent = value;
       }
       region.append(table);
-      body.replaceChildren(note, download, region);
+      body.replaceChildren(note, download, history, region);
       status.textContent = `Report revised ${rows.at(-1).source_revision_date}.`
         + (rows.some(row => row.source_status === "retained_after_failure") ? " Showing the last verified report." : "");
     } catch {
