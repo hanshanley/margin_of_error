@@ -259,7 +259,7 @@ export function coverageCsvFile(sources, path) {
   const file = sources?.supported_release?.downloads?.[path];
   if (!file) return null;
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath].includes(path)
-    ? 2_000_000 : path === washingtonAgePath ? 1_000_000 : path === alBallotUnits ? 262144
+    ? 2_000_000 : path === washingtonAgePath ? 1_000_000 : [alBallotUnits, ctTownArchive].includes(path) ? 262144
       : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
@@ -2418,13 +2418,14 @@ export function connecticutTownRows(csv) {
     const cells = historicalCsvLine(line);
     const [state, date, scope, name, part, reg, votes, fraction, hold, status] = positions.map(i => cells[i]);
     const key = `${date}/${name}/${part}`;
-    if (cells.length !== columns.length || state !== "CT" || !/^(?:1998|200[02468])-11-\d\d$/.test(date)
+    if (cells.length !== columns.length || state !== "CT" || !/^(?:1998|20[012][02468])-11-\d\d$/.test(date)
         || !["state", "town", "town_part"].includes(scope) || !name || seen.has(key)
         || (scope === "town_part" ? !["1", "2"].includes(part) : part !== "1")
         || !["reported", "retained_after_failure"].includes(status)
         || [reg, votes].some(value => value !== "" && !integer(value))
         || (reg !== "" && votes !== "" && Number(reg) < Number(votes))
-        || (fraction === "" ? !["malformed_count", "town_counts_do_not_reconcile", "printed_percentage_differs"].includes(hold)
+        || (fraction === "" ? !["malformed_count", "town_counts_do_not_reconcile", "printed_percentage_differs",
+          "incomplete_town_inventory"].includes(hold)
           : hold || !integer(reg) || !integer(votes) || Number(reg) === 0 || !/^[01]\.\d{8}$/.test(fraction)
             || Math.abs(Number(fraction) - Number(votes) / Number(reg)) > 0.000000006))
       throw new Error("Invalid Connecticut turnout archive row");
@@ -2437,7 +2438,7 @@ function installConnecticutTowns(host, sources) {
   if (!sources?.supported_release?.downloads?.[ctTownArchive]) return;
   const panel = document.createElement("details"), summary = document.createElement("summary");
   const content = document.createElement("div");
-  summary.textContent = "Connecticut turnout by town, 1998–2008";
+  summary.textContent = "Connecticut turnout by town";
   panel.append(summary, content);
   host.append(panel);
   let loading = false;
@@ -2450,8 +2451,8 @@ function installConnecticutTowns(host, sources) {
       const rows = connecticutTownRows(csv);
       const note = document.createElement("p"), download = document.createElement("a");
       note.textContent = "The fraction uses people checked as having voted divided by names on the same report’s active checklist. "
-        + "It is not a share of the eligible population. The 2008 split-town components remain separate. "
-        + "The download includes the printed cells and absentee-ballot accounting.";
+        + "It is not a share of the eligible population. Split-town components remain separate. "
+        + "The download includes the printed cells and separately reported ballot modes.";
       download.href = file.url;
       download.textContent = "Complete Connecticut town counts and provenance (CSV · gzip)";
       const label = document.createElement("label"), town = document.createElement("select");
@@ -2468,6 +2469,7 @@ function installConnecticutTowns(host, sources) {
       const reasons = {
         malformed_count: "Unreadable count", town_counts_do_not_reconcile: "Town and state counts do not reconcile",
         printed_percentage_differs: "Printed percentage differs from counts",
+        incomplete_town_inventory: "Report does not list every town",
       };
       const displayCount = value => value === "" ? "Not usable" : Number(value).toLocaleString("en-US");
       const render = () => {
@@ -2504,6 +2506,7 @@ function installConnecticutTowns(host, sources) {
 const ctTownLayers = {
   "2000-11-07": { bytes: 607788, sha256: "87fd7f27376ae4b3269919535ee1995747f0b88eae295f1628c9688340dbf136" },
   "2008-11-04": { bytes: 607890, sha256: "5e02fc8bba44d99c2fa9cb25e411685b08e7344c947bf8681a0aed7a249006e6" },
+  "2024-11-05": { bytes: 519631, sha256: "f5aba2496d0a4cc9867558c31129a2d949a866b2109ae0caa3917c2fa4c7c686" },
 };
 
 function installConnecticutTownMap(host, rows) {
@@ -2570,7 +2573,9 @@ function installConnecticutTownMap(host, rows) {
       legend.textContent = `${qualified} of 169 towns have a whole-town fraction. Light to dark: below 60%, `
         + "60% to below 70%, 70% to below 80%, 80% or higher. Gray means withheld, not zero. Census town display boundaries.";
       const archive = document.createElement("a");
-      archive.href = "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-1998-2008/connecticut-town-maps-2000-2008.zip";
+      archive.href = year === "2024"
+        ? "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-2010-2024/connecticut-town-maps-2000-2024.zip"
+        : "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-1998-2008/connecticut-town-maps-2000-2008.zip";
       archive.textContent = "Download original Census layers, baseline counts, and map rebuild code (ZIP)";
       content.replaceChildren(svg, legend, archive);
       retry = false;

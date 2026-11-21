@@ -1,4 +1,4 @@
-"""Reproduce the two dated Connecticut town display layers and their joins."""
+"""Reproduce dated Connecticut town display layers and their joins."""
 import csv
 import gzip
 import hashlib
@@ -10,11 +10,15 @@ import shapefile
 from shapely import coverage_is_valid
 from shapely.geometry import mapping, shape
 
+BASE = "https://www2.census.gov/geo/tiger/"
 SOURCES = {
-    "2000-11-07": ("00", "b336cf1ce7a33ede104af093a0f1dba809a9b5994e8f9ee2674f17cb8983816f"),
-    "2008-11-04": ("", "a02f093eedc3b4028a28f3c6d8da138f4379fc84cfee8661a7a082cfec55ae61"),
+    "2000-11-07": ("TIGER2008/09_CONNECTICUT/tl_2008_09_cousub00.zip", "00", "COSBIDFP00",
+                   "b336cf1ce7a33ede104af093a0f1dba809a9b5994e8f9ee2674f17cb8983816f"),
+    "2008-11-04": ("TIGER2008/09_CONNECTICUT/tl_2008_09_cousub.zip", "", "COSBIDFP",
+                   "a02f093eedc3b4028a28f3c6d8da138f4379fc84cfee8661a7a082cfec55ae61"),
+    "2024-11-05": ("TIGER2024/COUSUB/tl_2024_09_cousub.zip", "", "GEOID",
+                   "5d1215b53c40afd93479611828673c4a51c2eb899674d3e1cf05fce9d52eda02"),
 }
-BASE = "https://www2.census.gov/geo/tiger/TIGER2008/09_CONNECTICUT/"
 
 
 def build(inputs, output):
@@ -23,8 +27,8 @@ def build(inputs, output):
         rows = list(csv.DictReader(stream))
     output.mkdir(parents=True, exist_ok=True)
     receipts = {}
-    for date, (suffix, digest) in SOURCES.items():
-        name = f"tl_2008_09_cousub{suffix}.zip"
+    for date, (path, suffix, key, digest) in SOURCES.items():
+        name = path.rsplit("/", 1)[-1]
         source = inputs / name
         if hashlib.sha256(source.read_bytes()).hexdigest() != digest:
             raise ValueError(f"{date}: source geometry differs")
@@ -41,7 +45,7 @@ def build(inputs, output):
                     raise ValueError(f"{date}: invalid town geometry")
                 polygons.append(polygon)
                 features.append({"type": "Feature", "properties": {
-                    "town": r[f"NAME{suffix}"], "id": r[f"COSBIDFP{suffix}"]},
+                    "town": r[f"NAME{suffix}"], "id": r[key]},
                     "geometry": mapping(polygon)})
         towns = {f["properties"]["town"] for f in features}
         selected = [r for r in rows if r["election_date"] == date and r["geography_level"] != "state"]
@@ -55,7 +59,7 @@ def build(inputs, output):
         (output / asset).write_bytes(body)
         receipts[date] = {
             "path": asset, "sha256": hashlib.sha256(body).hexdigest(),
-            "bytes": len(body), "source_url": BASE + name, "source_sha256": digest,
+            "bytes": len(body), "source_url": BASE + path, "source_sha256": digest,
             "geometry_count": len(features),
             "qualified_whole_town_rates": sum(r["geography_level"] == "town" and bool(r["checked_as_voted_fraction"])
                                                for r in selected),
