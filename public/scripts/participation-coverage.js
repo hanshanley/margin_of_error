@@ -3343,7 +3343,7 @@ export function alabamaBallotRows(csv, units) {
     const row = Object.fromEntries(fields.map(field => [field, cells[columns.indexOf(field)]]));
     const key = `${row.year}/${row.county}/${row.source_unit_ordinal ?? ""}`;
     if (cells.length !== columns.length || row.state_code !== "AL"
-        || !["2010", "2012", "2016", "2018", "2020", "2022", "2024", "2026"].includes(row.year)
+        || !["2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024", "2026"].includes(row.year)
         || !/^[A-Z_]+$/.test(row.county) || seen.has(key)
         || !["reconciled", "county_control_disagrees", "not_reconciled_without_both_sources"].includes(row.reconciliation))
       throw new Error("Invalid Alabama ballot archive row");
@@ -3405,7 +3405,7 @@ function installAlabamaBallots(host, sources) {
       const downloads = document.createElement("p");
       const workbookAudit = coverageCsvFile(sources, alBallotWorkbookAudit);
       for (const [file, label] of [[controls.file, "Complete county checks"], [units?.file, "Complete reporting units"],
-        [workbookAudit, "2010–2012 workbook control audit"]]) {
+        [workbookAudit, "2010–2014 workbook control audit"]]) {
         if (!file) continue;
         const link = document.createElement("a");
         link.href = file.url; link.textContent = `${label} (CSV · gzip)`;
