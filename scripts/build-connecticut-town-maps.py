@@ -22,6 +22,8 @@ SOURCES = {
                    "74cd1f28b68c354358c128e904be6c2cdd327b362713c4a8fa7ecab370013813"),
     "2014-11-04": ("TIGER2014/COUSUB/tl_2014_09_cousub.zip", "", "GEOID",
                    "3bf89621693a7e2a28bbbbc3dd98fcb25dabec40962363bd3b2bcdf60a56c4f7"),
+    "2016-11-08": ("TIGER2016/COUSUB/tl_2016_09_cousub.zip", "", "GEOID",
+                   "8d460549cf9af0ce3a2122557979da979890bc2e37eead6d066c6cdb597036cd"),
     "2020-11-03": ("TIGER2020/COUSUB/tl_2020_09_cousub.zip", "", "GEOID",
                    "fc565cb199529fb9f5c28a4ca495bc419d42a9e26a510a3e5e6a896670e30318"),
     "2022-11-08": ("TIGER2022/COUSUB/tl_2022_09_cousub.zip", "", "GEOID",
