@@ -1144,7 +1144,7 @@ function installLouisianaElectionGroups(host, sources) {
       const groups = louisianaElectionGroups(csv);
       const note = document.createElement("p"), link = document.createElement("a");
       note.textContent = "Registration party is not vote choice. Percentages use the workbook’s post-election active and inactive "
-        + "registration stock, not an independently qualified turnout denominator.";
+        + "registration stock, not an independently qualified turnout denominator. The map shows counts on 2024 parish reference outlines.";
       link.href = file.url;
       link.textContent = "Complete statewide and parish group data (CSV · gzip)";
       const label = document.createElement("label"), select = document.createElement("select");
@@ -1152,6 +1152,7 @@ function installLouisianaElectionGroups(host, sources) {
       label.textContent = "Group";
       for (const [key, value] of Object.entries(laGroupLabels)) select.add(new Option(value, key));
       const region = document.createElement("div");
+      const map = document.createElement("div");
       region.className = "table-wrap";
       region.tabIndex = 0;
       region.setAttribute("role", "region");
@@ -1176,7 +1177,12 @@ function installLouisianaElectionGroups(host, sources) {
         status.textContent = [...areas.values()].some(row => row.status !== "reported") ? "Showing stored workbook data." : "";
       };
       select.addEventListener("change", render);
-      body.replaceChildren(note, link, " · ", label, " ", select, region);
+      body.replaceChildren(note, link, " · ", label, " ", select, map, region);
+      installHistoricalCountyMap(map, "LA", "2026-11-03", null, { LA: "Louisiana" }, () => ({
+        code: "LA", date: "2026-11-03", referenceVintage: 2024, measure: "voters_voting",
+        rows: new Map([...groups.get(select.value)].map(([key, row]) =>
+          [key === "STATE" ? "state" : key, { name: row.name, count: row.count, rate: null }])),
+      }), { refreshOn: select });
       render();
     } catch {
       loading = false;
