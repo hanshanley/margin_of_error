@@ -31,6 +31,7 @@ const kansasStudyPath = "release/participation-ks-statewide-turnout-study.csv.gz
 const hawaiiHistoryPath = "release/participation-hi-general-election-county-turnout.csv.gz";
 const dakotaHistoryPath = "release/participation-dakota-statewide-turnout-history.csv.gz";
 const njPeriodicComponentsPath = "release/participation-nj-2026-periodic-county-components.csv.gz";
+const mdCurrentCardsPath = "release/participation-md-2026-unofficial-cards.csv.gz";
 const turnoutReleaseWatchPath = "release/participation-turnout-release-watch.csv.gz";
 const writeInReleaseWatchPath = "release/congressional-write-in-release-watch.csv.gz";
 const southeastHistory = {
@@ -1013,6 +1014,87 @@ const archiveMeasureLabel = measure => measure === "voter_history_credits" ? "Vo
   : measure === "voters_voting" ? "Voters Voting" : measure === "total_voters" ? "Total Voters"
   : measure === "state_reported_votes_cast" ? "Total Votes Cast"
   : measure === "state_reported_turnout" ? "Reported Turnout" : "Ballots Cast";
+
+export function marylandCurrentCards(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header), names = new Set(), edition = new Set();
+  const [rows, sums] = [[], [0, 0]];
+  if (new Set(fields).size !== fields.length || lines.length !== 25)
+    throw new Error("Incomplete Maryland card report");
+  for (const [i, line] of lines.entries()) {
+    const cells = historicalCsvLine(line), get = key => cells[fields.indexOf(key)];
+    const state = i === lines.length - 1, name = get("county");
+    const n = get("reported_cards_cast"), d = get("reported_eligible_voters");
+    const clock = get("native_run_time_timezone_not_supplied");
+    const status = get("source_status"), digest = get("source_sha256");
+    const printed = get("printed_cards_per_eligible_pct");
+    if (cells.length !== fields.length || get("state_code") !== "MD" || get("election_date") !== "2026-11-03"
+        || get("geography_level") !== (state ? "state" : "county")
+        || (state ? name !== "Total" : !name || !/(?: County| City)$/.test(name)) || names.has(name)
+        || ![n, d].every(value => /^\d+$/.test(value) && Number.isSafeInteger(Number(value)))
+        || Number(d) <= 0 || Number(n) > Number(d) || !/^\d+(?:\.\d{1,2})?$/.test(printed)
+        || Math.abs(100 * Number(n) / Number(d) - Number(printed)) > 0.0050000001
+        || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/.test(clock) || clock < "2026-11-03"
+        || !["reported", "retained_after_failure"].includes(status) || !/^[a-f0-9]{64}$/.test(digest)
+        || get("source_url") !== "https://elections.maryland.gov/press_room/2026_stats/GG26/2026-general_election_night_unofficial_turnout.pdf"
+        || get("reporting_status") !== "unofficial" || get("certified_unique_voter_rate") !== "False")
+      throw new Error("Incompatible Maryland card evidence");
+    const reported = get("reported_source_units"), expected = get("expected_source_units");
+    if (state ? reported || expected || sums[0] !== Number(n) || sums[1] !== Number(d)
+      : !/^[1-9]\d*$/.test(reported) || reported !== expected)
+      throw new Error("Maryland card totals or reporting coverage differ");
+    if (!state) { sums[0] += Number(n); sums[1] += Number(d); }
+    edition.add(`${clock}/${digest}/${status}`);
+    rows.push({ name, state, cards: Number(n), eligible: Number(d), printed: Number(printed), clock, status });
+    names.add(name);
+  }
+  if (edition.size !== 1) throw new Error("Mixed Maryland card reports");
+  return rows;
+}
+
+function installMarylandCurrentCards(host, sources) {
+  const file = coverageCsvFile(sources, mdCurrentCardsPath);
+  if (!file) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const note = document.createElement("p"), tableHost = document.createElement("div"), download = document.createElement("a");
+  summary.textContent = "Maryland 2026 unofficial cards cast";
+  note.textContent = "Cards cast per source-reported eligible voter, not a certified turnout or unique-voter rate. ";
+  download.href = file.url; download.textContent = "Complete statewide and county report (CSV · gzip)";
+  note.append(download);
+  panel.append(summary, note, tableHost);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    try {
+      const { csv } = await loadCoverageCsv(sources, mdCurrentCardsPath), rows = marylandCurrentCards(csv);
+      const statewide = rows.at(-1), provenance = document.createElement("p");
+      provenance.textContent = `${statewide.status === "retained_after_failure" ? "Last verified edition retained. " : ""}`
+        + `Report run: ${statewide.clock.replace("T", " ")} (timezone not supplied).`;
+      const table = document.createElement("table"), region = document.createElement("div");
+      table.createCaption().textContent = "Maryland unofficial all-mode card counts and eligible voters";
+      const header = table.createTHead().insertRow(), body = table.createTBody();
+      for (const label of ["Area", "Cards cast", "Eligible voters", "Printed percentage"]) {
+        const cell = document.createElement("th");
+        cell.scope = "col"; cell.textContent = label; header.append(cell);
+      }
+      for (const row of [statewide, ...rows.slice(0, -1)]) {
+        const tr = body.insertRow(), label = document.createElement("th");
+        label.scope = "row"; label.textContent = row.state ? "Maryland statewide" : row.name; tr.append(label);
+        for (const value of [row.cards.toLocaleString("en-US"), row.eligible.toLocaleString("en-US"),
+          `${row.printed.toFixed(2)}%`]) tr.insertCell().textContent = value;
+      }
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", table.caption.textContent);
+      region.append(table);
+      tableHost.replaceChildren(provenance, region);
+    } catch {
+      loading = false;
+      tableHost.textContent = "The Maryland card report could not be verified. Reopen this section to retry.";
+    }
+  });
+}
 
 export function louisianaParishFrame(data) {
   const date = "2026-11-03";
@@ -3687,6 +3769,7 @@ function installAdministrativeCoverage(host) {
       installHawaiiHistory(content, manifest.house_sources);
       installDakotaHistory(content, manifest.house_sources);
       installNewJerseyPeriodicComponents(content, manifest.house_sources);
+      installMarylandCurrentCards(content, manifest.house_sources);
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);
