@@ -3343,6 +3343,7 @@ export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
     if (!frames.has(date)) frames.set(date, { date, code: "NC", rows: new Map(), groups: [],
       measure: "voter_history_credits", lineage, status: row.source_status,
       url: row.history_url, historySha: row.history_sha256,
+      voterSha: row.voter_sha256,
       historyEdition: row.history_edition, voterEdition: row.voter_edition,
       voterRawEdition: row.voter_unparsed_edition });
     const frame = frames.get(date);
@@ -3403,6 +3404,41 @@ export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
     }
   }
   return frames;
+}
+
+export function northCarolinaPrecinctCounts(csv, frame) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const required = ["state_code", "election_date", "source_status", "history_url", "history_sha256",
+    "voter_sha256", "history_edition", "voter_edition", "native_county", "native_precinct_code", "voters_with_history"];
+  const cols = Object.fromEntries(required.map(name => [name, fields.indexOf(name)]));
+  if (new Set(fields).size !== fields.length || Object.values(cols).includes(-1) || lines.length > 50_000)
+    throw new Error("Invalid NC precinct export");
+  const counts = new Map(), seen = new Set(), totals = new Map();
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), get = name => cells[cols[name]];
+    if (cells.length !== fields.length || get("state_code") !== "NC" || !ncArchiveDates.has(get("election_date")))
+      throw new Error("Invalid NC precinct row");
+    if (get("election_date") !== frame.date) continue;
+    const county = get("native_county"), precinct = get("native_precinct_code"), raw = get("voters_with_history");
+    const id = JSON.stringify([county, precinct]);
+    if (county === "state" || !frame.rows.has(county) || seen.has(id)
+        || get("history_url") !== frame.url || get("history_sha256") !== frame.historySha
+        || get("voter_sha256") !== frame.voterSha || get("source_status") !== frame.status
+        || get("history_edition") !== frame.historyEdition || get("voter_edition") !== frame.voterEdition)
+      throw new Error("NC precinct provenance or identity differs");
+    seen.add(id);
+    if (raw === "") continue;
+    const count = Number(raw);
+    if (!/^\d+$/.test(raw) || !Number.isSafeInteger(count)) throw new Error("Invalid NC precinct count");
+    counts.set(id, count);
+    totals.set(county, (totals.get(county) ?? 0) + count);
+  }
+  for (const [county, row] of frame.rows) {
+    if (county !== "state" && totals.get(county) !== row.count)
+      throw new Error("NC precinct totals do not reconcile to the county archive");
+  }
+  return counts;
 }
 
 export function northCarolinaGroupHistory(frames, dimension, group) {
@@ -3470,7 +3506,12 @@ function installNorthCarolinaArchives(host, sources) {
       dimLabel.append(" View ", dimension);
       panel.append(electionLabel, dimLabel, map, output, history);
       installHistoricalCountyMap(map, "NC", election, null, { NC: "North Carolina" }, () => frames.get(election.value));
-      installNorthCarolinaPrecinctReference(map, election, () => frames.get(election.value));
+      let precinctCsv;
+      installNorthCarolinaPrecinctReference(map, election, () => frames.get(election.value), async frame => {
+        precinctCsv ??= loadCoverageCsv(sources, ncArchivePaths[2])
+          .catch(error => { precinctCsv = undefined; throw error; });
+        return northCarolinaPrecinctCounts((await precinctCsv).csv, frame);
+      });
       const render = () => {
         const frame = frames.get(election.value), county = dimension.value === "county";
         const table = document.createElement("table"), region = document.createElement("div");

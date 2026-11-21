@@ -7,7 +7,8 @@ import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, louisianaParishFrame,
   stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
+  northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, northCarolinaPrecinctCounts,
+  washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
   dakotaHistoryFrames, newJerseyPeriodicFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
@@ -20,20 +21,29 @@ import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill }
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
 import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-precinct-map.js";
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
-import { northCarolinaPrecinctReference } from "../public/scripts/participation-nc-precinct-reference.js";
+import { bindNorthCarolinaReference } from "../public/scripts/participation-nc-precinct-reference.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
 
-test("North Carolina reference layers require the exact count edition", () => {
+test("North Carolina reference maps use revised counts but reject a changed roster or mismatched county totals", () => {
   const frame = {
-    code: "NC", date: "2018-11-06",
-    historySha: "f0877a95e84265a38cee25c5481ed5a3b989b91b276fbbe18273733a3f43731b",
-    rows: new Map([["state", { count: 3754102 }]]),
+    date: "2018-11-06", status: "reported", url: "history-url",
+    historySha: "history-pin", voterSha: "voter-pin", historyEdition: "2018-12-08", voterEdition: "",
+    rows: new Map([["LEE", { count: 499 }], ["state", { count: 499 }]]),
   };
-  assert.equal(northCarolinaPrecinctReference(frame).shown, 2698);
-  assert.equal(northCarolinaPrecinctReference({ ...frame, historySha: "a".repeat(64) }), null);
-  assert.equal(northCarolinaPrecinctReference({ ...frame, rows: new Map([["state", { count: 3754103 }]]) }), null);
-  assert.equal(northCarolinaPrecinctReference({ ...frame, date: "2010-11-02" }), null);
+  const csv = "state_code,election_date,source_status,history_url,history_sha256,voter_sha256,history_edition,"
+    + "voter_edition,native_county,native_precinct_code,voters_with_history\n"
+    + "NC,2018-11-06,reported,history-url,history-pin,voter-pin,2018-12-08,,LEE,A,499";
+  const layer = { contract: "participation.nc_precinct_reference.v1", election: frame.date,
+    edition: "20170519 and 20190507", roster: [["LEE", "A"]], paths: [["LEE", "A", "M0,0L1,1Z"]] };
+  const bind = (body, f) => bindNorthCarolinaReference(layer, f.date, northCarolinaPrecinctCounts(body, f))[0];
+  assert.equal(bind(csv, frame).count, 499);
+  const revision = { ...frame, historySha: "new-pin", rows: new Map([["LEE", { count: 500 }], ["state", { count: 500 }]]) };
+  const revisedCsv = csv.replace("history-pin", "new-pin").replace(",499", ",500");
+  assert.notEqual(bind(csv, frame).fill, bind(revisedCsv, revision).fill);
+  assert.throws(() => bind(revisedCsv, frame), /provenance/);
+  assert.throws(() => bind(revisedCsv.replace(",500", ",501"), revision), /totals/);
+  assert.throws(() => bind(revisedCsv.replace(",A,", ",B,"), revision), /roster/);
 });
 
 test("North Carolina archive maps only reconciled counts and withholds an incorrectly promoted age rate", () => {
