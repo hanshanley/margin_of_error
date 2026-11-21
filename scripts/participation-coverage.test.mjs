@@ -16,7 +16,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
-import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill }
+import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill, officialArchiveGeometry }
   from "../public/scripts/participation-historical-county-map.js";
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
 import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-precinct-map.js";
@@ -37,6 +37,21 @@ test("South Carolina preserves provisional units and withholds rates on the chec
   assert.equal(parse(rows).counties.get("County 0").units[1].name, "Provisional");
   assert.throws(() => parse(rows.slice(0, -1)), /unreconciled/);
   assert.throws(() => parse([...rows.slice(0, -1), rows.at(-1) + "0"]), /Invalid/);
+});
+
+test("South Carolina count maps bind every dated county and reject a wrong vintage", () => {
+  for (const year of [2010, 2012, 2020, 2022, 2024]) {
+    const pin = officialArchiveGeometry[`SC/${year}`];
+    const bytes = readFileSync(new URL(`../public/${pin.path}`, import.meta.url));
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), pin.sha256);
+    const layer = JSON.parse(gunzipSync(bytes));
+    const rows = new Map(layer.features.map(({ properties: { name } }) => [name, { name, count: 10, rate: null }]));
+    rows.set("state", { name: "South Carolina", count: 460, rate: null });
+    const frame = { code: "SC", date: `${year}-11-05`, rows };
+    const bound = bindOfficialCountyArchive(layer, frame);
+    assert.equal(bound.filter(({ value }) => value?.count === 10 && value.rate === null).length, 46);
+    assert.throws(() => bindOfficialCountyArchive(layer, { ...frame, date: "2008-11-04" }), /identity/);
+  }
 });
 
 test("Hawaii precinct reader preserves native counts while withholding rates from an unreconciled report", () => {

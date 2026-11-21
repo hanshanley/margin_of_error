@@ -7,11 +7,24 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { AL: 67, CA: 58, CO: 64, HI: 4, IN: 92, KS: 105, LA: 64, NC: 100, NE: 93, NJ: 21, VA: 133, WA: 39, WV: 55, WY: 23 };
+const officialCountySizes = { AL: 67, CA: 58, CO: 64, HI: 4, IN: 92, KS: 105, LA: 64, NC: 100, NE: 93, NJ: 21, SC: 46, VA: 133, WA: 39, WV: 55, WY: 23 };
 const hawaiiReportingCounties = { "15001": ["15001"], "15003": ["15003"], "15007": ["15007"], "15009": ["15009", "15005"] };
 const geometryReleases = "https://github.com/hanshanley/voter-participation/releases/download/";
 const nebraskaGeometryRelease = geometryReleases + "nebraska-legacy-county-geometry-20261120/";
+const scGeometry = [
+  [2010, 154755, "8c0c8d83a701cbd021e56ee1f8bdeb8da4368e7d9cbbe150006944f0847aefa1"],
+  [2012, 153971, "2e0c2401128fdd1dd492e720630a91f4cbe9eefb55921649df0cc7fb2bdcebf0"],
+  [2020, 151219, "9e83c9661e7de6692c53e282a295334e68c579e4684775909ae10178b7257156"],
+  [2022, 151125, "2caad7bf91542e640fec26c0af4f04dfb095923efe6e47c5919d8367cdaa75ca"],
+  [2024, 150998, "b1d1c1577320294e1b33b04bd88b5e7f78ad62cd068b86fdac275595610f8fa3"],
+];
 export const officialArchiveGeometry = {
+  ...Object.fromEntries(scGeometry.map(([year, bytes, sha256]) => [`SC/${year}`, {
+    path: `participation-archive-geometry/county-SC-${year}.geojson.gz`,
+    bytes, sha256, referenceDate: `${year}-01-01`,
+    reproduction: "south-carolina-county-reference-maps.zip",
+    reproductionBase: geometryReleases + "south-carolina-county-reference-maps/",
+  }])),
   "HI/2024": {
     path: "participation-archive-geometry/county-HI-2024-reporting-areas.geojson.gz",
     bytes: 16920,
@@ -301,7 +314,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         reproduction.textContent = `Reproduce ${vintage} county boundaries (ZIP)`;
         reproduction.hidden = false;
       }
-      if ((!legacy && vintage < 2008) || (officialFrame && !officialCountySizes[code])) {
+      if ((!legacy && (vintage < 2008 || frame?.requirePinnedCountyGeometry))
+          || (officialFrame && !officialCountySizes[code])) {
         status.textContent = `${label}: no reviewed same-year county shapes; use the table.`;
         return;
       }
@@ -363,7 +377,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
           : value && frame?.measure === "group_report_ballots" ? `${number.format(value.count)} reported ballots`
           : value ? `${number.format(value.count)} ${frame?.measure === "voter_history_credits"
             ? "voter-history credits" : frame?.measure === "voters_voting" ? "voters voting"
-              : frame?.measure === "semi_official_ballot_count" ? "reported ballots" : "reported"}; `
+              : ["semi_official_ballot_count", "reconciled_ballot_count"].includes(frame?.measure) ? "reported ballots" : "reported"}; `
           + (rate == null ? "rate withheld" : `${rate.toFixed(2)}% of same-report registrations`)
           : "no verified mapped count"}`;
         path.append(title);

@@ -3223,6 +3223,13 @@ function installSouthCarolinaDetail(host, sources) {
       content.replaceChildren(note, download, ...(auditFile ? [" · ", audit] : []),
         document.createElement("br"), dateLabel, " · ", countyLabel, region);
       selectCounties();
+      installHistoricalCountyMap(content, "SC", date, null, { SC: "South Carolina" }, () => {
+        const frame = frames.get(date.value);
+        const rows = new Map([...frame.counties].map(([key, row]) => [key, { ...row, rate: null }]));
+        rows.set("state", { ...frame.state, rate: null });
+        return { code: "SC", date: date.value, measure: "reconciled_ballot_count",
+          requirePinnedCountyGeometry: true, rows };
+      });
     } catch {
       loading = false;
       status.textContent = "The South Carolina detail reports could not be verified. Reopen this section to retry.";
