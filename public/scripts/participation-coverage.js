@@ -33,6 +33,7 @@ const alBallotUnits = "release/participation-al-precinct-ballot-archives.csv.gz"
 const alBallotControls = "release/participation-al-precinct-ballot-county-controls.csv.gz";
 const akBallotUnits = "release/participation-ak-2024-precinct-ballot-archive.csv.gz";
 const akCardsArchive = "release/participation-ak-general-cards-cast-archive.csv.gz";
+const akAgeArchive = "release/participation-ak-general-age-voter-history.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
@@ -2186,6 +2187,99 @@ function installAlaskaCards(host, sources) {
   });
 }
 
+export function alaskaAgeRows(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const fields = ["state_code", "election_date", "age_group", "reported_gender", "registered_in_report",
+    "voter_history_credits", "history_per_registered", "rate_hold_reason", "source_status"];
+  const positions = fields.map(field => columns.indexOf(field));
+  if (!lines.length || positions.includes(-1) || new Set(columns).size !== columns.length)
+    throw new Error("Missing Alaska voter-history fields");
+  const keys = new Set();
+  return lines.map(line => {
+    const cells = historicalCsvLine(line);
+    const [state, date, age, gender, denominator, numerator, fraction, hold, status] = positions.map(i => cells[i]);
+    const registered = Number(denominator), credited = Number(numerator);
+    const key = `${date}/${age}/${gender}`;
+    if (cells.length !== columns.length || state !== "AK" || !/^20(?:0[02468])-\d\d-\d\d$|^199[68]-\d\d-\d\d$/.test(date)
+        || !age || !["all", "male", "female"].includes(gender) || keys.has(key)
+        || !["reported", "retained_after_failure"].includes(status)
+        || ![denominator, numerator].every(value => /^\d+$/.test(value) && Number.isSafeInteger(Number(value)))
+        || credited > registered
+        || (fraction === "" ? registered > 0 && !hold
+          : hold || !registered || !/^(?:[01]\.\d{8}|0E-8)$/.test(fraction)
+            || Math.abs(Number(fraction) - credited / registered) > 0.000000006))
+      throw new Error("Invalid Alaska voter-history row");
+    keys.add(key);
+    return { date, age, gender, registered, credited, rate: fraction === "" ? null : Number(fraction), hold, status };
+  });
+}
+
+function installAlaskaAge(host, sources) {
+  if (!sources?.supported_release?.downloads?.[akAgeArchive]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const content = document.createElement("div");
+  summary.textContent = "Alaska voter history by age and reported gender, 1996–2008";
+  panel.append(summary, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    content.textContent = "Checking Alaska’s voter-history tables…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, akAgeArchive);
+      const rows = alaskaAgeRows(csv);
+      const note = document.createElement("p"), download = document.createElement("a");
+      note.textContent = "Participation is voter-history credits divided by registrations in the same report. "
+        + "It is not a ballot count, an eligible-population estimate, or a measure of vote choice. "
+        + "Totals include people outside the two reported gender categories. The 2004 male rates are withheld "
+        + "because the age-band counts and printed statewide total differ by three.";
+      download.href = file.url;
+      download.textContent = "Complete Alaska voter-history counts and provenance (CSV · gzip)";
+      const ageLabel = document.createElement("label"), age = document.createElement("select");
+      age.setAttribute("aria-label", "Age band");
+      ageLabel.append("Age band ", age);
+      age.append(new Option("All ages", "TOTALS"));
+      for (const band of new Set(rows.filter(row => row.age !== "TOTALS").map(row => row.age)))
+        age.append(new Option(band, band));
+      const genderLabel = document.createElement("label"), gender = document.createElement("select");
+      gender.setAttribute("aria-label", "Reported gender");
+      genderLabel.append("Reported gender ", gender);
+      for (const [label, value] of [["All", "all"], ["Male", "male"], ["Female", "female"]])
+        gender.append(new Option(label, value));
+      const region = document.createElement("div");
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", summary.textContent);
+      const render = () => {
+        const table = document.createElement("table");
+        table.createCaption().textContent = `${age.selectedOptions[0].text} · ${gender.selectedOptions[0].text}`;
+        const header = table.createTHead().insertRow();
+        for (const label of ["General election", "Voter-history credits", "Registered in report", "Credits per registration", "Source status"]) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = label; header.append(th);
+        }
+        const body = table.createTBody();
+        for (const item of rows.filter(row => row.age === age.value && row.gender === gender.value)) {
+          const row = body.insertRow(), year = document.createElement("th");
+          year.scope = "row"; year.textContent = item.date.slice(0, 4); row.append(year);
+          for (const value of [item.credited.toLocaleString("en-US"), item.registered.toLocaleString("en-US"),
+            item.rate === null ? "Withheld" : `${(item.rate * 100).toFixed(1)}%`,
+            item.status === "retained_after_failure" ? "Retained" : "Reported"]) row.insertCell().textContent = value;
+        }
+        region.replaceChildren(table);
+      };
+      age.addEventListener("change", render);
+      gender.addEventListener("change", render);
+      render();
+      content.replaceChildren(note, download, " ", ageLabel, " ", genderLabel, region);
+    } catch {
+      loading = false;
+      content.textContent = "The checked Alaska voter-history archive could not be loaded. Reopen this section to retry.";
+    }
+  });
+}
+
 export function northCarolinaAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = header.split(",");
@@ -2397,6 +2491,7 @@ function installAdministrativeCoverage(host) {
       installAlabamaBallots(content, manifest.house_sources);
       installAlaskaBallots(content, manifest.house_sources);
       installAlaskaCards(content, manifest.house_sources);
+      installAlaskaAge(content, manifest.house_sources);
       panel.dataset.runtimeVersion = manifest.version;
     } catch {
       content.textContent = "Administrative coverage could not be verified. Close and reopen to retry.";
