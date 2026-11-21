@@ -3885,6 +3885,20 @@ function installAdministrativeCoverage(host) {
       installDakotaHistory(content, manifest.house_sources);
       installNewJerseyPeriodicComponents(content, manifest.house_sources);
       installCaliforniaMedia(content, manifest.house_sources);
+      try {
+        const newMexico = coverageCsvFile(manifest.house_sources, "release/participation-nm-2026-native-turnout.csv.gz");
+        if (newMexico) {
+          const paragraph = document.createElement("p"), link = document.createElement("a");
+          link.href = newMexico.url;
+          link.textContent = "New Mexico statewide, county and native precinct participation (complete CSV · gzip)";
+          paragraph.append(link, " Includes reporting units without a verified map match.");
+          content.append(paragraph);
+        }
+      } catch {
+        const notice = document.createElement("p");
+        notice.textContent = "The complete New Mexico precinct download could not be verified.";
+        content.append(notice);
+      }
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);
