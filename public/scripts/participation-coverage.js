@@ -2088,9 +2088,77 @@ function installAlaskaBallots(host, sources, current = false) {
       choice.addEventListener("change", render);
       render();
       content.replaceChildren(note, download, " ", label, region);
+      installAlaskaBallotMap(content, rows, current ? 2026 : 2024);
     } catch {
       loading = false;
       content.textContent = "The checked Alaska archive could not be loaded. Reopen this section to retry.";
+    }
+  });
+}
+
+function installAlaskaBallotMap(host, rows, year) {
+  const physical = rows.filter(row => row.physical);
+  const counts = new Map(physical.map(row => [row.label.slice(0, 6), row]));
+  if (physical.length !== 402 || counts.size !== 402
+      || (year === 2026 && rows[0].edition !== "2026-11-18T17:25:35")) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const content = document.createElement("div");
+  summary.textContent = `Map ${year} Election Day ballots (81 verified precinct shapes)`;
+  panel.append(summary, content);
+  host.append(panel);
+  let loading = false, retry = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    content.textContent = "Checking Alaska’s precinct display geometry…";
+    try {
+      const roster = new TextEncoder().encode([...counts.keys()].sort().join("\n"));
+      const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", roster));
+      if (Array.from(digest, b => b.toString(16).padStart(2, "0")).join("")
+          !== "be107e5afd87362baa865bb2e209e787e1ef7f903f9691748698938c626c852b")
+        throw new Error("Unverified Alaska physical precinct roster");
+      const { checkedCountyBody } = await import("./participation-historical-county-map.js");
+      const { conicProjection, projectFeatures } = await import("./participation-map-projection.js");
+      const url = new URL("../participation-precincts/20261110-alaska-native-display-01/AK.geojson.gz", import.meta.url).href;
+      const bytes = await checkedCountyBody(url, {
+        bytes: 38523, sha256: "8c5bf4c88d3d4ab72b3a655189b904f28f7c9a3a6c87047516a39aca9cbc8273"
+      }, retry);
+      const body = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).json();
+      const features = body.features;
+      const ids = features.map(f => f.properties.native_precinct_id);
+      if (body.type !== "FeatureCollection" || ids.length !== 81 || new Set(ids).size !== 81
+          || ids.some(id => !counts.has(id))) throw new Error("Unverified Alaska display roster");
+      // The pinned display subset has the same source coordinates in both election apps.
+      const paths = projectFeatures(features, conicProjection(-154, 55, 65), [10, 10, 500, 300]);
+      if (paths.some(path => !path.d || /NaN|Infinity/.test(path.d))) throw new Error("Unusable Alaska paths");
+      const ns = "http://www.w3.org/2000/svg", svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("viewBox", "0 0 520 320");
+      svg.setAttribute("width", "520");
+      svg.setAttribute("role", "img");
+      svg.setAttribute("aria-label", `Alaska ${year} Election Day ballots for 81 of 402 precincts. Exact counts are in the table.`);
+      svg.style.maxWidth = "100%";
+      svg.style.height = "auto";
+      paths.forEach(({ d }, i) => {
+        const row = counts.get(ids[i]), path = document.createElementNS(ns, "path");
+        path.setAttribute("d", d);
+        path.setAttribute("fill", row.count < 250 ? "#dae7ea" : row.count < 500 ? "#8ab0b9" : "#3e7887");
+        path.setAttribute("stroke", "#4d6269");
+        path.setAttribute("stroke-width", ".65");
+        path.setAttribute("fill-rule", "evenodd");
+        path.dataset.precinct = ids[i];
+        const title = document.createElementNS(ns, "title");
+        title.textContent = `${row.label}: ${row.count.toLocaleString("en-US")} Election Day ballots`;
+        path.append(title);
+        svg.append(path);
+      });
+      const note = document.createElement("p");
+      note.textContent = "81 of 402 precincts have verified display geometry. The other 321 are not zero and remain in the table. "
+        + "Counts: 0–249 (light), 250–499 (medium), 500 or more (dark). No central ballots or rates are mapped.";
+      content.replaceChildren(svg, note);
+    } catch {
+      retry = true;
+      loading = false;
+      content.textContent = "The Alaska map could not be verified. The full table and download remain available.";
     }
   });
 }
