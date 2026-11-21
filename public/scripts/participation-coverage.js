@@ -283,7 +283,7 @@ export function coverageCsvFile(sources, path) {
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath,
     ncArchivePaths[2]].includes(path)
     ? 2_000_000 : [washingtonAgePath, eacLocalityPath, scDetailPath].includes(path) ? 1_000_000 : path === ctTownArchive ? 262144
-      : [alBallotUnits, stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
+      : [alBallotUnits, stateCountyArchivesPath, publishedCpsPath, overallCpsPath, laHistoryPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
       || file.media_type !== "text/csv" || file.compression !== "gzip"
@@ -1203,7 +1203,9 @@ function installLouisianaGroupHistory(host, sources) {
       link.textContent = "Complete historical statewide and parish data (CSV · gzip)";
       const year = document.createElement("select"), group = document.createElement("select");
       const yearLabel = document.createElement("label"), groupLabel = document.createElement("label");
-      yearLabel.append("Election ", year); groupLabel.append("Group ", group);
+      yearLabel.htmlFor = year.id = "la-history-election";
+      groupLabel.htmlFor = group.id = "la-history-group";
+      yearLabel.textContent = "Election"; groupLabel.textContent = "Group";
       for (const value of [...years].reverse()) {
         const frame = elections.get(value);
         year.add(new Option(`${value} · ${frame?.cycle ?? "not reconciled"}`, String(value)));
@@ -1261,7 +1263,7 @@ function installLouisianaGroupHistory(host, sources) {
       year.addEventListener("change", render); group.addEventListener("change", render);
       trend.className = "table-wrap"; trend.tabIndex = 0;
       trend.setAttribute("role", "region"); trend.setAttribute("aria-label", "Louisiana statewide historical comparison");
-      body.replaceChildren(note, link, " · ", yearLabel, " ", groupLabel, trend, region);
+      body.replaceChildren(note, link, " · ", yearLabel, " ", year, " ", groupLabel, " ", group, trend, region);
       render();
     } catch {
       loading = false;

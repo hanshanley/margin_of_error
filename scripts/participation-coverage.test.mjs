@@ -65,6 +65,14 @@ test("Louisiana history accepts legacy precision and retained frames without fab
   assert.equal(result.get(1998).groups.get("white").get("PAR 01").pct, "");
   assert.throws(() => louisianaGroupHistory(csv.replace("2024-11-05", "2024-11-06")), /Invalid/);
   assert.throws(() => louisianaGroupHistory([header, ...rows.slice(1)].join("\n")), /reconcile/);
+  const path = "release/participation-la-historical-post-election-groups.csv.gz";
+  const base_url = "https://example.test/accepted";
+  const file = { path, url: `${base_url}/${path}`, bytes: 222191, sha256: "a".repeat(64),
+    media_type: "text/csv", compression: "gzip" };
+  const manifest = { base_url, supported_release: { downloads: { [path]: file } } };
+  assert.equal(coverageCsvFile(manifest, path), file);
+  file.bytes = 6_000_000;
+  assert.throws(() => coverageCsvFile(manifest, path), /not bound/);
 });
 
 test("South Carolina preserves provisional units and withholds rates on the checked detail export", () => {
