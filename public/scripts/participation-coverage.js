@@ -9,6 +9,7 @@ import { installMarylandPrecinctMap } from "./participation-maryland-precinct-ma
 import { installNorthCarolinaPrecinctReference } from "./participation-nc-precinct-reference.js";
 import { participationDownload } from "./participation-downloads.js";
 import { projectStateContext } from "./participation-map-projection.js";
+import { installVirginiaPrecinctReference } from "./participation-virginia-precinct-reference.js";
 
 const coveragePath = "release/participation-administrative-coverage.csv.gz";
 const historicalCountyPath = "participation/eac-county-year-decisions.csv.gz";
@@ -1287,7 +1288,7 @@ function installVirginiaPrecinctCounts(host, sources) {
       const { edition, status, week, localities } = virginiaPrecinctCounts(csv);
       const note = document.createElement("p"), link = document.createElement("a");
       note.textContent = "Physical precinct rows count Election Day ballots only. Early, mail and provisional "
-        + "ballots remain in central reporting units; there is no precinct rate or boundary match.";
+        + "ballots remain in central reporting units; no precinct rate or verified election-day boundary match is available.";
       link.href = file.url; link.textContent = "Complete precinct and central counts (CSV · gzip)";
       const label = document.createElement("label"), choice = document.createElement("select");
       label.htmlFor = choice.id = "va-2022-precinct-locality";
@@ -1321,6 +1322,7 @@ function installVirginiaPrecinctCounts(host, sources) {
       choice.addEventListener("change", render);
       body.replaceChildren(note, link, " · ", label, " ", choice, region);
       render();
+      installVirginiaPrecinctReference(body, choice, localities);
     } catch {
       loading = false;
       notice.textContent = "The Virginia precinct counts could not be verified. Reopen this section to retry.";

@@ -20,6 +20,7 @@ import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill, officialArchiveGeometry }
   from "../public/scripts/participation-historical-county-map.js";
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
+import { bindVirginiaPrecinctReference } from "../public/scripts/participation-virginia-precinct-reference.js";
 import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-precinct-map.js";
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
 import { bindNorthCarolinaReference } from "../public/scripts/participation-nc-precinct-reference.js";
@@ -107,6 +108,29 @@ test("Virginia precinct reader keeps central ballots separate and requires balan
   assert.throws(() => virginiaPrecinctCounts([header, ...rows.slice(1)].join("\n")), /reconcile/);
   assert.throws(() => virginiaPrecinctCounts(full.replace(",False,,", ",False,50,")), /Invalid/);
   assert.throws(() => virginiaPrecinctCounts(full.replace(",False,,", ",True,,")), /Invalid/);
+});
+
+test("Suffolk reference map uses revised physical counts and keeps the unmatched precinct unshaded", () => {
+  const layer = JSON.parse(readFileSync(new URL(
+    "../public/participation-archive-geometry/precinct-VA-Suffolk-2022.geojson", import.meta.url), "utf8"));
+  const codes = "105 704 204 504 502 104 703 402 601 501 304 403 202 102 603 301 604 602 404 401 203 405 302 101 305 505 201 605 306 706".split(" ");
+  const electionDay = new Map(layer.features.map(({ properties: p }) => {
+    const code = codes[Number(p.Precinct_Number.slice(1)) - 1];
+    return [code, code === "603" ? { name: "603 - ELEPHANTS FORK/WESTHAVEN", ballots: 350 }
+      : { name: `${code} - ${p.Precinct_Name}`, ballots: 3 }];
+  }));
+  const locality = { electionDay, central: new Map([["mail", { ballots: 100 }]]) };
+  const before = bindVirginiaPrecinctReference(layer, locality);
+  assert.equal(before.filter(({ row }) => row).length, 29);
+  assert.equal(before.find(({ id }) => id === "P15").row, undefined);
+  const first = before.find(({ row }) => row);
+  electionDay.get(first.row.code).ballots = 0;
+  assert.equal(bindVirginiaPrecinctReference(layer, locality).find(({ id }) => id === first.id).row.ballots, 0);
+  const second = before.filter(({ row }) => row)[1];
+  const crossed = new Map(electionDay);
+  crossed.set(first.row.code, electionDay.get(second.row.code));
+  crossed.set(second.row.code, electionDay.get(first.row.code));
+  assert.throws(() => bindVirginiaPrecinctReference(layer, { ...locality, electionDay: crossed }), /join changed/);
 });
 
 test("South Carolina preserves provisional units and withholds rates on the checked detail export", () => {
