@@ -6,7 +6,8 @@ import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, alabamaBallotRows, publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
+  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, alabamaBallotRows, alaskaBallotRows,
+  publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
@@ -17,6 +18,16 @@ import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-pr
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Alaska keeps mixed central ballot modes out of the physical precinct scope", () => {
+  const csv = "state_code,election_date,reporting_unit,unit_scope,source_status,reported_ballots,"
+    + "election_day_ballots,absentee_ballots,early_ballots,question_ballots,remote_ballots\n"
+    + "AK,2024-11-05,01-600 Ketchikan,precinct_election_day_only,reported,5,5,0,0,0,0\n"
+    + "AK,2024-11-05,District 6 - Early Voting,central_unallocated_ballots,reported,4069,126,0,3943,0,0";
+  assert.deepEqual(alaskaBallotRows(csv).map(row => [row.physical, row.count, row.modes[0]]),
+    [[true, 5, 5], [false, 4069, 126]]);
+  assert.throws(() => alaskaBallotRows(csv.replace("4069,126", "4068,126")), /Invalid Alaska/);
+});
 
 test("Alabama reporting-unit controls retain conflicting totals and reject an inconsistent decision", () => {
   const prefix = "state_code,year,county,reconciliation,archive_status,control_status,";

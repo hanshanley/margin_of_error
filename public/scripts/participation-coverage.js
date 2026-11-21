@@ -31,6 +31,7 @@ const southeastHistory = {
 };
 const alBallotUnits = "release/participation-al-precinct-ballot-archives.csv.gz";
 const alBallotControls = "release/participation-al-precinct-ballot-county-controls.csv.gz";
+const akBallotUnits = "release/participation-ak-2024-precinct-ballot-archive.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
@@ -1998,6 +1999,89 @@ function installAlabamaBallots(host, sources) {
   });
 }
 
+const alaskaBallotModes = [
+  "election_day_ballots", "absentee_ballots", "early_ballots", "question_ballots", "remote_ballots",
+];
+
+export function alaskaBallotRows(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const fields = ["state_code", "election_date", "reporting_unit", "unit_scope", "source_status",
+    "reported_ballots", ...alaskaBallotModes];
+  if (!lines.length || new Set(columns).size !== columns.length || fields.some(field => !columns.includes(field)))
+    throw new Error("Missing Alaska ballot archive fields");
+  const names = new Set();
+  return lines.map(line => {
+    const cells = historicalCsvLine(line);
+    const [state, date, label, scope, status, ...literalCounts] = fields.map(field => cells[columns.indexOf(field)]);
+    const [count, ...modes] = literalCounts.map(Number);
+    const physical = scope === "precinct_election_day_only";
+    if (cells.length !== columns.length || state !== "AK" || date !== "2024-11-05"
+        || !label || names.has(label) || (!physical && scope !== "central_unallocated_ballots")
+        || !["reported", "retained_after_failure"].includes(status)
+        || literalCounts.some(value => !/^\d+$/.test(value) || !Number.isSafeInteger(Number(value)))
+        || modes.reduce((total, value) => total + value, 0) !== count
+        || (physical && (!/^\d{2}-\d{3} .+/.test(label) || count !== modes[0])))
+      throw new Error("Invalid Alaska ballot archive row");
+    names.add(label);
+    return { label, physical, status, count, modes };
+  });
+}
+
+function installAlaskaBallots(host, sources) {
+  if (!sources?.supported_release?.downloads?.[akBallotUnits]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const content = document.createElement("div");
+  summary.textContent = "Alaska 2024 precinct and central ballot counts";
+  panel.append(summary, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    content.textContent = "Checking Alaska’s ballot reports…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, akBallotUnits);
+      const rows = alaskaBallotRows(csv);
+      const note = document.createElement("p"), download = document.createElement("a");
+      note.textContent = "Physical precinct rows count Election Day ballots only. Central and overseas counts "
+        + "are shown separately and are not reassigned to precincts. No all-mode precinct rate is calculated."
+        + (rows.some(row => row.status === "retained_after_failure") ? " Showing retained source data." : "");
+      download.href = file.url;
+      download.textContent = "Complete Alaska ballot counts and provenance (CSV · gzip)";
+      const choice = document.createElement("select"), label = document.createElement("label");
+      choice.setAttribute("aria-label", "Reporting scope");
+      choice.append(new Option("Physical precincts", "precinct"), new Option("Central and overseas units", "central"));
+      label.append("Reporting scope ", choice);
+      const region = document.createElement("div");
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", summary.textContent);
+      const render = () => {
+        const table = document.createElement("table");
+        table.createCaption().textContent = choice.selectedOptions[0].text;
+        const header = table.createTHead().insertRow();
+        for (const heading of ["Reporting unit", "Reported ballots", "Election Day", "Absentee", "Early", "Questioned", "Remote"]) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = heading; header.append(th);
+        }
+        const body = table.createTBody();
+        for (const row of rows.filter(row => row.physical === (choice.value === "precinct"))) {
+          const tr = body.insertRow(), name = document.createElement("th");
+          name.scope = "row"; name.textContent = row.label; tr.append(name);
+          for (const count of [row.count, ...row.modes]) tr.insertCell().textContent = count.toLocaleString("en-US");
+        }
+        region.replaceChildren(table);
+      };
+      choice.addEventListener("change", render);
+      render();
+      content.replaceChildren(note, download, " ", label, region);
+    } catch {
+      loading = false;
+      content.textContent = "The checked Alaska archive could not be loaded. Reopen this section to retry.";
+    }
+  });
+}
+
 export function northCarolinaAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = header.split(",");
@@ -2207,6 +2291,7 @@ function installAdministrativeCoverage(host) {
       installOregonHistory(content, manifest.house_sources);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       installAlabamaBallots(content, manifest.house_sources);
+      installAlaskaBallots(content, manifest.house_sources);
       panel.dataset.runtimeVersion = manifest.version;
     } catch {
       content.textContent = "Administrative coverage could not be verified. Close and reopen to retry.";
