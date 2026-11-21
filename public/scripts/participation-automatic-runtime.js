@@ -266,7 +266,12 @@ export function loadAutomaticRuntime() {
     try {
       const response = await fetch(automaticRuntimeURL, { cache: "no-cache", signal: controller.signal });
       if (!response.ok) throw new Error(`Automatic runtime: HTTP ${response.status}`);
-      return validateAutomaticRuntime(await response.json());
+      const manifest = validateAutomaticRuntime(await response.json());
+      const checked = Date.parse(manifest.checked_at);
+      if (checked > Date.now()) throw new Error("Automatic runtime check time is in the future.");
+      if (checked < Date.parse(manifest.election_date))
+        throw new Error("Automatic runtime predates the general-election publication window.");
+      return manifest;
     } finally {
       clearTimeout(timer);
     }

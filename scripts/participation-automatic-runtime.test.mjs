@@ -1,4 +1,4 @@
-import test from "node:test";
+import test, { beforeEach } from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
@@ -119,6 +119,23 @@ function manifest() {
     complete_download: download,
   };
 }
+
+beforeEach(t => t.mock.method(Date, "now", () => Date.parse("2026-11-21T00:00:00Z")));
+
+test("the live reader rejects future and pre-election checkpoints before loading their bodies", async t => {
+  resetAutomaticRuntimeForTests();
+  t.after(resetAutomaticRuntimeForTests);
+  const checks = ["2026-11-21T00:00:01Z", "2026-11-02T23:59:59Z", "2026-11-03T00:00:00Z"];
+  const requests = [];
+  t.mock.method(globalThis, "fetch", async url => {
+    requests.push(url);
+    return Response.json({ ...manifest(), checked_at: checks.shift() });
+  });
+  await assert.rejects(loadAutomaticRuntime(), /check time is in the future/);
+  await assert.rejects(loadAutomaticRuntime(), /predates the general-election publication window/);
+  assert.equal((await loadAutomaticRuntime()).runtime_commit, runtimeCommit);
+  assert.deepEqual(requests, [automaticRuntimeURL, automaticRuntimeURL, automaticRuntimeURL]);
+});
 
 test("the latest runtime accepts one committed count/model snapshot and all nine guarded controls", () => {
   const result = validateAutomaticRuntime(manifest());
