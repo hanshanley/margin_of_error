@@ -476,6 +476,20 @@ test("Hawaii history retains a disputed statewide count without plotting a rate"
   assert.throws(() => hawaiiHistoryFrames(csv.replace("50.000000", "49.000000")), /Invalid Hawaii/);
 });
 
+test("Hawaii map binds one Maui reporting area, including Kalawao, for 2024 only", () => {
+  const asset = new URL("../public/participation-archive-geometry/county-HI-2024-reporting-areas.geojson.gz", import.meta.url);
+  const collection = JSON.parse(gunzipSync(readFileSync(asset)));
+  const rows = new Map(collection.features.map(({ properties }) => [properties.name, { name: properties.name, count: 10 }]));
+  rows.set("state", { count: 40 });
+  const frame = { code: "HI", date: "2024", rows };
+  const bound = bindOfficialCountyArchive(collection, frame);
+  assert.equal(bound.length, 4);
+  assert.equal(bound.reduce((sum, { value }) => sum + value.count, 0), 40);
+  assert.throws(() => bindOfficialCountyArchive(collection, { ...frame, date: "2022" }), /geometry identity/);
+  collection.features.find(({ properties }) => properties.key === "15009").properties.source_counties = ["15009"];
+  assert.throws(() => bindOfficialCountyArchive(collection, frame), /geometry identity/);
+});
+
 test("Kansas study validates an entire statewide series and its registration fraction", () => {
   const header = "state_code,year,election_date,reported_general_election_turnout,reported_registration,"
     + "turnout_per_reported_registration,source_status,source_url";

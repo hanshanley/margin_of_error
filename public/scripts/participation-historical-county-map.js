@@ -7,10 +7,17 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { AL: 67, CA: 58, CO: 64, KS: 105, NC: 100, NE: 93, NJ: 21, VA: 133, WA: 39, WV: 55, WY: 23 };
+const officialCountySizes = { AL: 67, CA: 58, CO: 64, HI: 4, KS: 105, NC: 100, NE: 93, NJ: 21, VA: 133, WA: 39, WV: 55, WY: 23 };
+const hawaiiReportingCounties = { "15001": ["15001"], "15003": ["15003"], "15007": ["15007"], "15009": ["15009", "15005"] };
 const geometryReleases = "https://github.com/hanshanley/voter-participation/releases/download/";
 const nebraskaGeometryRelease = geometryReleases + "nebraska-legacy-county-geometry-20261120/";
 export const officialArchiveGeometry = {
+  "HI/2024": {
+    path: "participation-archive-geometry/county-HI-2024-reporting-areas.geojson.gz",
+    bytes: 16920,
+    sha256: "88fa43a133d5350b4b462933f05b20f43c5896fbd6596fc035225f14d8597a09",
+    boundaryLabel: "2024 Census boundaries. The Maui reporting area includes Kalawao; no separate Kalawao turnout is estimated.",
+  },
   "CA/1990": {
     path: "participation-archive-geometry/county-CA-1990.geojson.gz",
     bytes: 149674,
@@ -211,6 +218,9 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
     const p = feature.properties;
     if (feature.type !== "Feature" || p?.state_code !== code || p.boundary_year !== year
         || p.level !== "county" || !/^[0-9]{5}$/.test(p.key) || keys.has(p.key) || missing.has(p.key)
+        || (code === "HI" && (date !== "2024" || !hawaiiReportingCounties[p.key]
+          || !Array.isArray(p.source_counties)
+          || p.source_counties.join(",") !== hawaiiReportingCounties[p.key].join(",")))
         || (missing.size && (!/^31\d{3}$/.test(p.key) || Number(p.key.slice(2)) % 2 !== 1
           || Number(p.key.slice(2)) > 185))
         || typeof p.name !== "string" || !["Polygon", "MultiPolygon"].includes(feature.geometry?.type))
@@ -255,7 +265,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
   panel.append(button, figure);
   let generation = 0, inventory, opened = false;
   const load = async (retry = false) => {
-    const token = ++generation, code = state.value, vintage = Number(year.value.slice(0, 4));
+    const token = ++generation, code = typeof state === "string" ? state : state.value;
+    const vintage = Number((typeof year === "string" ? year : year.value).slice(0, 4));
     const label = `${names[code] || code} · ${vintage}`;
     const legacy = officialFrame && officialArchiveGeometry[`${code}/${vintage}`];
     figure.querySelector("svg")?.remove();
@@ -364,7 +375,9 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
       button.textContent = "Retry county map";
     }
   };
-  for (const select of [state, year]) select.addEventListener("change", () => { if (opened) load(); });
+  for (const select of [state, year]) {
+    if (typeof select !== "string") select.addEventListener("change", () => { if (opened) load(); });
+  }
   button.addEventListener("click", () => {
     if (button.textContent === "Retry county map") return load(true);
     opened = !opened;

@@ -1916,6 +1916,13 @@ function installHawaiiHistory(host, sources) {
       render(area.value);
       history.open = true;
       panel.append(label, history);
+      const current = frames.filter(frame => frame.date === "2024");
+      if (current.length === hawaiiAreas.length) {
+        const rows = new Map(current.map(frame => [frame.code === "Statewide" ? "state" : frame.code,
+          { ...frame.rows.get("state"), name: frame.code }]));
+        installHistoricalCountyMap(panel, "HI", "2024", null, { HI: "Hawaii" },
+          () => ({ code: "HI", date: "2024", measure: "total_voters", rows }));
+      }
       status.textContent = "";
     } catch {
       loading = false;
