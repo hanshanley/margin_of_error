@@ -4130,6 +4130,9 @@ function installAdministrativeCoverage(host) {
         ["Pennsylvania", "release/participation-pa-2026-ballot-audit.csv.gz",
           "Pennsylvania ballot audit figures and sampled-batch counts",
           "This is the audit's reporting scope, not final statewide turnout or county totals."],
+        ["Hawaii", "release/participation-hi-2026-native-precinct-turnout.csv.gz",
+          "Hawaii mail and in-person turnout by native reporting unit",
+          "Includes both report clocks, the statewide reconciliation, and any withheld rates. No boundaries are implied."],
       ]) {
         try {
           const file = coverageCsvFile(manifest.house_sources, path);
