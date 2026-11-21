@@ -295,6 +295,67 @@ export function coverageCsvFile(sources, path) {
   return file;
 }
 
+export function releaseQueryFiles(sources) {
+  const base = sources?.base_url;
+  const inventory = sources?.supported_release?.downloads;
+  if (typeof base !== "string"
+      || !/^https:\/\/raw\.githubusercontent\.com\/hanshanley\/margin_of_error\/[a-f0-9]{40}\/automatic\/versions\/[a-f0-9]{64}$/.test(base)
+      || !inventory || typeof inventory !== "object" || Array.isArray(inventory)) return [];
+  return Object.keys(inventory).sort().flatMap(path => {
+    const match = /^release\/([A-Za-z0-9][A-Za-z0-9_-]*)\.(csv|json)\.gz$/.exec(path);
+    const file = inventory[path];
+    if (!match || file?.path !== path || file.url !== `${base}/${path}`
+        || file.media_type !== (match[2] === "csv" ? "text/csv" : "application/json")
+        || file.compression !== "gzip" || !Number.isSafeInteger(file.bytes) || file.bytes < 1
+        || typeof file.sha256 !== "string" || !/^[a-f0-9]{64}$/.test(file.sha256)) return [];
+    return [{ name: path.slice("release/".length), url: file.url }];
+  });
+}
+
+export function installReleaseQueryDownloads(sources, completeUrl) {
+  const files = releaseQueryFiles(sources);
+  if (!files.length) return null;
+
+  const panel = document.createElement("details");
+  panel.className = "participation-reference";
+  const title = document.createElement("summary");
+  title.textContent = "Individual files in the current analytical release";
+  const note = document.createElement("p");
+  const complete = document.createElement("a");
+  complete.href = completeUrl;
+  complete.textContent = "Complete analysis and offline replay (ZIP)";
+  note.append(complete, ". The individual files include source audits and held rows as well as qualified results. "
+    + "A file's presence does not mean every row qualifies for the map.");
+  const label = document.createElement("label");
+  const search = document.createElement("input");
+  search.type = "search";
+  label.append("Filter by filename ", search);
+  const status = document.createElement("p");
+  status.setAttribute("role", "status");
+  const list = document.createElement("ul");
+  const items = files.map(file => {
+    const item = document.createElement("li"), link = document.createElement("a");
+    link.href = file.url;
+    link.textContent = file.name;
+    item.append(link);
+    list.append(item);
+    return { item, name: file.name.toLowerCase() };
+  });
+  const render = () => {
+    const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    let visible = 0;
+    for (const { item, name } of items) {
+      item.hidden = !terms.every(term => name.includes(term));
+      if (!item.hidden) visible++;
+    }
+    status.textContent = `${visible} of ${files.length} files`;
+  };
+  search.addEventListener("input", render);
+  render();
+  panel.append(title, note, label, status, list);
+  return panel;
+}
+
 export function installMarylandAffiliationSnapshots(groupFile, precinctFile, { archival = false } = {}) {
   const panel = document.createElement("details"), title = document.createElement("summary");
   const note = document.createElement("p"), load = document.createElement("button"), status = document.createElement("p");
@@ -5118,6 +5179,8 @@ function installAdministrativeCoverage(host) {
       }
       scroller.append(table);
       content.replaceChildren(note, download, " · ", complete, scroller);
+      const queries = installReleaseQueryDownloads(manifest.house_sources, manifest.complete_download.url);
+      if (queries) content.append(queries);
       const historical = historicalCountyDownload(manifest.house_sources);
       if (historical) content.append(...installHistoricalCounties(manifest.house_sources, historical, names));
       const indiana = indianaTurnoutDownload(manifest.house_sources);

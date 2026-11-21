@@ -14,7 +14,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   connecticutTownRows, alabamaReconciledCountyFrame, alabamaCountyMapDates, alStatewideHistoryRows, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames,
-  virginiaPrecinctCounts }
+  virginiaPrecinctCounts, releaseQueryFiles }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill, officialArchiveGeometry }
@@ -1287,6 +1287,32 @@ test("table-only reporting units are loaded without inventing geographic referen
   assert.equal(row.reference_units, 0);
   assert.equal(row.unknown, 1);
   assert.equal(row.fractions, 0);
+});
+
+test("the release inventory discovers new query files and omits invalid descriptors", () => {
+  const base = `https://raw.githubusercontent.com/hanshanley/margin_of_error/${"a".repeat(40)}/automatic/versions/${"b".repeat(64)}`;
+  const descriptor = (path, media_type, override = {}) => ({
+    path, media_type, bytes: 42, compression: "gzip", sha256: "c".repeat(64),
+    url: `${base}/${path}`, ...override,
+  });
+  const large = "release/house-boundary-changed-blocks.csv.gz";
+  const future = "release/accepted-future-report.json.gz";
+  const escaped = "release/../outside.csv.gz";
+  const external = "release/external.csv.gz";
+  const mistyped = "release/not-csv.csv.gz";
+  const unhashed = "release/unpinned.json.gz";
+  const sources = {base_url: base, supported_release: {downloads: {
+    [large]: descriptor(large, "text/csv", {bytes: 4_000_000}),
+    [future]: descriptor(future, "application/json"),
+    [escaped]: descriptor(escaped, "text/csv"),
+    [external]: descriptor(external, "text/csv", {url: "https://example.test/other.csv.gz"}),
+    [mistyped]: descriptor(mistyped, "application/json"),
+    [unhashed]: descriptor(unhashed, "application/json", {sha256: ""}),
+  }}};
+  assert.deepEqual(releaseQueryFiles(sources), [future, large].map(path =>
+    ({ name: path.slice("release/".length), url: `${base}/${path}` })));
+  assert.deepEqual(releaseQueryFiles({...sources, base_url: base.replace("a".repeat(40), "main")}), []);
+  assert.deepEqual(releaseQueryFiles({base_url: base}), []);
 });
 
 test("coverage links the validated scope package and clears rejected, historical or unsafe links", async () => {
