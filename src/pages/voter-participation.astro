@@ -1157,6 +1157,28 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<p>Complete ZIPs and CSV tables are hosted on GitHub with their original bytes preserved.
 				<a href="/participation-downloads.json">Download locations and checksums</a>.</p>
 			<p>Full observations and geometry, including flagged and unmatched records—not metadata-only exports.</p>
+			<details class="participation-reference" id="historical-senate-survey-support">
+				<summary>2022 Senate survey support · Florida, Ohio and Oklahoma</summary>
+				<p>This audit checks the historical survey questions against the correct seat, election type and
+					candidate slate. The counts are survey respondents, not election turnout or estimates of switching.
+					The historical weights were calibrated in part on Senate choice, and the historical and current
+					respondents are not linked. No Senate transition estimate is qualified by this check.</p>
+				<div class="table-wrap" tabindex="0" role="region" aria-label="2022 Senate survey support counts">
+					<table>
+						<caption>Unweighted 2022 Cooperative Election Study respondent counts</caption>
+						<thead><tr><th scope="col">Historical contest</th><th scope="col">Answered</th>
+							<th scope="col">Same-state validated voters matched to the slate</th>
+							<th scope="col">Reported a major-party choice</th></tr></thead>
+						<tbody>
+							<tr><th scope="row">Florida, regular Class III</th><td>3,002</td><td>2,339</td><td>2,298</td></tr>
+							<tr><th scope="row">Ohio, regular Class III</th><td>1,675</td><td>1,327</td><td>1,304</td></tr>
+							<tr><th scope="row">Oklahoma, special Class II</th><td>370</td><td>283</td><td>269</td></tr>
+						</tbody>
+					</table>
+				</div>
+				<p><a href="https://github.com/hanshanley/voter-participation/releases/download/ces-2022-senate-support-audit/ces-2022-senate-support.csv">Complete aggregate audit (CSV)</a> ·
+					<a href="https://github.com/hanshanley/voter-participation/releases/download/ces-2022-senate-support-audit/ces-2022-senate-support.zip">Aggregate outputs, source pins and reproduction (ZIP)</a></p>
+			</details>
 			<p>Precinct candidate results are separate from participation. Every state and every even-year
 				election from 1964 through 2026 has an explicit entry in the coverage worklist, newest first.
 				Partial coverage is not completion; state colors remain beneath unmatched precinct areas.</p>
