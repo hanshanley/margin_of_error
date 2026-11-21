@@ -282,10 +282,10 @@ def tick(now, request, journal, record, *, apply=False):
         return not entries or now - clock(entries[0]["updated_at"]) >= RETRY
 
     stage, publish_reason, collect_reason = None, None, None
-    # A scoped refresh cannot invalidate the immutable source already waiting for publication.
+    # A known collector cannot invalidate an accepted checkpoint already awaiting publication.
     blocking_collection = any(
         run["status"] in ACTIVE and (not changed or run.get("display_title") not in
-                                    {"Run scoped election results update", ARCHIVE_TITLE})
+                                    {FULL_COLLECTION_TITLE, "Run scoped election results update", ARCHIVE_TITLE})
         for run in runs["collection"])
     can_publish = ready("publication") and not blocking_collection and cooled(runs["publication"])
     # A successful run may have pinned the previous checkpoint before its successor activated.

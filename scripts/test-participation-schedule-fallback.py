@@ -118,10 +118,11 @@ class FallbackTests(unittest.TestCase):
         self.runs["collection"] = [scoped, run(120, 110)]
         self.assertEqual(self.result(apply=False), "would_dispatch_collection")
 
-    def test_scoped_collection_does_not_delay_publishing_accepted_source(self):
+    def test_known_collection_does_not_delay_publishing_accepted_source(self):
         self.backlog()
         collecting = run(10, 4, status="in_progress", conclusion=None)
-        for title in ("Run scoped election results update", "Check late participation archives"):
+        for title in ("Collect full election results", "Run scoped election results update",
+                      "Check late participation archives"):
             self.runs["collection"] = [{**collecting, "display_title": title}]
             self.runs["publication"] = [run(15, 5)]
             self.assertEqual(self.result(apply=False), "would_dispatch_publication")
@@ -164,11 +165,11 @@ class FallbackTests(unittest.TestCase):
         self.assertEqual(self.result(), "no_dispatch")
 
     def test_already_running_collectors_and_publishers_are_not_duplicated(self):
+        self.runs["collection"] = [run(71, 66, status="waiting", conclusion=None)]
+        self.assertEqual(self.result(), "no_dispatch")
         self.backlog()
-        for stage in ("collection", "publication"):
-            self.runs[stage].append(run(71, 66, status="waiting", conclusion=None))
-            self.assertEqual(self.result(), "no_dispatch")
-            self.runs[stage].pop()
+        self.runs["publication"].append(run(71, 66, status="waiting", conclusion=None))
+        self.assertEqual(self.result(), "no_dispatch")
         self.assertEqual(self.effects, [])
 
     def test_pinned_source_changes_collect_before_analysis_only_republish(self):
