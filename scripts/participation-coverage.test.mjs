@@ -5,7 +5,7 @@ import { runInNewContext } from "node:vm";
 import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
-  loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
+  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
@@ -20,6 +20,28 @@ import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-pr
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Indiana admits whole county histories but never shades a withheld rate as qualified", () => {
+  const header = "state_code,year,election_date,geography_level,geography,registered_voters,voters_voting,"
+    + "printed_turnout_pct,election_day_vote,in_person,absentee,printed_absentee_pct,mode_count_minus_voters_voting,"
+    + "qualified_registered_fraction_pct,qualification_holds,report_edition,source_status,source_sha256,source_url";
+  const names = Array.from({ length: 92 }, (_, i) =>
+    `County ${String.fromCharCode(65 + Math.floor(i / 26), 65 + i % 26)}`);
+  const row = (name, multiplier, bump) =>
+    `IN,2014,2014-11-04,${multiplier > 1 ? "state" : "county"},${name},${100 * multiplier},${40 * multiplier},`
+    + `40,,${25 * multiplier + bump},${15 * multiplier},38,${bump},`
+    + `${bump ? ',"[""mode_counts_do_not_sum_to_voters_voting""]"' : "40,[]"},,reported,${"a".repeat(64)},`
+    + "https://www.in.gov/dA/0123456789/turnout.pdf";
+  const csv = [header, row("Indiana", 92, 1), ...names.map((name, i) => row(name, 1, Number(i === 0)))].join("\n");
+  const [frame] = indianaTurnoutFrames(csv);
+  assert.equal(frame.measure, "voters_voting");
+  assert.equal(frame.rows.get("state").count, 3680);
+  assert.equal(frame.rows.get("state").rate, null);
+  assert.equal(frame.rows.get(`county/${names[1]}`).rate, 40);
+  assert.throws(() => indianaTurnoutFrames(csv.replace("40,[]", "41,[]")), /fraction or reconciliation/);
+  assert.throws(() => indianaTurnoutFrames(csv.replace("3680,40", "3681,40")), /fraction or reconciliation/);
+  assert.throws(() => indianaTurnoutFrames(csv.slice(0, csv.lastIndexOf("\n"))), /Incomplete or inconsistent/);
+});
 
 test("Alaska digital age reports retain withheld statewide figures and explicitly unknown gender", () => {
   const csv = "state_code,election_date,age_group,reported_gender,registered_in_report,voter_history_credits,"

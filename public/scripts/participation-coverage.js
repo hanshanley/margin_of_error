@@ -1004,7 +1004,72 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
 }
 
 const archiveMeasureLabel = measure => measure === "voter_history_credits" ? "Voter-history credits"
-  : measure === "total_voters" ? "Total Voters" : "Ballots Cast";
+  : measure === "voters_voting" ? "Voters Voting" : measure === "total_voters" ? "Total Voters" : "Ballots Cast";
+
+const indianaElectionDays = [4, 2, 6, 4, 8, 6, 3, 8, 5, 3];
+
+export function indianaTurnoutFrames(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const required = ["state_code", "year", "election_date", "geography_level", "geography", "registered_voters",
+    "voters_voting", "printed_turnout_pct", "election_day_vote", "absentee", "printed_absentee_pct",
+    "mode_count_minus_voters_voting", "qualified_registered_fraction_pct", "qualification_holds",
+    "report_edition", "source_status", "source_sha256", "source_url"];
+  if (new Set(columns).size !== columns.length || required.some(key => !columns.includes(key))
+      || !lines.length || lines.length > 930) throw new Error("Incomplete Indiana turnout archive");
+  const integer = text => /^\d+$/.test(text) && Number.isSafeInteger(Number(text));
+  const frames = new Map();
+  for (const line of lines) {
+    const cells = historicalCsvLine(line);
+    if (cells.length !== columns.length) throw new Error("Invalid Indiana turnout archive row");
+    const get = key => cells[columns.indexOf(key)];
+    const year = get("year"), date = get("election_date"), name = get("geography"), level = get("geography_level");
+    const day = indianaElectionDays[(Number(year) - 2008) / 2];
+    const legacy = Number(year) >= 2010 && Number(year) <= 2016;
+    const edition = get("report_edition"), url = get("source_url"), sha = get("source_sha256"), status = get("source_status");
+    const other = get(legacy ? "in_person" : "election_day_vote");
+    const numbers = [get("registered_voters"), get("voters_voting"), get("printed_turnout_pct"),
+      other, get("absentee"), get("printed_absentee_pct")];
+    if (get("state_code") !== "IN" || !/^\d{4}$/.test(year) || !day || date !== `${year}-11-0${day}`
+        || !["state", "county"].includes(level) || !/^[A-Za-z. ]+$/.test(name)
+        || (name === "Indiana") !== (level === "state")
+        || !(legacy || year === "2018" ? edition === "" : /^\d{4}-\d{2}-\d{2}$/.test(edition) && edition >= date)
+        || (legacy ? get("election_day_vote") !== "" : Boolean(get("in_person")))
+        || !/^https:\/\/www\.in\.gov\/(?:dA\/[a-f0-9]{10}\/[A-Za-z0-9_.-]+\.pdf(?:\?language_id=1)?|sos\/elections\/voter-information\/files\/[A-Za-z0-9_.-]+\.pdf)$/.test(url)
+        || !/^[a-f0-9]{64}$/.test(sha) || !["reported", "retained_after_failure"].includes(status)
+        || !numbers.every(integer)) throw new Error("Indiana turnout report identity or count differs");
+    const [registered, count, printed, mode, absentee, absenteePct] = numbers.map(Number);
+    const gap = mode + absentee - count;
+    const holds = [];
+    if (!registered || count > registered) holds.push("invalid_registration_frame");
+    else if (Math.abs(200 * count - 2 * printed * registered) > registered)
+      holds.push("reported_turnout_percentage_disagrees");
+    if (gap) holds.push("mode_counts_do_not_sum_to_voters_voting");
+    if (count && Math.abs(200 * absentee - 2 * absenteePct * count) > count)
+      holds.push("reported_absentee_percentage_disagrees");
+    const fraction = get("qualified_registered_fraction_pct");
+    if (get("mode_count_minus_voters_voting") !== String(gap)
+        || JSON.stringify(JSON.parse(get("qualification_holds"))) !== JSON.stringify(holds)
+        || (holds.length ? fraction !== "" : !/^\d+(?:\.\d+)?(?:e[+-]?\d+)?$/i.test(fraction)
+          || Math.abs(Number(fraction) - 100 * count / registered) > 1e-10))
+      throw new Error("Indiana turnout fraction or reconciliation differs");
+    if (!frames.has(date)) frames.set(date, { code: "IN", date, measure: "voters_voting", basis: "Registered Voters",
+      url, sha, status, edition, note: "The count is the report’s Voters Voting field, not a physical ballot count.",
+      rows: new Map() });
+    const frame = frames.get(date), key = level === "state" ? "state" : `county/${name}`;
+    if (frame.rows.has(key) || frame.url !== url || frame.sha !== sha || frame.status !== status || frame.edition !== edition)
+      throw new Error("Mixed or repeated Indiana turnout archive rows");
+    frame.rows.set(key, { name, count, registered, rate: holds.length ? null : Number(fraction),
+      hold: holds.join("; "), mode, absentee });
+  }
+  for (const { rows } of frames.values()) {
+    const state = rows.get("state");
+    if (!state || rows.size !== 93 || ["count", "registered", "mode", "absentee"].some(field =>
+      [...rows.values()].reduce((sum, row) => sum + row[field], 0) !== 2 * state[field]))
+      throw new Error("Incomplete or inconsistent Indiana statewide and county report");
+  }
+  return [...frames.values()].sort((a, b) => b.date.localeCompare(a.date));
+}
 
 export function nebraskaCountyReportsFrame(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
@@ -1398,6 +1463,8 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
     link.textContent = "Virginia 2024 locality ballot counts (CSV · gzip)";
     note.append(" ", link);
   }
+  const indianaFile = !wyoming && !currentCalifornia && !currentNebraska
+    ? coverageCsvFile(sources, indianaTurnoutPath) : null;
   let retry = false;
   button.addEventListener("click", async () => {
     button.disabled = true;
@@ -1430,6 +1497,19 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
             warning.setAttribute("role", "status");
             warning.textContent = "The Virginia 2024 locality table could not be verified.";
             panel.append(warning);
+          }
+          if (indianaFile) {
+            try {
+              const extra = await checkedCountyBody(indianaFile.url, indianaFile, retry);
+              const csv = await new Response(new Blob([extra]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+              frames.push(...indianaTurnoutFrames(csv));
+              frames.sort((a, b) => a.code.localeCompare(b.code) || b.date.localeCompare(a.date));
+            } catch {
+              const warning = document.createElement("p");
+              warning.setAttribute("role", "status");
+              warning.textContent = "The Indiana statewide and county turnout archive could not be verified.";
+              panel.append(warning);
+            }
           }
         }
       }

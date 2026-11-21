@@ -7,7 +7,7 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { AL: 67, CA: 58, CO: 64, HI: 4, KS: 105, NC: 100, NE: 93, NJ: 21, VA: 133, WA: 39, WV: 55, WY: 23 };
+const officialCountySizes = { AL: 67, CA: 58, CO: 64, HI: 4, IN: 92, KS: 105, NC: 100, NE: 93, NJ: 21, VA: 133, WA: 39, WV: 55, WY: 23 };
 const hawaiiReportingCounties = { "15001": ["15001"], "15003": ["15003"], "15007": ["15007"], "15009": ["15009", "15005"] };
 const geometryReleases = "https://github.com/hanshanley/voter-participation/releases/download/";
 const nebraskaGeometryRelease = geometryReleases + "nebraska-legacy-county-geometry-20261120/";
@@ -341,7 +341,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         title.textContent = `${area}: ${frame?.rateOnly ? `${rate}% published turnout`
           : value && frame?.measure === "group_report_ballots" ? `${number.format(value.count)} reported ballots`
           : value ? `${number.format(value.count)} ${frame?.measure === "voter_history_credits"
-            ? "voter-history credits" : "reported"}; `
+            ? "voter-history credits" : frame?.measure === "voters_voting" ? "voters voting" : "reported"}; `
           + (rate == null ? "rate withheld" : `${rate.toFixed(2)}% of same-report registrations`)
           : "no verified mapped count"}`;
         path.append(title);
