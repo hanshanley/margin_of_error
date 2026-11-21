@@ -32,6 +32,7 @@ const southeastHistory = {
 const alBallotUnits = "release/participation-al-precinct-ballot-archives.csv.gz";
 const alBallotControls = "release/participation-al-precinct-ballot-county-controls.csv.gz";
 const akBallotUnits = "release/participation-ak-2024-precinct-ballot-archive.csv.gz";
+const akCurrentBallotUnits = "release/participation-ak-2026-precinct-ballot-archive.csv.gz";
 const akCardsArchive = "release/participation-ak-general-cards-cast-archive.csv.gz";
 const akAgeArchive = "release/participation-ak-general-age-voter-history.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
@@ -2005,36 +2006,40 @@ const alaskaBallotModes = [
   "election_day_ballots", "absentee_ballots", "early_ballots", "question_ballots", "remote_ballots",
 ];
 
-export function alaskaBallotRows(csv) {
+export function alaskaBallotRows(csv, current = false) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const columns = historicalCsvLine(header);
   const fields = ["state_code", "election_date", "reporting_unit", "unit_scope", "source_status",
-    "reported_ballots", ...alaskaBallotModes];
+    "reported_ballots", ...alaskaBallotModes, ...(current ? ["publication_status", "official_control_edition_local"] : [])];
   if (!lines.length || new Set(columns).size !== columns.length || fields.some(field => !columns.includes(field)))
     throw new Error("Missing Alaska ballot archive fields");
   const names = new Set();
   return lines.map(line => {
     const cells = historicalCsvLine(line);
     const [state, date, label, scope, status, ...literalCounts] = fields.map(field => cells[columns.indexOf(field)]);
-    const [count, ...modes] = literalCounts.map(Number);
+    const [count, ...modes] = literalCounts.slice(0, 6).map(Number);
+    const [editionStatus, edition] = current ? literalCounts.slice(6) : ["OFFICIAL RESULTS", null];
     const physical = scope === "precinct_election_day_only";
-    if (cells.length !== columns.length || state !== "AK" || date !== "2024-11-05"
+    if (cells.length !== columns.length || state !== "AK" || date !== (current ? "2026-11-03" : "2024-11-05")
         || !label || names.has(label) || (!physical && scope !== "central_unallocated_ballots")
         || !["reported", "retained_after_failure"].includes(status)
-        || literalCounts.some(value => !/^\d+$/.test(value) || !Number.isSafeInteger(Number(value)))
+        || literalCounts.slice(0, 6).some(value => !/^\d+$/.test(value) || !Number.isSafeInteger(Number(value)))
+        || (current && (!["OFFICIAL RESULTS", "UNOFFICIAL RESULTS"].includes(editionStatus)
+          || !/^2026-\d\d-\d\dT\d\d:\d\d:\d\d$/.test(edition)))
         || modes.reduce((total, value) => total + value, 0) !== count
         || (physical && (!/^\d{2}-\d{3} .+/.test(label) || count !== modes[0])))
       throw new Error("Invalid Alaska ballot archive row");
     names.add(label);
-    return { label, physical, status, count, modes };
+    return { label, physical, status, count, modes, ...(current ? { editionStatus, edition } : {}) };
   });
 }
 
-function installAlaskaBallots(host, sources) {
-  if (!sources?.supported_release?.downloads?.[akBallotUnits]) return;
+function installAlaskaBallots(host, sources, current = false) {
+  const path = current ? akCurrentBallotUnits : akBallotUnits;
+  if (!sources?.supported_release?.downloads?.[path]) return;
   const panel = document.createElement("details"), summary = document.createElement("summary");
   const content = document.createElement("div");
-  summary.textContent = "Alaska 2024 precinct and central ballot counts";
+  summary.textContent = `Alaska ${current ? "2026" : "2024"} precinct and central ballot counts`;
   panel.append(summary, content);
   host.append(panel);
   let loading = false;
@@ -2043,10 +2048,16 @@ function installAlaskaBallots(host, sources) {
     loading = true;
     content.textContent = "Checking Alaska’s ballot reports…";
     try {
-      const { csv, file } = await loadCoverageCsv(sources, akBallotUnits);
-      const rows = alaskaBallotRows(csv);
+      const { csv, file } = await loadCoverageCsv(sources, path);
+      const rows = alaskaBallotRows(csv, current);
+      const first = rows[0];
+      if (current && (rows.some(row => row.edition !== first.edition || row.editionStatus !== first.editionStatus)
+          || rows.length !== 523 || rows.filter(row => row.physical).length !== 402))
+        throw new Error("Alaska midterm source editions or scopes differ");
       const note = document.createElement("p"), download = document.createElement("a");
-      note.textContent = "Physical precinct rows count Election Day ballots only. Central and overseas counts "
+      note.textContent = (current ? `${first.editionStatus === "OFFICIAL RESULTS" ? "Official" : "Unofficial"} results. `
+        + `Summary edition ${first.edition.replace("T", " ")} (local time). ` : "")
+        + "Physical precinct rows count Election Day ballots only. Central and overseas counts "
         + "are shown separately and are not reassigned to precincts. No all-mode precinct rate is calculated."
         + (rows.some(row => row.status === "retained_after_failure") ? " Showing retained source data." : "");
       download.href = file.url;
@@ -2490,6 +2501,7 @@ function installAdministrativeCoverage(host) {
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       installAlabamaBallots(content, manifest.house_sources);
       installAlaskaBallots(content, manifest.house_sources);
+      installAlaskaBallots(content, manifest.house_sources, true);
       installAlaskaCards(content, manifest.house_sources);
       installAlaskaAge(content, manifest.house_sources);
       panel.dataset.runtimeVersion = manifest.version;
