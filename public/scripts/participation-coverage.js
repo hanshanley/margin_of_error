@@ -6,6 +6,7 @@ import { checkedCountyBody, installHistoricalCountyMap } from "./participation-h
 import { installDenverPrecinctMap } from "./participation-denver-precinct-map.js";
 import { installMinnesotaPrecinctMap } from "./participation-minnesota-precinct-map.js";
 import { installMarylandPrecinctMap } from "./participation-maryland-precinct-map.js";
+import { installNorthCarolinaPrecinctReference } from "./participation-nc-precinct-reference.js";
 import { participationDownload } from "./participation-downloads.js";
 import { projectStateContext } from "./participation-map-projection.js";
 
@@ -3341,7 +3342,7 @@ export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
     const lineage = identity(row), date = row.election_date;
     if (!frames.has(date)) frames.set(date, { date, code: "NC", rows: new Map(), groups: [],
       measure: "voter_history_credits", lineage, status: row.source_status,
-      url: row.history_url,
+      url: row.history_url, historySha: row.history_sha256,
       historyEdition: row.history_edition, voterEdition: row.voter_edition,
       voterRawEdition: row.voter_unparsed_edition });
     const frame = frames.get(date);
@@ -3469,6 +3470,7 @@ function installNorthCarolinaArchives(host, sources) {
       dimLabel.append(" View ", dimension);
       panel.append(electionLabel, dimLabel, map, output, history);
       installHistoricalCountyMap(map, "NC", election, null, { NC: "North Carolina" }, () => frames.get(election.value));
+      installNorthCarolinaPrecinctReference(map, election, () => frames.get(election.value));
       const render = () => {
         const frame = frames.get(election.value), county = dimension.value === "county";
         const table = document.createElement("table"), region = document.createElement("div");

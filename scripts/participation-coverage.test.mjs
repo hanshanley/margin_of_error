@@ -20,8 +20,21 @@ import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill }
 import { bindTetonPrecinctMap } from "../public/scripts/participation-teton-precinct-map.js";
 import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-precinct-map.js";
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
+import { northCarolinaPrecinctReference } from "../public/scripts/participation-nc-precinct-reference.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("North Carolina reference layers require the exact count edition", () => {
+  const frame = {
+    code: "NC", date: "2018-11-06",
+    historySha: "f0877a95e84265a38cee25c5481ed5a3b989b91b276fbbe18273733a3f43731b",
+    rows: new Map([["state", { count: 3754102 }]]),
+  };
+  assert.equal(northCarolinaPrecinctReference(frame).shown, 2698);
+  assert.equal(northCarolinaPrecinctReference({ ...frame, historySha: "a".repeat(64) }), null);
+  assert.equal(northCarolinaPrecinctReference({ ...frame, rows: new Map([["state", { count: 3754103 }]]) }), null);
+  assert.equal(northCarolinaPrecinctReference({ ...frame, date: "2010-11-02" }), null);
+});
 
 test("North Carolina archive maps only reconciled counts and withholds an incorrectly promoted age rate", () => {
   const date = "2024-11-05", base = "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2024_11_05/";
