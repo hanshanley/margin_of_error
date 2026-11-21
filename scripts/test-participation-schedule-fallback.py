@@ -1,4 +1,5 @@
 import base64
+import errno
 import hashlib
 import json
 import runpy
@@ -110,6 +111,28 @@ class FallbackTests(unittest.TestCase):
         self.assertEqual((report["decision"], report["run_id"]), ("dispatched_publication", 102))
         self.assertEqual(self.effects, [("journal", {"publication": NOW.isoformat()}),
                                         ("dispatch", "publication")])
+
+    def test_disk_full_does_not_dispatch_without_a_durable_receipt(self):
+        self.backlog()
+
+        def fail_write(_):
+            raise OSError(errno.ENOSPC, "No space left on device")
+
+        with self.assertRaises(OSError):
+            tick(NOW, self.request, self.journal, fail_write, apply=True)
+        self.assertEqual(self.effects, [])
+        self.journal = {}  # The failed process never persisted its in-memory change.
+        self.assertEqual(self.result(), "dispatched_publication")
+
+    def test_future_dated_pointers_cannot_trigger_an_automatic_dispatch(self):
+        for pointer in (self.source, self.live):
+            with self.subTest(pointer=pointer["contract"]):
+                prior = pointer["checked_at"]
+                pointer["checked_at"] = (NOW + timedelta(seconds=1)).isoformat()
+                with self.assertRaisesRegex(ValueError, "future-dated"):
+                    self.result()
+                pointer["checked_at"] = prior
+        self.assertEqual(self.effects, [])
 
     def test_scoped_failure_does_not_schedule_a_national_retry(self):
         scoped = {**run(34, 30, conclusion="failure"), "display_title": "Run scoped election results update"}

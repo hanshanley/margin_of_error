@@ -263,9 +263,11 @@ def tick(now, request, journal, record, *, apply=False):
     if not all(re.fullmatch(r"[a-f0-9]{64}", version)
                for version in (accepted, consumed, live["version"])):
         raise ValueError("Invalid source or runtime version")
+    source_time, live_time = clock(source["checked_at"]), clock(live["checked_at"])
+    if source_time > now or live_time > now:
+        raise ValueError("Refusing to dispatch against a future-dated participation checkpoint")
     changed = accepted != consumed
     if changed:
-        source_time, live_time = clock(source["checked_at"]), clock(live["checked_at"])
         if source_time < live_time or (source_time == live_time and not same_clock_successor(request, source, live)):
             raise ValueError("Refusing to dispatch a publisher against older or ambiguous source data")
 
@@ -384,6 +386,8 @@ def main():
                 print(json.dumps({"checked_at": now.isoformat(), **report}, sort_keys=True))
     except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
         parser.exit(1, "GitHub fallback request failed; no immediate retry\n")
+    except OSError as error:
+        parser.exit(1, f"Fallback I/O failed; no immediate retry: {error.strerror or error}\n")
 
 
 if __name__ == "__main__":
