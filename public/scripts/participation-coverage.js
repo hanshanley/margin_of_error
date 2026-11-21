@@ -2074,6 +2074,10 @@ function installIndianaEarlyHistory(host, sources) {
           region.append(table);
           panel.append(label, region);
           render();
+          installHistoricalCountyMap(panel, "IN", select, null, { IN: "Indiana" }, () => ({
+            ...frames.find(item => item.date === select.value),
+            measure: "voters_voting", requirePinnedCountyGeometry: true,
+          }));
         }
         status.textContent = "";
       } catch {

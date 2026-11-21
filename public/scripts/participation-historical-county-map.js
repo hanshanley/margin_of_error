@@ -33,6 +33,14 @@ export const officialArchiveGeometry = {
     reproductionBase: "https://github.com/hanshanley/margin_of_error/releases/download/hawaii-2024-reporting-area-map/",
     reproduction: "hawaii-2024-reporting-area-map.zip",
   },
+  "IN/1990": {
+    path: "participation-archive-geometry/county-IN-1990.geojson.gz",
+    bytes: 40875,
+    sha256: "02bfc8d620e9ba7cae6b046be4b78e71ce11f723e838f3f7e6845edecdc2ce1a",
+    boundaryLabel: "1990 Census cartographic reference boundaries, not election-day precinct boundaries.",
+    reproduction: "indiana-1990-county-map.zip",
+    reproductionBase: geometryReleases + "indiana-1990-county-map/",
+  },
   "CA/1990": {
     path: "participation-archive-geometry/county-CA-1990.geojson.gz",
     bytes: 149674,
