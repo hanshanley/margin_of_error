@@ -7,7 +7,7 @@ import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
-  connecticutTownRows,
+  connecticutTownRows, alabamaReconciledCountyFrame,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
@@ -71,6 +71,18 @@ test("Alabama reporting-unit controls retain conflicting totals and reject an in
   const units = prefix + "reporting_unit,unit_type,reported_ballots,source_unit_ordinal\n"
     + "AL,2024,CLEBURNE,county_control_disagrees,reported,reported,ABSENTEE,central_mode_or_provisional,12,17";
   assert.equal(alabamaBallotRows(units, true)[0].unit_type, "central_mode_or_provisional");
+});
+
+test("Alabama maps only checked county agreements in a whole dated frame", () => {
+  const counties = ["TOTAL", "CLEBURNE", ...Array.from({ length: 66 }, (_, i) => `TEST${i}`)]
+    .map(county => ({ year: "2024", county, county_control_ballots: "7860",
+      reconciliation: county === "CLEBURNE" ? "county_control_disagrees" : "reconciled" }));
+  const frame = alabamaReconciledCountyFrame(counties, "2024-11-05");
+  assert.equal(frame.size, 68);
+  assert.equal(frame.get("CLEBURNE").count, null);
+  assert.equal(frame.get("TEST0").count, 7860);
+  assert.equal(alabamaReconciledCountyFrame(counties.slice(1), "2024-11-05").size, 0);
+  assert.equal(alabamaReconciledCountyFrame(counties, "2020-11-03").size, 0);
 });
 
 test("Southeast histories preserve missing ages and distinguish printed and calculated rates", () => {

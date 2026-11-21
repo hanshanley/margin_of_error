@@ -1495,7 +1495,8 @@ const washingtonSex = [["total", "All reported sexes"], ["female", "Female"], ["
 const washingtonMeasures = [["ballots", "Reported ballots"], ["registration_estimate", "Ballots / estimated registrations"],
   ["april_vap_estimate", "Ballots / estimated voting-age population"]];
 
-function installGroupCountyMap(host, { code, name, dates, filters, countRows }) {
+function installGroupCountyMap(host, { code, name, dates, filters, countRows,
+  description = "Map shows the selected group’s reported counts, not rates." }) {
   if (!dates.length) return;
   const panel = document.createElement("details"), title = document.createElement("summary");
   title.textContent = `Compare ${name} counties on a map`;
@@ -1505,7 +1506,7 @@ function installGroupCountyMap(host, { code, name, dates, filters, countRows }) 
   for (const date of dates) election.append(new Option(date, date));
   state.append(new Option(name, code));
   label.append("Map election ", election);
-  controls.append(label, " Map shows the selected group’s reported counts, not rates.");
+  controls.append(label, ` ${description}`);
   panel.append(title, controls);
   const frame = () => ({ code, date: election.value, measure: "group_report_ballots",
     rows: countRows(election.value) });
@@ -1925,6 +1926,16 @@ export function alabamaBallotRows(csv, units) {
   });
 }
 
+export function alabamaReconciledCountyFrame(counties, date) {
+  const rows = new Map(counties.filter(row => row.year === date.slice(0, 4))
+    .map(row => [row.county === "TOTAL" ? "state" : row.county, {
+      name: row.county,
+      count: row.reconciliation === "reconciled" ? Number(row.county_control_ballots) : null,
+      rate: null,
+    }]));
+  return rows.size === 68 && rows.has("state") ? rows : new Map();
+}
+
 function installAlabamaBallots(host, sources) {
   if (!sources?.supported_release?.downloads?.[alBallotControls]) return;
   const panel = document.createElement("details"), summary = document.createElement("summary");
@@ -1996,6 +2007,14 @@ function installAlabamaBallots(host, sources) {
       select.addEventListener("change", render);
       render();
       content.replaceChildren(note, downloads, label, status, region);
+      installGroupCountyMap(content, {
+        code: "AL", name: "Alabama", filters: [],
+        dates: ["2024-11-05", "2020-11-03", "2018-11-06"].filter(date =>
+          [...alabamaReconciledCountyFrame(counties, date).values()].some(row => row.count !== null)),
+        countRows: date => alabamaReconciledCountyFrame(counties, date),
+        description: "Only counties whose workbook and independent control agree are shaded. "
+          + "These are county totals, including centrally reported ballots, not precinct allocations or rates.",
+      });
     } catch {
       loading = false;
       content.textContent = "The checked Alabama archive could not be loaded. Reopen this section to retry.";
