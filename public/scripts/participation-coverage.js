@@ -273,12 +273,15 @@ function installHistoricalCounties(sources, historical, names) {
   return [note, panel];
 }
 
+const scDetailPath = "release/participation-sc-county-precinct-voting-statistics.csv.gz";
+const scAuditPath = "release/participation-sc-voting-statistics-reconciliation.csv.gz";
+
 export function coverageCsvFile(sources, path) {
   const file = sources?.supported_release?.downloads?.[path];
   if (!file) return null;
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath,
     ncArchivePaths[2]].includes(path)
-    ? 2_000_000 : [washingtonAgePath, eacLocalityPath].includes(path) ? 1_000_000 : [alBallotUnits, ctTownArchive].includes(path) ? 262144
+    ? 2_000_000 : [washingtonAgePath, eacLocalityPath, scDetailPath].includes(path) ? 1_000_000 : [alBallotUnits, ctTownArchive].includes(path) ? 262144
       : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
@@ -3112,6 +3115,121 @@ export function southeastHistoryRows(csv, state) {
   });
 }
 
+export function southCarolinaDetailFrames(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const required = ["state_code", "election_date", "source_status", "geography_level", "county", "native_name",
+    "source_row_ordinal", "reported_ballots_cast", "source_labeled_registered_voters", "qualified_rate_pct"];
+  const columns = Object.fromEntries(fields.map((field, index) => [field, index]));
+  if (!lines.length || lines.length > 30000 || new Set(fields).size !== fields.length
+      || required.some(field => !Object.hasOwn(columns, field))) throw new Error("Missing South Carolina reporting-unit columns");
+  const frames = new Map();
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), get = key => cells[columns[key]];
+    const date = get("election_date"), status = get("source_status"), level = get("geography_level");
+    const county = get("county"), name = get("native_name"), ordinal = get("source_row_ordinal");
+    const voters = get("reported_ballots_cast"), registered = get("source_labeled_registered_voters");
+    if (cells.length !== fields.length || get("state_code") !== "SC"
+        || !/^20(?:08|10|12|14|16|18|20|22|24|26)-11-0[2-8]$/.test(date)
+        || !["reported", "retained_after_failure"].includes(status) || !name || get("qualified_rate_pct") !== ""
+        || ![voters, registered].every(value => /^\d{1,9}$/.test(value)))
+      throw new Error("Invalid South Carolina detail row");
+    if (!frames.has(date)) frames.set(date, { status, state: null, counties: new Map(), ordinals: new Set() });
+    const frame = frames.get(date);
+    if (frame.status !== status) throw new Error("Mixed South Carolina report status");
+    const row = { name, count: Number(voters), registered: Number(registered) };
+    if (level === "state" && !county && !ordinal && name === "South Carolina" && !frame.state) {
+      frame.state = row;
+    } else if (level === "county" && !ordinal && county === name && !frame.counties.has(county)) {
+      frame.counties.set(county, { ...row, units: [] });
+    } else if (level === "reporting_unit" && /^[1-9]\d{0,5}$/.test(ordinal)
+        && frame.counties.has(county) && !frame.ordinals.has(ordinal)) {
+      frame.ordinals.add(ordinal);
+      frame.counties.get(county).units.push(row);
+    } else throw new Error("Invalid South Carolina reporting unit identity");
+  }
+  const sum = (rows, key) => rows.reduce((total, row) => total + row[key], 0);
+  for (const frame of frames.values()) {
+    const counties = [...frame.counties.values()];
+    if (!frame.state || counties.length !== 46 || !["count", "registered"].every(key =>
+      sum(counties, key) === frame.state[key]
+      && counties.every(county => county.units.length && sum(county.units, key) === county[key])))
+      throw new Error("Incomplete or unreconciled South Carolina report");
+  }
+  return frames;
+}
+
+function installSouthCarolinaDetail(host, sources) {
+  if (!sources?.supported_release?.downloads?.[scDetailPath]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const content = document.createElement("div"), status = document.createElement("p");
+  summary.textContent = "South Carolina county and reporting-unit participation";
+  status.setAttribute("role", "status");
+  panel.append(summary, status, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    status.textContent = "Checking the official detail reports…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, scDetailPath);
+      const frames = southCarolinaDetailFrames(csv);
+      const note = document.createElement("p"), download = document.createElement("a");
+      note.textContent = "Ballot counts reconcile to the statewide summary. Registration figures are report values, "
+        + "not verified denominators. Reporting units can include central or provisional counts; no precinct map is inferred.";
+      download.href = file.url;
+      download.textContent = "Complete county and reporting-unit data (CSV · gzip)";
+      const audit = document.createElement("a"), auditFile = coverageCsvFile(sources, scAuditPath);
+      if (auditFile) {
+        audit.href = auditFile.url;
+        audit.textContent = "Election availability and statewide reconciliation (CSV · gzip)";
+      }
+      const dateLabel = document.createElement("label"), countyLabel = document.createElement("label");
+      const date = document.createElement("select"), county = document.createElement("select");
+      for (const value of [...frames.keys()].sort().reverse()) date.add(new Option(value));
+      dateLabel.append("Election date ", date); countyLabel.append("County ", county);
+      const region = document.createElement("div"), table = document.createElement("table");
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", summary.textContent);
+      const caption = table.createCaption(), heading = table.createTHead().insertRow(), body = table.createTBody();
+      for (const label of ["Area", "Ballots cast", "Source-labeled registered voters"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = label; heading.append(th);
+      }
+      region.append(table);
+      const render = () => {
+        const frame = frames.get(date.value);
+        const selected = frame.counties.get(county.value);
+        const rows = selected ? [selected, ...selected.units] : [frame.state, ...frame.counties.values()];
+        caption.textContent = `${selected?.name ?? "All counties"} · ${date.value}`;
+        status.textContent = frame.status === "reported" ? "Verified source counts; rates withheld."
+          : "Showing the last verified source counts; rates withheld.";
+        body.replaceChildren();
+        for (const row of rows) {
+          const tr = body.insertRow(), th = document.createElement("th");
+          th.scope = "row"; th.textContent = row.name; tr.append(th);
+          tr.insertCell().textContent = row.count.toLocaleString("en-US");
+          tr.insertCell().textContent = row.registered.toLocaleString("en-US");
+        }
+      };
+      const selectCounties = () => {
+        const selected = county.value, keys = [...frames.get(date.value).counties.keys()].sort();
+        county.replaceChildren(new Option("All counties", ""), ...keys.map(value => new Option(value)));
+        if (keys.includes(selected)) county.value = selected;
+        render();
+      };
+      date.addEventListener("change", selectCounties); county.addEventListener("change", render);
+      content.replaceChildren(note, download, ...(auditFile ? [" · ", audit] : []),
+        document.createElement("br"), dateLabel, " · ", countyLabel, region);
+      selectCounties();
+    } catch {
+      loading = false;
+      status.textContent = "The South Carolina detail reports could not be verified. Reopen this section to retry.";
+    }
+  });
+}
+
 function installSoutheastHistory(host, sources, state) {
   const path = southeastHistory[state];
   if (!sources?.supported_release?.downloads?.[path]) return;
@@ -4457,6 +4575,7 @@ function installAdministrativeCoverage(host) {
       installTurnoutReleaseWatch(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
+      installSouthCarolinaDetail(content, manifest.house_sources);
       installAlabamaBallots(content, manifest.house_sources);
       installAlaskaBallots(content, manifest.house_sources);
       installAlaskaBallots(content, manifest.house_sources, true);

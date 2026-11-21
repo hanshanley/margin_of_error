@@ -8,7 +8,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, indianaEarlyFrames, louisianaParishFrame, eacLocalityFrames,
   stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, northCarolinaPrecinctCounts,
-  washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
+  washingtonAgeSeries, southeastHistoryRows, southCarolinaDetailFrames, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
   californiaMediaTurnout, californiaHistoryFrames, hawaiiPrecinctFrame, dakotaHistoryFrames, newJerseyPeriodicFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
@@ -24,6 +24,20 @@ import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryl
 import { bindNorthCarolinaReference } from "../public/scripts/participation-nc-precinct-reference.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("South Carolina preserves provisional units and withholds rates on the checked detail export", () => {
+  const header = "state_code,election_date,source_status,geography_level,county,native_name,"
+    + "source_row_ordinal,reported_ballots_cast,source_labeled_registered_voters,qualified_rate_pct";
+  const base = "SC,2024-11-05,reported,";
+  const rows = [base + "state,,South Carolina,,92,138,", ...Array.from({ length: 46 }, (_, i) => [
+    `${base}county,County ${i},County ${i},,2,3,`, `${base}reporting_unit,County ${i},A,${i * 3 + 2},1,3,`,
+    `${base}reporting_unit,County ${i},Provisional,${i * 3 + 3},1,0,`,
+  ]).flat()];
+  const parse = lines => southCarolinaDetailFrames([header, ...lines].join("\n")).get("2024-11-05");
+  assert.equal(parse(rows).counties.get("County 0").units[1].name, "Provisional");
+  assert.throws(() => parse(rows.slice(0, -1)), /unreconciled/);
+  assert.throws(() => parse([...rows.slice(0, -1), rows.at(-1) + "0"]), /Invalid/);
+});
 
 test("Hawaii precinct reader preserves native counts while withholding rates from an unreconciled report", () => {
   const root = "https://elections.hawaii.gov/wp-content/results/2026%20General/";
