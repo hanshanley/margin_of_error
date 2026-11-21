@@ -3341,7 +3341,7 @@ export function alabamaBallotRows(csv, units) {
     const cells = historicalCsvLine(line);
     const row = Object.fromEntries(fields.map(field => [field, cells[columns.indexOf(field)]]));
     const key = `${row.year}/${row.county}/${row.source_unit_ordinal ?? ""}`;
-    if (cells.length !== columns.length || row.state_code !== "AL" || !["2018", "2020", "2022", "2024", "2026"].includes(row.year)
+    if (cells.length !== columns.length || row.state_code !== "AL" || !["2016", "2018", "2020", "2022", "2024", "2026"].includes(row.year)
         || !/^[A-Z_]+$/.test(row.county) || seen.has(key)
         || !["reconciled", "county_control_disagrees", "not_reconciled_without_both_sources"].includes(row.reconciliation))
       throw new Error("Invalid Alabama ballot archive row");

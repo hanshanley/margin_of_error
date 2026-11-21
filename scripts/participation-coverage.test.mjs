@@ -394,6 +394,9 @@ test("Alabama reporting-unit controls retain conflicting totals and reject an in
   const units = prefix + "reporting_unit,unit_type,reported_ballots,source_unit_ordinal\n"
     + "AL,2024,CLEBURNE,county_control_disagrees,reported,reported,ABSENTEE,central_mode_or_provisional,12,17";
   assert.equal(alabamaBallotRows(units, true)[0].unit_type, "central_mode_or_provisional");
+  const legacy = prefix + "county_archive_ballots,county_control_ballots,archive_minus_control\n"
+    + "AL,2016,TOTAL,not_reconciled_without_both_sources,reported,,2134051,,";
+  assert.equal(alabamaBallotRows(legacy, false)[0].county_archive_ballots, "2134051");
 });
 
 test("Alabama maps only checked county agreements in a whole dated frame", () => {
