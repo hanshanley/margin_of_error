@@ -111,10 +111,10 @@ fallback also runs the existing issue monitor if its own schedule is missed. An
 accepted dispatch and a successful data activation are distinct; confirm the latter
 with `input_results_version` in `automatic/latest.json`.
 
-The native scheduled publisher gives an already-running full collector time to
-finish when no newer accepted input is waiting. It skips that wait when the
-commit-pinned source checkpoint is newer than the input used by the live
-runtime. The fallback can also dispatch publication of an unconsumed accepted
+The native scheduled publisher gives a recent full, scoped, or late-archive
+collector time to finish when no newer accepted input is waiting. It rechecks
+the commit-pinned source checkpoint during the bounded wait, and hands off
+when it sees a newer input. The fallback can also dispatch publication of an unconsumed accepted
 checkpoint alongside a recognized collector. Neither shortcut bypasses the
 publisher's input validation or permits a second publication writer.
 

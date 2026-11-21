@@ -33,7 +33,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: scripts/wait-for-participation-source.py
 
-      - name: Give the current full collection time to publish
+      - name: Give a recent collection time to publish
         run: |
           python3 scripts/wait-for-participation-source.py | tee -a "$GITHUB_STEP_SUMMARY"
 
@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: 6c66d638b87f3141a2e4669405494c77dfc0574b
+          ref: 96d1bd74af61ccd049f799bbdd625b3c4b2fc6ca
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false

@@ -1,4 +1,4 @@
-"""Let an already-started full election collection finish before publishing."""
+"""Wait for a recent collector if no accepted checkpoint is ready."""
 
 import json
 import re
@@ -12,13 +12,21 @@ SOURCE = "hanshanley/voter-participation"
 SITE = "hanshanley/margin_of_error"
 LATEST = "/workflows/election-night.yml/runs?branch=main&per_page=20"
 ACTIVE = {"queued", "in_progress", "requested", "waiting", "pending"}
+ARCHIVE_TITLE = "Check late participation archives"
+COLLECTION_TITLES = {ARCHIVE_TITLE, "Collect full election results", "Run scoped election results update"}
+START = datetime(2026, 11, 3, tzinfo=timezone.utc)
+CUTOFF = datetime(2027, 2, 1, tzinfo=timezone.utc)
 
 
-def is_full_collection(run):
-    return (run["event"] == "schedule" and run.get("display_title") != "Check late participation archives") or (
-        run["event"] == "workflow_dispatch"
-        and run["display_title"] == "Collect full election results"
-    )
+def is_collection(run, *, late):
+    title = run.get("display_title")
+    if run["event"] not in {"schedule", "workflow_dispatch"}:
+        return False
+    if title is None and run["event"] == "workflow_dispatch":
+        raise ValueError("Missing collection title")
+    if late:
+        return title == ARCHIVE_TITLE
+    return title in COLLECTION_TITLES or title is None
 
 
 def fetch_json(url):
@@ -59,25 +67,31 @@ def unconsumed_checkpoint(fetch=fetch_json):
 def wait_for_collection(fetch=request, *, monotonic=time.monotonic, sleep=time.sleep,
                         pending=unconsumed_checkpoint, now=None, wait_seconds=2400):
     now = now or datetime.now(timezone.utc)
-    if not datetime(2026, 11, 3, tzinfo=timezone.utc) <= now < datetime(2027, 2, 1, tzinfo=timezone.utc):
+    if now < START:
         return {"status": "outside_collection_window"}
     deadline = monotonic() + wait_seconds
     try:
         runs = fetch(LATEST)["workflow_runs"]
-        run = next((item for item in runs if is_full_collection(item)), None)
-        if run is None or run["status"] == "completed":
+        active = [item for item in runs if item["status"] != "completed" and is_collection(item, late=now >= CUTOFF)]
+        if not active:
             return {"status": "no_collection_in_progress"}
-        run_id = run["id"]
-        created = datetime.fromisoformat(run["created_at"].replace("Z", "+00:00"))
-        if (type(run_id) is not int or run_id <= 0 or run["status"] not in ACTIVE
-                or run["head_branch"] != "main"
-                or created.utcoffset() is None):
-            raise ValueError("Unexpected full collection evidence")
-        if not timedelta(0) <= now - created <= timedelta(minutes=75):
+        recent = []
+        for item in active:
+            created = datetime.fromisoformat(item["created_at"].replace("Z", "+00:00"))
+            if (type(item["id"]) is not int or item["id"] <= 0 or item["status"] not in ACTIVE
+                    or item["head_branch"] != "main" or created.utcoffset() is None):
+                raise ValueError("Unexpected collection evidence")
+            if timedelta(0) <= now - created <= timedelta(minutes=75):
+                recent.append(item)
+        if not recent:
             return {"status": "no_recent_collection_in_progress"}
+        run = next((item for item in recent if item["status"] == "in_progress"), recent[0])
+        run_id = run["id"]
 
         if (version := pending()) is not None:
             return {"status": "accepted_checkpoint_ready", "input_results_version": version}
+        # A checkpoint check uses two GitHub API requests in addition to the job poll.
+        next_checkpoint_check = monotonic() + 450
 
         while (remaining := deadline - monotonic()) > 0:
             sleep(min(90, remaining))
@@ -85,13 +99,18 @@ def wait_for_collection(fetch=request, *, monotonic=time.monotonic, sleep=time.s
                 break
             observed = fetch(f"/runs/{run_id}")
             if (observed["id"] != run_id or observed["head_branch"] != "main"
-                    or observed["event"] != run["event"] or not is_full_collection(observed)):
+                    or observed["event"] != run["event"]
+                    or observed.get("display_title") != run.get("display_title")):
                 raise ValueError("Collection run identity changed")
             if observed["status"] == "completed":
                 return {"status": "collection_completed", "run_id": run_id,
                         "conclusion": observed["conclusion"]}
             if observed["status"] not in ACTIVE:
                 raise ValueError("Unknown collection run status")
+            if monotonic() >= next_checkpoint_check:
+                if (version := pending()) is not None:
+                    return {"status": "accepted_checkpoint_ready", "input_results_version": version}
+                next_checkpoint_check = monotonic() + 450
         return {"status": "wait_limit_reached", "run_id": run_id}
     except (OSError, ValueError, KeyError, TypeError):
         # This is an ordering hint, never a substitute for validating the accepted pointer.

@@ -80,23 +80,29 @@ class TestWaitForSource(unittest.TestCase):
             self.assertIsNone(wait.unconsumed_checkpoint({**route, key: {**live, **update}}.__getitem__))
         self.assertIsNone(wait.unconsumed_checkpoint({}.__getitem__))
 
-    def test_waits_for_full_dispatch_but_ignores_scoped_collection(self):
+    def test_prefers_running_scoped_collection_over_a_newer_queued_full_run(self):
         scoped = dict(RUN, id=1, event="workflow_dispatch", display_title="Run scoped election results update")
         full = dict(RUN, event="workflow_dispatch", display_title="Collect full election results")
-        self.assertEqual(self.simulate([{"workflow_runs": [scoped]}])["status"], "no_collection_in_progress")
-        result = self.simulate([{"workflow_runs": [scoped, full]},
-                                dict(full, status="completed", conclusion="success")])
-        self.assertEqual(result, {"status": "collection_completed", "run_id": RUN["id"],
+        result = self.simulate([{"workflow_runs": [dict(full, status="queued"), scoped]},
+                                dict(scoped, status="completed", conclusion="success")])
+        self.assertEqual(result, {"status": "collection_completed", "run_id": scoped["id"],
                                   "conclusion": "success"})
-        self.assertEqual(self.paths, [wait.LATEST, f"/runs/{RUN['id']}"])
-        self.assertEqual(self.simulate([{"workflow_runs": [full]}, scoped])["status"],
+        self.assertEqual(self.paths, [wait.LATEST, f"/runs/{scoped['id']}"])
+        self.assertEqual(self.simulate([{"workflow_runs": [full]}, dict(scoped, id=full["id"])])["status"],
                          "collection_status_unavailable")
 
-    def test_weekly_archive_check_does_not_delay_hourly_publication(self):
-        archive = dict(RUN, id=1, display_title="Check late participation archives")
-        finished = dict(RUN, status="completed", conclusion="success")
-        self.assertEqual(self.simulate([{"workflow_runs": [archive, RUN]}, finished]),
-                         {"status": "collection_completed", "run_id": RUN["id"], "conclusion": "success"})
+    def test_waits_for_weekly_archive_after_hourly_collection_ends(self):
+        now = datetime(2027, 2, 1, 10, 31, tzinfo=timezone.utc)
+        archive = dict(RUN, id=1, created_at="2027-02-01T10:19:00Z", display_title=wait.ARCHIVE_TITLE)
+        finished = dict(archive, status="completed", conclusion="success")
+        self.assertEqual(self.simulate([{"workflow_runs": [RUN, archive]}, finished], now=now),
+                         {"status": "collection_completed", "run_id": archive["id"], "conclusion": "success"})
+
+    def test_periodically_checks_for_an_accepted_checkpoint_during_the_wait(self):
+        checkpoints = iter((None, "a" * 64))
+        self.assertEqual(self.simulate([{"workflow_runs": [RUN]}] + [RUN] * 5, pending=lambda: next(checkpoints)),
+                         {"status": "accepted_checkpoint_ready", "input_results_version": "a" * 64})
+        self.assertEqual(self.elapsed, 450)
 
     def test_completed_missing_or_stale_run_does_not_hold_publication(self):
         for runs, expected in (([], "no_collection_in_progress"),
@@ -105,7 +111,7 @@ class TestWaitForSource(unittest.TestCase):
                                 "no_recent_collection_in_progress")):
             self.assertEqual(self.simulate([{"workflow_runs": runs}])["status"], expected)
             self.assertEqual(self.elapsed, 0)
-        outside = datetime(2027, 2, 1, tzinfo=timezone.utc)
+        outside = datetime(2026, 11, 2, tzinfo=timezone.utc)
         self.assertEqual(self.simulate([], now=outside)["status"], "outside_collection_window")
         self.assertEqual(self.paths, [])
 
