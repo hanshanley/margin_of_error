@@ -266,9 +266,10 @@ function installHistoricalCounties(sources, historical, names) {
 export function coverageCsvFile(sources, path) {
   const file = sources?.supported_release?.downloads?.[path];
   if (!file) return null;
-  const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath].includes(path)
+  const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath,
+    ncArchivePaths[2]].includes(path)
     ? 2_000_000 : path === washingtonAgePath ? 1_000_000 : [alBallotUnits, ctTownArchive].includes(path) ? 262144
-      : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath, ncArchivePaths[2]].includes(path) ? 524288 : 65536;
+      : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
       || file.media_type !== "text/csv" || file.compression !== "gzip"
@@ -3287,8 +3288,10 @@ function installConnecticutTownMap(host, rows) {
   choice.addEventListener("change", render);
 }
 
-const ncArchiveDates = new Set(["2016-11-08", "2018-11-06", "2020-11-03",
+const ncArchiveDates = new Set(["2008-11-04", "2010-11-02", "2012-11-06", "2014-11-04",
+  "2016-11-08", "2018-11-06", "2020-11-03",
   "2022-11-08", "2024-11-05", "2026-11-03"]);
+const ncTruncatedVoterEditions = { 2012: "Nov  6 201", 2014: "Nov  5 201" };
 
 export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
   const parse = csv => {
@@ -3314,12 +3317,15 @@ export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
       const url = "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/"
         + `${date.replaceAll("-", "_")}/${kind}_stats_${date.replaceAll("-", "")}.zip`;
       const edition = row[`${kind}_edition`];
+      const noEdition = (kind === "voter" && edition === ""
+        && ([2016, 2018].includes(year) || row.voter_unparsed_edition === ncTruncatedVoterEditions[year]
+          && Object.hasOwn(ncTruncatedVoterEditions, year)));
       if (row[`${kind}_url`] !== url || !/^[a-f0-9]{64}$/.test(row[`${kind}_sha256`])
-          || (!(kind === "voter" && year <= 2018 && edition === "")
+          || (!noEdition
             && (!/^\d{4}-\d{2}-\d{2}$/.test(edition) || edition < date)))
         throw new Error("Incompatible NC archive provenance");
     }
-    return ["source_status", "history_sha256", "voter_sha256", "history_edition", "voter_edition"]
+    return ["source_status", "history_sha256", "voter_sha256", "history_edition", "voter_edition", "voter_unparsed_edition"]
       .map(key => row[key]).join("/");
   };
   const frames = new Map();
@@ -3327,7 +3333,8 @@ export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
     const lineage = identity(row), date = row.election_date;
     if (!frames.has(date)) frames.set(date, { date, code: "NC", rows: new Map(), groups: [],
       measure: "voter_history_credits", lineage, status: row.source_status,
-      historyEdition: row.history_edition, voterEdition: row.voter_edition });
+      historyEdition: row.history_edition, voterEdition: row.voter_edition,
+      voterRawEdition: row.voter_unparsed_edition });
     const frame = frames.get(date);
     const statewide = row.geography_level === "state", key = statewide ? "state" : row.native_county;
     if (frame.lineage !== lineage || frame.rows.has(key) || (statewide ? row.native_county !== ""
@@ -3421,7 +3428,8 @@ function installNorthCarolinaArchives(host, sources) {
         const header = table.createTHead().insertRow(), body = table.createTBody();
         const provenance = document.createElement("p");
         provenance.textContent = `${frame.status === "retained_after_failure" ? "Last verified edition retained. " : ""}`
-          + `Voter-history edition: ${frame.historyEdition}. Registration edition: ${frame.voterEdition || "not printed"}.`;
+          + `Voter-history edition: ${frame.historyEdition}. Registration edition: `
+          + `${frame.voterEdition || (frame.voterRawEdition ? `truncated in source (${frame.voterRawEdition})` : "not printed")}.`;
         table.createCaption().textContent = county ? "State and county totals" : "Statewide demographic groups";
         for (const text of [county ? "Area" : "Native group", "Voter-history credits", "Registered voter statistics",
           ...(county ? [] : ["Checked fraction"])]) {
