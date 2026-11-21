@@ -12,6 +12,7 @@ import { projectStateContext } from "./participation-map-projection.js";
 
 const coveragePath = "release/participation-administrative-coverage.csv.gz";
 const historicalCountyPath = "participation/eac-county-year-decisions.csv.gz";
+const eacLocalityPath = "release/participation-eac-locality-history.csv.gz";
 const countyYears = Array.from({ length: 11 }, (_, i) => 2004 + 2 * i);
 const countyDecisions = {
   reconciled_direct_county_turnout: "Matches the direct county report",
@@ -272,7 +273,7 @@ export function coverageCsvFile(sources, path) {
   if (!file) return null;
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath,
     ncArchivePaths[2]].includes(path)
-    ? 2_000_000 : path === washingtonAgePath ? 1_000_000 : [alBallotUnits, ctTownArchive].includes(path) ? 262144
+    ? 2_000_000 : [washingtonAgePath, eacLocalityPath].includes(path) ? 1_000_000 : [alBallotUnits, ctTownArchive].includes(path) ? 262144
       : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
@@ -1912,6 +1913,109 @@ async function loadCoverageCsv(sources, path) {
     throw new Error("Administrative coverage checksum differs");
   const csv = await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
   return { csv, file };
+}
+
+export function eacLocalityFrames(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header), frames = new Map(), seen = new Set();
+  const names = new Set(["CT", "ME", "MA", "NH", "RI", "VT", "WI"]);
+  const integer = raw => /^\d+$/.test(raw) && Number.isSafeInteger(Number(raw));
+  if (!lines.length || lines.length > 100_000 || new Set(fields).size !== fields.length)
+    throw new Error("Unverified EAC locality inventory");
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), get = key => cells[fields.indexOf(key)];
+    const state = get("state_code"), year = get("year"), id = get("native_row");
+    const name = get("native_name"), fips = get("native_fips");
+    const count = get("reported_counted_ballot_participants"), registered = get("registered_literal");
+    const fraction = get("same_report_registration_fraction_pct");
+    const hold = get("count_hold"), rateHold = get("rate_hold");
+    if (cells.length !== fields.length || !names.has(state) || !/^\d{4}$/.test(year)
+        || Number(year) < 2004 || Number(year) > 2024 || Number(year) % 2
+        || !integer(id) || seen.has(id) || get("geographic_match_claimed") !== "False"
+        || (count === "" ? !hold || fraction !== "" :
+          hold || !name || !/^\d{10}$/.test(fips) || fips.endsWith("00000") || !integer(count)
+          || get("source_votescast") !== "0" || get("source_ballots") !== "1"
+          || count !== get("reported_turnout_literal"))
+        || (fraction === "" ? !rateHold :
+          rateHold || !integer(registered) || Number(registered) < 1 || Number(count) > Number(registered)
+          || !/^\d+(\.\d+)?$/.test(fraction)
+          || Math.abs(Number(fraction) - 100 * Number(count) / Number(registered)) > 1e-8))
+      throw new Error("Incompatible EAC locality record");
+    seen.add(id);
+    if (!frames.has(state)) frames.set(state, new Map());
+    const years = frames.get(state);
+    if (!years.has(year)) years.set(year, []);
+    years.get(year).push({ name, fips, count: count === "" ? null : Number(count), registered,
+      fraction: fraction === "" ? null : Number(fraction), hold });
+  }
+  return frames;
+}
+
+function installEacLocalityHistory(host, sources, names) {
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const status = document.createElement("p"), content = document.createElement("div");
+  summary.textContent = "EAC historical local participation reports, 2004–2024";
+  status.setAttribute("role", "status");
+  let file;
+  try { file = coverageCsvFile(sources, eacLocalityPath); } catch {
+    status.textContent = "The historical locality download could not be verified.";
+    panel.append(summary, status); host.append(panel);
+    return;
+  }
+  if (!file) return;
+  const note = document.createElement("p"), download = document.createElement("a");
+  note.textContent = "Counts require the report to identify ballots counted as a source and not use highest-office votes. "
+    + "Percentages use registrations in the same report. Held values are not zero, and this table does not match records to boundaries. ";
+  download.href = file.url; download.textContent = "Complete locality records and decisions (CSV · gzip)";
+  note.append(download); panel.append(summary, note, status, content); host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    status.textContent = "Verifying historical locality records…";
+    try {
+      const { csv } = await loadCoverageCsv(sources, eacLocalityPath);
+      const frames = eacLocalityFrames(csv), state = document.createElement("select"), year = document.createElement("select");
+      const region = document.createElement("div"), table = document.createElement("table");
+      const caption = table.createCaption(), heading = table.createTHead().insertRow(), body = table.createTBody();
+      const number = new Intl.NumberFormat("en-US");
+      state.setAttribute("aria-label", "Historical locality state");
+      year.setAttribute("aria-label", "Historical locality election year");
+      const option = (parent, value, text) => parent.append(new Option(text, value));
+      for (const code of [...frames.keys()].sort()) option(state, code, names[code] ?? code);
+      if (frames.has("ME")) state.value = "ME";
+      for (const label of ["Reporting jurisdiction", "Counted-ballot participants", "Reported registration", "Same-report fraction", "Count decision"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = label; heading.append(th);
+      }
+      const render = () => {
+        const rows = frames.get(state.value).get(year.value);
+        caption.textContent = `${names[state.value] ?? state.value} · ${year.value} EAC locality records`;
+        body.replaceChildren();
+        for (const row of rows) {
+          const tr = body.insertRow(), label = document.createElement("th");
+          label.scope = "row"; label.textContent = row.name || row.fips || "Unidentified"; tr.append(label);
+          for (const value of [row.count === null ? "Withheld" : number.format(row.count),
+            /^\d+$/.test(row.registered) ? number.format(Number(row.registered)) : "Unavailable",
+            row.fraction === null ? "Withheld" : `${row.fraction.toFixed(2)}%`,
+            row.hold ? row.hold.replaceAll("_", " ") : "Ballot count source verified"]) tr.insertCell().textContent = value;
+        }
+        status.textContent = `${rows.filter(row => row.count !== null).length} of ${rows.length} records have usable counts.`;
+      };
+      const updateYears = () => {
+        year.replaceChildren();
+        for (const value of [...frames.get(state.value).keys()].sort().reverse()) option(year, value, value);
+        render();
+      };
+      state.addEventListener("change", updateYears); year.addEventListener("change", render);
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", "Historical EAC locality data");
+      region.append(table); content.append(state, year, region); updateYears();
+    } catch {
+      loading = false;
+      status.textContent = "The historical locality table could not be verified. Use the complete download or reopen to retry.";
+    }
+  });
 }
 
 const washingtonAges = new Map([
@@ -3883,6 +3987,7 @@ function installAdministrativeCoverage(host) {
       installKansasStudy(content, manifest.house_sources);
       installHawaiiHistory(content, manifest.house_sources);
       installDakotaHistory(content, manifest.house_sources);
+      installEacLocalityHistory(content, manifest.house_sources, names);
       installNewJerseyPeriodicComponents(content, manifest.house_sources);
       installCaliforniaMedia(content, manifest.house_sources);
       for (const [state, path, title, note] of [

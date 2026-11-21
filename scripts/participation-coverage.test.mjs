@@ -5,7 +5,7 @@ import { runInNewContext } from "node:vm";
 import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
-  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, louisianaParishFrame,
+  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, louisianaParishFrame, eacLocalityFrames,
   stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, northCarolinaPrecinctCounts,
   washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
@@ -24,6 +24,23 @@ import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryl
 import { bindNorthCarolinaReference } from "../public/scripts/participation-nc-precinct-reference.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("EAC locality reader distinguishes zero from an unqualified highest-office proxy", () => {
+  const csv = [
+    "state_code,year,native_row,native_name,native_fips,registered_literal,reported_turnout_literal,"
+      + "reported_counted_ballot_participants,same_report_registration_fraction_pct,count_hold,rate_hold,"
+      + "source_votescast,source_ballots,geographic_match_claimed",
+    "ME,2024,2,ABBOT,2302100100,20,0,0,0.0,,,0,1,False",
+    "ME,2024,3,ACTON,2303100275,20,10,,,highest_office_source_reported,count_withheld,1,1,False",
+  ].join("\n");
+  const [zero, held] = eacLocalityFrames(csv).get("ME").get("2024");
+  assert.equal(zero.count, 0);
+  assert.equal(zero.fraction, 0);
+  assert.equal(held.count, null);
+  assert.equal(held.fraction, null);
+  assert.throws(() => eacLocalityFrames(csv.replace("20,0,0,0.0", "20,0,0,0.1")), /Incompatible/);
+  assert.throws(() => eacLocalityFrames(csv.replace(",,,highest_office", ",10,,highest_office")), /Incompatible/);
+});
 
 test("California media ballot counts bind to all 58 counties without turning missing counts into zero or mapping rates", () => {
   const layer = JSON.parse(gunzipSync(readFileSync(new URL(
