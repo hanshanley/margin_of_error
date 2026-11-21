@@ -1072,6 +1072,7 @@ export function louisianaParishFrame(data) {
 }
 
 const laGroupPath = "release/participation-la-post-election-groups.csv.gz";
+const laHistoryPath = "release/participation-la-historical-post-election-groups.csv.gz";
 const laGroupLabels = {
   total: "All registrations", white: "White", black: "Black", other_race: "Other race (source category)",
   democrat_total: "Democratic registration", republican_total: "Republican registration",
@@ -1124,6 +1125,149 @@ export function louisianaElectionGroups(csv) {
   }
   if (groups.size !== Object.keys(laGroupLabels).length) throw new Error("Incomplete Louisiana group inventory");
   return groups;
+}
+
+export function louisianaGroupHistory(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header), elections = new Map();
+  const required = ["election_date", "election_cycle", "native_id", "area_name", "group", "voters_voting",
+    "post_election_active_inactive_registered", "native_percent_voting", "observed_percent_voting",
+    "analytical_rate_promoted", "source_status", "checked_week_utc"];
+  if (!lines.length || new Set(columns).size !== columns.length || required.some(name => !columns.includes(name)))
+    throw new Error("Missing Louisiana historical group columns");
+  for (const line of lines) {
+    const cells = historicalCsvLine(line);
+    const row = Object.fromEntries(columns.map((key, index) => [key, cells[index]]));
+    const { election_date: date, native_id: area, area_name: name, group, source_status: status,
+      voters_voting: n, post_election_active_inactive_registered: d, native_percent_voting: printed,
+      observed_percent_voting: pct, checked_week_utc: week } = row;
+    const year = Number(date?.slice(0, 4)), firstNovember = new Date(Date.UTC(year, 10, 1));
+    const day = 2 + (8 - firstNovember.getUTCDay()) % 7;
+    const cycle = year % 4 === 0 ? "presidential" : "midterm", state = area === "STATE";
+    const count = Number(n), register = Number(d);
+    if (cells.length !== columns.length || year < 1998 || year > 2024 || year % 2 !== 0
+        || date !== `${year}-11-${String(day).padStart(2, "0")}` || row.election_cycle !== cycle
+        || !Object.hasOwn(laGroupLabels, group)
+        || (state ? name !== "Louisiana" : !name || !/^PAR (?:0[1-9]|[1-5]\d|6[0-4])$/.test(area))
+        || !/^\d{1,9}$/.test(n) || !/^\d{1,9}$/.test(d) || count > register
+        || !/^\d{1,3}\.\d{1,2}$/.test(printed)
+        || (register ? pct !== printed || Math.abs(Number(pct) - 100 * count / register)
+          > (printed.split(".")[1].length === 1 ? 0.050000001 : 0.005000001) : pct !== "" || Number(printed) !== 0)
+        || row.analytical_rate_promoted !== "false" || !["reported", "retained_after_failure"].includes(status)
+        || !/^\d{4}-\d{2}-\d{2}$/.test(week))
+      throw new Error("Invalid Louisiana historical group row");
+    if (!elections.has(year)) elections.set(year, { date, cycle, status, week, groups: new Map(), names: new Map() });
+    const frame = elections.get(year);
+    if (!frame.groups.has(group)) frame.groups.set(group, new Map());
+    const areas = frame.groups.get(group);
+    if (frame.week !== week || frame.status !== status || areas.has(area)
+        || (frame.names.has(area) && frame.names.get(area) !== name))
+      throw new Error("Conflicting Louisiana historical group rows");
+    frame.names.set(area, name);
+    areas.set(area, { name, count, register, pct });
+  }
+  for (const frame of elections.values()) {
+    if (frame.groups.size !== Object.keys(laGroupLabels).length) throw new Error("Incomplete historical group inventory");
+    for (const areas of frame.groups.values()) {
+      const state = areas.get("STATE"), parish = [...areas].filter(([key]) => key !== "STATE");
+      if (!state || parish.length !== 64 || ["count", "register"].some(
+        key => parish.reduce((sum, [, row]) => sum + row[key], 0) !== state[key]))
+        throw new Error("Louisiana historical groups do not reconcile");
+    }
+  }
+  return elections;
+}
+
+function installLouisianaGroupHistory(host, sources) {
+  if (!sources?.supported_release?.downloads?.[laHistoryPath]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const notice = document.createElement("p"), body = document.createElement("div");
+  summary.textContent = "Louisiana participation by race and registration party, 1998–2024";
+  notice.setAttribute("role", "status");
+  panel.append(summary, notice, body);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    notice.textContent = "Checking historical group records…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, laHistoryPath);
+      const elections = louisianaGroupHistory(csv);
+      const years = Array.from({ length: 14 }, (_, i) => 1998 + 2 * i);
+      const note = document.createElement("p"), link = document.createElement("a");
+      note.textContent = "These reports count people recorded as voting, not physical ballots. "
+        + "The reported percentages use active and inactive post-election registrations, not an independently "
+        + "qualified turnout denominator. Registration party is not vote choice. Held years are not estimated.";
+      link.href = file.url;
+      link.textContent = "Complete historical statewide and parish data (CSV · gzip)";
+      const year = document.createElement("select"), group = document.createElement("select");
+      const yearLabel = document.createElement("label"), groupLabel = document.createElement("label");
+      yearLabel.append("Election ", year); groupLabel.append("Group ", group);
+      for (const value of [...years].reverse()) {
+        const frame = elections.get(value);
+        year.add(new Option(`${value} · ${frame?.cycle ?? "not reconciled"}`, String(value)));
+      }
+      for (const [key, label] of Object.entries(laGroupLabels)) group.add(new Option(label, key));
+      const trend = document.createElement("div"), region = document.createElement("div");
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", "Louisiana historical parish data");
+      const format = new Intl.NumberFormat("en-US");
+      const rowCells = (section, heading, values) => {
+        const tr = section.insertRow(), th = document.createElement("th");
+        th.scope = "row"; th.textContent = heading; tr.append(th);
+        for (const value of values) tr.insertCell().textContent = value;
+      };
+      const tableFor = (caption, headings) => {
+        const table = document.createElement("table");
+        table.createCaption().textContent = caption;
+        const tr = table.createTHead().insertRow();
+        for (const heading of headings) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = heading; tr.append(th);
+        }
+        return table;
+      };
+      const numbers = row => [format.format(row.count), format.format(row.register), row.pct ? `${row.pct}%` : "Not defined"];
+      const render = () => {
+        const selected = elections.get(Number(year.value)), name = group.selectedOptions[0].text;
+        const fields = ["Reported voters", "Reported registration stock", "Reported percentage"];
+        const history = tableFor(`Statewide history · ${name}`, ["Election", "Cycle", ...fields, "Source"]);
+        const values = history.createTBody();
+        for (const value of years) {
+          const frame = elections.get(value);
+          rowCells(values, String(value), frame
+            ? [frame.cycle, ...numbers(frame.groups.get(group.value).get("STATE")),
+              frame.status === "reported" ? "Reported" : "Last verified"]
+            : [value % 4 ? "midterm" : "presidential", "—", "—", "—", "Not reconciled"]);
+        }
+        trend.replaceChildren(history);
+        if (!selected) {
+          region.replaceChildren();
+          notice.textContent = `No reconciled group report for ${year.value}.`;
+          return;
+        }
+        notice.textContent = `${selected.status === "reported" ? "Checked" : "Showing the last verified report; checked"} `
+          + `the week of ${selected.week} (UTC).`;
+        const detail = tableFor(`${selected.date} · ${name}`, ["Area", ...fields]);
+        const areas = detail.createTBody();
+        const rows = selected.groups.get(group.value);
+        rowCells(areas, "Louisiana", numbers(rows.get("STATE")));
+        for (const [key, row] of [...rows].sort(([a], [b]) => a.localeCompare(b))) {
+          if (key !== "STATE") rowCells(areas, row.name, numbers(row));
+        }
+        region.replaceChildren(detail);
+      };
+      year.addEventListener("change", render); group.addEventListener("change", render);
+      trend.className = "table-wrap"; trend.tabIndex = 0;
+      trend.setAttribute("role", "region"); trend.setAttribute("aria-label", "Louisiana statewide historical comparison");
+      body.replaceChildren(note, link, " · ", yearLabel, " ", groupLabel, trend, region);
+      render();
+    } catch {
+      loading = false;
+      notice.textContent = "The Louisiana historical group data could not be verified. Reopen this section to retry.";
+    }
+  });
 }
 
 function installLouisianaElectionGroups(host, sources) {
@@ -4818,6 +4962,7 @@ function installAdministrativeCoverage(host) {
         }
       }
       installLouisianaElectionGroups(content, manifest.house_sources);
+      installLouisianaGroupHistory(content, manifest.house_sources);
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);

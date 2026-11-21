@@ -5,7 +5,7 @@ import { runInNewContext } from "node:vm";
 import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
-  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, indianaEarlyFrames, louisianaParishFrame, louisianaElectionGroups, eacLocalityFrames,
+  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, indianaEarlyFrames, louisianaParishFrame, louisianaElectionGroups, louisianaGroupHistory, eacLocalityFrames,
   stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, northCarolinaPrecinctCounts,
   washingtonAgeSeries, southeastHistoryRows, southCarolinaDetailFrames, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
@@ -41,6 +41,30 @@ test("Louisiana group reader distinguishes zero stock from rates and rejects a m
   assert.throws(() => louisianaElectionGroups([header, ...rows.slice(1)].join("\n")), /Incomplete/);
   assert.throws(() => louisianaElectionGroups(csv.replace(",63,126,50.00,50.00", ",64,128,50.00,50.00")),
     /do not reconcile/);
+});
+
+test("Louisiana history accepts legacy precision and retained frames without fabricating missing elections", () => {
+  const header = "election_date,election_cycle,native_id,area_name,group,voters_voting,"
+    + "post_election_active_inactive_registered,native_percent_voting,observed_percent_voting,"
+    + "analytical_rate_promoted,source_status,checked_week_utc";
+  const parties = ["democrat", "republican", "other_parties"], races = ["white", "black", "other_race"];
+  const groups = ["total", ...races, ...parties.map(p => `${p}_total`),
+    ...parties.flatMap(p => races.map(r => `${p}_${r}`))];
+  const build = (date, cycle, precision, status) => groups.flatMap(group => [
+    `STATE,Louisiana,${group},63,189,${(100 / 3).toFixed(precision)},${(100 / 3).toFixed(precision)}`,
+    ...Array.from({ length: 64 }, (_, i) =>
+      `PAR ${String(i + 1).padStart(2, "0")},Parish ${i},${group},` + (i
+        ? `1,3,${(100 / 3).toFixed(precision)},${(100 / 3).toFixed(precision)}` : "0,0,0.0,")),
+  ]).map(row => `${date},${cycle},${row},false,${status},2026-11-16`);
+  const rows = [...build("1998-11-03", "midterm", 1, "retained_after_failure"),
+    ...build("2024-11-05", "presidential", 2, "reported")];
+  const csv = [header, ...rows].join("\n");
+  const result = louisianaGroupHistory(csv);
+  assert.deepEqual([...result.keys()], [1998, 2024]);
+  assert.equal(result.get(1998).status, "retained_after_failure");
+  assert.equal(result.get(1998).groups.get("white").get("PAR 01").pct, "");
+  assert.throws(() => louisianaGroupHistory(csv.replace("2024-11-05", "2024-11-06")), /Invalid/);
+  assert.throws(() => louisianaGroupHistory([header, ...rows.slice(1)].join("\n")), /reconcile/);
 });
 
 test("South Carolina preserves provisional units and withholds rates on the checked detail export", () => {
