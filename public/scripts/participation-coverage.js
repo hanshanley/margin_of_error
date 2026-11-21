@@ -3376,6 +3376,11 @@ export function alabamaReconciledCountyFrame(counties, date) {
   return rows.size === 68 && rows.has("state") ? rows : new Map();
 }
 
+export function alabamaCountyMapDates(counties) {
+  return ["2026-11-03", "2024-11-05", "2022-11-08", "2020-11-03", "2018-11-06"].filter(date =>
+    [...alabamaReconciledCountyFrame(counties, date)].some(([key, row]) => key !== "state" && row.count !== null));
+}
+
 function installAlabamaBallots(host, sources) {
   if (!sources?.supported_release?.downloads?.[alBallotControls]) return;
   const panel = document.createElement("details"), summary = document.createElement("summary");
@@ -3451,8 +3456,7 @@ function installAlabamaBallots(host, sources) {
       content.replaceChildren(note, downloads, label, status, region);
       installGroupCountyMap(content, {
         code: "AL", name: "Alabama", filters: [],
-        dates: ["2024-11-05", "2022-11-08", "2020-11-03", "2018-11-06"].filter(date =>
-          [...alabamaReconciledCountyFrame(counties, date).values()].some(row => row.count !== null)),
+        dates: alabamaCountyMapDates(counties),
         countRows: date => alabamaReconciledCountyFrame(counties, date),
         description: "Only counties whose workbook and independent control agree are shaded. "
           + "These are county totals, including centrally reported ballots, not precinct allocations or rates.",

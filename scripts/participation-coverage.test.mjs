@@ -11,7 +11,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   washingtonAgeSeries, southeastHistoryRows, southCarolinaDetailFrames, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
   californiaMediaTurnout, californiaHistoryFrames, hawaiiPrecinctFrame, dakotaHistoryFrames, newJerseyPeriodicFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
-  connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
+  connecticutTownRows, alabamaReconciledCountyFrame, alabamaCountyMapDates, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
@@ -429,6 +429,26 @@ test("Alabama midterm geometry binds St. Clair but does not shade a conflicted c
   assert.equal(bound.find(({ feature }) => feature.properties.name === "Cullman").value, null);
   assert.equal(bound.find(({ feature }) => feature.properties.name === "St. Clair").value.name, "St. Clair");
   assert.throws(() => bindOfficialCountyArchive(layer, { ...frame, date: "2024-11-05" }), /identity differs/);
+});
+
+test("Alabama 2026 is not offered before a county control reconciles", () => {
+  const { path, sha256 } = officialArchiveGeometry["AL/2026"];
+  const bytes = readFileSync(new URL(`../public/${path}`, import.meta.url));
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), sha256);
+  const layer = JSON.parse(gunzipSync(bytes));
+  const counties = ["TOTAL", ...layer.features.map(({ properties }) =>
+    properties.name === "St. Clair" ? "ST_CLAIR" : properties.name.toUpperCase())]
+    .map(county => ({ year: "2026", county, county_control_ballots: "",
+      reconciliation: "not_reconciled_without_both_sources" }));
+  assert.deepEqual(alabamaCountyMapDates(counties), []);
+  const autauga = counties.find(row => row.county === "AUTAUGA");
+  autauga.county_control_ballots = "19200";
+  autauga.reconciliation = "reconciled";
+  const [date] = alabamaCountyMapDates(counties);
+  assert.equal(date, "2026-11-03");
+  const bound = bindOfficialCountyArchive(layer, { code: "AL", date, measure: "group_report_ballots",
+    rows: alabamaReconciledCountyFrame(counties, date) });
+  assert.deepEqual(bound.filter(entry => entry.value).map(entry => entry.value.count), [19200]);
 });
 
 test("Southeast histories preserve missing ages and distinguish printed and calculated rates", () => {

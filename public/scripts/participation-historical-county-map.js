@@ -25,6 +25,14 @@ const scGeometry = [
   [2024, 150998, "b1d1c1577320294e1b33b04bd88b5e7f78ad62cd068b86fdac275595610f8fa3"],
 ];
 export const officialArchiveGeometry = {
+  "AL/2026": {
+    path: "participation-archive-geometry/county-AL-2026.geojson.gz",
+    bytes: 140187,
+    sha256: "c293819ffd5ef0074a64440acb7aa6bf4ba82d27c1a2e2eff5b36cf276316986",
+    referenceDate: "2026-01-01",
+    reproduction: "alabama-2026-county-reference.zip",
+    reproductionBase: geometryReleases + "alabama-2026-county-reference/",
+  },
   ...Object.fromEntries(alGeometry.map(([year, bytes, sha256]) => [`AL/${year}`, {
     path: `participation-archive-geometry/county-AL-${year}.geojson.gz`,
     bytes, sha256, referenceDate: `${year}-01-01`,
