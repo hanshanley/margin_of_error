@@ -11,6 +11,12 @@ const officialCountySizes = { AL: 67, CA: 58, CO: 64, HI: 4, IN: 92, KS: 105, LA
 const hawaiiReportingCounties = { "15001": ["15001"], "15003": ["15003"], "15007": ["15007"], "15009": ["15009", "15005"] };
 const geometryReleases = "https://github.com/hanshanley/voter-participation/releases/download/";
 const nebraskaGeometryRelease = geometryReleases + "nebraska-legacy-county-geometry-20261120/";
+const alGeometry = [
+  [2018, 140270, "0ff82114a71e8c493778e2692e564cdd907fb7ed1a1a8aff46706860d0896e6c"],
+  [2020, 140177, "dda391840454d074229f45cf65cfa2627a25c5fef0b377951bf22b4de65836df"],
+  [2022, 140251, "fd8b8e815a4a552289d06e988105153db9ff09feeff9014f09f3da33c281e792"],
+  [2024, 140245, "23e0dc713ebe60d197e7feb8dacebded588daf30b232a8c06176511a37a2e1e1"],
+];
 const scGeometry = [
   [2010, 154755, "8c0c8d83a701cbd021e56ee1f8bdeb8da4368e7d9cbbe150006944f0847aefa1"],
   [2012, 153971, "2e0c2401128fdd1dd492e720630a91f4cbe9eefb55921649df0cc7fb2bdcebf0"],
@@ -19,6 +25,12 @@ const scGeometry = [
   [2024, 150998, "b1d1c1577320294e1b33b04bd88b5e7f78ad62cd068b86fdac275595610f8fa3"],
 ];
 export const officialArchiveGeometry = {
+  ...Object.fromEntries(alGeometry.map(([year, bytes, sha256]) => [`AL/${year}`, {
+    path: `participation-archive-geometry/county-AL-${year}.geojson.gz`,
+    bytes, sha256, referenceDate: `${year}-01-01`,
+    reproduction: "alabama-county-ballot-maps.zip",
+    reproductionBase: geometryReleases + "alabama-county-ballot-maps/",
+  }])),
   ...Object.fromEntries(scGeometry.map(([year, bytes, sha256]) => [`SC/${year}`, {
     path: `participation-archive-geometry/county-SC-${year}.geojson.gz`,
     bytes, sha256, referenceDate: `${year}-01-01`,

@@ -408,6 +408,24 @@ test("Alabama maps only checked county agreements in a whole dated frame", () =>
   assert.equal(alabamaReconciledCountyFrame(counties, "2020-11-03").size, 0);
 });
 
+test("Alabama midterm geometry binds St. Clair but does not shade a conflicted count", () => {
+  const { path, sha256 } = officialArchiveGeometry["AL/2022"];
+  const bytes = readFileSync(new URL(`../public/${path}`, import.meta.url));
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), sha256);
+  const layer = JSON.parse(gunzipSync(bytes));
+  const counties = ["TOTAL", ...layer.features.map(({ properties }) =>
+    properties.name === "St. Clair" ? "ST_CLAIR" : properties.name.toUpperCase())]
+    .map(county => ({ year: "2022", county, county_control_ballots: "26236",
+      reconciliation: county === "CULLMAN" ? "county_control_disagrees" : "reconciled" }));
+  const frame = { code: "AL", date: "2022-11-08", measure: "group_report_ballots",
+    rows: alabamaReconciledCountyFrame(counties, "2022-11-08") };
+  const bound = bindOfficialCountyArchive(layer, frame);
+  assert.equal(bound.filter(entry => entry.value).length, 66);
+  assert.equal(bound.find(({ feature }) => feature.properties.name === "Cullman").value, null);
+  assert.equal(bound.find(({ feature }) => feature.properties.name === "St. Clair").value.name, "St. Clair");
+  assert.throws(() => bindOfficialCountyArchive(layer, { ...frame, date: "2024-11-05" }), /identity differs/);
+});
+
 test("Southeast histories preserve missing ages and distinguish printed and calculated rates", () => {
   const al = "state_code,year,source_status,geography,geography_level,age_group,reported_ballots\n"
     + "AL,2018,reported,BARBOUR,county,100+,\nAL,2024,reported,BARBOUR,county,100+,0";

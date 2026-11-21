@@ -3367,7 +3367,7 @@ export function alabamaBallotRows(csv, units) {
 export function alabamaReconciledCountyFrame(counties, date) {
   const rows = new Map(counties.filter(row => row.year === date.slice(0, 4))
     .map(row => [row.county === "TOTAL" ? "state" : row.county, {
-      name: row.county,
+      name: row.county === "ST_CLAIR" ? "St. Clair" : row.county,
       count: row.reconciliation === "reconciled" ? Number(row.county_control_ballots) : null,
       rate: null,
     }]));
@@ -3447,7 +3447,7 @@ function installAlabamaBallots(host, sources) {
       content.replaceChildren(note, downloads, label, status, region);
       installGroupCountyMap(content, {
         code: "AL", name: "Alabama", filters: [],
-        dates: ["2024-11-05", "2020-11-03", "2018-11-06"].filter(date =>
+        dates: ["2024-11-05", "2022-11-08", "2020-11-03", "2018-11-06"].filter(date =>
           [...alabamaReconciledCountyFrame(counties, date).values()].some(row => row.count !== null)),
         countRows: date => alabamaReconciledCountyFrame(counties, date),
         description: "Only counties whose workbook and independent control agree are shaded. "
