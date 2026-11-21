@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: 9543d1b77f23b4e2abbf9f8265a53e6b2bf51a7b
+          ref: fb8ced91df01c99a2cf08bac609429237630d81b
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
