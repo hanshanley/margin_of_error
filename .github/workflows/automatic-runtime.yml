@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: c9f78ae1c6d64f5addd67e495620e04e566db45a
+          ref: a284caa8eadd55675fe2079afc50c22bbd5a743d
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -80,6 +80,7 @@ jobs:
             data/results-intake/district-splits
             data/results-intake/senate-legacy
             data/results-intake/senate-complete-categories
+            data/results-intake/senate-cross-cycle-survey-support.zip
             data/results-intake/protected-official-house
 
       - uses: actions/setup-python@v6
