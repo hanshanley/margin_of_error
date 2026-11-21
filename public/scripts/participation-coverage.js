@@ -1212,6 +1212,10 @@ function installLouisianaGroupHistory(host, sources) {
       }
       for (const [key, label] of Object.entries(laGroupLabels)) group.add(new Option(label, key));
       const trend = document.createElement("div"), region = document.createElement("div");
+      const map = document.createElement("div");
+      const mapScope = document.createElement("p");
+      mapScope.textContent = "The map shows reported counts on same-year Census parish outlines, not precinct boundaries or rates.";
+      map.append(mapScope);
       const chart = document.createElement("figure"), chartNote = document.createElement("figcaption");
       chart.style.marginInline = "0";
       chartNote.textContent = "Statewide reported percentages. Circles are presidential elections; squares are midterms. "
@@ -1244,6 +1248,7 @@ function installLouisianaGroupHistory(host, sources) {
       const numbers = row => [format.format(row.count), format.format(row.register), row.pct ? `${row.pct}%` : "Not defined"];
       const render = () => {
         const selected = elections.get(Number(year.value)), name = group.selectedOptions[0].text;
+        map.hidden = !selected || Number(year.value) < 2008;
         const fields = ["Reported voters", "Reported registration stock", "Reported percentage"];
         const history = tableFor(`Statewide history · ${name}`, ["Election", "Cycle", ...fields, "Source"]);
         const values = history.createTBody();
@@ -1298,7 +1303,14 @@ function installLouisianaGroupHistory(host, sources) {
       year.addEventListener("change", render); group.addEventListener("change", render);
       trend.className = "table-wrap"; trend.tabIndex = 0;
       trend.setAttribute("role", "region"); trend.setAttribute("aria-label", "Louisiana statewide historical comparison");
-      body.replaceChildren(note, link, " · ", yearLabel, " ", year, " ", groupLabel, " ", group, chart, trend, region);
+      body.replaceChildren(note, link, " · ", yearLabel, " ", year, " ", groupLabel, " ", group, chart, trend, map, region);
+      installHistoricalCountyMap(map, "LA", year, null, { LA: "Louisiana" }, () => {
+        const frame = elections.get(Number(year.value));
+        if (!frame || Number(year.value) < 2008) throw new Error("No mapped historical parish frame");
+        return { code: "LA", date: frame.date, measure: "voters_voting", rows: new Map(
+          [...frame.groups.get(group.value)].map(([key, row]) =>
+            [key === "STATE" ? "state" : key, { name: row.name, count: row.count, rate: null }])) };
+      }, { refreshOn: group });
       render();
     } catch {
       loading = false;
