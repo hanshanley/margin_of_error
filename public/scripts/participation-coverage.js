@@ -38,6 +38,7 @@ const idahoCountyHistoryPath = "release/participation-id-2020-2022-county-turnou
 const idahoAgePath = "release/participation-id-2026-early-and-absentee-age.csv.gz";
 const maCanvassPath = "release/participation-ma-2026-paired-canvass-ballot-counts.csv.gz";
 const maCanvassHistoryPath = "release/participation-ma-2020-2024-paired-canvass-ballot-counts.csv.gz";
+const maCountyRollupPath = "release/participation-ma-2022-county-rollup.csv.gz";
 const maCanvassDates = ["2026-11-03", "2024-11-05", "2022-11-08", "2020-11-03"];
 const indianaEarlyPaths = ["statewide", "county"].map(level => `release/participation-in-early-${level}-turnout-history.csv.gz`);
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
@@ -2709,6 +2710,31 @@ export function massachusettsCanvassFrame(csv, date = maCanvassDates[0]) {
     requirePinnedCountyGeometry: date === maCanvassDates[0], rows, status };
 }
 
+export function massachusettsCountyRollup(csv, original) {
+  const date = "2022-11-08";
+  const frame = massachusettsCanvassFrame(csv, date);
+  if (!frame || original?.date !== date || frame.status !== original.status || frame.shortfall
+      || frame.rows.get("state").count !== original.rows.get("state").count)
+    throw new Error("Massachusetts county rollup does not match the paired canvass");
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const counties = [...original.rows.values()].filter(row => row.name !== "Massachusetts")
+    .map(row => row.name).sort();
+  for (const line of lines) {
+    const cells = historicalCsvLine(line);
+    const at = key => cells[fields.indexOf(key)];
+    if (at("geography_level") !== "county") continue;
+    const name = at("name"), fips = `25${String(2 * counties.indexOf(name) + 1).padStart(3, "0")}`;
+    const prior = original.rows.get(`county/${name}`)?.count;
+    const updated = frame.rows.get(`county/${name}`)?.count;
+    if (at("county_fips") !== fips || at("census_geoid") !== fips
+        || at("original_county_page_ballots") !== String(prior)
+        || at("difference_from_original_county_pages") !== String(updated - prior))
+      throw new Error("Massachusetts county rollup differs from the original county audit");
+  }
+  return { ...frame, originalShortfall: original.shortfall };
+}
+
 export function installMassachusettsCanvass(host, sources) {
   const paths = [maCanvassPath, maCanvassHistoryPath]
     .filter(path => sources?.supported_release?.downloads?.[path]);
@@ -2744,6 +2770,19 @@ export function installMassachusettsCanvass(host, sources) {
         warnings.push(`${path === maCanvassPath ? "2026" : "Historical"} canvasses could not be loaded.`);
       }
     }
+    const source2022 = frames.get("2022-11-08");
+    if (source2022 && sources.supported_release.downloads[maCountyRollupPath]) {
+      try {
+        const { csv, file } = await loadCoverageCsv(sources, maCountyRollupPath);
+        frames.set(source2022.date, massachusettsCountyRollup(csv, source2022));
+        const download = document.createElement("a");
+        download.href = file.url;
+        download.textContent = "2022 municipality-to-county reconciliation (CSV · gzip)";
+        downloads.push(download, " ");
+      } catch {
+        warnings.push("The 2022 municipality-to-county reconciliation could not be verified.");
+      }
+    }
     if (frames.size) {
       const note = document.createElement("p"), label = document.createElement("label");
       const select = document.createElement("select"), map = document.createElement("div");
@@ -2764,7 +2803,8 @@ export function installMassachusettsCanvass(host, sources) {
         const frame = frames.get(select.value);
         note.textContent = "Ballots include blanks. No turnout rate is available. Municipalities and native reporting units are in the downloads."
           + (frame.status === "retained_after_failure" ? " Showing the last verified canvass." : "")
-          + (frame.shortfall ? ` The county pages are short by ${frame.shortfall.toLocaleString("en-US")} ballots relative to the statewide control; the county map is withheld.` : "");
+          + (frame.shortfall ? ` The county pages are short by ${frame.shortfall.toLocaleString("en-US")} ballots relative to the statewide control; the county map is withheld.` : "")
+          + (frame.originalShortfall ? ` Map and table sum the reconciled municipal counts by Census county. The separate county pages omit ${frame.originalShortfall.toLocaleString("en-US")} ballots.` : "");
         body.replaceChildren();
         for (const fact of frame.rows.values()) {
           const tr = body.insertRow(), name = document.createElement("th");

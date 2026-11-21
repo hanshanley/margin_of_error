@@ -14,7 +14,8 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   connecticutTownRows, alabamaReconciledCountyFrame, alabamaCountyMapDates, alStatewideHistoryRows, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames,
-  virginiaPrecinctCounts, releaseQueryFiles, idahoCountyArchiveFrame, idahoAgeRows, massachusettsCanvassFrame }
+  virginiaPrecinctCounts, releaseQueryFiles, idahoCountyArchiveFrame, idahoAgeRows,
+  massachusettsCanvassFrame, massachusettsCountyRollup }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill, officialArchiveGeometry }
@@ -1310,6 +1311,19 @@ test("the Massachusetts county map uses complete all-ballot totals without inven
   assert.equal(massachusettsCanvassFrame(historical, "2024-11-05"), null);
   assert.throws(() => massachusettsCanvassFrame(historical.replace("Massachusetts,17,", "Massachusetts,16,"),
     "2022-11-08"), /do not reconcile/);
+  const original = massachusettsCanvassFrame(historical, "2022-11-08");
+  const rollup = [header + ",county_ballot_shortfall,county_fips,census_geoid,original_county_page_ballots,difference_from_original_county_pages",
+    row("statewide", "Massachusetts", 17) + ",0,,,,",
+    ...names.map((name, i) => {
+      const fips = `25${String(2 * i + 1).padStart(3, "0")}`;
+      return row("county", name, i ? 1 : 4) + `,0,${fips},${fips},1,${i ? 0 : 3}`;
+    })].join("\n").replaceAll("2026-11-03", "2022-11-08");
+  const recovered = massachusettsCountyRollup(rollup, original);
+  assert.equal(recovered.rows.get("county/Barnstable").count, 4);
+  assert.equal(recovered.shortfall, 0);
+  assert.equal(recovered.originalShortfall, 3);
+  assert.throws(() => massachusettsCountyRollup(rollup.replace(",25001,25001,1,3", ",25001,25001,2,2"),
+    original), /differs from the original county audit/);
 });
 
 test("the Idaho age query preserves mode counts and rejects incompatible rows", () => {
