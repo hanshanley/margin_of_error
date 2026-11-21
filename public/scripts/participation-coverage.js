@@ -1498,18 +1498,18 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
             warning.textContent = "The Virginia 2024 locality table could not be verified.";
             panel.append(warning);
           }
-          if (indianaFile) {
-            try {
-              const extra = await checkedCountyBody(indianaFile.url, indianaFile, retry);
-              const csv = await new Response(new Blob([extra]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
-              frames.push(...indianaTurnoutFrames(csv));
-              frames.sort((a, b) => a.code.localeCompare(b.code) || b.date.localeCompare(a.date));
-            } catch {
-              const warning = document.createElement("p");
-              warning.setAttribute("role", "status");
-              warning.textContent = "The Indiana statewide and county turnout archive could not be verified.";
-              panel.append(warning);
-            }
+        }
+        if (indianaFile) {
+          try {
+            const extra = await checkedCountyBody(indianaFile.url, indianaFile, retry);
+            const csv = await new Response(new Blob([extra]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+            frames.push(...indianaTurnoutFrames(csv));
+            frames.sort((a, b) => a.code.localeCompare(b.code) || b.date.localeCompare(a.date));
+          } catch {
+            const warning = document.createElement("p");
+            warning.setAttribute("role", "status");
+            warning.textContent = "The Indiana statewide and county turnout archive could not be verified.";
+            panel.append(warning);
           }
         }
       }
