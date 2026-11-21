@@ -5,6 +5,8 @@ const root = new URL("../participation-archive-geometry/mn-precinct/", import.me
 const measures = ["reported_total_voters", "registered_at_7am", "same_day_registrations"];
 const dates = {
   "2006-11-07": [4123, 2217818],
+  "2008-11-04": [4130, 2921498],
+  "2010-11-02": [4136, 2123369],
   "2012-11-06": [4102, 2950780], "2014-11-04": [4106, 1992566],
   "2016-11-08": [4120, 2968281], "2018-11-06": [4113, 2611365], "2020-11-03": [4110, 3292997],
   "2022-11-08": [4103, 2525873], "2024-11-05": [4103, 3272414],
@@ -16,7 +18,7 @@ export function minnesotaPrecinctFrames(csv, parseLine) {
   const fields = parseLine(header), frames = new Map(), ids = new Set();
   const required = ["state_code", "election_date", "county_geoid", "county", "precinct_id",
     "precinct_name", "source_status", "rate_hold_reason", ...measures];
-  if (!lines.length || lines.length > 32880 || new Set(fields).size !== fields.length
+  if (!lines.length || lines.length > 42000 || new Set(fields).size !== fields.length
       || required.some(name => !fields.includes(name))) throw new Error("Missing Minnesota precinct data");
   for (const line of lines) {
     const row = parseLine(line);
@@ -24,24 +26,37 @@ export function minnesotaPrecinctFrames(csv, parseLine) {
     const get = name => row[fields.indexOf(name)];
     const code = get("county_geoid"), id = get("precinct_id"), date = get("election_date");
     const status = get("source_status"), name = get("county"), precinct = get("precinct_name");
-    if (!Object.hasOwn(dates, date) || get("state_code") !== "MN" || !/^27\d{3}$/.test(code)
-        || !/^\d{9}$/.test(id) || id.slice(0, 5) !== code || ids.has(`${date}/${id}`) || !name || !precinct
+    if (!Object.hasOwn(dates, date) || get("state_code") !== "MN" || !precinct
         || !["reported", "retained_after_failure"].includes(status)
         || get("rate_hold_reason") !== "pre_registration_excludes_same_day_registrants"
         || !measures.every(key => exactCount(get(key)))) throw new Error("Invalid Minnesota participation record");
-    ids.add(`${date}/${id}`);
-    if (!frames.has(date)) frames.set(date, { status, counties: new Map(), n: 0, count: 0 });
+    if (!frames.has(date)) frames.set(date, { status, counties: new Map(), n: 0, count: 0, unallocated: new Map() });
     const frame = frames.get(date);
+    if (frame.status !== status) throw new Error("Mixed Minnesota report identity");
+    const [count, registered, sameDay] = measures.map(key => Number(get(key)));
+    if (get("geography_level") === "nongeographic") {
+      const key = get("statewide_native_reporting_code");
+      const label = { "0005": "STATE ABSENTEE COUNT JAN 3RD", "0010": "STATE COURT CONTEST APR 7TH" }[key];
+      if (date !== "2008-11-04" || code || id || name || !label || precinct !== label || registered !== 0
+          || frame.unallocated.has(key)) throw new Error("Invalid Minnesota unallocated record");
+      frame.unallocated.set(key, count);
+      frame.count += count;
+      continue;
+    }
+    if (![undefined, "", "precinct"].includes(get("geography_level"))
+        || !/^27\d{3}$/.test(code) || !/^\d{9}$/.test(id) || id.slice(0, 5) !== code
+        || ids.has(`${date}/${id}`) || !name) throw new Error("Invalid Minnesota precinct identity");
+    ids.add(`${date}/${id}`);
     if (!frame.counties.has(code)) frame.counties.set(code, { name, rows: [] });
     const county = frame.counties.get(code);
-    if (frame.status !== status || county.name !== name) throw new Error("Mixed Minnesota report identity");
-    const [count, registered, sameDay] = measures.map(key => Number(get(key)));
+    if (county.name !== name) throw new Error("Mixed Minnesota report identity");
     county.rows.push({ id, precinct, count, registered, sameDay });
     ++frame.n;
     frame.count += count;
   }
   for (const [date, frame] of frames)
-    if (frame.counties.size !== 87 || frame.n !== dates[date][0] || frame.count !== dates[date][1])
+    if (frame.counties.size !== 87 || frame.n !== dates[date][0] || frame.count !== dates[date][1]
+        || frame.unallocated.size !== (date === "2008-11-04" ? 2 : 0))
       throw new Error("Incomplete Minnesota precinct workbook");
   return frames;
 }
@@ -158,6 +173,10 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
         renderCountyHistory(history, frames, code, name);
         tableCaption.textContent = `${name} County · ${date}`;
         status.textContent = `${rows.length} reported precincts.${frame.status === "reported" ? "" : " Showing last verified edition."}`;
+        if (frame.unallocated.size) {
+          const n = [...frame.unallocated.values()].reduce((sum, count) => sum + count, 0);
+          status.textContent += ` ${n.toLocaleString("en-US")} additional voters are reported statewide, not assigned to a county.`;
+        }
         body.replaceChildren();
         for (const value of rows) {
           const row = body.insertRow(), id = document.createElement("th");
@@ -166,8 +185,8 @@ export function installMinnesotaPrecinctMap(file, parseLine) {
             row.insertCell().textContent = n.toLocaleString("en-US");
         }
         figure.querySelector("svg")?.remove();
-        if (date === "2006-11-07") {
-          caption.textContent = "The 2006 precinct table is available, but no election-year boundaries have been verified.";
+        if (Number(date.slice(0, 4)) < 2012) {
+          caption.textContent = `The ${date.slice(0, 4)} precinct table is available, but no election-year boundaries have been verified.`;
           return;
         }
         caption.textContent = "Checking election-year precinct boundaries…";

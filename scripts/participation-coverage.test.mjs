@@ -461,6 +461,29 @@ test("Minnesota maps require equal participation counts and election-year precin
   assert.throws(() => minnesotaPrecinctFrames(csv.replace(",0,10,0", ",,10,0"), line => line.split(",")), /Invalid/);
 });
 
+test("Minnesota's two 2008 unallocated rows reconcile statewide without entering county maps", () => {
+  const date = "2008-11-04";
+  const header = "state_code,election_date,county_geoid,county,precinct_id,precinct_name,source_status,"
+    + "rate_hold_reason,reported_total_voters,registered_at_7am,same_day_registrations,geography_level,statewide_native_reporting_code";
+  const numbers = [933, 351];
+  const status = "reported,pre_registration_excludes_same_day_registrants";
+  const regular = Array.from({ length: 4130 }, (_, i) => {
+    const county = String(27001 + 2 * (i % 87));
+    const unit = String(Math.floor(i / 87)).padStart(4, "0");
+    const count = i === 0 ? 2921498 - 1284 : 0;
+    return `MN,${date},${county},County ${county},${county}${unit},Precinct,${status},${count},0,0,,`;
+  });
+  const unallocated = ["STATE ABSENTEE COUNT JAN 3RD", "STATE COURT CONTEST APR 7TH"].map((name, i) =>
+    `MN,${date},,,,${name},${status},${numbers[i]},0,0,nongeographic,${i ? "0010" : "0005"}`);
+  const parse = last => minnesotaPrecinctFrames([header, ...regular, ...last].join("\n"), line => line.split(","));
+  const frame = parse(unallocated).get(date);
+  assert.equal(frame.n, regular.length);
+  assert.equal(frame.count, 2921498);
+  assert.deepEqual([...frame.unallocated.values()], numbers);
+  assert.throws(() => parse(unallocated.slice(0, 1)), /Incomplete/);
+  assert.throws(() => parse([unallocated[0].replace(",,,,STATE", ",27001,,,STATE"), unallocated[1]]), /unallocated/);
+});
+
 test("Denver map requires exact full 2022 precinct identities, not matching suffixes", () => {
   const asset = new URL("../public/participation-archive-geometry/precinct-CO-Denver-2022.json.gz", import.meta.url);
   const layer = JSON.parse(gunzipSync(readFileSync(asset)));

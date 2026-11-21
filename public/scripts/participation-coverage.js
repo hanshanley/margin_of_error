@@ -943,6 +943,7 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     const basis = hasMeasures ? field("registration_basis") : "Report's registered voters";
     const stateGap = field("state_ballot_shortfall") ?? "";
     const countyGap = field("county_ballot_shortfall") ?? "";
+    const statewideUnallocated = field("reported_statewide_unallocated_voters") ?? "";
     const virginia = code === "VA" && date === (virginiaNative ? "2024-11-05" : "2022-11-08");
     const minnesota = code === "MN" && measure === "total_voters" && basis === "Pre-registered at 7 a.m."
       && stock === "" && rate === null && hold === "pre_registration_excludes_same_day_registrants";
@@ -968,6 +969,8 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
         || (hold === "state_ballot_control_disagrees" && !stateGap)
         || (countyGap !== "" && (code !== "CO" || level !== "county"
           || !integer(countyGap) || Number(countyGap) !== coloradoCountyBallotGaps.get(`${date}/${name}`)))
+        || (statewideUnallocated !== "" && (!minnesota || level !== "state"
+          || date !== "2008-11-04" || !integer(statewideUnallocated)))
         || !["reported", "retained_after_failure"].includes(status)
         || !/^https:\/\/[^/@?#\s]+\/[^#\s]+$/.test(url) || !/^[a-f0-9]{64}$/.test(sha)
         || (rate === null ? !hold : hold || !/^\d+(?:\.\d+)?(?:e[+-]?\d+)?$/i.test(fraction)
@@ -982,6 +985,7 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
         || frame.status !== status || frame.url !== url || frame.sha !== sha || frame.note !== note)
       throw new Error("Mixed or repeated election-office report rows");
     frame.rows.set(rowKey, { name, count: Number(value), registered: countOnly ? null : Number(stock), rate, hold,
+      ...(statewideUnallocated ? { statewideUnallocated: Number(statewideUnallocated) } : {}),
       ...(stateGap || countyGap ? { shortfall: Number(stateGap || countyGap) } : {}) });
   }
   if (!virginiaNative && [...frames.values()].some(frame => !frame.rows.has("state") || frame.rows.size < 2))
@@ -995,7 +999,9 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
     const state = frame.rows.get("state");
     const countySum = [...frame.rows.entries()].reduce((sum, [key, row]) => sum + (key === "state" ? 0 : row.count), 0);
     if (frame.code === "MN") {
-      if (frame.rows.size !== 88 || state.count !== countySum || state.name !== "Minnesota"
+      const gap = state.statewideUnallocated;
+      if (frame.rows.size !== 88 || state.count !== countySum + (gap ?? 0) || state.name !== "Minnesota"
+          || (frame.date === "2008-11-04" && gap === undefined)
           || [...frame.rows.values()].some(row => row.registered !== null || row.rate !== null))
         throw new Error("Incomplete or inconsistent Minnesota county report");
       continue;
