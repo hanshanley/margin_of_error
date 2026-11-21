@@ -1,0 +1,3 @@
+fitted_to_both_endpoints,id,independently_validated_histories,office,reason,reported_change_pp,state_code,status
+True,AL-senate-86907,False,senate,,10.968434568775848,AL,return_constrained_scenario_not_identified_histories
+True,NM-senate-87288,False,senate,,20.24898687555662,NM,return_constrained_scenario_not_identified_histories
