@@ -5,7 +5,7 @@ import { runInNewContext } from "node:vm";
 import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
-  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, indianaEarlyFrames, louisianaParishFrame, eacLocalityFrames,
+  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, indianaEarlyFrames, louisianaParishFrame, louisianaElectionGroups, eacLocalityFrames,
   stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, northCarolinaPrecinctCounts,
   washingtonAgeSeries, southeastHistoryRows, southCarolinaDetailFrames, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
@@ -24,6 +24,24 @@ import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryl
 import { bindNorthCarolinaReference } from "../public/scripts/participation-nc-precinct-reference.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Louisiana group reader distinguishes zero stock from rates and rejects a missing parish", () => {
+  const header = "state_code,election_date,native_area_id,geography_level,geography,group,"
+    + "reported_voters_participating,reported_registration_stock,workbook_printed_pct,workbook_participation_pct,"
+    + "registration_scope,analytical_denominator_qualified,geography_allocation,collection_status";
+  const parties = ["democrat", "republican", "other_parties"], races = ["white", "black", "other_race"];
+  const rows = ["total", ...races, ...parties.map(p => `${p}_total`),
+    ...parties.flatMap(p => races.map(r => `${p}_${r}`))].flatMap(group => [
+    `STATE,state,Louisiana,${group},63,126,50.00,50.00`,
+    ...Array.from({ length: 64 }, (_, i) =>
+      `PAR ${String(i + 1).padStart(2, "0")},county_equivalent,Parish ${i},${group},` + (i ? "1,2,50.00,50.00" : "0,0,0.00,")),
+  ]).map(row => `LA,2026-11-03,${row},active_and_inactive_post_election,False,False,reported`);
+  const csv = [header, ...rows].join("\n");
+  assert.equal(louisianaElectionGroups(csv).get("black").get("PAR 01").pct, "");
+  assert.throws(() => louisianaElectionGroups([header, ...rows.slice(1)].join("\n")), /Incomplete/);
+  assert.throws(() => louisianaElectionGroups(csv.replace(",63,126,50.00,50.00", ",64,128,50.00,50.00")),
+    /do not reconcile/);
+});
 
 test("South Carolina preserves provisional units and withholds rates on the checked detail export", () => {
   const header = "state_code,election_date,source_status,geography_level,county,native_name,"
