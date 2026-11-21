@@ -1212,6 +1212,17 @@ function installLouisianaGroupHistory(host, sources) {
       }
       for (const [key, label] of Object.entries(laGroupLabels)) group.add(new Option(label, key));
       const trend = document.createElement("div"), region = document.createElement("div");
+      const chart = document.createElement("figure"), chartNote = document.createElement("figcaption");
+      chart.style.marginInline = "0";
+      chartNote.textContent = "Statewide reported percentages. Circles are presidential elections; squares are midterms. "
+        + "Hollow marks show the last verified report. Held years have no mark.";
+      chart.append(chartNote);
+      const svgNode = (tag, attributes, text) => {
+        const node = document.createElementNS("http://www.w3.org/2000/svg", tag);
+        for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
+        if (text !== undefined) node.textContent = text;
+        return node;
+      };
       region.className = "table-wrap"; region.tabIndex = 0;
       region.setAttribute("role", "region"); region.setAttribute("aria-label", "Louisiana historical parish data");
       const format = new Intl.NumberFormat("en-US");
@@ -1236,13 +1247,37 @@ function installLouisianaGroupHistory(host, sources) {
         const fields = ["Reported voters", "Reported registration stock", "Reported percentage"];
         const history = tableFor(`Statewide history · ${name}`, ["Election", "Cycle", ...fields, "Source"]);
         const values = history.createTBody();
+        const svg = svgNode("svg", { viewBox: "0 0 480 156", width: "480", role: "img",
+          "aria-label": `Reported Louisiana statewide percentages for ${name}; exact values in the table` });
+        svg.style.maxWidth = "100%";
+        svg.style.height = "auto";
+        for (const percent of [0, 50, 100]) {
+          const y = 124 - percent;
+          svg.append(svgNode("line", { x1: 46, x2: 454, y1: y, y2: y, stroke: "currentColor", opacity: ".2" }),
+            svgNode("text", { x: 41, y: y + 4, "text-anchor": "end", "font-size": 13, fill: "currentColor" }, `${percent}%`));
+        }
         for (const value of years) {
           const frame = elections.get(value);
+          const statewide = frame?.groups.get(group.value)?.get("STATE");
+          const x = 54 + 392 * (value - 1998) / (2024 - 1998);
+          if ([1998, 2004, 2012, 2020, 2024].includes(value))
+            svg.append(svgNode("text", { x, y: 145, "text-anchor": "middle",
+              "font-size": 13, fill: "currentColor" }, value));
+          if (statewide?.pct) {
+            const y = 124 - Number(statewide.pct);
+            const style = { fill: frame.status === "reported" ? "#286477" : "none",
+              stroke: "#286477", "data-election": frame.date };
+            const mark = value % 4 === 0 ? svgNode("circle", { ...style, cx: x, cy: y, r: 4 })
+              : svgNode("rect", { ...style, x: x - 3.5, y: y - 3.5, width: 7, height: 7 });
+            mark.append(svgNode("title", {}, `${value} ${frame.cycle}: ${statewide.pct}%`));
+            svg.append(mark);
+          }
           rowCells(values, String(value), frame
-            ? [frame.cycle, ...numbers(frame.groups.get(group.value).get("STATE")),
+            ? [frame.cycle, ...numbers(statewide),
               frame.status === "reported" ? "Reported" : "Last verified"]
             : [value % 4 ? "midterm" : "presidential", "—", "—", "—", "Not reconciled"]);
         }
+        chart.replaceChildren(svg, chartNote);
         trend.replaceChildren(history);
         if (!selected) {
           region.replaceChildren();
@@ -1263,7 +1298,7 @@ function installLouisianaGroupHistory(host, sources) {
       year.addEventListener("change", render); group.addEventListener("change", render);
       trend.className = "table-wrap"; trend.tabIndex = 0;
       trend.setAttribute("role", "region"); trend.setAttribute("aria-label", "Louisiana statewide historical comparison");
-      body.replaceChildren(note, link, " · ", yearLabel, " ", year, " ", groupLabel, " ", group, trend, region);
+      body.replaceChildren(note, link, " · ", yearLabel, " ", year, " ", groupLabel, " ", group, chart, trend, region);
       render();
     } catch {
       loading = false;
