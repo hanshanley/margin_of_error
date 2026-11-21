@@ -108,6 +108,7 @@ jobs:
           python -m scripts.automatic_runtime \
             --results-pointer "$pointer" \
             --repository "$GITHUB_WORKSPACE" \
+            --accept-reviewed-house-split-geometry \
             --work-dir "$RUNNER_TEMP/participation-automatic-runtime" \
             | tee "$RUNNER_TEMP/participation-automatic-runtime-result.json"
           {
