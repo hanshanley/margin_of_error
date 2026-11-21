@@ -109,6 +109,8 @@ const countyName = name => name.trim().toUpperCase().replace(/\s+(COUNTY|PARISH|
   .replace(/[^A-Z0-9]/g, "");
 const louisianaContext = frame => frame?.code === "LA" && frame.date === "2026-11-03"
   && frame.measure === "voters_voting" && frame.referenceVintage === 2024;
+const newJerseyComponents = frame => frame?.code === "NJ" && frame.date === "2026-11-03"
+  && frame.measure === "nj_periodic_component" && frame.referenceVintage === 2024;
 
 export async function checkedCountyBody(url, { sha256, bytes }, retry) {
   const response = await fetch(url, {
@@ -194,7 +196,8 @@ export function bindHistoricalCountyMap(collection, prior, rows, code, year) {
 
 export function bindOfficialCountyArchive(collection, frame, allowPartialGeometry = false) {
   const { code, date, rows } = frame;
-  const year = louisianaContext(frame) ? 2024 : Number(date.slice(0, 4));
+  const component = newJerseyComponents(frame);
+  const year = louisianaContext(frame) || component ? 2024 : Number(date.slice(0, 4));
   const size = code === "CO" && year === 2000 ? 63 : officialCountySizes[code];
   const partial = frame.partialCountyReports === true && code === "NE" && date === "2026-11-03";
   const localityCountsOnly = frame.localityCountsOnly === true && code === "VA" && date === "2024-11-05";
@@ -206,7 +209,7 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
         || Number(key.slice(2)) > 185))) throw new Error("Unverified missing county boundary inventory");
   if (!size || collection?.type !== "FeatureCollection" || !Array.isArray(collection.features)
       || collection.features.length + missing.size !== size
-      || (partial || localityCountsOnly ? rows.size !== size || rows.has("state")
+      || (partial || localityCountsOnly || component ? rows.size !== size || rows.has("state")
         : rows.size !== size + 1 || !rows.has("state")))
     throw new Error("Missing complete official county frame");
   const byName = new Map(), keys = new Set();
@@ -237,7 +240,8 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
         || !Number.isInteger(value.rate) || value.rate < 0 || value.rate > 100)))
       throw new Error("Official county roster differs from its dated reference");
     byName.delete(name);
-    return { feature, value: (partial || frame.measure === "group_report_ballots") && value.count === null ? null : value };
+    return { feature, value: (partial || component || frame.measure === "group_report_ballots")
+      && value.count === null ? null : value };
   });
 }
 
@@ -255,7 +259,7 @@ export function countyMapFill(value, countOnly) {
   return value.rate == null ? "#c4d2d7" : `hsl(193 47% ${90 - value.rate * 0.62}%)`;
 }
 
-export function installHistoricalCountyMap(panel, state, year, rows, names, officialFrame) {
+export function installHistoricalCountyMap(panel, state, year, rows, names, officialFrame, { refreshOn } = {}) {
   const button = document.createElement("button"), figure = document.createElement("figure");
   const status = document.createElement("figcaption");
   const reproduction = document.createElement("a");
@@ -278,8 +282,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
     figure.hidden = false;
     button.textContent = "Hide county map";
     try {
-      const frame = officialFrame?.(), context = louisianaContext(frame);
-      const vintage = context ? 2024 : electionYear;
+      const frame = officialFrame?.(), context = louisianaContext(frame), component = newJerseyComponents(frame);
+      const vintage = context || component ? 2024 : electionYear;
       const legacy = officialFrame && officialArchiveGeometry[`${code}/${vintage}`];
       if (legacy?.reproduction) {
         reproduction.href = (legacy.reproductionBase ?? nebraskaGeometryRelease) + legacy.reproduction;
@@ -317,7 +321,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         : bindHistoricalCountyMap(collection, prior, rows, code, vintage);
       const counts = bound.filter(item => item.value).length;
       const rates = bound.filter(item => item.value?.rate != null).length;
-      const countOnly = Boolean(frame && !frame.rateOnly && !rates && (counts || frame.measure === "group_report_ballots"));
+      const countOnly = Boolean(frame && !frame.rateOnly && !rates
+        && (counts || component || frame.measure === "group_report_ballots"));
       const projection = code === "AK" ? conicProjection(-154, 55, 65)
         : code === "HI" ? conicProjection(-157, 8, 18) : conicProjection(-96, 29.5, 45.5);
       const items = projectFeatures(collection.features, projection, [12, 12, 576, 336]);
@@ -343,6 +348,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         const title = document.createElementNS(svgNS, "title");
         const area = frame?.code === "VA" ? value?.name ?? feature.properties.name : feature.properties.name;
         title.textContent = `${area}: ${frame?.rateOnly ? `${rate}% published turnout`
+          : value && component ? `${number.format(value.count)} · ${frame.measureLabel}`
           : value && frame?.measure === "group_report_ballots" ? `${number.format(value.count)} reported ballots`
           : value ? `${number.format(value.count)} ${frame?.measure === "voter_history_credits"
             ? "voter-history credits" : frame?.measure === "voters_voting" ? "voters voting" : "reported"}; `
@@ -374,6 +380,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
         + (legacy?.referenceDate ? `Census reference boundaries dated January 1, ${vintage}.`
           : legacy ? legacy.boundaryLabel ?? `${vintage} Census cartographic county boundaries (simplified).`
           : context ? "2024 Census parish reference boundaries; not 2026 precinct boundaries."
+          : component ? "2024 Census county reference boundaries. Report editions may differ by county."
             : "Boundaries are for this election year only.");
       figure.append(svg);
     } catch {
@@ -382,8 +389,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
       button.textContent = "Retry county map";
     }
   };
-  for (const select of [state, year]) {
-    if (typeof select !== "string") select.addEventListener("change", () => { if (opened) load(); });
+  for (const select of [state, year, refreshOn]) {
+    if (select && typeof select !== "string") select.addEventListener("change", () => { if (opened) load(); });
   }
   button.addEventListener("click", () => {
     if (button.textContent === "Retry county map") return load(true);

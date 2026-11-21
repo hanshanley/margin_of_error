@@ -28,6 +28,7 @@ const oregonHistoryPath = "release/participation-or-general-election-turnout-rec
 const kansasStudyPath = "release/participation-ks-statewide-turnout-study.csv.gz";
 const hawaiiHistoryPath = "release/participation-hi-general-election-county-turnout.csv.gz";
 const dakotaHistoryPath = "release/participation-dakota-statewide-turnout-history.csv.gz";
+const njPeriodicComponentsPath = "release/participation-nj-2026-periodic-county-components.csv.gz";
 const turnoutReleaseWatchPath = "release/participation-turnout-release-watch.csv.gz";
 const southeastHistory = {
   AL: "release/participation-al-general-election-by-age.csv.gz",
@@ -1096,6 +1097,127 @@ function installLouisianaParishCounts(host, download) {
 }
 
 const indianaElectionDays = [4, 2, 6, 4, 8, 6, 3, 8, 5, 3];
+
+const njCounties = ["Atlantic", "Bergen", "Burlington", "Camden", "Cape May", "Cumberland", "Essex",
+  "Gloucester", "Hudson", "Hunterdon", "Mercer", "Middlesex", "Monmouth", "Morris", "Ocean", "Passaic",
+  "Salem", "Somerset", "Sussex", "Union", "Warren"];
+const njMeasures = new Map([
+  ["early_votes_cast", "Early votes cast"],
+  ["election_day_votes_cast", "Election Day votes cast"],
+  ["mail_ballots_tallied", "Mail ballots tallied"],
+  ["eligible_provisionals_counted", "Eligible provisional ballots counted"],
+]);
+
+export function newJerseyPeriodicFrames(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const required = ["county", "measure", "reported_component", "hold_reason", "native_control_literals",
+    "source_status", "source_status_literal", "source_local_clock", "posted_edition", "source_sha256", "source_url",
+    "state_code", "election_date", "not_all_mode_ballots_or_turnout_rate"];
+  if (!lines.length || lines.length > 84 || new Set(fields).size !== fields.length
+      || required.some(key => !fields.includes(key))) throw new Error("Incomplete New Jersey component export");
+  const frames = new Map([...njMeasures.keys()].map(measure => [measure, new Map()]));
+  const editions = new Map();
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), get = key => cells[fields.indexOf(key)];
+    const county = get("county"), measure = get("measure"), clock = get("source_local_clock");
+    const edition = get("posted_edition"), status = get("source_status"), reportedStatus = get("source_status_literal");
+    const url = get("source_url"), sha = get("source_sha256");
+    const hold = get("hold_reason"), n = get("reported_component");
+    if (cells.length !== fields.length || !njCounties.includes(county) || !njMeasures.has(measure)
+        || get("state_code") !== "NJ" || get("election_date") !== "2026-11-03"
+        || get("not_all_mode_ballots_or_turnout_rate") !== "True"
+        || !["reported", "retained_after_failure"].includes(status) || !["OFFICIAL", "UNOFFICIAL"].includes(reportedStatus)
+        || !/^2026-(?:11|12)-\d{2}$/.test(edition) || edition < "2026-11-03"
+        || !/^2026-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/.test(clock)
+        || clock.slice(0, 10) < "2026-11-03" || clock.slice(0, 10) > edition
+        || !/^[a-f0-9]{64}$/.test(sha)
+        || url !== `https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-${edition.slice(5).replace("-", "")}-${county.toLowerCase().replace(" ", "")}-periodic-report.pdf`
+        || frames.get(measure).has(county)) throw new Error("New Jersey component identity differs");
+    const controls = JSON.parse(get("native_control_literals"));
+    if (!controls || !Object.hasOwn(controls, "county") || Object.keys(controls).some(key =>
+      !["county", "congressional", "municipal"].includes(key)
+      || (controls[key] !== null && typeof controls[key] !== "string")))
+      throw new Error("Incomplete New Jersey native controls");
+    const values = Object.values(controls).map(value => value?.trim().match(
+      /^((?:\d{1,3}(?:,\d{3})+|\d+))\s*\*?$/)?.[1]).filter(value => value !== undefined)
+      .map(value => Number(value.replaceAll(",", "")));
+    const unique = new Set(values);
+    const expected = unique.size === 1 && values.length >= 2 ? values[0] : null;
+    const expectedHold = expected !== null ? "" : unique.size > 1 ? "printed_component_controls_disagree"
+      : "fewer_than_two_reported_component_controls";
+    if (values.some(value => !Number.isSafeInteger(value)) || (expected === null ? n !== "" : n !== String(expected))
+        || hold !== expectedHold) throw new Error("New Jersey component failed its printed controls");
+    const identity = JSON.stringify([clock, edition, status, reportedStatus, url, sha]);
+    if (editions.has(county) && editions.get(county) !== identity) throw new Error("Mixed New Jersey report edition");
+    editions.set(county, identity);
+    frames.get(measure).set(county, { name: county, count: expected, rate: null, hold, edition, url, status, reportedStatus });
+  }
+  for (const rows of frames.values()) {
+    if (rows.size !== editions.size) throw new Error("New Jersey county component roster differs");
+    for (const name of njCounties) if (!rows.has(name)) rows.set(name, { name, count: null, rate: null, hold: "report_not_verified" });
+  }
+  return frames;
+}
+
+function installNewJerseyPeriodicComponents(host, sources) {
+  const file = coverageCsvFile(sources, njPeriodicComponentsPath);
+  if (!file) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const note = document.createElement("p"), status = document.createElement("p"), link = document.createElement("a");
+  summary.textContent = "New Jersey 2026 county participation by voting method";
+  link.href = file.url; link.textContent = "Complete county component queries (CSV · gzip)";
+  note.append("County reports have different editions. These components are not added into a total or used to calculate turnout. ", link);
+  status.setAttribute("role", "status");
+  panel.append(summary, note, status);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    try {
+      const { csv } = await loadCoverageCsv(sources, njPeriodicComponentsPath);
+      const frames = newJerseyPeriodicFrames(csv);
+      const select = document.createElement("select"), label = document.createElement("label");
+      for (const [value, name] of njMeasures) select.add(new Option(name, value));
+      label.append("Reported component ", select);
+      panel.append(label);
+      const frame = () => ({ code: "NJ", date: "2026-11-03", referenceVintage: 2024, measure: "nj_periodic_component",
+        measureLabel: njMeasures.get(select.value), rows: frames.get(select.value) });
+      installHistoricalCountyMap(panel, "NJ", frame().date, null, { NJ: "New Jersey" }, frame, { refreshOn: select });
+      const wrap = document.createElement("div"), table = document.createElement("table");
+      wrap.className = "table-wrap"; wrap.tabIndex = 0;
+      wrap.setAttribute("role", "region"); wrap.setAttribute("aria-label", "New Jersey county voting-method counts");
+      const header = table.createTHead().insertRow(), body = table.createTBody();
+      for (const column of ["County", "Count", "Posted report edition", "Report status"]) {
+        const cell = document.createElement("th");
+        cell.scope = "col"; cell.textContent = column; header.append(cell);
+      }
+      const number = new Intl.NumberFormat("en-US");
+      const render = () => {
+        body.replaceChildren();
+        const rows = frame().rows;
+        status.textContent = `${[...rows.values()].filter(row => row.count !== null).length} of 21 counties have a verified component count.`;
+        for (const name of njCounties) {
+          const row = rows.get(name), tr = body.insertRow(), key = document.createElement("th");
+          key.scope = "row"; key.textContent = name; tr.append(key);
+          tr.insertCell().textContent = row.count === null ? `Withheld · ${row.hold.replaceAll("_", " ")}` : number.format(row.count);
+          const source = tr.insertCell();
+          if (row.url) {
+            const original = document.createElement("a");
+            original.href = row.url; original.textContent = row.edition; source.append(original);
+          } else source.textContent = "Not verified";
+          tr.insertCell().textContent = (row.reportedStatus ?? "Not verified")
+            + (row.status === "retained_after_failure" ? " · Last verified report" : "");
+        }
+      };
+      select.addEventListener("change", render);
+      wrap.append(table); panel.append(wrap); render();
+    } catch {
+      loading = false; status.textContent = "The county component reports could not be verified.";
+    }
+  });
+}
 
 export function indianaTurnoutFrames(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
@@ -3373,6 +3495,7 @@ function installAdministrativeCoverage(host) {
       installKansasStudy(content, manifest.house_sources);
       installHawaiiHistory(content, manifest.house_sources);
       installDakotaHistory(content, manifest.house_sources);
+      installNewJerseyPeriodicComponents(content, manifest.house_sources);
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);

@@ -8,7 +8,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, louisianaParishFrame,
   stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
-  dakotaHistoryFrames,
+  dakotaHistoryFrames, newJerseyPeriodicFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
@@ -91,6 +91,24 @@ test("Dakota histories keep registration and voting-age rates separate and prese
   assert.deepEqual([...dakotaHistoryFrames([header, ...rows].map(omitEligible).join("\n")).keys()], ["registered", "vap"]);
   assert.throws(() => dakotaHistoryFrames(csv.replace("50.000000", "45.000000")), /fraction differs/);
   assert.throws(() => dakotaHistoryFrames([header, ...rows.slice(0, -1)].join("\n")), /Truncated/);
+});
+
+test("New Jersey maps only components that agree across two printed controls", () => {
+  const header = "county,measure,reported_component,hold_reason,native_control_literals,source_status,source_status_literal,"
+    + "source_local_clock,posted_edition,source_sha256,source_url,state_code,election_date,not_all_mode_ballots_or_turnout_rate";
+  const url = "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1118-essex-periodic-report.pdf";
+  const measures = ["early_votes_cast", "election_day_votes_cast", "mail_ballots_tallied", "eligible_provisionals_counted"];
+  const rows = measures.map((m, i) => {
+    const raw = JSON.stringify({ county: "", congressional: "123", municipal: i === 2 ? "125" : "123" });
+    return `Essex,${m},${i === 2 ? ",printed_component_controls_disagree" : "123,"},"${raw.replaceAll('"', '""')}",`
+      + `reported,UNOFFICIAL,2026-11-18T16:00:00,2026-11-18,${"a".repeat(64)},${url},NJ,2026-11-03,True`;
+  });
+  const csv = [header, ...rows].join("\n");
+  const frames = newJerseyPeriodicFrames(csv);
+  assert.equal(frames.get("early_votes_cast").get("Essex").count, 123);
+  assert.equal(frames.get("mail_ballots_tallied").get("Essex").count, null);
+  assert.equal(frames.get("mail_ballots_tallied").get("Cape May").hold, "report_not_verified");
+  assert.throws(() => newJerseyPeriodicFrames(csv.replace("123,,", "0,,")), /failed its printed controls/);
 });
 
 test("Alaska digital age reports retain withheld statewide figures and explicitly unknown gender", () => {
