@@ -5,7 +5,7 @@ import { runInNewContext } from "node:vm";
 import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
-  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, indianaEarlyFrames, louisianaParishFrame, louisianaElectionGroups, louisianaGroupHistory, eacLocalityFrames,
+  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, indianaEarlyFrames, louisianaParishFrame, louisianaElectionGroups, louisianaGroupHistory, louisianaPrecinctHistory, eacLocalityFrames,
   stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, northCarolinaPrecinctCounts,
   washingtonAgeSeries, southeastHistoryRows, southCarolinaDetailFrames, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
@@ -73,6 +73,21 @@ test("Louisiana history accepts legacy precision and retained frames without fab
   assert.equal(coverageCsvFile(manifest, path), file);
   file.bytes = 6_000_000;
   assert.throws(() => coverageCsvFile(manifest, path), /not bound/);
+});
+
+test("Historical Louisiana precincts reconcile within each parish and retain a disagreeing statewide control", () => {
+  const header = "election_date,native_parish_id,native_precinct_id,parish,voters_voting,parish_file_voting_control,"
+    + "statewide_file_parish_voting_control,control_status,geometry_qualified,rate_qualified,source_status,checked_week_utc";
+  const rows = Array.from({ length: 64 }, (_, i) => {
+    const id = `PAR ${String(i + 1).padStart(2, "0")}`;
+    return `2016-11-08,${id},${id} W 01 P 01,Parish ${i},10,10,${i ? 10 : 11},`
+      + `${i ? "parish_and_statewide_counts_agree" : "parish_rows_reconcile_statewide_control_differs"},false,false,reported,2026-11-16`;
+  });
+  const csv = [header, ...rows].join("\n");
+  assert.equal(louisianaPrecinctHistory(csv).get(2016).parishes.get("PAR 01").state, 11);
+  assert.throws(() => louisianaPrecinctHistory([header, ...rows, rows[0]].join("\n")), /Conflicting/);
+  assert.throws(() => louisianaPrecinctHistory(csv.replace(",10,10,11,", ",9,10,11,")), /do not reconcile/);
+  assert.throws(() => louisianaPrecinctHistory(csv.replace(",false,false,", ",true,false,")), /Invalid/);
 });
 
 test("South Carolina preserves provisional units and withholds rates on the checked detail export", () => {

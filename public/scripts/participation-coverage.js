@@ -282,7 +282,7 @@ export function coverageCsvFile(sources, path) {
   if (!file) return null;
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath,
     ncArchivePaths[2]].includes(path)
-    ? 2_000_000 : [washingtonAgePath, eacLocalityPath, scDetailPath].includes(path) ? 1_000_000 : path === ctTownArchive ? 262144
+    ? 2_000_000 : [washingtonAgePath, eacLocalityPath, scDetailPath, laPrecinctHistoryPath].includes(path) ? 1_000_000 : path === ctTownArchive ? 262144
       : [alBallotUnits, stateCountyArchivesPath, publishedCpsPath, overallCpsPath, laHistoryPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
@@ -1073,6 +1073,7 @@ export function louisianaParishFrame(data) {
 
 const laGroupPath = "release/participation-la-post-election-groups.csv.gz";
 const laHistoryPath = "release/participation-la-historical-post-election-groups.csv.gz";
+const laPrecinctHistoryPath = "release/participation-la-historical-native-precinct-counts.csv.gz";
 const laGroupLabels = {
   total: "All registrations", white: "White", black: "Black", other_race: "Other race (source category)",
   democrat_total: "Democratic registration", republican_total: "Republican registration",
@@ -1127,6 +1128,13 @@ export function louisianaElectionGroups(csv) {
   return groups;
 }
 
+function louisianaHistoricalDate(date) {
+  const year = Number(date?.slice(0, 4));
+  const day = 2 + (8 - new Date(Date.UTC(year, 10, 1)).getUTCDay()) % 7;
+  return year >= 1998 && year <= 2024 && year % 2 === 0
+    && date === `${year}-11-${String(day).padStart(2, "0")}` ? year : null;
+}
+
 export function louisianaGroupHistory(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const columns = historicalCsvLine(header), elections = new Map();
@@ -1141,12 +1149,10 @@ export function louisianaGroupHistory(csv) {
     const { election_date: date, native_id: area, area_name: name, group, source_status: status,
       voters_voting: n, post_election_active_inactive_registered: d, native_percent_voting: printed,
       observed_percent_voting: pct, checked_week_utc: week } = row;
-    const year = Number(date?.slice(0, 4)), firstNovember = new Date(Date.UTC(year, 10, 1));
-    const day = 2 + (8 - firstNovember.getUTCDay()) % 7;
+    const year = louisianaHistoricalDate(date);
     const cycle = year % 4 === 0 ? "presidential" : "midterm", state = area === "STATE";
     const count = Number(n), register = Number(d);
-    if (cells.length !== columns.length || year < 1998 || year > 2024 || year % 2 !== 0
-        || date !== `${year}-11-${String(day).padStart(2, "0")}` || row.election_cycle !== cycle
+    if (cells.length !== columns.length || year === null || row.election_cycle !== cycle
         || !Object.hasOwn(laGroupLabels, group)
         || (state ? name !== "Louisiana" : !name || !/^PAR (?:0[1-9]|[1-5]\d|6[0-4])$/.test(area))
         || !/^\d{1,9}$/.test(n) || !/^\d{1,9}$/.test(d) || count > register
@@ -1176,6 +1182,114 @@ export function louisianaGroupHistory(csv) {
     }
   }
   return elections;
+}
+
+export function louisianaPrecinctHistory(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header), elections = new Map();
+  const required = ["election_date", "native_parish_id", "native_precinct_id", "parish", "voters_voting",
+    "parish_file_voting_control", "statewide_file_parish_voting_control", "control_status",
+    "geometry_qualified", "rate_qualified", "source_status", "checked_week_utc"];
+  if (!lines.length || new Set(columns).size !== columns.length || required.some(name => !columns.includes(name)))
+    throw new Error("Missing Louisiana historical precinct columns");
+  for (const line of lines) {
+    const cells = historicalCsvLine(line);
+    const r = Object.fromEntries(columns.map((key, index) => [key, cells[index]]));
+    const { election_date: date, native_parish_id: id, native_precinct_id: unit, parish: name,
+      voters_voting: n, parish_file_voting_control: p, statewide_file_parish_voting_control: s,
+      source_status: status, checked_week_utc: week } = r;
+    const year = louisianaHistoricalDate(date);
+    const match = /^(PAR (?:0[1-9]|[1-5]\d|6[0-4])) W [A-Z0-9-]+ P [A-Z0-9-]+$/.exec(unit);
+    const expected = p === s ? "parish_and_statewide_counts_agree" : "parish_rows_reconcile_statewide_control_differs";
+    if (cells.length !== columns.length || year === null || !match || match[1] !== id || !name
+        || ![n, p, s].every(value => /^\d{1,9}$/.test(value)) || Number(n) > Number(p)
+        || r.control_status !== expected || r.geometry_qualified !== "false" || r.rate_qualified !== "false"
+        || !["reported", "retained_after_failure"].includes(status) || !/^\d{4}-\d{2}-\d{2}$/.test(week))
+      throw new Error("Invalid Louisiana historical precinct row");
+    if (!elections.has(year)) elections.set(year, { date, status, week, parishes: new Map() });
+    const frame = elections.get(year);
+    if (frame.status !== status || frame.week !== week) throw new Error("Mixed Louisiana precinct source editions");
+    if (!frame.parishes.has(id)) frame.parishes.set(id, { name, parish: Number(p), state: Number(s), units: new Map() });
+    const parish = frame.parishes.get(id);
+    if (parish.name !== name || parish.parish !== Number(p) || parish.state !== Number(s) || parish.units.has(unit))
+      throw new Error("Conflicting Louisiana historical precinct controls");
+    parish.units.set(unit, Number(n));
+  }
+  for (const frame of elections.values()) {
+    if (frame.parishes.size !== 64 || new Set([...frame.parishes.values()].map(row => row.name)).size !== 64
+        || [...frame.parishes.values()].some(row => [...row.units.values()].reduce((a, b) => a + b, 0) !== row.parish))
+      throw new Error("Louisiana historical precinct counts do not reconcile");
+  }
+  return elections;
+}
+
+function installLouisianaPrecinctHistory(host, sources) {
+  if (!sources?.supported_release?.downloads?.[laPrecinctHistoryPath]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const notice = document.createElement("p"), body = document.createElement("div");
+  summary.textContent = "Louisiana historical precinct counts, 1998–2024";
+  notice.setAttribute("role", "status");
+  panel.append(summary, notice, body);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    notice.textContent = "Checking historical precinct counts…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, laPrecinctHistoryPath);
+      const frames = louisianaPrecinctHistory(csv);
+      const note = document.createElement("p"), link = document.createElement("a");
+      note.textContent = "These source-defined precinct records count people recorded as voting, not physical ballots. "
+        + "They do not establish precinct rates, boundaries, or cross-year precinct matches.";
+      link.href = file.url; link.textContent = "Complete precinct counts and controls (CSV · gzip)";
+      const year = document.createElement("select"), parish = document.createElement("select");
+      const yearLabel = document.createElement("label"), parishLabel = document.createElement("label");
+      yearLabel.htmlFor = year.id = "la-precinct-history-election";
+      parishLabel.htmlFor = parish.id = "la-precinct-history-parish";
+      yearLabel.textContent = "Election"; parishLabel.textContent = "Parish";
+      for (const [value, frame] of [...frames].sort(([a], [b]) => b - a)) year.add(new Option(frame.date, String(value)));
+      const region = document.createElement("div");
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", "Louisiana historical precinct counts");
+      const format = new Intl.NumberFormat("en-US");
+      function render() {
+        const frame = frames.get(Number(year.value)), local = frame.parishes.get(parish.value);
+        const table = document.createElement("table");
+        table.createCaption().textContent = `${frame.date} · ${local.name}`;
+        const header = table.createTHead().insertRow(), rows = table.createTBody();
+        for (const title of ["Native precinct", "Reported voters"]) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = title; header.append(th);
+        }
+        for (const [unit, count] of local.units) {
+          const tr = rows.insertRow(), key = document.createElement("th");
+          key.scope = "row"; key.textContent = unit; tr.append(key);
+          tr.insertCell().textContent = format.format(count);
+        }
+        region.replaceChildren(table);
+        notice.textContent = (frame.status === "reported" ? "" : "Showing the last verified report. ")
+          + `Checked the week of ${frame.week} (UTC). ${local.units.size} precincts sum to `
+          + `${format.format(local.parish)} in the parish report. `
+          + (local.parish === local.state ? "The statewide report agrees."
+            : `The statewide report instead shows ${format.format(local.state)}; the difference is unresolved.`);
+      }
+      function setParishes() {
+        const selected = parish.value;
+        const parishes = frames.get(Number(year.value)).parishes;
+        parish.replaceChildren(...[...parishes].sort(([, a], [, b]) => a.name.localeCompare(b.name))
+          .map(([id, row]) => new Option(row.name, id)));
+        if (parishes.has(selected)) parish.value = selected;
+        render();
+      }
+      year.addEventListener("change", setParishes); parish.addEventListener("change", render);
+      body.replaceChildren(note, link, " · ", yearLabel, " ", year, " ", parishLabel, " ", parish, region);
+      setParishes();
+    } catch {
+      loading = false;
+      notice.textContent = "The Louisiana historical precinct counts could not be verified. Reopen this section to retry.";
+    }
+  });
 }
 
 function installLouisianaGroupHistory(host, sources) {
@@ -5012,6 +5126,7 @@ function installAdministrativeCoverage(host) {
       }
       installLouisianaElectionGroups(content, manifest.house_sources);
       installLouisianaGroupHistory(content, manifest.house_sources);
+      installLouisianaPrecinctHistory(content, manifest.house_sources);
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);
