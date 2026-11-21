@@ -35,6 +35,7 @@ const indianaTurnoutPath = "release/participation-indiana-general-turnout-histor
 const idahoStatePath = "release/participation-id-statewide-general-turnout.csv.gz";
 const idahoWorkbookPath = "release/participation-id-2024-native-turnout-workbook.csv.gz";
 const idahoCountyHistoryPath = "release/participation-id-2020-2022-county-turnout.csv.gz";
+const idahoAgePath = "release/participation-id-2026-early-and-absentee-age.csv.gz";
 const indianaEarlyPaths = ["statewide", "county"].map(level => `release/participation-in-early-${level}-turnout-history.csv.gz`);
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
 const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
@@ -2661,6 +2662,82 @@ async function loadCoverageCsv(sources, path) {
     throw new Error("Administrative coverage checksum differs");
   const csv = await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
   return { csv, file };
+}
+
+export function idahoAgeRows(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const ages = ["18-29", "30-44", "45-59", "60-74", "75+"];
+  const numberFields = ["absentee_returns", "early_votes", "combined_source_reported_activity"];
+  const required = ["state_code", "election_date", "age_group", "source_status", "source_clock",
+    "source_clock_literal", "source_sha256", "not_all_mode_turnout_or_an_age_specific_turnout_rate", ...numberFields];
+  if (new Set(fields).size !== fields.length || !required.every(key => fields.includes(key))
+      || lines.length !== ages.length) throw new Error("Incomplete Idaho age activity query");
+  let reference;
+  return lines.map((line, i) => {
+    const cells = historicalCsvLine(line);
+    const field = key => cells[fields.indexOf(key)];
+    const literals = numberFields.map(field);
+    const [absentee, early, combined] = literals.map(Number);
+    const status = field("source_status"), clock = field("source_clock"), literal = field("source_clock_literal");
+    const hash = field("source_sha256"), identity = `${status}|${clock}|${literal}|${hash}`;
+    reference ??= identity;
+    if (cells.length !== fields.length || field("state_code") !== "ID" || field("election_date") !== "2026-11-03"
+        || field("age_group") !== ages[i] || !["reported", "retained_after_failure"].includes(status)
+        || !Number.isFinite(Date.parse(clock)) || !/^\d\d\/\d\d \d\d:\d\d [AP]M M[SD]T$/.test(literal)
+        || !/^[a-f0-9]{64}$/.test(hash) || identity !== reference
+        || !literals.every(value => /^\d{1,9}$/.test(value)) || absentee + early !== combined
+        || !["true", "True"].includes(field("not_all_mode_turnout_or_an_age_specific_turnout_rate")))
+      throw new Error("Invalid Idaho age activity observation");
+    return { age: ages[i], absentee, early, combined, status, literal };
+  });
+}
+
+function installIdahoAge(host, sources) {
+  if (!sources?.supported_release?.downloads?.[idahoAgePath]) return;
+  const panel = document.createElement("details"), title = document.createElement("summary");
+  const content = document.createElement("div");
+  title.textContent = "Idaho early and absentee activity by age, 2026";
+  panel.append(title, content);
+  host.append(panel);
+  let pending = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || pending) return;
+    pending = true;
+    content.textContent = "Checking the published age counts…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, idahoAgePath);
+      const rows = idahoAgeRows(csv);
+      const note = document.createElement("p"), download = document.createElement("a");
+      note.textContent = `Dashboard update: ${rows[0].literal}. `
+        + (rows[0].status === "retained_after_failure" ? "Showing the last verified edition. " : "")
+        + "These are absentee returns and early votes, not all-mode turnout or rates for each age group.";
+      download.href = file.url;
+      download.textContent = "Complete age activity query (CSV · gzip)";
+      const scroller = document.createElement("div"), table = document.createElement("table");
+      scroller.className = "table-wrap";
+      scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region");
+      scroller.setAttribute("aria-label", title.textContent);
+      table.createCaption().textContent = "Age counts reconciled to Idaho’s separate statewide mode totals";
+      const header = table.createTHead().insertRow(), body = table.createTBody();
+      for (const label of ["Age group", "Absentee returns", "Early votes", "Combined activity"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = label; header.append(th);
+      }
+      for (const row of rows) {
+        const tr = body.insertRow(), age = document.createElement("th");
+        age.scope = "row"; age.textContent = row.age; tr.append(age);
+        for (const value of [row.absentee, row.early, row.combined])
+          tr.insertCell().textContent = value.toLocaleString("en-US");
+      }
+      scroller.append(table);
+      content.replaceChildren(note, download, scroller);
+    } catch {
+      pending = false;
+      content.textContent = "The Idaho age counts could not be verified. Reopen this panel to retry.";
+    }
+  });
 }
 
 const indianaEarlyCountyFiles = {
@@ -5451,6 +5528,7 @@ function installAdministrativeCoverage(host) {
       installLouisianaGroupHistory(content, manifest.house_sources);
       installLouisianaPrecinctHistory(content, manifest.house_sources);
       installVirginiaPrecinctCounts(content, manifest.house_sources);
+      installIdahoAge(content, manifest.house_sources);
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);

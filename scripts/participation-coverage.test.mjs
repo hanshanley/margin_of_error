@@ -14,7 +14,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   connecticutTownRows, alabamaReconciledCountyFrame, alabamaCountyMapDates, alStatewideHistoryRows, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames,
-  virginiaPrecinctCounts, releaseQueryFiles, idahoCountyArchiveFrame }
+  virginiaPrecinctCounts, releaseQueryFiles, idahoCountyArchiveFrame, idahoAgeRows }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill, officialArchiveGeometry }
@@ -1287,6 +1287,16 @@ test("table-only reporting units are loaded without inventing geographic referen
   assert.equal(row.reference_units, 0);
   assert.equal(row.unknown, 1);
   assert.equal(row.fractions, 0);
+});
+
+test("the Idaho age query preserves mode counts and rejects incompatible rows", () => {
+  const header = "state_code,election_date,age_group,source_status,source_clock,source_clock_literal,"
+    + "source_sha256,not_all_mode_turnout_or_an_age_specific_turnout_rate,absentee_returns,early_votes,combined_source_reported_activity";
+  const csv = [header, ...["18-29", "30-44", "45-59", "60-74", "75+"].map(age =>
+    `ID,2026-11-03,${age},retained_after_failure,2026-11-05T09:10:00-07:00,11/05 09:10 AM MST,${"a".repeat(64)},True,2,3,5`)].join("\n");
+  assert.equal(idahoAgeRows(csv).reduce((sum, row) => sum + row.combined, 0), 25);
+  assert.throws(() => idahoAgeRows(csv.replace(",2,3,5", ",2,3,6")), /Invalid Idaho age activity/);
+  assert.throws(() => idahoAgeRows(csv.replace("retained_after_failure", "reported")), /Invalid Idaho age activity/);
 });
 
 test("the Idaho map uses reconciled county parents, not reporting units", () => {
