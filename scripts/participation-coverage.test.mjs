@@ -167,6 +167,34 @@ test("North Carolina archive maps only reconciled counts and withholds an incorr
     hold: "Group not listed in this edition" });
   assert.throws(() => northCarolinaArchiveFrames(countyCsv, extended.replace(",400,80,https", ",399,80,https")),
     /does not match/);
+
+  const legacy = csv => csv.replaceAll("2024-12-08", "2008-06-06")
+    .replaceAll("2024-11-05", "2004-11-02").replaceAll("2024_11_05", "2004_11_02")
+    .replaceAll("20241105", "20041102");
+  const oldGroups = groupCsv.replace(age, `${common},age,Age 18 - 25,400,500,,no_published_age_control,,,,`);
+  const old = northCarolinaArchiveFrames(legacy(countyCsv), legacy(oldGroups)).get("2004-11-02");
+  assert.equal(old.rows.size, 101);
+  assert.equal(old.rows.get("state").count, 400);
+  assert.equal(old.groups[0].rate, null);
+  assert.throws(() => northCarolinaArchiveFrames(legacy(countyCsv),
+    legacy(oldGroups).replace(",400,500,,no_published_age_control", ",400,500,80,no_published_age_control")),
+  /does not match/);
+});
+
+test("North Carolina's partial county map shows only verified 2002 outlines", () => {
+  const collection = JSON.parse(gunzipSync(readFileSync(new URL(
+    "../public/participation-archive-geometry/county-NC-2002.geojson.gz", import.meta.url))));
+  const rows = new Map(collection.features.map(({ properties }) =>
+    [properties.name, { name: properties.name, count: 40, rate: null }]));
+  for (let i = 0; i < 60; i++) rows.set(`Held ${i}`, { name: `Held ${i}`, count: 5, rate: null });
+  rows.set("state", { count: 1900, rate: null });
+  const frame = { code: "NC", date: "2002-11-05", rows };
+  assert.equal(bindOfficialCountyArchive(collection, frame, true).length, 40);
+  assert.throws(() => bindOfficialCountyArchive(collection, frame), /Missing complete/);
+  assert.throws(() => bindOfficialCountyArchive(collection, { ...frame, date: "2004-11-02" }, true),
+    /Missing complete/);
+  const corrupt = { ...collection, missing_counties: ["31081", ...collection.missing_counties.slice(1)] };
+  assert.throws(() => bindOfficialCountyArchive(corrupt, frame, true), /missing county boundary inventory/);
 });
 
 test("Indiana admits whole county histories but never shades a withheld rate as qualified", () => {

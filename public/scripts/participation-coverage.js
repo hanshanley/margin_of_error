@@ -3758,7 +3758,8 @@ function installConnecticutTownMap(host, rows) {
   choice.addEventListener("change", render);
 }
 
-const ncArchiveDates = new Set(["2008-11-04", "2010-11-02", "2012-11-06", "2014-11-04",
+const ncArchiveDates = new Set(["2000-11-07", "2002-11-05", "2004-11-02", "2006-11-07",
+  "2008-11-04", "2010-11-02", "2012-11-06", "2014-11-04",
   "2016-11-08", "2018-11-06", "2020-11-03",
   "2022-11-08", "2024-11-05", "2026-11-03"]);
 const ncTruncatedVoterEditions = { 2012: "Nov  6 201", 2014: "Nov  5 201" };
@@ -3928,7 +3929,8 @@ function installNorthCarolinaArchives(host, sources) {
   const status = document.createElement("p");
   summary.textContent = "North Carolina participation by election, county and demographic group";
   note.textContent = "Voter-history entries document participation, not ballot choices or certified ballots. "
-    + "The registration counts are from a separate election archive. County and native precinct rates are not shown.";
+    + "Registration counts come from a separate election archive. County and native precinct rates are not shown. "
+    + "Older precinct codes are preserved as printed; they do not establish boundary matches.";
   status.setAttribute("role", "status");
   files.forEach((file, i) => {
     const item = document.createElement("li"), link = document.createElement("a");

@@ -49,6 +49,15 @@ export const officialArchiveGeometry = {
     reproduction: "co-2000-county-map-reproduction.zip",
     reproductionBase: geometryReleases + "colorado-2000-county-geometry-20261120/",
   },
+  "NC/2002": {
+    path: "participation-archive-geometry/county-NC-2002.geojson.gz",
+    bytes: 324804,
+    sha256: "18bb0bdc615723350b4e4532444ecbe4837983165a2803ac3120171cf5f31cd2",
+    referenceDate: "2002-01-01",
+    partialGeometry: true,
+    reproduction: "north-carolina-2002-partial-county-map.zip",
+    reproductionBase: geometryReleases + "north-carolina-2002-partial-county-map/",
+  },
   "NC/2006": {
     path: "participation-archive-geometry/county-NC-2006.geojson.gz",
     bytes: 1333876,
@@ -201,12 +210,15 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
   const size = code === "CO" && year === 2000 ? 63 : officialCountySizes[code];
   const partial = frame.partialCountyReports === true && code === "NE" && date === "2026-11-03";
   const localityCountsOnly = frame.localityCountsOnly === true && code === "VA" && date === "2024-11-05";
-  const missing = allowPartialGeometry && code === "NE" && date === "2002-11-05"
+  const partialFips = { NE: ["31", 185], NC: ["37", 199] }[code];
+  const missing = allowPartialGeometry && partialFips && date === "2002-11-05"
     && collection?.reference_date === "2002-01-01" && Array.isArray(collection.missing_counties)
     ? new Set(collection.missing_counties) : new Set();
+  const expectedPartialKey = key => typeof key === "string" && /^\d{5}$/.test(key)
+    && key.startsWith(partialFips[0]) && Number(key.slice(2)) % 2 === 1
+    && Number(key.slice(2)) <= partialFips[1];
   if (missing.size && (missing.size !== collection.missing_counties.length || missing.size >= size
-      || [...missing].some(key => !/^31\d{3}$/.test(key) || Number(key.slice(2)) % 2 !== 1
-        || Number(key.slice(2)) > 185))) throw new Error("Unverified missing county boundary inventory");
+      || [...missing].some(key => !expectedPartialKey(key)))) throw new Error("Unverified missing county boundary inventory");
   if (!size || collection?.type !== "FeatureCollection" || !Array.isArray(collection.features)
       || collection.features.length + missing.size !== size
       || (partial || localityCountsOnly || component ? rows.size !== size || rows.has("state")
@@ -228,8 +240,7 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
         || (code === "HI" && (date !== "2024" || !hawaiiReportingCounties[p.key]
           || !Array.isArray(p.source_counties)
           || p.source_counties.join(",") !== hawaiiReportingCounties[p.key].join(",")))
-        || (missing.size && (!/^31\d{3}$/.test(p.key) || Number(p.key.slice(2)) % 2 !== 1
-          || Number(p.key.slice(2)) > 185))
+        || (missing.size && !expectedPartialKey(p.key))
         || typeof p.name !== "string" || !["Polygon", "MultiPolygon"].includes(feature.geometry?.type))
       throw new Error("Official county geometry identity differs");
     keys.add(p.key);
