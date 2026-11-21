@@ -2227,7 +2227,9 @@ function installGroupCountyMap(host, { code, name, dates, filters, countRows,
   for (const date of dates) election.append(new Option(date, date));
   state.append(new Option(name, code));
   label.append("Map election ", election);
-  controls.append(label, ` ${description}`);
+  const freshness = document.createElement("span");
+  freshness.setAttribute("role", "status");
+  controls.append(label, ` ${description}`, freshness);
   panel.append(title, controls);
   const frame = () => ({ code, date: election.value, measure: "group_report_ballots",
     rows: countRows(election.value) });
@@ -2237,6 +2239,9 @@ function installGroupCountyMap(host, { code, name, dates, filters, countRows,
   region.setAttribute("role", "region"); region.setAttribute("aria-label", `${name} mapped county counts`);
   panel.append(region);
   const compare = () => {
+    const { rows } = frame();
+    freshness.textContent = [...rows.values()].some(row => row.count !== null && row.retained)
+      ? " This map includes retained counts from a source that could not be refreshed." : "";
     const table = document.createElement("table");
     table.createCaption().textContent = `${name} county ballot counts · ${election.value}`;
     const header = table.createTHead().insertRow();
@@ -2245,7 +2250,7 @@ function installGroupCountyMap(host, { code, name, dates, filters, countRows,
       th.scope = "col"; th.textContent = heading; header.append(th);
     }
     const body = table.createTBody();
-    for (const [key, { name: county, count }] of frame().rows) {
+    for (const [key, { name: county, count }] of rows) {
       if (key === "state") continue;
       const tr = body.insertRow(), th = document.createElement("th");
       th.scope = "row"; th.textContent = county.replaceAll("_", " "); tr.append(th);
@@ -3372,6 +3377,7 @@ export function alabamaReconciledCountyFrame(counties, date) {
       name: row.county === "ST_CLAIR" ? "St. Clair" : row.county,
       count: row.reconciliation === "reconciled" ? Number(row.county_control_ballots) : null,
       rate: null,
+      retained: [row.archive_status, row.control_status].includes("retained_after_failure"),
     }]));
   return rows.size === 68 && rows.has("state") ? rows : new Map();
 }

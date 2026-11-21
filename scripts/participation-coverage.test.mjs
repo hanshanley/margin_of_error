@@ -444,11 +444,13 @@ test("Alabama 2026 is not offered before a county control reconciles", () => {
   const autauga = counties.find(row => row.county === "AUTAUGA");
   autauga.county_control_ballots = "19200";
   autauga.reconciliation = "reconciled";
+  autauga.control_status = "retained_after_failure";
   const [date] = alabamaCountyMapDates(counties);
   assert.equal(date, "2026-11-03");
   const bound = bindOfficialCountyArchive(layer, { code: "AL", date, measure: "group_report_ballots",
     rows: alabamaReconciledCountyFrame(counties, date) });
   assert.deepEqual(bound.filter(entry => entry.value).map(entry => entry.value.count), [19200]);
+  assert.equal(bound.find(entry => entry.value).value.retained, true);
 });
 
 test("Southeast histories preserve missing ages and distinguish printed and calculated rates", () => {
