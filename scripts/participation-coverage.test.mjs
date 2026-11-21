@@ -1302,6 +1302,14 @@ test("the Massachusetts county map uses complete all-ballot totals without inven
   assert.throws(() => massachusettsCanvassFrame(csv.replace("Massachusetts,14,", "Massachusetts,13,")),
     /do not reconcile/);
   assert.throws(() => massachusettsCanvassFrame(csv.replace("Worcester", "Essex")), /identity or count differs/);
+  const historical = [header + ",county_ballot_shortfall",
+    row("statewide", "Massachusetts", 17) + ",3",
+    ...names.map(name => row("county_page_with_statewide_shortfall", name, 1) + ",3")]
+    .join("\n").replaceAll("2026-11-03", "2022-11-08");
+  assert.equal(massachusettsCanvassFrame(historical, "2022-11-08").shortfall, 3);
+  assert.equal(massachusettsCanvassFrame(historical, "2024-11-05"), null);
+  assert.throws(() => massachusettsCanvassFrame(historical.replace("Massachusetts,17,", "Massachusetts,16,"),
+    "2022-11-08"), /do not reconcile/);
 });
 
 test("the Idaho age query preserves mode counts and rejects incompatible rows", () => {
