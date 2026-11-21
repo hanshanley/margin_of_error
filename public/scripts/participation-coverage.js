@@ -2510,6 +2510,7 @@ const ctTownLayers = {
   "2012-11-06": { bytes: 566922, sha256: "ea5a3f96c4cd3f24e9dcb8054463b585fc26f3b3c9578c6f5d1f1070d76bf211" },
   "2014-11-04": { bytes: 567854, sha256: "31a8bfe67925af8600bc5590b36e64bd98f779e829465df9a529db95e119b426" },
   "2016-11-08": { bytes: 566779, sha256: "10405a561672c354663270eb75674b52f81454d30c51707b66ab83d56a2cd78c" },
+  "2018-11-06": { bytes: 575682, sha256: "b0acb0502f1989f97751a84f10b6c4fad54c76a5c8083a2e8f342b0822e4806c" },
   "2020-11-03": { bytes: 576442, sha256: "7ac34f99d84e431be6cecaec77c17dfacad392a3616624ff474fd222c04331c8" },
   "2022-11-08": { bytes: 519720, sha256: "0b451566b32a789fc475ca9e263389ac83dc4541845d018b7eb396627c2537d3" },
   "2024-11-05": { bytes: 519631, sha256: "f5aba2496d0a4cc9867558c31129a2d949a866b2109ae0caa3917c2fa4c7c686" },
@@ -2543,7 +2544,8 @@ function installConnecticutTownMap(host, rows) {
       const exact = new Map(report.filter(row => row.scope === "town").map(row => [row.name, row]));
       const features = layer.features;
       const featureNames = new Set(features.map(feature => feature.properties.town));
-      const allowedAbsent = date === "2020-11-03" ? ["New Canaan", "North Branford"] : [];
+      const allowedAbsent = date === "2018-11-06" ? ["East Granby", "Torrington"]
+        : date === "2020-11-03" ? ["New Canaan", "North Branford"] : [];
       if (layer.type !== "FeatureCollection" || layer.state_code !== "CT" || layer.election_date !== date
           || features.length !== 169 || featureNames.size !== 169
           || [...names].some(name => !featureNames.has(name))
@@ -2581,7 +2583,9 @@ function installConnecticutTownMap(host, rows) {
       legend.textContent = `${qualified} of 169 towns have a whole-town fraction. Light to dark: below 60%, `
         + "60% to below 70%, 70% to below 80%, 80% or higher. Gray means unavailable, not zero. Census town display boundaries.";
       const archive = document.createElement("a");
-      archive.href = year === "2016"
+      archive.href = year === "2018"
+        ? "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-2018/connecticut-town-maps-ten-editions.zip"
+        : year === "2016"
         ? "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-2016/connecticut-town-maps-nine-editions.zip"
         : Number(year) >= 2010
         ? "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-2010-2024/connecticut-town-maps-eight-editions.zip"

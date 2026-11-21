@@ -24,6 +24,8 @@ SOURCES = {
                    "3bf89621693a7e2a28bbbbc3dd98fcb25dabec40962363bd3b2bcdf60a56c4f7"),
     "2016-11-08": ("TIGER2016/COUSUB/tl_2016_09_cousub.zip", "", "GEOID",
                    "8d460549cf9af0ce3a2122557979da979890bc2e37eead6d066c6cdb597036cd"),
+    "2018-11-06": ("TIGER2018/COUSUB/tl_2018_09_cousub.zip", "", "GEOID",
+                   "657c1e6d106288336b339e159fc2d70beed32e5388024a6f41990cff557042aa"),
     "2020-11-03": ("TIGER2020/COUSUB/tl_2020_09_cousub.zip", "", "GEOID",
                    "fc565cb199529fb9f5c28a4ca495bc419d42a9e26a510a3e5e6a896670e30318"),
     "2022-11-08": ("TIGER2022/COUSUB/tl_2022_09_cousub.zip", "", "GEOID",
@@ -31,7 +33,7 @@ SOURCES = {
     "2024-11-05": ("TIGER2024/COUSUB/tl_2024_09_cousub.zip", "", "GEOID",
                    "5d1215b53c40afd93479611828673c4a51c2eb899674d3e1cf05fce9d52eda02"),
 }
-ALLOWED_ABSENCES = {"2020-11-03": {"New Canaan", "North Branford"}}
+ALLOWED_ABSENCES = {"2018-11-06": {"East Granby", "Torrington"}, "2020-11-03": {"New Canaan", "North Branford"}}
 
 
 def build(inputs, output):
