@@ -240,7 +240,7 @@ export function bindOfficialCountyArchive(collection, frame, allowPartialGeometr
         || !Number.isInteger(value.rate) || value.rate < 0 || value.rate > 100)))
       throw new Error("Official county roster differs from its dated reference");
     byName.delete(name);
-    return { feature, value: (partial || component || frame.measure === "group_report_ballots")
+    return { feature, value: (partial || component || ["group_report_ballots", "semi_official_ballot_count"].includes(frame.measure))
       && value.count === null ? null : value };
   });
 }
@@ -322,7 +322,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
       const counts = bound.filter(item => item.value).length;
       const rates = bound.filter(item => item.value?.rate != null).length;
       const countOnly = Boolean(frame && !frame.rateOnly && !rates
-        && (counts || component || frame.measure === "group_report_ballots"));
+        && (counts || component || ["group_report_ballots", "semi_official_ballot_count"].includes(frame.measure)));
       const projection = code === "AK" ? conicProjection(-154, 55, 65)
         : code === "HI" ? conicProjection(-157, 8, 18) : conicProjection(-96, 29.5, 45.5);
       const items = projectFeatures(collection.features, projection, [12, 12, 576, 336]);
@@ -351,7 +351,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
           : value && component ? `${number.format(value.count)} · ${frame.measureLabel}`
           : value && frame?.measure === "group_report_ballots" ? `${number.format(value.count)} reported ballots`
           : value ? `${number.format(value.count)} ${frame?.measure === "voter_history_credits"
-            ? "voter-history credits" : frame?.measure === "voters_voting" ? "voters voting" : "reported"}; `
+            ? "voter-history credits" : frame?.measure === "voters_voting" ? "voters voting"
+              : frame?.measure === "semi_official_ballot_count" ? "reported ballots" : "reported"}; `
           + (rate == null ? "rate withheld" : `${rate.toFixed(2)}% of same-report registrations`)
           : "no verified mapped count"}`;
         path.append(title);
@@ -374,6 +375,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
             + `${missingGeometry} counties are not drawn because matching outlines were unavailable; see the complete table. `
           : `${label}: ${counts} of ${bound.length} areas have verified counts; ${rates} have rates. `)
         + (frame?.measure === "voter_history_credits" ? "Counts are voter-history credits, not physical ballot counts. " : "")
+        + (frame?.measure === "semi_official_ballot_count" ? "Semi-official reported ballots; not certified. " : "")
         + (countOnly ? countMapLegend + "Shading shows counts, not turnout rates. "
           : "Darker blue means a higher fraction of registered voters (0–100%). Blue-gray means count only; "
             + "light gray means no verified mapped count, not zero. ")

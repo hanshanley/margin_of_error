@@ -9,7 +9,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, northCarolinaPrecinctCounts,
   washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
-  dakotaHistoryFrames, newJerseyPeriodicFrames,
+  californiaMediaTurnout, dakotaHistoryFrames, newJerseyPeriodicFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
@@ -24,6 +24,29 @@ import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryl
 import { bindNorthCarolinaReference } from "../public/scripts/participation-nc-precinct-reference.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("California media ballot counts bind to all 58 counties without turning missing counts into zero or mapping rates", () => {
+  const layer = JSON.parse(gunzipSync(readFileSync(new URL(
+    "../public/participation-archive-geometry/county-CA-2026.geojson.gz", import.meta.url))));
+  const fields = "county_code,county,geography_level,reported_ballots_cast,reported_registered_voters,"
+    + "printed_registration_fraction_pct,native_last_report,media_edition,source_status,state_code,election_date,"
+    + "reporting_stage,media_clock_timezone,native_report_type,s_source_url,s_source_sha256,v_source_url,v_source_sha256";
+  const tail = `,202611201826,2026-11-21T00:12:35,retained_after_failure,CA,2026-11-03,semi_official_canvass,`
+    + `America/Los_Angeles,F,https://media.sos.ca.gov/media/S26GG.txt,${"a".repeat(64)},`
+    + `https://media.sos.ca.gov/media/V26GG.txt,${"b".repeat(64)}`;
+  const counties = layer.features.map(({ properties }, i) =>
+    `${i + 1},${properties.name},county,${i === 0 ? ",10," : "6,10,60.0"}${tail}`);
+  const csv = [fields, `59,State of California,state,342,580,59.0${tail}`, ...counties].join("\n");
+  const frame = californiaMediaTurnout(csv);
+  const bound = bindOfficialCountyArchive(layer, frame);
+  assert.equal(bound.length, 58);
+  assert.equal(bound.filter(({ value }) => value === null).length, 1);
+  assert.ok(bound.every(({ value }) => value === null || value.rate === null));
+  assert.equal(frame.rows.get("state").printed, "59.0");
+  assert.equal(frame.rows.get("state").status, "retained_after_failure");
+  assert.throws(() => californiaMediaTurnout(csv.replace("342,580,59.0", "342,580,60.0")), /Incompatible/);
+  assert.throws(() => californiaMediaTurnout(csv.replace(",county,,10,,", ",county,5,10,50.0,")), /county totals/);
+});
 
 test("North Carolina reference maps use revised counts but reject a changed roster or mismatched county totals", () => {
   const frame = {

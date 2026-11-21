@@ -32,6 +32,8 @@ const kansasStudyPath = "release/participation-ks-statewide-turnout-study.csv.gz
 const hawaiiHistoryPath = "release/participation-hi-general-election-county-turnout.csv.gz";
 const dakotaHistoryPath = "release/participation-dakota-statewide-turnout-history.csv.gz";
 const njPeriodicComponentsPath = "release/participation-nj-2026-periodic-county-components.csv.gz";
+const caMediaTurnoutPath = "release/participation-ca-2026-media-turnout.csv.gz";
+const caMediaHousePath = "release/congressional-ca-2026-media-house.csv.gz";
 const turnoutReleaseWatchPath = "release/participation-turnout-release-watch.csv.gz";
 const writeInReleaseWatchPath = "release/congressional-write-in-release-watch.csv.gz";
 const southeastHistory = {
@@ -1163,6 +1165,101 @@ export function newJerseyPeriodicFrames(csv) {
     for (const name of njCounties) if (!rows.has(name)) rows.set(name, { name, count: null, rate: null, hold: "report_not_verified" });
   }
   return frames;
+}
+
+export function californiaMediaTurnout(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header), rows = new Map(), codes = new Set(), editions = new Set();
+  const integer = raw => /^\d+$/.test(raw) && Number.isSafeInteger(Number(raw));
+  if (new Set(fields).size !== fields.length || lines.length !== 59)
+    throw new Error("Incomplete California media turnout");
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), get = key => cells[fields.indexOf(key)];
+    const code = get("county_code"), name = get("county"), state = code === "59";
+    const count = get("reported_ballots_cast"), stock = get("reported_registered_voters");
+    const fraction = get("printed_registration_fraction_pct"), when = get("native_last_report");
+    const edition = get("media_edition"), status = get("source_status");
+    if (cells.length !== fields.length || get("state_code") !== "CA" || get("election_date") !== "2026-11-03"
+        || get("reporting_stage") !== "semi_official_canvass" || get("media_clock_timezone") !== "America/Los_Angeles"
+        || get("geography_level") !== (state ? "state" : "county")
+        || !integer(code) || Number(code) < 1 || Number(code) > 59 || codes.has(Number(code))
+        || (state ? name !== "State of California" : !/^[A-Za-z][A-Za-z ]+$/.test(name)) || rows.has(name)
+        || !integer(stock) || Number(stock) < 1 || (count === "" ? fraction !== "" :
+          !integer(count) || Number(count) > Number(stock) || !/^\d{1,3}(?:\.\d)?$/.test(fraction)
+          || Math.abs(100 * Number(count) / Number(stock) - Number(fraction)) > 0.0500000001)
+        || !["", "R", "F", "U"].includes(get("native_report_type"))
+        || (when !== "" && !/^\d{12}$/.test(when))
+        || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/.test(edition) || edition < "2026-11-03"
+        || !["reported", "retained_after_failure"].includes(status)
+        || !["s", "v"].every(kind => get(`${kind}_source_url`) === `https://media.sos.ca.gov/media/${kind.toUpperCase()}26GG.txt`
+          && /^[a-f0-9]{64}$/.test(get(`${kind}_source_sha256`))))
+      throw new Error("Incompatible California turnout evidence");
+    codes.add(Number(code));
+    editions.add(JSON.stringify([edition, status, get("s_source_sha256"), get("v_source_sha256")]));
+    rows.set(state ? "state" : name, { name, count: count === "" ? null : Number(count), stock: Number(stock),
+      rate: null, printed: fraction, when, edition, status, native: get("native_report_type") });
+  }
+  const statewide = rows.get("state"), counties = [...rows.entries()].filter(([id]) => id !== "state").map(([, row]) => row);
+  if (editions.size !== 1 || !statewide || counties.reduce((n, row) => n + row.stock, 0) !== statewide.stock
+      || (counties.every(row => row.count !== null) && counties.reduce((n, row) => n + row.count, 0) !== statewide.count))
+    throw new Error("California county totals differ from the state");
+  return { code: "CA", date: "2026-11-03", rows, measure: "semi_official_ballot_count" };
+}
+
+function installCaliforniaMedia(host, sources) {
+  const turnout = coverageCsvFile(sources, caMediaTurnoutPath), house = coverageCsvFile(sources, caMediaHousePath);
+  if (!turnout && !house) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const note = document.createElement("p"), status = document.createElement("p"), content = document.createElement("div");
+  summary.textContent = "California 2026 semi-official canvass";
+  note.textContent = "This text feed is a separate view of the semi-official canvass. Do not add these ballots to the California turnout totals above. County report times may differ. "
+    + "The separate House file lists candidate vote counts; it does not establish a complete write-in universe.";
+  status.setAttribute("role", "status");
+  panel.append(summary, note);
+  for (const [file, text] of [[turnout, "Complete ballot counts and registration figures"], [house, "Complete listed House candidate returns"]]) {
+    if (!file) continue;
+    const p = document.createElement("p"), link = document.createElement("a");
+    link.href = file.url; link.textContent = `${text} (CSV · gzip)`;
+    p.append(link); panel.append(p);
+  }
+  panel.append(status, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading || !turnout) return;
+    loading = true;
+    status.textContent = "Verifying the county and statewide ballot counts…";
+    try {
+      const { csv } = await loadCoverageCsv(sources, caMediaTurnoutPath);
+      const frame = californiaMediaTurnout(csv), state = frame.rows.get("state");
+      const table = document.createElement("table"), region = document.createElement("div");
+      const header = table.createTHead().insertRow(), body = table.createTBody();
+      const number = new Intl.NumberFormat("en-US");
+      table.createCaption().textContent = "California semi-official ballots cast and source-reported registrations";
+      for (const label of ["Area", "Ballots cast", "Registered voters", "Printed % of registered voters", "Last report (Pacific time)"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = label; header.append(th);
+      }
+      for (const row of [state, ...[...frame.rows.values()].filter(row => row !== state)]) {
+        const tr = body.insertRow(), label = document.createElement("th");
+        label.scope = "row"; label.textContent = row.name; tr.append(label);
+        const clock = row.when.replace(/^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})$/, "$1-$2-$3 $4:$5");
+        for (const value of [row.count === null ? "Not reported" : number.format(row.count),
+          number.format(row.stock), row.printed === "" ? "Not reported" : `${row.printed}%`, clock || "Not reported"])
+          tr.insertCell().textContent = value;
+      }
+      region.className = "table-wrap"; region.tabIndex = 0;
+      region.setAttribute("role", "region"); region.setAttribute("aria-label", table.caption.textContent);
+      region.append(table);
+      content.append(region);
+      installHistoricalCountyMap(content, "CA", frame.date, null, { CA: "California" }, () => frame);
+      status.textContent = `${state.status === "retained_after_failure" ? "Last verified edition retained. " : ""}`
+        + `Media edition: ${state.edition.replace("T", " ")} Pacific time.`;
+    } catch {
+      loading = false;
+      status.textContent = "The turnout table could not be verified. Reopen this section to retry or use the downloads.";
+    }
+  });
 }
 
 function installNewJerseyPeriodicComponents(host, sources) {
@@ -3787,6 +3884,7 @@ function installAdministrativeCoverage(host) {
       installHawaiiHistory(content, manifest.house_sources);
       installDakotaHistory(content, manifest.house_sources);
       installNewJerseyPeriodicComponents(content, manifest.house_sources);
+      installCaliforniaMedia(content, manifest.house_sources);
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);
