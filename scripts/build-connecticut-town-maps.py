@@ -16,9 +16,20 @@ SOURCES = {
                    "b336cf1ce7a33ede104af093a0f1dba809a9b5994e8f9ee2674f17cb8983816f"),
     "2008-11-04": ("TIGER2008/09_CONNECTICUT/tl_2008_09_cousub.zip", "", "COSBIDFP",
                    "a02f093eedc3b4028a28f3c6d8da138f4379fc84cfee8661a7a082cfec55ae61"),
+    "2010-11-02": ("TIGER2010/COUSUB/2010/tl_2010_09_cousub10.zip", "10", "GEOID10",
+                   "3ac1723d4cd36e90a039c6c94cba422bcc907c20f260a31c0df75c1cfacfd5d0"),
+    "2012-11-06": ("TIGER2012/COUSUB/tl_2012_09_cousub.zip", "", "GEOID",
+                   "74cd1f28b68c354358c128e904be6c2cdd327b362713c4a8fa7ecab370013813"),
+    "2014-11-04": ("TIGER2014/COUSUB/tl_2014_09_cousub.zip", "", "GEOID",
+                   "3bf89621693a7e2a28bbbbc3dd98fcb25dabec40962363bd3b2bcdf60a56c4f7"),
+    "2020-11-03": ("TIGER2020/COUSUB/tl_2020_09_cousub.zip", "", "GEOID",
+                   "fc565cb199529fb9f5c28a4ca495bc419d42a9e26a510a3e5e6a896670e30318"),
+    "2022-11-08": ("TIGER2022/COUSUB/tl_2022_09_cousub.zip", "", "GEOID",
+                   "07eca7e68e7e06540005d3c7555e506a100706e03c868179eab6c5c829ed104a"),
     "2024-11-05": ("TIGER2024/COUSUB/tl_2024_09_cousub.zip", "", "GEOID",
                    "5d1215b53c40afd93479611828673c4a51c2eb899674d3e1cf05fce9d52eda02"),
 }
+ALLOWED_ABSENCES = {"2020-11-03": {"New Canaan", "North Branford"}}
 
 
 def build(inputs, output):
@@ -49,8 +60,9 @@ def build(inputs, output):
                     "geometry": mapping(polygon)})
         towns = {f["properties"]["town"] for f in features}
         selected = [r for r in rows if r["election_date"] == date and r["geography_level"] != "state"]
+        reported = {r["reporting_unit"] for r in selected}
         if (len(towns) != len(features) or len(towns) != 169 or not coverage_is_valid(polygons)
-                or towns != {r["reporting_unit"] for r in selected}):
+                or not reported <= towns or not towns - reported <= ALLOWED_ABSENCES.get(date, set())):
             raise ValueError(f"{date}: town geometry and publication roster do not agree")
         features.sort(key=lambda f: f["properties"]["id"])
         asset = f"town-CT-{date[:4]}.geojson.gz"
@@ -61,6 +73,7 @@ def build(inputs, output):
             "path": asset, "sha256": hashlib.sha256(body).hexdigest(),
             "bytes": len(body), "source_url": BASE + path, "source_sha256": digest,
             "geometry_count": len(features),
+            "towns_absent_from_report": sorted(towns - reported),
             "qualified_whole_town_rates": sum(r["geography_level"] == "town" and bool(r["checked_as_voted_fraction"])
                                                for r in selected),
         }

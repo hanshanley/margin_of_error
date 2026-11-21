@@ -2506,6 +2506,11 @@ function installConnecticutTowns(host, sources) {
 const ctTownLayers = {
   "2000-11-07": { bytes: 607788, sha256: "87fd7f27376ae4b3269919535ee1995747f0b88eae295f1628c9688340dbf136" },
   "2008-11-04": { bytes: 607890, sha256: "5e02fc8bba44d99c2fa9cb25e411685b08e7344c947bf8681a0aed7a249006e6" },
+  "2010-11-02": { bytes: 567166, sha256: "ffd50fb724c4c9865b7147ef44e90ede90e3d1a50ce537658fc380e886bdea61" },
+  "2012-11-06": { bytes: 566922, sha256: "ea5a3f96c4cd3f24e9dcb8054463b585fc26f3b3c9578c6f5d1f1070d76bf211" },
+  "2014-11-04": { bytes: 567854, sha256: "31a8bfe67925af8600bc5590b36e64bd98f779e829465df9a529db95e119b426" },
+  "2020-11-03": { bytes: 576442, sha256: "7ac34f99d84e431be6cecaec77c17dfacad392a3616624ff474fd222c04331c8" },
+  "2022-11-08": { bytes: 519720, sha256: "0b451566b32a789fc475ca9e263389ac83dc4541845d018b7eb396627c2537d3" },
   "2024-11-05": { bytes: 519631, sha256: "f5aba2496d0a4cc9867558c31129a2d949a866b2109ae0caa3917c2fa4c7c686" },
 };
 
@@ -2536,10 +2541,12 @@ function installConnecticutTownMap(host, rows) {
       const names = new Set(report.map(row => row.name));
       const exact = new Map(report.filter(row => row.scope === "town").map(row => [row.name, row]));
       const features = layer.features;
+      const featureNames = new Set(features.map(feature => feature.properties.town));
+      const allowedAbsent = date === "2020-11-03" ? ["New Canaan", "North Branford"] : [];
       if (layer.type !== "FeatureCollection" || layer.state_code !== "CT" || layer.election_date !== date
-          || features.length !== 169 || names.size !== 169
-          || new Set(features.map(feature => feature.properties.town)).size !== 169
-          || features.some(feature => !names.has(feature.properties.town)))
+          || features.length !== 169 || featureNames.size !== 169
+          || [...names].some(name => !featureNames.has(name))
+          || [...featureNames].some(name => !names.has(name) && !allowedAbsent.includes(name)))
         throw new Error("Connecticut map roster or election differs");
       const paths = projectFeatures(features, conicProjection(-72.7, 40, 43), [10, 10, 500, 300]);
       if (paths.some(path => !path.d || /NaN|Infinity/.test(path.d))) throw new Error("Invalid Connecticut town paths");
@@ -2565,16 +2572,16 @@ function installConnecticutTownMap(host, rows) {
         path.dataset.town = town;
         const title = document.createElementNS(ns, "title");
         title.textContent = `${town}: ${rate !== null ? `${(rate * 100).toFixed(2)}% of active checklist`
-          : row ? "fraction withheld" : "split-town rows; no whole-town fraction"}`;
+          : row ? "fraction withheld" : names.has(town) ? "split-town rows; no whole-town fraction" : "not listed in this report"}`;
         path.append(title);
         svg.append(path);
       }
       const legend = document.createElement("p");
       legend.textContent = `${qualified} of 169 towns have a whole-town fraction. Light to dark: below 60%, `
-        + "60% to below 70%, 70% to below 80%, 80% or higher. Gray means withheld, not zero. Census town display boundaries.";
+        + "60% to below 70%, 70% to below 80%, 80% or higher. Gray means unavailable, not zero. Census town display boundaries.";
       const archive = document.createElement("a");
-      archive.href = year === "2024"
-        ? "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-2010-2024/connecticut-town-maps-2000-2024.zip"
+      archive.href = Number(year) >= 2010
+        ? "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-2010-2024/connecticut-town-maps-eight-editions.zip"
         : "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-1998-2008/connecticut-town-maps-2000-2008.zip";
       archive.textContent = "Download original Census layers, baseline counts, and map rebuild code (ZIP)";
       content.replaceChildren(svg, legend, archive);
