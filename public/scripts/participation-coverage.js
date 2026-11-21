@@ -1586,7 +1586,7 @@ function archiveStateHistory(panel, frames, name, { scope = "statewide", denomin
       link.href = frame.url; link.textContent = frame.date;
       key.scope = "row"; key.append(link); tr.append(key);
       const measure = archiveMeasureLabel(frame.measure);
-      tr.insertCell().textContent = `${number.format(row.count)} (${measure})`;
+      tr.insertCell().textContent = row.count === null ? "Not listed" : `${number.format(row.count)} (${measure})`;
       tr.insertCell().textContent = row.registered === null ? "Not reported" : number.format(row.registered);
       tr.insertCell().textContent = frame.basis || "Not in report";
       const fraction = row.rate === null ? `Withheld · ${row.hold.replaceAll("_", " ")}` : `${row.rate.toFixed(2)}%`;
@@ -3341,6 +3341,7 @@ export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
     const lineage = identity(row), date = row.election_date;
     if (!frames.has(date)) frames.set(date, { date, code: "NC", rows: new Map(), groups: [],
       measure: "voter_history_credits", lineage, status: row.source_status,
+      url: row.history_url,
       historyEdition: row.history_edition, voterEdition: row.voter_edition,
       voterRawEdition: row.voter_unparsed_edition });
     const frame = frames.get(date);
@@ -3403,6 +3404,19 @@ export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
   return frames;
 }
 
+export function northCarolinaGroupHistory(frames, dimension, group) {
+  return [...frames.values()].sort((a, b) => b.date.localeCompare(a.date)).map(frame => {
+    const row = frame.groups.find(item => item.dim === dimension && item.group === group);
+    const hold = !row ? "Group not listed in this edition"
+      : row.hold === "published_history_count_differs" ? "Published count differs"
+      : "No matching published control";
+    return { code: "NC", date: frame.date, url: frame.url, status: frame.status, measure: frame.measure,
+      basis: "Election-specific registration archive",
+      rows: new Map([["state", { count: row?.count ?? null, registered: row?.stock ?? null,
+        rate: row?.rate ?? null, hold }]]) };
+  });
+}
+
 function installNorthCarolinaArchives(host, sources) {
   const files = ncArchivePaths.map(path => coverageCsvFile(sources, path));
   if (files.some(file => !file)) return;
@@ -3433,12 +3447,27 @@ function installNorthCarolinaArchives(host, sources) {
       const election = document.createElement("select"), dimension = document.createElement("select");
       const electionLabel = document.createElement("label"), dimLabel = document.createElement("label");
       const map = document.createElement("div"), output = document.createElement("div");
+      const history = document.createElement("div"), historyOutput = document.createElement("div");
+      const groupLabel = document.createElement("label"), group = document.createElement("select");
+      groupLabel.append("Group for historical comparison ", group);
+      history.append(groupLabel, historyOutput);
+      const renderHistory = () => {
+        const reports = northCarolinaGroupHistory(frames, dimension.value, group.value);
+        const chart = document.createElement("details");
+        archiveStateHistory(chart, reports, () => group.selectedOptions[0].textContent, {
+          scope: "group", denominator: "Registered voter statistics", fractionHeading: "Checked participation fraction",
+          chartNote: "Dots show rates checked against state-published totals. Missing or withheld rates have no dot. "
+            + "Hollow dots indicate a retained report. Presidential elections and midterms are shown separately in time, not averaged.",
+        })("NC");
+        chart.open = true;
+        historyOutput.replaceChildren(chart);
+      };
       for (const date of [...frames.keys()].sort().reverse()) election.add(new Option(date, date));
       for (const [label, key] of [["Counties", "county"], ["Statewide age", "age"], ["Statewide race", "race"],
         ["Statewide ethnicity", "ethnicity"], ["Statewide sex codes", "sex"]]) dimension.add(new Option(label, key));
       electionLabel.append("General election ", election);
       dimLabel.append(" View ", dimension);
-      panel.append(electionLabel, dimLabel, map, output);
+      panel.append(electionLabel, dimLabel, map, output, history);
       installHistoricalCountyMap(map, "NC", election, null, { NC: "North Carolina" }, () => frames.get(election.value));
       const render = () => {
         const frame = frames.get(election.value), county = dimension.value === "county";
@@ -3474,13 +3503,26 @@ function installNorthCarolinaArchives(host, sources) {
           }
         }
         map.hidden = !county;
+        history.hidden = county;
         region.className = "table-wrap"; region.tabIndex = 0;
         region.setAttribute("role", "region"); region.setAttribute("aria-label", table.caption.textContent);
         region.append(table);
         output.replaceChildren(provenance, region);
       };
+      const updateGroups = () => {
+        const labels = new Map();
+        for (const frame of frames.values()) {
+          for (const row of frame.groups)
+            if (row.dim === dimension.value) labels.set(row.group, row.label);
+        }
+        group.replaceChildren(...[...labels].map(([value, label]) => new Option(label, value)));
+        const preferred = { age: ncAges[0], race: "A", ethnicity: "HL", sex: "F" }[dimension.value];
+        if (labels.has(preferred)) group.value = preferred;
+        if (labels.size) renderHistory();
+      };
       election.addEventListener("change", render);
-      dimension.addEventListener("change", render);
+      dimension.addEventListener("change", () => { render(); updateGroups(); });
+      group.addEventListener("change", renderHistory);
       render();
       status.textContent = "";
     } catch {

@@ -7,7 +7,7 @@ import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, louisianaParishFrame,
   stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, northCarolinaArchiveFrames, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
+  northCarolinaAgeRows, northCarolinaArchiveFrames, northCarolinaGroupHistory, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
   dakotaHistoryFrames, newJerseyPeriodicFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
@@ -51,6 +51,9 @@ test("North Carolina archive maps only reconciled counts and withholds an incorr
   const accepted = northCarolinaArchiveFrames(countyCsv, extended).get(date).groups.find(row => row.dim === "race");
   assert.equal(accepted.rate, 80);
   assert.equal(accepted.label, "Asian");
+  const history = northCarolinaGroupHistory(northCarolinaArchiveFrames(countyCsv, extended), "race", "B");
+  assert.deepEqual(history[0].rows.get("state"), { count: null, registered: null, rate: null,
+    hold: "Group not listed in this edition" });
   assert.throws(() => northCarolinaArchiveFrames(countyCsv, extended.replace(",400,80,https", ",399,80,https")),
     /does not match/);
 });
