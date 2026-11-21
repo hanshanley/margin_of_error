@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
+  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
@@ -456,6 +456,20 @@ test("pre-2015 Shannon County uses the dated code without changing the source ro
   assert.equal(bind([row], [{ ...reference, registered: 8000 }]).value, null);
   assert.equal(bind([row], [{ ...reference, total_participation: 2794 }]).value, null);
   assert.throws(() => bind([row, { ...row, fips: "46113", name: "Shannon County" }]), /Ambiguous/);
+});
+
+test("Kansas study validates an entire statewide series and its registration fraction", () => {
+  const header = "state_code,year,election_date,reported_general_election_turnout,reported_registration,"
+    + "turnout_per_reported_registration,source_status,source_url";
+  const source = "https://www.sos.ks.gov/elections/10elec/2010_Future_of_Kansas_Elections_report.pdf";
+  const rows = Array.from({ length: 7 }, (_, index) => {
+    const year = 2008 - 2 * index;
+    return `KS,${year},${year}-11-04,750,1000,0.75000000,reported,${source}`;
+  });
+  const csv = [header, ...rows].join("\n");
+  assert.equal(kansasStudyFrames(csv).at(-1).rows.get("state").rate, 75);
+  assert.throws(() => kansasStudyFrames(csv.replace("0.75000000", "0.74000000")), /Invalid Kansas/);
+  assert.throws(() => kansasStudyFrames([header, ...rows.slice(1)].join("\n")), /Incomplete/);
 });
 
 test("Virginia turnout keeps a county and independent city with the same name separate", () => {

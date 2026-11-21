@@ -25,6 +25,7 @@ const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
 const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
+const kansasStudyPath = "release/participation-ks-statewide-turnout-study.csv.gz";
 const southeastHistory = {
   AL: "release/participation-al-general-election-by-age.csv.gz",
   SC: "release/participation-sc-general-election-history.csv.gz",
@@ -1787,6 +1788,68 @@ function installOregonHistory(host, sources) {
   });
 }
 
+export function kansasStudyFrames(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const required = ["state_code", "year", "election_date", "reported_general_election_turnout",
+    "reported_registration", "turnout_per_reported_registration", "source_status", "source_url"];
+  if (new Set(fields).size !== fields.length || lines.length !== 7
+      || required.some(field => !fields.includes(field))) throw new Error("Incomplete Kansas study series");
+  return lines.map((line, i) => {
+    const cells = historicalCsvLine(line);
+    const field = key => cells[fields.indexOf(key)];
+    const year = 2008 - 2 * i, date = field("election_date"), status = field("source_status");
+    const n = field("reported_general_election_turnout"), d = field("reported_registration");
+    const fraction = field("turnout_per_reported_registration"), url = field("source_url");
+    if (cells.length !== fields.length || field("year") !== String(year) || field("state_code") !== "KS"
+        || !new RegExp(`^${year}-11-0[2-8]$`).test(date)
+        || ![n, d].every(v => /^[1-9]\d*$/.test(v) && Number.isSafeInteger(Number(v)))
+        || Number(n) > Number(d) || !/^[01]\.\d{8}$/.test(fraction)
+        || Math.abs(Number(fraction) - Number(n) / Number(d)) > 5.000001e-9
+        || !["reported", "retained_after_failure"].includes(status)
+        || url !== "https://www.sos.ks.gov/elections/10elec/2010_Future_of_Kansas_Elections_report.pdf")
+      throw new Error("Invalid Kansas study turnout or report identity");
+    return { code: "KS", date, status, url, measure: "total_voters",
+      basis: "Registration in the December 2009 study",
+      rows: new Map([["state", { count: Number(n), registered: Number(d), rate: 100 * Number(fraction) }]]) };
+  });
+}
+
+function installKansasStudy(host, sources) {
+  const file = coverageCsvFile(sources, kansasStudyPath);
+  if (!file) return;
+  const panel = document.createElement("details"), title = document.createElement("summary");
+  const note = document.createElement("p"), download = document.createElement("a");
+  title.textContent = "Kansas statewide turnout, 1996–2008";
+  note.textContent = "The election office’s December 2009 study reports statewide turnout and registration, "
+    + "not county estimates. Three printed advance-vote shares disagree with the counts and are flagged in the download. ";
+  download.href = file.url;
+  download.textContent = "Complete study data and source checks (CSV · gzip)";
+  note.append(download);
+  panel.append(title, note);
+  host.append(panel);
+  let loading = false;
+  const status = document.createElement("p");
+  status.setAttribute("role", "status");
+  panel.append(status);
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    status.textContent = "Checking the Kansas statewide turnout series…";
+    try {
+      const { csv } = await loadCoverageCsv(sources, kansasStudyPath);
+      const history = document.createElement("details");
+      archiveStateHistory(history, kansasStudyFrames(csv), () => "Kansas")("KS");
+      history.open = true;
+      panel.append(history);
+      status.textContent = "";
+    } catch {
+      loading = false;
+      status.textContent = "The Kansas turnout data could not be verified. Reopen this section to retry.";
+    }
+  });
+}
+
 export function southeastHistoryRows(csv, state) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = historicalCsvLine(header);
@@ -2840,6 +2903,7 @@ function installAdministrativeCoverage(host) {
       installNorthCarolinaAge(content, manifest.house_sources);
       installWashingtonAge(content, manifest.house_sources);
       installOregonHistory(content, manifest.house_sources);
+      installKansasStudy(content, manifest.house_sources);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       installAlabamaBallots(content, manifest.house_sources);
       installAlaskaBallots(content, manifest.house_sources);
