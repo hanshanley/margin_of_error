@@ -118,6 +118,19 @@ class FallbackTests(unittest.TestCase):
         self.runs["collection"] = [scoped, run(120, 110)]
         self.assertEqual(self.result(apply=False), "would_dispatch_collection")
 
+    def test_scoped_collection_does_not_delay_publishing_accepted_source(self):
+        self.backlog()
+        collecting = run(10, 4, status="in_progress", conclusion=None)
+        for title in ("Run scoped election results update", "Check late participation archives"):
+            self.runs["collection"] = [{**collecting, "display_title": title}]
+            self.runs["publication"] = [run(15, 5)]
+            self.assertEqual(self.result(apply=False), "would_dispatch_publication")
+            self.runs["publication"] = [run(15, 4, status="queued", conclusion=None)]
+            self.assertEqual(self.result(apply=False), "no_dispatch")
+        self.runs["publication"] = [run(15, 5)]
+        self.runs["collection"] = [{**collecting, "display_title": "Unknown collection"}]
+        self.assertEqual(self.result(apply=False), "no_dispatch")
+
     def test_publication_cooldown_does_not_allow_recollecting_unconsumed_source(self):
         self.backlog()
         self.runs["publication"] = [run(15, 5, conclusion="failure")]
