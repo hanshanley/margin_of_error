@@ -2309,27 +2309,28 @@ export function alaskaAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const columns = historicalCsvLine(header);
   const fields = ["state_code", "election_date", "age_group", "reported_gender", "registered_in_report",
-    "voter_history_credits", "history_per_registered", "rate_hold_reason", "source_status"];
+    "voter_history_credits", "history_per_registered", "rate_hold_reason", "source_status", "source_reported_percent"];
   const positions = fields.map(field => columns.indexOf(field));
   if (!lines.length || positions.includes(-1) || new Set(columns).size !== columns.length)
     throw new Error("Missing Alaska voter-history fields");
   const keys = new Set();
   return lines.map(line => {
     const cells = historicalCsvLine(line);
-    const [state, date, age, gender, denominator, numerator, fraction, hold, status] = positions.map(i => cells[i]);
+    const [state, date, age, gender, denominator, numerator, fraction, hold, status, printed] = positions.map(i => cells[i]);
     const registered = Number(denominator), credited = Number(numerator);
     const key = `${date}/${age}/${gender}`;
-    if (cells.length !== columns.length || state !== "AK" || !/^20(?:0[02468])-\d\d-\d\d$|^199[68]-\d\d-\d\d$/.test(date)
-        || !age || !["all", "male", "female"].includes(gender) || keys.has(key)
+    if (cells.length !== columns.length || state !== "AK" || !/^(?:199[68]|20[012][02468])-\d\d-\d\d$/.test(date)
+        || !age || !["all", "male", "female", "unknown"].includes(gender) || keys.has(key)
         || !["reported", "retained_after_failure"].includes(status)
         || ![denominator, numerator].every(value => /^\d+$/.test(value) && Number.isSafeInteger(Number(value)))
         || credited > registered
+        || (printed !== "" && (!/^\d{1,3}(?:\.\d{1,2})?$/.test(printed) || Number(printed) > 100))
         || (fraction === "" ? registered > 0 && !hold
           : hold || !registered || !/^(?:[01]\.\d{8}|0E-8)$/.test(fraction)
             || Math.abs(Number(fraction) - credited / registered) > 0.000000006))
       throw new Error("Invalid Alaska voter-history row");
     keys.add(key);
-    return { date, age, gender, registered, credited, rate: fraction === "" ? null : Number(fraction), hold, status };
+    return { date, age, gender, registered, credited, rate: fraction === "" ? null : Number(fraction), hold, status, printed };
   });
 }
 
@@ -2337,7 +2338,7 @@ function installAlaskaAge(host, sources) {
   if (!sources?.supported_release?.downloads?.[akAgeArchive]) return;
   const panel = document.createElement("details"), summary = document.createElement("summary");
   const content = document.createElement("div");
-  summary.textContent = "Alaska voter history by age and reported gender, 1996–2008";
+  summary.textContent = "Alaska voter history by age and reported gender";
   panel.append(summary, content);
   host.append(panel);
   let loading = false;
@@ -2351,8 +2352,9 @@ function installAlaskaAge(host, sources) {
       const note = document.createElement("p"), download = document.createElement("a");
       note.textContent = "Participation is voter-history credits divided by registrations in the same report. "
         + "It is not a ballot count, an eligible-population estimate, or a measure of vote choice. "
-        + "Totals include people outside the two reported gender categories. The 2004 male rates are withheld "
-        + "because the age-band counts and printed statewide total differ by three.";
+        + "Totals include people whose gender is not classified as male or female. The 2004 male rates are withheld "
+        + "because the age-band counts and printed statewide total differ by three. "
+        + "When a report’s printed percentage disagrees with its counts, the rate is withheld and the printed figure is shown.";
       download.href = file.url;
       download.textContent = "Complete Alaska voter-history counts and provenance (CSV · gzip)";
       const ageLabel = document.createElement("label"), age = document.createElement("select");
@@ -2366,6 +2368,8 @@ function installAlaskaAge(host, sources) {
       genderLabel.append("Reported gender ", gender);
       for (const [label, value] of [["All", "all"], ["Male", "male"], ["Female", "female"]])
         gender.append(new Option(label, value));
+      if (rows.some(row => row.gender === "unknown"))
+        gender.append(new Option("Unknown (source category)", "unknown"));
       const region = document.createElement("div");
       region.className = "table-wrap"; region.tabIndex = 0;
       region.setAttribute("role", "region"); region.setAttribute("aria-label", summary.textContent);
@@ -2382,7 +2386,9 @@ function installAlaskaAge(host, sources) {
           const row = body.insertRow(), year = document.createElement("th");
           year.scope = "row"; year.textContent = item.date.slice(0, 4); row.append(year);
           for (const value of [item.credited.toLocaleString("en-US"), item.registered.toLocaleString("en-US"),
-            item.rate === null ? "Withheld" : `${(item.rate * 100).toFixed(1)}%`,
+            item.hold === "printed_percent_disagrees_with_counts"
+              ? `Withheld — source prints ${item.printed}%; counts disagree`
+              : item.rate === null ? "Withheld" : `${(item.rate * 100).toFixed(1)}%`,
             item.status === "retained_after_failure" ? "Retained" : "Reported"]) row.insertCell().textContent = value;
         }
         region.replaceChildren(table);

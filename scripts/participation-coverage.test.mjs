@@ -7,7 +7,7 @@ import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
-  connecticutTownRows, alabamaReconciledCountyFrame,
+  connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
@@ -19,6 +19,17 @@ import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-pr
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("Alaska digital age reports retain withheld statewide figures and explicitly unknown gender", () => {
+  const csv = "state_code,election_date,age_group,reported_gender,registered_in_report,voter_history_credits,"
+    + "history_per_registered,rate_hold_reason,source_status,source_reported_percent\n"
+    + "AK,2022-11-08,TOTALS,all,602912,267964,,printed_percent_disagrees_with_counts,reported,40.10\n"
+    + "AK,2022-11-08,TOTALS,unknown,699,119,0.17024320,,retained_after_failure,";
+  const [total, unknown] = alaskaAgeRows(csv);
+  assert.deepEqual([total.credited, total.rate, total.printed], [267964, null, "40.10"]);
+  assert.deepEqual([unknown.gender, unknown.rate, unknown.status], ["unknown", 0.17024320, "retained_after_failure"]);
+  assert.throws(() => alaskaAgeRows(csv.replace("0.17024320", "0.71024320")), /Invalid Alaska/);
+});
 
 test("Alaska keeps mixed central ballot modes out of the physical precinct scope", () => {
   const csv = "state_code,election_date,reporting_unit,unit_scope,source_status,reported_ballots,"
