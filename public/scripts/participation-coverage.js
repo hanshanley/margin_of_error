@@ -13,6 +13,9 @@ import { projectStateContext } from "./participation-map-projection.js";
 const coveragePath = "release/participation-administrative-coverage.csv.gz";
 const historicalCountyPath = "participation/eac-county-year-decisions.csv.gz";
 const eacLocalityPath = "release/participation-eac-locality-history.csv.gz";
+const eacReferenceYears = { MA: ["2018", "2020"], ME: ["2018", "2020", "2022", "2024"],
+  NH: ["2018", "2020", "2022"], VT: ["2018", "2020", "2022", "2024"] };
+const eacReferenceBase = "https://github.com/hanshanley/voter-participation/releases/download/eac-locality-reference-maps-2018-2024";
 const countyYears = Array.from({ length: 11 }, (_, i) => 2004 + 2 * i);
 const countyDecisions = {
   reconciled_direct_county_turnout: "Matches the direct county report",
@@ -1977,6 +1980,7 @@ function installEacLocalityHistory(host, sources, names) {
       const { csv } = await loadCoverageCsv(sources, eacLocalityPath);
       const frames = eacLocalityFrames(csv), state = document.createElement("select"), year = document.createElement("select");
       const region = document.createElement("div"), table = document.createElement("table");
+      const references = document.createElement("p");
       const caption = table.createCaption(), heading = table.createTHead().insertRow(), body = table.createTBody();
       const number = new Intl.NumberFormat("en-US");
       state.setAttribute("aria-label", "Historical locality state");
@@ -2001,6 +2005,19 @@ function installEacLocalityHistory(host, sources, names) {
             row.hold ? row.hold.replaceAll("_", " ") : "Ballot count source verified"]) tr.insertCell().textContent = value;
         }
         status.textContent = `${rows.filter(row => row.count !== null).length} of ${rows.length} records have usable counts.`;
+        references.replaceChildren();
+        if (eacReferenceYears[state.value]?.includes(year.value)) {
+          references.append("Fixed Census reference maps for this election: ");
+          for (const [measure, label] of [["count", "counts"], ["rate", "registration fractions"]]) {
+            const link = document.createElement("a");
+            link.href = `${eacReferenceBase}/${state.value}-${year.value}-${measure}.svg`;
+            link.textContent = `${label} (SVG)`;
+            if (measure === "rate") references.append(" · ");
+            references.append(link);
+          }
+        } else {
+          references.textContent = "No reviewed reference map for this selection.";
+        }
       };
       const updateYears = () => {
         year.replaceChildren();
@@ -2010,7 +2027,7 @@ function installEacLocalityHistory(host, sources, names) {
       state.addEventListener("change", updateYears); year.addEventListener("change", render);
       region.className = "table-wrap"; region.tabIndex = 0;
       region.setAttribute("role", "region"); region.setAttribute("aria-label", "Historical EAC locality data");
-      region.append(table); content.append(state, year, region); updateYears();
+      region.append(table); content.append(state, year, references, region); updateYears();
     } catch {
       loading = false;
       status.textContent = "The historical locality table could not be verified. Use the complete download or reopen to retry.";
