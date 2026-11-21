@@ -32,6 +32,7 @@ const hawaiiHistoryPath = "release/participation-hi-general-election-county-turn
 const dakotaHistoryPath = "release/participation-dakota-statewide-turnout-history.csv.gz";
 const njPeriodicComponentsPath = "release/participation-nj-2026-periodic-county-components.csv.gz";
 const turnoutReleaseWatchPath = "release/participation-turnout-release-watch.csv.gz";
+const writeInReleaseWatchPath = "release/congressional-write-in-release-watch.csv.gz";
 const southeastHistory = {
   AL: "release/participation-al-general-election-by-age.csv.gz",
   SC: "release/participation-sc-general-election-history.csv.gz",
@@ -2354,6 +2355,8 @@ const turnoutReleaseIndexes = {
     "https://www.eac.gov/research-and-data/studies-and-reports"],
   "CT-2026-general-statement-of-vote-index": ["Connecticut Statement of Vote",
     "https://portal.ct.gov/SOTS/Election-Services/Statement-Of-Vote-PDFs/General-Elections-Statement-of-Vote-1922"],
+  "WV-2026-general-write-in-results-index": ["West Virginia general-election write-ins",
+    "https://sos.wv.gov/elections/election-data/historical-election-results-and-turnout"],
 };
 const turnoutReleaseStates = {
   not_yet_linked: "Not yet linked",
@@ -2392,14 +2395,14 @@ export function turnoutReleaseRows(csv) {
   });
 }
 
-function installTurnoutReleaseWatch(host, sources) {
-  const file = coverageCsvFile(sources, turnoutReleaseWatchPath);
+function installTurnoutReleaseWatch(host, sources, path = turnoutReleaseWatchPath) {
+  const file = coverageCsvFile(sources, path);
   if (!file) return;
   const panel = document.createElement("details"), title = document.createElement("summary");
   const note = document.createElement("p"), download = document.createElement("a");
   const list = document.createElement("ul");
-  title.textContent = "Watched 2026 turnout releases";
-  note.textContent = "A linked file is not a turnout observation. Its counts and denominators must pass validation. ";
+  title.textContent = path === writeInReleaseWatchPath ? "Watched 2026 write-in releases" : "Watched 2026 turnout releases";
+  note.textContent = "A linked file is not a validated result. Its counts and reporting scope must be checked first. ";
   download.href = file.url;
   download.textContent = "Download release checks and links (CSV · gzip)";
   note.append(download);
@@ -2410,7 +2413,7 @@ function installTurnoutReleaseWatch(host, sources) {
     if (!panel.open || loading) return;
     loading = true;
     try {
-      const { csv } = await loadCoverageCsv(sources, turnoutReleaseWatchPath);
+      const { csv } = await loadCoverageCsv(sources, path);
       list.replaceChildren(...turnoutReleaseRows(csv).map(row => {
         const item = document.createElement("li"), index = document.createElement("a");
         index.href = row.index;
@@ -3686,6 +3689,7 @@ function installAdministrativeCoverage(host) {
       installNewJerseyPeriodicComponents(content, manifest.house_sources);
       if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
+      installTurnoutReleaseWatch(content, manifest.house_sources, writeInReleaseWatchPath);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       installAlabamaBallots(content, manifest.house_sources);
       installAlaskaBallots(content, manifest.house_sources);
