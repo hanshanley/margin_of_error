@@ -7,7 +7,7 @@ const svgNS = "http://www.w3.org/2000/svg";
 const ohio2008Archive = "https://www.eac.gov/sites/default/files/eac_assets/1/6/2008%20eavs%20xls%20august%2011%202010.zip";
 const countedBallots2008 = "Number of ballots counted at precincts and/or at a central location "
   + "(including UOCAVA and other absentee or early vote ballots)";
-const officialCountySizes = { AL: 67, CA: 58, CO: 64, HI: 4, IN: 92, KS: 105, NC: 100, NE: 93, NJ: 21, VA: 133, WA: 39, WV: 55, WY: 23 };
+const officialCountySizes = { AL: 67, CA: 58, CO: 64, HI: 4, IN: 92, KS: 105, LA: 64, NC: 100, NE: 93, NJ: 21, VA: 133, WA: 39, WV: 55, WY: 23 };
 const hawaiiReportingCounties = { "15001": ["15001"], "15003": ["15003"], "15007": ["15007"], "15009": ["15009", "15005"] };
 const geometryReleases = "https://github.com/hanshanley/voter-participation/releases/download/";
 const nebraskaGeometryRelease = geometryReleases + "nebraska-legacy-county-geometry-20261120/";
@@ -107,6 +107,8 @@ export const officialArchiveGeometry = {
 };
 const countyName = name => name.trim().toUpperCase().replace(/\s+(COUNTY|PARISH|BOROUGH)$/, "")
   .replace(/[^A-Z0-9]/g, "");
+const louisianaContext = frame => frame?.code === "LA" && frame.date === "2026-11-03"
+  && frame.measure === "voters_voting" && frame.referenceVintage === 2024;
 
 export async function checkedCountyBody(url, { sha256, bytes }, retry) {
   const response = await fetch(url, {
@@ -192,7 +194,7 @@ export function bindHistoricalCountyMap(collection, prior, rows, code, year) {
 
 export function bindOfficialCountyArchive(collection, frame, allowPartialGeometry = false) {
   const { code, date, rows } = frame;
-  const year = Number(date.slice(0, 4));
+  const year = louisianaContext(frame) ? 2024 : Number(date.slice(0, 4));
   const size = code === "CO" && year === 2000 ? 63 : officialCountySizes[code];
   const partial = frame.partialCountyReports === true && code === "NE" && date === "2026-11-03";
   const localityCountsOnly = frame.localityCountsOnly === true && code === "VA" && date === "2024-11-05";
@@ -268,26 +270,28 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
   let generation = 0, inventory, opened = false;
   const load = async (retry = false) => {
     const token = ++generation, code = typeof state === "string" ? state : state.value;
-    const vintage = Number((typeof year === "string" ? year : year.value).slice(0, 4));
-    const label = `${names[code] || code} · ${vintage}`;
-    const legacy = officialFrame && officialArchiveGeometry[`${code}/${vintage}`];
+    const electionYear = Number((typeof year === "string" ? year : year.value).slice(0, 4));
+    const label = `${names[code] || code} · ${electionYear}`;
     figure.querySelector("svg")?.remove();
-    reproduction.hidden = !legacy?.reproduction;
+    reproduction.hidden = true;
     reproduction.removeAttribute("href");
-    if (legacy?.reproduction) {
-      reproduction.href = (legacy.reproductionBase ?? nebraskaGeometryRelease) + legacy.reproduction;
-      reproduction.textContent = `Reproduce ${vintage} county boundaries (ZIP)`;
-    }
     figure.hidden = false;
     button.textContent = "Hide county map";
-    if ((!legacy && vintage < 2008) || (officialFrame && !officialCountySizes[code])) {
-      status.textContent = `${label}: no reviewed same-year county shapes; use the table.`;
-      return;
-    }
-    status.textContent = `Checking county map for ${label}…`;
     try {
+      const frame = officialFrame?.(), context = louisianaContext(frame);
+      const vintage = context ? 2024 : electionYear;
+      const legacy = officialFrame && officialArchiveGeometry[`${code}/${vintage}`];
+      if (legacy?.reproduction) {
+        reproduction.href = (legacy.reproductionBase ?? nebraskaGeometryRelease) + legacy.reproduction;
+        reproduction.textContent = `Reproduce ${vintage} county boundaries (ZIP)`;
+        reproduction.hidden = false;
+      }
+      if ((!legacy && vintage < 2008) || (officialFrame && !officialCountySizes[code])) {
+        status.textContent = `${label}: no reviewed same-year county shapes; use the table.`;
+        return;
+      }
+      status.textContent = `Checking county map for ${label}…`;
       const geography = `geometry/${vintage}/county-${code}.geojson.gz`, sources = `states/${code}.json.gz`;
-      const frame = officialFrame?.();
       let collection, prior;
       if (legacy) {
         const url = new URL(`../${legacy.path}`, import.meta.url).href;
@@ -323,7 +327,7 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
       svg.setAttribute("viewBox", "0 0 600 360");
       svg.setAttribute("width", "600");
       svg.setAttribute("role", "img");
-      svg.setAttribute("aria-label", `${label} county participation; values and evidence are in the table`);
+      svg.setAttribute("aria-label", `${label} ${context ? "parish" : "county"} participation; values and evidence are in the table`);
       svg.style.maxWidth = "100%";
       svg.style.height = "auto";
       const number = new Intl.NumberFormat("en-US");
@@ -369,7 +373,8 @@ export function installHistoricalCountyMap(panel, state, year, rows, names, offi
             + "light gray means no verified mapped count, not zero. ")
         + (legacy?.referenceDate ? `Census reference boundaries dated January 1, ${vintage}.`
           : legacy ? legacy.boundaryLabel ?? `${vintage} Census cartographic county boundaries (simplified).`
-          : "Boundaries are for this election year only.");
+          : context ? "2024 Census parish reference boundaries; not 2026 precinct boundaries."
+            : "Boundaries are for this election year only.");
       figure.append(svg);
     } catch {
       if (token !== generation) return;

@@ -5,7 +5,8 @@ import { runInNewContext } from "node:vm";
 import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
-  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, stateCountyArchivesDownload, stateCountyArchiveFrames,
+  loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, louisianaParishFrame,
+  stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
   dakotaHistoryFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
@@ -42,6 +43,34 @@ test("Indiana admits whole county histories but never shades a withheld rate as 
   assert.throws(() => indianaTurnoutFrames(csv.replace("40,[]", "41,[]")), /fraction or reconciliation/);
   assert.throws(() => indianaTurnoutFrames(csv.replace("3680,40", "3681,40")), /fraction or reconciliation/);
   assert.throws(() => indianaTurnoutFrames(csv.slice(0, csv.lastIndexOf("\n"))), /Incomplete or inconsistent/);
+});
+
+test("Louisiana parish maps require 64 unique reconciled counts and no denominator", () => {
+  const date = "2026-11-03";
+  const prefix = "https://electionstatistics.sos.la.gov/Data/Post_Election_Statistics/";
+  const names = Array.from({ length: 64 }, (_, i) => `Test Parish ${i + 1}`);
+  const row = (i, n) => ({
+    election: { date },
+    geography: { state_code: "LA", level: i === 0 ? "state" : "county_equivalent",
+      name: i === 0 ? "Louisiana" : names[i - 1] },
+    count: { status: "reported", value: n },
+    measure: { literal: "# VOTING", kind: "voters_reported", mode: "all_methods" },
+    denominator: null,
+    source: { id: "la-sos-post-election-statistics-2026-11-03", input_sha256: "a".repeat(64),
+      url: `${prefix}${i === 0 ? "statewide/2026_1103_sta.xlsx" : "parish/2026_1103_par.xlsx"}` },
+    view: { ballots: n, native_record: { native_level: i === 0 ? "state" : "parish",
+      native_id: i === 0 ? "STATE" : `PAR ${String(i).padStart(2, "0")}`, voters_participating: n } },
+  });
+  const data = { state_code: "LA", records: [row(0, 64), ...names.map((_, i) => row(i + 1, 1))] };
+  const frame = louisianaParishFrame(data);
+  assert.equal(frame.rows.get("state").count, 64);
+  assert.equal(frame.rows.get("TESTPARISH1").rate, null);
+  assert.equal(frame.referenceVintage, 2024);
+  assert.throws(() => louisianaParishFrame({ ...data, records: data.records.slice(1) }), /do not reconcile/);
+  assert.throws(() => louisianaParishFrame({ ...data, records: [row(0, 65), ...data.records.slice(1)] }),
+    /do not reconcile/);
+  data.records[1].denominator = { value: 100 };
+  assert.throws(() => louisianaParishFrame(data), /Unverified Louisiana/);
 });
 
 test("Dakota histories keep registration and voting-age rates separate and preserve holds", () => {

@@ -1,5 +1,5 @@
 import { loadDatasetCatalog } from "./participation-dataset.js";
-import { countStates, loadCountIndex, validateCurrentCountSnapshot } from "./participation-counts.js";
+import { countStates, loadCountIndex, loadCountState, validateCurrentCountSnapshot } from "./participation-counts.js";
 import { loadNativeIndex } from "./participation-native-bindings.js";
 import { loadAutomaticRuntime, loadWyomingPrecinctCanvass } from "./participation-automatic-runtime.js";
 import { checkedCountyBody, installHistoricalCountyMap } from "./participation-historical-county-map.js";
@@ -1008,6 +1008,92 @@ const archiveMeasureLabel = measure => measure === "voter_history_credits" ? "Vo
   : measure === "voters_voting" ? "Voters Voting" : measure === "total_voters" ? "Total Voters"
   : measure === "state_reported_votes_cast" ? "Total Votes Cast"
   : measure === "state_reported_turnout" ? "Reported Turnout" : "Ballots Cast";
+
+export function louisianaParishFrame(data) {
+  const date = "2026-11-03";
+  const base = "https://electionstatistics.sos.la.gov/Data/Post_Election_Statistics/";
+  const url = `${base}parish/2026_1103_par.xlsx`;
+  const rows = new Map(), parishCodes = new Set(), editions = new Set();
+  let download;
+  for (const row of data.records) {
+    if (row.source?.id !== "la-sos-post-election-statistics-2026-11-03"
+        || row.measure?.kind !== "voters_reported") continue;
+    const level = row.geography?.level;
+    if (level !== "state" && level !== "county_equivalent") continue;
+    const n = row.count?.value, name = row.geography.name, state = level === "state";
+    const native = row.view?.native_record;
+    const expectedUrl = state ? `${base}statewide/2026_1103_sta.xlsx` : url;
+    const key = state ? "state" : name.toUpperCase().replace(/[^A-Z0-9]/g, "");
+    if (data.state_code !== "LA" || row.election?.date !== date || row.geography.state_code !== "LA"
+        || row.measure.literal !== "# VOTING" || row.measure.mode !== "all_methods"
+        || row.count.status !== "reported" || !Number.isSafeInteger(n) || n < 0
+        || row.denominator !== null || row.source.url !== expectedUrl
+        || row.view?.ballots !== n || native?.voters_participating !== n
+        || native?.native_level !== (state ? "state" : "parish")
+        || !/^[a-f0-9]{64}$/.test(row.source.input_sha256) || rows.has(key)
+        || (state ? name !== "Louisiana" || native.native_id !== "STATE"
+          : !key || !/^PAR \d{2}$/.test(native.native_id) || parishCodes.has(native.native_id)))
+      throw new Error("Unverified Louisiana parish participation record");
+    if (!state) {
+      parishCodes.add(native.native_id);
+      editions.add(row.source.input_sha256);
+    } else download = row.view.complete_download_url;
+    rows.set(key, { name, count: n, rate: null });
+  }
+  const statewide = rows.get("state");
+  if (!statewide || rows.size !== 65 || editions.size !== 1
+      || [...rows].reduce((sum, [key, row]) => sum + (key === "state" ? 0 : row.count), 0) !== statewide.count)
+    throw new Error("Louisiana parish counts do not reconcile to the statewide total");
+  return { code: "LA", date, referenceVintage: 2024, measure: "voters_voting", url, rows, download };
+}
+
+function installLouisianaParishCounts(host, download) {
+  const panel = document.createElement("details");
+  const summary = document.createElement("summary"), note = document.createElement("p");
+  const status = document.createElement("p"), link = document.createElement("a");
+  summary.textContent = "Louisiana 2026 participation by parish";
+  link.href = download; link.textContent = "Complete analysis and aggregate queries (ZIP)";
+  note.textContent = "The November 3 reports count people listed as voting, not physical ballots. "
+    + "The map uses 2024 parish boundaries for reference and shows counts, not rates.";
+  status.setAttribute("role", "status");
+  panel.append(summary, note, status);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    status.textContent = "Checking the accepted Louisiana participation reports…";
+    try {
+      const frame = louisianaParishFrame(await loadCountState("LA"));
+      const original = document.createElement("a");
+      original.href = frame.url; original.textContent = "Louisiana parish workbook";
+      note.append(" ", original);
+      if (frame.download === download) note.append(" · ", link);
+      const wrap = document.createElement("div"), table = document.createElement("table");
+      wrap.className = "table-wrap"; wrap.tabIndex = 0;
+      wrap.setAttribute("role", "region"); wrap.setAttribute("aria-label", "Louisiana reported parish participation counts");
+      table.createCaption().textContent = "November 3, 2026 · Reported # VOTING";
+      const header = table.createTHead().insertRow(), body = table.createTBody();
+      for (const label of ["Reporting area", "Reported voters"]) {
+        const cell = document.createElement("th");
+        cell.scope = "col"; cell.textContent = label; header.append(cell);
+      }
+      const number = new Intl.NumberFormat("en-US");
+      const local = [...frame.rows].filter(([key]) => key !== "state").map(([, row]) => row);
+      for (const row of [frame.rows.get("state"), ...local]) {
+        const tr = body.insertRow(), key = document.createElement("th");
+        key.scope = "row"; key.textContent = row.name; tr.append(key);
+        tr.insertCell().textContent = number.format(row.count);
+      }
+      installHistoricalCountyMap(panel, "LA", frame.date, null, { LA: "Louisiana" }, () => frame);
+      wrap.append(table); panel.append(wrap);
+      status.textContent = "64 parish counts reconcile to the statewide total. No source count-update time is supplied.";
+    } catch {
+      loading = false;
+      status.textContent = "A complete, reconciled Louisiana parish report is not available. Reopen this section to retry.";
+    }
+  });
+}
 
 const indianaElectionDays = [4, 2, 6, 4, 8, 6, 3, 8, 5, 3];
 
@@ -3287,6 +3373,7 @@ function installAdministrativeCoverage(host) {
       installKansasStudy(content, manifest.house_sources);
       installHawaiiHistory(content, manifest.house_sources);
       installDakotaHistory(content, manifest.house_sources);
+      if (manifest.complete_download?.url) installLouisianaParishCounts(content, manifest.complete_download.url);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       installAlabamaBallots(content, manifest.house_sources);
