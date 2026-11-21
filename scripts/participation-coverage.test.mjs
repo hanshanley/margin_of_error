@@ -14,7 +14,7 @@ import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDown
   connecticutTownRows, alabamaReconciledCountyFrame, alabamaCountyMapDates, alStatewideHistoryRows, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames,
-  virginiaPrecinctCounts, releaseQueryFiles }
+  virginiaPrecinctCounts, releaseQueryFiles, idahoCountyArchiveFrame }
   from "../public/scripts/participation-coverage.js";
 import { countStates } from "../public/scripts/participation-counts.js";
 import { bindHistoricalCountyMap, bindOfficialCountyArchive, countyMapFill, officialArchiveGeometry }
@@ -1287,6 +1287,27 @@ test("table-only reporting units are loaded without inventing geographic referen
   assert.equal(row.reference_units, 0);
   assert.equal(row.unknown, 1);
   assert.equal(row.fractions, 0);
+});
+
+test("the Idaho map uses reconciled county parents, not reporting units", () => {
+  const shared = "state_code,election_date,source_status,source_url,source_sha256,ballots_cast,registered_voters";
+  const prefix = "ID,2024-11-05,retained_after_failure";
+  const hash = "a".repeat(64);
+  const state = `${shared},registered_reconciled_pct,registered_rate_hold\n`
+    + `${prefix},https://voteidaho.gov/election-results/,${hash},440,880,50,`;
+  const [countyHeader, countyRecords] = [`${shared},geography_level,county,native_label,reconciled_pct,rate_hold`,
+    Array.from({length: 44}, (_, i) => `${prefix},https://archive.sos.idaho.gov/elections/data/results/2024/raw_stats_general.xlsx,`
+      + `${hash},10,20,county,${String.fromCharCode(65 + i % 26)} ${String.fromCharCode(65 + Math.floor(i / 26))},Total,50,`)];
+  const workbook = [countyHeader, ...countyRecords,
+    `${prefix},https://archive.sos.idaho.gov/elections/data/results/2024/raw_stats_general.xlsx,`
+    + `${hash},100,0,native_reporting_unit,A A,Absentee,,pooled_absentee_reporting_unit`].join("\n");
+  const frame = idahoCountyArchiveFrame(state, workbook);
+  assert.equal(frame.rows.size, 45);
+  assert.deepEqual(frame.rows.get("county/A A"), { name: "A A", count: 10, registered: 20, rate: 50, hold: "" });
+  assert.throws(() => idahoCountyArchiveFrame(state.replace(",440,880,50,", ",880,1760,50,"), workbook),
+    /do not reconcile/);
+  assert.throws(() => idahoCountyArchiveFrame(state, workbook.replace(",Total,50,", ",Total,25,")),
+    /count, rate or source differs/);
 });
 
 test("the release inventory discovers new query files and omits invalid descriptors", () => {

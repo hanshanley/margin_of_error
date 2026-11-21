@@ -32,6 +32,8 @@ const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
 const ncArchivePaths = ["county-history", "state-groups", "native-precincts"]
   .map(kind => `release/participation-nc-general-${kind}.csv.gz`);
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
+const idahoStatePath = "release/participation-id-statewide-general-turnout.csv.gz";
+const idahoWorkbookPath = "release/participation-id-2024-native-turnout-workbook.csv.gz";
 const indianaEarlyPaths = ["statewide", "county"].map(level => `release/participation-in-early-${level}-turnout-history.csv.gz`);
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
 const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
@@ -978,6 +980,61 @@ const coloradoCountOnlyReasons = new Map([
   ...["2004-11-02", "2006-11-07"].map(date => [date, "registration_not_in_report"]),
   ...["2008-11-04", "2010-11-02"].map(date => [date, "active_registration_only"]),
 ]);
+
+export function idahoCountyArchiveFrame(stateCsv, workbookCsv) {
+  const date = "2024-11-05";
+  const parse = (csv, fields) => {
+    const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+    const columns = historicalCsvLine(header);
+    if (new Set(columns).size !== columns.length || fields.some(field => !columns.includes(field)))
+      throw new Error("Incomplete Idaho archive columns");
+    return lines.map(line => {
+      const cells = historicalCsvLine(line);
+      if (cells.length !== columns.length) throw new Error("Invalid Idaho archive row");
+      return Object.fromEntries(columns.map((name, i) => [name, cells[i]]));
+    });
+  };
+  const common = ["state_code", "election_date", "source_status", "source_url", "source_sha256",
+    "ballots_cast", "registered_voters"];
+  const history = parse(stateCsv, [...common, "registered_reconciled_pct", "registered_rate_hold"]);
+  const reports = parse(workbookCsv, [...common, "geography_level", "county", "native_label", "reconciled_pct", "rate_hold"]);
+  const statewide = history.filter(row => row.election_date === date);
+  const county = reports.filter(row => row.geography_level === "county");
+  if (statewide.length !== 1 || county.length !== 44) throw new Error("Incomplete Idaho statewide or county frame");
+  const [state] = statewide;
+  const workbook = "https://archive.sos.idaho.gov/elections/data/results/2024/raw_stats_general.xlsx";
+  const validate = (row, name, url, rateField, holdField) => {
+    const count = Number(row.ballots_cast), registered = Number(row.registered_voters);
+    const rate = Number(row[rateField]);
+    if (row.state_code !== "ID" || row.election_date !== date || row.source_url !== url
+      || row.source_status !== state.source_status || !["reported", "retained_after_failure"].includes(row.source_status)
+      || !/^[a-f0-9]{64}$/.test(row.source_sha256)
+      || !/^\d+$/.test(row.ballots_cast) || !/^\d+$/.test(row.registered_voters)
+      || !Number.isSafeInteger(count) || !Number.isSafeInteger(registered) || registered <= 0 || count > registered
+      || row[holdField] || !/^\d+(?:\.\d+)?$/.test(row[rateField])
+      || Math.abs(rate - 100 * count / registered) > 1e-10)
+      throw new Error("Idaho county archive count, rate or source differs");
+    return { name, count, registered, rate, hold: "" };
+  };
+  const rows = new Map([["state", validate(state, "Idaho", "https://voteidaho.gov/election-results/",
+    "registered_reconciled_pct", "registered_rate_hold")]]);
+  let countSum = 0, regSum = 0;
+  for (const row of county) {
+    const key = `county/${row.county}`;
+    if (!/^[A-Za-z]+(?: [A-Za-z]+)*$/.test(row.county) || rows.has(key)
+        || row.native_label !== "Total" || row.source_sha256 !== county[0].source_sha256)
+      throw new Error("Repeated or mixed Idaho county control");
+    const fact = validate(row, row.county, workbook, "reconciled_pct", "rate_hold");
+    rows.set(key, fact);
+    countSum += fact.count;
+    regSum += fact.registered;
+  }
+  if (countSum !== rows.get("state").count || regSum !== rows.get("state").registered)
+    throw new Error("Idaho counties do not reconcile to the statewide control");
+  return { code: "ID", date, measure: "ballots_cast", basis: "Registered voters, including Election Day registrants",
+    status: state.source_status, url: workbook, sha: county[0].source_sha256, rows,
+    note: "The workbook includes separately reported absentee ballots in the county totals. Native reporting units are not mapped." };
+}
 
 export function stateCountyArchiveFrames(csv, { currentCalifornia = false, currentNebraska = false, virginiaNative = false } = {}) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
@@ -2391,6 +2448,24 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
   }
   const indianaFile = !wyoming && !currentCalifornia && !currentNebraska
     ? coverageCsvFile(sources, indianaTurnoutPath) : null;
+  let idahoFiles = [];
+  if (!wyoming && !currentCalifornia && !currentNebraska) {
+    try {
+      idahoFiles = [idahoStatePath, idahoWorkbookPath].map(path => coverageCsvFile(sources, path));
+    } catch {
+      const notice = document.createElement("p");
+      notice.textContent = "The Idaho archive download descriptor could not be verified.";
+      panel.append(notice);
+    }
+  }
+  if (idahoFiles.length && idahoFiles.every(Boolean)) {
+    for (const [file, text] of [[idahoFiles[0], "Idaho statewide history"], [idahoFiles[1], "Idaho complete 2024 workbook query"]]) {
+      const link = document.createElement("a");
+      link.href = file.url;
+      link.textContent = `${text} (CSV · gzip)`;
+      note.append(" ", link);
+    }
+  }
   let retry = false;
   button.addEventListener("click", async () => {
     button.disabled = true;
@@ -2435,6 +2510,22 @@ function installStateCountyArchives(sources, url, names, { currentCalifornia = f
             const warning = document.createElement("p");
             warning.setAttribute("role", "status");
             warning.textContent = "The Indiana statewide and county turnout archive could not be verified.";
+            panel.append(warning);
+          }
+        }
+        if (idahoFiles.length && idahoFiles.every(Boolean)) {
+          try {
+            const texts = await Promise.all(idahoFiles.map(async file => {
+              const bytes = await checkedCountyBody(file.url, file, retry);
+              return new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+            }));
+            const idaho = idahoCountyArchiveFrame(...texts);
+            if (!frames.some(frame => frame.code === idaho.code && frame.date === idaho.date)) frames.push(idaho);
+            frames.sort((a, b) => a.code.localeCompare(b.code) || b.date.localeCompare(a.date));
+          } catch {
+            const warning = document.createElement("p");
+            warning.setAttribute("role", "status");
+            warning.textContent = "The Idaho historical county frame could not be verified.";
             panel.append(warning);
           }
         }
