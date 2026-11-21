@@ -3295,6 +3295,11 @@ const ncArchiveDates = new Set(["2008-11-04", "2010-11-02", "2012-11-06", "2014-
   "2016-11-08", "2018-11-06", "2020-11-03",
   "2022-11-08", "2024-11-05", "2026-11-03"]);
 const ncTruncatedVoterEditions = { 2012: "Nov  6 201", 2014: "Nov  5 201" };
+const ncGroupLabels = {
+  race: { A: "Asian", B: "Black or African American", I: "American Indian or Alaska Native",
+    M: "Two or More Races", O: "Other", P: "Native Hawaiian or Pacific Islander", U: "Undesignated", W: "White" },
+  ethnicity: { HL: "Hispanic or Latino", NL: "Not Hispanic or Latino", UN: "Undesignated" },
+};
 
 export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
   const parse = csv => {
@@ -3362,19 +3367,29 @@ export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
     const count = row.voters_with_history === "" ? null : integer(row.voters_with_history);
     const stock = row.registered_voter_statistics === "" ? null : integer(row.registered_voter_statistics);
     const rate = row.source_defined_rate_pct === "" ? null : Number(row.source_defined_rate_pct);
-    const controlled = ["2022", "2024"].includes(frame.date.slice(0, 4)) && dim === "age" && ncAges.includes(group);
+    const hasControl = row.published_control_count !== "";
+    const knownGroup = dim === "age" ? ncAges.includes(group) : Object.hasOwn(ncGroupLabels[dim] ?? {}, group);
+    const permitted = ["2022", "2024"].includes(frame.date.slice(0, 4)) && knownGroup;
+    if ((hasControl && !permitted) || (permitted && dim === "age" && !hasControl))
+      throw new Error("Missing or unexpected NC demographic control");
+    const controlled = hasControl && permitted;
+    const places = row.published_control_decimal_places ?? "1";
     const voteControl = controlled ? integer(row.published_control_count) : null;
     const rateControl = controlled ? Number(row.published_control_rate_pct) : null;
+    const multiplier = 10 ** Number(places);
     if (controlled && (!/^[a-f0-9]{64}$/.test(row.published_control_sha256)
       || row.published_control_url !== `https://www.ncsbe.gov/results-data/voter-turnout/${frame.date.slice(0, 4)}-general-election-turnout`
-      || !row.published_control_rate_pct || !Number.isFinite(rateControl))) throw new Error("NC age control differs");
+      || !["0", "1"].includes(places) || !row.published_control_rate_pct
+      || !Number.isFinite(rateControl) || rateControl < 0 || rateControl > 100))
+      throw new Error("NC demographic control differs");
     const expected = controlled && count === voteControl && count > 0 && stock >= count
-      && Math.floor((count * 2000 + stock) / (2 * stock)) === Math.round(rateControl * 10)
+      && Math.floor((count * 200 * multiplier + stock) / (2 * stock)) === Math.round(rateControl * multiplier)
       ? 100 * count / stock : null;
     if (expected === null ? rate !== null || !row.rate_hold
       : !Number.isFinite(rate) || Math.abs(rate - expected) > 1e-8 || row.rate_hold)
       throw new Error("NC group rate does not match its controls");
-    frame.groups.push({ dim, group, count, stock, rate, hold: row.rate_hold });
+    frame.groups.push({ dim, group, label: Object.hasOwn(ncGroupLabels[dim] ?? {}, group)
+      ? ncGroupLabels[dim][group] : group.trim() || "Blank in source", count, stock, rate, hold: row.rate_hold });
   }
   for (const frame of frames.values()) {
     const state = frame.rows.get("state");
@@ -3419,8 +3434,8 @@ function installNorthCarolinaArchives(host, sources) {
       const electionLabel = document.createElement("label"), dimLabel = document.createElement("label");
       const map = document.createElement("div"), output = document.createElement("div");
       for (const date of [...frames.keys()].sort().reverse()) election.add(new Option(date, date));
-      for (const [label, key] of [["Counties", "county"], ["Statewide age", "age"], ["Statewide race codes", "race"],
-        ["Statewide ethnicity codes", "ethnicity"], ["Statewide sex codes", "sex"]]) dimension.add(new Option(label, key));
+      for (const [label, key] of [["Counties", "county"], ["Statewide age", "age"], ["Statewide race", "race"],
+        ["Statewide ethnicity", "ethnicity"], ["Statewide sex codes", "sex"]]) dimension.add(new Option(label, key));
       electionLabel.append("General election ", election);
       dimLabel.append(" View ", dimension);
       panel.append(electionLabel, dimLabel, map, output);
@@ -3442,7 +3457,7 @@ function installNorthCarolinaArchives(host, sources) {
         const rows = county ? [...frame.rows.values()] : frame.groups.filter(row => row.dim === dimension.value);
         for (const row of rows) {
           const tr = body.insertRow(), label = document.createElement("th");
-          label.scope = "row"; label.textContent = county ? row.name : row.group.trim() || "Blank in source";
+          label.scope = "row"; label.textContent = county ? row.name : row.label;
           tr.append(label);
           for (const value of [row.count, row.stock])
             tr.insertCell().textContent = value === null ? "Not listed" : value.toLocaleString("en-US");
@@ -3453,7 +3468,7 @@ function installNorthCarolinaArchives(host, sources) {
             } else {
               const meter = document.createElement("meter");
               meter.min = 0; meter.max = 100; meter.value = row.rate;
-              meter.setAttribute("aria-label", `${row.group}: percent of registered voters`);
+              meter.setAttribute("aria-label", `${row.label}: percent of registered voters`);
               cell.append(`${row.rate.toFixed(1)}% `, meter);
             }
           }

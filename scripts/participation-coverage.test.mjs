@@ -45,6 +45,14 @@ test("North Carolina archive maps only reconciled counts and withholds an incorr
   assert.throws(() => northCarolinaArchiveFrames(countyCsv.replace("AA,4,5", "AA,7,5"), groupCsv), /county total/);
   assert.throws(() => northCarolinaArchiveFrames(countyCsv, groupCsv.replace("500,,published", "500,80,published")),
     /does not match/);
+  const race = `${common},race,A,400,500,80,,400,80,`
+    + "https://www.ncsbe.gov/results-data/voter-turnout/2024-general-election-turnout," + "c".repeat(64);
+  const extended = groupCsv.replace(`${common},race,A,400,500,,no_group_rate_control,,,,`, race);
+  const accepted = northCarolinaArchiveFrames(countyCsv, extended).get(date).groups.find(row => row.dim === "race");
+  assert.equal(accepted.rate, 80);
+  assert.equal(accepted.label, "Asian");
+  assert.throws(() => northCarolinaArchiveFrames(countyCsv, extended.replace(",400,80,https", ",399,80,https")),
+    /does not match/);
 });
 
 test("Indiana admits whole county histories but never shades a withheld rate as qualified", () => {
