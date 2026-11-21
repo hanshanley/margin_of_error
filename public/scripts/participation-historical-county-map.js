@@ -17,6 +17,8 @@ export const officialArchiveGeometry = {
     bytes: 16920,
     sha256: "88fa43a133d5350b4b462933f05b20f43c5896fbd6596fc035225f14d8597a09",
     boundaryLabel: "2024 Census boundaries. The Maui reporting area includes Kalawao; no separate Kalawao turnout is estimated.",
+    reproductionBase: "https://github.com/hanshanley/margin_of_error/releases/download/hawaii-2024-reporting-area-map/",
+    reproduction: "hawaii-2024-reporting-area-map.zip",
   },
   "CA/1990": {
     path: "participation-archive-geometry/county-CA-1990.geojson.gz",
