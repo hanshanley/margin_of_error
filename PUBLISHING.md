@@ -112,9 +112,11 @@ accepted dispatch and a successful data activation are distinct; confirm the lat
 with `input_results_version` in `automatic/latest.json`.
 
 The native scheduled publisher gives an already-running full collector time to
-finish, whether GitHub's schedule or the independent timer started it. Scoped
-manual collections do not hold the publisher. The wait is bounded and does not
-replace validation of the accepted data pointer.
+finish when no newer accepted input is waiting. It skips that wait when the
+commit-pinned source checkpoint is newer than the input used by the live
+runtime. The fallback can also dispatch publication of an unconsumed accepted
+checkpoint alongside a recognized collector. Neither shortcut bypasses the
+publisher's input validation or permits a second publication writer.
 
 On the maintainer's Mac, run from a reviewed website checkout:
 
