@@ -32,6 +32,7 @@ const southeastHistory = {
 const alBallotUnits = "release/participation-al-precinct-ballot-archives.csv.gz";
 const alBallotControls = "release/participation-al-precinct-ballot-county-controls.csv.gz";
 const akBallotUnits = "release/participation-ak-2024-precinct-ballot-archive.csv.gz";
+const akCardsArchive = "release/participation-ak-general-cards-cast-archive.csv.gz";
 const stateCountyArchivesPath = "release/participation-state-county-turnout-archives.csv.gz";
 const coloradoPrecinctStatisticsPath = "release/participation-co-precinct-voting-statistics.csv.gz";
 const minnesotaPrecinctStatisticsPath = "release/participation-mn-historical-precinct-turnout.csv.gz";
@@ -2082,6 +2083,109 @@ function installAlaskaBallots(host, sources) {
   });
 }
 
+export function alaskaCardsFrames(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const fields = ["state_code", "election_date", "reporting_unit", "unit_scope", "source_status",
+    "official_control_edition_local", "cards_cast", "ts_cast", "os_cast", "official_statewide_cards_cast"];
+  const positions = fields.map(field => columns.indexOf(field));
+  if (!lines.length || new Set(columns).size !== columns.length || positions.includes(-1))
+    throw new Error("Missing Alaska cards-cast fields");
+  const frames = new Map();
+  for (const line of lines) {
+    const cells = historicalCsvLine(line);
+    const [state, date, label, scope, status, edition, ...literalCounts] = positions.map(i => cells[i]);
+    const [cards, ts, os, control] = literalCounts.map(Number);
+    if (cells.length !== columns.length || state !== "AK" || !["2014-11-04", "2016-11-08", "2018-11-06"].includes(date)
+        || !label || !["state", "physical_precinct", "central_unallocated", "duplicate_zero_overseas_line"].includes(scope)
+        || !["reported", "retained_after_failure"].includes(status) || !edition
+        || literalCounts.some(value => !/^\d+$/.test(value) || !Number.isSafeInteger(Number(value)))
+        || cards !== ts + os || (scope === "duplicate_zero_overseas_line" && cards !== 0))
+      throw new Error("Invalid Alaska cards-cast row");
+    if (!frames.has(date)) frames.set(date, { status, edition, control, rows: [], total: null, keys: new Set() });
+    const frame = frames.get(date);
+    const key = `${scope}/${label}`;
+    if (frame.status !== status || frame.edition !== edition || frame.control !== control || frame.keys.has(key)
+        || (scope === "state" && (frame.total !== null || label !== "Total" || cards !== control)))
+      throw new Error("Conflicting Alaska cards-cast controls");
+    frame.keys.add(key);
+    const value = { label, scope, cards, ts, os };
+    if (scope === "state") frame.total = value;
+    else frame.rows.push(value);
+  }
+  for (const frame of frames.values()) {
+    if (!frame.total || frame.rows.filter(row => row.scope === "physical_precinct").length !== 441
+        || frame.rows.reduce((total, row) => total + row.cards, 0) !== frame.control)
+      throw new Error("Incomplete Alaska cards-cast edition");
+  }
+  return frames;
+}
+
+function installAlaskaCards(host, sources) {
+  if (!sources?.supported_release?.downloads?.[akCardsArchive]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const content = document.createElement("div");
+  summary.textContent = "Alaska historical cards cast, 2014–2018";
+  panel.append(summary, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    content.textContent = "Checking Alaska’s historical cards-cast reports…";
+    try {
+      const { csv, file } = await loadCoverageCsv(sources, akCardsArchive);
+      const frames = alaskaCardsFrames(csv);
+      const note = document.createElement("p"), download = document.createElement("a");
+      note.textContent = "These are source-reported cards cast, not unique voters or turnout rates. "
+        + "Cards counted centrally are not assigned to physical precincts.";
+      download.href = file.url;
+      download.textContent = "Complete Alaska cards-cast archive and provenance (CSV · gzip)";
+      const yearLabel = document.createElement("label"), election = document.createElement("select");
+      yearLabel.append("Election ", election);
+      for (const date of [...frames.keys()].sort().reverse()) election.append(new Option(date.slice(0, 4), date));
+      const scopeLabel = document.createElement("label"), scope = document.createElement("select");
+      scopeLabel.append("Reporting scope ", scope);
+      scope.append(new Option("Physical precincts", "physical"), new Option("Central and overseas units", "central"));
+      const status = document.createElement("p"), region = document.createElement("div");
+      status.setAttribute("role", "status");
+      region.className = "table-wrap";
+      region.tabIndex = 0;
+      region.setAttribute("role", "region");
+      region.setAttribute("aria-label", summary.textContent);
+      const render = () => {
+        const frame = frames.get(election.value);
+        status.textContent = `${frame.control.toLocaleString("en-US")} cards cast statewide. `
+          + `Official summary edition ${frame.edition.replace("T", " ")} (local time).`
+          + (frame.status === "retained_after_failure" ? " Showing retained source data." : "");
+        const table = document.createElement("table");
+        table.createCaption().textContent = `${election.value.slice(0, 4)} · ${scope.selectedOptions[0].text}`;
+        const header = table.createTHead().insertRow();
+        for (const label of ["Reporting unit", "Cards cast", "TS Cast", "OS Cast"]) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = label; header.append(th);
+        }
+        const body = table.createTBody();
+        for (const item of frame.rows.filter(row => (row.scope === "physical_precinct") === (scope.value === "physical"))) {
+          const row = body.insertRow(), name = document.createElement("th");
+          name.scope = "row";
+          name.textContent = item.label + (item.scope === "duplicate_zero_overseas_line" ? " (second printed zero line)" : "");
+          row.append(name);
+          for (const value of [item.cards, item.ts, item.os]) row.insertCell().textContent = value.toLocaleString("en-US");
+        }
+        region.replaceChildren(table);
+      };
+      election.addEventListener("change", render);
+      scope.addEventListener("change", render);
+      render();
+      content.replaceChildren(note, download, " ", yearLabel, " ", scopeLabel, status, region);
+    } catch {
+      loading = false;
+      content.textContent = "The checked Alaska cards-cast archive could not be loaded. Reopen this section to retry.";
+    }
+  });
+}
+
 export function northCarolinaAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = header.split(",");
@@ -2292,6 +2396,7 @@ function installAdministrativeCoverage(host) {
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       installAlabamaBallots(content, manifest.house_sources);
       installAlaskaBallots(content, manifest.house_sources);
+      installAlaskaCards(content, manifest.house_sources);
       panel.dataset.runtimeVersion = manifest.version;
     } catch {
       content.textContent = "Administrative coverage could not be verified. Close and reopen to retry.";
