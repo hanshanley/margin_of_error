@@ -7,6 +7,7 @@ import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, stateCountyArchivesDownload, stateCountyArchiveFrames,
   northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
+  dakotaHistoryFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
@@ -41,6 +42,26 @@ test("Indiana admits whole county histories but never shades a withheld rate as 
   assert.throws(() => indianaTurnoutFrames(csv.replace("40,[]", "41,[]")), /fraction or reconciliation/);
   assert.throws(() => indianaTurnoutFrames(csv.replace("3680,40", "3681,40")), /fraction or reconciliation/);
   assert.throws(() => indianaTurnoutFrames(csv.slice(0, csv.lastIndexOf("\n"))), /Incomplete or inconsistent/);
+});
+
+test("Dakota histories keep registration and voting-age rates separate and preserve holds", () => {
+  const header = "state_code,year,geography_level,turnout_measure,reported_turnout,source_status,source_sha256,source_url,"
+    + "reported_eligible_voter_estimate,printed_eligible_turnout_pct,qualified_eligible_turnout_pct,eligible_turnout_hold,"
+    + "reported_registered_voters,printed_registered_turnout_pct,qualified_registered_turnout_pct,registered_turnout_hold,"
+    + "reported_voting_age_population,printed_vap_turnout_pct,qualified_vap_turnout_pct,vap_turnout_hold";
+  const url = "https://sdsos.gov/elections-voting/election-resources/election-history/registration_turnout.aspx";
+  const rows = Array.from({ length: 19 }, (_, i) =>
+    `SD,${1988 + 2 * i},state,turnout_state_election_statistics,400,reported,${"a".repeat(64)},${url},,,,,`
+      + (i ? "800,50%,50.000000," : "800,40%,,published_percent_does_not_match_counts") + ",1000,40%,40.000000,");
+  const csv = [header, ...rows].join("\n");
+  const frames = dakotaHistoryFrames(csv);
+  assert.deepEqual([...frames.keys()], ["registered", "vap"]);
+  assert.equal(frames.get("registered").at(-1).rows.get("state").rate, null);
+  assert.equal(frames.get("vap").at(-1).rows.get("state").rate, 40);
+  const omitEligible = row => row.split(",").filter((_, i) => i < 8 || i > 11).join(",");
+  assert.deepEqual([...dakotaHistoryFrames([header, ...rows].map(omitEligible).join("\n")).keys()], ["registered", "vap"]);
+  assert.throws(() => dakotaHistoryFrames(csv.replace("50.000000", "45.000000")), /fraction differs/);
+  assert.throws(() => dakotaHistoryFrames([header, ...rows.slice(0, -1)].join("\n")), /Truncated/);
 });
 
 test("Alaska digital age reports retain withheld statewide figures and explicitly unknown gender", () => {

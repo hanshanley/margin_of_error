@@ -27,6 +27,7 @@ const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv
 const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
 const kansasStudyPath = "release/participation-ks-statewide-turnout-study.csv.gz";
 const hawaiiHistoryPath = "release/participation-hi-general-election-county-turnout.csv.gz";
+const dakotaHistoryPath = "release/participation-dakota-statewide-turnout-history.csv.gz";
 const turnoutReleaseWatchPath = "release/participation-turnout-release-watch.csv.gz";
 const southeastHistory = {
   AL: "release/participation-al-general-election-by-age.csv.gz",
@@ -1004,7 +1005,9 @@ export function stateCountyArchiveFrames(csv, { currentCalifornia = false, curre
 }
 
 const archiveMeasureLabel = measure => measure === "voter_history_credits" ? "Voter-history credits"
-  : measure === "voters_voting" ? "Voters Voting" : measure === "total_voters" ? "Total Voters" : "Ballots Cast";
+  : measure === "voters_voting" ? "Voters Voting" : measure === "total_voters" ? "Total Voters"
+  : measure === "state_reported_votes_cast" ? "Total Votes Cast"
+  : measure === "state_reported_turnout" ? "Reported Turnout" : "Ballots Cast";
 
 const indianaElectionDays = [4, 2, 6, 4, 8, 6, 3, 8, 5, 3];
 
@@ -1309,7 +1312,8 @@ export function installNebraskaCountyReports(file) {
   return panel;
 }
 
-function archiveStateHistory(panel, frames, name, { scope = "statewide" } = {}) {
+function archiveStateHistory(panel, frames, name, { scope = "statewide", denominator = "Registrations",
+  fractionHeading = "Same-report registration fraction", chartNote } = {}) {
   const table = document.createElement("table"), chart = document.createElement("figure");
   const note = document.createElement("figcaption"), scroller = document.createElement("div");
   const heading = document.createElement("summary");
@@ -1322,7 +1326,8 @@ function archiveStateHistory(panel, frames, name, { scope = "statewide" } = {}) 
   chart.style.marginInline = "0";
   chart.append(note);
   const caption = table.createCaption(), header = table.createTHead().insertRow(), body = table.createTBody();
-  for (const label of ["Election", "Reported count", "Registrations", "Registration basis", "Same-report registration fraction"]) {
+  for (const label of ["Election", "Reported count", denominator,
+    denominator === "Registrations" ? "Registration basis" : "Denominator basis", fractionHeading]) {
     const th = document.createElement("th");
     th.scope = "col"; th.textContent = label; header.append(th);
   }
@@ -1343,12 +1348,12 @@ function archiveStateHistory(panel, frames, name, { scope = "statewide" } = {}) 
     const label = name(code);
     caption.textContent = `${label} ${scope === "statewide" ? "statewide " : ""}reports`;
     const hasRates = reports.some(frame => frame.rows.get("state").rate !== null);
-    note.textContent = hasRates
+    note.textContent = chartNote ?? (hasRates
       ? "Each dot uses that election report’s own registration count. Reports can use different "
         + "count definitions and registration dates. Withheld rates have no dot."
-      : "No comparable registration fractions are available. See the table for reported counts.";
+      : "No comparable registration fractions are available. See the table for reported counts.");
     const svg = svgNode("svg", { viewBox: "0 0 480 156", width: "480", role: "img",
-      "aria-label": `${label} ${scope === "statewide" ? "statewide " : ""}registration fractions by election; exact values in the table` });
+      "aria-label": `${label} ${scope === "statewide" ? "statewide " : ""}${fractionHeading.toLowerCase()} by election; exact values in the table` });
     svg.style.maxWidth = "100%";
     svg.style.height = "auto";
     const dates = reports.map(frame => Number(frame.date.slice(0, 4)));
@@ -1894,6 +1899,125 @@ export function kansasStudyFrames(csv) {
     return { code: "KS", date, status, url, measure: "total_voters",
       basis: "Registration in the December 2009 study",
       rows: new Map([["state", { count: Number(n), registered: Number(d), rate: 100 * Number(fraction) }]]) };
+  });
+}
+
+const dakotaProfiles = {
+  ND: { name: "North Dakota", first: 1980,
+    url: "https://www.sos.nd.gov/sites/www/files/documents/elections/election-results-pdfs/statistics-turnout.pdf",
+    measure: "total_votes_cast_state_election_statistics" },
+  SD: { name: "South Dakota", first: 1988,
+    url: "https://sdsos.gov/elections-voting/election-resources/election-history/registration_turnout.aspx",
+    measure: "turnout_state_election_statistics" },
+};
+const dakotaBases = {
+  eligible: { code: "ND", label: "North Dakota — estimated eligible voters", stock: "reported_eligible_voter_estimate",
+    basis: "Eligible voter estimate in the report", measure: "state_reported_votes_cast" },
+  registered: { code: "SD", label: "South Dakota — registered voters", stock: "reported_registered_voters",
+    basis: "Total registration in the report", measure: "state_reported_turnout" },
+  vap: { code: "SD", label: "South Dakota — voting-age population", stock: "reported_voting_age_population",
+    basis: "Voting-age population in the report", measure: "state_reported_turnout" },
+};
+
+export function dakotaHistoryFrames(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const required = ["state_code", "year", "geography_level", "turnout_measure", "reported_turnout", "source_status",
+    "source_sha256", "source_url"];
+  if (new Set(fields).size !== fields.length || !lines.length || lines.length > 120
+      || required.some(field => !fields.includes(field)))
+    throw new Error("Incomplete Dakota turnout archive");
+  const frames = new Map(Object.keys(dakotaBases).map(key => [key, []])), editions = new Map();
+  const positive = value => /^[1-9]\d*$/.test(value) && Number.isSafeInteger(Number(value));
+  for (const line of lines) {
+    const cells = historicalCsvLine(line), get = key => cells[fields.indexOf(key)];
+    const code = get("state_code"), date = get("year"), count = get("reported_turnout");
+    const status = get("source_status"), url = get("source_url"), sha = get("source_sha256");
+    const profile = dakotaProfiles[code];
+    if (cells.length !== fields.length || !profile || !/^\d{4}$/.test(date) || Number(date) > 2100
+        || !positive(count) || get("geography_level") !== "state" || get("turnout_measure") !== profile.measure
+        || url !== profile.url || !/^[a-f0-9]{64}$/.test(sha) || !["reported", "retained_after_failure"].includes(status))
+      throw new Error("Dakota statewide archive lineage differs");
+    if (editions.has(code) && editions.get(code) !== `${sha}/${status}`)
+      throw new Error("Mixed Dakota statewide archive editions");
+    editions.set(code, `${sha}/${status}`);
+    for (const [key, base] of Object.entries(dakotaBases)) {
+      const stock = get(base.stock), printed = get(`printed_${key}_turnout_pct`);
+      const fraction = get(`qualified_${key}_turnout_pct`), hold = get(`${key}_turnout_hold`);
+      if (base.code !== code) {
+        if (stock || printed || fraction || hold) throw new Error("Mixed Dakota turnout denominators");
+        continue;
+      }
+      const series = frames.get(key), published = /^(\d{1,3})(?:\.(\d{1,2}))?%$/.exec(printed);
+      if (fraction === undefined || hold === undefined || !published || Number(printed.slice(0, -1)) > 100
+          || !positive(stock) || Number(stock) < Number(count)
+          || Number(date) !== profile.first + 2 * series.length)
+        throw new Error("Invalid Dakota turnout denominator or election roster");
+      const precision = 10 ** (published[2]?.length ?? 0);
+      const expected = 100 * Number(count) / Number(stock);
+      const printedUnits = Number(published[1]) * precision + Number(published[2] ?? 0);
+      const scaled = 200n * BigInt(count) * BigInt(precision);
+      const size = BigInt(stock);
+      const agrees = (2n * BigInt(printedUnits) - 1n) * size <= scaled
+        && scaled < (2n * BigInt(printedUnits) + 1n) * size;
+      if (agrees ? hold || !/^\d{1,3}\.\d{6}$/.test(fraction) || Math.abs(Number(fraction) - expected) > 5.000001e-7
+        : fraction || hold !== "published_percent_does_not_match_counts")
+        throw new Error("Dakota turnout fraction differs from its report");
+      series.push({ code, date, status, url, measure: base.measure, basis: base.basis,
+        rows: new Map([["state", { count: Number(count), registered: Number(stock),
+          rate: agrees ? Number(fraction) : null, hold }]]) });
+    }
+  }
+  for (const [key, series] of frames) {
+    if (!series.length) frames.delete(key);
+    else if (Number(series.at(-1).date) < 2024) throw new Error("Truncated Dakota turnout archive");
+    else series.reverse();
+  }
+  return frames;
+}
+
+function installDakotaHistory(host, sources) {
+  const file = coverageCsvFile(sources, dakotaHistoryPath);
+  if (!file) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const note = document.createElement("p"), status = document.createElement("p"), download = document.createElement("a");
+  summary.textContent = "North and South Dakota statewide participation history";
+  note.textContent = "Choose one denominator at a time. Estimated eligible voters, voting-age population, "
+    + "and registered voters are not interchangeable. ";
+  download.href = file.url;
+  download.textContent = "Complete Dakota statewide reports (CSV · gzip)";
+  note.append(download);
+  status.setAttribute("role", "status");
+  panel.append(summary, note, status);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    status.textContent = "Checking the stored Dakota statewide reports…";
+    try {
+      const { csv } = await loadCoverageCsv(sources, dakotaHistoryPath);
+      const series = dakotaHistoryFrames(csv);
+      const label = document.createElement("label"), select = document.createElement("select"), item = document.createElement("div");
+      for (const key of series.keys()) select.add(new Option(dakotaBases[key].label, key));
+      label.append("State and denominator ", select);
+      panel.append(label, item);
+      const render = () => {
+        const key = select.value, profile = dakotaBases[key], history = document.createElement("details");
+        archiveStateHistory(history, series.get(key), code => dakotaProfiles[code].name, {
+          denominator: "Reported denominator", fractionHeading: "Qualified participation fraction",
+          chartNote: "Each dot uses the selected denominator from the same report. Disputed printed rates have no dot.",
+        })(profile.code);
+        history.open = true;
+        item.replaceChildren(history);
+      };
+      select.addEventListener("change", render);
+      render();
+      status.textContent = "";
+    } catch {
+      loading = false;
+      status.textContent = "The Dakota statewide reports could not be verified. Reopen this section to retry.";
+    }
   });
 }
 
@@ -3162,6 +3286,7 @@ function installAdministrativeCoverage(host) {
       installOregonHistory(content, manifest.house_sources);
       installKansasStudy(content, manifest.house_sources);
       installHawaiiHistory(content, manifest.house_sources);
+      installDakotaHistory(content, manifest.house_sources);
       installTurnoutReleaseWatch(content, manifest.house_sources);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       installAlabamaBallots(content, manifest.house_sources);
