@@ -4136,6 +4136,12 @@ function installAdministrativeCoverage(host) {
         ["Hawaii", "release/participation-hi-2024-native-precinct-turnout.csv.gz",
           "Hawaii 2024 native precinct turnout and registration fractions",
           "Rates use the same report’s registration count. This archive is separate from the 2026 midterm."],
+        ["Hawaii", "release/participation-hi-2022-native-precinct-turnout.csv.gz",
+          "Hawaii 2022 native precinct turnout",
+          "Rates are withheld where the precinct and state reports disagree."],
+        ["Hawaii", "release/participation-hi-2020-native-precinct-turnout.csv.gz",
+          "Hawaii 2020 native precinct turnout and registration fractions",
+          "In-person blocks do not repeat registration counts."],
       ]) {
         try {
           const file = coverageCsvFile(manifest.house_sources, path);
