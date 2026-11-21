@@ -6,7 +6,8 @@ import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
+  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames,
+  alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
@@ -456,6 +457,23 @@ test("pre-2015 Shannon County uses the dated code without changing the source ro
   assert.equal(bind([row], [{ ...reference, registered: 8000 }]).value, null);
   assert.equal(bind([row], [{ ...reference, total_participation: 2794 }]).value, null);
   assert.throws(() => bind([row, { ...row, fips: "46113", name: "Shannon County" }]), /Ambiguous/);
+});
+
+test("Hawaii history retains a disputed statewide count without plotting a rate", () => {
+  const header = "state_code,year,geography,reported_voter_turnout,reported_registered_voters,"
+    + "qualified_turnout_percent,rate_hold_reason,source_status,source_url";
+  const source = "https://elections.hawaii.gov/resources/registration-voter-turnout-statistics/";
+  const areas = ["Statewide", "County of Hawaii", "County of Maui", "County of Kauai", "City & County of Honolulu"];
+  const rows = Array.from({ length: 34 }, (_, i) => i ? 1958 + i * 2 : 1959)
+    .flatMap(year => areas.map(area => `HI,${year},${area},` + (year === 2022 && area === "Statewide"
+      ? "2002,4000,,county_totals_do_not_reconcile" : "500,1000,50.000000,") + `,reported,${source}`));
+  const csv = [header, ...rows].join("\n");
+  const frames = hawaiiHistoryFrames(csv);
+  assert.equal(frames.length, 170);
+  const held = frames.find(row => row.code === "Statewide" && row.date === "2022").rows.get("state");
+  assert.equal(held.count, 2002);
+  assert.equal(held.rate, null);
+  assert.throws(() => hawaiiHistoryFrames(csv.replace("50.000000", "49.000000")), /Invalid Hawaii/);
 });
 
 test("Kansas study validates an entire statewide series and its registration fraction", () => {

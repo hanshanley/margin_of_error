@@ -26,6 +26,7 @@ const indianaTurnoutPath = "release/participation-indiana-general-turnout-histor
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
 const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
 const kansasStudyPath = "release/participation-ks-statewide-turnout-study.csv.gz";
+const hawaiiHistoryPath = "release/participation-hi-general-election-county-turnout.csv.gz";
 const southeastHistory = {
   AL: "release/participation-al-general-election-by-age.csv.gz",
   SC: "release/participation-sc-general-election-history.csv.gz",
@@ -1242,15 +1243,15 @@ export function installNebraskaCountyReports(file) {
   return panel;
 }
 
-function archiveStateHistory(panel, frames, name) {
+function archiveStateHistory(panel, frames, name, { scope = "statewide" } = {}) {
   const table = document.createElement("table"), chart = document.createElement("figure");
   const note = document.createElement("figcaption"), scroller = document.createElement("div");
   const heading = document.createElement("summary");
-  heading.textContent = "Statewide participation across elections";
+  heading.textContent = scope === "statewide" ? "Statewide participation across elections" : "Participation across elections";
   scroller.className = "table-wrap";
   scroller.tabIndex = 0;
   scroller.setAttribute("role", "region");
-  scroller.setAttribute("aria-label", "Statewide turnout history");
+  scroller.setAttribute("aria-label", `${scope === "statewide" ? "Statewide turnout" : "Election turnout"} history`);
   scroller.append(table);
   chart.style.marginInline = "0";
   chart.append(note);
@@ -1274,14 +1275,14 @@ function archiveStateHistory(panel, frames, name) {
     chart.querySelector("svg")?.remove();
     if (panel.hidden) return;
     const label = name(code);
-    caption.textContent = `${label} statewide reports`;
+    caption.textContent = `${label} ${scope === "statewide" ? "statewide " : ""}reports`;
     const hasRates = reports.some(frame => frame.rows.get("state").rate !== null);
     note.textContent = hasRates
       ? "Each dot uses that election report’s own registration count. Reports can use different "
         + "count definitions and registration dates. Withheld rates have no dot."
       : "No comparable registration fractions are available. See the table for reported counts.";
     const svg = svgNode("svg", { viewBox: "0 0 480 156", width: "480", role: "img",
-      "aria-label": `${label} statewide registration fractions by election; exact values in the table` });
+      "aria-label": `${label} ${scope === "statewide" ? "statewide " : ""}registration fractions by election; exact values in the table` });
     svg.style.maxWidth = "100%";
     svg.style.height = "auto";
     const dates = reports.map(frame => Number(frame.date.slice(0, 4)));
@@ -1846,6 +1847,79 @@ function installKansasStudy(host, sources) {
     } catch {
       loading = false;
       status.textContent = "The Kansas turnout data could not be verified. Reopen this section to retry.";
+    }
+  });
+}
+
+const hawaiiAreas = ["Statewide", "County of Hawaii", "County of Maui", "County of Kauai", "City & County of Honolulu"];
+
+export function hawaiiHistoryFrames(csv) {
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const fields = historicalCsvLine(header);
+  const required = ["state_code", "year", "geography", "reported_voter_turnout", "reported_registered_voters",
+    "qualified_turnout_percent", "rate_hold_reason", "source_status", "source_url"];
+  if (new Set(fields).size !== fields.length || lines.length < 170 || lines.length > 360
+      || lines.length % 5 || required.some(field => !fields.includes(field)))
+    throw new Error("Incomplete Hawaii turnout history");
+  return lines.map((line, i) => {
+    const cells = historicalCsvLine(line);
+    const field = key => cells[fields.indexOf(key)];
+    const year = i < 5 ? 1959 : 1958 + 2 * Math.floor(i / 5), area = hawaiiAreas[i % 5];
+    const n = field("reported_voter_turnout"), d = field("reported_registered_voters");
+    const status = field("source_status"), url = field("source_url"), hold = field("rate_hold_reason");
+    const fraction = field("qualified_turnout_percent"), rate = fraction === "" ? null : Number(fraction);
+    if (cells.length !== fields.length || field("year") !== String(year) || field("state_code") !== "HI"
+        || field("geography") !== area || ![n, d].every(v => /^[1-9]\d*$/.test(v) && Number.isSafeInteger(Number(v)))
+        || Number(n) > Number(d) || !["reported", "retained_after_failure"].includes(status)
+        || url !== "https://elections.hawaii.gov/resources/registration-voter-turnout-statistics/"
+        || (rate === null ? !hold || hold.split(";").some(reason => !["printed_turnout_percent_disagrees",
+          ...(area === "Statewide" ? ["county_totals_do_not_reconcile"] : [])].includes(reason))
+          : hold || !/^\d{1,3}\.\d{6}$/.test(fraction) || Math.abs(rate - 100 * Number(n) / Number(d)) > 5.000001e-7))
+      throw new Error("Invalid Hawaii turnout year, area or fraction");
+    return { code: area, date: String(year), status, url, measure: "total_voters",
+      basis: "Registration in the same Office of Elections table",
+      rows: new Map([["state", { count: Number(n), registered: Number(d), rate, hold: hold.replaceAll(";", "; ") }]]) };
+  }).reverse();
+}
+
+function installHawaiiHistory(host, sources) {
+  const file = coverageCsvFile(sources, hawaiiHistoryPath);
+  if (!file) return;
+  const panel = document.createElement("details"), title = document.createElement("summary");
+  const note = document.createElement("p"), download = document.createElement("a");
+  title.textContent = "Hawaii general-election turnout history";
+  note.textContent = "Compare statewide and four county reporting areas, each using its own published registration count. "
+    + "Statewide counts are shown as published; where they do not reconcile to the county tables, the rate is withheld. ";
+  download.href = file.url;
+  download.textContent = "Complete Hawaii counts, fractions and source checks (CSV · gzip)";
+  note.append(download);
+  panel.append(title, note);
+  host.append(panel);
+  const status = document.createElement("p");
+  status.setAttribute("role", "status");
+  panel.append(status);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    status.textContent = "Checking the Hawaii turnout history…";
+    try {
+      const { csv } = await loadCoverageCsv(sources, hawaiiHistoryPath);
+      const frames = hawaiiHistoryFrames(csv);
+      const history = document.createElement("details"), label = document.createElement("label");
+      const area = document.createElement("select");
+      for (const name of hawaiiAreas) area.add(new Option(name, name));
+      label.append("Hawaii reporting area ", area);
+      const render = archiveStateHistory(history, frames, name => name === "Statewide" ? "Hawaii statewide" : name,
+        { scope: "reporting area" });
+      area.addEventListener("change", () => render(area.value));
+      render(area.value);
+      history.open = true;
+      panel.append(label, history);
+      status.textContent = "";
+    } catch {
+      loading = false;
+      status.textContent = "The Hawaii turnout data could not be verified. Reopen this section to retry.";
     }
   });
 }
@@ -2904,6 +2978,7 @@ function installAdministrativeCoverage(host) {
       installWashingtonAge(content, manifest.house_sources);
       installOregonHistory(content, manifest.house_sources);
       installKansasStudy(content, manifest.house_sources);
+      installHawaiiHistory(content, manifest.house_sources);
       for (const state of Object.keys(southeastHistory)) installSoutheastHistory(content, manifest.house_sources, state);
       installAlabamaBallots(content, manifest.house_sources);
       installAlaskaBallots(content, manifest.house_sources);
