@@ -2776,10 +2776,14 @@ const ctTownLayers = {
   "2020-11-03": { bytes: 576442, sha256: "7ac34f99d84e431be6cecaec77c17dfacad392a3616624ff474fd222c04331c8" },
   "2022-11-08": { bytes: 519720, sha256: "0b451566b32a789fc475ca9e263389ac83dc4541845d018b7eb396627c2537d3" },
   "2024-11-05": { bytes: 519631, sha256: "f5aba2496d0a4cc9867558c31129a2d949a866b2109ae0caa3917c2fa4c7c686" },
+  "2026-11-03": { bytes: 519946, sha256: "2f40f5a29ad07cdaad3b31af614eedf6cbeb00b3fc1022e23d487a2ea6f7fc4b" },
 };
 
 function installConnecticutTownMap(host, rows) {
-  const dates = Object.keys(ctTownLayers).filter(date => rows.some(row => row.date === date));
+  const dates = Object.keys(ctTownLayers).filter(date => date === "2026-11-03"
+    ? rows.filter(row => row.date === date && row.scope === "town").length === 169
+      && rows.some(row => row.date === date && row.scope === "state")
+    : rows.some(row => row.date === date));
   if (!dates.length) return;
   const panel = document.createElement("details"), summary = document.createElement("summary");
   const label = document.createElement("label"), choice = document.createElement("select"), content = document.createElement("div");
@@ -2844,15 +2848,19 @@ function installConnecticutTownMap(host, rows) {
       const legend = document.createElement("p");
       legend.textContent = `${qualified} of 169 towns have a whole-town fraction. Light to dark: below 60%, `
         + "60% to below 70%, 70% to below 80%, 80% or higher. Gray means unavailable, not zero. Census town display boundaries.";
+      if (year === "2026") legend.append(" Reference boundaries are dated January 1, 2026.");
       const archive = document.createElement("a");
-      archive.href = year === "2018"
+      archive.href = year === "2026"
+        ? "https://github.com/hanshanley/margin_of_error/releases/download/connecticut-2026-town-map-reference/connecticut-2026-town-map-reference.zip"
+        : year === "2018"
         ? "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-2018/connecticut-town-maps-ten-editions.zip"
         : year === "2016"
         ? "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-2016/connecticut-town-maps-nine-editions.zip"
         : Number(year) >= 2010
         ? "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-2010-2024/connecticut-town-maps-eight-editions.zip"
         : "https://github.com/hanshanley/voter-participation/releases/download/connecticut-town-turnout-1998-2008/connecticut-town-maps-2000-2008.zip";
-      archive.textContent = "Download original Census layers, baseline counts, and map rebuild code (ZIP)";
+      archive.textContent = year === "2026" ? "Download 2026 Census boundaries and map rebuild code (ZIP)"
+        : "Download original Census layers, baseline counts, and map rebuild code (ZIP)";
       content.replaceChildren(svg, legend, archive);
       retry = false;
     } catch {

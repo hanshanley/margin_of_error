@@ -34,15 +34,21 @@ SOURCES = {
                    "5d1215b53c40afd93479611828673c4a51c2eb899674d3e1cf05fce9d52eda02"),
 }
 ALLOWED_ABSENCES = {"2018-11-06": {"East Granby", "Torrington"}, "2020-11-03": {"New Canaan", "North Branford"}}
+REFERENCE_2026 = {"2026-11-03": (
+    "TIGER2026/COUSUB/tl_2026_09_cousub.zip", "", "GEOID",
+    "12a8d846e1021257e9834ad57deb8aa4fef25e0e74b4f1932e3e6c35546ad7df")}
+TOWN_ROSTER = "c661188e0b7bfdc977cfd16eb6208554acabd36e2ff5bb997b5c39e751b67f5d"
 
 
-def build(inputs, output):
-    with gzip.open(inputs / "participation-ct-general-town-turnout-archive.csv.gz",
-                   "rt", encoding="utf-8", newline="") as stream:
-        rows = list(csv.DictReader(stream))
+def build(inputs, output, *, reference_2026=False):
+    rows = []
+    if not reference_2026:
+        with gzip.open(inputs / "participation-ct-general-town-turnout-archive.csv.gz",
+                       "rt", encoding="utf-8", newline="") as stream:
+            rows = list(csv.DictReader(stream))
     output.mkdir(parents=True, exist_ok=True)
     receipts = {}
-    for date, (path, suffix, key, digest) in SOURCES.items():
+    for date, (path, suffix, key, digest) in (REFERENCE_2026 if reference_2026 else SOURCES).items():
         name = path.rsplit("/", 1)[-1]
         source = inputs / name
         if hashlib.sha256(source.read_bytes()).hexdigest() != digest:
@@ -65,8 +71,11 @@ def build(inputs, output):
         towns = {f["properties"]["town"] for f in features}
         selected = [r for r in rows if r["election_date"] == date and r["geography_level"] != "state"]
         reported = {r["reporting_unit"] for r in selected}
-        if (len(towns) != len(features) or len(towns) != 169 or not coverage_is_valid(polygons)
-                or not reported <= towns or not towns - reported <= ALLOWED_ABSENCES.get(date, set())):
+        if (len(features) != 169 or len({f["properties"]["id"] for f in features}) != 169
+                or hashlib.sha256("\n".join(sorted(towns)).encode()).hexdigest() != TOWN_ROSTER
+                or not coverage_is_valid(polygons)
+                or (not reference_2026 and (not reported <= towns
+                    or not towns - reported <= ALLOWED_ABSENCES.get(date, set())))):
             raise ValueError(f"{date}: town geometry and publication roster do not agree")
         features.sort(key=lambda f: f["properties"]["id"])
         asset = f"town-CT-{date[:4]}.geojson.gz"
@@ -77,12 +86,13 @@ def build(inputs, output):
             "path": asset, "sha256": hashlib.sha256(body).hexdigest(),
             "bytes": len(body), "source_url": BASE + path, "source_sha256": digest,
             "geometry_count": len(features),
-            "towns_absent_from_report": sorted(towns - reported),
-            "qualified_whole_town_rates": sum(r["geography_level"] == "town" and bool(r["checked_as_voted_fraction"])
-                                               for r in selected),
+            **({"reference_only": True, "reference_date": "2026-01-01"} if reference_2026 else {
+                "towns_absent_from_report": sorted(towns - reported),
+                "qualified_whole_town_rates": sum(r["geography_level"] == "town" and bool(r["checked_as_voted_fraction"])
+                                                   for r in selected)}),
         }
     (output / "map-audit.json").write_text(json.dumps(receipts, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
-    build(Path(sys.argv[1]), Path(sys.argv[2]))
+    build(Path(sys.argv[1]), Path(sys.argv[2]), reference_2026="--reference-2026" in sys.argv[3:])
