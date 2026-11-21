@@ -2030,7 +2030,11 @@ export function alaskaBallotRows(csv, current = false) {
         || (physical && (!/^\d{2}-\d{3} .+/.test(label) || count !== modes[0])))
       throw new Error("Invalid Alaska ballot archive row");
     names.add(label);
-    return { label, physical, status, count, modes, ...(current ? { editionStatus, edition } : {}) };
+    const optional = key => columns.includes(key) ? cells[columns.indexOf(key)] : null;
+    return { label, physical, status, count, modes, ...(current ? {
+      editionStatus, edition, geometryStatus: optional("display_geometry_status"),
+      geometrySha: optional("display_geometry_sha256"), sourceSha: optional("source_sha256"),
+    } : {}) };
   });
 }
 
@@ -2096,11 +2100,23 @@ function installAlaskaBallots(host, sources, current = false) {
   });
 }
 
+export function alaskaMidtermMapQualified(rows) {
+  return rows.length > 0 && rows.every(row => row.geometryStatus === "verified_display_subset"
+    ? row.geometrySha === "1e9d6b95b88c4ebeea3a1ec5bcd3d0a6052d0436e82dfee0fb62fbc4c25381eb"
+    : row.geometryStatus === null && row.geometrySha === null && row.edition === "2026-11-18T17:25:35"
+      && row.sourceSha === "ce1807693399216072657bb0a8451e5451b7d081b7f224e2a8306f99d6cedfb0");
+}
+
 function installAlaskaBallotMap(host, rows, year) {
   const physical = rows.filter(row => row.physical);
   const counts = new Map(physical.map(row => [row.label.slice(0, 6), row]));
-  if (physical.length !== 402 || counts.size !== 402
-      || (year === 2026 && rows[0].edition !== "2026-11-18T17:25:35")) return;
+  if (physical.length !== 402 || counts.size !== 402) return;
+  if (year === 2026 && !alaskaMidtermMapQualified(rows)) {
+    const note = document.createElement("p");
+    note.textContent = "The map is withheld for this edition: its precinct shapes have not been verified. All counts remain in the table and download.";
+    host.append(note);
+    return;
+  }
   const panel = document.createElement("details"), summary = document.createElement("summary");
   const content = document.createElement("div");
   summary.textContent = `Map ${year} Election Day ballots (81 verified precinct shapes)`;
@@ -2154,7 +2170,10 @@ function installAlaskaBallotMap(host, rows, year) {
       const note = document.createElement("p");
       note.textContent = "81 of 402 precincts have verified display geometry. The other 321 are not zero and remain in the table. "
         + "Counts: 0–249 (light), 250–499 (medium), 500 or more (dark). No central ballots or rates are mapped.";
-      content.replaceChildren(svg, note);
+      const archive = document.createElement("a");
+      archive.href = "https://github.com/hanshanley/voter-participation/releases/download/alaska-2026-precinct-ballot-archive/alaska-2024-2026-map-reproduction.zip";
+      archive.textContent = "Download map geometry and baseline counts (ZIP)";
+      content.replaceChildren(svg, note, archive);
     } catch {
       retry = true;
       loading = false;

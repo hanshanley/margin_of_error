@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, alabamaBallotRows, alaskaBallotRows,
+  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   publishedCpsStatus, cpsMapCells, cpsRowsForBasis,
   wyomingCurrentCountyFrame, wyomingCanvassCountyFrame, nebraskaCountyReportsFrame, coloradoPrecinctFrames }
   from "../public/scripts/participation-coverage.js";
@@ -27,6 +27,24 @@ test("Alaska keeps mixed central ballot modes out of the physical precinct scope
   assert.deepEqual(alaskaBallotRows(csv).map(row => [row.physical, row.count, row.modes[0]]),
     [[true, 5, 5], [false, 4069, 126]]);
   assert.throws(() => alaskaBallotRows(csv.replace("4069,126", "4068,126")), /Invalid Alaska/);
+});
+
+test("Alaska midterm mapping follows a verified geometry receipt, not a hardcoded edition", () => {
+  const header = "state_code,election_date,reporting_unit,unit_scope,source_status,reported_ballots,"
+    + "election_day_ballots,absentee_ballots,early_ballots,question_ballots,remote_ballots,"
+    + "publication_status,official_control_edition_local,source_sha256";
+  const row = "AK,2026-11-03,01-600 Ketchikan,precinct_election_day_only,reported,5,5,0,0,0,0,"
+    + "OFFICIAL RESULTS,2026-12-01T10:00:00," + "a".repeat(64);
+  const checks = ",display_geometry_status,display_geometry_sha256";
+  const geometry = "1e9d6b95b88c4ebeea3a1ec5bcd3d0a6052d0436e82dfee0fb62fbc4c25381eb";
+  const parsed = alaskaBallotRows(`${header}${checks}\n${row},verified_display_subset,${geometry}`, true);
+  assert.ok(alaskaMidtermMapQualified(parsed));
+  assert.equal(alaskaMidtermMapQualified(alaskaBallotRows(`${header}\n${row}`, true)), false);
+  for (const [status, sha] of [["geometry_changed", "b".repeat(64)], ["source_stopped", ""]]) {
+    const held = alaskaBallotRows(`${header}${checks}\n${row},${status},${sha}`, true);
+    assert.equal(alaskaMidtermMapQualified(held), false);
+    assert.equal(held[0].count, 5);
+  }
 });
 
 test("Alabama reporting-unit controls retain conflicting totals and reject an inconsistent decision", () => {
