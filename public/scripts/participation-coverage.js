@@ -22,6 +22,8 @@ const countyDecisions = {
   ambiguous_county_workbook_identity: "County identity is ambiguous",
 };
 const ncAgePath = "release/participation-nc-vote-history-age.csv.gz";
+const ncArchivePaths = ["county-history", "state-groups", "native-precincts"]
+  .map(kind => `release/participation-nc-general-${kind}.csv.gz`);
 const indianaTurnoutPath = "release/participation-indiana-general-turnout-history.csv.gz";
 const washingtonAgePath = "release/participation-wa-general-election-age-sex.csv.gz";
 const oregonHistoryPath = "release/participation-or-general-election-turnout-reconciliation.csv.gz";
@@ -266,7 +268,7 @@ export function coverageCsvFile(sources, path) {
   if (!file) return null;
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath].includes(path)
     ? 2_000_000 : path === washingtonAgePath ? 1_000_000 : [alBallotUnits, ctTownArchive].includes(path) ? 262144
-      : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath].includes(path) ? 524288 : 65536;
+      : [stateCountyArchivesPath, publishedCpsPath, overallCpsPath, ncArchivePaths[2]].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
       || file.media_type !== "text/csv" || file.compression !== "gzip"
@@ -3285,6 +3287,183 @@ function installConnecticutTownMap(host, rows) {
   choice.addEventListener("change", render);
 }
 
+const ncArchiveDates = new Set(["2016-11-08", "2018-11-06", "2020-11-03",
+  "2022-11-08", "2024-11-05", "2026-11-03"]);
+
+export function northCarolinaArchiveFrames(countyCsv, groupCsv) {
+  const parse = csv => {
+    const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+    const names = historicalCsvLine(header);
+    if (new Set(names).size !== names.length || !lines.length) throw new Error("Missing NC archive data");
+    return lines.map(line => {
+      const cells = historicalCsvLine(line);
+      if (cells.length !== names.length) throw new Error("Malformed NC archive row");
+      return Object.fromEntries(names.map((name, i) => [name, cells[i]]));
+    });
+  };
+  const integer = value => {
+    if (!/^\d+$/.test(value) || !Number.isSafeInteger(Number(value))) throw new Error("Invalid NC count");
+    return Number(value);
+  };
+  const identity = row => {
+    const date = row.election_date, year = Number(date?.slice(0, 4));
+    if (row.state_code !== "NC" || !ncArchiveDates.has(date)
+        || !["reported", "retained_after_failure"].includes(row.source_status))
+      throw new Error("Incompatible NC archive election");
+    for (const kind of ["history", "voter"]) {
+      const url = "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/"
+        + `${date.replaceAll("-", "_")}/${kind}_stats_${date.replaceAll("-", "")}.zip`;
+      const edition = row[`${kind}_edition`];
+      if (row[`${kind}_url`] !== url || !/^[a-f0-9]{64}$/.test(row[`${kind}_sha256`])
+          || (!(kind === "voter" && year <= 2018 && edition === "")
+            && (!/^\d{4}-\d{2}-\d{2}$/.test(edition) || edition < date)))
+        throw new Error("Incompatible NC archive provenance");
+    }
+    return ["source_status", "history_sha256", "voter_sha256", "history_edition", "voter_edition"]
+      .map(key => row[key]).join("/");
+  };
+  const frames = new Map();
+  for (const row of parse(countyCsv)) {
+    const lineage = identity(row), date = row.election_date;
+    if (!frames.has(date)) frames.set(date, { date, code: "NC", rows: new Map(), groups: [],
+      measure: "voter_history_credits", lineage, status: row.source_status,
+      historyEdition: row.history_edition, voterEdition: row.voter_edition });
+    const frame = frames.get(date);
+    const statewide = row.geography_level === "state", key = statewide ? "state" : row.native_county;
+    if (frame.lineage !== lineage || frame.rows.has(key) || (statewide ? row.native_county !== ""
+      : row.geography_level !== "county" || !/^[A-Z][A-Z ]+$/.test(row.native_county))
+      || row.rate_hold !== (statewide ? "no_overall_archive_rate_control" : "no_county_denominator_control"))
+      throw new Error("Incompatible NC county frame");
+    frame.rows.set(key, { name: statewide ? "North Carolina" : key,
+      count: integer(row.voters_with_history), stock: integer(row.registered_voter_statistics), rate: null });
+  }
+  for (const frame of frames.values()) {
+    const state = frame.rows.get("state");
+    const rows = [...frame.rows.entries()].filter(([key]) => key !== "state").map(([, row]) => row);
+    if (!state || rows.length !== 100 || !["count", "stock"].every(field =>
+      rows.reduce((total, row) => total + row[field], 0) === state[field])) throw new Error("NC county total differs");
+  }
+  for (const row of parse(groupCsv)) {
+    const frame = frames.get(row.election_date);
+    const dim = row.dimension, group = row.native_group;
+    if (!frame || frame.lineage !== identity(row) || !["age", "race", "sex", "ethnicity"].includes(dim)
+        || frame.groups.some(other => other.dim === dim && other.group === group))
+      throw new Error("Incompatible NC group frame");
+    const count = row.voters_with_history === "" ? null : integer(row.voters_with_history);
+    const stock = row.registered_voter_statistics === "" ? null : integer(row.registered_voter_statistics);
+    const rate = row.source_defined_rate_pct === "" ? null : Number(row.source_defined_rate_pct);
+    const controlled = ["2022", "2024"].includes(frame.date.slice(0, 4)) && dim === "age" && ncAges.includes(group);
+    const voteControl = controlled ? integer(row.published_control_count) : null;
+    const rateControl = controlled ? Number(row.published_control_rate_pct) : null;
+    if (controlled && (!/^[a-f0-9]{64}$/.test(row.published_control_sha256)
+      || row.published_control_url !== `https://www.ncsbe.gov/results-data/voter-turnout/${frame.date.slice(0, 4)}-general-election-turnout`
+      || !row.published_control_rate_pct || !Number.isFinite(rateControl))) throw new Error("NC age control differs");
+    const expected = controlled && count === voteControl && count > 0 && stock >= count
+      && Math.floor((count * 2000 + stock) / (2 * stock)) === Math.round(rateControl * 10)
+      ? 100 * count / stock : null;
+    if (expected === null ? rate !== null || !row.rate_hold
+      : !Number.isFinite(rate) || Math.abs(rate - expected) > 1e-8 || row.rate_hold)
+      throw new Error("NC group rate does not match its controls");
+    frame.groups.push({ dim, group, count, stock, rate, hold: row.rate_hold });
+  }
+  for (const frame of frames.values()) {
+    const state = frame.rows.get("state");
+    for (const dim of ["age", "race", "sex", "ethnicity"]) {
+      const rows = frame.groups.filter(row => row.dim === dim);
+      if (!["count", "stock"].every(field =>
+        rows.reduce((total, row) => total + (row[field] ?? 0), 0) === state[field]))
+        throw new Error("NC group totals differ from the county frame");
+    }
+  }
+  return frames;
+}
+
+function installNorthCarolinaArchives(host, sources) {
+  const files = ncArchivePaths.map(path => coverageCsvFile(sources, path));
+  if (files.some(file => !file)) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const note = document.createElement("p"), downloads = document.createElement("ul");
+  const status = document.createElement("p");
+  summary.textContent = "North Carolina participation by election, county and demographic group";
+  note.textContent = "Voter-history entries document participation, not ballot choices or certified ballots. "
+    + "The registration counts are from a separate election archive. County and native precinct rates are not shown.";
+  status.setAttribute("role", "status");
+  files.forEach((file, i) => {
+    const item = document.createElement("li"), link = document.createElement("a");
+    link.href = file.url;
+    link.textContent = ["County and statewide counts", "Statewide age, race, ethnicity and sex",
+      "Native precinct counts and mapping holds"][i] + " (CSV · gzip)";
+    item.append(link); downloads.append(item);
+  });
+  panel.append(summary, note, downloads, status);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    status.textContent = "Checking the election archives…";
+    try {
+      const [counties, groups] = await Promise.all(ncArchivePaths.slice(0, 2).map(path => loadCoverageCsv(sources, path)));
+      const frames = northCarolinaArchiveFrames(counties.csv, groups.csv);
+      const election = document.createElement("select"), dimension = document.createElement("select");
+      const electionLabel = document.createElement("label"), dimLabel = document.createElement("label");
+      const map = document.createElement("div"), output = document.createElement("div");
+      for (const date of [...frames.keys()].sort().reverse()) election.add(new Option(date, date));
+      for (const [label, key] of [["Counties", "county"], ["Statewide age", "age"], ["Statewide race codes", "race"],
+        ["Statewide ethnicity codes", "ethnicity"], ["Statewide sex codes", "sex"]]) dimension.add(new Option(label, key));
+      electionLabel.append("General election ", election);
+      dimLabel.append(" View ", dimension);
+      panel.append(electionLabel, dimLabel, map, output);
+      installHistoricalCountyMap(map, "NC", election, null, { NC: "North Carolina" }, () => frames.get(election.value));
+      const render = () => {
+        const frame = frames.get(election.value), county = dimension.value === "county";
+        const table = document.createElement("table"), region = document.createElement("div");
+        const header = table.createTHead().insertRow(), body = table.createTBody();
+        const provenance = document.createElement("p");
+        provenance.textContent = `${frame.status === "retained_after_failure" ? "Last verified edition retained. " : ""}`
+          + `Voter-history edition: ${frame.historyEdition}. Registration edition: ${frame.voterEdition || "not printed"}.`;
+        table.createCaption().textContent = county ? "State and county totals" : "Statewide demographic groups";
+        for (const text of [county ? "Area" : "Native group", "Voter-history credits", "Registered voter statistics",
+          ...(county ? [] : ["Checked fraction"])]) {
+          const th = document.createElement("th");
+          th.scope = "col"; th.textContent = text; header.append(th);
+        }
+        const rows = county ? [...frame.rows.values()] : frame.groups.filter(row => row.dim === dimension.value);
+        for (const row of rows) {
+          const tr = body.insertRow(), label = document.createElement("th");
+          label.scope = "row"; label.textContent = county ? row.name : row.group.trim() || "Blank in source";
+          tr.append(label);
+          for (const value of [row.count, row.stock])
+            tr.insertCell().textContent = value === null ? "Not listed" : value.toLocaleString("en-US");
+          if (!county) {
+            const cell = tr.insertCell();
+            if (row.rate === null) {
+              cell.textContent = row.hold === "published_history_count_differs" ? "Held: published count differs" : "Not verified";
+            } else {
+              const meter = document.createElement("meter");
+              meter.min = 0; meter.max = 100; meter.value = row.rate;
+              meter.setAttribute("aria-label", `${row.group}: percent of registered voters`);
+              cell.append(`${row.rate.toFixed(1)}% `, meter);
+            }
+          }
+        }
+        map.hidden = !county;
+        region.className = "table-wrap"; region.tabIndex = 0;
+        region.setAttribute("role", "region"); region.setAttribute("aria-label", table.caption.textContent);
+        region.append(table);
+        output.replaceChildren(provenance, region);
+      };
+      election.addEventListener("change", render);
+      dimension.addEventListener("change", render);
+      render();
+      status.textContent = "";
+    } catch {
+      loading = false;
+      status.textContent = "The election archives could not be verified. Reopen this section to retry or use the downloads.";
+    }
+  });
+}
+
 export function northCarolinaAgeRows(csv) {
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const fields = header.split(",");
@@ -3490,6 +3669,7 @@ function installAdministrativeCoverage(host) {
         content.append(notice);
       }
       installNorthCarolinaAge(content, manifest.house_sources);
+      installNorthCarolinaArchives(content, manifest.house_sources);
       installWashingtonAge(content, manifest.house_sources);
       installOregonHistory(content, manifest.house_sources);
       installKansasStudy(content, manifest.house_sources);

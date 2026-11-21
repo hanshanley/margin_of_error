@@ -7,7 +7,7 @@ import { gzipSync, gunzipSync } from "node:zlib";
 import { administrativeRows, coverageCsvFile, coverageRows, historicalCountyDownload, historicalCountyRows,
   loadHistoricalCountyRows, indianaTurnoutDownload, indianaTurnoutFrames, louisianaParishFrame,
   stateCountyArchivesDownload, stateCountyArchiveFrames,
-  northCarolinaAgeRows, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
+  northCarolinaAgeRows, northCarolinaArchiveFrames, washingtonAgeSeries, southeastHistoryRows, kansasStudyFrames, hawaiiHistoryFrames, turnoutReleaseRows,
   dakotaHistoryFrames, newJerseyPeriodicFrames,
   alabamaBallotRows, alaskaBallotRows, alaskaMidtermMapQualified,
   connecticutTownRows, alabamaReconciledCountyFrame, alaskaAgeRows,
@@ -22,6 +22,30 @@ import { bindDenverPrecinctMap } from "../public/scripts/participation-denver-pr
 import { bindMarylandPrecinctLayer } from "../public/scripts/participation-maryland-precinct-map.js";
 import { bindMinnesotaPrecinctLayer, minnesotaCountyHistory, minnesotaPrecinctFrames }
   from "../public/scripts/participation-minnesota-precinct-map.js";
+
+test("North Carolina archive maps only reconciled counts and withholds an incorrectly promoted age rate", () => {
+  const date = "2024-11-05", base = "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2024_11_05/";
+  const prefix = "state_code,election_date,source_status,history_edition,voter_edition,history_url,voter_url,history_sha256,voter_sha256";
+  const common = `NC,${date},retained_after_failure,2024-12-08,${date},${base}history_stats_20241105.zip,`
+    + `${base}voter_stats_20241105.zip,${"a".repeat(64)},${"b".repeat(64)}`;
+  const countyHeader = `${prefix},geography_level,native_county,voters_with_history,registered_voter_statistics,rate_hold`;
+  const counties = Array.from({ length: 100 }, (_, i) =>
+    `${common},county,${String.fromCharCode(65 + Math.floor(i / 26), 65 + i % 26)},4,5,no_county_denominator_control`);
+  const countyCsv = [countyHeader, `${common},state,,400,500,no_overall_archive_rate_control`, ...counties].join("\n");
+  const groupHeader = `${prefix},dimension,native_group,voters_with_history,registered_voter_statistics,`
+    + "source_defined_rate_pct,rate_hold,published_control_count,published_control_rate_pct,published_control_url,published_control_sha256";
+  const age = `${common},age,Age 18 - 25,400,500,,published_history_count_differs,399,80,`
+    + "https://www.ncsbe.gov/results-data/voter-turnout/2024-general-election-turnout," + "c".repeat(64);
+  const groupCsv = [groupHeader, age, ...["race", "sex", "ethnicity"]
+    .map(key => `${common},${key},A,400,500,,no_group_rate_control,,,,`)].join("\n");
+  const frame = northCarolinaArchiveFrames(countyCsv, groupCsv).get(date);
+  assert.equal(frame.rows.get("AA").rate, null);
+  assert.equal(frame.groups[0].rate, null);
+  assert.equal(frame.status, "retained_after_failure");
+  assert.throws(() => northCarolinaArchiveFrames(countyCsv.replace("AA,4,5", "AA,7,5"), groupCsv), /county total/);
+  assert.throws(() => northCarolinaArchiveFrames(countyCsv, groupCsv.replace("500,,published", "500,80,published")),
+    /does not match/);
+});
 
 test("Indiana admits whole county histories but never shades a withheld rate as qualified", () => {
   const header = "state_code,year,election_date,geography_level,geography,registered_voters,voters_voting,"
