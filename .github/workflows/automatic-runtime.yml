@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: 1aa9676f7143e1f8cc91a7bbad3a5e2742b6914f
+          ref: ab9b8a6dd5af19866bc1453591fc1a67dbb25329
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -93,14 +93,18 @@ jobs:
       - name: Install the reviewed producer environment
         run: python -m pip install 'requests>=2.31' 'xlrd>=2' 'openpyxl==3.1.5'
 
-      - name: Require the reviewed comparison reader before activating new frames
+      - name: Enable expanded House comparisons only for the reviewed reader
+        id: house-comparisons
         shell: bash
         run: |
           reader="$RUNNER_TEMP/participation-congress.js"
-          curl --fail --silent --show-error --max-time 30 \
-            https://www.themarginoferror.com/scripts/participation-congress.js -o "$reader"
-          printf '%s  %s\n' '39fab31cdd74faa89a0ee25d047a231701f20223391d33c49d17072aab81330e' "$reader" \
-            | sha256sum --check
+          enabled=false
+          if curl --fail --silent --show-error --max-time 30 \
+            https://www.themarginoferror.com/scripts/participation-congress.js -o "$reader" \
+            && [ "$(sha256sum "$reader" | cut -d ' ' -f 1)" = '39fab31cdd74faa89a0ee25d047a231701f20223391d33c49d17072aab81330e' ]; then
+            enabled=true
+          fi
+          echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
 
       - name: Verify and atomically publish the data-only runtime
         shell: bash
@@ -108,6 +112,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/research-source
           RESULTS_POINTER: ${{ inputs.results_pointer }}
+          HOUSE_COMPARISONS: ${{ steps.house-comparisons.outputs.enabled }}
         run: |
           pointer="$RESULTS_POINTER"
           if [ -z "$pointer" ]; then
@@ -116,12 +121,15 @@ jobs:
             [[ "$source_commit" =~ ^[0-9a-f]{40}$ ]]
             pointer="https://raw.githubusercontent.com/hanshanley/voter-participation/$source_commit/latest.json"
           fi
+          comparison_args=()
+          if [ "$HOUSE_COMPARISONS" = true ]; then
+            comparison_args+=(--accept-reviewed-house-final-rounds --accept-reviewed-house-water-only)
+          fi
           python -m scripts.automatic_runtime \
             --results-pointer "$pointer" \
             --repository "$GITHUB_WORKSPACE" \
             --accept-reviewed-house-split-geometry \
-            --accept-reviewed-house-final-rounds \
-            --accept-reviewed-house-water-only \
+            "${comparison_args[@]}" \
             --work-dir "$RUNNER_TEMP/participation-automatic-runtime" \
             | tee "$RUNNER_TEMP/participation-automatic-runtime-result.json"
           {
