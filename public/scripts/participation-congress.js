@@ -179,6 +179,51 @@ function validateMatchedDistrictSubset(state, selected) {
   "House matched-district subset differs from verified district comparisons");
 }
 
+function validateOlderSenateBaselines(entries, races, candidates) {
+  if (entries === undefined) return;
+  const stages = { AR: ["2014-11-04", "general"], LA: ["2014-12-06", "general_runoff"] };
+  require(Array.isArray(entries) && new Set(entries.map(row => row?.race_id)).size === entries.length,
+    "Older Senate comparison inventory differs");
+  for (const entry of entries) {
+    const row = races.get(entry.race_id);
+    const [date, stage] = stages[entry.state_code] ?? [];
+    require(date && row?.id === `npr:senate:${entry.state_code}:2:regular:general:not_ranked`
+      && row.advertised && !row.qualified_comparison && entry.seat === "2"
+      && entry.previous_election_date === date && entry.current_election_date === row.election_date
+      && entry.previous_stage === stage && entry.current_stage === row.stage
+      && entry.stage_changed === (stage !== row.stage)
+      && entry.scope === "older_same_seat_recorded_margin_not_last_cycle"
+      && entry.replaces_last_cycle === false && entry.behavioral_estimate_updated === false
+      && entry.historical_source?.url === "https://www.fec.gov/documents/1705/results14.xls"
+      && entry.historical_source?.sha256 === "62fa46fc365cc54c3290deda16b0ee2c3e97158adcca020781b3a42396435158"
+      && Array.isArray(entry.historical_candidates) && Array.isArray(entry.comparison_holds),
+    "Older Senate seat or election frame differs");
+    const before = { D: 0, R: 0, O: 0 };
+    const major = { D: 0, R: 0 };
+    for (const fact of entry.historical_candidates) {
+      require(typeof fact.name === "string" && fact.name && typeof fact.party === "string" && fact.party
+        && Number.isSafeInteger(fact.votes) && fact.votes >= 0, "Invalid older Senate candidate");
+      const party = Object.hasOwn(major, fact.party) ? fact.party : "O";
+      before[party] += fact.votes;
+      if (party !== "O") major[party]++;
+    }
+    const current = Object.fromEntries([..."DROU"].map(party => [party, row[party]]));
+    const holds = [];
+    if (row.status !== "reported") holds.push("Current returns were not refreshed");
+    if (row.ranked_choice || row.native_runoff || !row.count_coverage_complete || row.U !== 0
+      || ["D", "R"].some(party => !(row[party] > 0) || candidates.get(row.id).filter(
+        candidate => candidate.role === "named_candidate" && candidate.party_group === party).length !== 1))
+      holds.push("Current regular general-election count frame differs");
+    const margin = v => 100 * (v.D - v.R) / (v.D + v.R);
+    const change = holds.length ? null : margin(current) - margin(before);
+    require(major.D === 1 && major.R === 1 && before.D > 0 && before.R > 0
+      && equal(before, entry.previous_counts) && equal(current, entry.current_counts)
+      && equal(holds, entry.comparison_holds) && close(change, entry.margin_change_pp)
+      && close(change === null ? null : change / 2, entry.D_two_party_share_change_pp),
+    "Older Senate comparison counts or qualification differ");
+  }
+}
+
 function validatePayload(data, reviewed = false) {
   require(data?.contract === "participation.congressional_results.v1"
     && data.election_date === "2026-11-03" && data.source_models_refitted === false
@@ -285,6 +330,7 @@ function validatePayload(data, reviewed = false) {
       reviewedSenateFrame(row, selected);
     reviewedHouseBoundary(row, boundaries);
   }
+  validateOlderSenateBaselines(data.senate_older_baselines, races, candidates);
   require(new Set(data.coverage.map(row => row.id)).size === data.coverage.length,
     "Congressional coverage identities are duplicated");
   const coverageById = new Map(data.coverage.map(row => [row.id, row]));
@@ -442,6 +488,7 @@ export function installCongressionalReturns(root) {
       controls.replaceChildren(chamber, state);
       const candidateRows = new Map(data.races.map(row =>
         [row.id, data.candidates.filter(candidate => candidate.id === row.id)]));
+      const olderBaselines = new Map((data.senate_older_baselines ?? []).map(row => [row.race_id, row]));
       const show = row => {
         detail.replaceChildren(
           node("h4", `${row.state_code} · ${row.chamber} · ${row.seat_label} · ${row.election_kind}`),
@@ -488,6 +535,15 @@ export function installCongressionalReturns(root) {
           sources.append(node("a", "2024 report", { href: pair.previous.source }), " · ",
             node("a", "2026 report", { href: pair.current.source }));
           detail.append(sources);
+        }
+        const older = olderBaselines.get(row.id);
+        if (older) {
+          detail.append(node("h5", "Older same-seat comparison"));
+          const previousStage = older.stage_changed ? "decisive runoff" : "general election";
+          detail.append(node("p", `2014 ${previousStage} to 2026 general election: `
+            + (older.comparison_holds.length ? older.comparison_holds.join("; ") : points(older.margin_change_pp))
+            + ". This does not replace the held 2020 comparison."),
+          node("a", "Official 2014 FEC results workbook", { href: older.historical_source.url }));
         }
       };
       const draw = () => {

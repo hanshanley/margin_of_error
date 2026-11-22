@@ -41,6 +41,35 @@ test("complete both-chamber results preserve zeros, separate seat identities and
   assert.equal(data.races[0].raw_recorded_margin_change_pp, 2 * data.races[0].raw_recorded_D_share_change_pp);
 });
 
+test("an older Senate runoff cannot replace the last-cycle comparison or change its stage", () => {
+  const data = fixture();
+  for (const row of [...data.races, ...data.candidates, ...data.coverage].filter(r => r.chamber === "senate"))
+    Object.assign(row, { state_code: "LA", id: "npr:senate:LA:2:regular:general:not_ranked" });
+  const row = data.races[1];
+  Object.assign(row, { qualified_comparison: false, qualified_margin_change_pp: null,
+    comparison_holds: ["Last-cycle candidate frame differs"] });
+  for (const candidate of data.candidates.filter(c => c.chamber === "senate"))
+    candidate.role = candidate.party_group === "O" ? "provider_aggregate_other" : "named_candidate";
+  const prior = { D: 561210, R: 712379, O: 0 };
+  const change = 20 - 100 * (prior.D - prior.R) / (prior.D + prior.R);
+  const older = {
+    race_id: row.id, state_code: "LA", seat: "2", scope: "older_same_seat_recorded_margin_not_last_cycle",
+    previous_election_date: "2014-12-06", current_election_date: "2026-11-03",
+    previous_stage: "general_runoff", current_stage: "general", stage_changed: true,
+    previous_counts: prior, current_counts: { D: 60, R: 40, O: 0, U: 0 },
+    historical_candidates: [{ name: "Landrieu", party: "D", votes: prior.D },
+      { name: "Cassidy", party: "R", votes: prior.R }],
+    historical_source: { url: "https://www.fec.gov/documents/1705/results14.xls",
+      sha256: "62fa46fc365cc54c3290deda16b0ee2c3e97158adcca020781b3a42396435158" },
+    replaces_last_cycle: false, behavioral_estimate_updated: false, comparison_holds: [],
+    margin_change_pp: change, D_two_party_share_change_pp: change / 2,
+  };
+  data.senate_older_baselines = [older];
+  assert.equal(validateCongressionalResults(data).races[1].qualified_comparison, false);
+  older.previous_stage = "general";
+  assert.throws(() => validateCongressionalResults(data), /Older Senate seat or election frame/);
+});
+
 test("source, candidate, arithmetic, frame and freshness corruptions are rejected", () => {
   for (const mutate of [
     value => { value.candidates.pop(); },
