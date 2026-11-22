@@ -287,6 +287,7 @@ function installHistoricalCounties(sources, historical, names) {
 
 const scDetailPath = "release/participation-sc-county-precinct-voting-statistics.csv.gz";
 const scAuditPath = "release/participation-sc-voting-statistics-reconciliation.csv.gz";
+const nmHistoryPath = "release/participation-nm-historical-native-turnout.csv.gz";
 
 export function coverageCsvFile(sources, path) {
   const file = sources?.supported_release?.downloads?.[path];
@@ -294,7 +295,7 @@ export function coverageCsvFile(sources, path) {
   const maxBytes = [coloradoPrecinctStatisticsPath, minnesotaPrecinctStatisticsPath, marylandPrecinctPath,
     ncArchivePaths[2]].includes(path)
     ? 2_000_000 : [washingtonAgePath, eacLocalityPath, scDetailPath, laPrecinctHistoryPath].includes(path) ? 1_000_000 : path === ctTownArchive ? 262144
-      : [alBallotUnits, stateCountyArchivesPath, publishedCpsPath, overallCpsPath, laHistoryPath, maCanvassHistoryPath].includes(path) ? 524288 : 65536;
+      : [alBallotUnits, stateCountyArchivesPath, publishedCpsPath, overallCpsPath, laHistoryPath, maCanvassHistoryPath, nmHistoryPath].includes(path) ? 524288 : 65536;
   if (typeof sources.base_url !== "string" || !sources.base_url.startsWith("https://")
       || file.path !== path || file.url !== `${sources.base_url}/${path}`
       || file.media_type !== "text/csv" || file.compression !== "gzip"
@@ -3418,6 +3419,120 @@ export function oregonHistoryRows(csv) {
   });
 }
 
+export function newMexicoHistoryRows(csv) {
+  const expected = {"2020-11-03": 1925, "2022-11-08": 2163, "2024-11-05": 2169};
+  const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
+  const columns = historicalCsvLine(header);
+  const fields = ["state_code", "election_date", "geography_level", "county_id", "county", "unit",
+    "source_reported_count", "source_eligible_voters", "source_eligible_rate_pct", "rate_hold",
+    "source_status", "source_clock", "native_numerator_label", "native_denominator_label"];
+  const positions = fields.map(field => columns.indexOf(field));
+  if (positions.includes(-1) || new Set(columns).size !== columns.length)
+    throw new Error("Missing New Mexico history fields");
+  const seen = new Set(), totals = new Map(), counties = new Map(), units = new Map();
+  for (const line of lines) {
+    const cells = historicalCsvLine(line);
+    const [state, date, level, id, county, unit, ballots, eligible, fraction, hold, status, clock, numerator, denominator] =
+      positions.map(i => cells[i]);
+    const key = JSON.stringify([date, level, id, unit]), count = Number(ballots), voters = Number(eligible);
+    const rate = fraction === "" ? null : Number(fraction);
+    if (cells.length !== columns.length || state !== "NM" || !Object.hasOwn(expected, date) || seen.has(key)
+        || !["state", "county", "reporting_unit"].includes(level)
+        || (level === "state" ? id || county || unit : !/^\d+$/.test(id) || !county || Boolean(unit) !== (level === "reporting_unit"))
+        || !/^\d+$/.test(ballots) || !/^-?\d+$/.test(eligible)
+        || !Number.isSafeInteger(count) || !Number.isSafeInteger(voters)
+        || !["reported", "retained_after_failure"].includes(status) || !clock
+        || numerator !== "Ballots Cast" || denominator !== "Eligible Voters"
+        || (hold ? rate !== null : voters <= 0 || count > voters || !Number.isFinite(rate)
+          || Math.abs(rate - 100 * count / voters) > 1e-9))
+      throw new Error("New Mexico history row differs");
+    seen.add(key);
+    const row = {date, level, id, county, count, voters, rate, hold, status, clock};
+    if (level === "state") totals.set(date, row);
+    if (level === "county") counties.set(JSON.stringify([date, id]), row);
+    if (level !== "reporting_unit") continue;
+    const group = JSON.stringify([date, id]);
+    const sum = units.get(group) ?? {count: 0, voters: 0, rows: 0, invalid: false, county, status, clock};
+    if (sum.county !== county || sum.status !== status || sum.clock !== clock
+        || Boolean(hold) !== (voters <= 0 || count > voters)) throw new Error("New Mexico unit scope differs");
+    sum.count += count; sum.voters += voters; sum.rows++; sum.invalid ||= voters < 0 || count > voters;
+    units.set(group, sum);
+  }
+  if (!totals.size || units.size !== counties.size) throw new Error("Incomplete New Mexico history");
+  for (const [date, total] of totals) {
+    const parts = [...counties.values()].filter(row => row.date === date);
+    const sums = parts.map(row => {
+      const sum = units.get(JSON.stringify([row.date, row.id]));
+      if (!sum || ["count", "voters", "county", "status", "clock"].some(field => sum[field] !== row[field])
+          || row.status !== total.status || row.clock !== total.clock
+          || Boolean(row.hold) !== (sum.invalid || row.voters <= 0 || row.count > row.voters))
+        throw new Error("New Mexico county totals or rate hold differ");
+      return sum;
+    });
+    if (parts.length !== 33 || sums.reduce((n, r) => n + r.rows, 0) !== expected[date]
+        || sums.reduce((n, r) => n + r.count, 0) !== total.count
+        || sums.reduce((n, r) => n + r.voters, 0) !== total.voters || total.hold)
+      throw new Error("New Mexico statewide totals differ");
+  }
+  if ([...counties.values()].some(row => !totals.has(row.date))) throw new Error("New Mexico county lacks statewide control");
+  return [...totals.values(), ...counties.values()].sort((a, b) => a.date.localeCompare(b.date));
+}
+
+function installNewMexicoHistory(host, sources) {
+  if (!sources?.supported_release?.downloads?.[nmHistoryPath]) return;
+  const panel = document.createElement("details"), summary = document.createElement("summary");
+  const content = document.createElement("div");
+  summary.textContent = "New Mexico statewide and county turnout across elections";
+  panel.append(summary, content);
+  host.append(panel);
+  let loading = false;
+  panel.addEventListener("toggle", async () => {
+    if (!panel.open || loading) return;
+    loading = true;
+    try {
+      const {csv, file} = await loadCoverageCsv(sources, nmHistoryPath);
+      const rows = newMexicoHistoryRows(csv);
+      const note = document.createElement("p"), link = document.createElement("a");
+      note.textContent = "Rates use each official report's own Eligible Voters denominator, not VAP or VEP. "
+        + "County rates are withheld where a component's denominator is negative or below its count. No precinct geometry is inferred.";
+      link.href = file.url;
+      link.textContent = "Complete statewide, county and native reporting-unit history (CSV · gzip)";
+      const label = document.createElement("label"), select = document.createElement("select");
+      label.textContent = "Area ";
+      const options = [...new Set(rows.filter(row => row.level === "county").map(row => row.county))].sort();
+      select.append(new Option("Statewide", ""), ...options.map(name => new Option(name, name)));
+      label.append(select);
+      const scroller = document.createElement("div"), table = document.createElement("table");
+      scroller.className = "table-wrap";
+      scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region");
+      scroller.setAttribute("aria-label", "New Mexico turnout history table");
+      const header = table.createTHead().insertRow();
+      for (const title of ["Election", "Ballots Cast", "Eligible Voters", "Same-report rate", "Report clock"]) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = title; header.append(th);
+      }
+      const body = table.createTBody();
+      const draw = () => {
+        body.replaceChildren();
+        for (const r of rows.filter(row => row.county === select.value)) {
+          const tr = body.insertRow(), th = document.createElement("th");
+          th.scope = "row"; th.textContent = r.date; tr.append(th);
+          tr.insertCell().textContent = r.count.toLocaleString("en-US");
+          tr.insertCell().textContent = r.voters.toLocaleString("en-US");
+          tr.insertCell().textContent = r.rate === null ? "Withheld: invalid component denominator" : `${r.rate.toFixed(2)}%`;
+          tr.insertCell().textContent = r.clock + (r.status === "retained_after_failure" ? " · Last verified report" : "");
+        }
+      };
+      select.addEventListener("change", draw);
+      scroller.append(table); content.replaceChildren(note, link, label, scroller); draw();
+    } catch {
+      loading = false;
+      content.textContent = "The checked New Mexico history could not be loaded. Reopen this section to retry.";
+    }
+  });
+}
+
 function installOregonHistory(host, sources) {
   if (!sources?.supported_release?.downloads?.[oregonHistoryPath]) return;
   const panel = document.createElement("details"), summary = document.createElement("summary");
@@ -5642,6 +5757,7 @@ function installAdministrativeCoverage(host) {
       installIndianaEarlyHistory(content, manifest.house_sources);
       installWashingtonAge(content, manifest.house_sources);
       installOregonHistory(content, manifest.house_sources);
+      installNewMexicoHistory(content, manifest.house_sources);
       installKansasStudy(content, manifest.house_sources);
       installHawaiiHistory(content, manifest.house_sources);
       installHawaiiPrecinctHistory(content, manifest.house_sources);
