@@ -276,6 +276,28 @@ test("district boundary qualification preserves split holds and inspectable raw 
   assert.equal(held.qualified_margin_change_pp, null);
 });
 
+test("the verified Florida water-only transfer admits a swing but not a changed transfer or split", () => {
+  const data = boundaryFixture();
+  for (const rows of [data.races, data.candidates, data.coverage])
+    for (const row of rows.filter(row => row.chamber === "house"))
+      Object.assign(row, { state_code: "FL", id: "npr:house:FL:3:regular:general:not_ranked" });
+  const row = data.races[0];
+  row.baseline.district = "FL-03";
+  Object.assign(row.baseline.boundary_eligibility, {
+    district: "FL-03", state_code: "FL", state_fips: "12",
+    current_membership: { blocks: 3, sha256: "c".repeat(64) },
+    whole_block_membership_equal: false,
+    method: "complete_enacted_plans_differ_only_in_reviewed_water_blocks",
+    water_only_transfer: { block: "120830010031087", from: "12", to: "03", water_m2: 208825 },
+  });
+  assert.equal(validateCongressionalResults(data).races[0].qualified_margin_change_pp, 20);
+  const wrong = structuredClone(data);
+  wrong.races[0].baseline.boundary_eligibility.water_only_transfer.from = "11";
+  assert.throws(() => validateCongressionalResults(wrong), /Congressional House boundary/);
+  row.baseline.boundary_eligibility.affected_split_blocks = ["120830010031087"];
+  assert.throws(() => validateCongressionalResults(data), /Congressional House boundary/);
+});
+
 test("district numbering, equal assigned blocks or boundary compatibility alone cannot grant a swing", () => {
   for (const mutate of [
     value => { delete value.races[0].baseline.boundary_eligibility; },

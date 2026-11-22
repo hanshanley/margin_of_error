@@ -28,6 +28,12 @@ const splitGeometryReview = {
   blocks: ["080010096072000"],
 };
 
+const waterOnlyMethod = "complete_enacted_plans_differ_only_in_reviewed_water_blocks";
+const waterOnlyTransfers = {
+  "FL-03": { block: "120830010031087", from: "12", to: "03", water_m2: 208825 },
+  "FL-06": { block: "120690303052039", from: "11", to: "06", water_m2: 46759 },
+};
+
 function reviewedHouseBoundary(row, review) {
   const boundary = row.baseline?.boundary_eligibility;
   if (boundary === undefined) {
@@ -42,6 +48,12 @@ function reviewedHouseBoundary(row, review) {
     && boundary.split_geometry_review_sha256 === splitGeometryReview.sha256
     && splitGeometryReview.districts.includes(boundary.district)
     && equal(boundary.affected_split_blocks, splitGeometryReview.blocks);
+  const reviewedWater = boundary.method === waterOnlyMethod
+    && Object.hasOwn(waterOnlyTransfers, boundary.district)
+    && equal(boundary.water_only_transfer, waterOnlyTransfers[boundary.district])
+    && equal(boundary.affected_split_blocks, [])
+    && boundary.current_membership?.blocks === boundary.previous_membership?.blocks + 1
+    && boundary.current_membership?.sha256 !== boundary.previous_membership?.sha256;
   require(review && row.chamber === "house"
     && boundary.review_version === review.version
     && boundary.state_code === row.state_code && /^[0-9]{2}$/.test(boundary.state_fips)
@@ -52,7 +64,7 @@ function reviewedHouseBoundary(row, review) {
     && boundary.previous_year === 2024 && boundary.current_year === 2026
     && boundary.previous_congress === 119 && boundary.current_congress === 120
     && (boundary.method === "identical_2020_census_block_union_without_affected_split_blocks"
-      || reviewedSplit)
+      || reviewedSplit || reviewedWater)
     && fingerprint(boundary.previous_membership) && fingerprint(boundary.current_membership)
     && Array.isArray(boundary.affected_split_blocks)
     && new Set(boundary.affected_split_blocks).size === boundary.affected_split_blocks.length
@@ -62,7 +74,7 @@ function reviewedHouseBoundary(row, review) {
     && boundary.historical_votes_allocated === false && boundary.behavioral_model_qualified === false,
   "Congressional House boundary identity, source frame or method differs");
   const same = equal(boundary.previous_membership, boundary.current_membership);
-  const holds = [...(!same ? ["changed_2020_block_membership"] : []),
+  const holds = [...(!same && !reviewedWater ? ["changed_2020_block_membership"] : []),
     ...(boundary.affected_split_blocks.length && !reviewedSplit
       ? ["split_block_geometry_unresolved"] : [])];
   require(boundary.whole_block_membership_equal === same
@@ -419,6 +431,8 @@ export function installCongressionalReturns(root) {
               + (row.baseline.previous_stage_differs
                 ? "Final election to final election; the prior decisive runoff is not a preliminary round."
                 : "Election kinds and stages are preserved separately.")
+              : row.baseline.boundary_eligibility?.method === waterOnlyMethod
+                ? "Qualified recorded House comparison: the enacted boundaries differ only by a reviewed water block. No historical votes were allocated."
               : row.baseline.final_round_pair
                 ? "Qualified recorded House comparison: continuing candidate votes in the final ranked-choice tabulation in both elections, on the same reviewed district boundaries."
               : row.baseline.boundary_eligibility?.boundary_compatible
