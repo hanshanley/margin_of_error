@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: ab9b8a6dd5af19866bc1453591fc1a67dbb25329
+          ref: ffb2143b7f3b3d46fb67525d6feb0db315dc6cdb
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -101,7 +101,7 @@ jobs:
           enabled=false
           if curl --fail --silent --show-error --max-time 30 \
             https://www.themarginoferror.com/scripts/participation-congress.js -o "$reader" \
-            && [ "$(sha256sum "$reader" | cut -d ' ' -f 1)" = '39fab31cdd74faa89a0ee25d047a231701f20223391d33c49d17072aab81330e' ]; then
+            && [ "$(sha256sum "$reader" | cut -d ' ' -f 1)" = '3fcd2f4bfd8a4bdaf47748e308be772833b29ccd7c979d0189c452f004790819' ]; then
             enabled=true
           fi
           echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
