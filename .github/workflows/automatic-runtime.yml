@@ -99,14 +99,16 @@ jobs:
         shell: bash
         run: |
           reader_matches() {
-            local name="$1" expected="$2" path="$RUNNER_TEMP/$1"
-            curl --fail --silent --show-error --max-time 30 \
-              "https://www.themarginoferror.com/scripts/$name" -o "$path" \
-              && [ "$(sha256sum "$path" | cut -d ' ' -f 1)" = "$expected" ]
+            local name="$1"
+            local deployed="$RUNNER_TEMP/$name"
+            local expected="$RUNNER_TEMP/expected-$name"
+            git show "$GITHUB_SHA:public/scripts/$name" > "$expected" \
+              && curl --fail --silent --show-error --max-time 30 \
+                "https://www.themarginoferror.com/scripts/$name" -o "$deployed" \
+              && cmp -s "$expected" "$deployed"
           }
           enabled=false
-          if reader_matches participation-congress.js 23f641c2292ce21faa0e6c5e269fb85eb021fbddcc01b81c409487ada1407504 \
-            && reader_matches participation-house-districts.js 82e98fbfec2e498ec4ef8b1282d312c3c1771d50a989c95c686ff3555ecf4794; then
+          if reader_matches participation-congress.js && reader_matches participation-house-districts.js; then
             enabled=true
           fi
           echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
