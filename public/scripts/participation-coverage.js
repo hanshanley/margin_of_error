@@ -3420,7 +3420,8 @@ export function oregonHistoryRows(csv) {
 }
 
 export function newMexicoHistoryRows(csv) {
-  const expected = {"2020-11-03": 1925, "2022-11-08": 2163, "2024-11-05": 2169};
+  const expected = {"2016-11-08": 1492, "2018-11-06": 1492, "2020-11-03": 1925,
+    "2022-11-08": 2163, "2024-11-05": 2169};
   const [header, ...lines] = csv.trimEnd().split(/\r?\n/);
   const columns = historicalCsvLine(header);
   const fields = ["state_code", "election_date", "geography_level", "county_id", "county", "unit",
