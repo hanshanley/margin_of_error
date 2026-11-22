@@ -115,6 +115,34 @@ function reviewedSenateFrame(row, candidates) {
   "Senate historical counts or unique major-party coverage differ");
 }
 
+function reviewedHouseFinalRound(row, selected) {
+  const pair = row.baseline?.final_round_pair;
+  if (pair === undefined) return false;
+  const before = pair.previous, after = pair.current;
+  const contestants = selected.filter(candidate => candidate.role === "named_candidate");
+  require(pair.contract === "participation.house_rcv_final_pair.v1"
+    && pair.scope === "continuing_candidate_votes_at_final_central_tabulation"
+    && pair.district === "ME-02" && row.baseline.district === pair.district
+    && row.baseline.boundary_eligibility?.boundary_compatible === true
+    && row.id === "npr:house:ME:2:regular:general:rcv-final"
+    && row.ranked_choice && row.native_rcv_result === "final" && !row.native_runoff
+    && row.advertised && row.status === "reported" && row.count_coverage_complete
+    && before?.date === "2024-11-05" && after?.date === row.election_date
+    && before.source === "https://www1.maine.gov/sos/sites/maine.gov.sos/files/content/assets/Nov24-20RCV-20CG2-20Summary-20Report.pdf"
+    && after.source === "https://www3.maine.gov/sos/news/ranked-choice-voting-tabulation-results-announced-maine-congressional-district-2"
+    && after.certification === "not_asserted_by_tabulation_announcement"
+    && before.D === 197151 && before.R === 194445 && after.D === 165432 && after.R === 170890
+    && row.previous?.D === before.D && row.previous?.R === before.R && row.previous?.O === 0
+    && row.D === after.D && row.R === after.R && row.O === 0 && row.U === 0
+    && contestants.length === 2
+    && contestants.some(c => c.party_group === "D" && c.name === "Matthew Dunlap" && c.votes === after.D)
+    && contestants.some(c => c.party_group === "R" && c.name === "Paul LePage" && c.votes === after.R)
+    && selected.every(c => c.role === "named_candidate"
+      || (c.role === "provider_aggregate_other" && c.party_group === "O" && c.votes === 0)),
+  "Congressional ranked-choice final-round evidence differs");
+  return true;
+}
+
 function validatePayload(data, reviewed = false) {
   require(data?.contract === "participation.congressional_results.v1"
     && data.election_date === "2026-11-03" && data.source_models_refitted === false
@@ -208,8 +236,9 @@ function validatePayload(data, reviewed = false) {
       && close(raw === null ? null : raw / 2, row.raw_recorded_D_share_change_pp)
       && close(row.qualified_comparison ? raw : null, row.qualified_margin_change_pp),
     "Congressional recorded change does not reconcile");
+    const finalRoundQualified = reviewedHouseFinalRound(row, selected);
     if (row.qualified_comparison) require(previous && row.comparison_holds.length === 0
-      && row.status === "reported" && row.stage === "general" && !row.ranked_choice
+      && row.status === "reported" && row.stage === "general" && (!row.ranked_choice || finalRoundQualified)
       && row.count_coverage_complete && row.D > 0 && row.R > 0
       && previous.D > 0 && previous.R > 0
       && (row.chamber === "house" ? row.baseline.year === 2024 && row.baseline.stage === row.stage
@@ -274,6 +303,12 @@ function validatePayload(data, reviewed = false) {
       require(close(denominator ? 100 * (value.D - value.R) / denominator : null,
         value.D_minus_R_margin_pp), "House-state margin does not reconcile");
     }
+    const selectedPairs = Object.fromEntries(current
+      .filter(r => r.qualified_comparison && r.baseline?.final_round_pair)
+      .map(r => [r.id, r.baseline.final_round_pair]));
+    require(equal(row.final_round_pairs ?? {}, selectedPairs)
+      && (!row.qualified_comparison || current.every(r => !r.ranked_choice || selectedPairs[r.id])),
+    "House-state final-round evidence differs");
     const raw = row.previous.D_minus_R_margin_pp === null || row.current.D_minus_R_margin_pp === null
       ? null : row.current.D_minus_R_margin_pp - row.previous.D_minus_R_margin_pp;
     require(close(raw, row.raw_recorded_margin_change_pp)
@@ -384,6 +419,8 @@ export function installCongressionalReturns(root) {
               + (row.baseline.previous_stage_differs
                 ? "Final election to final election; the prior decisive runoff is not a preliminary round."
                 : "Election kinds and stages are preserved separately.")
+              : row.baseline.final_round_pair
+                ? "Qualified recorded House comparison: continuing candidate votes in the final ranked-choice tabulation in both elections, on the same reviewed district boundaries."
               : row.baseline.boundary_eligibility?.boundary_compatible
                 ? "Qualified recorded House comparison: identical reviewed 2020 Census block unions "
                   + "for the 119th and 120th Congress, with affected split blocks excluded. "
@@ -406,6 +443,13 @@ export function installCongressionalReturns(root) {
         const source = row.source?.url;
         if (typeof source === "string" && source.startsWith("https://apps.npr.org/"))
           detail.append(node("a", "Native national results feed", { href: source }));
+        const pair = row.baseline.final_round_pair;
+        if (pair) {
+          const sources = node("p", "Official final tabulations: ");
+          sources.append(node("a", "2024 report", { href: pair.previous.source }), " · ",
+            node("a", "2026 report", { href: pair.current.source }));
+          detail.append(sources);
+        }
       };
       const draw = () => {
         const selected = data.races.filter(row => row.chamber === chamber.value
@@ -452,7 +496,9 @@ export function installCongressionalReturns(root) {
             for (const value of [row.state_code, number(row.previous.D), number(row.previous.R),
               number(row.current.D), number(row.current.R), points(row.raw_recorded_margin_change_pp),
               points(row.qualified_margin_change_pp),
-              row.comparison_holds.join("; ") || "Complete same-office statewide source frame"])
+              row.comparison_holds.join("; ") || (row.final_round_pairs
+                ? "Complete statewide frame; matched final ranked-choice rounds where applicable"
+                : "Complete same-office statewide source frame")])
               tr.append(node("td", value));
             stateBody.append(tr);
           }
