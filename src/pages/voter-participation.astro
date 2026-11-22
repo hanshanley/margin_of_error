@@ -375,6 +375,14 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<p>The main results are in States, Demographics and 2026 swings above.
 				These supporting studies explain particular sources, historical comparisons and local cases.</p>
 			<details class="explorer-notes"><summary>Historical participation and demographic comparisons</summary>
+			<details data-nm-history-panel>
+				<summary>New Mexico statewide and county turnout, 2016–2024</summary>
+				<p>Official general-election reports. Rates use each report’s Eligible Voters denominator, not VAP or VEP.
+					Invalid denominators remain withheld. No precinct geometry is inferred.</p>
+				<div data-nm-history aria-live="polite"></div>
+				<p><a href="https://github.com/hanshanley/voter-participation/releases/download/new-mexico-turnout-history-2016-2024/new-mexico-turnout-history.zip">All 9,411 turnout rows and offline tables (ZIP)</a> ·
+					<a href="https://github.com/hanshanley/voter-participation/releases/download/new-mexico-county-turnout-maps-2016-2024/new-mexico-county-turnout-maps.zip">Five county maps, full data and replay (ZIP)</a></p>
+			</details>
 			<ParticipationCPSUnifiedHistory />
 			<ParticipationCPSEarlyHistory />
 			<ParticipationCPSOlderHistory />
@@ -1210,6 +1218,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		</section>
 	</div>
 	<script is:inline src="/scripts/participation-explorer.js" type="module"></script>
+	<script is:inline src="/scripts/participation-new-mexico-history.js" type="module"></script>
 	<script is:inline src="/voter-participation/current.js" defer></script>
 	<script is:inline src="/voter-participation/model.js" defer></script>
 	<script is:inline src="/voter-participation/cps.js" defer></script>

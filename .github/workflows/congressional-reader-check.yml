@@ -8,6 +8,7 @@ on:
       - 'public/scripts/participation-*.js'
       - 'scripts/participation-*.test.mjs'
       - 'scripts/fixtures/district-*.json.gz'
+      - 'src/pages/voter-participation.astro'
       - 'package.json'
 
 permissions:
@@ -30,3 +31,4 @@ jobs:
           scripts/participation-house-districts.test.mjs
           scripts/participation-congress.test.mjs
           scripts/participation-automatic-runtime.test.mjs
+          scripts/participation-new-mexico-history.test.mjs
