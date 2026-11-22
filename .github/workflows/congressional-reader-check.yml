@@ -1,0 +1,32 @@
+name: Congressional reader check
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/congressional-reader-check.yml'
+      - '.github/workflows/automatic-runtime.yml'
+      - 'public/scripts/participation-*.js'
+      - 'scripts/participation-*.test.mjs'
+      - 'scripts/fixtures/district-*.json.gz'
+      - 'package.json'
+
+permissions:
+  contents: read
+
+jobs:
+  congressional-reader:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Verify the full district map and congressional comparison contracts
+        run: >-
+          node --test
+          scripts/participation-house-districts.test.mjs
+          scripts/participation-congress.test.mjs
+          scripts/participation-automatic-runtime.test.mjs
