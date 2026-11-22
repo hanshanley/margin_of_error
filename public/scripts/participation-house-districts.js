@@ -77,7 +77,8 @@ export function validateDistrictGeometry(data) {
 export function bindDistrictResults(geometry, raw) {
   validateDistrictGeometry(geometry);
   const data = validateCongressionalResults(raw);
-  const rows = data.races.filter(row => row.chamber === "house" && row.voting_house_seat);
+  const rows = data.races.filter(row => row.chamber === "house" && row.voting_house_seat
+    && row.superseded_by_race_id === undefined);
   require(rows.length === 435 && new Set(rows.map(row => row.baseline?.district)).size === 435,
     "Current voting House district inventory differs");
   const byDistrict = new Map(rows.map(row => [row.baseline.district, row]));
