@@ -290,6 +290,42 @@ test("the verified Florida water-only transfer admits a swing but not a changed 
     method: "complete_enacted_plans_differ_only_in_reviewed_water_blocks",
     water_only_transfer: { block: "120830010031087", from: "12", to: "03", water_m2: 208825 },
   });
+
+  test("a held state can show a verified partial subtotal, never a statewide swing", () => {
+    const data = boundaryFixture();
+    const included = data.races[0];
+    const held = boundaryFixture(true);
+    const excluded = held.races[0];
+    for (const row of [excluded, ...held.candidates.filter(r => r.chamber === "house"), held.coverage[0]]) {
+      row.id = "npr:house:AL:4:regular:general:not_ranked";
+      row.seat = "4";
+    }
+    excluded.baseline.seat = "4";
+    excluded.baseline.district = "AL-04";
+    Object.assign(excluded.baseline.boundary_eligibility, { district: "AL-04", district_code: "04" });
+    data.races.push(excluded);
+    data.candidates.push(...held.candidates.filter(r => r.chamber === "house"));
+    data.coverage.push(held.coverage[0]);
+    Object.assign(data.summary.house, { discovered: 2, refreshed: 2 });
+    const state = {
+      state_code: "AL", office: "house", previous_year: 2024, current_year: 2026,
+      previous: { D: 100, R: 100, O: 0, D_minus_R_margin_pp: 0 },
+      current: { D: 120, R: 80, O: 0, U: 0, D_minus_R_margin_pp: 20 },
+      selected_race_ids: [included.id, excluded.id], expected_voting_seats: 2,
+      raw_recorded_margin_change_pp: 20, raw_recorded_D_share_change_pp: 10,
+      comparison_holds: ["An incomparable contest"], qualified_comparison: false,
+      qualified_margin_change_pp: null, behavioral_estimate_updated: false,
+      matched_district_subset: {
+        scope: "qualified_matched_districts_not_statewide", race_ids: [included.id],
+        districts: 1, state_districts: 2, previous: { D: 50, R: 50 },
+        current: { D: 60, R: 40 }, margin_change_pp: 20, D_two_party_share_change_pp: 10,
+      },
+    };
+    data.house_states = [state];
+    assert.equal(validateCongressionalResults(data).house_states[0].qualified_margin_change_pp, null);
+    state.matched_district_subset.race_ids = [excluded.id];
+    assert.throws(() => validateCongressionalResults(data), /matched-district subset/);
+  });
   assert.equal(validateCongressionalResults(data).races[0].qualified_margin_change_pp, 20);
   const wrong = structuredClone(data);
   wrong.races[0].baseline.boundary_eligibility.water_only_transfer.from = "11";

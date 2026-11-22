@@ -155,6 +155,30 @@ function reviewedHouseFinalRound(row, selected) {
   return true;
 }
 
+function validateMatchedDistrictSubset(state, selected) {
+  const subset = state.matched_district_subset;
+  if (subset === undefined) return;
+  const rows = selected.filter(r => r.advertised && r.qualified_comparison
+    && r.baseline?.boundary_eligibility?.boundary_compatible === true);
+  const previous = { D: 0, R: 0 }, current = { D: 0, R: 0 };
+  for (const row of rows)
+    for (const party of ["D", "R"]) {
+      previous[party] += row.previous[party];
+      current[party] += row[party];
+    }
+  const margin = v => 100 * (v.D - v.R) / (v.D + v.R);
+  const change = margin(current) - margin(previous);
+  require(!state.qualified_comparison && selected.length === state.expected_voting_seats
+    && new Set(selected.map(r => r.seat)).size === selected.length
+    && rows.length > 0 && rows.length < state.expected_voting_seats
+    && subset.scope === "qualified_matched_districts_not_statewide"
+    && subset.districts === rows.length && subset.state_districts === state.expected_voting_seats
+    && equal(subset.race_ids, rows.map(r => r.id).sort())
+    && equal(subset.previous, previous) && equal(subset.current, current)
+    && close(change, subset.margin_change_pp) && close(change / 2, subset.D_two_party_share_change_pp),
+  "House matched-district subset differs from verified district comparisons");
+}
+
 function validatePayload(data, reviewed = false) {
   require(data?.contract === "participation.congressional_results.v1"
     && data.election_date === "2026-11-03" && data.source_models_refitted === false
@@ -305,6 +329,7 @@ function validatePayload(data, reviewed = false) {
       && row.selected_race_ids.every(id => races.get(id)?.state_code === row.state_code
         && races.get(id)?.chamber === "house"), "House-state comparison identity differs");
     const current = row.selected_race_ids.map(id => races.get(id));
+    validateMatchedDistrictSubset(row, current);
     for (const party of ["D", "R", "O", "U"])
       if (row.current[party] !== null) require(row.current[party] === current.reduce(
         (sum, race) => sum === null || race[party] === null ? null : sum + race[party], 0),
@@ -500,24 +525,29 @@ export function installCongressionalReturns(root) {
           states.append(node("h4", "Statewide House comparisons"));
           const stateTable = node("table", null), header = node("tr", null), stateBody = node("tbody", null);
           for (const label of ["State", "2024 D", "2024 R", "2026 D", "2026 R",
-            "Raw margin change", "Qualified margin change", "Qualification"])
+            "Raw margin change", "Qualified statewide margin change", "Qualification",
+            "Qualified districts only"])
             header.append(node("th", label, { scope: "col" }));
           const head = node("thead", null);
           head.append(header);
           stateTable.append(head);
           for (const row of data.house_states.filter(row => !state.value || row.state_code === state.value)) {
             const tr = node("tr", null, { "data-congress-house-state": row.state_code });
+            const subset = row.matched_district_subset;
             for (const value of [row.state_code, number(row.previous.D), number(row.previous.R),
               number(row.current.D), number(row.current.R), points(row.raw_recorded_margin_change_pp),
               points(row.qualified_margin_change_pp),
               row.comparison_holds.join("; ") || (row.final_round_pairs
                 ? "Complete statewide frame; matched final ranked-choice rounds where applicable"
-                : "Complete same-office statewide source frame")])
+                : "Complete same-office statewide source frame"),
+              subset ? `${points(subset.margin_change_pp)} · ${subset.districts} of ${subset.state_districts} districts`
+                : "Not shown"])
               tr.append(node("td", value));
             stateBody.append(tr);
           }
           stateTable.append(stateBody);
-          states.append(node("p", "These complete statewide totals do not assert matched district boundaries or individual histories."),
+          states.append(node("p", "The qualified-district column shows only matched districts in held states. "
+            + "It is not a statewide estimate or a measure of turnout or individual switching."),
             stateTable);
         }
         detail.replaceChildren();
