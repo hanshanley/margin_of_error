@@ -28,6 +28,12 @@ const splitGeometryReview = {
   blocks: ["080010096072000"],
 };
 
+const waterOnlyMethod = "complete_enacted_plans_differ_only_in_reviewed_water_blocks";
+const waterOnlyTransfers = {
+  "FL-03": { block: "120830010031087", from: "12", to: "03", water_m2: 208825 },
+  "FL-06": { block: "120690303052039", from: "11", to: "06", water_m2: 46759 },
+};
+
 function reviewedHouseBoundary(row, review) {
   const boundary = row.baseline?.boundary_eligibility;
   if (boundary === undefined) {
@@ -42,6 +48,12 @@ function reviewedHouseBoundary(row, review) {
     && boundary.split_geometry_review_sha256 === splitGeometryReview.sha256
     && splitGeometryReview.districts.includes(boundary.district)
     && equal(boundary.affected_split_blocks, splitGeometryReview.blocks);
+  const reviewedWater = boundary.method === waterOnlyMethod
+    && Object.hasOwn(waterOnlyTransfers, boundary.district)
+    && equal(boundary.water_only_transfer, waterOnlyTransfers[boundary.district])
+    && equal(boundary.affected_split_blocks, [])
+    && boundary.current_membership?.blocks === boundary.previous_membership?.blocks + 1
+    && boundary.current_membership?.sha256 !== boundary.previous_membership?.sha256;
   require(review && row.chamber === "house"
     && boundary.review_version === review.version
     && boundary.state_code === row.state_code && /^[0-9]{2}$/.test(boundary.state_fips)
@@ -52,7 +64,7 @@ function reviewedHouseBoundary(row, review) {
     && boundary.previous_year === 2024 && boundary.current_year === 2026
     && boundary.previous_congress === 119 && boundary.current_congress === 120
     && (boundary.method === "identical_2020_census_block_union_without_affected_split_blocks"
-      || reviewedSplit)
+      || reviewedSplit || reviewedWater)
     && fingerprint(boundary.previous_membership) && fingerprint(boundary.current_membership)
     && Array.isArray(boundary.affected_split_blocks)
     && new Set(boundary.affected_split_blocks).size === boundary.affected_split_blocks.length
@@ -62,7 +74,7 @@ function reviewedHouseBoundary(row, review) {
     && boundary.historical_votes_allocated === false && boundary.behavioral_model_qualified === false,
   "Congressional House boundary identity, source frame or method differs");
   const same = equal(boundary.previous_membership, boundary.current_membership);
-  const holds = [...(!same ? ["changed_2020_block_membership"] : []),
+  const holds = [...(!same && !reviewedWater ? ["changed_2020_block_membership"] : []),
     ...(boundary.affected_split_blocks.length && !reviewedSplit
       ? ["split_block_geometry_unresolved"] : [])];
   require(boundary.whole_block_membership_equal === same
@@ -113,6 +125,103 @@ function reviewedSenateFrame(row, candidates) {
       && candidates.filter(candidate => candidate.party_group === party
         && candidate.role === "named_candidate").length === 1),
   "Senate historical counts or unique major-party coverage differ");
+}
+
+function reviewedHouseFinalRound(row, selected) {
+  const pair = row.baseline?.final_round_pair;
+  if (pair === undefined) return false;
+  const before = pair.previous, after = pair.current;
+  const contestants = selected.filter(candidate => candidate.role === "named_candidate");
+  require(pair.contract === "participation.house_rcv_final_pair.v1"
+    && pair.scope === "continuing_candidate_votes_at_final_central_tabulation"
+    && pair.district === "ME-02" && row.baseline.district === pair.district
+    && row.baseline.boundary_eligibility?.boundary_compatible === true
+    && row.id === "npr:house:ME:2:regular:general:rcv-final"
+    && row.ranked_choice && row.native_rcv_result === "final" && !row.native_runoff
+    && row.advertised && row.status === "reported" && row.count_coverage_complete
+    && before?.date === "2024-11-05" && after?.date === row.election_date
+    && before.source === "https://www1.maine.gov/sos/sites/maine.gov.sos/files/content/assets/Nov24-20RCV-20CG2-20Summary-20Report.pdf"
+    && after.source === "https://www3.maine.gov/sos/news/ranked-choice-voting-tabulation-results-announced-maine-congressional-district-2"
+    && after.certification === "not_asserted_by_tabulation_announcement"
+    && before.D === 197151 && before.R === 194445 && after.D === 165432 && after.R === 170890
+    && row.previous?.D === before.D && row.previous?.R === before.R && row.previous?.O === 0
+    && row.D === after.D && row.R === after.R && row.O === 0 && row.U === 0
+    && contestants.length === 2
+    && contestants.some(c => c.party_group === "D" && c.name === "Matthew Dunlap" && c.votes === after.D)
+    && contestants.some(c => c.party_group === "R" && c.name === "Paul LePage" && c.votes === after.R)
+    && selected.every(c => c.role === "named_candidate"
+      || (c.role === "provider_aggregate_other" && c.party_group === "O" && c.votes === 0)),
+  "Congressional ranked-choice final-round evidence differs");
+  return true;
+}
+
+function validateMatchedDistrictSubset(state, selected) {
+  const subset = state.matched_district_subset;
+  if (subset === undefined) return;
+  const rows = selected.filter(r => r.advertised && r.qualified_comparison
+    && r.baseline?.boundary_eligibility?.boundary_compatible === true);
+  const previous = { D: 0, R: 0 }, current = { D: 0, R: 0 };
+  for (const row of rows)
+    for (const party of ["D", "R"]) {
+      previous[party] += row.previous[party];
+      current[party] += row[party];
+    }
+  const margin = v => 100 * (v.D - v.R) / (v.D + v.R);
+  const change = margin(current) - margin(previous);
+  require(!state.qualified_comparison && selected.length === state.expected_voting_seats
+    && new Set(selected.map(r => r.seat)).size === selected.length
+    && rows.length > 0 && rows.length < state.expected_voting_seats
+    && subset.scope === "qualified_matched_districts_not_statewide"
+    && subset.districts === rows.length && subset.state_districts === state.expected_voting_seats
+    && equal(subset.race_ids, rows.map(r => r.id).sort())
+    && equal(subset.previous, previous) && equal(subset.current, current)
+    && close(change, subset.margin_change_pp) && close(change / 2, subset.D_two_party_share_change_pp),
+  "House matched-district subset differs from verified district comparisons");
+}
+
+function validateOlderSenateBaselines(entries, races, candidates) {
+  if (entries === undefined) return;
+  const stages = { AR: ["2014-11-04", "general"], LA: ["2014-12-06", "general_runoff"] };
+  require(Array.isArray(entries) && new Set(entries.map(row => row?.race_id)).size === entries.length,
+    "Older Senate comparison inventory differs");
+  for (const entry of entries) {
+    const row = races.get(entry.race_id);
+    const [date, stage] = stages[entry.state_code] ?? [];
+    require(date && row?.id === `npr:senate:${entry.state_code}:2:regular:general:not_ranked`
+      && row.advertised && !row.qualified_comparison && entry.seat === "2"
+      && entry.previous_election_date === date && entry.current_election_date === row.election_date
+      && entry.previous_stage === stage && entry.current_stage === row.stage
+      && entry.stage_changed === (stage !== row.stage)
+      && entry.scope === "older_same_seat_recorded_margin_not_last_cycle"
+      && entry.replaces_last_cycle === false && entry.behavioral_estimate_updated === false
+      && entry.historical_source?.url === "https://www.fec.gov/documents/1705/results14.xls"
+      && entry.historical_source?.sha256 === "62fa46fc365cc54c3290deda16b0ee2c3e97158adcca020781b3a42396435158"
+      && Array.isArray(entry.historical_candidates) && Array.isArray(entry.comparison_holds),
+    "Older Senate seat or election frame differs");
+    const before = { D: 0, R: 0, O: 0 };
+    const major = { D: 0, R: 0 };
+    for (const fact of entry.historical_candidates) {
+      require(typeof fact.name === "string" && fact.name && typeof fact.party === "string" && fact.party
+        && Number.isSafeInteger(fact.votes) && fact.votes >= 0, "Invalid older Senate candidate");
+      const party = Object.hasOwn(major, fact.party) ? fact.party : "O";
+      before[party] += fact.votes;
+      if (party !== "O") major[party]++;
+    }
+    const current = Object.fromEntries([..."DROU"].map(party => [party, row[party]]));
+    const holds = [];
+    if (row.status !== "reported") holds.push("Current returns were not refreshed");
+    if (row.ranked_choice || row.native_runoff || !row.count_coverage_complete || row.U !== 0
+      || ["D", "R"].some(party => !(row[party] > 0) || candidates.get(row.id).filter(
+        candidate => candidate.role === "named_candidate" && candidate.party_group === party).length !== 1))
+      holds.push("Current regular general-election count frame differs");
+    const margin = v => 100 * (v.D - v.R) / (v.D + v.R);
+    const change = holds.length ? null : margin(current) - margin(before);
+    require(major.D === 1 && major.R === 1 && before.D > 0 && before.R > 0
+      && equal(before, entry.previous_counts) && equal(current, entry.current_counts)
+      && equal(holds, entry.comparison_holds) && close(change, entry.margin_change_pp)
+      && close(change === null ? null : change / 2, entry.D_two_party_share_change_pp),
+    "Older Senate comparison counts or qualification differ");
+  }
 }
 
 function validatePayload(data, reviewed = false) {
@@ -208,8 +317,9 @@ function validatePayload(data, reviewed = false) {
       && close(raw === null ? null : raw / 2, row.raw_recorded_D_share_change_pp)
       && close(row.qualified_comparison ? raw : null, row.qualified_margin_change_pp),
     "Congressional recorded change does not reconcile");
+    const finalRoundQualified = reviewedHouseFinalRound(row, selected);
     if (row.qualified_comparison) require(previous && row.comparison_holds.length === 0
-      && row.status === "reported" && row.stage === "general" && !row.ranked_choice
+      && row.status === "reported" && row.stage === "general" && (!row.ranked_choice || finalRoundQualified)
       && row.count_coverage_complete && row.D > 0 && row.R > 0
       && previous.D > 0 && previous.R > 0
       && (row.chamber === "house" ? row.baseline.year === 2024 && row.baseline.stage === row.stage
@@ -220,14 +330,26 @@ function validatePayload(data, reviewed = false) {
       reviewedSenateFrame(row, selected);
     reviewedHouseBoundary(row, boundaries);
   }
+  validateOlderSenateBaselines(data.senate_older_baselines, races, candidates);
   require(new Set(data.coverage.map(row => row.id)).size === data.coverage.length,
     "Congressional coverage identities are duplicated");
   const coverageById = new Map(data.coverage.map(row => [row.id, row]));
   for (const race of races.values()) {
     const row = coverageById.get(race.id);
     require(row && ["chamber", "state_code", "status", "freshness", "advertised",
-      "source_updated_at"].every(key => row[key] === race[key]),
+      "source_updated_at", "superseded_by_race_id"].every(key => row[key] === race[key]),
     "Congressional coverage differs from its race");
+    if (race.superseded_by_race_id !== undefined) {
+      const final = races.get(race.superseded_by_race_id);
+      require(race.status === "retained_after_failure" && race.advertised === false
+        && race.hold_reason === "Race no longer advertised" && race.ranked_choice
+        && race.native_rcv_result === "pending" && typeof race.provider_race_id === "string"
+        && final?.status === "reported" && final.advertised && final.ranked_choice
+        && final.native_rcv_result === "final" && final.count_coverage_complete
+        && final.source_updated_epoch_ms > race.source_updated_epoch_ms
+        && ["provider_race_id", "chamber", "state_code", "seat", "election_date", "election_kind", "stage"]
+          .every(key => final[key] === race[key]), "Congressional final round does not supersede this record");
+    }
   }
   for (const row of data.coverage)
     require(races.has(row.id) || (row.status === "held" && row.freshness === "unavailable"
@@ -238,6 +360,7 @@ function validatePayload(data, reviewed = false) {
     const coverage = data.coverage.filter(row => row.chamber === chamber), summary = data.summary?.[chamber];
     require(summary && summary.refreshed === rows.filter(row => row.status === "reported").length
       && summary.retained === rows.filter(row => row.status !== "reported").length
+      && (summary.superseded_rcv_records ?? 0) === rows.filter(row => row.superseded_by_race_id !== undefined).length
       && summary.held === coverage.filter(row => row.status === "held").length
       && summary.discovered === coverage.filter(row => row.advertised).length,
     "Congressional freshness summary differs");
@@ -252,6 +375,7 @@ function validatePayload(data, reviewed = false) {
       && row.selected_race_ids.every(id => races.get(id)?.state_code === row.state_code
         && races.get(id)?.chamber === "house"), "House-state comparison identity differs");
     const current = row.selected_race_ids.map(id => races.get(id));
+    validateMatchedDistrictSubset(row, current);
     for (const party of ["D", "R", "O", "U"])
       if (row.current[party] !== null) require(row.current[party] === current.reduce(
         (sum, race) => sum === null || race[party] === null ? null : sum + race[party], 0),
@@ -262,6 +386,12 @@ function validatePayload(data, reviewed = false) {
       require(close(denominator ? 100 * (value.D - value.R) / denominator : null,
         value.D_minus_R_margin_pp), "House-state margin does not reconcile");
     }
+    const selectedPairs = Object.fromEntries(current
+      .filter(r => r.qualified_comparison && r.baseline?.final_round_pair)
+      .map(r => [r.id, r.baseline.final_round_pair]));
+    require(equal(row.final_round_pairs ?? {}, selectedPairs)
+      && (!row.qualified_comparison || current.every(r => !r.ranked_choice || selectedPairs[r.id])),
+    "House-state final-round evidence differs");
     const raw = row.previous.D_minus_R_margin_pp === null || row.current.D_minus_R_margin_pp === null
       ? null : row.current.D_minus_R_margin_pp - row.previous.D_minus_R_margin_pp;
     require(close(raw, row.raw_recorded_margin_change_pp)
@@ -323,6 +453,11 @@ function node(tag, text, attributes = {}) {
   return element;
 }
 
+function roundFreshness(row) {
+  return row.superseded_by_race_id ? "archived; superseded by the provider's final ranked-choice count"
+    : row.freshness.replaceAll("_", " ");
+}
+
 export function installCongressionalReturns(root) {
   const disclosure = root.querySelector("[data-congressional-results]");
   if (!disclosure) return;
@@ -353,10 +488,11 @@ export function installCongressionalReturns(root) {
       controls.replaceChildren(chamber, state);
       const candidateRows = new Map(data.races.map(row =>
         [row.id, data.candidates.filter(candidate => candidate.id === row.id)]));
+      const olderBaselines = new Map((data.senate_older_baselines ?? []).map(row => [row.race_id, row]));
       const show = row => {
         detail.replaceChildren(
           node("h4", `${row.state_code} · ${row.chamber} · ${row.seat_label} · ${row.election_kind}`),
-          node("p", `${row.native_type} · ${row.round} · ${row.freshness.replaceAll("_", " ")}. `
+          node("p", `${row.native_type} · ${row.round} · ${roundFreshness(row)}. `
             + `Native count update: ${row.source_updated_at}. `
             + `Source results type: ${row.native_results_type ?? "not supplied"}. `
             + `Certification flag: ${row.native_certified ?? "not supplied"}.`),
@@ -367,6 +503,10 @@ export function installCongressionalReturns(root) {
               + (row.baseline.previous_stage_differs
                 ? "Final election to final election; the prior decisive runoff is not a preliminary round."
                 : "Election kinds and stages are preserved separately.")
+              : row.baseline.boundary_eligibility?.method === waterOnlyMethod
+                ? "Qualified recorded House comparison: the enacted boundaries differ only by a reviewed water block. No historical votes were allocated."
+              : row.baseline.final_round_pair
+                ? "Qualified recorded House comparison: continuing candidate votes in the final ranked-choice tabulation in both elections, on the same reviewed district boundaries."
               : row.baseline.boundary_eligibility?.boundary_compatible
                 ? "Qualified recorded House comparison: identical reviewed 2020 Census block unions "
                   + "for the 119th and 120th Congress, with affected split blocks excluded. "
@@ -389,13 +529,31 @@ export function installCongressionalReturns(root) {
         const source = row.source?.url;
         if (typeof source === "string" && source.startsWith("https://apps.npr.org/"))
           detail.append(node("a", "Native national results feed", { href: source }));
+        const pair = row.baseline.final_round_pair;
+        if (pair) {
+          const sources = node("p", "Official final tabulations: ");
+          sources.append(node("a", "2024 report", { href: pair.previous.source }), " · ",
+            node("a", "2026 report", { href: pair.current.source }));
+          detail.append(sources);
+        }
+        const older = olderBaselines.get(row.id);
+        if (older) {
+          detail.append(node("h5", "Older same-seat comparison"));
+          const previousStage = older.stage_changed ? "decisive runoff" : "general election";
+          detail.append(node("p", `2014 ${previousStage} to 2026 general election: `
+            + (older.comparison_holds.length ? older.comparison_holds.join("; ") : points(older.margin_change_pp))
+            + ". This does not replace the held 2020 comparison."),
+          node("a", "Official 2014 FEC results workbook", { href: older.historical_source.url }));
+        }
       };
       const draw = () => {
         const selected = data.races.filter(row => row.chamber === chamber.value
           && (!state.value || row.state_code === state.value));
         const totals = data.summary[chamber.value];
+        const superseded = totals.superseded_rcv_records ?? 0;
         status.textContent = `${totals.discovered} advertised ${chamber.value} contests: `
-          + `${totals.refreshed} source-verified, ${totals.retained} retained, ${totals.held} unavailable holds. `
+          + `${totals.refreshed} source-verified, ${totals.retained - superseded} retained, ${totals.held} unavailable holds. `
+          + (superseded ? `${superseded} superseded ranked-choice records archived. ` : "")
           + (totals.discovered === 0 ? "The live inventory is unavailable, not proof that no contests exist. " : "")
           + `Checked ${manifest.checked_at}; native count dates are shown separately. `
           + `${selected.filter(row => row.qualified_comparison).length} qualified recorded comparisons in this selection.`;
@@ -412,7 +570,7 @@ export function installCongressionalReturns(root) {
             percent(row.D_two_party_share_pct),
             points(row.D_minus_R_margin_pp), points(row.raw_recorded_margin_change_pp),
             row.qualified_comparison ? "Qualified recorded" : "Held; raw arithmetic only",
-            row.freshness.replaceAll("_", " "), row.source_updated_at])
+            roundFreshness(row), row.source_updated_at])
             tr.append(node("td", value));
           body.append(tr);
         }
@@ -423,22 +581,29 @@ export function installCongressionalReturns(root) {
           states.append(node("h4", "Statewide House comparisons"));
           const stateTable = node("table", null), header = node("tr", null), stateBody = node("tbody", null);
           for (const label of ["State", "2024 D", "2024 R", "2026 D", "2026 R",
-            "Raw margin change", "Qualified margin change", "Qualification"])
+            "Raw margin change", "Qualified statewide margin change", "Qualification",
+            "Qualified districts only"])
             header.append(node("th", label, { scope: "col" }));
           const head = node("thead", null);
           head.append(header);
           stateTable.append(head);
           for (const row of data.house_states.filter(row => !state.value || row.state_code === state.value)) {
             const tr = node("tr", null, { "data-congress-house-state": row.state_code });
+            const subset = row.matched_district_subset;
             for (const value of [row.state_code, number(row.previous.D), number(row.previous.R),
               number(row.current.D), number(row.current.R), points(row.raw_recorded_margin_change_pp),
               points(row.qualified_margin_change_pp),
-              row.comparison_holds.join("; ") || "Complete same-office statewide source frame"])
+              row.comparison_holds.join("; ") || (row.final_round_pairs
+                ? "Complete statewide frame; matched final ranked-choice rounds where applicable"
+                : "Complete same-office statewide source frame"),
+              subset ? `${points(subset.margin_change_pp)} · ${subset.districts} of ${subset.state_districts} districts`
+                : "Not shown"])
               tr.append(node("td", value));
             stateBody.append(tr);
           }
           stateTable.append(stateBody);
-          states.append(node("p", "These complete statewide totals do not assert matched district boundaries or individual histories."),
+          states.append(node("p", "The qualified-district column shows only matched districts in held states. "
+            + "It is not a statewide estimate or a measure of turnout or individual switching."),
             stateTable);
         }
         detail.replaceChildren();

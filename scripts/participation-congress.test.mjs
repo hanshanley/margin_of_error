@@ -41,6 +41,35 @@ test("complete both-chamber results preserve zeros, separate seat identities and
   assert.equal(data.races[0].raw_recorded_margin_change_pp, 2 * data.races[0].raw_recorded_D_share_change_pp);
 });
 
+test("an older Senate runoff cannot replace the last-cycle comparison or change its stage", () => {
+  const data = fixture();
+  for (const row of [...data.races, ...data.candidates, ...data.coverage].filter(r => r.chamber === "senate"))
+    Object.assign(row, { state_code: "LA", id: "npr:senate:LA:2:regular:general:not_ranked" });
+  const row = data.races[1];
+  Object.assign(row, { qualified_comparison: false, qualified_margin_change_pp: null,
+    comparison_holds: ["Last-cycle candidate frame differs"] });
+  for (const candidate of data.candidates.filter(c => c.chamber === "senate"))
+    candidate.role = candidate.party_group === "O" ? "provider_aggregate_other" : "named_candidate";
+  const prior = { D: 561210, R: 712379, O: 0 };
+  const change = 20 - 100 * (prior.D - prior.R) / (prior.D + prior.R);
+  const older = {
+    race_id: row.id, state_code: "LA", seat: "2", scope: "older_same_seat_recorded_margin_not_last_cycle",
+    previous_election_date: "2014-12-06", current_election_date: "2026-11-03",
+    previous_stage: "general_runoff", current_stage: "general", stage_changed: true,
+    previous_counts: prior, current_counts: { D: 60, R: 40, O: 0, U: 0 },
+    historical_candidates: [{ name: "Landrieu", party: "D", votes: prior.D },
+      { name: "Cassidy", party: "R", votes: prior.R }],
+    historical_source: { url: "https://www.fec.gov/documents/1705/results14.xls",
+      sha256: "62fa46fc365cc54c3290deda16b0ee2c3e97158adcca020781b3a42396435158" },
+    replaces_last_cycle: false, behavioral_estimate_updated: false, comparison_holds: [],
+    margin_change_pp: change, D_two_party_share_change_pp: change / 2,
+  };
+  data.senate_older_baselines = [older];
+  assert.equal(validateCongressionalResults(data).races[1].qualified_comparison, false);
+  older.previous_stage = "general";
+  assert.throws(() => validateCongressionalResults(data), /Older Senate seat or election frame/);
+});
+
 test("source, candidate, arithmetic, frame and freshness corruptions are rejected", () => {
   for (const mutate of [
     value => { value.candidates.pop(); },
@@ -72,6 +101,39 @@ test("a held RCV comparison keeps its raw recorded change without becoming a qua
   row.qualified_margin_change_pp = null;
   row.comparison_holds = ["Previous/current RCV rounds not matched"];
   assert.equal(validateCongressionalResults(data).races[1].raw_recorded_margin_change_pp, 20);
+});
+
+test("a superseded pending record stays downloadable and must link to the same contest's newer final", () => {
+  const data = fixture(), final = data.races[0];
+  const oldId = final.id;
+  const noComparison = { qualified_comparison: false, qualified_margin_change_pp: null,
+    comparison_holds: ["RCV rounds are not comparable"] };
+  Object.assign(final, noComparison, { ranked_choice: true, round: "rcv-final",
+    native_rcv_result: "final", provider_race_id: "2015", id: oldId.replace("not_ranked", "rcv-final") });
+  const timestamp = "2026-11-14T00:00:00.000+00:00";
+  const pending = { ...final, id: oldId.replace("not_ranked", "rcv-pending"), round: "rcv-pending",
+    native_rcv_result: "pending", advertised: false, status: "retained_after_failure",
+    freshness: "retained_last_good", hold_reason: "Race no longer advertised",
+    source_updated_at: timestamp, source_updated_epoch_ms: Date.parse(timestamp), superseded_by_race_id: final.id };
+  data.races.push(pending);
+  for (const candidate of data.candidates.filter(row => row.id === oldId)) {
+    const fields = { candidate_id: candidate.candidate_id, name: candidate.name,
+      literal_party: candidate.literal_party, party_group: candidate.party_group, votes: candidate.votes };
+    Object.assign(candidate, final, fields);
+    data.candidates.push({ ...pending, ...fields });
+  }
+  data.coverage = data.races.map(row => ({ ...row }));
+  Object.assign(data.summary.house, { retained: 1, superseded_rcv_records: 1 });
+  assert.equal(validateCongressionalResults(data).races.length, 3);
+  for (const mutate of [
+    copy => { copy.races[0].provider_race_id = "2016"; },
+    copy => { copy.races[0].native_rcv_result = "pending"; },
+    copy => { copy.summary.house.superseded_rcv_records = 0; },
+    copy => { delete copy.coverage[2].superseded_by_race_id; },
+  ]) {
+    const copy = structuredClone(data); mutate(copy);
+    assert.throws(() => validateCongressionalResults(copy), /Congressional/);
+  }
 });
 
 const readerLimit = "Reviewed same-seat comparison is qualified in congress-comparisons.csv; "
@@ -241,6 +303,64 @@ test("district boundary qualification preserves split holds and inspectable raw 
   const held = validateCongressionalResults(boundaryFixture(true)).races[0];
   assert.equal(held.raw_recorded_margin_change_pp, 20);
   assert.equal(held.qualified_margin_change_pp, null);
+});
+
+test("the verified Florida water-only transfer admits a swing but not a changed transfer or split", () => {
+  const data = boundaryFixture();
+  for (const rows of [data.races, data.candidates, data.coverage])
+    for (const row of rows.filter(row => row.chamber === "house"))
+      Object.assign(row, { state_code: "FL", id: "npr:house:FL:3:regular:general:not_ranked" });
+  const row = data.races[0];
+  row.baseline.district = "FL-03";
+  Object.assign(row.baseline.boundary_eligibility, {
+    district: "FL-03", state_code: "FL", state_fips: "12",
+    current_membership: { blocks: 3, sha256: "c".repeat(64) },
+    whole_block_membership_equal: false,
+    method: "complete_enacted_plans_differ_only_in_reviewed_water_blocks",
+    water_only_transfer: { block: "120830010031087", from: "12", to: "03", water_m2: 208825 },
+  });
+
+  test("a held state can show a verified partial subtotal, never a statewide swing", () => {
+    const data = boundaryFixture();
+    const included = data.races[0];
+    const held = boundaryFixture(true);
+    const excluded = held.races[0];
+    for (const row of [excluded, ...held.candidates.filter(r => r.chamber === "house"), held.coverage[0]]) {
+      row.id = "npr:house:AL:4:regular:general:not_ranked";
+      row.seat = "4";
+    }
+    excluded.baseline.seat = "4";
+    excluded.baseline.district = "AL-04";
+    Object.assign(excluded.baseline.boundary_eligibility, { district: "AL-04", district_code: "04" });
+    data.races.push(excluded);
+    data.candidates.push(...held.candidates.filter(r => r.chamber === "house"));
+    data.coverage.push(held.coverage[0]);
+    Object.assign(data.summary.house, { discovered: 2, refreshed: 2 });
+    const state = {
+      state_code: "AL", office: "house", previous_year: 2024, current_year: 2026,
+      previous: { D: 100, R: 100, O: 0, D_minus_R_margin_pp: 0 },
+      current: { D: 120, R: 80, O: 0, U: 0, D_minus_R_margin_pp: 20 },
+      selected_race_ids: [included.id, excluded.id], expected_voting_seats: 2,
+      raw_recorded_margin_change_pp: 20, raw_recorded_D_share_change_pp: 10,
+      comparison_holds: ["An incomparable contest"], qualified_comparison: false,
+      qualified_margin_change_pp: null, behavioral_estimate_updated: false,
+      matched_district_subset: {
+        scope: "qualified_matched_districts_not_statewide", race_ids: [included.id],
+        districts: 1, state_districts: 2, previous: { D: 50, R: 50 },
+        current: { D: 60, R: 40 }, margin_change_pp: 20, D_two_party_share_change_pp: 10,
+      },
+    };
+    data.house_states = [state];
+    assert.equal(validateCongressionalResults(data).house_states[0].qualified_margin_change_pp, null);
+    state.matched_district_subset.race_ids = [excluded.id];
+    assert.throws(() => validateCongressionalResults(data), /matched-district subset/);
+  });
+  assert.equal(validateCongressionalResults(data).races[0].qualified_margin_change_pp, 20);
+  const wrong = structuredClone(data);
+  wrong.races[0].baseline.boundary_eligibility.water_only_transfer.from = "11";
+  assert.throws(() => validateCongressionalResults(wrong), /Congressional House boundary/);
+  row.baseline.boundary_eligibility.affected_split_blocks = ["120830010031087"];
+  assert.throws(() => validateCongressionalResults(data), /Congressional House boundary/);
 });
 
 test("district numbering, equal assigned blocks or boundary compatibility alone cannot grant a swing", () => {

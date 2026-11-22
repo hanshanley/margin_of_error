@@ -140,6 +140,46 @@ test("changed plans, unresolved split blocks and RCV holds never become a zero o
   assert.equal(districtFill(0,20),"#f3f1ea");
 });
 
+test("the verified final Alaska round takes one map seat while its pending round stays in the archive", () => {
+  const raw = clone(splitOriginal);
+  let finalId, pendingId;
+  for (const rows of [raw.races, raw.reviewed_races]) {
+    const pending = rows.find(row => row.baseline?.district === "AK-AL");
+    pendingId = pending.id;
+    finalId = pendingId.replace("rcv-pending", "rcv-final");
+    const clock = pending.source_updated_epoch_ms + 1000;
+    rows.push({ ...pending, id: finalId, round: "rcv-final", native_rcv_result: "final",
+      source_updated_epoch_ms: clock, source_updated_at: new Date(clock).toISOString().replace("Z", "+00:00") });
+    Object.assign(pending, { advertised: false, status: "retained_after_failure",
+      freshness: "retained_last_good", hold_reason: "Race no longer advertised", superseded_by_race_id: finalId });
+  }
+  const final = raw.races.find(row => row.id === finalId);
+  const pending = raw.races.find(row => row.id === pendingId);
+  const fields = ["id", "status", "freshness", "advertised", "hold_reason", "round", "source_updated_at"];
+  for (const candidate of raw.candidates.filter(row => row.id === pendingId)) {
+    raw.candidates.push({ ...candidate, ...Object.fromEntries(fields.map(key => [key, final[key]])) });
+    Object.assign(candidate, Object.fromEntries(fields.map(key => [key, pending[key]])));
+  }
+  const cover = raw.coverage.find(row => row.id === pendingId);
+  raw.coverage.push({ ...cover, ...Object.fromEntries(fields.map(key => [key, final[key]])) });
+  Object.assign(cover, Object.fromEntries([...fields, "superseded_by_race_id"].map(key => [key, pending[key]])));
+  Object.assign(raw.summary.house, { retained: 1, superseded_rcv_records: 1 });
+  const state = raw.house_states.find(row => row.state_code === "AK");
+  state.selected_race_ids = [finalId];
+  state.source_updated_at_by_contest = { [finalId]: final.source_updated_at };
+
+  const map = bindDistrictResults(geometry, raw);
+  assert.equal(map.length, 435);
+  assert.equal(map.find(item => item.path.district === "AK-AL").row.id, finalId);
+  assert.equal(map.filter(item => item.row.qualified_comparison).length, 261);
+  assert(raw.races.some(row => row.id === pendingId));
+
+  for (const rows of [raw.races, raw.reviewed_races, raw.coverage])
+    delete rows.find(row => row.id === pendingId).superseded_by_race_id;
+  raw.summary.house.superseded_rcv_records = 0;
+  assert.throws(() => bindDistrictResults(geometry, raw), /Current voting House district inventory/);
+});
+
 test("wrong current vintage, CRS, source pins, duplicate and unassigned-as-seat mutations refuse",()=>{
   const mutations = [
     value=>{value.congress=119;},value=>{value.native_crs="EPSG:4326";},

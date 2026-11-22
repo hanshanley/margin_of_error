@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: d7e7f4069f8e7c796c2181f3f48656c1180105c2
+          ref: 384fdf7fbcbabd92b7f152a86936f981a909bb00
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -78,7 +78,9 @@ jobs:
             data/results-intake/explicit-reference-names
             data/results-intake/district-boundaries
             data/results-intake/district-splits
+            data/results-intake/district-water-only
             data/results-intake/senate-legacy
+            data/results-intake/senate-long-baseline
             data/results-intake/senate-complete-categories
             data/results-intake/senate-cross-cycle-survey-support.zip
             data/results-intake/protected-official-house
@@ -92,12 +94,30 @@ jobs:
       - name: Install the reviewed producer environment
         run: python -m pip install 'requests>=2.31' 'xlrd>=2' 'openpyxl==3.1.5'
 
+      - name: Enable expanded House comparisons only for the reviewed reader
+        id: house-comparisons
+        shell: bash
+        run: |
+          reader_matches() {
+            local name="$1" expected="$2" path="$RUNNER_TEMP/$1"
+            curl --fail --silent --show-error --max-time 30 \
+              "https://www.themarginoferror.com/scripts/$name" -o "$path" \
+              && [ "$(sha256sum "$path" | cut -d ' ' -f 1)" = "$expected" ]
+          }
+          enabled=false
+          if reader_matches participation-congress.js 23f641c2292ce21faa0e6c5e269fb85eb021fbddcc01b81c409487ada1407504 \
+            && reader_matches participation-house-districts.js 82e98fbfec2e498ec4ef8b1282d312c3c1771d50a989c95c686ff3555ecf4794; then
+            enabled=true
+          fi
+          echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
+
       - name: Verify and atomically publish the data-only runtime
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/research-source
           RESULTS_POINTER: ${{ inputs.results_pointer }}
+          HOUSE_COMPARISONS: ${{ steps.house-comparisons.outputs.enabled }}
         run: |
           pointer="$RESULTS_POINTER"
           if [ -z "$pointer" ]; then
@@ -106,10 +126,15 @@ jobs:
             [[ "$source_commit" =~ ^[0-9a-f]{40}$ ]]
             pointer="https://raw.githubusercontent.com/hanshanley/voter-participation/$source_commit/latest.json"
           fi
+          comparison_args=()
+          if [ "$HOUSE_COMPARISONS" = true ]; then
+            comparison_args+=(--accept-reviewed-house-final-rounds --accept-reviewed-house-water-only)
+          fi
           python -m scripts.automatic_runtime \
             --results-pointer "$pointer" \
             --repository "$GITHUB_WORKSPACE" \
             --accept-reviewed-house-split-geometry \
+            "${comparison_args[@]}" \
             --work-dir "$RUNNER_TEMP/participation-automatic-runtime" \
             | tee "$RUNNER_TEMP/participation-automatic-runtime-result.json"
           {
