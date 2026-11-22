@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: 88e6366aa17f681251377e6cdc6930345dfcaa01
+          ref: 1aa9676f7143e1f8cc91a7bbad3a5e2742b6914f
           path: research-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -78,6 +78,7 @@ jobs:
             data/results-intake/explicit-reference-names
             data/results-intake/district-boundaries
             data/results-intake/district-splits
+            data/results-intake/district-water-only
             data/results-intake/senate-legacy
             data/results-intake/senate-complete-categories
             data/results-intake/senate-cross-cycle-survey-support.zip
@@ -91,6 +92,15 @@ jobs:
 
       - name: Install the reviewed producer environment
         run: python -m pip install 'requests>=2.31' 'xlrd>=2' 'openpyxl==3.1.5'
+
+      - name: Require the reviewed comparison reader before activating new frames
+        shell: bash
+        run: |
+          reader="$RUNNER_TEMP/participation-congress.js"
+          curl --fail --silent --show-error --max-time 30 \
+            https://www.themarginoferror.com/scripts/participation-congress.js -o "$reader"
+          printf '%s  %s\n' '39fab31cdd74faa89a0ee25d047a231701f20223391d33c49d17072aab81330e' "$reader" \
+            | sha256sum --check
 
       - name: Verify and atomically publish the data-only runtime
         shell: bash
@@ -110,6 +120,8 @@ jobs:
             --results-pointer "$pointer" \
             --repository "$GITHUB_WORKSPACE" \
             --accept-reviewed-house-split-geometry \
+            --accept-reviewed-house-final-rounds \
+            --accept-reviewed-house-water-only \
             --work-dir "$RUNNER_TEMP/participation-automatic-runtime" \
             | tee "$RUNNER_TEMP/participation-automatic-runtime-result.json"
           {
