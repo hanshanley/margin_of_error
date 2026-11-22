@@ -98,11 +98,15 @@ jobs:
         id: house-comparisons
         shell: bash
         run: |
-          reader="$RUNNER_TEMP/participation-congress.js"
+          reader_matches() {
+            local name="$1" expected="$2" path="$RUNNER_TEMP/$1"
+            curl --fail --silent --show-error --max-time 30 \
+              "https://www.themarginoferror.com/scripts/$name" -o "$path" \
+              && [ "$(sha256sum "$path" | cut -d ' ' -f 1)" = "$expected" ]
+          }
           enabled=false
-          if curl --fail --silent --show-error --max-time 30 \
-            https://www.themarginoferror.com/scripts/participation-congress.js -o "$reader" \
-            && [ "$(sha256sum "$reader" | cut -d ' ' -f 1)" = '23f641c2292ce21faa0e6c5e269fb85eb021fbddcc01b81c409487ada1407504' ]; then
+          if reader_matches participation-congress.js 23f641c2292ce21faa0e6c5e269fb85eb021fbddcc01b81c409487ada1407504 \
+            && reader_matches participation-house-districts.js 82e98fbfec2e498ec4ef8b1282d312c3c1771d50a989c95c686ff3555ecf4794; then
             enabled=true
           fi
           echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
