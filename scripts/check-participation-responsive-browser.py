@@ -30,22 +30,26 @@ def check(base, screenshots):
             page.evaluate("document.fonts.ready")
             assert page.evaluate("document.documentElement.scrollWidth") == width
             turnout_top = round(map_view.bounding_box()["y"])
-            assert turnout_top < 780
+            assert turnout_top < 630
             options, color, touch = (page.locator(selector) for selector in (
-                "#mobile-map-options", "#map-color-label", "#map-touch",
+                "#atlas-options", "#map-color-label", "#map-touch",
             ))
+            expect(color).to_be_hidden()
+            expect(options).to_be_visible()
+            options.locator("summary").click()
+            expect(color).to_be_visible()
+            options.locator("summary").click()
+            expect(color).to_be_hidden()
+            more = page.locator("#selection-panel > .selection-more")
+            expect(more).not_to_have_attribute("open", "")
+            expect(page.locator("#state-history")).to_be_hidden()
+            expect(page.locator("#selection-panel > .selection-rate")).to_be_visible()
+            assert len(page.locator("#selection-panel").inner_text()) < 220
+            assert page.locator("#desktop-turnout-controls .explorer-toolbar").count() == 1
+            assert page.locator("#state-select").bounding_box()["y"] < map_view.bounding_box()["y"]
             if screenshots:
                 page.screenshot(path=screenshots / f"after-states-{width}.png")
             if mobile:
-                assert page.locator("#mobile-turnout-controls .explorer-toolbar").count() == 1
-                assert page.locator("#state-select").bounding_box()["y"] > map_view.bounding_box()["y"]
-                expect(color).to_be_hidden()
-                expect(options).to_be_visible()
-                options.tap()
-                expect(options).to_have_attribute("aria-expanded", "true")
-                expect(color).to_be_visible()
-                options.tap()
-                expect(color).to_be_hidden()
                 expect(touch).to_be_visible()
                 assert map_view.evaluate("(e) => getComputedStyle(e).touchAction") == "pan-y pinch-zoom"
                 if width == 390:
@@ -68,26 +72,45 @@ def check(base, screenshots):
                     expect(touch).to_have_attribute("aria-pressed", "false")
                     page.locator("#map-reset").tap()
             else:
-                assert page.locator("#desktop-turnout-controls .explorer-toolbar").count() == 1
-                assert page.locator("#state-select").bounding_box()["y"] < map_view.bounding_box()["y"]
-                expect(color).to_be_visible()
-                expect(options).to_be_hidden()
                 expect(touch).to_be_hidden()
                 if width == 1280:
                     assert abs(map_view.bounding_box()["y"] - page.locator("#selection-panel").bounding_box()["y"]) < 2
+            more.locator(":scope > summary").click()
+            expect(page.locator("#state-history")).to_be_visible()
+            more.locator(":scope > summary").click()
+            page.locator("#state-select").select_option(label="Pennsylvania")
+            expect(page.locator("#selection-panel > h3")).to_have_text("Pennsylvania")
+            expect(page.locator("#selection-panel > .selection-more")).not_to_have_attribute("open", "")
             page.locator("#tab-effects").click()
             swing = page.locator("[data-driver-map] svg")
             expect(swing).to_be_visible(timeout=45000)
+            page.locator("#tab-effects").focus()
             page.evaluate("scrollTo(0,0)")
             swing_top = round(swing.bounding_box()["y"])
-            assert swing_top < (650 if mobile else 900)
+            assert swing_top < 700
             geography = page.locator("[data-driver-geography]")
-            assert (geography.bounding_box()["y"] > swing_top) == mobile
+            assert geography.bounding_box()["y"] < swing_top
+            expect(page.locator("[data-driver-view]")).to_be_hidden()
+            expect(page.locator("[data-driver-summary] .comparison-more")).not_to_have_attribute("open", "")
+            assert len(page.locator("[data-driver-summary]").inner_text()) < 450
             assert page.evaluate("document.documentElement.scrollWidth") == width
             if screenshots:
                 page.screenshot(path=screenshots / f"after-swings-{width}.png")
             geography.select_option("district")
             expect(swing.locator("path[data-district]")).to_have_count(435, timeout=45000)
+            expect(page.locator("[data-driver-summary] .comparison-more")).not_to_have_attribute("open", "")
+            page.locator(".driver-overview-result > details > summary").click()
+            expect(page.locator("[data-driver-detail] table").first).to_be_visible()
+            page.locator(".driver-options > summary").click()
+            expect(page.locator("[data-driver-view]")).to_be_visible()
+            geography.select_option("state")
+            page.locator("[data-driver-state]").select_option("PA")
+            page.locator("[data-driver-view]").select_option("switching")
+            expect(page.locator("[data-driver-summary] .comparison-more")).not_to_have_attribute("open", "")
+            expect(page.locator("[data-driver-summary] table").first).to_be_visible(timeout=45000)
+            page.locator("[data-driver-view]").select_option("reported_counts")
+            page.locator(".driver-options > summary").click()
+            page.locator(".driver-research > summary").click()
             notes = page.locator(".driver-sources")
             notes.locator("summary").click()
             expect(notes.locator(".download-links a")).to_have_count(0)
@@ -96,6 +119,16 @@ def check(base, screenshots):
             congress.locator("summary").click()
             expect(congress.locator("[data-congress-race]").first).to_be_visible(timeout=45000)
             expect(congress.locator("[data-congress-downloads] a")).to_have_count(0)
+            page.locator("#tab-national").click()
+            page.locator("#year").select_option("2024")
+            expect(page.locator(".demographic-card").first).to_be_visible(timeout=45000)
+            assert page.evaluate("document.documentElement.scrollWidth") == width
+            page.locator("#tab-methods").click()
+            expect(page.locator(".methods-overview")).to_be_visible()
+            if screenshots:
+                page.locator("#tab-national").click()
+                page.evaluate("scrollTo(0,0)")
+                page.screenshot(path=screenshots / f"after-demographics-{width}.png")
             assert page.evaluate("document.documentElement.scrollWidth") == width
             assert not errors, (width, errors)
             print(f"{width}px: turnout map at {turnout_top}px, swing map at {swing_top}px; controls and archive removal passed",

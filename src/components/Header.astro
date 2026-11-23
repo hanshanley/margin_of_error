@@ -33,7 +33,7 @@ const nav = [
 								class={item.subscribe ? 'subscribe-link' : undefined}
 								aria-current={path === item.href ? 'page' : undefined}
 							>
-								{item.label}
+								{path === '/voter-participation/' && item.href === '/interactive-analysis/' ? 'Explore' : item.label}
 							</a>
 						</li>
 					))

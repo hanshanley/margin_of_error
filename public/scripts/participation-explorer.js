@@ -1,5 +1,5 @@
 import { participationDownload } from "./participation-downloads.js";
-import { installParticipationPublicationUI } from "./participation-publication-ui.js";
+import { installParticipationPublicationUI, organizeStateDetails } from "./participation-publication-ui.js";
 import { contextualCountyRows } from "./participation-county-context.js";
 import { installResidentContext } from "./participation-resident-context.js";
 import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, clearCountState, ufTurnoutRows } from "./participation-counts.js";
@@ -20,22 +20,9 @@ const $ = id => document.getElementById(id);
 const NS = "http://www.w3.org/2000/svg";
 const MAX_MAP_ZOOM = 16384;
 const root = document.querySelector(".participation-page");
-const phoneLayout = matchMedia("(max-width: 700px)");
-const responsiveControls = [
-  [root.querySelector(".explorer-toolbar"), "turnout"],
-  [$("participation-return-drivers")?.querySelector(".driver-controls"), "swing"],
-];
-function placeMapControls() {
-  for (const [controls, name] of responsiveControls) {
-    const destination = $(`${phoneLayout.matches ? "mobile" : "desktop"}-${name}-controls`);
-    if (!controls || !destination || controls.parentElement === destination) continue;
-    const focused = controls.contains(document.activeElement) ? document.activeElement : null;
-    destination.append(controls);
-    focused?.focus({ preventScroll: true });
-  }
-}
-placeMapControls();
-phoneLayout.addEventListener("change", placeMapControls);
+$("desktop-turnout-controls").append(root.querySelector(".explorer-toolbar"));
+for (const id of ["map-color-label", "map-level-label", "mode-label"])
+  $("atlas-options-controls").append($(id));
 const params = new URLSearchParams(location.search);
 const colors = ["#284766", "#8c98a6"];
 const albers = conicProjection(-96, 29.5, 45.5);
@@ -2214,7 +2201,7 @@ function configure(preferred = viewSelection()) {
   const requestedYear = (precincts && params.get("view") === "precincts" && !state.initialized
     ? params.get("year") : "") || preferred.year
     || String(years[0] ?? "");
-  options($("year"), years.map(year => [String(year), year === 2026 ? "2026 · Provisional" : String(year)]), requestedYear);
+  options($("year"), years.map(year => [String(year), String(year)]), requestedYear);
   if (precincts && requestedYear && requestedYear !== $("year").value)
     state.precinctControlNote += `${state.precinctControlNote ? " " : ""}No loaded ${requestedYear} precinct layer for ${state.selectedState}; showing ${$("year").value}. Other years' boundaries are not substituted.`;
   if (precincts) {
@@ -2232,7 +2219,6 @@ function configure(preferred = viewSelection()) {
       : [["overall", "Overall"], ["race", "Race / ethnicity"], ["age", "Age"], ["sex", "Sex"], ["education", "Education"],
       ...($("year").value === "2026" ? [["ethnicity", "Ethnicity"]] : [])], preferred.dimension);
   const provisional = isProvisional();
-  document.querySelector(".explorer-options").hidden = provisional || precincts && !ncParticipation;
   options($("mode"), Object.entries(modeLabels).filter(([mode]) => mode === "civic_model"
     ? state.view === "national" : state.view !== "national"
       || !["official", "available", "uf_vep", "uf_vap"].includes(mode)),
@@ -2251,6 +2237,7 @@ function configure(preferred = viewSelection()) {
     ["group-label", state.view === "national" || ncParticipation],
     ["map-color-label", state.view === "states"], ["map-level-label", state.view === "states"],
   ]) $(id).hidden = !visible;
+  $("atlas-options").hidden = ![...$("atlas-options-controls").children].some(label => !label.hidden);
   rememberView();
 }
 function configureGroups(preferred = $("group").value) {
@@ -2400,7 +2387,8 @@ function modeFor(row) {
   return participationLabel(row || {}) || modeLabels[row?.mode] || modeLabels.official;
 }
 function header(subtitle, title, measure, caption) {
-  $("subtitle").textContent = subtitle; $("title").textContent = title;
+  $("subtitle").textContent = subtitle;
+  $("title").textContent = title === "Participation across the United States" ? "Turnout by state" : title;
   $("measure").textContent = measure; $("caption").textContent = caption;
 }
 function seriesChart(container, rows, { width = 720, height = 390, compact = false, dimension = "overall" } = {}) {
@@ -3073,6 +3061,7 @@ function stateDetail() {
     if (matched) state.map.statePaths.get(stateCode())?.classList.remove("selected");
     outline.dataset.selectedState = state.selectedState;
   }
+  organizeStateDetails(panel);
   residentContext.setState(stateCode(), state.selectedState,
     `${year}|${$("map-level").value}|${$("map-color").value}|${$("mode").value}`);
 }
@@ -3169,7 +3158,7 @@ function setViewport(view) {
     label.style.fontSize = `${size * width / screenWidth}px`;
     label.style.strokeWidth = `${(label.classList.contains("precinct-label") ? 1 : 0) * width / screenWidth}px`;
   }
-  state.map.svg.classList.toggle("compact-map", screenWidth < 500 && fullWidth / width < 2);
+  state.map.svg.classList.toggle("compact-map", fullWidth / width < 2);
   if (state.view === "states" && state.map.stateItems) {
     clearTimeout(state.drillTimer);
     state.drillTimer = setTimeout(loadGeography, 80);
@@ -3290,10 +3279,6 @@ $("map-touch")?.addEventListener("click", event => {
   const active = event.currentTarget.getAttribute("aria-pressed") !== "true";
   event.currentTarget.setAttribute("aria-pressed", String(active));
   state.map?.svg.classList.toggle("pan-touch", active);
-});
-$("mobile-map-options")?.addEventListener("click", event => {
-  const button = event.currentTarget;
-  button.setAttribute("aria-expanded", String(button.getAttribute("aria-expanded") !== "true"));
 });
 function featurePath(item, value, label, action, attrs = {}) {
   const path = svgNode("path", { d: item.d, fill: fill(value), class: "map-feature", "fill-rule": "evenodd",

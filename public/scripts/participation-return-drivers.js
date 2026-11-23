@@ -1,5 +1,6 @@
 import { projectStateContext } from "./participation-map-projection.js";
 import { participationDownload } from "./participation-downloads.js";
+import { installComparisonSummary } from "./participation-publication-ui.js";
 import { calibratedTerms, validateCalibratedSwing, calibratedMapValue, roundedContributions, switchingConstraintBounds } from "./participation-calibrated-swing.js";
 import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
   scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
@@ -153,6 +154,10 @@ export async function initializeReturnDrivers() {
   const root = document.querySelector("#participation-return-drivers");
   if (!root || root.dataset.initialized) return;
   root.dataset.initialized = "true";
+  installComparisonSummary(root.querySelector("[data-driver-summary]"));
+  const displayControls = root.querySelector("#swing-display-controls");
+  if (displayControls)
+    for (const label of root.querySelectorAll("[data-driver-secondary]")) displayControls.append(label);
   installCongressionalReturns(root);
   const status = root.querySelector("[data-driver-status]");
   try {

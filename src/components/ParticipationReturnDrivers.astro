@@ -41,9 +41,8 @@ const tests = [
 ---
 <section id="participation-return-drivers" class="participation-current" aria-labelledby="return-drivers-title">
 	<header class="section-intro">
-		<p class="kicker">2024 → 2026 · House results</p>
-		<h2 id="return-drivers-title">House swings and modeled drivers</h2>
-		<p>Compare election returns where the races are comparable, or explore modeled drivers. Candidate votes are not turnout.</p>
+		<h2 id="return-drivers-title">Change in election results</h2>
+		<p>2024 → 2026 · Comparable candidate vote shares, not turnout.</p>
 	</header>
 	<div id="desktop-swing-controls"></div>
 	<div class="driver-controls">
@@ -53,7 +52,7 @@ const tests = [
 			<option value="state">States</option>
 			<option value="district">House districts</option>
 		</select></label>
-		<label>Map view<select data-driver-view disabled>
+		<label data-driver-secondary>Map view<select data-driver-view disabled>
 			<option value="reported_counts">Comparable House change</option>
 			<option value="reported_total">Like-for-like House comparisons only</option>
 			<option value="switching">Switching · fitted</option>
@@ -66,35 +65,37 @@ const tests = [
 				<option value="scenario_nonparticipation">Nonparticipation · scenario</option>
 			</optgroup>
 		</select></label>
-		<label data-driver-group-control hidden>Source group<select data-driver-group disabled>
+		<label data-driver-secondary data-driver-group-control hidden>Source group<select data-driver-group disabled>
 			<option value="">Overall source frame</option>
 		</select></label>
 		<label class="driver-state-control">State<select data-driver-state disabled><option value="">Loading state context…</option></select></label>
 		<label data-driver-district-control hidden>District<select data-driver-district disabled>
 			<option value="">Select a district…</option>
 		</select></label>
-		<label>House model<select data-driver-family disabled>
+		<label data-driver-secondary>House model<select data-driver-family disabled>
 			<option value="accepted_ridge_multinomial">Multinomial ridge · accepted baseline</option>
 		</select></label>
-		<label>Temporal association<select data-driver-association disabled>
+		<label data-driver-secondary>Temporal association<select data-driver-association disabled>
 			<option value="original">Original association</option>
 			<option value="attenuated">Historical association · attenuated stress</option>
 			<option value="full">Historical association · stronger stress</option>
 		</select></label>
-		<label>Change units<select data-driver-units disabled>
+		<label data-driver-secondary>Change units<select data-driver-units disabled>
 			<option value="democratic_two_party_share">D share (pp)</option>
 			<option value="margin">D−R margin (pp)</option>
 		</select></label>
 	</div>
+	<details class="driver-options"><summary>Model and display options</summary>
+		<div class="driver-controls" id="swing-display-controls"></div>
+	</details>
 	<p data-driver-association-note class="caption" hidden></p>
+	<div class="driver-overview"><div class="driver-overview-map">
 	<div class="driver-maps">
 		<section class="driver-map-card" aria-labelledby="driver-map-title">
 			<h3 id="driver-map-title" data-driver-map-title>Comparable House change</h3>
 			<div class="driver-map" data-driver-map="reported_counts"></div>
-			<p class="caption" data-driver-map-caption>Directional colour requires compatible candidate coverage. Neutral hatching marks an unavailable comparison, not a partisan swing. Raw totals remain in state details.</p>
 		</section>
 	</div>
-	<p data-driver-status class="caption" role="status">Loading comparable House changes…</p>
 	<div class="driver-map-key" aria-label="Shared signed margin-point scale">
 		<div><div class="driver-map-ramp"></div><div class="driver-map-ticks">
 			<span data-driver-scale-min></span><span>0</span><span data-driver-scale-max></span>
@@ -102,10 +103,18 @@ const tests = [
 		<span class="driver-no-model"><i></i>No qualified comparison / model</span>
 		<span class="driver-comparison-caution" data-driver-comparison-caution hidden><i></i>Not comparable · competition / scope</span>
 	</div>
-	<div id="mobile-swing-controls"></div>
+	<p class="driver-reading-note">Hatching marks an unavailable comparison, not a partisan swing.</p>
+	</div><aside class="driver-overview-result" aria-label="Selected election comparison">
 	<div data-driver-summary class="driver-summary" hidden aria-live="polite"></div>
+	<details class="explorer-notes"><summary data-driver-detail-title>Details and model checks</summary>
+		<div data-driver-detail class="driver-detail" hidden></div>
+	</details>
+	</aside></div>
+	<details class="driver-research"><summary>Sources and model methodology</summary>
 	<details class="explorer-notes driver-sources">
 		<summary>How to read the map</summary>
+		<p class="caption" data-driver-map-caption>Directional colour requires compatible candidate coverage. Raw totals remain in state details.</p>
+		<p data-driver-status class="caption" role="status">Loading comparable House changes…</p>
 		<p class="caption">Reported change compares <strong>same-office candidate counts</strong>, not measured voter preference.
 			Known-D/R margin = 100 × (D − R) / (D + R), twice the Democratic-share change.
 			Neutral hatching means a comparison is unavailable, not a partisan swing.
@@ -133,9 +142,6 @@ const tests = [
 		</div>
 	</details>
 	<noscript><p class="caption">The interactive map requires JavaScript. Research files are available in the project repositories.</p></noscript>
-	<details class="explorer-notes"><summary data-driver-detail-title>Selected state: demographic breakdown, retained voters and model checks</summary>
-		<div data-driver-detail class="driver-detail" hidden></div>
-	</details>
 	<details class="explorer-notes"><summary>How to read these estimates and their uncertainty</summary>
 	<p class="caption">The House model learns from <strong>113,020 NORC CHEP 2026 responses</strong> and
 		<strong>136,435 AP/NORC 2024 responses with positive state weights</strong>.
@@ -387,6 +393,7 @@ const tests = [
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-return-constrained-20261111-01/complete-analysis.zip">Archived return-constrained model, all 801 scenarios and transition cells, inputs, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-flow-identification-20261111-01/complete-analysis.zip">Archived compatible-flow bounds, all 3,824 extremal tables, original inputs, code and checksums · ZIP</a></div>
 	<div class="download-links"><a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-transition-simulation-20261111-01/complete-analysis.zip">Archived conditional transition simulations, every input/query/seed, code and checksums · ZIP</a></div>
+	</details>
 	<script type="application/json" is:inline data-driver-data set:html={payload}></script>
 </section>
 <script>
@@ -394,19 +401,25 @@ const tests = [
 	initializeReturnDrivers();
 </script>
 <style>
-	#participation-return-drivers { min-width: 0; margin-block: 1.5rem 2rem; }
+	#participation-return-drivers { min-width: 0; margin-block: 1.2rem 2rem; border-top: 0; padding-top: 0; }
 	#participation-return-drivers > .section-intro { margin-block: .6rem 1rem; }
 	#participation-return-drivers > .section-intro p { margin-block: .5rem; }
 	.driver-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr));
-		gap: .75rem; margin-block: 1.25rem .75rem; max-width: 55rem; }
+		gap: .75rem; margin-block: 1rem; max-width: 45rem; }
 	.driver-controls label { display: grid; min-width: 0; gap: .3rem; font: .73rem var(--sans); }
 	.driver-controls label[hidden] { display: none; }
 	.driver-controls[data-scenarios="true"] { grid-template-columns: repeat(4,minmax(0,1fr)); max-width: 65rem; }
 	.driver-controls :is(select,input) { width: 100%; min-width: 0; padding: .5rem; border: 1px solid var(--rule);
 		background: var(--paper); color: var(--ink); font: inherit; }
-	.driver-maps { display: grid; grid-template-columns: minmax(0,1fr); margin-top: 1.5rem; }
+	.driver-options { position: relative; margin-bottom: 1rem; }
+	.driver-options > summary { color: var(--muted); font-size: .78rem; }
+	.driver-options .driver-controls { padding: .8rem 0; max-width: 55rem; }
+	.driver-overview { display: grid; grid-template-columns: minmax(0,1fr) 265px; gap: 2.2rem; align-items: start; }
+	.driver-overview-map, .driver-overview-result { min-width: 0; }
+	.driver-overview-result { border-left: 1px solid var(--rule); padding-left: 1.4rem; }
+	.driver-maps { display: grid; grid-template-columns: minmax(0,1fr); margin-top: .5rem; }
 	.driver-map-card { min-width: 0; }
-	.driver-map-card h3 { margin: 0 0 .35rem; font: 400 1.3rem var(--serif); }
+	.driver-map-card h3 { margin: 0 0 .35rem; font: 400 1.15rem var(--serif); }
 	.driver-map-card > p { margin: .55rem 0 .5rem; }
 	.driver-sources .download-links { margin-block: .75rem; }
 	.driver-map { min-height: 120px; }
@@ -418,8 +431,8 @@ const tests = [
 	.driver-map :global(.driver-district.selected) { stroke-width: 1.5; }
 	.driver-map :global(.driver-district:focus-visible) { outline: none; stroke: #102f38; stroke-width: 2; }
 	.driver-map :global(.driver-inset-label) { fill: var(--muted); font: 15px var(--sans); }
-	.driver-map-key { display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-		gap: .5rem .75rem; font: .66rem/1.4 var(--sans); color: var(--muted); margin-block: .75rem; }
+	.driver-map-key { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start;
+		gap: .5rem .75rem; font: .72rem/1.4 var(--sans); color: var(--muted); margin-block: .75rem; }
 	.driver-map-key > div { width: min(100%, 20rem); }
 	.driver-map-ramp { height: .5rem; background: linear-gradient(to right,#a47045,#f1eee6,#2c6c75); }
 	.driver-map-ticks { display: flex; justify-content: space-between; margin-top: .25rem; font-variant-numeric: tabular-nums; }
@@ -431,21 +444,30 @@ const tests = [
 	.driver-comparison-caution i { width: .65rem; height: .65rem; border: 1px solid #8d958e;
 		background: repeating-linear-gradient(135deg,transparent 0 3px,#173d4866 3px 4px); }
 	.driver-detail { margin-top: 1rem; padding-top: .5rem; border-top: 1px solid var(--rule); min-width: 0; }
-	.driver-summary { margin-block: 1rem; padding-block: .75rem; border-block: 1px solid var(--rule); }
+	.driver-summary { margin-block: 0 .7rem; padding-block: .5rem; }
 	.driver-summary :global(h3) { margin: 0 0 .4rem; font: 400 1.15rem var(--serif); }
 	.driver-summary :global(p) { margin: .4rem 0; }
+	.driver-summary :global(.comparison-qualification) { color: var(--muted); font: .85rem/1.5 var(--sans); }
+	.driver-summary :global(.comparison-more) { margin-top: .9rem; }
+	.driver-summary :global(.comparison-more > summary) { font: .78rem var(--sans); color: var(--muted); padding-block: .5rem; }
+	.driver-overview-result > details:has([data-driver-detail][hidden]) { display: none; }
 	#participation-return-drivers :global(.driver-endpoint-version) { overflow-wrap: anywhere; }
 	.driver-summary :global(.driver-equation) { font: .85rem/1.65 var(--sans); font-variant-numeric: tabular-nums; }
+	.driver-reading-note { color: var(--muted); font: .75rem/1.5 var(--sans); }
+	.driver-research { margin-top: 1.3rem; padding-block: .8rem; border-top: 1px solid var(--rule); }
+	.driver-research > summary { color: var(--muted); }
 	@media(max-width:760px) {
 		#participation-return-drivers { margin-top: 0; padding-top: 0; border-top: 0; }
 		#participation-return-drivers > .section-intro { margin: .85rem 0; }
-		#participation-return-drivers > .section-intro h2 { font-size: 1.5rem; }
+		#participation-return-drivers > .section-intro h2 { font-size: 1.3rem; }
 		#participation-return-drivers > .section-intro > p:not(.kicker) { margin: .45rem 0; }
 		.driver-controls, .driver-controls[data-scenarios="true"] {
 			grid-template-columns: repeat(2,minmax(0,1fr)); gap: .55rem .65rem; margin-block: .8rem .55rem; }
 		.driver-controls :is(select,input) { min-height: 44px; font-size: 1rem; }
 		.driver-controls label:has([data-driver-view], [data-driver-family], [data-driver-association]) { grid-column: 1 / -1; }
 		.driver-maps { margin-top: .85rem; }
+		.driver-overview { grid-template-columns: minmax(0,1fr); gap: .6rem; }
+		.driver-overview-result { padding: .7rem 0 0; border-left: 0; border-top: 1px solid var(--rule); }
 		.driver-map-key { justify-content: flex-start; }
 		.driver-map-key > div { width: 100%; }
 		.driver-no-model { flex-basis: 100%; margin-left: 0; }

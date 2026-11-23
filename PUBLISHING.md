@@ -88,6 +88,13 @@ HTML, verifies offloaded release files, and omits complete participation packets
 whose exact bytes are retained in Git. Keep browser inputs and complete research
 releases separate; do not remove or replace the GitHub originals.
 
+Keep the atlas's default view editorial: state/year controls, one map and a
+concise selected result. Population, geography and model settings belong in
+the options disclosures; complete qualifications and local navigation remain
+available in selected-result details. Preserve the underlying nodes and event
+handlers when regrouping these dynamic sections, and test closed and expanded
+states on both touch and desktop layouts.
+
 The author-supplied editorial thumbnail is stored byte-for-byte at
 `public/artifacts/voter-participation/voter-participation-editorial.png`.
 Use it for the Interactive analysis preview and the explorer's social image,

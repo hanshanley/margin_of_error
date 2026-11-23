@@ -202,16 +202,15 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 	image="/artifacts/voter-participation/voter-participation-editorial.png">
 	<div class="participation-page" data-active-view="states">
 		<header class="participation-heading">
-			<p class="kicker">An atlas of voter participation</p>
 			<h1>Who participates?</h1>
-			<p class="participation-deck">Voter turnout across elections, places and demographic groups.</p>
+			<p class="participation-deck">Explore turnout by place, election and demographic group.</p>
 		</header>
 		{ufPointer && <noscript><p class="participation-scope">
 			<a href="/voter-participation/?view=methods#uf-turnout-2026">View saved 2026 turnout for all states and D.C.</a>
 		</p></noscript>}
 
 		<nav class="participation-nav" aria-label="Explore participation" role="tablist">
-			{[['states', 'States'], ['national', 'Demographics'], ['effects', '2026 swing maps'],
+			{[['states', 'Turnout'], ['national', 'Groups'], ['effects', 'Results'],
 				['methods', 'Methods']].map(([view, label]) =>
 				<button type="button" id={`tab-${view}`} role="tab" data-view={view}
 					aria-selected={view === 'states' ? 'true' : 'false'}
@@ -232,8 +231,6 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<label id="county-label" hidden>County<select id="precinct-county"><option value="">All counties</option></select></label>
 					<label id="precinct-search-label" hidden>Find a precinct<input id="precinct-search" type="search" list="precinct-options" placeholder="ID or precinct name" autocomplete="off" /><datalist id="precinct-options"></datalist></label>
 					<label>Year<select id="year"></select></label>
-					<button class="mobile-map-options" id="mobile-map-options" type="button" aria-expanded="false"
-						aria-controls="map-color-label map-level-label mode-label">Map and data options</button>
 					<label id="map-color-label">Map color<select id="map-color"><option value="turnout" selected>Participation</option><option value="margin">Election results · red / blue</option></select></label>
 					<label id="map-level-label">Detail<select id="map-level"><option value="county">Counties / equivalents</option><option value="precinct">Precincts · existing coverage</option><option value="auto">As you zoom</option><option value="district">Congressional districts</option></select></label>
 					<label id="current-state-label" hidden>State<select id="current-state-select"></select></label>
@@ -242,8 +239,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<label id="dimension-label" hidden>Compare<select id="dimension"></select></label>
 					<label id="group-label" hidden>Group<select id="group"></select></label>
 				</div>
-				<details class="explorer-options"><summary>More options</summary>
-					<div class="controls">
+				<details class="explorer-options" id="atlas-options"><summary>Options</summary>
+					<div class="controls" id="atlas-options-controls">
 						<label id="basis-label">Population<select id="basis"><option value="cvap">Adult citizens (CPS)</option><option value="vap">All adult residents (CPS)</option></select></label>
 						<label id="minimum-label" hidden>Minimum registrations<select id="minimum"><option value="1">1</option><option value="25" selected>25</option><option value="100">100</option></select></label>
 					</div>
@@ -262,8 +259,6 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 						<button type="button" id="map-touch" aria-pressed="false">Pan map</button>
 					</div>
 					<div id="visualization"><p class="empty">Loading the saved analysis…</p></div>
-					<div id="mobile-turnout-controls"></div>
-					<p id="measure" class="measure"></p>
 					<p id="map-help" class="map-help" hidden>
 						<span class="pointer-map-help">Click to select · drag to pan · scroll or use + / − to zoom</span>
 						<span class="touch-map-help">Tap to select · use + / − to zoom · turn on Pan map to drag or pinch</span>
@@ -275,6 +270,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<p>Select a state on the map to see its turnout history.</p>
 				</aside>
 			</div>
+			<details class="atlas-notes" id="atlas-notes"><summary>Sources and coverage</summary>
+			<p id="measure" class="measure"></p>
 			<p id="caption" class="caption"></p>
 			<ParticipationResidentContext />
 			<details id="participation-coverage" class="source-coverage">
@@ -300,6 +297,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<p class="caption" data-automatic-runtime-status role="status">
 				Checking the optional automatic count snapshot; accepted website sources remain available.
 			</p>
+			</details>
+			<details class="atlas-secondary"><summary>Voting methods</summary>
 			<section id="voting-methods" class="voting-methods" aria-labelledby="voting-methods-title" hidden>
 				<div class="voting-methods-heading"><div><p class="eyebrow">How ballots were cast</p>
 					<h2 id="voting-methods-title">Voting methods</h2></div>
@@ -317,6 +316,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<p id="method-source-notes"></p><div id="method-downloads" class="download-links"></div>
 				</details>
 			</section>
+			</details>
 			<details class="participation-panel" id="table-panel">
 				<summary>View the underlying observations</summary>
 				<label class="table-search">Search <input id="search" type="search" placeholder="State, county, precinct, or group" /></label>
