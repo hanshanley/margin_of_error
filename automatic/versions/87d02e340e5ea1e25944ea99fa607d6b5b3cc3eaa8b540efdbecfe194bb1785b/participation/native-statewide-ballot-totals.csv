@@ -1,0 +1,21 @@
+state_code,year,ballots,status,denominator,validated_pct,source_update_label,source_update_timezone,source_url,source_sha256
+NC,2026,4242662,retained_after_failure,7885046,53.80643308865922,"November 13, 2026 6:03 pm",,https://er.ncsbe.gov/enr/20261103/data/county.txt,9fc1b775d96cba4bf8da176be8351cf3b3b216969d69a3e88eb9a6c9c8c7a409
+ND,2026,239442,retained_after_failure,,,,,https://www.sos.nd.gov/news/state-canvassing-board-certifies-2026-general-election-results,e8c015daa6f27a7a3ac122027a69554b142179ba97ac126a739cde987cfc2b6b
+OR,2026,2000055,reported,3109150,64.32803177717382,11/22/2026 | 10:45 PM PT,PT,https://results.oregonvotes.gov/VoterTurnoutDetails.aspx,5e5aea76f63223cb0d4b87ed0f0be88941b23cc47f6eff756694857afd7d44a8
+SC,2026,2054835,reported,,,,,https://scvotes.gov/state-election-commission-certifies-2026-statewide-general-election/,0d8fff1b15a321ffa1807fd3c0eafc07ac5c9962532b35f2bcdf894d3e78c450
+WY,2026,191713,reported,,,,,https://sos.wyo.gov/Elections/Docs/2026/Results/General/2026_Wyoming_General_Results.zip,c378306bd8df97437a3d11fac7792e23a8297a7e3eded8129a9cd61e3e654ff1
+AZ,2026,2608919,reported,,,,,https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data,e56f8128cf22f3888c4cd4b2389aab822f37f2b3120d2e12be7b63aea8417263
+VT,2026,311510,reported,506830,61.4624232977527,,,https://outside.vermont.gov/dept/sos/Elections_Division/election_info_resources/elections_results_data/2026_general_election_voter_turnout.pdf,1a8826e99f2c263ed13940b4136c63f80af0e0dbe0c88502cd7d6bfcd8af4b5c
+AK,2026,290323,reported,605433,47.95295268014793,,,https://www.elections.alaska.gov/enr/26GENR/results/ElectionSummaryReportRPT.pdf,6a8315ec13227d1cc8db32181fc2b475c3aa50ba9b88cddc1a8d1834cf5384cc
+MN,2026,2851615,reported,,,11/19/26 2:38 PM,,https://electionresults.sos.mn.gov/Results/CountyStatisticsStatewide/Index?ersElectionId=201,6054f460d44a08e2c30bed62f95809e698754f739829d5a8b73592b847e783b2
+AR,2026,893026,retained_after_failure,,,,,https://arkansas.tally-enr.com/assets/__verdict-download/6a1f15f8fcc7/mw3h9e64-0-7yxhd8qe/2026_General_Election_%26_Judical_Runoff.json,079518a65d5f66385ec1cb5cedcd93a02973d6ae24a0793427af8d08c9fe14bd
+FL,2026,8335497,retained_after_failure,,,,,https://floridaelectionwatch.gov/CountyReportingStatus,f4a4ff86238aadf10336ba428aaef8a8c04374e0774642734968d7d14362ce72
+CT,2026,1150127,retained_after_failure,,,,,https://ctemspublic.tgstg.net/ng-app/data/election/108/52337/voterTurnout_Electiondata.json,4edd27b258832d7ab7013f404383f273fc292bbd9f91e131c4e5aa953ee42404
+HI,2026,392428,reported,,,,,https://elections.hawaii.gov/wp-content/results/2026%20General/histatewide.pdf,f59ac156768347faf26fa2ff71a02227b66625c3461058ddbc3e65647c276fec
+DC,2026,185086,retained_after_failure,457371,40.46736675477894,2026-11-04T04:36:21.283Z,UTC,https://electionresults.dcboe.org/cityWide/getVoterSummaryInfo/2026-General-Election,fd6e5c4d2349d7b536734a31ccdb1ef20eeedc9ed2110dddcb3263268b159887
+MT,2026,494042,reported,808879,61.07736756671888,11/20/2026 9:40:17 AM MT,MT,https://electionresults.mt.gov/,3fe566cbf13c8a720a27c2d9ae1d7fb3ee0c89f6a0dc244f0a3cecb204ef64ed
+WV,2026,463912,reported,1210385,38.327639552704305,,,https://sos.wv.gov/article/wv-secretary-state-kris-warner-announces-canvassing-will-start-monday-november-9,2f0cd07af10042c1c69d359d4a816462033b1105d7b007a9d489d1cba2bb2d87
+ID,2026,731980,retained_after_failure,,,,,https://www.themarginoferror.com/participation-local/ID.json.gz,efe2bfce82528da8e8fa01323a3d1eba9c6e78c249fe753f6b65cb628d3d9f81
+GA,2026,4218112,retained_after_failure,7535442,55.97696857065584,,,https://results.sos.ga.gov/results/public/api/elections/Georgia/11032026GeneralAndSpecialElection/data,f5baf6176a2174dcd221a65874d86f7a39a24889eb361027f636047c665ce94f
+OH,2026,4658250,retained_after_failure,8018054,58.097014562386335,,,https://liveresults.ohiosos.gov/Api/v1/Contest/getBallotsCastByCounty,eda04d97ecc271ebf05285ffb54b81e0b5f373ee1e33e47193bef3fd160da7dc
+MA,2026,2749609,reported,,,,,https://electionstats.state.ma.us/elections/view/173530/,bedf3cebdd4b3a97e0d3b90cb96634d3d12c688422f7fa1282bc97da6b81e974
