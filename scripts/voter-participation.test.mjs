@@ -9,9 +9,28 @@ import { join } from 'node:path';
 import { gunzipSync } from 'node:zlib';
 import { previewSvg, publicationScript, sourceRevision } from './stage-voter-participation.mjs';
 import { participationDownload, participationHistoricalRoot, participationArchivedNationwideRoot, participationSwingScopeRoot } from '../public/scripts/participation-downloads.js';
-import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles, verifyPagesSize, verifyPagesByteCounts } from './prepare-participation-pages.mjs';
+import { isParticipationPacket, participationConsumerHtml, rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles, verifyPagesSize, verifyPagesByteCounts } from './prepare-participation-pages.mjs';
 import { appendPrecinctHistory } from './build-precinct-histories.mjs';
 import { countFill, precinctSelectionYears, qualifiedDcPrecinctParticipation, qualifiedVaPrecinctParticipation } from '../public/scripts/participation-geography.js';
+
+test('consumer publication omits research ledgers and downloads without dropping reader content', () => {
+	const html = participationConsumerHtml(`<main class="participation-page">
+		<div id="downloads">Download ledger</div><details data-participation-archive>Old comparison</details>
+		<div class="download-links"><a href="https://github.com/hanshanley/voter-participation/releases/download/v1/archive.zip">Package</a> · </div>
+		<noscript><table><tr><td>Observed turnout</td></tr></table><a download href="/participation-methods/v1/states.csv">Bulk table</a></noscript>
+		<a href="https://github.com/hanshanley/voter-participation">Project repository</a>
+		<a href="https://www.census.gov/example">Census source</a>
+		<script type="application/json">{"input":"/participation-context/v1/counties.json"}</script>
+	</main>`);
+	assert.doesNotMatch(html, /Download ledger|Old comparison|archive\.zip|Bulk table/);
+	assert.match(html, /<noscript><table>.*Observed turnout/);
+	assert.match(html, /Project repository/);
+	assert.match(html, /Census source/);
+	assert.match(html, /"input":"\/participation-context\/v1\/counties\.json"/);
+	assert.equal(isParticipationPacket('/participation-results/v1/complete-results.zip'), true);
+	assert.equal(isParticipationPacket('/participation-results/v1/margins.json.gz'), false);
+	assert.equal(isParticipationPacket('/party-platforms/downloads/claim_documents.zip'), false);
+});
 
 test('overall reported observations retain native participation measures rather than relabeling people as ballots', () => {
 	const source = readFileSync(new URL('../public/scripts/participation-explorer.js', import.meta.url), 'utf8');

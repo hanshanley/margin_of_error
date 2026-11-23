@@ -101,18 +101,16 @@ export function installNewMexicoHistory(panel) {
     try {
       const history = await loadNewMexicoHistory((await loadAutomaticRuntime()).house_sources);
       if (!history) {
-        content.textContent = "The rolling archive is not available yet. Use the complete saved downloads below.";
+        content.textContent = "Turnout history is not available right now.";
         loading = false;
         return;
       }
-      const {rows, file} = history;
+      const {rows} = history;
       const select = document.createElement("select"), label = document.createElement("label");
       label.textContent = "Area ";
       const names = [...new Set(rows.filter(row => row.county).map(row => row.county))].sort();
       select.append(new Option("Statewide", ""), ...names.map(name => new Option(name, name)));
       label.append(select);
-      const link = document.createElement("a");
-      link.href = file.url; link.textContent = "Complete rolling turnout history (CSV · gzip)";
       const scroller = document.createElement("div"), table = document.createElement("table");
       scroller.className = "table-wrap"; scroller.tabIndex = 0;
       scroller.setAttribute("role", "region");
@@ -135,10 +133,10 @@ export function installNewMexicoHistory(panel) {
         }
       };
       select.addEventListener("change", draw);
-      scroller.append(table); content.replaceChildren(link, " · ", label, scroller); draw();
+      scroller.append(table); content.replaceChildren(label, scroller); draw();
     } catch {
       loading = false;
-      content.textContent = "The rolling history could not be verified. Reopen to retry, or use the saved downloads below.";
+      content.textContent = "Turnout history could not be verified. Close and reopen this section to retry.";
     }
   });
 }

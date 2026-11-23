@@ -45,6 +45,7 @@ const tests = [
 		<h2 id="return-drivers-title">House swings and modeled drivers</h2>
 		<p>Compare election returns where the races are comparable, or explore modeled drivers. Candidate votes are not turnout.</p>
 	</header>
+	<div id="desktop-swing-controls"></div>
 	<div class="driver-controls">
 		<label>2026 office<select data-driver-office disabled><option value="house">House</option>
 			<option value="senate">Senate</option><option value="governor">Governor · frames</option></select></label>
@@ -93,7 +94,7 @@ const tests = [
 			<p class="caption" data-driver-map-caption>Directional colour requires compatible candidate coverage. Neutral hatching marks an unavailable comparison, not a partisan swing. Raw totals remain in state details.</p>
 		</section>
 	</div>
-	<p data-driver-status class="caption" role="status">Loading comparable House changes; every state's raw totals and complete downloads remain available.</p>
+	<p data-driver-status class="caption" role="status">Loading comparable House changes…</p>
 	<div class="driver-map-key" aria-label="Shared signed margin-point scale">
 		<div><div class="driver-map-ramp"></div><div class="driver-map-ticks">
 			<span data-driver-scale-min></span><span>0</span><span data-driver-scale-max></span>
@@ -101,9 +102,10 @@ const tests = [
 		<span class="driver-no-model"><i></i>No qualified comparison / model</span>
 		<span class="driver-comparison-caution" data-driver-comparison-caution hidden><i></i>Not comparable · competition / scope</span>
 	</div>
+	<div id="mobile-swing-controls"></div>
 	<div data-driver-summary class="driver-summary" hidden aria-live="polite"></div>
 	<details class="explorer-notes driver-sources">
-		<summary>Map notes, source status and complete downloads</summary>
+		<summary>How to read the map</summary>
 		<p class="caption">Reported change compares <strong>same-office candidate counts</strong>, not measured voter preference.
 			Known-D/R margin = 100 × (D − R) / (D + R), twice the Democratic-share change.
 			Neutral hatching means a comparison is unavailable, not a partisan swing.
@@ -130,7 +132,7 @@ const tests = [
 			<a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-recorded-counts-20261113-01/complete-analysis.zip">Earlier recorded counts, full queries, model qualifications and code · ZIP</a>
 		</div>
 	</details>
-	<noscript><p class="caption">To view the map without JavaScript, open the HTML file in the offline map ZIP above.</p></noscript>
+	<noscript><p class="caption">The interactive map requires JavaScript. Research files are available in the project repositories.</p></noscript>
 	<details class="explorer-notes"><summary data-driver-detail-title>Selected state: demographic breakdown, retained voters and model checks</summary>
 		<div data-driver-detail class="driver-detail" hidden></div>
 	</details>
@@ -244,7 +246,7 @@ const tests = [
 		Before conditioning on current party totals, the {norcPoints.summary.return_anchored}-state margin mean absolute error is {norcPoints.preconditioning_margin_MAE_pp.toFixed(2)} pp.
 		Selected-state details retain each prediction gap as model error.</p>
 	</details>
-	<details class="explorer-notes"><summary>Every recorded House party-share change · unadjusted</summary>
+	<details class="explorer-notes" data-participation-archive><summary>Every recorded House party-share change · unadjusted</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="Recorded House party-share changes">
 			<table><caption>Raw candidate totals, not voter-preference swings or identified histories.
 				Changed competition and coalition labels can distort the change. Model holds do not erase recorded counts.
@@ -284,7 +286,7 @@ const tests = [
 		<div class="table-wrap" tabindex="0" role="region" aria-label="Statewide House comparisons" data-congress-house-states></div>
 		<div data-congress-detail></div>
 		<div class="download-links" data-congress-downloads></div>
-		<div class="download-links">
+		<div class="download-links" data-participation-archive>
 			<a href="https://github.com/hanshanley/voter-participation/releases/download/congress-comparison-candidate-0e5766689d4a/complete-analysis.zip">Reviewed House and Senate comparisons · complete candidate, not the live snapshot (ZIP)</a>
 			<a href="https://github.com/hanshanley/voter-participation/releases/download/california-house-component-audit-2024-2026/california-house-component-audit.zip">California 2024–2026 certified House geography audit · original inputs and complete tables (ZIP)</a>
 			<a href="https://github.com/hanshanley/voter-participation/releases/download/alabama-house-component-audit-2024-2026/alabama-house-component-audit.zip">Alabama 2024–2026 House geography audit · original inputs and complete tables (ZIP)</a>
@@ -293,7 +295,7 @@ const tests = [
 			<a href="https://github.com/hanshanley/voter-participation/releases/download/utah-house-component-audit-2024-2026/utah-house-component-audit.zip">Utah 2024–2026 House geography audit · original inputs and complete tables (ZIP)</a>
 			<a href="https://github.com/hanshanley/voter-participation/releases/download/house-boundary-water-screen-20261122/national-house-water-screen.zip">National water-only boundary screen · Census responses and complete decisions (ZIP)</a>
 		</div>
-		<p><a data-congress-saved-download href="https://github.com/hanshanley/margin_of_error/releases/download/automatic-participation-a0e36c10c6600463bb6a76c47c081f000bc4e82167752f2e68bfb09e13743247/complete-analysis.zip">Saved complete House/Senate release · inputs, every query and result · ZIP</a>.
+		<p data-participation-archive><a data-congress-saved-download href="https://github.com/hanshanley/margin_of_error/releases/download/automatic-participation-a0e36c10c6600463bb6a76c47c081f000bc4e82167752f2e68bfb09e13743247/complete-analysis.zip">Saved complete House/Senate release · inputs, every query and result · ZIP</a>.
 			Source snapshot checked November 16, 2026 at 13:57 UTC; individual count clocks remain separate.
 			The live download links above advance automatically; this saved release remains available.</p>
 		<p>The cross-cycle Senate survey audit covers all 35 contests in the November 21 snapshot. Nineteen have a
@@ -307,8 +309,7 @@ const tests = [
 			<a href="https://github.com/hanshanley/voter-participation/releases/download/ces-2022-senate-support-audit/ces-2022-senate-support.csv">2022 Senate survey audit · complete aggregate CSV</a>
 			<a href="https://github.com/hanshanley/voter-participation/releases/download/ces-2022-senate-support-audit/ces-2022-senate-support.zip">2022 Senate survey audit · input checksums, aggregates and replay code · ZIP</a>
 		</div>
-		<noscript><p>Interactive current returns require JavaScript. All saved analyses and complete downloadable
-			inputs, queries and results remain accessible, including the complete House/Senate release above.</p></noscript>
+		<noscript><p>Interactive current returns require JavaScript.</p></noscript>
 	</details>
 	<details class="explorer-notes"><summary>Every saved NORC House-state estimate</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 50 NORC House state models">
@@ -334,7 +335,7 @@ const tests = [
 			</table>
 		</div>
 	</details>
-	<details class="explorer-notes"><summary>Archived earlier return-constrained scenarios</summary>
+	<details class="explorer-notes" data-participation-archive><summary>Archived earlier return-constrained scenarios</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 113 return-constrained decisions">
 			<table><caption>Superseded central scenarios, not current voter-history estimates. Newly held House comparisons are suppressed here; original files remain archived. The final column is a compatible gross-switching percentage of previous D/R votes, not margin points or a confidence interval. Unavailable is not zero.</caption>
 				<thead><tr><th scope="col">State / office</th><th scope="col">Reported swing</th>
@@ -355,7 +356,7 @@ const tests = [
 			</table>
 		</div>
 	</details>
-	<details class="explorer-notes"><summary>Archived original survey-frame estimates · not the fitted swing scenarios</summary>
+	<details class="explorer-notes" data-participation-archive><summary>Archived original survey-frame estimates · not the fitted swing scenarios</summary>
 		<div class="table-wrap" tabindex="0" role="region" aria-label="All 113 saved modeled effect estimates">
 			<table><caption>Archived unfitted survey-frame terms, not a decomposition of the reported same-office swing. Unavailable is not zero.</caption>
 				<thead><tr><th scope="col">State / office</th><th scope="col">Switching</th><th scope="col">Nonparticipation</th>

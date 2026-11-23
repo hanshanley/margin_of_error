@@ -6,7 +6,9 @@ import { copyFile, mkdtemp, readdir, readFile, rmdir, stat, unlink, writeFile } 
 import { tmpdir } from 'node:os';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { load } from 'cheerio';
 import { participationCurrentRoot, participationHistoricalRoot, participationArchivedNationwideRoot, participationSwingScopeRoot, participationCountyContextRoots, participationDownload, participationRelease } from '../public/scripts/participation-downloads.js';
+import { isParticipationArchiveLink } from '../public/scripts/participation-publication-ui.js';
 
 const repository = 'hanshanley/margin_of_error';
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -27,6 +29,27 @@ export function rewriteDownloadHtml(html, files) {
 		html = html.replaceAll(`href="${file.path}"`, `href="${file.url}"`);
 	}
 	return html;
+}
+
+export function participationConsumerHtml(html) {
+	const $ = load(html, { scriptingEnabled: false });
+	const page = $('.participation-page');
+	page.find('#downloads, .download-ledger, [data-participation-archive]').remove();
+	for (const link of page.find('a').toArray()) {
+		const a = $(link);
+		if (isParticipationArchiveLink(a.attr('href'), a.attr('download') !== undefined)) a.remove();
+	}
+	page.find('.download-links').each((_, node) => {
+		const group = $(node);
+		if (!group.find('a').length) group.empty();
+	});
+	assert.equal(page.find('a[download], #downloads, [data-participation-archive]').length, 0,
+		'Research archives leaked into the public atlas');
+	return $.html();
+}
+
+export function isParticipationPacket(path) {
+	return /^\/(?:voter-participation|participation-[^/]+)\/.+\.(?:zip|tgz|tar\.gz|7z)$/i.test(path);
 }
 
 export function verifyReleaseAssets(files, assets) {
@@ -124,14 +147,27 @@ export async function preparePages(output, upload = false) {
 	}
 	verifyReleaseAssets(releaseFiles, release.assets);
 	await verifyRemoteFiles(pinnedFiles);
-	for (const path of paths.filter(path => path.endsWith('.html'))) {
+	const atlas = join(output, 'voter-participation', 'index.html');
+	await writeFile(atlas, participationConsumerHtml(await readFile(atlas, 'utf8')));
+	const retained = new Set(files.map(file => file.path));
+	const tracked = new Map(execFileSync('git', ['ls-files', '--stage', '-z', 'public'], {
+		encoding: 'utf8', maxBuffer: 8 * 1024 * 1024,
+	}).split('\0').filter(Boolean).map(line => {
+		const [meta, path] = line.split('\t');
+		return [path, meta.split(' ')[1]];
+	}));
+	for (const path of paths) {
+		const name = '/' + relative(output, path).split('\\').join('/');
+		if (!isParticipationPacket(name) || retained.has(name)) continue;
+		const blob = execFileSync('git', ['hash-object', path], { encoding: 'utf8' }).trim();
+		assert.equal(blob, tracked.get('public' + name), `Archive not preserved in Git: ${name}`);
+		await unlink(path);
+	}
+	for (const path of paths.filter(path => path.endsWith('.html') && path !== atlas)) {
 		const html = await readFile(path, 'utf8');
 		const rewritten = rewriteDownloadHtml(html, files);
 		if (rewritten !== html) await writeFile(path, rewritten);
 	}
-	await writeFile(join(output, 'participation-downloads.json'), JSON.stringify({
-		release: participationRelease, files,
-	}, null, 2) + '\n');
 	for (const file of files) await unlink(join(output, file.path.slice(1)));
 	const { bytes, archiveBytes } = await verifyPagesSize(output);
 	console.log(`Verified ${files.length} byte-identical bulk downloads; Pages site is ${bytes} bytes`);

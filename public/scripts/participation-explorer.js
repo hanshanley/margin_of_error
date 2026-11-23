@@ -1,4 +1,5 @@
-import { installParticipationDownloads, participationDownload } from "./participation-downloads.js";
+import { participationDownload } from "./participation-downloads.js";
+import { installParticipationPublicationUI } from "./participation-publication-ui.js";
 import { contextualCountyRows } from "./participation-county-context.js";
 import { installResidentContext } from "./participation-resident-context.js";
 import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, clearCountState, ufTurnoutRows } from "./participation-counts.js";
@@ -14,11 +15,27 @@ import { loadCountySubsets, subsetMarginLabel, subsetColorValue } from "./partic
 import { updateUfTurnoutTable } from "./participation-uf-turnout-table.js";
 import { loadAutomaticTurnoutHistory, loadPennsylvaniaVoteHistory } from "./participation-automatic-runtime.js";
 
-installParticipationDownloads(document.querySelector(".participation-page"));
+installParticipationPublicationUI(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
 const NS = "http://www.w3.org/2000/svg";
 const MAX_MAP_ZOOM = 16384;
 const root = document.querySelector(".participation-page");
+const phoneLayout = matchMedia("(max-width: 700px)");
+const responsiveControls = [
+  [root.querySelector(".explorer-toolbar"), "turnout"],
+  [$("participation-return-drivers")?.querySelector(".driver-controls"), "swing"],
+];
+function placeMapControls() {
+  for (const [controls, name] of responsiveControls) {
+    const destination = $(`${phoneLayout.matches ? "mobile" : "desktop"}-${name}-controls`);
+    if (!controls || !destination || controls.parentElement === destination) continue;
+    const focused = controls.contains(document.activeElement) ? document.activeElement : null;
+    destination.append(controls);
+    focused?.focus({ preventScroll: true });
+  }
+}
+placeMapControls();
+phoneLayout.addEventListener("change", placeMapControls);
 const params = new URLSearchParams(location.search);
 const colors = ["#284766", "#8c98a6"];
 const albers = conicProjection(-96, 29.5, 45.5);
@@ -154,14 +171,6 @@ async function loadLocal() {
     const pointer = await response.json();
     state.localPath = pointer.base_url;
     state.local = await localGet("index.json");
-    const link = html("a", "", "Complete nationwide local participation observations (CSV · gzip)");
-    link.href = state.localPath + "observations.csv.gz"; link.download = "";
-    if (!$("downloads").querySelector(`a[href="${link.getAttribute("href")}"]`))
-      $("downloads").querySelector(".download-links").append(link);
-    const coverage = html("a", "", "Every state and election year: local-data coverage (JSON)");
-    coverage.href = state.localPath + "coverage.json";
-    if (!$("downloads").querySelector(`a[href="${coverage.getAttribute("href")}"]`))
-      $("downloads").querySelector(".download-links").append(coverage);
   } catch (error) {
     state.localError = `Nationwide local observations could not be loaded: ${error.message}.`;
   }
@@ -562,7 +571,7 @@ function stateParticipationRows() {
         if (!counties.length) {
           container.replaceChildren(html("h4", "", "2026 local reporting"),
             html("p", "selection-note", data.source_mode_unavailable || (data.additional_error
-              ? `${data.additional_error}. Imported source tables and complete downloads remain in Methods & data; no missing observations are replaced with zero.`
+              ? `${data.additional_error}. Missing observations are not replaced with zero.`
               : "No verified full-election county/precinct counts ingested for this state yet. Statewide observations are separate and do not supply local counts.")));
           if (data.mode_review_complete_download) {
             const link = html("a", "selection-link", "Complete source-frame analysis and queries");
@@ -584,7 +593,7 @@ function stateParticipationRows() {
         container.replaceChildren(html("h4", "", "2026 local reporting"), label, select, detail, units);
         appendRegistryHistoryContexts(container, data.administrative_contexts || []);
         if (data.additional_error) container.append(html("p", "selection-note",
-          `${data.additional_error}. Imported source tables and complete downloads remain in Methods & data.`));
+          `${data.additional_error}. No missing observations are replaced with zero.`));
         for (const row of data.nongeographic || []) container.append(html("p", "selection-note",
           `${row.county}: ${fmt(row.ballots)} ballots in a separate nongeographic reporting unit; not assigned to county or municipal geography.`));
         const additional = counties.filter(row => row.review_id);
@@ -655,7 +664,7 @@ function stateParticipationRows() {
         if (select.value) choose();
       } catch (error) {
         if (container.isConnected) container.replaceChildren(html("p", "selection-note",
-          `${error.message}. No local counts inferred; complete downloads remain in Methods & data.`));
+          `${error.message}. No local counts were inferred.`));
       }
     }
     async function drawCurrentMunicipalityGeography(map, selected, code, token) {
@@ -1612,7 +1621,7 @@ async function loadCurrentPrecincts() {
       + `${fmt(coverage.colored)} colored reporting areas in this state. Partial coverage is not every precinct or all ballot modes. `
       + (countyBackground ? "County result colors remain beneath unmatched precinct areas; whole-state colors remain where county results are missing. "
         : "Whole-state red/blue result colors remain beneath unmatched areas. ")
-      + ([2020, 2024].includes(year) ? `${year} source: The New York Times; original state caveats and license are in Methods & data.` : "");
+      + ([2020, 2024].includes(year) ? `${year} source: The New York Times; original state caveats and license are in the research repository.` : "");
     $("geography-note").textContent = `${selected.feature.properties.NAME} · ${fmt(coverage.colored)} verified candidate-result shapes `
       + `on ${coverage.boundary_date} boundaries. ${coverage.notes}`;
     marginLegend(coverage.office);
@@ -1859,10 +1868,6 @@ async function contextGet(path) {
       const pointer = await response.json();
       state.contextPath = `/participation-context/${pointer.snapshot_id}/`;
       [state.context, state.margins] = await Promise.all([contextGet("index.json"), contextGet("margins.json")]);
-      const link = html("a", "", "Complete map context + original sources (ZIP)");
-      link.href = participationDownload(state.contextPath + "complete-context.zip"); link.download = "";
-      if (!$("downloads").querySelector(`a[href="${link.getAttribute("href")}"]`))
-        $("downloads").querySelector(".download-links").append(link);
     } catch (error) {
       state.contextError = `Election-map context is unavailable: ${error.message}.`;
       state.contextPath = "";
@@ -1995,10 +2000,6 @@ async function loadMethods() {
     };
     const [index, states, national] = await Promise.all([read("index.json"), read("states.json"), read("national.json")]);
     Object.assign(state, { methods: index, methodStates: states, methodNational: national, methodsPath: path });
-    const link = html("a", "", "Complete historical voting methods + original sources (ZIP)");
-    link.href = participationDownload(path + "complete-methods.zip"); link.download = "";
-    if (!$("downloads").querySelector(`a[href="${link.getAttribute("href")}"]`))
-      $("downloads").querySelector(".download-links").append(link);
   } catch (error) {
     state.methodsError = `Historical voting methods could not be loaded: ${error.message}.`;
   }
@@ -4058,8 +4059,6 @@ async function ncPrecinctsView(generation) {
     + `${fmt(filtered.filter(row => row.turnout_pct != null).length)} qualified registered-voter rates. `
     + "North Carolina voter-history participants and election-time registrations, not candidate votes.";
   state.precinctRows = new Map(rows.map(row => [keyFor(row), row]));
-  $("nc-download").href = `/voter-participation/data/nc/${year}.csv`;
-  $("nc-download").textContent = `NC ${year} precinct observations`;
   setTable(filtered, [["county", "County"], ["precinct", "Precinct"], ["group", "Group"],
     ["participants", "Participants"], ["registered", "Registered"], ["turnout_pct", "Participation"], ["quality", "Quality flags"]]);
   const audit = state.audits.find(row => row.year === year);
@@ -4134,7 +4133,7 @@ async function render() {
     state.map = null; state.mapPaths = [];
     $("map-tools").hidden = true; $("map-help").hidden = true;
     $("selection-panel").replaceChildren(html("p", "selection-note", "No selection data available for this view."));
-    $("visualization").replaceChildren(html("p", "empty", "Data unavailable. Complete downloads remain under Methods & data."));
+    $("visualization").replaceChildren(html("p", "empty", "Data unavailable for this selection."));
   }
 }
 function hashTarget() {

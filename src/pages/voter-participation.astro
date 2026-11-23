@@ -220,6 +220,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		</nav>
 
 		<section class="participation-explorer" id="historical-explorer" aria-label="Historical turnout explorer">
+			<div id="desktop-turnout-controls"></div>
 			<div class="explorer-toolbar">
 				<div class="controls" aria-label="Data filters">
 					<label id="state-label">State<select id="state-select"><option>North Carolina</option></select></label>
@@ -261,6 +262,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 						<button type="button" id="map-touch" aria-pressed="false">Pan map</button>
 					</div>
 					<div id="visualization"><p class="empty">Loading the saved analysis…</p></div>
+					<div id="mobile-turnout-controls"></div>
 					<p id="measure" class="measure"></p>
 					<p id="map-help" class="map-help" hidden>
 						<span class="pointer-map-help">Click to select · drag to pan · scroll or use + / − to zoom</span>
@@ -442,7 +444,6 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<a href="#definitions"><strong>Definitions</strong><span>Denominators, historical breaks and missing data</span></a>
 			<a href="#updates-panel"><strong>2026 sources</strong><span>Reporting clocks, coverage audits and native measures</span></a>
 			<a href="#participation-model"><strong>Experimental research</strong><span>Model tests and independent survey inputs</span></a>
-			<a href="#downloads"><strong>Complete data</strong><span>Original files, checksums, licenses and source ledgers</span></a>
 		</nav>
 
 		<section class="methods-cluster" aria-label="Model tests and survey inputs">
@@ -549,7 +550,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 
 		</section>
 		<details id="updates-panel" class="participation-reference methods-primary-disclosure">
-		<summary>2026 source coverage, reporting audits & complete downloads</summary>
+		<summary>2026 source coverage and reporting notes</summary>
 		<p>Explore 2026 through the regular year selector. These saved source tables preserve the reporting details;
 			demographic ballot counts are not group turnout rates.</p>
 		<h3 id="latest-2026-evidence-title">Newer 2026 participation observations</h3>

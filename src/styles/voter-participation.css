@@ -172,6 +172,7 @@ html:not(.js) .methods-archive:has(:target) { display: block; }
 .participation-downloads h2 { margin: 0; font-size: 1.5rem; }
 .participation-downloads p, .participation-sources { font-size: .85rem; color: var(--muted); }
 .participation-page .download-links { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; font: .78rem var(--sans); }
+.participation-page .download-links:empty { display: none; }
 .participation-page .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .participation-sources a { overflow-wrap: anywhere; }
 .section-intro { max-width: 750px; margin: 2rem 0; }
@@ -231,6 +232,10 @@ html:not(.js) .methods-archive:has(:target) { display: block; }
 	.js .participation-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .3rem; }
 	.participation-nav button { font-size: .78rem; min-height: 44px; padding: .35rem .1rem; white-space: normal; }
 	.explorer-toolbar { gap: .25rem; margin-bottom: .85rem; }
+	#mobile-turnout-controls .explorer-toolbar {
+		margin: .75rem 0 0; padding: .8rem 0 0; border-top: 1px solid var(--rule);
+	}
+	#mobile-swing-controls:not(:empty) { margin-top: .75rem; border-top: 1px solid var(--rule); }
 	.participation-explorer .controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem .65rem; width: 100%; }
 	.participation-explorer .controls label { min-width: 0; }
 	.participation-explorer :is(select, input) { width: 100%; min-height: 44px; font-size: 1rem; }

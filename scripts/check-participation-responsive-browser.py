@@ -37,6 +37,8 @@ def check(base, screenshots):
             if screenshots:
                 page.screenshot(path=screenshots / f"after-states-{width}.png")
             if mobile:
+                assert page.locator("#mobile-turnout-controls .explorer-toolbar").count() == 1
+                assert page.locator("#state-select").bounding_box()["y"] > map_view.bounding_box()["y"]
                 expect(color).to_be_hidden()
                 expect(options).to_be_visible()
                 options.tap()
@@ -66,6 +68,8 @@ def check(base, screenshots):
                     expect(touch).to_have_attribute("aria-pressed", "false")
                     page.locator("#map-reset").tap()
             else:
+                assert page.locator("#desktop-turnout-controls .explorer-toolbar").count() == 1
+                assert page.locator("#state-select").bounding_box()["y"] < map_view.bounding_box()["y"]
                 expect(color).to_be_visible()
                 expect(options).to_be_hidden()
                 expect(touch).to_be_hidden()
@@ -76,19 +80,25 @@ def check(base, screenshots):
             expect(swing).to_be_visible(timeout=45000)
             page.evaluate("scrollTo(0,0)")
             swing_top = round(swing.bounding_box()["y"])
-            assert swing_top < 900
+            assert swing_top < (650 if mobile else 900)
+            geography = page.locator("[data-driver-geography]")
+            assert (geography.bounding_box()["y"] > swing_top) == mobile
             assert page.evaluate("document.documentElement.scrollWidth") == width
             if screenshots:
                 page.screenshot(path=screenshots / f"after-swings-{width}.png")
-            page.locator("[data-driver-geography]").select_option("district")
+            geography.select_option("district")
             expect(swing.locator("path[data-district]")).to_have_count(435, timeout=45000)
             notes = page.locator(".driver-sources")
             notes.locator("summary").click()
-            expect(notes.locator(".download-links a")).to_have_count(6)
-            expect(notes.get_by_role("link", name="435-district offline map", exact=False)).to_be_visible()
+            expect(notes.locator(".download-links a")).to_have_count(0)
+            expect(page.locator("#downloads, [data-participation-archive], .participation-page a[download]")).to_have_count(0)
+            congress = page.locator("[data-congressional-results]")
+            congress.locator("summary").click()
+            expect(congress.locator("[data-congress-race]").first).to_be_visible(timeout=45000)
+            expect(congress.locator("[data-congress-downloads] a")).to_have_count(0)
             assert page.evaluate("document.documentElement.scrollWidth") == width
             assert not errors, (width, errors)
-            print(f"{width}px: turnout map at {turnout_top}px, swing map at {swing_top}px; controls and downloads passed",
+            print(f"{width}px: turnout map at {turnout_top}px, swing map at {swing_top}px; controls and archive removal passed",
                   flush=True)
             page.close()
         browser.close()
