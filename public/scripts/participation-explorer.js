@@ -798,11 +798,10 @@ function stateParticipationRows() {
       }
       if (token !== state.drillToken || state.map !== map) return;
       const contextualIds = new Set([...contextRows.values()].map(row => row.county_id));
-      const supplementalIds = new Set(supplementalReference === reference
-        ? [...nativeByFips.values()].map(row => row.county_id) : []);
+      const referenceIds = new Set([...nativeByFips.values()].map(row => row.county_id));
       const counties = observations.filter(row => row.maps_approved !== false
         && (!row.reference_geometry || row.reference_geometry.url === file)
-        || contextualIds.has(row.county_id) || supplementalIds.has(row.county_id));
+        || contextualIds.has(row.county_id) || referenceIds.has(row.county_id));
       if (observations.length && !counties.length) {
         if (state.countyResults?.year === 2026 && state.countyResults.coverage[code])
           return drawCountyCountFallback(map, selected, code, 2026, token,

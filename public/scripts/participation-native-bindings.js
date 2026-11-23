@@ -133,7 +133,8 @@ export function bindNativeGeometry(data, collection, verifiedHash) {
 }
 
 export function bindCountyReference(rows, collection, reference, binding) {
-  if (binding?.embedded_reference_required === false) {
+  // Table-only observations must not expand the approved map inventory.
+  if (binding) {
     const mappedIds = new Set(binding.rows.map(row => row.county_id));
     rows = rows.filter(row => row.maps_approved !== false || mappedIds.has(row.county_id));
   }

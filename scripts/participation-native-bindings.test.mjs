@@ -488,9 +488,14 @@ test("county bindings preserve identity and scope but do not hardcode old numeri
   const optional = { ...binding, embedded_reference_required: false };
   const selectorOnly = { ...row, county_id: "native:unmapped", maps_approved: false };
   assert.equal(bindCountyReference([row, selectorOnly], collection, row.reference_geometry, optional).size, 1);
-  assert.throws(() => bindCountyReference([row, selectorOnly], collection, row.reference_geometry, binding), /inventory/);
+  assert.equal(bindCountyReference([row, selectorOnly], collection, row.reference_geometry, binding).size, 1);
   assert.throws(() => bindCountyReference([row, { ...selectorOnly, maps_approved: true }],
     collection, row.reference_geometry, optional), /inventory/);
+  assert.throws(() => bindCountyReference([row, { ...selectorOnly, maps_approved: undefined }],
+    collection, row.reference_geometry, binding), /inventory/);
+  assert.throws(() => bindCountyReference([selectorOnly], collection, row.reference_geometry, binding), /inventory/);
+  assert.throws(() => bindCountyReference([row, { ...row, maps_approved: false }],
+    collection, row.reference_geometry, binding), /inventory/);
   assert.throws(() => bindCountyReference([selectorOnly], collection, row.reference_geometry, optional), /inventory/);
   assert.throws(() => bindCountyReference([{ ...row, geography_level: "municipality" }],
     collection, row.reference_geometry, binding), /differs/);
