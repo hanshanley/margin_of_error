@@ -3200,6 +3200,7 @@ function createMap(width, height, label) {
   $("map-tools").hidden = false; $("map-help").hidden = false;
   let drag = null, pinch = null, clickViewport = null;
   const pointers = new Map(), map = state.map;
+  svg.classList.toggle("pan-touch", $("map-touch").getAttribute("aria-pressed") === "true");
   const gesture = () => {
     const [a, b] = [...pointers.values()];
     return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2,
@@ -3208,6 +3209,7 @@ function createMap(width, height, label) {
   svg.addEventListener("pointerdown", event => {
     if (event.button !== 0 || state.map !== map) return;
     if (!pointers.size) map.dragged = false;
+    if (event.pointerType === "touch" && !svg.classList.contains("pan-touch")) return;
     pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
     drag = { id: event.pointerId, x: event.clientX, y: event.clientY, view: [...state.viewport] };
     event.target.setPointerCapture(event.pointerId);
@@ -3283,6 +3285,15 @@ function createMap(width, height, label) {
   setViewport([0, 0, width, height]);
   return svg;
 }
+$("map-touch")?.addEventListener("click", event => {
+  const active = event.currentTarget.getAttribute("aria-pressed") !== "true";
+  event.currentTarget.setAttribute("aria-pressed", String(active));
+  state.map?.svg.classList.toggle("pan-touch", active);
+});
+$("mobile-map-options")?.addEventListener("click", event => {
+  const button = event.currentTarget;
+  button.setAttribute("aria-expanded", String(button.getAttribute("aria-expanded") !== "true"));
+});
 function featurePath(item, value, label, action, attrs = {}) {
   const path = svgNode("path", { d: item.d, fill: fill(value), class: "map-feature", "fill-rule": "evenodd",
     role: "button", "aria-label": label, ...attrs });

@@ -43,24 +43,13 @@ const tests = [
 	<header class="section-intro">
 		<p class="kicker">2024 → 2026 · House results</p>
 		<h2 id="return-drivers-title">House swings and modeled drivers</h2>
-		<p>Compare recorded Democratic two-party vote share where candidate coverage is compatible. Select any state for both years' raw totals,
-			or choose modeled switching, net participation and prior no-House-choice to D/R contributions.</p>
+		<p>Compare election returns where the races are comparable, or explore modeled drivers. Candidate votes are not turnout.</p>
 	</header>
-	<p class="caption">Reported change compares held <strong>same-office candidate counts</strong>, not measured voter preference.
-		Known-D/R margin = 100 × (D − R) / (D + R), twice the Democratic-share change.
-		Neutral hatching means the statewide change is not comparable, not a Republican or Democratic swing.
-		Changed major-party candidate coverage, missing native counts and unqualified election stages cannot constrain a behavioral explanation.
-		NORC source models are trained separately from the reported results; qualified comparisons constrain the reconstruction.
-		Estimates, model checks and assumptions appear below the map.</p>
-	<p class="caption">Official Hawaii and Wyoming source updates are included; the other 48 states retain their held snapshots.
-		Wyoming's Other/unassigned total includes 1,031 write-in votes with unknown party, not assumed nonvoting.
-		Overvotes and undervotes remain separate. Hawaii's seven-ballot accounting difference remains unresolved.
-		Survey fits, weights and all existing behavioral holds are unchanged.</p>
 	<div class="driver-controls">
 		<label>2026 office<select data-driver-office disabled><option value="house">House</option>
 			<option value="senate">Senate</option><option value="governor">Governor · frames</option></select></label>
 		<label>Geography<select data-driver-geography disabled>
-			<option value="state">State comparisons</option>
+			<option value="state">States</option>
 			<option value="district">House districts</option>
 		</select></label>
 		<label>Map view<select data-driver-view disabled>
@@ -92,28 +81,19 @@ const tests = [
 			<option value="full">Historical association · stronger stress</option>
 		</select></label>
 		<label>Change units<select data-driver-units disabled>
-			<option value="democratic_two_party_share">Democratic two-party-share points</option>
-			<option value="margin">D−R margin points</option>
+			<option value="democratic_two_party_share">D share (pp)</option>
+			<option value="margin">D−R margin (pp)</option>
 		</select></label>
 	</div>
-	<p data-driver-status class="caption" role="status">Loading comparable House changes; every state's raw totals and complete downloads remain available.</p>
-	<p class="caption">The House district view uses the same automatically refreshed returns and exported comparison decisions.
-		<a href={districtGeometry.complete_download.url}>All 100 geography originals, complete queries, code and tests · ZIP</a> ·
-		<a href={districtGeometry.complete_geography_csv_url}>Every district geography decision · CSV</a> ·
-		<a href="https://github.com/hanshanley/margin_of_error/releases/download/house-district-offline-map-0e5766689d4a/house-district-map-complete.zip">Offline map of all 435 districts, with complete data and evidence · ZIP</a>.
-		<noscript>The interactive map requires JavaScript. Extract the offline ZIP and open its HTML map and table without JavaScript.</noscript>
-	</p>
-	<p data-automatic-runtime-status class="caption" role="status">
-		Checking the optional automatic House snapshot; accepted website estimates remain available.
-	</p>
 	<p data-driver-association-note class="caption" hidden></p>
 	<div class="driver-maps">
 		<section class="driver-map-card" aria-labelledby="driver-map-title">
 			<h3 id="driver-map-title" data-driver-map-title>Comparable House change</h3>
-			<p class="caption" data-driver-map-caption>Directional colour requires compatible candidate coverage. Neutral hatching marks an unavailable comparison, not a partisan swing. Raw totals remain in state details.</p>
 			<div class="driver-map" data-driver-map="reported_counts"></div>
+			<p class="caption" data-driver-map-caption>Directional colour requires compatible candidate coverage. Neutral hatching marks an unavailable comparison, not a partisan swing. Raw totals remain in state details.</p>
 		</section>
 	</div>
+	<p data-driver-status class="caption" role="status">Loading comparable House changes; every state's raw totals and complete downloads remain available.</p>
 	<div class="driver-map-key" aria-label="Shared signed margin-point scale">
 		<div><div class="driver-map-ramp"></div><div class="driver-map-ticks">
 			<span data-driver-scale-min></span><span>0</span><span data-driver-scale-max></span>
@@ -121,16 +101,36 @@ const tests = [
 		<span class="driver-no-model"><i></i>No qualified comparison / model</span>
 		<span class="driver-comparison-caution" data-driver-comparison-caution hidden><i></i>Not comparable · competition / scope</span>
 	</div>
-	<p class="caption driver-map-note">Colour shows <strong>signed percentage-point changes or contributions to the margin</strong>,
-		not party vote shares or turnout rates. House model change =
-		switching + net participation + Other/unassigned choice + unresolved responses.
-		The common accounting-frame size and transitions are modeled, not measured people.
-		No state estimate is spread onto counties or precincts.</p>
-	<p class="caption"><a href={norcSource.complete_download_url.replace('complete-analysis.zip', 'complete-recorded-counts.csv')}>Current complete recorded-count CSV</a> ·
-		<a href={norcSource.complete_download_url.replace('complete-analysis.zip', 'complete-recorded-counts.json')}>Current complete JSON</a>.
-		<a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-recorded-counts-20261113-01/complete-analysis.zip">Earlier recorded-count queries and interface correction</a>:
-		all 50 states, both change units, model qualifications, exact code/tests and the entire preceding scientific packet.</p>
 	<div data-driver-summary class="driver-summary" hidden aria-live="polite"></div>
+	<details class="explorer-notes driver-sources">
+		<summary>Map notes, source status and complete downloads</summary>
+		<p class="caption">Reported change compares <strong>same-office candidate counts</strong>, not measured voter preference.
+			Known-D/R margin = 100 × (D − R) / (D + R), twice the Democratic-share change.
+			Neutral hatching means a comparison is unavailable, not a partisan swing.
+			Changed major-party candidate coverage, missing native counts and unqualified election stages cannot constrain a behavioral explanation.
+			NORC source models are trained separately from the reported results; qualified comparisons constrain the reconstruction.</p>
+		<p class="caption">For the saved snapshot, the official Hawaii and Wyoming source updates are included; the other 48 states retain their held snapshots.
+			Wyoming's Other/unassigned total includes 1,031 write-in votes with unknown party, not assumed nonvoting.
+			Overvotes and undervotes remain separate. Hawaii's seven-ballot accounting difference remains unresolved.
+			Survey fits, weights and existing behavioral holds are unchanged.</p>
+		<p class="caption driver-map-note">Colour shows <strong>signed percentage-point changes or contributions to the margin</strong>,
+			not party vote shares or turnout rates. House model change =
+			switching + net participation + Other/unassigned choice + unresolved responses.
+			The common accounting-frame size and transitions are modeled, not measured people.
+			No state estimate is spread onto counties or precincts.</p>
+		<p data-automatic-runtime-status class="caption" role="status">
+			Checking the optional automatic House snapshot; accepted website estimates remain available.
+		</p>
+		<div class="download-links">
+			<a href={districtGeometry.complete_download.url}>Complete district geography evidence · ZIP</a>
+			<a href={districtGeometry.complete_geography_csv_url}>All district geography decisions · CSV</a>
+			<a href="https://github.com/hanshanley/margin_of_error/releases/download/house-district-offline-map-0e5766689d4a/house-district-map-complete.zip">435-district offline map, complete data and evidence · ZIP</a>
+			<a href={norcSource.complete_download_url.replace('complete-analysis.zip', 'complete-recorded-counts.csv')}>Complete saved recorded counts · CSV</a>
+			<a href={norcSource.complete_download_url.replace('complete-analysis.zip', 'complete-recorded-counts.json')}>Complete saved recorded counts · JSON</a>
+			<a href="https://github.com/hanshanley/margin_of_error/releases/download/participation-house-recorded-counts-20261113-01/complete-analysis.zip">Earlier recorded counts, full queries, model qualifications and code · ZIP</a>
+		</div>
+	</details>
+	<noscript><p class="caption">To view the map without JavaScript, open the HTML file in the offline map ZIP above.</p></noscript>
 	<details class="explorer-notes"><summary data-driver-detail-title>Selected state: demographic breakdown, retained voters and model checks</summary>
 		<div data-driver-detail class="driver-detail" hidden></div>
 	</details>
@@ -394,6 +394,8 @@ const tests = [
 </script>
 <style>
 	#participation-return-drivers { min-width: 0; margin-block: 1.5rem 2rem; }
+	#participation-return-drivers > .section-intro { margin-block: .6rem 1rem; }
+	#participation-return-drivers > .section-intro p { margin-block: .5rem; }
 	.driver-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr));
 		gap: .75rem; margin-block: 1.25rem .75rem; max-width: 55rem; }
 	.driver-controls label { display: grid; min-width: 0; gap: .3rem; font: .73rem var(--sans); }
@@ -404,7 +406,8 @@ const tests = [
 	.driver-maps { display: grid; grid-template-columns: minmax(0,1fr); margin-top: 1.5rem; }
 	.driver-map-card { min-width: 0; }
 	.driver-map-card h3 { margin: 0 0 .35rem; font: 400 1.3rem var(--serif); }
-	.driver-map-card > p { margin: 0 0 .5rem; }
+	.driver-map-card > p { margin: .55rem 0 .5rem; }
+	.driver-sources .download-links { margin-block: .75rem; }
 	.driver-map { min-height: 120px; }
 	.driver-map :global(svg) { display: block; width: 100%; max-width: 62.5rem; height: auto; margin-inline: auto; }
 	.driver-map :global(.driver-state) { stroke: #8d958e; stroke-width: .85; stroke-linejoin: round; vector-effect: non-scaling-stroke; cursor: pointer; }
@@ -426,7 +429,6 @@ const tests = [
 	.driver-comparison-caution[hidden] { display: none; }
 	.driver-comparison-caution i { width: .65rem; height: .65rem; border: 1px solid #8d958e;
 		background: repeating-linear-gradient(135deg,transparent 0 3px,#173d4866 3px 4px); }
-	.driver-map-note { max-width: 85ch; margin-inline: auto; }
 	.driver-detail { margin-top: 1rem; padding-top: .5rem; border-top: 1px solid var(--rule); min-width: 0; }
 	.driver-summary { margin-block: 1rem; padding-block: .75rem; border-block: 1px solid var(--rule); }
 	.driver-summary :global(h3) { margin: 0 0 .4rem; font: 400 1.15rem var(--serif); }
@@ -434,10 +436,15 @@ const tests = [
 	#participation-return-drivers :global(.driver-endpoint-version) { overflow-wrap: anywhere; }
 	.driver-summary :global(.driver-equation) { font: .85rem/1.65 var(--sans); font-variant-numeric: tabular-nums; }
 	@media(max-width:760px) {
-		.driver-controls { grid-template-columns: repeat(2,minmax(0,1fr)); }
-		.driver-controls[data-scenarios="true"] { grid-template-columns: repeat(2,minmax(0,1fr)); }
-		.driver-state-control { grid-column: 1 / -1; }
-		.driver-controls[data-scenarios="true"] .driver-state-control { grid-column: auto; }
+		#participation-return-drivers { margin-top: 0; padding-top: 0; border-top: 0; }
+		#participation-return-drivers > .section-intro { margin: .85rem 0; }
+		#participation-return-drivers > .section-intro h2 { font-size: 1.5rem; }
+		#participation-return-drivers > .section-intro > p:not(.kicker) { margin: .45rem 0; }
+		.driver-controls, .driver-controls[data-scenarios="true"] {
+			grid-template-columns: repeat(2,minmax(0,1fr)); gap: .55rem .65rem; margin-block: .8rem .55rem; }
+		.driver-controls :is(select,input) { min-height: 44px; font-size: 1rem; }
+		.driver-controls label:has([data-driver-view], [data-driver-family], [data-driver-association]) { grid-column: 1 / -1; }
+		.driver-maps { margin-top: .85rem; }
 		.driver-map-key { justify-content: flex-start; }
 		.driver-map-key > div { width: 100%; }
 		.driver-no-model { flex-basis: 100%; margin-left: 0; }

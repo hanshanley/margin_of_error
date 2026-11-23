@@ -231,6 +231,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<label id="county-label" hidden>County<select id="precinct-county"><option value="">All counties</option></select></label>
 					<label id="precinct-search-label" hidden>Find a precinct<input id="precinct-search" type="search" list="precinct-options" placeholder="ID or precinct name" autocomplete="off" /><datalist id="precinct-options"></datalist></label>
 					<label>Year<select id="year"></select></label>
+					<button class="mobile-map-options" id="mobile-map-options" type="button" aria-expanded="false"
+						aria-controls="map-color-label map-level-label mode-label">Map and data options</button>
 					<label id="map-color-label">Map color<select id="map-color"><option value="turnout" selected>Participation</option><option value="margin">Election results · red / blue</option></select></label>
 					<label id="map-level-label">Detail<select id="map-level"><option value="county">Counties / equivalents</option><option value="precinct">Precincts · existing coverage</option><option value="auto">As you zoom</option><option value="district">Congressional districts</option></select></label>
 					<label id="current-state-label" hidden>State<select id="current-state-select"></select></label>
@@ -249,7 +251,6 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<div class="explorer-heading"><div><p id="subtitle" class="eyebrow">State turnout · Census survey estimates</p>
 				<h2 id="title">Participation across the United States</h2>
 				<span id="provisional-status" class="provisional-badge" hidden>Provisional</span></div><div id="key"></div></div>
-			<p id="measure" class="measure"></p>
 			<p id="precinct-source-summary" class="precinct-source-summary" role="status" hidden></p>
 			<div class="explorer-layout">
 				<div class="explorer-canvas">
@@ -257,9 +258,14 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 						<button type="button" id="map-zoom-in" aria-label="Zoom in">+</button>
 						<button type="button" id="map-zoom-out" aria-label="Zoom out">−</button>
 						<button type="button" id="map-reset" aria-label="Reset map view">Reset</button>
+						<button type="button" id="map-touch" aria-pressed="false">Pan map</button>
 					</div>
 					<div id="visualization"><p class="empty">Loading the saved analysis…</p></div>
-					<p id="map-help" class="map-help" hidden>Click to select · drag to pan · scroll, pinch or use + / − to zoom</p>
+					<p id="measure" class="measure"></p>
+					<p id="map-help" class="map-help" hidden>
+						<span class="pointer-map-help">Click to select · drag to pan · scroll or use + / − to zoom</span>
+						<span class="touch-map-help">Tap to select · use + / − to zoom · turn on Pan map to drag or pinch</span>
+					</p>
 					<p id="geography-note" class="geography-note" role="status" hidden></p>
 				</div>
 				<aside id="selection-panel" class="selection-panel" aria-live="polite">
@@ -312,7 +318,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<details class="participation-panel" id="table-panel">
 				<summary>View the underlying observations</summary>
 				<label class="table-search">Search <input id="search" type="search" placeholder="State, county, precinct, or group" /></label>
-				<div class="table-wrap"><table><caption class="sr-only">Observations for the current selection</caption><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
+				<div class="table-wrap" tabindex="0" role="region" aria-label="Observations for the current selection"><table><caption class="sr-only">Observations for the current selection</caption><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
 				<p id="table-note" class="caption"></p>
 			</details>
 			<div id="tooltip" role="tooltip" hidden></div>
