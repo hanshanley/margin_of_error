@@ -95,6 +95,15 @@ available in selected-result details. Preserve the underlying nodes and event
 handlers when regrouping these dynamic sections, and test closed and expanded
 states on both touch and desktop layouts.
 
+For map changes, run `python3 scripts/check-participation-map-matrix-browser.py
+--base http://127.0.0.1:8436 --output /tmp/participation-map-matrix.json` against
+the prepared site. The check derives jurisdiction, historical-year and precinct
+cases from the actual menus and published indexes, waits for asynchronous
+sources, and exercises local selections and all 435 House districts at desktop
+and phone widths. Table-only sources and unavailable maps have separate checks;
+an empty loading screen is not a successful map. Use `--families`, `--states`
+and `--widths` for a focused regression before the full matrix.
+
 The author-supplied editorial thumbnail is stored byte-for-byte at
 `public/artifacts/voter-participation/voter-participation-editorial.png`.
 Use it for the Interactive analysis preview and the explorer's social image,

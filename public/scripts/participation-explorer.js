@@ -848,7 +848,6 @@ function stateParticipationRows() {
             + (contextual ? "\nSeparately reviewed Census county identity join; approximate 2024 contextual shape, not certified 2026 election geography." : "")
             : partialMunicipalityContext ? "\nNo source count for this reference municipality; missing is not zero."
               : "\nNo matched county counts"), () => {
-            $("selection-panel").querySelector(".selection-more")?.setAttribute("open", "");
             if (row && $("current-county-select")) {
               $("current-county-select").value = row.county_id;
               $("current-county-select").dispatchEvent(new Event("change"));
@@ -3284,12 +3283,20 @@ function featurePath(item, value, label, action, attrs = {}) {
   const path = svgNode("path", { d: item.d, fill: fill(value), class: "map-feature", "fill-rule": "evenodd",
     role: "button", "aria-label": label, ...attrs });
   bindTooltip(path, label);
+  const activate = () => {
+    const viewport = attrs["data-level"] && state.view === "states" ? [...state.viewport] : null;
+    action();
+    // Distant island components must not zoom a local selection out of drill-down.
+    if (viewport && state.map.full[0] / state.viewport[2] < 2.3) setViewport(viewport);
+    if (attrs["data-level"])
+      $("selection-panel").querySelector(".selection-more")?.setAttribute("open", "");
+  };
   path.addEventListener("click", event => {
     event.stopPropagation();
-    if (!state.map.dragged && event.detail < 2) action();
+    if (!state.map.dragged && event.detail < 2) activate();
   });
   path.addEventListener("keydown", event => {
-    if (event.key === "Enter" || event.key === " ") { event.preventDefault(); action(); }
+    if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activate(); }
   });
   if (!attrs["data-level"]) state.mapPaths.push(path);
   return path;
@@ -3880,7 +3887,7 @@ function precinctCoverageNavigation(panel, year) {
 }
 function installSourcedPrecinctSelection(map, preserveViewport) {
   const paths = [...map.detail.querySelectorAll("path[data-geography]")].filter(
-    path => ["precinct", "ward", "subprecinct"].includes(path.dataset.level));
+    path => ["precinct", "ward", "subprecinct", "reporting_reference"].includes(path.dataset.level));
   map.sourcePrecinctPaths = new Map(paths.map(path => [path.dataset.geography, path]));
   const countyFor = path => (path.getAttribute("aria-label") || "").split(" · ")[0];
   const counties = unique(paths.map(countyFor)).sort();
