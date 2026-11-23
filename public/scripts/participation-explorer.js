@@ -3,7 +3,7 @@ import { installParticipationPublicationUI, organizeStateDetails } from "./parti
 import { contextualCountyRows } from "./participation-county-context.js";
 import { installResidentContext } from "./participation-resident-context.js";
 import { loadCountState, loadCountIndex, loadCurrentCountSnapshot, countFrame, clearCountState, ufTurnoutRows } from "./participation-counts.js";
-import { loadNativeIndex, loadBoundNative, loadCountyBinding, loadMunicipalReference, loadReportingRows, reportingUnitDownloads, bindCountyReference, countyCoverageMessage } from "./participation-native-bindings.js";
+import { loadNativeIndex, loadBoundNative, loadCountyBinding, loadMunicipalReference, loadReportingRows, reportingUnitDownloads, bindCountyReference } from "./participation-native-bindings.js";
 import { installCoverage } from "./participation-coverage.js";
 import { installHistoricalNativeCounts } from "./participation-historical-native.js";
 import { installLouisianaNativeGroups } from "./participation-louisiana-native-groups.js";
@@ -848,10 +848,11 @@ function stateParticipationRows() {
             + (contextual ? "\nSeparately reviewed Census county identity join; approximate 2024 contextual shape, not certified 2026 election geography." : "")
             : partialMunicipalityContext ? "\nNo source count for this reference municipality; missing is not zero."
               : "\nNo matched county counts"), () => {
+            $("selection-panel").querySelector(".selection-more")?.setAttribute("open", "");
             if (row && $("current-county-select")) {
               $("current-county-select").value = row.county_id;
               $("current-county-select").dispatchEvent(new Event("change"));
-            } else if (reference?.partial_county_fips || partialMunicipalityContext) {
+            } else if (!row || reference?.partial_county_fips || partialMunicipalityContext) {
               const select = $("current-county-select");
               if (select) { select.value = ""; select.dispatchEvent(new Event("change")); }
               const message = nativeCities
@@ -860,7 +861,7 @@ function stateParticipationRows() {
                 ? "No uniquely matched source activity count for this reference area. Ambiguous and unmatched regions are held, not allocated or filled with zero."
                 : maineTownTurnout
                 ? "No reviewed town turnout report for this municipality. Its count and rate are unknown, not zero."
-                : countyCoverageMessage(observations);
+                : `No approved map observation for ${feature.properties.name}. Source counts may be held or unavailable; missing values are not zero.`;
               $("current-county-detail")?.replaceChildren(html("h4", "", feature.properties.name),
                 html("p", "selection-note", message));
               setTable([{ county: feature.properties.name, ballots: null, reported_pct: null, quality: [message] }],

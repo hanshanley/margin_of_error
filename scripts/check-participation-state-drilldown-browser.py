@@ -94,6 +94,14 @@ def check(base):
                         assert len(held) == len(expected["held"]), (name, mode, held)
                     note = page.locator("#geography-note").text_content()
                     assert f"{len(approved)} county observations" in note, (name, mode, note)
+                    if code == "TX" and mode == "available":
+                        known = next(row for row in actual if row["id"] and row["count"])
+                        page.locator(f'.geographic-detail [data-geography="{known["fips"]}"]').press("Enter")
+                        expect(page.locator("#selection-panel > .selection-more")).to_have_attribute("open", "")
+                        expect(page.locator("#current-county-detail")).to_be_visible()
+                        missing = next(iter(held.values()))
+                        page.locator(f'.geographic-detail [data-geography="{missing["fips"]}"]').press("Enter")
+                        expect(page.locator("#current-county-detail")).to_contain_text("No approved map observation")
                     assert page.evaluate("document.documentElement.scrollWidth") == width
                     print(json.dumps({"width": width, "state": code, "mode": mode,
                                       "outlines": len(actual), "approved": len(painted),
