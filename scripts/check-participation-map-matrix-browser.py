@@ -43,6 +43,7 @@ def inventory(page):
       const history = nc.filter(row => row.status === 'aggregated').map(row => ({code:'NC',
         year:row.year,layer:'participation',kind:audits.some(a => a.year === row.year) ? 'history-map' : 'history-table'}));
       return {names,precincts:[...results.values(),...current,...history],
+        modes:[...document.querySelector('#mode').options].filter(o => !o.disabled).map(o => o.value),
         years:[...document.querySelector('#year').options].map(o => Number(o.value))};
     }""")
 
@@ -51,8 +52,12 @@ def boot(page, base, query=None):
     response = page.goto(base + '/voter-participation/' + ('?' + urlencode(query) if query else ''),
                          wait_until='domcontentloaded')
     assert response.ok
-    page.wait_for_function("""() => document.querySelector('#state-select').options.length >= 51
-      && document.querySelector('#year').options.length > 1""", timeout=45000)
+    if query and query.get('view') == 'precincts':
+        expect(page.locator('#precinct-state-select option')).to_have_count(51, timeout=45000)
+        expect(page.locator('#year')).to_have_value(str(query['year']))
+    else:
+        expect(page.locator('svg.turnout-map')).to_be_visible(timeout=45000)
+        page.wait_for_function("() => document.querySelector('#state-select').options.length >= 51")
 
 
 def local_selection(page, paths):
@@ -102,6 +107,9 @@ def check(args):
             row = dict(width=width, **spec, **detail, status='passed')
         except Exception as error:
             row = dict(width=width, **spec, status='failed', error=str(error)[:2000])
+            row['display'] = page.evaluate("""() => Object.fromEntries(
+              ['title','geography-note','coverage-note','precinct-source-summary'].map(id =>
+                [id,document.getElementById(id)?.textContent]))""")
         rows.append(row)
         if args.output:
             args.output.write_text(json.dumps(rows, indent=2) + '\n')
@@ -117,7 +125,9 @@ def check(args):
             expected = inventory(probe)
             probe.close()
             names = expected['names']
+            assert len(names) == 51, names
             codes = [code for code in names if not args.states or code in args.states]
+            assert codes, 'No offered jurisdictions matched the requested states'
             for width in args.widths:
                 context = browser.new_context(viewport={'width': width, 'height': 950},
                                               has_touch=width < 700, is_mobile=width < 700)
@@ -127,7 +137,7 @@ def check(args):
                 if 'counties' in args.families:
                     boot(page, args.base)
                     expect(page.locator('svg.turnout-map')).to_be_visible(timeout=45000)
-                    for mode in args.modes:
+                    for mode in args.modes or expected['modes'] + ['margin']:
                         page.locator('#atlas-options').evaluate('e => e.open = true')
                         page.locator('#map-color').select_option('turnout')
                         page.locator('#mode').select_option('available' if mode == 'margin' else mode)
@@ -149,7 +159,7 @@ def check(args):
                 if 'historical' in args.families:
                     boot(page, args.base)
                     for year in expected['years']:
-                        if year == 2026:
+                        if year == 2026 or args.years and year not in args.years:
                             continue
                         def historical(year=year):
                             page.locator('#year').select_option(str(year))
@@ -164,8 +174,11 @@ def check(args):
                         run(page, errors, width, {'family':'historical','year':year}, historical)
                 if 'precincts' in args.families:
                     for spec in expected['precincts']:
-                        if spec['code'] not in codes:
+                        if spec['code'] not in codes or args.years and spec['year'] not in args.years:
                             continue
+                        page.close()
+                        page = context.new_page()
+                        page.on('pageerror', lambda error: errors.append(str(error)))
                         def precinct(spec=spec):
                             boot(page, args.base, {'view':'precincts','year':spec['year'],
                                  'state':names[spec['code']],'layer':spec['layer']})
@@ -184,7 +197,7 @@ def check(args):
                             if kind in ('mapped', 'history-map'):
                                 if kind == 'history-map':
                                     paths = page.locator('svg.turnout-map path[data-key]')
-                                assert paths.count() > 0, spec
+                                paths.first.wait_for(state='attached', timeout=45000)
                                 if kind == 'mapped':
                                     expect(paths).to_have_count(spec['expected'])
                                     summary = page.locator('#precinct-source-summary').text_content()
@@ -260,6 +273,7 @@ def check(args):
         finally:
             browser.close()
     failures = [row for row in rows if row['status'] == 'failed']
+    assert rows, 'No map cases matched the requested filters'
     print(json.dumps({'cases':len(rows),'failures':len(failures),
                       'families':dict(Counter(row['family'] for row in rows))}), flush=True)
     assert not failures, json.dumps(failures, indent=2)
@@ -271,8 +285,9 @@ if __name__ == '__main__':
     parser.add_argument('--widths', nargs='+', type=int, default=[1280,390])
     parser.add_argument('--families', nargs='+', choices=['counties','historical','precincts','results','districts'],
                         default=['counties','historical','precincts','results','districts'])
-    parser.add_argument('--modes', nargs='+', default=['available','official','in_person_early','mail_returned','margin'])
+    parser.add_argument('--modes', nargs='+')
     parser.add_argument('--states', nargs='+')
+    parser.add_argument('--years', nargs='+', type=int, help='Filter historical and precinct frames')
     parser.add_argument('--output', type=Path)
     parser.add_argument('--fail-fast', action='store_true')
     options = parser.parse_args()
