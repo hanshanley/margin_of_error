@@ -1,0 +1,27 @@
+conditioning_scope,holds,id,legacy_source_clock,model_source_clock,office,state_code,status,strict_legacy_model_refreshed
+reported_DR_only_current_O_unknown,['Candidate inventory changed or incomplete'],AL-senate-86907,2026-11-08T01:20:41.860Z,2026-11-10T21:59:55.308+00:00,senate,AL,held_retain_last_good_partial_scenario,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],CO-senate-87022,2026-11-08T01:31:15.505Z,,senate,CO,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],DE-senate-87036,2026-11-08T01:40:16.084Z,,senate,DE,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],GA-senate-87087,2026-11-08T01:27:25.836Z,,senate,GA,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],IA-senate-87151,2026-11-08T01:38:42.789Z,,senate,IA,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],IL-senate-87129,2026-11-08T01:34:30.399Z,,senate,IL,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],KS-senate-87162,2026-11-08T01:20:08.132Z,,senate,KS,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],KY-senate-87174,2026-11-08T01:28:57.249Z,,senate,KY,held_no_compatible_partial_bridge,False
+,"['Previous D nominee is absent or not unique', 'Previous R nominee is absent or not unique']",LA-senate-87183,2026-11-08T01:41:35.472Z,,senate,LA,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],MA-senate-87275,2026-11-08T01:20:21.480Z,,senate,MA,held_no_compatible_partial_bridge,False
+,"['A matching previous/current RCV round has not been qualified', 'Reported full candidate identity/universe differs; no minor/write-in mass discarded']",ME-senate-87188,2026-11-08T01:40:42.034Z,,senate,ME,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],MI-senate-87214,2026-11-08T01:28:16.852Z,,senate,MI,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],MN-senate-87229,2026-11-08T01:39:04.612Z,,senate,MN,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],MS-senate-81004,2026-11-08T01:41:02.005Z,,senate,MS,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],MT-senate-87247,2026-11-08T01:21:09.438Z,,senate,MT,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],NC-senate-87346,2026-11-08T01:26:52.633Z,,senate,NC,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],NH-senate-87283,2026-11-08T01:10:23.671Z,,senate,NH,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],NJ-senate-87302,2026-11-08T01:35:06.880Z,,senate,NJ,held_no_compatible_partial_bridge,False
+reported_DR_only_current_O_unknown,[],NM-senate-87288,2026-11-08T01:16:18.076Z,2026-11-11T16:39:16.795+00:00,senate,NM,fresh_partial_scenario,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],RI-senate-87396,2026-11-08T01:18:35.974Z,,senate,RI,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],SC-senate-87409,2026-11-08T01:40:45.993Z,,senate,SC,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],TN-senate-87475,2026-11-08T01:22:41.801Z,,senate,TN,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],TX-senate-87438,2026-11-08T01:24:31.961Z,,senate,TX,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],VA-senate-87472,2026-11-08T01:14:11.378Z,,senate,VA,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],WV-senate-87477,2026-11-08T01:17:06.133Z,,senate,WV,held_no_compatible_partial_bridge,False
+,['Reported full candidate identity/universe differs; no minor/write-in mass discarded'],WY-senate-87496,2026-11-08T01:37:35.905Z,,senate,WY,held_no_compatible_partial_bridge,False
