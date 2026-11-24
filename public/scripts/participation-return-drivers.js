@@ -9,6 +9,7 @@ import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection
 import { loadHouseSensitivity, houseSensitivityScope } from "./participation-house-sensitivity.js";
 import { installCongressionalReturns } from "./participation-congress.js";
 import { houseDistrictController } from "./participation-house-districts.js";
+import { statewideSourceController, statewideSourceViews, isStatewideSourceView } from "./participation-statewide-source.js";
 import { senatePartialController } from "./participation-senate-partial.js";
 import { senateCompleteController } from "./participation-senate-complete.js";
 import { automaticHouseDescriptor, automaticHouseProfileReceipt, automaticHouseSensitivityReceipt,
@@ -200,6 +201,8 @@ export async function initializeReturnDrivers() {
     const districts = geographySelect ? houseDistrictController(root, payload.district_geometry, {
       onSelectState:code=>{selectedCode=code;},
     }) : null;
+    const statewide = payload.statewide_source_model ? statewideSourceController(root,payload.statewide_source_model,
+      {items,names,effectFill,element,svgElement,onSelectState:code=>{selectedCode=code;}}) : null;
     const districtMode = () => Boolean(districts && geographySelect.value === "district"
       && office.value === "house" && view.value === "reported_counts");
     let scenarios, norc, norcComparison, norcOriginalComparison, norcFamily, hitObserver, groupKind="", generation = 0;
@@ -453,6 +456,9 @@ export async function initializeReturnDrivers() {
       detail.hidden = false;
     };
     const selectState = code => {
+      if (statewide && office.value === "house" && isStatewideSourceView(view.value)) {
+        selectedCode=code;stateSelect.value=code;statewide.select(code);return;
+      }
       if (districtMode()) { districtScope=code;districts.filter(code);return; }
       selectedCode = code; stateSelect.value = code;
       const row = data.rows.find(value => value.state_code === code && value.office === office.value);
@@ -509,6 +515,7 @@ export async function initializeReturnDrivers() {
     };
     const render = async () => {
       const current = ++generation, scenario = isScenarioView(view.value);
+      const sourceMode=Boolean(statewide && office.value === "house" && isStatewideSourceView(view.value));
       const norcMode=office.value==="house" && !scenario && Boolean(embeddedHouse.original);
       const recordedMode=norcMode && view.value==="reported_counts";
       if (geographySelect) {
@@ -520,6 +527,20 @@ export async function initializeReturnDrivers() {
           ?"Selected district: counts, comparison holds and source dates"
           :"Selected state: demographic breakdown, retained voters and model checks";
       }
+      const viewLabel=view.closest("label");
+      if (sourceMode) {
+        root.querySelector(".driver-controls").append(viewLabel);
+        if (geographySelect) {geographySelect.closest("label").hidden=true;geographySelect.disabled=true;}
+        root.querySelector("[data-driver-district-control]").hidden=true;
+        if (associationNote) associationNote.hidden=true;
+        root.querySelector("[data-driver-detail-title]").textContent="Model breakdown and assumptions";
+        districts?.leave();hitObserver?.disconnect();groupKind="";
+        await statewide.render({view:view.value,state:selectedCode,units:norcUnits(),isCurrent:()=>current===generation});
+        return;
+      }
+      statewide?.leave();
+      root.querySelector(".driver-reading-note").textContent="Hatching marks an unavailable comparison, not a partisan swing.";
+      if (displayControls && viewLabel.parentElement!==displayControls) displayControls.append(viewLabel);
       if (districtMode()) {
         hitObserver?.disconnect();
         for (const control of [familySelect,associationSelect]) if (control) {
@@ -568,7 +589,8 @@ export async function initializeReturnDrivers() {
           if (loaded.contract==="participation.house_model_families.v1") {
             norcComparison=loaded;
             norcOriginalComparison=requested==="original"?loaded:original;
-            norcFamily=loaded.families[norcFamily]?norcFamily:loaded.preferred_family;
+            norcFamily=loaded.families[familySelect?.value]?familySelect.value:
+              loaded.families[norcFamily]?norcFamily:loaded.preferred_family;
             if (familySelect) {
               familySelect.replaceChildren(...norcFamilies.map(([key,label])=>new Option(label,key)));
               familySelect.value=norcFamily;familySelect.disabled=false;
@@ -596,6 +618,9 @@ export async function initializeReturnDrivers() {
           const retry=element("button","Retry NORC model");retry.type="button";retry.addEventListener("click",render);
           root.querySelector("[data-driver-map]").replaceChildren(retry);return;
         }
+      }
+      if (norcMode && norcComparison?.families[familySelect?.value]) {
+        norcFamily=familySelect.value;norc=norcComparison.families[norcFamily];
       }
       if (norcMode && !recordedMode) {setGroups("norc");group.disabled=view.value==="reported_total";}
       if (norcMode && !recordedMode) requestSensitivity();
@@ -776,13 +801,30 @@ export async function initializeReturnDrivers() {
     for (const control of [office, view, stateSelect]) {
       control.disabled = false;
     }
+    let previousOffice=office.value;
+    const officeViews=new Map();
     const changeOffice=() => {
-      const previous=view.value, options=office.value==="house" && embeddedHouse.original?norcViews:mapTerms;
-      view.replaceChildren(...options.map(([key,label])=>new Option(label,key)));
+      officeViews.set(previousOffice,view.value);previousOffice=office.value;
+      const previous=officeViews.get(office.value) || view.value, options=office.value==="house" && embeddedHouse.original
+        ?[...(statewide?statewideSourceViews:[]),...norcViews]:mapTerms;
+      if (office.value==="house" && statewide) {
+        const sourceGroup=element("optgroup"),comparisonGroup=element("optgroup");
+        sourceGroup.label="Uniform source model · all 50 states";
+        comparisonGroup.label="Recorded / return-constrained · qualified comparisons";
+        for (const [key,label] of options)
+          (isStatewideSourceView(key)?sourceGroup:comparisonGroup).append(new Option(label,key));
+        view.replaceChildren(sourceGroup,comparisonGroup);
+      } else view.replaceChildren(...options.map(([key,label])=>new Option(label,key)));
       const archived=element("optgroup");archived.label="Archived survey-frame scenarios";
       for (const [key,label] of scenarioViews) archived.append(new Option(label,key));
       view.append(archived);
-      view.value=[...view.options].some(o=>o.value===previous)?previous:"reported_total";
+      view.value=[...view.options].some(o=>o.value===previous)?previous:
+        office.value==="house" && statewide?"source_total":"reported_total";
+      root.querySelector("#return-drivers-title").textContent=office.value==="house"?"Statewide House estimates":
+        office.value==="senate"?"Senate comparisons":"Governor source frames";
+      root.querySelector("[data-driver-intro]").textContent=office.value==="house"
+        ?"2024 → 2026 · One source-model method for all 50 states. Recorded comparisons remain separate."
+        :"Separate office-specific comparisons and source frames where supported; not the all-state House model.";
       render();
     };
     office.addEventListener("change",changeOffice);
@@ -790,6 +832,7 @@ export async function initializeReturnDrivers() {
     stateSelect.addEventListener("change", () => selectState(stateSelect.value));
     group.addEventListener("change", render);
     familySelect?.addEventListener("change",()=>{
+      if (statewide && isStatewideSourceView(view.value)) {render();return;}
       if (!norcComparison?.families[familySelect.value]) return;
       norcFamily=familySelect.value;norc=norcComparison.families[norcFamily];render();
     });

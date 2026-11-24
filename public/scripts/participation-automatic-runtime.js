@@ -56,6 +56,19 @@ function validateBodyPin(value) {
   return value;
 }
 
+export function automaticStatewideSourceReceipt(manifest) {
+  const sources=manifest?.house_sources,receipt=sources?.statewide_source_models;
+  if (!receipt) return null;
+  validateBodyPin(receipt);
+  const base=immutableRaw.exec((sources.base_url || "").replace(/\/?$/,"/"));
+  if (receipt.contract!=="participation.statewide_source_index.v1" || !hash.test(receipt.version)
+      || receipt.path!=="house/statewide-source/index.json.gz"
+      || !base || base[2]!==`automatic/versions/${manifest.version}/`
+      || receipt.url!==new URL(receipt.path,sources.base_url.replace(/\/?$/,"/")).href)
+    throw new Error("Automatic source model is not bound to its accepted runtime");
+  return receipt;
+}
+
 function validateAutomaticHouseSources(sources, version) {
   const profiles = ["original", "attenuated", "full"];
   const families = ["accepted_ridge_multinomial", "histogram_gradient_boosting",

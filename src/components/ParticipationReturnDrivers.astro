@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { roundedContributions, switchingConstraintBounds } from '../../public/scripts/participation-calibrated-swing.js';
 import { roundedNorcContributions, norcRecordedComparison } from '../../public/scripts/participation-norc-house.js';
 const { names } = Astro.props as { names: Record<string, string> };
@@ -14,6 +15,15 @@ const association = JSON.parse(readFileSync('data/participation-return-attributi
 const sensitivity = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/sensitivity-receipt.json', 'utf8'));
 const districtGeometry = JSON.parse(readFileSync('data/participation-house-districts/20261118-02/receipt.json', 'utf8'));
 const norcPoints = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/norc-point-summary.json', 'utf8'));
+const statewideSource = JSON.parse(readFileSync('data/participation-statewide-source/20261124-01/receipt.json', 'utf8'));
+const statewideBytes = readFileSync('data/participation-statewide-source/20261124-01/display-summary.json');
+const statewideSummary = JSON.parse(statewideBytes.toString('utf8'));
+if (statewideBytes.length !== statewideSource.display_summary.bytes ||
+	createHash('sha256').update(statewideBytes).digest('hex') !== statewideSource.display_summary.sha256 ||
+	statewideSummary.metadata.version !== statewideSource.version || statewideSummary.rows.length !== 50 ||
+	new Set(statewideSummary.rows.map((row: any) => row.state_code)).size !== 50 ||
+	statewideSummary.rows.some((row: any) => !names[row.state_code] || row.state_code === 'DC'))
+	throw new Error('Saved all-state source model does not match its verified display receipt');
 type CalibratedRow = { id: string; state_code: string; office: string;
 	point: { reported_change_pp: number; components_pp: Record<string, number> } | null };
 const receipt = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/download.json', 'utf8'));
@@ -30,7 +40,7 @@ const recordedHouse = norcPoints.rows.map((row: any) => ({
 }));
 const payload = JSON.stringify({ data, calibration, names, norc_source: norcSource, house_comparison_holds: houseHolds,
 	recorded_house_counts: recordedHouse, norc_association_sources: association, norc_sensitivity: sensitivity,
-	district_geometry: districtGeometry }).replaceAll('<', '\\u003c');
+	district_geometry: districtGeometry, statewide_source_model: statewideSource }).replaceAll('<', '\\u003c');
 const pp = (value: number | null) => value === null ? 'Unavailable' : `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 const validation = norcPoints.validation;
 const tests = [
@@ -41,8 +51,8 @@ const tests = [
 ---
 <section id="participation-return-drivers" class="participation-current" aria-labelledby="return-drivers-title">
 	<header class="section-intro">
-		<h2 id="return-drivers-title">Change in election results</h2>
-		<p>2024 → 2026 · Comparable candidate vote shares, not turnout.</p>
+		<h2 id="return-drivers-title">Statewide House estimates</h2>
+		<p data-driver-intro>2024 → 2026 · One source-model method for all 50 states. Recorded comparisons remain separate.</p>
 	</header>
 	<div id="desktop-swing-controls"></div>
 	<div class="driver-controls">
@@ -53,6 +63,14 @@ const tests = [
 			<option value="district">House districts</option>
 		</select></label>
 		<label data-driver-secondary>Map view<select data-driver-view disabled>
+			<option value="source_total">Modeled House change · all 50 states</option>
+			<option value="source_switching">Modeled switching contribution · source frame</option>
+			<option value="source_participation">Modeled net participation contribution · source frame</option>
+			<option value="source_entry">Modeled no House choice → D/R · source frame</option>
+			<option value="source_exit">Modeled D/R → no House choice · source frame</option>
+			<option value="source_other">Other / unassigned choice · source frame</option>
+			<option value="source_unresolved">Unresolved responses · source frame</option>
+			<option value="source_retaining">Kept party · source-model share</option>
 			<option value="reported_counts">Comparable House change</option>
 			<option value="reported_total">Like-for-like House comparisons only</option>
 			<option value="switching">Switching · fitted</option>
@@ -92,8 +110,8 @@ const tests = [
 	<div class="driver-overview"><div class="driver-overview-map">
 	<div class="driver-maps">
 		<section class="driver-map-card" aria-labelledby="driver-map-title">
-			<h3 id="driver-map-title" data-driver-map-title>Comparable House change</h3>
-			<div class="driver-map" data-driver-map="reported_counts"></div>
+			<h3 id="driver-map-title" data-driver-map-title>Modeled House change · all 50 states</h3>
+			<div class="driver-map" data-driver-map="source_total"></div>
 		</section>
 	</div>
 	<div class="driver-map-key" aria-label="Shared signed margin-point scale">
@@ -110,11 +128,30 @@ const tests = [
 		<div data-driver-detail class="driver-detail" hidden></div>
 	</details>
 	</aside></div>
+	<details class="explorer-notes" data-statewide-source-table><summary>Saved source-model estimates · all 50 states</summary>
+		<p class="caption">Original association and multinomial ridge; Democratic two-party-share percentage points.
+			Both endpoints describe the CHEP2026 source-weighted frame, not either year's observed electorate.
+			These estimates are not population calibrated or constrained by partisan returns. Sensitivity is not a confidence interval.
+			Input vintages: AP2024 / CHEP2026; interview and fit dates are not supplied. D.C. has no CHEP sample.</p>
+		<div class="table-wrap"><table><caption>Uniform source-model decomposition · source version {statewideSummary.metadata.version.slice(0,12)}</caption>
+			<thead><tr><th>State</th><th>Total modeled change</th><th>Switching</th><th>Net participation</th><th>Other choice</th><th>Unresolved</th><th>Model sensitivity</th></tr></thead>
+			<tbody>{statewideSummary.rows.map((row: any) => <tr data-statewide-source-state={row.state_code}>
+				<th scope="row">{names[row.state_code] || row.state_code}</th>
+				{[row.point.allocated_change_pp,row.point.contributions_pp.switching,row.point.net_participation_pp,
+					row.point.contributions_pp.other_choice,row.point.contributions_pp.unresolved].map(value =>
+					<td class="numeric">{pp(value / 2)}</td>)}
+				<td class="numeric">{pp(row.sensitivity.total_change.minimum / 2)} to {pp(row.sensitivity.total_change.maximum / 2)}</td>
+			</tr>)}</tbody>
+		</table></div>
+	</details>
 	<details class="driver-research"><summary>Sources and model methodology</summary>
 	<details class="explorer-notes driver-sources">
 		<summary>How to read the map</summary>
 		<p class="caption" data-driver-map-caption>Directional colour requires compatible candidate coverage. Raw totals remain in state details.</p>
-		<p data-driver-status class="caption" role="status">Loading comparable House changes…</p>
+		<p data-driver-status class="caption" role="status">Loading uniform source-model estimates for all 50 states…</p>
+		<p class="caption">The primary House layer uses the same fitted-source method in every state, without partisan-return constraints.
+			It does not mix return-conditioned estimates with unconditioned states. It is not a new population-calibrated model.
+			Recorded and return-constrained views retain their candidate-coverage and round qualifications.</p>
 		<p class="caption">Reported change compares <strong>same-office candidate counts</strong>, not measured voter preference.
 			Known-D/R margin = 100 × (D − R) / (D + R), twice the Democratic-share change.
 			Neutral hatching means a comparison is unavailable, not a partisan swing.
@@ -214,7 +251,7 @@ const tests = [
 		Pennsylvania now uses all 17 native district totals: its unmatched county-validation rows were not missing native votes.
 		Provider district totals omit known county-source write-ins; those are kept separate, not added to Other.
 		Every district is now audited for named major-party coverage, missing native counts and multiple same-party nominees.
-		There are {norcPoints.summary.return_anchored} conditional comparisons; incompatible or unresolved cases remain unavailable in modeled views.
+		There are {norcPoints.summary.return_anchored} conditional comparisons; incompatible or unresolved cases remain unavailable in return-constrained views, not in the separate source-only layer.
 		In Massachusetts, Republican candidates appear in 2 of 9 districts in 2024 but 5 of 9 in the held 2026 snapshot.
 		The old aggregate change therefore was not a like-for-like statewide preference swing. A common-district subtotal is not a statewide correction, and matching IDs do not certify unchanged geography.
 		Maine's unresolved ranked-choice-round hold remains independent. Unreported counts are never filled with zero.</p>

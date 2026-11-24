@@ -248,6 +248,7 @@ def check(args):
                 if 'districts' in args.families:
                     boot(page, args.base)
                     page.locator('#tab-effects').click()
+                    page.locator('[data-driver-view]').select_option('reported_counts')
                     page.locator('[data-driver-geography]').select_option('district')
                     paths = page.locator('[data-driver-map] path[data-district]')
                     expect(paths).to_have_count(435, timeout=45000)

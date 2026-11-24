@@ -1,0 +1,17 @@
+{
+  "contract": "participation.statewide_source_index.v1",
+  "version": "dddb5b0002c3c207bc92a86fe5b9db73648b8e34de39dc433f30d0a9fcca75ac",
+  "path": "house/statewide-source/index.json.gz",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/voter-participation/a30f5a3c84079907694d74da09289ab8224a4647/data/statewide-source-model/20261124-01/",
+  "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/a30f5a3c84079907694d74da09289ab8224a4647/data/statewide-source-model/20261124-01/house/statewide-source/index.json.gz",
+  "compression": "gzip",
+  "media_type": "application/json",
+  "bytes": 2231,
+  "sha256": "8a09693afbfe697427fc51ad1bd642771552a673138a4ae01b58263c5da40216",
+  "decoded_bytes": 4811,
+  "decoded_sha256": "63f125545168f9e5bcd74b2c7972fee92edeef45c5eac9ad73865e624fa6e175",
+  "display_summary": {
+    "bytes": 53346,
+    "sha256": "de81ad5e67fcaec8a213a98bd5d0dfecb63e4d57f340bfb4872829d154250063"
+  }
+}
