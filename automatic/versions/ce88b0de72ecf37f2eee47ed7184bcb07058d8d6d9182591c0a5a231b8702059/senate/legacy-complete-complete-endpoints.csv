@@ -1,0 +1,7 @@
+endpoint,id,native_candidate_count,observed_count_supplied,office,party,state_code
+previous,RI-senate-87396,328574,True,senate,D,RI
+previous,RI-senate-87396,164855,True,senate,R,RI
+previous,RI-senate-87396,833,True,senate,O,RI
+current,RI-senate-87396,240707,True,senate,D,RI
+current,RI-senate-87396,105459,True,senate,R,RI
+current,RI-senate-87396,14258,True,senate,O,RI
