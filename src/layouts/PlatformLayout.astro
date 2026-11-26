@@ -9,16 +9,17 @@ interface Props {
 	active: 'issues' | 'sources';
 }
 const { title, description, active } = Astro.props;
+const [titleLead, ...titleRest] = title.split(': ');
 ---
 
 <BaseLayout title={title} description={description} image={platformCover.src}>
-	<div class="platform-page">
+	<div class:list={['platform-page', { 'platform-issues': active === 'issues' }]}>
 		{platforms.preview_only && <p class="qualification" role="status">Local development preview,
 			not a verified publication. Do not publish this build.</p>}
 		<header class="analysis-heading">
 			<div>
 				<p class="kicker">{active === 'issues' ? 'Party documents and caucus statements' : 'National documents, 2000\u20132026'}</p>
-				<h1>{title}</h1>
+				<h1>{titleLead}{titleRest.length > 0 && <><span class="title-colon">: </span><span class="title-detail">{titleRest.join(': ')}</span></>}</h1>
 				<p class="analysis-deck">{description}</p>
 			</div>
 		</header>

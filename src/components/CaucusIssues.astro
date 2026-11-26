@@ -59,6 +59,7 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 			<details id={`caucus-${topic.id}`} class="caucus-issue" open={index === 0} data-caucus-topic={topic.id}>
 				<summary>{topic.title}</summary>
 				<h3 class="caucus-theme-title" tabindex="-1">{topic.title} <SectionLink href={`#caucus-${topic.id}`} label={`the caucus comparison on ${topic.title}`} /></h3>
+				<details class="caucus-theme-context" hidden><summary>About this issue</summary></details>
 				<p class="caucus-theme-summary">{topic.summary}</p>
 				<div class="caucus-comparison">
 					<div class="caucus-chart">
@@ -183,12 +184,18 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 	@media (max-width: 880px) {
 		.caucus-toolbar { flex-wrap: wrap; gap: 1rem; }
 		.caucus-toolbar > label { flex-basis: 100%; }
+		.caucus-toolbar nav { display: none; }
+		.caucus-chart { display: flex; flex-direction: column; }
+		.caucus-chart-caption { order: -1; margin: 0 0 .75rem; }
+		.caucus-issue .caucus-theme-context { margin: .25rem 0 .75rem; }
+		.caucus-theme-context > summary { padding-block: .65rem; font: .8rem/1.5 Arial, sans-serif; color: var(--muted); }
+		.caucus-theme-context .caucus-theme-summary { margin: .5rem 0 1rem; }
 		.caucus-toolbar select { min-height: 44px; padding: 0.6rem 0.75rem; border: 1px solid var(--rule); background: #f7f5f0; font: 1rem/1.5 Arial, sans-serif; }
 		.caucus-comparison { grid-template-columns: 1fr; gap: 1.5rem; }
 		.caucus-positions { border-left: 0; border-top: 1px solid var(--rule); padding: 1.25rem 0 0; }
 		.caucus-chart-heading, .caucus-row { grid-template-columns: minmax(0, 1fr) 2.9rem 3.1rem; column-gap: 0.75rem; }
 		.caucus-chart-heading > :first-child { display: none; }
-		.caucus-row { font-size: 0.85rem; row-gap: 0.25rem; padding-block: 0.6rem; }
+		.caucus-row { min-height: 50px; font-size: 0.85rem; row-gap: 0.15rem; padding-block: 0.45rem; }
 		.caucus-name { grid-column: 1 / -1; }
 		.caucus-chart-heading { font-size: 0.68rem; }
 		.caucus-theme-summary { font-size: 0.95rem; }
@@ -204,6 +211,21 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 	const select = section.querySelector<HTMLSelectElement>('#caucus-topic-select')!;
 	const count = section.querySelector<HTMLElement>('#caucus-topic-count')!;
 	const steps = [...section.querySelectorAll<HTMLButtonElement>('[data-caucus-step]')];
+	const compactLayout = matchMedia('(max-width: 880px)');
+	const contexts = panels.map(panel => ({ panel,
+		details: panel.querySelector<HTMLDetailsElement>('.caucus-theme-context')!,
+		text: panel.querySelector<HTMLElement>('.caucus-theme-summary')!,
+		comparison: panel.querySelector<HTMLElement>('.caucus-comparison')!,
+	}));
+	const organizeContext = () => {
+		for (const context of contexts) {
+			if (compactLayout.matches) { context.details.append(context.text); context.details.open = false; }
+			else context.panel.insertBefore(context.text, context.comparison);
+			context.details.hidden = !compactLayout.matches;
+		}
+	};
+	compactLayout.addEventListener('change', organizeContext);
+	organizeContext();
 	let current = 0;
 	const showIssue = (index: number) => {
 		current = index;

@@ -41,12 +41,30 @@ def check(args):
             })();""")
             response = page.goto(args.base.rstrip("/") + "/party-platforms/", wait_until="domcontentloaded")
             assert response.ok
-            expect(page.locator("#overview-picker")).to_be_visible()
+            if width < 700:
+                expect(page.locator("#overview-mobile-subject")).to_be_visible()
+                expect(page.locator("#overview-picker")).to_be_hidden()
+                menu = page.locator(".platform-mobile-menu")
+                menu.locator("summary").tap()
+                expect(menu.locator("nav a")).to_have_count(5)
+                expect(menu.locator("nav")).to_be_visible()
+                menu.locator("summary").tap()
+                expect(menu).not_to_have_attribute("open", "")
+            else:
+                expect(page.locator("#overview-picker")).to_be_visible()
             page.evaluate("document.fonts.ready")
             if width <= 880:
-                assert "Avenir Next" in page.locator(".group-position:visible").first.evaluate("e=>getComputedStyle(e).fontFamily")
-            if width <= 880:
-                assert page.locator(".mobile-topic:visible").first.bounding_box()["y"] < 800
+                assert "Avenir Next" in page.locator(".mobile-party:visible").first.evaluate("e=>getComputedStyle(e).fontFamily")
+            if width < 700:
+                page.wait_for_function("""() => {
+                  const rows=[...document.querySelectorAll('.mobile-topic:not([hidden]) .mobile-party')]
+                    .filter(e=>e.getBoundingClientRect().height);
+                  return rows.length===3 && rows[2].getBoundingClientRect().bottom<800;
+                }""")
+                last_party = page.locator(".mobile-topic:visible .mobile-party").last.bounding_box()
+                assert last_party["y"] + last_party["height"] < 800
+                expect(page.locator(".mobile-topic:visible .mobile-party-positions")).not_to_have_attribute("open", "")
+                expect(page.locator(".mobile-topic:visible .group-position").first).to_be_hidden()
             fits(page, width)
             if args.screenshots:
                 page.screenshot(path=args.screenshots / f"page-{width}.png")
@@ -55,13 +73,28 @@ def check(args):
                 topic = page.locator(".mobile-topic:visible")
                 expect(topic).to_have_count(1)
                 expect(topic.locator(".mobile-value")).to_have_count(3)
+                if width < 700:
+                    positions = topic.locator(".mobile-party-positions")
+                    expect(positions.locator(".group-position")).to_have_count(3)
+                    positions.locator("summary").tap()
+                    expect(positions.locator(".group-position").last).to_be_visible()
+                    positions.locator("summary").tap()
                 canvas = topic.locator("canvas")
                 page.wait_for_function("e => e.width > 0 && e.textBoxes?.length > 0", arg=canvas.element_handle())
                 clipped = canvas.evaluate("""e => e.textBoxes.filter(b =>
                   b.left < -1 || b.right > b.width+1 || b.top < -1 || b.bottom > b.height+1)""")
                 assert not clipped, (width, topic.get_attribute("data-topic"), clipped)
                 if index + 1 < subjects:
-                    page.locator("#overview-subject-next").click()
+                    if width < 700:
+                        page.locator("#overview-mobile-subject").select_option(index=index + 1)
+                    else:
+                        page.locator("#overview-subject-next").click()
+            if width == 390:
+                page.set_viewport_size({"width": 1280, "height": 1000})
+                expect(page.locator(".mobile-topic:visible .mobile-value > .group-position")).to_have_count(3)
+                expect(page.locator(".mobile-topic:visible .mobile-party-positions")).to_be_hidden()
+                page.set_viewport_size({"width": width, "height": 1000})
+                expect(page.locator(".mobile-topic:visible .mobile-party-positions .group-position")).to_have_count(3)
             page.locator(".section-links a[href='#density']").click()
             expect(page.locator("#density-explorer")).to_have_attribute("data-ready", "true", timeout=60000)
             pairs = page.locator("#density-pair option").evaluate_all("es=>es.map(e=>e.value)")
@@ -76,6 +109,9 @@ def check(args):
                 page.locator("#density").evaluate("e=>scrollTo({top:e.offsetTop,behavior:'instant'})")
                 page.screenshot(path=args.screenshots / f"density-{width}.png")
             page.locator(".section-links a[href='#caucuses']").click()
+            if width <= 880:
+                expect(page.locator(".caucus-issue:visible .caucus-theme-context")).not_to_have_attribute("open", "")
+                assert page.locator(".caucus-issue:visible .caucus-row").first.bounding_box()["y"] - page.locator("#caucuses").bounding_box()["y"] < 550
             cases = 0
             for topic in data["topics"]:
                 page.locator("#caucus-topic-select").select_option(topic["id"])
@@ -113,6 +149,8 @@ def check(args):
         page.goto(args.base.rstrip("/") + "/party-platforms/")
         expect(page.locator(".caucus-issue")).to_have_count(len(data["topics"]))
         assert page.locator(".caucus-row").count() == len(data["topics"]) * 13
+        expect(page.locator(".mobile-topic .group-position")).to_have_count(63)
+        expect(page.locator(".group-position").first).to_be_visible()
         expect(page.locator("#density a[href='/party-platforms/sources/']").first).to_be_visible()
         assert page.evaluate("document.documentElement.scrollWidth") == 390
         page.close()

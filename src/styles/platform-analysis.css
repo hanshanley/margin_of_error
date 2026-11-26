@@ -26,6 +26,7 @@
 .platform-page section > p { max-width: 900px; }
 .platform-page .qualification { max-width: 900px; color: var(--muted); }
 .platform-page .section-links { display: flex; flex-wrap: wrap; gap: 0.7rem 1.8rem; font: 0.9rem var(--sans); }
+.platform-page .section-label-short, .platform-page .mobile-issue-control { display: none; }
 .platform-page .party-summary,
 .platform-page .timeline-values,
 .platform-page .attention-table { scroll-margin-top: 6rem; }
@@ -236,8 +237,19 @@
 }
 
 @media (max-width: 700px) {
-	.platform-page .section-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.2rem 1rem; padding-block: 0.4rem; border-block: 1px solid var(--rule); font-size: 0.8rem; }
-	.platform-page .section-links a { display: flex; align-items: center; min-height: 44px; width: fit-content; max-width: 100%; line-height: 1.4; }
+	.platform-issues .analysis-heading { padding: .8rem 0 .75rem; }
+	.platform-issues .analysis-heading :is(.kicker, .analysis-deck, .title-colon) { display: none; }
+	.platform-issues h1 { font-size: 1.9rem; margin-block: .5rem .4rem; }
+	.platform-issues .title-detail { display: block; margin-top: .35rem; color: var(--muted); font: .95rem/1.4 var(--sans); }
+	.platform-page .section-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; padding-block: 0; border-block: 1px solid var(--rule); font-size: 0.8rem; }
+	.platform-page .section-links a { display: flex; align-items: center; justify-content: center; min-height: 44px; max-width: 100%; line-height: 1.4; text-decoration: none; }
+	.platform-page .section-label-full { display: none; }
+	.platform-page .section-label-short { display: inline; }
+	.platform-page #overview { margin-top: 1rem; }
+	.platform-page #overview > h2 { font-size: 1.25rem; margin-bottom: .5rem; }
+	.js .platform-page .mobile-issue-control { display: block; width: 100%; font: .75rem/1.5 var(--sans); color: var(--muted); }
+	.platform-page .mobile-issue-control select { min-height: 44px; padding: .65rem .6rem; border: 1px solid var(--rule); font: 1rem/1.4 var(--sans); }
+	.js .platform-page .overview-toolbar :is(#overview-subject-index, #overview-picker) { display: none; }
 	.platform-page .overview-toolbar { flex-wrap: nowrap; gap: 0.5rem; padding-block: 0.65rem; margin-top: 0.8rem; }
 	.platform-page .overview-toolbar .subject-index { min-width: 0; }
 	.platform-page .overview-toolbar .subject-index > summary { font-size: 0.8rem; }
@@ -250,10 +262,16 @@
 	.platform-page .position-overview .mobile-topic,
 	.platform-page .position-overview h3 { scroll-margin-top: 6rem; }
 	.platform-page .position-overview .mobile-value { grid-template-columns: 6rem minmax(0, 1fr); gap: 0.5rem 1rem; }
+	.platform-page .position-overview .mobile-value { min-height: 44px; margin: 0; padding-block: .5rem; font-size: .9rem; }
+	.platform-page .mobile-party-positions { margin: .5rem 0 0; border-top: 1px solid var(--rule); }
+	.platform-page .mobile-party-positions > summary { min-height: 44px; padding-block: .75rem; font: .8rem/1.5 var(--sans); color: var(--muted); }
+	.platform-page .mobile-party-positions .group-position { margin: .5rem 0 1rem; font: .95rem/1.6 var(--sans); }
+	.platform-page .mobile-party-positions .group-position + .group-position { padding-top: .75rem; border-top: 1px solid var(--rule); }
 	.platform-page .position-overview .mobile-track { width: calc(100% - 3.5rem); }
 	.platform-page .position-overview .mobile-track > .mobile-number { height: auto; }
 	.platform-page .position-overview .group-position { grid-column: 1 / -1; }
 	.platform-page .position-overview .mobile-topic h3 { font-size: 1.15rem; }
+	.platform-page .position-overview .mobile-topic { padding-block: .75rem; }
 	.platform-page .subject-index ul { columns: 1; }
 	.platform-page .density-interactive-grid { grid-template-columns: 1fr; gap: 1rem; }
 	.platform-page .density-explorer-controls { grid-template-columns: 1fr; }

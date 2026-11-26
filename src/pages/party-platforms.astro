@@ -83,15 +83,18 @@ const partyOverviews = organizations.map(group => {
 <PlatformLayout title="DSA in Context: Party Platforms and Caucuses" active="issues"
 	description="Explore DSA's priorities alongside Democratic and Republican platforms, and compare thirteen DSA caucuses and networks.">
 	<nav class="section-links" aria-label="Explore the analysis">
-		<a href="#overview">Compare issues</a>
-		<a href="#organization-patterns">Overall patterns by organization</a>
-		<a href="#density">Language maps</a>
-		<a href="#caucuses">Inside DSA</a>
+		<a href="#overview" aria-label="Compare issues"><span class="section-label-full">Compare issues</span><span class="section-label-short">Issues</span></a>
+		<a href="#organization-patterns" aria-label="Overall patterns by organization"><span class="section-label-full">Overall patterns by organization</span><span class="section-label-short">Parties</span></a>
+		<a href="#density" aria-label="Language maps"><span class="section-label-full">Language maps</span><span class="section-label-short">Language</span></a>
+		<a href="#caucuses" aria-label="Inside DSA"><span class="section-label-full">Inside DSA</span><span class="section-label-short">Caucuses</span></a>
 	</nav>
 
 	<section id="overview" class="reader-section" aria-labelledby="overview-title">
 		<h2 id="overview-title">Compare the issues <SectionLink href="#overview" label="the issue comparisons" /></h2>
 		<div class="overview-toolbar">
+		<label class="mobile-issue-control" hidden>Choose an issue
+			<select id="overview-mobile-subject">{overviewTopics.map(topic => <option value={topic.topic_id}>{topic.title}</option>)}</select>
+		</label>
 		<details id="overview-subject-index" class="subject-index">
 			<summary>Choose an issue</summary>
 			<ul>{overviewTopics.map(topic => (
@@ -138,6 +141,7 @@ const partyOverviews = organizations.map(group => {
 										: <p class="group-position">{groupPosition(topic.topic_id, column.group)}</p>}
 								</div>;
 							})}
+							<details class="mobile-party-positions" hidden><summary>Read party positions</summary></details>
 							</div>
 							{view.id === 'topic_distribution' && <figure class="issue-timeline"
 								data-png={`/party-platforms/${platformFigure('expanded/issues', `${topic.topic_id}_time`).path}?source=${data.source_revision}`}>
@@ -381,6 +385,22 @@ const partyOverviews = organizations.map(group => {
 	const overviewSubjects = [...subjectIndex.querySelectorAll<HTMLAnchorElement>('[data-overview-subject]')];
 	const subjectSteps = [...document.querySelectorAll<HTMLButtonElement>('[data-overview-step]')];
 	const subjectRange = document.querySelector<HTMLElement>('#overview-subject-range')!;
+	const mobileSubject = document.querySelector<HTMLSelectElement>('#overview-mobile-subject')!;
+	const phoneLayout = matchMedia('(max-width: 700px)');
+	const readingPanels = [...document.querySelectorAll<HTMLElement>('.position-overview .mobile-topic')].map(topic => ({
+		details: topic.querySelector<HTMLDetailsElement>('.mobile-party-positions')!,
+		positions: [...topic.querySelectorAll<HTMLElement>('.group-position')].map(text => ({ text, parent: text.parentElement! })),
+	}));
+	const organizeReading = () => {
+		for (const panel of readingPanels) {
+			for (const position of panel.positions) (phoneLayout.matches ? panel.details : position.parent).append(position.text);
+			panel.details.hidden = !phoneLayout.matches;
+			if (phoneLayout.matches) panel.details.open = false;
+		}
+	};
+	phoneLayout.addEventListener('change', organizeReading);
+	organizeReading();
+	mobileSubject.parentElement!.hidden = false;
 	let overviewSubject = 0;
 	const updateComparisons = () => {
 		const page = Math.floor(overviewSubject / 8) + 1;
@@ -409,7 +429,13 @@ const partyOverviews = organizations.map(group => {
 				? overviewSubject === 0 : overviewSubject === overviewSubjects.length - 1;
 		}
 		subjectRange.textContent = `${overviewSubject + 1} of ${overviewSubjects.length}`;
+		mobileSubject.value = overviewSubjects[overviewSubject].dataset.overviewSubject!;
 	};
+	mobileSubject.addEventListener('change', () => {
+		overviewSubject = overviewSubjects.findIndex(link => link.dataset.overviewSubject === mobileSubject.value);
+		updateComparisons();
+		history.replaceState(null, '', `#issue-${mobileSubject.value}`);
+	});
 	for (const button of subjectSteps) {
 		button.addEventListener('click', () => {
 			overviewSubject = Math.max(0, Math.min(overviewSubjects.length - 1, overviewSubject + Number(button.dataset.overviewStep)));

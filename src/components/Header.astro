@@ -1,5 +1,6 @@
 ---
 const path = Astro.url.pathname;
+const platformPage = path.startsWith('/party-platforms/');
 const nav = [
 	{ href: '/', label: 'Latest' },
 	{ href: '/archive/', label: 'Archive' },
@@ -13,7 +14,7 @@ const nav = [
 ];
 ---
 
-<header class="site-header">
+<header class:list={['site-header', { 'platform-header': platformPage }]}>
 	<div class="edition-line" aria-hidden="true">
 		<span>Independent notes on systems and society</span>
 		<span>Est. 2021</span>
@@ -40,5 +41,25 @@ const nav = [
 				}
 			</ul>
 		</nav>
+		{platformPage && <details class="platform-mobile-menu">
+			<summary>Menu</summary>
+			<nav aria-label="Primary navigation"><ul>{nav.map(item =>
+				<li><a href={item.href} aria-current={path === item.href ? 'page' : undefined}>{item.label}</a></li>
+			)}</ul></nav>
+		</details>}
 	</div>
 </header>
+
+<style>
+	.platform-mobile-menu { display: none; }
+	@media (max-width: 700px) {
+		.platform-header .masthead { position: relative; display: flex; flex-direction: row; align-items: center; justify-content: space-between; }
+		.platform-header .wordmark-main { font-size: 1.8rem; }
+		.platform-header .masthead > nav { display: none; }
+		.platform-mobile-menu { display: block; }
+		.platform-mobile-menu > summary { min-height: 44px; padding: .7rem .35rem; cursor: pointer; font: .85rem/1.5 Arial, sans-serif; }
+		.platform-mobile-menu nav { position: absolute; z-index: 20; right: 0; top: 100%; width: min(15rem, calc(100vw - 28px)); padding: .5rem 1rem; border: 1px solid var(--rule); background: var(--paper); }
+		.platform-mobile-menu nav ul { display: block; margin: 0; padding: 0; list-style: none; font: .9rem/1.5 Arial, sans-serif; }
+		.platform-mobile-menu nav a { display: flex; align-items: center; min-height: 44px; }
+	}
+</style>
