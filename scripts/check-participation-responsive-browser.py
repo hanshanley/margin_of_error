@@ -47,6 +47,9 @@ def check(base, screenshots):
             assert len(page.locator("#selection-panel").inner_text()) < 220
             assert page.locator("#desktop-turnout-controls .explorer-toolbar").count() == 1
             assert page.locator("#state-select").bounding_box()["y"] < map_view.bounding_box()["y"]
+            if width <= 880:
+                assert map_view.bounding_box()["width"] > width * .85
+                assert page.locator("#selection-panel").bounding_box()["y"] >= map_view.bounding_box()["y"] + map_view.bounding_box()["height"]
             if screenshots:
                 page.screenshot(path=screenshots / f"after-states-{width}.png")
             if mobile:
@@ -89,13 +92,20 @@ def check(base, screenshots):
             swing_top = round(swing.bounding_box()["y"])
             assert swing_top < 700
             geography = page.locator("[data-driver-geography]")
-            assert geography.bounding_box()["y"] < swing_top
-            expect(page.locator("[data-driver-view]")).to_be_hidden()
-            expect(page.locator("[data-driver-summary] .comparison-more")).not_to_have_attribute("open", "")
+            expect(geography).to_be_hidden()
+            expect(page.locator("[data-driver-view]")).to_be_visible()
+            expect(page.locator("[data-driver-map] path[data-state-code]")).to_have_count(51)
+            expect(page.locator("[data-driver-summary] .driver-value")).to_be_visible(timeout=45000)
+            expect(page.locator(".driver-overview-result > details")).not_to_have_attribute("open", "")
             assert len(page.locator("[data-driver-summary]").inner_text()) < 450
             assert page.evaluate("document.documentElement.scrollWidth") == width
             if screenshots:
                 page.screenshot(path=screenshots / f"after-swings-{width}.png")
+            if width <= 880:
+                assert swing.bounding_box()["width"] > width * .85
+                assert page.locator(".driver-overview-result").bounding_box()["y"] > swing.bounding_box()["y"] + swing.bounding_box()["height"]
+            page.locator("[data-driver-view]").select_option("reported_counts")
+            expect(geography).to_be_visible()
             geography.select_option("district")
             expect(swing.locator("path[data-district]")).to_have_count(435, timeout=45000)
             expect(page.locator("[data-driver-summary] .comparison-more")).not_to_have_attribute("open", "")

@@ -242,10 +242,13 @@ export function statewideSourceController(root, fallback, {items,names,effectFil
       primary.append(element("p",code==="DC"?"D.C. has no CHEP sample; no estimate is invented.":"Select a state for its source-model estimate.","caption"));return;
     }
     const metric=viewMetric[view],value=sourceMetric(row,metric,group.value),range=rangeFor(row);
-    primary.append(element("p",value===null?(metric==="retaining" && row.groups.find(g=>g.dimension+"|"+g.group===group.value)?.available
-      ?"Retention is unavailable: this source group has no previous-D/R denominator.":"This source demographic cell is withheld, not zero."):
-      `${points(value*factor())} · ${metric==="retaining"?"retained previous-D/R source share":
-        group.value?"contribution to statewide change":"source-model estimate"}`),
+    const headline=element("p",null,"driver-primary");
+    if (value===null) headline.textContent=metric==="retaining" && row.groups.find(g=>g.dimension+"|"+g.group===group.value)?.available
+      ?"Retention is unavailable: this source group has no previous-D/R denominator.":"This source demographic cell is withheld, not zero.";
+    else headline.append(element("span",points(value*factor()),"driver-value"),
+      element("span",` ${metric==="retaining"?"retained previous-D/R source share":
+        group.value?"contribution to statewide change":"source-model estimate"}`,"driver-value-label"));
+    primary.append(headline,
     element("p",range?`Model sensitivity: ${points(range.minimum*factor())} to ${points(range.maximum*factor())}. Not a confidence interval.`:
       "No demographic estimate is filled from another category.","caption"),
     element("p","Unconditioned survey-source model · not population calibrated.","caption"),
