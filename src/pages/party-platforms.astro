@@ -254,7 +254,7 @@ const partyOverviews = organizations.map(group => {
 	const drawTimeline = (canvas: HTMLCanvasElement) => {
 		const width = canvas.getBoundingClientRect().width;
 		if (!width) return;
-		const height = 320;
+		const height = canvas.getBoundingClientRect().height;
 		const ratio = window.devicePixelRatio || 1;
 		canvas.width = Math.round(width * ratio);
 		canvas.height = height * ratio;

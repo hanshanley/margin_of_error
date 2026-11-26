@@ -180,9 +180,10 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 		.caucus-chart-heading, .caucus-row { grid-template-columns: minmax(7rem, 9rem) minmax(2rem, 1fr) 2.9rem 3.2rem; gap: 0.55rem; }
 		.caucus-positions { padding-left: 1.25rem; }
 	}
-	@media (max-width: 760px) {
+	@media (max-width: 880px) {
 		.caucus-toolbar { flex-wrap: wrap; gap: 1rem; }
 		.caucus-toolbar > label { flex-basis: 100%; }
+		.caucus-toolbar select { min-height: 44px; padding: 0.6rem 0.75rem; border: 1px solid var(--rule); background: #f7f5f0; font: 1rem/1.5 Arial, sans-serif; }
 		.caucus-comparison { grid-template-columns: 1fr; gap: 1.5rem; }
 		.caucus-positions { border-left: 0; border-top: 1px solid var(--rule); padding: 1.25rem 0 0; }
 		.caucus-chart-heading, .caucus-row { grid-template-columns: minmax(0, 1fr) 2.9rem 3.1rem; column-gap: 0.75rem; }
@@ -192,7 +193,8 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 		.caucus-chart-heading { font-size: 0.68rem; }
 		.caucus-theme-summary { font-size: 0.95rem; }
 		.caucus-statement { font-size: 1.1rem; }
-		:global(.js) .caucus-back { display: block; margin-top: 1.5rem; border: 0; border-bottom: 1px solid var(--rule); padding: 0 0 0.25rem; background: none; font: 0.8rem/1.5 Arial, sans-serif; color: var(--muted); cursor: pointer; }
+		.caucus-evidence > summary { min-height: 44px; box-sizing: border-box; padding-block: 0.8rem; }
+		:global(.js) .caucus-back { display: block; min-height: 44px; margin-top: 1rem; border: 0; border-bottom: 1px solid var(--rule); padding: 0.6rem 0; background: none; font: 0.85rem/1.5 Arial, sans-serif; color: var(--muted); cursor: pointer; }
 	}
 </style>
 
@@ -232,7 +234,7 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 			event.preventDefault();
 			showPosition(panel, row.dataset.caucus!);
 			history.replaceState(null, '', row.hash);
-			if (matchMedia('(max-width: 760px)').matches) {
+			if (matchMedia('(max-width: 880px)').matches) {
 				const position = panel.querySelector<HTMLElement>('.caucus-position:not([hidden])')!;
 				position.scrollIntoView({ behavior: 'instant', block: 'start' });
 				position.querySelector<HTMLElement>('.caucus-position-name')!.focus({ preventScroll: true });
