@@ -26,7 +26,7 @@ test('share links have unique real targets and the DSA title remains on the exis
 			assert.equal($(comparison).find('[data-share-link]').attr('href'), `#${$(comparison).attr('id')}`);
 		}
 	}
-	assert.match($('h1').text(), /^DSA in Context: Party Platforms and Caucuses$/);
+	assert.equal($('h1').text(), 'DSA, in context');
 	assert.equal($('.analysis-heading .scope').length, 0);
 	assert.match($('title').text(), /DSA in Context: Party Platforms and Caucuses/);
 	assert.match($('meta[property="og:title"]').attr('content'), /DSA in Context/);
@@ -46,7 +46,9 @@ test('caucus comparisons follow the existing national analysis and work without 
 	assert.equal($('#caucuses details.caucus-issue').length, data.topics.length);
 	assert.equal($('#caucuses details.caucus-issue[open]').length, 1);
 	assert.equal($('#caucus-topic-select option').length, data.topics.length);
-	assert.equal($('#caucuses [data-caucus-step]').length, 2);
+	assert.equal($('#caucuses [data-caucus-step]').length, 0);
+	assert.equal($('[data-platform-panel]').length, 3);
+	assert.deepEqual($('.section-links [data-platform-view]').toArray().map(tab => $(tab).attr('data-platform-view')), ['parties', 'caucuses', 'language']);
 	assert.equal($('#caucuses canvas, #caucuses .issue-timeline').length, 0);
 	assert.match($('#caucuses').text(), /Zero attention does not mean opposition/);
 });
@@ -63,7 +65,14 @@ test('every theme contains all thirteen caucuses, exact shares and unsmoothed ra
 		assert.equal(panel.find('.caucus-axis').text(), `0%${Math.round(100 * ceiling)}%`);
 		for (const group of topic.groups) {
 			const row = panel.find(`[data-caucus="${group.id}"]`);
-			assert.equal(panel.find(row.attr('href')).attr('data-caucus-position'), group.id);
+			const position = row.parent('details.caucus-position');
+			assert.equal(position.attr('id'), `caucus-position-${topic.id}-${group.id}`);
+			assert.equal(position.attr('data-caucus-position'), group.id);
+			assert.equal(row.is('summary'), true);
+			assert.equal(position.find('.caucus-position-body').length, 1);
+			const tableRow = panel.find(`[data-caucus-value="${group.id}"]`);
+			assert.equal(tableRow.find('td').first().text(), `${(100 * group.share).toFixed(1)}%`);
+			assert.equal(tableRow.find('td').last().text(), group.ratio === null ? '—' : `${group.ratio.toFixed(1)}×`);
 			const barWidth = Number(row.find('.caucus-track > span').attr('style').match(/width:([\d.]+)%/)[1]);
 			assert.ok(Math.abs(barWidth - group.share / ceiling * 100) < 1e-10);
 			assert.equal(Number(row.attr('data-share')), group.share);
@@ -74,7 +83,7 @@ test('every theme contains all thirteen caucuses, exact shares and unsmoothed ra
 			if (baseline > 0) {
 				assert.ok(Math.abs(group.ratio - group.share / baseline) < 1e-10);
 				assert.equal(Number(row.attr('data-ratio')), group.ratio);
-				assert.equal(row.find('.caucus-ratio').text(), `${group.ratio.toFixed(1)}×`);
+				assert.equal(position.find('.caucus-ratio').text(), `${group.ratio.toFixed(1)}×`);
 			} else {
 				assert.equal(group.ratio, null);
 				assert.equal(row.attr('data-ratio'), undefined);

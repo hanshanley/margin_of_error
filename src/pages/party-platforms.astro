@@ -7,6 +7,7 @@ import CaucusIssues from '../components/CaucusIssues.astro';
 import SectionLink from '../components/SectionLink.astro';
 import { platforms as data, densityMap, organizations, platformFigure, timelineShares } from '../lib/platform-analysis';
 import { claimDisplayText, partyPositionSummary } from '../lib/platform-position-copy.mjs';
+import { issueLabel, positionReadout } from '../lib/platform-display.mjs';
 
 const number = (value: number) => value.toLocaleString('en-US');
 const share = (topic: typeof data.topics[number], group: string) =>
@@ -83,34 +84,28 @@ const partyOverviews = organizations.map(group => {
 <PlatformLayout title="DSA in Context: Party Platforms and Caucuses" active="issues"
 	description="Explore DSA's priorities alongside Democratic and Republican platforms, and compare thirteen DSA caucuses and networks.">
 	<nav class="section-links" aria-label="Explore the analysis">
-		<a href="#overview" aria-label="Compare issues"><span class="section-label-full">Compare issues</span><span class="section-label-short">Issues</span></a>
-		<a href="#organization-patterns" aria-label="Overall patterns by organization"><span class="section-label-full">Overall patterns by organization</span><span class="section-label-short">Parties</span></a>
-		<a href="#density" aria-label="Language maps"><span class="section-label-full">Language maps</span><span class="section-label-short">Language</span></a>
-		<a href="#caucuses" aria-label="Inside DSA"><span class="section-label-full">Inside DSA</span><span class="section-label-short">Caucuses</span></a>
+		<a href="#overview" data-platform-view="parties"><span class="section-label-full">Party comparison</span><span class="section-label-short">Parties</span></a>
+		<a href="#caucuses" data-platform-view="caucuses"><span class="section-label-full">DSA caucuses</span><span class="section-label-short">Caucuses</span></a>
+		<a href="#density" data-platform-view="language"><span class="section-label-full">Language map</span><span class="section-label-short">Language</span></a>
 	</nav>
 
-	<section id="overview" class="reader-section" aria-labelledby="overview-title">
-		<h2 id="overview-title">Compare the issues <SectionLink href="#overview" label="the issue comparisons" /></h2>
+	<section id="overview" class="reader-section" data-platform-panel="parties" aria-labelledby="overview-title">
+		<h2 id="overview-title" class="reader-section-title">Party comparison</h2>
 		<div class="overview-toolbar">
-		<label class="mobile-issue-control" hidden>Issue · share of attention in sampled documents
-			<select id="overview-mobile-subject">{overviewTopics.map(topic => <option value={topic.topic_id}>{topic.title}</option>)}</select>
+		<label class="party-issue-control" hidden>Issue
+			<select id="overview-mobile-subject">{overviewTopics.map(topic => <option value={topic.topic_id}>{issueLabel(topic.topic_id)}</option>)}</select>
 		</label>
-		<details id="overview-subject-index" class="subject-index">
+		</div>
+		<div class="chart-mode" role="group" aria-label="Party chart view" hidden>
+			<button type="button" data-party-mode="overall" aria-pressed="true">Overall</button>
+			<button type="button" data-party-mode="history" aria-pressed="false">Over time</button>
+		</div>
+		<details id="overview-subject-index" class="subject-index nojs-index">
 			<summary>Choose an issue</summary>
 			<ul>{overviewTopics.map(topic => (
 				<li><a href={`#issue-${topic.topic_id}`} data-overview-subject={topic.topic_id}>{topic.title}</a></li>
 			))}</ul>
 		</details>
-		<div id="overview-picker" hidden>
-			<div id="overview-subject-controls">
-				<nav class="overview-pages" aria-label="Browse issues">
-					<button type="button" id="overview-subject-previous" data-overview-step="-1" aria-label="Previous issue" disabled>Previous</button>
-					<span id="overview-subject-range" class="subject-count" role="status" aria-live="polite">1 of {data.topics.length}</span>
-					<button type="button" id="overview-subject-next" data-overview-step="1" aria-label="Next issue">Next</button>
-				</nav>
-			</div>
-		</div>
-		</div>
 		{overviewViews.map(view => overviewPages.map(page => (
 			<details class="overview-chart" data-kind={view.id} data-page={page}
 				open={view.id === 'topic_distribution' && page === 1}>
@@ -120,9 +115,12 @@ const partyOverviews = organizations.map(group => {
 					{overviewTopics.slice((page - 1) * 8, page * 8).map(topic => (
 						<div class="mobile-topic" data-topic={topic.topic_id}
 							id={view.id === 'topic_distribution' ? `issue-${topic.topic_id}` : undefined}>
-							<h3 tabindex="-1">{topic.title} <SectionLink href={`#issue-${topic.topic_id}`} label={topic.title} /></h3>
+							<h3 tabindex="-1" class="issue-reader-title">{issueLabel(topic.topic_id)}</h3>
+							<div class="reader-comparison">
+							<div class="reader-graphic">
+							<p class="chart-definition" data-party-definition>Share of each organization's document-weighted attention · 2000–2026</p>
 							<div class:list={['issue-comparison', { 'with-history': view.id === 'topic_distribution' }]}>
-							<div data-issue-positions={view.id === 'topic_distribution' ? '' : undefined}>
+							<div class="attention-bars" data-issue-positions={view.id === 'topic_distribution' ? '' : undefined}>
 							{mobileColumns(view.id).map(column => {
 								const value = mobileValue(topic, column);
 								const difference = view.id !== 'topic_distribution';
@@ -134,22 +132,41 @@ const partyOverviews = organizations.map(group => {
 									<span class="mobile-party">{label}</span>
 									<span class:list={['mobile-track', { difference }]} aria-hidden={difference ? 'true' : undefined}>
 										<span class="mobile-fill" style={`background:${value < 0 ? column.baseline.length === 2 ? '#77736d' : colors[column.baseline[0]] : colors[column.group]};width:${proportion * (difference ? 50 : 100)}%;left:${difference ? value < 0 ? 50 - proportion * 50 : 50 : 0}%`}></span>
-										{!difference && <span class="mobile-number" style={`left:${proportion * 100}%;color:${colors[column.group]}`}>{(100 * value).toFixed(1)}%</span>}
 									</span>
-									{difference
-										? <span class="mobile-number">{value > 0 ? '+' : ''}{(100 * value).toFixed(1)} pp</span>
-										: <p class="group-position">{groupPosition(topic.topic_id, column.group)}</p>}
+									<span class="mobile-number">{difference ? `${value > 0 ? '+' : ''}${(100 * value).toFixed(1)} pp` : `${(100 * value).toFixed(1)}%`}</span>
 								</div>;
 							})}
-							<details class="mobile-party-positions" hidden><summary>Read party positions</summary></details>
 							</div>
 							{view.id === 'topic_distribution' && <figure class="issue-timeline"
 								data-png={`/party-platforms/${platformFigure('expanded/issues', `${topic.topic_id}_time`).path}?source=${data.source_revision}`}>
-								<figcaption>Over time</figcaption>
+								<figcaption>Attention in observed four-year periods</figcaption>
 								<canvas class="issue-time-chart" data-timeline={JSON.stringify(topicTimeline(topic.topic_id))}
 									role="img" aria-label={`Document-weighted share of attention over time: ${topic.title}. Republican dots bridge the reused 2020 platform, not a separate observation. Exact values are available below.`}></canvas>
 								<p class="timeline-caption">Weighted attention &middot; *partial period. Republican dots bridge
 									the reused 2020 platform; other gaps mean no documents.</p>
+								<noscript><PlatformFigure figure={platformFigure('expanded/issues', `${topic.topic_id}_time`)}
+									caption="Share of attention in observed four-year periods. Missing periods remain gaps." /></noscript>
+							</figure>}
+							</div>
+							<p class="chart-definition">Sampled documents or predefined DSA period bundles receive equal weight. Attention is not voter support or agreement.</p>
+							</div>
+							<section class="party-readouts" aria-label="Positions in the sampled documents">
+								<h4>What the documents say</h4>
+								<p class="readout-scope">Brief descriptions of the sample, not a current consensus.</p>
+								{organizations.map(group => <section class="party-readout" data-group={group.id} style={`--party-color:${colors[group.id]}`}>
+									<h5>{shortNames[group.id]}</h5>
+									<p class="position-readout">{positionReadout(topic.topic_id, group.id)}</p>
+									<details class="position-evidence"><summary>Full summary and evidence</summary>
+										<p class="group-position">{groupPosition(topic.topic_id, group.id)}</p>
+										<a href={evidence(topic.topic_id)}>Read the source statements</a>
+									</details>
+								</section>)}
+							</section></div>
+							<details class="issue-all-values"><summary>All values and sources</summary>
+								<p class="original-topic-title">Original research title: {topic.title} <SectionLink href={`#issue-${topic.topic_id}`} label={topic.title} /></p>
+								<div class="table-wrap"><table class="overall-values"><caption>Overall sampled-document attention</caption><thead><tr><th>Organization</th><th>Share</th></tr></thead><tbody>
+									{organizations.map(group => <tr><th scope="row">{shortNames[group.id]}</th><td>{percent(topic, group.id)}</td></tr>)}
+								</tbody></table></div>
 								<details class="timeline-values">
 									<summary>Period values and source qualifications</summary>
 									<SectionLink id={`timeline-${topic.topic_id}`} href={`#timeline-${topic.topic_id}`} label={`the timeline for ${topic.title}`} />
@@ -163,11 +180,8 @@ const partyOverviews = organizations.map(group => {
 									</table></div>
 									<p>{topic.caveat}</p>
 								</details>
-								<noscript><PlatformFigure figure={platformFigure('expanded/issues', `${topic.topic_id}_time`)}
-									caption="Share of attention in observed four-year periods. Missing periods remain gaps." /></noscript>
-							</figure>}
-							</div>
 							{view.id === 'topic_distribution' && <AttentionShares topicId={topic.topic_id} />}
+							</details>
 						</div>
 					))}
 				</div>
@@ -206,6 +220,7 @@ const partyOverviews = organizations.map(group => {
 				</div>
 			</details>
 		)))}
+		<details class="organization-overviews"><summary>Organization overviews</summary>
 		<section id="organization-patterns" class="party-overview" aria-labelledby="organization-patterns-title">
 		<h2 id="organization-patterns-title">Overall patterns by organization <SectionLink href="#organization-patterns" label="the organization summaries" /></h2>
 		<div class="party-summaries">
@@ -239,16 +254,22 @@ const partyOverviews = organizations.map(group => {
 		<p class="qualification">These are summaries of observed documents across 2000&ndash;2026,
 			not exhaustive descriptions of current beliefs. DSA coverage includes national
 			resolutions and statements alongside platforms/programs; periods and genres differ.</p>
-		</section>
+		</section></details>
 	</section>
 
-	<section id="density" class="reader-section" aria-labelledby="density-title">
-		<h2 id="density-title">Where the language differs <SectionLink href="#density" label="the language maps" /></h2>
-		<p>These maps compare the concentration of each organization's language in a shared
-			semantic space. Explore the issues and source statements behind the points.
-			Similar language does not imply the same policy position.</p>
-		<p id="density-instructions">Hover to explore an issue. Click or tap to pin it.</p>
+	<section id="density" class="reader-section" data-platform-panel="language" aria-labelledby="density-title">
+		<h2 id="density-title">Language map</h2>
+		<p class="language-intro">Nearby points use similar language, not necessarily the same politics.
+			This is not a left–right spectrum.</p>
+		<p id="density-instructions" class="language-instructions">Choose an issue, or click or tap a point to pin it.</p>
 		<DensityExplorer />
+		<details><summary>About the language map</summary>
+			<SectionLink href="#density" label="the language maps" />
+			<p>These maps compare the concentration of each organization's language in a shared
+				semantic space. Explore the issues and source statements behind the points.
+				Similar language does not imply the same policy position.</p>
+			<p>Hover to explore an issue. Click or tap to pin it.</p>
+		</details>
 	</section>
 
 	<CaucusIssues />
@@ -383,25 +404,67 @@ const partyOverviews = organizations.map(group => {
 	});
 	const subjectIndex = document.querySelector<HTMLDetailsElement>('#overview-subject-index')!;
 	const overviewSubjects = [...subjectIndex.querySelectorAll<HTMLAnchorElement>('[data-overview-subject]')];
-	const subjectSteps = [...document.querySelectorAll<HTMLButtonElement>('[data-overview-step]')];
-	const subjectRange = document.querySelector<HTMLElement>('#overview-subject-range')!;
 	const mobileSubject = document.querySelector<HTMLSelectElement>('#overview-mobile-subject')!;
-	const phoneLayout = matchMedia('(max-width: 700px)');
-	const readingPanels = [...document.querySelectorAll<HTMLElement>('.position-overview .mobile-topic')].map(topic => ({
-		details: topic.querySelector<HTMLDetailsElement>('.mobile-party-positions')!,
-		positions: [...topic.querySelectorAll<HTMLElement>('.group-position')].map(text => ({ text, parent: text.parentElement! })),
-	}));
-	const organizeReading = () => {
-		for (const panel of readingPanels) {
-			for (const position of panel.positions) (phoneLayout.matches ? panel.details : position.parent).append(position.text);
-			panel.details.hidden = !phoneLayout.matches;
-			if (phoneLayout.matches) panel.details.open = false;
+	const root = document.querySelector<HTMLElement>('.platform-page')!;
+	const nav = document.querySelector<HTMLElement>('.section-links')!;
+	const tabs = [...nav.querySelectorAll<HTMLAnchorElement>('[data-platform-view]')];
+	const panels = [...document.querySelectorAll<HTMLElement>('[data-platform-panel]')];
+	const modes = [...document.querySelectorAll<HTMLButtonElement>('[data-party-mode]')];
+	const savedHashes = new Map<string, string>();
+	let activeView = 'parties';
+	mobileSubject.parentElement!.hidden = false;
+	document.querySelector<HTMLElement>('.chart-mode')!.hidden = false;
+	nav.setAttribute('role', 'tablist');
+	for (const panel of panels) panel.setAttribute('role', 'tabpanel');
+	for (const tab of tabs) {
+		tab.setAttribute('role', 'tab');
+		tab.setAttribute('aria-controls', tab.hash.slice(1));
+	}
+	let overviewSubject = 0;
+	const setMode = (mode: string) => {
+		root.dataset.chartMode = mode === 'history' ? 'history' : 'overall';
+		for (const button of modes) button.setAttribute('aria-pressed', String(button.dataset.partyMode === root.dataset.chartMode));
+		for (const topic of document.querySelectorAll<HTMLElement>('.mobile-topic')) {
+			topic.querySelector<HTMLElement>('.attention-bars')!.hidden = root.dataset.chartMode === 'history';
+			topic.querySelector<HTMLElement>('.issue-timeline')!.hidden = root.dataset.chartMode !== 'history';
+			topic.querySelector<HTMLElement>('[data-party-definition]')!.textContent = root.dataset.chartMode === 'history'
+				? 'Share of sampled-document attention in each observed period. *Final period is partial.'
+				: "Share of each organization's document-weighted attention · 2000–2026";
 		}
 	};
-	phoneLayout.addEventListener('change', organizeReading);
-	organizeReading();
-	mobileSubject.parentElement!.hidden = false;
-	let overviewSubject = 0;
+	for (const button of modes) button.addEventListener('click', () => {
+		setMode(button.dataset.partyMode!);
+		const url = new URL(location.href);
+		if (root.dataset.chartMode === 'history') url.searchParams.set('chart', 'history');
+		else url.searchParams.delete('chart');
+		history.replaceState(null, '', url);
+	});
+	const showView = (view: string) => {
+		activeView = view;
+		for (const panel of panels) panel.hidden = panel.dataset.platformPanel !== view;
+		for (const tab of tabs) {
+			const selected = tab.dataset.platformView === view;
+			tab.setAttribute('aria-selected', String(selected));
+			tab.tabIndex = selected ? 0 : -1;
+		}
+	};
+	for (const [index, tab] of tabs.entries()) {
+		tab.addEventListener('click', event => {
+			event.preventDefault();
+			const target = document.getElementById(location.hash.slice(1));
+			if (target?.closest<HTMLElement>('[data-platform-panel]')?.dataset.platformPanel === activeView) savedHashes.set(activeView, location.hash);
+			const hash = savedHashes.get(tab.dataset.platformView!) || tab.hash;
+			history.pushState(null, '', hash);
+			showView(tab.dataset.platformView!);
+		});
+		tab.addEventListener('keydown', event => {
+			if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+			event.preventDefault();
+			const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1
+				: (index + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+			tabs[next].click(); tabs[next].focus({ preventScroll: true });
+		});
+	}
 	const updateComparisons = () => {
 		const page = Math.floor(overviewSubject / 8) + 1;
 		for (const chart of document.querySelectorAll<HTMLDetailsElement>('.overview-chart')) {
@@ -424,11 +487,6 @@ const partyOverviews = organizations.map(group => {
 			if (index === overviewSubject) link.setAttribute('aria-current', 'true');
 			else link.removeAttribute('aria-current');
 		}
-		for (const button of subjectSteps) {
-			button.disabled = Number(button.dataset.overviewStep) < 0
-				? overviewSubject === 0 : overviewSubject === overviewSubjects.length - 1;
-		}
-		subjectRange.textContent = `${overviewSubject + 1} of ${overviewSubjects.length}`;
 		mobileSubject.value = overviewSubjects[overviewSubject].dataset.overviewSubject!;
 	};
 	mobileSubject.addEventListener('change', () => {
@@ -436,13 +494,6 @@ const partyOverviews = organizations.map(group => {
 		updateComparisons();
 		history.replaceState(null, '', `#issue-${mobileSubject.value}`);
 	});
-	for (const button of subjectSteps) {
-		button.addEventListener('click', () => {
-			overviewSubject = Math.max(0, Math.min(overviewSubjects.length - 1, overviewSubject + Number(button.dataset.overviewStep)));
-			updateComparisons();
-			history.replaceState(null, '', `#issue-${overviewSubjects[overviewSubject].dataset.overviewSubject}`);
-		});
-	}
 	for (const [index, link] of overviewSubjects.entries()) {
 		link.addEventListener('click', event => {
 			event.preventDefault();
@@ -450,7 +501,6 @@ const partyOverviews = organizations.map(group => {
 			subjectIndex.open = false;
 			updateComparisons();
 			history.replaceState(null, '', link.hash);
-			document.querySelector<HTMLElement>('.overview-chart:not([hidden]) .mobile-topic:not([hidden]) h3')?.focus();
 		});
 	}
 	document.addEventListener('click', event => {
@@ -462,11 +512,12 @@ const partyOverviews = organizations.map(group => {
 			subjectIndex.querySelector<HTMLElement>('summary')!.focus();
 		}
 	});
-	document.querySelector<HTMLElement>('#overview-picker')!.hidden = false;
 	updateComparisons();
 	const reveal = () => {
 		const hash = window.location.hash;
 		const target = document.getElementById(hash.slice(1));
+		showView(target?.closest<HTMLElement>('[data-platform-panel]')?.dataset.platformPanel || 'parties');
+		setMode(new URLSearchParams(location.search).get('chart') || 'overall');
 		const issue = target?.closest<HTMLElement>('.mobile-topic');
 		const index = overviewSubjects.findIndex(link => link.dataset.overviewSubject === issue?.dataset.topic);
 		if (index !== -1) {
@@ -478,9 +529,9 @@ const partyOverviews = organizations.map(group => {
 			requestAnimationFrame(() => target?.scrollIntoView({ behavior: 'instant' }));
 			return;
 		}
-		if (target?.matches('#overview, #organization-patterns, .party-summary, #density')) {
-			requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant' }));
-		}
+		for (let element: HTMLElement | null = target; element; element = element.parentElement)
+			if (element instanceof HTMLDetailsElement) element.open = true;
+		if (target && hash) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant' }));
 		const oldTopic = overviewSubjects.find(link => `#${link.dataset.overviewSubject}` === hash);
 		if (oldTopic || hash === '#topics') {
 			window.location.replace(`/party-platforms/sources/${hash}`);
@@ -499,7 +550,9 @@ const partyOverviews = organizations.map(group => {
 		});
 	}
 	window.addEventListener('hashchange', reveal);
+	window.addEventListener('popstate', reveal);
 	window.addEventListener('load', reveal, { once: true });
 	document.fonts.ready.then(reveal);
 	reveal();
+	root.dataset.readerReady = 'true';
 </script>

@@ -18,13 +18,14 @@ const [titleLead, ...titleRest] = title.split(': ');
 			not a verified publication. Do not publish this build.</p>}
 		<header class="analysis-heading">
 			<div>
-				<p class="kicker">{active === 'issues' ? 'Party documents and caucus statements' : 'National documents, 2000\u20132026'}</p>
-				<h1>{titleLead}{titleRest.length > 0 && <><span class="title-colon">: </span><span class="title-detail">{titleRest.join(': ')}</span></>}</h1>
-				<p class="analysis-deck">{description}</p>
+				{active === 'sources' && <p class="kicker">National documents, 2000–2026</p>}
+				<h1>{active === 'issues' ? 'DSA, in context' : <>{titleLead}{titleRest.length > 0 && <>: {titleRest.join(': ')}</>}</>}</h1>
+				<p class="analysis-deck">{active === 'issues' ? 'What party documents emphasize, and how DSA caucuses differ.' : description}</p>
 			</div>
 		</header>
 		{active === 'sources' && <p><a href="/party-platforms/">&larr; Back to the comparison</a></p>}
 		<slot />
+		{active === 'issues' && <details class="project-scope"><summary>About this project</summary><p>{title}</p><p>Party documents and caucus statements</p><p>{description}</p></details>}
 		<p class="repository-link"><a id="platform-repository" href={platformRepository}>
 			Code, data and methods on GitHub &rarr;</a></p>
 	</div>

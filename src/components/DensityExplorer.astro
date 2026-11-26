@@ -3,6 +3,7 @@ import { densityMap, organizations, platforms } from '../lib/platform-analysis';
 import { claimDisplayText, partyPositionSummary } from '../lib/platform-position-copy.mjs';
 import { densityComparisons } from '../lib/platform-density-comparison.mjs';
 import AttentionShares from './AttentionShares.astro';
+import { issueLabel } from '../lib/platform-display.mjs';
 ---
 
 <noscript><p>Interactive maps require JavaScript. <a href="/party-platforms/sources/">Read the issue evidence instead.</a></p></noscript>
@@ -17,7 +18,7 @@ import AttentionShares from './AttentionShares.astro';
 		<div class="density-issue-control">
 			<label>Issue
 				<select id="density-topic">{densityMap.topics.map((topic, index) =>
-					<option value={index}>{topic.title}</option>)}</select>
+					<option value={index}>{topic.displayed ? issueLabel(topic.topic_id) : topic.title}</option>)}</select>
 			</label>
 			<button id="density-unpin" type="button" hidden disabled>Unpin issue</button>
 		</div>
@@ -42,7 +43,7 @@ import AttentionShares from './AttentionShares.astro';
 		<div class="density-comparison" aria-live="polite" aria-atomic="false">
 			{densityMap.topics.map((topic, index) =>
 				<article class="density-topic" data-index={index} data-topic={topic.topic_id} hidden>
-					<h3>{topic.title}</h3>
+					<h3>{topic.displayed ? issueLabel(topic.topic_id) : topic.title}</h3>
 					<AttentionShares topicId={topic.topic_id} interactive />
 					<section class="density-takeaways">
 						<h4 class="density-section-label">Key differences</h4>
@@ -81,6 +82,7 @@ import AttentionShares from './AttentionShares.astro';
 					<div class="density-topic-footer">
 					<details>
 						<summary>About this issue cluster</summary>
+						<p>Original research title: {topic.title}</p>
 						<p class="density-topic-summary">{topic.summary}</p>
 						{!topic.displayed && <p class="qualification">An organization-identity cluster: retained in the map,
 							but omitted from subject rankings.</p>}
