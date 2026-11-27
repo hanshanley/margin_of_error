@@ -45,6 +45,8 @@ const payload = JSON.stringify({ data, calibration, names, norc_source: norcSour
 const pp = (value: number | null) => value === null ? 'Unavailable' : `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 const validation = norcPoints.validation;
 const reading = effectReading('source_total');
+const outcomeAudit = JSON.parse(readFileSync('data/participation-estimate-validation/20261127-01/summary.json', 'utf8'));
+const outcomeStates = JSON.parse(readFileSync('data/participation-estimate-validation/20261127-01/state-checks.json', 'utf8'));
 const tests = [
 	['2024 House baseline bridge', validation.house_2024_bridge_without_demographics, validation.house_2024_bridge],
 	['2026 House response holdout', validation.current_2026_response_without_demographics, validation.current_2026_response],
@@ -53,8 +55,8 @@ const tests = [
 ---
 <section id="participation-return-drivers" class="participation-current" aria-labelledby="return-drivers-title">
 	<header class="section-intro">
-		<h2 id="return-drivers-title">Statewide House estimates</h2>
-		<p data-driver-intro>2024 → 2026 · One source-model method for all 50 states. Recorded comparisons remain separate.</p>
+		<h2 id="return-drivers-title">Reported House results</h2>
+		<p data-driver-intro>2024 → 2026 · Reported candidate counts first. Experimental models remain separate from observed results.</p>
 	</header>
 	<div id="desktop-swing-controls"></div>
 	<div class="driver-controls">
@@ -73,7 +75,7 @@ const tests = [
 			<option value="source_other">Other / unassigned choice · source frame</option>
 			<option value="source_unresolved">Unresolved responses · source frame</option>
 			<option value="source_retaining">Kept party · source-model share</option>
-			<option value="reported_counts">Comparable House change</option>
+			<option value="reported_counts" selected>Comparable reported House change</option>
 			<option value="reported_total">Like-for-like House comparisons only</option>
 			<option value="switching">Switching · fitted</option>
 			<option value="modeled_nonparticipation">Net participation · NORC estimate</option>
@@ -109,6 +111,10 @@ const tests = [
 		<div class="driver-controls" id="swing-display-controls"></div>
 	</details>
 	<p data-driver-association-note class="caption" hidden></p>
+	<p data-driver-counts-notice class="caption" hidden>Current congressional counts could not be loaded.
+		The recorded view retains an older saved model-endpoint snapshot; it is not marked as current results.</p>
+	<p data-driver-model-warning class="driver-model-warning" hidden>Experimental scenario, not a validated explanation of actual switching or staying home.
+		The source-model baseline differs from recorded 2024 results. <a href="#estimate-outcome-check">Read the outcome check.</a></p>
 	<div class="driver-overview"><div class="driver-overview-map">
 	<div class="driver-maps">
 		<section class="driver-map-card" aria-labelledby="driver-map-title">
@@ -135,6 +141,30 @@ const tests = [
 		<div data-driver-detail class="driver-detail" hidden></div>
 	</details>
 	</aside></div>
+	<details class="explorer-notes" id="estimate-outcome-check"><summary>Outcome check: models versus reported results</summary>
+		<p>November 27, 2026 check · {outcomeAudit.states_checked} states reviewed;
+			{outcomeAudit.qualified_comparisons} comparable House changes. The source-model change differs from the recorded
+			Democratic-share change by {outcomeAudit.change_MAE_pp.toFixed(2)} percentage points on average.
+			{outcomeAudit.change_error_above_2pp} comparisons differ by more than 2 points.
+			Baseline error is material: the modeled 2024 baseline is not the recorded 2024 result.</p>
+		<p>Current-share mean absolute difference: {outcomeAudit.current_share_MAE_pp.toFixed(2)} pp;
+			baseline-share difference: {outcomeAudit.baseline_share_MAE_pp.toFixed(2)} pp.
+			{outcomeAudit.outside_model_sensitivity} of {outcomeAudit.qualified_comparisons} recorded changes fall outside the model-sensitivity range.
+			Those ranges are not confidence intervals. Matching totals does not validate individual switching,
+			staying home or demographic turnout. No model was rescaled or refitted to make this check pass.</p>
+		<p>Frozen audit reference: runtime {outcomeAudit.runtime_version.slice(0,12)}, checked {outcomeAudit.runtime_checked_at}.
+			The recorded-results map uses the current accepted congressional snapshot, not this frozen audit.</p>
+		<p><a href="https://github.com/hanshanley/voter-participation/tree/1c0b99c86ee129a08703e50c55c1ec641494c3b2/data/estimate-validation/20261127-01">Complete outcome check and source evidence on GitHub</a></p>
+		<div class="table-wrap"><table><caption>All-state check · Democratic share among D+R candidate votes; changes in percentage points</caption>
+			<thead><tr><th>State</th><th>Model change</th><th>Recorded change</th><th>Difference</th><th>Comparison</th></tr></thead>
+			<tbody>{outcomeStates.map((row: any) => <tr data-outcome-check-state={row.state_code}>
+				<th scope="row">{names[row.state_code] || row.state_code}</th><td>{pp(row.modeled_change_pp)}</td>
+				<td>{row.qualified_outcome_comparison ? pp(row.recorded_change_pp) : 'Not comparable'}</td>
+				<td>{row.qualified_outcome_comparison ? pp(row.change_error_pp) : 'Not scored'}</td>
+				<td>{row.qualified_outcome_comparison ? 'Compatible candidate coverage' : row.comparison_holds}</td>
+			</tr>)}</tbody>
+		</table></div>
+	</details>
 	<details class="explorer-notes" data-statewide-source-table><summary>Saved source-model estimates · all 50 states</summary>
 		<p class="caption">Original association and multinomial ridge; Democratic two-party-share percentage points.
 			Both endpoints describe the CHEP2026 source-weighted frame, not either year's observed electorate.
@@ -505,6 +535,7 @@ const tests = [
 	.driver-summary :global(.driver-value-label) { display: block; margin-top: .25rem; color: var(--muted); font-size: .8rem; }
 	.driver-summary :global(.caption) { font: .8rem/1.6 var(--sans); color: var(--muted); margin-top: .75rem; }
 	.driver-reading-note { max-width: 70ch; color: var(--muted); font: .8rem/1.6 var(--sans); }
+	.driver-model-warning { border-left: 2px solid var(--signal); padding-left: .9rem; max-width: 75ch; font: .85rem/1.65 var(--sans); }
 	.driver-unit-reading { max-width: 70ch; margin-block: 1.25rem; font: .82rem/1.6 var(--sans); }
 	.driver-unit-reading p { margin: .4rem 0; }
 	.driver-unit-reading strong { font-weight: 500; }

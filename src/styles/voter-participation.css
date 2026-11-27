@@ -159,6 +159,8 @@ html:not(.js) .methods-archive:has(:target) { display: block; }
 .civic-group-held { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); gap: 1rem; border-top: 1px solid var(--rule); padding-block: .75rem; }
 .civic-group-held strong { font-weight: 500; color: var(--ink); }
 .group-empty { max-width: 60ch; font: 1rem/1.65 var(--serif); }
+.group-validation-warning { font: .9rem/1.65 var(--sans); max-width: 70ch; border-left: 2px solid var(--signal); padding-left: .9rem; }
+.group-observed-link { display: inline-block; margin-bottom: 1rem; font: .8rem/1.5 var(--sans); }
 .civic-group-about { margin-top: 1rem; color: var(--muted); font: .8rem/1.65 var(--sans); }
 .civic-group-about summary { cursor: pointer; min-height: 44px; }
 .observation-gap { padding: .8rem 1rem; margin-bottom: 1rem; background: var(--paper-deep); font-size: .78rem; line-height: 1.6; }

@@ -92,10 +92,11 @@ def check(base, screenshots):
             swing_top = round(swing.bounding_box()["y"])
             assert swing_top < 700
             geography = page.locator("[data-driver-geography]")
-            expect(geography).to_be_hidden()
-            expect(page.locator("[data-driver-view]")).to_be_visible()
+            expect(geography).to_be_visible()
+            expect(page.locator("[data-driver-view]")).to_have_value("reported_counts")
+            expect(page.locator("[data-driver-view]")).to_be_hidden()
             expect(page.locator("[data-driver-map] path[data-state-code]")).to_have_count(51)
-            expect(page.locator("[data-driver-summary] .driver-value")).to_be_visible(timeout=45000)
+            expect(page.locator("[data-driver-summary] > .driver-recorded-endpoints")).to_be_visible(timeout=45000)
             expect(page.locator(".driver-overview-result > details")).not_to_have_attribute("open", "")
             assert len(page.locator("[data-driver-summary]").inner_text()) < 450
             assert page.evaluate("document.documentElement.scrollWidth") == width
@@ -104,7 +105,6 @@ def check(base, screenshots):
             if width <= 880:
                 assert swing.bounding_box()["width"] > width * .85
                 assert page.locator(".driver-overview-result").bounding_box()["y"] > swing.bounding_box()["y"] + swing.bounding_box()["height"]
-            page.locator("[data-driver-view]").select_option("reported_counts")
             expect(geography).to_be_visible()
             geography.select_option("district")
             expect(swing.locator("path[data-district]")).to_have_count(435, timeout=45000)

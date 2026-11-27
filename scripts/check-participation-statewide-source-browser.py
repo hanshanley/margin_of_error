@@ -28,6 +28,9 @@ async def boot(page,base):
     response=await page.goto(base+"/voter-participation/?view=effects",wait_until="domcontentloaded")
     assert response.ok
     await page.locator("#tab-effects").click()
+    await expect(page.locator(ROOT+" [data-driver-view]")).to_be_enabled(timeout=60000)
+    await page.locator(ROOT+" .driver-options > summary").click()
+    await page.locator(ROOT+" [data-driver-view]").select_option("source_total")
 
 async def ready(page):
     await expect(page.locator(ROOT+" [data-driver-map] path.driver-state")).to_have_count(51,timeout=60000)

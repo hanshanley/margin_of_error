@@ -6,7 +6,7 @@ export const norcTerms = [
   ["unresolved", "Unresolved responses"],
 ];
 export const norcViews = [
-  ["reported_counts", "Comparable House change"],
+  ["reported_counts", "Reported House change"],
   ["reported_total", "Like-for-like House comparisons only"],
   ["switching", "Switching · NORC estimate"],
   ["modeled_nonparticipation", "Net participation · NORC estimate"],
@@ -446,6 +446,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
     summary.hidden=false; detail.hidden=true; return;
   }
   const point=row.point;
+  summary.dataset.recordedSource=row.recorded_source || "model-endpoint-snapshot";
   summary.dataset.norcFamily=options.family || "accepted_ridge_multinomial";
   summary.dataset.norcUnits=units;
   summary.dataset.norcAssociation=options.association?.profile || "original";
@@ -457,11 +458,12 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   "caption driver-endpoint-version"));
   const recorded=norcRecordedComparison(row);
   if (recorded && (!row.source_comparison_available || options.view==="reported_counts")) {
+    const currentLabel=row.recorded_source==="current-congressional-counts"?"2026 reported":"held 2026";
     summary.dataset.recordedRawShareChange=String(recorded.share_change_pp);
     if (row.source_comparison_available) summary.dataset.recordedShareChange=String(recorded.share_change_pp);
     else summary.children[0].textContent=`${name} · House swing not comparable`;
     const raw=element("p",
-      `Recorded Democratic two-party share: 2024 ${recorded.previous_share.toFixed(2)}% → held 2026 `
+      `Recorded Democratic two-party share: 2024 ${recorded.previous_share.toFixed(2)}% → ${currentLabel} `
       +`${recorded.current_share.toFixed(2)}%; ${pp(recorded.share_change_pp)} share change `
       +`(${pp(recorded.share_change_pp*2)} D−R margin change). `
       +"These are unadjusted candidate totals, not a measured voter-preference swing.",
@@ -477,13 +479,17 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
     const snapshot=typeof recorded.snapshot==="string"&&recorded.snapshot.startsWith("native-query:")
       ?`reviewed official query ${recorded.snapshot.slice(13,25)}`:recorded.snapshot;
     summary.append(element("p",`2024 recorded D/R/Other-unassigned: ${count(recorded.previous.D)} / `
-      +`${count(recorded.previous.R)} / ${count(recorded.previous.O)}; held 2026: ${count(recorded.current.D)} / `
+      +`${count(recorded.previous.R)} / ${count(recorded.previous.O)}; ${currentLabel}: ${count(recorded.current.D)} / `
       +`${count(recorded.current.R)} / ${count(recorded.current.O)}. Snapshot: ${snapshot}. `
       +"Changed competition or coalition labels can distort the raw change; Other is outside the two-party denominator.",
     "caption"));
   }
-  if (options.view==="reported_counts" && row.source_comparison_available) {
-    summary.append(element("p","Candidate-coverage checks passed. This recorded change does not identify how much came from switching, participation or entry; select a modeled view for the separate conditional explanation.","caption"));
+  if (options.view==="reported_counts") {
+    if (!row.source_comparison_available && recorded) {
+      summary.append(element("p",`2026 reported Democratic share: ${recorded.current_share.toFixed(2)}% of D+R candidate votes.`,"driver-recorded-endpoints"),
+        element("p",`No comparable statewide change: ${row.reported_comparison.reason} Raw prior/current counts remain available in comparison details.`,"caption"));
+      summary.dataset.norcHold="true";
+    } else summary.append(element("p","Candidate-coverage checks passed. This recorded change does not identify how much came from switching, participation or entry. Conditional models are separate, unvalidated behavioral scenarios.","caption"));
     summary.dataset.norcState=row.state_code;
     summary.hidden=false;detail.hidden=true;return;
   }
@@ -493,7 +499,7 @@ export function renderNorcSelection(row, group, name, summary, detail,options={}
   "driver-endpoints"));
   if (!row.source_comparison_available) {
     const review=row.contest_comparability;
-    if (review) summary.append(element("p",
+    if (review && Number.isInteger(review.previous_named_R_districts) && Number.isInteger(review.current_named_R_districts)) summary.append(element("p",
       `Named Republican candidates: ${review.previous_named_R_districts}/${review.districts} districts in 2024; `
       +`${review.current_named_R_districts}/${review.districts} in the held 2026 snapshot. `
       +"Different ballot choices can change aggregate party margins without a corresponding voter-preference swing. "

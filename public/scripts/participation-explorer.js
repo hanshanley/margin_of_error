@@ -2199,7 +2199,7 @@ function configure(preferred = viewSelection()) {
   }
   const requestedYear = (precincts && params.get("view") === "precincts" && !state.initialized
     ? params.get("year") : "") || preferred.year
-    || String(years[0] ?? "");
+    || (state.view === "national" && !params.has("year") ? "2024" : String(years[0] ?? ""));
   options($("year"), years.map(year => [String(year), String(year)]), requestedYear);
   if (precincts && requestedYear && requestedYear !== $("year").value)
     state.precinctControlNote += `${state.precinctControlNote ? " " : ""}No loaded ${requestedYear} precinct layer for ${state.selectedState}; showing ${$("year").value}. Other years' boundaries are not substituted.`;
@@ -2698,7 +2698,7 @@ function provisionalGroupsView() {
 }
 async function civicStateModelView(generation) {
   const code = state.countState, dimension = $("dimension").value, group = $("group").value;
-  header("2026 · Survey-model estimates", `Likely-voter share in ${stateName(code)}`,
+  header("2026 · Unvalidated survey classifications", `Survey classifications in ${stateName(code)}`,
     "Source-weighted share classified as likely voters. Not reported ballots or certified demographic turnout.",
     "No 2024 extrapolation, group-population scaling or local allocation. Source field period, calibration and state representativeness remain unqualified; no design confidence interval.");
   $("map-tools").hidden = true; $("map-help").hidden = true; state.map = null; state.mapPaths = [];
@@ -2722,6 +2722,11 @@ async function civicStateModelView(generation) {
     const rows = civicStateRows(civicStatesData, code, dimension)
       .filter(row => selectedGroup === "All groups" || row.group === selectedGroup);
     const comparison = html("section", "civic-group-comparison");
+    comparison.append(html("p", "group-validation-warning",
+      "Not validated against completed 2026 turnout. These are classifications within this survey, not verified turnout rates for the state's population."));
+    const observed = html("a", "group-observed-link", "Compare reported 2024 survey voting instead");
+    observed.href = `/voter-participation/?view=national&year=2024&demographic-state=${code}&dimension=${["overall","age","sex","race","education"].includes(dimension)?dimension:"overall"}`;
+    comparison.append(observed);
     comparison.append(html("p", "group-reading",
       "The percentage within each group classified as likely to vote—not that group's share of all voters. These are survey-model estimates, not counted ballots."));
     const available = rows.filter(row => row.modeled_voter_pct !== null);
@@ -2732,7 +2737,7 @@ async function civicStateModelView(generation) {
     if (available.length) {
       const table = html("table", "civic-group-table"), head = html("thead"), headings = html("tr"), body = html("tbody");
       table.append(html("caption", "", "2026 survey-model estimates · within-group likely-voter share"));
-      for (const label of ["Group", "Likely to vote"]) {
+      for (const label of ["Group", "Classified likely voter"]) {
         const cell = html("th", "", label); cell.scope = "col"; headings.append(cell);
       }
       head.append(headings); table.append(head);

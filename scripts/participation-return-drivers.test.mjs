@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { driverRows, driverScale, validateModels, mapScale, effectFill, mapTerms, mapValue, validateRecordedHouseCounts } from '../public/scripts/participation-return-drivers.js';
+import { driverRows, driverScale, validateModels, mapScale, effectFill, mapTerms, mapValue, validateRecordedHouseCounts, congressionalRecordedHouse } from '../public/scripts/participation-return-drivers.js';
+import { norcRecordedComparison } from '../public/scripts/participation-norc-house.js';
 import { effectReading } from '../public/scripts/participation-effect-reading.js';
 
 test('reading guidance distinguishes swing contributions from gross shares and changes with units', () => {
@@ -25,6 +26,35 @@ test('reading guidance distinguishes swing contributions from gross shares and c
 });
 
 const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/viewer-data.json'));
+
+test('recorded results use current congressional counts and their gate, never frozen model endpoints', () => {
+  const baseline = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/norc-point-summary.json'));
+  const before = structuredClone(baseline);
+  const congress = {house_states: baseline.rows.map(row => ({
+    state_code: row.state_code, current: {...row.contest_comparability.current_counts},
+    previous: {...row.contest_comparability.previous_counts},
+    qualified_comparison: row.source_comparison_available, comparison_holds: [],
+    expected_voting_seats: row.contest_comparability.districts, source_updated_at_by_contest: {},
+  }))};
+  const mo = congress.house_states.find(row => row.state_code === 'MO');
+  mo.current.D += 1000;
+  mo.qualified_comparison = false;
+  mo.comparison_holds = ['Current source is retained'];
+  const me = congress.house_states.find(row => row.state_code === 'ME');
+  me.qualified_comparison = true;
+  const fresh = congressionalRecordedHouse(baseline, congress);
+  const selected = fresh.rows.find(row => row.state_code === 'MO');
+  assert.deepEqual(norcRecordedComparison(selected).current, mo.current);
+  assert.equal(selected.source_comparison_available, false);
+  assert.equal(selected.reported_comparison.reason, 'Current source is retained');
+  assert.equal(selected.recorded_source, 'current-congressional-counts');
+  assert.equal(fresh.rows.find(row => row.state_code === 'ME').source_comparison_available, true);
+  assert.deepEqual(baseline, before);
+  const duplicate = structuredClone(congress); duplicate.house_states.push(duplicate.house_states[0]);
+  assert.throws(() => congressionalRecordedHouse(baseline, duplicate), /inventory differs/);
+  const missing = structuredClone(congress); missing.house_states[0].current.D = null;
+  assert.throws(() => congressionalRecordedHouse(baseline, missing), /inventory differs/);
+});
 
 test('raw all-state inventory remains valid when directional comparisons are held', () => {
   const { rows } = JSON.parse(readFileSync('data/participation-return-attribution/20261113-01/norc-point-summary.json'));

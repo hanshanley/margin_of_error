@@ -8,14 +8,14 @@ import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
 import { loadNorcHouse, norcViews, norcGroups, norcMapValue, renderNorcSelection, norcFamilies,
   norcAssociations, norcSharedBound, norcRecordedBound, norcRecordedComparison, validateNorcAssociation } from "./participation-norc-house.js";
 import { loadHouseSensitivity, houseSensitivityScope } from "./participation-house-sensitivity.js";
-import { installCongressionalReturns } from "./participation-congress.js";
+import { installCongressionalReturns, validateCongressionalResults } from "./participation-congress.js";
 import { houseDistrictController } from "./participation-house-districts.js";
 import { statewideSourceController, statewideSourceViews, isStatewideSourceView } from "./participation-statewide-source.js";
 import { senatePartialController } from "./participation-senate-partial.js";
 import { senateCompleteController } from "./participation-senate-complete.js";
 import { automaticHouseDescriptor, automaticHouseProfileReceipt, automaticHouseSensitivityReceipt,
   automaticHouseSources, loadAutomaticRecordedHouse, rejectAutomaticRuntime,
-  setAutomaticRuntimeStatus } from "./participation-automatic-runtime.js";
+  setAutomaticRuntimeStatus, loadAutomaticCongress } from "./participation-automatic-runtime.js";
 
 export const effectTerms = [
   ["switching", "Switching", "#3e7d84"],
@@ -152,6 +152,25 @@ export function validateRecordedHouseCounts(rows, codes) {
   return {rows};
 }
 
+export function congressionalRecordedHouse(baseline, congress) {
+  const states = new Map(congress.house_states.map(row => [row.state_code, row]));
+  if (states.size !== 50 || states.size !== congress.house_states.length || baseline.rows.length !== 50)
+    throw new Error("Congressional state inventory differs");
+  return validateRecordedHouseCounts(baseline.rows.map(row => {
+    const current = states.get(row.state_code);
+    if (!current) throw new Error("Missing congressional House state");
+    const counts = phase => Object.fromEntries(["D", "R", "O"].map(key => [key, current[phase][key]]));
+    const clocks = Object.values(current.source_updated_at_by_contest || {}).filter(Boolean).sort();
+    return {state_code: row.state_code, source_comparison_available: current.qualified_comparison,
+      recorded_source: "current-congressional-counts",
+      reported_comparison: {reason: current.comparison_holds.join("; "),
+        current_native_clock: clocks.length ? `${clocks[0]} to ${clocks.at(-1)} (per-contest range)` : null,
+        current_snapshot: clocks.length ? `Congressional source updates ${clocks[0]} to ${clocks.at(-1)}` : "Congressional source snapshot; native clocks not supplied"},
+      contest_comparability: {previous_counts: counts("previous"), current_counts: counts("current"),
+        districts: current.expected_voting_seats}};
+  }), [...states.keys()]);
+}
+
 export async function initializeReturnDrivers() {
   const root = document.querySelector("#participation-return-drivers");
   if (!root || root.dataset.initialized) return;
@@ -185,9 +204,10 @@ export async function initializeReturnDrivers() {
       sensitivity: payload.norc_sensitivity,
       shared_max_abs_margin: payload.norc_association_sources?.shared_max_abs_margin,
     };
-    const [response, selectedSources] = await Promise.all([
+    const [response, selectedSources, congressional] = await Promise.all([
       fetch(participationDownload("/voter-participation/data/states.geojson")),
       automaticHouseSources(embeddedHouse),
+      loadAutomaticCongress().then(value => ({...value, data: validateCongressionalResults(value.data)})).catch(() => null),
     ]);
     let houseSelection = selectedSources;
     root.dataset.automaticRuntime = houseSelection.automatic?.version || "fallback";
@@ -216,6 +236,11 @@ export async function initializeReturnDrivers() {
     const norcUnits=()=>unitsSelect?.value || "margin";
     let recordedHouse = houseSelection.automatic ? null : payload.recorded_house_counts
       ? validateRecordedHouseCounts(payload.recorded_house_counts,codes) : null;
+    const currentRecorded = () => congressional && payload.recorded_house_counts
+      ? congressionalRecordedHouse({rows:payload.recorded_house_counts}, congressional.data) : null;
+    recordedHouse = currentRecorded() || recordedHouse;
+    const countsNotice=root.querySelector("[data-driver-counts-notice]");
+    if (countsNotice) countsNotice.hidden = Boolean(congressional);
     if (houseSelection.automatic) {
       sensitivitySources=Object.fromEntries(["original","attenuated","full"]
         .map(profile=>[profile,automaticHouseProfileReceipt(houseSelection,profile)]));
@@ -280,8 +305,8 @@ export async function initializeReturnDrivers() {
       sensitivityReceipt=embeddedHouse.sensitivity;
       sharedMaximums=embeddedHouse.shared_max_abs_margin;
       houseComparisonHolds={...payload.house_comparison_holds};
-      recordedHouse=payload.recorded_house_counts
-        ?validateRecordedHouseCounts(payload.recorded_house_counts,codes):null;
+      recordedHouse=currentRecorded() || (payload.recorded_house_counts
+        ?validateRecordedHouseCounts(payload.recorded_house_counts,codes):null);
       sensitivity=null;sensitivityState="idle";
       norc=undefined;norcComparison=undefined;norcOriginalComparison=undefined;norcFamily=undefined;
     };
@@ -522,6 +547,8 @@ export async function initializeReturnDrivers() {
       const sourceMode=Boolean(statewide && office.value === "house" && isStatewideSourceView(view.value));
       const norcMode=office.value==="house" && !scenario && Boolean(embeddedHouse.original);
       const recordedMode=norcMode && view.value==="reported_counts";
+      const modelWarning=root.querySelector("[data-driver-model-warning]");
+      if (modelWarning) modelWarning.hidden = office.value !== "house" || recordedMode;
       if (geographySelect) {
         geographySelect.closest("label").hidden=!recordedMode;
         geographySelect.disabled=!recordedMode;
@@ -604,7 +631,7 @@ export async function initializeReturnDrivers() {
           if (houseSelection.automatic) {
             const originalComparison=requested==="original"?loaded:original;
             const baseline=originalComparison.families.accepted_ridge_multinomial;
-            recordedHouse=mergeRecordedHouse(baseline,recorded);
+            recordedHouse=currentRecorded() || mergeRecordedHouse(baseline,recorded);
             houseComparisonHolds=Object.fromEntries(baseline.rows
               .filter(row=>!row.source_comparison_available)
               .map(row=>[row.state_code,row.reported_comparison.reason]));
@@ -813,7 +840,7 @@ export async function initializeReturnDrivers() {
         ?[...(statewide?statewideSourceViews:[]),...norcViews]:mapTerms;
       if (office.value==="house" && statewide) {
         const sourceGroup=element("optgroup"),comparisonGroup=element("optgroup");
-        sourceGroup.label="Uniform source model · all 50 states";
+        sourceGroup.label="Experimental source-frame models · not recorded election changes";
         comparisonGroup.label="Recorded / return-constrained · qualified comparisons";
         for (const [key,label] of options)
           (isStatewideSourceView(key)?sourceGroup:comparisonGroup).append(new Option(label,key));
@@ -823,11 +850,11 @@ export async function initializeReturnDrivers() {
       for (const [key,label] of scenarioViews) archived.append(new Option(label,key));
       view.append(archived);
       view.value=[...view.options].some(o=>o.value===previous)?previous:
-        office.value==="house" && statewide?"source_total":"reported_total";
-      root.querySelector("#return-drivers-title").textContent=office.value==="house"?"Statewide House estimates":
+        office.value==="house"?"reported_counts":"reported_total";
+      root.querySelector("#return-drivers-title").textContent=office.value==="house"?"Reported House results":
         office.value==="senate"?"Senate comparisons":"Governor source frames";
       root.querySelector("[data-driver-intro]").textContent=office.value==="house"
-        ?"2024 → 2026 · One source-model method for all 50 states. Recorded comparisons remain separate."
+        ?"2024 → 2026 · Reported candidate counts first. Experimental models remain separate from observed results."
         :"Separate office-specific comparisons and source frames where supported; not the all-state House model.";
       render();
     };

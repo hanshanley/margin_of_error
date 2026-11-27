@@ -1,0 +1,50 @@
+{
+  "baseline_share_MAE_pp": 2.443745832207923,
+  "change_MAE_pp": 2.678882685239094,
+  "change_error_above_2pp": 19,
+  "change_error_above_5pp": 3,
+  "conclusions": [
+    "The source-model change is not the recorded election change; estimated baseline error is material.",
+    "Reported-result display must use current congressional counts, not frozen model endpoints.",
+    "Aggregate returns cannot validate individual switching, staying home, or demographic turnout rates.",
+    "UF VEP/VAP context has a different, explicit population denominator; differences are not like-for-like model errors.",
+    "No outcome fitting, demographic scaling or source-model refitting was performed."
+  ],
+  "current_share_MAE_pp": 0.7601116782747108,
+  "matched_population_demographic_turnout_validation": false,
+  "native_contest_count_differences": 1,
+  "native_contests_checked": 435,
+  "native_source_receipt": {
+    "bytes": 53874,
+    "gzip_transport": true,
+    "saved_at": "2026-11-27T22:26:31.710280+00:00",
+    "sha256": "5340d7b65aa83b639da56ff4e24cd645c2b126699d3d702c5cf350c88654e010",
+    "url": "https://apps.npr.org/2026-election-results/data/house.json"
+  },
+  "observed_individual_switching_or_staying_home_identified": false,
+  "outside_model_sensitivity": 31,
+  "population_calibration_or_independent_forecast_validation_established": false,
+  "primary_recorded_source_differences": 38,
+  "qualified_comparisons": 33,
+  "runtime_checked_at": "2026-11-27T20:28:14.392868+00:00",
+  "runtime_version": "07f580d40537c6bbbdbcd97319388b8a02cb484d08f1a097bc17fe9673b90806",
+  "states_checked": 50,
+  "survey_classification_coding_checked": {
+    "coding_reversal_detected": false,
+    "fields": {
+      "CHEP_WEIGHT": "Overall population weight; calibration targets and field period not independently qualified here.",
+      "LIKELYVOTER": {
+        "1": "Likely voter",
+        "2": "Nonvoter",
+        "target": "Native model classification, not a completed-voting history"
+      },
+      "SEX": {
+        "1": "Male",
+        "2": "Female",
+        "definition": "Sex assigned at birth"
+      }
+    },
+    "native_vote_history_replacement_inferred": false,
+    "original_source": "user-supplied civichealth_codebook.zip"
+  }
+}

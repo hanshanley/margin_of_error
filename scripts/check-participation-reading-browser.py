@@ -67,7 +67,12 @@ def check(args):
             fits(page, width)
             page.locator("#tab-effects").click()
             root = page.locator("#participation-return-drivers")
+            expect(root.locator("[data-driver-view]")).to_have_value("reported_counts", timeout=60000)
+            expect(root.locator("[data-driver-summary]")).to_have_attribute("data-recorded-source", "current-congressional-counts", timeout=60000)
+            root.locator(".driver-options > summary").click()
+            root.locator("[data-driver-view]").select_option("source_total")
             expect(root.locator("[data-driver-summary]")).to_have_attribute("data-source-model-state", "TX", timeout=60000)
+            expect(root.locator("[data-driver-model-warning]")).to_be_visible()
             reading = root.locator("[data-driver-reading]")
             expect(reading).to_be_visible()
             expect(reading).to_contain_text("not the percentage who switched parties or stayed home")
@@ -80,7 +85,8 @@ def check(args):
             snapshot(page, args, "results", width)
             root.locator("[data-driver-summary]").scroll_into_view_if_needed()
             snapshot(page, args, "results-definition", width)
-            root.locator(".driver-options > summary").click()
+            if root.locator(".driver-options").get_attribute("open") is None:
+                root.locator(".driver-options > summary").click()
             selector = root.locator("[data-driver-view]")
             for view, meaning in [("source_switching", "not the percentage of people who switched"),
                                   ("source_participation", "entry into and exit"),
