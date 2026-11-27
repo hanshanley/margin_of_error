@@ -1,0 +1,11 @@
+{
+  "complete_queries": 1530,
+  "new_subgroup_counts_or_weights_exported": false,
+  "newly_supported_rate_only_groups": 193,
+  "observed_turnout": false,
+  "resolution_pp": "0.1",
+  "source_cases": 113020,
+  "source_sha256": "496a5b57fbc435210bdf78e2c1c3717879c0689c74081bee830d121b548c792f",
+  "source_states": 50,
+  "supported_rates": 864
+}

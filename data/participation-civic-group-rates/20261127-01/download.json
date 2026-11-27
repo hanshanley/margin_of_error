@@ -1,0 +1,30 @@
+{
+  "status": "published_and_fully_verified",
+  "commit": "83c072e58680e74ce57a34748c813549d99ef5da",
+  "assets": [
+    {
+      "name": "complete-analysis.zip",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/83c072e58680e74ce57a34748c813549d99ef5da/data/civic-group-rates/20261127-01/complete-analysis.zip",
+      "bytes": 159721,
+      "sha256": "9966126d09dd348c484e3536ad46ee7eb38540d8742f5cfd6dae7d6f3eeeb675"
+    },
+    {
+      "name": "complete-state-demographic-query.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/83c072e58680e74ce57a34748c813549d99ef5da/data/civic-group-rates/20261127-01/complete-state-demographic-query.csv",
+      "bytes": 165813,
+      "sha256": "48d8d156b52c70f4eb004e2da95f44376f595c03f5f0ee3df74781ec77af6b1d"
+    },
+    {
+      "name": "viewer-data.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/83c072e58680e74ce57a34748c813549d99ef5da/data/civic-group-rates/20261127-01/viewer-data.json",
+      "bytes": 1026778,
+      "sha256": "102d580b05c9c048a404df31b667fcd6b38e5196ea4be71ab31523dd47efd335"
+    },
+    {
+      "name": "summary.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/83c072e58680e74ce57a34748c813549d99ef5da/data/civic-group-rates/20261127-01/summary.json",
+      "bytes": 343,
+      "sha256": "4fd13b58f3789b68b79d0236e29dc9c0a70a0b5d61fa8fe38102bba84a3a50ab"
+    }
+  ]
+}

@@ -33,8 +33,8 @@ const stateDemographics = JSON.parse(readFileSync(
 	resolve('data/participation-state-demographics/20261108-01/viewer-data.json'), 'utf8')).rows;
 const demographicRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-cps-state-demographics-20261108-01/';
 const civicStateGroups = JSON.parse(readFileSync(
-	resolve('data/participation-civic-state-demographics/20261108-01/viewer-data.json'), 'utf8')).groups;
-const civicStateRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/participation-civic-state-demographics-20261108-01/';
+	resolve('data/participation-civic-group-rates/20261127-01/viewer-data.json'), 'utf8')).groups;
+const civicStateRelease = 'https://raw.githubusercontent.com/hanshanley/voter-participation/83c072e58680e74ce57a34748c813549d99ef5da/data/civic-group-rates/20261127-01/';
 const mapRepairRelease = 'https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-map-repairs-20261107-01/';
 const precinctResultsPointerPath = resolve('public/precinct-results.json');
 const precinctResultsPointer = existsSync(precinctResultsPointerPath)
@@ -356,15 +356,14 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				The complete query retains every demographic estimate and privacy/source holding.</p>
 			<div class="table-wrap"><table>
 				<caption>2026 Civic model · all 50 source states, D.C. absence explicit</caption>
-				<thead><tr><th scope="col">State</th><th scope="col">Modeled voter share</th>
-					<th scope="col">Source cases</th><th scope="col">Evidence</th></tr></thead>
+				<thead><tr><th scope="col">State</th><th scope="col">Modeled likely-voter share</th><th scope="col">Evidence</th></tr></thead>
 				<tbody>{civicStateGroups.filter((row: { dimension: string }) => row.dimension === 'overall')
 					.map((row: { state_code: string; modeled_voter_pct: string | null; n: number | null; disposition: string }) =>
 						<tr data-civic-state-model={row.state_code} data-rate={row.modeled_voter_pct ?? ''}
 							data-sample-n={row.n ?? ''} data-disposition={row.disposition}>
 							<th scope="row">{row.state_code}</th>
 							<td>{row.modeled_voter_pct === null ? 'No source sample' : Number(row.modeled_voter_pct).toFixed(1) + '%'}</td>
-							<td>{row.n ?? 'Not available'}</td><td>{row.disposition === 'selected_broad_source_model' ? 'Source model, not observed turnout' : 'No D.C. survey sample'}</td>
+							<td>{row.disposition === 'selected_broad_source_model' ? 'Source model, not observed turnout' : 'No D.C. survey sample'}</td>
 						</tr>)}</tbody>
 			</table></div>
 			<div class="download-links">

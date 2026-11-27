@@ -36,3 +36,23 @@ test("held counts, promoted turnout or invalid fractions fail closed", () => {
     assert.throws(() => validateCivicStates(changed));
   }
 });
+
+test("the percentage-only successor recovers broad groups without releasing new counts", () => {
+  const rates = JSON.parse(fs.readFileSync(new URL('../data/participation-civic-group-rates/20261127-01/viewer-data.json', import.meta.url)));
+  validateCivicStates(rates);
+  assert.equal(rates.groups.filter(row => row.modeled_voter_pct !== null).length, 864);
+  const oldKeys = new Set(data.groups.filter(row => row.modeled_voter_pct !== null)
+    .map(row => `${row.state_code}|${row.dimension}|${row.group}`));
+  assert.equal(rates.groups.filter(row => row.modeled_voter_pct !== null
+    && !oldKeys.has(`${row.state_code}|${row.dimension}|${row.group}`)).length, 193);
+  assert.notEqual(civicStateRows(rates, 'MO', 'sex').find(row => row.group === 'male').modeled_voter_pct, null);
+  assert.ok(rates.groups.every(row => row.n === null && row.source_weight_concentration_effective_n === null));
+  for (const mutate of [
+    copy => { copy.publication.minimum_source_cases = 1; },
+    copy => { copy.groups.find(row => row.modeled_voter_pct !== null).n = 100; },
+    copy => { copy.groups.find(row => row.modeled_voter_pct !== null).modeled_voter_pct = '50.123'; },
+  ]) {
+    const changed = structuredClone(rates); mutate(changed);
+    assert.throws(() => validateCivicStates(changed));
+  }
+});

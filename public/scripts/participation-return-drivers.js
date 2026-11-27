@@ -1,6 +1,7 @@
 import { projectStateContext } from "./participation-map-projection.js";
 import { participationDownload } from "./participation-downloads.js";
 import { installComparisonSummary } from "./participation-publication-ui.js";
+import { effectReading } from "./participation-effect-reading.js";
 import { calibratedTerms, validateCalibratedSwing, calibratedMapValue, roundedContributions, switchingConstraintBounds } from "./participation-calibrated-swing.js";
 import { isScenarioView, loadScenarios, scenarioViews, scenarioGroups,
   scenarioEstimate, scenarioScale, scenarioDownload } from "./participation-transition-scenarios.js";
@@ -515,6 +516,9 @@ export async function initializeReturnDrivers() {
     };
     const render = async () => {
       const current = ++generation, scenario = isScenarioView(view.value);
+      const reading = effectReading(view.value, norcUnits(), group.value, office.value);
+      for (const [key, text] of Object.entries(reading))
+        root.querySelector(`[data-driver-reading-${key}]`).textContent = text;
       const sourceMode=Boolean(statewide && office.value === "house" && isStatewideSourceView(view.value));
       const norcMode=office.value==="house" && !scenario && Boolean(embeddedHouse.original);
       const recordedMode=norcMode && view.value==="reported_counts";

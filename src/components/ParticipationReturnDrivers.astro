@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { roundedContributions, switchingConstraintBounds } from '../../public/scripts/participation-calibrated-swing.js';
 import { roundedNorcContributions, norcRecordedComparison } from '../../public/scripts/participation-norc-house.js';
+import { effectReading } from '../../public/scripts/participation-effect-reading.js';
 const { names } = Astro.props as { names: Record<string, string> };
 type DriverRow = { id: string; state_code: string; office: string; components_pp: Record<string, number>;
 	reported_comparison: { baseline_year?: number; reported_change_pp: number | null;
@@ -43,6 +44,7 @@ const payload = JSON.stringify({ data, calibration, names, norc_source: norcSour
 	district_geometry: districtGeometry, statewide_source_model: statewideSource }).replaceAll('<', '\\u003c');
 const pp = (value: number | null) => value === null ? 'Unavailable' : `${value > 0 ? '+' : ''}${value.toFixed(2)}`;
 const validation = norcPoints.validation;
+const reading = effectReading('source_total');
 const tests = [
 	['2024 House baseline bridge', validation.house_2024_bridge_without_demographics, validation.house_2024_bridge],
 	['2026 House response holdout', validation.current_2026_response_without_demographics, validation.current_2026_response],
@@ -120,6 +122,11 @@ const tests = [
 		</div><div class="driver-map-directions"><span>Republican direction</span><span>Democratic direction</span></div></div>
 		<span class="driver-no-model"><i></i>No qualified comparison / model</span>
 		<span class="driver-comparison-caution" data-driver-comparison-caution hidden><i></i>Not comparable · competition / scope</span>
+	</div>
+	<div class="driver-unit-reading" data-driver-reading role="note" aria-live="polite">
+		<p><strong data-driver-reading-title>{reading.title}</strong></p>
+		<p data-driver-reading-meaning>{reading.meaning}</p>
+		<p data-driver-reading-example>{reading.example}</p>
 	</div>
 	<p class="driver-reading-note">Hatching marks an unavailable comparison, not a partisan swing.</p>
 	</div><aside class="driver-overview-result" aria-label="Selected election comparison">
@@ -498,6 +505,10 @@ const tests = [
 	.driver-summary :global(.driver-value-label) { display: block; margin-top: .25rem; color: var(--muted); font-size: .8rem; }
 	.driver-summary :global(.caption) { font: .8rem/1.6 var(--sans); color: var(--muted); margin-top: .75rem; }
 	.driver-reading-note { max-width: 70ch; color: var(--muted); font: .8rem/1.6 var(--sans); }
+	.driver-unit-reading { max-width: 70ch; margin-block: 1.25rem; font: .82rem/1.6 var(--sans); }
+	.driver-unit-reading p { margin: .4rem 0; }
+	.driver-unit-reading strong { font-weight: 500; }
+	.driver-unit-reading [data-driver-reading-example] { color: var(--muted); font-size: .75rem; }
 	.driver-research { margin-top: 1.3rem; padding-block: .8rem; border-top: 1px solid var(--rule); }
 	.driver-research > summary { color: var(--muted); }
 	@media(max-width:880px) {

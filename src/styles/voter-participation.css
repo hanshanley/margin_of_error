@@ -1,4 +1,4 @@
-.participation-page { --sans: "Avenir Next", Arial, sans-serif; --control-paper: #f7f5f0; width: min(1100px, var(--page)); margin: 0 auto; padding: 1.8rem 0 3rem; }
+.participation-page { --sans: "Avenir Next", Arial, sans-serif; --control-paper: #f7f5f0; width: min(1100px, var(--page)); margin: 0 auto; padding: 1.8rem 0 3rem; overflow-wrap: anywhere; }
 body:has(.participation-page) .site-header { width: min(1100px, var(--page)); }
 body:has(.participation-page) .edition-line { display: none; }
 body:has(.participation-page) .masthead { padding: .8rem 0; align-items: center; }
@@ -119,6 +119,10 @@ html:not(.js) .methods-archive:has(:target) { display: block; }
 .voting-methods .method-missing { margin-top: .8rem; }
 .voting-methods .explorer-notes { font-size: .75rem; line-height: 1.6; }
 @media (max-width: 700px) {
+  .participation-page code { white-space: normal; overflow-wrap: anywhere; }
+  body:has(.participation-page) .site-footer { grid-template-columns: minmax(0, 1fr); }
+  body:has(.participation-page) .site-footer > * { min-width: 0; }
+  body:has(.participation-page) .footer-links { flex-wrap: wrap; }
   .voting-methods-heading { display: block; }
   .voting-methods-heading .controls { margin-top: 1rem; }
   .method-layout { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
@@ -133,6 +137,30 @@ html:not(.js) .methods-archive:has(:target) { display: block; }
 .demographic-card h3 { margin: 0; font: 400 1.05rem var(--serif); }
 .demographic-value { font-size: 1.2rem; font-weight: 500; color: #284766; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .demographic-period { color: var(--muted); font-size: .64rem; margin: .4rem 0; }
+.participation-page[data-active-view="national"] #visualization:has(.civic-group-comparison) { min-height: 0; }
+.participation-page[data-active-view="national"]:has(.civic-group-comparison) #provisional-status { display: none; }
+.civic-group-comparison { max-width: 52rem; padding-bottom: 1.5rem; }
+.group-reading { max-width: 75ch; font: .9rem/1.65 var(--sans); margin: 0 0 1rem; }
+.group-availability, .group-reading-example { color: var(--muted); font: .78rem/1.65 var(--sans); }
+.civic-group-table { width: 100%; border-collapse: collapse; table-layout: fixed; margin: 1.25rem 0 1rem; }
+.participation-explorer .civic-group-table caption { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; clip-path: inset(50%); overflow: hidden; white-space: nowrap; }
+.civic-group-table :is(th,td) { border-bottom: 1px solid var(--rule); padding: 1rem .75rem; text-align: left; overflow-wrap: anywhere; }
+.civic-group-table thead th { font: .75rem/1.5 var(--sans); color: var(--muted); }
+.civic-group-table th:first-child { width: 42%; padding-left: 0; }
+.civic-group-table th:last-child { text-align: right; }
+.civic-group-table tbody th { font: 400 1.1rem/1.4 var(--serif); }
+.civic-group-table .civic-group-estimate { font: .95rem/1.4 var(--sans); }
+.civic-group-value { display: block; margin-bottom: .55rem; text-align: right; font-weight: 500; font-variant-numeric: tabular-nums; }
+.civic-group-estimate .count-track { display: block; }
+.civic-group-table .civic-group-estimate, .civic-group-table thead th:last-child { padding-right: 0; }
+.civic-group-withheld { border-top: 1px solid var(--rule); margin-top: 1.5rem; padding-top: .75rem; font: .8rem/1.65 var(--sans); color: var(--muted); }
+.civic-group-withheld summary { min-height: 44px; cursor: pointer; color: var(--ink); }
+.civic-group-withheld ul { list-style: none; padding: 0; }
+.civic-group-held { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); gap: 1rem; border-top: 1px solid var(--rule); padding-block: .75rem; }
+.civic-group-held strong { font-weight: 500; color: var(--ink); }
+.group-empty { max-width: 60ch; font: 1rem/1.65 var(--serif); }
+.civic-group-about { margin-top: 1rem; color: var(--muted); font: .8rem/1.65 var(--sans); }
+.civic-group-about summary { cursor: pointer; min-height: 44px; }
 .observation-gap { padding: .8rem 1rem; margin-bottom: 1rem; background: var(--paper-deep); font-size: .78rem; line-height: 1.6; }
 .observation-gap button { display: block; margin-top: .4rem; border: 0; border-bottom: 1px solid currentColor; padding: 0; background: none; color: var(--ink); font: inherit; cursor: pointer; }
 .provisional-bars { list-style: none; padding: 1.5rem 0 .5rem; margin: 0; max-width: 850px; }

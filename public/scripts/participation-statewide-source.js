@@ -245,11 +245,16 @@ export function statewideSourceController(root, fallback, {items,names,effectFil
     const headline=element("p",null,"driver-primary");
     if (value===null) headline.textContent=metric==="retaining" && row.groups.find(g=>g.dimension+"|"+g.group===group.value)?.available
       ?"Retention is unavailable: this source group has no previous-D/R denominator.":"This source demographic cell is withheld, not zero.";
-    else headline.append(element("span",points(value*factor()),"driver-value"),
-      element("span",` ${metric==="retaining"?"retained previous-D/R source share":
-        group.value?"contribution to statewide change":"source-model estimate"}`,"driver-value-label"));
-    primary.append(headline,
-    element("p",range?`Model sensitivity: ${points(range.minimum*factor())} to ${points(range.maximum*factor())}. Not a confidence interval.`:
+    else {
+      const measure=selectedUnits==="margin"?"D−R margin":"Democratic share of D+R choices";
+      const label=metric==="retaining"?"of previous D/R source choices kept the same party in the model"
+        :`${group.value?"group contribution to statewide":metric==="total_change"?"modeled change in":"modeled contribution to"} ${measure}`;
+      headline.append(element("span",points(value*factor()),"driver-value"),element("span",` ${label}`,"driver-value-label"));
+    }
+    primary.append(headline);
+    if (metric==="total_change" && !group.value && value!==null) primary.append(element("p",
+      `Modeled Democratic share: ${(50+row.point.previous_margin_pp/2).toFixed(2)}% in the 2024 baseline → ${(50+row.point.current_margin_pp/2).toFixed(2)}% in 2026, among D+R source choices. Neither endpoint is observed turnout.`,"caption"));
+    primary.append(element("p",range?`Model sensitivity: ${points(range.minimum*factor())} to ${points(range.maximum*factor())}. Not a confidence interval.`:
       "No demographic estimate is filled from another category.","caption"),
     element("p","Unconditioned survey-source model · not population calibrated.","caption"),
     element("p","Input vintages: AP 2024 / CHEP 2026. Interview dates not supplied.","caption"));
@@ -259,6 +264,7 @@ export function statewideSourceController(root, fallback, {items,names,effectFil
       "The same fitted-source method is used in all 50 states. The modeled 2024 House baseline is bridged from AP2024 President/House responses and CHEP recalled presidential choice. Both endpoints describe the CHEP2026 source-weighted frame, not either year's observed statewide electorate.","caption"));
     if (value!==null) {
       const table=element("table"),head=element("thead"),heading=element("tr"),body=element("tbody");
+      table.append(element("caption",`Contributions in percentage points of ${selectedUnits==="margin"?"the D−R margin":"Democratic share among D+R choices"}; not percentages of people.`));
       for (const text of ["Term","Estimate","Model sensitivity"]) heading.append(element("th",text));head.append(heading);table.append(head);
       for (const [key,label] of [["switching","Modeled switching"],["net_participation","Modeled net participation"],
         ["other_choice","Other / unassigned choice"],["unresolved","Unresolved responses"],["total_change","Total modeled change"]]) {

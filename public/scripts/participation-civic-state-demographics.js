@@ -1,7 +1,7 @@
 export const civicStateSource = {
-  url: "https://raw.githubusercontent.com/hanshanley/voter-participation/e5adde3bc5efa78468bb614d93134369115717cc/data/civic-state-demographics/20261108-01/viewer-data.json",
-  sha256: "a7273836c258127b444eff52f3aa8e5fcf06c69d7e3cd89ff3ef4beed83071bf",
-  release: "https://github.com/hanshanley/margin_of_error/releases/download/participation-civic-state-demographics-20261108-01/",
+  url: "https://raw.githubusercontent.com/hanshanley/voter-participation/83c072e58680e74ce57a34748c813549d99ef5da/data/civic-group-rates/20261127-01/viewer-data.json",
+  sha256: "102d580b05c9c048a404df31b667fcd6b38e5196ea4be71ab31523dd47efd335",
+  release: "https://raw.githubusercontent.com/hanshanley/voter-participation/83c072e58680e74ce57a34748c813549d99ef5da/data/civic-group-rates/20261127-01/",
 };
 export const civicDimensions = [
   ["overall", "Overall"], ["age", "Age"], ["sex", "Source sex"], ["gender", "Source gender · held"],
@@ -12,11 +12,17 @@ const dimensions = { overall: "overall", age: "AGE6", sex: "SEX", gender: "GENDE
   education: "EDUC", race: "RACETH5", income: "INCOME", county_context: "RUCC" };
 
 export function validateCivicStates(data) {
-  if (data?.schema !== "civic-state-demographics-v1" || data.year !== 2026
+  const rounded = data?.schema === "civic-state-demographics-v2";
+  if ((!rounded && data?.schema !== "civic-state-demographics-v1") || data.year !== 2026
     || data.status !== "source_weighted_modeled_participation_not_observed_turnout"
     || data.field_period !== null || data.weight_target_and_calibration !== null
     || data.groups?.length !== 1530)
     throw new Error("Incomplete or changed 2026 source model");
+  if (rounded && (data.publication?.format !== "rounded_rates_without_new_count_or_weight_primitives"
+    || data.publication.resolution_pp !== "0.1" || data.publication.minimum_source_cases !== 100
+    || data.publication.minimum_each_model_class !== 30 || data.publication.new_subgroup_counts_or_weights_exported !== false
+    || data.publication.standalone_unknown_categories_released !== false || data.publication.gender3_released !== false))
+    throw new Error("Changed rate-only publication safeguards");
   const keys = new Set(), states = new Set();
   for (const row of data.groups) {
     const key = [row.state_code, row.dimension, row.group].join("|");
@@ -30,7 +36,9 @@ export function validateCivicStates(data) {
     const selected = row.disposition === "selected_broad_source_model";
     if (selected) {
       if (row.state_code === "DC" || row.dimension === "GENDER3" || row.group === "unknown"
-        || !Number.isInteger(row.n) || row.n < 100 || row.modeled_voter_pct === null || row.modeled_nonvoter_pct === null
+        || (rounded ? row.n !== null || row.source_weight_concentration_effective_n !== null
+          || !/^\d{1,3}\.\d$/.test(row.modeled_voter_pct) || !/^\d{1,3}\.\d$/.test(row.modeled_nonvoter_pct)
+          : !Number.isInteger(row.n) || row.n < 100) || row.modeled_voter_pct === null || row.modeled_nonvoter_pct === null
         || ![row.modeled_voter_pct, row.modeled_nonvoter_pct].every(value =>
           Number.isFinite(Number(value)) && Number(value) >= 0 && Number(value) <= 100)
         || Math.abs(Number(row.modeled_voter_pct) + Number(row.modeled_nonvoter_pct) - 100) > 1e-10)

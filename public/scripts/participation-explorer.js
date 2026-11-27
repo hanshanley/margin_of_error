@@ -2698,7 +2698,7 @@ function provisionalGroupsView() {
 }
 async function civicStateModelView(generation) {
   const code = state.countState, dimension = $("dimension").value, group = $("group").value;
-  header("2026 midterm · Civic source-weighted model", `Modeled participation in ${stateName(code)}`,
+  header("2026 · Survey-model estimates", `Likely-voter share in ${stateName(code)}`,
     "Source-weighted share classified as likely voters. Not reported ballots or certified demographic turnout.",
     "No 2024 extrapolation, group-population scaling or local allocation. Source field period, calibration and state representativeness remain unqualified; no design confidence interval.");
   $("map-tools").hidden = true; $("map-help").hidden = true; state.map = null; state.mapPaths = [];
@@ -2721,29 +2721,58 @@ async function civicStateModelView(generation) {
     const selectedGroup = $("group").value;
     const rows = civicStateRows(civicStatesData, code, dimension)
       .filter(row => selectedGroup === "All groups" || row.group === selectedGroup);
-    const grid = html("div", "demographic-grid");
-    for (const row of rows) {
-      const card = html("section", "demographic-card");
-      Object.assign(card.dataset, { civicState: code, group: row.group,
-        rate: row.modeled_voter_pct ?? "", disposition: row.disposition, sampleN: String(row.n ?? "") });
-      const value = row.modeled_voter_pct === null ? null : Number(row.modeled_voter_pct);
-      const heading = html("div", "demographic-card-heading");
-      heading.append(html("h3", "", row.label), html("strong", "demographic-value",
-        value === null ? "Not publicly estimated" : pct(value)));
-      card.append(heading);
-      if (value !== null) {
-        const track = html("div", "count-track"), bar = html("i");
-        bar.style.width = `${value}%`; track.setAttribute("aria-hidden", "true"); track.append(bar);
-        card.append(track, html("p", "demographic-period", `${fmt(row.n)} source cases · modeled voter share`));
-      } else card.append(html("p", "selection-note", row.disposition === "no_dc_source_sample"
-        ? "No D.C. survey sample; no value is inferred."
-        : "Held for source support or disclosure protection, including complementary cells. Missing is not zero."));
-      grid.append(card);
+    const comparison = html("section", "civic-group-comparison");
+    comparison.append(html("p", "group-reading",
+      "The percentage within each group classified as likely to vote—not that group's share of all voters. These are survey-model estimates, not counted ballots."));
+    const available = rows.filter(row => row.modeled_voter_pct !== null);
+    const held = rows.filter(row => row.modeled_voter_pct === null);
+    const identify = (node, row) => Object.assign(node.dataset, { civicState: code, group: row.group,
+      rate: row.modeled_voter_pct ?? "", disposition: row.disposition, sampleN: String(row.n ?? "") });
+    comparison.append(html("p", "group-availability", `${available.length} estimate${available.length === 1 ? "" : "s"} shown${held.length ? ` · ${held.length} unavailable` : ""}`));
+    if (available.length) {
+      const table = html("table", "civic-group-table"), head = html("thead"), headings = html("tr"), body = html("tbody");
+      table.append(html("caption", "", "2026 survey-model estimates · within-group likely-voter share"));
+      for (const label of ["Group", "Likely to vote"]) {
+        const cell = html("th", "", label); cell.scope = "col"; headings.append(cell);
+      }
+      head.append(headings); table.append(head);
+      for (const row of available) {
+        const line = html("tr", "civic-group-row"); identify(line, row);
+        const name = html("th", "", row.label); name.scope = "row";
+        const value = html("td", "civic-group-estimate"), track = html("span", "count-track"), bar = html("i");
+        bar.style.width = `${Number(row.modeled_voter_pct)}%`; track.setAttribute("aria-hidden", "true"); track.append(bar);
+        value.append(html("strong", "civic-group-value", pct(Number(row.modeled_voter_pct))), track);
+        line.append(name, value); body.append(line);
+      }
+      table.append(body); comparison.append(table);
+      const first = available[0];
+      comparison.append(html("p", "group-reading-example",
+        `For example, ${pct(Number(first.modeled_voter_pct))} means about ${Number(first.modeled_voter_pct).toFixed(0)} in every 100 source-weighted members of the “${first.label}” group are classified as likely voters. Group percentages do not add to 100%.`));
+    } else comparison.append(html("p", "group-empty", code === "DC"
+      ? "D.C. has no survey sample in this source. Choose another state; no estimate is inferred."
+      : "No public estimate is available for this selection. Choose another comparison or group; withheld results are not zero."));
+    if (held.length) {
+      const withheld = html("details", "civic-group-withheld");
+      withheld.append(html("summary", "", `Unavailable groups (${held.length})`), html("p", "",
+        "These results are not publicly estimated. They are not zero and cannot be calculated from the displayed groups."));
+      const list = html("ul");
+      for (const row of held) {
+        const item = html("li", "civic-group-held"); identify(item, row);
+        item.append(html("strong", "", row.label), html("span", "", row.disposition === "no_dc_source_sample"
+          ? "No D.C. survey sample; no value is inferred."
+          : "Held for source support or disclosure protection, including complementary cells. Missing is not zero."));
+        list.append(item);
+      }
+      withheld.append(list); comparison.append(withheld);
     }
-    $("visualization").replaceChildren(grid);
+    const about = html("details", "civic-group-about");
+    about.append(html("summary", "", "About these estimates"), html("p", "",
+      "Rates use all CHEP source weight within each group and are rounded to one decimal place. Displayed groups meet a screen of at least 100 source cases and 30 in each model class; exact subgroup counts and weights are not newly disclosed. The field period and population calibration are not qualified, and no confidence interval is available. These are not verified voting or staying-home histories."));
+    comparison.append(about);
+    $("visualization").replaceChildren(comparison);
     setTable(rows.map(row => ({ ...row, modeled_share: row.modeled_voter_pct === null
       ? "Not publicly estimated" : pct(Number(row.modeled_voter_pct)) })),
-    [["state_code", "State"], ["label", "Source group"], ["modeled_share", "Modeled voter share"],
+    [["state_code", "State"], ["label", "Source group"], ["modeled_share", "Within-group likely-voter share"],
       ["n", "Source cases"], ["disposition", "Evidence / holding"]]);
     note(dimension === "county_context" ? "Native urban/suburban/rural county context, not measured individual residence or local turnout."
       : dimension === "income" ? "Source income bins; household-income definition is not independently qualified."

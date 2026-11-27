@@ -100,7 +100,7 @@ async def normal(browser,args,profiles,width):
     for row in states:
         code=row["state_code"];await page.locator(ROOT+" [data-driver-state]").select_option(code)
         await expect(page.locator(ROOT+" [data-driver-summary]")).to_have_attribute("data-source-model-state",code)
-        await expect(page.locator(ROOT+" [data-driver-summary]")).to_contain_text("source-model estimate")
+        await expect(page.locator(ROOT+" [data-driver-summary]")).to_contain_text("modeled change in Democratic share of D+R choices")
         text=await page.locator(ROOT+" [data-driver-summary] .driver-equation > p").first.inner_text()
         assert abs(float(text.split(" pp")[0])-row["point"]["allocated_change_pp"]/2)<=.0050000001
     for code in ("TX","CA","WI"):

@@ -11,17 +11,17 @@ from playwright.sync_api import expect, sync_playwright
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data/participation-civic-state-demographics/20261108-01"
+DATA = ROOT / "data/participation-civic-group-rates/20261127-01"
 RAW = (DATA / "viewer-data.json").read_bytes()
 ROWS = json.loads(RAW)["groups"]
 DOWNLOAD = json.loads((DATA / "download.json").read_bytes())
 URL = ("https://raw.githubusercontent.com/hanshanley/voter-participation/"
-       "e5adde3bc5efa78468bb614d93134369115717cc/data/civic-state-demographics/20261108-01/viewer-data.json")
+       "83c072e58680e74ce57a34748c813549d99ef5da/data/civic-group-rates/20261127-01/viewer-data.json")
 DIMS = {"overall": "overall", "age": "AGE6", "sex": "SEX", "gender": "GENDER3",
         "race": "RACETH5", "education": "EDUC", "income": "INCOME", "county_context": "RUCC"}
 
 
-def check(base, proof):
+def check(base, proof, modes=None):
     assert not proof.exists()
     results = []
     with sync_playwright() as runtime:
@@ -32,6 +32,8 @@ def check(base, proof):
                 ("mobile", {"viewport": {"width": 390, "height": 844}, "is_mobile": True}),
                 ("no_javascript", {"java_script_enabled": False}),
                 ("failed_source", {}), ("changed_checksum", {}), ("delayed_source_tab_race", {})]:
+                if modes and mode not in modes:
+                    continue
                 proof.with_suffix(".progress.json").write_text(json.dumps(results, indent=2) + "\n")
                 context = browser.new_context(**settings)
                 try:
@@ -72,19 +74,21 @@ def check(base, proof):
                         expect(page.locator("#methods-panel")).to_be_visible()
                         expect(page.locator("#historical-explorer")).to_be_hidden()
                         page.locator("#tab-national").click()
-                        expect(page.locator('.demographic-card[data-civic-state="TX"]')).to_have_count(1)
+                        expect(page.locator('#visualization [data-civic-state="TX"]')).to_have_count(1)
                         results.append(dict(mode=mode, stale_model_render_cannot_replace_methods=True, passed=True))
                         continue
                     if mode in {"failed_source", "changed_checksum"}:
                         expect(page.locator("#visualization")).to_contain_text(
                             "2026 model source unavailable", timeout=90000)
-                        expect(page.locator("#selection-panel")).to_contain_text("Complete 2026 inputs")
-                        assert page.locator(".demographic-card[data-civic-state]").count() == 0
+                        expect(page.locator("#selection-panel")).to_contain_text("not administrative voting")
+                        assert page.locator("#selection-panel .source-link").count() == 0
+                        assert page.locator("#visualization [data-civic-state]").count() == 0
+                        page.locator("#atlas-options > summary").click()
                         page.select_option("#mode", "in_person_early")
-                        expect(page.locator("#measure")).to_contain_text("Ballot counts, not demographic turnout")
+                        expect(page.locator("#measure")).to_contain_text("Reported source counts, not demographic turnout rates")
                         results.append(dict(mode=mode, reported_observations_and_full_downloads_preserved=True, passed=True))
                         continue
-                    expect(page.locator('.demographic-card[data-civic-state="TX"]')).to_have_count(1, timeout=90000)
+                    expect(page.locator('#visualization [data-civic-state="TX"]')).to_have_count(1, timeout=90000)
                     checked, selected = 0, 0
                     for state in sorted({row["state_code"] for row in ROWS}):
                         page.select_option("#current-state-select", state)
@@ -92,7 +96,7 @@ def check(base, proof):
                             page.select_option("#dimension", dimension)
                             page.select_option("#group", "All groups")
                             expected = [row for row in ROWS if row["state_code"] == state and row["dimension"] == native_dimension]
-                            cards = page.locator(f'.demographic-card[data-civic-state="{state}"]')
+                            cards = page.locator(f'#visualization [data-civic-state="{state}"]')
                             expect(cards).to_have_count(len(expected))
                             actual = cards.evaluate_all(
                                 "cards=>Object.fromEntries(cards.map(card=>[card.dataset.group,{rate:card.dataset.rate,"
@@ -103,11 +107,12 @@ def check(base, proof):
                                 assert card["n"] == (str(row["n"]) if row["n"] is not None else "")
                                 assert card["disposition"] == row["disposition"]
                                 if row["modeled_voter_pct"] is None:
-                                    assert "Not publicly estimated" in card["text"]
+                                    assert not card["rate"] and not card["n"]
+                                    expect(page.locator(f'#visualization [data-civic-state="{state}"][data-group="{row["group"]}"]')).to_have_class("civic-group-held")
                                 else:
                                     selected += 1
                                 checked += 1
-                    assert checked == 1530 and selected == 671
+                    assert checked == 1530 and selected == 864
                     page.select_option("#current-state-select", "TX")
                     page.select_option("#dimension", "income")
                     page.select_option("#group", "100000_plus")
@@ -145,7 +150,7 @@ def check(base, proof):
                     assert hashlib.sha256(body).hexdigest() == asset["sha256"]
                     if asset["name"].endswith(".zip"):
                         with zipfile.ZipFile(io.BytesIO(body)) as archive:
-                            assert len(archive.namelist()) == 9
+                            assert len(archive.namelist()) == 10
                             for name, receipt in json.loads(archive.read("checksums.json")).items():
                                 member = archive.read(name)
                                 assert len(member) == receipt["bytes"]
@@ -163,5 +168,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base", required=True)
     parser.add_argument("--proof", type=Path, required=True)
+    parser.add_argument("--modes", nargs="+", choices=["desktop", "mobile", "no_javascript",
+                        "failed_source", "changed_checksum", "delayed_source_tab_race"])
     args = parser.parse_args()
-    check(args.base, args.proof)
+    check(args.base, args.proof, args.modes)

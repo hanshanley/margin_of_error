@@ -2,6 +2,27 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { driverRows, driverScale, validateModels, mapScale, effectFill, mapTerms, mapValue, validateRecordedHouseCounts } from '../public/scripts/participation-return-drivers.js';
+import { effectReading } from '../public/scripts/participation-effect-reading.js';
+
+test('reading guidance distinguishes swing contributions from gross shares and changes with units', () => {
+  const switching = effectReading('source_switching');
+  assert.match(switching.title, /Percentage-point contribution.*Democratic vote share/);
+  assert.match(switching.meaning, /not the percentage of people who switched/);
+  assert.match(switching.meaning, /D ÷ \(D \+ R\)/);
+  assert.match(effectReading('source_participation').meaning, /entry into and exit/);
+  assert.match(effectReading('source_exit').meaning, /does not prove someone stayed home/);
+  const margin = effectReading('source_switching', 'margin');
+  assert.match(margin.title, /D−R margin/);
+  assert.match(margin.meaning, /\(D − R\) ÷ \(D \+ R\)/);
+  assert.match(effectReading('source_switching', 'margin', 'AGE6|18_29').meaning, /statewide denominator, not a within-group/);
+  const retention = effectReading('source_retaining');
+  assert.match(retention.meaning, /denominator is previous Democratic or Republican House source choices/);
+  assert.doesNotMatch(retention.title, /Percentage-point/);
+  const gross = effectReading('scenario_switching');
+  assert.match(gross.meaning, /recalling a 2024 Democratic or Republican presidential choice/);
+  assert.doesNotMatch(gross.title, /Percentage-point/);
+  assert.match(effectReading('switching', 'democratic_two_party_share', '', 'senate').title, /D−R margin/);
+});
 
 const data = JSON.parse(readFileSync('data/participation-return-attribution/20261110-02/viewer-data.json'));
 
