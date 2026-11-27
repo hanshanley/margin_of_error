@@ -1,0 +1,53 @@
+state_code,state,year,geographic_level,ballots,vep,vap,vep_rate,vap_rate,source_status_literal,ballots_status,source_update_label,source_update_timezone,independently_certified,local_allocation_qualified,collection_status,source_version,source_url
+AK,Alaska,2026,state,290483,543594,569435,53.44,51.01,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+AL,Alabama,2026,state,1700000,3959631,4118726,42.93,41.27,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+AR,Arkansas,2026,state,895505,2258698,2446155,39.65,36.61,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+AZ,Arizona,2026,state,2608919,5582558,6134224,46.73,42.53,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+CA,California,2026,state,13600000,26975668,31353978,50.42,43.38,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+CO,Colorado,2026,state,2750000,4529484,4836458,60.71,56.86,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+CT,Connecticut,2026,state,1310000,2764230,2996754,47.39,43.71,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+DC,District of Columbia,2026,state,239000,525068,573218,45.52,41.69,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+DE,Delaware,2026,state,384862,798311,864649,48.21,44.51,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+FL,Florida,2026,state,8345654,17082876,19303654,48.85,43.23,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+GA,Georgia,2026,state,4218118,8109595,8946409,52.01,47.15,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+HI,Hawaii,2026,state,392428,1061698,1152515,36.96,34.05,Final,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+IA,Iowa,2026,state,1382511,2402474,2537706,57.55,54.48,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+ID,Idaho,2026,state,734140,1506064,1597634,48.75,45.95,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+IL,Illinois,2026,state,4300000,9308092,10171209,46.2,42.28,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+IN,Indiana,2026,state,1981000,5183690,5459386,38.22,36.29,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+KS,Kansas,2026,state,1120000,2174165,2318762,51.51,48.3,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+KY,Kentucky,2026,state,1448000,3419315,3626692,42.35,39.93,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+LA,Louisiana,2026,state,1493171,3395047,3588088,43.98,41.61,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+MA,Massachusetts,2026,state,2749609,5281884,5861585,52.06,46.91,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+MD,Maryland,2026,state,2385000,4527315,4970148,52.68,47.99,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+ME,Maine,2026,state,731486,1155427,1182627,63.31,61.85,Final,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+MI,Michigan,2026,state,4849519,7795255,8128616,62.21,59.66,Official?,unrecognized_source_status,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+MN,Minnesota,2026,state,2851615,4404656,4601709,64.74,61.97,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+MO,Missouri,2026,state,2115000,4808744,4956708,43.98,42.67,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+MS,Mississippi,2026,state,980000,2202083,2313169,44.5,42.37,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+MT,Montana,2026,state,495000,907352,925257,54.55,53.5,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+NC,North Carolina,2026,state,4245000,8435462,9024439,50.32,47.04,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+ND,North Dakota,2026,state,239445,599775,624110,39.92,38.37,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+NE,Nebraska,2026,state,780000,1461019,1558468,53.39,50.05,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+NH,New Hampshire,2026,state,641536,1145431,1182976,56.01,54.23,Final,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+NJ,New Jersey,2026,state,3025000,6717813,7628767,45.03,39.65,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+NM,New Mexico,2026,state,731602,1582834,1696908,46.22,43.11,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+NV,Nevada,2026,state,1110000,2377039,2651886,46.7,41.86,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+NY,New York,2026,state,6400000,14437679,16148400,44.33,39.63,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+OH,Ohio,2026,state,4710000,9104755,9443582,51.73,49.88,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+OK,Oklahoma,2026,state,1124000,3031199,3206448,37.08,35.05,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+OR,Oregon,2026,state,2002000,3281307,3488276,61.01,57.39,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+PA,Pennsylvania,2026,state,5030000,10087026,10536627,49.87,47.74,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+RI,Rhode Island,2026,state,365493,858733,925888,42.56,39.47,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+SC,South Carolina,2026,state,2054835,4310047,4528126,47.68,45.38,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+SD,South Dakota,2026,state,311000,695871,726691,44.69,42.8,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+TN,Tennessee,2026,state,2120000,5473359,5824991,38.73,36.39,"Official, inflated from vote for highest office",unrecognized_source_status,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+TX,Texas,2026,state,9975000,21229663,24629135,46.99,40.5,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+US,United States,2026,national,122925900,251588219,272847949,48.86,45.05,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+UT,Utah,2026,state,1100000,2485622,2679403,44.25,41.05,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+VA,Virginia,2026,state,3682000,6573770,7115673,56.01,51.74,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+VT,Vermont,2026,state,311510,525941,535581,59.23,58.16,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+WA,Washington,2026,state,3258746,5876925,6473370,55.45,50.34,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+WI,Wisconsin,2026,state,2700000,4574796,4791126,59.02,56.35,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+WV,West Virginia,2026,state,466000,1392266,1424689,33.47,32.71,,estimate,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
+WY,Wyoming,2026,state,191713,451426,466918,42.47,41.06,Official,source_reported_not_independently_certified,,,False,False,reported,0.3,https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.3.csv
