@@ -11,6 +11,7 @@ import { loadHouseSensitivity, houseSensitivityScope } from "./participation-hou
 import { installCongressionalReturns, validateCongressionalResults } from "./participation-congress.js";
 import { houseDistrictController } from "./participation-house-districts.js";
 import { statewideSourceController, statewideSourceViews, isStatewideSourceView } from "./participation-statewide-source.js";
+import { houseTransitionController, transitionViews, isTransitionView } from "./participation-house-transitions.js";
 import { senatePartialController } from "./participation-senate-partial.js";
 import { senateCompleteController } from "./participation-senate-complete.js";
 import { automaticHouseDescriptor, automaticHouseProfileReceipt, automaticHouseSensitivityReceipt,
@@ -224,6 +225,9 @@ export async function initializeReturnDrivers() {
     }) : null;
     const statewide = payload.statewide_source_model ? statewideSourceController(root,payload.statewide_source_model,
       {items,names,effectFill,element,svgElement,onSelectState:code=>{selectedCode=code;}}) : null;
+    const transitions = payload.statewide_house_transitions ? houseTransitionController(root,payload.statewide_house_transitions,
+      {items,names,effectFill,element,svgElement,onSelectState:code=>{selectedCode=code;}}) : null;
+    const originalModelWarning=root.querySelector("[data-driver-model-warning]")?.textContent;
     const districtMode = () => Boolean(districts && geographySelect.value === "district"
       && office.value === "house" && view.value === "reported_counts");
     let scenarios, norc, norcComparison, norcOriginalComparison, norcFamily, hitObserver, groupKind="", generation = 0;
@@ -482,6 +486,9 @@ export async function initializeReturnDrivers() {
       detail.hidden = false;
     };
     const selectState = code => {
+      if (transitions && office.value === "house" && isTransitionView(view.value)) {
+        selectedCode=code;stateSelect.value=code;transitions.select(code);return;
+      }
       if (statewide && office.value === "house" && isStatewideSourceView(view.value)) {
         selectedCode=code;stateSelect.value=code;statewide.select(code);return;
       }
@@ -541,6 +548,7 @@ export async function initializeReturnDrivers() {
     };
     const render = async () => {
       const current = ++generation, scenario = isScenarioView(view.value);
+      const transitionMode=Boolean(transitions && office.value==="house" && isTransitionView(view.value));
       const reading = effectReading(view.value, norcUnits(), group.value, office.value);
       for (const [key, text] of Object.entries(reading))
         root.querySelector(`[data-driver-reading-${key}]`).textContent = text;
@@ -548,7 +556,18 @@ export async function initializeReturnDrivers() {
       const norcMode=office.value==="house" && !scenario && Boolean(embeddedHouse.original);
       const recordedMode=norcMode && view.value==="reported_counts";
       const modelWarning=root.querySelector("[data-driver-model-warning]");
-      if (modelWarning) modelWarning.hidden = office.value !== "house" || recordedMode;
+      if (modelWarning) {
+        modelWarning.hidden = office.value !== "house" || recordedMode;
+        modelWarning.textContent=transitionMode
+          ?"Conditional statewide estimates, not identified voter histories. House totals and turnout benchmarks constrain the accounting; matching them does not independently validate switching or staying home."
+          :originalModelWarning;
+      }
+      if(office.value==="house"){
+        root.querySelector("#return-drivers-title").textContent=transitionMode?"Switching and staying home · House":"Reported House results";
+        root.querySelector("[data-driver-intro]").textContent=transitionMode
+          ?"2024 → 2026 · Modeled statewide comparisons for all 50 states, using whole-state House and turnout totals."
+          :"2024 → 2026 · Reported candidate counts first. Model views remain separate from observed histories.";
+      }
       if (geographySelect) {
         geographySelect.closest("label").hidden=!recordedMode;
         geographySelect.disabled=!recordedMode;
@@ -559,6 +578,20 @@ export async function initializeReturnDrivers() {
           :"Selected state: demographic breakdown, retained voters and model checks";
       }
       const viewLabel=view.closest("label");
+      if(transitionMode){
+        root.querySelector(".driver-controls").append(viewLabel);
+        root.querySelector(".driver-controls").dataset.scenarios="false";
+        for(const control of [familySelect,associationSelect,geographySelect])if(control){control.disabled=true;control.closest("label").hidden=true;}
+        root.querySelector("[data-driver-group-control]").hidden=true;group.disabled=true;
+        root.querySelector("[data-driver-district-control]").hidden=true;
+        unitsSelect.disabled=false;unitsSelect.closest("label").hidden=false;
+        if(associationNote)associationNote.hidden=true;
+        root.querySelector("[data-driver-detail-title]").textContent="Full statewide accounting and assumptions";
+        districts?.leave();statewide?.leave();hitObserver?.disconnect();
+        await transitions.render({view:view.value,state:selectedCode,units:norcUnits(),isCurrent:()=>current===generation});
+        return;
+      }
+      transitions?.leave();
       if (sourceMode) {
         root.querySelector(".driver-controls").append(viewLabel);
         if (geographySelect) {geographySelect.closest("label").hidden=true;geographySelect.disabled=true;}
@@ -837,20 +870,21 @@ export async function initializeReturnDrivers() {
     const changeOffice=() => {
       officeViews.set(previousOffice,view.value);previousOffice=office.value;
       const previous=officeViews.get(office.value) || view.value, options=office.value==="house" && embeddedHouse.original
-        ?[...(statewide?statewideSourceViews:[]),...norcViews]:mapTerms;
+        ?[...(transitions?transitionViews:[]),...(statewide?statewideSourceViews:[]),...norcViews]:mapTerms;
       if (office.value==="house" && statewide) {
-        const sourceGroup=element("optgroup"),comparisonGroup=element("optgroup");
+        const sourceGroup=element("optgroup"),comparisonGroup=element("optgroup"),transitionGroup=element("optgroup");
+        transitionGroup.label="Whole-state House / turnout model · all 50 states";
         sourceGroup.label="Experimental source-frame models · not recorded election changes";
         comparisonGroup.label="Recorded / return-constrained · qualified comparisons";
         for (const [key,label] of options)
-          (isStatewideSourceView(key)?sourceGroup:comparisonGroup).append(new Option(label,key));
-        view.replaceChildren(sourceGroup,comparisonGroup);
+          (isTransitionView(key)?transitionGroup:isStatewideSourceView(key)?sourceGroup:comparisonGroup).append(new Option(label,key));
+        view.replaceChildren(transitionGroup,comparisonGroup,sourceGroup);
       } else view.replaceChildren(...options.map(([key,label])=>new Option(label,key)));
       const archived=element("optgroup");archived.label="Archived survey-frame scenarios";
       for (const [key,label] of scenarioViews) archived.append(new Option(label,key));
       view.append(archived);
       view.value=[...view.options].some(o=>o.value===previous)?previous:
-        office.value==="house"?"reported_counts":"reported_total";
+        office.value==="house"?(transitions?"house_transition_home":"reported_counts"):"reported_total";
       root.querySelector("#return-drivers-title").textContent=office.value==="house"?"Reported House results":
         office.value==="senate"?"Senate comparisons":"Governor source frames";
       root.querySelector("[data-driver-intro]").textContent=office.value==="house"

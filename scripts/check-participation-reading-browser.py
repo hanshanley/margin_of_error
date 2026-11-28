@@ -67,6 +67,8 @@ def check(args):
             fits(page, width)
             page.locator("#tab-effects").click()
             root = page.locator("#participation-return-drivers")
+            expect(root.locator("[data-driver-view]")).to_have_value("house_transition_home", timeout=60000)
+            root.locator("[data-driver-view]").select_option("reported_counts")
             expect(root.locator("[data-driver-view]")).to_have_value("reported_counts", timeout=60000)
             expect(root.locator("[data-driver-summary]")).to_have_attribute("data-recorded-source", "current-congressional-counts", timeout=60000)
             root.locator(".driver-options > summary").click()

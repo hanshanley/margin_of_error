@@ -85,6 +85,8 @@ def check(base, screenshots):
             expect(page.locator("#selection-panel > h3")).to_have_text("Pennsylvania")
             expect(page.locator("#selection-panel > .selection-more")).not_to_have_attribute("open", "")
             page.locator("#tab-effects").click()
+            expect(page.locator("[data-driver-view]")).to_have_value("house_transition_home", timeout=60000)
+            page.locator("[data-driver-view]").select_option("reported_counts")
             swing = page.locator("[data-driver-map] svg")
             expect(swing).to_be_visible(timeout=45000)
             page.locator("#tab-effects").focus()
