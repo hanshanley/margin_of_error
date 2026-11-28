@@ -37,6 +37,10 @@ def check(args):
             data = captures[-1]
             rows = {row['state_code']: row for row in data['rows']}
             assert len(rows) == 50 and 'DC' not in rows
+            if root.locator('[data-driver-map]').get_attribute('data-transition-automatic') == 'true':
+                download = page.evaluate("async()=> (await (await import('/scripts/participation-automatic-runtime.js')).loadAutomaticRuntime()).complete_download.url")
+                release_page = download.replace('/releases/download/', '/releases/tag/').rsplit('/', 1)[0]
+                expect(root.locator('[data-house-transition-methods] a')).to_have_attribute('href', release_page)
             summary = root.locator('[data-driver-summary]')
             state = root.locator('[data-driver-state]')
             assert not root.locator('[data-driver-family]').is_visible()

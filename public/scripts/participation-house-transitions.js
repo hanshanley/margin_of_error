@@ -93,10 +93,11 @@ export function houseTransitionController(root, fallback, {items,names,effectFil
   const host=root.querySelector("[data-driver-map]"),summary=root.querySelector("[data-driver-summary]"),detail=root.querySelector("[data-driver-detail]");
   const table=root.querySelector("[data-house-transition-table]"),methods=root.querySelector("[data-house-transition-methods]");
   const savedRows=table?.querySelector("tbody").cloneNode(true),savedTableText=table?.querySelector("p").textContent;
+  const analysisLink=methods?.querySelector("a"),savedAnalysisURL=analysisLink?.href;
   const legend=root.querySelector(".driver-no-model").lastChild,legacyLegend=legend.textContent;
   const key=root.querySelector(".driver-map-key"),legacyKey=key.getAttribute("aria-label");
   let data,promise,automatic=false,active=false,ticket=0,selected="TX",view="house_transition_home",units="democratic_two_party_share",observer;
-  let rejected=false,lastOptions;
+  let rejected=false,lastOptions,analysisURL;
   const field=()=>view==="house_transition_switching"?"switching":"staying_home";
   const select=code=>{
     selected=code;onSelectState?.(code);
@@ -142,7 +143,8 @@ export function houseTransitionController(root, fallback, {items,names,effectFil
     try{
       if(rejected||automaticRuntimeRejected("counts")||automaticRuntimeRejected("house"))throw Error("Accepted model inputs were rejected");
       const manifest=await loadAutomaticRuntime(),receipt=transitionReceipt(manifest);
-      if(receipt){const body=validateHouseTransitions(await fetchSourceBody(receipt));if(body.version!==receipt.version||rejected)throw Error("Model version differs or inputs were rejected");automatic=true;return body;}
+      if(receipt){const body=validateHouseTransitions(await fetchSourceBody(receipt));if(body.version!==receipt.version||rejected)throw Error("Model version differs or inputs were rejected");
+        analysisURL=manifest.complete_download.url.replace("/releases/download/","/releases/tag/").replace(/\/[^/]+$/,"");automatic=true;return body;}
     }catch{ /* The complete saved model remains a separate immutable fallback. */ }
     automatic=false;const body=validateHouseTransitions(await fetchSourceBody(fallback));
     if(body.version!==fallback.version)throw Error("Saved model version differs");return body;
@@ -158,6 +160,7 @@ export function houseTransitionController(root, fallback, {items,names,effectFil
       active=true;const current=++ticket;selected=options.state;view=options.view;units=options.units;observer?.disconnect();
       delete host.dataset.transitionVersion;delete host.dataset.transitionAutomatic;
       delete summary.dataset.transitionState;delete summary.dataset.transitionVersion;
+      if(analysisLink){analysisLink.href=savedAnalysisURL;analysisLink.textContent="Saved complete analysis: inputs, all state queries, sensitivity matrices and replay code";}
       host.replaceChildren(element("p","Loading the complete all-50-state House transition model…","caption"));summary.replaceChildren();detail.replaceChildren();summary.hidden=true;detail.hidden=true;
       if(table)table.hidden=false;if(methods)methods.hidden=false;
       for(const selector of ["#estimate-outcome-check","[data-statewide-source-table]",".driver-research"]){const node=root.querySelector(selector);if(node)node.hidden=true;}
@@ -167,6 +170,7 @@ export function houseTransitionController(root, fallback, {items,names,effectFil
         if(table)table.querySelector("p").textContent=`Modeled contributions to the reported ${units==="margin"?"D−R margin":"Democratic share of D+R"} change, in percentage points. Every state uses whole-state totals; changed candidate coverage is context, not a reason to omit the state. Matching totals is a constraint, not validation of individual histories.`;
         const bound=Math.max(1,Math.ceil(Math.max(...data.rows.flatMap(row=>["switching","staying_home"].flatMap(key=>{const r=row.sensitivity["contribution_"+key];return[Math.abs(r.minimum*factor),Math.abs(r.maximum*factor)];})))/5)*5);
         host.dataset.driverMap=view;host.dataset.transitionVersion=data.version;host.dataset.transitionAutomatic=String(automatic);
+        if(analysisLink&&automatic){analysisLink.href=analysisURL;analysisLink.textContent="Current complete analysis: inputs, all state queries, sensitivity matrices and replay code";}
         root.querySelector("[data-driver-map-title]").textContent=transitionViews.find(([key])=>key===view)[1];
         root.querySelector("[data-driver-scale-min]").textContent=`−${bound} pp`;root.querySelector("[data-driver-scale-max]").textContent=`+${bound} pp`;
         root.querySelector(".driver-map-ticks").children[1].textContent="0";root.querySelector(".driver-map-ramp").style.background="";
