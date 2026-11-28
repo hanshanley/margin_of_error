@@ -1,5 +1,5 @@
 import { fetchSourceBody } from "./participation-statewide-source.js";
-import { loadAutomaticRuntime } from "./participation-automatic-runtime.js";
+import { loadAutomaticRuntime, automaticRuntimeRejected } from "./participation-automatic-runtime.js";
 
 export const transitionViews = [
   ["house_transition_home", "Modeled staying-home contribution · all 50 states"],
@@ -92,9 +92,11 @@ export function roundedTransitionContributions(point, units="democratic_two_part
 export function houseTransitionController(root, fallback, {items,names,effectFill,element,svgElement,onSelectState}) {
   const host=root.querySelector("[data-driver-map]"),summary=root.querySelector("[data-driver-summary]"),detail=root.querySelector("[data-driver-detail]");
   const table=root.querySelector("[data-house-transition-table]"),methods=root.querySelector("[data-house-transition-methods]");
+  const savedRows=table?.querySelector("tbody").cloneNode(true),savedTableText=table?.querySelector("p").textContent;
   const legend=root.querySelector(".driver-no-model").lastChild,legacyLegend=legend.textContent;
   const key=root.querySelector(".driver-map-key"),legacyKey=key.getAttribute("aria-label");
   let data,promise,automatic=false,active=false,ticket=0,selected="TX",view="house_transition_home",units="democratic_two_party_share",observer;
+  let rejected=false,lastOptions;
   const field=()=>view==="house_transition_switching"?"switching":"staying_home";
   const select=code=>{
     selected=code;onSelectState?.(code);
@@ -132,26 +134,30 @@ export function houseTransitionController(root, fallback, {items,names,effectFil
     }accounting.append(rows);const box=element("div",null,"table-wrap");box.append(accounting);detail.append(box);
     detail.append(element("p",`Whole-state House D/R/Other recorded votes: 2024 ${row.previous.house.map(v=>Math.round(v).toLocaleString("en-US")).join(" / ")}; 2026 ${row.current.house.map(v=>Math.round(v).toLocaleString("en-US")).join(" / ")}.`,"caption"),
       element("p",`Ballot benchmarks: 2024 ${Math.round(row.previous.ballots).toLocaleString("en-US")}; 2026 ${Math.round(row.current.ballots).toLocaleString("en-US")}. Ballots without a reported House choice are not staying home. Eligibility/frame changes are modeled separately.`,"caption"),
-      element("p",`2026 UF source status: ${row.current.source_status||"estimate"}; not independently certified here. Source periods, priors and eligibility overlap remain assumptions, not linked voter histories.`,"caption"),
+      element("p",`2026 UF source status: ${row.current.source_status||"not supplied"}; not independently certified here. Source periods, priors and eligibility overlap remain assumptions, not linked voter histories.`,"caption"),
       element("p",row.context_holds.length?row.context_holds.join(" "):"All statewide recorded vote categories are retained; no common-district subset is substituted.","caption"));
     detail.hidden=false;
   };
   const load=async()=>{
     try{
+      if(rejected||automaticRuntimeRejected("counts")||automaticRuntimeRejected("house"))throw Error("Accepted model inputs were rejected");
       const manifest=await loadAutomaticRuntime(),receipt=transitionReceipt(manifest);
-      if(receipt){const body=validateHouseTransitions(await fetchSourceBody(receipt));if(body.version!==receipt.version)throw Error("Model version differs");automatic=true;return body;}
+      if(receipt){const body=validateHouseTransitions(await fetchSourceBody(receipt));if(body.version!==receipt.version||rejected)throw Error("Model version differs or inputs were rejected");automatic=true;return body;}
     }catch{ /* The complete saved model remains a separate immutable fallback. */ }
     automatic=false;const body=validateHouseTransitions(await fetchSourceBody(fallback));
     if(body.version!==fallback.version)throw Error("Saved model version differs");return body;
   };
-  return {select,
+  const controller={select,
     leave(){active=false;ticket++;observer?.disconnect();delete summary.dataset.transitionState;delete summary.dataset.transitionVersion;
       legend.textContent=legacyLegend;key.setAttribute("aria-label",legacyKey);
       delete host.dataset.transitionVersion;delete host.dataset.transitionAutomatic;
       if(table)table.hidden=true;if(methods)methods.hidden=true;
       for(const selector of ["#estimate-outcome-check","[data-statewide-source-table]",".driver-research"]){const node=root.querySelector(selector);if(node)node.hidden=false;}},
     async render(options){
+      lastOptions=options;
       active=true;const current=++ticket;selected=options.state;view=options.view;units=options.units;observer?.disconnect();
+      delete host.dataset.transitionVersion;delete host.dataset.transitionAutomatic;
+      delete summary.dataset.transitionState;delete summary.dataset.transitionVersion;
       host.replaceChildren(element("p","Loading the complete all-50-state House transition model…","caption"));summary.replaceChildren();detail.replaceChildren();summary.hidden=true;detail.hidden=true;
       if(table)table.hidden=false;if(methods)methods.hidden=false;
       for(const selector of ["#estimate-outcome-check","[data-statewide-source-table]",".driver-research"]){const node=root.querySelector(selector);if(node)node.hidden=true;}
@@ -185,7 +191,15 @@ export function houseTransitionController(root, fallback, {items,names,effectFil
         hits();observer=new ResizeObserver(hits);observer.observe(svg);
         if(table){const tbody=table.querySelector("tbody");tbody.replaceChildren();for(const row of data.rows){const tr=element("tr"),name=element("button",names[row.state_code]),rounded=roundedTransitionContributions(row.point,units);name.type="button";name.addEventListener("click",()=>select(row.state_code));const th=element("th");th.scope="row";th.append(name);tr.append(th);tr.dataset.houseTransitionState=row.state_code;for(const value of [row.point.recorded_change_pp*factor,rounded.switching,rounded.staying_home])tr.append(element("td",pp(value),"numeric"));tbody.append(tr);}}
         select(selected);
-      }catch(error){if(!active||current!==ticket||!options.isCurrent())return;promise=null;host.replaceChildren(element("p",`All-state model unavailable: ${error.message}. Saved state comparisons remain below; no values are filled with zero.`,"caption"));}
+      }catch(error){if(!active||current!==ticket||!options.isCurrent())return;promise=null;
+        if(table&&savedRows){table.querySelector("tbody").replaceWith(savedRows.cloneNode(true));table.querySelector("p").textContent=savedTableText;}
+        host.replaceChildren(element("p",`All-state model unavailable: ${error.message}. Saved state comparisons remain below; no values are filled with zero.`,"caption"));}
     },
   };
+  globalThis.addEventListener?.("participation:automatic-runtime-rejected",event=>{
+    if(!["counts","house"].includes(event.detail?.component))return;
+    rejected=true;data=null;promise=null;automatic=false;ticket++;
+    if(active&&lastOptions)controller.render(lastOptions);
+  });
+  return controller;
 }

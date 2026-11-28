@@ -59,6 +59,8 @@ def check(args):
                             assert abs(float(estimate.get_attribute('data-value')) - factor * row['point']['contributions_pp'][key]) < 1e-8
                             expect(estimate.locator('small')).to_contain_text(' to ')
                         assert row['available'] is True
+                        if not row['current']['source_status']:
+                            assert '2026 UF source status: not supplied' in root.locator('[data-driver-detail]').text_content()
                     assert values['DC'] == ''
             state.select_option('DC')
             expect(summary).to_contain_text('no voting House seat')
@@ -107,6 +109,7 @@ def check(args):
         table.locator('summary').click()
         expect(table.locator('tbody tr')).to_have_count(50)
         expect(table.locator('tbody')).to_be_visible()
+        saved_rows = table.locator('tbody').text_content()
         page.close()
         page = browser.new_page()
         page.route('**/house/statewide-transitions/viewer.json.gz', lambda route: route.fulfill(status=503, body='Injected optional automatic-model outage'))
@@ -116,9 +119,35 @@ def check(args):
         expect(page.locator('[data-driver-map] path')).to_have_count(0)
         expect(page.locator('[data-house-transition-table] tbody tr')).to_have_count(50)
         page.close()
+        page = browser.new_page()
+        page.goto(url)
+        host = page.locator('[data-driver-map]')
+        expect(host.locator('path[data-house-transition]')).to_have_count(51, timeout=60000)
+        fallback = json.loads(page.locator('[data-driver-data]').text_content())['statewide_house_transitions']['version']
+        page.evaluate("""async () => {
+            const runtime = await import('/scripts/participation-automatic-runtime.js');
+            runtime.rejectAutomaticRuntime('counts', new Error('Injected accepted-input rejection'));
+        }""")
+        expect(host).to_have_attribute('data-transition-automatic', 'false', timeout=60000)
+        expect(host).to_have_attribute('data-transition-version', fallback)
+        expect(host.locator('path[data-house-transition]')).to_have_count(51)
+        page.close()
+        page = browser.new_page()
+        page.route('**/statewide-house-transitions/**/viewer-data.json.gz', lambda route: route.fulfill(status=503, body='Injected saved-model outage'))
+        page.goto(url)
+        host = page.locator('[data-driver-map]')
+        expect(host.locator('path[data-house-transition]')).to_have_count(51, timeout=60000)
+        page.evaluate("""async () => {
+            const runtime = await import('/scripts/participation-automatic-runtime.js');
+            runtime.rejectAutomaticRuntime('counts', new Error('Injected accepted-input rejection'));
+        }""")
+        expect(host).to_contain_text('All-state model unavailable', timeout=60000)
+        assert page.locator('[data-house-transition-table] tbody').text_content() == saved_rows
+        assert host.get_attribute('data-transition-automatic') is None
+        page.close()
         browser.close()
     proof = dict(status='passed', base=args.base, results=results, nojs_all_50_states=True,
-                 unavailable_models_not_zero_filled=True)
+                 unavailable_models_not_zero_filled=True, rejected_input_frame_not_retained_as_current=True)
     args.output.write_text(json.dumps(proof, indent=2) + '\n')
     print(json.dumps(proof))
 
