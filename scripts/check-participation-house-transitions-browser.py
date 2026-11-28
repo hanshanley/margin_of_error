@@ -90,6 +90,7 @@ def check(args):
             expect(root.locator('.driver-no-model')).not_to_contain_text('No voting-House model')
             view.select_option('source_total')
             expect(summary).to_have_attribute('data-source-model-state', 'MO', timeout=60000)
+            expect(root.locator('[data-driver-model-warning] a')).to_have_attribute('href', '#estimate-outcome-check')
             view.select_option('house_transition_home')
             expect(summary).to_have_attribute('data-transition-state', 'MO', timeout=60000)
             expect(root.locator('[data-house-transition-table] tbody tr')).to_have_count(50)

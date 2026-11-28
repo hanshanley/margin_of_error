@@ -227,7 +227,8 @@ export async function initializeReturnDrivers() {
       {items,names,effectFill,element,svgElement,onSelectState:code=>{selectedCode=code;}}) : null;
     const transitions = payload.statewide_house_transitions ? houseTransitionController(root,payload.statewide_house_transitions,
       {items,names,effectFill,element,svgElement,onSelectState:code=>{selectedCode=code;}}) : null;
-    const originalModelWarning=root.querySelector("[data-driver-model-warning]")?.textContent;
+    const originalModelWarning=Array.from(root.querySelector("[data-driver-model-warning]")?.childNodes || [])
+      .map(node=>node.cloneNode(true));
     const districtMode = () => Boolean(districts && geographySelect.value === "district"
       && office.value === "house" && view.value === "reported_counts");
     let scenarios, norc, norcComparison, norcOriginalComparison, norcFamily, hitObserver, groupKind="", generation = 0;
@@ -558,9 +559,8 @@ export async function initializeReturnDrivers() {
       const modelWarning=root.querySelector("[data-driver-model-warning]");
       if (modelWarning) {
         modelWarning.hidden = office.value !== "house" || recordedMode;
-        modelWarning.textContent=transitionMode
-          ?"Conditional statewide estimates, not identified voter histories. House totals and turnout benchmarks constrain the accounting; matching them does not independently validate switching or staying home."
-          :originalModelWarning;
+        if(transitionMode)modelWarning.textContent="Conditional statewide estimates, not identified voter histories. House totals and turnout benchmarks constrain the accounting; matching them does not independently validate switching or staying home.";
+        else modelWarning.replaceChildren(...originalModelWarning.map(node=>node.cloneNode(true)));
       }
       if(office.value==="house"){
         root.querySelector("#return-drivers-title").textContent=transitionMode?"Switching and staying home · House":"Reported House results";
